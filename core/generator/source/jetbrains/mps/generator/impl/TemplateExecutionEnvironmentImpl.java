@@ -154,7 +154,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           PostponedReference postponedReference = new PostponedReference(
             refInfo,
             generator);
-          reference.getSourceNode().replaceReference(reference, postponedReference);
+          reference.getSourceNode().setReference(reference.getRole(), postponedReference);
         }
         return true;
       }
@@ -261,7 +261,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.setReference(postponedReference);
+    outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
   public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
@@ -276,7 +276,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.setReference(postponedReference);
+    outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
@@ -288,7 +288,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.setReference(postponedReference);
+    outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
   /*

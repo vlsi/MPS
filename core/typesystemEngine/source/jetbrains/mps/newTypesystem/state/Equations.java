@@ -68,7 +68,7 @@ public class Equations {
   }
 
   public SNode getRepresentative(final SNode node) {
-    return getRepresentative(node,true);
+    return getRepresentative(node, true);
   }
 
   private SNode getRepresentative(final SNode node, final boolean shortenPaths) {
@@ -108,11 +108,11 @@ public class Equations {
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
- /*   if (lRepresentative == null || rRepresentative == null) {
-      myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
-      return false;
-    } */
-    if (lRepresentative !=null && lRepresentative.equals(rRepresentative)) {
+    /*   if (lRepresentative == null || rRepresentative == null) {
+     myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
+     return false;
+   } */
+    if (lRepresentative != null && lRepresentative.equals(rRepresentative)) {
       return true;
     }
     if (TypesUtil.isVariable(lRepresentative)) {
@@ -137,7 +137,7 @@ public class Equations {
   private boolean processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
     for (SNode innerVar : TypesUtil.getVariables(type, myState)) {
-      if (getRepresentative(innerVar, false).equals(var)){
+      if (getRepresentative(innerVar, false).equals(var)) {
         reportRecursiveType(source, info);
         return false;
       }
@@ -198,7 +198,7 @@ public class Equations {
         }
         if (newNode != oldNode) {
           String role = reference.getRole();
-          node.removeReference(reference);
+          node.setReference(role, null);
           node.setReferenceTarget(role, newNode);
         }
       }
@@ -213,7 +213,7 @@ public class Equations {
 
   void reportRecursiveType(SNode node, EquationInfo info) {  //todo
     SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed",
-                info == null? null:info.getRuleModel(), info == null? null:info.getRuleId());
+      info == null ? null : info.getRuleModel(), info == null ? null : info.getRuleId());
     myState.getTypeCheckingContext().reportMessage(node, errorReporter);
   }
 

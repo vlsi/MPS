@@ -147,7 +147,7 @@ public class TemplateProcessor {
           refInfo,
           myGenerator
         );
-        outputNode.setReference(postponedReference);
+        outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else {
         outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
@@ -170,7 +170,7 @@ public class TemplateProcessor {
           refInfo,
           myGenerator
         );
-        outputNode.setReference(postponedReference);
+        outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else if (!GeneratorUtilEx.isTemplateLanguageElement(templateChildNode)) {
         templateChildNodes.add(templateChildNode);
       }
@@ -619,7 +619,7 @@ public class TemplateProcessor {
           PostponedReference postponedReference = new PostponedReference(
             refInfo,
             myGenerator);
-          reference.getSourceNode().replaceReference(reference, postponedReference);
+          reference.getSourceNode().setReference(reference.getRole(), postponedReference);
         }
         return true;
       }

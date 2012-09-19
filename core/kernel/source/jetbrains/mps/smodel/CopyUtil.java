@@ -171,17 +171,18 @@ public final class CopyUtil {
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
             StaticReference statRef = (StaticReference) ref;
-            outputNode.setReference(new StaticReference(
+            SReference reference = new StaticReference(
               statRef.getRole(),
               outputNode,
               statRef.getTargetSModelReference(),
               statRef.getTargetNodeId(),
-              statRef.getResolveInfo()));
+              statRef.getResolveInfo());
+            outputNode.setReference(reference.getRole(), reference);
           } else if (ref instanceof DynamicReference && cloneRefs) {
             DynamicReference dynRef = (DynamicReference) ref;
             DynamicReference output = new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo());
             output.setOrigin(dynRef.getOrigin());
-            outputNode.setReference(output);
+            outputNode.setReference(output.getRole(), output);
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferenceTarget(ref.getRole(), mapping.get(inputTargetNode));

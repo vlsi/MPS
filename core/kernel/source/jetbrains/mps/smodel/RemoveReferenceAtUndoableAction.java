@@ -26,7 +26,7 @@ class RemoveReferenceAtUndoableAction extends SNodeUndoableAction {
   }
 
   protected void doUndo() {
-    getAffectedNode().setReference(myReference);
+    getAffectedNode().setReference(myReference.getRole(), myReference);
   }
 
   protected void doRedo() {

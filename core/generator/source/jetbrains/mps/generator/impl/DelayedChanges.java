@@ -181,7 +181,7 @@ public class DelayedChanges {
         PostponedReference postponedReference = new PostponedReference(
           refInfo,
           myGenerator);
-        reference.getSourceNode().replaceReference(reference, postponedReference);
+        reference.getSourceNode().setReference(reference.getRole(), postponedReference);
       }
     }
 

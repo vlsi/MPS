@@ -539,12 +539,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             continue;
           }
 
-          outputNode.setReference(new StaticReference(
+          SReference reference = new StaticReference(
             inputReference.getRole(),
             outputNode,
             targetModelReference,
             inputReference.getTargetNodeId(),
-            inputReference.getResolveInfo()));
+            inputReference.getResolveInfo());
+          outputNode.setReference(reference.getRole(), reference);
         } else if (inputReference instanceof DynamicReference) {
           DynamicReference outputReference = new DynamicReference(
             inputReference.getRole(),
@@ -552,7 +553,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             targetModelReference,
             inputReference.getResolveInfo());
           outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
-          outputNode.setReference(outputReference);
+          outputNode.setReference(outputReference.getRole(), outputReference);
         } else {
           myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
             new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
@@ -577,7 +578,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           refInfo,
           this
         );
-        outputNode.setReference(reference);
+        outputNode.setReference(reference.getRole(), reference);
       } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
         outputNode.setReferenceTarget(inputReference.getRole(), inputTargetNode);
       } else {
