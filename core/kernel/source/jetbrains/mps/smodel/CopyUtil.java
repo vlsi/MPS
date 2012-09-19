@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
@@ -139,7 +140,8 @@ public final class CopyUtil {
     mapping.put(node, result);
     jetbrains.mps.util.SNodeOperations.copyProperties(node, result);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(node, result);
-    for (SNode child : node.getChildren(copyAttributes)) {
+    for (SNode child : node.getChildren()) {
+      if (!copyAttributes && AttributeOperations.isAttribute(child)) continue;
       String role = child.getRole();
       assert role != null;
       result.addChild(role, clone(child, mapping, copyAttributes));

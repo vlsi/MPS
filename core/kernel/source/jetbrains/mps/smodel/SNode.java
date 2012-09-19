@@ -483,19 +483,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public List<SNode> getChildren(boolean includeAttributes) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    SNode firstChild = firstChild();
-    if (includeAttributes) {
-      return new ChildrenList(firstChild);
-    } else {
-      return new SkipAttributesChildrenList(firstChild);
-    }
-  }
-
   public void insertChild(final SNodeBase anchor, String _role, final SNode child) {
     enforceModelLoad();
 
@@ -1416,6 +1403,19 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return new ArrayList<SReference>(_reference());
+  }
+
+  public List<SNode> getChildren(boolean includeAttributes) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    SNode firstChild = firstChild();
+    if (includeAttributes) {
+      return new ChildrenList(firstChild);
+    } else {
+      return new SkipAttributesChildrenList(firstChild);
+    }
   }
 
   //--------private (SNode and SModel usages)-------

@@ -25,9 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public class SNodeUtil {
   /**
    * Replaces node with another, preserving attributes
-   * @param node
-   * @param replacer
-   * @return
    */
 //  public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
 //    SNode nodeParent = node.getParent();
@@ -53,4 +50,9 @@ public class SNodeUtil {
 //  }
 //
 
+
+  public static boolean isAttribute(SNode node){
+    //AttributeOperations.isAttribute(node)
+    return  false;
+  }
 }
