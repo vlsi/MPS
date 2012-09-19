@@ -543,18 +543,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     insertChild(role, newChild, anchor);
   }
 
-  public void replaceChild(SNode oldChild, List<SNode> newChildren) {
-    assert oldChild.treeParent() == this;
-    String oldChildRole = oldChild.getRole();
-    assert oldChildRole != null;
-    SNode prevChild = oldChild;
-    for (SNode newChild : newChildren) {
-      insertChild(oldChildRole, newChild, prevChild);
-      prevChild = newChild;
-    }
-    removeChild(oldChild);
-  }
-
   public String getResolveInfo() {
     String resolveInfo = SNodeUtil.getResolveInfo(this);
     if (resolveInfo != null) {
@@ -1421,6 +1409,19 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       addChild(role, childNode);
     }
   }
+
+  public void replaceChild(SNode oldChild, List<SNode> newChildren) {
+    assert oldChild.treeParent() == this;
+    String oldChildRole = oldChild.getRole();
+    assert oldChildRole != null;
+    SNode prevChild = oldChild;
+    for (SNode newChild : newChildren) {
+      insertChild(oldChildRole, newChild, prevChild);
+      prevChild = newChild;
+    }
+    removeChild(oldChild);
+  }
+
 
   //--------private (SNode and SModel usages)-------
 
