@@ -32,7 +32,7 @@ public class CellAction_DeleteOnErrorReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    if (mySource.getReference(myRole) != null && mySource.getReferent(myRole) == null) {
+    if (mySource.getReference(myRole) != null && mySource.getReferenceTarget(myRole) == null) {
       mySource.removeReference(mySource.getReference(myRole));
     } else {
       List<SNode> nodes = new ArrayList<SNode>();

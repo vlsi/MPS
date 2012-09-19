@@ -257,7 +257,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode operationNode = null;
     SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = node.getReferent(SModelUtil.getLinkDeclarationRole(linkDeclaration));
+      SNode referentNode = (SNode) node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
         operationNode = referentNode;
       }

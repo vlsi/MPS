@@ -171,7 +171,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       return new AggregationCellContext(parentNode, currentChild, myLinkDeclaration);
     }
     SNode referenceNode = getSNode();
-    SNode currentReferent = referenceNode.getReferent(myGenuineRole);
+    SNode currentReferent = (SNode) referenceNode.getReferenceTarget(myGenuineRole);
     return new ReferenceCellContext(referenceNode, currentReferent, myLinkDeclaration);
   }
 }
