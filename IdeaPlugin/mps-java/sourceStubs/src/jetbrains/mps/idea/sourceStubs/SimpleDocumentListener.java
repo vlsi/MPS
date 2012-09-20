@@ -1,3 +1,4 @@
+package jetbrains.mps.idea.sourceStubs;
 /*
  * Copyright 2003-2012 JetBrains s.r.o.
  *
@@ -13,8 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.vfs.VirtualFile;

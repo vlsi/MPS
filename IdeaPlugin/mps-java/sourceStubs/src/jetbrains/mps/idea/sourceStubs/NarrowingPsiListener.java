@@ -1,3 +1,4 @@
+package jetbrains.mps.idea.sourceStubs;
 /*
  * Copyright 2003-2012 JetBrains s.r.o.
  *
@@ -14,15 +15,13 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.project.stubs;
 
-import com.intellij.openapi.vfs.VirtualFile;
+
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiTreeChangeAdapter;
 import com.intellij.psi.PsiTreeChangeEvent;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -62,7 +61,7 @@ public class NarrowingPsiListener extends PsiTreeChangeAdapter {
     }
   }
 
-  // before* methods are not handled, because SimpleDocumentListener is simple
+  // before* methods are not handled, because jetbrains.mps.idea.sourceStubs.SimpleDocumentListener is simple
   // and only gives the new state of the document in the event
 
   @Override

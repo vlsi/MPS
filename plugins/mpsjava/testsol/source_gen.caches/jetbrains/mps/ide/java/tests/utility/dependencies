@@ -28,10 +28,10 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
-    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.JavaParser" />
-    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.JavaSourceStubModelDS" />
-    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.JavaSourceStubs" />
-    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.ParseDepth" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaSourceStubModelDS" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.ParseDepth" />
+    <classNode dependClassName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubs" />
     <classNode dependClassName="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

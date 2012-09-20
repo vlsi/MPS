@@ -34,6 +34,9 @@ import org.jetbrains.annotations.NotNull;
  * Date: 4/30/12
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
+
+  // should really be parameterized by ModelRootManager, not boolean sourceStubs
+
   public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots, boolean sourceStubs) {
     ModelRootManager rootMgr = sourceStubs ? LanguageID.JAVA_SOURCE_MANAGER : LanguageID.JAVA_MANAGER;
     for (VirtualFile f : roots) {

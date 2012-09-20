@@ -29,7 +29,6 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
-import jetbrains.mps.idea.core.project.stubs.ProjectJavaSourceImporter;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -49,6 +48,7 @@ public class SolutionIdea extends Solution {
   @NotNull
   private Module myModule;
   private List<Dependency> myDependencies;
+  private List<Dependency> myAddedDependencies = new ArrayList<Dependency>();
   private MessageBusConnection myConnection;
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
@@ -117,6 +117,9 @@ public class SolutionIdea extends Solution {
     if (myDependencies == null) {
       // TODO: move to Solution descriptor & try to use common Solution implementation here?
       myDependencies = new ArrayList<Dependency>();
+
+      myDependencies.addAll(myAddedDependencies);
+
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
       for (Map.Entry<ModuleId, ModuleReference> e : LibrariesLoader.getInstance().getLoadedSolutions().entrySet()) {
         ModuleReference lang = e.getValue();
@@ -128,6 +131,7 @@ public class SolutionIdea extends Solution {
         }
       }
 
+      /*
       Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
       if (sourceStubSol!=null) {
         Dependency dep = new Dependency();
@@ -135,6 +139,7 @@ public class SolutionIdea extends Solution {
         dep.setReexport(false);
         myDependencies.add(dep);
       }
+      */
 
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
@@ -180,7 +185,10 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
-
+    Dependency dep = new Dependency();
+    dep.setModuleRef(moduleRef);
+    dep.setReexport(false); // overriding parameter
+    myAddedDependencies.add(dep);
   }
 
   @Override

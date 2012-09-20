@@ -49,6 +49,7 @@
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/platform"/>
     <mps.LanguageLibrary dir="/workbench"/>
+    <mps.LanguageLibrary dir="/stubs"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.VisibleModuleMask mask="Ant"/>
     <mps.VisibleModuleMask mask="closures.*"/>

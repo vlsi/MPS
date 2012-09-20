@@ -1,3 +1,5 @@
+package jetbrains.mps.idea.sourceStubs;
+
 /*
  * Copyright 2003-2012 JetBrains s.r.o.
  *
@@ -14,8 +16,6 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.project.stubs;
-
 import com.intellij.ProjectTopics;
 import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
@@ -25,11 +25,11 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.ModuleAdapter;
-import com.intellij.openapi.project.ModuleListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootEvent;
 import com.intellij.openapi.roots.ModuleRootListener;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
@@ -38,6 +38,9 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.idea.core.facet.MPSFacet;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
+import jetbrains.mps.idea.core.project.stubs.JavaStubPsiListener;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -142,6 +145,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
         System.out.println("*** " + mod.toString());
         trackModule(mod, false);
+
         updatePsiListener();
       }
 
@@ -232,13 +236,16 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
   }
 
   private boolean hasMPSFacet(Module mod) {
-    // TODO should use getFacetsByType
-    Facet[] facets = FacetManager.getInstance(mod).getAllFacets();
-    for (Facet f: facets) {
-      if (f instanceof MPSFacet) return true;
-    }
-    return false;
+    Collection<MPSFacet> mpsFacets = FacetManager.getInstance(mod).getFacetsByType(MPSFacetType.ID);
+    return (mpsFacets!=null && mpsFacets.size() > 0);
   }
+
+  private MPSFacet getMpsFacet(Module mod) {
+    Collection<MPSFacet> mpsFacets = FacetManager.getInstance(mod).getFacetsByType(MPSFacetType.ID);
+    if (mpsFacets!=null && mpsFacets.size() > 0) return mpsFacets.iterator().next();
+    else return null;
+  }
+
 
   /**
    * Module should be from our project
@@ -281,6 +288,18 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
           }
         }
       }
+
+      // we suppose that module has MPS facet for now, see activate()
+      StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+        // we use runWhenProjectInitialized because it's how MPSFacet is initialized
+        // and we use MPSFacet.getSolution
+        @Override
+        public void run() {
+          MPSFacet mpsFacet = getMpsFacet(module);
+          Solution facetSolution = mpsFacet.getSolution();
+          facetSolution.addDependency(solutionCell[0].getModuleReference(), false);
+        }
+      });
 
       if (separate) updatePsiListener();
     }
