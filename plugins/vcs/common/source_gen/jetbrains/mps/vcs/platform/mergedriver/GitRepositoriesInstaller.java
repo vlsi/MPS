@@ -156,7 +156,7 @@ import java.io.IOException;
           }
         }
         if (addNew) {
-          ListSequence.fromList(lines).addElement(pat + " merge=mps");
+          ListSequence.fromList(lines).addElement(pat + " text merge=mps");
         }
       }
 

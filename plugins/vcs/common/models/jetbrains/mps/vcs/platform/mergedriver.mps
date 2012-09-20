@@ -840,7 +840,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="572687202609934010">
                           <node role="argument" roleId="tp2q.1160612519549" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="572687202609934011">
                             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="572687202609934012">
-                              <property name="value" nameId="tpee.1070475926801" value=" merge=mps" />
+                              <property name="value" nameId="tpee.1070475926801" value=" text merge=mps" />
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="428846146748920536">
                               <link role="variable" roleId="tp2q.1153944258490" targetNodeId="428846146748920531" resolveInfo="pat" />
