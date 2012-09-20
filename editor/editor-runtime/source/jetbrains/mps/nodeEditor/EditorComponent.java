@@ -2483,11 +2483,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return Collections.unmodifiableSet(nodeProxies);
   }
 
-  public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
-    if ((cell == null) && node != null) return true;
+  public boolean doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodePointer nodePointer) {
+    if ((cell == null) && node != null) {
+      return true;
+    }
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
     Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodePointer(node))));
+    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(nodePointer)));
   }
 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
@@ -2802,11 +2804,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         } else {
           SNode target = null;
-          for (SNode sibling : siblings) {
-            int index = parent.getChildren().indexOf(sibling);
-            if (index < childIndex) {
-              target = sibling;
+          int index = 0;
+          for (SNode child : parent.getChildren()) {
+            if (index >= childIndex) {
+              break;
             }
+            if (role.equals(child.getRole_())) {
+              target = child;
+            }
+            index++;
           }
 
           if (target != null) {

@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 import jetbrains.mps.util.Computable;
@@ -44,7 +45,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
-  private List<SModelEvent> mySModelEvents = null;
+  private List<Pair<SNode, SNodePointer>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
@@ -103,32 +104,32 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   public void resetModelEvents() {
-    mySModelEvents = null;
+    myModelModifications = null;
   }
 
   public void setModelEvents(List<SModelEvent> modelEvents) {
-    mySModelEvents = modelEvents;
+    myModelModifications = EditorManager.convert(modelEvents);
   }
 
-  private EditorCell createNodeCell(java.util.List<SModelEvent> events) {
-    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, events, myCurrentRefNodeContext);
+  private EditorCell createNodeCell(List<Pair<SNode, SNodePointer>> modifications) {
+    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 
   public EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
-    mySModelEvents = events;
+    myModelModifications = EditorManager.convert(events);
     initializeRefContext(node);
     EditorCell result = myOperationContext.getComponent(EditorManager.class).createRootCell(this, node, events);
     resetCurrentRefContext();
-    mySModelEvents = null;
+    myModelModifications = null;
     return result;
   }
 
   public EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
-    mySModelEvents = events;
+    myModelModifications = EditorManager.convert(events);
     initializeRefContext(node);
     EditorCell result = myOperationContext.getComponent(EditorManager.class).createInspectedCell(this, node, events);
     resetCurrentRefContext();
-    mySModelEvents = null;
+    myModelModifications = null;
     return result;
   }
 
@@ -146,7 +147,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.sameContextButAnotherNode(node);
-    EditorCell nodeCell = createNodeCell(mySModelEvents);
+    EditorCell nodeCell = createNodeCell(myModelModifications);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
   }
@@ -157,7 +158,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
-    EditorCell nodeCell = createNodeCell(mySModelEvents);
+    EditorCell nodeCell = createNodeCell(myModelModifications);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
   }
@@ -345,7 +346,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         return cellWithRole;
     }
     
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute, mySModelEvents);
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute, myModelModifications);
   }
 
   public List<SNode> getSelectedNodes() {

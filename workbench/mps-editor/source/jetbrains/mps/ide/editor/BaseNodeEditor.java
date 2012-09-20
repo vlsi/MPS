@@ -230,7 +230,7 @@ public abstract class BaseNodeEditor implements Editor {
       if (mementoElem != null) {
         myMemento = MementoPersistence.loadMemento(mementoElem);
       }
-      Element inspectorMementoElem = e.getChild(MEMENTO);
+      Element inspectorMementoElem = e.getChild(INSPECTOR_MEMENTO);
       if (inspectorMementoElem != null) {
         myInspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
       }

@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.EventsCollector;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -47,24 +48,26 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.smodel.SModelAdapter;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
@@ -74,6 +77,7 @@ public class ChangesTracking {
   private SimpleCommandQueue myQueue;
   private DefaultSModelDescriptor myModelDescriptor;
   private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
+  private EventsCollector myEventsCollector = new ChangesTracking.MyEventsCollector();
   private boolean myDisposed = false;
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();
   private Set<ModelChange> myMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
@@ -89,6 +93,7 @@ public class ChangesTracking {
     myQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
     synchronized (this) {
       myModelDescriptor.addModelListener(myModelListener);
+      myEventsCollector.add(myModelDescriptor);
     }
   }
 
@@ -97,6 +102,8 @@ public class ChangesTracking {
       if (!(myDisposed)) {
         myDisposed = true;
         myModelDescriptor.removeModelListener(myModelListener);
+        myEventsCollector.remove(myModelDescriptor);
+        myEventsCollector.dispose();
         myQueue.runTask(new Runnable() {
           public void run() {
             myDifference.removeChangeSet();
@@ -364,17 +371,41 @@ public class ChangesTracking {
     ));
   }
 
-  private class MyModelListener extends SModelAdapter {
-    public MyModelListener() {
+  public class MyEventsCollector extends EventsCollector {
+    public MyEventsCollector() {
     }
 
     @Override
-    public void propertyChanged(final SModelPropertyEvent event) {
+    protected void eventsHappened(List<SModelEvent> evets) {
+      Map<SNode, Set<String>> chlidChanged = MapSequence.fromMap(new HashMap<SNode, Set<String>>());
+      for (SModelEvent event : ListSequence.fromList(evets)) {
+        if (event instanceof SModelPropertyEvent) {
+          processProperty((SModelPropertyEvent) event);
+        } else if (event instanceof SModelReferenceEvent) {
+          processReference((SModelReferenceEvent) event);
+        } else if (event instanceof SModelChildEvent) {
+          processChild((SModelChildEvent) event, chlidChanged);
+        } else if (event instanceof SModelRootEvent) {
+          processRoot((SModelRootEvent) event);
+        } else if (event instanceof SModelLanguageEvent) {
+          processLanguage((SModelLanguageEvent) event);
+        } else if (event instanceof SModelDevKitEvent) {
+          processDevkit((SModelDevKitEvent) event);
+        } else if (event instanceof SModelImportEvent) {
+          processImport((SModelImportEvent) event);
+        }
+      }
+    }
+
+    private void processProperty(SModelPropertyEvent event) {
+      final SNode node = event.getNode();
+      if (node.isDeleted()) {
+        return;
+      }
+      final SNodeId nodeId = node.getSNodeId();
+      final String propertyName = event.getPropertyName();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          final SNodeId nodeId = event.getNode().getSNodeId();
-          final String propertyName = event.getPropertyName();
-
           removeChanges(nodeId, SetPropertyChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetPropertyChange>() {
             public Boolean invoke(SetPropertyChange ch) {
               return propertyName.equals(ch.getPropertyName());
@@ -382,20 +413,23 @@ public class ChangesTracking {
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForProperty(getOldNode(nodeId), event.getNode(), propertyName);
+              b.buildForProperty(getOldNode(nodeId), node, propertyName);
             }
           });
         }
-      }, event.getNode(), event);
+      }, node, event);
     }
 
-    private void referenceEvent(final SModelReferenceEvent event) {
+    private void processReference(SModelReferenceEvent event) {
+      SReference ref = event.getReference();
+      final SNode sourceNode = ref.getSourceNode();
+      if (sourceNode.isDeleted()) {
+        return;
+      }
+      final SNodeId nodeId = sourceNode.getSNodeId();
+      final String role = ref.getRole();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          final SReference ref = event.getReference();
-          final SNodeId nodeId = ref.getSourceNode().getSNodeId();
-          final String role = ref.getRole();
-
           removeChanges(nodeId, SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
             public Boolean invoke(SetReferenceChange ch) {
               return role.equals(ch.getRole());
@@ -403,25 +437,34 @@ public class ChangesTracking {
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForReference(getOldNode(nodeId), ref.getSourceNode(), role);
+              b.buildForReference(getOldNode(nodeId), sourceNode, role);
             }
           });
         }
       }, event.getReference().getSourceNode(), event);
     }
 
-    @Override
-    public void referenceAdded(SModelReferenceEvent event) {
-      referenceEvent(event);
-    }
+    private void processChild(SModelChildEvent event, Map<SNode, Set<String>> childChanged) {
+      SNode parent = event.getParent();
+      if (parent.isDeleted()) {
+        return;
+      }
+      final String childRole = event.getChildRole();
 
-    @Override
-    public void referenceRemoved(SModelReferenceEvent event) {
-      referenceEvent(event);
-    }
+      // tyring to avoid update task execution for the same child role twice 
+      Set<String> childRoles = MapSequence.fromMap(childChanged).get(parent);
+      if (childRoles == null) {
+        childRoles = SetSequence.fromSet(new HashSet<String>());
+        MapSequence.fromMap(childChanged).put(parent, childRoles);
+      }
+      if (SetSequence.fromSet(childRoles).contains(childRole)) {
+        return;
+      } else {
+        SetSequence.fromSet(childRoles).addElement(childRole);
+      }
+      final SNodeId parentId = parent.getSNodeId();
 
-    private void childEvent(final SModelChildEvent event) {
-      final Wrappers._T<List<SNode>> childrenRightAfterEvent = new Wrappers._T<List<SNode>>(event.getParent().getChildren(event.getChildRole()));
+      final Wrappers._T<List<SNode>> childrenRightAfterEvent = new Wrappers._T<List<SNode>>(parent.getChildren(childRole));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode n) {
           return CopyUtil.copyAndPreserveId(n, false);
@@ -429,15 +472,13 @@ public class ChangesTracking {
       }).toListSequence();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          final SNodeId parentId = event.getParent().getSNodeId();
-          final String role = event.getChildRole();
 
           removeChanges(parentId, NodeGroupChange.class, new _FunctionTypes._return_P1_E0<Boolean, NodeGroupChange>() {
             public Boolean invoke(NodeGroupChange ch) {
-              return role.equals(ch.getRole());
+              return childRole.equals(ch.getRole());
             }
           });
-          removeDescendantChanges(parentId, role);
+          removeDescendantChanges(parentId, childRole);
           myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
               return n.getSNodeId();
@@ -445,68 +486,61 @@ public class ChangesTracking {
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForNodeRole(getOldNode(parentId).getChildren(role), childrenRightAfterEvent.value, parentId, role);
+              b.buildForNodeRole(getOldNode(parentId).getChildren(childRole), childrenRightAfterEvent.value, parentId, childRole);
             }
           });
         }
-      }, event.getParent(), event);
+      }, parent, event);
     }
 
-    @Override
-    public void childAdded(SModelChildEvent event) {
-      childEvent(event);
-    }
-
-    @Override
-    public void childRemoved(SModelChildEvent event) {
-      childEvent(event);
-    }
-
-    @Override
-    public void rootRemoved(final SModelRootEvent event) {
+    private void processRoot(final SModelRootEvent event) {
+      SNode root = event.getRoot();
+      final boolean added = event.isAdded();
+      if ((added ?
+        root.isDeleted() :
+        !(root.isDeleted())
+      )) {
+        return;
+      }
+      final SNodeId rootId = root.getSNodeId();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          final SNodeId rootId = event.getRoot().getSNodeId();
-
-          if (removeChanges(rootId, AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
-            public Boolean invoke(AddRootChange ch) {
-              return true;
-            }
-          }) == 0) {
-            // root was not added 
-            removeDescendantChanges(rootId);
-            buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
-              public void invoke(ChangeSetBuilder b) {
-                b.buildForNode(getOldNode(rootId), null);
+          if (added) {
+            removeChanges(rootId, DeleteRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteRootChange>() {
+              public Boolean invoke(DeleteRootChange ch) {
+                return true;
               }
             });
+            buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
+              public void invoke(ChangeSetBuilder b) {
+                b.buildForNode(getOldNode(rootId), event.getRoot());
+              }
+            });
+          } else {
+            if (removeChanges(rootId, AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
+              public Boolean invoke(AddRootChange ch) {
+                return true;
+              }
+            }) == 0) {
+              // root was not added 
+              removeDescendantChanges(rootId);
+              buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
+                public void invoke(ChangeSetBuilder b) {
+                  b.buildForNode(getOldNode(rootId), null);
+                }
+              });
+            }
           }
         }
       }, null, event);
     }
 
-    @Override
-    public void rootAdded(final SModelRootEvent event) {
-      runUpdateTask(new _FunctionTypes._void_P0_E0() {
-        public void invoke() {
-          final SNodeId rootId = event.getRoot().getSNodeId();
-          removeChanges(rootId, DeleteRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteRootChange>() {
-            public Boolean invoke(DeleteRootChange ch) {
-              return true;
-            }
-          });
-          buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
-            public void invoke(ChangeSetBuilder b) {
-              b.buildForNode(getOldNode(rootId), event.getRoot());
-            }
-          });
-        }
-      }, null, event);
+    private void processLanguage(SModelLanguageEvent event) {
+      moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, event.isAdded());
     }
 
-    @Override
-    public void modelReplaced(SModelDescriptor descriptor) {
-      scheduleFullUpdate();
+    private void processDevkit(SModelDevKitEvent event) {
+      moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, event.isAdded());
     }
 
     private void moduleDependencyEvent(SModelEvent event, final ModuleReference moduleRef, final ModuleDependencyChange.DependencyType type, final boolean added) {
@@ -523,27 +557,7 @@ public class ChangesTracking {
       }, null, event);
     }
 
-    @Override
-    public void languageAdded(SModelLanguageEvent event) {
-      moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, true);
-    }
-
-    @Override
-    public void languageRemoved(SModelLanguageEvent event) {
-      moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, false);
-    }
-
-    @Override
-    public void devkitAdded(SModelDevKitEvent event) {
-      moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, true);
-    }
-
-    @Override
-    public void devkitRemoved(SModelDevKitEvent event) {
-      moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, false);
-    }
-
-    private void importEvent(SModelImportEvent event, final boolean added) {
+    private void processImport(final SModelImportEvent event) {
       final SModelReference modelRef = event.getModelUID();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -552,20 +566,20 @@ public class ChangesTracking {
               return modelRef.equals(imc.getModelReference());
             }
           }) == 0) {
-            addChange(new ImportedModelChange(myDifference.getChangeSet(), modelRef, !(added)));
+            addChange(new ImportedModelChange(myDifference.getChangeSet(), modelRef, !(event.isAdded())));
           }
         }
       }, null, event);
     }
+  }
 
-    @Override
-    public void importAdded(SModelImportEvent event) {
-      importEvent(event, true);
+  private class MyModelListener extends SModelAdapter {
+    public MyModelListener() {
     }
 
     @Override
-    public void importRemoved(SModelImportEvent event) {
-      importEvent(event, false);
+    public void modelReplaced(SModelDescriptor descriptor) {
+      scheduleFullUpdate();
     }
   }
 }
