@@ -1233,14 +1233,9 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124469" resolveInfo="debugInfo" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4474271214083124487">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4hf9.~DebugInfo%dgetPositionForNode(java%dlang%dString)%cjetbrains%dmps%dtraceInfo%dTraceablePositionInfo" resolveInfo="getPositionForNode" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4474271214083124488">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4474271214083124489">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124458" resolveInfo="node" />
-                            </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4474271214083124490">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
-                            </node>
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4hf9.~DebugInfo%dgetPositionForNode(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dtraceInfo%dTraceablePositionInfo" resolveInfo="getPositionForNode" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4474271214083124489">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124458" resolveInfo="node" />
                           </node>
                         </node>
                       </node>

@@ -11,8 +11,9 @@ import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelReference;
 
@@ -45,11 +46,17 @@ public class BreakpointLocation {
     if (model == null) {
       return null;
     }
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+    final DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;
     }
-    return debugInfo.getPositionForNode(myNodePointer.getNodeId().toString());
+    final Wrappers._T<TraceablePositionInfo> positionForNode = new Wrappers._T<TraceablePositionInfo>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        positionForNode.value = debugInfo.getPositionForNode(myNodePointer.getNode());
+      }
+    });
+    return positionForNode.value;
   }
 
   public String getTargetUnitName() {

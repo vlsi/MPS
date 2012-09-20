@@ -276,7 +276,7 @@ public class Java_Command {
           }
           className.value = null;
         } else {
-          List<UnitPositionInfo> unitForNode = debugInfo.getUnitsForNode(node.getId());
+          List<UnitPositionInfo> unitForNode = debugInfo.getUnitsForNode(node);
           if (ListSequence.fromList(unitForNode).isEmpty()) {
             if (log.isErrorEnabled()) {
               log.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
@@ -285,7 +285,7 @@ public class Java_Command {
           } else if ((int) ListSequence.fromList(unitForNode).count() == 1) {
             className.value = ListSequence.fromList(unitForNode).first().getUnitName();
           } else {
-            DebugInfoRoot infoRoot = debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node).getId());
+            DebugInfoRoot infoRoot = debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node));
             for (final TraceablePositionInfo position : SetSequence.fromSet(infoRoot.getPositions())) {
               if (eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
                 if (eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class})))) {

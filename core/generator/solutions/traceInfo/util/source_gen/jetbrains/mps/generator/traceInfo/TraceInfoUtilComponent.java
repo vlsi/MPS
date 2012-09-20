@@ -145,7 +145,7 @@ public class TraceInfoUtilComponent implements CoreComponent {
           return null;
         }
         for (T info : infoForPosition) {
-          SNode node = descriptor.getSModel().getNodeById(info.getNodeId());
+          SNode node = DebugInfo.findNode(info);
           if (node != null) {
             nodes.add(node);
           }

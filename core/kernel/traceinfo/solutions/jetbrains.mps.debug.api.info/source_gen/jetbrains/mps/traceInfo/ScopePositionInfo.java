@@ -13,7 +13,7 @@ import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
@@ -44,12 +44,12 @@ public class ScopePositionInfo extends PositionInfo {
     }
   }
 
-  public SNode getVarNode(String varName, @NotNull SModel model) {
+  public SNode getVarNode(String varName) {
     VarInfo varInfo = MapSequence.fromMap(myVars).get(varName);
     if (varInfo == null) {
       return null;
     }
-    return model.getNodeById(varInfo.getNodeId());
+    return DebugInfo.nodeFrom(MultiTuple.<String,String>from(varInfo.getNodeId(), getModelId()));
   }
 
   public void addVarInfo(@NotNull SNode node) {
@@ -83,5 +83,9 @@ public class ScopePositionInfo extends PositionInfo {
   @Override
   public int compareTo(PositionInfo p) {
     return super.compareTo(p);
+  }
+
+  public Iterable<VarInfo> getVarInfos() {
+    return MapSequence.fromMap(myVars).values();
   }
 }
