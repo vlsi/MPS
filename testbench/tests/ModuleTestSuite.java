@@ -46,6 +46,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_smodel_unittest",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_traceable_operations_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_make_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_smodel_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
