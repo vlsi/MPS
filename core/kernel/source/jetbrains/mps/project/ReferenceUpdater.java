@@ -38,7 +38,8 @@ public class ReferenceUpdater {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
-      if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor)) {
+      SModel model = sm.getSModel();
+      if ((model.updateSModelReferences() | model.updateModuleReferences()) && (sm instanceof EditableSModelDescriptor)) {
         ((EditableSModelDescriptor) sm).setChanged(true);
       }
     }
