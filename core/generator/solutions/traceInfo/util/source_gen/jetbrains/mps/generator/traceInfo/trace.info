@@ -535,7 +535,7 @@
     <nodeInfo nodeId="7921341742263185920" fileName="TraceInfoUtil.java" startLine="163" startPosition="68" endLine="164" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2897370900776712702" fileName="TraceInfoUtil.java" startLine="167" startPosition="58" endLine="168" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2897370900776712716" fileName="TraceInfoUtil.java" startLine="171" startPosition="65" endLine="172" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2897370900776712723" fileName="TraceInfoUtil.java" startLine="175" startPosition="52" endLine="176" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2897370900776712723" fileName="TraceInfoUtil.java" startLine="175" startPosition="52" endLine="176" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2897370900776712733" fileName="TraceInfoUtil.java" startLine="177" startPosition="28" endLine="178" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2897370900776712741" fileName="TraceInfoUtil.java" startLine="180" startPosition="9" endLine="181" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1053276000964838658" fileName="TraceInfoUtil.java" startLine="189" startPosition="48" endLine="190" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -555,7 +555,7 @@
     <nodeInfo nodeId="2897370900776712445" fileName="TraceInfoUtil.java" startLine="94" startPosition="104" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2897370900776712496" fileName="TraceInfoUtil.java" startLine="114" startPosition="73" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2897370900776712700" fileName="TraceInfoUtil.java" startLine="166" startPosition="11" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2897370900776712731" fileName="TraceInfoUtil.java" startLine="176" startPosition="76" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2897370900776712731" fileName="TraceInfoUtil.java" startLine="176" startPosition="52" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7921341742263220045" fileName="TraceInfoUtil.java" startLine="225" startPosition="79" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5111910545577580315" fileName="TraceInfoUtil.java" startLine="232" startPosition="79" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="24227610116320087" fileName="TraceInfoUtil.java" startLine="239" startPosition="73" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
