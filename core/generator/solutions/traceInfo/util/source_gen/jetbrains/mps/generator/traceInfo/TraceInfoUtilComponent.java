@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 public class TraceInfoUtilComponent implements CoreComponent {
   private static TraceInfoUtilComponent INSTANCE;
-  public static String DEFAULT_MAPPER = "jetbrains.mps.generator.traceInfo";
 
   public TraceInfoUtilComponent() {
   }

@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -95,8 +94,6 @@ public class TraceInfoUtil {
         if (resultList == null || ListSequence.fromList(resultList).isEmpty()) {
           return null;
         }
-
-        SModel model = modelDescriptor.getSModel();
 
         Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
           public TraceablePositionInfo select(TraceablePositionInfo it) {
