@@ -184,10 +184,11 @@ public class TextGenerator {
         List<SNode> unchangedRoots = new ArrayList<SNode>();
         String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
         for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
-          SNode node = new SNodePointer(inputModelUid, dependency.getRootId()).getNode();
-          if (node != null) {
-            unchangedRoots.add(node);
-          }
+          String rootId = dependency.getRootId();
+          if (rootId == null) continue;
+          SNode node = new SNodePointer(inputModelUid, rootId).getNode();
+          if (node == null) continue;
+          unchangedRoots.add(node);
         }
 
         DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
