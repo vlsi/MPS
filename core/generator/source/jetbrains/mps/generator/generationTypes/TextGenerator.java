@@ -20,7 +20,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -204,7 +204,7 @@ public class TextGenerator {
   private static SNode getOriginalInputNode(SNode input) {
     while (input != null && !(input.isDisposed())
       && (input.getModel() instanceof TransientSModel)) {
-      input = TemplateQueryContext.getInputNode(input);
+      input = TracingUtil.getInputNode(input);
     }
     return input;
   }

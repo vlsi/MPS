@@ -14,6 +14,7 @@ import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PackagingBuildScript_Producer {
@@ -54,7 +55,7 @@ public class PackagingBuildScript_Producer {
         return null;
       }
 
-      PackagingBuildScript_Configuration configuration = new PackagingBuildScript_Configuration(getContext().getProject(), (PackagingBuildScript_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(source, "name"));
+      PackagingBuildScript_Configuration configuration = ((PackagingBuildScript_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(source, "name"), (PackagingBuildScript_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(layout.value);
       configuration.setConfigurationId(configurationId.value);
       return configuration;
@@ -94,7 +95,7 @@ public class PackagingBuildScript_Producer {
         }
       });
 
-      PackagingBuildScript_Configuration configuration = new PackagingBuildScript_Configuration(getContext().getProject(), (PackagingBuildScript_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(source, "name") + "." + SPropertyOperations.getString(source, "name"));
+      PackagingBuildScript_Configuration configuration = ((PackagingBuildScript_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(source, "name") + "." + SPropertyOperations.getString(source, "name"), (PackagingBuildScript_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       configuration.setConfigurationId(configurationId.value);
       return configuration;

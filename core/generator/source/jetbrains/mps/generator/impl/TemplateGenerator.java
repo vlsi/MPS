@@ -30,7 +30,7 @@ import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -277,7 +277,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
         for (SNode outputNode : outputNodes) {
-          TemplateQueryContext.putInputNode(outputNode, inputNode);
+          TracingUtil.putInputNode(outputNode, inputNode);
         }
       }
 
@@ -422,7 +422,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 reducedNode.putUserObjects(inputNode);
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-                  TemplateQueryContext.putInputNode(reducedNode, inputNode);
+                  TracingUtil.putInputNode(reducedNode, inputNode);
                 }
               }
             }
@@ -518,7 +518,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     outputNode.putUserObjects(inputNode);
     // keep track of 'original input node'
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-      TemplateQueryContext.putInputNode(outputNode, inputNode);
+      TracingUtil.putInputNode(outputNode, inputNode);
     }
 
     for (SReference inputReference : inputNode.getReferencesIterable()) {

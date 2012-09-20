@@ -17,7 +17,6 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.*;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -26,9 +25,6 @@ import java.util.List;
  * Jul 21, 2008
  */
 public class TemplateQueryContext {
-  // key for 'node user object' used to keep track of 'original input node' for a generated node
-  // only used when output node has been created as a 'copy' of 'original input node'
-  public static final String ORIGINAL_INPUT_NODE = "originalInputNode";
 
   private final SNode myInputNode;
   private final SNode myTemplateNode;
@@ -155,7 +151,7 @@ public class TemplateQueryContext {
 
   public SNode getOriginalCopiedInputNode(SNode node) {
     if (node == null || node.isDisposed()) return null;
-    SNode result = getInputNode(node);
+    SNode result = TracingUtil.getInputNode(node);
     return result != null ? result : node;
   }
 
@@ -229,36 +225,4 @@ public class TemplateQueryContext {
     return null;
   }
 
-  @Nullable
-  public static SNodePointer getInput(SNode output) {
-    return (SNodePointer) output.getUserObject(ORIGINAL_INPUT_NODE);
-  }
-
-  public static void putInput(SNode output, SNodePointer input) {
-    output.putUserObject(ORIGINAL_INPUT_NODE, input);
-  }
-
-  @Nullable
-  public static SNode getInputNode(SNode output) {
-    SNodePointer inputNodePointer = (SNodePointer) output.getUserObject(ORIGINAL_INPUT_NODE);
-    if (inputNodePointer == null) {
-      return null;
-    }
-    return inputNodePointer.getNode();
-  }
-
-  public static void putInputNode(SNode output, SNode input) {
-    output.putUserObject(ORIGINAL_INPUT_NODE, new SNodePointer(input));
-  }
-
-  public static void fillOriginalNode(SNode inputNode, SNode outputNode, boolean originalInput) {
-    if (originalInput) {
-      TemplateQueryContext.putInputNode(outputNode, inputNode);
-    } else {
-      SNodePointer originalInputNode = TemplateQueryContext.getInput(inputNode);
-      if (originalInputNode != null) {
-        TemplateQueryContext.putInput(outputNode, originalInputNode);
-      }
-    }
-  }
 }
