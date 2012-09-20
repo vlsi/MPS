@@ -23,6 +23,10 @@ import java.util.Set;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFqName;
+import java.util.ArrayList;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -40,7 +44,7 @@ public class TraceInfoUtil {
 
   @Nullable
   public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
-    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+    return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
         UnitPositionInfo unitInfo = TraceInfoUtil.getUnitInfoForPosition(info, position, file);
         if (unitInfo == null) {
@@ -88,7 +92,7 @@ public class TraceInfoUtil {
    */
   @Nullable
   public static SNode getJavaNode(@NonNls String unitName, final String fileName, final int lineNumber) {
-    return TraceInfoUtilComponent.getInstance().findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+    return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor modelDescriptor) {
         List<TraceablePositionInfo> resultList = info.getTraceableInfoForPosition(fileName, lineNumber);
         if (resultList == null || ListSequence.fromList(resultList).isEmpty()) {
@@ -154,7 +158,7 @@ public class TraceInfoUtil {
 
   @Nullable
   public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
-    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+    return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
         List<ScopePositionInfo> resultList = info.getInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
           public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
@@ -182,8 +186,8 @@ public class TraceInfoUtil {
 
   @Nullable
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull final String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
-    return TraceInfoUtilComponent.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
-      public Set<T> invoke(DebugInfoRoot info) {
+    return getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<T>>() {
+      public Set<T> value(DebugInfoRoot info) {
         return positionsGetter.value(info);
       }
     });
@@ -215,6 +219,72 @@ public class TraceInfoUtil {
       @Override
       public Set<UnitPositionInfo> value(DebugInfoRoot key) {
         return key.getUnitPositions();
+      }
+    });
+  }
+
+  public static String modelFqNameFromUnitName(String unitName) {
+    int lastDot = unitName.lastIndexOf(".");
+    return ((lastDot == -1 ?
+      "" :
+      unitName.substring(0, lastDot)
+    ));
+  }
+
+  @Nullable
+  public static <T> T findInTraceInfo(@NonNls String unitName, _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModelDescriptor> getter) {
+    for (SModelDescriptor descriptor : Sequence.fromIterable(getCandidateModels(unitName))) {
+      final DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
+      if (info == null) {
+        continue;
+      }
+      T result = getter.invoke(info, descriptor);
+      if (result != null) {
+        return result;
+      }
+    }
+    return null;
+  }
+
+  public static Iterable<SModelDescriptor> getCandidateModels(String unitName) {
+    final String modelFqName = modelFqNameFromUnitName(unitName);
+    return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return !(SModelStereotype.isStubModelStereotype(it));
+      }
+    }).select(new ISelector<String, SModelDescriptor>() {
+      public SModelDescriptor select(String stereotype) {
+        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype));
+      }
+    }).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return it != null;
+      }
+    });
+  }
+
+  public static <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, final String file, final int lineNumber, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
+    return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<List<SNode>, DebugInfo, SModelDescriptor>() {
+      public List<SNode> invoke(DebugInfo debugInfo, SModelDescriptor descriptor) {
+        List<T> infoForPosition = debugInfo.getInfoForPosition(file, lineNumber, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+          public Set<T> invoke(DebugInfoRoot root) {
+            return positionsGetter.invoke(root);
+          }
+        });
+        List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
+        if (ListSequence.fromList(infoForPosition).isEmpty()) {
+          return null;
+        }
+        for (T info : infoForPosition) {
+          SNode node = DebugInfo.findNode(info);
+          if (node != null) {
+            nodes.add(node);
+          }
+        }
+        if (ListSequence.fromList(nodes).isEmpty()) {
+          return null;
+        }
+        return nodes;
       }
     });
   }
