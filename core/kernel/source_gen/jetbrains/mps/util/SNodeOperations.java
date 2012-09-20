@@ -17,6 +17,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.Nullable;
@@ -123,11 +124,11 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    */
-  public static Set<SReference> getReferences(SNode n) {
-    final Set<SReference> res = SetSequence.fromSet(new HashSet<SReference>());
+  public static List<SReference> getReferences(SNode n) {
+    final List<SReference> res = new LinkedList<SReference>();
     n.visitReferences(new SNode.ReferenceVisitor() {
       public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference reference) {
-        SetSequence.fromSet(res).addElement(((SReference) reference));
+        res.add(((SReference) reference));
         return true;
       }
     });
