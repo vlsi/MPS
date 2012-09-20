@@ -22,7 +22,6 @@ import jetbrains.mps.traceInfo.ScopePositionInfo;
 import java.util.Set;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
@@ -185,19 +184,9 @@ public class TraceInfoUtil {
   }
 
   @Nullable
-  public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull final String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
-    return getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<T>>() {
-      public Set<T> value(DebugInfoRoot info) {
-        return positionsGetter.value(info);
-      }
-    });
-  }
-
-  @Nullable
   public static List<SNode> getAllTraceableNodes(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<TraceablePositionInfo>>() {
-      @Override
-      public Set<TraceablePositionInfo> value(DebugInfoRoot key) {
+    return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
+      public Set<TraceablePositionInfo> invoke(DebugInfoRoot key) {
         return key.getPositions();
       }
     });
@@ -205,9 +194,8 @@ public class TraceInfoUtil {
 
   @Nullable
   public static List<SNode> getAllScopeNodes(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<ScopePositionInfo>>() {
-      @Override
-      public Set<ScopePositionInfo> value(DebugInfoRoot key) {
+    return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
+      public Set<ScopePositionInfo> invoke(DebugInfoRoot key) {
         return key.getScopePositions();
       }
     });
@@ -215,9 +203,8 @@ public class TraceInfoUtil {
 
   @Nullable
   public static List<SNode> getAllUnitNodes(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.getAllNodes(className, file, position, new Mapper<DebugInfoRoot, Set<UnitPositionInfo>>() {
-      @Override
-      public Set<UnitPositionInfo> value(DebugInfoRoot key) {
+    return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
+      public Set<UnitPositionInfo> invoke(DebugInfoRoot key) {
         return key.getUnitPositions();
       }
     });
