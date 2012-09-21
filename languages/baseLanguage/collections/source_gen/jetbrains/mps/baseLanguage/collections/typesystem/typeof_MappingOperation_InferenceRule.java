@@ -28,12 +28,10 @@ public class typeof_MappingOperation_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createGreaterThanInequality((SNode) new typeof_MappingOperation_InferenceRule.QuotationClass_ev5xzi_a0a1a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1203508136831), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885291574", true), false, true, _info_12389875345);
     }
     final SNode elType_typevar_1203507994173 = typeCheckingContext.createNewRuntimeTypesVariable();
-    if (!(typeCheckingContext.isSingleTypeComputation())) {
-      {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(to, "closure", true);
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120540", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225883546585", true), (SNode) new typeof_MappingOperation_InferenceRule.QuotationClass_ev5xzi_a0a3a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1203508136831), typeCheckingContext.getRepresentative(elType_typevar_1203507994173), typeCheckingContext), true, true, _info_12389875345);
-      }
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(to, "closure", true);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5380162141333161506", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_MappingOperation_InferenceRule.QuotationClass_ev5xzi_a0a3a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1203508136831), typeCheckingContext.getRepresentative(elType_typevar_1203507994173), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5380162141333161518", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = to;
