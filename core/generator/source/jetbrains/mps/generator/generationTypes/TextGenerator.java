@@ -177,7 +177,7 @@ public class TextGenerator {
 
       // complete debug info with info for roots that did not changed and therefore were not generated
       // we get debug info for them from cache
-      DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().get(status.getOriginalInputModel());
+      DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
       DebugInfo generatedDebugInfo = status.getDebugInfo();
       if (cachedDebugInfo != null && generatedDebugInfo != null) {
 

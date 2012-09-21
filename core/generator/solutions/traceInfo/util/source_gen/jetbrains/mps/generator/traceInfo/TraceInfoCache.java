@@ -23,8 +23,10 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
-import org.jdom.Element;
 import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
+import java.net.MalformedURLException;
+import org.jdom.Element;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
@@ -33,7 +35,6 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
 
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
-  private final TraceInfoFromSourceProvider myFromSourceProvider = new TraceInfoFromSourceProvider();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
   public TraceInfoCache(SModelRepository modelRepository) {
@@ -56,16 +57,10 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     });
     // todo: move (but remember that java provider is used in idea plugin as well) 
     myProviders.add(myJavaTraceInfoProvider);
-    if (TraceInfoFromSourceProvider.isInAnt()) {
-      myProviders.add(myFromSourceProvider);
-    }
   }
 
   @Override
   public void dispose() {
-    if (TraceInfoFromSourceProvider.isInAnt()) {
-      myProviders.remove(myFromSourceProvider);
-    }
     myProviders.remove(myJavaTraceInfoProvider);
     super.dispose();
     synchronized (INSTANCE_LOCK) {
@@ -172,6 +167,24 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   private String traceInfoResourceName(SModelDescriptor sm) {
     return sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME;
+  }
+
+  @Nullable
+  public DebugInfo getLastGeneratedDebugInfo(@NotNull SModelDescriptor descriptor) {
+    String generatorOutputPath = descriptor.getModule().getGeneratorOutputPath();
+    if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
+      return null;
+    }
+    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(generatorOutputPath).getDescendant(traceInfoResourceName(descriptor));
+    if (!(traceInfoFile.exists())) {
+      return null;
+    }
+    try {
+      URL url = new File(traceInfoFile.getPath().replace("/", File.separator)).toURI().toURL();
+      return loadCacheFromUrl(url, descriptor);
+    } catch (MalformedURLException e) {
+      return null;
+    }
   }
 
   @Override
