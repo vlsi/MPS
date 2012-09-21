@@ -16,7 +16,7 @@
   <unitInfo fileName="NodeStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.NodeStatement_BehaviorDescriptor" />
   <unitInfo fileName="ResultStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ResultStatement_BehaviorDescriptor" />
   <unitInfo fileName="SearchedNodesBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock_BehaviorDescriptor" />
-  <root nodeId="1213877240100">
+  <root nodeId="1213877240100" modelId="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)">
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="17" startPosition="41" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8952337903384724634" />
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="18" startPosition="72" endLine="19" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_6261424444345979396" />
     <nodeInfo nodeId="1213877240104" fileName="FinderDeclaration_Behavior.java" startLine="24" startPosition="81" endLine="25" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -97,7 +97,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
   </root>
-  <root nodeId="1213877299657">
+  <root nodeId="1213877299657" modelId="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)">
     <nodeInfo nodeId="1213877299657" fileName="ExecuteFinderExpression_Behavior.java" startLine="7" startPosition="47" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877299659" fileName="ExecuteFinderExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877299657" fileName="ExecuteFinderExpression_Behavior.java" startLine="7" startPosition="47" endLine="10" endPosition="0">
@@ -105,7 +105,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877299657" fileName="ExecuteFinderExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression_Behavior" />
   </root>
-  <root nodeId="1213877363196">
+  <root nodeId="1213877363196" modelId="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)">
     <nodeInfo nodeId="1213877363196" fileName="CheckCancelledStatusStatement_Behavior.java" startLine="7" startPosition="53" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877363198" fileName="CheckCancelledStatusStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877363196" fileName="CheckCancelledStatusStatement_Behavior.java" startLine="7" startPosition="53" endLine="10" endPosition="0">
@@ -113,7 +113,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877363196" fileName="CheckCancelledStatusStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_Behavior" />
   </root>
-  <root nodeId="1213877373943">
+  <root nodeId="1213877373943" modelId="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)">
     <nodeInfo nodeId="1213877373943" fileName="ResultStatement_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877373945" fileName="ResultStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877373943" fileName="ResultStatement_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0">
@@ -121,7 +121,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877373943" fileName="ResultStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ResultStatement_Behavior" />
   </root>
-  <root nodeId="1213877418351">
+  <root nodeId="1213877418351" modelId="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)">
     <nodeInfo nodeId="1213877418351" fileName="NodeStatement_Behavior.java" startLine="7" startPosition="37" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877418353" fileName="NodeStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877418351" fileName="NodeStatement_Behavior.java" startLine="7" startPosition="37" endLine="10" endPosition="0">
