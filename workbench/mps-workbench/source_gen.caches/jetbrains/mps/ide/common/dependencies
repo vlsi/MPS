@@ -36,6 +36,23 @@
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.Insets" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.common.NodeTreeModel" file="NodeTreeModel.java">
+    <classNode dependClassName="com.intellij.ide.structureView.FileEditorPositionListener" />
+    <classNode dependClassName="com.intellij.ide.structureView.ModelListener" />
+    <classNode dependClassName="com.intellij.ide.structureView.StructureViewTreeElement" />
+    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Filter" />
+    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Grouper" />
+    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />
+    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.TreeElement" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.ide.structureView.StructureViewModel" />
+    <classNode extendsClassName="jetbrains.mps.workbench.structureview.nodes.NodeTreeElement" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.common.PathField" file="PathField.java">
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
