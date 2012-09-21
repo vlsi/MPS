@@ -9,15 +9,15 @@ CONTENTS
 	languages/          packaged languages
 	lib/                libraries
 	license/            license files
-	plugin/             MPS plugin for IntelliJ IDEA
-	plugins/            plugins for MPS
+	plugin/             JetBrains MPS plugin for IntelliJ IDEA
+	plugins/            plugins for JetBrains MPS
 	about.txt           software included in JetBrains MPS
 	build.number        information about current build
 	build.properties    properties of current build
 	mps.bat             bat-file for starting JetBrains MPS on Windows (may not be present for some distributions)
 	mps.sh              sh-file for starting JetBrains MPS on Unix (may not be present for some distributions)
 	readme.txt          this file
-	releaseNotes.txt    MPS $version$ release notes
+	releaseNotes.txt    JetBrains MPS $version$ release notes
 	samples.zip         sample projects
 
 SYSTEM REQUIREMENTS
@@ -27,7 +27,7 @@ HOW TO START
     1. Unpack the JetBrains MPS distribution file to whenever you wish to install the program.
        We will refer to this destination location as your {installation home} below.
     2. a) [WINDOWS] Open console window and start mps.bat file, located in {installation home}.
-    2. b) [MAC OS X] Execute MPS application.
+    2. b) [MAC OS X] Execute JetBrains MPS application.
     2. c) [UNIX] Open console window and start mps.sh file, located in {installation home}.
     3. [OPTIONAL] Add the "{installation home}" to your PATH environmental
        variable so that you may start JetBrains MPS from any directory.
