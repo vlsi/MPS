@@ -20,7 +20,11 @@ public class TraceInfoFromSourceProvider implements TraceInfoCache.TraceInfoReso
     if (!(TraceInfoFromSourceProvider.isInAnt())) {
       return null;
     }
-    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()).getDescendant(resourceName);
+    String generatorOutputPath = module.getGeneratorOutputPath();
+    if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
+      return null;
+    }
+    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(generatorOutputPath).getDescendant(resourceName);
     if (!(traceInfoFile.exists())) {
       return null;
     }
