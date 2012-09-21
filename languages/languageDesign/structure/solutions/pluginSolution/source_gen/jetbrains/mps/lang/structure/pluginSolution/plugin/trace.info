@@ -1374,9 +1374,7 @@
     <scopeInfo nodeId="1161420610164770591" fileName="MoveConcepts_Action.java" startLine="127" startPosition="27" endLine="132" endPosition="11">
       <varInfo nodeId="1161420610164770592" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="78" startPosition="26" endLine="84" endPosition="9">
-      <varInfo nodeId="5487985028841904387" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="78" startPosition="26" endLine="84" endPosition="9" />
     <scopeInfo nodeId="1161420610164770526" fileName="MoveConcepts_Action.java" startLine="127" startPosition="27" endLine="136" endPosition="360" />
     <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="57" startPosition="89" endLine="68" endPosition="5" />
     <scopeInfo nodeId="5487985028841904401" fileName="MoveConcepts_Action.java" startLine="152" startPosition="25" endLine="163" endPosition="11">

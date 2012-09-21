@@ -756,6 +756,10 @@
       <varInfo nodeId="866755926374576097" varName="treeNode" />
     </scopeInfo>
     <unitInfo nodeId="3651762609556438508" fileName="TypeSystemStateTree.java" startLine="65" startPosition="30" endLine="53" endPosition="0" />
+    <unitInfo nodeId="866755926374575616" fileName="TypeSystemStateTree.java" startLine="53" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree" />
+    <unitInfo nodeId="866755926374576022" fileName="TypeSystemStateTree.java" startLine="208" startPosition="31" endLine="212" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$2" />
+    <unitInfo nodeId="2594011872875000711" fileName="TypeSystemStateTree.java" startLine="233" startPosition="45" endLine="257" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$3" />
+    <unitInfo nodeId="866755926374576170" fileName="TypeSystemStateTree.java" startLine="265" startPosition="45" endLine="292" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$4" />
     <unitInfo nodeId="866755926374576219" fileName="TypeSystemStateTree.java" startLine="276" startPosition="26" endLine="288" endPosition="13" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$5" />
     <unitInfo nodeId="2511793679788302738" fileName="TypeSystemStateTree.java" startLine="278" startPosition="57" endLine="286" endPosition="17" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$6" />
     <unitInfo nodeId="3651762609556423453" fileName="TypeSystemStateTree.java" startLine="386" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree$EditorMessageUpdater" />

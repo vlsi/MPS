@@ -26,8 +26,12 @@
     <scopeInfo nodeId="1100832983841501835" fileName="InternalClassCreator_TextGen.java" startLine="31" startPosition="109" endLine="32" endPosition="28" />
     <scopeInfo nodeId="1100832983841501823" fileName="InternalClassCreator_TextGen.java" startLine="18" startPosition="80" endLine="22" endPosition="11" />
     <scopeInfo nodeId="1100832983841501835" fileName="InternalClassCreator_TextGen.java" startLine="29" startPosition="83" endLine="33" endPosition="9" />
-    <scopeInfo nodeId="1100832983841501823" fileName="InternalClassCreator_TextGen.java" startLine="17" startPosition="100" endLine="23" endPosition="9" />
-    <scopeInfo nodeId="1100832983841501835" fileName="InternalClassCreator_TextGen.java" startLine="28" startPosition="103" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="1100832983841501823" fileName="InternalClassCreator_TextGen.java" startLine="17" startPosition="100" endLine="23" endPosition="9">
+      <varInfo nodeId="1100832983841501823" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="1100832983841501835" fileName="InternalClassCreator_TextGen.java" startLine="28" startPosition="103" endLine="34" endPosition="7">
+      <varInfo nodeId="1100832983841501835" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1100832983841501822" fileName="InternalClassCreator_TextGen.java" startLine="15" startPosition="98" endLine="25" endPosition="23" />
     <scopeInfo nodeId="1100832983841501823" fileName="InternalClassCreator_TextGen.java" startLine="15" startPosition="98" endLine="25" endPosition="23" />
     <scopeInfo nodeId="1100832983841501835" fileName="InternalClassCreator_TextGen.java" startLine="26" startPosition="5" endLine="36" endPosition="21" />
@@ -283,8 +287,12 @@
     <scopeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="13" startPosition="42" endLine="15" endPosition="21" />
     <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="19" startPosition="84" endLine="23" endPosition="11" />
     <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="31" startPosition="83" endLine="35" endPosition="9" />
-    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="18" startPosition="104" endLine="24" endPosition="9" />
-    <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="30" startPosition="103" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="18" startPosition="104" endLine="24" endPosition="9">
+      <varInfo nodeId="1237463991818" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="30" startPosition="103" endLine="36" endPosition="7">
+      <varInfo nodeId="319021450862604103" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1236703091961" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="102" endLine="26" endPosition="23" />
     <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="102" endLine="26" endPosition="23" />
     <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="67" endLine="38" endPosition="21" />

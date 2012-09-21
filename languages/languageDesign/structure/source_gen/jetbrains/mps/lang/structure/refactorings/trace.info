@@ -92,58 +92,58 @@
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="23" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="28" startPosition="23" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="32" startPosition="39" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="36" startPosition="47" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="40" startPosition="52" endLine="41" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781661" fileName="RenameLink.java" startLine="44" startPosition="69" endLine="45" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781671" fileName="RenameLink.java" startLine="45" startPosition="169" endLine="46" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781686" fileName="RenameLink.java" startLine="46" startPosition="132" endLine="47" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781700" fileName="RenameLink.java" startLine="50" startPosition="88" endLine="51" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781707" fileName="RenameLink.java" startLine="51" startPosition="73" endLine="52" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781716" fileName="RenameLink.java" startLine="53" startPosition="33" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781721" fileName="RenameLink.java" startLine="55" startPosition="5" endLine="56" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1347577327951781735" fileName="RenameLink.java" startLine="57" startPosition="89" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951781743" fileName="RenameLink.java" startLine="59" startPosition="5" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781757" fileName="RenameLink.java" startLine="63" startPosition="86" endLine="64" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951781763" fileName="RenameLink.java" startLine="67" startPosition="92" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="31" startPosition="39" endLine="32" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="35" startPosition="47" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="39" startPosition="52" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781661" fileName="RenameLink.java" startLine="43" startPosition="69" endLine="44" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781671" fileName="RenameLink.java" startLine="44" startPosition="169" endLine="45" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781686" fileName="RenameLink.java" startLine="45" startPosition="132" endLine="46" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1347577327951781700" fileName="RenameLink.java" startLine="49" startPosition="88" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781707" fileName="RenameLink.java" startLine="50" startPosition="73" endLine="51" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781716" fileName="RenameLink.java" startLine="52" startPosition="33" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781721" fileName="RenameLink.java" startLine="54" startPosition="5" endLine="55" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1347577327951781735" fileName="RenameLink.java" startLine="56" startPosition="89" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1347577327951781743" fileName="RenameLink.java" startLine="58" startPosition="5" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781757" fileName="RenameLink.java" startLine="62" startPosition="86" endLine="63" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951781763" fileName="RenameLink.java" startLine="66" startPosition="92" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="9" startPosition="62" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameLink_Target#()V" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="57" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameLink#()V" />
-    <nodeInfo nodeId="1347577327951781714" fileName="RenameLink.java" startLine="52" startPosition="93" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="56" startPosition="156" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="26" startPosition="57" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameLink#()V" />
+    <nodeInfo nodeId="1347577327951781714" fileName="RenameLink.java" startLine="51" startPosition="93" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="55" startPosition="156" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="49" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="10" startPosition="30" endLine="10" endPosition="30" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="116" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="28" startPosition="23" endLine="29" endPosition="42" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="32" startPosition="39" endLine="33" endPosition="25" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="36" startPosition="47" endLine="37" endPosition="24" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="40" startPosition="52" endLine="41" endPosition="35" />
-    <scopeInfo nodeId="1347577327951781715" fileName="RenameLink.java" startLine="53" startPosition="33" endLine="54" endPosition="20" />
-    <scopeInfo nodeId="1347577327951781734" fileName="RenameLink.java" startLine="57" startPosition="89" endLine="58" endPosition="82" />
-    <scopeInfo nodeId="1347577327951781756" fileName="RenameLink.java" startLine="63" startPosition="86" endLine="64" endPosition="270" />
-    <scopeInfo nodeId="1347577327951781762" fileName="RenameLink.java" startLine="67" startPosition="92" endLine="68" endPosition="46" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="23" endLine="28" endPosition="42" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="31" startPosition="39" endLine="32" endPosition="25" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="35" startPosition="47" endLine="36" endPosition="24" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="39" startPosition="52" endLine="40" endPosition="35" />
+    <scopeInfo nodeId="1347577327951781715" fileName="RenameLink.java" startLine="52" startPosition="33" endLine="53" endPosition="20" />
+    <scopeInfo nodeId="1347577327951781734" fileName="RenameLink.java" startLine="56" startPosition="89" endLine="57" endPosition="82" />
+    <scopeInfo nodeId="1347577327951781756" fileName="RenameLink.java" startLine="62" startPosition="86" endLine="63" endPosition="270" />
+    <scopeInfo nodeId="1347577327951781762" fileName="RenameLink.java" startLine="66" startPosition="92" endLine="67" endPosition="46" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="9" startPosition="62" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="57" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="1347577327951781641" fileName="RenameLink.java" startLine="44" startPosition="69" endLine="47" endPosition="147">
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="26" startPosition="57" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="1347577327951781641" fileName="RenameLink.java" startLine="43" startPosition="69" endLine="46" endPosition="147">
       <varInfo nodeId="1347577327951781662" varName="concept" />
       <varInfo nodeId="1347577327951781672" varName="newLinkName" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="56" startPosition="156" endLine="59" endPosition="5">
+    <scopeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="55" startPosition="156" endLine="58" endPosition="5">
       <varInfo nodeId="1347577327951781733" varName="modelList" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -152,31 +152,31 @@
       <varInfo nodeId="1347577327951781653" varName="entity" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1347577327951781638" varName="model" />
       <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1347577327951781653" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781699" fileName="RenameLink.java" startLine="50" startPosition="88" endLine="60" endPosition="18">
+    <scopeInfo nodeId="1347577327951781699" fileName="RenameLink.java" startLine="49" startPosition="88" endLine="59" endPosition="18">
       <varInfo nodeId="1347577327951781722" varName="modelMap" />
       <varInfo nodeId="1347577327951781701" varName="result" />
       <varInfo nodeId="1347577327951781708" varName="sourceLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="49" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="48" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1347577327951781638" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="27" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink" />
+    <unitInfo nodeId="1347577327951781638" fileName="RenameLink.java" startLine="26" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink" />
     <unitInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink_Target" />
   </root>
   <root nodeId="1347577327951781764">

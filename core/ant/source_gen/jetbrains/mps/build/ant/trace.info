@@ -1101,17 +1101,6 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="1076338101818482910" fileName="MpsWorker.java" startLine="246" startPosition="41" endLine="50" endPosition="0" />
-    <unitInfo nodeId="4003657351907886909" fileName="MpsWorker.java" startLine="50" startPosition="0" endLine="497" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker" />
-    <unitInfo nodeId="4003657351907887444" fileName="MpsWorker.java" startLine="131" startPosition="46" endLine="137" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$1" />
-    <unitInfo nodeId="4003657351907887458" fileName="MpsWorker.java" startLine="142" startPosition="46" endLine="146" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$2" />
-    <unitInfo nodeId="4003657351907888070" fileName="MpsWorker.java" startLine="235" startPosition="68" endLine="239" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$3" />
-    <unitInfo nodeId="4003657351907888089" fileName="MpsWorker.java" startLine="243" startPosition="61" endLine="256" endPosition="7" unitName="jetbrains.mps.build.ant.MpsWorker$4" />
-    <unitInfo nodeId="4003657351907886942" fileName="MpsWorker.java" startLine="411" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$AntLogger" />
-    <unitInfo nodeId="4003657351907886982" fileName="MpsWorker.java" startLine="440" startPosition="0" endLine="465" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$LogLogger" />
-    <unitInfo nodeId="4003657351907886911" fileName="MpsWorker.java" startLine="378" startPosition="0" endLine="410" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$MyMessageHandlerAppender" />
-    <unitInfo nodeId="4003657351907886995" fileName="MpsWorker.java" startLine="466" startPosition="0" endLine="496" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$ObjectsToProcess" />
-    <unitInfo nodeId="4003657351907886951" fileName="MpsWorker.java" startLine="415" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$ProjectComponentLogger" />
-    <unitInfo nodeId="4003657351907886969" fileName="MpsWorker.java" startLine="427" startPosition="0" endLine="439" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$SystemOutLogger" />
   </root>
   <root nodeId="4003657351907888741">
     <nodeInfo nodeId="4003657351907894252" fileName="AntBootstrap.java" startLine="15" startPosition="42" endLine="16" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

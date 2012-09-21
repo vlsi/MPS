@@ -1236,7 +1236,9 @@
     <scopeInfo nodeId="1240573155515" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="56" startPosition="90" endLine="61" endPosition="51">
       <varInfo nodeId="2379012257478178219" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="101" startPosition="28" endLine="106" endPosition="7" />
+    <scopeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="101" startPosition="28" endLine="106" endPosition="7">
+      <varInfo nodeId="1240572960649" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="1240572960649" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1240572960649" varName="editorContext" />
       <varInfo nodeId="1240572960649" varName="node" />
@@ -1634,7 +1636,9 @@
       <varInfo nodeId="1240595838065" varName="editorContext" />
       <varInfo nodeId="1240595838065" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7">
+      <varInfo nodeId="1240595838065" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="1240595838065" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1240595838065" varName="editorContext" />
       <varInfo nodeId="1240595838065" varName="node" />
@@ -1750,7 +1754,9 @@
       <varInfo nodeId="1240595864245" varName="editorContext" />
       <varInfo nodeId="1240595864245" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240595864245" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="1240595864245" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7">
+      <varInfo nodeId="1240595864245" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="1240595864245" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1240595864245" varName="editorContext" />
       <varInfo nodeId="1240595864245" varName="node" />
@@ -1866,7 +1872,9 @@
       <varInfo nodeId="1240595919493" varName="editorContext" />
       <varInfo nodeId="1240595919493" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7">
+      <varInfo nodeId="1240595919493" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1240595919493" varName="editorContext" />
       <varInfo nodeId="1240595919493" varName="node" />
@@ -2485,9 +2493,7 @@
     <scopeInfo nodeId="3644457381597322644" fileName="AddNodeMacroParam_switch_Intention.java" startLine="54" startPosition="90" endLine="59" endPosition="51">
       <varInfo nodeId="2379012257478178273" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="3644457381597319727" fileName="AddNodeMacroParam_switch_Intention.java" startLine="82" startPosition="28" endLine="87" endPosition="7">
-      <varInfo nodeId="3644457381597319727" varName="param" />
-    </scopeInfo>
+    <scopeInfo nodeId="3644457381597319727" fileName="AddNodeMacroParam_switch_Intention.java" startLine="82" startPosition="28" endLine="87" endPosition="7" />
     <scopeInfo nodeId="3644457381597319731" fileName="AddNodeMacroParam_switch_Intention.java" startLine="62" startPosition="76" endLine="68" endPosition="52">
       <varInfo nodeId="3644457381597322672" varName="nodeMacro" />
       <varInfo nodeId="3644457381597322677" varName="switchMacro" />
