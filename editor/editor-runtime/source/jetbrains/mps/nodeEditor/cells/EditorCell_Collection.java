@@ -580,9 +580,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void paint(Graphics g, ParentSettings parentSettings) {
-    if (!g.getClipBounds().intersects(getBounds())) {
-      return;
-    }
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {
       settings = (paintBackground(g, parentSettings));
@@ -591,7 +588,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     paintContent(g, parentSettings);
 
     for (EditorCell child : this) {
-      child.paint(g, settings);
+      if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
+        child.paint(g, settings);
+      }
     }
     paintDecorations(g);
   }
@@ -626,14 +625,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
-    Rectangle clip = g.getClipBounds();
-    Rectangle bound = getBounds();
-
-    Rectangle intersection = clip.intersection(bound);
-    if (intersection.isEmpty()) {
-      return;
-    }
-
     if (drawBorder && g instanceof Graphics2D) {
       g = new SelectionGraphics((Graphics2D) g);
     }
@@ -642,7 +633,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (selectionCells != null) {
       ParentSettings selection = isSelectionPaintedOnAncestor(parentSettings);
       for (EditorCell cell : selectionCells) {
-        cell.paintSelection(g, c, false, selection);
+        if (g.hitClip(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
+          cell.paintSelection(g, c, false, selection);
+        }
       }
     } else {
       List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
