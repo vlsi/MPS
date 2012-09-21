@@ -38,6 +38,10 @@ public class SelectionGraphics extends ProxyGraphics {
   @Override
   public void fillRect(int x, int y, int width, int height) {
     super.fillRect(x, y, width, height);
+    // Expanding original rectangle to ensure it is taken into account if it is connected with the border of clip only
+    if (!myGraphics.getClipBounds().intersects(new Rectangle(x - 1, y - 1, width + 2, height + 2))) {
+      return;
+    }
     mySelectionAreas.add(new Area(new Rectangle(x, y, width, height)));
   }
 
