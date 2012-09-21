@@ -8,6 +8,8 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -47,8 +49,15 @@ public class StaticMethodDeclaration_Behavior {
     return true;
   }
 
-  public static boolean call_isMainMethod_1213877536670(SNode thisNode) {
-    return "main".equals(SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_qyxuoz_a1a0a0a3().createNode(), false);
+  public static boolean call_isMainMethod_1213877536670(final SNode thisNode) {
+    // if we do not use resolve action, type system would compute all types in the root 
+    // while in resolve mode only types required for calculating typeof are computed 
+    // the difference between two methods is very visible in main node selection in java run configuation () 
+    return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return "main".equals(SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_qyxuoz_a1a0a0a0a0a0a3a3().createNode(), false);
+      }
+    });
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
@@ -123,8 +132,8 @@ public class StaticMethodDeclaration_Behavior {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381569, new Object[]{});
   }
 
-  public static class QuotationClass_qyxuoz_a1a0a0a3 {
-    public QuotationClass_qyxuoz_a1a0a0a3() {
+  public static class QuotationClass_qyxuoz_a1a0a0a0a0a0a3a3 {
+    public QuotationClass_qyxuoz_a1a0a0a0a0a0a3a3() {
     }
 
     public SNode createNode() {
