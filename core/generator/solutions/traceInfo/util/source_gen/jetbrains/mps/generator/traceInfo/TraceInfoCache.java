@@ -33,6 +33,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
 
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
+  private final TraceInfoFromSourceProvider myFromSourceProvider = new TraceInfoFromSourceProvider();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
   public TraceInfoCache(SModelRepository modelRepository) {
@@ -47,20 +48,26 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       }
       INSTANCE = this;
     }
-    // todo: move (but remember that java provider is used in idea plugin as well) 
-    myProviders.add(myJavaTraceInfoProvider);
     super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         cleanup();
       }
     });
+    // todo: move (but remember that java provider is used in idea plugin as well) 
+    myProviders.add(myJavaTraceInfoProvider);
+    if (TraceInfoFromSourceProvider.isInAnt()) {
+      myProviders.add(myFromSourceProvider);
+    }
   }
 
   @Override
   public void dispose() {
-    super.dispose();
+    if (TraceInfoFromSourceProvider.isInAnt()) {
+      myProviders.remove(myFromSourceProvider);
+    }
     myProviders.remove(myJavaTraceInfoProvider);
+    super.dispose();
     synchronized (INSTANCE_LOCK) {
       INSTANCE = null;
     }
