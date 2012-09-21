@@ -655,37 +655,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //NO USAGES IN JAVA CODE - LEFT FOR COMPATIBILITY (till 3.0)
   //----------------------------------------------------------
 
-  public String getRole_() {
-    return getRole();
-  }
-
-  public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
-    getParent().insertChild(getRole(), newSibling, this);
-  }
-
-  public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
-    getParent().insertChild(getRole(), newSibling, getPrevSibling());
-  }
-
-  public int getIntegerProperty(String propertyName) {
-    String value = getProperty(propertyName);
-    try {
-      return Integer.parseInt(value);
-    } catch (Exception e) {
-      return 0;
+  public SNode findConceptProperty(String propertyName) {
+    SNode conceptDeclaration;
+    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+      conceptDeclaration = this;
+    } else {
+      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-  }
-
-  public void setIntegerProperty(String propertyName, int value) {
-    setProperty(propertyName, "" + value);
-  }
-
-  public boolean getBooleanProperty(String propertyName) {
-    return "true".equals(getProperty(propertyName));
-  }
-
-  public void setBooleanProperty(String propertyName, boolean value) {
-    setProperty(propertyName, value ? "" + value : null);
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   public boolean hasConceptProperty(String propertyName) {
@@ -968,22 +945,27 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
 
+  @Deprecated
+  /**
+   * Do not use. Access to children is now provided in by-role manner and through parent node.
+   * Most probably, by calling this method you want to know a sibling in the same role.
+   * E.g. if you need a previous sibling in the same role, use getParent().getPrevChild(node)
+   * @Deprecated in 3.0
+   */
   public SNode prevSibling() {
     if (getParent() == null) return null;
     return getParent().firstChild() == this ? null : (SNode) treePrevious();
   }
 
-  public org.jetbrains.mps.openapi.model.SNode getPrevSibling() {
-    if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : treePrevious();
-  }
-
+  @Deprecated
+  /**
+   * Do not use. Access to children is now provided in by-role manner and through parent node.
+   * Most probably, by calling this method you want to know a sibling in the same role.
+   * E.g. if you need a next sibling in the same role, use getParent().getNextChild(node)
+   * @Deprecated in 3.0
+   */
   public SNode nextSibling() {
     return (SNode) treeNext();
-  }
-
-  public org.jetbrains.mps.openapi.model.SNode getNextSibling() {
-    return treeNext();
   }
 
   public SNode getChildAt(int index) {
@@ -1160,14 +1142,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
     return addChildRoles(new HashSet<String>(), includeAttributeRoles);
-  }
-
-  public void removeAllUserObjects() {
-    myUserObjects = null;
-  }
-
-  public void removeReferent(String role) {
-    setReferenceTarget(role, null);
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
@@ -1381,18 +1355,13 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     removeChild(oldChild);
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public ModuleReference getConceptLanguage() {
-    return new ModuleReference(NameUtil.namespaceFromConceptFQName(getConceptFqName()));
-  }
-
-  public SNode findConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+    return new ModuleReference(getConcept().getLanguage().getPresentation());
   }
 
   @Deprecated
@@ -1430,15 +1399,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
    * @Deprecated in 3.0
    */
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.equals(referenceToRemove)) {
-          int index = _reference().indexOf(reference);
-          replaceReferenceAt(index, referenceToAdd);
-          break;
-        }
-      }
-    }
+    setReference(referenceToRemove.getRole(), referenceToAdd);
   }
 
   @Deprecated
@@ -1459,6 +1420,15 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     setReference(reference.getRole(), reference);
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void removeReferent(String role) {
+    setReferenceTarget(role, null);
+  }
+
   @NotNull
   @Deprecated
   /**
@@ -1477,6 +1447,66 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
    */
   public String getConceptShortName() {
     return getConcept().getName();
+  }
+
+  @Deprecated
+  /**
+   * Do not use this method. Add and remove only your own user objects
+   * by using setUserObject() method
+   * @Deprecated in 3.0
+   */
+  public void removeAllUserObjects() {
+    myUserObjects = null;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getRole_() {
+    return getRole();
+  }
+
+  @Deprecated
+  /**
+   * Use migration in MPS, should be no usages in java code (use smodel language instead)
+   * @Deprecated in 3.0
+   */
+  public int getIntegerProperty(String propertyName) {
+    String value = getProperty(propertyName);
+    try {
+      return Integer.parseInt(value);
+    } catch (Exception e) {
+      return 0;
+    }
+  }
+
+  @Deprecated
+  /**
+   * Use migration in MPS, should be no usages in java code (use smodel language instead)
+   * @Deprecated in 3.0
+   */
+  public void setIntegerProperty(String propertyName, int value) {
+    setProperty(propertyName, "" + value);
+  }
+
+  @Deprecated
+  /**
+   * Use migration in MPS, should be no usages in java code (use smodel language instead)
+   * @Deprecated in 3.0
+   */
+  public boolean getBooleanProperty(String propertyName) {
+    return "true".equals(getProperty(propertyName));
+  }
+
+  @Deprecated
+  /**
+   * Use migration in MPS, should be no usages in java code (use smodel language instead)
+   * @Deprecated in 3.0
+   */
+  public void setBooleanProperty(String propertyName, boolean value) {
+    setProperty(propertyName, value ? "" + value : null);
   }
 
   //--------private (SNode and SModel usages)-------
