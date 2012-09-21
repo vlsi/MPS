@@ -230,7 +230,18 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     if (target == null) {
-      removeReferent(role);
+      if (ourMemberAccessModifier != null) {
+        role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+      }
+      if (myReferences != null) {
+        for (SReference reference : myReferences) {
+          if (reference.getRole().equals(role)) {
+            int index = _reference().indexOf(reference);
+            removeReferenceAt(index);
+            break;
+          }
+        }
+      }
     } else {
       setReferent(role, ((SNode) target));
     }
@@ -363,7 +374,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public SConcept getConcept() {
-    return new SConceptNodeAdapter(getConceptFqName());
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    return new SConceptNodeAdapter(myConceptFqName);
   }
 
   public Object getUserObject(Object key) {
@@ -781,11 +795,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return list;
   }
 
-  @NotNull
-  public String getConceptShortName() {
-    return NameUtil.shortNameFromLongName(getConceptFqName());
-  }
-
   public Set<String> addChildRoles(final Set<String> augend, boolean includeAttributeRoles) {
     ModelAccess.assertLegalRead(this);
 
@@ -1140,18 +1149,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public void removeReferent(String role) {
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
-    }
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getRole().equals(role)) {
-          int index = _reference().indexOf(reference);
-          removeReferenceAt(index);
-          break;
-        }
-      }
-    }
+    setReferenceTarget(role, null);
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
@@ -1379,19 +1377,40 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public Language getLanguage() {
     return jetbrains.mps.util.SNodeOperations.getLanguage(this);
   }
 
+  @Deprecated
   @NotNull
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public String getLanguageNamespace() {
-    return NameUtil.namespaceFromConceptFQName(getConceptFqName());
+    return getConcept().getLanguage().getPresentation();
   }
 
+  @NotNull
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public Language getNodeLanguage() {
     return jetbrains.mps.util.SNodeOperations.getLanguage(this);
   }
 
+  @Deprecated
+  /**
+   * Use setReference(referenceToRemove.getRole, referenceToAdd)
+   * @Deprecated in 3.0
+   */
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
@@ -1404,29 +1423,42 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public void removeReference(org.jetbrains.mps.openapi.model.SReference referenceToRemove) {
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.equals(referenceToRemove)) {
-          int index = _reference().indexOf(reference);
-          removeReferenceAt(index);
-          break;
-        }
-      }
-    }
+    setReference(referenceToRemove.getRole(), null);
   }
 
+  @Deprecated
+  /**
+   * Use setReference(role, ref)
+   * @Deprecated in 3.0
+   */
   public void setReference(SReference reference) {
     setReference(reference.getRole(), reference);
   }
 
   @NotNull
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public String getConceptFqName() {
-    ModelAccess.assertLegalRead(this);
+    return getConcept().getId();
+  }
 
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return myConceptFqName;
+  @NotNull
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getConceptShortName() {
+    return getConcept().getName();
   }
 
   //--------private (SNode and SModel usages)-------
