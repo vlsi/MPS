@@ -466,8 +466,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769033909559">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="6062668769033909560">
                   <node role="initValue" roleId="tpee.1154542803372" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="6062668769033909561">
-                    <node role="component" roleId="cx9y.1238853845806" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="3381879624490803956">
-                      <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+                    <node role="component" roleId="cx9y.1238853845806" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="8278380780105905714">
+                      <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
                     </node>
                     <node role="component" roleId="cx9y.1238853845806" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6062668769033909563">
                       <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6062668769033909564">
@@ -493,8 +493,8 @@
                     </node>
                   </node>
                   <node role="initValue" roleId="tpee.1154542803372" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="6062668769033909572">
-                    <node role="component" roleId="cx9y.1238853845806" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="3381879624490803982">
-                      <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="4fqr.4666195181811081429" resolveInfo="IMainClass" />
+                    <node role="component" roleId="cx9y.1238853845806" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="8278380780105905872">
+                      <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="4fqr.4666195181811081429" resolveInfo="IMainClass" />
                     </node>
                     <node role="component" roleId="cx9y.1238853845806" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6062668769033909574">
                       <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6062668769033909575">
@@ -533,7 +533,7 @@
                     </node>
                   </node>
                   <node role="componentType" roleId="tpee.1154542793668" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="6062668769033909588">
-                    <node role="componentType" roleId="cx9y.1238852204892" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3381879624490803938" />
+                    <node role="componentType" roleId="cx9y.1238852204892" type="tpee.StringType" typeId="tpee.1225271177708" id="8278380780105905812" />
                     <node role="componentType" roleId="cx9y.1238852204892" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="6062668769033909590">
                       <node role="resultType" roleId="tp2c.1199542457201" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6062668769033909591" />
                       <node role="parameterType" roleId="tp2c.1199542501692" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6062668769033909592" />

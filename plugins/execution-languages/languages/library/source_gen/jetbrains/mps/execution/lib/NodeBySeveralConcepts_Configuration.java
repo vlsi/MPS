@@ -9,8 +9,8 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -24,17 +24,16 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   protected static Log log = LogFactory.getLog(NodeBySeveralConcepts_Configuration.class);
 
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
-  private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+  private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
   private SettingsEditorEx<NodeBySeveralConcepts_Configuration> myEditorEx;
 
-  public NodeBySeveralConcepts_Configuration(List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+  public NodeBySeveralConcepts_Configuration(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     myTargets = targets;
   }
 
@@ -120,10 +119,11 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
   }
 
   private boolean isValid(final SNode node) {
-    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
-      public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
+    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
+      public boolean accept(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
+        String concept = it._0();
         _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(((SNode) it._0())))) {
+        if (SNodeOperations.isInstanceOf(node, concept)) {
           if (function != null) {
             return function.invoke(node);
           } else {

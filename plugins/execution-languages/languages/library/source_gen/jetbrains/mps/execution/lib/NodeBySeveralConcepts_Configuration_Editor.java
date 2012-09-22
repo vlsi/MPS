@@ -6,17 +6,17 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx<NodeBySeveralConcepts_Configuration> {
   private NodeBySeveralConceptChooser myChooser;
-  private List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+  private List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
 
-  public NodeBySeveralConcepts_Configuration_Editor(final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+  public NodeBySeveralConcepts_Configuration_Editor(final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     super(new Factory<NodeBySeveralConcepts_Configuration>() {
       public NodeBySeveralConcepts_Configuration create() {
         return new NodeBySeveralConcepts_Configuration(targets);
