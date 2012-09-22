@@ -72,12 +72,11 @@ public class ShowStructure_Action extends BaseAction {
 
       StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), ((Project) MapSequence.fromMap(_params).get("project")));
       FileStructurePopup popup = new FileStructurePopup(structureView.getTreeModel(), ((Project) MapSequence.fromMap(_params).get("project")), structureView, true);
-      if (popup != null) {
-        if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
-          popup.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getPresentableUrl());
-        }
-        popup.show();
+      if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
+        // todo: look like this action is unnecessary (it's just ctrl+f12 idea action by logic and implementation) 
+        popup.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getName());
       }
+      popup.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowStructure", t);

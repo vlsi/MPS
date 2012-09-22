@@ -59,8 +59,8 @@ public class ShowMembers_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("projct", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("projct") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     {
@@ -98,7 +98,7 @@ public class ShowMembers_Action extends BaseAction {
         }
       };
 
-      FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("projct")), auxDisposable, false);
+      FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("project")), auxDisposable, false);
       popup.setTitle(title.value);
       popup.show();
     } catch (Throwable t) {
