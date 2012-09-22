@@ -90,7 +90,7 @@ public class CommonChoosers {
     if (project == null) throw new IllegalStateException("Project not found");
     NodeChooserDialog dialog = new NodeChooserDialog(project, values);
     dialog.show();
-    return dialog.getResult();
+    return dialog.getResultNode();
   }
 
   public static List<SModelReference> showDialogModelCollectionChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {

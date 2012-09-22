@@ -18,6 +18,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -41,10 +42,14 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
         final ProgressMonitor progressAdapter = new EmptyProgressMonitor();
 
-        final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
+        final Wrappers._T<List<SNodePointer>> toChooseFrom = new Wrappers._T<List<SNodePointer>>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            toChooseFrom.value = findToChooseFromOnInit(findUsegesManager, progressAdapter);
+            toChooseFrom.value = ListSequence.fromList(findToChooseFromOnInit(findUsegesManager, progressAdapter)).select(new ISelector<SNode, SNodePointer>() {
+              public SNodePointer select(SNode it) {
+                return new SNodePointer(it);
+              }
+            }).toListSequence();
           }
         });
 
@@ -52,7 +57,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         chooserDialog.show();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode selectedNode = chooserDialog.getResult();
+            SNode selectedNode = chooserDialog.getResultNode();
             setNode(selectedNode);
           }
         });

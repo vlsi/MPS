@@ -19,23 +19,24 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Use BaseNodePointerItem
- */
-@Deprecated
-@ToRemove(version = 3.0)
-public abstract class BaseNodeItem implements NavigationItem {
-  private SNode myNode;
+public abstract class BaseNodePointerItem implements NavigationItem {
+  private final SNodePointer myNode;
+  private final NodePointerPresentation myNodePointerPresentation;
 
-  public BaseNodeItem(SNode node) {
+  public BaseNodePointerItem(SNodePointer node) {
     myNode = node;
+    myNodePointerPresentation = new NodePointerPresentation(myNode);
+  }
+
+  public SNodePointer getNodePointer() {
+    return myNode;
   }
 
   public SNode getNode() {
-    return myNode;
+    return myNode.getNode();
   }
 
   public String getName() {
@@ -44,11 +45,11 @@ public abstract class BaseNodeItem implements NavigationItem {
 
   @Nullable
   public ItemPresentation getPresentation() {
-    return new NodePresentation(myNode);
+    return myNodePointerPresentation;
   }
 
   public FileStatus getFileStatus() {
-    //todo return right value
+    //todo return correct value
     return FileStatus.NOT_CHANGED;
   }
 
