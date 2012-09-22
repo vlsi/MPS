@@ -57,8 +57,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         chooserDialog.show();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode selectedNode = chooserDialog.getResultNode();
-            setNode(selectedNode);
+            setNode(chooserDialog.getResultNode());
           }
         });
       }
