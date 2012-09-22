@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +19,7 @@ public class MembersPopulatingContext {
   private final List<SNode> members = new ArrayList<SNode>();
   private final Set<Signature> hidedSignatures = new HashSet<Signature>();
 
-  public MembersPopulatingContext(SNode classifier) {
+  public MembersPopulatingContext() {
     // java collections for speed 
   }
 
@@ -39,7 +40,7 @@ public class MembersPopulatingContext {
   }
 
   public void enterClassifierInternal(SNode classifier) {
-    classifiers.add(classifier);
+    classifiers.add(((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class})));
 
     // recalc is package protected available 
     isPackageProtectedAvailable = true;
@@ -53,7 +54,7 @@ public class MembersPopulatingContext {
   }
 
   public void exitClassifierInternal(SNode classifier) {
-    assert classifiers.pop() == classifier;
+    assert classifiers.pop() == ((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class}));
   }
 
   public boolean isPackageProtectedVisible() {

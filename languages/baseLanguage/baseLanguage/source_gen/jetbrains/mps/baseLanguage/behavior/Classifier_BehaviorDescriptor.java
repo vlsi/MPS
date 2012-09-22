@@ -10,7 +10,6 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IVisible_BehaviorDescriptor, IContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public Classifier_BehaviorDescriptor() {
@@ -38,10 +37,6 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     return Classifier_Behavior.virtual_getThisType_3305065273710880775(thisNode);
-  }
-
-  public Iterable<SNode> virtual_getMembersImpl_3642561415614722957(SNode thisNode) {
-    return Classifier_Behavior.virtual_getMembersImpl_3642561415614722957(thisNode);
   }
 
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
@@ -94,10 +89,6 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
-  }
-
-  public void virtual_populateMembersImpl_3642561415614722944(SNode thisNode, MembersPopulatingContext context, SNode contextClassifier) {
-    Classifier_Behavior.virtual_populateMembersImpl_3642561415614722944(thisNode, context, contextClassifier);
   }
 
   public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {

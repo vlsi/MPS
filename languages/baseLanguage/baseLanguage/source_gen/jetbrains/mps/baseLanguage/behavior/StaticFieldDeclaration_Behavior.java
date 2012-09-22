@@ -23,8 +23,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -135,15 +133,6 @@ public class StaticFieldDeclaration_Behavior {
     }
     // todo: staticField??? 
     return new StaticFieldDeclarationScope(SLinkOperations.getTargets(classNode, "staticField", true), extendsScopes);
-  }
-
-  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext context, SNode contextClassifier) {
-    if (!(context.isElementVisible(thisNode))) {
-      return;
-    }
-
-    context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
-    context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {

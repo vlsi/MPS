@@ -8,7 +8,6 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.scope.Scope;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
@@ -37,10 +36,6 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return ClassConcept_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
-  }
-
-  public void virtual_populateMembersImpl_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
-    ClassConcept_Behavior.virtual_populateMembersImpl_3642561415614722944(thisNode, scope, contextClassifier);
   }
 
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {

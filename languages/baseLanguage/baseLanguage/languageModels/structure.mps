@@ -1161,6 +1161,18 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7405920559687209277">
+      <property name="name" nameId="tpck.1169194664001" value="IClassifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7405920559687209278">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
+      <property name="name" nameId="tpck.1169194664001" value="IClassifierMember" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7405920559687237502">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
+      <property name="name" nameId="tpck.1169194664001" value="IClassifierType" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4374,5 +4386,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1070534760951" resolveInfo="ArrayType" />
     </node>
   </root>
+  <root id="7405920559687209277" />
+  <root id="7405920559687209278" />
+  <root id="7405920559687237502" />
 </model>
 

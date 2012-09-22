@@ -10,7 +10,6 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public FieldDeclaration_BehaviorDescriptor() {
@@ -59,10 +58,6 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  }
-
-  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext context, SNode contextClassifier) {
-    FieldDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, context, contextClassifier);
   }
 
   public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
