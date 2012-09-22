@@ -16,10 +16,9 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.common.MemberContainerStructureModel;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.Disposable;
-import jetbrains.mps.ide.common.FileStructurePopup;
+import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.project.Project;
 
 public class ShowMembers_Action extends BaseAction {

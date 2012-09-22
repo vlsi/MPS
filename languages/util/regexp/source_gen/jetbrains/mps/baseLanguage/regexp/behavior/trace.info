@@ -62,7 +62,7 @@
   <unitInfo fileName="SymbolClassRegexp_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_BehaviorDescriptor" />
   <unitInfo fileName="UnaryRegexp_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor" />
   <unitInfo fileName="UnicodeCharacterRegexp_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_BehaviorDescriptor" />
-  <root nodeId="1213877429450">
+  <root nodeId="1213877429450" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1213877429450" fileName="Regexp_Behavior.java" startLine="16" startPosition="30" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1213877429451" />
     <nodeInfo nodeId="1213877429450" fileName="Regexp_Behavior.java" startLine="17" startPosition="66" endLine="18" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222432436326" />
     <nodeInfo nodeId="1213877429450" fileName="Regexp_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1353467374623880338" />
@@ -228,7 +228,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877429450" fileName="Regexp_Behavior.java" startLine="16" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
   </root>
-  <root nodeId="1213877475221">
+  <root nodeId="1213877475221" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1213877475221" fileName="MatchParensRegexp_Behavior.java" startLine="15" startPosition="41" endLine="16" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222435297321" />
     <nodeInfo nodeId="1213877475221" fileName="MatchParensRegexp_Behavior.java" startLine="16" startPosition="78" endLine="17" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4204903511793602684" />
     <nodeInfo nodeId="1222856845886" fileName="MatchParensRegexp_Behavior.java" startLine="22" startPosition="90" endLine="23" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -298,7 +298,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877475221" fileName="MatchParensRegexp_Behavior.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_Behavior" />
   </root>
-  <root nodeId="1213877492182">
+  <root nodeId="1213877492182" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1213877492182" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="14" startPosition="52" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222610343965" />
     <nodeInfo nodeId="1222610383089" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877492182" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -332,7 +332,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877492182" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
   </root>
-  <root nodeId="1222431791866">
+  <root nodeId="1222431791866" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222431791866" fileName="StringLiteralRegexp_Behavior.java" startLine="13" startPosition="43" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222431822198" />
     <nodeInfo nodeId="1222431791866" fileName="StringLiteralRegexp_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4759120547781297313" />
     <nodeInfo nodeId="1222433006828" fileName="StringLiteralRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -479,7 +479,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222431791866" fileName="StringLiteralRegexp_Behavior.java" startLine="13" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior" />
   </root>
-  <root nodeId="1222433039738">
+  <root nodeId="1222433039738" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222433039738" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="13" startPosition="46" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222433041600" />
     <nodeInfo nodeId="1222433063059" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222433039738" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="23" startPosition="87" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -513,7 +513,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222433039738" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
   </root>
-  <root nodeId="1222433139931">
+  <root nodeId="1222433139931" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222433139931" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="14" startPosition="51" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222433142247" />
     <nodeInfo nodeId="1222433158002" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222433139931" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -547,7 +547,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222433139931" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
   </root>
-  <root nodeId="1222433930821">
+  <root nodeId="1222433930821" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222433930821" fileName="OrRegexp_Behavior.java" startLine="13" startPosition="32" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222434354398" />
     <nodeInfo nodeId="1222433930821" fileName="OrRegexp_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1353467374623956023" />
     <nodeInfo nodeId="8330008649153448487" fileName="OrRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -613,7 +613,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222433930821" fileName="OrRegexp_Behavior.java" startLine="13" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
   </root>
-  <root nodeId="1222434887346">
+  <root nodeId="1222434887346" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222434887346" fileName="ParensRegexp_Behavior.java" startLine="13" startPosition="36" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222434892303" />
     <nodeInfo nodeId="1222435148313" fileName="ParensRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222434887346" fileName="ParensRegexp_Behavior.java" startLine="23" startPosition="87" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -647,7 +647,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222434887346" fileName="ParensRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
   </root>
-  <root nodeId="1222436753891">
+  <root nodeId="1222436753891" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222436753891" fileName="SeqRegexp_Behavior.java" startLine="13" startPosition="33" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222436755347" />
     <nodeInfo nodeId="1222436753891" fileName="SeqRegexp_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1353467374623955980" />
     <nodeInfo nodeId="1222436787296" fileName="SeqRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -704,7 +704,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222436753891" fileName="SeqRegexp_Behavior.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_Behavior" />
   </root>
-  <root nodeId="1222437176020">
+  <root nodeId="1222437176020" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222437176020" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="13" startPosition="56" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222437178336" />
     <nodeInfo nodeId="1222437228567" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222437176020" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="23" startPosition="87" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -738,7 +738,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222437176020" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
   </root>
-  <root nodeId="1222437727387">
+  <root nodeId="1222437727387" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222437727387" fileName="NTimesRegexp_Behavior.java" startLine="14" startPosition="36" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222437729031" />
     <nodeInfo nodeId="8330008649153449204" fileName="NTimesRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222437727387" fileName="NTimesRegexp_Behavior.java" startLine="28" startPosition="87" endLine="29" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -775,7 +775,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222437727387" fileName="NTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
   </root>
-  <root nodeId="1222609599871">
+  <root nodeId="1222609599871" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222609599871" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="14" startPosition="43" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222609601608" />
     <nodeInfo nodeId="8330008649153448568" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222609599871" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="28" startPosition="87" endLine="29" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -812,7 +812,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222609599871" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
   </root>
-  <root nodeId="1222609846769">
+  <root nodeId="1222609846769" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222609846769" fileName="FromNToMTimesRegexp_Behavior.java" startLine="14" startPosition="43" endLine="15" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1353467374626527597" />
     <nodeInfo nodeId="8330008649153448599" fileName="FromNToMTimesRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222609846769" fileName="FromNToMTimesRegexp_Behavior.java" startLine="28" startPosition="93" endLine="29" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -849,7 +849,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222609846769" fileName="FromNToMTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_Behavior" />
   </root>
-  <root nodeId="1222857576752">
+  <root nodeId="1222857576752" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222857576752" fileName="SymbolClassRegexp_Behavior.java" startLine="14" startPosition="41" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222857578599" />
     <nodeInfo nodeId="1222857576752" fileName="SymbolClassRegexp_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8173814113624650627" />
     <nodeInfo nodeId="8173814113624650645" fileName="SymbolClassRegexp_Behavior.java" startLine="21" startPosition="90" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -922,7 +922,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222857576752" fileName="SymbolClassRegexp_Behavior.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_Behavior" />
   </root>
-  <root nodeId="1222861534672">
+  <root nodeId="1222861534672" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222861534672" fileName="LookRegexp_Behavior.java" startLine="14" startPosition="34" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222861536253" />
     <nodeInfo nodeId="1222861557760" fileName="LookRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222861534672" fileName="LookRegexp_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -956,7 +956,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222861534672" fileName="LookRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_Behavior" />
   </root>
-  <root nodeId="1222867682828">
+  <root nodeId="1222867682828" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="1222867682828" fileName="UnaryRegexp_Behavior.java" startLine="14" startPosition="35" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1222867684394" />
     <nodeInfo nodeId="8330008649153448539" fileName="UnaryRegexp_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222867682828" fileName="UnaryRegexp_Behavior.java" startLine="35" startPosition="87" endLine="36" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -999,7 +999,7 @@
     </scopeInfo>
     <unitInfo nodeId="1222867682828" fileName="UnaryRegexp_Behavior.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
   </root>
-  <root nodeId="3796137614137207004">
+  <root nodeId="3796137614137207004" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="3796137614137207012" fileName="ReplaceRegexpOperation_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4161170987575526839" fileName="ReplaceRegexpOperation_Behavior.java" startLine="15" startPosition="26" endLine="16" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3796137614137210642" fileName="ReplaceRegexpOperation_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1024,7 +1024,7 @@
     </scopeInfo>
     <unitInfo nodeId="3796137614137207004" fileName="ReplaceRegexpOperation_Behavior.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
   </root>
-  <root nodeId="3796137614137538899">
+  <root nodeId="3796137614137538899" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="3796137614137538899" fileName="Replacement_Behavior.java" startLine="11" startPosition="35" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3796137614137538905" />
     <nodeInfo nodeId="4161170987575807315" fileName="Replacement_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3796137614137538899" fileName="Replacement_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1058,7 +1058,7 @@
     </scopeInfo>
     <unitInfo nodeId="3796137614137538899" fileName="Replacement_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_Behavior" />
   </root>
-  <root nodeId="3796137614137538913">
+  <root nodeId="3796137614137538913" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="3796137614137538913" fileName="LiteralReplacement_Behavior.java" startLine="12" startPosition="42" endLine="13" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3796137614137538916" />
     <nodeInfo nodeId="3796137614137565914" fileName="LiteralReplacement_Behavior.java" startLine="18" startPosition="91" endLine="19" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3796137614137567971" fileName="LiteralReplacement_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1187,7 +1187,7 @@
     </scopeInfo>
     <unitInfo nodeId="3796137614137538913" fileName="LiteralReplacement_Behavior.java" startLine="12" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_Behavior" />
   </root>
-  <root nodeId="3796137614137539492">
+  <root nodeId="3796137614137539492" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="3796137614137539492" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="15" startPosition="57" endLine="16" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3796137614137539495" />
     <nodeInfo nodeId="3796137614137539498" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="21" startPosition="91" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3796137614137539504" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="22" startPosition="46" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1225,7 +1225,7 @@
     </scopeInfo>
     <unitInfo nodeId="3796137614137539492" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_Behavior" />
   </root>
-  <root nodeId="8173814113624637182">
+  <root nodeId="8173814113624637182" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="8173814113624732623" fileName="SymbolClassPart_Behavior.java" startLine="11" startPosition="88" endLine="12" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8173814113624732628" fileName="SymbolClassPart_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8173814113624732632" fileName="SymbolClassPart_Behavior.java" startLine="13" startPosition="14" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1324,7 +1324,7 @@
     </scopeInfo>
     <unitInfo nodeId="8173814113624637182" fileName="SymbolClassPart_Behavior.java" startLine="7" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_Behavior" />
   </root>
-  <root nodeId="8173814113624637190">
+  <root nodeId="8173814113624637190" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="8173814113624637190" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="13" startPosition="60" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8173814113624650544" />
     <nodeInfo nodeId="8173814113624650548" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8173814113624637190" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1355,7 +1355,7 @@
     </scopeInfo>
     <unitInfo nodeId="8173814113624637190" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_Behavior" />
   </root>
-  <root nodeId="8173814113624637220">
+  <root nodeId="8173814113624637220" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="8173814113624637220" fileName="IntervalSymbolClassPart_Behavior.java" startLine="12" startPosition="47" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8173814113624650554" />
     <nodeInfo nodeId="8173814113624650558" fileName="IntervalSymbolClassPart_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8173814113624637220" fileName="IntervalSymbolClassPart_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1386,7 +1386,7 @@
     </scopeInfo>
     <unitInfo nodeId="8173814113624637220" fileName="IntervalSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
   </root>
-  <root nodeId="8173814113624637890">
+  <root nodeId="8173814113624637890" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="8173814113624637890" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="12" startPosition="51" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8173814113624650585" />
     <nodeInfo nodeId="8173814113625142905" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8173814113624637890" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1417,7 +1417,7 @@
     </scopeInfo>
     <unitInfo nodeId="8173814113624637890" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
   </root>
-  <root nodeId="8173814113624637901">
+  <root nodeId="8173814113624637901" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="8173814113624637901" fileName="CharacterSymbolClassPart_Behavior.java" startLine="12" startPosition="48" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8173814113624650574" />
     <nodeInfo nodeId="8173814113624650578" fileName="CharacterSymbolClassPart_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8173814113624637901" fileName="CharacterSymbolClassPart_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1448,7 +1448,7 @@
     </scopeInfo>
     <unitInfo nodeId="8173814113624637901" fileName="CharacterSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_Behavior" />
   </root>
-  <root nodeId="8173814113624650479">
+  <root nodeId="8173814113624650479" modelId="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)">
     <nodeInfo nodeId="8173814113624650479" fileName="SymbolClassRegexpAndPart_Behavior.java" startLine="11" startPosition="48" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8173814113624650482" />
     <nodeInfo nodeId="8173814113624650479" fileName="SymbolClassRegexpAndPart_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8173814113624650479" fileName="SymbolClassRegexpAndPart_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

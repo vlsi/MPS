@@ -2461,7 +2461,9 @@
     <scopeInfo nodeId="2565896126719599788" fileName="Generator_TabDescriptor.java" startLine="180" startPosition="47" endLine="184" endPosition="72" />
     <scopeInfo nodeId="2565896126719599486" fileName="Generator_TabDescriptor.java" startLine="72" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="2565896126719599688" fileName="Generator_TabDescriptor.java" startLine="130" startPosition="57" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="2565896126719599753" fileName="Generator_TabDescriptor.java" startLine="166" startPosition="25" endLine="171" endPosition="9" />
+    <scopeInfo nodeId="2565896126719599754" fileName="Generator_TabDescriptor.java" startLine="166" startPosition="25" endLine="171" endPosition="9">
+      <varInfo nodeId="2565896126719599756" varName="generator" />
+    </scopeInfo>
     <scopeInfo nodeId="2565896126719599486" fileName="Generator_TabDescriptor.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="2565896126719599486" varName="node" />
     </scopeInfo>
@@ -2493,9 +2495,7 @@
       <varInfo nodeId="2254732680176829848" varName="firstGen" />
       <varInfo nodeId="2254732680176829854" varName="templateModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2565896126719599604" fileName="Generator_TabDescriptor.java" startLine="102" startPosition="31" endLine="115" endPosition="9">
-      <varInfo nodeId="2565896126719599657" varName="moduleRef" />
-    </scopeInfo>
+    <scopeInfo nodeId="2565896126719599603" fileName="Generator_TabDescriptor.java" startLine="102" startPosition="31" endLine="115" endPosition="9" />
     <scopeInfo nodeId="2565896126719599779" fileName="Generator_TabDescriptor.java" startLine="178" startPosition="27" endLine="191" endPosition="59">
       <varInfo nodeId="2565896126719599781" varName="model" />
       <varInfo nodeId="2565896126719599821" varName="node" />
@@ -4188,9 +4188,7 @@
       <varInfo nodeId="3465865320786328040" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" />
-    <scopeInfo nodeId="3465865320786328043" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="18" startPosition="9" endLine="21" endPosition="7">
-      <varInfo nodeId="3465865320786328049" varName="aspect" />
-    </scopeInfo>
+    <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="18" startPosition="9" endLine="21" endPosition="7" />
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="14" startPosition="53" endLine="24" endPosition="5" />
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="13" startPosition="0" endLine="25" endPosition="3" />
     <unitInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
