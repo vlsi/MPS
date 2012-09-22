@@ -12,6 +12,7 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor {
   public ControlAbstractionDeclaration_BehaviorDescriptor() {
@@ -21,12 +22,20 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  }
+
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return ControlAbstractionDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext scope, SNode classifier) {
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, scope, classifier);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {

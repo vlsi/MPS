@@ -35,6 +35,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -396,6 +397,22 @@ public class Classifier_Behavior {
     }
 
     return ScopeUtils.lazyParentScope(thisNode, kind);
+  }
+
+  public static Iterable<SNode> virtual_getTypeVariables_7405920559687237503(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true);
+  }
+
+  public static Iterable<SNode> virtual_getSuperTypes_7405920559687237523(SNode thisNode) {
+    return Classifier_Behavior.call_getExtendedClassifierTypes_2201875424516179426(thisNode);
+  }
+
+  public static SNode virtual_getThisType_7405920559687254782(SNode thisNode) {
+    return Classifier_Behavior.call_getThisType_3305065273710880775(thisNode);
+  }
+
+  public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    // do nothing by default 
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081868(SNode thisNode) {

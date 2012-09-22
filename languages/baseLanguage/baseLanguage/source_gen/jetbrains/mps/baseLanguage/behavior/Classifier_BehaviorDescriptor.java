@@ -10,8 +10,9 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import java.util.Set;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IVisible_BehaviorDescriptor, IContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
+public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IClassifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IVisible_BehaviorDescriptor, IContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public Classifier_BehaviorDescriptor() {
   }
 
@@ -67,8 +68,16 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
 
+  public Iterable<SNode> virtual_getSuperTypes_7405920559687237523(SNode thisNode) {
+    return Classifier_Behavior.virtual_getSuperTypes_7405920559687237523(thisNode);
+  }
+
   public Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
     return Classifier_Behavior.virtual_getVisibleMembers_8083692786967356611(thisNode, contextNode, kind);
+  }
+
+  public Iterable<SNode> virtual_getTypeVariables_7405920559687237503(SNode thisNode) {
+    return Classifier_Behavior.virtual_getTypeVariables_7405920559687237503(thisNode);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
@@ -93,6 +102,14 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return Classifier_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
+  }
+
+  public SNode virtual_getThisType_7405920559687254782(SNode thisNode) {
+    return Classifier_Behavior.virtual_getThisType_7405920559687254782(thisNode);
+  }
+
+  public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    Classifier_Behavior.virtual_populateMembers_7405920559687241403(thisNode, context, classifierType);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

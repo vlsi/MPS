@@ -21,6 +21,8 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.MethodSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -94,6 +96,15 @@ public class StaticMethodDeclaration_Behavior {
       }
     }));
     return new StaticMethodDeclarationScope(classNode, extendedClassifiers);
+  }
+
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    if (!((context.isElementVisible(thisNode)))) {
+      return;
+    }
+    String signature = SPropertyOperations.getString(thisNode, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(thisNode) + ")";
+    context.addMember(thisNode, new MethodSignature(signature));
+    context.hideMembers(new MethodSignature(signature));
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082235(SNode thisNode) {

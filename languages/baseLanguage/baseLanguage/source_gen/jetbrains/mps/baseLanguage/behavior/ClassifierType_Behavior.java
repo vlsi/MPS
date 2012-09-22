@@ -200,6 +200,14 @@ public class ClassifierType_Behavior {
     return true;
   }
 
+  public static SNode virtual_getClassifier_7405920559687237513(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "classifier", false);
+  }
+
+  public static Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "parameter", true);
+  }
+
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236, new Object[]{});

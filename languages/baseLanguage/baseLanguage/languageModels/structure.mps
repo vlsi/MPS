@@ -2313,6 +2313,9 @@
       <property name="role" nameId="tpce.1071599776563" value="staticInnerClassifiers" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7405920559687605081">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7405920559687209277" resolveInfo="IClassifier" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1188208561367">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1188208481402" resolveInfo="HasAnnotation" />
     </node>
@@ -2353,6 +2356,9 @@
       <property name="role" nameId="tpce.1071599776563" value="parameter" />
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7405920559687605197">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7405920559687237502" resolveInfo="IClassifierType" />
     </node>
   </root>
   <root id="1107796713796">
@@ -3162,6 +3168,9 @@
   <root id="1178285077437">
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178549989306">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178549954367" resolveInfo="IVisible" />
+    </node>
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7405920559687647667">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7405920559687209278" resolveInfo="IClassifierMember" />
     </node>
   </root>
   <root id="1178549954367">

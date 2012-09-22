@@ -7,5 +7,5 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public interface IClassifierMember_BehaviorDescriptor {
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode);
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext scope, SNode classifier);
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier);
 }

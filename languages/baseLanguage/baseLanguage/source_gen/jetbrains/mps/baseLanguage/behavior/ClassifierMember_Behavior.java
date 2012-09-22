@@ -14,6 +14,7 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.scope.Scope;
@@ -83,6 +84,14 @@ public class ClassifierMember_Behavior {
     }
 
     return false;
+  }
+
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    // do nothing by default 
+  }
+
+  public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.call_isStatic_8986964027630462944(thisNode);
   }
 
   public static boolean call_isStatic_8986964027630462944(SNode thisNode) {

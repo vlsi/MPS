@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
@@ -18,8 +19,16 @@ public class Property_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
     return Property_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+  }
+
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {

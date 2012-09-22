@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +22,10 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
     return ConstructorDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+  }
+
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return ConstructorDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
@@ -31,6 +36,10 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
 
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
   public boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {

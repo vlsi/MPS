@@ -6,5 +6,5 @@ import jetbrains.mps.smodel.SNode;
 
 public interface IClassifierType_BehaviorDescriptor {
   public SNode virtual_getClassifier_7405920559687237513(SNode thisNode);
-  public SNode virtual_getTypeParameters_7405920559687237518(SNode thisNode);
+  public Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode);
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public StaticMethodDeclaration_BehaviorDescriptor() {
@@ -15,6 +16,10 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
 
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return StaticMethodDeclaration_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
@@ -31,6 +36,10 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    StaticMethodDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {

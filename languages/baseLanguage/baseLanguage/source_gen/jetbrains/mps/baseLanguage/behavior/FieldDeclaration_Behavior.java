@@ -24,6 +24,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.LazyScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -143,6 +145,14 @@ public class FieldDeclaration_Behavior {
     } else {
       return fields;
     }
+  }
+
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    if (!((context.isElementVisible(thisNode)))) {
+      return;
+    }
+    context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+    context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377970(SNode thisNode) {

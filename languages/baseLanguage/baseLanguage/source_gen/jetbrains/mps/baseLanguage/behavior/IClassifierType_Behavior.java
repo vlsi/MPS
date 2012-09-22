@@ -29,11 +29,15 @@ public class IClassifierType_Behavior {
   }
 
   public static void call_populateMembers_7405920559687241253(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    context.enterClassifierInternal(thisNode);
-    try {
-      IClassifier_Behavior.call_populateMembers_7405920559687241403(IClassifierType_Behavior.call_getClassifier_7405920559687237513(thisNode), context, classifier);
-    } finally {
-      context.exitClassifierInternal(thisNode);
+    SNode thisClassifier = IClassifierType_Behavior.call_getClassifier_7405920559687237513(thisNode);
+
+    if ((thisClassifier != null)) {
+      context.enterClassifierInternal(thisNode);
+      try {
+        IClassifier_Behavior.call_populateMembers_7405920559687241403(thisClassifier, context, classifier);
+      } finally {
+        context.exitClassifierInternal(thisNode);
+      }
     }
   }
 
@@ -42,16 +46,16 @@ public class IClassifierType_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), "virtual_getClassifier_7405920559687237513", PARAMETERS_7405920559687237513, new Object[]{});
   }
 
-  public static SNode call_getTypeParameters_7405920559687237518(SNode thisNode) {
+  public static Iterable<SNode> call_getTypeParameters_7405920559687237518(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), "virtual_getTypeParameters_7405920559687237518", PARAMETERS_7405920559687237518, new Object[]{});
+    return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), "virtual_getTypeParameters_7405920559687237518", PARAMETERS_7405920559687237518, new Object[]{});
   }
 
   public static SNode callSuper_getClassifier_7405920559687237513(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getClassifier_7405920559687237513", PARAMETERS_7405920559687237513, new Object[]{});
   }
 
-  public static SNode callSuper_getTypeParameters_7405920559687237518(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getTypeParameters_7405920559687237518", PARAMETERS_7405920559687237518, new Object[]{});
+  public static Iterable<SNode> callSuper_getTypeParameters_7405920559687237518(SNode thisNode, String callerConceptFqName) {
+    return (Iterable<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getTypeParameters_7405920559687237518", PARAMETERS_7405920559687237518, new Object[]{});
   }
 }

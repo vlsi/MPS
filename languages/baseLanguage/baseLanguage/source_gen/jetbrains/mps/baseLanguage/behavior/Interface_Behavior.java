@@ -19,6 +19,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -111,6 +112,31 @@ public class Interface_Behavior {
     }
 
     return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.Interface", kind);
+  }
+
+  public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    // populate own members 
+    for (SNode member : SNodeOperations.getChildren(thisNode)) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.IClassifierMember")) {
+        IClassifierMember_Behavior.call_populateMember_7405920559687254644(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), context, classifierType);
+      }
+    }
+
+    // populate extended interfaces members  
+    for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    })) {
+      IClassifierType_Behavior.call_populateMembers_7405920559687241253(extendedInterface, context, classifierType);
+    }
+
+    // populate Object members in case of classifierType.getClassifier() == this classifier 
+    if (IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierType) == thisNode) {
+      if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
+        IClassifier_Behavior.call_populateMembers_7405920559687241403(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), context, classifierType);
+      }
+    }
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {

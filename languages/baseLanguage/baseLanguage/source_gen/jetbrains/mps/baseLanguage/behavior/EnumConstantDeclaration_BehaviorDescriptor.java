@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,6 +36,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return IMethodCall_Behavior.virtual_getTypesByTypeVars_851115533308208851(thisNode);
   }
 
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    EnumConstantDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+  }
+
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
@@ -53,6 +58,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {

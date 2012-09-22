@@ -21,16 +21,16 @@ public class IClassifierMember_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), "virtual_isStatic_7405920559687241224", PARAMETERS_7405920559687241224, new Object[]{});
   }
 
-  public static void call_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext scope, SNode classifier) {
+  public static void call_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), "virtual_populateMember_7405920559687254644", PARAMETERS_7405920559687254644, new Object[]{scope, classifier});
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), "virtual_populateMember_7405920559687254644", PARAMETERS_7405920559687254644, new Object[]{context, classifier});
   }
 
   public static boolean callSuper_isStatic_7405920559687241224(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), callerConceptFqName, "virtual_isStatic_7405920559687241224", PARAMETERS_7405920559687241224, new Object[]{});
   }
 
-  public static void callSuper_populateMember_7405920559687254644(SNode thisNode, String callerConceptFqName, MembersPopulatingContext scope, SNode classifier) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), callerConceptFqName, "virtual_populateMember_7405920559687254644", PARAMETERS_7405920559687254644, new Object[]{scope, classifier});
+  public static void callSuper_populateMember_7405920559687254644(SNode thisNode, String callerConceptFqName, MembersPopulatingContext context, SNode classifier) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), callerConceptFqName, "virtual_populateMember_7405920559687254644", PARAMETERS_7405920559687254644, new Object[]{context, classifier});
   }
 }
