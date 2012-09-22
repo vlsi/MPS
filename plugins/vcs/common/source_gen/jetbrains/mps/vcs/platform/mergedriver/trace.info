@@ -174,7 +174,7 @@
     <scopeInfo nodeId="8298649587588677847" fileName="MergeDriverPacker.java" startLine="109" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="8298649587588690227" fileName="MergeDriverPacker.java" startLine="111" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="462404415121491368" fileName="MergeDriverPacker.java" startLine="113" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="1564108971409412552" fileName="MergeDriverPacker.java" startLine="80" startPosition="14" endLine="83" endPosition="9" />
+    <scopeInfo nodeId="1564108971409412551" fileName="MergeDriverPacker.java" startLine="80" startPosition="14" endLine="83" endPosition="9" />
     <scopeInfo nodeId="6006585546800309875" fileName="MergeDriverPacker.java" startLine="104" startPosition="43" endLine="107" endPosition="45">
       <varInfo nodeId="6006585546800309877" varName="vcsCorePlugin" />
     </scopeInfo>
@@ -1209,7 +1209,7 @@
     <scopeInfo nodeId="6590770702563546492" fileName="GitGlobalConfigFixesInstaller.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="6590770702563546493" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8098913440253374790" fileName="GitGlobalConfigFixesInstaller.java" startLine="36" startPosition="22" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="8098913440253374784" fileName="GitGlobalConfigFixesInstaller.java" startLine="36" startPosition="22" endLine="39" endPosition="9" />
     <scopeInfo nodeId="8098913440253374837" fileName="GitGlobalConfigFixesInstaller.java" startLine="51" startPosition="30" endLine="54" endPosition="7" />
     <scopeInfo nodeId="8098913440253374766" fileName="GitGlobalConfigFixesInstaller.java" startLine="30" startPosition="9" endLine="34" endPosition="7">
       <varInfo nodeId="8098913440253374752" varName="currentValue" />
