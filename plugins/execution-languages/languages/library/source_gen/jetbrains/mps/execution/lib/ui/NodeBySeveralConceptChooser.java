@@ -115,4 +115,7 @@ public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
       }
     });
   }
+
+  public static void main(String[] args) {
+  }
 }

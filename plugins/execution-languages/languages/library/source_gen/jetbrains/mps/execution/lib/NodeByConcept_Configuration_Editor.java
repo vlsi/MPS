@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByConcept_Configuration> {
   private NodeByConceptChooser myChooser;
@@ -37,10 +38,18 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
   }
 
   public void applyEditorTo(final NodeByConcept_Configuration configuration) throws ConfigurationException {
-    configuration.setNode(myChooser.getNode());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        configuration.setNode(myChooser.getNode());
+      }
+    });
   }
 
   public void resetEditorFrom(final NodeByConcept_Configuration configuration) {
-    myChooser.setNode(configuration.getNode());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myChooser.setNode(configuration.getNode());
+      }
+    });
   }
 }
