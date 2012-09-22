@@ -34,6 +34,12 @@ public class MainNodeTreeElement extends NodeTreeElement {
     myProject = project;
   }
 
+  @Override
+  public SNodePointer getValue() {
+    // if getValue() equal for root and leaf caching strategy in CachingChildrenTreeNode fail and you got infinite tree
+    return new SNodePointer(null);
+  }
+
   public TreeElement[] getChildren() {
     final List<TreeElement> result = new ArrayList<TreeElement>();
 

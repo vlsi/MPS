@@ -15,8 +15,7 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.ide.structureView.StructureView;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.ide.devkit.structureview.FileStructureDialog;
+import jetbrains.mps.ide.common.FileStructurePopup;
 import com.intellij.openapi.vfs.VirtualFile;
 
 public class ShowStructure_Action extends BaseAction {
@@ -72,12 +71,12 @@ public class ShowStructure_Action extends BaseAction {
       }
 
       StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), ((Project) MapSequence.fromMap(_params).get("project")));
-      DialogWrapper dialog = new FileStructureDialog(structureView.getTreeModel(), null, ((Project) MapSequence.fromMap(_params).get("project")), null, structureView, true);
-      if (dialog != null) {
+      FileStructurePopup popup = new FileStructurePopup(structureView.getTreeModel(), ((Project) MapSequence.fromMap(_params).get("project")), structureView, true);
+      if (popup != null) {
         if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
-          dialog.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getPresentableUrl());
+          popup.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getPresentableUrl());
         }
-        dialog.show();
+        popup.show();
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
