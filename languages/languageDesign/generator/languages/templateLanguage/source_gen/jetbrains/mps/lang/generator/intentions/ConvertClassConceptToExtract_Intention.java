@@ -59,7 +59,7 @@ public class ConvertClassConceptToExtract_Intention extends BaseIntention implem
     List<SNode> children = node.getChildren();
     CopyUtil.copy(children, mapping);
     for (SNode child : children) {
-      newNode.addChild(child.getRole_(), mapping.get(child));
+      newNode.addChild(child.getRole(), mapping.get(child));
     }
     for (SReference reference : node.getReferences()) {
       newNode.setReferent(reference.getRole(), reference.getTargetNode());

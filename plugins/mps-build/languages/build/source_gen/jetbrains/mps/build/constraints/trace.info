@@ -459,7 +459,7 @@
     <nodeInfo nodeId="4903714810883755363" fileName="BuildTextStringPart_Constraints.java" startLine="32" startPosition="37" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="38" startPosition="40" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="43" startPosition="84" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9184644532456897626" fileName="BuildTextStringPart_Constraints.java" startLine="45" startPosition="267" endLine="46" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9184644532456897626" fileName="BuildTextStringPart_Constraints.java" startLine="45" startPosition="267" endLine="46" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9184644532456897316" fileName="BuildTextStringPart_Constraints.java" startLine="47" startPosition="9" endLine="48" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="50" startPosition="7" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="16" startPosition="80" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildTextStringPart_Constraints#()V" />
@@ -476,7 +476,7 @@
     <scopeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="26" startPosition="37" endLine="27" endPosition="20" />
     <scopeInfo nodeId="4903714810883755362" fileName="BuildTextStringPart_Constraints.java" startLine="32" startPosition="37" endLine="33" endPosition="59" />
     <scopeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="38" startPosition="40" endLine="39" endPosition="20" />
-    <scopeInfo nodeId="9184644532456897473" fileName="BuildTextStringPart_Constraints.java" startLine="45" startPosition="267" endLine="46" endPosition="312" />
+    <scopeInfo nodeId="9184644532456897473" fileName="BuildTextStringPart_Constraints.java" startLine="45" startPosition="267" endLine="46" endPosition="311" />
     <scopeInfo nodeId="4903714810883755357" fileName="BuildTextStringPart_Constraints.java" startLine="31" startPosition="56" endLine="33" endPosition="59">
       <varInfo nodeId="4903714810883755357" varName="propertyName" />
     </scopeInfo>

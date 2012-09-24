@@ -86,7 +86,7 @@ public class CopyThisDown_Action extends BaseAction {
         SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
-          String role = nodeToCopy.getRole_();
+          String role = nodeToCopy.getRole();
           SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(parent), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
           if (link == null) {
             return;
@@ -103,7 +103,7 @@ public class CopyThisDown_Action extends BaseAction {
       } else {
         SNode firstNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
-        String role = firstNode.getRole_();
+        String role = firstNode.getRole();
         SNode parent = SNodeOperations.getParent(firstNode);
         SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(parent), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
         if (link == null) {

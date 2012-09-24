@@ -43,7 +43,7 @@ public class ChangeProperty_Intention extends BaseIntention implements Intention
     SLinkOperations.setTarget(transactional, "property", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
     for (SNode child : ListSequence.fromList(node.getChildren())) {
-      String role = child.getRole_();
+      String role = child.getRole();
       node.removeChild(child);
       transactional.addChild(role, child);
     }

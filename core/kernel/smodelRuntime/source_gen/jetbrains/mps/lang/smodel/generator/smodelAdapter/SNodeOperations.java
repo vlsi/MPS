@@ -347,7 +347,7 @@ public class SNodeOperations {
     if (parent == null) {
       return result;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -374,7 +374,7 @@ public class SNodeOperations {
       result.add(node);
     }
     boolean childFound = false;
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -396,7 +396,7 @@ public class SNodeOperations {
     if (parent == null) {
       return result;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -419,7 +419,7 @@ public class SNodeOperations {
     if (newChild == null) {
       return null;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert parent != null && role != null;
     parent.insertChild(node, role, newChild);
     return newChild;
@@ -437,7 +437,7 @@ public class SNodeOperations {
     if (newChild == null) {
       return null;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     parent.insertChild(node, role, newChild, true);
     return newChild;
@@ -455,7 +455,7 @@ public class SNodeOperations {
     if (parent != null) {
       parent.removeChild(siblingNode);
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     nodeParent.insertChild(node, role, siblingNode, false);
     return siblingNode;
@@ -473,7 +473,7 @@ public class SNodeOperations {
     if (siblingParent != null) {
       siblingParent.removeChild(siblingNode);
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     nodeParent.insertChild(node, role, siblingNode, true);
     return siblingNode;
@@ -579,7 +579,7 @@ public class SNodeOperations {
     if (!(SModelUtil.isAssignableConcept(conceptOfParent, expectedConcept))) {
       return false;
     }
-    return role.equals(node.getRole_());
+    return role.equals(node.getRole());
   }
 
   public static SNode getConceptDeclaration(SNode node) {

@@ -289,7 +289,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714226066(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getRole_();
+    return _context.getNode().getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714225930(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -297,7 +297,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714225971(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getRole_();
+    return _context.getNode().getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_8196331069071119405(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -824,12 +824,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1368513600865902766(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // TODO check 
-    return SNodeOperations.getParent(_context.getNode()).getRole_();
+    return SNodeOperations.getParent(_context.getNode()).getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_1368513600865961746(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // TODO check 
-    return SNodeOperations.getParent(_context.getNode()).getRole_();
+    return SNodeOperations.getParent(_context.getNode()).getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_9196441569928398217(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -3590,7 +3590,7 @@ public class QueriesGenerated {
     }
     Collections.sort(propertyMacros, new Comparator<SNode>() {
       public int compare(SNode node1, SNode node2) {
-        return node1.getRole_().compareTo(node2.getRole_());
+        return node1.getRole().compareTo(node2.getRole());
       }
     });
     return propertyMacros;
@@ -3664,7 +3664,7 @@ public class QueriesGenerated {
     }
     Collections.sort(referenceMacros, new Comparator<SNode>() {
       public int compare(SNode node1, SNode node2) {
-        return node1.getRole_().compareTo(node2.getRole_());
+        return node1.getRole().compareTo(node2.getRole());
       }
     });
     return referenceMacros;

@@ -127,7 +127,7 @@ public class WriteHelper {
   }
 
   public String genRole(@NotNull SNode node) {
-    return node.getRole_();
+    return node.getRole();
   }
 
   public String genRole(@NotNull SReference ref) {

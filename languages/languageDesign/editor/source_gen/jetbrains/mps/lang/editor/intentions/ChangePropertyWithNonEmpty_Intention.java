@@ -55,7 +55,7 @@ public class ChangePropertyWithNonEmpty_Intention extends BaseIntention implemen
     SLinkOperations.setTarget(nonEmpty, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
     for (SNode child : ListSequence.fromList(node.getChildren())) {
-      String role = child.getRole_();
+      String role = child.getRole();
       node.removeChild(child);
       nonEmpty.addChild(role, child);
     }
