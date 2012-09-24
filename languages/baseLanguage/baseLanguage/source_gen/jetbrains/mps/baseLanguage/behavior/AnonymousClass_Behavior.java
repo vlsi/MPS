@@ -134,6 +134,10 @@ public class AnonymousClass_Behavior {
     }
   }
 
+  public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return false;
+  }
+
   public static String call_getUnitName_2496361171403550994(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403550994, new Object[]{});

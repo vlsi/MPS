@@ -46,6 +46,10 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
     return AnonymousClass_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return AnonymousClass_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  }
+
   public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return AnonymousClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
   }
