@@ -746,7 +746,7 @@
     <nodeInfo nodeId="3436588812410792021" fileName="WriteHelper.java" startLine="107" startPosition="83" endLine="108" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3436588812410759332" fileName="WriteHelper.java" startLine="108" startPosition="48" endLine="109" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3436588812410759345" fileName="WriteHelper.java" startLine="110" startPosition="26" endLine="111" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3436588812410792073" fileName="WriteHelper.java" startLine="112" startPosition="7" endLine="113" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3436588812410792073" fileName="WriteHelper.java" startLine="112" startPosition="7" endLine="113" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961474289" fileName="WriteHelper.java" startLine="114" startPosition="5" endLine="115" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6031791847596807227" fileName="WriteHelper.java" startLine="119" startPosition="39" endLine="120" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961474762" fileName="WriteHelper.java" startLine="121" startPosition="5" endLine="122" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -871,7 +871,7 @@
     <scopeInfo nodeId="4362914091961472259" fileName="WriteHelper.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="4362914091961472265" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5427614427235890091" fileName="WriteHelper.java" startLine="106" startPosition="39" endLine="113" endPosition="71">
+    <scopeInfo nodeId="5427614427235890091" fileName="WriteHelper.java" startLine="106" startPosition="39" endLine="113" endPosition="72">
       <varInfo nodeId="3436588812410792022" varName="fqName" />
       <varInfo nodeId="3436588812410759333" varName="index" />
     </scopeInfo>

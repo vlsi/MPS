@@ -138,7 +138,7 @@ public class GoToRulesHelper {
         }
         String nodeName = node.getName();
         if (nodeName == null || nodeName.equals("")) {
-          nodeName = node.getConceptShortName();
+          nodeName = node.getConcept().getName();
         }
         add(new AbstractAction(nodeName + " (" + node.getModel() + ")") {
           {

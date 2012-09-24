@@ -110,7 +110,7 @@ public class WriteHelper {
       if (index == null) {
         return MODEL_SEPARATOR_CHAR + fqName;
       }
-      return index + MODEL_SEPARATOR_CHAR + node.getConceptShortName();
+      return index + MODEL_SEPARATOR_CHAR + node.getConcept().getName();
     }
     return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConcept().getId());
   }

@@ -506,7 +506,7 @@ public class SNodeOperations {
         String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
         if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(newChild), "call_findPropertyDeclaration_1219835742593", new Class[]{SNode.class, String.class}, propertyName)) == null)) {
           // no such property in new child : don't copy the attribute 
-          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConceptShortName(), newChild);
+          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }
@@ -514,7 +514,7 @@ public class SNodeOperations {
         String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"));
         if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(newChild), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, linkRole)) == null)) {
           // no such link in new child : don't copy the attribute 
-          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConceptShortName(), newChild);
+          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }

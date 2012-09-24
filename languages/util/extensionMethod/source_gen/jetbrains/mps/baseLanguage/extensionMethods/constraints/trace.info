@@ -51,13 +51,13 @@
       <varInfo nodeId="6235310215814089102" varName="operand" />
     </scopeInfo>
     <scopeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="43" startPosition="115" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6235310215814037900" fileName="ExtensionMethodCall_Constraints.java" startLine="61" startPosition="276" endLine="66" endPosition="21" />
+    <scopeInfo nodeId="6235310215814037901" fileName="ExtensionMethodCall_Constraints.java" startLine="61" startPosition="276" endLine="66" endPosition="21">
+      <varInfo nodeId="6235310215814037902" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="6235310215814037939" fileName="ExtensionMethodCall_Constraints.java" startLine="70" startPosition="118" endLine="75" endPosition="21" />
     <scopeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="92" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6235310215814037898" fileName="ExtensionMethodCall_Constraints.java" startLine="60" startPosition="228" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="6235310215814037937" fileName="ExtensionMethodCall_Constraints.java" startLine="69" startPosition="246" endLine="76" endPosition="19">
-      <varInfo nodeId="6235310215814037938" varName="method" />
-    </scopeInfo>
+    <scopeInfo nodeId="6235310215814037936" fileName="ExtensionMethodCall_Constraints.java" startLine="69" startPosition="246" endLine="76" endPosition="19" />
     <scopeInfo nodeId="6235310215814037988" fileName="ExtensionMethodCall_Constraints.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="6235310215814037991" varName="node" />
     </scopeInfo>
