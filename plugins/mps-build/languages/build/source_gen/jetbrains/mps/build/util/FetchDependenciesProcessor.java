@@ -88,11 +88,11 @@ public class FetchDependenciesProcessor {
 
     private boolean check(SNode node) {
       if (SNodeOperations.getModel(node).isTransient()) {
-        genContext.showErrorMessage(dep, "returned dependency in transient model: " + node.getDebugText());
+        genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
       }
       if (!(artifacts.contains(node))) {
-        genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + node.getDebugText());
+        genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
       }
       return true;
@@ -100,7 +100,7 @@ public class FetchDependenciesProcessor {
 
     private boolean checkArtifactId(Object artifactId) {
       if (artifactId instanceof SNode && ((SNode) artifactId).getModel().isTransient()) {
-        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + ((SNode) artifactId).getDebugText());
+        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + jetbrains.mps.util.SNodeOperations.getDebugText(((SNode) artifactId)));
         return false;
       }
       return true;

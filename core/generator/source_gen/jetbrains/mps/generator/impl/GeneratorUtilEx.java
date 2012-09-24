@@ -46,7 +46,7 @@ public class GeneratorUtilEx {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")) {
       mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "labelDeclaration", false);
     } else {
-      LOG.errorWithTrace("unexpected input " + node.getDebugText());
+      LOG.errorWithTrace("unexpected input " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
     String mappingName = (mappingLabel != null ?
       SPropertyOperations.getString(mappingLabel, "name") :

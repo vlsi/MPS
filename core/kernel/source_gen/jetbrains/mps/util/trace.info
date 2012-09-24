@@ -804,9 +804,7 @@
     <scopeInfo nodeId="8018595893829093119" fileName="DisjointSets.java" startLine="39" startPosition="89" endLine="40" endPosition="83" />
     <scopeInfo nodeId="8018595893829093168" fileName="DisjointSets.java" startLine="50" startPosition="60" endLine="51" endPosition="87" />
     <scopeInfo nodeId="8018595893829093221" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="21" endPosition="44" />
-    <scopeInfo nodeId="8018595893829093218" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5">
-      <varInfo nodeId="8018595893829093219" varName="e" />
-    </scopeInfo>
+    <scopeInfo nodeId="8018595893829093217" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />
     <scopeInfo nodeId="8018595893829093056" fileName="DisjointSets.java" startLine="25" startPosition="26" endLine="29" endPosition="48" />
     <scopeInfo nodeId="8018595893829093111" fileName="DisjointSets.java" startLine="37" startPosition="12" endLine="41" endPosition="7" />
     <scopeInfo nodeId="8018595893829093161" fileName="DisjointSets.java" startLine="48" startPosition="30" endLine="53" endPosition="81">

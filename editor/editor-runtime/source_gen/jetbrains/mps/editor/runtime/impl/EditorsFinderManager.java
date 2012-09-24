@@ -120,7 +120,7 @@ public class EditorsFinderManager implements ApplicationComponent {
       public INodeEditor compute() {
         SNode nodeConcept = SNodeOperations.getConceptDeclaration(nodeToEdit);
         if (nodeConcept == null) {
-          EditorsFinderManager.LOG.error("error loading editor for node " + nodeToEdit.getDebugText() + "\n" + "couldn't find node concept");
+          EditorsFinderManager.LOG.error("error loading editor for node " + jetbrains.mps.util.SNodeOperations.getDebugText(nodeToEdit) + "\n" + "couldn't find node concept");
           return null;
         }
         if (SNodeOperations.isInstanceOf(nodeConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
@@ -210,7 +210,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
-      return new EditorCell_Constant(context, node, node.getDebugText());
+      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }

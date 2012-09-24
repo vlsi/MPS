@@ -73,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode extendsClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.FileSetUtil" file="FileSetUtil.java">

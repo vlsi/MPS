@@ -154,7 +154,7 @@ public class StubResolver {
           public IListSequence<SNode> compute() {
             return Sequence.fromIterable(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode n) {
-                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(n.getResolveInfo());
+                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
               }
             }).toListSequence();
           }

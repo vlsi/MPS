@@ -193,7 +193,7 @@ public class WriteHelper {
         null
       );
       if ((target != null)) {
-        String resolveInfo = target.getResolveInfo();
+        String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(target);
         if (resolveInfo != null) {
           return resolveInfo;
         }

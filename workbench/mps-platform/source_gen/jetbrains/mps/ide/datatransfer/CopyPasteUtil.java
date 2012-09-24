@@ -275,7 +275,7 @@ public class CopyPasteUtil {
     int i = 1;
     int size = nodes.size();
     for (SNode node : nodes) {
-      stringBuilder.append(node.getDebugText());
+      stringBuilder.append(jetbrains.mps.util.SNodeOperations.getDebugText(node));
       if (i < size) {
         stringBuilder.append("\n");
       }
