@@ -45,7 +45,7 @@ public class ModelLinkMap {
     for (SNode node : myModel.nodes()) {
       addRoleLocation(ptr(SNodeOperations.getContainingLinkDeclaration(node)), node);
       addTypeLocation(ptr(SNodeOperations.getConceptDeclaration(node)), node);
-      for (String prop : SetSequence.fromSet(node.getPropertyNames())) {
+      for (String prop : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
         addNameLocation(ptr(node.getPropertyDeclaration(prop)), node, prop);
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {

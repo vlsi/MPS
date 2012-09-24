@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -63,7 +64,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
 
       InternalActionsUtils.executeActionOnAllNodesInModal("Calculate statistic", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode node) {
-          int propertiesCount = node.getPropertyNames().size();
+          int propertiesCount = SNodeOperations.getProperties(node).keySet().size();
           MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ?
             MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 :
             1

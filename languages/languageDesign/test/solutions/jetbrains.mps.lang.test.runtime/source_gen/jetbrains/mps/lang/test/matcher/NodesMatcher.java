@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 import java.util.HashSet;
+import jetbrains.mps.util.SNodeOperations;
 
 public class NodesMatcher {
   public NodesMatcher() {
@@ -58,8 +59,8 @@ public class NodesMatcher {
       return;
     }
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(a.getChildRoles());
-    roles.addAll(b.getChildRoles());
+    roles.addAll(SNodeOperations.getChildRoles(a));
+    roles.addAll(SNodeOperations.getChildRoles(b));
     for (String role : roles) {
       List<SNode> children1 = a.getChildren(role);
       List<SNode> children2 = b.getChildren(role);
@@ -97,8 +98,8 @@ public class NodesMatcher {
 
   private static void matchReferences(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(a.getReferenceRoles());
-    roles.addAll(b.getReferenceRoles());
+    roles.addAll(SNodeOperations.getReferenceRoles(a));
+    roles.addAll(SNodeOperations.getReferenceRoles(b));
     for (String role : roles) {
       SNode reference1 = null;
       if (a.getReference(role) != null) {
@@ -122,8 +123,8 @@ public class NodesMatcher {
 
   private static void matchChildren(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(a.getChildRoles());
-    roles.addAll(b.getChildRoles());
+    roles.addAll(SNodeOperations.getChildRoles(a));
+    roles.addAll(SNodeOperations.getChildRoles(b));
     for (String role : roles) {
       List<SNode> children1 = a.getChildren(role);
       List<SNode> children2 = b.getChildren(role);
@@ -142,8 +143,8 @@ public class NodesMatcher {
 
   private static void matchProperties(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
     HashSet<String> propertes = new HashSet<String>();
-    propertes.addAll(a.getPropertyNames());
-    propertes.addAll(b.getPropertyNames());
+    propertes.addAll(SNodeOperations.getProperties(a).keySet());
+    propertes.addAll(SNodeOperations.getProperties(b).keySet());
     for (String key : propertes) {
       String p1 = a.getProperties().get(key);
       String p2 = b.getProperties().get(key);

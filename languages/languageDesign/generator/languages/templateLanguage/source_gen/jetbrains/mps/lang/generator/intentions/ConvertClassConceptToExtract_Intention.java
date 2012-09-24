@@ -64,7 +64,7 @@ public class ConvertClassConceptToExtract_Intention extends BaseIntention implem
     for (SReference reference : node.getReferences()) {
       newNode.setReferent(reference.getRole(), reference.getTargetNode());
     }
-    for (String propertyName : node.getPropertyNames()) {
+    for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
       newNode.setProperty(propertyName, node.getProperty(propertyName));
     }
     SNodeOperations.replaceWithAnother(node, newNode);
