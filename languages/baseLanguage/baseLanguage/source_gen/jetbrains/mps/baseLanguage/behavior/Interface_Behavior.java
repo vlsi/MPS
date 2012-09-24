@@ -134,7 +134,7 @@ public class Interface_Behavior {
     // populate Object members in case of classifierType.getClassifier() == this classifier 
     if (IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierType) == thisNode) {
       if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
-        IClassifier_Behavior.call_populateMembers_7405920559687241403(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), context, classifierType);
+        IClassifierType_Behavior.call_populateMembers_7405920559687241253(IClassifier_Behavior.call_getThisType_7405920559687254782(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")), context, classifierType);
       }
     }
   }
