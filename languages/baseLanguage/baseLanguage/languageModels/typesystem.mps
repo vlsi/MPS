@@ -4310,23 +4310,15 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="4293892367838067557">
-                    <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
-                    <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
-                    <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4293892367838067558">
-                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="4293892367838067559">
-                        <node role="term" roleId="tpd4.1174657509053" type="tp2q.MultiForEachVariableReference" typeId="tp2q.8293956702609956630" id="4293892367838067565">
-                          <link role="variable" roleId="tp2q.8293956702609966325" targetNodeId="4293892367838067537" resolveInfo="arg" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4293892367838067561">
-                      <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4293892367838067562">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5380162141339274418">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="5380162141339274419">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5380162141339274272" resolveInfo="matchedType_supertypeOf_argument" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5380162141339274420">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4293892367838067550" resolveInfo="matchedType" />
                       </node>
-                    </node>
-                    <node role="nodeToCheck" roleId="tpd4.1174662598553" type="tp2q.MultiForEachVariableReference" typeId="tp2q.8293956702609956630" id="4293892367838067566">
-                      <link role="variable" roleId="tp2q.8293956702609966325" targetNodeId="4293892367838067537" resolveInfo="arg" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.MultiForEachVariableReference" typeId="tp2q.8293956702609956630" id="5380162141339274422">
+                        <link role="variable" roleId="tp2q.8293956702609966325" targetNodeId="4293892367838067537" resolveInfo="arg" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4358,6 +4350,53 @@
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1203512339340">
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="tpd5.1196177069451" resolveInfo="InferenceMethod" />
+      </node>
+    </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5380162141339274272">
+      <property name="name" nameId="tpck.1169194664001" value="matchedType_supertypeOf_argument" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5380162141339274284">
+        <property name="name" nameId="tpck.1169194664001" value="matchedType" />
+        <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5380162141339274286" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5380162141339274280">
+        <property name="name" nameId="tpck.1169194664001" value="arg" />
+        <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5380162141339274282">
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5380162141339274273" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5380162141339274279" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5380162141339274275">
+        <node role="statement" roleId="tpee.1068581517665" type="tpd4.WhenConcreteStatement" typeId="tpd4.1185805035213" id="5380162141339274295">
+          <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="5380162141339274296">
+            <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="5380162141339274409">
+              <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5380162141339274413">
+                <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="5380162141339274416">
+                  <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="5380162141339274298" resolveInfo="TARG" />
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5380162141339274412">
+                <node role="normalType" roleId="tpd4.1185788644032" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5380162141339274388">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5380162141339274284" resolveInfo="matchedType" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="argument" roleId="tpd4.1185805056450" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="5380162141339274300">
+            <node role="term" roleId="tpd4.1174657509053" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5380162141339274302">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5380162141339274280" resolveInfo="arg" />
+            </node>
+          </node>
+          <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="5380162141339274298">
+            <property name="name" nameId="tpck.1169194664001" value="TARG" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="5380162141339274299" />
+          </node>
+        </node>
+      </node>
+      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5380162141339274307">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="tpd5.1196177069451" resolveInfo="InferenceMethod" />
       </node>
     </node>

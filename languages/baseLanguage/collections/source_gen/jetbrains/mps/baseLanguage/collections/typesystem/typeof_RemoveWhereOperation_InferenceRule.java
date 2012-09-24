@@ -31,8 +31,8 @@ public class typeof_RemoveWhereOperation_InferenceRule extends AbstractInference
     }
     {
       SNode _nodeToCheck_1029348928467 = rwo;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "3055999550620863372", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(OPERAND_TYPE_typevar_3055999550620867612), (SNode) IContainerOperation_Behavior.call_expectedOperandType_2141797557973018589(rwo, typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_3055999550620863371)), false, true, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5380162141339074462", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) IContainerOperation_Behavior.call_expectedOperandType_2141797557973018589(rwo, typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_3055999550620863371)), (SNode) typeCheckingContext.getRepresentative(OPERAND_TYPE_typevar_3055999550620867612), false, true, _info_12389875345);
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
