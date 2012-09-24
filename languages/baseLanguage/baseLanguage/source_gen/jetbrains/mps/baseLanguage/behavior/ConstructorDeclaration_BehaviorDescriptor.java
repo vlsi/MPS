@@ -7,8 +7,6 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
 
 public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public ConstructorDeclaration_BehaviorDescriptor() {
@@ -54,16 +52,8 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
     return ConstructorDeclaration_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    return ConstructorDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
-  }
-
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  }
-
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return ConstructorDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   public String virtual_jniSignature_8847328628797656446(SNode thisNode) {

@@ -60,7 +60,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
 
-  private static class ConstructorDeclarationReferenceInfoResolver extends ReachableClassifiersScope.ClassifierReferenceInfoResolver {
+  private static class ConstructorDeclarationReferenceInfoResolver extends ClassifierReferenceInfoResolver {
     private List<SNode> myActualArgs;
     private List<SNode> myTypeParms;
 

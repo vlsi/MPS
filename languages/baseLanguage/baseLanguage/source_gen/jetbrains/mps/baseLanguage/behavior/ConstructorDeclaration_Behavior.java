@@ -10,8 +10,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -122,14 +120,6 @@ public class ConstructorDeclaration_Behavior {
     } else {
       return ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first();
     }
-  }
-
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    throw new UnsupportedOperationException();
-  }
-
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    throw new UnsupportedOperationException();
   }
 
   public static Icon call_getAdditionalIcon_8884554759541375762(SNode thisNode) {

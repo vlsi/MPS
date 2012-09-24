@@ -12,15 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
-import jetbrains.mps.scope.EmptyScope;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -76,35 +69,6 @@ public class InstanceMethodDeclaration_Behavior {
       }
     }
     return null;
-  }
-
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
-      return new EmptyScope();
-    }
-
-    // collect extended classifiers 
-    List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
-    if ((extendsClass != null)) {
-      ListSequence.fromList(extendedClassifiers).addElement(extendsClass);
-    }
-    ListSequence.fromList(extendedClassifiers).addSequence(Sequence.fromIterable(Sequence.fromArray(implementsInterfaces)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }));
-    return new InstanceMethodDeclarationScope(classNode, extendedClassifiers);
-  }
-
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    if (ClassifierScopeUtils.isHierarchyCyclic(interfaceNode)) {
-      return new EmptyScope();
-    }
-    if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
-      return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
-    } else {
-      return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromArray(extendsInterfaces));
-    }
   }
 
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {

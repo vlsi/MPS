@@ -16,9 +16,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_57atcm_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137292");
@@ -51,11 +57,20 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
               if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
                 return null;
               }
-              SNode opClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
-              if (opClassifier == null) {
-                return null;
+              SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+              SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+              if ((SLinkOperations.getTarget(classifierType, "classifier", false) == null)) {
+                return new EmptyScope();
               }
-              return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(opClassifier, _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property"));
+              return new NamedElementsScope(Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
+                }
+              }).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+                }
+              }));
             }
           }
         };

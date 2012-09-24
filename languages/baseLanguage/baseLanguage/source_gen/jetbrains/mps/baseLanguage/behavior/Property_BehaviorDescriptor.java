@@ -7,8 +7,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class Property_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
@@ -24,7 +22,7 @@ public class Property_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
   }
 
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+    Property_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
@@ -35,16 +33,8 @@ public class Property_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    return Property_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
-  }
-
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  }
-
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return Property_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

@@ -6,11 +6,10 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.scope.Scope;
 
 public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public FieldDeclaration_BehaviorDescriptor() {
@@ -28,12 +27,12 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
   }
 
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    FieldDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
-  }
-
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return FieldDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    FieldDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public String virtual_getMessage_1225207468592(SNode thisNode) {
@@ -65,16 +64,8 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return FieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    return FieldDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
-  }
-
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  }
-
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return FieldDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   @Override

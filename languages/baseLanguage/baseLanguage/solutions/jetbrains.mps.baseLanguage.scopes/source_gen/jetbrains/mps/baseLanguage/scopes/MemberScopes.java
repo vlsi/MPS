@@ -16,10 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.scope.EmptyScope;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -76,25 +72,6 @@ public class MemberScopes {
     }
 
     return result;
-  }
-
-  public static Scope forClass(final SNode kind, final SNode classNode, @Nullable final SNode extendsClass, final SNode... implementedInterfaces) {
-    return calculateScope(classNode, kind, new _FunctionTypes._return_P0_E0<Scope>() {
-      public Scope invoke() {
-        // todo: rewrite using  
-        SNode node = SConceptOperations.createNewNode(NameUtil.nodeFQName(kind), null);
-        return ClassifierMember_Behavior.call_getScopeForClass_1251851371723365193(node, classNode, extendsClass, implementedInterfaces);
-      }
-    });
-  }
-
-  public static Scope forInterface(final SNode kind, final SNode interfaceNode, final SNode... implementedInterfaces) {
-    return calculateScope(interfaceNode, kind, new _FunctionTypes._return_P0_E0<Scope>() {
-      public Scope invoke() {
-        SNode node = SConceptOperations.createNewNode(NameUtil.nodeFQName(kind), null);
-        return ClassifierMember_Behavior.call_getScopeForInterface_1251851371723365208(node, interfaceNode, implementedInterfaces);
-      }
-    });
   }
 
   public static Scope nonAbstractMethods(@NotNull Scope scope) {
