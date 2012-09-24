@@ -50,12 +50,11 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       for (SNode typeParam : SLinkOperations.getTargets(supertypeCopy, "parameter", true)) {
         for (SNode typeVar : SNodeOperations.getDescendants(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
           int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false));
-          if (i < 0 || i >= ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).count()) {
-            ((SNode) supertypeCopy).removeChild(typeParam);
-            continue;
+          if (!(i < 0 || i >= ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).count())) {
+            // substitute the typevar ref with the existing type from the original CT 
+            SNode newNode = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).getElement(i));
+            SNodeOperations.replaceWithAnother(typeVar, newNode);
           }
-          SNode newNode = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).getElement(i));
-          SNodeOperations.replaceWithAnother(typeVar, newNode);
         }
       }
       ListSequence.fromList(result).addElement(supertypeCopy);
