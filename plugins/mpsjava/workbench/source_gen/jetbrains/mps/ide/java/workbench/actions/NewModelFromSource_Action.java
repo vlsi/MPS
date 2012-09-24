@@ -128,10 +128,10 @@ public class NewModelFromSource_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(localModule, NewModelFromSource_Action.this.getNamespace(_params), localContext, stereotype, NewModelFromSource_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), localModule, NewModelFromSource_Action.this.getNamespace(_params), localContext, stereotype, NewModelFromSource_Action.this.isStrict(_params));
         }
       });
-      dialog.value.showDialog();
+      dialog.value.show();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         TreeFileChooser treeFileChooser = new TreeFileChooser();

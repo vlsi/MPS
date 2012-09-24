@@ -23,6 +23,8 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("types.png");
@@ -100,7 +102,7 @@ public class ShowNodeType_Action extends BaseAction {
             tmpModel.getSModel().addRoot(type.value);
           }
         });
-        new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).showDialog();
+        new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
       } finally {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {

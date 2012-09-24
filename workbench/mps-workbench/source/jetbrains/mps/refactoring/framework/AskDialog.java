@@ -27,6 +27,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@Deprecated
 public class AskDialog extends BaseDialog {
   private JPanel myInnerPanel;
   private boolean myIsCancelled = true;

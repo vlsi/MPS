@@ -15,9 +15,9 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 import java.awt.datatransfer.StringSelection;
 import com.intellij.ide.CopyPasteManagerEx;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class AnalyzeStacktrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -85,8 +85,12 @@ public class AnalyzeStacktrace_Action extends BaseAction {
         StringSelection contents = new StringSelection(writer.toString());
         CopyPasteManagerEx.getInstanceEx().setContents(contents);
       }
-      AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      dialog.showDialog();
+      final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          dialog.show();
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AnalyzeStacktrace", t);

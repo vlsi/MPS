@@ -29,7 +29,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModelChooserComponent.this.collectModels();
         StringBuilder result = new StringBuilder();
-        SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, ModelChooserComponent.this.myCheckedModels, Collections.EMPTY_LIST);
+        SModelReference modelRef = CommonChoosers.showDialogModelChooser(null, ModelChooserComponent.this, ModelChooserComponent.this.myCheckedModels, Collections.EMPTY_LIST);
         if (modelRef != null) {
           result.append(modelRef.getLongName());
           ModelChooserComponent.this.setText(result.toString());

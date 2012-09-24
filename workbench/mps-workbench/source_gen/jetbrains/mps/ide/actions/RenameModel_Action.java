@@ -17,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 import com.intellij.openapi.project.Project;
-import java.awt.Frame;
 
 public class RenameModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -86,7 +85,7 @@ public class RenameModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), (EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).showDialog();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")))).show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameModel", t);

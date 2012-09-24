@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Arrays;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
@@ -54,8 +53,8 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
     switch (kind) {
       case EXCEPTION_BREAKPOINT:
-        ExceptionChooserDialog dialog = new ExceptionChooserDialog(WindowManager.getInstance().getFrame(project), "Choose Exception Class");
-        dialog.showDialog();
+        ExceptionChooserDialog dialog = new ExceptionChooserDialog(project, "Choose Exception Class");
+        dialog.show();
         String chosenException = dialog.getSelected();
         if (chosenException == null) {
           return null;

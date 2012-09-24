@@ -31,6 +31,6 @@ public class ModelChooser implements Computable<List<SModelReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModelCollectionChooser(myOwner.getMainComponent(), models, null);
+    return CommonChoosers.showDialogModelCollectionChooser(null, myOwner.getMainComponent(), models, null);
   }
 }

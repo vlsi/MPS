@@ -19,9 +19,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
@@ -38,19 +38,25 @@ import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseBindedDialog extends BaseDialog implements IBindedDialog {
+public abstract class BaseBindedDialog extends DialogWrapper implements IBindedDialog {
   private static final Logger LOG = Logger.getLogger(BaseBindedDialog.class);
 
   protected IOperationContext myOperationContext;
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
   protected BaseBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(ProjectHelper.toMainFrame(operationContext.getProject()), text, false);
+    super(ProjectHelper.toIdeaProject(operationContext.getProject()));
+    setTitle(text);
+
     myOperationContext = operationContext;
-    doInit(ProjectHelper.toMainFrame(operationContext.getProject()));
   }
 
-  public abstract JComponent getMainComponent();
+  @Override
+  protected abstract JComponent createCenterPanel();
+
+  public final JComponent getMainComponent() {
+    return createCenterPanel();
+  }
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
@@ -65,13 +71,13 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   }
 
   public void addNotify() {
-    super.addNotify();
+    getContentPane().addNotify();
     bind();
   }
 
   public void removeNotify() {
     unbind();
-    super.removeNotify();
+    getContentPane().removeNotify();
   }
 
   final protected void bind() {
@@ -133,6 +139,25 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
     ApplicationManager.getApplication().saveAll();
 
     return closeDialog[0];
+  }
+
+  @Override
+  protected final void doOKAction() {
+    if(saveChanges())
+      super.doOKAction();
+  }
+
+  @Override
+  public void show() {
+    init();
+    addNotify();
+    super.show();
+  }
+
+  @Override
+  protected void dispose() {
+    removeNotify();
+    super.dispose();
   }
 
   protected boolean doSaveChanges() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.ide.dialogs.BaseNodeDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,14 +25,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import java.awt.HeadlessException;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-public class
-  MyBaseNodeDialog extends BaseNodeDialog {
+public class MyBaseNodeDialog extends BaseNodeDialog {
   private final SNode myType;
   private SModel myModel;
   private final IErrorReporter myError;
@@ -41,14 +36,14 @@ public class
   private Splitter myMainComponent;
   private JComponent mySupertypesViewComponent;
 
-  public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) throws HeadlessException {
-    super(getTitle(node), operationContext);
+  public MyBaseNodeDialog(Project project, IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) {
+    super(project, getTitle(node), operationContext);
 
     SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
 
     mySupertypesViewComponent = supertypesView.getComponent();
     myMainComponent = new Splitter(false);
-    myMainComponent.setFirstComponent(getSuperMainComponent());
+    myMainComponent.setFirstComponent(super.getMainComponent());
     myMainComponent.setSecondComponent(mySupertypesViewComponent);
 
     myType = type;
@@ -57,34 +52,32 @@ public class
         myModel = myType.getModel();
       }
     });
+
     myError = error;
     supertypesView.showItemInHierarchy(myType, operationContext);
+
+    //setHorizontalStretch(1f);
+    //setHorizontalStretch(1f);
+
+    init();
   }
 
-  private static String getTitle(final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
-      public String compute() {
-        return "Type For Node " + node;
-      }
-    });
-  }
 
-  protected JComponent getMainComponent() {
+  @Override
+  protected JComponent createCenterPanel() {
     return myMainComponent;
   }
 
-  private JComponent getSuperMainComponent() {
-    return super.getMainComponent();
-  }
-
-  protected JButton[] createButtons() {
-    JButton button = new JButton(new AbstractAction("OK") {
-      public void actionPerformed(ActionEvent e) {
-        MyBaseNodeDialog.this.dispose();
-      }
-    });
-    if (myError != null) {
-      JButton errorButton = new JButton(new AbstractAction("Go To Rule Which Caused Error") {
+  @Override
+  protected Action[] createActions() {
+    if(myError != null) {
+      String s = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return myError.reportError();
+        }
+      });
+      setErrorText("Type error! Message: " + s);
+      return new Action[]{getOKAction(), new AbstractAction("Go To Rule Which Caused Error") {
         public void actionPerformed(ActionEvent e) {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
@@ -93,37 +86,18 @@ public class
             }
           });
         }
-      });
-      return new JButton[]{button, errorButton};
+      }};
     }
-    return new JButton[]{button};
+    return new Action[]{getOKAction()};
   }
 
-  protected boolean saveChanges() {
-    return true;
-  }
-
+  @Override
   protected SNode getNode() {
     return myType;
   }
 
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(200, 200, 500, 400);
-  }
-
-  public void showDialog() {
-    if (myError != null) {
-      String s = ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          return myError.reportError();
-        }
-      });
-      setErrorText("Type error! Message: " + s);
-    }
-    super.showDialog();
-  }
-
-  public void dispose() {
+  @Override
+  protected void dispose() {
     if (mySupertypesViewComponent != null && mySupertypesViewComponent.getParent() != null) {
       mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
     }
@@ -134,6 +108,14 @@ public class
           myWasRegistered = true;
         }
         MyBaseNodeDialog.super.dispose();
+      }
+    });
+  }
+
+  private static String getTitle(final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
+        return "Type For Node " + node;
       }
     });
   }

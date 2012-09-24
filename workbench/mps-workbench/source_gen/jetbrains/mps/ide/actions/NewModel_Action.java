@@ -20,9 +20,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.StereotypeProvider;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
@@ -120,10 +120,10 @@ public class NewModel_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModel_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(_params), localContext, stereotype, NewModel_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), localModule, NewModel_Action.this.getNamespace(_params), localContext, stereotype, NewModel_Action.this.isStrict(_params));
         }
       });
-      dialog.value.showDialog();
+      dialog.value.show();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;

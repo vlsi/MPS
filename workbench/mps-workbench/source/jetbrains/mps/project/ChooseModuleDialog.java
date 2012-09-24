@@ -32,6 +32,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+@Deprecated
 public class ChooseModuleDialog extends BaseDialog {
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {

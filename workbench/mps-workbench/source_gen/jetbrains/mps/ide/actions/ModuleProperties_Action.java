@@ -81,7 +81,7 @@ public class ModuleProperties_Action extends BaseAction {
           }
         }
       });
-      dialog.value.showDialog();
+      dialog.value.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ModuleProperties", t);

@@ -19,8 +19,8 @@ import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewSubModel_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("model.png");
@@ -93,10 +93,10 @@ public class NewSubModel_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype();
-          dialog.value = new NewModelDialog(localModule, namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), localModule, namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
         }
       });
-      dialog.value.showDialog();
+      dialog.value.show();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;

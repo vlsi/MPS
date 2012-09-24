@@ -88,7 +88,7 @@ public class CloneModel_Action extends BaseAction {
           dialog.value = new CloneModelDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         }
       });
-      dialog.value.showDialog();
+      dialog.value.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CloneModel", t);

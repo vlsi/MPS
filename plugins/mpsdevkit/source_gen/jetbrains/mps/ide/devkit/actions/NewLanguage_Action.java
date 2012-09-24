@@ -72,7 +72,8 @@ public class NewLanguage_Action extends BaseAction {
     try {
       NewLanguageDialog dialog = new NewLanguageDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
-      dialog.showDialog();
+      dialog.show();
+
       Language l = dialog.getResult();
       if (l == null) {
         return;

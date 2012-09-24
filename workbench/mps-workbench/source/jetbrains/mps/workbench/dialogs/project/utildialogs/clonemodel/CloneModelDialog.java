@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
@@ -35,6 +33,7 @@ import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
 import javax.swing.*;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
@@ -56,10 +55,6 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     collectModelProps();
     initUI();
     myModelStereotype.setSelectedItem(modelDescriptor.getStereotype());
-  }
-
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 500, 170);
   }
 
   private void initUI() {
@@ -220,16 +215,5 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       }
     });
     return true;
-  }
-
-  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void buttonOK() {
-    if (!saveChanges()) return;
-    this.dispose();
-  }
-
-  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
-  public void buttonCancel() {
-    dispose();
   }
 }

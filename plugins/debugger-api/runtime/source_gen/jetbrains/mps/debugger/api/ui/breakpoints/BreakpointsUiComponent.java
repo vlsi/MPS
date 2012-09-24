@@ -18,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.application.ModalityState;
 import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
@@ -93,7 +94,11 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
 
   public void editBreakpointProperties(final ILocationBreakpoint breakpoint) {
     final BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)));
-    breakpointsBrowserDialog.showDialog();
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        breakpointsBrowserDialog.show();
+      }
+    }, ModalityState.NON_MODAL);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {

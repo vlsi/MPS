@@ -6,31 +6,39 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.ide.dialogs.BaseDialog;
+import javax.swing.Action;
+import com.intellij.openapi.ui.DialogWrapper;
+import java.awt.event.ActionEvent;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
 public class EvaluationDialog extends AbstractEvaluationDialog {
   public EvaluationDialog(final IOperationContext context, @NotNull EvaluationProvider provider, AbstractEvaluationModel evalModel) {
     super(context, provider, evalModel, "Evaluate");
   }
 
-  @BaseDialog.Button(position = 1, name = "Watch", mnemonic = 'W', defaultButton = false)
-  public void buttonWatch() {
-    myProvider.addWatch(myEvaluationPanel.getEvaluationModel());
-    dispose();
-  }
-
-  @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
-  public void buttonEvaluate() {
-    myEvaluationPanel.evaluate();
-  }
-
-  @BaseDialog.Button(position = 2, name = "Close", mnemonic = 'C', defaultButton = false)
-  public void buttonCancel() {
-    dispose();
-  }
-
   @Override
-  public void dispose() {
-    super.dispose();
+  protected Action[] createActions() {
+    return new Action[]{new DialogWrapper.DialogWrapperAction("Evaluate") {
+      protected void doAction(ActionEvent p0) {
+        myEvaluationPanel.evaluate();
+      }
+    }, new DialogWrapper.DialogWrapperAction("Watch") {
+      protected void doAction(ActionEvent p0) {
+        myProvider.addWatch(myEvaluationPanel.getEvaluationModel());
+        doOKAction();
+      }
+    }, new DialogWrapper.DialogWrapperAction("Close") {
+      protected void doAction(ActionEvent p0) {
+        doOKAction();
+      }
+    }};
+  }
+
+  @Nullable
+  @NonNls
+  @Override
+  protected String getDimensionServiceKey() {
+    return EvaluationDialog.class.getName();
   }
 }
