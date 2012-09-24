@@ -248,7 +248,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode getReferenceTarget(String role) {
+  public SNode getReferenceTarget(String role) {
     return getReferent(role);
   }
 
