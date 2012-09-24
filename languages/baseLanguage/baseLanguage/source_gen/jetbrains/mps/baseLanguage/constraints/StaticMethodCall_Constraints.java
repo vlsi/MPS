@@ -17,8 +17,13 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
+import jetbrains.mps.baseLanguage.scopes.MethodsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137643");
@@ -47,13 +52,24 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
-              return new EmptyScope();
+            {
+              if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
+                return new EmptyScope();
+              }
+              if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) == null)) {
+                return new EmptyScope();
+              }
+              SNode classifier = IClassifier_Behavior.call_getThisType_7405920559687254782(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false));
+              return new MethodsScope(classifier, Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifier, _context.getContextNode())).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+                }
+              }).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+                }
+              }));
             }
-            if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) == null)) {
-              return new EmptyScope();
-            }
-            return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
           }
         };
       }
