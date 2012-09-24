@@ -209,10 +209,10 @@ public class ApiMigrationHelper {
     migrateMethods(new ApiTransformations().getTransformations());
   }
 
-  private void migrateMethods(final List<Tuples._4<String, SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._void_P1_E0<? super SNode>>> transformations) {
+  private void migrateMethods(final List<Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>>> transformations) {
     final List<Tuples._2<Set<SNode>, Set<SNode>>> usages = ListSequence.fromList(new ArrayList<Tuples._2<Set<SNode>, Set<SNode>>>());
 
-    for (Tuples._4<String, SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._void_P1_E0<? super SNode>> transformation : ListSequence.fromList(transformations)) {
+    for (Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>> transformation : ListSequence.fromList(transformations)) {
       Set<SNode> method = SetSequence.fromSetAndArray(new HashSet<SNode>(), transformation._1());
 
       Set<SReference> musages = FindUsagesManager.getInstance().findUsages(method, SearchType.USAGES, scope, new EmptyProgressMonitor());
@@ -225,7 +225,7 @@ public class ApiMigrationHelper {
         if (eq_yke5lt_a0b0h0c0c(NameUtil.nodeFQName(SNodeOperations.getContainingRoot(n)), ApiMigrationHelper.class.getName())) {
           continue;
         }
-        if (!(transformation._2().invoke(n))) {
+        if (!(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null))) {
           SetSequence.fromSet(unknown).addElement(n);
           continue;
         }
@@ -245,7 +245,7 @@ public class ApiMigrationHelper {
       }));
       ListSequence.fromList(results).addSequence(SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._1()).select(new ISelector<SNode, SearchResult<SNode>>() {
         public SearchResult<SNode> select(SNode it) {
-          return new SearchResult<SNode>(it, "unknown: " + cat);
+          return new SearchResult<SNode>(it, "unknown");
         }
       }));
     }
@@ -257,7 +257,7 @@ public class ApiMigrationHelper {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
-              _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._3();
+              _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
               for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
                 SNodePointer np = new SNodePointer(known);
                 if (ListSequence.fromList(included).contains(np)) {
@@ -268,8 +268,8 @@ public class ApiMigrationHelper {
           }
         });
       }
-    }, new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(transformations).select(new ISelector<Tuples._4<String, SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._void_P1_E0<? super SNode>>, SNode>() {
-      public SNode select(Tuples._4<String, SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._void_P1_E0<? super SNode>> it) {
+    }, new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(transformations).select(new ISelector<Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>>, SNode>() {
+      public SNode select(Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>> it) {
         return it._1();
       }
     })), ListSequence.fromList(results).where(new IWhereFilter<SearchResult<SNode>>() {
