@@ -110,7 +110,7 @@ public class Solution extends ClassLoadingModule {
     //do not save stub solutions (otherwise build model generation fails)
     if (bootstrapCP.keySet().contains(this.getModuleReference())) return;
     // in StubSolutions myDescriptorFile is null, so preventing NPE here (MPS-16793)
-    if (myDescriptorFile == null) return;
+    if (myDescriptorFile == null || isPackaged()) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
