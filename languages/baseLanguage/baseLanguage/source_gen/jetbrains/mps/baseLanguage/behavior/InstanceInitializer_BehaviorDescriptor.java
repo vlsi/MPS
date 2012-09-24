@@ -33,6 +33,10 @@ public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_Behavior
     return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return InstanceInitializer_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }

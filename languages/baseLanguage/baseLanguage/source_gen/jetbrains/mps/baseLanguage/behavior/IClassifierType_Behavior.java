@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -24,6 +25,14 @@ public class IClassifierType_Behavior {
     return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IClassifierMember");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_getVisibleMembers_6145907390641297279(final SNode thisNode, final SNode contextNode) {
+    return Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return IClassifierMember_Behavior.call_isVisible_6145907390641297352(it, thisNode, contextNode);
       }
     });
   }

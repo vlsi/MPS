@@ -15,10 +15,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -87,31 +83,6 @@ public class Interface_Behavior {
     } else {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), extendedClassifiers);
     }
-  }
-
-  public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-      SNode[] implementedInterfaces = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "classifier", false) != null);
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "classifier", false);
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (it != null);
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Interface");
-        }
-      }).toGenericArray(SNode.class);
-      return MemberScopes.forInterface(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, implementedInterfaces);
-    }
-
-    return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.Interface", kind);
   }
 
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {

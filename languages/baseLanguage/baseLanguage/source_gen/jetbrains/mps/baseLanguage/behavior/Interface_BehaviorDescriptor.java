@@ -6,7 +6,6 @@ import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.Set;
-import jetbrains.mps.scope.Scope;
 import java.util.List;
 
 public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
@@ -35,10 +34,6 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return Interface_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
-  }
-
-  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    return Interface_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
 
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {

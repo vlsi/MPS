@@ -28,6 +28,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return EnumConstantDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return IMethodCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }

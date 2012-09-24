@@ -16,8 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.MemberScopes;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -113,25 +112,26 @@ public class AnonymousClass_Behavior {
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass", kind, child);
   }
 
-  public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    if (!(SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-      return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass", kind);
+  public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    // populate own members 
+    for (SNode member : SNodeOperations.getChildren(thisNode)) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.IClassifierMember")) {
+        IClassifierMember_Behavior.call_populateMember_7405920559687254644(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), context, classifierType);
+      }
     }
 
-    SNode superClass = SLinkOperations.getTarget(ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode), "classifier", false);
-    Scope result = null;
-    if (SNodeOperations.isInstanceOf(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      result = MemberScopes.forClass(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    } else if (SNodeOperations.isInstanceOf(superClass, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      result = MemberScopes.forClass(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), new SNode[]{SNodeOperations.cast(superClass, "jetbrains.mps.baseLanguage.structure.Interface")});
+    // populate extended members 
+    SNode superClass = ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode);
+    if (SNodeOperations.isInstanceOf(IClassifierType_Behavior.call_getClassifier_7405920559687237513(superClass), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      IClassifierType_Behavior.call_populateMembers_7405920559687241253(superClass, context, classifierType);
+    } else if (SNodeOperations.isInstanceOf(IClassifierType_Behavior.call_getClassifier_7405920559687237513(superClass), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
+        IClassifierType_Behavior.call_populateMembers_7405920559687241253(IClassifier_Behavior.call_getThisType_7405920559687254782(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")), context, classifierType);
+      }
+      IClassifierType_Behavior.call_populateMembers_7405920559687241253(superClass, context, classifierType);
     } else {
       LOG.warning("Superclass of Anonymous class is not ClassConcept or Interface");
     }
-    if (result != null) {
-      return result;
-    }
-
-    return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass", kind);
   }
 
   public static String call_getUnitName_2496361171403550994(SNode thisNode) {

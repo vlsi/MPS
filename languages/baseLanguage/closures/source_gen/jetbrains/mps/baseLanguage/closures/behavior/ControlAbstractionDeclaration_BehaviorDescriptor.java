@@ -26,6 +26,10 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return ControlAbstractionDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }
@@ -34,8 +38,8 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext scope, SNode classifier) {
-    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, scope, classifier);
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {

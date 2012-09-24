@@ -90,6 +90,10 @@ public class ClassifierMember_Behavior {
     // do nothing by default 
   }
 
+  public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.call_isVisible_8083692786967482069(thisNode, SNodeOperations.cast(IClassifierType_Behavior.call_getClassifier_7405920559687237513(contextClassifierType), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode);
+  }
+
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.call_isStatic_8986964027630462944(thisNode);
   }

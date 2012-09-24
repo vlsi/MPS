@@ -6,7 +6,7 @@
   <unitInfo fileName="ClosureLiteral_BehaviorDescriptor.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
   <unitInfo fileName="CompactInvokeFunctionExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_BehaviorDescriptor" />
   <unitInfo fileName="ControlAbstractionContainer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_BehaviorDescriptor" />
-  <unitInfo fileName="ControlAbstractionDeclaration_BehaviorDescriptor.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ControlAbstractionDeclaration_BehaviorDescriptor.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ControlClosureLiteral_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlClosureLiteral_BehaviorDescriptor" />
   <unitInfo fileName="FunctionMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="FunctionType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor" />
@@ -976,6 +976,14 @@
       <varInfo nodeId="1229600742436" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1229600742436" fileName="ControlAbstractionContainer_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_Behavior" />
+  </root>
+  <root nodeId="1229629866761" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+    <nodeInfo nodeId="1229629866761" fileName="ClosureControlStatement_Behavior.java" startLine="7" startPosition="47" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="1229629866763" fileName="ClosureControlStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1229629866761" fileName="ClosureControlStatement_Behavior.java" startLine="7" startPosition="47" endLine="10" endPosition="0">
+      <varInfo nodeId="1229629866761" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1229629866761" fileName="ClosureControlStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_Behavior" />
   </root>
   <root nodeId="1229630689134" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
     <nodeInfo nodeId="1229704225596" fileName="ControlMethodUtil.java" startLine="18" startPosition="52" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

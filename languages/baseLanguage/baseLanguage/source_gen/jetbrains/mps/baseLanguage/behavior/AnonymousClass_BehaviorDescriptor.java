@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.List;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.scope.Scope;
 
 public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
@@ -49,6 +50,10 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
     return AnonymousClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
   }
 
+  public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    AnonymousClass_Behavior.virtual_populateMembers_7405920559687241403(thisNode, context, classifierType);
+  }
+
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
@@ -59,10 +64,6 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return AnonymousClass_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  }
-
-  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    return AnonymousClass_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
 
   @Override

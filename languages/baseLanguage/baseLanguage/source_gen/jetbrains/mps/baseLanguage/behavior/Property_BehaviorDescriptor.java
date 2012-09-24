@@ -19,6 +19,10 @@ public class Property_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
     return Property_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }

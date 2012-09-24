@@ -18,10 +18,6 @@ public class IClassifier_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> call_getMembers_7405920559687227569(SNode thisNode) {
-    return IClassifierType_Behavior.call_getMembers_7405920559687277275(IClassifier_Behavior.call_getThisType_7405920559687254782(thisNode));
-  }
-
   public static Iterable<SNode> call_getTypeVariables_7405920559687237503(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifier"), "virtual_getTypeVariables_7405920559687237503", PARAMETERS_7405920559687237503, new Object[]{});

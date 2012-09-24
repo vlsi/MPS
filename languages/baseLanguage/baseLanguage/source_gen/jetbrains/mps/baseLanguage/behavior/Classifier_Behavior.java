@@ -19,22 +19,23 @@ import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.FilteringByNameScope;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -97,9 +98,35 @@ public class Classifier_Behavior {
     return members;
   }
 
+  @Deprecated
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
+    // use sequence<node<IClassifierMember> getMembers() instead 
     // returns all accessible classifier members in classifier 
-    // todo: ? 
+    SNode thisType = IClassifier_Behavior.call_getThisType_7405920559687254782(thisNode);
+    Iterable<SNode> members = IClassifierType_Behavior.call_getMembers_7405920559687277275(thisType);
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      return new NamedElementsScope(Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
+        }
+      }));
+    }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+      return new MethodsScope(thisType, Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        }
+      }));
+    }
+
     return new EmptyScope();
   }
 

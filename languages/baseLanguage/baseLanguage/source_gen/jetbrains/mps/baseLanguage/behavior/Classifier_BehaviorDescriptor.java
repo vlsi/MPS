@@ -64,6 +64,7 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
+  @Deprecated
   public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
     return Classifier_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }

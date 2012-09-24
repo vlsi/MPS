@@ -18,6 +18,10 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
     return ConstructorDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return ConstructorDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
