@@ -558,8 +558,8 @@
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="13" startPosition="42" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1216377898846" />
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="14" startPosition="66" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1216378357889" />
     <nodeInfo nodeId="1216377921925" fileName="CellModel_WithRole_Behavior.java" startLine="20" startPosition="77" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216378375083" fileName="CellModel_WithRole_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216378375090" fileName="CellModel_WithRole_Behavior.java" startLine="25" startPosition="55" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216378375083" fileName="CellModel_WithRole_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216378375090" fileName="CellModel_WithRole_Behavior.java" startLine="25" startPosition="57" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1216378375095" fileName="CellModel_WithRole_Behavior.java" startLine="26" startPosition="73" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="30" startPosition="74" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="31" startPosition="113" endLine="32" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3401,9 +3401,9 @@
     <nodeInfo nodeId="8255250703325737458" fileName="ScriptKindClassItem_Behavior.java" startLine="13" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8255250703325737460" fileName="ScriptKindClassItem_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="21" startPosition="48" endLine="22" endPosition="172" />
-    <scopeInfo nodeId="8255250703325740978" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
+    <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
     <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="176" />
-    <scopeInfo nodeId="8255250703325740987" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
+    <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
     <scopeInfo nodeId="8255250703325737458" fileName="ScriptKindClassItem_Behavior.java" startLine="10" startPosition="43" endLine="13" endPosition="0">
       <varInfo nodeId="8255250703325737458" varName="thisNode" />
     </scopeInfo>

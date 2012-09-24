@@ -95,7 +95,7 @@ public class ModelLinkMap {
     res |= move(myNodeTypeMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
         String modelName = newPtr.getModelReference().getLongName();
-        String name = NameUtil.shortNameFromLongName(node.getConceptFqName());
+        String name = NameUtil.shortNameFromLongName(node.getConcept().getId());
         HackSNodeUtil.setConceptFqName(node, NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
@@ -146,7 +146,7 @@ public class ModelLinkMap {
     boolean res = false;
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
-        String modelName = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
+        String modelName = NameUtil.namespaceFromConceptFQName(node.getConcept().getId());
         HackSNodeUtil.setConceptFqName(node, NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
       }
     });
@@ -219,7 +219,7 @@ public class ModelLinkMap {
         res = true;
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode node) {
-            String name = NameUtil.shortNameFromLongName(node.getConceptFqName());
+            String name = NameUtil.shortNameFromLongName(node.getConcept().getId());
             HackSNodeUtil.setConceptFqName(node, NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
 
           }

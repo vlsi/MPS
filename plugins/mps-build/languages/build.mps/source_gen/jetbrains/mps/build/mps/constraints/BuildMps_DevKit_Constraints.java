@@ -45,6 +45,6 @@ public class BuildMps_DevKit_Constraints extends BaseConstraintsDescriptor {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMPSPlugin");
       }
-    }) || pnode.getConceptFqName().startsWith("jetbrains.mps.lang.generator");
+    }) || pnode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
   }
 }

@@ -353,7 +353,7 @@ public class RefactoringContext {
     }
 
     for (SNode node : model.nodes()) {
-      String conceptFQName = node.getConceptFqName();
+      String conceptFQName = node.getConcept().getId();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {
         for (StructureModificationData.ConceptFeature conceptFeature : exactConceptFeatures) {
@@ -476,7 +476,7 @@ public class RefactoringContext {
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }
-      String conceptFQName = oldNode.getParent().getConceptFqName();
+      String conceptFQName = oldNode.getParent().getConcept().getId();
       switch (data.type) {
         case CHILD:
           modifier.addChildRoleChange(conceptFQName, data.oldValue, data.newValue);

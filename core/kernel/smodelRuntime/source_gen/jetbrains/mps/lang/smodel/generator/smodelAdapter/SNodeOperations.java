@@ -634,9 +634,9 @@ public class SNodeOperations {
       // hack, remove? 
       if (!(HUtil.isRuntimeTypeVariable(node))) {
         if (ourCastsEnabled) {
-          throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+          throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
         } else {
-          LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
+          LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
         }
       }
     }

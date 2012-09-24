@@ -34,6 +34,6 @@ public class BuildLayout_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") || parentNode.getConceptFqName().startsWith("jetbrains.mps.lang.generator");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") || parentNode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
   }
 }

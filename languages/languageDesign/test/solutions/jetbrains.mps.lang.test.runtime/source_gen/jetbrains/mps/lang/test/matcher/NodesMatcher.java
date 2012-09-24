@@ -54,7 +54,7 @@ public class NodesMatcher {
   }
 
   private static void match(SNode a, SNode b, Map<SNode, SNode> map) {
-    if (!(a.getConceptFqName().equals(b.getConceptFqName()))) {
+    if (!(a.getConcept().getId().equals(b.getConcept().getId()))) {
       return;
     }
     HashSet<String> roles = new HashSet<String>();
@@ -88,8 +88,8 @@ public class NodesMatcher {
   }
 
   private static boolean matchConcepts(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
-    if (!(a.getConceptFqName().equals(b.getConceptFqName()))) {
-      difference.add(new ConceptDifference(a.getConceptFqName(), b.getConceptFqName()));
+    if (!(a.getConcept().getId().equals(b.getConcept().getId()))) {
+      difference.add(new ConceptDifference(a.getConcept().getId(), b.getConcept().getId()));
       return true;
     }
     return false;

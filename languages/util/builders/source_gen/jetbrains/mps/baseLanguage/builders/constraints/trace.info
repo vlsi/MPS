@@ -172,9 +172,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5389689214217448670" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="35" startPosition="95" endLine="40" endPosition="0" />
     <scopeInfo nodeId="5389689214217448670" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="3436597452201051221" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="51" startPosition="218" endLine="57" endPosition="17">
-      <varInfo nodeId="3436597452201051222" varName="basedecl" />
-    </scopeInfo>
+    <scopeInfo nodeId="3436597452201051214" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="51" startPosition="218" endLine="57" endPosition="17" />
     <scopeInfo nodeId="3436597452201051211" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="50" startPosition="130" endLine="58" endPosition="15">
       <varInfo nodeId="3436597452201051212" varName="builders" />
     </scopeInfo>
@@ -322,7 +320,7 @@
     <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="22" startPosition="36" endLine="23" endPosition="71" />
     <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" />
     <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="40" startPosition="61" endLine="41" endPosition="58" />
-    <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="45" startPosition="122" endLine="46" endPosition="109" />
+    <scopeInfo nodeId="3671207155728838949" fileName="BeanBuilder_Constraints.java" startLine="45" startPosition="122" endLine="46" endPosition="109" />
     <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="29" startPosition="115" endLine="34" endPosition="0" />
     <scopeInfo nodeId="6666322667909634552" fileName="BeanBuilder_Constraints.java" startLine="38" startPosition="40" endLine="43" endPosition="0" />

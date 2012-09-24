@@ -878,9 +878,7 @@
     <scopeInfo nodeId="5846203010383983641" fileName="AbstractConceptDeclaration_Behavior.java" startLine="301" startPosition="0" endLine="315" endPosition="5">
       <varInfo nodeId="5846203010383983644" varName="superconcept" />
     </scopeInfo>
-    <scopeInfo nodeId="2165772098013607456" fileName="AbstractConceptDeclaration_Behavior.java" startLine="96" startPosition="50" endLine="111" endPosition="7">
-      <varInfo nodeId="2165772098013607457" varName="sd" />
-    </scopeInfo>
+    <scopeInfo nodeId="2165772098013607019" fileName="AbstractConceptDeclaration_Behavior.java" startLine="96" startPosition="50" endLine="111" endPosition="7" />
     <scopeInfo nodeId="1213877394026" fileName="AbstractConceptDeclaration_Behavior.java" startLine="166" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="1213877394291" varName="scope" />
       <varInfo nodeId="1213877394026" varName="thisNode" />
@@ -919,9 +917,7 @@
       <varInfo nodeId="2165772098013606221" varName="language" />
       <varInfo nodeId="2165772098013606280" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877394248" fileName="AbstractConceptDeclaration_Behavior.java" startLine="138" startPosition="30" endLine="161" endPosition="9">
-      <varInfo nodeId="1213877394252" varName="method" />
-    </scopeInfo>
+    <scopeInfo nodeId="1213877394247" fileName="AbstractConceptDeclaration_Behavior.java" startLine="138" startPosition="30" endLine="161" endPosition="9" />
     <scopeInfo nodeId="1213877394026" fileName="AbstractConceptDeclaration_Behavior.java" startLine="296" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="1213877394026" varName="thisNode" />
     </scopeInfo>

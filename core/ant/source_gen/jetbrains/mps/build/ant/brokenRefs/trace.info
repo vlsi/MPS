@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4003657351907888918">
+  <root nodeId="4003657351907888918" modelId="r:784d242b-f6ad-4b0f-aa36-a8c26e63e674(jetbrains.mps.build.ant.brokenRefs)">
     <nodeInfo nodeId="4003657351907889503" fileName="TestBrokenReferencesWorker.java" startLine="31" startPosition="60" endLine="32" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuildServerMessageFormat" />
     <nodeInfo nodeId="4003657351907889507" fileName="TestBrokenReferencesWorker.java" startLine="32" startPosition="128" endLine="33" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedHeap" />
     <nodeInfo nodeId="4003657351907889510" fileName="TestBrokenReferencesWorker.java" startLine="33" startPosition="26" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedNonHeap" />
@@ -36,9 +36,9 @@
     <nodeInfo nodeId="4003657351907889729" fileName="TestBrokenReferencesWorker.java" startLine="100" startPosition="42" endLine="101" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907889734" fileName="TestBrokenReferencesWorker.java" startLine="101" startPosition="33" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907889748" fileName="TestBrokenReferencesWorker.java" startLine="104" startPosition="47" endLine="105" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889762" fileName="TestBrokenReferencesWorker.java" startLine="106" startPosition="106" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889767" fileName="TestBrokenReferencesWorker.java" startLine="107" startPosition="49" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907889774" fileName="TestBrokenReferencesWorker.java" startLine="108" startPosition="54" endLine="109" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889762" fileName="TestBrokenReferencesWorker.java" startLine="106" startPosition="108" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889767" fileName="TestBrokenReferencesWorker.java" startLine="107" startPosition="49" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889774" fileName="TestBrokenReferencesWorker.java" startLine="108" startPosition="56" endLine="109" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907889802" fileName="TestBrokenReferencesWorker.java" startLine="114" startPosition="63" endLine="115" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4003657351907889810" fileName="TestBrokenReferencesWorker.java" startLine="117" startPosition="42" endLine="118" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907889815" fileName="TestBrokenReferencesWorker.java" startLine="118" startPosition="60" endLine="119" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -101,7 +101,7 @@
     <scopeInfo nodeId="4003657351907889655" fileName="TestBrokenReferencesWorker.java" startLine="66" startPosition="5" endLine="69" endPosition="5">
       <varInfo nodeId="4003657351907889659" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889761" fileName="TestBrokenReferencesWorker.java" startLine="106" startPosition="106" endLine="109" endPosition="35" />
+    <scopeInfo nodeId="4003657351907889761" fileName="TestBrokenReferencesWorker.java" startLine="106" startPosition="108" endLine="109" endPosition="35" />
     <scopeInfo nodeId="4003657351907889520" fileName="TestBrokenReferencesWorker.java" startLine="40" startPosition="110" endLine="44" endPosition="66">
       <varInfo nodeId="4003657351907889525" varName="mmbean" />
     </scopeInfo>
@@ -140,11 +140,9 @@
       <varInfo nodeId="8911572761289376739" varName="project" />
       <varInfo nodeId="4003657351907887217" varName="projectFile" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889874" fileName="TestBrokenReferencesWorker.java" startLine="71" startPosition="25" endLine="83" endPosition="9" />
     <scopeInfo nodeId="4003657351907889875" fileName="TestBrokenReferencesWorker.java" startLine="71" startPosition="25" endLine="83" endPosition="9">
       <varInfo nodeId="4003657351907889879" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889787" fileName="TestBrokenReferencesWorker.java" startLine="112" startPosition="47" endLine="124" endPosition="7" />
     <scopeInfo nodeId="4003657351907889788" fileName="TestBrokenReferencesWorker.java" startLine="112" startPosition="47" endLine="124" endPosition="7">
       <varInfo nodeId="4003657351907889792" varName="ref" />
     </scopeInfo>
@@ -170,7 +168,7 @@
     <unitInfo nodeId="4003657351907889674" fileName="TestBrokenReferencesWorker.java" startLine="70" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$1" />
     <unitInfo nodeId="4003657351907889717" fileName="TestBrokenReferencesWorker.java" startLine="95" startPosition="77" endLine="99" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$2" />
   </root>
-  <root nodeId="4003657351907888919">
+  <root nodeId="4003657351907888919" modelId="r:784d242b-f6ad-4b0f-aa36-a8c26e63e674(jetbrains.mps.build.ant.brokenRefs)">
     <nodeInfo nodeId="4003657351907888932" fileName="TestBrokenReferencesOnTeamcity.java" startLine="15" startPosition="57" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4003657351907888938" fileName="TestBrokenReferencesOnTeamcity.java" startLine="20" startPosition="62" endLine="21" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4003657351907888922" fileName="TestBrokenReferencesOnTeamcity.java" startLine="11" startPosition="65" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBrokenReferencesOnTeamcity#()V" />

@@ -105,14 +105,14 @@ public class WriteHelper {
   public String genType(@NotNull SNode node) {
     if (RoleIdsComponent.isEnabled()) {
       // return fqName prefixed with "." if we can't find model or name of concept 
-      String fqName = node.getConceptFqName();
+      String fqName = node.getConcept().getId();
       String index = MapSequence.fromMap(myModelIndex).get(RoleIdsComponent.getConceptPointer(node).getModelReference());
       if (index == null) {
         return MODEL_SEPARATOR_CHAR + fqName;
       }
       return index + MODEL_SEPARATOR_CHAR + node.getConceptShortName();
     }
-    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConceptFqName());
+    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConcept().getId());
   }
 
   public String genTypeId(@NotNull SNode node) {
