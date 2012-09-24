@@ -103,11 +103,11 @@
     <nodeInfo nodeId="8984393347190227835" fileName="NodesMatcher.java" startLine="70" startPosition="50" endLine="71" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227846" fileName="NodesMatcher.java" startLine="73" startPosition="5" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227864" fileName="NodesMatcher.java" startLine="77" startPosition="84" endLine="78" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227877" fileName="NodesMatcher.java" startLine="79" startPosition="55" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190227877" fileName="NodesMatcher.java" startLine="79" startPosition="55" endLine="80" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8984393347190227884" fileName="NodesMatcher.java" startLine="81" startPosition="5" endLine="82" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227889" fileName="NodesMatcher.java" startLine="82" startPosition="51" endLine="83" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227895" fileName="NodesMatcher.java" startLine="83" startPosition="54" endLine="84" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227908" fileName="NodesMatcher.java" startLine="85" startPosition="33" endLine="86" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190227908" fileName="NodesMatcher.java" startLine="85" startPosition="33" endLine="86" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8984393347190227915" fileName="NodesMatcher.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8984393347190227939" fileName="NodesMatcher.java" startLine="92" startPosition="67" endLine="93" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227951" fileName="NodesMatcher.java" startLine="93" startPosition="92" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -180,8 +180,8 @@
     <scopeInfo nodeId="8984393347190227769" fileName="NodesMatcher.java" startLine="58" startPosition="67" endLine="59" endPosition="13" />
     <scopeInfo nodeId="8984393347190227821" fileName="NodesMatcher.java" startLine="67" startPosition="49" endLine="68" endPosition="17" />
     <scopeInfo nodeId="8984393347190227834" fileName="NodesMatcher.java" startLine="70" startPosition="50" endLine="71" endPosition="68" />
-    <scopeInfo nodeId="8984393347190227876" fileName="NodesMatcher.java" startLine="79" startPosition="55" endLine="80" endPosition="58" />
-    <scopeInfo nodeId="8984393347190227907" fileName="NodesMatcher.java" startLine="85" startPosition="33" endLine="86" endPosition="58" />
+    <scopeInfo nodeId="8984393347190227876" fileName="NodesMatcher.java" startLine="79" startPosition="55" endLine="80" endPosition="65" />
+    <scopeInfo nodeId="8984393347190227907" fileName="NodesMatcher.java" startLine="85" startPosition="33" endLine="86" endPosition="65" />
     <scopeInfo nodeId="8984393347190228007" fileName="NodesMatcher.java" startLine="105" startPosition="41" endLine="106" endPosition="58" />
     <scopeInfo nodeId="8984393347190228028" fileName="NodesMatcher.java" startLine="109" startPosition="41" endLine="110" endPosition="58" />
     <scopeInfo nodeId="8984393347190228066" fileName="NodesMatcher.java" startLine="113" startPosition="48" endLine="114" endPosition="62" />

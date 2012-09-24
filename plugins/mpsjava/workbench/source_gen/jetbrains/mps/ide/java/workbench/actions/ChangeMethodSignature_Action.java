@@ -104,7 +104,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
           SModelRepository.getInstance().saveAll();
           baseMethod.value = ((SNode) BehaviorManager.getInstance().invoke(Object.class, ((SNode) MapSequence.fromMap(_params).get("method")), "call_getBaseMethod_5014346297260519893", new Class[]{SNode.class}));
           if (baseMethod.value != null) {
-            message.value = "Method " + ((SNode) MapSequence.fromMap(_params).get("method")).toString() + " overrides method from " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), "jetbrains.mps.baseLanguage.structure.Classifier"), "name") + ".\n";
+            message.value = "Method " + ((SNode) MapSequence.fromMap(_params).get("method")).getPresentation() + " overrides method from " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), "jetbrains.mps.baseLanguage.structure.Classifier"), "name") + ".\n";
             message.value += "Do you want to change signature of this method instead?";
           }
         }

@@ -77,13 +77,13 @@ public class NodesMatcher {
   public static NodeDifference matchNodes(SNode a, SNode b, Map<SNode, SNode> map) {
     ArrayList<DifferanceItem> difference = new ArrayList<DifferanceItem>();
     if (NodesMatcher.matchConcepts(a, b, difference)) {
-      return new NodeDifference(a.toString(), difference);
+      return new NodeDifference(a.getPresentation(), difference);
     }
     NodesMatcher.matchProperties(a, b, difference);
     NodesMatcher.matchChildren(a, b, map, difference);
     NodesMatcher.matchReferences(a, b, map, difference);
     if (difference.size() != 0) {
-      return new NodeDifference(a.toString(), difference);
+      return new NodeDifference(a.getPresentation(), difference);
     }
     return null;
   }

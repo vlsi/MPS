@@ -106,7 +106,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   private int compareBrothers(SNode n1, SNode n2) {
     if (SNodeOperations.getContainingLinkRole(n1) == null) {
-      return n1.toString().compareTo(n2.toString());
+      return n1.getPresentation().compareTo(n2.getPresentation());
     }
     if (SNodeOperations.getContainingLinkRole(n1).equals(SNodeOperations.getContainingLinkRole(n2))) {
       return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
