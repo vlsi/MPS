@@ -74,15 +74,15 @@ public class ConceptMethodDeclaration_Behavior {
     if (baseMethod == null) {
       return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1225196404032(thisNode);
     }
-    return "virtual_" + SPropertyOperations.getString(baseMethod, "name") + "_" + baseMethod.getId();
+    return "virtual_" + SPropertyOperations.getString(baseMethod, "name") + "_" + baseMethod.getNodeId().toString();
   }
 
   public static String call_getCallerMethodName_1225196404032(SNode thisNode) {
-    return "call_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
+    return "call_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getNodeId().toString();
   }
 
   public static String call_getSuperCallerMethodName_1225196404049(SNode thisNode) {
-    return "callSuper_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
+    return "callSuper_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getNodeId().toString();
   }
 
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
