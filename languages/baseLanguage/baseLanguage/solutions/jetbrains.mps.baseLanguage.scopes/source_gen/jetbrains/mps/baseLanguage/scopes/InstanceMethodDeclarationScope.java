@@ -16,7 +16,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
+@Deprecated
 public class InstanceMethodDeclarationScope extends BaseMethodsScope {
+  @Deprecated
   public InstanceMethodDeclarationScope(SNode classifierNode, Iterable<SNode> extendedClassifiers) {
     super(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), classifierNode, extendedClassifiers);
   }

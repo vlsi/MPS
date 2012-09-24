@@ -11,7 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public class StaticMethodDeclarationScope extends BaseMethodsScope {
+  @Deprecated
   public StaticMethodDeclarationScope(SNode classNode, Iterable<SNode> extendedClassifiers) {
     super(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), classNode, extendedClassifiers);
   }

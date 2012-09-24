@@ -67,19 +67,19 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="members" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="56048315080429574">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="members" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
       <property name="name" nameId="tpck.1169194664001" value="StaticFieldDeclarationScope" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="56048315080429580">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="members" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
       <property name="name" nameId="tpck.1169194664001" value="InstanceMethodDeclarationScope" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="56048315080429586">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="members" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
       <property name="name" nameId="tpck.1169194664001" value="StaticMethodDeclarationScope" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2428721740552781832">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="members" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated" />
       <property name="name" nameId="tpck.1169194664001" value="BaseMethodsScope" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
@@ -7134,6 +7134,9 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6738210457885485151">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="56048315080429580">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="56048315080429581" />
@@ -7572,6 +7575,9 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6738210457885485146">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
   <root id="56048315080429586">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="56048315080429587" />
@@ -7730,6 +7736,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6738210457885485152">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="2428721740552781832">
@@ -9023,6 +9032,9 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2428721740553104485">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6738210457885485144">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="3161373106581142361">
@@ -12507,6 +12519,11 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7865228194069708882" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7865228194069708883" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7865228194069708884">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6738210457885485161">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6738210457885485162">
+            <property name="text" nameId="tpee.6329021646629104958" value="todo: check recursion here!" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1942105213081722345">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1942105213081722369">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1942105213081722346">

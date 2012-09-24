@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+@Deprecated
 public abstract class BaseMethodsScope extends Scope {
   private final Map<String, List<SNode>> nameToMethods;
   protected final SNode kind;
@@ -32,6 +33,7 @@ public abstract class BaseMethodsScope extends Scope {
   protected final Iterable<SNode> extendedClassifiers;
   private SNode[] allMethods;
 
+  @Deprecated
   public BaseMethodsScope(final SNode kind, SNode classifier, Iterable<SNode> extendedClassifiers) {
     // all extendedClassifiers should be not null 
     if (Sequence.fromIterable(extendedClassifiers).any(new IWhereFilter<SNode>() {

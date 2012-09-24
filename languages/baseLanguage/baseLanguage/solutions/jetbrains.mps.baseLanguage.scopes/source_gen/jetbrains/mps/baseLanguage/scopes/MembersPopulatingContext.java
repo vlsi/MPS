@@ -40,6 +40,7 @@ public class MembersPopulatingContext {
   }
 
   public void enterClassifierInternal(SNode classifier) {
+    // todo: check recursion here! 
     classifiers.add(((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class})));
 
     // recalc is package protected available 

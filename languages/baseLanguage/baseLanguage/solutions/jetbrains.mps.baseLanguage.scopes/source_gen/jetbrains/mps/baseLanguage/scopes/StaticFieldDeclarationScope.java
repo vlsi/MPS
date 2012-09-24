@@ -20,10 +20,12 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 
+@Deprecated
 public class StaticFieldDeclarationScope extends Scope {
   private final Map<String, SNode> nameToField;
   private final Iterable<Scope> extendsScopes;
 
+  @Deprecated
   public StaticFieldDeclarationScope(Iterable<SNode> fields, Iterable<Scope> extendsScopes) {
     nameToField = MapSequence.fromMap(new HashMap<String, SNode>(Sequence.fromIterable(fields).count()));
     for (SNode node : Sequence.fromIterable(fields)) {

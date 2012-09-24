@@ -10,6 +10,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope" file="BaseMethodsScope.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -146,6 +147,7 @@
   <dependency className="jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope" file="InstanceMethodDeclarationScope.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -298,6 +300,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.Signature" file="Signature.java" />
   <dependency className="jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope" file="StaticFieldDeclarationScope.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -321,6 +324,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope" file="StaticMethodDeclarationScope.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
