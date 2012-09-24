@@ -422,9 +422,7 @@
     <scopeInfo nodeId="1203276018782" fileName="ClassifierTypeUtil.java" startLine="167" startPosition="18" endLine="173" endPosition="7">
       <varInfo nodeId="1203276018786" varName="tvd" />
     </scopeInfo>
-    <scopeInfo nodeId="1203272152493" fileName="ClassifierTypeUtil.java" startLine="175" startPosition="100" endLine="181" endPosition="7">
-      <varInfo nodeId="1203272152515" varName="pt" />
-    </scopeInfo>
+    <scopeInfo nodeId="1203272152492" fileName="ClassifierTypeUtil.java" startLine="175" startPosition="100" endLine="181" endPosition="7" />
     <scopeInfo nodeId="429408675341368858" fileName="ClassifierTypeUtil.java" startLine="284" startPosition="32" endLine="290" endPosition="7" />
     <scopeInfo nodeId="2881759691295698971" fileName="ClassifierTypeUtil.java" startLine="302" startPosition="32" endLine="308" endPosition="7" />
     <scopeInfo nodeId="1222884459486" fileName="ClassifierTypeUtil.java" startLine="50" startPosition="109" endLine="57" endPosition="7">

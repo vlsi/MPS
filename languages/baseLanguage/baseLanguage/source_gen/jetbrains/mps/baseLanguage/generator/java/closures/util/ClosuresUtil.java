@@ -40,8 +40,8 @@ public class ClosuresUtil {
     if (node == null) {
       return null;
     }
-    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<org.jetbrains.mps.openapi.model.SNode>() {
-      public boolean met(org.jetbrains.mps.openapi.model.SNode n) {
+    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
+      public boolean met(SNode n) {
         if (!(n instanceof SNode)) {
           if (log.isWarnEnabled()) {
             log.warn("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");

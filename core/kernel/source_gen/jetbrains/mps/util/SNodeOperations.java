@@ -48,7 +48,7 @@ public class SNodeOperations {
     return res;
   }
 
-  public static Iterable<jetbrains.mps.smodel.SNode> getDescendants(SNode node, Condition<SNode> cond, boolean includeFirst) {
+  public static Iterable<jetbrains.mps.smodel.SNode> getDescendants(SNode node, Condition<jetbrains.mps.smodel.SNode> cond, boolean includeFirst) {
     Iterator<? extends jetbrains.mps.smodel.SNode> iterator = ((Iterator<? extends jetbrains.mps.smodel.SNode>) node.getChildren().iterator());
     SNode firstChild = (iterator.hasNext() ?
       iterator.next() :
@@ -60,13 +60,13 @@ public class SNodeOperations {
     ), cond);
   }
 
-  public static jetbrains.mps.smodel.SNode findParent(SNode node, Condition<SNode> condition) {
-    SNode parent = node.getParent();
+  public static jetbrains.mps.smodel.SNode findParent(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
+    jetbrains.mps.smodel.SNode parent = ((jetbrains.mps.smodel.SNode) node.getParent());
     while (parent != null) {
       if (condition.met(parent)) {
         return ((jetbrains.mps.smodel.SNode) parent);
       }
-      parent = parent.getParent();
+      parent = ((jetbrains.mps.smodel.SNode) parent.getParent());
     }
     return null;
   }
@@ -82,16 +82,16 @@ public class SNodeOperations {
     return result;
   }
 
-  public static List<jetbrains.mps.smodel.SNode> getDescendants(SNode node, Condition<SNode> condition) {
+  public static List<jetbrains.mps.smodel.SNode> getDescendants(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
     List<jetbrains.mps.smodel.SNode> res = ListSequence.fromList(new ArrayList<jetbrains.mps.smodel.SNode>());
     collectDescendants(node, res, condition);
     return res;
   }
 
-  private static void collectDescendants(SNode node, final List<jetbrains.mps.smodel.SNode> list, final Condition<SNode> condition) {
+  private static void collectDescendants(SNode node, final List<jetbrains.mps.smodel.SNode> list, final Condition<jetbrains.mps.smodel.SNode> condition) {
     node.visitChildren(new SNode.ChildVisitor() {
       public boolean visitChild(String role, SNode child) {
-        if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
+        if (condition == null || condition == Condition.TRUE_CONDITION || (child instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) child)))) {
           ListSequence.fromList(list).addElement(((jetbrains.mps.smodel.SNode) child));
         }
         collectDescendants(child, list, condition);
@@ -240,14 +240,14 @@ public class SNodeOperations {
   private static class DescendantsIterable implements TreeIterator<jetbrains.mps.smodel.SNode>, Iterable<jetbrains.mps.smodel.SNode> {
     private SNode original;
     private SNode current;
-    private Condition<SNode> condition;
+    private Condition<jetbrains.mps.smodel.SNode> condition;
     private SNode prev;
 
-    /*package*/ DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
+    /*package*/ DescendantsIterable(SNode original, SNode first, @Nullable Condition<jetbrains.mps.smodel.SNode> condition) {
       this.original = original;
       this.current = first;
       this.condition = condition;
-      while (current != null && condition != null && !(condition.met(current))) {
+      while (current != null && condition != null && !(current instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) current)))) {
         current = nextInternal(current, false);
       }
     }
@@ -257,7 +257,7 @@ public class SNodeOperations {
         throw new IllegalStateException("no element");
       }
       current = nextInternal(prev, true);
-      while (current != null && condition != null && !(condition.met(current))) {
+      while (current != null && condition != null && !(current instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) current)))) {
         current = nextInternal(current, false);
       }
     }
@@ -270,7 +270,7 @@ public class SNodeOperations {
       jetbrains.mps.smodel.SNode result = ((jetbrains.mps.smodel.SNode) current);
       do {
         current = nextInternal(current, false);
-      } while (current != null && condition != null && !(condition.met(current)));
+      } while (current != null && condition != null && !(current instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) current))));
       prev = result;
       return result;
     }

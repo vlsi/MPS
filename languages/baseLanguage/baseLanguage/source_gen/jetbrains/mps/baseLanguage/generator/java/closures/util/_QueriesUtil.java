@@ -96,15 +96,15 @@ public class _QueriesUtil {
    */
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner 
-    SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.util.SNodeOperations.findParent(nodeInsideClosure, new Condition<org.jetbrains.mps.openapi.model.SNode>() {
-      public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
+    SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.util.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
+      public boolean met(SNode object) {
         if (!(object instanceof SNode)) {
           if (log.isWarnEnabled()) {
             log.warn("method create_closureContextObject(node<>, ITemplateGenerator) in " + _QueriesUtil.class.toString() + " operates only with the instances of SNode class");
           }
           return false;
         }
-        if (SNodeOperations.isInstanceOf(((SNode) object), "jetbrains.mps.baseLanguage.structure.Closure")) {
+        if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
           return true;
         }
         return ClosuresUtil.isClosureContextOwner(((SNode) object));
