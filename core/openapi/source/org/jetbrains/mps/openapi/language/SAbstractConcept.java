@@ -15,6 +15,12 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+/**
+ * A descriptor of a concept
+ * This interface is not supposed to be implemented by someone not from MPS team
+ * Moreover, it's prohibited to have 2 or more implementations of it at a time
+ * This interface is only introduced to have an ability to switch between two implementations w/o affecting users
+ */
 public interface SAbstractConcept {
   /**
    * This is a string used to identify a concept.
@@ -23,7 +29,7 @@ public interface SAbstractConcept {
    */
   String getId();
 
-  String getName();
+  String getName();  //todo? rename to getPresentation or use getId
 
   SLanguage getLanguage();
 
