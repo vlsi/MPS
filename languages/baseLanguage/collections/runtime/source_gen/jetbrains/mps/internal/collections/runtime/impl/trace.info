@@ -1895,7 +1895,7 @@
     <nodeInfo nodeId="6543581031674034302" fileName="ReversingSequence.java" startLine="10" startPosition="47" endLine="11" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6543581031674034309" fileName="ReversingSequence.java" startLine="14" startPosition="33" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6543581031674034321" fileName="ReversingSequence.java" startLine="16" startPosition="28" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674034326" fileName="ReversingSequence.java" startLine="18" startPosition="5" endLine="19" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034326" fileName="ReversingSequence.java" startLine="18" startPosition="5" endLine="19" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674034276" fileName="ReversingSequence.java" startLine="22" startPosition="68" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="listIterator" />
     <nodeInfo nodeId="6543581031674034336" fileName="ReversingSequence.java" startLine="25" startPosition="60" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674034343" fileName="ReversingSequence.java" startLine="29" startPosition="30" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1926,7 +1926,7 @@
     <scopeInfo nodeId="6543581031674034286" fileName="ReversingSequence.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="6543581031674034289" fileName="ReversingSequence.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="6543581031674034292" fileName="ReversingSequence.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034308" fileName="ReversingSequence.java" startLine="14" startPosition="33" endLine="19" endPosition="85">
+    <scopeInfo nodeId="6543581031674034308" fileName="ReversingSequence.java" startLine="14" startPosition="33" endLine="19" endPosition="88">
       <varInfo nodeId="6543581031674034310" varName="cache" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674034304" fileName="ReversingSequence.java" startLine="13" startPosition="0" endLine="21" endPosition="0" />
