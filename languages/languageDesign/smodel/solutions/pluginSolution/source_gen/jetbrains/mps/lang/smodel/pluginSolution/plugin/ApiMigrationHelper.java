@@ -37,6 +37,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
@@ -225,7 +226,7 @@ public class ApiMigrationHelper {
         if (eq_yke5lt_a0b0h0c0c(NameUtil.nodeFQName(SNodeOperations.getContainingRoot(n)), ApiMigrationHelper.class.getName())) {
           continue;
         }
-        if (!(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null))) {
+        if (!(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(n)), "jetbrains.mps.baseLanguage.structure.DotExpression") && (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null))) {
           SetSequence.fromSet(unknown).addElement(n);
           continue;
         }
