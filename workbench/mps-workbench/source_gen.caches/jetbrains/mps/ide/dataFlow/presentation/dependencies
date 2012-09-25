@@ -16,6 +16,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.AltBlock" file="AltBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
@@ -53,6 +54,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.FreeZone" file="FreeZone.java" />
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.GraphCreator" file="GraphCreator.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.AltBlock" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlock" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper" />
@@ -105,6 +107,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.JumpBlock" file="JumpBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
@@ -131,12 +134,14 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ReadBlock" file="ReadBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ReturnBlock" file="ReturnBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
@@ -170,12 +175,14 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.SimpleBlock" file="SimpleBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.WriteBlock" file="WriteBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>

@@ -7,8 +7,8 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 public class ReturnBlock extends AbstractBlock {
-  public ReturnBlock(int x, int y, int width, int height, SNodePointer source) {
-    super(x, y, width, height, source);
+  public ReturnBlock(int x, int y, int width, int height, SNodePointer source, String caption) {
+    super(x, y, width, height, source, caption);
   }
 
   protected void paintBlock(Graphics g) {

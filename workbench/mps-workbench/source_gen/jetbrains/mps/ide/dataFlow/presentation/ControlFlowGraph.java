@@ -37,7 +37,7 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
   }
 
   public void buildBlocks() {
-    Map<IInstruction<T>, IBlock> instructionToBlock = new HashMap<IInstruction, IBlock>();
+    Map<IInstruction<T>, IBlock> instructionToBlock = new HashMap<IInstruction<T>, IBlock>();
     for (IInstruction<T> instruction : this.myProgram.getInstructions()) {
       IBlock block = this.myGraphCreator.createBlock((T) instruction, MARGIN_X, 0, 0, 0);
       this.myBlocks.add(block);

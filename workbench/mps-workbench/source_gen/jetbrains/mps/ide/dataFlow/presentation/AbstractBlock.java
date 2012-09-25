@@ -25,13 +25,13 @@ public abstract class AbstractBlock implements IBlock {
   private Set<IBlockListener> myBlockListeners = new HashSet<IBlockListener>();
   private Set<IBlock> mySucc;
 
-  public AbstractBlock(int x, int y, int width, int height, SNodePointer sourceNode) {
+  public AbstractBlock(int x, int y, int width, int height, SNodePointer sourceNode, String caption) {
     this.myX = x;
     this.myY = y;
     this.myWidth = width;
     this.myHeight = height;
     this.mySourceNode = sourceNode;
-    this.myCaption = this.mySourceNode.toString();
+    this.myCaption = caption;
   }
 
   public SNodePointer getSourceNode() {

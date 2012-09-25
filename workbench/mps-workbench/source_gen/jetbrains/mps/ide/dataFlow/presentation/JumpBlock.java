@@ -7,8 +7,8 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 public class JumpBlock extends AbstractBlock {
-  public JumpBlock(int x, int y, int width, int height, SNodePointer source) {
-    super(x, y, width, height, source);
+  public JumpBlock(int x, int y, int width, int height, SNodePointer source, String caption) {
+    super(x, y, width, height, source, caption);
   }
 
   protected void paintBlock(Graphics g) {
