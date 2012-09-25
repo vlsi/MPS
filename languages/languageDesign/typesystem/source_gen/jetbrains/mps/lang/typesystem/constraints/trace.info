@@ -417,6 +417,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="23" startPosition="0" endLine="56" endPosition="0" />
     <unitInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="51" startPosition="19" endLine="19" endPosition="0" />
+    <unitInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptReference_Constraints" />
     <unitInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="27" startPosition="34" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptReference_Constraints$1" />
   </root>
   <root nodeId="1213104858863" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">

@@ -2745,7 +2745,9 @@
     <scopeInfo nodeId="1224588814561808536" fileName="BuildProject_Behavior.java" startLine="106" startPosition="7" endLine="112" endPosition="7">
       <varInfo nodeId="1224588814561808537" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="1224588814561811049" fileName="BuildProject_Behavior.java" startLine="113" startPosition="38" endLine="119" endPosition="7" />
+    <scopeInfo nodeId="1224588814561811123" fileName="BuildProject_Behavior.java" startLine="113" startPosition="38" endLine="119" endPosition="7">
+      <varInfo nodeId="1224588814561811124" varName="plugin" />
+    </scopeInfo>
     <scopeInfo nodeId="1224588814561808312" fileName="BuildProject_Behavior.java" startLine="161" startPosition="5" endLine="167" endPosition="5">
       <varInfo nodeId="1224588814561808313" varName="dep" />
     </scopeInfo>

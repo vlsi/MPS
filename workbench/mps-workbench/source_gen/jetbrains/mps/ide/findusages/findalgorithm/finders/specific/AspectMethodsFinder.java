@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
@@ -54,7 +55,7 @@ public class AspectMethodsFinder implements IFinder {
         break;
       }
     }
-    for (SNode child : node.getChildren()) {
+    for (SNode child : SNodeOperations.getChildren(node)) {
       findNodes(res, child, methodName);
     }
   }

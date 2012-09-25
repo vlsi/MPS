@@ -9,10 +9,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ChangeNonEmptyProperty_Intention extends BaseIntention implements Intention {
   public ChangeNonEmptyProperty_Intention() {
@@ -42,7 +42,7 @@ public class ChangeNonEmptyProperty_Intention extends BaseIntention implements I
     SNode property = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
     SLinkOperations.setTarget(property, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
-    for (SNode child : ListSequence.fromList(node.getChildren())) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       String role = child.getRole();
       node.removeChild(child);
       property.addChild(role, child);
@@ -53,7 +53,7 @@ public class ChangeNonEmptyProperty_Intention extends BaseIntention implements I
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
       property.addReference(reference);
     }
-    SNodeOperations.replaceWithAnother(node, property);
+    jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, property);
   }
 
   public String getLocationString() {

@@ -270,7 +270,7 @@ public class SNodeOperations {
   }
 
   private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition, Condition<SNode> stopCondition) {
-    for (SNode child : node.getChildrenIterable()) {
+    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       if (condition.met(child)) {
         list.add(child);
       }
@@ -296,7 +296,7 @@ public class SNodeOperations {
     if (node == null) {
       return new ArrayList<SNode>();
     }
-    return node.getChildren();
+    return jetbrains.mps.util.SNodeOperations.getChildren(node);
   }
 
   public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {

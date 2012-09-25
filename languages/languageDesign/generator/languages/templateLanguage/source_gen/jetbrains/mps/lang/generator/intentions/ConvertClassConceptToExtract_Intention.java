@@ -51,12 +51,12 @@ public class ConvertClassConceptToExtract_Intention extends BaseIntention implem
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", null);
-    for (SNode child : newNode.getChildren()) {
+    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(newNode)) {
       newNode.removeChild(child);
     }
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     mapping.put(node, newNode);
-    List<SNode> children = node.getChildren();
+    List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(node);
     CopyUtil.copy(children, mapping);
     for (SNode child : children) {
       newNode.addChild(child.getRole(), mapping.get(child));

@@ -3403,7 +3403,7 @@
     <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="21" startPosition="48" endLine="22" endPosition="172" />
     <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
     <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="176" />
-    <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
+    <scopeInfo nodeId="8255250703325740987" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
     <scopeInfo nodeId="8255250703325737458" fileName="ScriptKindClassItem_Behavior.java" startLine="10" startPosition="43" endLine="13" endPosition="0">
       <varInfo nodeId="8255250703325737458" varName="thisNode" />
     </scopeInfo>

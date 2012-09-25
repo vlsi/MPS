@@ -47,7 +47,7 @@
     <nodeInfo nodeId="6299533519672650218" fileName="CopyPasteUtil.java" startLine="130" startPosition="7" endLine="131" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672650224" fileName="CopyPasteUtil.java" startLine="131" startPosition="54" endLine="132" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650236" fileName="CopyPasteUtil.java" startLine="133" startPosition="45" endLine="134" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6299533519672650241" fileName="CopyPasteUtil.java" startLine="135" startPosition="5" endLine="136" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6299533519672650241" fileName="CopyPasteUtil.java" startLine="135" startPosition="5" endLine="136" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650262" fileName="CopyPasteUtil.java" startLine="139" startPosition="59" endLine="140" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650281" fileName="CopyPasteUtil.java" startLine="141" startPosition="64" endLine="142" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6299533519672650282" fileName="CopyPasteUtil.java" startLine="145" startPosition="7" endLine="146" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -71,8 +71,8 @@
     <nodeInfo nodeId="6299533519672650457" fileName="CopyPasteUtil.java" startLine="181" startPosition="60" endLine="182" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650464" fileName="CopyPasteUtil.java" startLine="182" startPosition="69" endLine="183" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650546" fileName="CopyPasteUtil.java" startLine="184" startPosition="34" endLine="185" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6299533519672650536" fileName="CopyPasteUtil.java" startLine="187" startPosition="135" endLine="188" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6299533519672650518" fileName="CopyPasteUtil.java" startLine="195" startPosition="143" endLine="196" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6299533519672650536" fileName="CopyPasteUtil.java" startLine="187" startPosition="185" endLine="188" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6299533519672650518" fileName="CopyPasteUtil.java" startLine="195" startPosition="124" endLine="196" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3894316088676861611" fileName="CopyPasteUtil.java" startLine="197" startPosition="20" endLine="198" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672650530" fileName="CopyPasteUtil.java" startLine="199" startPosition="13" endLine="200" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672650508" fileName="CopyPasteUtil.java" startLine="202" startPosition="38" endLine="203" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -95,7 +95,7 @@
     <nodeInfo nodeId="6299533519672650688" fileName="CopyPasteUtil.java" startLine="273" startPosition="62" endLine="274" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650693" fileName="CopyPasteUtil.java" startLine="274" startPosition="54" endLine="275" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672650697" fileName="CopyPasteUtil.java" startLine="275" startPosition="14" endLine="276" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6299533519672650708" fileName="CopyPasteUtil.java" startLine="277" startPosition="30" endLine="278" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6299533519672650708" fileName="CopyPasteUtil.java" startLine="277" startPosition="30" endLine="278" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672650720" fileName="CopyPasteUtil.java" startLine="279" startPosition="21" endLine="280" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672650725" fileName="CopyPasteUtil.java" startLine="281" startPosition="7" endLine="282" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672650728" fileName="CopyPasteUtil.java" startLine="283" startPosition="5" endLine="284" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -175,7 +175,7 @@
     <nodeInfo nodeId="6299533519672650602" fileName="CopyPasteUtil.java" startLine="219" startPosition="5" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6299533519672650614" fileName="CopyPasteUtil.java" startLine="222" startPosition="5" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3237530507069942629" fileName="CopyPasteUtil.java" startLine="257" startPosition="98" endLine="260" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6299533519672650715" fileName="CopyPasteUtil.java" startLine="278" startPosition="82" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6299533519672650715" fileName="CopyPasteUtil.java" startLine="278" startPosition="63" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6299533519672650792" fileName="CopyPasteUtil.java" startLine="300" startPosition="82" endLine="303" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6299533519672650807" fileName="CopyPasteUtil.java" startLine="305" startPosition="5" endLine="308" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7365583369097483175" fileName="CopyPasteUtil.java" startLine="314" startPosition="46" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -237,7 +237,7 @@
     <nodeInfo nodeId="6299533519672650825" fileName="CopyPasteUtil.java" startLine="310" startPosition="41" endLine="322" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2199634891381805034" fileName="CopyPasteUtil.java" startLine="391" startPosition="0" endLine="403" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6299533519672650496" fileName="CopyPasteUtil.java" startLine="193" startPosition="12" endLine="206" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6299533519672650248" fileName="CopyPasteUtil.java" startLine="136" startPosition="52" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6299533519672650248" fileName="CopyPasteUtil.java" startLine="136" startPosition="67" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6299533519672650681" fileName="CopyPasteUtil.java" startLine="272" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyNodesToClipboard#(Ljava/util/List;)V" />
     <nodeInfo nodeId="6299533519672650816" fileName="CopyPasteUtil.java" startLine="308" startPosition="5" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6299533519672650560" fileName="CopyPasteUtil.java" startLine="212" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyModelProperties#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModel;" />
@@ -285,8 +285,8 @@
     <scopeInfo nodeId="6299533519672650372" fileName="CopyPasteUtil.java" startLine="167" startPosition="55" endLine="168" endPosition="133" />
     <scopeInfo nodeId="6299533519672650370" fileName="CopyPasteUtil.java" startLine="169" startPosition="16" endLine="170" endPosition="19" />
     <scopeInfo nodeId="6299533519672650545" fileName="CopyPasteUtil.java" startLine="184" startPosition="34" endLine="185" endPosition="98" />
-    <scopeInfo nodeId="6299533519672650535" fileName="CopyPasteUtil.java" startLine="187" startPosition="135" endLine="188" endPosition="100" />
-    <scopeInfo nodeId="3894316088676861606" fileName="CopyPasteUtil.java" startLine="195" startPosition="143" endLine="196" endPosition="179" />
+    <scopeInfo nodeId="6299533519672650535" fileName="CopyPasteUtil.java" startLine="187" startPosition="185" endLine="188" endPosition="100" />
+    <scopeInfo nodeId="3894316088676861606" fileName="CopyPasteUtil.java" startLine="195" startPosition="124" endLine="196" endPosition="179" />
     <scopeInfo nodeId="3894316088676861610" fileName="CopyPasteUtil.java" startLine="197" startPosition="20" endLine="198" endPosition="116" />
     <scopeInfo nodeId="6299533519672650507" fileName="CopyPasteUtil.java" startLine="202" startPosition="38" endLine="203" endPosition="102" />
     <scopeInfo nodeId="6299533519672650505" fileName="CopyPasteUtil.java" startLine="204" startPosition="18" endLine="205" endPosition="21" />
@@ -525,7 +525,7 @@
     <scopeInfo nodeId="6299533519672649780" fileName="CopyPasteUtil.java" startLine="52" startPosition="202" endLine="66" endPosition="5">
       <varInfo nodeId="6299533519672649790" varName="sourceNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6299533519672650248" fileName="CopyPasteUtil.java" startLine="136" startPosition="52" endLine="150" endPosition="5">
+    <scopeInfo nodeId="6299533519672650248" fileName="CopyPasteUtil.java" startLine="136" startPosition="67" endLine="150" endPosition="5">
       <varInfo nodeId="6299533519672650250" varName="sourceChild" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650681" fileName="CopyPasteUtil.java" startLine="272" startPosition="0" endLine="286" endPosition="0">
@@ -561,9 +561,7 @@
       <varInfo nodeId="6299533519672650338" varName="oldTargetNode" />
     </scopeInfo>
     <scopeInfo nodeId="6299533519672650925" fileName="CopyPasteUtil.java" startLine="337" startPosition="57" endLine="356" endPosition="0" />
-    <scopeInfo nodeId="6299533519672650319" fileName="CopyPasteUtil.java" startLine="154" startPosition="115" endLine="174" endPosition="5">
-      <varInfo nodeId="6299533519672650321" varName="sourceReference" />
-    </scopeInfo>
+    <scopeInfo nodeId="6299533519672650318" fileName="CopyPasteUtil.java" startLine="154" startPosition="115" endLine="174" endPosition="5" />
     <scopeInfo nodeId="6299533519672650025" fileName="CopyPasteUtil.java" startLine="100" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="6299533519672650033" varName="model" />
       <varInfo nodeId="6299533519672650035" varName="modelProperties" />

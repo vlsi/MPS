@@ -413,7 +413,7 @@ public class RefactoringContext {
           if (!(delete)) {
             newRole = newConceptFeature.getFeatureName();
           }
-          for (SNode child : new ArrayList<SNode>(node.getChildren())) {
+          for (SNode child : new ArrayList<SNode>(jetbrains.mps.util.SNodeOperations.getChildren(node))) {
             String childRole = child.getRole();
             if (childRole != null && childRole.equals(oldRole)) {
               if (delete) {
