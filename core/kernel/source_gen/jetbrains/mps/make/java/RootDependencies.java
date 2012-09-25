@@ -61,7 +61,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
 
   public void saveTo(Element element) {
     element.setAttribute(CLASS_NAME, myClassName);
-    if (myClassName != null) {
+    if (myFileName != null) {
       element.setAttribute(FILE_NAME, myFileName);
     }
     for (String dependNodeName : this.myDependNodes) {

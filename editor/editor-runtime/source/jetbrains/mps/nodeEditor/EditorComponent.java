@@ -2045,7 +2045,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
     EditorCell deepestCell = getDeepestSelectedCell();
-    if (deepestCell instanceof EditorCell_Label) {
+    if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
       g.setColor(CARET_ROW_COLOR);
@@ -2066,7 +2066,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    if (myRootCell != null) {
+    if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
       EditorSettings setting = EditorSettings.getInstance();
       g.setColor(Color.LIGHT_GRAY);
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
