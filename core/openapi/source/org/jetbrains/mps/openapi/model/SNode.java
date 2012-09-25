@@ -24,7 +24,7 @@ public interface SNode {
 
   //common properties
 
-  SNodeId getNodeId();
+  SNodeId getSNodeId();
 
   SNodeReference getReference();
 

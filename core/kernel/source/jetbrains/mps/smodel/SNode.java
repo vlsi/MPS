@@ -94,6 +94,18 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myModel;
   }
 
+  public SNodeId getSNodeId() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+      // TODO remove id generation
+      myId = SModel.generateUniqueId();
+      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
+    }
+    return myId;
+  }
+
   @NotNull
   public final SNode getTopmostAncestor() {
     SNodeBase current = this;
@@ -303,19 +315,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
    */
   public void delete() {
     delete_internal();
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.model.SNodeId getNodeId() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
-      // TODO remove id generation
-      myId = SModel.generateUniqueId();
-      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
-    }
-    return myId;
   }
 
   public String getPresentation() {
@@ -603,10 +602,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
-
-  public SNodeId getSNodeId() {
-    return (SNodeId) getNodeId();
-  }
 
   public void setId(@Nullable SNodeId id) {
     if (ObjectUtils.equals(id, myId)) return;
@@ -1303,7 +1298,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
    * @Deprecated in 3.0
    */
   public boolean hasId() {
-    return getNodeId() != null;
+    return getSNodeId() != null;
   }
 
   @Deprecated
