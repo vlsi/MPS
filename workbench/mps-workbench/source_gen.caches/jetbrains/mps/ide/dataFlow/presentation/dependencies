@@ -141,32 +141,31 @@
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" file="ShowCFGDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph" />
-    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.GraphCreator" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IInstruction" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper" />
-    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode extendsClassName="javax.swing.JComponent" />
-    <classNode extendsClassName="javax.swing.JDialog" />
     <classNode extendsClassName="javax.swing.Scrollable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.SimpleBlock" file="SimpleBlock.java">

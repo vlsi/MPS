@@ -20,6 +20,7 @@ public abstract class AbstractBlock<T extends IInstruction<T>> implements IBlock
   private int myPaddingY = 0;
   private int myCharHeight = 0;
   private int myStringWidth = 0;
+  private String myCaption;
   private Set<IBlockListener<T>> myBlockListeners = new HashSet<IBlockListener<T>>();
 
   public AbstractBlock(int x, int y, int width, int height, T source) {
@@ -28,6 +29,7 @@ public abstract class AbstractBlock<T extends IInstruction<T>> implements IBlock
     this.myWidth = width;
     this.myHeight = height;
     this.mySource = source;
+    this.myCaption = this.mySource.toString();
   }
 
   public T getSourceObject() {
@@ -72,10 +74,9 @@ public abstract class AbstractBlock<T extends IInstruction<T>> implements IBlock
   }
 
   public void relayout(Component c) {
-    String caption = this.mySource.toString();
     Font font = c.getFont();
     FontMetrics metrics = c.getFontMetrics(font);
-    this.myStringWidth = metrics.stringWidth(caption);
+    this.myStringWidth = metrics.stringWidth(this.myCaption);
     this.myCharHeight = metrics.getHeight();
     this.myWidth = this.myStringWidth + 2 * AbstractBlock.this.getPaddingX(metrics);
     this.myHeight = this.myCharHeight + 2 * AbstractBlock.this.getPaddingY(metrics);
@@ -108,8 +109,7 @@ public abstract class AbstractBlock<T extends IInstruction<T>> implements IBlock
   }
 
   protected void paintCaption(Graphics g) {
-    String caption = this.mySource.toString();
-    g.drawString(caption, this.myX + this.myPaddingX, this.myY + this.myPaddingY + this.myCharHeight);
+    g.drawString(this.myCaption, this.myX + this.myPaddingX, this.myY + this.myPaddingY + this.myCharHeight);
   }
 
   protected abstract void paintBlock(Graphics g);
