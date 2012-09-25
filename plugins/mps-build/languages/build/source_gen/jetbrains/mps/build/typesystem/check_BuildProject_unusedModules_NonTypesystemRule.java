@@ -39,7 +39,7 @@ public class check_BuildProject_unusedModules_NonTypesystemRule extends Abstract
       modules.add(jm);
     }
 
-    for (SNode node : SLinkOperations.getTarget(buildProject, "layout", true).getDescendantsIterable(null, false)) {
+    for (SNode node : jetbrains.mps.util.SNodeOperations.getDescendants(SLinkOperations.getTarget(buildProject, "layout", true), null, false)) {
       for (SReference ref : node.getReferencesIterable()) {
         SNode targetNode = ref.getTargetNodeSilently();
         modules.remove(targetNode);

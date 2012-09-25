@@ -219,7 +219,7 @@ public class LanguageErrorsComponent {
       SetSequence.fromSet(myInvalidation).addElement(event.getChild());
     }
     if (event.isAdded()) {
-      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(event.getChild().getDescendants()));
+      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(((SNode) event.getChild()), null, false, new String[]{})));
       SetSequence.fromSet(myInvalidNodes).addElement(event.getChild());
     }
   }

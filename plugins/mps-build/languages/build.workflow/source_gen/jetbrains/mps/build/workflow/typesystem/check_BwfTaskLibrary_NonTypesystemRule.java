@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -29,7 +30,7 @@ public class check_BwfTaskLibrary_NonTypesystemRule extends AbstractNonTypesyste
     }
 
     TaskLibrariesHelper.closure(libsSet);
-    for (SNode n : lib.getDescendantsIterable(null, true)) {
+    for (SNode n : SNodeOperations.getDescendants(lib, null, true)) {
       for (SReference ref : n.getReferencesIterable()) {
         SNode targetNode = ref.getTargetNodeSilently();
         if (targetNode != null && !(libsSet.contains(targetNode.getTopmostAncestor()))) {

@@ -108,7 +108,7 @@ public class TemplateModelScanner {
     if ((node == null)) {
       return;
     }
-    for (SNode n : node.getDescendantsIterable(null, true)) {
+    for (SNode n : jetbrains.mps.util.SNodeOperations.getDescendants(node, null, true)) {
       SetSequence.fromSet(myQueryLanguages).addElement(n.getLanguageNamespace());
     }
   }

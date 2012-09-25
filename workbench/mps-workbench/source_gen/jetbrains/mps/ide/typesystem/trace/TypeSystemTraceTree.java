@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -35,7 +36,6 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.util.SNodeOperations;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -68,7 +68,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     myErrorNodes = new LinkedList<TypeSystemTraceTreeNode>();
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
-    myNodes.addAll(node.getDescendants());
+    myNodes.addAll(SNodeOperations.getDescendants(((SNode) node), null, false, new String[]{}));
     myNodes.add(node);
     myCurrentContext = tcc;
     myParent = parent;
@@ -262,7 +262,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
       return rule;
     }
-    if (source != null && SNodeOperations.isRegistered(source)) {
+    if (source != null && jetbrains.mps.util.SNodeOperations.isRegistered(source)) {
       if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
         return source;
       }

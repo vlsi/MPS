@@ -64,7 +64,7 @@ public class GeneratorUtilEx {
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new LinkedList<SNode>();
-    for (SNode subnode : template.getDescendantsIterable(new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
+    for (SNode subnode : jetbrains.mps.util.SNodeOperations.getDescendants(template, new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
       templateFragments.add((SNode) subnode);
     }
     return templateFragments;

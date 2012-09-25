@@ -31,7 +31,7 @@ public abstract class DescendantsScope extends Scope {
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     Iterable<SNode> seq = ListSequence.fromList(SNodeOperations.getChildren(node, link)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return it.getDescendantsIterable(new IsInstanceCondition(concept), true);
+        return jetbrains.mps.util.SNodeOperations.getDescendants(it, new IsInstanceCondition(concept), true);
       }
     });
     if (prefix == null || prefix.isEmpty()) {
