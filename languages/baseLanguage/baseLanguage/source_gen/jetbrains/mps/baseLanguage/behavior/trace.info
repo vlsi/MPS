@@ -2155,7 +2155,7 @@
     <scopeInfo nodeId="6699851228396682176" fileName="Classifier_Behavior.java" startLine="294" startPosition="12" endLine="295" endPosition="106" />
     <scopeInfo nodeId="8967654016644708010" fileName="Classifier_Behavior.java" startLine="311" startPosition="75" endLine="312" endPosition="47" />
     <scopeInfo nodeId="4108288078926480243" fileName="Classifier_Behavior.java" startLine="314" startPosition="24" endLine="315" endPosition="56" />
-    <scopeInfo nodeId="2832018561209150554" fileName="Classifier_Behavior.java" startLine="323" startPosition="122" endLine="324" endPosition="71" />
+    <scopeInfo nodeId="229277139747537792" fileName="Classifier_Behavior.java" startLine="323" startPosition="122" endLine="324" endPosition="71" />
     <scopeInfo nodeId="5967160216353655816" fileName="Classifier_Behavior.java" startLine="328" startPosition="33" endLine="329" endPosition="156" />
     <scopeInfo nodeId="3050821798734721025" fileName="Classifier_Behavior.java" startLine="330" startPosition="16" endLine="331" endPosition="60" />
     <scopeInfo nodeId="7497677991178027472" fileName="Classifier_Behavior.java" startLine="338" startPosition="35" endLine="339" endPosition="219" />
@@ -2997,7 +2997,7 @@
     <scopeInfo nodeId="702942408396828387" fileName="ClassifierType_Behavior.java" startLine="93" startPosition="102" endLine="94" endPosition="19" />
     <scopeInfo nodeId="1213877315930" fileName="ClassifierType_Behavior.java" startLine="105" startPosition="80" endLine="106" endPosition="138" />
     <scopeInfo nodeId="1213877315986" fileName="ClassifierType_Behavior.java" startLine="115" startPosition="111" endLine="116" endPosition="139" />
-    <scopeInfo nodeId="1220440312182" fileName="ClassifierType_Behavior.java" startLine="132" startPosition="38" endLine="133" endPosition="24" />
+    <scopeInfo nodeId="1220440312184" fileName="ClassifierType_Behavior.java" startLine="132" startPosition="38" endLine="133" endPosition="24" />
     <scopeInfo nodeId="2452011492298376929" fileName="ClassifierType_Behavior.java" startLine="152" startPosition="97" endLine="153" endPosition="29" />
     <scopeInfo nodeId="2452011492298376944" fileName="ClassifierType_Behavior.java" startLine="156" startPosition="75" endLine="157" endPosition="29" />
     <scopeInfo nodeId="9011026350741578238" fileName="ClassifierType_Behavior.java" startLine="169" startPosition="95" endLine="170" endPosition="82" />
@@ -3101,7 +3101,9 @@
     <scopeInfo nodeId="1213877315889" fileName="ClassifierType_Behavior.java" startLine="71" startPosition="82" endLine="76" endPosition="75">
       <varInfo nodeId="1213877315891" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="2817265908000529962" fileName="ClassifierType_Behavior.java" startLine="193" startPosition="102" endLine="198" endPosition="7" />
+    <scopeInfo nodeId="2817265908000610197" fileName="ClassifierType_Behavior.java" startLine="193" startPosition="102" endLine="198" endPosition="7">
+      <varInfo nodeId="2817265908000610201" varName="parameter" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877315813" fileName="ClassifierType_Behavior.java" startLine="202" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="1213877315813" varName="thisNode" />
     </scopeInfo>
@@ -5381,9 +5383,7 @@
       <varInfo nodeId="6989301481869012157" varName="expr" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470349200585" fileName="ArrayType_Behavior.java" startLine="52" startPosition="167" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="1213877352300" fileName="ArrayType_Behavior.java" startLine="57" startPosition="14" endLine="60" endPosition="9">
-      <varInfo nodeId="1213877352301" varName="suffix" />
-    </scopeInfo>
+    <scopeInfo nodeId="1447667470349157995" fileName="ArrayType_Behavior.java" startLine="57" startPosition="14" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1213877352269" fileName="ArrayType_Behavior.java" startLine="19" startPosition="78" endLine="23" endPosition="134" />
     <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1213877352267" varName="thisNode" />
@@ -5821,7 +5821,9 @@
     <scopeInfo nodeId="4892662966716545705" fileName="ClassConcept_Behavior.java" startLine="233" startPosition="9" endLine="239" endPosition="9">
       <varInfo nodeId="4892662966716545708" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4892662966716545627" fileName="ClassConcept_Behavior.java" startLine="240" startPosition="102" endLine="246" endPosition="9" />
+    <scopeInfo nodeId="4892662966716545810" fileName="ClassConcept_Behavior.java" startLine="240" startPosition="102" endLine="246" endPosition="9">
+      <varInfo nodeId="4892662966716545829" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="369" startPosition="206" endLine="375" endPosition="7">
       <varInfo nodeId="8008512149545173446" varName="param" />
     </scopeInfo>
@@ -6845,7 +6847,7 @@
     <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="42" endLine="17" endPosition="0">
       <varInfo nodeId="1213877419060" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="31" endPosition="10" />
+    <scopeInfo nodeId="6694311595176645028" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="31" endPosition="10" />
     <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="21" startPosition="5" endLine="32" endPosition="7">
       <varInfo nodeId="6694311595176645020" varName="concept_c0a" />
     </scopeInfo>
@@ -10049,9 +10051,7 @@
     <scopeInfo nodeId="1220005182656" fileName="VariableArityType_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1220005182656" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2251110901304794544" fileName="VariableArityType_Behavior.java" startLine="24" startPosition="137" endLine="29" endPosition="9">
-      <varInfo nodeId="2251110901304794545" varName="suffix" />
-    </scopeInfo>
+    <scopeInfo nodeId="2251110901304794543" fileName="VariableArityType_Behavior.java" startLine="24" startPosition="137" endLine="29" endPosition="9" />
     <scopeInfo nodeId="2251110901304794541" fileName="VariableArityType_Behavior.java" startLine="23" startPosition="79" endLine="34" endPosition="7" />
     <scopeInfo nodeId="2251110901304794531" fileName="VariableArityType_Behavior.java" startLine="21" startPosition="88" endLine="36" endPosition="28">
       <varInfo nodeId="2251110901304794533" varName="variableSuffixes" />
@@ -10219,7 +10219,9 @@
     <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1224848545824" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1224848553388" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1224848553389" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="28" endPosition="7">
+      <varInfo nodeId="1224848553427" varName="annotation" />
+    </scopeInfo>
     <scopeInfo nodeId="1224848547767" fileName="IBLDeprecatable_Behavior.java" startLine="15" startPosition="76" endLine="30" endPosition="17" />
     <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1224848545824" varName="thisNode" />
@@ -11675,7 +11677,9 @@
     <scopeInfo nodeId="4313092516462065717" fileName="UsingStatement_Behavior.java" startLine="10" startPosition="38" endLine="13" endPosition="0">
       <varInfo nodeId="4313092516462065717" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4313092516462065740" fileName="UsingStatement_Behavior.java" startLine="15" startPosition="35" endLine="18" endPosition="7" />
+    <scopeInfo nodeId="4313092516462065769" fileName="UsingStatement_Behavior.java" startLine="15" startPosition="35" endLine="18" endPosition="7">
+      <varInfo nodeId="4313092516462065770" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4313092516462065723" fileName="UsingStatement_Behavior.java" startLine="14" startPosition="152" endLine="20" endPosition="164" />
     <scopeInfo nodeId="4313092516462065717" fileName="UsingStatement_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4313092516462065727" varName="ignoreMayBeThrowables" />
@@ -13143,7 +13147,9 @@
       <varInfo nodeId="9103527268106342063" varName="result" />
       <varInfo nodeId="9103527268106342069" varName="varRefs" />
     </scopeInfo>
-    <scopeInfo nodeId="9103527268106342416" fileName="ResolveUtil.java" startLine="145" startPosition="38" endLine="157" endPosition="7" />
+    <scopeInfo nodeId="9103527268106342417" fileName="ResolveUtil.java" startLine="145" startPosition="38" endLine="157" endPosition="7">
+      <varInfo nodeId="9103527268106342471" varName="varRef" />
+    </scopeInfo>
     <scopeInfo nodeId="9103527268106342458" fileName="ResolveUtil.java" startLine="231" startPosition="0" endLine="244" endPosition="0" />
     <scopeInfo nodeId="9103527268106341979" fileName="ResolveUtil.java" startLine="47" startPosition="149" endLine="61" endPosition="5">
       <varInfo nodeId="9103527268106342048" varName="paramType" />

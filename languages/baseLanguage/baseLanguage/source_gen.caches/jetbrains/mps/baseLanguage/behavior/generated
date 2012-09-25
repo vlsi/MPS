@@ -70,15 +70,7 @@
   <dep model="r:5a1c73a7-6ef8-45c4-96b7-fef49633c51a(jetbrains.mps.resourceBundles)" hash="-b4eaktv49g84tiroz0civrpbvf7mjyv" />
   <dep model="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" hash="elhvkj3hk6o6xao9tjeamd2a70l35zc" />
   <dep model="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" hash="dt1wkjp6g0k39n4k0bbxiylt6gygfao" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="almtkqz0gbddds7x887jrdbzzaw55u3" />
-=======
   <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-9zxctx5mfomb389qkuwndopp2i32fvc" />
->>>>>>> 23eb076... rewrite SNodeOperations via node<> type in return parameters with generics (will be migrated later together with java code)
-=======
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-5dqhxcn95n7bsjvsqsmstc1u5d744nv" />
->>>>>>> 78d9bd4... migrate findParent(cond),getDescendants(cond): MPS
   <dep model="r:64af8966-9a33-4cc7-8f2a-fe243f26c38f(jetbrains.mps.baseLanguage.jdk7.structure)" hash="86433i85vrrfejih7k12khi4bvgtd0d" />
   <dep model="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" hash="-1szr2290cq46xlw12zt02cp5qh6q0sr" />
   <dep model="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" hash="-dh83ckaqot5xdv6xa5bzckc6pr7p4tj" />
