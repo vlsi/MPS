@@ -37,7 +37,12 @@ public final class BehaviorManager {
     return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
+  @Deprecated
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+  }
+
+  public <T> T invokeSuperNew(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object... parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 }
