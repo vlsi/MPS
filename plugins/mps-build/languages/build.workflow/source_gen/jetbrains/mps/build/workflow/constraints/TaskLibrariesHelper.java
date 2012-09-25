@@ -65,7 +65,7 @@ public class TaskLibrariesHelper {
       for (SReference ref : n.getReferences()) {
         SNode targetNode = ref.getTargetNodeSilently();
         if (map.containsKey(targetNode)) {
-          n.setReferent(ref.getRole(), map.get(targetNode));
+          n.setReferenceTarget(ref.getRole(), map.get(targetNode));
         } else {
           SNode containingRoot = targetNode.getTopmostAncestor();
           if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {

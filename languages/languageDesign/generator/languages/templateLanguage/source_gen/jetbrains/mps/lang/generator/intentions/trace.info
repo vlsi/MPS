@@ -1497,9 +1497,7 @@
     <scopeInfo nodeId="1240595522760" fileName="AddPropertyMacroParam_property_Intention.java" startLine="54" startPosition="90" endLine="59" endPosition="88">
       <varInfo nodeId="2379012257478178406" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="108" startPosition="28" endLine="113" endPosition="7">
-      <varInfo nodeId="1240595522621" varName="param" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="108" startPosition="28" endLine="113" endPosition="7" />
     <scopeInfo nodeId="1240595522621" fileName="AddPropertyMacroParam_property_Intention.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1240595522621" varName="editorContext" />
       <varInfo nodeId="1240595522621" varName="node" />
@@ -1864,9 +1862,7 @@
       <varInfo nodeId="1240595919493" varName="editorContext" />
       <varInfo nodeId="1240595919493" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7">
-      <varInfo nodeId="1240595919493" varName="param" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="91" startPosition="28" endLine="96" endPosition="7" />
     <scopeInfo nodeId="1240595919493" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1240595919493" varName="editorContext" />
       <varInfo nodeId="1240595919493" varName="node" />
@@ -2218,7 +2214,7 @@
     <nodeInfo nodeId="34229510189811846" fileName="ConvertClassConceptToExtract_Intention.java" startLine="58" startPosition="31" endLine="59" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="34229510189756325" fileName="ConvertClassConceptToExtract_Intention.java" startLine="59" startPosition="80" endLine="60" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="34229510189818259" fileName="ConvertClassConceptToExtract_Intention.java" startLine="61" startPosition="34" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="34229510189818364" fileName="ConvertClassConceptToExtract_Intention.java" startLine="64" startPosition="55" endLine="65" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="34229510189818364" fileName="ConvertClassConceptToExtract_Intention.java" startLine="64" startPosition="55" endLine="65" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="34229510189818415" fileName="ConvertClassConceptToExtract_Intention.java" startLine="67" startPosition="97" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="34229510189631178" fileName="ConvertClassConceptToExtract_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="34229510189607557" fileName="ConvertClassConceptToExtract_Intention.java" startLine="73" startPosition="37" endLine="74" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2247,7 +2243,7 @@
     <scopeInfo nodeId="34229510189631185" fileName="ConvertClassConceptToExtract_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="138" />
     <scopeInfo nodeId="34229510190027320" fileName="ConvertClassConceptToExtract_Intention.java" startLine="54" startPosition="81" endLine="55" endPosition="33" />
     <scopeInfo nodeId="34229510189811818" fileName="ConvertClassConceptToExtract_Intention.java" startLine="61" startPosition="34" endLine="62" endPosition="60" />
-    <scopeInfo nodeId="34229510189818317" fileName="ConvertClassConceptToExtract_Intention.java" startLine="64" startPosition="55" endLine="65" endPosition="74" />
+    <scopeInfo nodeId="34229510189818317" fileName="ConvertClassConceptToExtract_Intention.java" startLine="64" startPosition="55" endLine="65" endPosition="81" />
     <scopeInfo nodeId="34229510189818389" fileName="ConvertClassConceptToExtract_Intention.java" startLine="67" startPosition="97" endLine="68" endPosition="72" />
     <scopeInfo nodeId="34229510189607557" fileName="ConvertClassConceptToExtract_Intention.java" startLine="73" startPosition="37" endLine="74" endPosition="53" />
     <scopeInfo nodeId="34229510189607557" fileName="ConvertClassConceptToExtract_Intention.java" startLine="17" startPosition="96" endLine="19" endPosition="3" />

@@ -613,7 +613,7 @@ public class ClassifierUpdater {
   }
 
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
-    if (sourceNode.getReferent(role) != null) {
+    if (sourceNode.getReferenceTarget(role) != null) {
       return;
     }
 
@@ -626,7 +626,7 @@ public class ClassifierUpdater {
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
-    if (sourceNode.getReferent(role) != null) {
+    if (sourceNode.getReferenceTarget(role) != null) {
       return;
     }
 
@@ -638,7 +638,7 @@ public class ClassifierUpdater {
   }
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
-    if (sourceNode.getReferent(role) != null) {
+    if (sourceNode.getReferenceTarget(role) != null) {
       return;
     }
 

@@ -33,7 +33,7 @@ public class SLinkOperations {
           null
         );
       }
-      return node.getReferent(role);
+      return node.getReferenceTarget(role);
     }
     return null;
   }
@@ -56,7 +56,7 @@ public class SLinkOperations {
           }
         }
       } else {
-        node.setReferent(role, targetNode);
+        node.setReferenceTarget(role, targetNode);
       }
     }
     return targetNode;

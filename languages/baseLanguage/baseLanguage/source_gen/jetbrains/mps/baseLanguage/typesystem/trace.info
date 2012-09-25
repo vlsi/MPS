@@ -2198,7 +2198,7 @@
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="53" startPosition="68" endLine="57" endPosition="5" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1219923151020" fileName="typeOf_VarRef_InferenceRule.java" startLine="34" startPosition="33" endLine="39" endPosition="11" />
+    <scopeInfo nodeId="1219923151018" fileName="typeOf_VarRef_InferenceRule.java" startLine="34" startPosition="33" endLine="39" endPosition="11" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="52" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1176719219618" varName="argument" />
     </scopeInfo>
@@ -3286,7 +3286,7 @@
     <scopeInfo nodeId="1203438324865" fileName="RulesFunctions_BaseLanguage.java" startLine="431" startPosition="102" endLine="432" endPosition="37" />
     <scopeInfo nodeId="1201700393666" fileName="RulesFunctions_BaseLanguage.java" startLine="446" startPosition="240" endLine="447" endPosition="18" />
     <scopeInfo nodeId="1201700829807" fileName="RulesFunctions_BaseLanguage.java" startLine="462" startPosition="54" endLine="463" endPosition="175" />
-    <scopeInfo nodeId="1201700829809" fileName="RulesFunctions_BaseLanguage.java" startLine="466" startPosition="39" endLine="467" endPosition="119" />
+    <scopeInfo nodeId="1201700829807" fileName="RulesFunctions_BaseLanguage.java" startLine="466" startPosition="39" endLine="467" endPosition="119" />
     <scopeInfo nodeId="3115327157609989892" fileName="RulesFunctions_BaseLanguage.java" startLine="479" startPosition="34" endLine="480" endPosition="17" />
     <scopeInfo nodeId="3115327157609989907" fileName="RulesFunctions_BaseLanguage.java" startLine="486" startPosition="190" endLine="487" endPosition="17" />
     <scopeInfo nodeId="3115327157609989921" fileName="RulesFunctions_BaseLanguage.java" startLine="489" startPosition="37" endLine="490" endPosition="114" />
@@ -3595,9 +3595,7 @@
     <scopeInfo nodeId="4460871289557452670" fileName="RulesFunctions_BaseLanguage.java" startLine="538" startPosition="124" endLine="545" endPosition="15">
       <varInfo nodeId="4460871289557452672" varName="cc" />
     </scopeInfo>
-    <scopeInfo nodeId="4460871289557452878" fileName="RulesFunctions_BaseLanguage.java" startLine="556" startPosition="126" endLine="563" endPosition="17">
-      <varInfo nodeId="4460871289557452880" varName="cc" />
-    </scopeInfo>
+    <scopeInfo nodeId="4460871289557452852" fileName="RulesFunctions_BaseLanguage.java" startLine="556" startPosition="126" endLine="563" endPosition="17" />
     <scopeInfo nodeId="4460871289557453758" fileName="RulesFunctions_BaseLanguage.java" startLine="571" startPosition="24" endLine="578" endPosition="19">
       <varInfo nodeId="4460871289557453772" varName="thr" />
     </scopeInfo>
@@ -3630,7 +3628,7 @@
       <varInfo nodeId="1203452192899" varName="tvar" />
       <varInfo nodeId="1203452214274" varName="tvd" />
     </scopeInfo>
-    <scopeInfo nodeId="4460871289557451562" fileName="RulesFunctions_BaseLanguage.java" startLine="537" startPosition="39" endLine="546" endPosition="13" />
+    <scopeInfo nodeId="4460871289557451560" fileName="RulesFunctions_BaseLanguage.java" startLine="537" startPosition="39" endLine="546" endPosition="13" />
     <scopeInfo nodeId="4460871289557451639" fileName="RulesFunctions_BaseLanguage.java" startLine="555" startPosition="41" endLine="564" endPosition="15" />
     <scopeInfo nodeId="4460871289557914783" fileName="RulesFunctions_BaseLanguage.java" startLine="596" startPosition="53" endLine="605" endPosition="9" />
     <scopeInfo nodeId="1196777955046" fileName="RulesFunctions_BaseLanguage.java" startLine="735" startPosition="76" endLine="744" endPosition="20">
@@ -3751,7 +3749,9 @@
     <scopeInfo nodeId="1203441371334" fileName="RulesFunctions_BaseLanguage.java" startLine="257" startPosition="29" endLine="270" endPosition="7">
       <varInfo nodeId="1203441371350" varName="matchedType" />
     </scopeInfo>
-    <scopeInfo nodeId="1203454932001" fileName="RulesFunctions_BaseLanguage.java" startLine="385" startPosition="23" endLine="398" endPosition="7" />
+    <scopeInfo nodeId="1203452801447" fileName="RulesFunctions_BaseLanguage.java" startLine="385" startPosition="23" endLine="398" endPosition="7">
+      <varInfo nodeId="1203452801449" varName="nodes" />
+    </scopeInfo>
     <scopeInfo nodeId="1201700829805" fileName="RulesFunctions_BaseLanguage.java" startLine="456" startPosition="7" endLine="469" endPosition="9">
       <varInfo nodeId="1201700829805" varName="matchedNode_5ahx9e_a0f0o" />
     </scopeInfo>
@@ -11331,7 +11331,7 @@
     <scopeInfo nodeId="1215004550927" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="21" startPosition="61" endLine="21" endPosition="61" />
     <scopeInfo nodeId="1215004742941" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="60" startPosition="52" endLine="60" endPosition="52" />
     <scopeInfo nodeId="1215004601308" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="32" startPosition="48" endLine="33" endPosition="167" />
-    <scopeInfo nodeId="1215004601310" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="36" startPosition="33" endLine="37" endPosition="322" />
+    <scopeInfo nodeId="1215004601308" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="36" startPosition="33" endLine="37" endPosition="322" />
     <scopeInfo nodeId="1215004550927" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="44" startPosition="46" endLine="45" endPosition="65" />
     <scopeInfo nodeId="1215004550927" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="55" startPosition="27" endLine="56" endPosition="17" />
     <scopeInfo nodeId="1215004742941" fileName="anonymousClassExtendsItsClassifier_SubtypingRule.java" startLine="74" startPosition="37" endLine="75" endPosition="98" />
@@ -11994,8 +11994,8 @@
     <nodeInfo nodeId="1220443943109" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="20" startPosition="253" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1220443845368" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
     <scopeInfo nodeId="1220443845368" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="17" startPosition="63" endLine="17" endPosition="63" />
-    <scopeInfo nodeId="1220443995701" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="40" startPosition="103" endLine="41" endPosition="304" />
-    <scopeInfo nodeId="1220444023165" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="42" startPosition="12" endLine="43" endPosition="185" />
+    <scopeInfo nodeId="1220443943111" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="40" startPosition="103" endLine="41" endPosition="304" />
+    <scopeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="42" startPosition="12" endLine="43" endPosition="185" />
     <scopeInfo nodeId="1220443845368" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="48" startPosition="27" endLine="49" endPosition="16" />
     <scopeInfo nodeId="1220443845368" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="66" startPosition="53" endLine="67" endPosition="55" />
     <scopeInfo nodeId="1220443845368" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="70" startPosition="55" endLine="71" endPosition="65" />
@@ -15088,7 +15088,7 @@
     <unitInfo nodeId="1241543390448" fileName="check_EnumConstantHasConstructorDeclaration_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_EnumConstantHasConstructorDeclaration_NonTypesystemRule" />
   </root>
   <root nodeId="1241543745974" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
-    <nodeInfo nodeId="1241544122388" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="23" startPosition="101" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241544122388" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="23" startPosition="101" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241543946857" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241543946857" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="27" startPosition="62" endLine="28" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241543946857" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="29" startPosition="11" endLine="30" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -15110,7 +15110,7 @@
     <nodeInfo nodeId="1241543946857" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="28" startPosition="255" endLine="34" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1241543745974" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="1241543946857" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="25" startPosition="114" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241543854042" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="24" startPosition="83" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241543854042" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="24" startPosition="90" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1241543833871" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="22" startPosition="134" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1241543745974" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1241543745974" fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="19" startPosition="81" endLine="19" endPosition="81" />
@@ -15905,9 +15905,7 @@
     <scopeInfo nodeId="2089334432680127922" fileName="check_DuplicateEnumConstants_NonTypesystemRule.java" startLine="22" startPosition="88" endLine="34" endPosition="7">
       <varInfo nodeId="2089334432680127981" varName="namesakes" />
     </scopeInfo>
-    <scopeInfo nodeId="2089334432680127918" fileName="check_DuplicateEnumConstants_NonTypesystemRule.java" startLine="21" startPosition="122" endLine="35" endPosition="5">
-      <varInfo nodeId="2089334432680127920" varName="constant" />
-    </scopeInfo>
+    <scopeInfo nodeId="2089334432680122743" fileName="check_DuplicateEnumConstants_NonTypesystemRule.java" startLine="21" startPosition="122" endLine="35" endPosition="5" />
     <scopeInfo nodeId="2089334432680122742" fileName="check_DuplicateEnumConstants_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2089334432680122742" varName="enumClass" />
       <varInfo nodeId="2089334432680122742" varName="status" />
@@ -16683,9 +16681,9 @@
     <scopeInfo nodeId="5351908542925432920" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="268" startPosition="71" endLine="268" endPosition="71" />
     <scopeInfo nodeId="5351908542925432920" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="275" startPosition="42" endLine="275" endPosition="42" />
     <scopeInfo nodeId="5351908542925351155" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="32" startPosition="43" endLine="33" endPosition="217" />
-    <scopeInfo nodeId="2731213890635126336" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="111" startPosition="112" endLine="112" endPosition="271" />
+    <scopeInfo nodeId="2731213890635159241" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="111" startPosition="112" endLine="112" endPosition="271" />
     <scopeInfo nodeId="2731213890635159298" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="113" startPosition="119" endLine="114" endPosition="271" />
-    <scopeInfo nodeId="2731213890635159482" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="115" startPosition="117" endLine="116" endPosition="152" />
+    <scopeInfo nodeId="2731213890635159410" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="115" startPosition="117" endLine="116" endPosition="152" />
     <scopeInfo nodeId="3216938209399927487" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="119" startPosition="61" endLine="120" endPosition="152" />
     <scopeInfo nodeId="3216938209399927516" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="120" startPosition="152" endLine="121" endPosition="152" />
     <scopeInfo nodeId="2731213890635126142" fileName="generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="124" startPosition="62" endLine="125" endPosition="34" />
@@ -17250,9 +17248,7 @@
     <scopeInfo nodeId="2925336694746295128" fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="11" startPosition="51" endLine="11" endPosition="51" />
     <scopeInfo nodeId="2925336694746295133" fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="15" startPosition="160" endLine="16" endPosition="187" />
     <scopeInfo nodeId="2925336694746295128" fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="10" startPosition="78" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="2925336694746295132" fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="14" startPosition="35" endLine="17" endPosition="5">
-      <varInfo nodeId="2925336694746295136" varName="parameter" />
-    </scopeInfo>
+    <scopeInfo nodeId="2925336694746295130" fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="14" startPosition="35" endLine="17" endPosition="5" />
     <scopeInfo nodeId="2925336694746295128" fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="13" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="2925336694746295128" varName="node" />
     </scopeInfo>
@@ -17368,9 +17364,7 @@
       <varInfo nodeId="3073231036166011787" varName="scope" />
       <varInfo nodeId="3073231036166007623" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="3073231036166007638" fileName="check_UsingStatement_NonTypesystemRule.java" startLine="31" startPosition="127" endLine="57" endPosition="5">
-      <varInfo nodeId="3073231036166007639" varName="resource" />
-    </scopeInfo>
+    <scopeInfo nodeId="3073231036166000666" fileName="check_UsingStatement_NonTypesystemRule.java" startLine="31" startPosition="127" endLine="57" endPosition="5" />
     <scopeInfo nodeId="3073231036166000665" fileName="check_UsingStatement_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3073231036166000665" varName="status" />
       <varInfo nodeId="3073231036166000665" varName="typeCheckingContext" />
@@ -18373,9 +18367,9 @@
     <scopeInfo nodeId="2248407684786392198" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="189" startPosition="59" endLine="189" endPosition="59" />
     <scopeInfo nodeId="8512491756795014441" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="35" startPosition="681" endLine="36" endPosition="18" />
     <scopeInfo nodeId="8512491756795014492" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="45" startPosition="57" endLine="46" endPosition="184" />
-    <scopeInfo nodeId="8512491756795014494" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="49" startPosition="42" endLine="50" endPosition="166" />
+    <scopeInfo nodeId="8512491756795014492" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="49" startPosition="42" endLine="50" endPosition="166" />
     <scopeInfo nodeId="8512491756795014504" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="55" startPosition="59" endLine="56" endPosition="181" />
-    <scopeInfo nodeId="8512491756795014506" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="59" startPosition="44" endLine="60" endPosition="168" />
+    <scopeInfo nodeId="8512491756795014504" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="59" startPosition="44" endLine="60" endPosition="168" />
     <scopeInfo nodeId="8512491756795014533" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="67" startPosition="42" endLine="68" endPosition="416" />
     <scopeInfo nodeId="3759381730162150198" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="80" startPosition="46" endLine="81" endPosition="62" />
     <scopeInfo nodeId="3759381730162150198" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="91" startPosition="30" endLine="92" endPosition="17" />
@@ -21415,7 +21409,7 @@
     <nodeInfo nodeId="6125943271043465146" fileName="Arrays_InequationReplacementRule.java" startLine="21" startPosition="253" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6125943271043337054" fileName="Arrays_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
     <scopeInfo nodeId="6125943271043337054" fileName="Arrays_InequationReplacementRule.java" startLine="18" startPosition="45" endLine="18" endPosition="45" />
-    <scopeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="41" startPosition="155" endLine="42" endPosition="243" />
+    <scopeInfo nodeId="6125943271043465147" fileName="Arrays_InequationReplacementRule.java" startLine="41" startPosition="155" endLine="42" endPosition="243" />
     <scopeInfo nodeId="6125943271043532195" fileName="Arrays_InequationReplacementRule.java" startLine="43" startPosition="12" endLine="44" endPosition="203" />
     <scopeInfo nodeId="6125943271043337054" fileName="Arrays_InequationReplacementRule.java" startLine="49" startPosition="27" endLine="50" endPosition="16" />
     <scopeInfo nodeId="6125943271043337054" fileName="Arrays_InequationReplacementRule.java" startLine="67" startPosition="53" endLine="68" endPosition="60" />

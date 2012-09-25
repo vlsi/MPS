@@ -1082,27 +1082,27 @@
     <scopeInfo nodeId="2705856473428697889" fileName="MathUtil.java" startLine="1249" startPosition="45" endLine="1249" endPosition="45" />
     <scopeInfo nodeId="2705856473428697902" fileName="MathUtil.java" startLine="1287" startPosition="45" endLine="1287" endPosition="45" />
     <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="38" startPosition="49" endLine="39" endPosition="181" />
-    <scopeInfo nodeId="1238942028292" fileName="MathUtil.java" startLine="42" startPosition="34" endLine="43" endPosition="230" />
+    <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="42" startPosition="34" endLine="43" endPosition="230" />
     <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="48" startPosition="51" endLine="49" endPosition="184" />
     <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="52" startPosition="36" endLine="53" endPosition="235" />
     <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="58" startPosition="53" endLine="59" endPosition="184" />
-    <scopeInfo nodeId="1238942028324" fileName="MathUtil.java" startLine="62" startPosition="38" endLine="63" endPosition="240" />
+    <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="62" startPosition="38" endLine="63" endPosition="240" />
     <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="68" startPosition="55" endLine="69" endPosition="186" />
     <scopeInfo nodeId="1238942028340" fileName="MathUtil.java" startLine="72" startPosition="40" endLine="73" endPosition="245" />
     <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="90" startPosition="49" endLine="91" endPosition="169" />
     <scopeInfo nodeId="1238942053988" fileName="MathUtil.java" startLine="94" startPosition="34" endLine="95" endPosition="192" />
     <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="100" startPosition="51" endLine="101" endPosition="172" />
-    <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="104" startPosition="36" endLine="105" endPosition="197" />
+    <scopeInfo nodeId="1238942054004" fileName="MathUtil.java" startLine="104" startPosition="36" endLine="105" endPosition="197" />
     <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="110" startPosition="53" endLine="111" endPosition="172" />
-    <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="114" startPosition="38" endLine="115" endPosition="202" />
+    <scopeInfo nodeId="1238942054020" fileName="MathUtil.java" startLine="114" startPosition="38" endLine="115" endPosition="202" />
     <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="120" startPosition="55" endLine="121" endPosition="174" />
-    <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="124" startPosition="40" endLine="125" endPosition="207" />
+    <scopeInfo nodeId="1238942054036" fileName="MathUtil.java" startLine="124" startPosition="40" endLine="125" endPosition="207" />
     <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="143" startPosition="49" endLine="144" endPosition="182" />
     <scopeInfo nodeId="1300076822026748101" fileName="MathUtil.java" startLine="147" startPosition="34" endLine="148" endPosition="82" />
     <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="153" startPosition="51" endLine="154" endPosition="182" />
-    <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="157" startPosition="36" endLine="158" endPosition="84" />
+    <scopeInfo nodeId="1904947163751468052" fileName="MathUtil.java" startLine="157" startPosition="36" endLine="158" endPosition="84" />
     <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="163" startPosition="53" endLine="164" endPosition="186" />
-    <scopeInfo nodeId="1904947163751468056" fileName="MathUtil.java" startLine="167" startPosition="38" endLine="168" endPosition="86" />
+    <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="167" startPosition="38" endLine="168" endPosition="86" />
     <scopeInfo nodeId="1300076822026746767" fileName="MathUtil.java" startLine="176" startPosition="13" endLine="177" endPosition="74" />
     <scopeInfo nodeId="1300076822026746773" fileName="MathUtil.java" startLine="178" startPosition="13" endLine="179" endPosition="74" />
     <scopeInfo nodeId="1300076822026746779" fileName="MathUtil.java" startLine="180" startPosition="13" endLine="181" endPosition="74" />
@@ -1119,7 +1119,7 @@
     <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="221" startPosition="49" endLine="222" endPosition="170" />
     <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="225" startPosition="34" endLine="226" endPosition="137" />
     <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="231" startPosition="51" endLine="232" endPosition="172" />
-    <scopeInfo nodeId="2705856473428697738" fileName="MathUtil.java" startLine="235" startPosition="36" endLine="236" endPosition="139" />
+    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="235" startPosition="36" endLine="236" endPosition="139" />
     <scopeInfo nodeId="2705856473428697762" fileName="MathUtil.java" startLine="245" startPosition="158" endLine="246" endPosition="15" />
     <scopeInfo nodeId="2705856473428697773" fileName="MathUtil.java" startLine="248" startPosition="158" endLine="249" endPosition="15" />
     <scopeInfo nodeId="2705856473428697784" fileName="MathUtil.java" startLine="251" startPosition="158" endLine="252" endPosition="15" />

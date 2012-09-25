@@ -304,8 +304,8 @@
     <nodeInfo nodeId="2742102018362199415" fileName="StubResolver.java" startLine="150" startPosition="45" endLine="151" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2742102018362199429" fileName="StubResolver.java" startLine="156" startPosition="46" endLine="157" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="163" startPosition="37" endLine="164" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2742102018362199469" fileName="StubResolver.java" startLine="167" startPosition="58" endLine="168" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2742102018362199480" fileName="StubResolver.java" startLine="168" startPosition="98" endLine="169" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742102018362199469" fileName="StubResolver.java" startLine="167" startPosition="58" endLine="168" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742102018362199480" fileName="StubResolver.java" startLine="168" startPosition="105" endLine="169" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199485" fileName="StubResolver.java" startLine="169" startPosition="62" endLine="170" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199488" fileName="StubResolver.java" startLine="170" startPosition="16" endLine="171" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199498" fileName="StubResolver.java" startLine="174" startPosition="20" endLine="175" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -371,9 +371,7 @@
     <scopeInfo nodeId="5778265495851109961" fileName="StubResolver.java" startLine="51" startPosition="25" endLine="53" endPosition="24" />
     <scopeInfo nodeId="9073603541474867759" fileName="StubResolver.java" startLine="80" startPosition="91" endLine="82" endPosition="56" />
     <scopeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="112" startPosition="88" endLine="115" endPosition="5" />
-    <scopeInfo nodeId="2082194532791126333" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5">
-      <varInfo nodeId="2082194532791126334" varName="model" />
-    </scopeInfo>
+    <scopeInfo nodeId="2082194532791124435" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5" />
     <scopeInfo nodeId="9164503229271486529" fileName="StubResolver.java" startLine="129" startPosition="93" endLine="132" endPosition="9" />
     <scopeInfo nodeId="2742102018362199454" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" />
     <scopeInfo nodeId="5778265495851109958" fileName="StubResolver.java" startLine="50" startPosition="0" endLine="54" endPosition="3" />
@@ -420,9 +418,7 @@
       <varInfo nodeId="9073603541474867744" varName="modelRef" />
       <varInfo nodeId="9073603541474867707" varName="targetModelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="9073603541474867700" fileName="StubResolver.java" startLine="68" startPosition="92" endLine="84" endPosition="7">
-      <varInfo nodeId="9073603541474867701" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="9073603541474867699" fileName="StubResolver.java" startLine="68" startPosition="92" endLine="84" endPosition="7" />
     <scopeInfo nodeId="9073603541474867694" fileName="StubResolver.java" startLine="67" startPosition="81" endLine="85" endPosition="5">
       <varInfo nodeId="9073603541474867695" varName="node" />
     </scopeInfo>

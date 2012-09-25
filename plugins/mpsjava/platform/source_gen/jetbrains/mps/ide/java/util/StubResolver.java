@@ -165,7 +165,7 @@ public class StubResolver {
           }
         }
         if (ListSequence.fromList(resolved).count() > 0) {
-          node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
+          node.setReferenceTarget(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++cnt;
           found = true;
