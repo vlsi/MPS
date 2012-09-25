@@ -10,9 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.scope.Scope;
 
 public class MpsScopesUtil {
   public MpsScopesUtil() {
@@ -34,25 +31,9 @@ public class MpsScopesUtil {
     return "No signature for " + classifierMember;
   }
 
-  public static Iterable<SNode> getMembersOld(SNode classifier) {
-    List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode memberType : ListSequence.fromList(Arrays.asList(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")))) {
-      Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getMembers_2201875424515824604", new Class[]{SNode.class, SNode.class}, memberType));
-      for (SNode member : scope.getAvailableElements(null)) {
-        ListSequence.fromList(members).addElement(member);
-      }
-    }
-    return members;
-  }
-
-  public static Iterable<SNode> getMembersNew(SNode classifier) {
-    // here new way to members calculating 
-    return getMembersOld(classifier);
-  }
-
   public static List<String> getMembersSignatures(SNode classifier) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (SNode member : getMembersNew(classifier)) {
+    for (SNode member : ((Iterable<SNode>) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getThisType_7405920559687254782", new Class[]{SNode.class})), "call_getMembers_7405920559687277275", new Class[]{SNode.class}))) {
       if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
         ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
       } else {

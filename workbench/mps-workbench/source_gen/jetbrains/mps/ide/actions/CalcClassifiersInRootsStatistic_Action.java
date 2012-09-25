@@ -24,11 +24,11 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -70,8 +70,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._int rootsCount = new Wrappers._int(0);
-      final Wrappers._long newMembersOverallTime = new Wrappers._long(0);
-      final Wrappers._long oldMembersOverallTime = new Wrappers._long(0);
+      final Wrappers._long membersOverallTime = new Wrappers._long(0);
 
       InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(final SNode node) {
@@ -109,13 +108,9 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
             }
 
             final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
-            long oldMembersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
+            long membersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
               public void invoke() {
-                members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
-                  public Iterable<SNode> invoke(SNode classifier) {
-                    return MpsScopesUtil.getMembersOld(classifier);
-                  }
-                }, _params);
+                members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, _params);
               }
             }, _params);
 
@@ -124,27 +119,11 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
               somethingPrinted = true;
             }
 
-            if (oldMembersCalcTime > 500) {
-              System.out.printf("%s: old members calc time = %.3f%n", nodeName, oldMembersCalcTime * 0.001);
+            if (membersCalcTime > 500) {
+              System.out.printf("%s: old members calc time = %.3f%n", nodeName, membersCalcTime * 0.001);
               somethingPrinted = true;
             }
-            oldMembersOverallTime.value += oldMembersCalcTime;
-
-            long newMembersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
-                  public Iterable<SNode> invoke(SNode classifier) {
-                    return MpsScopesUtil.getMembersNew(classifier);
-                  }
-                }, _params);
-              }
-            }, _params);
-
-            if (newMembersCalcTime > 500) {
-              System.out.printf("%s: new members calc time = %.3f%n", nodeName, newMembersCalcTime * 0.001);
-              somethingPrinted = true;
-            }
-            newMembersOverallTime.value += newMembersCalcTime;
+            membersOverallTime.value += membersCalcTime;
 
             if (somethingPrinted) {
               System.out.println();
@@ -153,8 +132,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
         }
       });
 
-      System.out.println("New members average time: " + newMembersOverallTime.value * 0.001 / rootsCount.value);
-      System.out.println("Old members average time: " + oldMembersOverallTime.value * 0.001 / rootsCount.value);
+      System.out.println("Members average time: " + membersOverallTime.value * 0.001 / rootsCount.value);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
@@ -178,12 +156,12 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     return result;
   }
 
-  /*package*/ List<SNode> calcAllMembersOfClassifiers(Iterable<SNode> classifiers, _FunctionTypes._return_P1_E0<? extends Iterable<SNode>, ? super SNode> membersCaclulator, final Map<String, Object> _params) {
+  /*package*/ List<SNode> calcAllMembersOfClassifiers(Iterable<SNode> classifiers, final Map<String, Object> _params) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
     for (SNode classifier : classifiers) {
       try {
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(membersCaclulator.invoke(classifier)));
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(((Iterable<SNode>) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getThisType_7405920559687254782", new Class[]{SNode.class})), "call_getMembers_7405920559687277275", new Class[]{SNode.class}))));
       } catch (Exception e) {
         System.out.println(e);
       }
