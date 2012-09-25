@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class MethodSignature implements Signature {
   private final String singature;
 
-  public MethodSignature(SNode method, Map<SNode, SNode> typeVarToType) {
-    this.singature = getStringSignature(method, typeVarToType);
+  public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable) {
+    this.singature = getStringSignature(method, typeByTypeVariable);
   }
 
   @Override
@@ -27,8 +27,8 @@ public class MethodSignature implements Signature {
     return eq_1fkaqj_a0c0b(this.singature, arg.singature);
   }
 
-  public static String getStringSignature(SNode method, Map<SNode, SNode> typeVarToType) {
-    return SPropertyOperations.getString(method, "name") + "(" + ClassifierScopeUtils.createMethodParameterTypesString(method, typeVarToType) + ")";
+  public static String getStringSignature(SNode method, Map<SNode, SNode> typeByTypeVariable) {
+    return SPropertyOperations.getString(method, "name") + "(" + ClassifierScopeUtils.createMethodParameterTypesString(method, typeByTypeVariable) + ")";
   }
 
   private static boolean eq_1fkaqj_a0c0b(Object a, Object b) {

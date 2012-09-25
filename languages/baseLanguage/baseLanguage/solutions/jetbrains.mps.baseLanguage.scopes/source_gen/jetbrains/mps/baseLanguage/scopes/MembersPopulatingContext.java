@@ -8,17 +8,25 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Collections;
 
 public class MembersPopulatingContext {
   private Stack<SNode> classifiers = new Stack<SNode>();
   private boolean isPackageProtectedAvailable = true;
   private final List<SNode> members = new ArrayList<SNode>();
   private final Set<Signature> hidedSignatures = new HashSet<Signature>();
+  private Map<SNode, SNode> typeByTypeVariable = new HashMap<SNode, SNode>();
 
   public MembersPopulatingContext() {
     // java collections for speed 
@@ -49,7 +57,18 @@ public class MembersPopulatingContext {
     }
     classifiers.add(classifier);
 
-    // todo: set types variables 
+    // set types variables 
+    Iterable<SNode> typeParams = IClassifierType_Behavior.call_getTypeParameters_7405920559687237518(classifierType);
+    if (Sequence.fromIterable(typeParams).isNotEmpty()) {
+      Iterator<SNode> typeVars = Sequence.fromIterable(IClassifier_Behavior.call_getTypeVariables_7405920559687237503(classifier)).iterator();
+      for (SNode typeParm : typeParams) {
+        if (!(typeVars.hasNext())) {
+          break;
+        }
+        SNode typeVar = typeVars.next();
+        MapSequence.fromMap(typeByTypeVariable).put(typeVar, typeParm);
+      }
+    }
 
     // recalc is package protected available 
     isPackageProtectedAvailable = true;
@@ -84,5 +103,9 @@ public class MembersPopulatingContext {
       return isPackageProtectedVisible();
     }
     return true;
+  }
+
+  public Map<SNode, SNode> getTypeByTypeVariableMapping() {
+    return Collections.unmodifiableMap(typeByTypeVariable);
   }
 }

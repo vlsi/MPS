@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -75,7 +74,7 @@ public class InstanceMethodDeclaration_Behavior {
     if (!((context.isElementVisible(thisNode)))) {
       return;
     }
-    MethodSignature signature = new MethodSignature(thisNode, ClassifierScopeUtils.resolveClassifierTypeVars(SNodeOperations.cast(IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifier), "jetbrains.mps.baseLanguage.structure.Classifier")));
+    MethodSignature signature = new MethodSignature(thisNode, context.getTypeByTypeVariableMapping());
     context.addMember(thisNode, signature);
     context.hideMembers(signature);
   }
