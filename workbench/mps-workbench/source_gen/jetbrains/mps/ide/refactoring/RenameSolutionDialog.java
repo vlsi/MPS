@@ -17,7 +17,6 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.renameSolution.SolutionRenamer;
 
 public class RenameSolutionDialog extends BaseDialog {
@@ -54,10 +53,6 @@ public class RenameSolutionDialog extends BaseDialog {
         final String fqName = myLanguageNameField.getText();
         if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
           setErrorText("Duplicate solution name");
-          return false;
-        }
-        if (!((SourceVersion.isName(fqName)))) {
-          setErrorText("Solution namespace should be valid Java package");
           return false;
         }
         new SolutionRenamer(mySolution, fqName).rename();

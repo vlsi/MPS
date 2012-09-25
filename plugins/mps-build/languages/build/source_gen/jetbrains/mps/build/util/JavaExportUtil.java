@@ -42,14 +42,15 @@ public class JavaExportUtil {
         }
         SNode classpath = SLinkOperations.getTarget(jcp, "classpath", true);
         if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar")) {
-          SNode jarArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+          Tuples._2<SNode, String> resource = artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true));
+          SNode jarArtifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
           if (jarArtifact != null) {
-            ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(jarArtifact, false));
+            ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(jarArtifact, isNotEmpty_4xqa58_a1a0a0a2a3a2a6a0(resource._1())));
           }
         } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")) {
-          SNode requiredJar = requireJar(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), "extJar", true), "jar", false), contextNode);
+          Tuples._2<SNode, Boolean> requiredJar = requireJar(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), "extJar", true), "jar", false), contextNode);
           if (requiredJar != null) {
-            ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(requiredJar, false));
+            ListSequence.fromList(result).addElement(requiredJar);
           }
         } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder")) {
           SNode requiredJarFolder = requireJarFolder(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"), "extFolder", true), "folder", false), contextNode);
@@ -136,9 +137,25 @@ public class JavaExportUtil {
         continue;
       }
 
-      SNode jarNode = requireJar(artifacts, extJar, contextNode);
-      if (jarNode != null) {
-        builder.add(jarNode);
+      Tuples._2<SNode, Boolean> jarImport = requireJar(artifacts, extJar, contextNode);
+      if (jarImport != null) {
+        if ((boolean) jarImport._1()) {
+          builder.addWithContent(jarImport._0());
+        } else {
+          builder.add(jarImport._0());
+        }
+        hasDependencies = true;
+      }
+    }
+
+    for (Tuples._2<SNode, String> extJarInFolder : CollectionSequence.fromCollection(closure.getExternalJarsInFolder())) {
+      if (SNodeOperations.getContainingRoot(extJarInFolder._0()) == SNodeOperations.getContainingRoot(contextNode)) {
+        continue;
+      }
+
+      SNode folderNode = requireJarFolder(artifacts, extJarInFolder._0(), contextNode);
+      if (folderNode != null) {
+        builder.addWithContent(folderNode);
         hasDependencies = true;
       }
     }
@@ -148,7 +165,7 @@ public class JavaExportUtil {
     }
   }
 
-  public static SNode requireJar(VisibleArtifacts artifacts, SNode jar, SNode contextNode) {
+  public static Tuples._2<SNode, Boolean> requireJar(VisibleArtifacts artifacts, SNode jar, SNode contextNode) {
     if (SNodeOperations.getContainingRoot(jar) == SNodeOperations.getContainingRoot(contextNode)) {
       return null;
     }
@@ -159,12 +176,15 @@ public class JavaExportUtil {
     }
 
     SNode artifact = null;
+    boolean withContent = false;
     if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_Node")) {
       artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
     } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+      Tuples._2<SNode, String> resource = artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true));
+      artifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
+      withContent = isNotEmpty_4xqa58_a0a2a0h0c(resource._1());
     }
-    return artifact;
+    return MultiTuple.<SNode,Boolean>from(artifact, withContent);
   }
 
   public static SNode requireJarFolder(VisibleArtifacts artifacts, SNode jarFolder, SNode contextNode) {
@@ -181,9 +201,17 @@ public class JavaExportUtil {
     if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer")) {
       artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
     } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFolder")) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+      artifact = SNodeOperations.as(artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true))._0(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
     }
     return artifact;
 
+  }
+
+  public static boolean isNotEmpty_4xqa58_a1a0a0a2a3a2a6a0(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_4xqa58_a0a2a0h0c(String str) {
+    return str != null && str.length() > 0;
   }
 }

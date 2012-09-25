@@ -17,12 +17,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.Set;
@@ -94,7 +94,7 @@ public class TraceInfoUtil {
           }
         }, true);
         final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
-        String nodeId = firstPositionInfo.getNodeId();
+        PositionInfo result = firstPositionInfo;
         // here we do some magic to fix the following bug: 
         // each node in base language owns a '\n' symbol in a previous line 
         // in the following code we will never get 'for' node quering line 1: 
@@ -103,7 +103,7 @@ public class TraceInfoUtil {
         // 3.  } 
         // since 'some statement' takes lines 1-2 instead of just line 2 
         if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
-          nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
+          result = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1);
         }
         // here we have another example of how not to write code 
         // this is a hack fixing MPS-8644 
@@ -123,12 +123,12 @@ public class TraceInfoUtil {
             }
           });
           if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
-            SNode currentNode = model.getNodeById(firstPositionInfo.getNodeId());
+            SNode currentNode = DebugInfo.findNode(firstPositionInfo);
             boolean finished = false;
             while (!(finished)) {
               finished = true;
               for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
-                SNode otherNode = model.getNodeById(otherPos.getNodeId());
+                SNode otherNode = DebugInfo.findNode(otherPos);
                 if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
                   currentNode = otherNode;
                   finished = false;
@@ -139,7 +139,7 @@ public class TraceInfoUtil {
             return currentNode;
           }
         }
-        return model.getNodeById(nodeId);
+        return DebugInfo.findNode(result);
 
       }
     }, TraceInfoUtilComponent.DEFAULT_MAPPER);
@@ -173,7 +173,7 @@ public class TraceInfoUtil {
     if (debugInfo == null) {
       return null;
     }
-    UnitPositionInfo unitForNode = debugInfo.getUnitForNode(node.getId());
+    UnitPositionInfo unitForNode = ListSequence.fromList(debugInfo.getUnitsForNode(node)).first();
     if (unitForNode != null) {
       return unitForNode.getUnitName();
     }

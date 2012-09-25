@@ -21,7 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -329,6 +329,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   private void fillOriginalNode(SNode inputNode, SNode outputNode) {
-    TemplateQueryContext.fillOriginalNode(inputNode, outputNode, inputNode.getModel() == getGenerator().getGeneratorSessionContext().getOriginalInputModel());
+    TracingUtil.fillOriginalNode(inputNode, outputNode, inputNode.getModel() == getGenerator().getGeneratorSessionContext().getOriginalInputModel());
   }
 }

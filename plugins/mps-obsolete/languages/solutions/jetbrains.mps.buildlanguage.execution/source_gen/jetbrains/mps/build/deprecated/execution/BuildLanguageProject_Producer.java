@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.execution.impl.RunManagerImpl;
 
 public class BuildLanguageProject_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.build.deprecated.execution.BuildLanguageProject_Configuration_Factory";
@@ -36,7 +37,7 @@ public class BuildLanguageProject_Producer {
 
     protected BuildLanguageProject_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      BuildLanguageProject_Configuration configuration = new BuildLanguageProject_Configuration(getContext().getProject(), (BuildLanguageProject_Configuration_Factory) getConfigurationFactory(), "Build Script " + SPropertyOperations.getString(source, "name"));
+      BuildLanguageProject_Configuration configuration = ((BuildLanguageProject_Configuration) getConfigurationFactory().createConfiguration("Build Script " + SPropertyOperations.getString(source, "name"), (BuildLanguageProject_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;
     }

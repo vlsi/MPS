@@ -4674,16 +4674,9 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8149197049716796493" resolveInfo="debugInfo" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8149197049716796514">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="21is.2897370900776712752" resolveInfo="getPositionForNode" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8149197049716796515">
-                      <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="8149197049716796516">
-                        <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8149197049716796517">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214082915057" resolveInfo="node" />
-                        </node>
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8149197049716796518">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
-                      </node>
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="21is.7618927747100824049" resolveInfo="getPositionForNode" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8149197049716796517">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214082915057" resolveInfo="node" />
                     </node>
                   </node>
                 </node>

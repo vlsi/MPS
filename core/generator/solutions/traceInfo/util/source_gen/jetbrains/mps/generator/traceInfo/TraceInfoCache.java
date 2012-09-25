@@ -19,7 +19,10 @@ import jetbrains.mps.project.IModule;
 import java.net.URL;
 import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
+import org.jdom.JDOMException;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.CommonPaths;
@@ -33,6 +36,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
 
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
+  private final TraceInfoFromSourceProvider myFromSourceProvider = new TraceInfoFromSourceProvider();
 
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -52,10 +56,16 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         cleanup();
       }
     });
+    if (TraceInfoFromSourceProvider.isInAnt()) {
+      myProviders.add(myFromSourceProvider);
+    }
   }
 
   @Override
   public void dispose() {
+    if (TraceInfoFromSourceProvider.isInAnt()) {
+      myProviders.remove(myFromSourceProvider);
+    }
     super.dispose();
     synchronized (INSTANCE_LOCK) {
       INSTANCE = null;
@@ -113,8 +123,11 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       if (stream == null) {
         return null;
       }
-      return load(stream);
+      Document doc = JDOMUtil.loadDocument(stream);
+      return DebugInfo.fromXml(doc.getRootElement(), sm);
     } catch (IOException e) {
+      return null;
+    } catch (JDOMException e) {
       return null;
     } finally {
       try {
@@ -127,6 +140,11 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         }
       }
     }
+  }
+
+  @Override
+  protected DebugInfo load(InputStream stream) throws IOException {
+    throw new UnsupportedOperationException();
   }
 
   @Nullable
@@ -180,7 +198,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   protected DebugInfo fromXml(Element e) {
-    return DebugInfo.fromXml(e);
+    throw new UnsupportedOperationException();
   }
 
   public void addResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {

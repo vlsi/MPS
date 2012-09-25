@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -59,6 +58,11 @@ public class TextLine {
   private FontMetrics myFontMetrics;
 
   private int myCaretPosition = 0;
+  private int myCaretX = -1;
+  private int mySelectionStartX = -1;
+  private int mySelectionEndX = -1;
+  private int myTextEndX = -1;
+  private int myMinWidth = -1;
   private int myStartTextSelectionPosition = 0;
   private int myEndTextSelectionPosition = 0;
 
@@ -123,18 +127,27 @@ public class TextLine {
     if (text.equals(myText)) {
       return;
     }
+    doSetText(text);
+    doSetCaretPosition(Math.min(myText.length(), getCaretPosition()));
+
+    setStartTextSelectionPosition(getCaretPosition());
+    setEndTextSelectionPosition(getCaretPosition());
+  }
+
+  private void doSetText(String text) {
     myText = text;
-    myCaretPosition = Math.min(myText.length(), myCaretPosition);
-    myStartTextSelectionPosition = myCaretPosition;
-    myEndTextSelectionPosition = myCaretPosition;
+    myCaretX = -1;
+    mySelectionStartX = -1;
+    mySelectionEndX = -1;
+    myTextEndX = -1;
   }
 
   public String getTextBeforeCaret() {
-    return myText.substring(0, myCaretPosition);
+    return myText.substring(0, getCaretPosition());
   }
 
   public String getTextAfterCaret() {
-    return myText.substring(myCaretPosition, myText.length());
+    return myText.substring(getCaretPosition(), myText.length());
   }
 
   public int getWidth() {
@@ -158,6 +171,7 @@ public class TextLine {
    */
   public void setMinimalLength(int length) {
     myMinimalLength = length;
+    myMinWidth = -1;
   }
 
   private void updateStyle(Set<StyleAttribute> attributes) {
@@ -208,20 +222,23 @@ public class TextLine {
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
-    int minWidth = calculateMinWidth(metrics);
+    int minWidth = calculateMinWidth();
     int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getPaddingLeft() + getPaddingRight();
     myWidth = Math.max(minWidth, width);
     myDescent = metrics.getDescent();
   }
 
-  public int getEffectiveWidth(FontMetrics metrics) {
-    int minWidth = calculateMinWidth(metrics);
+  int getEffectiveWidth() {
+    int minWidth = calculateMinWidth();
     int effectiveWidth = myWidth - getPaddingLeft() - getPaddingRight();
     return Math.max(minWidth, effectiveWidth);
   }
 
-  private int calculateMinWidth(FontMetrics metrics) {
-    return Math.max(myMinimalLength * metrics.charWidth('w'), 2);
+  private int calculateMinWidth() {
+    if (myMinWidth == -1) {
+      myMinWidth = Math.max(myMinimalLength * getFontMetrics().charWidth('w'), 2);
+    }
+    return myMinWidth;
   }
 
   private int getHorizontalInternalInset(Padding p) {
@@ -404,8 +421,6 @@ public class TextLine {
     Color textColor;
     Color textBackgroundColor;
 
-    FontMetrics metrics = getFontMetrics();
-
     backgroundColor = getBackgroundColor();
     if (forcedTextColor != null) {
       textColor = forcedTextColor;
@@ -441,52 +456,52 @@ public class TextLine {
       g.setColor(textColor);
     }
 
-    int deltaShiftX_EndSelection =
-      (myEndTextSelectionPosition <= myText.length()) ? getCaretX(0, myEndTextSelectionPosition) : getPaddingLeft();
-    int deltaShiftX_StartSelection = getCaretX(0, myStartTextSelectionPosition);
-    int endLine = getCaretX(shiftX, myText.length());
+    int selectionStartX = shiftX + getPaddingLeft() + getSelectionStartX();
+    int selectionEndX = shiftX + getPaddingLeft() + getSelectionEndX();
+    int endLineX = shiftX + getPaddingLeft() + getTextEndX();
     int baselineY = shiftY + myHeight - myDescent - getPaddingBottom() - getPaddingTop();
     int centerLineY = shiftY + (myHeight - getPaddingBottom() + getPaddingTop())/ 2;
 
-    if (myStartTextSelectionPosition > 0) {
-      g.drawString(myText.substring(0, myStartTextSelectionPosition), shiftX + getPaddingLeft(), baselineY);
+    if (getStartTextSelectionPosition() > 0) {
+      g.drawString(myText.substring(0, getStartTextSelectionPosition()), shiftX + getPaddingLeft(), baselineY);
       if (isUnderlined()) {
-        g.drawLine(shiftX + getPaddingLeft(), baselineY + 1, shiftX + deltaShiftX_StartSelection, baselineY + 1);
+        g.drawLine(shiftX + getPaddingLeft(), baselineY + 1, selectionStartX, baselineY + 1);
       }
       if (isStrikeOut()) {
-        drawStrikeOutLine(g, shiftX + getPaddingLeft(), shiftX + deltaShiftX_StartSelection, centerLineY);
-      }
-    }
-    if (myEndTextSelectionPosition <= myText.length()) {
-      g.drawString(myText.substring(myEndTextSelectionPosition), shiftX + deltaShiftX_EndSelection, baselineY);
-      if (isUnderlined()) {
-        g.drawLine(shiftX + deltaShiftX_EndSelection, baselineY + 1, endLine, baselineY + 1);
-      }
-      if (isStrikeOut()) {
-        drawStrikeOutLine(g, shiftX + deltaShiftX_EndSelection, endLine, centerLineY);
+        drawStrikeOutLine(g, shiftX + getPaddingLeft(), selectionStartX, centerLineY);
       }
     }
 
-    if (myStartTextSelectionPosition < myEndTextSelectionPosition) {
+    if (getEndTextSelectionPosition() <= myText.length()) {
+      g.drawString(myText.substring(getEndTextSelectionPosition()), selectionEndX, baselineY);
+      if (isUnderlined()) {
+        g.drawLine(selectionEndX, baselineY + 1, endLineX, baselineY + 1);
+      }
+      if (isStrikeOut()) {
+        drawStrikeOutLine(g, selectionEndX, endLineX, centerLineY);
+      }
+    }
+
+    if (getStartTextSelectionPosition() < getEndTextSelectionPosition()) {
       //drawing textual selection
-      Rectangle2D selectedStringBounds = metrics.getStringBounds(getTextuallySelectedText(), g);
+      String selectedText = getTextuallySelectedText();
       g.setColor(myTextSelectedBackgroundColor);
-      // Filling smaller rectangle to not cover frames created by other nessages
-      g.fillRect(shiftX + deltaShiftX_StartSelection + 1, shiftY + getPaddingTop() + 1,
-        (int) selectedStringBounds.getWidth() - 2, myTextHeight - 2);
+      // Filling smaller rectangle to not cover frames created by other messages
+      if (selectionEndX - selectionStartX - 2 > 0) {
+        g.fillRect(selectionStartX + 1, shiftY + getPaddingTop() + 1, selectionEndX - selectionStartX - 2, myTextHeight - 2);
+      }
 
       g.setColor(myTextSelectedTextColor);
-      g.drawString(getTextuallySelectedText(), shiftX + deltaShiftX_StartSelection, baselineY);
+      g.drawString(selectedText, selectionStartX, baselineY);
       if (isUnderlined()) {
-        g.drawLine(shiftX + deltaShiftX_StartSelection, baselineY + 1, shiftX + deltaShiftX_EndSelection, baselineY + 1);
+        g.drawLine(selectionStartX, baselineY + 1, selectionEndX, baselineY + 1);
       }
       if (isStrikeOut()) {
-        drawStrikeOutLine(g, shiftX + deltaShiftX_StartSelection, shiftX + deltaShiftX_EndSelection, centerLineY);
+        drawStrikeOutLine(g, selectionStartX, selectionEndX, centerLineY);
       }
 
       g.setColor(textColor);
     }
-
 
     if (myShowCaret) {
       drawCaret(g, shiftX, shiftY);
@@ -514,12 +529,36 @@ public class TextLine {
 
 
   public int getCaretX(int shiftX) {
-    return getCaretX(shiftX, myCaretPosition);
+    if (myCaretX == -1) {
+      myCaretX = getTextWidth(getCaretPosition());
+    }
+    return shiftX + getPaddingLeft() + myCaretX;
   }
 
-  public int getCaretX(int shiftX, int caretPosition) {
+  private int getSelectionStartX() {
+    if (mySelectionStartX == -1) {
+      mySelectionStartX = getTextWidth(getStartTextSelectionPosition());
+    }
+    return mySelectionStartX;
+  }
+
+  private int getSelectionEndX() {
+    if (mySelectionEndX == -1) {
+      mySelectionEndX = getTextWidth(getEndTextSelectionPosition());
+    }
+    return mySelectionEndX;
+  }
+
+  private int getTextEndX() {
+    if (myTextEndX == -1) {
+      myTextEndX = getTextWidth(getText().length());
+    }
+    return myTextEndX;
+  }
+
+  private int getTextWidth(int caretPosition) {
     FontMetrics metrics = getFontMetrics();
-    return shiftX + getPaddingLeft() + metrics.charsWidth(myText.toCharArray(), 0, caretPosition);
+    return metrics.charsWidth(myText.toCharArray(), 0, caretPosition);
   }
 
   public FontMetrics getFontMetrics() {
@@ -530,7 +569,7 @@ public class TextLine {
   }
 
   public void insertText(String insertion) {
-    if (myStartTextSelectionPosition < myEndTextSelectionPosition) {
+    if (getStartTextSelectionPosition() < getEndTextSelectionPosition()) {
       insertTextAtTextualSelection(insertion);
     } else {
       insertTextAtCaretPosition(insertion);
@@ -538,39 +577,41 @@ public class TextLine {
   }
 
   public void insertTextAtCaretPosition(String insertion) {
-    myText = myText.substring(0, myCaretPosition) + insertion + myText.substring(myCaretPosition);
-    myStartTextSelectionPosition = myCaretPosition;
-    myCaretPosition += insertion.length();
-    myEndTextSelectionPosition = myCaretPosition;
+    doSetText(myText.substring(0, getCaretPosition()) + insertion + myText.substring(getCaretPosition()));
+    setStartTextSelectionPosition(getCaretPosition());
+    doSetCaretPosition(getCaretPosition() + insertion.length());
+    setEndTextSelectionPosition(getCaretPosition());
   }
 
   public void insertTextAtTextualSelection(String insertion) {
-    myText = myText.substring(0, myStartTextSelectionPosition) + insertion + myText.substring(myEndTextSelectionPosition);
-    myEndTextSelectionPosition = myStartTextSelectionPosition + insertion.length();
-    myCaretPosition = myEndTextSelectionPosition;
+    doSetText(myText.substring(0, getStartTextSelectionPosition()) + insertion + myText.substring(getEndTextSelectionPosition()));
+    setEndTextSelectionPosition(getStartTextSelectionPosition() + insertion.length());
+    doSetCaretPosition(getEndTextSelectionPosition());
   }
 
   public String getTextuallySelectedText() {
-    if (myStartTextSelectionPosition > myEndTextSelectionPosition) return "";
-    return myText.substring(myStartTextSelectionPosition, myEndTextSelectionPosition);
+    if (getStartTextSelectionPosition() > getEndTextSelectionPosition()) return "";
+    return myText.substring(getStartTextSelectionPosition(), getEndTextSelectionPosition());
   }
 
 
   public void resetSelection() {
-    myStartTextSelectionPosition = myCaretPosition;
-    myEndTextSelectionPosition = myCaretPosition;
+    setStartTextSelectionPosition(getCaretPosition());
+    setEndTextSelectionPosition(getCaretPosition());
   }
 
   public boolean hasNonTrivialSelection() {
-    return (myStartTextSelectionPosition != myCaretPosition || myEndTextSelectionPosition != myCaretPosition);
+    return (getStartTextSelectionPosition() != getCaretPosition() || getEndTextSelectionPosition() != getCaretPosition());
   }
 
   public void setStartTextSelectionPosition(int i) {
     this.myStartTextSelectionPosition = Math.min(i, myText.length());
+    mySelectionStartX = -1;
   }
 
   public void setEndTextSelectionPosition(int i) {
     this.myEndTextSelectionPosition = Math.min(i, myText.length());
+    mySelectionEndX = -1;
   }
 
   public void selectAll() {
@@ -579,8 +620,8 @@ public class TextLine {
   }
 
   public void deselectAll() {
-    setStartTextSelectionPosition(myCaretPosition);
-    setEndTextSelectionPosition(myCaretPosition);
+    setStartTextSelectionPosition(getCaretPosition());
+    setEndTextSelectionPosition(getCaretPosition());
   }
 
   public boolean isEverythingSelected() {
@@ -611,24 +652,32 @@ public class TextLine {
     setCaretPosition(i, false);
   }
 
+  private void doSetCaretPosition(int position) {
+    myCaretPosition = position;
+    myCaretX = -1;
+  }
+
   public void setCaretPosition(int position, boolean duringSelection) {
     if (!duringSelection) {
-      myCaretPosition = Math.min(myText.length(), position);
-      myStartTextSelectionPosition = myCaretPosition;
-      myEndTextSelectionPosition = myCaretPosition;
+      doSetCaretPosition(Math.min(myText.length(), position));
+      setStartTextSelectionPosition(getCaretPosition());
+      setEndTextSelectionPosition(getCaretPosition());
       return;
     }
 
-    int old = myCaretPosition;
-    myCaretPosition = Math.min(myText.length(), position);
+    int old = getCaretPosition();
+    doSetCaretPosition(Math.min(myText.length(), position));
 
-    if (myEndTextSelectionPosition == old) myEndTextSelectionPosition = myCaretPosition;
-    else myStartTextSelectionPosition = myCaretPosition;
+    if (getEndTextSelectionPosition() == old) {
+      setEndTextSelectionPosition(getCaretPosition());
+    } else {
+      setStartTextSelectionPosition(getCaretPosition());
+    }
 
-    if (myEndTextSelectionPosition < myStartTextSelectionPosition) {
-      int temp = myEndTextSelectionPosition;
-      myEndTextSelectionPosition = myStartTextSelectionPosition;
-      myStartTextSelectionPosition = temp;
+    if (getEndTextSelectionPosition() < getStartTextSelectionPosition()) {
+      int temp = getEndTextSelectionPosition();
+      setEndTextSelectionPosition(getStartTextSelectionPosition());
+      setStartTextSelectionPosition(temp);
     }
   }
 

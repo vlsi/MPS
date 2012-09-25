@@ -106,7 +106,7 @@ public class DebugInfoManager implements ApplicationComponent {
 
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node).getModelDescriptor());
     if (debugInfo != null) {
-      TraceablePositionInfo position = debugInfo.getPositionForNode(node.getId());
+      TraceablePositionInfo position = debugInfo.getPositionForNode(node);
       if (position != null) {
         String conceptFqName = position.getConceptFqName();
         if (conceptFqName == null) {

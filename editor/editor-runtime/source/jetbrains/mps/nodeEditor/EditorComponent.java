@@ -1333,6 +1333,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         removeOurListeners(oldDep);
       }
     }
+    // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
+    // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
+    if (myNode != null && !myNode.isDeleted() && myNode.isRegistered()) {
+      SModel model = myNode.getModel();
+      SModelDescriptor modelDescriptor = model.getModelDescriptor();
+      if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
+        assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+      }
+    }
 
     revalidate();
     repaint();
@@ -2036,7 +2045,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
     EditorCell deepestCell = getDeepestSelectedCell();
-    if (deepestCell instanceof EditorCell_Label) {
+    if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
       g.setColor(CARET_ROW_COLOR);
@@ -2057,7 +2066,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    if (myRootCell != null) {
+    if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
       EditorSettings setting = EditorSettings.getInstance();
       g.setColor(Color.LIGHT_GRAY);
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
@@ -2474,11 +2483,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return Collections.unmodifiableSet(nodeProxies);
   }
 
+
+  /**
+   * Deprecated: use doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodePointer nodePointer) to avoid
+   * extra new SNodePointer() call
+   */
+  @Deprecated
   public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
-    if ((cell == null) && node != null) return true;
+    return doesCellDependOnNode(cell, node, new SNodePointer(node));
+  }
+
+  public boolean doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodePointer nodePointer) {
+    if ((cell == null) && node != null) {
+      return true;
+    }
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
     Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodePointer(node))));
+    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(nodePointer)));
   }
 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
@@ -2793,11 +2814,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         } else {
           SNode target = null;
-          for (SNode sibling : siblings) {
-            int index = parent.getChildren().indexOf(sibling);
-            if (index < childIndex) {
-              target = sibling;
+          int index = 0;
+          for (SNode child : parent.getChildren()) {
+            if (index >= childIndex) {
+              break;
             }
+            if (role.equals(child.getRole_())) {
+              target = child;
+            }
+            index++;
           }
 
           if (target != null) {

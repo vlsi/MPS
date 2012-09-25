@@ -14,6 +14,7 @@ import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -57,7 +58,7 @@ public class CustomMPSApplication_Producer {
         return null;
       }
 
-      CustomMPSApplication_Configuration configuration = new CustomMPSApplication_Configuration(getContext().getProject(), (CustomMPSApplication_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(source, "name"));
+      CustomMPSApplication_Configuration configuration = ((CustomMPSApplication_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(source, "name"), (CustomMPSApplication_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(layout.value);
       configuration.setConfigurationId(configurationId.value);
       return configuration;
@@ -97,7 +98,7 @@ public class CustomMPSApplication_Producer {
         }
       });
 
-      CustomMPSApplication_Configuration configuration = new CustomMPSApplication_Configuration(getContext().getProject(), (CustomMPSApplication_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(source, "name"));
+      CustomMPSApplication_Configuration configuration = ((CustomMPSApplication_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(source, "name"), (CustomMPSApplication_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       configuration.setConfigurationId(configurationId.value);
       return configuration;
@@ -140,7 +141,7 @@ public class CustomMPSApplication_Producer {
         return null;
       }
 
-      CustomMPSApplication_Configuration runConfiguration = new CustomMPSApplication_Configuration(getContext().getProject(), (CustomMPSApplication_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(layout.value, "name") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, "name"));
+      CustomMPSApplication_Configuration runConfiguration = ((CustomMPSApplication_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(layout.value, "name") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, "name"), (CustomMPSApplication_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       runConfiguration.getNode().setNode(source);
       runConfiguration.setConfigurationId(configurationId.value);
       return runConfiguration;

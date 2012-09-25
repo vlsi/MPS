@@ -3,9 +3,9 @@
   <root nodeId="5890305283801268194">
     <nodeInfo nodeId="6526493364578751225" fileName="NewModuleUtil.java" startLine="42" startPosition="25" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5049856602248782968" fileName="NewModuleUtil.java" startLine="43" startPosition="71" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="50" startPosition="94" endLine="51" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="50" startPosition="93" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460447244" fileName="NewModuleUtil.java" startLine="53" startPosition="33" endLine="54" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4543209876460425560" fileName="NewModuleUtil.java" startLine="55" startPosition="5" endLine="56" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4543209876460425560" fileName="NewModuleUtil.java" startLine="55" startPosition="5" endLine="56" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4543209876460425571" fileName="NewModuleUtil.java" startLine="57" startPosition="26" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425650" fileName="NewModuleUtil.java" startLine="60" startPosition="34" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425653" fileName="NewModuleUtil.java" startLine="63" startPosition="81" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -69,7 +69,7 @@
     <nodeInfo nodeId="5249055041137756477" fileName="NewModuleUtil.java" startLine="36" startPosition="28" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewModuleUtil#()V" />
     <nodeInfo nodeId="8720557803585309179" fileName="NewModuleUtil.java" startLine="49" startPosition="83" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460447230" fileName="NewModuleUtil.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4543209876460425567" fileName="NewModuleUtil.java" startLine="56" startPosition="119" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4543209876460425567" fileName="NewModuleUtil.java" startLine="56" startPosition="102" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460425575" fileName="NewModuleUtil.java" startLine="59" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460425587" fileName="NewModuleUtil.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460425600" fileName="NewModuleUtil.java" startLine="65" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -99,7 +99,7 @@
     <nodeInfo nodeId="4543209876460424807" fileName="NewModuleUtil.java" startLine="48" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="5249055041137756479" fileName="NewModuleUtil.java" startLine="37" startPosition="26" endLine="37" endPosition="26" />
     <scopeInfo nodeId="4543209876460447590" fileName="NewModuleUtil.java" startLine="100" startPosition="46" endLine="100" endPosition="46" />
-    <scopeInfo nodeId="8720557803585309180" fileName="NewModuleUtil.java" startLine="50" startPosition="94" endLine="51" endPosition="61" />
+    <scopeInfo nodeId="8720557803585309180" fileName="NewModuleUtil.java" startLine="50" startPosition="93" endLine="51" endPosition="63" />
     <scopeInfo nodeId="4543209876460447231" fileName="NewModuleUtil.java" startLine="53" startPosition="33" endLine="54" endPosition="40" />
     <scopeInfo nodeId="4543209876460425568" fileName="NewModuleUtil.java" startLine="57" startPosition="26" endLine="58" endPosition="21" />
     <scopeInfo nodeId="4543209876460425576" fileName="NewModuleUtil.java" startLine="60" startPosition="34" endLine="61" endPosition="45" />

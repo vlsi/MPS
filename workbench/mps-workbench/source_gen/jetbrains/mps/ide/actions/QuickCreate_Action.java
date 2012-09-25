@@ -28,7 +28,7 @@ public class QuickCreate_Action extends BaseAction {
   protected static Log log = LogFactory.getLog(QuickCreate_Action.class);
 
   public QuickCreate_Action() {
-    super("Quick Create", "", ICON);
+    super("Quick Create...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -65,8 +65,7 @@ public class QuickCreate_Action extends BaseAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          boolean controlDown = event.getInputEvent().isControlDown();
-          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(controlDown);
+          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(true);
 
           if (group != null) {
             Presentation pres = new Presentation();

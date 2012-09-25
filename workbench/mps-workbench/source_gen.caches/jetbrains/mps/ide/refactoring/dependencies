@@ -128,9 +128,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RenameLanguageDialog" file="RenameLanguageDialog.java">
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
@@ -138,7 +135,6 @@
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -165,7 +161,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RenameModelDialog" file="RenameModelDialog.java">
@@ -204,7 +199,6 @@
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.lang.model.SourceVersion" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />

@@ -27,7 +27,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -573,7 +573,7 @@ public class TemplateProcessor {
       if (_outputNodes != null) {
         outputNodes.addAll(_outputNodes);
         for (SNode outputNode : _outputNodes) {
-          TemplateQueryContext.fillOriginalNode(inputNode, outputNode, myGenerator.getGeneratorSessionContext().getOriginalInputModel() == inputNode.getModel());
+          TracingUtil.fillOriginalNode(inputNode, outputNode, myGenerator.getGeneratorSessionContext().getOriginalInputModel() == inputNode.getModel());
         }
       }
       return outputNodes;

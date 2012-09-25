@@ -23,7 +23,7 @@ public abstract class Feature {
   }
 
   @NotNull
-  public SModelReference getModelReference() {
+  public final SModelReference getModelReference() {
     return myModelReference;
   }
 

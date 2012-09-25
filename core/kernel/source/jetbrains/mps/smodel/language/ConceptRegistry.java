@@ -105,7 +105,7 @@ public class ConceptRegistry implements CoreComponent {
       try {
         LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime == null) {
-          LOG.warning("No language for: " + fqName);
+          LOG.warning("No language for: " + fqName, new Throwable());
         } else {
           descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
         }

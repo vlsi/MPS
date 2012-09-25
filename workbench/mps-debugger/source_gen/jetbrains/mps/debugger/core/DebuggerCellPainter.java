@@ -12,9 +12,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E> {
   private static final int LEFT_MARGIN = 4;
@@ -151,19 +151,23 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       // whatever 
       return false;
     }
-    if (nodeCell.getParent().getCellLayout() instanceof CellLayout_Horizontal) {
+    EditorCell_Collection parent = nodeCell.getParent();
+    if (parent == null) {
+      return false;
+    }
+    if (parent.getCellLayout() instanceof CellLayout_Horizontal) {
       // if immediate parent is a horisontal collection 
       return true;
     }
     return nodeCell.findParent(new Condition<EditorCell_Collection>() {
       public boolean met(EditorCell_Collection cellCollection) {
         // do not want an explicit dependency on table.runtime 
-        return eq_mgy25g_a0b0a0a0a0a3a51(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
+        return eq_mgy25g_a0b0a0a0a0a5a51(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
       }
     }) != null;
   }
 
-  private static boolean eq_mgy25g_a0b0a0a0a0a3a51(Object a, Object b) {
+  private static boolean eq_mgy25g_a0b0a0a0a0a5a51(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

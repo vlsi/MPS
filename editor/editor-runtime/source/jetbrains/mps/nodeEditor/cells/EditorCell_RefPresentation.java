@@ -83,6 +83,9 @@ public class EditorCell_RefPresentation {
           return myNode.getPresentation();
         }
         IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
+        if (presentation == null) {
+          return myNode.getPresentation();
+        }
         return presentation.getText(myNode, true, false, true);
       }
       if (myContextCell == null || myContextCell.getParent() == null) return null;
@@ -98,6 +101,9 @@ public class EditorCell_RefPresentation {
         return referenceTarget.getPresentation();
       }
       IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
+      if (presentation == null) {
+        return referenceTarget.getPresentation();
+      }
       return presentation.getText(referenceTarget, true, false, true);
     }
 

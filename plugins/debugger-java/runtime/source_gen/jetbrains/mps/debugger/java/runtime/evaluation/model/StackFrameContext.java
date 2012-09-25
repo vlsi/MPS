@@ -65,14 +65,13 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   @Nullable
   public SNode getLocationNode() {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
-    SNode locationNode = null;
     if (javaStackFrame != null) {
       JavaLocation location = javaStackFrame.getLocation();
       if (location != null) {
         return TraceInfoUtil.getJavaNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
       }
     }
-    return locationNode;
+    return null;
   }
 
   @NotNull

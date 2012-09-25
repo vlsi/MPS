@@ -21,10 +21,6 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -90,22 +86,7 @@ public class RenameLanguageDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         renamer.rename(needToRegenerate);
-      }
-    });
-    ProgressManager.getInstance().run(new Task.Modal(myProject, "Updating language references...", false) {
-      @Override
-      public void run(@NotNull ProgressIndicator indicator) {
-        indicator.pushState();
-        try {
-          indicator.setIndeterminate(true);
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            public void run() {
-              renamer.update();
-            }
-          });
-        } finally {
-          indicator.popState();
-        }
+        renamer.update();
       }
     });
     if (needToRegenerate) {

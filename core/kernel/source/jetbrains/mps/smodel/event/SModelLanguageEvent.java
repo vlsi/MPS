@@ -21,10 +21,12 @@ import jetbrains.mps.smodel.SNode;
 
 public class SModelLanguageEvent extends SModelEvent {
   private ModuleReference myLanguage;
+  private boolean myAdded;
 
-  public SModelLanguageEvent(SModel model, ModuleReference ref) {
+  public SModelLanguageEvent(SModel model, ModuleReference ref, boolean added) {
     super(model);
     myLanguage = ref;
+    myAdded = added;
   }
 
   public SNode getAffectedRoot() {
@@ -33,6 +35,10 @@ public class SModelLanguageEvent extends SModelEvent {
 
   public ModuleReference getLanguageNamespace() {
     return myLanguage;
+  }
+
+  public boolean isAdded() {
+    return myAdded;
   }
 
   public void accept(SModelEventVisitor visitor) {

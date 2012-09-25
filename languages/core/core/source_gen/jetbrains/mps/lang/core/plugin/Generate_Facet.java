@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -49,7 +50,6 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
@@ -266,6 +266,20 @@ public class Generate_Facet extends IFacet.Stub {
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).parametersProvider(new DefaultGenerationParametersProvider());
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().parameters(pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).parametersProvider());
+
+              Object tmc = null;
+              try {
+                Class<?> tmcCls = Class.forName("jetbrains.mps.ide.generator.TransientModelsComponent");
+                tmc = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(tmcCls);
+              } catch (ClassNotFoundException ignore) {
+              }
+
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).transientModelsProvider((tmc != null ?
+                (TransientModelsProvider) tmc :
+                new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), null)
+              ));
+
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).transientModelsProvider().removeAllTransient();
               return new IResult.SUCCESS(_output_fi61u2_a0b);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0b);
@@ -336,18 +350,18 @@ public class Generate_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._3) t).assign((Tuples._3) copyFrom);
+        ((Tuples._4) t).assign((Tuples._4) copyFrom);
       }
       return t;
     }
 
-    public static class Variables extends MultiTuple._3<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider> {
+    public static class Variables extends MultiTuple._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> {
       public Variables() {
         super();
       }
 
-      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions, DefaultGenerationParametersProvider parametersProvider) {
-        super(saveTransient, generationOptions, parametersProvider);
+      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions, DefaultGenerationParametersProvider parametersProvider, TransientModelsProvider transientModelsProvider) {
+        super(saveTransient, generationOptions, parametersProvider, transientModelsProvider);
       }
 
       public Boolean saveTransient(Boolean value) {
@@ -362,6 +376,10 @@ public class Generate_Facet extends IFacet.Stub {
         return super._2(value);
       }
 
+      public TransientModelsProvider transientModelsProvider(TransientModelsProvider value) {
+        return super._3(value);
+      }
+
       public Boolean saveTransient() {
         return super._0();
       }
@@ -374,8 +392,12 @@ public class Generate_Facet extends IFacet.Stub {
         return super._2();
       }
 
+      public TransientModelsProvider transientModelsProvider() {
+        return super._3();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_configure.Variables assignFrom(Tuples._3<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider> from) {
+      public Generate_Facet.Target_configure.Variables assignFrom(Tuples._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> from) {
         return (Generate_Facet.Target_configure.Variables) super.assign(from);
       }
     }
@@ -540,18 +562,7 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }).toListSequence();
 
-              Object tmc = null;
-              try {
-                Class<?> tmcCls = Class.forName("jetbrains.mps.ide.generator.TransientModelsComponent");
-                tmc = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(tmcCls);
-              } catch (ClassNotFoundException ignore) {
-              }
-
-              final TransientModelsProvider transModels = (tmc != null ?
-                (TransientModelsProvider) tmc :
-                new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), null)
-              );
-              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).monitorProvider().invoke(), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), transModels);
+              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).monitorProvider().invoke(), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).transientModelsProvider());
 
               monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
@@ -568,7 +579,7 @@ public class Generate_Facet extends IFacet.Stub {
 
                 public boolean reconcile() {
                   if (!(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
-                    transModels.removeAllTransient();
+                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).transientModelsProvider().removeAllTransient();
                   }
                   return true;
                 }
@@ -660,6 +671,7 @@ public class Generate_Facet extends IFacet.Stub {
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.saveTransient", String.valueOf(props.saveTransient()));
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.generationOptions", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.parametersProvider", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.transientModelsProvider", null);
         }
       }
     }
@@ -693,6 +705,9 @@ public class Generate_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.parametersProvider")) {
             props.parametersProvider(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.transientModelsProvider")) {
+            props.transientModelsProvider(null);
           }
         }
       } catch (RuntimeException re) {

@@ -272,7 +272,7 @@ public class ModelLinkMap {
   }
 
   private static <K, T> void addValue(Map<K, List<T>> map, K key, T value) {
-    if (value == null) {
+    if (key == null || value == null) {
       return;
     }
     List<T> list = MapSequence.fromMap(map).get(key);

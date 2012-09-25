@@ -104,6 +104,9 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
   public void paintSelection(Graphics2D g) {
     EditorComponent.turnOnAliasingIfPossible(g);
     for (EditorCell cell : getSelectedCells()) {
+      if (!g.hitClip(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
+        continue;
+      }
       boolean wasSelected = cell.isSelected();
       cell.setSelected(true);
 

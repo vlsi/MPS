@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="typesystemIntegration.languageChecker.AutoResolver" file="AutoResolver.java">
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
@@ -13,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />

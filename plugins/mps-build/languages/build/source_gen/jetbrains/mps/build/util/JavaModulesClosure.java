@@ -5,10 +5,12 @@ package jetbrains.mps.build.util;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import java.util.LinkedHashSet;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -20,6 +22,7 @@ public class JavaModulesClosure {
   private Set<SNode> libraries = new LinkedHashSet<SNode>();
   private Set<SNode> jars = new LinkedHashSet<SNode>();
   private Set<SNode> externalJars = new LinkedHashSet<SNode>();
+  private Set<Tuples._2<SNode, String>> externalJarsInFolder = new LinkedHashSet<Tuples._2<SNode, String>>();
   private TemplateQueryContext genContext;
   private SNode initial;
 
@@ -77,6 +80,13 @@ public class JavaModulesClosure {
         }
 
         externalJars.add(SLinkOperations.getTarget(SLinkOperations.getTarget(jarDep, "extJar", true), "jar", false));
+      } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder")) {
+        SNode jarInFolder = SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder");
+        if (reexportOnly && !(SPropertyOperations.getBoolean(jarInFolder, "reexport"))) {
+          continue;
+        }
+
+        externalJarsInFolder.add(MultiTuple.<SNode,String>from(SLinkOperations.getTarget(SLinkOperations.getTarget(jarInFolder, "extFolder", true), "folder", false), SPropertyOperations.getString(jarInFolder, "suffix")));
       }
     }
   }
@@ -117,6 +127,10 @@ public class JavaModulesClosure {
         return SLinkOperations.getTarget(SLinkOperations.getTarget(it, "customLocation", true), "jar", false);
       }
     }).concat(SetSequence.fromSet(externalJars)).toListSequence();
+  }
+
+  public Collection<Tuples._2<SNode, String>> getExternalJarsInFolder() {
+    return externalJarsInFolder;
   }
 
   public SNode getInitial() {

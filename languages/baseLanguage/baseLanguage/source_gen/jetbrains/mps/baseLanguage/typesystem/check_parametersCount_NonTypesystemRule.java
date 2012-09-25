@@ -22,21 +22,16 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
 
   public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false);
-    boolean b;
+    boolean isOk;
     if (baseMethodDeclaration != null) {
       List<SNode> parameterDeclarations = SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true);
       List<SNode> actualArguments = SLinkOperations.getTargets(iMethodCall, "actualArgument", true);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-        b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
+        isOk = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
       } else {
-        b = (int) ListSequence.fromList(parameterDeclarations).count() == (int) ListSequence.fromList(actualArguments).count();
+        isOk = (int) ListSequence.fromList(parameterDeclarations).count() == (int) ListSequence.fromList(actualArguments).count();
       }
-      if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
-        for (SNode actual : actualArguments) {
-          typeCheckingContext.addDependencyForCurrent(actual);
-        }
-      }
-      if (!(b)) {
+      if (!(isOk)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iMethodCall, "wrong number of parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219948518456", null, errorTarget);

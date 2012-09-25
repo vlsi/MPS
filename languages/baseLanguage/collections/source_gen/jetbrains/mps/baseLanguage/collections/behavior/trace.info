@@ -1660,91 +1660,84 @@
     <unitInfo nodeId="5192033827214196835" fileName="CustomContainerCreator_Behavior.java" startLine="27" startPosition="90" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerCreator_Behavior$1" />
   </root>
   <root nodeId="1331913329176269837">
-    <nodeInfo nodeId="1576845966387098673" fileName="CustomContainersUtil.java" startLine="26" startPosition="40" endLine="27" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1576845966387098679" fileName="CustomContainersUtil.java" startLine="27" startPosition="130" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1279588871815509357" fileName="CustomContainersUtil.java" startLine="28" startPosition="77" endLine="29" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1434634659124293199" fileName="CustomContainersUtil.java" startLine="29" startPosition="94" endLine="30" endPosition="451" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1434634659123514320" fileName="CustomContainersUtil.java" startLine="30" startPosition="451" endLine="31" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1434634659124293832" fileName="CustomContainersUtil.java" startLine="33" startPosition="83" endLine="34" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1434634659124149429" fileName="CustomContainersUtil.java" startLine="41" startPosition="23" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1434634659124149701" fileName="CustomContainersUtil.java" startLine="42" startPosition="96" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1434634659124149731" fileName="CustomContainersUtil.java" startLine="44" startPosition="23" endLine="45" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1434634659124210439" fileName="CustomContainersUtil.java" startLine="45" startPosition="98" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1434634659124149858" fileName="CustomContainersUtil.java" startLine="47" startPosition="24" endLine="48" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1576845966387098685" fileName="CustomContainersUtil.java" startLine="51" startPosition="11" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1576845966387098646" fileName="CustomContainersUtil.java" startLine="56" startPosition="40" endLine="57" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1576845966387098652" fileName="CustomContainersUtil.java" startLine="57" startPosition="136" endLine="58" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1576845966387106089" fileName="CustomContainersUtil.java" startLine="59" startPosition="123" endLine="60" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1576845966387098658" fileName="CustomContainersUtil.java" startLine="61" startPosition="11" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9034802358628472466" fileName="CustomContainersUtil.java" startLine="70" startPosition="40" endLine="71" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7602110602932951426" fileName="CustomContainersUtil.java" startLine="74" startPosition="40" endLine="75" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1331913329176269839" fileName="CustomContainersUtil.java" startLine="19" startPosition="35" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomContainersUtil#()V" />
-    <nodeInfo nodeId="1279588871815509430" fileName="CustomContainersUtil.java" startLine="58" startPosition="77" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1434634659124149575" fileName="CustomContainersUtil.java" startLine="35" startPosition="112" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9034802358628472464" fileName="CustomContainersUtil.java" startLine="69" startPosition="176" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7602110602932948111" fileName="CustomContainersUtil.java" startLine="73" startPosition="40" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1576845966387098644" fileName="CustomContainersUtil.java" startLine="55" startPosition="102" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="9034802358628472461" fileName="CustomContainersUtil.java" startLine="68" startPosition="87" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1434634659124149349" fileName="CustomContainersUtil.java" startLine="39" startPosition="17" endLine="49" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="9034802358628470395" fileName="CustomContainersUtil.java" startLine="67" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containerDeclarations#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1434634659124148763" fileName="CustomContainersUtil.java" startLine="34" startPosition="70" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1434634659124293271" fileName="CustomContainersUtil.java" startLine="31" startPosition="353" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1576845966387098671" fileName="CustomContainersUtil.java" startLine="25" startPosition="102" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1331913329176269888" fileName="CustomContainersUtil.java" startLine="23" startPosition="83" endLine="65" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1331913329176269843" fileName="CustomContainersUtil.java" startLine="22" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containerCreators#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1331913329176269842" fileName="CustomContainersUtil.java" startLine="20" startPosition="33" endLine="20" endPosition="33" />
-    <scopeInfo nodeId="1434634659124149351" fileName="CustomContainersUtil.java" startLine="47" startPosition="24" endLine="48" endPosition="38" />
-    <scopeInfo nodeId="1279588871815509431" fileName="CustomContainersUtil.java" startLine="59" startPosition="123" endLine="60" endPosition="195" />
-    <scopeInfo nodeId="9034802358628472465" fileName="CustomContainersUtil.java" startLine="70" startPosition="40" endLine="71" endPosition="155" />
-    <scopeInfo nodeId="7602110602932948112" fileName="CustomContainersUtil.java" startLine="74" startPosition="40" endLine="75" endPosition="134" />
-    <scopeInfo nodeId="1331913329176269839" fileName="CustomContainersUtil.java" startLine="19" startPosition="35" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1434634659124149399" fileName="CustomContainersUtil.java" startLine="41" startPosition="23" endLine="43" endPosition="24" />
-    <scopeInfo nodeId="1434634659124149671" fileName="CustomContainersUtil.java" startLine="44" startPosition="23" endLine="46" endPosition="24" />
-    <scopeInfo nodeId="9034802358628472464" fileName="CustomContainersUtil.java" startLine="69" startPosition="176" endLine="73" endPosition="0">
+    <nodeInfo nodeId="1576845966387098673" fileName="CustomContainersUtil.java" startLine="25" startPosition="40" endLine="26" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576845966387098679" fileName="CustomContainersUtil.java" startLine="26" startPosition="130" endLine="27" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1279588871815509357" fileName="CustomContainersUtil.java" startLine="27" startPosition="77" endLine="28" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1434634659124293199" fileName="CustomContainersUtil.java" startLine="28" startPosition="94" endLine="29" endPosition="451" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1434634659123514320" fileName="CustomContainersUtil.java" startLine="29" startPosition="451" endLine="30" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1434634659124293832" fileName="CustomContainersUtil.java" startLine="32" startPosition="83" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1434634659124149429" fileName="CustomContainersUtil.java" startLine="40" startPosition="23" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1434634659124149701" fileName="CustomContainersUtil.java" startLine="41" startPosition="96" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1434634659124149731" fileName="CustomContainersUtil.java" startLine="43" startPosition="23" endLine="44" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1434634659124210439" fileName="CustomContainersUtil.java" startLine="44" startPosition="98" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1434634659124149858" fileName="CustomContainersUtil.java" startLine="46" startPosition="24" endLine="47" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1576845966387098685" fileName="CustomContainersUtil.java" startLine="50" startPosition="11" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576845966387098646" fileName="CustomContainersUtil.java" startLine="55" startPosition="40" endLine="56" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576845966387098652" fileName="CustomContainersUtil.java" startLine="56" startPosition="136" endLine="57" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1576845966387106089" fileName="CustomContainersUtil.java" startLine="58" startPosition="123" endLine="59" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1576845966387098658" fileName="CustomContainersUtil.java" startLine="60" startPosition="11" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9034802358628472466" fileName="CustomContainersUtil.java" startLine="69" startPosition="40" endLine="70" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1331913329176269839" fileName="CustomContainersUtil.java" startLine="18" startPosition="35" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomContainersUtil#()V" />
+    <nodeInfo nodeId="1279588871815509430" fileName="CustomContainersUtil.java" startLine="57" startPosition="77" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1434634659124149575" fileName="CustomContainersUtil.java" startLine="34" startPosition="112" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9034802358628472464" fileName="CustomContainersUtil.java" startLine="68" startPosition="176" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="9034802358628472461" fileName="CustomContainersUtil.java" startLine="67" startPosition="87" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9034802358628470395" fileName="CustomContainersUtil.java" startLine="66" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containerDeclarations#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1576845966387098644" fileName="CustomContainersUtil.java" startLine="54" startPosition="102" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1434634659124149349" fileName="CustomContainersUtil.java" startLine="38" startPosition="17" endLine="48" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1434634659124148763" fileName="CustomContainersUtil.java" startLine="33" startPosition="70" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1434634659124293271" fileName="CustomContainersUtil.java" startLine="30" startPosition="353" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1576845966387098671" fileName="CustomContainersUtil.java" startLine="24" startPosition="102" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1331913329176269888" fileName="CustomContainersUtil.java" startLine="22" startPosition="83" endLine="64" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1331913329176269843" fileName="CustomContainersUtil.java" startLine="21" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containerCreators#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="1331913329176269842" fileName="CustomContainersUtil.java" startLine="19" startPosition="33" endLine="19" endPosition="33" />
+    <scopeInfo nodeId="1434634659124149351" fileName="CustomContainersUtil.java" startLine="46" startPosition="24" endLine="47" endPosition="38" />
+    <scopeInfo nodeId="1279588871815509431" fileName="CustomContainersUtil.java" startLine="58" startPosition="123" endLine="59" endPosition="195" />
+    <scopeInfo nodeId="9034802358628472465" fileName="CustomContainersUtil.java" startLine="69" startPosition="40" endLine="70" endPosition="155" />
+    <scopeInfo nodeId="1331913329176269839" fileName="CustomContainersUtil.java" startLine="18" startPosition="35" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1434634659124149399" fileName="CustomContainersUtil.java" startLine="40" startPosition="23" endLine="42" endPosition="24" />
+    <scopeInfo nodeId="1434634659124149671" fileName="CustomContainersUtil.java" startLine="43" startPosition="23" endLine="45" endPosition="24" />
+    <scopeInfo nodeId="9034802358628472464" fileName="CustomContainersUtil.java" startLine="68" startPosition="176" endLine="72" endPosition="0">
       <varInfo nodeId="9034802358628472464" varName="ccd" />
     </scopeInfo>
-    <scopeInfo nodeId="7602110602932948111" fileName="CustomContainersUtil.java" startLine="73" startPosition="40" endLine="77" endPosition="0">
-      <varInfo nodeId="7602110602932948111" varName="ccd" />
-    </scopeInfo>
-    <scopeInfo nodeId="1576845966387098645" fileName="CustomContainersUtil.java" startLine="56" startPosition="40" endLine="62" endPosition="21">
+    <scopeInfo nodeId="9034802358628470398" fileName="CustomContainersUtil.java" startLine="67" startPosition="87" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="1576845966387098645" fileName="CustomContainersUtil.java" startLine="55" startPosition="40" endLine="61" endPosition="21">
       <varInfo nodeId="1576845966387098647" varName="ccc" />
     </scopeInfo>
-    <scopeInfo nodeId="1576845966387098644" fileName="CustomContainersUtil.java" startLine="55" startPosition="102" endLine="64" endPosition="0">
-      <varInfo nodeId="1576845966387098644" varName="ccd" />
-    </scopeInfo>
-    <scopeInfo nodeId="9034802358628470398" fileName="CustomContainersUtil.java" startLine="68" startPosition="87" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="9034802358628470395" fileName="CustomContainersUtil.java" startLine="67" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="9034802358628470395" fileName="CustomContainersUtil.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="7602110602933087154" varName="model" />
       <varInfo nodeId="9034802358628472457" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1434634659124148765" fileName="CustomContainersUtil.java" startLine="35" startPosition="112" endLine="49" endPosition="15">
+    <scopeInfo nodeId="1576845966387098644" fileName="CustomContainersUtil.java" startLine="54" startPosition="102" endLine="63" endPosition="0">
+      <varInfo nodeId="1576845966387098644" varName="ccd" />
+    </scopeInfo>
+    <scopeInfo nodeId="1434634659124148765" fileName="CustomContainersUtil.java" startLine="34" startPosition="112" endLine="48" endPosition="15">
       <varInfo nodeId="1434634659124149576" varName="pt" />
     </scopeInfo>
-    <scopeInfo nodeId="1434634659124293272" fileName="CustomContainersUtil.java" startLine="33" startPosition="83" endLine="50" endPosition="13">
+    <scopeInfo nodeId="1434634659124293272" fileName="CustomContainersUtil.java" startLine="32" startPosition="83" endLine="49" endPosition="13">
       <varInfo nodeId="1434634659124293833" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1434634659124293271" fileName="CustomContainersUtil.java" startLine="31" startPosition="353" endLine="51" endPosition="11">
+    <scopeInfo nodeId="1434634659124293271" fileName="CustomContainersUtil.java" startLine="30" startPosition="353" endLine="50" endPosition="11">
       <varInfo nodeId="1434634659124293274" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1576845966387098672" fileName="CustomContainersUtil.java" startLine="26" startPosition="40" endLine="52" endPosition="21">
+    <scopeInfo nodeId="1576845966387098672" fileName="CustomContainersUtil.java" startLine="25" startPosition="40" endLine="51" endPosition="21">
       <varInfo nodeId="1576845966387098674" varName="cmc" />
       <varInfo nodeId="1434634659124293200" varName="ctParams" />
       <varInfo nodeId="1279588871815509358" varName="tvds" />
       <varInfo nodeId="1434634659123514321" varName="typeParams" />
     </scopeInfo>
-    <scopeInfo nodeId="1576845966387098671" fileName="CustomContainersUtil.java" startLine="25" startPosition="102" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1576845966387098671" fileName="CustomContainersUtil.java" startLine="24" startPosition="102" endLine="53" endPosition="0">
       <varInfo nodeId="1576845966387098671" varName="ccd" />
     </scopeInfo>
-    <scopeInfo nodeId="1331913329176269853" fileName="CustomContainersUtil.java" startLine="23" startPosition="83" endLine="65" endPosition="6" />
-    <scopeInfo nodeId="1331913329176269843" fileName="CustomContainersUtil.java" startLine="22" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="1331913329176269853" fileName="CustomContainersUtil.java" startLine="22" startPosition="83" endLine="64" endPosition="6" />
+    <scopeInfo nodeId="1331913329176269843" fileName="CustomContainersUtil.java" startLine="21" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7602110602933087137" varName="model" />
       <varInfo nodeId="1331913329176269850" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="1331913329176269837" fileName="CustomContainersUtil.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil" />
-    <unitInfo nodeId="1576845966387098644" fileName="CustomContainersUtil.java" startLine="55" startPosition="75" endLine="64" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$1" />
-    <unitInfo nodeId="1576845966387098671" fileName="CustomContainersUtil.java" startLine="25" startPosition="75" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$2" />
-    <unitInfo nodeId="9034802358628472464" fileName="CustomContainersUtil.java" startLine="69" startPosition="153" endLine="73" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$3" />
-    <unitInfo nodeId="7602110602932948111" fileName="CustomContainersUtil.java" startLine="73" startPosition="17" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$4" />
+    <unitInfo nodeId="1331913329176269837" fileName="CustomContainersUtil.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil" />
+    <unitInfo nodeId="1576845966387098644" fileName="CustomContainersUtil.java" startLine="54" startPosition="75" endLine="63" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$1" />
+    <unitInfo nodeId="1576845966387098671" fileName="CustomContainersUtil.java" startLine="24" startPosition="75" endLine="53" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$2" />
+    <unitInfo nodeId="9034802358628472464" fileName="CustomContainersUtil.java" startLine="68" startPosition="153" endLine="72" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil$3" />
   </root>
   <root nodeId="1576845966386891472">
     <nodeInfo nodeId="1576845966386891478" fileName="CustomMapCreator_Behavior.java" startLine="18" startPosition="75" endLine="19" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
