@@ -41,11 +41,12 @@ public class IClassifierType_Behavior {
     SNode thisClassifier = IClassifierType_Behavior.call_getClassifier_7405920559687237513(thisNode);
 
     if ((thisClassifier != null)) {
-      context.enterClassifierInternal(thisNode);
-      try {
-        IClassifier_Behavior.call_populateMembers_7405920559687241403(thisClassifier, context, classifier);
-      } finally {
-        context.exitClassifierInternal(thisNode);
+      if (context.enterClassifierInternal(thisNode)) {
+        try {
+          IClassifier_Behavior.call_populateMembers_7405920559687241403(thisClassifier, context, classifier);
+        } finally {
+          context.exitClassifierInternal(thisNode);
+        }
       }
     }
   }

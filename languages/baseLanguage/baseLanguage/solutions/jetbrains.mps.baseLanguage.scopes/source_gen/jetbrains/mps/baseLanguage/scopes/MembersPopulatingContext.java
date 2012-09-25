@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MembersPopulatingContext {
@@ -39,9 +40,16 @@ public class MembersPopulatingContext {
     return members;
   }
 
-  public void enterClassifierInternal(SNode classifier) {
-    // todo: check recursion here! 
-    classifiers.add(((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class})));
+  public boolean enterClassifierInternal(SNode classifierType) {
+    SNode classifier = IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierType);
+
+    // recursion preventing 
+    if (classifiers.contains(classifier)) {
+      return false;
+    }
+    classifiers.add(classifier);
+
+    // todo: set types variables 
 
     // recalc is package protected available 
     isPackageProtectedAvailable = true;
@@ -52,6 +60,8 @@ public class MembersPopulatingContext {
         break;
       }
     }
+
+    return true;
   }
 
   public void exitClassifierInternal(SNode classifier) {
