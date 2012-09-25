@@ -7389,6 +7389,7 @@
             <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237723049572">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1237723049573">
                 <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+                <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
                 <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1237723049574">
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237723049575">
                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1237723049576">
@@ -7403,22 +7404,6 @@
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1237723049579">
                     <node role="term" roleId="tpd4.1174657509053" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1237723049580">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237723049567" resolveInfo="initValue" />
-                    </node>
-                  </node>
-                </node>
-                <node role="errorString" roleId="tpd4.1180447237840" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1237723049582">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237723049583">
-                    <property name="value" nameId="tpee.1070475926801" value=" is expected" />
-                  </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1237723049581">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237723049587" />
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237723049584">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1237723049585">
-                        <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1237723040303" resolveInfo="creator" />
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1237723074848">
-                        <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1237721435807" />
-                      </node>
                     </node>
                   </node>
                 </node>
