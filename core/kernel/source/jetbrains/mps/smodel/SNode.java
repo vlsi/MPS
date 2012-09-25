@@ -685,37 +685,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return addChildRoles(augend, false);
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean hasId() {
-    return getNodeId() != null;
-  }
-
-  @Deprecated
-  /**
-   * Do not use it.
-   * Try to eliminate as many usages as possible,
-   * make your own getChildCount() utility where you can't live without it.
-   * No migration is provided since calls should be reviewed separately to avoid performance problems
-   * @Deprecated in 3.0
-   */
-  public int getChildCount() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    int count = 0;
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      count++;
-    }
-    return count;
-  }
-
   public boolean isDescendantOf(SNode node, boolean includeThis) {
     SNode current;
     if (includeThis) {
@@ -857,15 +826,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getId() {
-    return getSNodeId().toString();
-  }
-
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
   }
@@ -943,6 +903,46 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getId() {
+    return getSNodeId().toString();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean hasId() {
+    return getNodeId() != null;
+  }
+
+  @Deprecated
+  /**
+   * Do not use it.
+   * Try to eliminate as many usages as possible,
+   * make your own getChildCount() utility where you can't live without it.
+   * No migration is provided since calls should be reviewed separately to avoid performance problems
+   * @Deprecated in 3.0
+   */
+  public int getChildCount() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    int count = 0;
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      count++;
+    }
+    return count;
   }
 
   @Deprecated
