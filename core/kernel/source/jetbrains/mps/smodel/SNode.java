@@ -32,6 +32,7 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.migration.annotations.MigrationScript;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
@@ -1454,6 +1455,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     myUserObjects = null;
   }
 
+  @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
   @Deprecated
   /**
    * Inline content in java code, use migration in MPS
