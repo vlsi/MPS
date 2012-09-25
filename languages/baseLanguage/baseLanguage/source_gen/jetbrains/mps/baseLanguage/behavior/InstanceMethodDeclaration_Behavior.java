@@ -13,8 +13,8 @@ import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -75,9 +75,9 @@ public class InstanceMethodDeclaration_Behavior {
     if (!((context.isElementVisible(thisNode)))) {
       return;
     }
-    String signature = ClassifierScopeUtils.getMethodSignatureForOverriding(SNodeOperations.cast(IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifier), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
-    context.addMember(thisNode, new MethodSignature(signature));
-    context.hideMembers(new MethodSignature(signature));
+    MethodSignature signature = new MethodSignature(thisNode, ClassifierScopeUtils.resolveClassifierTypeVars(SNodeOperations.cast(IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifier), "jetbrains.mps.baseLanguage.structure.Classifier")));
+    context.addMember(thisNode, signature);
+    context.hideMembers(signature);
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {

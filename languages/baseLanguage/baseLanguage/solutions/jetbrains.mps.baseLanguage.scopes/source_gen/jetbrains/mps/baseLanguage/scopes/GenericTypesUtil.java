@@ -45,6 +45,10 @@ public class GenericTypesUtil {
   }
 
   private static SNode createClassifierTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
+    if (typeByTypeVar.isEmpty()) {
+      return type;
+    }
+
     SNode typeCopy = SNodeOperations.copyNode(type);
     for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getDescendants(typeCopy, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{}))) {
       SNode resolvedType = GenericTypesUtil.getTypeByTypeVariable(typeVariableRef, typeByTypeVar);
