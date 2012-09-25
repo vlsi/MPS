@@ -69,8 +69,8 @@ public class NamedTupleDeclaration_Behavior {
   }
 
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
-    _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, Object>() {
-      public SNode invoke(Object tvr) {
+    _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
+      public SNode invoke(SNode tvr) {
         return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0a0a4().createNode(tvr);
       }
     };
