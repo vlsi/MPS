@@ -56,9 +56,6 @@
       <implementation-class>jetbrains.mps.ide.refactoring.RefactoringAccessImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.editorMigration.EditorSettingsMigration</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.findusages.caches.StubModelsIndexer</implementation-class>
     </component>
     <component>
@@ -379,5 +376,9 @@
     </component>
 
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable"/>
+  </extensions>
 
 </components>

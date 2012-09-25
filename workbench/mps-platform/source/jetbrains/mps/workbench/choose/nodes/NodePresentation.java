@@ -20,12 +20,18 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
+/**
+ * Use NodePointerPresentation
+ */
+@Deprecated
+@ToRemove(version = 3.0)
 public class NodePresentation extends BasePresentation {
   private SNode myNode;
   private String myModelName = null;
