@@ -6620,6 +6620,7 @@
         <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1176897990298">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1215105338790">
             <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+            <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
             <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215105338791">
               <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215105338792">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1176897990296" resolveInfo="throwsItem" />
@@ -6847,6 +6848,7 @@
                       </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1185363921400">
                         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+                        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
                         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1185790951959">
                           <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1185363923089">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178764868212" resolveInfo="expectedRetType" />
@@ -6946,6 +6948,7 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1185363855090">
                 <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+                <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
                 <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1185790951961">
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1185363856795">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178764868212" resolveInfo="expectedRetType" />
