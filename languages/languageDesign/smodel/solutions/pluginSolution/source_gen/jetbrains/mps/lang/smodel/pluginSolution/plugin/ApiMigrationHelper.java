@@ -212,7 +212,8 @@ public class ApiMigrationHelper {
     if (eq_yke5lt_a0b0c(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.ClassConcept") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(jetbrains.mps.util.SNodeOperations.class.getName())) {
+    SNode root = SNodeOperations.getContainingRoot(n);
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(jetbrains.mps.util.SNodeOperations.class.getName())) {
       return false;
     }
     return true;
