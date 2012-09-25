@@ -32,7 +32,9 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.migration.annotations.LongTermMigration;
 import org.jetbrains.mps.migration.annotations.MigrationScript;
+import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
@@ -451,6 +453,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return new ArrayList<SReference>(_reference());
+  }
+
+  public SNodeId getNodeId(){
+    return getSNodeId();
   }
 
 //-------------------------------------------------------
@@ -1301,6 +1307,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getSNodeId() != null;
   }
 
+  @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
+  @ShortTermMigration(migration = "Replace with SNodeOperations.getChildCount(node)")
+  @LongTermMigration(migration = "Try to rewrite using getChildren()")
   @Deprecated
   /**
    * Do not use it.
