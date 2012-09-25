@@ -15,7 +15,7 @@ import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,6 +31,7 @@ import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JLabel;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -40,7 +41,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.AbstractListModel;
 
 public class ListPanel extends JPanel {
@@ -82,11 +82,11 @@ public class ListPanel extends JPanel {
     this.myListComponent = new JBList(this.myListModel);
     AnAction add = new ListAddAction(this.myListComponent) {
       protected int doAdd(AnActionEvent p0) {
-        List<SNode> nodesList = getCandidates();
+        List<SNodePointer> nodesList = getCandidates();
 
         NodeChooserDialog chooserDialog = new NodeChooserDialog(myProject, nodesList);
         chooserDialog.show();
-        final SNode resultNode = chooserDialog.getResult();
+        final SNodePointer resultNode = chooserDialog.getResult();
 
         if (resultNode == null) {
           return -1;
@@ -94,7 +94,7 @@ public class ListPanel extends JPanel {
         final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode);
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode.getNode());
           }
         });
         if (wrapper.value == null) {
@@ -150,7 +150,7 @@ public class ListPanel extends JPanel {
     this.myListComponent.updateUI();
   }
 
-  private List<SNode> getCandidates() {
+  private List<SNodePointer> getCandidates() {
     boolean needsUpdate;
     synchronized (myLock) {
       needsUpdate = this.myCandidates == null;
@@ -207,9 +207,9 @@ public class ListPanel extends JPanel {
 
     synchronized (myLock) {
       ListSequence.fromList(this.myCandidates).removeSequence(ListSequence.fromList(this.myValues));
-      return ListSequence.fromList(this.myCandidates).select(new ISelector<ITestNodeWrapper, SNode>() {
-        public SNode select(ITestNodeWrapper it) {
-          return SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept");
+      return ListSequence.fromList(this.myCandidates).select(new ISelector<ITestNodeWrapper, SNodePointer>() {
+        public SNodePointer select(ITestNodeWrapper it) {
+          return it.getNodePointer();
         }
       }).toListSequence();
     }

@@ -63,8 +63,12 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
     int selStart = this.getTextField().getSelectionStart();
     int selEnd = this.getTextField().getSelectionEnd();
 
-    this.getTextField().setText(this.getText());
-    this.getTextField().setCaretPosition(cp);
+    String text = this.getText();
+    this.getTextField().setText(text);
+    this.getTextField().setCaretPosition((cp > text.length() ?
+      text.length() :
+      cp
+    ));
     // except for those lines: they fix selection, broken by previous line 
     this.getTextField().setSelectionStart(selStart);
     this.getTextField().setSelectionEnd(selEnd);

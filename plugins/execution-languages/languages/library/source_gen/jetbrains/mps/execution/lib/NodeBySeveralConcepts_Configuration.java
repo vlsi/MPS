@@ -9,8 +9,8 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -24,34 +24,34 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   protected static Log log = LogFactory.getLog(NodeBySeveralConcepts_Configuration.class);
 
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
-  private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+  private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
   private SettingsEditorEx<NodeBySeveralConcepts_Configuration> myEditorEx;
 
-  public NodeBySeveralConcepts_Configuration(List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+  public NodeBySeveralConcepts_Configuration(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     myTargets = targets;
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
-      final SNode node = getNode();
-      if (node == null) {
-        throw new RuntimeConfigurationException("Node is not specified.");
-      }
-      final Wrappers._boolean accept = new Wrappers._boolean();
+      final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          accept.value = isValid(node);
+          SNode node = getNode();
+          if (node == null) {
+            errorText.value = "Node is not specified.";
+          } else if (!(isValid(node))) {
+            errorText.value = "Node is not valid.";
+          }
         }
       });
-      if (!(accept.value)) {
-        throw new RuntimeConfigurationException("Node is not valid.");
+      if (isNotEmpty_8tyej6_a0c0a0a(errorText.value)) {
+        throw new RuntimeConfigurationException(errorText.value);
       }
     }
   }
@@ -87,14 +87,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
 
   @Nullable
   public SNode getNode() {
-    final SNodePointer pointer = getNodePointer();
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-      public SNode invoke() {
-        return node.value = check_38tk9z_a0a0a2a0(pointer);
-      }
-    }));
-    return node.value;
+    return getNodePointer().getNode();
   }
 
   @Nullable
@@ -105,25 +98,22 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     return new SNodePointer(this.getModelId(), this.getNodeId());
   }
 
-  public void setNode(@Nullable final SNode node) {
+  public void setNode(@Nullable SNode node) {
     if (node == null) {
       this.setModelId(null);
       this.setNodeId(null);
     } else {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          NodeBySeveralConcepts_Configuration.this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
-          NodeBySeveralConcepts_Configuration.this.setNodeId(node.getId());
-        }
-      });
+      this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
+      this.setNodeId(node.getId());
     }
   }
 
   private boolean isValid(final SNode node) {
-    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
-      public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
+    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
+      public boolean accept(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
+        String concept = it._0();
         _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(((SNode) it._0())))) {
+        if (SNodeOperations.isInstanceOf(node, concept)) {
           if (function != null) {
             return function.invoke(node);
           } else {
@@ -165,11 +155,8 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     return myEditorEx;
   }
 
-  private static SNode check_38tk9z_a0a0a2a0(SNodePointer checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
-    }
-    return null;
+  public static boolean isNotEmpty_8tyej6_a0c0a0a(String str) {
+    return str != null && str.length() > 0;
   }
 
   public class MyState {
