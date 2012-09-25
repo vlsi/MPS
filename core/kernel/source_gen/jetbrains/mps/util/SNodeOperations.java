@@ -295,8 +295,9 @@ public class SNodeOperations {
       SNode parent;
       do {
         parent = curr.getParent();
-        if (parent.getNextChild(curr) != null) {
-          return parent.getNextChild(curr);
+        jetbrains.mps.smodel.SNode s = ((jetbrains.mps.smodel.SNode) curr).nextSibling();
+        if (s != null) {
+          return s;
         }
         curr = parent;
       } while (curr != original);
