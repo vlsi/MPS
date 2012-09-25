@@ -125,10 +125,10 @@ public class ChangeMethodSignature_Action extends BaseAction {
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))).isRegistered()) || ((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))).isDisposed()) {
+          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))))) {
             return;
           }
-          if (!(((SNode) methodToRefactor).isRegistered()) || ((SNode) methodToRefactor).isDisposed()) {
+          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) methodToRefactor))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) methodToRefactor))) {
             return;
           }
 

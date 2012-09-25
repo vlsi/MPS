@@ -1985,6 +1985,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
   </dependency>

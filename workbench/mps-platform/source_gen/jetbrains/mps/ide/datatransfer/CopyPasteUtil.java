@@ -192,7 +192,7 @@ public class CopyPasteUtil {
             oldTargetNode.getName()
           );
           if (resolveInfo != null) {
-            if (oldTargetNode != null && !(oldTargetNode.isDisposed()) && oldTargetNode.getModel() != null) {
+            if (oldTargetNode != null && !(jetbrains.mps.util.SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);

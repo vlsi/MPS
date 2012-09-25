@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.usageView.UsageViewBundle;
@@ -71,7 +72,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         SNodePointer ptr = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
           public SNodePointer compute() {
             SNode node = treeNode.getNode();
-            if (node == null || node.isDisposed()) {
+            if (node == null || SNodeOperations.isDisposed(node)) {
               return null;
             }
 

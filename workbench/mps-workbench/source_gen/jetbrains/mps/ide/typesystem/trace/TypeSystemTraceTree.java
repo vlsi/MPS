@@ -35,6 +35,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.util.SNodeOperations;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -261,7 +262,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
       return rule;
     }
-    if (source != null && source.isRegistered()) {
+    if (source != null && SNodeOperations.isRegistered(source)) {
       if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
         return source;
       }

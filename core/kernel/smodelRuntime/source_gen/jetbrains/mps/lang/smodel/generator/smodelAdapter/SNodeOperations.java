@@ -554,7 +554,7 @@ public class SNodeOperations {
   }
 
   public static SNode detachNode(SNode node) {
-    if (node != null && node.isRegistered()) {
+    if (node != null && jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       SNode parent = node.getParent();
       if (parent != null) {
         parent.removeChild(node);

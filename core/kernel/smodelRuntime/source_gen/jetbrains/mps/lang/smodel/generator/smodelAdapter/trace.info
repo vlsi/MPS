@@ -1591,9 +1591,7 @@
     <scopeInfo nodeId="6599163591527286562" fileName="SLinkOperations.java" startLine="85" startPosition="23" endLine="88" endPosition="22">
       <varInfo nodeId="6599163591527286925" varName="newChild" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527286637" fileName="SLinkOperations.java" startLine="104" startPosition="78" endLine="107" endPosition="5">
-      <varInfo nodeId="6599163591527286639" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6599163591527286636" fileName="SLinkOperations.java" startLine="104" startPosition="78" endLine="107" endPosition="5" />
     <scopeInfo nodeId="6599163591527286766" fileName="SLinkOperations.java" startLine="143" startPosition="52" endLine="146" endPosition="5">
       <varInfo nodeId="6599163591527286768" varName="child" />
     </scopeInfo>
@@ -1899,7 +1897,7 @@
     <nodeInfo nodeId="6599163591527294912" fileName="SNodeOperations.java" startLine="544" startPosition="12" endLine="545" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6599163591527294940" fileName="SNodeOperations.java" startLine="546" startPosition="5" endLine="547" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527294958" fileName="SNodeOperations.java" startLine="551" startPosition="46" endLine="552" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6599163591527294977" fileName="SNodeOperations.java" startLine="557" startPosition="46" endLine="558" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527294977" fileName="SNodeOperations.java" startLine="557" startPosition="80" endLine="558" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6599163591527294997" fileName="SNodeOperations.java" startLine="559" startPosition="27" endLine="560" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6599163591527294989" fileName="SNodeOperations.java" startLine="561" startPosition="14" endLine="562" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6599163591527295002" fileName="SNodeOperations.java" startLine="564" startPosition="5" endLine="565" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2352,7 +2350,7 @@
     <scopeInfo nodeId="6599163591527294942" fileName="SNodeOperations.java" startLine="549" startPosition="0" endLine="555" endPosition="0">
       <varInfo nodeId="6599163591527294945" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527294976" fileName="SNodeOperations.java" startLine="557" startPosition="46" endLine="563" endPosition="7">
+    <scopeInfo nodeId="6599163591527294976" fileName="SNodeOperations.java" startLine="557" startPosition="80" endLine="563" endPosition="7">
       <varInfo nodeId="6599163591527294978" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="6599163591527293173" fileName="SNodeOperations.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
@@ -2404,9 +2402,7 @@
     <scopeInfo nodeId="6599163591527295459" fileName="SNodeOperations.java" startLine="698" startPosition="0" endLine="705" endPosition="0">
       <varInfo nodeId="6599163591527295463" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527293957" fileName="SNodeOperations.java" startLine="272" startPosition="140" endLine="280" endPosition="5">
-      <varInfo nodeId="6599163591527293961" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="6599163591527293956" fileName="SNodeOperations.java" startLine="272" startPosition="140" endLine="280" endPosition="5" />
     <scopeInfo nodeId="6599163591527294001" fileName="SNodeOperations.java" startLine="283" startPosition="77" endLine="291" endPosition="5">
       <varInfo nodeId="6599163591527294003" varName="conceptFqName" />
     </scopeInfo>

@@ -1227,7 +1227,9 @@
       <varInfo nodeId="1218628312772" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="84" startPosition="9" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="1218628302807" fileName="CloneRoot_Action.java" startLine="84" startPosition="9" endLine="91" endPosition="7">
+      <varInfo nodeId="1218628302808" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="89" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="66" startPosition="5" endLine="75" endPosition="7">
       <varInfo nodeId="1215874930420" varName="error" />
@@ -1319,7 +1321,9 @@
     <scopeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
     <scopeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="72" startPosition="9" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="1215882055649" fileName="EditNode_Action.java" startLine="72" startPosition="9" endLine="77" endPosition="7">
+      <varInfo nodeId="1215882055651" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="35" startPosition="89" endLine="43" endPosition="5" />
     <scopeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="50" startPosition="5" endLine="59" endPosition="7">
       <varInfo nodeId="1215881875402" varName="error" />
@@ -4700,7 +4704,9 @@
     <scopeInfo nodeId="1241020613337" fileName="DeleteModules_Action.java" startLine="30" startPosition="33" endLine="33" endPosition="40" />
     <scopeInfo nodeId="3575273646046393010" fileName="DeleteModules_Action.java" startLine="48" startPosition="113" endLine="51" endPosition="7" />
     <scopeInfo nodeId="1241020613337" fileName="DeleteModules_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="1241021458633" fileName="DeleteModules_Action.java" startLine="99" startPosition="27" endLine="102" endPosition="11" />
+    <scopeInfo nodeId="3575273646046394911" fileName="DeleteModules_Action.java" startLine="99" startPosition="27" endLine="102" endPosition="11">
+      <varInfo nodeId="3575273646046394912" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="1241020613337" fileName="DeleteModules_Action.java" startLine="105" startPosition="0" endLine="108" endPosition="7">
       <varInfo nodeId="1241020613337" varName="t" />
     </scopeInfo>
@@ -8236,7 +8242,7 @@
     <scopeInfo nodeId="8243555296290550312" fileName="AddToNewFavoritesList_Action.java" startLine="83" startPosition="25" endLine="84" endPosition="62" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="88" startPosition="33" endLine="89" endPosition="95" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="29" startPosition="41" endLine="32" endPosition="41" />
-    <scopeInfo nodeId="8243555296290550346" fileName="AddToNewFavoritesList_Action.java" startLine="41" startPosition="9" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="41" startPosition="9" endLine="44" endPosition="7" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="7">
       <varInfo nodeId="2834677590307342574" varName="t" />
@@ -8734,8 +8740,8 @@
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -8799,8 +8805,8 @@
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -8995,9 +9001,7 @@
     <scopeInfo nodeId="3575273646046443882" fileName="DeleteModels_Action.java" startLine="84" startPosition="135" endLine="88" endPosition="212" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="3" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="3575273646046443877" fileName="DeleteModels_Action.java" startLine="83" startPosition="27" endLine="89" endPosition="11">
-      <varInfo nodeId="3575273646046443878" varName="model" />
-    </scopeInfo>
+    <scopeInfo nodeId="3575273646046443876" fileName="DeleteModels_Action.java" startLine="83" startPosition="27" endLine="89" endPosition="11" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="39" startPosition="89" endLine="47" endPosition="5" />
     <scopeInfo nodeId="3575273646046443875" fileName="DeleteModels_Action.java" startLine="82" startPosition="69" endLine="91" endPosition="0" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
@@ -9332,7 +9336,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3858094006307874058" fileName="NewDirectory_Action.java" startLine="90" startPosition="39" endLine="90" endPosition="39" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="3858094006307874170" fileName="NewDirectory_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="62" />
+    <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="62" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="45" startPosition="33" endLine="46" endPosition="87" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="53" startPosition="53" endLine="54" endPosition="19" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="57" startPosition="67" endLine="58" endPosition="19" />
@@ -9454,7 +9458,7 @@
     <nodeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="32" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="50" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="50" />
+    <scopeInfo nodeId="3906874221886742267" fileName="GoToAction_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="50" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="37" startPosition="33" endLine="38" endPosition="85" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="56" startPosition="33" endLine="57" endPosition="84" />
@@ -9950,7 +9954,7 @@
     <nodeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="44" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="50" />
+    <scopeInfo nodeId="3906874221886749873" fileName="FileDelete_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="50" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="38" startPosition="33" endLine="39" endPosition="85" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="46" startPosition="53" endLine="47" endPosition="19" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="50" startPosition="67" endLine="51" endPosition="19" />
@@ -11698,9 +11702,7 @@
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="112" startPosition="33" endLine="113" endPosition="89" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="37" startPosition="35" endLine="40" endPosition="40" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="2372163530067851541" fileName="HighlightUsages_Action.java" startLine="91" startPosition="20" endLine="94" endPosition="15">
-      <varInfo nodeId="2372163530067851542" varName="message" />
-    </scopeInfo>
+    <scopeInfo nodeId="5533671870987188721" fileName="HighlightUsages_Action.java" startLine="91" startPosition="20" endLine="94" endPosition="15" />
     <scopeInfo nodeId="5533671870987188841" fileName="HighlightUsages_Action.java" startLine="101" startPosition="22" endLine="104" endPosition="17" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="111" startPosition="0" endLine="114" endPosition="7">
       <varInfo nodeId="5533671870987003804" varName="t" />
@@ -13068,175 +13070,175 @@
     <unitInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="86" startPosition="57" endLine="97" endPosition="7" unitName="jetbrains.mps.ide.actions.RenamePackage_Action$2" />
   </root>
   <root nodeId="7054831363147542055" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
-    <nodeInfo nodeId="7054831363147658711" fileName="MappingDialog.java" startLine="40" startPosition="47" endLine="41" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
-    <nodeInfo nodeId="7054831363147695801" fileName="MappingDialog.java" startLine="41" startPosition="66" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
-    <nodeInfo nodeId="2606490174690344014" fileName="MappingDialog.java" startLine="42" startPosition="30" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="6835529810040688435" fileName="MappingDialog.java" startLine="43" startPosition="28" endLine="44" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="7054831363147695791" fileName="MappingDialog.java" startLine="46" startPosition="37" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7054831363147696118" fileName="MappingDialog.java" startLine="51" startPosition="66" endLine="52" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2606490174690344103" fileName="MappingDialog.java" startLine="52" startPosition="89" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7054831363147695942" fileName="MappingDialog.java" startLine="53" startPosition="24" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2630739728628960320" fileName="MappingDialog.java" startLine="54" startPosition="26" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7054831363147696143" fileName="MappingDialog.java" startLine="55" startPosition="72" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1815921522226817402" fileName="MappingDialog.java" startLine="56" startPosition="57" endLine="57" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1815921522227175440" fileName="MappingDialog.java" startLine="60" startPosition="50" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1815921522227175529" fileName="MappingDialog.java" startLine="62" startPosition="9" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1815921522227175539" fileName="MappingDialog.java" startLine="64" startPosition="27" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1815921522227175551" fileName="MappingDialog.java" startLine="66" startPosition="9" endLine="67" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1815921522227175836" fileName="MappingDialog.java" startLine="68" startPosition="47" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2606490174690342441" fileName="MappingDialog.java" startLine="70" startPosition="9" endLine="71" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6107809127287287514" fileName="MappingDialog.java" startLine="73" startPosition="29" endLine="74" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6107809127287260120" fileName="MappingDialog.java" startLine="75" startPosition="110" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6107809127287287524" fileName="MappingDialog.java" startLine="77" startPosition="13" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1071422968910407069" fileName="MappingDialog.java" startLine="78" startPosition="44" endLine="79" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7054831363147696156" fileName="MappingDialog.java" startLine="83" startPosition="7" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2630739728628960333" fileName="MappingDialog.java" startLine="84" startPosition="24" endLine="85" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7054831363147660925" fileName="MappingDialog.java" startLine="88" startPosition="43" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1723406319279238782" fileName="MappingDialog.java" startLine="93" startPosition="82" endLine="94" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7054831363147695817" fileName="MappingDialog.java" startLine="98" startPosition="29" endLine="99" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7054831363147695863" fileName="MappingDialog.java" startLine="100" startPosition="5" endLine="101" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2606490174690344237" fileName="MappingDialog.java" startLine="102" startPosition="66" endLine="103" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7054831363147695918" fileName="MappingDialog.java" startLine="103" startPosition="104" endLine="104" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7054831363147695960" fileName="MappingDialog.java" startLine="104" startPosition="170" endLine="105" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7054831363147695988" fileName="MappingDialog.java" startLine="106" startPosition="68" endLine="107" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7054831363147696126" fileName="MappingDialog.java" startLine="107" startPosition="168" endLine="108" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6208260877632111166" fileName="MappingDialog.java" startLine="108" startPosition="45" endLine="109" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2788803143009132608" fileName="MappingDialog.java" startLine="112" startPosition="42" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6208260877632113708" fileName="MappingDialog.java" startLine="115" startPosition="13" endLine="116" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7054831363147696135" fileName="MappingDialog.java" startLine="119" startPosition="5" endLine="120" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6835529810040688448" fileName="MappingDialog.java" startLine="123" startPosition="28" endLine="124" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2630739728628960368" fileName="MappingDialog.java" startLine="130" startPosition="40" endLine="131" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6208260877632155310" fileName="MappingDialog.java" startLine="134" startPosition="35" endLine="135" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6835529810040688453" fileName="MappingDialog.java" startLine="136" startPosition="12" endLine="137" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2630739728628960381" fileName="MappingDialog.java" startLine="137" startPosition="70" endLine="138" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2630739728628960394" fileName="MappingDialog.java" startLine="138" startPosition="23" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6208260877632114753" fileName="MappingDialog.java" startLine="144" startPosition="30" endLine="145" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6208260877632114766" fileName="MappingDialog.java" startLine="145" startPosition="21" endLine="146" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2594719566410564267" fileName="MappingDialog.java" startLine="149" startPosition="52" endLine="150" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
-    <nodeInfo nodeId="2594719566410564270" fileName="MappingDialog.java" startLine="150" startPosition="24" endLine="151" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeIdentifier" />
-    <nodeInfo nodeId="1957466449921438230" fileName="MappingDialog.java" startLine="151" startPosition="36" endLine="152" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
-    <nodeInfo nodeId="2594719566410564298" fileName="MappingDialog.java" startLine="154" startPosition="97" endLine="155" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2594719566410564275" fileName="MappingDialog.java" startLine="155" startPosition="21" endLine="156" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2594719566410564284" fileName="MappingDialog.java" startLine="156" startPosition="20" endLine="157" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957466449921438238" fileName="MappingDialog.java" startLine="157" startPosition="40" endLine="158" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3733687804922898511" fileName="MappingDialog.java" startLine="158" startPosition="20" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3733687804922987900" fileName="MappingDialog.java" startLine="159" startPosition="0" endLine="160" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3733687804922987904" fileName="MappingDialog.java" startLine="160" startPosition="42" endLine="161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3733687804922987908" fileName="MappingDialog.java" startLine="161" startPosition="22" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1815921522227175438" fileName="MappingDialog.java" startLine="59" startPosition="54" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1815921522227175537" fileName="MappingDialog.java" startLine="63" startPosition="70" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1815921522227175747" fileName="MappingDialog.java" startLine="67" startPosition="50" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6107809127287259423" fileName="MappingDialog.java" startLine="74" startPosition="45" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7054831363147695807" fileName="MappingDialog.java" startLine="97" startPosition="37" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7054831363147695781" fileName="MappingDialog.java" startLine="45" startPosition="42" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="7054831363147658705" fileName="MappingDialog.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="2788803143009132601" fileName="MappingDialog.java" startLine="111" startPosition="108" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6835529810040619793" fileName="MappingDialog.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2630739728628960362" fileName="MappingDialog.java" startLine="129" startPosition="96" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2630739728628960379" fileName="MappingDialog.java" startLine="136" startPosition="10" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7054831363147660929" fileName="MappingDialog.java" startLine="44" startPosition="25" endLine="49" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="1723406319279177995" fileName="MappingDialog.java" startLine="91" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="6208260877632111585" fileName="MappingDialog.java" startLine="110" startPosition="124" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2630739728628960348" fileName="MappingDialog.java" startLine="128" startPosition="26" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6208260877632114624" fileName="MappingDialog.java" startLine="142" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
-    <nodeInfo nodeId="6208260877632114830" fileName="MappingDialog.java" startLine="133" startPosition="7" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6208260877632111557" fileName="MappingDialog.java" startLine="109" startPosition="38" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2511793679788237347" fileName="MappingDialog.java" startLine="72" startPosition="61" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2511793679788230241" fileName="MappingDialog.java" startLine="71" startPosition="60" endLine="81" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2594719566410564252" fileName="MappingDialog.java" startLine="153" startPosition="0" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeNode#(Ljetbrains/mps/smodel/IOperationContext;Ljavax/swing/Icon;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7054831363147695854" fileName="MappingDialog.java" startLine="105" startPosition="34" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6208260877632114611" fileName="MappingDialog.java" startLine="126" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonOk#()V" />
-    <nodeInfo nodeId="7054831363147695826" fileName="MappingDialog.java" startLine="101" startPosition="55" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1815921522227174522" fileName="MappingDialog.java" startLine="58" startPosition="65" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
-    <nodeInfo nodeId="1815921522227133841" fileName="MappingDialog.java" startLine="57" startPosition="90" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7054831363147695786" fileName="MappingDialog.java" startLine="96" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildTree#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="7054831363147542057" fileName="MappingDialog.java" startLine="50" startPosition="0" endLine="86" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/Language;)V" />
-    <scopeInfo nodeId="7054831363147695784" fileName="MappingDialog.java" startLine="46" startPosition="37" endLine="47" endPosition="46" />
-    <scopeInfo nodeId="1815921522227175439" fileName="MappingDialog.java" startLine="60" startPosition="50" endLine="61" endPosition="17" />
-    <scopeInfo nodeId="1815921522227175538" fileName="MappingDialog.java" startLine="64" startPosition="27" endLine="65" endPosition="17" />
-    <scopeInfo nodeId="1815921522227175748" fileName="MappingDialog.java" startLine="68" startPosition="47" endLine="69" endPosition="17" />
-    <scopeInfo nodeId="6107809127287259424" fileName="MappingDialog.java" startLine="75" startPosition="110" endLine="76" endPosition="21" />
-    <scopeInfo nodeId="7054831363147658708" fileName="MappingDialog.java" startLine="88" startPosition="43" endLine="89" endPosition="27" />
-    <scopeInfo nodeId="1723406319279177998" fileName="MappingDialog.java" startLine="93" startPosition="82" endLine="94" endPosition="77" />
-    <scopeInfo nodeId="7054831363147695809" fileName="MappingDialog.java" startLine="98" startPosition="29" endLine="99" endPosition="18" />
-    <scopeInfo nodeId="2788803143009132606" fileName="MappingDialog.java" startLine="112" startPosition="42" endLine="113" endPosition="27" />
-    <scopeInfo nodeId="6835529810040619796" fileName="MappingDialog.java" startLine="123" startPosition="28" endLine="124" endPosition="20" />
-    <scopeInfo nodeId="2630739728628960367" fileName="MappingDialog.java" startLine="130" startPosition="40" endLine="131" endPosition="20" />
-    <scopeInfo nodeId="6208260877632114831" fileName="MappingDialog.java" startLine="134" startPosition="35" endLine="135" endPosition="89" />
-    <scopeInfo nodeId="6208260877632114627" fileName="MappingDialog.java" startLine="144" startPosition="30" endLine="146" endPosition="14" />
-    <scopeInfo nodeId="2630739728628960380" fileName="MappingDialog.java" startLine="136" startPosition="12" endLine="139" endPosition="16" />
-    <scopeInfo nodeId="7054831363147695781" fileName="MappingDialog.java" startLine="45" startPosition="42" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="7054831363147658705" fileName="MappingDialog.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="2788803143009132601" fileName="MappingDialog.java" startLine="111" startPosition="108" endLine="115" endPosition="0">
+    <nodeInfo nodeId="7054831363147658711" fileName="MappingDialog.java" startLine="41" startPosition="47" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
+    <nodeInfo nodeId="7054831363147695801" fileName="MappingDialog.java" startLine="42" startPosition="66" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
+    <nodeInfo nodeId="2606490174690344014" fileName="MappingDialog.java" startLine="43" startPosition="30" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="6835529810040688435" fileName="MappingDialog.java" startLine="44" startPosition="28" endLine="45" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
+    <nodeInfo nodeId="7054831363147695791" fileName="MappingDialog.java" startLine="47" startPosition="37" endLine="48" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7054831363147696118" fileName="MappingDialog.java" startLine="52" startPosition="66" endLine="53" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2606490174690344103" fileName="MappingDialog.java" startLine="53" startPosition="89" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7054831363147695942" fileName="MappingDialog.java" startLine="54" startPosition="24" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2630739728628960320" fileName="MappingDialog.java" startLine="55" startPosition="26" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7054831363147696143" fileName="MappingDialog.java" startLine="56" startPosition="72" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1815921522226817402" fileName="MappingDialog.java" startLine="57" startPosition="57" endLine="58" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1815921522227175440" fileName="MappingDialog.java" startLine="61" startPosition="50" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1815921522227175529" fileName="MappingDialog.java" startLine="63" startPosition="9" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1815921522227175539" fileName="MappingDialog.java" startLine="65" startPosition="27" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1815921522227175551" fileName="MappingDialog.java" startLine="67" startPosition="9" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1815921522227175836" fileName="MappingDialog.java" startLine="69" startPosition="47" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2606490174690342441" fileName="MappingDialog.java" startLine="71" startPosition="9" endLine="72" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6107809127287287514" fileName="MappingDialog.java" startLine="74" startPosition="29" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6107809127287260120" fileName="MappingDialog.java" startLine="76" startPosition="140" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6107809127287287524" fileName="MappingDialog.java" startLine="78" startPosition="13" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1071422968910407069" fileName="MappingDialog.java" startLine="79" startPosition="44" endLine="80" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7054831363147696156" fileName="MappingDialog.java" startLine="84" startPosition="7" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2630739728628960333" fileName="MappingDialog.java" startLine="85" startPosition="24" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7054831363147660925" fileName="MappingDialog.java" startLine="89" startPosition="43" endLine="90" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1723406319279238782" fileName="MappingDialog.java" startLine="94" startPosition="82" endLine="95" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7054831363147695817" fileName="MappingDialog.java" startLine="99" startPosition="29" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7054831363147695863" fileName="MappingDialog.java" startLine="101" startPosition="5" endLine="102" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2606490174690344237" fileName="MappingDialog.java" startLine="103" startPosition="66" endLine="104" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7054831363147695918" fileName="MappingDialog.java" startLine="104" startPosition="104" endLine="105" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7054831363147695960" fileName="MappingDialog.java" startLine="105" startPosition="170" endLine="106" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7054831363147695988" fileName="MappingDialog.java" startLine="107" startPosition="68" endLine="108" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7054831363147696126" fileName="MappingDialog.java" startLine="108" startPosition="168" endLine="109" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6208260877632111166" fileName="MappingDialog.java" startLine="109" startPosition="45" endLine="110" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2788803143009132608" fileName="MappingDialog.java" startLine="113" startPosition="42" endLine="114" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6208260877632113708" fileName="MappingDialog.java" startLine="116" startPosition="13" endLine="117" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7054831363147696135" fileName="MappingDialog.java" startLine="120" startPosition="5" endLine="121" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6835529810040688448" fileName="MappingDialog.java" startLine="124" startPosition="28" endLine="125" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2630739728628960368" fileName="MappingDialog.java" startLine="131" startPosition="40" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6208260877632155310" fileName="MappingDialog.java" startLine="135" startPosition="35" endLine="136" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6835529810040688453" fileName="MappingDialog.java" startLine="137" startPosition="12" endLine="138" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2630739728628960381" fileName="MappingDialog.java" startLine="138" startPosition="70" endLine="139" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2630739728628960394" fileName="MappingDialog.java" startLine="139" startPosition="23" endLine="140" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6208260877632114753" fileName="MappingDialog.java" startLine="145" startPosition="30" endLine="146" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6208260877632114766" fileName="MappingDialog.java" startLine="146" startPosition="21" endLine="147" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2594719566410564267" fileName="MappingDialog.java" startLine="150" startPosition="52" endLine="151" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
+    <nodeInfo nodeId="2594719566410564270" fileName="MappingDialog.java" startLine="151" startPosition="24" endLine="152" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeIdentifier" />
+    <nodeInfo nodeId="1957466449921438230" fileName="MappingDialog.java" startLine="152" startPosition="36" endLine="153" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
+    <nodeInfo nodeId="2594719566410564298" fileName="MappingDialog.java" startLine="155" startPosition="97" endLine="156" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2594719566410564275" fileName="MappingDialog.java" startLine="156" startPosition="21" endLine="157" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2594719566410564284" fileName="MappingDialog.java" startLine="157" startPosition="20" endLine="158" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957466449921438238" fileName="MappingDialog.java" startLine="158" startPosition="40" endLine="159" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3733687804922898511" fileName="MappingDialog.java" startLine="159" startPosition="20" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3733687804922987900" fileName="MappingDialog.java" startLine="160" startPosition="0" endLine="161" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3733687804922987904" fileName="MappingDialog.java" startLine="161" startPosition="42" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3733687804922987908" fileName="MappingDialog.java" startLine="162" startPosition="22" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1815921522227175438" fileName="MappingDialog.java" startLine="60" startPosition="54" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1815921522227175537" fileName="MappingDialog.java" startLine="64" startPosition="70" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1815921522227175747" fileName="MappingDialog.java" startLine="68" startPosition="50" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6107809127287259423" fileName="MappingDialog.java" startLine="75" startPosition="45" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7054831363147695807" fileName="MappingDialog.java" startLine="98" startPosition="37" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7054831363147695781" fileName="MappingDialog.java" startLine="46" startPosition="42" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="7054831363147658705" fileName="MappingDialog.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="2788803143009132601" fileName="MappingDialog.java" startLine="112" startPosition="108" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6835529810040619793" fileName="MappingDialog.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2630739728628960362" fileName="MappingDialog.java" startLine="130" startPosition="96" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2630739728628960379" fileName="MappingDialog.java" startLine="137" startPosition="10" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7054831363147660929" fileName="MappingDialog.java" startLine="45" startPosition="25" endLine="50" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="1723406319279177995" fileName="MappingDialog.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="6208260877632111585" fileName="MappingDialog.java" startLine="111" startPosition="124" endLine="116" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2630739728628960348" fileName="MappingDialog.java" startLine="129" startPosition="26" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6208260877632114624" fileName="MappingDialog.java" startLine="143" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
+    <nodeInfo nodeId="6208260877632114830" fileName="MappingDialog.java" startLine="134" startPosition="7" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6208260877632111557" fileName="MappingDialog.java" startLine="110" startPosition="38" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2511793679788237347" fileName="MappingDialog.java" startLine="73" startPosition="61" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2511793679788230241" fileName="MappingDialog.java" startLine="72" startPosition="60" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2594719566410564252" fileName="MappingDialog.java" startLine="154" startPosition="0" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeNode#(Ljetbrains/mps/smodel/IOperationContext;Ljavax/swing/Icon;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7054831363147695854" fileName="MappingDialog.java" startLine="106" startPosition="34" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6208260877632114611" fileName="MappingDialog.java" startLine="127" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonOk#()V" />
+    <nodeInfo nodeId="7054831363147695826" fileName="MappingDialog.java" startLine="102" startPosition="55" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1815921522227174522" fileName="MappingDialog.java" startLine="59" startPosition="65" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
+    <nodeInfo nodeId="1815921522227133841" fileName="MappingDialog.java" startLine="58" startPosition="90" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7054831363147695786" fileName="MappingDialog.java" startLine="97" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildTree#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="7054831363147542057" fileName="MappingDialog.java" startLine="51" startPosition="0" endLine="87" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/Language;)V" />
+    <scopeInfo nodeId="7054831363147695784" fileName="MappingDialog.java" startLine="47" startPosition="37" endLine="48" endPosition="46" />
+    <scopeInfo nodeId="1815921522227175439" fileName="MappingDialog.java" startLine="61" startPosition="50" endLine="62" endPosition="17" />
+    <scopeInfo nodeId="1815921522227175538" fileName="MappingDialog.java" startLine="65" startPosition="27" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="1815921522227175748" fileName="MappingDialog.java" startLine="69" startPosition="47" endLine="70" endPosition="17" />
+    <scopeInfo nodeId="6107809127287259424" fileName="MappingDialog.java" startLine="76" startPosition="140" endLine="77" endPosition="21" />
+    <scopeInfo nodeId="7054831363147658708" fileName="MappingDialog.java" startLine="89" startPosition="43" endLine="90" endPosition="27" />
+    <scopeInfo nodeId="1723406319279177998" fileName="MappingDialog.java" startLine="94" startPosition="82" endLine="95" endPosition="77" />
+    <scopeInfo nodeId="7054831363147695809" fileName="MappingDialog.java" startLine="99" startPosition="29" endLine="100" endPosition="18" />
+    <scopeInfo nodeId="2788803143009132606" fileName="MappingDialog.java" startLine="113" startPosition="42" endLine="114" endPosition="27" />
+    <scopeInfo nodeId="6835529810040619796" fileName="MappingDialog.java" startLine="124" startPosition="28" endLine="125" endPosition="20" />
+    <scopeInfo nodeId="2630739728628960367" fileName="MappingDialog.java" startLine="131" startPosition="40" endLine="132" endPosition="20" />
+    <scopeInfo nodeId="6208260877632114831" fileName="MappingDialog.java" startLine="135" startPosition="35" endLine="136" endPosition="89" />
+    <scopeInfo nodeId="6208260877632114627" fileName="MappingDialog.java" startLine="145" startPosition="30" endLine="147" endPosition="14" />
+    <scopeInfo nodeId="2630739728628960380" fileName="MappingDialog.java" startLine="137" startPosition="12" endLine="140" endPosition="16" />
+    <scopeInfo nodeId="7054831363147695781" fileName="MappingDialog.java" startLine="46" startPosition="42" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="7054831363147658705" fileName="MappingDialog.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="2788803143009132601" fileName="MappingDialog.java" startLine="112" startPosition="108" endLine="116" endPosition="0">
       <varInfo nodeId="2788803143009132604" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6835529810040619793" fileName="MappingDialog.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="2630739728628960362" fileName="MappingDialog.java" startLine="129" startPosition="96" endLine="133" endPosition="0">
+    <scopeInfo nodeId="6835529810040619793" fileName="MappingDialog.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="2630739728628960362" fileName="MappingDialog.java" startLine="130" startPosition="96" endLine="134" endPosition="0">
       <varInfo nodeId="2630739728628960365" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1723406319279177995" fileName="MappingDialog.java" startLine="91" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="2511793679788237350" fileName="MappingDialog.java" startLine="73" startPosition="29" endLine="79" endPosition="103">
+    <scopeInfo nodeId="1723406319279177995" fileName="MappingDialog.java" startLine="92" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="2511793679788237350" fileName="MappingDialog.java" startLine="74" startPosition="29" endLine="80" endPosition="103">
       <varInfo nodeId="6107809127287287515" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6208260877632111558" fileName="MappingDialog.java" startLine="110" startPosition="124" endLine="116" endPosition="42">
+    <scopeInfo nodeId="6208260877632111558" fileName="MappingDialog.java" startLine="111" startPosition="124" endLine="117" endPosition="42">
       <varInfo nodeId="6208260877632111586" varName="nodeTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6208260877632114624" fileName="MappingDialog.java" startLine="142" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="6208260877632111557" fileName="MappingDialog.java" startLine="109" startPosition="38" endLine="117" endPosition="9">
+    <scopeInfo nodeId="6208260877632114624" fileName="MappingDialog.java" startLine="143" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="6208260877632111557" fileName="MappingDialog.java" startLine="110" startPosition="38" endLine="118" endPosition="9">
       <varInfo nodeId="6208260877632111561" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2594719566410564255" fileName="MappingDialog.java" startLine="154" startPosition="97" endLine="162" endPosition="22" />
-    <scopeInfo nodeId="2511793679788237347" fileName="MappingDialog.java" startLine="72" startPosition="61" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="2594719566410564252" fileName="MappingDialog.java" startLine="153" startPosition="0" endLine="163" endPosition="5">
+    <scopeInfo nodeId="2594719566410564255" fileName="MappingDialog.java" startLine="155" startPosition="97" endLine="163" endPosition="22" />
+    <scopeInfo nodeId="2511793679788237347" fileName="MappingDialog.java" startLine="73" startPosition="61" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="2594719566410564252" fileName="MappingDialog.java" startLine="154" startPosition="0" endLine="164" endPosition="5">
       <varInfo nodeId="2606490174690344334" varName="context" />
       <varInfo nodeId="2594719566410564262" varName="icon" />
       <varInfo nodeId="2594719566410564264" varName="nodeIdentifier" />
       <varInfo nodeId="1957466449921438234" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7054831363147695855" fileName="MappingDialog.java" startLine="106" startPosition="68" endLine="117" endPosition="9">
+    <scopeInfo nodeId="7054831363147695855" fileName="MappingDialog.java" startLine="107" startPosition="68" endLine="118" endPosition="9">
       <varInfo nodeId="6208260877632111167" varName="model" />
       <varInfo nodeId="7054831363147695989" varName="modelTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6208260877632114614" fileName="MappingDialog.java" startLine="128" startPosition="26" endLine="140" endPosition="5">
+    <scopeInfo nodeId="6208260877632114614" fileName="MappingDialog.java" startLine="129" startPosition="26" endLine="141" endPosition="5">
       <varInfo nodeId="2630739728628960349" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7054831363147695854" fileName="MappingDialog.java" startLine="105" startPosition="34" endLine="118" endPosition="7">
+    <scopeInfo nodeId="7054831363147695854" fileName="MappingDialog.java" startLine="106" startPosition="34" endLine="119" endPosition="7">
       <varInfo nodeId="7054831363147695858" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="7054831363147695827" fileName="MappingDialog.java" startLine="102" startPosition="66" endLine="118" endPosition="7">
+    <scopeInfo nodeId="7054831363147695827" fileName="MappingDialog.java" startLine="103" startPosition="66" endLine="119" endPosition="7">
       <varInfo nodeId="7054831363147695919" varName="generatorTreeNode" />
       <varInfo nodeId="2606490174690344238" varName="moduleContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6208260877632114611" fileName="MappingDialog.java" startLine="126" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="7054831363147695826" fileName="MappingDialog.java" startLine="101" startPosition="55" endLine="119" endPosition="5">
+    <scopeInfo nodeId="6208260877632114611" fileName="MappingDialog.java" startLine="127" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="7054831363147695826" fileName="MappingDialog.java" startLine="102" startPosition="55" endLine="120" endPosition="5">
       <varInfo nodeId="7054831363147695830" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="1815921522227174527" fileName="MappingDialog.java" startLine="59" startPosition="54" endLine="81" endPosition="11">
+    <scopeInfo nodeId="1815921522227174527" fileName="MappingDialog.java" startLine="60" startPosition="54" endLine="82" endPosition="11">
       <varInfo nodeId="1815921522227175552" varName="node" />
       <varInfo nodeId="1815921522227175530" varName="path" />
       <varInfo nodeId="2606490174690342442" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7054831363147695789" fileName="MappingDialog.java" startLine="97" startPosition="37" endLine="120" endPosition="16">
+    <scopeInfo nodeId="7054831363147695789" fileName="MappingDialog.java" startLine="98" startPosition="37" endLine="121" endPosition="16">
       <varInfo nodeId="7054831363147695864" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1815921522227174522" fileName="MappingDialog.java" startLine="58" startPosition="65" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1815921522227174522" fileName="MappingDialog.java" startLine="59" startPosition="65" endLine="84" endPosition="0">
       <varInfo nodeId="1815921522227174525" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7054831363147695786" fileName="MappingDialog.java" startLine="96" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="7054831363147542060" fileName="MappingDialog.java" startLine="51" startPosition="66" endLine="85" endPosition="23">
+    <scopeInfo nodeId="7054831363147695786" fileName="MappingDialog.java" startLine="97" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7054831363147542060" fileName="MappingDialog.java" startLine="52" startPosition="66" endLine="86" endPosition="23">
       <varInfo nodeId="2630739728628960321" varName="scrollPane" />
     </scopeInfo>
-    <scopeInfo nodeId="7054831363147542057" fileName="MappingDialog.java" startLine="50" startPosition="0" endLine="86" endPosition="3">
+    <scopeInfo nodeId="7054831363147542057" fileName="MappingDialog.java" startLine="51" startPosition="0" endLine="87" endPosition="3">
       <varInfo nodeId="7054831363147695805" varName="language" />
       <varInfo nodeId="2606490174690276031" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="7054831363147542055" fileName="MappingDialog.java" startLine="40" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ide.actions.MappingDialog" />
-    <unitInfo nodeId="7054831363147695779" fileName="MappingDialog.java" startLine="45" startPosition="31" endLine="49" endPosition="3" unitName="jetbrains.mps.ide.actions.MappingDialog$1" />
-    <unitInfo nodeId="1815921522227174520" fileName="MappingDialog.java" startLine="58" startPosition="40" endLine="83" endPosition="5" unitName="jetbrains.mps.ide.actions.MappingDialog$2" />
-    <unitInfo nodeId="2788803143009132599" fileName="MappingDialog.java" startLine="111" startPosition="88" endLine="115" endPosition="11" unitName="jetbrains.mps.ide.actions.MappingDialog$3" />
-    <unitInfo nodeId="2511793679788237345" fileName="MappingDialog.java" startLine="72" startPosition="49" endLine="81" endPosition="9" unitName="jetbrains.mps.ide.actions.MappingDialog$3" />
-    <unitInfo nodeId="2630739728628960360" fileName="MappingDialog.java" startLine="129" startPosition="77" endLine="133" endPosition="5" unitName="jetbrains.mps.ide.actions.MappingDialog$4" />
-    <unitInfo nodeId="2594719566410564250" fileName="MappingDialog.java" startLine="149" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.ide.actions.MappingDialog$MyTreeNode" />
+    <unitInfo nodeId="7054831363147542055" fileName="MappingDialog.java" startLine="41" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ide.actions.MappingDialog" />
+    <unitInfo nodeId="7054831363147695779" fileName="MappingDialog.java" startLine="46" startPosition="31" endLine="50" endPosition="3" unitName="jetbrains.mps.ide.actions.MappingDialog$1" />
+    <unitInfo nodeId="1815921522227174520" fileName="MappingDialog.java" startLine="59" startPosition="40" endLine="84" endPosition="5" unitName="jetbrains.mps.ide.actions.MappingDialog$2" />
+    <unitInfo nodeId="2788803143009132599" fileName="MappingDialog.java" startLine="112" startPosition="88" endLine="116" endPosition="11" unitName="jetbrains.mps.ide.actions.MappingDialog$3" />
+    <unitInfo nodeId="2511793679788237345" fileName="MappingDialog.java" startLine="73" startPosition="49" endLine="82" endPosition="9" unitName="jetbrains.mps.ide.actions.MappingDialog$3" />
+    <unitInfo nodeId="2630739728628960360" fileName="MappingDialog.java" startLine="130" startPosition="77" endLine="134" endPosition="5" unitName="jetbrains.mps.ide.actions.MappingDialog$4" />
+    <unitInfo nodeId="2594719566410564250" fileName="MappingDialog.java" startLine="150" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ide.actions.MappingDialog$MyTreeNode" />
   </root>
   <root nodeId="7162597690968192621" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
     <nodeInfo nodeId="7162597690968192621" fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="66" endLine="13" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
@@ -13600,10 +13602,10 @@
     <scopeInfo nodeId="4599756646901436761" fileName="AnalyzeDependencies_Action.java" startLine="112" startPosition="36" endLine="113" endPosition="45" />
     <scopeInfo nodeId="7318050879424155903" fileName="AnalyzeDependencies_Action.java" startLine="32" startPosition="39" endLine="35" endPosition="40" />
     <scopeInfo nodeId="7318050879424155903" fileName="AnalyzeDependencies_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="3476022648979713750" fileName="AnalyzeDependencies_Action.java" startLine="76" startPosition="92" endLine="79" endPosition="9">
-      <varInfo nodeId="3476022648979713753" varName="model" />
+    <scopeInfo nodeId="449423548053247360" fileName="AnalyzeDependencies_Action.java" startLine="76" startPosition="92" endLine="79" endPosition="9" />
+    <scopeInfo nodeId="3476022648979713778" fileName="AnalyzeDependencies_Action.java" startLine="81" startPosition="84" endLine="84" endPosition="9">
+      <varInfo nodeId="3476022648979713781" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="449423548053247386" fileName="AnalyzeDependencies_Action.java" startLine="81" startPosition="84" endLine="84" endPosition="9" />
     <scopeInfo nodeId="7318050879424155903" fileName="AnalyzeDependencies_Action.java" startLine="97" startPosition="0" endLine="100" endPosition="7">
       <varInfo nodeId="7318050879424155903" varName="t" />
     </scopeInfo>
@@ -14129,16 +14131,14 @@
     <scopeInfo nodeId="4006758004392427753" fileName="InternalActionsUtils.java" startLine="146" startPosition="13" endLine="147" endPosition="89" />
     <scopeInfo nodeId="7660780840540888331" fileName="InternalActionsUtils.java" startLine="157" startPosition="36" endLine="158" endPosition="43" />
     <scopeInfo nodeId="7420326557580749698" fileName="InternalActionsUtils.java" startLine="46" startPosition="0" endLine="48" endPosition="3" />
-    <scopeInfo nodeId="4006758004392366733" fileName="InternalActionsUtils.java" startLine="53" startPosition="25" endLine="56" endPosition="9">
-      <varInfo nodeId="4006758004392366736" varName="concept" />
-    </scopeInfo>
+    <scopeInfo nodeId="4006758004392313093" fileName="InternalActionsUtils.java" startLine="53" startPosition="25" endLine="56" endPosition="9" />
     <scopeInfo nodeId="7420326557580750061" fileName="InternalActionsUtils.java" startLine="66" startPosition="86" endLine="69" endPosition="9" />
     <scopeInfo nodeId="7660780840540886881" fileName="InternalActionsUtils.java" startLine="78" startPosition="11" endLine="81" endPosition="9" />
-    <scopeInfo nodeId="7420326557580751492" fileName="InternalActionsUtils.java" startLine="94" startPosition="41" endLine="97" endPosition="15" />
+    <scopeInfo nodeId="7420326557580751491" fileName="InternalActionsUtils.java" startLine="94" startPosition="41" endLine="97" endPosition="15" />
     <scopeInfo nodeId="7420326557580751623" fileName="InternalActionsUtils.java" startLine="104" startPosition="0" endLine="107" endPosition="19">
       <varInfo nodeId="7420326557580751624" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751628" fileName="InternalActionsUtils.java" startLine="104" startPosition="39" endLine="107" endPosition="19" />
+    <scopeInfo nodeId="7420326557580751626" fileName="InternalActionsUtils.java" startLine="104" startPosition="39" endLine="107" endPosition="19" />
     <scopeInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="70" startPosition="120" endLine="74" endPosition="0">
       <varInfo nodeId="7420326557580750074" varName="it" />
     </scopeInfo>
@@ -14164,9 +14164,7 @@
     <scopeInfo nodeId="4006758004392313030" fileName="InternalActionsUtils.java" startLine="50" startPosition="53" endLine="59" endPosition="20">
       <varInfo nodeId="4006758004392366757" varName="concepts" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751513" fileName="InternalActionsUtils.java" startLine="100" startPosition="32" endLine="109" endPosition="15">
-      <varInfo nodeId="7420326557580751606" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7660780840540888339" fileName="InternalActionsUtils.java" startLine="100" startPosition="32" endLine="109" endPosition="15" />
     <scopeInfo nodeId="7420326557580761655" fileName="InternalActionsUtils.java" startLine="122" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="7420326557580761777" varName="actionName" />
       <varInfo nodeId="7420326557580766021" varName="nodeCallback" />
@@ -14365,7 +14363,9 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="48" startPosition="87" endLine="53" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="109" startPosition="59" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="85" startPosition="26" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="85" startPosition="26" endLine="91" endPosition="9">
+      <varInfo nodeId="7889360268649425705" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="123" startPosition="111" endLine="129" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />

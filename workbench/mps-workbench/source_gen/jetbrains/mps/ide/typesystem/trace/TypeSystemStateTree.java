@@ -27,6 +27,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -163,7 +164,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
         }
         for (SNode var : vars) {
           SNode node = check_x8yvv7_a0a0d0a0a0a0d0i(maps, var);
-          if (node != null && node.isRegistered()) {
+          if (node != null && SNodeOperations.isRegistered(node)) {
             final SNodePointer pointer = new SNodePointer(node);
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
