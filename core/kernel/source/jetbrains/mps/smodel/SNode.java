@@ -395,7 +395,23 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void putUserObject(Object key, @Nullable Object value) {
     if (value == null) {
-      removeUserObject(key);
+      if (myUserObjects == null) return;
+      for (int i = 0; i < myUserObjects.length; i += 2) {
+        if (myUserObjects[i].equals(key)) {
+          Object[] newarr = new Object[myUserObjects.length - 2];
+          if (i > 0) {
+            System.arraycopy(myUserObjects, 0, newarr, 0, i);
+          }
+          if (i + 2 < myUserObjects.length) {
+            System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
+          }
+          myUserObjects = newarr;
+          break;
+        }
+      }
+      if (myUserObjects.length == 0) {
+        myUserObjects = null;
+      }
       return;
     }
 
@@ -905,69 +921,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getId() {
-    return getSNodeId().toString();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean hasId() {
-    return getNodeId() != null;
-  }
-
-  @Deprecated
-  /**
-   * Do not use it.
-   * Try to eliminate as many usages as possible,
-   * make your own getChildCount() utility where you can't live without it.
-   * No migration is provided since calls should be reviewed separately to avoid performance problems
-   * @Deprecated in 3.0
-   */
-  public int getChildCount() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    int count = 0;
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      count++;
-    }
-    return count;
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Access to children is now provided in by-role manner and through parent node.
-   * Most probably, by calling this method you want to know a sibling in the same role.
-   * E.g. if you need a previous sibling in the same role, use getParent().getPrevChild(node)
-   * @Deprecated in 3.0
-   */
-  public SNode prevSibling() {
-    if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : (SNode) treePrevious();
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Access to children is now provided in by-role manner and through parent node.
-   * Most probably, by calling this method you want to know a sibling in the same role.
-   * E.g. if you need a next sibling in the same role, use getParent().getNextChild(node)
-   * @Deprecated in 3.0
-   */
-  public SNode nextSibling() {
-    return (SNode) treeNext();
-  }
-
   public SNode getChildAt(int index) {
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (index-- == 0) {
@@ -1027,26 +980,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public void removeUserObject(Object key) {
-    if (myUserObjects == null) return;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        Object[] newarr = new Object[myUserObjects.length - 2];
-        if (i > 0) {
-          System.arraycopy(myUserObjects, 0, newarr, 0, i);
-        }
-        if (i + 2 < myUserObjects.length) {
-          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
-        }
-        myUserObjects = newarr;
-        break;
-      }
-    }
-    if (myUserObjects.length == 0) {
-      myUserObjects = null;
-    }
-  }
-
   public Set<String> getPropertyNames() {
     ModelAccess.assertLegalRead(this);
 
@@ -1097,30 +1030,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
-  public Iterable<SNode> getChildrenIterable() {
-    return new Iterable<SNode>() {
-      public Iterator<SNode> iterator() {
-        return new Iterator<SNode>() {
-          private SNode current = firstChild();
-
-          public boolean hasNext() {
-            return current != null;
-          }
-
-          public SNode next() {
-            SNode result = current;
-            current = current.nextSibling();
-            return result;
-          }
-
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
-      }
-    };
-  }
-
   public Map<Object, Object> getUserObjects() {
     Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
     if (myUserObjects == null) {
@@ -1142,10 +1051,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
     return addChildRoles(new HashSet<String>(), includeAttributeRoles);
-  }
-
-  public void setRoleInParent(String newRoleInParent) {//todo add undo
-    myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 
   public List<SNode> getReferents() {
@@ -1353,6 +1258,96 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       prevChild = newChild;
     }
     removeChild(oldChild);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Iterable<SNode> getChildrenIterable() {
+    return getChildren();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void removeUserObject(Object key) {
+    putUserObject(key, null);
+  }
+
+  @Deprecated
+  /**
+   * Users are not supposed to use this in past
+   * @Deprecated in 3.0
+   */
+  public void setRoleInParent(String newRoleInParent) {//todo add undo
+    myRoleInParent = InternUtil.intern(newRoleInParent);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getId() {
+    return getSNodeId().toString();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean hasId() {
+    return getNodeId() != null;
+  }
+
+  @Deprecated
+  /**
+   * Do not use it.
+   * Try to eliminate as many usages as possible,
+   * make your own getChildCount() utility where you can't live without it.
+   * No migration is provided since calls should be reviewed separately to avoid performance problems
+   * @Deprecated in 3.0
+   */
+  public int getChildCount() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    int count = 0;
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      count++;
+    }
+    return count;
+  }
+
+  @Deprecated
+  /**
+   * Do not use. Access to children is now provided in by-role manner and through parent node.
+   * Most probably, by calling this method you want to know a sibling in the same role.
+   * E.g. if you need a previous sibling in the same role, use getParent().getPrevChild(node)
+   * @Deprecated in 3.0
+   */
+  public SNode prevSibling() {
+    if (getParent() == null) return null;
+    return getParent().firstChild() == this ? null : (SNode) treePrevious();
+  }
+
+  @Deprecated
+  /**
+   * Do not use. Access to children is now provided in by-role manner and through parent node.
+   * Most probably, by calling this method you want to know a sibling in the same role.
+   * E.g. if you need a next sibling in the same role, use getParent().getNextChild(node)
+   * @Deprecated in 3.0
+   */
+  public SNode nextSibling() {
+    return (SNode) treeNext();
   }
 
   @Deprecated
