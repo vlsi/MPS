@@ -31,7 +31,7 @@ public class AbstractAction_Constraints extends BaseConstraintsDescriptor {
         {
           String id = node.getProperty("id");
           id = (id == null ?
-            node.getNodeId().toString() :
+            node.getId() :
             id
           );
           return SConceptPropertyOperations.getString(node, "alias") + "$" + (id).replace('.', '-');

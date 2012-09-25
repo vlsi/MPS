@@ -9,6 +9,6 @@ public class RemoveSTByConditionPart_Behavior {
   }
 
   public static String call_getQueryMethodName_1220279474449(SNode thisNode) {
-    return "removeSideTransformActionsByCondition_" + thisNode.getNodeId().toString();
+    return "removeSideTransformActionsByCondition_" + thisNode.getId();
   }
 }

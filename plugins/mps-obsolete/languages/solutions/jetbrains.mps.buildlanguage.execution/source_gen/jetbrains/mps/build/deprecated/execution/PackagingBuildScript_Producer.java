@@ -48,7 +48,7 @@ public class PackagingBuildScript_Producer {
         public void run() {
           layout.value = SNodeOperations.getAncestor(source, "jetbrains.mps.build.packaging.structure.Layout", false, true);
           isApplicable.value = (layout.value != null) && ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
-          configurationId.value = source.getNodeId().toString();
+          configurationId.value = source.getId();
         }
       });
       if (!(isApplicable.value)) {
@@ -91,7 +91,7 @@ public class PackagingBuildScript_Producer {
       final Wrappers._T<String> configurationId = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          configurationId.value = ListSequence.fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getNodeId().toString();
+          configurationId.value = ListSequence.fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getId();
         }
       });
 

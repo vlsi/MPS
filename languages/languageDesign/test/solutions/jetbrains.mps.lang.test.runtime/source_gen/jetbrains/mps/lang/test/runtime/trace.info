@@ -106,7 +106,9 @@
       <varInfo nodeId="1215617277226" varName="var" />
       <varInfo nodeId="1215617277219" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11" />
+    <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11">
+      <varInfo nodeId="1215609104512" varName="operation" />
+    </scopeInfo>
     <scopeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="152" startPosition="0" endLine="155" endPosition="0" />
     <scopeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="852155438141188214" varName="node" />
@@ -253,7 +255,7 @@
     <nodeInfo nodeId="5364632142688376208" fileName="BaseEditorTestBody.java" startLine="83" startPosition="175" endLine="84" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229267128017" fileName="BaseEditorTestBody.java" startLine="89" startPosition="55" endLine="90" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229267218094" fileName="BaseEditorTestBody.java" startLine="91" startPosition="55" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229267227176" fileName="BaseEditorTestBody.java" startLine="93" startPosition="5" endLine="94" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229267227176" fileName="BaseEditorTestBody.java" startLine="93" startPosition="5" endLine="94" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5180312817676884727" fileName="BaseEditorTestBody.java" startLine="97" startPosition="49" endLine="98" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="508601795559132967" fileName="BaseEditorTestBody.java" startLine="98" startPosition="78" endLine="99" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4639535695230346504" fileName="BaseEditorTestBody.java" startLine="103" startPosition="15" endLine="104" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -404,7 +406,7 @@
     <scopeInfo nodeId="4658555162377043274" fileName="BaseEditorTestBody.java" startLine="216" startPosition="49" endLine="220" endPosition="0" />
     <scopeInfo nodeId="8329921230705384657" fileName="BaseEditorTestBody.java" startLine="224" startPosition="49" endLine="228" endPosition="0" />
     <scopeInfo nodeId="5364632142688376240" fileName="BaseEditorTestBody.java" startLine="59" startPosition="25" endLine="64" endPosition="9" />
-    <scopeInfo nodeId="1229267022353" fileName="BaseEditorTestBody.java" startLine="89" startPosition="55" endLine="94" endPosition="197">
+    <scopeInfo nodeId="1229267022353" fileName="BaseEditorTestBody.java" startLine="89" startPosition="55" endLine="94" endPosition="182">
       <varInfo nodeId="1229267128018" varName="annotations" />
     </scopeInfo>
     <scopeInfo nodeId="4840161274939429362" fileName="BaseEditorTestBody.java" startLine="126" startPosition="15" endLine="131" endPosition="9" />
@@ -420,7 +422,9 @@
       <varInfo nodeId="1225981862355" varName="node" />
       <varInfo nodeId="1225981812341" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7633582661619311613" fileName="BaseEditorTestBody.java" startLine="189" startPosition="25" endLine="194" endPosition="9" />
+    <scopeInfo nodeId="7633582661619311616" fileName="BaseEditorTestBody.java" startLine="189" startPosition="25" endLine="194" endPosition="9">
+      <varInfo nodeId="7633582661619311617" varName="code" />
+    </scopeInfo>
     <scopeInfo nodeId="5180312817676877426" fileName="BaseEditorTestBody.java" startLine="103" startPosition="15" endLine="109" endPosition="13">
       <varInfo nodeId="4639535695230346505" varName="editedNode" />
       <varInfo nodeId="7633582661619655994" varName="map" />
@@ -505,7 +509,7 @@
     <nodeInfo nodeId="2209739309055597279" fileName="CellReference.java" startLine="31" startPosition="118" endLine="32" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227009797309" fileName="CellReference.java" startLine="35" startPosition="26" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1228580949966" fileName="CellReference.java" startLine="39" startPosition="28" endLine="40" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228580960078" fileName="CellReference.java" startLine="42" startPosition="25" endLine="43" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228580960078" fileName="CellReference.java" startLine="42" startPosition="25" endLine="43" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228580487321" fileName="CellReference.java" startLine="45" startPosition="7" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229529344680" fileName="CellReference.java" startLine="49" startPosition="45" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6268941039745707946" fileName="CellReference.java" startLine="50" startPosition="101" endLine="51" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -545,7 +549,7 @@
     <nodeInfo nodeId="7556920020845005349" fileName="CellReference.java" startLine="62" startPosition="29" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6268941039745719501" fileName="CellReference.java" startLine="53" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertEditor#(Ljetbrains/mps/openapi/editor/Editor;Ljava/util/Map;)V" />
     <scopeInfo nodeId="1227009788558" fileName="CellReference.java" startLine="35" startPosition="26" endLine="36" endPosition="23" />
-    <scopeInfo nodeId="1228580945370" fileName="CellReference.java" startLine="42" startPosition="25" endLine="43" endPosition="174" />
+    <scopeInfo nodeId="1228580945370" fileName="CellReference.java" startLine="42" startPosition="25" endLine="43" endPosition="159" />
     <scopeInfo nodeId="5681471431307948568" fileName="CellReference.java" startLine="56" startPosition="77" endLine="57" endPosition="67" />
     <scopeInfo nodeId="5097407566122005874" fileName="CellReference.java" startLine="81" startPosition="30" endLine="82" endPosition="78" />
     <scopeInfo nodeId="5097407566122005883" fileName="CellReference.java" startLine="83" startPosition="14" endLine="84" endPosition="65" />

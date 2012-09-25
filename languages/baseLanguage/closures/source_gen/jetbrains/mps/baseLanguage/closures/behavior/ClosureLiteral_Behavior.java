@@ -43,7 +43,7 @@ public class ClosureLiteral_Behavior {
   }
 
   public static String call_getFunctionInterfaceName_1213877338544(SNode thisNode) {
-    return "_function_" + thisNode.getNodeId().toString();
+    return "_function_" + ((SNode) thisNode).getId();
   }
 
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {

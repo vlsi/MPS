@@ -30,7 +30,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     String nodeId = operation.getPresentation();
     SNode source = operation.getSource();
     if (source != null) {
-      nodeId += source.getNodeId().toString();
+      nodeId += source.getId();
     } else if (operation.getRule() != null) {
       nodeId += operation.getRule().o2;
     }

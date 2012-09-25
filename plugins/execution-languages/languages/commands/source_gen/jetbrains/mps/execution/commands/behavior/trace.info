@@ -54,7 +54,7 @@
     <nodeInfo nodeId="558680274511380758" fileName="ExecuteCommandPart_Behavior.java" startLine="57" startPosition="91" endLine="58" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="558680274511380768" fileName="ExecuteCommandPart_Behavior.java" startLine="61" startPosition="69" endLine="62" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="558680274511380778" fileName="ExecuteCommandPart_Behavior.java" startLine="65" startPosition="80" endLine="66" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835940539" fileName="ExecuteCommandPart_Behavior.java" startLine="69" startPosition="75" endLine="70" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3754131050835940539" fileName="ExecuteCommandPart_Behavior.java" startLine="69" startPosition="75" endLine="70" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="73" startPosition="87" endLine="74" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="74" startPosition="113" endLine="75" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="78" startPosition="71" endLine="79" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -128,7 +128,7 @@
     <scopeInfo nodeId="558680274511380757" fileName="ExecuteCommandPart_Behavior.java" startLine="57" startPosition="91" endLine="58" endPosition="142" />
     <scopeInfo nodeId="558680274511380767" fileName="ExecuteCommandPart_Behavior.java" startLine="61" startPosition="69" endLine="62" endPosition="111" />
     <scopeInfo nodeId="558680274511380777" fileName="ExecuteCommandPart_Behavior.java" startLine="65" startPosition="80" endLine="66" endPosition="86" />
-    <scopeInfo nodeId="3754131050835940466" fileName="ExecuteCommandPart_Behavior.java" startLine="69" startPosition="75" endLine="70" endPosition="115" />
+    <scopeInfo nodeId="3754131050835940466" fileName="ExecuteCommandPart_Behavior.java" startLine="69" startPosition="75" endLine="70" endPosition="100" />
     <scopeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="88" startPosition="120" endLine="89" endPosition="295" />
     <scopeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="92" startPosition="104" endLine="93" endPosition="273" />
     <scopeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="96" startPosition="115" endLine="97" endPosition="284" />

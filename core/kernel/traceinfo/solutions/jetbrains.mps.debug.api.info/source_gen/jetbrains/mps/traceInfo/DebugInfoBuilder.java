@@ -19,21 +19,21 @@ public class DebugInfoBuilder {
   }
 
   public void addTraceablePosition(SNode inputNode, SModelDescriptor inputModel, String fileName, TraceablePositionInfo positionInfo) {
-    positionInfo.setNodeId(inputNode.getNodeId().toString());
+    positionInfo.setNodeId(inputNode.getId());
     positionInfo.setFileName(fileName);
     SNode topmostAncestor = inputNode.getTopmostAncestor();
     myDebugInfo.addPosition(positionInfo, topmostAncestor);
   }
 
   public void addScopePosition(SNode inputNode, SModelDescriptor inputModel, String fileName, ScopePositionInfo positionInfo) {
-    positionInfo.setNodeId(inputNode.getNodeId().toString());
+    positionInfo.setNodeId(inputNode.getId());
     positionInfo.setFileName(fileName);
     Map<SNode, VarInfo> varMap = positionInfo.getTempVarInfoMap();
     for (SNode varNode : varMap.keySet()) {
       SNode originalVar = getOriginalInputNodeForNearestParent(varNode);
       VarInfo varInfo = varMap.get(varNode);
-      if (originalVar != null && !((SNodeOperations.isDisposed(originalVar)))) {
-        varInfo.setNodeId(originalVar.getNodeId().toString());
+      if (originalVar != null && !((originalVar.isDisposed()))) {
+        varInfo.setNodeId(originalVar.getId());
       } else {
         positionInfo.removeVarInfo(varInfo);
       }
@@ -45,8 +45,8 @@ public class DebugInfoBuilder {
   public void addUnitPosition(SNode inputNode, SModelDescriptor inputModel, String fileName, UnitPositionInfo positionInfo) {
     positionInfo.setFileName(fileName);
     SNode topmostAncestor = null;
-    if (inputNode != null && !((SNodeOperations.isDisposed(inputNode)))) {
-      positionInfo.setNodeId(inputNode.getNodeId().toString());
+    if (inputNode != null && !((inputNode.isDisposed()))) {
+      positionInfo.setNodeId(inputNode.getId());
       topmostAncestor = inputNode.getTopmostAncestor();
     }
     myDebugInfo.addUnitPosition(positionInfo, topmostAncestor);

@@ -24,15 +24,15 @@ public enum Values {
   }
 
   public void set(TemplateQueryContext genContext, SNode node, Object value) {
-    genContext.putSessionObject(this.name + node.getNodeId().toString(), value);
+    genContext.putSessionObject(this.name + node.getId(), value);
   }
 
   public Object get(TemplateQueryContext genContext, SNode node) {
-    return genContext.getSessionObject(this.name + node.getNodeId().toString());
+    return genContext.getSessionObject(this.name + node.getId());
   }
 
   public boolean isSet(TemplateQueryContext genContext, SNode node) {
-    return genContext.getSessionObject(this.name + node.getNodeId().toString()) != null;
+    return genContext.getSessionObject(this.name + node.getId()) != null;
   }
 
   private static String PREFIX(String str) {

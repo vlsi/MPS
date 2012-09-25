@@ -66,7 +66,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     }));
     MultiMap<SModelDescriptor, SNode> result = findModels(models, nodes, new Mapper<SNode, String>() {
       public String value(SNode key) {
-        return key.getNodeId().toString();
+        return key.getId();
       }
     });
     for (SNode node : SetSequence.fromSet(nodes)) {

@@ -245,7 +245,9 @@
     <scopeInfo nodeId="3078742637637080247" fileName="SequenceType_Behavior.java" startLine="76" startPosition="7" endLine="80" endPosition="31">
       <varInfo nodeId="3078742637637080247" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1447667470349161984" fileName="SequenceType_Behavior.java" startLine="34" startPosition="135" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200717" fileName="SequenceType_Behavior.java" startLine="34" startPosition="135" endLine="39" endPosition="9">
+      <varInfo nodeId="1447667470349200718" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="3078742637637080247" fileName="SequenceType_Behavior.java" startLine="75" startPosition="32" endLine="81" endPosition="7" />
     <scopeInfo nodeId="1235575347100" fileName="SequenceType_Behavior.java" startLine="53" startPosition="87" endLine="61" endPosition="18">
       <varInfo nodeId="1235575368808" varName="result" />
@@ -914,7 +916,9 @@
       <varInfo nodeId="1237468611264" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470349200670" fileName="IteratorType_Behavior.java" startLine="34" startPosition="165" endLine="37" endPosition="11" />
-    <scopeInfo nodeId="1447667470349161922" fileName="IteratorType_Behavior.java" startLine="39" startPosition="14" endLine="42" endPosition="9" />
+    <scopeInfo nodeId="1237468719555" fileName="IteratorType_Behavior.java" startLine="39" startPosition="14" endLine="42" endPosition="9">
+      <varInfo nodeId="1237468719556" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="1237468611264" fileName="IteratorType_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1237468611264" varName="thisNode" />
     </scopeInfo>
@@ -973,7 +977,9 @@
       <varInfo nodeId="1237496376141" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470349200648" fileName="EnumeratorType_Behavior.java" startLine="27" startPosition="165" endLine="30" endPosition="11" />
-    <scopeInfo nodeId="1447667470349161883" fileName="EnumeratorType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="1237496377931" fileName="EnumeratorType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9">
+      <varInfo nodeId="1237496377932" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="1237496376141" fileName="EnumeratorType_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1237496376141" varName="thisNode" />
     </scopeInfo>
