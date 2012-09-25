@@ -29,7 +29,7 @@ public final class SNodeReference extends SEntityReference<SNode> {
 
   public SNodeReference(SNode node) {
     myModel = new SModelReference(node.getModel());
-    myId = node.getNodeId();
+    myId = node.getSNodeId();
     myPresentation = node.getPresentation();
   }
   public SModelReference getModel() {
