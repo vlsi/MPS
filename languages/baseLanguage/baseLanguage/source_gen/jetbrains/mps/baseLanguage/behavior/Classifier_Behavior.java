@@ -16,13 +16,13 @@ import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -94,31 +94,27 @@ public class Classifier_Behavior {
     // use sequence<node<IClassifierMember> getMembers() instead 
     // returns all accessible classifier members in classifier 
     SNode thisType = IClassifier_Behavior.call_getThisType_7405920559687254782(thisNode);
-    Iterable<SNode> members = IClassifierType_Behavior.call_getMembers_7405920559687277275(thisType);
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.Property")) {
-      return new NamedElementsScope(Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-        }
-      }));
-    }
+    Iterable<SNode> members = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(thisType)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+      }
+    });
+
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      return new MethodsScope(thisType, Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
-        }
-      }).select(new ISelector<SNode, SNode>() {
+      return new MethodsScope(thisType, Sequence.fromIterable(members).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         }
       }));
+    } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      return new NamedElementsScope(Sequence.fromIterable(members).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
+        }
+      }));
+    } else {
+      return new EmptyScope();
     }
-
-    return new EmptyScope();
   }
 
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(final SNode thisNode) {
