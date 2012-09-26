@@ -398,7 +398,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
     }
-    final String role1 = role;
     SNode parentOfChild = ((SNode) child).getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(((SNode) child).getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
@@ -409,14 +408,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       throw new RuntimeException(((SNode) child).getDebugText() + " is root node. Can't add it as a child");
     }
 
-    if (getTopmostAncestor() == ((SNode) child)) {
+    if (getTopmostAncestor() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
     }
 
     ModelChange.assertLegalNodeChange(this);
 
     children_insertAfter(((SNode) anchor), ((SNode) child));
-    ((SNode) child).setRoleInParent(role1);
+    ((SNode) child).setRoleInParent(role);
 
     SModel model = getModel();
     if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
@@ -430,7 +429,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     model.performUndoableAction(new InsertChildAtUndoableAction(this, ((SNode) anchor), role, ((SNode) child)));
 
     if (ModelChange.needFireEvents(model, this)) {
-      model.fireChildAddedEvent(this, role1, ((SNode) child), ((SNode) anchor));
+      model.fireChildAddedEvent(this, role, ((SNode) child), ((SNode) anchor));
     }
   }
 
@@ -907,44 +906,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return foundChild;
   }
 
-  public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
-    if (insertBefore) {
-      final SNode anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
-      insertChild(role, child, anchor);
-    } else {
-      insertChild(role, child, anchorChild);
-    }
-  }
-
-  public Set<String> getReferenceRoles() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    Set<String> result = new HashSet<String>();
-    if (myReferences != null) {
-      for (SReference ref : myReferences) {
-        result.add(ref.getRole());
-      }
-    }
-    result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
-    return result;
-  }
-
-  public List<SNode> getReferents() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    List<SNode> result = new ArrayList<SNode>();
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        SNode targetNode = reference.getTargetNode();
-        if (targetNode != null) result.add(targetNode);
-      }
-    }
-    return result;
-  }
-
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -967,6 +928,44 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
+    if (insertBefore) {
+      final SNode anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
+      insertChild(role, child, anchor);
+    } else {
+      insertChild(role, child, anchorChild);
+    }
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public List<SNode> getReferents() {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SReference reference : getReferences()) {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode != null) result.add(targetNode);
+    }
+    return result;
+  }
+
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Set<String> getReferenceRoles() {
+    return jetbrains.mps.util.SNodeOperations.getReferenceRoles(this);
+  }
 
   @Deprecated
   /**
