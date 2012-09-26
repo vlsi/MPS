@@ -380,4 +380,8 @@
 
   </project-components>
 
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable"/>
+  </extensions>
+
 </components>

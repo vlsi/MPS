@@ -15,21 +15,15 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.application.options.editor.EditorOptionsProviderEP;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.TextLine;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -43,7 +37,7 @@ import java.util.List;
       file = "$APP_CONFIG$/mpsEditor.xml"
     )}
 )
-public class EditorSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
+public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
@@ -181,7 +175,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     myListeners.remove(l);
   }
 
-  void fireEditorSettingsChanged() {
+  /*package private*/ void fireEditorSettingsChanged() {
     for (EditorSettingsListener l : new ArrayList<EditorSettingsListener>(myListeners)) {
       try {
         l.settingsChanged();
@@ -191,54 +185,14 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     }
   }
 
-  private EditorSettingsPreferencesPage getPreferencesPage() {
+  /*package private*/ EditorSettingsPreferencesPage getPreferencesPage() {
     if (myPreferencesPage == null) {
       myPreferencesPage = new EditorSettingsPreferencesPage(this);
     }
     return myPreferencesPage;
   }
 
-  public String getId() {
-    return "mps.editor.settings";
-  }
-
-  public Runnable enableSearch(String option) {
-    return null;
-  }
-
-  @Nls
-  public String getDisplayName() {
-    return "Editor";
-  }
-
-  @Nullable
-  public Icon getIcon() {
-    return null;
-  }
-
-  @Nullable
-  @NonNls
-  public String getHelpTopic() {
-    return "preferences.editor";
-  }
-
-  public JComponent createComponent() {
-    return getPreferencesPage().getComponent();
-  }
-
-  public boolean isModified() {
-    return getPreferencesPage().isModified();
-  }
-
-  public void apply() throws ConfigurationException {
-    getPreferencesPage().commit();
-  }
-
-  public void reset() {
-    getPreferencesPage().reset();
-  }
-
-  public void disposeUIResources() {
+  /*package private*/ void disposeUi() {
     if (myPreferencesPage != null) {
       myPreferencesPage.dispose();
     }
