@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5619723216767159054">
+  <root nodeId="5619723216767159054" modelId="r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)">
     <nodeInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="40" startPosition="79" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="44" startPosition="89" endLine="45" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="45" startPosition="96" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

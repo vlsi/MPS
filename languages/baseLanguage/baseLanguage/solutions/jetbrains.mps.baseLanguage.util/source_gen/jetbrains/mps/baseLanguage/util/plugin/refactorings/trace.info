@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1143458983612877046">
+  <root nodeId="1143458983612877046" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1143458983612877343" fileName="SimpleDuplicatesFinder.java" startLine="12" startPosition="37" endLine="13" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeToMatch" />
     <nodeInfo nodeId="1143458983612877351" fileName="SimpleDuplicatesFinder.java" startLine="15" startPosition="45" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1143458983612877053" fileName="SimpleDuplicatesFinder.java" startLine="19" startPosition="49" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -27,7 +27,7 @@
     </scopeInfo>
     <unitInfo nodeId="1143458983612877046" fileName="SimpleDuplicatesFinder.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.SimpleDuplicatesFinder" />
   </root>
-  <root nodeId="1514868709970875555">
+  <root nodeId="1514868709970875555" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1514868709970875562" fileName="RenameUtil.java" startLine="14" startPosition="121" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1514868709970875569" fileName="RenameUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1514868709970875577" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameUtil#()V" />
@@ -42,7 +42,7 @@
     </scopeInfo>
     <unitInfo nodeId="1514868709970875555" fileName="RenameUtil.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameUtil" />
   </root>
-  <root nodeId="1769066237347579005">
+  <root nodeId="1769066237347579005" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1769066237347591962" fileName="MethodDuplicatesFinder.java" startLine="18" startPosition="37" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToFind" />
     <nodeInfo nodeId="1769066237347591966" fileName="MethodDuplicatesFinder.java" startLine="19" startPosition="36" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMapping" />
     <nodeInfo nodeId="5159544814167501710" fileName="MethodDuplicatesFinder.java" startLine="20" startPosition="44" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameterOrder" />
@@ -165,7 +165,7 @@
     <unitInfo nodeId="1769066237347579005" fileName="MethodDuplicatesFinder.java" startLine="18" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesFinder" />
     <unitInfo nodeId="1769066237347603102" fileName="MethodDuplicatesFinder.java" startLine="69" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesFinder$MethodMatchModifier" />
   </root>
-  <root nodeId="1769066237347603177">
+  <root nodeId="1769066237347603177" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1769066237347633246" fileName="MethodMatch.java" startLine="22" startPosition="26" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
     <nodeInfo nodeId="5159544814167497284" fileName="MethodMatch.java" startLine="23" startPosition="30" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParametersOrder" />
     <nodeInfo nodeId="6841284288831227815" fileName="MethodMatch.java" startLine="24" startPosition="40" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParamsToNodes" />
@@ -320,7 +320,7 @@
     <unitInfo nodeId="1769066237347603177" fileName="MethodMatch.java" startLine="22" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
     <unitInfo nodeId="5159544814167718022" fileName="MethodMatch.java" startLine="120" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch$QuotationClass_5zfyci_a0a0a0a0b0l" />
   </root>
-  <root nodeId="1981729211697065637">
+  <root nodeId="1981729211697065637" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1981729211697065684" fileName="InlineVariableAssignmentRefactoring.java" startLine="22" startPosition="84" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgram" />
     <nodeInfo nodeId="1981729211697065687" fileName="InlineVariableAssignmentRefactoring.java" startLine="23" startPosition="28" endLine="24" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadInstructions" />
     <nodeInfo nodeId="1981729211697065691" fileName="InlineVariableAssignmentRefactoring.java" startLine="24" startPosition="50" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVariable" />
@@ -367,9 +367,6 @@
       <varInfo nodeId="1981729211697065895" varName="read" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697065962" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="72" endLine="39" endPosition="9" />
-    <scopeInfo nodeId="1981729211697065963" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="72" endLine="39" endPosition="9">
-      <varInfo nodeId="1981729211697065979" varName="read" />
-    </scopeInfo>
     <scopeInfo nodeId="1981729211697065849" fileName="InlineVariableAssignmentRefactoring.java" startLine="47" startPosition="16" endLine="52" endPosition="7">
       <varInfo nodeId="1981729211697065850" varName="reference" />
     </scopeInfo>
@@ -377,7 +374,6 @@
       <varInfo nodeId="1981729211697065889" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697065814" fileName="InlineVariableAssignmentRefactoring.java" startLine="46" startPosition="56" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1981729211697065959" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="100" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1981729211697065960" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="100" endLine="40" endPosition="7">
       <varInfo nodeId="1981729211697065961" varName="next" />
     </scopeInfo>
@@ -407,7 +403,7 @@
     </scopeInfo>
     <unitInfo nodeId="1981729211697065637" fileName="InlineVariableAssignmentRefactoring.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring" />
   </root>
-  <root nodeId="1981729211697065999">
+  <root nodeId="1981729211697065999" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1981729211697066018" fileName="InlineVariableRefactoring.java" startLine="25" startPosition="51" endLine="26" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1981729211697066037" fileName="InlineVariableRefactoring.java" startLine="28" startPosition="51" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1981729211697066045" fileName="InlineVariableRefactoring.java" startLine="30" startPosition="45" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -461,16 +457,12 @@
       <varInfo nodeId="1981729211697066063" varName="write" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697066138" fileName="InlineVariableRefactoring.java" startLine="52" startPosition="72" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="1981729211697066139" fileName="InlineVariableRefactoring.java" startLine="52" startPosition="72" endLine="57" endPosition="9">
-      <varInfo nodeId="1981729211697066149" varName="read" />
-    </scopeInfo>
     <scopeInfo nodeId="1981729211697066171" fileName="InlineVariableRefactoring.java" startLine="63" startPosition="49" endLine="68" endPosition="19">
       <varInfo nodeId="1981729211697066173" varName="current" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697066204" fileName="InlineVariableRefactoring.java" startLine="71" startPosition="73" endLine="76" endPosition="5" />
     <scopeInfo nodeId="1981729211697066031" fileName="InlineVariableRefactoring.java" startLine="27" startPosition="86" endLine="33" endPosition="7" />
     <scopeInfo nodeId="1981729211697066056" fileName="InlineVariableRefactoring.java" startLine="35" startPosition="86" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1981729211697066135" fileName="InlineVariableRefactoring.java" startLine="51" startPosition="99" endLine="58" endPosition="7" />
     <scopeInfo nodeId="1981729211697066136" fileName="InlineVariableRefactoring.java" startLine="51" startPosition="99" endLine="58" endPosition="7">
       <varInfo nodeId="1981729211697066137" varName="next" />
     </scopeInfo>
@@ -506,7 +498,7 @@
     </scopeInfo>
     <unitInfo nodeId="1981729211697065999" fileName="InlineVariableRefactoring.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
   </root>
-  <root nodeId="1981729211697066242">
+  <root nodeId="1981729211697066242" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="1981729211697066243" fileName="InlineVariableReferenceRefactoring.java" startLine="18" startPosition="83" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReference" />
     <nodeInfo nodeId="1981729211697066246" fileName="InlineVariableReferenceRefactoring.java" startLine="19" startPosition="28" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAssignment" />
     <nodeInfo nodeId="1981729211697066254" fileName="InlineVariableReferenceRefactoring.java" startLine="22" startPosition="57" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -557,9 +549,6 @@
       <varInfo nodeId="1981729211697066265" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697066434" fileName="InlineVariableReferenceRefactoring.java" startLine="55" startPosition="111" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="1981729211697066435" fileName="InlineVariableReferenceRefactoring.java" startLine="55" startPosition="111" endLine="60" endPosition="9">
-      <varInfo nodeId="1981729211697066436" varName="instruction" />
-    </scopeInfo>
     <scopeInfo nodeId="1981729211697066469" fileName="InlineVariableReferenceRefactoring.java" startLine="66" startPosition="60" endLine="71" endPosition="93">
       <varInfo nodeId="1981729211697066471" varName="curParent" />
     </scopeInfo>
@@ -589,7 +578,7 @@
     </scopeInfo>
     <unitInfo nodeId="1981729211697066242" fileName="InlineVariableReferenceRefactoring.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" />
   </root>
-  <root nodeId="2996818953919429936">
+  <root nodeId="2996818953919429936" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="2996818953919430098" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="16" startPosition="102" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="2996818953919430101" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="17" startPosition="25" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToRefactor" />
     <nodeInfo nodeId="2996818953919430104" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="18" startPosition="42" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isStatic" />
@@ -672,7 +661,7 @@
     <scopeInfo nodeId="2996818953919430005" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="37" startPosition="0" endLine="51" endPosition="0" />
     <unitInfo nodeId="2996818953919429936" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
   </root>
-  <root nodeId="2996818953919430129">
+  <root nodeId="2996818953919430129" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="2996818953919430142" fileName="AbstractStaticContainerProcessor.java" startLine="7" startPosition="93" endLine="8" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticContainer" />
     <nodeInfo nodeId="2996818953919430150" fileName="AbstractStaticContainerProcessor.java" startLine="10" startPosition="66" endLine="11" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2996818953919430134" fileName="AbstractStaticContainerProcessor.java" startLine="14" startPosition="39" endLine="15" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -688,7 +677,7 @@
     </scopeInfo>
     <unitInfo nodeId="2996818953919430129" fileName="AbstractStaticContainerProcessor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor" />
   </root>
-  <root nodeId="2996818953919430159">
+  <root nodeId="2996818953919430159" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="2996818953919430160" fileName="IExtractMethodRefactoringProcessor.java" startLine="8" startPosition="53" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainerMethod#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2996818953919430164" fileName="IExtractMethodRefactoringProcessor.java" startLine="9" startPosition="36" endLine="10" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2996818953919430168" fileName="IExtractMethodRefactoringProcessor.java" startLine="10" startPosition="33" endLine="11" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMethod#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -706,7 +695,7 @@
     <scopeInfo nodeId="2996818953919430182" fileName="IExtractMethodRefactoringProcessor.java" startLine="12" startPosition="66" endLine="13" endPosition="40" />
     <unitInfo nodeId="2996818953919430159" fileName="IExtractMethodRefactoringProcessor.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
   </root>
-  <root nodeId="2996818953919430187">
+  <root nodeId="2996818953919430187" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="2996818953919430188" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="44" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2996818953919430192" fileName="IStaticContainerProcessor.java" startLine="9" startPosition="33" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMethod#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2996818953919430198" fileName="IStaticContainerProcessor.java" startLine="10" startPosition="38" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
@@ -720,7 +709,7 @@
     </scopeInfo>
     <unitInfo nodeId="2996818953919430187" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
   </root>
-  <root nodeId="418677511065435622">
+  <root nodeId="418677511065435622" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="418677511065441892" fileName="MoveStaticMethodRefactoring.java" startLine="15" startPosition="71" endLine="16" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="418677511065441953" fileName="MoveStaticMethodRefactoring.java" startLine="19" startPosition="32" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="418677511065441973" fileName="MoveStaticMethodRefactoring.java" startLine="21" startPosition="183" endLine="22" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -900,7 +889,7 @@
     <unitInfo nodeId="418677511065471898" fileName="MoveStaticMethodRefactoring.java" startLine="116" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring$QuotationClass_f5lqsg_a0a0a0b0b0d" />
     <unitInfo nodeId="418677511065471878" fileName="MoveStaticMethodRefactoring.java" startLine="98" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring$QuotationClass_f5lqsg_a0a0a1a1a3" />
   </root>
-  <root nodeId="4317009991304269613">
+  <root nodeId="4317009991304269613" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="4317009991304269722" fileName="InlineMethodModel.java" startLine="19" startPosition="32" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
     <nodeInfo nodeId="4317009991304269725" fileName="InlineMethodModel.java" startLine="20" startPosition="25" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCall" />
     <nodeInfo nodeId="4317009991304269728" fileName="InlineMethodModel.java" startLine="21" startPosition="35" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsContainsSelfCalls" />
@@ -998,7 +987,7 @@
     <unitInfo nodeId="4317009991304269613" fileName="InlineMethodModel.java" startLine="19" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel" />
     <unitInfo nodeId="4317009991304269741" fileName="InlineMethodModel.java" startLine="26" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel$1" />
   </root>
-  <root nodeId="4909369320862629899">
+  <root nodeId="4909369320862629899" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="4909369320863190497" fileName="MoveRefactoringUtils.java" startLine="22" startPosition="65" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4909369320863190513" fileName="MoveRefactoringUtils.java" startLine="25" startPosition="72" endLine="26" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4358493250249988887" fileName="MoveRefactoringUtils.java" startLine="32" startPosition="44" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1029,7 +1018,6 @@
     <scopeInfo nodeId="1300615610528459006" fileName="MoveRefactoringUtils.java" startLine="54" startPosition="49" endLine="55" endPosition="159" />
     <scopeInfo nodeId="1279276159889585467" fileName="MoveRefactoringUtils.java" startLine="18" startPosition="35" endLine="20" endPosition="3" />
     <scopeInfo nodeId="4909369320863190505" fileName="MoveRefactoringUtils.java" startLine="24" startPosition="232" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1603057458589441327" fileName="MoveRefactoringUtils.java" startLine="47" startPosition="162" endLine="50" endPosition="7" />
     <scopeInfo nodeId="1603057458589441346" fileName="MoveRefactoringUtils.java" startLine="47" startPosition="162" endLine="50" endPosition="7">
       <varInfo nodeId="1603057458589441347" varName="reference" />
     </scopeInfo>
@@ -1044,9 +1032,6 @@
       <varInfo nodeId="4909369320863190504" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="1603057458589413163" fileName="MoveRefactoringUtils.java" startLine="46" startPosition="53" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1603057458589441324" fileName="MoveRefactoringUtils.java" startLine="46" startPosition="53" endLine="51" endPosition="5">
-      <varInfo nodeId="1603057458589441325" varName="descendant" />
-    </scopeInfo>
     <scopeInfo nodeId="4909369320863190496" fileName="MoveRefactoringUtils.java" startLine="22" startPosition="65" endLine="28" endPosition="5">
       <varInfo nodeId="4909369320863190498" varName="concept" />
     </scopeInfo>
@@ -1066,7 +1051,7 @@
     </scopeInfo>
     <unitInfo nodeId="4909369320862629899" fileName="MoveRefactoringUtils.java" startLine="18" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils" />
   </root>
-  <root nodeId="5142438244426402999">
+  <root nodeId="5142438244426402999" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="5142438244426403025" fileName="BasicMoveRefactoring.java" startLine="11" startPosition="35" endLine="12" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMoving" />
     <nodeInfo nodeId="5142438244426403028" fileName="BasicMoveRefactoring.java" startLine="12" startPosition="33" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDestination" />
     <nodeInfo nodeId="5142438244426403031" fileName="BasicMoveRefactoring.java" startLine="13" startPosition="38" endLine="14" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReplacing" />
@@ -1130,7 +1115,7 @@
     <scopeInfo nodeId="5142438244426403097" fileName="BasicMoveRefactoring.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="5142438244426402999" fileName="BasicMoveRefactoring.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
   </root>
-  <root nodeId="8184320397304927312">
+  <root nodeId="8184320397304927312" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8184320397304989933" fileName="ConvertAnonymousRefactoring.java" startLine="32" startPosition="42" endLine="33" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLES_NOT_TO_COPY" />
     <nodeInfo nodeId="8184320397304932012" fileName="ConvertAnonymousRefactoring.java" startLine="34" startPosition="0" endLine="35" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassToRefactor" />
     <nodeInfo nodeId="8184320397304932148" fileName="ConvertAnonymousRefactoring.java" startLine="35" startPosition="34" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNameForInnerClass" />
@@ -1931,7 +1916,7 @@
     <unitInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="287" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a1a0a0b0b0d" />
     <unitInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="255" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a1a0a0b0c" />
   </root>
-  <root nodeId="8492459591399162714">
+  <root nodeId="8492459591399162714" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8155843501977634812" fileName="ExtractMethodFactory.java" startLine="15" startPosition="88" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8155843501977766079" fileName="ExtractMethodFactory.java" startLine="17" startPosition="223" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8155843501977766090" fileName="ExtractMethodFactory.java" startLine="18" startPosition="52" endLine="19" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2010,7 +1995,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399162714" fileName="ExtractMethodFactory.java" startLine="11" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory" />
   </root>
-  <root nodeId="8492459591399162985">
+  <root nodeId="8492459591399162985" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="4001355776228202850" fileName="IntroduceLocalVariableRefactoring.java" startLine="21" startPosition="32" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399163011" fileName="IntroduceLocalVariableRefactoring.java" startLine="22" startPosition="26" endLine="23" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4038232163186941033" fileName="IntroduceLocalVariableRefactoring.java" startLine="24" startPosition="20" endLine="25" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2131,9 +2116,6 @@
     <scopeInfo nodeId="8492459591399163014" fileName="IntroduceLocalVariableRefactoring.java" startLine="122" startPosition="20" endLine="124" endPosition="43" />
     <scopeInfo nodeId="7568753874916141927" fileName="IntroduceLocalVariableRefactoring.java" startLine="138" startPosition="52" endLine="140" endPosition="5" />
     <scopeInfo nodeId="2163048091639765871" fileName="IntroduceLocalVariableRefactoring.java" startLine="37" startPosition="27" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="2163048091639765875" fileName="IntroduceLocalVariableRefactoring.java" startLine="37" startPosition="27" endLine="40" endPosition="7">
-      <varInfo nodeId="2163048091639765876" varName="duplicate" />
-    </scopeInfo>
     <scopeInfo nodeId="4001355776228087233" fileName="IntroduceLocalVariableRefactoring.java" startLine="54" startPosition="58" endLine="57" endPosition="82">
       <varInfo nodeId="7568753874916141924" varName="reference" />
     </scopeInfo>
@@ -2218,7 +2200,7 @@
     <unitInfo nodeId="7568753874916141927" fileName="IntroduceLocalVariableRefactoring.java" startLine="138" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring$QuotationClass_nngwe4_a0a0a2" />
     <unitInfo nodeId="8492459591399163014" fileName="IntroduceLocalVariableRefactoring.java" startLine="86" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring$QuotationClass_nngwe4_a0a1a0" />
   </root>
-  <root nodeId="8492459591399163659">
+  <root nodeId="8492459591399163659" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399163660" fileName="ExtractMethodRefactoring.java" startLine="27" startPosition="48" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
     <nodeInfo nodeId="8492459591399163663" fileName="ExtractMethodRefactoring.java" startLine="28" startPosition="60" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnalyzer" />
     <nodeInfo nodeId="8492459591399163666" fileName="ExtractMethodRefactoring.java" startLine="29" startPosition="56" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticContainer" />
@@ -2572,7 +2554,6 @@
     <scopeInfo nodeId="8492459591399164094" fileName="ExtractMethodRefactoring.java" startLine="191" startPosition="48" endLine="196" endPosition="5">
       <varInfo nodeId="8492459591399164113" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034332" fileName="ExtractMethodRefactoring.java" startLine="227" startPosition="81" endLine="232" endPosition="7" />
     <scopeInfo nodeId="6195342755328034333" fileName="ExtractMethodRefactoring.java" startLine="227" startPosition="81" endLine="232" endPosition="7">
       <varInfo nodeId="6195342755328034334" varName="varReference" />
     </scopeInfo>
@@ -2763,7 +2744,7 @@
     <unitInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0a2a6" />
     <unitInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="305" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0b0c0g" />
   </root>
-  <root nodeId="8492459591399164277">
+  <root nodeId="8492459591399164277" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399164337" fileName="ExtractMethodWithReturn.java" startLine="14" startPosition="82" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8492459591399164280" fileName="ExtractMethodWithReturn.java" startLine="18" startPosition="32" endLine="19" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4626240717634959526" fileName="ExtractMethodWithReturn.java" startLine="25" startPosition="25" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2802,7 +2783,7 @@
     <unitInfo nodeId="8492459591399164277" fileName="ExtractMethodWithReturn.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithReturn" />
     <unitInfo nodeId="4626240717634959520" fileName="ExtractMethodWithReturn.java" startLine="24" startPosition="55" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithReturn$1" />
   </root>
-  <root nodeId="8492459591399164533">
+  <root nodeId="8492459591399164533" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399164535" fileName="ToStringWrap.java" startLine="6" startPosition="30" endLine="7" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myObj" />
     <nodeInfo nodeId="8492459591399164538" fileName="ToStringWrap.java" startLine="7" startPosition="18" endLine="8" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
     <nodeInfo nodeId="8492459591399164545" fileName="ToStringWrap.java" startLine="10" startPosition="30" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2822,7 +2803,7 @@
     <scopeInfo nodeId="8492459591399164569" fileName="ToStringWrap.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="8492459591399164533" fileName="ToStringWrap.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ToStringWrap" />
   </root>
-  <root nodeId="8492459591399164578">
+  <root nodeId="8492459591399164578" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399164718" fileName="ExtractMethodWithExitPoints.java" startLine="14" startPosition="85" endLine="15" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8492459591399164583" fileName="ExtractMethodWithExitPoints.java" startLine="18" startPosition="32" endLine="19" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4626240717634959371" fileName="ExtractMethodWithExitPoints.java" startLine="25" startPosition="25" endLine="26" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2879,7 +2860,7 @@
     <unitInfo nodeId="8492459591399164578" fileName="ExtractMethodWithExitPoints.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints" />
     <unitInfo nodeId="4626240717634959366" fileName="ExtractMethodWithExitPoints.java" startLine="24" startPosition="55" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints$1" />
   </root>
-  <root nodeId="8492459591399164722">
+  <root nodeId="8492459591399164722" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399164723" fileName="IntroduceFieldRefactoring.java" startLine="19" startPosition="77" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldInitialization" />
     <nodeInfo nodeId="4001355776228202865" fileName="IntroduceFieldRefactoring.java" startLine="28" startPosition="32" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399164737" fileName="IntroduceFieldRefactoring.java" startLine="29" startPosition="26" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3119,7 +3100,6 @@
     <scopeInfo nodeId="8492459591399164810" fileName="IntroduceFieldRefactoring.java" startLine="233" startPosition="20" endLine="235" endPosition="44" />
     <scopeInfo nodeId="4001355776228087190" fileName="IntroduceFieldRefactoring.java" startLine="249" startPosition="53" endLine="251" endPosition="5" />
     <scopeInfo nodeId="8492459591399164730" fileName="IntroduceFieldRefactoring.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2163048091639705808" fileName="IntroduceFieldRefactoring.java" startLine="57" startPosition="27" endLine="60" endPosition="7" />
     <scopeInfo nodeId="2163048091639705825" fileName="IntroduceFieldRefactoring.java" startLine="57" startPosition="27" endLine="60" endPosition="7">
       <varInfo nodeId="2163048091639705826" varName="duplicate" />
     </scopeInfo>
@@ -3274,7 +3254,7 @@
     <unitInfo nodeId="8492459591399164745" fileName="IntroduceFieldRefactoring.java" startLine="87" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring$QuotationClass_baxqxe_a0a0a2a1" />
     <unitInfo nodeId="8492459591399164810" fileName="IntroduceFieldRefactoring.java" startLine="193" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring$QuotationClass_baxqxe_a0a6a1" />
   </root>
-  <root nodeId="8492459591399164935">
+  <root nodeId="8492459591399164935" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399164936" fileName="ExtractMethodRefactoringParameters.java" startLine="15" startPosition="69" endLine="16" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnalyzer" />
     <nodeInfo nodeId="8492459591399164939" fileName="ExtractMethodRefactoringParameters.java" startLine="16" startPosition="54" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToRefactor" />
     <nodeInfo nodeId="8492459591399164942" fileName="ExtractMethodRefactoringParameters.java" startLine="17" startPosition="40" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVisibility" />
@@ -3407,7 +3387,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399164935" fileName="ExtractMethodRefactoringParameters.java" startLine="15" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
   </root>
-  <root nodeId="8492459591399165206">
+  <root nodeId="8492459591399165206" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399165263" fileName="ChangeMethodSignatureParameters.java" startLine="13" startPosition="46" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
     <nodeInfo nodeId="8492459591399165266" fileName="ChangeMethodSignatureParameters.java" startLine="14" startPosition="25" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldMethod" />
     <nodeInfo nodeId="8492459591399165269" fileName="ChangeMethodSignatureParameters.java" startLine="15" startPosition="28" endLine="16" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParametersIds" />
@@ -3442,7 +3422,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399165206" fileName="ChangeMethodSignatureParameters.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters" />
   </root>
-  <root nodeId="8492459591399165317">
+  <root nodeId="8492459591399165317" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399165375" fileName="VisibilityLevel.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8492459591399165378" fileName="VisibilityLevel.java" startLine="15" startPosition="24" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="8492459591399165381" fileName="VisibilityLevel.java" startLine="16" startPosition="23" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButtonText" />
@@ -3473,7 +3453,7 @@
     <scopeInfo nodeId="8492459591399165318" fileName="VisibilityLevel.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="8492459591399165317" fileName="VisibilityLevel.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel" />
   </root>
-  <root nodeId="8492459591399165730">
+  <root nodeId="8492459591399165730" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399165731" fileName="ExtractMethodWithOutputVariable.java" startLine="18" startPosition="98" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputVariable" />
     <nodeInfo nodeId="8492459591399165734" fileName="ExtractMethodWithOutputVariable.java" startLine="19" startPosition="33" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclarationStatement" />
     <nodeInfo nodeId="8492459591399165820" fileName="ExtractMethodWithOutputVariable.java" startLine="22" startPosition="94" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -3608,7 +3588,7 @@
     <unitInfo nodeId="4626240717634959436" fileName="ExtractMethodWithOutputVariable.java" startLine="50" startPosition="55" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithOutputVariable$1" />
     <unitInfo nodeId="4626240717634959483" fileName="ExtractMethodWithOutputVariable.java" startLine="70" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithOutputVariable$QuotationClass_n3576q_a0a1a0c0a0a0a0a0c" />
   </root>
-  <root nodeId="8492459591399165879">
+  <root nodeId="8492459591399165879" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399166131" fileName="MethodModel.java" startLine="16" startPosition="26" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
     <nodeInfo nodeId="8492459591399166134" fileName="MethodModel.java" startLine="17" startPosition="23" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8492459591399166138" fileName="MethodModel.java" startLine="18" startPosition="29" endLine="19" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
@@ -3691,9 +3671,6 @@
     <scopeInfo nodeId="1642079203062891602" fileName="MethodModel.java" startLine="45" startPosition="43" endLine="47" endPosition="22" />
     <scopeInfo nodeId="8492459591399165970" fileName="MethodModel.java" startLine="68" startPosition="53" endLine="70" endPosition="22" />
     <scopeInfo nodeId="8492459591399165931" fileName="MethodModel.java" startLine="54" startPosition="28" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="8492459591399165932" fileName="MethodModel.java" startLine="54" startPosition="28" endLine="57" endPosition="5">
-      <varInfo nodeId="8492459591399165933" varName="listener" />
-    </scopeInfo>
     <scopeInfo nodeId="8492459591399165880" fileName="MethodModel.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8492459591399165904" fileName="MethodModel.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1642079203062891876" fileName="MethodModel.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
@@ -3738,7 +3715,7 @@
     <unitInfo nodeId="8492459591399165879" fileName="MethodModel.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel" />
     <unitInfo nodeId="8492459591399166003" fileName="MethodModel.java" startLine="83" startPosition="45" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodModel$1" />
   </root>
-  <root nodeId="8492459591399166166">
+  <root nodeId="8492459591399166166" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399166167" fileName="ClassExtractMethodRefactoringProcessor.java" startLine="12" startPosition="103" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClass" />
     <nodeInfo nodeId="8492459591399166326" fileName="ClassExtractMethodRefactoringProcessor.java" startLine="15" startPosition="90" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8492459591399166329" fileName="ClassExtractMethodRefactoringProcessor.java" startLine="16" startPosition="33" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3794,7 +3771,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399166166" fileName="ClassExtractMethodRefactoringProcessor.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor" />
   </root>
-  <root nodeId="8492459591399166501">
+  <root nodeId="8492459591399166501" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399166575" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="36" startPosition="47" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPartToExtract" />
     <nodeInfo nodeId="8492459591399166578" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="37" startPosition="38" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgram" />
     <nodeInfo nodeId="8492459591399166581" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="38" startPosition="28" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInternalExitPoints" />
@@ -4045,7 +4022,6 @@
     <scopeInfo nodeId="8492459591399167330" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="268" startPosition="12" endLine="270" endPosition="40" />
     <scopeInfo nodeId="1642079203062869979" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="100" startPosition="68" endLine="103" endPosition="7" />
     <scopeInfo nodeId="8492459591399166844" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="147" startPosition="136" endLine="150" endPosition="9" />
-    <scopeInfo nodeId="8492459591399166883" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="158" startPosition="77" endLine="161" endPosition="7" />
     <scopeInfo nodeId="8492459591399166884" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="158" startPosition="77" endLine="161" endPosition="7">
       <varInfo nodeId="8492459591399166900" varName="variable" />
     </scopeInfo>
@@ -4075,9 +4051,6 @@
       <varInfo nodeId="8492459591399166797" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399167197" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="242" startPosition="68" endLine="246" endPosition="7" />
-    <scopeInfo nodeId="8492459591399167198" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="242" startPosition="68" endLine="246" endPosition="7">
-      <varInfo nodeId="8492459591399167225" varName="parameter" />
-    </scopeInfo>
     <scopeInfo nodeId="8492459591399167245" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="250" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="8492459591399167258" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="254" startPosition="0" endLine="258" endPosition="0" />
     <scopeInfo nodeId="5161277940733564033" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="285" startPosition="112" endLine="289" endPosition="0">
@@ -4101,9 +4074,6 @@
       <varInfo nodeId="8492459591399166746" varName="a2" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399166831" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="146" startPosition="78" endLine="151" endPosition="7" />
-    <scopeInfo nodeId="8492459591399166832" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="146" startPosition="78" endLine="151" endPosition="7">
-      <varInfo nodeId="8492459591399166833" varName="writeInstruction" />
-    </scopeInfo>
     <scopeInfo nodeId="8492459591399166882" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="157" startPosition="72" endLine="162" endPosition="5">
       <varInfo nodeId="8492459591399166904" varName="exitPoint" />
     </scopeInfo>
@@ -4114,7 +4084,6 @@
     <scopeInfo nodeId="8492459591399167106" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="215" startPosition="50" endLine="220" endPosition="18">
       <varInfo nodeId="8492459591399167108" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167145" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="226" startPosition="101" endLine="231" endPosition="9" />
     <scopeInfo nodeId="8492459591399167146" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="226" startPosition="101" endLine="231" endPosition="9">
       <varInfo nodeId="8492459591399167167" varName="writeInstruction" />
     </scopeInfo>
@@ -4142,7 +4111,6 @@
     <scopeInfo nodeId="8492459591399166997" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="187" startPosition="47" endLine="194" endPosition="17">
       <varInfo nodeId="8492459591399166999" varName="exits" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167143" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="225" startPosition="54" endLine="232" endPosition="7" />
     <scopeInfo nodeId="8492459591399167144" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="225" startPosition="54" endLine="232" endPosition="7">
       <varInfo nodeId="8492459591399167174" varName="instruction" />
     </scopeInfo>
@@ -4173,9 +4141,6 @@
     <scopeInfo nodeId="8492459591399166910" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="165" startPosition="0" endLine="175" endPosition="0" />
     <scopeInfo nodeId="8492459591399166996" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="186" startPosition="0" endLine="196" endPosition="0" />
     <scopeInfo nodeId="8492459591399167040" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="199" startPosition="49" endLine="209" endPosition="9" />
-    <scopeInfo nodeId="8492459591399167041" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="199" startPosition="49" endLine="209" endPosition="9">
-      <varInfo nodeId="8492459591399167091" varName="next" />
-    </scopeInfo>
     <scopeInfo nodeId="8492459591399167385" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="327" startPosition="76" endLine="337" endPosition="17">
       <varInfo nodeId="8492459591399167395" varName="reference" />
       <varInfo nodeId="8492459591399167387" varName="type" />
@@ -4244,9 +4209,6 @@
       <varInfo nodeId="5161277940733582943" varName="writes" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399167348" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="318" startPosition="74" endLine="343" endPosition="5" />
-    <scopeInfo nodeId="8492459591399167349" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="318" startPosition="74" endLine="343" endPosition="5">
-      <varInfo nodeId="8492459591399167465" varName="instruction" />
-    </scopeInfo>
     <scopeInfo nodeId="8492459591399167343" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="317" startPosition="0" endLine="345" endPosition="0">
       <varInfo nodeId="8492459591399167344" varName="result" />
     </scopeInfo>
@@ -4266,7 +4228,7 @@
     <unitInfo nodeId="5161277940733582251" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="292" startPosition="48" endLine="296" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer$1" />
     <unitInfo nodeId="5161277940733564033" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="285" startPosition="83" endLine="289" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer$2" />
   </root>
-  <root nodeId="8492459591399167469">
+  <root nodeId="8492459591399167469" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399167652" fileName="MethodCallAdapter.java" startLine="17" startPosition="239" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="8492459591399167655" fileName="MethodCallAdapter.java" startLine="19" startPosition="5" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399167475" fileName="MethodCallAdapter.java" startLine="24" startPosition="110" endLine="25" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4329,7 +4291,7 @@
     <scopeInfo nodeId="8492459591399167506" fileName="MethodCallAdapter.java" startLine="32" startPosition="0" endLine="42" endPosition="0" />
     <unitInfo nodeId="8492459591399167469" fileName="MethodCallAdapter.java" startLine="12" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
   </root>
-  <root nodeId="8492459591399168690">
+  <root nodeId="8492459591399168690" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399168695" fileName="MethodOptimizer.java" startLine="16" startPosition="43" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399168705" fileName="MethodOptimizer.java" startLine="18" startPosition="110" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399168712" fileName="MethodOptimizer.java" startLine="20" startPosition="163" endLine="21" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4454,7 +4416,7 @@
     <unitInfo nodeId="8492459591399168690" fileName="MethodOptimizer.java" startLine="12" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer" />
     <unitInfo nodeId="6195342755327886672" fileName="MethodOptimizer.java" startLine="38" startPosition="52" endLine="42" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer$1" />
   </root>
-  <root nodeId="8492459591399168919">
+  <root nodeId="8492459591399168919" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399168920" fileName="MethodParameter.java" startLine="19" startPosition="59" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
     <nodeInfo nodeId="8492459591399168923" fileName="MethodParameter.java" startLine="20" startPosition="30" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
     <nodeInfo nodeId="8492459591399168926" fileName="MethodParameter.java" startLine="21" startPosition="23" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVariableReference" />
@@ -4574,7 +4536,7 @@
     <scopeInfo nodeId="8492459591399169010" fileName="MethodParameter.java" startLine="39" startPosition="0" endLine="67" endPosition="0" />
     <unitInfo nodeId="8492459591399168919" fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
   </root>
-  <root nodeId="8492459591399169241">
+  <root nodeId="8492459591399169241" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399169248" fileName="IntroduceConstantRefactoring.java" startLine="19" startPosition="32" endLine="20" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399169272" fileName="IntroduceConstantRefactoring.java" startLine="20" startPosition="232" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399169282" fileName="IntroduceConstantRefactoring.java" startLine="21" startPosition="114" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4711,7 +4673,6 @@
     <scopeInfo nodeId="8459194913967351492" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7">
       <varInfo nodeId="8459194913967351493" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967378076" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7" />
     <scopeInfo nodeId="6140205464397988602" fileName="IntroduceConstantRefactoring.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="6140205464397988609" varName="node" />
     </scopeInfo>
@@ -4804,7 +4765,7 @@
     <unitInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="132" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0a0c" />
     <unitInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="114" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0d0a" />
   </root>
-  <root nodeId="8492459591399169431">
+  <root nodeId="8492459591399169431" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399169432" fileName="MethodParameterModel.java" startLine="9" startPosition="35" endLine="10" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
     <nodeInfo nodeId="8492459591399169435" fileName="MethodParameterModel.java" startLine="10" startPosition="30" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8492459591399169438" fileName="MethodParameterModel.java" startLine="11" startPosition="24" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOrder" />
@@ -4855,7 +4816,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399169431" fileName="MethodParameterModel.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameterModel" />
   </root>
-  <root nodeId="8492459591399170533">
+  <root nodeId="8492459591399170533" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399170550" fileName="ChangeMethodSignatureRefactoring.java" startLine="14" startPosition="47" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
     <nodeInfo nodeId="8492459591399170553" fileName="ChangeMethodSignatureRefactoring.java" startLine="15" startPosition="55" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
     <nodeInfo nodeId="8492459591399170556" fileName="ChangeMethodSignatureRefactoring.java" startLine="16" startPosition="30" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUssages" />
@@ -4956,7 +4917,7 @@
     <scopeInfo nodeId="8492459591399170562" fileName="ChangeMethodSignatureRefactoring.java" startLine="23" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="8492459591399170533" fileName="ChangeMethodSignatureRefactoring.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" />
   </root>
-  <root nodeId="8492459591399170869">
+  <root nodeId="8492459591399170869" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399170878" fileName="MethodRefactoringUtils.java" startLine="23" startPosition="132" endLine="24" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399170913" fileName="MethodRefactoringUtils.java" startLine="24" startPosition="88" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399170923" fileName="MethodRefactoringUtils.java" startLine="28" startPosition="98" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5022,7 +4983,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399170869" fileName="MethodRefactoringUtils.java" startLine="19" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
   </root>
-  <root nodeId="8492459591399171652">
+  <root nodeId="8492459591399171652" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399171653" fileName="ExtractMethodFromStatementsRefactoring.java" startLine="15" startPosition="86" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatements" />
     <nodeInfo nodeId="8492459591399171663" fileName="ExtractMethodFromStatementsRefactoring.java" startLine="18" startPosition="92" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8492459591399171665" fileName="ExtractMethodFromStatementsRefactoring.java" startLine="19" startPosition="18" endLine="20" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5075,7 +5036,7 @@
     <unitInfo nodeId="8492459591399171652" fileName="ExtractMethodFromStatementsRefactoring.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring" />
     <unitInfo nodeId="4626240717634959313" fileName="ExtractMethodFromStatementsRefactoring.java" startLine="31" startPosition="55" endLine="42" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromStatementsRefactoring$1" />
   </root>
-  <root nodeId="8492459591399171824">
+  <root nodeId="8492459591399171824" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399171830" fileName="ClassRefactoringUtils.java" startLine="17" startPosition="63" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399171845" fileName="ClassRefactoringUtils.java" startLine="20" startPosition="49" endLine="21" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399171864" fileName="ClassRefactoringUtils.java" startLine="24" startPosition="171" endLine="25" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5116,7 +5077,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399171824" fileName="ClassRefactoringUtils.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" />
   </root>
-  <root nodeId="8492459591399173316">
+  <root nodeId="8492459591399173316" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399173325" fileName="FieldInitializationPlace.java" startLine="10" startPosition="0" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8492459591399173339" fileName="FieldInitializationPlace.java" startLine="13" startPosition="41" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399173320" fileName="FieldInitializationPlace.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5130,7 +5091,7 @@
     <scopeInfo nodeId="8492459591399173317" fileName="FieldInitializationPlace.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="8492459591399173316" fileName="FieldInitializationPlace.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
   </root>
-  <root nodeId="8492459591399173414">
+  <root nodeId="8492459591399173414" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399173423" fileName="ExtractMethodFromExpressionRefactoring.java" startLine="19" startPosition="97" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8492459591399173425" fileName="ExtractMethodFromExpressionRefactoring.java" startLine="20" startPosition="18" endLine="21" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8823815475437247198" fileName="ExtractMethodFromExpressionRefactoring.java" startLine="24" startPosition="38" endLine="25" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5182,7 +5143,7 @@
     <unitInfo nodeId="8492459591399173414" fileName="ExtractMethodFromExpressionRefactoring.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromExpressionRefactoring" />
     <unitInfo nodeId="4626240717634941935" fileName="ExtractMethodFromExpressionRefactoring.java" startLine="39" startPosition="55" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFromExpressionRefactoring$1" />
   </root>
-  <root nodeId="8492459591399173795">
+  <root nodeId="8492459591399173795" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399174922" fileName="InlineMethodRefactoring.java" startLine="29" startPosition="38" endLine="30" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReturnType" />
     <nodeInfo nodeId="8492459591399174925" fileName="InlineMethodRefactoring.java" startLine="30" startPosition="29" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodProgram" />
     <nodeInfo nodeId="8492459591399174928" fileName="InlineMethodRefactoring.java" startLine="31" startPosition="34" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHasManyReturns" />
@@ -5496,7 +5457,6 @@
     <scopeInfo nodeId="8492459591399174251" fileName="InlineMethodRefactoring.java" startLine="140" startPosition="135" endLine="146" endPosition="5">
       <varInfo nodeId="8492459591399174252" varName="localCall" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174289" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5" />
     <scopeInfo nodeId="8492459591399174290" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5">
       <varInfo nodeId="8492459591399174291" varName="ref" />
     </scopeInfo>
@@ -5580,9 +5540,6 @@
       <varInfo nodeId="8492459591399175019" varName="returns" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174015" fileName="InlineMethodRefactoring.java" startLine="95" startPosition="89" endLine="108" endPosition="5" />
-    <scopeInfo nodeId="8492459591399174016" fileName="InlineMethodRefactoring.java" startLine="95" startPosition="89" endLine="108" endPosition="5">
-      <varInfo nodeId="8492459591399174017" varName="returnStatement" />
-    </scopeInfo>
     <scopeInfo nodeId="8492459591399174489" fileName="InlineMethodRefactoring.java" startLine="206" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="8492459591399174538" varName="parameterDeclaration" />
     </scopeInfo>
@@ -5658,7 +5615,7 @@
     <unitInfo nodeId="8492459591399174751" fileName="InlineMethodRefactoring.java" startLine="261" startPosition="44" endLine="265" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$1" />
     <unitInfo nodeId="8492459591399174002" fileName="InlineMethodRefactoring.java" startLine="301" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$QuotationClass_49noxv_a0a0a0b0b" />
   </root>
-  <root nodeId="8492459591399175050">
+  <root nodeId="8492459591399175050" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399175056" fileName="ClassStaticContainerProcessor.java" startLine="13" startPosition="52" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8492459591399175065" fileName="ClassStaticContainerProcessor.java" startLine="17" startPosition="34" endLine="18" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399175077" fileName="ClassStaticContainerProcessor.java" startLine="21" startPosition="70" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5684,7 +5641,7 @@
     </scopeInfo>
     <unitInfo nodeId="8492459591399175050" fileName="ClassStaticContainerProcessor.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassStaticContainerProcessor" />
   </root>
-  <root nodeId="8492459591399175108">
+  <root nodeId="8492459591399175108" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399175109" fileName="IntroduceVariableRefactoring.java" startLine="25" startPosition="52" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8492459591399175112" fileName="IntroduceVariableRefactoring.java" startLine="26" startPosition="24" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExpression" />
     <nodeInfo nodeId="8492459591399175115" fileName="IntroduceVariableRefactoring.java" startLine="27" startPosition="29" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExpressionType" />
@@ -5922,7 +5879,7 @@
     <unitInfo nodeId="6974242407276553242" fileName="IntroduceVariableRefactoring.java" startLine="187" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$QuotationClass_x65dk2_a0a0a3a1" />
     <unitInfo nodeId="3109730807963502074" fileName="IntroduceVariableRefactoring.java" startLine="169" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$QuotationClass_x65dk2_a0a1a1a2a1" />
   </root>
-  <root nodeId="8517902611909168513">
+  <root nodeId="8517902611909168513" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="4909369320862630205" fileName="MoveStaticFieldRefactoring.java" startLine="13" startPosition="70" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4458227202731876832" fileName="MoveStaticFieldRefactoring.java" startLine="17" startPosition="47" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1290499202061198248" fileName="MoveStaticFieldRefactoring.java" startLine="19" startPosition="132" endLine="20" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

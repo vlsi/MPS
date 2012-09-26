@@ -664,7 +664,9 @@
       <varInfo nodeId="865001690840234163" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="865001690840234148" fileName="QueriesGenerated.java" startLine="471" startPosition="9" endLine="476" endPosition="99" />
-    <scopeInfo nodeId="865001690840234129" fileName="QueriesGenerated.java" startLine="466" startPosition="144" endLine="477" endPosition="5" />
+    <scopeInfo nodeId="865001690840234130" fileName="QueriesGenerated.java" startLine="466" startPosition="144" endLine="477" endPosition="5">
+      <varInfo nodeId="865001690840234131" varName="blockStatement" />
+    </scopeInfo>
     <unitInfo nodeId="865001690840234137" fileName="QueriesGenerated.java" startLine="467" startPosition="167" endLine="471" endPosition="5" unitName="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$10" />
     <unitInfo nodeId="865001690840234163" fileName="QueriesGenerated.java" startLine="472" startPosition="246" endLine="476" endPosition="7" unitName="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$9" />
   </root>

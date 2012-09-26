@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1197150020790">
+  <root nodeId="1197150020790" modelId="r:00000000-0000-4000-0000-011c89590431(jetbrains.mps.samples.secretCompartmentLanguage.sandbox)">
     <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="14" startPosition="41" endLine="15" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="15" startPosition="65" endLine="16" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="16" startPosition="65" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -26,7 +26,7 @@
     <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="13" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.sandbox.MrsH_StateMachineFactory" />
   </root>
-  <root nodeId="1197247437082">
+  <root nodeId="1197247437082" modelId="r:00000000-0000-4000-0000-011c89590431(jetbrains.mps.samples.secretCompartmentLanguage.sandbox)">
     <nodeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="10" startPosition="41" endLine="11" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="11" startPosition="77" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197255880355" fileName="MrsH_StateMachine_Test.java" startLine="12" startPosition="30" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6812098398776640299">
+  <root nodeId="6812098398776640299" modelId="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
     <nodeInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="34" startPosition="62" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="35" startPosition="40" endLine="36" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="38" startPosition="41" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -154,7 +154,7 @@
     <unitInfo nodeId="6812098398776640310" fileName="ChangeMethodSignature_Action.java" startLine="102" startPosition="48" endLine="111" endPosition="7" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action$1" />
     <unitInfo nodeId="8139782154295720684" fileName="ChangeMethodSignature_Action.java" startLine="126" startPosition="46" endLine="137" endPosition="7" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action$2" />
   </root>
-  <root nodeId="6812098398776640439">
+  <root nodeId="6812098398776640439" modelId="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
     <nodeInfo nodeId="6812098398776640577" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="68" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
     <nodeInfo nodeId="6812098398776640580" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="30" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
     <nodeInfo nodeId="6812098398776640583" fileName="ChangeMethodSignatureDialog.java" startLine="43" startPosition="55" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
@@ -279,7 +279,7 @@
     <unitInfo nodeId="6812098398776640726" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="42" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
     <unitInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="112" startPosition="49" endLine="116" endPosition="9" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
   </root>
-  <root nodeId="6812098398776640803">
+  <root nodeId="6812098398776640803" modelId="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="1" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="1" endLine="1" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -463,7 +463,7 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <unitInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="16" endPosition="0" unitName="JavaWorkbenchActions.xml" />
   </root>
-  <root nodeId="6930463558351181264">
+  <root nodeId="6930463558351181264" modelId="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="38" startPosition="59" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="39" startPosition="40" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="42" startPosition="38" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

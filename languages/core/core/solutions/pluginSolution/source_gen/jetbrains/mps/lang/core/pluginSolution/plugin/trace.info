@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" />
-  <root nodeId="2222556283720140738">
+  <root nodeId="2222556283720140738" modelId="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)">
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="25" startPosition="61" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="26" startPosition="40" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="29" startPosition="40" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -127,7 +127,7 @@
     </scopeInfo>
     <unitInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="25" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.AddMissingDependency_Action" />
   </root>
-  <root nodeId="2724756130234264123">
+  <root nodeId="2724756130234264123" modelId="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)">
     <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="8" startPosition="72" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="9" startPosition="83" endLine="10" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -146,7 +146,7 @@
     <scopeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
   </root>
-  <root nodeId="6905339732004138486">
+  <root nodeId="6905339732004138486" modelId="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)">
     <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="57" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1162302692985202025" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6905339732004138985" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="18" startPosition="5" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -160,7 +160,7 @@
     <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" />
   </root>
-  <root nodeId="8437874342968954378">
+  <root nodeId="8437874342968954378" modelId="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)">
     <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="77" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

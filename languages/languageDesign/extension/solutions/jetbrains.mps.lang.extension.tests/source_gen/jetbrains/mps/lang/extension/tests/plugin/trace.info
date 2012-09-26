@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.ExtensionDescriptor" />
-  <root nodeId="2622946712629256035">
+  <root nodeId="2622946712629256035" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="2622946712629256041" fileName="LazyTestObject.java" startLine="6" startPosition="29" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2622946712629256045" fileName="LazyTestObject.java" startLine="9" startPosition="27" endLine="10" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LazyTestObject#()V" />
@@ -9,7 +9,7 @@
     <scopeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="8" startPosition="0" endLine="11" endPosition="3" />
     <unitInfo nodeId="2622946712629256035" fileName="LazyTestObject.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
   </root>
-  <root nodeId="2622946712629256054">
+  <root nodeId="2622946712629256054" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="8" startPosition="65" endLine="9" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2622946712629256057" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="12" startPosition="31" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="7" startPosition="109" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_lazyTestExtensionPoint2622946712629256054_#()V" />
@@ -20,7 +20,7 @@
     <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint2622946712629256054_" />
   </root>
-  <root nodeId="4451661519483734260">
+  <root nodeId="4451661519483734260" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="8" startPosition="62" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4451661519483734263" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="7" startPosition="98" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint4451661519483734260_#()V" />
@@ -31,7 +31,7 @@
     <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734260_" />
   </root>
-  <root nodeId="4451661519483734265">
+  <root nodeId="4451661519483734265" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="8" startPosition="62" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4451661519483734268" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="7" startPosition="98" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint4451661519483734265_#()V" />
@@ -42,7 +42,7 @@
     <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734265_" />
   </root>
-  <root nodeId="7036359038356246776">
+  <root nodeId="7036359038356246776" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="6" startPosition="25" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShutDown" />
     <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="7" startPosition="29" endLine="8" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="13" startPosition="32" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -70,7 +70,7 @@
     </scopeInfo>
     <unitInfo nodeId="7036359038356246776" fileName="TestObject.java" startLine="6" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
   </root>
-  <root nodeId="7036359038356253986">
+  <root nodeId="7036359038356253986" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="7" startPosition="101" endLine="8" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestObject" />
     <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="10" startPosition="61" endLine="11" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7036359038356262452" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="14" startPosition="27" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

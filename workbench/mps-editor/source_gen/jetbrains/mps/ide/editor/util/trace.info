@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2808756344206283880">
+  <root nodeId="2808756344206283880" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="2808756344206284083" fileName="GoToHelper.java" startLine="46" startPosition="131" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2808756344206284091" fileName="GoToHelper.java" startLine="47" startPosition="85" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2808756344206284096" fileName="GoToHelper.java" startLine="48" startPosition="81" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -255,7 +255,7 @@
     <unitInfo nodeId="2808756344206283882" fileName="GoToHelper.java" startLine="138" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$DefaultNodeNavigationItemCellRenderer" />
     <unitInfo nodeId="2808756344206283971" fileName="GoToHelper.java" startLine="171" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$MethodCellRenderer" />
   </root>
-  <root nodeId="2808756344206284331">
+  <root nodeId="2808756344206284331" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="2808756344206284452" fileName="NodeListCellRenderer.java" startLine="22" startPosition="36" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2808756344206284469" fileName="NodeListCellRenderer.java" startLine="26" startPosition="128" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2808756344206284471" fileName="NodeListCellRenderer.java" startLine="27" startPosition="16" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -370,7 +370,7 @@
     <unitInfo nodeId="2808756344206284592" fileName="NodeListCellRenderer.java" startLine="64" startPosition="15" endLine="77" endPosition="5" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer$1" />
     <unitInfo nodeId="2808756344206284336" fileName="NodeListCellRenderer.java" startLine="80" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer$LeftRenderer" />
   </root>
-  <root nodeId="4491627601716787026">
+  <root nodeId="4491627601716787026" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="4491627601716787044" fileName="EditorComponentUtil.java" startLine="25" startPosition="131" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787058" fileName="EditorComponentUtil.java" startLine="27" startPosition="49" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787062" fileName="EditorComponentUtil.java" startLine="28" startPosition="40" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -514,7 +514,7 @@
     </scopeInfo>
     <unitInfo nodeId="4491627601716787026" fileName="EditorComponentUtil.java" startLine="20" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.editor.util.EditorComponentUtil" />
   </root>
-  <root nodeId="7973955287399271868">
+  <root nodeId="7973955287399271868" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="7973955287399271882" fileName="EditorUtil.java" startLine="29" startPosition="98" endLine="30" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7973955287399271897" fileName="EditorUtil.java" startLine="33" startPosition="131" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572311180462203034" fileName="EditorUtil.java" startLine="34" startPosition="82" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

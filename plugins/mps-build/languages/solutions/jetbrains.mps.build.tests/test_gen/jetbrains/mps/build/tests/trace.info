@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="193602448594327346">
+  <root nodeId="193602448594327346" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="19" startPosition="116" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="24" startPosition="70" endLine="25" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -89,7 +89,7 @@
     <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="15" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.tests.MacroTest_Test" />
     <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="59" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.tests.MacroTest_Test$TestBody" />
   </root>
-  <root nodeId="4045247515868358877">
+  <root nodeId="4045247515868358877" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="19" startPosition="116" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="24" startPosition="54" endLine="25" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -179,7 +179,7 @@
     <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test" />
     <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="53" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody" />
   </root>
-  <root nodeId="5368511706901688070">
+  <root nodeId="5368511706901688070" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="1841835149314679084" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="52" endLine="12" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1841835149314679092" fileName="TestRelativePathHelper_Test.java" startLine="12" startPosition="70" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1841835149314679120" fileName="TestRelativePathHelper_Test.java" startLine="13" startPosition="21" endLine="14" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -222,7 +222,7 @@
     <scopeInfo nodeId="5368511706901692172" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="59" endLine="44" endPosition="0" />
     <unitInfo nodeId="5368511706901688070" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
   </root>
-  <root nodeId="5584673629410321146">
+  <root nodeId="5584673629410321146" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="5584673629410321283" fileName="TestContext.java" startLine="17" startPosition="42" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP_MACRO" />
     <nodeInfo nodeId="193602448594332738" fileName="TestContext.java" startLine="18" startPosition="54" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP" />
     <nodeInfo nodeId="5584673629410321288" fileName="TestContext.java" startLine="19" startPosition="60" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPLOY_MACRO" />

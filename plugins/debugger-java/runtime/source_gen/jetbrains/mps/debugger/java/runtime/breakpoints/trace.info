@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2891782949125146029">
+  <root nodeId="2891782949125146029" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125146034" fileName="MethodBreakpoint.java" startLine="27" startPosition="85" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2891782949125146043" fileName="MethodBreakpoint.java" startLine="31" startPosition="46" endLine="32" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodName" />
     <nodeInfo nodeId="2891782949125146047" fileName="MethodBreakpoint.java" startLine="32" startPosition="37" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJniSignature" />
@@ -165,7 +165,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125146029" fileName="MethodBreakpoint.java" startLine="27" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.MethodBreakpoint" />
   </root>
-  <root nodeId="2891782949125146030">
+  <root nodeId="2891782949125146030" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125170576" fileName="JavaBreakpointKind.java" startLine="13" startPosition="0" endLine="14" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LANGUAGE_PREFIX" />
     <nodeInfo nodeId="2891782949125170580" fileName="JavaBreakpointKind.java" startLine="15" startPosition="0" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresentation" />
     <nodeInfo nodeId="2891782949125170589" fileName="JavaBreakpointKind.java" startLine="18" startPosition="43" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -189,7 +189,7 @@
     <scopeInfo nodeId="2891782949125170609" fileName="JavaBreakpointKind.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
     <unitInfo nodeId="2891782949125146030" fileName="JavaBreakpointKind.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointKind" />
   </root>
-  <root nodeId="2891782949125147574">
+  <root nodeId="2891782949125147574" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125147578" fileName="FieldBreakpoint.java" startLine="24" startPosition="84" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2891782949125147583" fileName="FieldBreakpoint.java" startLine="26" startPosition="0" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocation" />
     <nodeInfo nodeId="2891782949125147586" fileName="FieldBreakpoint.java" startLine="27" startPosition="46" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldName" />
@@ -306,7 +306,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125147574" fileName="FieldBreakpoint.java" startLine="24" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.FieldBreakpoint" />
   </root>
-  <root nodeId="2891782949125147777">
+  <root nodeId="2891782949125147777" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125147783" fileName="JavaBreakpoint.java" startLine="23" startPosition="123" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspendPolicy" />
     <nodeInfo nodeId="2891782949125147787" fileName="JavaBreakpoint.java" startLine="24" startPosition="57" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLogMessage" />
     <nodeInfo nodeId="2891782949125147791" fileName="JavaBreakpoint.java" startLine="25" startPosition="39" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOG" />
@@ -444,7 +444,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125147777" fileName="JavaBreakpoint.java" startLine="23" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
   </root>
-  <root nodeId="2891782949125148940">
+  <root nodeId="2891782949125148940" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125148973" fileName="ExceptionBreakpoint.java" startLine="18" startPosition="57" endLine="19" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2891782949125148978" fileName="ExceptionBreakpoint.java" startLine="20" startPosition="0" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExceptionName" />
     <nodeInfo nodeId="2891782949125148989" fileName="ExceptionBreakpoint.java" startLine="23" startPosition="69" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -573,7 +573,7 @@
     <unitInfo nodeId="2891782949125148940" fileName="ExceptionBreakpoint.java" startLine="18" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint" />
     <unitInfo nodeId="2891782949125148943" fileName="ExceptionBreakpoint.java" startLine="102" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint$ExceptionBreakpointInfo" />
   </root>
-  <root nodeId="2891782949125149284">
+  <root nodeId="2891782949125149284" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125149287" fileName="JavaBreakpointInfo.java" startLine="8" startPosition="56" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspendPolicy" />
     <nodeInfo nodeId="2891782949125149290" fileName="JavaBreakpointInfo.java" startLine="9" startPosition="29" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsLogMessage" />
     <nodeInfo nodeId="2596130676084754269" fileName="JavaBreakpointInfo.java" startLine="12" startPosition="85" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -598,7 +598,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125149284" fileName="JavaBreakpointInfo.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointInfo" />
   </root>
-  <root nodeId="2891782949125168600">
+  <root nodeId="2891782949125168600" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125168604" fileName="LineBreakpoint.java" startLine="23" startPosition="83" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2891782949125168609" fileName="LineBreakpoint.java" startLine="25" startPosition="0" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocation" />
     <nodeInfo nodeId="2891782949125168621" fileName="LineBreakpoint.java" startLine="28" startPosition="77" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -699,9 +699,6 @@
       <varInfo nodeId="2891782949125168618" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125168769" fileName="LineBreakpoint.java" startLine="43" startPosition="28" endLine="47" endPosition="9" />
-    <scopeInfo nodeId="2891782949125168770" fileName="LineBreakpoint.java" startLine="43" startPosition="28" endLine="47" endPosition="9">
-      <varInfo nodeId="2891782949125168772" varName="location" />
-    </scopeInfo>
     <scopeInfo nodeId="2891782949125168743" fileName="LineBreakpoint.java" startLine="48" startPosition="14" endLine="52" endPosition="29">
       <varInfo nodeId="2891782949125168751" varName="message" />
     </scopeInfo>
@@ -742,7 +739,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125168600" fileName="LineBreakpoint.java" startLine="23" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.LineBreakpoint" />
   </root>
-  <root nodeId="6951057689129812782">
+  <root nodeId="6951057689129812782" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125172048" fileName="BreakpointsIconCache.java" startLine="27" startPosition="63" endLine="28" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCache" />
     <nodeInfo nodeId="6951057689129812851" fileName="BreakpointsIconCache.java" startLine="28" startPosition="103" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="6951057689129812855" fileName="BreakpointsIconCache.java" startLine="29" startPosition="34" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointManager" />

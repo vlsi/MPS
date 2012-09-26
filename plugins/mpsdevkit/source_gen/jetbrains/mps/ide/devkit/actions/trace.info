@@ -3075,9 +3075,7 @@
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="86" startPosition="33" endLine="87" endPosition="99" />
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="28" startPosition="45" endLine="31" endPosition="41" />
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="2662234144540708462" fileName="HighlightCellDependencies_Action.java" startLine="71" startPosition="26" endLine="74" endPosition="9">
-      <varInfo nodeId="2662234144540708463" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="2662234144540708461" fileName="HighlightCellDependencies_Action.java" startLine="71" startPosition="26" endLine="74" endPosition="9" />
     <scopeInfo nodeId="2662234144540708494" fileName="HighlightCellDependencies_Action.java" startLine="78" startPosition="80" endLine="81" endPosition="11" />
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="85" startPosition="0" endLine="88" endPosition="7">
       <varInfo nodeId="2662234144540708417" varName="t" />
@@ -3913,7 +3911,7 @@
       <varInfo nodeId="3465865320786305631" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" />
-    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="29" />
+    <scopeInfo nodeId="3465865320786305712" fileName="NewAccessoryModel_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="29" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="44">
       <varInfo nodeId="3465865320786305631" varName="t" />
     </scopeInfo>

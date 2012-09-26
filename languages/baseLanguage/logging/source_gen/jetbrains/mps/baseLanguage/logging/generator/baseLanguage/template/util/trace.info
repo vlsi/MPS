@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1210176650661">
+  <root nodeId="1210176650661" modelId="r:00000000-0000-4000-0000-011c89590581(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util)">
     <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="28" startPosition="59" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="62" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="32" startPosition="83" endLine="33" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

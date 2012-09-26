@@ -285,9 +285,7 @@
       <varInfo nodeId="5658809246031045920" varName="painter" />
     </scopeInfo>
     <scopeInfo nodeId="5574644062438401411" fileName="CurrentLinePositionComponentEx.java" startLine="175" startPosition="27" endLine="181" endPosition="11" />
-    <scopeInfo nodeId="5658809246031046019" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7">
-      <varInfo nodeId="5658809246031046020" varName="session" />
-    </scopeInfo>
+    <scopeInfo nodeId="5658809246031046018" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7" />
     <scopeInfo nodeId="1053276000964508307" fileName="CurrentLinePositionComponentEx.java" startLine="128" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="1053276000964508310" varName="painter" />
     </scopeInfo>

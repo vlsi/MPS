@@ -5,7 +5,7 @@
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.FacetManifest$1" />
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IconContainer" />
-  <root nodeId="2990235398088186554">
+  <root nodeId="2990235398088186554" modelId="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="10" startPosition="72" endLine="11" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="14" startPosition="5" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="15" startPosition="48" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -32,7 +32,7 @@
     <unitInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
     <unitInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="40" endLine="19" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior$1" />
   </root>
-  <root nodeId="349375443596798661">
+  <root nodeId="349375443596798661" modelId="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="10" startPosition="74" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="14" startPosition="5" endLine="15" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="15" startPosition="50" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -60,7 +60,7 @@
     <unitInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility" />
     <unitInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="13" startPosition="40" endLine="20" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility$1" />
   </root>
-  <root nodeId="6648795410103967073">
+  <root nodeId="6648795410103967073" modelId="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
     <nodeInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="58" startPosition="52" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="59" startPosition="82" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="62" startPosition="30" endLine="63" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -520,7 +520,6 @@
       <varInfo nodeId="6648795410103967254" varName="compiledAnything" />
       <varInfo nodeId="6648795410103967254" varName="skipCompilation" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103967411" fileName="JavaCompile_Facet.java" startLine="324" startPosition="33" endLine="327" endPosition="19" />
     <scopeInfo nodeId="6648795410103967412" fileName="JavaCompile_Facet.java" startLine="324" startPosition="33" endLine="327" endPosition="19">
       <varInfo nodeId="6648795410103967416" varName="msg" />
     </scopeInfo>
@@ -791,13 +790,13 @@
     <unitInfo nodeId="6648795410103967618" fileName="JavaCompile_Facet.java" startLine="476" startPosition="187" endLine="480" endPosition="19" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$3" />
     <unitInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="588" startPosition="0" endLine="651" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$TargetProperties" />
     <unitInfo nodeId="6648795410103967258" fileName="JavaCompile_Facet.java" startLine="262" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$Target_auxCompile" />
+    <unitInfo nodeId="6648795410103967472" fileName="JavaCompile_Facet.java" startLine="408" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$Target_auxCompile$Parameters" />
     <unitInfo nodeId="6648795410103967074" fileName="JavaCompile_Facet.java" startLine="92" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$Target_compile" />
+    <unitInfo nodeId="6648795410103967254" fileName="JavaCompile_Facet.java" startLine="230" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$Target_compile$Parameters" />
     <unitInfo nodeId="6648795410103967476" fileName="JavaCompile_Facet.java" startLine="432" startPosition="0" endLine="587" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$Target_compileToMemory" />
-    <unitInfo nodeId="6648795410103967472" fileName="JavaCompile_Facet.java" startLine="408" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_auxCompile$Parameters" />
-    <unitInfo nodeId="6648795410103967254" fileName="JavaCompile_Facet.java" startLine="230" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_compile$Parameters" />
-    <unitInfo nodeId="6648795410103967653" fileName="JavaCompile_Facet.java" startLine="556" startPosition="0" endLine="586" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_compileToMemory$Parameters" />
+    <unitInfo nodeId="6648795410103967653" fileName="JavaCompile_Facet.java" startLine="556" startPosition="0" endLine="586" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet$Target_compileToMemory$Parameters" />
   </root>
-  <root nodeId="6648795410103987945">
+  <root nodeId="6648795410103987945" modelId="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
     <nodeInfo nodeId="6648795410103987945" fileName="ReloadClasses_Facet.java" startLine="29" startPosition="54" endLine="30" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="6648795410103987945" fileName="ReloadClasses_Facet.java" startLine="30" startPosition="82" endLine="31" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="6648795410103987945" fileName="ReloadClasses_Facet.java" startLine="33" startPosition="32" endLine="34" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4198951972171372748">
+  <root nodeId="4198951972171372748" modelId="r:5b5d3edc-7109-4b21-b309-f1eed7ed275b(jetbrains.mps.project.structure.stub)">
     <nodeInfo nodeId="4198951972171373441" fileName="ProjectStructureBuilder.java" startLine="34" startPosition="47" endLine="35" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" />
     <nodeInfo nodeId="2721285250110487901" fileName="ProjectStructureBuilder.java" startLine="35" startPosition="42" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="2721285250110524841" fileName="ProjectStructureBuilder.java" startLine="36" startPosition="29" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -261,9 +261,6 @@
       <varInfo nodeId="2721285250110587019" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4243809718336239954" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5" />
-    <scopeInfo nodeId="4243809718336271611" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5">
-      <varInfo nodeId="4243809718336271612" varName="ref" />
-    </scopeInfo>
     <scopeInfo nodeId="269654322145298937" fileName="ProjectStructureBuilder.java" startLine="118" startPosition="46" endLine="122" endPosition="18">
       <varInfo nodeId="269654322145298945" varName="result" />
     </scopeInfo>

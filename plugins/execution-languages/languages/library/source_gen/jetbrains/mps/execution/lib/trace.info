@@ -166,7 +166,7 @@
     <scopeInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration_Editor.java" startLine="28" startPosition="31" endLine="28" endPosition="31" />
     <scopeInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration.java" startLine="180" startPosition="22" endLine="180" endPosition="22" />
     <scopeInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration_Editor.java" startLine="21" startPosition="54" endLine="22" endPosition="59" />
-    <scopeInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration_Editor.java" startLine="37" startPosition="111" endLine="38" endPosition="47" />
+    <scopeInfo nodeId="1977878056377381289" fileName="MultiConceptNode_Configuration_Editor.java" startLine="37" startPosition="111" endLine="38" endPosition="47" />
     <scopeInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration.java" startLine="37" startPosition="137" endLine="38" endPosition="24" />
     <scopeInfo nodeId="1977878056377381280" fileName="MultiConceptNode_Configuration_Editor.java" startLine="41" startPosition="83" endLine="42" endPosition="47" />
     <scopeInfo nodeId="1977878056377381313" fileName="MultiConceptNode_Configuration.java" startLine="44" startPosition="25" endLine="45" endPosition="74" />
@@ -662,7 +662,7 @@
       <varInfo nodeId="8278380780105768314" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="8278380780105768314" fileName="NodeByConcept_Configuration_Editor.java" startLine="40" startPosition="108" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="8278380780105768440" fileName="NodeByConcept_Configuration_Editor.java" startLine="48" startPosition="80" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="8278380780105768314" fileName="NodeByConcept_Configuration_Editor.java" startLine="48" startPosition="80" endLine="53" endPosition="7" />
     <scopeInfo nodeId="8278380780105768314" fileName="NodeByConcept_Configuration.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="8278380780105768314" varName="element" />
     </scopeInfo>
@@ -877,8 +877,8 @@
     <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration.java" startLine="170" startPosition="61" endLine="174" endPosition="19">
       <varInfo nodeId="8278380780105899265" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="8278380780105899456" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="38" startPosition="116" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="46" startPosition="88" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="38" startPosition="116" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="8278380780105899447" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="46" startPosition="88" endLine="51" endPosition="7" />
     <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8278380780105899265" varName="element" />
     </scopeInfo>

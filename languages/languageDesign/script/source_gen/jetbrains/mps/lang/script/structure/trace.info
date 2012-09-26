@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Script_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.structure.Script_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
-  <root nodeId="5299416737274925392">
+  <root nodeId="5299416737274925392" modelId="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)">
     <nodeInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5299416737274925392" fileName="ScriptType.java" startLine="12" startPosition="0" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

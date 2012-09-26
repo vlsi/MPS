@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2891782949125168912">
+  <root nodeId="2891782949125168912" modelId="r:4b47d87b-c63f-4029-bce0-f6c8adde3fa8(jetbrains.mps.debugger.java)">
     <nodeInfo nodeId="2891782949125168916" fileName="JavaDebugger.java" startLine="21" startPosition="84" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaBreakpointsProvider" />
     <nodeInfo nodeId="2891782949125168929" fileName="JavaDebugger.java" startLine="24" startPosition="99" endLine="25" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2891782949125168940" fileName="JavaDebugger.java" startLine="30" startPosition="90" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,7 +41,7 @@
     <scopeInfo nodeId="2891782949125168975" fileName="JavaDebugger.java" startLine="54" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="2891782949125168912" fileName="JavaDebugger.java" startLine="21" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaDebugger" />
   </root>
-  <root nodeId="2891782949125171999">
+  <root nodeId="2891782949125171999" modelId="r:4b47d87b-c63f-4029-bce0-f6c8adde3fa8(jetbrains.mps.debugger.java)">
     <nodeInfo nodeId="2891782949125172116" fileName="JavaBreakpointsProvider.java" startLine="46" startPosition="49" endLine="47" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2891782949125172128" fileName="JavaBreakpointsProvider.java" startLine="51" startPosition="68" endLine="52" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2891782949125172141" fileName="JavaBreakpointsProvider.java" startLine="56" startPosition="70" endLine="57" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -309,7 +309,7 @@
     <unitInfo nodeId="2891782949125204746" fileName="JavaBreakpointsProvider.java" startLine="200" startPosition="37" endLine="208" endPosition="9" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$1" />
     <unitInfo nodeId="2891782949125204789" fileName="JavaBreakpointsProvider.java" startLine="215" startPosition="47" endLine="220" endPosition="7" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$2" />
     <unitInfo nodeId="2891782949125172004" fileName="JavaBreakpointsProvider.java" startLine="186" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$MyIBreakpointPropertiesUi" />
-    <unitInfo nodeId="2891782949125172008" fileName="JavaBreakpointsProvider.java" startLine="244" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider.MyIBreakpointPropertiesUi$SuspendPolicy" />
+    <unitInfo nodeId="2891782949125172008" fileName="JavaBreakpointsProvider.java" startLine="244" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$SuspendPolicy" />
   </root>
 </debugInfo>
 

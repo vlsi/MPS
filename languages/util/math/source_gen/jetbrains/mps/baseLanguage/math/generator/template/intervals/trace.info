@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.generator.template.intervals.QueriesGenerated" />
-  <root nodeId="1235747506420">
+  <root nodeId="1235747506420" modelId="r:85be6a23-8e6d-4452-b81d-2513e76e45bd(jetbrains.mps.baseLanguage.math.generator.template.intervals@generator)">
     <nodeInfo nodeId="1236432114224" fileName="QueriesGenerated.java" startLine="17" startPosition="148" endLine="18" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236432114251" fileName="QueriesGenerated.java" startLine="21" startPosition="148" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236432114205" fileName="QueriesGenerated.java" startLine="25" startPosition="130" endLine="26" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -4,7 +4,7 @@
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.FacetAspectDescriptor$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.FacetManifest$1" />
-  <root nodeId="2182758403694683132">
+  <root nodeId="2182758403694683132" modelId="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)">
     <nodeInfo nodeId="2182758403694683133" fileName="Differ.java" startLine="24" startPosition="21" endLine="25" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH_CHAR" />
     <nodeInfo nodeId="2182758403694683137" fileName="Differ.java" startLine="25" startPosition="45" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH" />
     <nodeInfo nodeId="2182758403694683141" fileName="Differ.java" startLine="27" startPosition="0" endLine="28" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ignoredFiles" />
@@ -228,14 +228,14 @@
     <unitInfo nodeId="2182758403694683771" fileName="Differ.java" startLine="33" startPosition="75" endLine="37" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Differ$3" />
     <unitInfo nodeId="2182758403694683779" fileName="Differ.java" startLine="37" startPosition="16" endLine="41" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Differ$4" />
   </root>
-  <root nodeId="2182758403694683800">
+  <root nodeId="2182758403694683800" modelId="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)">
     <nodeInfo nodeId="2182758403694683801" fileName="ITestResource.java" startLine="9" startPosition="50" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildCommandLine#()Ljava/util/List;" />
     <nodeInfo nodeId="2182758403694683806" fileName="ITestResource.java" startLine="10" startPosition="41" endLine="11" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Ljetbrains/mps/project/IModule;" />
     <scopeInfo nodeId="2182758403694683801" fileName="ITestResource.java" startLine="9" startPosition="50" endLine="10" endPosition="41" />
     <scopeInfo nodeId="2182758403694683806" fileName="ITestResource.java" startLine="10" startPosition="41" endLine="11" endPosition="29" />
     <unitInfo nodeId="2182758403694683800" fileName="ITestResource.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.ITestResource" />
   </root>
-  <root nodeId="2182758403694683812">
+  <root nodeId="2182758403694683812" modelId="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)">
     <nodeInfo nodeId="2179243551222162510" fileName="TestCollector.java" startLine="37" startPosition="28" endLine="38" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_CASE" />
     <nodeInfo nodeId="2179243551222162912" fileName="TestCollector.java" startLine="38" startPosition="54" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_ANN" />
     <nodeInfo nodeId="2179243551222162987" fileName="TestCollector.java" startLine="39" startPosition="52" endLine="40" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_LAUNCH_ANN" />
@@ -564,7 +564,7 @@
     <unitInfo nodeId="2182758403694684111" fileName="TestCollector.java" startLine="217" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$QuotationClass_rpw6il_a0a0a0a0a0c0a0a8" />
     <unitInfo nodeId="2182758403694684144" fileName="TestCollector.java" startLine="235" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.TestCollector$QuotationClass_rpw6il_a0a0a0a0a0c0a0a9" />
   </root>
-  <root nodeId="2182758403694684223">
+  <root nodeId="2182758403694684223" modelId="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)">
     <nodeInfo nodeId="2182758403694684397" fileName="Tester.java" startLine="22" startPosition="46" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
     <nodeInfo nodeId="2182758403694684400" fileName="Tester.java" startLine="23" startPosition="25" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="testClasses" />
     <nodeInfo nodeId="2182758403694684385" fileName="Tester.java" startLine="26" startPosition="63" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -638,7 +638,7 @@
     <unitInfo nodeId="2182758403694684342" fileName="Tester.java" startLine="58" startPosition="45" endLine="62" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Tester$1" />
     <unitInfo nodeId="2182758403694684357" fileName="Tester.java" startLine="63" startPosition="56" endLine="67" endPosition="5" unitName="jetbrains.mps.build.gentest.plugin.Tester$2" />
   </root>
-  <root nodeId="3705898146943254769">
+  <root nodeId="3705898146943254769" modelId="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)">
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="38" startPosition="45" endLine="39" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="39" startPosition="82" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="42" startPosition="23" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -890,9 +890,9 @@
     <unitInfo nodeId="7226636334567097805" fileName="Diff_Facet.java" startLine="93" startPosition="34" endLine="99" endPosition="19" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$2" />
     <unitInfo nodeId="3705898146943254769" fileName="Diff_Facet.java" startLine="210" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$TargetProperties" />
     <unitInfo nodeId="3705898146943254774" fileName="Diff_Facet.java" startLine="70" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$Target_diff" />
-    <unitInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="178" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet.Target_diff$Parameters" />
+    <unitInfo nodeId="3705898146943254947" fileName="Diff_Facet.java" startLine="178" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Diff_Facet$Target_diff$Parameters" />
   </root>
-  <root nodeId="8852346936509564326">
+  <root nodeId="8852346936509564326" modelId="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)">
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="34" startPosition="45" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="35" startPosition="82" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="38" startPosition="23" endLine="39" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1183,7 +1183,6 @@
       <varInfo nodeId="8852346936509681512" varName="gr" />
       <varInfo nodeId="3638565609602523642" varName="tests" />
     </scopeInfo>
-    <scopeInfo nodeId="8852346936509564331" fileName="Test_Facet.java" startLine="81" startPosition="19" endLine="94" endPosition="15" />
     <scopeInfo nodeId="8852346936509659287" fileName="Test_Facet.java" startLine="81" startPosition="19" endLine="94" endPosition="15">
       <varInfo nodeId="8852346936509659289" varName="resource" />
     </scopeInfo>
@@ -1226,7 +1225,7 @@
     <unitInfo nodeId="8852346936509564326" fileName="Test_Facet.java" startLine="280" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$TargetProperties" />
     <unitInfo nodeId="8852346936509564329" fileName="Test_Facet.java" startLine="67" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$Target_collectTest" />
     <unitInfo nodeId="8852346936509659263" fileName="Test_Facet.java" startLine="156" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$Target_runTests" />
-    <unitInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="256" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet.Target_runTests$Parameters" />
+    <unitInfo nodeId="8852346936509691323" fileName="Test_Facet.java" startLine="256" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.build.gentest.plugin.Test_Facet$Target_runTests$Parameters" />
   </root>
 </debugInfo>
 

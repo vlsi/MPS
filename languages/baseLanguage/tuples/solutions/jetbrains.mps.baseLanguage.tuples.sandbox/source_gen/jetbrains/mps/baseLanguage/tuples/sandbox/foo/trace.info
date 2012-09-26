@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4290232310992490187">
+  <root nodeId="4290232310992490187" modelId="r:94910e79-1d3f-434f-b2c0-94371a9bbe8d(jetbrains.mps.baseLanguage.tuples.sandbox.foo)">
     <nodeInfo nodeId="4290232310992490211" fileName="Fubar.java" startLine="9" startPosition="20" endLine="10" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="a" />
     <nodeInfo nodeId="4290232310992498348" fileName="Fubar.java" startLine="12" startPosition="18" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4290232310992498067" fileName="Fubar.java" startLine="16" startPosition="42" endLine="17" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
