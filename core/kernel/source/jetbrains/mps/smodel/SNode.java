@@ -783,7 +783,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return findConceptProperty(propertyName) != null;
   }
 
-
   public boolean isDescendantOf(SNode node, boolean includeThis) {
     SNode current;
     if (includeThis) {
@@ -853,7 +852,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return list;
   }
 
-
   public void setName(String name) {
     setProperty(SNodeUtil.property_INamedConcept_name, name);
   }
@@ -902,13 +900,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return count;
   }
 
-  public StackTraceElement[] getModelDisposedTrace() {
-    if (myModel != null) {
-      return myModel.getDisposedStacktrace();
-    } else {
-      return null;
-    }
-  }
 
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
@@ -1131,7 +1122,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1150,6 +1140,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, is not supposed to be used in MPS
+   * @Deprecated in 3.0
+   */
+  public StackTraceElement[] getModelDisposedTrace() {
+    return getModel() == null ? null : getModel().getDisposedStacktrace();
+  }
 
   @Deprecated
   /**
