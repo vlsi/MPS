@@ -802,35 +802,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return findConceptProperty(propertyName) != null;
   }
 
-  public SNode findChildByPath(String path) {
-    if (path == null) return null;
-    String residual = path;
-    SNode current = this;
-    while (!residual.equals("") && current != null) {
-      residual = residual.substring(1);
-      int index = residual.indexOf("/");
-      String roleAndNumber = index == -1 ? residual : residual.substring(0, index);
-      residual = residual.substring(roleAndNumber.length());
-
-      int numberIndex = roleAndNumber.indexOf("#");
-      String role = numberIndex == -1 ? roleAndNumber : roleAndNumber.substring(0, numberIndex);
-      String numberString = numberIndex == -1 ? "-1" : roleAndNumber.substring(numberIndex + 1);
-      int number = Integer.parseInt(numberString);
-
-      if (number == -1) {
-        current = current.getChild(role);
-      } else {
-        List<SNode> childrenForRole = current.getChildren(role);
-        if (number < childrenForRole.size()) {
-          current = childrenForRole.get(number);
-        } else {
-          current = null;
-        }
-      }
-    }
-    return current;
-  }
-
   public List<SNode> getDescendants(Condition<SNode> condition) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1082,6 +1053,40 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Set<String> getPropertyNames() {
     return jetbrains.mps.util.SNodeOperations.getProperties(this).keySet();
+  }
+
+  @Deprecated
+  /**
+   * Is not supposed to be used. Inline.
+   * @Deprecated in 3.0
+   */
+  public SNode findChildByPath(String path) {
+    if (path == null) return null;
+    String residual = path;
+    SNode current = this;
+    while (!residual.equals("") && current != null) {
+      residual = residual.substring(1);
+      int index = residual.indexOf("/");
+      String roleAndNumber = index == -1 ? residual : residual.substring(0, index);
+      residual = residual.substring(roleAndNumber.length());
+
+      int numberIndex = roleAndNumber.indexOf("#");
+      String role = numberIndex == -1 ? roleAndNumber : roleAndNumber.substring(0, numberIndex);
+      String numberString = numberIndex == -1 ? "-1" : roleAndNumber.substring(numberIndex + 1);
+      int number = Integer.parseInt(numberString);
+
+      if (number == -1) {
+        current = current.getChild(role);
+      } else {
+        List<SNode> childrenForRole = current.getChildren(role);
+        if (number < childrenForRole.size()) {
+          current = childrenForRole.get(number);
+        } else {
+          current = null;
+        }
+      }
+    }
+    return current;
   }
 
   @Deprecated
