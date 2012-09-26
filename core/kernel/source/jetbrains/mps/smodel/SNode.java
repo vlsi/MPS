@@ -1130,24 +1130,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return jetbrains.mps.util.SNodeOperations.getReferences(this);
   }
 
-  public int getIndexOfChild(SNode child_) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    String role_ = child_.getRole();
-    if (role_ == null) return -1;
-    int count = 0;
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (child == child_) return count;
-      if (role_.equals(child.getRole())) {
-        count++;
-      }
-    }
-    return -1;
-  }
-
   public SNode getReferent(String role) {
     SReference reference = getReference(role);
     SNode result = reference == null ? null : reference.getTargetNode();
@@ -1220,6 +1202,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+
+  //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
     SNode oldChild = getChild(role);
     if (oldChild != null) {
@@ -1230,6 +1220,22 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public int getIndexOfChild(SNode child) {
+    String role = child.getRole();
+    if (role == null) return -1;
+    return getChildren(role).indexOf(child);
+  }
+
+  @Deprecated
+  /**
+   * Do not use. Replace with smodel language or operations from SNodeUtil
+   * @Deprecated in 3.0
+   */
   public void replaceChild(SNode oldChild, List<SNode> newChildren) {
     assert oldChild.treeParent() == this;
     String oldChildRole = oldChild.getRole();
