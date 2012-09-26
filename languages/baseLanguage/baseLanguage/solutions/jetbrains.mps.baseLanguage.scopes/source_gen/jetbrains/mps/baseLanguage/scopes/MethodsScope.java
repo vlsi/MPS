@@ -12,20 +12,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 
 public class MethodsScope extends Scope {
   private final Map<SNode, SNode> typeBindings;
   private final Map<String, List<SNode>> nameToMethods;
 
-  public MethodsScope(SNode classifierTypeNode, Iterable<SNode> methods) {
+  public MethodsScope(Iterable<SNode> methods, Map<SNode, SNode> typeByTypeVariable) {
     nameToMethods = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     for (SNode method : Sequence.fromIterable(methods)) {
       String name = SPropertyOperations.getString(method, "name");
@@ -38,21 +36,15 @@ public class MethodsScope extends Scope {
       }
     }
 
-    // todo: make static constructors (static and instance methods?) from IClassifierType 
-    boolean isStatic = Sequence.fromIterable(methods).all(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IClassifierMember") && IClassifierMember_Behavior.call_isStatic_7405920559687241224(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
-      }
-    });
-    if (isStatic) {
-      typeBindings = new HashMap<SNode, SNode>();
-    } else {
-      SNode classifier = IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierTypeNode);
-      typeBindings = ((classifier != null) ?
-        MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), IClassifierType_Behavior.call_getTypeParameters_7405920559687237518(classifierTypeNode)) :
-        Collections.<SNode,SNode>emptyMap()
-      );
-    }
+    this.typeBindings = typeByTypeVariable;
+  }
+
+  public MethodsScope(SNode classifierType, Iterable<SNode> methods) {
+    this(methods, calcTypeBindings(classifierType));
+  }
+
+  public MethodsScope(Iterable<SNode> methods) {
+    this(methods, Collections.<SNode,SNode>emptyMap());
   }
 
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
@@ -102,5 +94,13 @@ public class MethodsScope extends Scope {
     }
 
     return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeBindings);
+  }
+
+  private static Map<SNode, SNode> calcTypeBindings(SNode classifierType) {
+    SNode classifier = IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierType);
+    return ((classifier != null) ?
+      MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), IClassifierType_Behavior.call_getTypeParameters_7405920559687237518(classifierType)) :
+      Collections.<SNode,SNode>emptyMap()
+    );
   }
 }

@@ -11,12 +11,9 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigrationScript {
   public ConvertExtensionMethodCallToLocal_MigrationScript(IOperationContext operationContext) {
@@ -47,17 +44,8 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
         if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
           return false;
         }
-        SNode constraint = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         while (classifier != declarationClassifier) {
-          for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, node, constraint).getAvailableElements(SPropertyOperations.getString(declaration, "name"))).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-            }
-          }).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-            }
-          })) {
+          for (SNode method : Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), node)) {
             if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
               return false;
             }
