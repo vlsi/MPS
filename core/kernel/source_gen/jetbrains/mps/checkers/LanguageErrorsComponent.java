@@ -104,7 +104,7 @@ public class LanguageErrorsComponent {
     }
     String id = (ruleNode == null ?
       null :
-      ruleNode.getNodeId().toString()
+      ruleNode.getSNodeId().toString()
     );
     String modelId = (ruleNode == null ?
       null :

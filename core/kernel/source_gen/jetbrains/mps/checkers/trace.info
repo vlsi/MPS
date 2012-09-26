@@ -677,9 +677,7 @@
     <scopeInfo nodeId="7390982340086719098" fileName="LanguageErrorsComponent.java" startLine="216" startPosition="52" endLine="224" endPosition="5" />
     <scopeInfo nodeId="7390982340086719151" fileName="LanguageErrorsComponent.java" startLine="235" startPosition="56" endLine="243" endPosition="5" />
     <scopeInfo nodeId="7390982340086719201" fileName="LanguageErrorsComponent.java" startLine="250" startPosition="23" endLine="258" endPosition="26" />
-    <scopeInfo nodeId="7390982340086718859" fileName="LanguageErrorsComponent.java" startLine="139" startPosition="30" endLine="148" endPosition="7">
-      <varInfo nodeId="7390982340086718860" varName="additional" />
-    </scopeInfo>
+    <scopeInfo nodeId="7390982340086718858" fileName="LanguageErrorsComponent.java" startLine="139" startPosition="30" endLine="148" endPosition="7" />
     <scopeInfo nodeId="7390982340086719068" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="7390982340086719093" varName="affectedNode" />
     </scopeInfo>

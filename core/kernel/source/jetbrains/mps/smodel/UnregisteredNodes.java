@@ -57,7 +57,7 @@ public class UnregisteredNodes {
   }
 
   void put(SNode node) {
-    if (myDisabled || !(node.getNodeId() != null)) return;
+    if (myDisabled || !(node.getSNodeId() != null)) return;
     add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
 

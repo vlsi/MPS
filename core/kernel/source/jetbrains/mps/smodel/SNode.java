@@ -455,10 +455,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new ArrayList<SReference>(_reference());
   }
 
-  public SNodeId getNodeId(){
-    return getSNodeId();
-  }
-
 //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
