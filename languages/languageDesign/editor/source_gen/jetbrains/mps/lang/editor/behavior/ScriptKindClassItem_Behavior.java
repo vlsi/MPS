@@ -19,7 +19,7 @@ public class ScriptKindClassItem_Behavior {
         {
           SNode matchingNode_o7mo2_a0a0 = SNodeOperations.getParent(cellModel);
           if (matchingNode_o7mo2_a0a0 != null) {
-            matches_o7mo2_a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_o7mo2_a0a0.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+            matches_o7mo2_a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_o7mo2_a0a0.getConcept().getId(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
           }
         }
         if (matches_o7mo2_a0a0) {
@@ -29,7 +29,7 @@ public class ScriptKindClassItem_Behavior {
           {
             SNode matchingNode_o7mo2_b0a0 = SNodeOperations.getParent(cellModel);
             if (matchingNode_o7mo2_b0a0 != null) {
-              matches_o7mo2_b0a0 = SModelUtil_new.isAssignableConcept(matchingNode_o7mo2_b0a0.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
+              matches_o7mo2_b0a0 = SModelUtil_new.isAssignableConcept(matchingNode_o7mo2_b0a0.getConcept().getId(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
             }
           }
           if (matches_o7mo2_b0a0) {

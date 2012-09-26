@@ -121,9 +121,7 @@
       <varInfo nodeId="6547494638219585446" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1117643560963218972" fileName="TaskLibrariesHelper.java" startLine="44" startPosition="28" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="1117643560963219076" fileName="TaskLibrariesHelper.java" startLine="64" startPosition="73" endLine="75" endPosition="7">
-      <varInfo nodeId="1117643560963219077" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="1117643560963219075" fileName="TaskLibrariesHelper.java" startLine="64" startPosition="73" endLine="75" endPosition="7" />
     <scopeInfo nodeId="1117643560963218877" fileName="TaskLibrariesHelper.java" startLine="106" startPosition="47" endLine="117" endPosition="5">
       <varInfo nodeId="1117643560963218879" varName="queue" />
     </scopeInfo>

@@ -72,7 +72,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6139750523307920886(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ("let_" + _context.getNode().getId());
+    return ("let_" + _context.getNode().getSNodeId().toString());
   }
 
   public static Object propertyMacro_GetPropertyValue_466391367986582294(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -112,7 +112,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2167053794906731228(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Function_" + _context.getNode().getId();
+    return "Function_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2985097847315884744(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -128,7 +128,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_816130369292752659(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "lambdaAbstr_" + SLinkOperations.getTarget(_context.getNode(), "function", true).getId();
+    return "lambdaAbstr_" + SLinkOperations.getTarget(_context.getNode(), "function", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2985097847315884705(final IOperationContext operationContext, final PropertyMacroContext _context) {

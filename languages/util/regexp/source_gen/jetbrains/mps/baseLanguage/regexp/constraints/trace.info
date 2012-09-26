@@ -512,9 +512,7 @@
     <scopeInfo nodeId="8030573611853647788" fileName="RegexUtil.java" startLine="17" startPosition="49" endLine="20" endPosition="5">
       <varInfo nodeId="8030573611853647795" varName="ruc" />
     </scopeInfo>
-    <scopeInfo nodeId="8030573611853647856" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9">
-      <varInfo nodeId="8030573611853647870" varName="expr" />
-    </scopeInfo>
+    <scopeInfo nodeId="8030573611853647855" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9" />
     <scopeInfo nodeId="8030573611853647937" fileName="RegexUtil.java" startLine="52" startPosition="175" endLine="55" endPosition="11" />
     <scopeInfo nodeId="8030573611853647971" fileName="RegexUtil.java" startLine="61" startPosition="198" endLine="64" endPosition="9" />
     <scopeInfo nodeId="8030573611853648000" fileName="RegexUtil.java" startLine="70" startPosition="65" endLine="73" endPosition="15">
@@ -525,7 +523,9 @@
       <varInfo nodeId="8030573611853795830" varName="mpe" />
     </scopeInfo>
     <scopeInfo nodeId="8030573611853647835" fileName="RegexUtil.java" startLine="26" startPosition="85" endLine="30" endPosition="11" />
-    <scopeInfo nodeId="8030573611853647933" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="8030573611853647934" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9">
+      <varInfo nodeId="8030573611853647935" varName="regref" />
+    </scopeInfo>
     <scopeInfo nodeId="8030573611853647960" fileName="RegexUtil.java" startLine="60" startPosition="116" endLine="65" endPosition="7">
       <varInfo nodeId="8030573611853647969" varName="expr" />
     </scopeInfo>

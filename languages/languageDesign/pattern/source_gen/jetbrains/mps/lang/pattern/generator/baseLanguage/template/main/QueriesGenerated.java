@@ -34,7 +34,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getConceptFqName();
+    return _context.getNode().getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931377077(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -216,11 +216,11 @@ public class QueriesGenerated {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_8843103228116991971(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_2144206851851948492(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_3527005385733066929(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_2144206851851948502(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
@@ -603,7 +603,7 @@ public class QueriesGenerated {
       SNode referent = _context.getNode().getReferent(referentRole);
       SPropertyOperations.set(referenceNode, "role", referentRole);
       SPropertyOperations.set(referenceNode, "model", referent.getModel().getSModelReference().toString());
-      SPropertyOperations.set(referenceNode, "id", referent.getId());
+      SPropertyOperations.set(referenceNode, "id", referent.getSNodeId().toString());
       SLinkOperations.setTarget(referenceNode, "mainNode", _context.getNode(), false);
       ListSequence.fromList(result).addElement(referenceNode);
     }

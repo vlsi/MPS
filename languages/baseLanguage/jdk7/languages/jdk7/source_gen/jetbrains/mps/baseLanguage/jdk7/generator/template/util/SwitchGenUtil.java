@@ -35,7 +35,7 @@ public class SwitchGenUtil {
   }
 
   public static Map<String, Integer> getMap(SNode node, TemplateQueryContext genContext) {
-    Map<String, Integer> m = (Map<String, Integer>) genContext.getTransientObject("switch" + node.getId());
+    Map<String, Integer> m = (Map<String, Integer>) genContext.getTransientObject("switch" + node.getSNodeId().toString());
     if (m != null) {
       return m;
     }
@@ -46,7 +46,7 @@ public class SwitchGenUtil {
     for (SNode e : nodes) {
       MapSequence.fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"), index++);
     }
-    genContext.putTransientObject("switch" + node.getId(), m);
+    genContext.putTransientObject("switch" + node.getSNodeId().toString(), m);
     return m;
   }
 }

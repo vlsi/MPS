@@ -42,17 +42,17 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_937236280924643241(final IOperationContext operationContext, final PropertyMacroContext _context) {
     //  the 'node' expression may have been already mapped and unique name created for it 
-    String uniqName = (String) _context.getTransientObject("parameterFromExpressions_" + _context.getNode().getId());
+    String uniqName = (String) _context.getTransientObject("parameterFromExpressions_" + _context.getNode().getSNodeId().toString());
     uniqName = (uniqName != null ?
       uniqName :
       "parameter_" + QuotationUtil.genQuotationNodeId(_context, _context.getNode())
     );
-    _context.putTransientObject("parameterFromExpressions_" + _context.getNode().getId(), uniqName);
+    _context.putTransientObject("parameterFromExpressions_" + _context.getNode().getSNodeId().toString(), uniqName);
     return uniqName;
   }
 
   public static Object propertyMacro_GetPropertyValue_1196351886765(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getConceptFqName();
+    return _context.getNode().getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1201868689728(final IOperationContext operationContext, final PropertyMacroContext _context) {

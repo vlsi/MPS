@@ -34,7 +34,7 @@ public class TemplateCallMacro_Behavior {
       {
         SNode nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0;
         nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0.getConcept().getId()))) {
           return false;
         }
         patternVar_concept = nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0.getReferent("concept");

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="178770917832460637">
+  <root nodeId="178770917832460637" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="18" startPosition="82" endLine="19" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="21" startPosition="46" endLine="22" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="26" startPosition="83" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -38,7 +38,7 @@
     <unitInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="28" startPosition="35" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.AnalyzerRunnerCreator_Constraints$1" />
     <unitInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.AnalyzerRunnerCreator_Constraints$2" />
   </root>
-  <root nodeId="4217760266503650622">
+  <root nodeId="4217760266503650622" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="23" startPosition="81" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_yymroq_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="26" startPosition="45" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -84,14 +84,14 @@
     <unitInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="33" startPosition="38" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.InstructionReference_Constraints$1" />
     <unitInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.InstructionReference_Constraints$2" />
   </root>
-  <root nodeId="4943044633101742685">
+  <root nodeId="4943044633101742685" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="4943044633101742685" fileName="ConceptCondition_Constraints.java" startLine="8" startPosition="41" endLine="9" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4943044633101742685" fileName="ConceptCondition_Constraints.java" startLine="7" startPosition="77" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptCondition_Constraints#()V" />
     <scopeInfo nodeId="4943044633101742685" fileName="ConceptCondition_Constraints.java" startLine="8" startPosition="41" endLine="9" endPosition="78" />
     <scopeInfo nodeId="4943044633101742685" fileName="ConceptCondition_Constraints.java" startLine="7" startPosition="77" endLine="10" endPosition="3" />
     <unitInfo nodeId="4943044633101742685" fileName="ConceptCondition_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ConceptCondition_Constraints" />
   </root>
-  <root nodeId="4943044633102057755">
+  <root nodeId="4943044633102057755" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="23" startPosition="84" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_b5wqlc_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="26" startPosition="48" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -136,7 +136,7 @@
     <unitInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="33" startPosition="41" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ApplicableNodeReference_Constraints$1" />
     <unitInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="42" startPosition="19" endLine="57" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ApplicableNodeReference_Constraints$2" />
   </root>
-  <root nodeId="7985661997283725842">
+  <root nodeId="7985661997283725842" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="7985661997283725842" fileName="IsOperation_Constraints.java" startLine="21" startPosition="72" endLine="22" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="7985661997283725842" fileName="IsOperation_Constraints.java" startLine="22" startPosition="189" endLine="23" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_ejw1sa_a0a1a0a0a1a0b0a1a2" />
     <nodeInfo nodeId="7985661997283725842" fileName="IsOperation_Constraints.java" startLine="25" startPosition="36" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -207,14 +207,14 @@
     <unitInfo nodeId="7985661997283725842" fileName="IsOperation_Constraints.java" startLine="48" startPosition="38" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.IsOperation_Constraints$1" />
     <unitInfo nodeId="7985661997283725842" fileName="IsOperation_Constraints.java" startLine="57" startPosition="19" endLine="67" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.IsOperation_Constraints$2" />
   </root>
-  <root nodeId="8424563347437838493">
+  <root nodeId="8424563347437838493" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="8424563347437838493" fileName="EmitInstruction_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8424563347437838493" fileName="EmitInstruction_Constraints.java" startLine="7" startPosition="76" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmitInstruction_Constraints#()V" />
     <scopeInfo nodeId="8424563347437838493" fileName="EmitInstruction_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="77" />
     <scopeInfo nodeId="8424563347437838493" fileName="EmitInstruction_Constraints.java" startLine="7" startPosition="76" endLine="10" endPosition="3" />
     <unitInfo nodeId="8424563347437838493" fileName="EmitInstruction_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.constraints.EmitInstruction_Constraints" />
   </root>
-  <root nodeId="95073643532950051">
+  <root nodeId="95073643532950051" modelId="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)">
     <nodeInfo nodeId="95073643532950051" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="16" startPosition="91" endLine="17" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="95073643532950051" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="19" startPosition="55" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="95073643532950051" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

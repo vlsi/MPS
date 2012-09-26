@@ -206,7 +206,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8285036680620207080(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getConceptFqName();
+    return _context.getNode().getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_8285036680620207089(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -475,7 +475,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6612261708901109136(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(_context.getNode()).getConceptFqName();
+    return SNodeOperations.getParent(_context.getNode()).getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_99767819676504012(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -631,7 +631,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6612261708901143234(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(_context.getNode()).getConceptFqName();
+    return SNodeOperations.getParent(_context.getNode()).getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_8196331069071255561(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -710,7 +710,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_330395710727988798(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "patternNode", true).getConceptFqName();
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "patternNode", true).getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_9191117361655049724(final IOperationContext operationContext, final PropertyMacroContext _context) {
