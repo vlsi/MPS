@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
@@ -160,8 +159,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void visitProperties(PropertyVisitor v) {
-    for (Entry<String, String> e : getProperties().entrySet()) {
-      if (!v.visitProperty(e.getKey(), e.getValue())) return;
+    if (myProperties == null) return;
+    for (int i = 0; i < myProperties.length; i += 2) {
+      v.visitProperty(myProperties[i], myProperties[i + 1]);
     }
   }
 
@@ -361,8 +361,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void visitReferences(ReferenceVisitor v) {
-    for (SReference ref : getReferences()) {
-      if (!v.visitReference(ref.getRole(), ref)) return;
+    if (myReferences == null) return;
+    for (SReference ref : myReferences) {
+      v.visitReference(ref.getRole(), ref);
     }
   }
 
@@ -1002,14 +1003,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-  public Map<String, String> getProperties() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (myProperties == null) return Collections.emptyMap();
-    return new PropertiesMap(myProperties);
-  }
-
   public List<SNode> getReferents() {
     ModelAccess.assertLegalRead(this);
 
@@ -1028,16 +1021,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void addReference(SReference reference) {
     assert reference.getSourceNode() == this;
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
-  }
-
-  public SReference[] getReferencesArray() {
-    SReference[] references = new SReference[myReferences.length];
-    System.arraycopy(myReferences, 0, references, 0, myReferences.length);
-    return references;
-  }
-
-  public Collection<SReference> getReferencesIterable() {
-    return jetbrains.mps.util.SNodeOperations.getReferences(this);
   }
 
   public List<SNode> getChildren(boolean includeAttributes) {
@@ -1062,6 +1045,34 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Use visitProperties()
+   * @Deprecated in 3.0
+   */
+  public Map<String, String> getProperties() {
+    return jetbrains.mps.util.SNodeOperations.getProperties(this);
+  }
+
+  @Deprecated
+  /**
+   * Use visitReferences()
+   * @Deprecated in 3.0
+   */
+  public SReference[] getReferencesArray() {
+    List<SReference> refs = jetbrains.mps.util.SNodeOperations.getReferences(this);
+    return refs.toArray(new SReference[refs.size()]);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Collection<SReference> getReferencesIterable() {
+    return jetbrains.mps.util.SNodeOperations.getReferences(this);
+  }
 
   @Deprecated
   /**
