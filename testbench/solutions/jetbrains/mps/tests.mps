@@ -345,9 +345,6 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707830929">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.3852894662483397197" resolveInfo="PriorityCheckTest" />
     </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707830930">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.7164702912147669285" resolveInfo="SubstitutionOfMethodWithNameSimularToStaticMethod" />
-    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707830931">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.8547191361977403062" resolveInfo="ReturnFollowerByVarName" />
     </node>
