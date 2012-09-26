@@ -983,10 +983,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return "<no role>";
   }
 
-  public Set<String> getChildRoles() {
-    return getChildRoles(false);
-  }
-
   public Set<String> getReferenceRoles() {
     ModelAccess.assertLegalRead(this);
 
@@ -1147,6 +1143,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public StackTraceElement[] getModelDisposedTrace() {
     return getModel() == null ? null : getModel().getDisposedStacktrace();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Set<String> getChildRoles() {
+    return getChildRoles(false);
   }
 
   @Deprecated
