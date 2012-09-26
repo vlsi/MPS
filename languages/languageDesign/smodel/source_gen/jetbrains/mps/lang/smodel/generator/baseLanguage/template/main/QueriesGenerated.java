@@ -31,6 +31,7 @@ import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behav
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -793,8 +794,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_891543857195932480(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptBehavior = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(conceptBehavior, "concept", false));
+    SNode leftExpression = SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(leftExpression));
   }
 
   public static Object propertyMacro_GetPropertyValue_891543857195932500(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -802,8 +803,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_891543857195934287(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptBehavior = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(conceptBehavior, "concept", false));
+    SNode leftExpression = SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(leftExpression));
   }
 
   public static Object propertyMacro_GetPropertyValue_891543857195934307(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -929,7 +930,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_891543857195932540(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
     return (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression") ?
-      "invokeSuper" :
+      "invokeSuperNew" :
       "invoke"
     );
   }
@@ -944,7 +945,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_891543857195934347(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
     return (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression") ?
-      "invokeSuper" :
+      "invokeSuperNew" :
       "invoke"
     );
   }
