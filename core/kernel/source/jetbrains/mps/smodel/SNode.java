@@ -313,7 +313,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public SNode getReferenceTarget(String role) {
-    return getReferent(role);
+    SReference reference = getReference(role);
+    SNode result = reference == null ? null : reference.getTargetNode();
+    if (result != null) {
+      NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result);
+    }
+    return result;
   }
 
   public SReference getReference(String role) {
@@ -812,20 +817,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return current;
   }
 
-  public String getNodePath(SNode child) {
-    StringBuilder sb = new StringBuilder();
-    SNode current = child;
-    while (current != this && current != null) {
-      String role = current.getRole();
-      SNode currentParent = current.getParent();
-      List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
-      String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
-      sb.insert(0, "/" + role + numberString);
-      current = currentParent;
-    }
-    return sb.toString();
-  }
-
   public List<SNode> getDescendants(Condition<SNode> condition) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -924,19 +915,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public boolean isInstanceOfConcept(SNode concept) {
-    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)));
-  }
-
-  public SNode getChildAt(int index) {
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (index-- == 0) {
-        return child;
-      }
-    }
-    return null;
-  }
-
   public SNode getNextChild(SNode child) {
     String childRole = child.getRole();
     assert childRole != null : "role must be not null";
@@ -985,19 +963,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     } else {
       insertChild(role, child, anchorChild);
     }
-  }
-
-  public Set<String> getPropertyNames() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
-    if (myProperties != null) {
-      for (int i = 0; i < myProperties.length; i += 2) {
-        result.add(myProperties[i]);
-      }
-    }
-    return result;
   }
 
   public String getRoleOf(SNode node) {
@@ -1075,15 +1040,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return jetbrains.mps.util.SNodeOperations.getReferences(this);
   }
 
-  public SNode getReferent(String role) {
-    SReference reference = getReference(role);
-    SNode result = reference == null ? null : reference.getTargetNode();
-    if (result != null) {
-      NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result);
-    }
-    return result;
-  }
-
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1097,11 +1053,61 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+  public boolean isInstanceOfConcept(SNode concept) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+  }
+
   public boolean isInstanceOfConcept(String conceptFqName) {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Do not use. Replace with visitProperties
+   * @Deprecated in 3.0
+   */
+  public Set<String> getPropertyNames() {
+    return jetbrains.mps.util.SNodeOperations.getProperties(this).keySet();
+  }
+
+  @Deprecated
+  /**
+   * Is not supposed to be used. Inline.
+   * @Deprecated in 3.0
+   */
+  public String getNodePath(SNode child) {
+    StringBuilder sb = new StringBuilder();
+    SNode current = child;
+    while (current != this && current != null) {
+      String role = current.getRole();
+      SNode currentParent = current.getParent();
+      List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
+      String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
+      sb.insert(0, "/" + role + numberString);
+      current = currentParent;
+    }
+    return sb.toString();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode getChildAt(int index) {
+    return getChildren().get(index);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode getReferent(String role) {
+    return getReferenceTarget(role);
+  }
 
   @Deprecated
   /**

@@ -15,17 +15,15 @@
  */
 package jetbrains.mps.lang.pattern.util;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.ObjectUtils;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MatchingUtil {
   private static final Logger LOG = Logger.getLogger(MatchingUtil.class);
@@ -41,21 +39,27 @@ public class MatchingUtil {
     if (!node1.getConceptFqName().equals(node2.getConceptFqName())) return false;
 
     //properties
-    Set<String> propertyNames1 = node1.getPropertyNames();
-    Set<String> propertyNames = propertyNames1;
-    propertyNames.addAll(node2.getPropertyNames());
+    final Set<String> propertyNames = new HashSet<String>();
+    PropertyVisitor collector = new PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        propertyNames.add(name);
+        return true;
+      }
+    };
+    node1.visitProperties(collector);
+    node2.visitProperties(collector);
+
+    SNode typeDeclaration = node1.getConceptDeclarationNode();
+
     for (String propertyName : propertyNames) {
-      SNode typeDeclaration = node1.getConceptDeclarationNode();
       SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
       String propertyValue1 = node1.getProperty(propertyName);
       String propertyValue2 = node2.getProperty(propertyName);
       if (propertyDeclaration == null) {
-        SNode diagnosticsNode = propertyNames1.contains(propertyName) ? node1 : node2;
+        SNode diagnosticsNode = node1.getProperty(propertyName) != null ? node1 : node2;
         LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
-        if (!ObjectUtils.equals(propertyValue1, propertyValue2)) {
-          return false;
-        }
+        if (!ObjectUtils.equals(propertyValue1, propertyValue2)) return false;
       } else {
         PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
         if (!ObjectUtils.equals(propertySupport.fromInternalValue(propertyValue1),

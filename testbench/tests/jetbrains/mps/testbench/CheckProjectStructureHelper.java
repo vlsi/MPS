@@ -320,9 +320,9 @@ public class CheckProjectStructureHelper {
 
       node.visitChildren(new ChildVisitor() {
         public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-          SLink link = concept.findLink(child.getRole());
+          SLink link = concept.findLink(role);
           if (link == null || link.isReference()) {
-            result.add("unknown child role: `" + child.getRole() + "' in node " + node.getDebugText());
+            result.add("unknown child role: `" + role + "' in node " + node.getDebugText());
           }
           return true;
         }

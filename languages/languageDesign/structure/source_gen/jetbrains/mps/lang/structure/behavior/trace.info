@@ -919,7 +919,9 @@
       <varInfo nodeId="2165772098013606221" varName="language" />
       <varInfo nodeId="2165772098013606280" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877394247" fileName="AbstractConceptDeclaration_Behavior.java" startLine="138" startPosition="30" endLine="161" endPosition="9" />
+    <scopeInfo nodeId="1213877394248" fileName="AbstractConceptDeclaration_Behavior.java" startLine="138" startPosition="30" endLine="161" endPosition="9">
+      <varInfo nodeId="1213877394252" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877394026" fileName="AbstractConceptDeclaration_Behavior.java" startLine="296" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="1213877394026" varName="thisNode" />
     </scopeInfo>

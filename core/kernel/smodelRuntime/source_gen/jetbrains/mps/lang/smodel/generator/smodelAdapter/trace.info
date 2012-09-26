@@ -1591,7 +1591,9 @@
     <scopeInfo nodeId="6599163591527286562" fileName="SLinkOperations.java" startLine="85" startPosition="23" endLine="88" endPosition="22">
       <varInfo nodeId="6599163591527286925" varName="newChild" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527286636" fileName="SLinkOperations.java" startLine="104" startPosition="78" endLine="107" endPosition="5" />
+    <scopeInfo nodeId="6599163591527286637" fileName="SLinkOperations.java" startLine="104" startPosition="78" endLine="107" endPosition="5">
+      <varInfo nodeId="6599163591527286639" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6599163591527286766" fileName="SLinkOperations.java" startLine="143" startPosition="52" endLine="146" endPosition="5">
       <varInfo nodeId="6599163591527286768" varName="child" />
     </scopeInfo>
@@ -2556,7 +2558,9 @@
       <varInfo nodeId="6599163591527294350" varName="result" />
       <varInfo nodeId="6599163591527294377" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527294777" fileName="SNodeOperations.java" startLine="503" startPosition="73" endLine="523" endPosition="5" />
+    <scopeInfo nodeId="6599163591527294778" fileName="SNodeOperations.java" startLine="503" startPosition="73" endLine="523" endPosition="5">
+      <varInfo nodeId="6599163591527294782" varName="attribute" />
+    </scopeInfo>
     <scopeInfo nodeId="6599163591527294690" fileName="SNodeOperations.java" startLine="481" startPosition="0" endLine="502" endPosition="0">
       <varInfo nodeId="6599163591527294695" varName="conceptFqName" />
       <varInfo nodeId="6599163591527294693" varName="oldChild" />
