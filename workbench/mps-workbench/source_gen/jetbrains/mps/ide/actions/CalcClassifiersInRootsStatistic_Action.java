@@ -120,7 +120,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
             }
 
             if (membersCalcTime > 500) {
-              System.out.printf("%s: old members calc time = %.3f%n", nodeName, membersCalcTime * 0.001);
+              System.out.printf("%s: members calc time = %.3f%n", nodeName, membersCalcTime * 0.001);
               somethingPrinted = true;
             }
             membersOverallTime.value += membersCalcTime;
