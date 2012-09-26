@@ -24,11 +24,11 @@ public class TargetChoosePanel extends ChildChoosePanel<SNode, SNode> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if ((SLinkOperations.getTarget(node, "default", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "default", true), "targetDeclaration", false) != null)) {
-          child.value = ((SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(node, "default", true), "targetDeclaration", false)).getId();
+          child.value = ((SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(node, "default", true), "targetDeclaration", false)).getSNodeId().toString();
         } else {
           List<SNode> childrenNodes = getChildrenNodes(node);
           if (childrenNodes != null && ListSequence.fromList(childrenNodes).isNotEmpty()) {
-            child.value = ((SNode) ListSequence.fromList(childrenNodes).first()).getId();
+            child.value = ((SNode) ListSequence.fromList(childrenNodes).first()).getSNodeId().toString();
           }
         }
       }

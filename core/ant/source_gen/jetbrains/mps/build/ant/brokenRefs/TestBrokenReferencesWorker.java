@@ -116,7 +116,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
         }
         if (ref.getTargetNode() == null) {
           errorMessages.append("Broken reference in node ");
-          errorMessages.append(node.getId());
+          errorMessages.append(node.getSNodeId().toString());
           errorMessages.append("(");
           errorMessages.append(node);
           errorMessages.append(")\n");

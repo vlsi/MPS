@@ -113,7 +113,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           NodeBySeveralConcepts_Configuration.this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
-          NodeBySeveralConcepts_Configuration.this.setNodeId(node.getId());
+          NodeBySeveralConcepts_Configuration.this.setNodeId(node.getSNodeId().toString());
         }
       });
     }

@@ -3455,7 +3455,7 @@
     <nodeInfo nodeId="8598098202018087054" fileName="DefaultBaseLine_Behavior.java" startLine="13" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8598098202018087056" fileName="DefaultBaseLine_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="8598098202018154477" fileName="DefaultBaseLine_Behavior.java" startLine="21" startPosition="49" endLine="22" endPosition="175" />
-    <scopeInfo nodeId="8598098202018154477" fileName="DefaultBaseLine_Behavior.java" startLine="25" startPosition="34" endLine="26" endPosition="497" />
+    <scopeInfo nodeId="8598098202018154479" fileName="DefaultBaseLine_Behavior.java" startLine="25" startPosition="34" endLine="26" endPosition="497" />
     <scopeInfo nodeId="8598098202018154481" fileName="DefaultBaseLine_Behavior.java" startLine="31" startPosition="51" endLine="32" endPosition="176" />
     <scopeInfo nodeId="8598098202018154483" fileName="DefaultBaseLine_Behavior.java" startLine="35" startPosition="36" endLine="36" endPosition="499" />
     <scopeInfo nodeId="8598098202018087054" fileName="DefaultBaseLine_Behavior.java" startLine="10" startPosition="39" endLine="13" endPosition="0">

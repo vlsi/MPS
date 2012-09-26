@@ -954,7 +954,9 @@
       <varInfo nodeId="1747818952411874074" varName="list" />
       <varInfo nodeId="1747818952411874070" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="407" startPosition="52" endLine="411" endPosition="13" />
+    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="407" startPosition="52" endLine="411" endPosition="13">
+      <varInfo nodeId="3416087927885130128" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4060390951635974672" fileName="StandardComponents.java" startLine="439" startPosition="0" endLine="443" endPosition="0">
       <varInfo nodeId="4060390951635974677" varName="caption" />
       <varInfo nodeId="4060390951635974679" varName="list" />
@@ -2792,8 +2794,8 @@
     <nodeInfo nodeId="5923576889075047880" fileName="EditOperandDialog.java" startLine="266" startPosition="85" endLine="267" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5923576889075047888" fileName="EditOperandDialog.java" startLine="267" startPosition="107" endLine="268" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5923576889075047893" fileName="EditOperandDialog.java" startLine="268" startPosition="67" endLine="269" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047904" fileName="EditOperandDialog.java" startLine="269" startPosition="76" endLine="270" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047915" fileName="EditOperandDialog.java" startLine="270" startPosition="61" endLine="271" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047904" fileName="EditOperandDialog.java" startLine="269" startPosition="76" endLine="270" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047915" fileName="EditOperandDialog.java" startLine="270" startPosition="77" endLine="271" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5923576889075047924" fileName="EditOperandDialog.java" startLine="274" startPosition="91" endLine="275" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5923576889075047931" fileName="EditOperandDialog.java" startLine="275" startPosition="82" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5923576889075047942" fileName="EditOperandDialog.java" startLine="277" startPosition="40" endLine="278" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2929,9 +2931,7 @@
       <varInfo nodeId="5923576889075047336" varName="child" />
       <varInfo nodeId="5923576889075047345" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047285" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7">
-      <varInfo nodeId="5923576889075047292" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="5923576889075047284" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7" />
     <scopeInfo nodeId="5923576889075047658" fileName="EditOperandDialog.java" startLine="214" startPosition="63" endLine="217" endPosition="7">
       <varInfo nodeId="5923576889075047660" varName="child" />
     </scopeInfo>
@@ -2994,8 +2994,12 @@
     <scopeInfo nodeId="6801780643483355755" fileName="EditOperandDialog.java" startLine="162" startPosition="101" endLine="168" endPosition="7" />
     <scopeInfo nodeId="5923576889075048085" fileName="EditOperandDialog.java" startLine="311" startPosition="0" endLine="317" endPosition="0" />
     <scopeInfo nodeId="5923576889075046985" fileName="EditOperandDialog.java" startLine="48" startPosition="16" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="5923576889075047432" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11" />
-    <scopeInfo nodeId="6801780643483355745" fileName="EditOperandDialog.java" startLine="161" startPosition="98" endLine="169" endPosition="5" />
+    <scopeInfo nodeId="5923576889075047433" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11">
+      <varInfo nodeId="5923576889075047440" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="6801780643483355746" fileName="EditOperandDialog.java" startLine="161" startPosition="98" endLine="169" endPosition="5">
+      <varInfo nodeId="6801780643483355753" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="5923576889075047874" fileName="EditOperandDialog.java" startLine="265" startPosition="0" endLine="273" endPosition="0">
       <varInfo nodeId="5923576889075047877" varName="nRoot" />
     </scopeInfo>

@@ -267,7 +267,7 @@ public class EditOperandDialog extends BaseDialog {
     MappingSelectTree.NodeRefNodeData rootData = (MappingSelectTree.NodeRefNodeData) nRoot.getUserObject();
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.setModelUID(rootData.getObject().getModelReference().toString());
-    result.setNodeID(rootData.getObject().getNode().getId());
+    result.setNodeID(rootData.getObject().getNode().getSNodeId().toString());
     return result;
   }
 

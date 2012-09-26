@@ -42,7 +42,7 @@
     <nodeInfo nodeId="1213877338517" fileName="ClosureLiteral_Behavior.java" startLine="38" startPosition="78" endLine="39" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877338527" fileName="ClosureLiteral_Behavior.java" startLine="39" startPosition="89" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877338536" fileName="ClosureLiteral_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877338547" fileName="ClosureLiteral_Behavior.java" startLine="45" startPosition="84" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877338547" fileName="ClosureLiteral_Behavior.java" startLine="45" startPosition="84" endLine="46" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229718192190" fileName="ClosureLiteral_Behavior.java" startLine="49" startPosition="170" endLine="50" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237540583054" fileName="ClosureLiteral_Behavior.java" startLine="53" startPosition="90" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239707798336" fileName="ClosureLiteral_Behavior.java" startLine="57" startPosition="69" endLine="58" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -128,7 +128,7 @@
     <scopeInfo nodeId="1213877338557" fileName="ClosureLiteral_Behavior.java" startLine="32" startPosition="43" endLine="32" endPosition="43" />
     <scopeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="107" startPosition="42" endLine="107" endPosition="42" />
     <scopeInfo nodeId="1239708048982" fileName="ClosureLiteral_Behavior.java" startLine="152" startPosition="42" endLine="152" endPosition="42" />
-    <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="45" startPosition="84" endLine="46" endPosition="53" />
+    <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="45" startPosition="84" endLine="46" endPosition="69" />
     <scopeInfo nodeId="1229718192189" fileName="ClosureLiteral_Behavior.java" startLine="49" startPosition="170" endLine="50" endPosition="117" />
     <scopeInfo nodeId="1237540575570" fileName="ClosureLiteral_Behavior.java" startLine="53" startPosition="90" endLine="54" endPosition="73" />
     <scopeInfo nodeId="1239707739905" fileName="ClosureLiteral_Behavior.java" startLine="57" startPosition="69" endLine="58" endPosition="61" />

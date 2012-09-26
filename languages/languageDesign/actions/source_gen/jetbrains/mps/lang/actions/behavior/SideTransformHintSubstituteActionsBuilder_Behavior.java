@@ -12,12 +12,12 @@ public class SideTransformHintSubstituteActionsBuilder_Behavior {
 
   public static String call_getBuilderQueryMethodName_1220279234749(SNode thisNode) {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
-    return "sideTransform_ActionsFactory_" + conceptName + "_" + thisNode.getId();
+    return "sideTransform_ActionsFactory_" + conceptName + "_" + thisNode.getSNodeId().toString();
   }
 
   public static String call_getPreconditionQueryMethodName_1220279571415(SNode thisNode) {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
     SNode precondtion = SLinkOperations.getTarget(thisNode, "precondition", true);
-    return "sideTransformHintSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondtion.getId();
+    return "sideTransformHintSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondtion.getSNodeId().toString();
   }
 }

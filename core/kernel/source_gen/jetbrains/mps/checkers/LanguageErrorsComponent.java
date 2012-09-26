@@ -104,7 +104,7 @@ public class LanguageErrorsComponent {
     }
     String id = (ruleNode == null ?
       null :
-      ruleNode.getId()
+      ruleNode.getNodeId().toString()
     );
     String modelId = (ruleNode == null ?
       null :
@@ -219,7 +219,7 @@ public class LanguageErrorsComponent {
       SetSequence.fromSet(myInvalidation).addElement(event.getChild());
     }
     if (event.isAdded()) {
-      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(((SNode) event.getChild()), null, false, new String[]{})));
+      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(event.getChild().getDescendants()));
       SetSequence.fromSet(myInvalidNodes).addElement(event.getChild());
     }
   }
@@ -233,11 +233,11 @@ public class LanguageErrorsComponent {
   }
 
   public void processBeforeModelDisposed(SModel model) {
-    if (!(jetbrains.mps.util.SNodeOperations.isDisposed(myRoot)) && SNodeOperations.getModel(myRoot) == model) {
+    if (!(myRoot.isDisposed()) && SNodeOperations.getModel(myRoot) == model) {
       return;
     }
     for (SNode additional : new HashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
-      if (jetbrains.mps.util.SNodeOperations.isDisposed(additional) || SNodeOperations.getModel(additional) == model) {
+      if (additional.isDisposed() || SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }
     }

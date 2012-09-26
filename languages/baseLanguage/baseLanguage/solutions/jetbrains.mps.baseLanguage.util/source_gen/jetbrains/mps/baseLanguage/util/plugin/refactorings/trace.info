@@ -376,7 +376,9 @@
       <varInfo nodeId="1981729211697065889" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697065814" fileName="InlineVariableAssignmentRefactoring.java" startLine="46" startPosition="56" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1981729211697065959" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="100" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="1981729211697065960" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="100" endLine="40" endPosition="7">
+      <varInfo nodeId="1981729211697065961" varName="next" />
+    </scopeInfo>
     <scopeInfo nodeId="1981729211697065811" fileName="InlineVariableAssignmentRefactoring.java" startLine="45" startPosition="30" endLine="53" endPosition="5">
       <varInfo nodeId="1981729211697065812" varName="sourceNode" />
     </scopeInfo>
@@ -456,16 +458,16 @@
     <scopeInfo nodeId="1981729211697066061" fileName="InlineVariableRefactoring.java" startLine="36" startPosition="52" endLine="41" endPosition="9">
       <varInfo nodeId="1981729211697066063" varName="write" />
     </scopeInfo>
-    <scopeInfo nodeId="1981729211697066139" fileName="InlineVariableRefactoring.java" startLine="52" startPosition="72" endLine="57" endPosition="9">
-      <varInfo nodeId="1981729211697066149" varName="read" />
-    </scopeInfo>
+    <scopeInfo nodeId="1981729211697066138" fileName="InlineVariableRefactoring.java" startLine="52" startPosition="72" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1981729211697066171" fileName="InlineVariableRefactoring.java" startLine="63" startPosition="49" endLine="68" endPosition="19">
       <varInfo nodeId="1981729211697066173" varName="current" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697066204" fileName="InlineVariableRefactoring.java" startLine="71" startPosition="73" endLine="76" endPosition="5" />
     <scopeInfo nodeId="1981729211697066031" fileName="InlineVariableRefactoring.java" startLine="27" startPosition="86" endLine="33" endPosition="7" />
     <scopeInfo nodeId="1981729211697066056" fileName="InlineVariableRefactoring.java" startLine="35" startPosition="86" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1981729211697066135" fileName="InlineVariableRefactoring.java" startLine="51" startPosition="99" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="1981729211697066136" fileName="InlineVariableRefactoring.java" startLine="51" startPosition="99" endLine="58" endPosition="7">
+      <varInfo nodeId="1981729211697066137" varName="next" />
+    </scopeInfo>
     <scopeInfo nodeId="1981729211697066026" fileName="InlineVariableRefactoring.java" startLine="26" startPosition="100" endLine="34" endPosition="5">
       <varInfo nodeId="1981729211697066027" varName="instruction" />
     </scopeInfo>
@@ -1020,7 +1022,9 @@
     <scopeInfo nodeId="1300615610528459006" fileName="MoveRefactoringUtils.java" startLine="54" startPosition="49" endLine="55" endPosition="159" />
     <scopeInfo nodeId="1279276159889585467" fileName="MoveRefactoringUtils.java" startLine="18" startPosition="35" endLine="20" endPosition="3" />
     <scopeInfo nodeId="4909369320863190505" fileName="MoveRefactoringUtils.java" startLine="24" startPosition="232" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1603057458589441327" fileName="MoveRefactoringUtils.java" startLine="47" startPosition="162" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="1603057458589441346" fileName="MoveRefactoringUtils.java" startLine="47" startPosition="162" endLine="50" endPosition="7">
+      <varInfo nodeId="1603057458589441347" varName="reference" />
+    </scopeInfo>
     <scopeInfo nodeId="1603057458588772996" fileName="MoveRefactoringUtils.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1603057458588773014" varName="node" />
       <varInfo nodeId="1603057458588773020" varName="toImport" />
@@ -3100,9 +3104,7 @@
     <scopeInfo nodeId="8492459591399164810" fileName="IntroduceFieldRefactoring.java" startLine="233" startPosition="20" endLine="235" endPosition="44" />
     <scopeInfo nodeId="4001355776228087190" fileName="IntroduceFieldRefactoring.java" startLine="249" startPosition="53" endLine="251" endPosition="5" />
     <scopeInfo nodeId="8492459591399164730" fileName="IntroduceFieldRefactoring.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2163048091639705825" fileName="IntroduceFieldRefactoring.java" startLine="57" startPosition="27" endLine="60" endPosition="7">
-      <varInfo nodeId="2163048091639705826" varName="duplicate" />
-    </scopeInfo>
+    <scopeInfo nodeId="2163048091639705808" fileName="IntroduceFieldRefactoring.java" startLine="57" startPosition="27" endLine="60" endPosition="7" />
     <scopeInfo nodeId="8492459591399164810" fileName="IntroduceFieldRefactoring.java" startLine="215" startPosition="13" endLine="218" endPosition="63">
       <varInfo nodeId="8492459591399164810" varName="quotedNode1_10" />
     </scopeInfo>
@@ -3393,7 +3395,7 @@
     <nodeInfo nodeId="8492459591399165269" fileName="ChangeMethodSignatureParameters.java" startLine="15" startPosition="28" endLine="16" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParametersIds" />
     <nodeInfo nodeId="8492459591399165281" fileName="ChangeMethodSignatureParameters.java" startLine="18" startPosition="61" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399165289" fileName="ChangeMethodSignatureParameters.java" startLine="19" startPosition="58" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399165305" fileName="ChangeMethodSignatureParameters.java" startLine="21" startPosition="109" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399165305" fileName="ChangeMethodSignatureParameters.java" startLine="21" startPosition="109" endLine="22" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399165211" fileName="ChangeMethodSignatureParameters.java" startLine="26" startPosition="33" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399165220" fileName="ChangeMethodSignatureParameters.java" startLine="30" startPosition="35" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399165228" fileName="ChangeMethodSignatureParameters.java" startLine="34" startPosition="40" endLine="35" endPosition="359" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3404,7 +3406,7 @@
     <nodeInfo nodeId="8492459591399165224" fileName="ChangeMethodSignatureParameters.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisibilityChanged#()Z" />
     <nodeInfo nodeId="8492459591399165246" fileName="ChangeMethodSignatureParameters.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReturnValueChanged#()Z" />
     <nodeInfo nodeId="8492459591399165277" fileName="ChangeMethodSignatureParameters.java" startLine="17" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignatureParameters#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="8492459591399165304" fileName="ChangeMethodSignatureParameters.java" startLine="21" startPosition="109" endLine="22" endPosition="76" />
+    <scopeInfo nodeId="8492459591399165304" fileName="ChangeMethodSignatureParameters.java" startLine="21" startPosition="109" endLine="22" endPosition="92" />
     <scopeInfo nodeId="8492459591399165210" fileName="ChangeMethodSignatureParameters.java" startLine="26" startPosition="33" endLine="27" endPosition="25" />
     <scopeInfo nodeId="8492459591399165219" fileName="ChangeMethodSignatureParameters.java" startLine="30" startPosition="35" endLine="31" endPosition="32" />
     <scopeInfo nodeId="8492459591399165227" fileName="ChangeMethodSignatureParameters.java" startLine="34" startPosition="40" endLine="35" endPosition="359" />
@@ -3670,7 +3672,9 @@
     <scopeInfo nodeId="8492459591399165915" fileName="MethodModel.java" startLine="40" startPosition="41" endLine="42" endPosition="22" />
     <scopeInfo nodeId="1642079203062891602" fileName="MethodModel.java" startLine="45" startPosition="43" endLine="47" endPosition="22" />
     <scopeInfo nodeId="8492459591399165970" fileName="MethodModel.java" startLine="68" startPosition="53" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="8492459591399165931" fileName="MethodModel.java" startLine="54" startPosition="28" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="8492459591399165932" fileName="MethodModel.java" startLine="54" startPosition="28" endLine="57" endPosition="5">
+      <varInfo nodeId="8492459591399165933" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399165880" fileName="MethodModel.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8492459591399165904" fileName="MethodModel.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1642079203062891876" fileName="MethodModel.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
@@ -4022,9 +4026,7 @@
     <scopeInfo nodeId="8492459591399167330" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="268" startPosition="12" endLine="270" endPosition="40" />
     <scopeInfo nodeId="1642079203062869979" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="100" startPosition="68" endLine="103" endPosition="7" />
     <scopeInfo nodeId="8492459591399166844" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="147" startPosition="136" endLine="150" endPosition="9" />
-    <scopeInfo nodeId="8492459591399166884" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="158" startPosition="77" endLine="161" endPosition="7">
-      <varInfo nodeId="8492459591399166900" varName="variable" />
-    </scopeInfo>
+    <scopeInfo nodeId="8492459591399166883" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="158" startPosition="77" endLine="161" endPosition="7" />
     <scopeInfo nodeId="8492459591399166926" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="168" startPosition="59" endLine="171" endPosition="5">
       <varInfo nodeId="8492459591399166936" varName="instruction" />
     </scopeInfo>
@@ -4050,9 +4052,7 @@
       <varInfo nodeId="8492459591399166783" varName="result" />
       <varInfo nodeId="8492459591399166797" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167198" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="242" startPosition="68" endLine="246" endPosition="7">
-      <varInfo nodeId="8492459591399167225" varName="parameter" />
-    </scopeInfo>
+    <scopeInfo nodeId="8492459591399167197" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="242" startPosition="68" endLine="246" endPosition="7" />
     <scopeInfo nodeId="8492459591399167245" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="250" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="8492459591399167258" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="254" startPosition="0" endLine="258" endPosition="0" />
     <scopeInfo nodeId="5161277940733564033" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="285" startPosition="112" endLine="289" endPosition="0">
@@ -4088,9 +4088,7 @@
     <scopeInfo nodeId="8492459591399167106" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="215" startPosition="50" endLine="220" endPosition="18">
       <varInfo nodeId="8492459591399167108" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167146" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="226" startPosition="101" endLine="231" endPosition="9">
-      <varInfo nodeId="8492459591399167167" varName="writeInstruction" />
-    </scopeInfo>
+    <scopeInfo nodeId="8492459591399167145" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="226" startPosition="101" endLine="231" endPosition="9" />
     <scopeInfo nodeId="1642079203062869911" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="99" startPosition="39" endLine="105" endPosition="16" />
     <scopeInfo nodeId="8492459591399167196" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="241" startPosition="34" endLine="247" endPosition="5">
       <varInfo nodeId="8492459591399167234" varName="node" />
@@ -4115,7 +4113,9 @@
     <scopeInfo nodeId="8492459591399166997" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="187" startPosition="47" endLine="194" endPosition="17">
       <varInfo nodeId="8492459591399166999" varName="exits" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167143" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="225" startPosition="54" endLine="232" endPosition="7" />
+    <scopeInfo nodeId="8492459591399167144" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="225" startPosition="54" endLine="232" endPosition="7">
+      <varInfo nodeId="8492459591399167174" varName="instruction" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399166628" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="64" startPosition="40" endLine="72" endPosition="17">
       <varInfo nodeId="8492459591399166630" varName="current" />
     </scopeInfo>
@@ -4142,7 +4142,9 @@
     <scopeInfo nodeId="8492459591399166873" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="155" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="8492459591399166910" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="165" startPosition="0" endLine="175" endPosition="0" />
     <scopeInfo nodeId="8492459591399166996" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="186" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="8492459591399167040" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="199" startPosition="49" endLine="209" endPosition="9" />
+    <scopeInfo nodeId="8492459591399167041" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="199" startPosition="49" endLine="209" endPosition="9">
+      <varInfo nodeId="8492459591399167091" varName="next" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399167385" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="327" startPosition="76" endLine="337" endPosition="17">
       <varInfo nodeId="8492459591399167395" varName="reference" />
       <varInfo nodeId="8492459591399167387" varName="type" />
@@ -4833,13 +4835,13 @@
     <nodeInfo nodeId="8492459591399170667" fileName="ChangeMethodSignatureRefactoring.java" startLine="39" startPosition="62" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399170673" fileName="ChangeMethodSignatureRefactoring.java" startLine="40" startPosition="59" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399170679" fileName="ChangeMethodSignatureRefactoring.java" startLine="41" startPosition="54" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170693" fileName="ChangeMethodSignatureRefactoring.java" startLine="43" startPosition="136" endLine="44" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399170693" fileName="ChangeMethodSignatureRefactoring.java" startLine="43" startPosition="136" endLine="44" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399170709" fileName="ChangeMethodSignatureRefactoring.java" startLine="45" startPosition="26" endLine="46" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399170721" fileName="ChangeMethodSignatureRefactoring.java" startLine="47" startPosition="16" endLine="48" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5161277940733431506" fileName="ChangeMethodSignatureRefactoring.java" startLine="54" startPosition="33" endLine="55" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399170737" fileName="ChangeMethodSignatureRefactoring.java" startLine="58" startPosition="35" endLine="59" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399170745" fileName="ChangeMethodSignatureRefactoring.java" startLine="59" startPosition="94" endLine="60" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170755" fileName="ChangeMethodSignatureRefactoring.java" startLine="61" startPosition="134" endLine="62" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399170755" fileName="ChangeMethodSignatureRefactoring.java" startLine="61" startPosition="134" endLine="62" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399170771" fileName="ChangeMethodSignatureRefactoring.java" startLine="63" startPosition="24" endLine="64" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399170787" fileName="ChangeMethodSignatureRefactoring.java" startLine="65" startPosition="14" endLine="66" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399170799" fileName="ChangeMethodSignatureRefactoring.java" startLine="66" startPosition="160" endLine="67" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4856,10 +4858,10 @@
     <nodeInfo nodeId="8492459591399170835" fileName="ChangeMethodSignatureRefactoring.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUsages#(Ljava/util/List;)V" />
     <nodeInfo nodeId="8492459591399170534" fileName="ChangeMethodSignatureRefactoring.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8492459591399170601" fileName="ChangeMethodSignatureRefactoring.java" startLine="28" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399170707" fileName="ChangeMethodSignatureRefactoring.java" startLine="44" startPosition="100" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399170707" fileName="ChangeMethodSignatureRefactoring.java" startLine="44" startPosition="116" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399170785" fileName="ChangeMethodSignatureRefactoring.java" startLine="65" startPosition="12" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399170683" fileName="ChangeMethodSignatureRefactoring.java" startLine="42" startPosition="29" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170769" fileName="ChangeMethodSignatureRefactoring.java" startLine="62" startPosition="98" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399170769" fileName="ChangeMethodSignatureRefactoring.java" startLine="62" startPosition="114" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399170753" fileName="ChangeMethodSignatureRefactoring.java" startLine="60" startPosition="101" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399170665" fileName="ChangeMethodSignatureRefactoring.java" startLine="38" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399170735" fileName="ChangeMethodSignatureRefactoring.java" startLine="57" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeParameters#()V" />
@@ -5459,9 +5461,7 @@
     <scopeInfo nodeId="8492459591399174251" fileName="InlineMethodRefactoring.java" startLine="140" startPosition="135" endLine="146" endPosition="5">
       <varInfo nodeId="8492459591399174252" varName="localCall" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174290" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5">
-      <varInfo nodeId="8492459591399174291" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="8492459591399174289" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5" />
     <scopeInfo nodeId="8492459591399174692" fileName="InlineMethodRefactoring.java" startLine="252" startPosition="118" endLine="258" endPosition="7">
       <varInfo nodeId="8492459591399174694" varName="st" />
     </scopeInfo>
