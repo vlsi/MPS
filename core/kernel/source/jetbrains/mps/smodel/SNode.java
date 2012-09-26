@@ -440,7 +440,22 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
-    return ((SNode) child).getRole();
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    if (child.getParent() == this) {
+      String role = child.getRole();
+      assert role != null;
+      return role;
+    }
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getTargetNode() == child) return reference.getRole();
+      }
+    }
+
+    return "<no role>";
   }
 
   @Override
@@ -873,17 +888,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-  public SNode findParent(Condition<SNode> condition) {
-    SNode parent = getParent();
-    while (parent != null) {
-      if (condition.met(parent)) {
-        return parent;
-      }
-      parent = parent.getParent();
-    }
-    return null;
-  }
-
   public List<SNode> getDescendants() {
     return getDescendants(null);
   }
@@ -964,25 +968,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public String getRoleOf(SNode node) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    if (node.getParent() == this) {
-      String role = node.getRole();
-      assert role != null;
-      return role;
-    }
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getTargetNode() == node) return reference.getRole();
-      }
-    }
-
-    return "<no role>";
-  }
-
   public Set<String> getReferenceRoles() {
     ModelAccess.assertLegalRead(this);
 
@@ -1040,8 +1025,26 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
+  public String getRoleOf(SNode node) {
+    return getRoleOf(((org.jetbrains.mps.openapi.model.SNode) node));
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode findParent(Condition<SNode> condition) {
+    return jetbrains.mps.util.SNodeOperations.findParent(this, condition);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public void addReference(SReference reference) {
-    setReference(reference.getRole(),reference);
+    setReference(reference.getRole(), reference);
   }
 
   @Deprecated
