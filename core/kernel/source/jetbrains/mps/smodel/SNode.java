@@ -38,7 +38,6 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.util.*;
@@ -817,29 +816,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     setProperty(SNodeUtil.property_INamedConcept_name, name);
   }
 
-  public void putProperties(SNode fromNode) {
-    ModelChange.assertLegalNodeChange(this);
-
-    if (fromNode == null || fromNode.myProperties == null) return;
-
-    String[] addedProps = fromNode.myProperties;
-    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
-    myProperties = new String[oldProperties.length + addedProps.length];
-    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
-    System.arraycopy(addedProps, 0, myProperties, oldProperties.length, addedProps.length);
-  }
-
-  public void putUserObjects(SNode fromNode) {
-    if (fromNode == null || fromNode.myUserObjects == null) return;
-    if (myUserObjects == null) {
-      myUserObjects = fromNode.myUserObjects;
-    } else {
-      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
-        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
-      }
-    }
-  }
-
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
   }
@@ -991,6 +967,37 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void putProperties(SNode fromNode) {
+    if (fromNode == null) return;
+
+    fromNode.visitProperties(new PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        setProperty(name, value);
+        return true;
+      }
+    });
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void putUserObjects(SNode fromNode) {
+    if (fromNode == null) return;
+    fromNode.visitUserObjects(new UserObjectVisitor() {
+      public boolean visitObject(Object key, Object value) {
+        putUserObject(key, value);
+        return true;
+      }
+    });
+  }
 
   @Deprecated
   /**
@@ -1189,7 +1196,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
     visitChildren(new ChildVisitor() {
       public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-        String roleOf = child.getRole();
+        String roleOf = getRoleOf(child);
         assert roleOf != null;
         if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
           augend.add(roleOf);
