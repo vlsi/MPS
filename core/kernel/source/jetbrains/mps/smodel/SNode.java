@@ -43,7 +43,7 @@ import org.jetbrains.mps.openapi.reference.SNodeReference;
 import java.util.*;
 import java.util.Map.Entry;
 
-public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
+public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   @Deprecated
@@ -110,7 +110,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @NotNull
   public final SNode getTopmostAncestor() {
-    SNodeBase current = this;
+    SNode current = this;
     while (current.treeParent() != null) {
       assert current != current.treeParent();
       current = current.treeParent();
@@ -171,14 +171,8 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SNode firstChild = firstChild();
-    final SNodeBase anchor = firstChild == null ? null : firstChild.treePrevious();
+    final SNode anchor = firstChild == null ? null : firstChild.treePrevious();
     insertChild(role, (SNode) child, anchor);
-  }
-
-  //all access to myFirstChild should be via this method
-  protected SNode firstChild() {
-    enforceModelLoad();
-    return (SNode) super.firstChild();
   }
 
   @NotNull
@@ -221,7 +215,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     ModelChange.assertLegalNodeChange(this);
     final SNode wasChild = (SNode) child;
     final String wasRole = wasChild.getRole();
-    SNodeBase anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
+    SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
     SModel model = getModel();
@@ -344,7 +338,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChild(((SNodeBase) anchor), role, ((SNode) child));
+    insertChild(((SNode) anchor), role, ((SNode) child));
   }
 
   @Override
@@ -438,8 +432,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void visitUserObjects(UserObjectVisitor v) {
-    for (Entry e : getUserObjects().entrySet()) {
-      if (!v.visitObject(e.getKey(), e.getValue())) return;
+    if (myUserObjects == null) return ;
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      v.visitObject(myUserObjects[i], myUserObjects[i + 1]);
     }
   }
 
@@ -550,7 +545,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public void replaceChild(SNode oldChild, SNode newChild) {
-    SNodeBase anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
+    SNode anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
     String role = oldChild.getRole();
     assert role != null;
     // old and new child can have the same node Id
@@ -969,9 +964,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return foundChild;
   }
 
-  public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
+  public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
-      final SNodeBase anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
+      final SNode anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
       insertChild(role, child, anchor);
     } else {
       insertChild(role, child, anchorChild);
@@ -1026,17 +1021,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
     return result;
-  }
-
-  public Map<Object, Object> getUserObjects() {
-    Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
-    if (myUserObjects == null) {
-      return userObjects;
-    }
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      userObjects.put(myUserObjects[i], myUserObjects[i + 1]);
-    }
-    return userObjects;
   }
 
   public Map<String, String> getProperties() {
@@ -1194,7 +1178,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
-  public void insertChild(final SNodeBase anchor, String _role, final SNode child) {
+  public void insertChild(final SNode anchor, String _role, final SNode child) {
     enforceModelLoad();
 
     if (ourMemberAccessModifier != null) {
@@ -1260,6 +1244,22 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Deprecated
   /**
+   * Do not use. Replace with visitUserObjects
+   * @Deprecated in 3.0
+   */
+  public Map<Object, Object> getUserObjects() {
+    final Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
+    visitUserObjects(new UserObjectVisitor() {
+      public boolean visitObject(Object key, Object value) {
+        userObjects.put(key,value);
+        return true;
+      }
+    });
+    return userObjects;
+  }
+
+  @Deprecated
+  /**
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
@@ -1315,17 +1315,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
    * @Deprecated in 3.0
    */
   public int getChildCount() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    int count = 0;
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      count++;
-    }
-    return count;
+    return jetbrains.mps.util.SNodeOperations.getChildren(this).size();
   }
 
   @Deprecated
@@ -1844,4 +1834,80 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  //---------tree structure-------------
+
+  private SNode parent;
+
+  /**
+   * access only in firstChild()
+   */
+  private SNode first;
+
+  private SNode next;  // == null only for the last child in the list
+  private SNode prev;  // notNull, myFirstChild.myLeftSibling = the last child
+
+  protected SNode() {
+  }
+
+  protected SNode firstChild() {
+    enforceModelLoad();
+    return first;
+  }
+
+  protected SNode treePrevious() {
+    return prev;
+  }
+
+  protected SNode treeNext() {
+    return next;
+  }
+
+  protected SNode treeParent() {
+    return parent;
+  }
+
+  protected void children_insertAfter(SNode anchor, @NotNull SNode node) {
+    //be sure that getFirstChild is called before any access to myFirstChild
+    SNode firstChild = firstChild();
+    if (anchor == null) {
+      if (firstChild != null) {
+        node.prev = firstChild.prev;
+        firstChild.prev = node;
+      } else {
+        node.prev = node;
+      }
+      node.next = firstChild;
+      first = node;
+    } else {
+      node.prev = anchor;
+      node.next = anchor.next;
+      if (anchor.next == null) {
+        firstChild.prev = node;
+      } else {
+        anchor.next.prev = node;
+      }
+      anchor.next = node;
+    }
+    node.parent = this;
+  }
+
+  protected void children_remove(@NotNull SNode node) {
+    //be sure that getFirstChild is called before any access to myFirstChild
+    SNode firstChild = firstChild();
+    if (firstChild == node) {
+      first = node.next;
+      if (first != null) {
+        first.prev = node.prev;
+      }
+    } else {
+      node.prev.next = node.next;
+      if (node.next != null) {
+        node.next.prev = node.prev;
+      } else {
+        firstChild.prev = node.prev;
+      }
+    }
+    node.prev = node.next = null;
+    node.parent = null;
+  }
 }

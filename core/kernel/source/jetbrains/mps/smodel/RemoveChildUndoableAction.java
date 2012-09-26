@@ -16,11 +16,11 @@
 package jetbrains.mps.smodel;
 
 class RemoveChildUndoableAction extends SNodeUndoableAction {
-  private SNodeBase myAnchor;
+  private SNode myAnchor;
   private String myRole;
   private SNode myChild;
 
-  RemoveChildUndoableAction(SNode node, SNodeBase anchor, String role, SNode child) {
+  RemoveChildUndoableAction(SNode node, SNode anchor, String role, SNode child) {
     super(node);
     myAnchor = anchor;
     myRole = role;
