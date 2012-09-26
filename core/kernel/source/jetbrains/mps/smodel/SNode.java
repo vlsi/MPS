@@ -783,22 +783,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return findConceptProperty(propertyName) != null;
   }
 
-  public boolean isDescendantOf(SNode node, boolean includeThis) {
-    SNode current;
-    if (includeThis) {
-      current = this;
-    } else {
-      current = getParent();
-    }
-    while (current != null) {
-      if (current == node) {
-        return true;
-      }
-      current = current.getParent();
-    }
-    return false;
-  }
-
   public SNode findChildByPath(String path) {
     if (path == null) return null;
     String residual = path;
@@ -878,28 +862,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
     }
   }
-
-  public boolean isAncestorOf(SNode child) {
-    return jetbrains.mps.util.SNodeOperations.isAncestor(this, child);
-  }
-
-  public int getChildCount(String role) {
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
-    }
-    int count = 0;
-
-    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole())) {
-        count++;
-      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
-        count++;
-      }
-    }
-    return count;
-  }
-
 
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
@@ -1146,6 +1108,24 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, is not supposed to be used in MPS
    * @Deprecated in 3.0
    */
+  public boolean isAncestorOf(SNode child) {
+    return jetbrains.mps.util.SNodeOperations.isAncestor(this, child);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, is not supposed to be used in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isDescendantOf(SNode node, boolean includeThis) {
+    return jetbrains.mps.util.SNodeOperations.isAncestor(node, includeThis ? this : getParent());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, is not supposed to be used in MPS
+   * @Deprecated in 3.0
+   */
   public StackTraceElement[] getModelDisposedTrace() {
     return getModel() == null ? null : getModel().getDisposedStacktrace();
   }
@@ -1193,7 +1173,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public SReference setReferent(String role, SNode newReferent, boolean useHandler) {
-    if (!useHandler){
+    if (!useHandler) {
       LOG.warning("SNode.setReferent does not use the last parameter now");
     }
     setReferenceTarget(role, newReferent);
@@ -1345,6 +1325,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public boolean hasId() {
     return getSNodeId() != null;
+  }
+
+  @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
+  @ShortTermMigration(migration = "Replace with SNodeOperations.getChildCount(node)")
+  @LongTermMigration(migration = "Try to rewrite using getChildren()")
+  @Deprecated
+  /**
+   * Do not use it.
+   * Try to eliminate as many usages as possible,
+   * make your own getChildCount() utility where you can't live without it.
+   * No migration is provided since calls should be reviewed separately to avoid performance problems
+   * @Deprecated in 3.0
+   */
+  public int getChildCount(String role) {
+    return getChildren(role).size();
   }
 
   @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
