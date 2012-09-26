@@ -75,8 +75,6 @@ public interface SNode {
 
   SNode getNextChild(SNode child);
 
-  @Nullable String getRole();
-
   String getRoleOf(SNode child);
 
   public Iterable<? extends SNode> getChildren();  //?needed

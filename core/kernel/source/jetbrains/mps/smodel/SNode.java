@@ -38,6 +38,7 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.util.*;
@@ -119,10 +120,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public String getName() {
     return getProperty(SNodeUtil.property_INamedConcept_name);
-  }
-
-  public String getRole() {
-    return myRoleInParent;
   }
 
   public final boolean hasProperty(String propertyName) {
@@ -445,7 +442,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     if (child.getParent() == this) {
-      String role = child.getRole();
+      String role = ((SNode) child).myRoleInParent;
       assert role != null;
       return role;
     }
@@ -565,6 +562,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
+
+  public String getRole() {
+    return myRoleInParent;
+  }
 
   public String getPersistentProperty(String propertyName) {
     if (myProperties == null) return null;
