@@ -252,7 +252,62 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
         }
       }
     } else {
-      setReferent(role, ((SNode) target));
+      if (ourMemberAccessModifier != null) {
+        role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+      }
+
+      // remove old references
+      List<SReference> toDelete = new ArrayList<SReference>();
+      if (myReferences != null) {
+        for (SReference reference : myReferences) {
+          if (reference.getRole().equals(role)) {
+            toDelete.add(reference);
+          }
+        }
+      }
+      SNode oldReferent = null;
+      if (!toDelete.isEmpty()) {
+        oldReferent = toDelete.get(0).getTargetNodeSilently();
+      }
+      if (toDelete.size() > 1) {
+        LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
+      }
+      boolean handlerFound = false;
+
+      if (myModel.canFireEvent()) {
+        // invoke custom referent set event handler
+        Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
+        Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
+        if (!threadSet.contains(pair)) {
+          ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getReference(role);
+
+          if (!(descriptor instanceof IllegalReferenceConstraintsDescriptor)) {
+            handlerFound = true;
+            threadSet.add(pair);
+
+            try {
+              if (descriptor.validate(this, oldReferent, ((SNode) target), GlobalScope.getInstance())) {
+                doSetReference(role, ((SNode) target), toDelete);
+                descriptor.onReferenceSet(this, oldReferent, ((SNode) target), GlobalScope.getInstance());
+              } else {
+                if (myReferences != null) {
+                  for (SReference reference : myReferences) {
+                    if (reference.getRole().equals(role)) break;
+                  }
+                }
+              }
+            } finally {
+              threadSet.remove(pair);
+            }
+          } else {
+            // todo: ?
+          }
+        }
+      }
+
+      if (!handlerFound) {
+        doSetReference(role, ((SNode) target), toDelete);
+      }
     }
   }
 
@@ -938,20 +993,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)));
   }
 
-  public boolean isReferentRequired(String role) {
-    SLink link = getConcept().findLink(role);
-    if (link == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getId());
-      return false;
-    }
-
-    return !link.isOptional();
-  }
-
-  public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
-  }
-
   public SNode getChildAt(int index) {
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (index-- == 0) {
@@ -1088,71 +1129,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-  public SReference setReferent(String role, SNode newReferent, boolean useHandler) {
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
-    }
-
-    // remove old references
-    List<SReference> toDelete = new ArrayList<SReference>();
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getRole().equals(role)) {
-          toDelete.add(reference);
-        }
-      }
-    }
-    SNode oldReferent = null;
-    if (!toDelete.isEmpty()) {
-      oldReferent = toDelete.get(0).getTargetNodeSilently();
-    }
-    if (toDelete.size() > 1) {
-      LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
-    }
-    SReference resultReference = null;
-    boolean handlerFound = false;
-
-    if (useHandler && myModel.canFireEvent()) {
-      // invoke custom referent set event handler
-      Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
-      Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
-      if (!threadSet.contains(pair)) {
-        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getReference(role);
-
-        if (!(descriptor instanceof IllegalReferenceConstraintsDescriptor)) {
-          handlerFound = true;
-          threadSet.add(pair);
-
-          try {
-            if (descriptor.validate(this, oldReferent, newReferent, GlobalScope.getInstance())) {
-              resultReference = doSetReference(role, newReferent, toDelete);
-              descriptor.onReferenceSet(this, oldReferent, newReferent, GlobalScope.getInstance());
-            } else {
-              if (myReferences != null) {
-                for (SReference reference : myReferences) {
-                  if (reference.getRole().equals(role)) {
-                    resultReference = reference;
-                    break;
-                  }
-                }
-              }
-            }
-          } finally {
-            threadSet.remove(pair);
-          }
-        } else {
-          // todo: ?
-        }
-      }
-    }
-
-    if (!handlerFound) {
-      resultReference = doSetReference(role, newReferent, toDelete);
-    }
-
-    return resultReference;
-  }
-
   public void addReference(SReference reference) {
     assert reference.getSourceNode() == this;
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
@@ -1177,9 +1153,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-  public SReference setReferent(String role, SNode newReferent) {
-    return setReferent(role, newReferent, true);
-  }
 
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
@@ -1199,6 +1172,53 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SReference setReferent(String role, SNode newReferent, boolean useHandler) {
+    if (!useHandler){
+      LOG.warning("SNode.setReferent does not use the last parameter now");
+    }
+    setReferenceTarget(role, newReferent);
+    return getReference(role);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SReference setReferent(String role, SNode newReferent) {
+    setReferenceTarget(role, newReferent);
+    return getReference(role);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isReferentRequired(String role) {
+    SLink link = getConcept().findLink(role);
+    if (link == null) {
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getId());
+      return false;
+    }
+
+    return !link.isOptional();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
+    return jetbrains.mps.util.SNodeOperations.getDescendants(this, condition, includeFirst);
+  }
 
   @Deprecated
   /**
@@ -1780,67 +1800,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
     protected Set<Pair<SNode, String>> initialValue() {
       return new HashSet<Pair<SNode, String>>();
-    }
-  }
-
-  private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
-    private SNode original;
-    private SNode current;
-    private Condition<SNode> condition;
-    private SNode prev;
-
-    DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
-      this.original = original;
-      this.current = first;
-      this.condition = condition;
-      while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current, false);
-      }
-    }
-
-    public boolean hasNext() {
-      return current != null;
-    }
-
-    public SNode next() {
-      SNode result = current;
-      do {
-        current = nextInternal(current, false);
-      } while (current != null && condition != null && !condition.met(current));
-      prev = result;
-      return result;
-    }
-
-    public void skipChildren() {
-      if (prev == null) throw new IllegalStateException("no element");
-      current = nextInternal(prev, true);
-      while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current, false);
-      }
-    }
-
-    private SNode nextInternal(SNode curr, boolean skipChildren) {
-      if (curr == null) return null;
-      if (!skipChildren) {
-        SNode firstChild = curr.firstChild();
-        if (firstChild != null) return firstChild;
-      }
-      if (curr == original) return null;
-      do {
-        if (curr.nextSibling() != null) {
-          return curr.nextSibling();
-        }
-        curr = curr.getParent();
-      } while (curr != original);
-      return null;
-    }
-
-    public void remove() {
-      throw new UnsupportedOperationException();
-    }
-
-    public Iterator<SNode> iterator() {
-      return this;
     }
   }
 
