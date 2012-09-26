@@ -244,11 +244,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
       if (myReferences != null) {
         for (SReference reference : myReferences) {
-          if (reference.getRole().equals(role)) {
-            int index = _reference().indexOf(reference);
-            removeReferenceAt(index);
-            break;
-          }
+          if (!reference.getRole().equals(role)) continue;
+          removeReferenceAt(reference);
+          break;
         }
       }
     } else {
@@ -349,8 +347,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     for (SReference r : myReferences) {
       if (r.getRole().equals(role)) {
-        int index = _reference().indexOf(r);
-        removeReferenceAt(index);
+        removeReferenceAt(r);
         break;
       }
     }
@@ -546,7 +543,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    return new ArrayList<SReference>(_reference());
+    return Arrays.asList(myReferences);
   }
 
 //-------------------------------------------------------
@@ -688,7 +685,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public boolean isDeleted() {
-    return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
+    return (myReferences.length == 0) && getParent() == null && !getModel().isRoot(this);
   }
 
   public boolean isDetached() {
@@ -1593,17 +1590,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myProperties[index + 1];
   }
 
-  private void replaceReferenceAt(int index, @NotNull SReference referenceToAdd) {
-    ModelChange.assertLegalNodeChange(this);
-
-    if (UndoHelper.getInstance().needRegisterUndo(getModel()) || ModelChange.needFireEvents(getModel(), this)) {
-      removeReferenceAt(index);
-      insertReferenceAt(index, referenceToAdd);
-    } else {
-      myReferences[index] = referenceToAdd;
-    }
-  }
-
   private void delete_internal() {
     //delete all children
     List<SNode> children = new ArrayList<SNode>(getChildren());
@@ -1612,7 +1598,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     //remove all references
-    removeAllReferences();
+    myReferences = SReference.EMPTY_ARRAY;
 
     //remove from parent
     SNode parent = getParent();
@@ -1626,16 +1612,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     UnregisteredNodes.instance().remove(this);
   }
 
-  private void removeAllReferences() {
-    while (_reference().size() > 0) {
-      removeReferenceAt(0);
-    }
-  }
-
   private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
     for (SReference reference : toDelete) {
-      int index = _reference().indexOf(reference);
-      removeReferenceAt(index);
+      removeReferenceAt(reference);
     }
 
     SReference resultReference = null;
@@ -1681,10 +1660,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
-  private List<SReference> _reference() {
-    return new MyReferencesWrapper();
-  }
-
   private String getProperty_internal(String propertyName) {
     Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
     Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
@@ -1708,10 +1683,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return -1;
   }
 
-  private void insertReferenceAt(final int i, final SReference reference) {
+  private void insertReferenceAt(final int index, final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
 
-    _reference().add(i, reference);
+    SReference[] newArray = new SReference[myReferences.length + 1];
+    System.arraycopy(myReferences, 0, newArray, 0, index);
+    newArray[index] = reference;
+    System.arraycopy(myReferences, index, newArray, index + 1, myReferences.length - index);
+    myReferences = newArray;
 
     SModel model = getModel();
     if (model == null) return;
@@ -1723,18 +1702,34 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  private void removeReferenceAt(final int i) {
+  private void removeReferenceAt(SReference ref) {
     ModelChange.assertLegalNodeChange(this);
-    final SReference reference = myReferences[i];
-    _reference().remove(reference);
+
+    int index = -1;
+    for (int i = 0; i < myReferences.length; i++) {
+      if (myReferences[i].equals(ref)) {
+        index = i;
+        break;
+      }
+    }
+
+    if (index == -1) {
+      LOG.error("ref not found " + ref, new Throwable());
+      return;
+    }
+
+    SReference[] newArray = new SReference[myReferences.length - 1];
+    System.arraycopy(myReferences, 0, newArray, 0, index);
+    System.arraycopy(myReferences, index + 1, newArray, index, myReferences.length - index - 1);
+    myReferences = newArray;
 
     SModel model = getModel();
     if (model == null) return;
 
-    model.performUndoableAction(new RemoveReferenceAtUndoableAction(this, reference));
+    model.performUndoableAction(new RemoveReferenceAtUndoableAction(this, ref));
 
     if (ModelChange.needFireEvents(model, this)) {
-      model.fireReferenceRemovedEvent(reference);
+      model.fireReferenceRemovedEvent(ref);
     }
   }
 
@@ -1748,22 +1743,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-
   //--------private classes-------
-
-  private class MyReferencesWrapper extends ArrayWrapper<SReference> {
-    protected SReference[] getArray() {
-      return myReferences;
-    }
-
-    protected void setArray(SReference[] newArray) {
-      myReferences = newArray;
-    }
-
-    protected SReference[] newArray(int size) {
-      return new SReference[size];
-    }
-  }
 
   private static class ChildrenList extends AbstractImmutableList<SNode> {
     public ChildrenList(SNode first) {
