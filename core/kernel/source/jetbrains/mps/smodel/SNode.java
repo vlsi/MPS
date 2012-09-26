@@ -352,7 +352,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
     }
     if (reference != null) {
-      addReference((SReference) reference);
+      assert reference.getSourceNode() == this;
+      insertReferenceAt(myReferences == null ? 0 : myReferences.length, (SReference) reference);
     }
   }
 
@@ -1015,11 +1016,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-  public void addReference(SReference reference) {
-    assert reference.getSourceNode() == this;
-    insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
-  }
-
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1042,6 +1038,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void addReference(SReference reference) {
+    setReference(reference.getRole(),reference);
+  }
 
   @Deprecated
   /**
