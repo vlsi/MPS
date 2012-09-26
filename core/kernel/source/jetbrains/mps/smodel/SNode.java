@@ -801,20 +801,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return findConceptProperty(propertyName) != null;
   }
 
-  public List<SNode> getDescendants(Condition<SNode> condition) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    List<SNode> list = new ArrayList<SNode>();
-    collectDescendants(condition, list);
-    return list;
-  }
-
-  public void setName(String name) {
-    setProperty(SNodeUtil.property_INamedConcept_name, name);
-  }
-
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
   }
@@ -833,10 +819,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       result.addAll(parent.getAncestors(true));
     }
     return result;
-  }
-
-  public List<SNode> getDescendants() {
-    return getDescendants(null);
   }
 
   public String getPresentation(boolean detailed) {
@@ -928,6 +910,33 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public List<SNode> getDescendants() {
+    return getDescendants(null);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public List<SNode> getDescendants(Condition<SNode> condition) {
+    return jetbrains.mps.util.SNodeOperations.getDescendants(this,condition);
+  }
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Use smodel language instead
+   * @Deprecated in 3.0
+   */
+  public void setName(String name) {
+    setProperty(SNodeUtil.property_INamedConcept_name, name);
+  }
 
   @Deprecated
   /**
@@ -1755,16 +1764,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     if (ModelChange.needFireEvents(model, this)) {
       model.fireReferenceRemovedEvent(ref);
-    }
-  }
-
-  private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
-    // depth-first traversal
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
-        list.add(child);
-      }
-      child.collectDescendants(condition, list);
     }
   }
 
