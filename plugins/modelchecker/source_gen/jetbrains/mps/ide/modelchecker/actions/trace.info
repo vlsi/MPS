@@ -110,8 +110,8 @@
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -519,7 +519,7 @@
       <varInfo nodeId="1453248744423272821" varName="operationContext" />
       <varInfo nodeId="1453248744423272819" varName="progressContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4209733725028773336" fileName="SpecificChecker.java" startLine="31" startPosition="60" endLine="34" endPosition="9" />
+    <scopeInfo nodeId="4209733725028773325" fileName="SpecificChecker.java" startLine="31" startPosition="60" endLine="34" endPosition="9" />
     <scopeInfo nodeId="2050748146933621393" fileName="SpecificChecker.java" startLine="58" startPosition="86" endLine="61" endPosition="7" />
     <scopeInfo nodeId="2050748146933621392" fileName="SpecificChecker.java" startLine="57" startPosition="5" endLine="62" endPosition="5">
       <varInfo nodeId="2050748146933621395" varName="property" />
@@ -845,7 +845,7 @@
       <varInfo nodeId="1453248744423273420" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="6193218767386778445" fileName="ModelChecker.java" startLine="54" startPosition="31" endLine="57" endPosition="13" />
-    <scopeInfo nodeId="6193218767386778628" fileName="ModelChecker.java" startLine="59" startPosition="32" endLine="62" endPosition="13" />
+    <scopeInfo nodeId="6193218767386778600" fileName="ModelChecker.java" startLine="59" startPosition="32" endLine="62" endPosition="13" />
     <scopeInfo nodeId="1748402200010119217" fileName="ModelChecker.java" startLine="73" startPosition="0" endLine="76" endPosition="17">
       <varInfo nodeId="1748402200010119218" varName="t" />
     </scopeInfo>
@@ -3196,7 +3196,9 @@
     <scopeInfo nodeId="6735645123418934992" fileName="ModelCheckerController.java" startLine="30" startPosition="114" endLine="35" endPosition="15">
       <varInfo nodeId="6735645123418935092" varName="issue" />
     </scopeInfo>
-    <scopeInfo nodeId="8356030516795832653" fileName="ModelCheckerController.java" startLine="29" startPosition="15" endLine="36" endPosition="13" />
+    <scopeInfo nodeId="6735645123418934991" fileName="ModelCheckerController.java" startLine="29" startPosition="15" endLine="36" endPosition="13">
+      <varInfo nodeId="6735645123418934994" varName="lit" />
+    </scopeInfo>
     <scopeInfo nodeId="6735645123418855223" fileName="ModelCheckerController.java" startLine="28" startPosition="27" endLine="39" endPosition="11" />
     <scopeInfo nodeId="6735645123418855220" fileName="ModelCheckerController.java" startLine="27" startPosition="33" endLine="41" endPosition="0" />
     <scopeInfo nodeId="6735645123418935392" fileName="ModelCheckerController.java" startLine="24" startPosition="69" endLine="45" endPosition="7">
@@ -3918,7 +3920,9 @@
     <scopeInfo nodeId="8307046163198019578" fileName="GeneratorTemplatesChecker.java" startLine="79" startPosition="66" endLine="80" endPosition="23" />
     <scopeInfo nodeId="8307046163197924983" fileName="GeneratorTemplatesChecker.java" startLine="25" startPosition="64" endLine="27" endPosition="3" />
     <scopeInfo nodeId="8307046163198019444" fileName="GeneratorTemplatesChecker.java" startLine="44" startPosition="67" endLine="50" endPosition="11" />
-    <scopeInfo nodeId="8307046163198019442" fileName="GeneratorTemplatesChecker.java" startLine="43" startPosition="26" endLine="51" endPosition="9" />
+    <scopeInfo nodeId="8307046163198019443" fileName="GeneratorTemplatesChecker.java" startLine="43" startPosition="26" endLine="51" endPosition="9">
+      <varInfo nodeId="8307046163198019456" varName="root" />
+    </scopeInfo>
     <scopeInfo nodeId="8307046163198019439" fileName="GeneratorTemplatesChecker.java" startLine="41" startPosition="37" endLine="53" endPosition="0" />
     <scopeInfo nodeId="8307046163197925055" fileName="GeneratorTemplatesChecker.java" startLine="61" startPosition="93" endLine="83" endPosition="223">
       <varInfo nodeId="8307046163198019563" varName="root" />

@@ -760,8 +760,8 @@
     <scopeInfo nodeId="4792031542972810752" fileName="RefactoringNodeMembersAccessModifier.java" startLine="43" startPosition="88" endLine="46" endPosition="56" />
     <scopeInfo nodeId="4792031542972810777" fileName="RefactoringNodeMembersAccessModifier.java" startLine="49" startPosition="91" endLine="52" endPosition="56" />
     <scopeInfo nodeId="4792031542972810802" fileName="RefactoringNodeMembersAccessModifier.java" startLine="55" startPosition="91" endLine="58" endPosition="56" />
-    <scopeInfo nodeId="4792031542972810852" fileName="RefactoringNodeMembersAccessModifier.java" startLine="65" startPosition="17" endLine="68" endPosition="14" />
-    <scopeInfo nodeId="4792031542972810868" fileName="RefactoringNodeMembersAccessModifier.java" startLine="69" startPosition="21" endLine="72" endPosition="14" />
+    <scopeInfo nodeId="4792031542972810854" fileName="RefactoringNodeMembersAccessModifier.java" startLine="65" startPosition="17" endLine="68" endPosition="14" />
+    <scopeInfo nodeId="4792031542972810866" fileName="RefactoringNodeMembersAccessModifier.java" startLine="69" startPosition="21" endLine="72" endPosition="14" />
     <scopeInfo nodeId="4792031542972810882" fileName="RefactoringNodeMembersAccessModifier.java" startLine="73" startPosition="20" endLine="76" endPosition="14" />
     <scopeInfo nodeId="4792031542972810978" fileName="RefactoringNodeMembersAccessModifier.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="4792031542972810981" varName="model" />
@@ -1627,9 +1627,7 @@
       <varInfo nodeId="7064882795684141685" varName="model" />
       <varInfo nodeId="7064882795684141687" varName="newName" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972814641" fileName="RefactoringContext.java" startLine="358" startPosition="41" endLine="370" endPosition="9">
-      <varInfo nodeId="4792031542972814643" varName="conceptFeature" />
-    </scopeInfo>
+    <scopeInfo nodeId="4792031542972814640" fileName="RefactoringContext.java" startLine="358" startPosition="41" endLine="370" endPosition="9" />
     <scopeInfo nodeId="4792031542972814980" fileName="RefactoringContext.java" startLine="447" startPosition="51" endLine="459" endPosition="11">
       <varInfo nodeId="4792031542972814988" varName="id" />
       <varInfo nodeId="4792031542972814994" varName="ids" />

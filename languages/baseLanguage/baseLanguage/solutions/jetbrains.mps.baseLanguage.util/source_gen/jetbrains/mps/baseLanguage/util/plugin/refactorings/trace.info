@@ -366,9 +366,7 @@
     <scopeInfo nodeId="1981729211697065894" fileName="InlineVariableAssignmentRefactoring.java" startLine="59" startPosition="48" endLine="62" endPosition="5">
       <varInfo nodeId="1981729211697065895" varName="read" />
     </scopeInfo>
-    <scopeInfo nodeId="1981729211697065963" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="72" endLine="39" endPosition="9">
-      <varInfo nodeId="1981729211697065979" varName="read" />
-    </scopeInfo>
+    <scopeInfo nodeId="1981729211697065962" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="72" endLine="39" endPosition="9" />
     <scopeInfo nodeId="1981729211697065849" fileName="InlineVariableAssignmentRefactoring.java" startLine="47" startPosition="16" endLine="52" endPosition="7">
       <varInfo nodeId="1981729211697065850" varName="reference" />
     </scopeInfo>
@@ -376,9 +374,7 @@
       <varInfo nodeId="1981729211697065889" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1981729211697065814" fileName="InlineVariableAssignmentRefactoring.java" startLine="46" startPosition="56" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1981729211697065960" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="100" endLine="40" endPosition="7">
-      <varInfo nodeId="1981729211697065961" varName="next" />
-    </scopeInfo>
+    <scopeInfo nodeId="1981729211697065959" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="100" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1981729211697065811" fileName="InlineVariableAssignmentRefactoring.java" startLine="45" startPosition="30" endLine="53" endPosition="5">
       <varInfo nodeId="1981729211697065812" varName="sourceNode" />
     </scopeInfo>
@@ -465,9 +461,7 @@
     <scopeInfo nodeId="1981729211697066204" fileName="InlineVariableRefactoring.java" startLine="71" startPosition="73" endLine="76" endPosition="5" />
     <scopeInfo nodeId="1981729211697066031" fileName="InlineVariableRefactoring.java" startLine="27" startPosition="86" endLine="33" endPosition="7" />
     <scopeInfo nodeId="1981729211697066056" fileName="InlineVariableRefactoring.java" startLine="35" startPosition="86" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1981729211697066136" fileName="InlineVariableRefactoring.java" startLine="51" startPosition="99" endLine="58" endPosition="7">
-      <varInfo nodeId="1981729211697066137" varName="next" />
-    </scopeInfo>
+    <scopeInfo nodeId="1981729211697066135" fileName="InlineVariableRefactoring.java" startLine="51" startPosition="99" endLine="58" endPosition="7" />
     <scopeInfo nodeId="1981729211697066026" fileName="InlineVariableRefactoring.java" startLine="26" startPosition="100" endLine="34" endPosition="5">
       <varInfo nodeId="1981729211697066027" varName="instruction" />
     </scopeInfo>
@@ -2119,9 +2113,7 @@
     <scopeInfo nodeId="8492459591399163014" fileName="IntroduceLocalVariableRefactoring.java" startLine="109" startPosition="20" endLine="111" endPosition="43" />
     <scopeInfo nodeId="8492459591399163014" fileName="IntroduceLocalVariableRefactoring.java" startLine="122" startPosition="20" endLine="124" endPosition="43" />
     <scopeInfo nodeId="7568753874916141927" fileName="IntroduceLocalVariableRefactoring.java" startLine="138" startPosition="52" endLine="140" endPosition="5" />
-    <scopeInfo nodeId="2163048091639765875" fileName="IntroduceLocalVariableRefactoring.java" startLine="37" startPosition="27" endLine="40" endPosition="7">
-      <varInfo nodeId="2163048091639765876" varName="duplicate" />
-    </scopeInfo>
+    <scopeInfo nodeId="2163048091639765871" fileName="IntroduceLocalVariableRefactoring.java" startLine="37" startPosition="27" endLine="40" endPosition="7" />
     <scopeInfo nodeId="4001355776228087233" fileName="IntroduceLocalVariableRefactoring.java" startLine="54" startPosition="58" endLine="57" endPosition="82">
       <varInfo nodeId="7568753874916141924" varName="reference" />
     </scopeInfo>
@@ -2560,7 +2552,9 @@
     <scopeInfo nodeId="8492459591399164094" fileName="ExtractMethodRefactoring.java" startLine="191" startPosition="48" endLine="196" endPosition="5">
       <varInfo nodeId="8492459591399164113" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034332" fileName="ExtractMethodRefactoring.java" startLine="227" startPosition="81" endLine="232" endPosition="7" />
+    <scopeInfo nodeId="6195342755328034333" fileName="ExtractMethodRefactoring.java" startLine="227" startPosition="81" endLine="232" endPosition="7">
+      <varInfo nodeId="6195342755328034334" varName="varReference" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399163821" fileName="ExtractMethodRefactoring.java" startLine="132" startPosition="40" endLine="138" endPosition="5" />
     <scopeInfo nodeId="1300615610528497334" fileName="ExtractMethodRefactoring.java" startLine="168" startPosition="163" endLine="174" endPosition="9" />
     <scopeInfo nodeId="1769066237347367165" fileName="ExtractMethodRefactoring.java" startLine="175" startPosition="7" endLine="181" endPosition="7">
@@ -4052,7 +4046,9 @@
       <varInfo nodeId="8492459591399166783" varName="result" />
       <varInfo nodeId="8492459591399166797" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167197" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="242" startPosition="68" endLine="246" endPosition="7" />
+    <scopeInfo nodeId="8492459591399167198" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="242" startPosition="68" endLine="246" endPosition="7">
+      <varInfo nodeId="8492459591399167225" varName="parameter" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399167245" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="250" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="8492459591399167258" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="254" startPosition="0" endLine="258" endPosition="0" />
     <scopeInfo nodeId="5161277940733564033" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="285" startPosition="112" endLine="289" endPosition="0">
@@ -4088,7 +4084,9 @@
     <scopeInfo nodeId="8492459591399167106" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="215" startPosition="50" endLine="220" endPosition="18">
       <varInfo nodeId="8492459591399167108" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167145" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="226" startPosition="101" endLine="231" endPosition="9" />
+    <scopeInfo nodeId="8492459591399167146" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="226" startPosition="101" endLine="231" endPosition="9">
+      <varInfo nodeId="8492459591399167167" varName="writeInstruction" />
+    </scopeInfo>
     <scopeInfo nodeId="1642079203062869911" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="99" startPosition="39" endLine="105" endPosition="16" />
     <scopeInfo nodeId="8492459591399167196" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="241" startPosition="34" endLine="247" endPosition="5">
       <varInfo nodeId="8492459591399167234" varName="node" />
@@ -4142,9 +4140,7 @@
     <scopeInfo nodeId="8492459591399166873" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="155" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="8492459591399166910" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="165" startPosition="0" endLine="175" endPosition="0" />
     <scopeInfo nodeId="8492459591399166996" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="186" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="8492459591399167041" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="199" startPosition="49" endLine="209" endPosition="9">
-      <varInfo nodeId="8492459591399167091" varName="next" />
-    </scopeInfo>
+    <scopeInfo nodeId="8492459591399167040" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="199" startPosition="49" endLine="209" endPosition="9" />
     <scopeInfo nodeId="8492459591399167385" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="327" startPosition="76" endLine="337" endPosition="17">
       <varInfo nodeId="8492459591399167395" varName="reference" />
       <varInfo nodeId="8492459591399167387" varName="type" />
@@ -4212,7 +4208,9 @@
       <varInfo nodeId="5161277940733564055" varName="read" />
       <varInfo nodeId="5161277940733582943" varName="writes" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399167348" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="318" startPosition="74" endLine="343" endPosition="5" />
+    <scopeInfo nodeId="8492459591399167349" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="318" startPosition="74" endLine="343" endPosition="5">
+      <varInfo nodeId="8492459591399167465" varName="instruction" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399167343" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="317" startPosition="0" endLine="345" endPosition="0">
       <varInfo nodeId="8492459591399167344" varName="result" />
     </scopeInfo>
@@ -4674,9 +4672,7 @@
     <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="114" startPosition="55" endLine="116" endPosition="5" />
     <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="132" startPosition="55" endLine="134" endPosition="5" />
     <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="150" startPosition="56" endLine="152" endPosition="5" />
-    <scopeInfo nodeId="8459194913967351492" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7">
-      <varInfo nodeId="8459194913967351493" varName="duplicate" />
-    </scopeInfo>
+    <scopeInfo nodeId="8459194913967378076" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7" />
     <scopeInfo nodeId="6140205464397988602" fileName="IntroduceConstantRefactoring.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="6140205464397988609" varName="node" />
     </scopeInfo>
@@ -5461,7 +5457,9 @@
     <scopeInfo nodeId="8492459591399174251" fileName="InlineMethodRefactoring.java" startLine="140" startPosition="135" endLine="146" endPosition="5">
       <varInfo nodeId="8492459591399174252" varName="localCall" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174289" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5" />
+    <scopeInfo nodeId="8492459591399174290" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5">
+      <varInfo nodeId="8492459591399174291" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399174692" fileName="InlineMethodRefactoring.java" startLine="252" startPosition="118" endLine="258" endPosition="7">
       <varInfo nodeId="8492459591399174694" varName="st" />
     </scopeInfo>
@@ -5541,7 +5539,9 @@
       <varInfo nodeId="8492459591399174949" varName="methodCallAdapter" />
       <varInfo nodeId="8492459591399175019" varName="returns" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174015" fileName="InlineMethodRefactoring.java" startLine="95" startPosition="89" endLine="108" endPosition="5" />
+    <scopeInfo nodeId="8492459591399174016" fileName="InlineMethodRefactoring.java" startLine="95" startPosition="89" endLine="108" endPosition="5">
+      <varInfo nodeId="8492459591399174017" varName="returnStatement" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399174489" fileName="InlineMethodRefactoring.java" startLine="206" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="8492459591399174538" varName="parameterDeclaration" />
     </scopeInfo>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2392684134639614907">
+  <root nodeId="2392684134639614907" modelId="r:16e1d5b7-80ca-4570-9d1a-1cf2ce305e08(jetbrains.mps.debugger.api.ui)">
     <nodeInfo nodeId="2392684134639614919" fileName="DebugActionsUtil.java" startLine="24" startPosition="75" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2392684134639614925" fileName="DebugActionsUtil.java" startLine="25" startPosition="53" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2392684134639614935" fileName="DebugActionsUtil.java" startLine="30" startPosition="80" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

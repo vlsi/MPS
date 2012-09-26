@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1178529045424">
+  <root nodeId="1178529045424" modelId="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)">
     <nodeInfo nodeId="1178529133696" fileName="EmailExample.java" startLine="8" startPosition="32" endLine="9" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_qkhp2f_a0a0a0a" />
     <nodeInfo nodeId="1222878828916" fileName="EmailExample.java" startLine="9" startPosition="96" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_qkhp2f_a0a1a0" />
     <nodeInfo nodeId="1178529080149" fileName="EmailExample.java" startLine="16" startPosition="5" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -27,7 +27,7 @@
     </scopeInfo>
     <unitInfo nodeId="1178529045424" fileName="EmailExample.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.regexp.examples.EmailExample" />
   </root>
-  <root nodeId="1178535069057">
+  <root nodeId="1178535069057" modelId="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)">
     <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="8" startPosition="59" endLine="9" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
     <nodeInfo nodeId="1178535102782" fileName="BaseLanguageIntegration.java" startLine="9" startPosition="43" endLine="10" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_efh9at_a0a0a0a" />
     <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="9" startPosition="54" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
@@ -76,9 +76,6 @@
     <scopeInfo nodeId="1178535102798" fileName="BaseLanguageIntegration.java" startLine="23" startPosition="33" endLine="25" endPosition="62" />
     <scopeInfo nodeId="1178535219994" fileName="BaseLanguageIntegration.java" startLine="50" startPosition="45" endLine="52" endPosition="13" />
     <scopeInfo nodeId="1178535280599" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="1178535286955" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5">
-      <varInfo nodeId="1178535286957" varName="st" />
-    </scopeInfo>
     <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="1178535234174" varName="closureContext" />
       <varInfo nodeId="1178535234174" varName="enclosingClass" />

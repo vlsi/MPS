@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="613652663728232571">
+  <root nodeId="613652663728232571" modelId="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)">
     <nodeInfo nodeId="613652663728244544" fileName="Context.java" startLine="10" startPosition="37" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuspendPolicy#()I" />
     <nodeInfo nodeId="613652663728244536" fileName="Context.java" startLine="8" startPosition="26" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThread#()Lcom/sun/jdi/ThreadReference;" />
     <scopeInfo nodeId="613652663728244544" fileName="Context.java" startLine="10" startPosition="37" endLine="11" endPosition="32" />
     <scopeInfo nodeId="613652663728244536" fileName="Context.java" startLine="8" startPosition="26" endLine="10" endPosition="37" />
     <unitInfo nodeId="613652663728232571" fileName="Context.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
   </root>
-  <root nodeId="613652663728232607">
+  <root nodeId="613652663728232607" modelId="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)">
     <nodeInfo nodeId="4838790954312079858" fileName="UserContext.java" startLine="9" startPosition="50" endLine="10" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsProcessor" />
     <nodeInfo nodeId="4838790954312079862" fileName="UserContext.java" startLine="12" startPosition="55" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="613652663728245229" fileName="UserContext.java" startLine="17" startPosition="38" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -30,7 +30,7 @@
     <scopeInfo nodeId="4838790954312079851" fileName="UserContext.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
     <unitInfo nodeId="613652663728232607" fileName="UserContext.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.events.UserContext" />
   </root>
-  <root nodeId="6460341978864584371">
+  <root nodeId="6460341978864584371" modelId="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)">
     <nodeInfo nodeId="6460341978864584435" fileName="EventsProcessor.java" startLine="35" startPosition="30" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATE_INITIAL" />
     <nodeInfo nodeId="6460341978864584439" fileName="EventsProcessor.java" startLine="36" startPosition="47" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATE_ATTACHED" />
     <nodeInfo nodeId="6460341978864584443" fileName="EventsProcessor.java" startLine="37" startPosition="48" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATE_DETACHING" />
@@ -449,7 +449,7 @@
     <unitInfo nodeId="6460341978864584380" fileName="EventsProcessor.java" startLine="298" startPosition="0" endLine="351" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$EventProcessorRunnable" />
     <unitInfo nodeId="2891782949125146472" fileName="EventsProcessor.java" startLine="352" startPosition="0" endLine="367" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$StepKind" />
   </root>
-  <root nodeId="6460341978864584962">
+  <root nodeId="6460341978864584962" modelId="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)">
     <nodeInfo nodeId="6460341978864584970" fileName="EventContext.java" startLine="15" startPosition="46" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventSet" />
     <nodeInfo nodeId="6460341978864585072" fileName="EventContext.java" startLine="16" startPosition="36" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVotesToVote" />
     <nodeInfo nodeId="6676843613964939339" fileName="EventContext.java" startLine="17" startPosition="28" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventProcessor" />
@@ -522,7 +522,7 @@
     <unitInfo nodeId="7672976942235879404" fileName="EventContext.java" startLine="26" startPosition="91" endLine="30" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext$1" />
     <unitInfo nodeId="7672976942235879409" fileName="EventContext.java" startLine="30" startPosition="22" endLine="34" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext$2" />
   </root>
-  <root nodeId="7672976942235813584">
+  <root nodeId="7672976942235813584" modelId="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)">
     <nodeInfo nodeId="7672976942235813584" fileName="ContextManager.java" startLine="22" startPosition="29" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6460341978864599944" fileName="ContextManager.java" startLine="24" startPosition="0" endLine="25" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspendedContexts" />
     <nodeInfo nodeId="7672976942235813933" fileName="ContextManager.java" startLine="25" startPosition="110" endLine="26" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvaluatedThreads" />

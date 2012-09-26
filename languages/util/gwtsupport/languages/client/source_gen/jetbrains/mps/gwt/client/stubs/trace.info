@@ -198,7 +198,9 @@
     <scopeInfo nodeId="4372437818008124683" fileName="GWTModuleReader.java" startLine="101" startPosition="5" endLine="104" endPosition="5">
       <varInfo nodeId="4372437818008124684" varName="elm" />
     </scopeInfo>
-    <scopeInfo nodeId="4372437818008124867" fileName="GWTModuleReader.java" startLine="141" startPosition="25" endLine="144" endPosition="7" />
+    <scopeInfo nodeId="4372437818008124868" fileName="GWTModuleReader.java" startLine="141" startPosition="25" endLine="144" endPosition="7">
+      <varInfo nodeId="4372437818008124882" varName="or" />
+    </scopeInfo>
     <scopeInfo nodeId="4372437818008124962" fileName="GWTModuleReader.java" startLine="158" startPosition="12" endLine="161" endPosition="235" />
     <scopeInfo nodeId="4372437818008125012" fileName="GWTModuleReader.java" startLine="165" startPosition="82" endLine="168" endPosition="235">
       <varInfo nodeId="4372437818008125014" varName="trgsmref" />

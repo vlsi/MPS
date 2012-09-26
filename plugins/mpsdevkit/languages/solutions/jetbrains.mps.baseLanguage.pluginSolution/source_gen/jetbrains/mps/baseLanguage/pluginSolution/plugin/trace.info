@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6573807532044001855">
+  <root nodeId="6573807532044001855" modelId="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="8" startPosition="91" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseLanguageCustomPlugin_CustomProjectPlugin#()V" />
     <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#(Ljetbrains/mps/project/MPSProject;)V" />
     <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#(Ljetbrains/mps/project/MPSProject;)V" />
@@ -16,7 +16,7 @@
     </scopeInfo>
     <unitInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   </root>
-  <root nodeId="6573807532044005480">
+  <root nodeId="6573807532044005480" modelId="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="26" startPosition="31" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -106,7 +106,7 @@
     </scopeInfo>
     <unitInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
   </root>
-  <root nodeId="6573807532044005513">
+  <root nodeId="6573807532044005513" modelId="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="8" startPosition="72" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="9" startPosition="83" endLine="10" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -125,7 +125,7 @@
     <scopeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
   </root>
-  <root nodeId="7162597690965088109">
+  <root nodeId="7162597690965088109" modelId="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="17" startPosition="73" endLine="18" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

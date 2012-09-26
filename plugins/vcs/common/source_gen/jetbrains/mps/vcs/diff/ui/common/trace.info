@@ -1163,9 +1163,7 @@
       <varInfo nodeId="4652592318748337734" varName="inspector" />
       <varInfo nodeId="8026003490916165917" varName="mergeAdjacent" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748337412" fileName="ChangeGroupLayout.java" startLine="68" startPosition="56" endLine="73" endPosition="7">
-      <varInfo nodeId="4652592318748337413" varName="b" />
-    </scopeInfo>
+    <scopeInfo nodeId="4652592318748337411" fileName="ChangeGroupLayout.java" startLine="68" startPosition="56" endLine="73" endPosition="7" />
     <scopeInfo nodeId="4652592318748337613" fileName="ChangeGroupLayout.java" startLine="122" startPosition="46" endLine="127" endPosition="26" />
     <scopeInfo nodeId="8026003490916188822" fileName="ChangeGroupLayout.java" startLine="173" startPosition="87" endLine="178" endPosition="102">
       <varInfo nodeId="1214268015959816391" varName="tolerance" />
@@ -1741,9 +1739,7 @@
     <scopeInfo nodeId="4652592318748339076" fileName="DiffEditorsGroup.java" startLine="28" startPosition="0" endLine="30" endPosition="3" />
     <scopeInfo nodeId="4652592318748338974" fileName="DiffEditorsGroup.java" startLine="130" startPosition="82" endLine="132" endPosition="5" />
     <scopeInfo nodeId="4652592318748339031" fileName="DiffEditorsGroup.java" startLine="32" startPosition="42" endLine="35" endPosition="122" />
-    <scopeInfo nodeId="4652592318748338953" fileName="DiffEditorsGroup.java" startLine="139" startPosition="36" endLine="142" endPosition="13">
-      <varInfo nodeId="4652592318748338954" varName="diffEditor" />
-    </scopeInfo>
+    <scopeInfo nodeId="4652592318748338952" fileName="DiffEditorsGroup.java" startLine="139" startPosition="36" endLine="142" endPosition="13" />
     <scopeInfo nodeId="4652592318748339018" fileName="DiffEditorsGroup.java" startLine="151" startPosition="0" endLine="154" endPosition="5">
       <varInfo nodeId="4652592318748339026" varName="diffEditor" />
     </scopeInfo>
@@ -2827,7 +2823,7 @@
       <varInfo nodeId="4652592318748341122" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340679" fileName="NextPreviousTraverser.java" startLine="81" startPosition="32" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="4652592318748341075" fileName="NextPreviousTraverser.java" startLine="225" startPosition="12" endLine="232" endPosition="7" />
+    <scopeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="225" startPosition="12" endLine="232" endPosition="7" />
     <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="235" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="4652592318748340849" varName="checkedDotOperand" />
       <varInfo nodeId="4652592318748340849" varName="left" />
@@ -3079,7 +3075,6 @@
     <scopeInfo nodeId="739457190729177668" fileName="ChangeGroupMessages.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="739457190729189660" fileName="ChangeGroupMessages.java" startLine="29" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="14" endPosition="0" />
-    <unitInfo nodeId="739457190729183679" fileName="ChangeGroupMessages.java" startLine="31" startPosition="39" endLine="39" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
     <unitInfo nodeId="9208869176467556553" fileName="ChangeGroupMessages.java" startLine="33" startPosition="60" endLine="37" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183618" fileName="ChangeGroupMessages.java" startLine="48" startPosition="67" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183512" fileName="ChangeGroupMessages.java" startLine="60" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />

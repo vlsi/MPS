@@ -44,9 +44,7 @@
     <scopeInfo nodeId="1200413471959" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="201" endLine="47" endPosition="9">
       <varInfo nodeId="1200413471960" varName="sMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1200413446949" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7">
-      <varInfo nodeId="1200413446950" varName="classNode" />
-    </scopeInfo>
+    <scopeInfo nodeId="1200309609800" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="39" startPosition="98" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="38" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1200309609796" varName="_results" />
@@ -415,9 +413,7 @@
     <scopeInfo nodeId="1206537111493" fileName="FieldUsages_Finder.java" startLine="67" startPosition="184" endLine="68" endPosition="62" />
     <scopeInfo nodeId="1206463233017" fileName="FieldUsages_Finder.java" startLine="73" startPosition="45" endLine="74" endPosition="26" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1206537167248" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9">
-      <varInfo nodeId="1206537167249" varName="fieldUsage" />
-    </scopeInfo>
+    <scopeInfo nodeId="1206537147100" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1206537111490" fileName="FieldUsages_Finder.java" startLine="66" startPosition="119" endLine="69" endPosition="7">
       <varInfo nodeId="1206537111491" varName="fieldNode" />
     </scopeInfo>
@@ -839,10 +835,10 @@
       <varInfo nodeId="1204127428918" varName="invocationNode" />
       <varInfo nodeId="1204127398185" varName="thisConstructor" />
     </scopeInfo>
-    <scopeInfo nodeId="1204121808317" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9">
-      <varInfo nodeId="1204121808318" varName="enumConstant" />
+    <scopeInfo nodeId="1204121678255" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9" />
+    <scopeInfo nodeId="1204127350109" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11">
+      <varInfo nodeId="1204127350110" varName="invocation" />
     </scopeInfo>
-    <scopeInfo nodeId="1204127076384" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11" />
     <scopeInfo nodeId="1204127040741" fileName="ConstructorUsages_Finder.java" startLine="49" startPosition="283" endLine="71" endPosition="9" />
     <scopeInfo nodeId="1204127040738" fileName="ConstructorUsages_Finder.java" startLine="48" startPosition="41" endLine="72" endPosition="7">
       <varInfo nodeId="1204127040739" varName="subclassResult" />
@@ -1120,7 +1116,9 @@
     <scopeInfo nodeId="1216386130660" fileName="BaseMethodUsages_Finder.java" startLine="62" startPosition="61" endLine="63" endPosition="57" />
     <scopeInfo nodeId="1216386272408" fileName="BaseMethodUsages_Finder.java" startLine="67" startPosition="45" endLine="68" endPosition="32" />
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1216386159395" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9" />
+    <scopeInfo nodeId="1216386170455" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9">
+      <varInfo nodeId="1216386170456" varName="usage" />
+    </scopeInfo>
     <scopeInfo nodeId="1216386130657" fileName="BaseMethodUsages_Finder.java" startLine="61" startPosition="56" endLine="64" endPosition="5">
       <varInfo nodeId="1216386130658" varName="method" />
     </scopeInfo>
@@ -1202,7 +1200,9 @@
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1216392046439" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1216392203371" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="1216392459935" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9">
+      <varInfo nodeId="1216392459936" varName="implementedInterface" />
+    </scopeInfo>
     <scopeInfo nodeId="1216392203368" fileName="ImplementedInterfaces_Finder.java" startLine="40" startPosition="57" endLine="47" endPosition="7">
       <varInfo nodeId="1216392203369" varName="classNode" />
     </scopeInfo>
@@ -1254,7 +1254,9 @@
       <varInfo nodeId="1227527031007" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1227527192373" fileName="ExactMethodUsages_Finder.java" startLine="41" startPosition="172" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="1227527031009" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="1227527192369" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7">
+      <varInfo nodeId="1227527192370" varName="nodeUsage" />
+    </scopeInfo>
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="38" startPosition="98" endLine="50" endPosition="5" />
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1227527031007" varName="_results" />

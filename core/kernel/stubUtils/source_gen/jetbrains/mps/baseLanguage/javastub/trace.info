@@ -1530,10 +1530,10 @@
     <scopeInfo nodeId="2566197375814061840" fileName="ClassifierUpdater.java" startLine="130" startPosition="9" endLine="133" endPosition="9">
       <varInfo nodeId="2566197375814061844" varName="act" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062131" fileName="ClassifierUpdater.java" startLine="150" startPosition="58" endLine="153" endPosition="5">
-      <varInfo nodeId="2566197375814062135" varName="annotation" />
+    <scopeInfo nodeId="2566197375814062130" fileName="ClassifierUpdater.java" startLine="150" startPosition="58" endLine="153" endPosition="5" />
+    <scopeInfo nodeId="2566197375814062161" fileName="ClassifierUpdater.java" startLine="156" startPosition="68" endLine="159" endPosition="5">
+      <varInfo nodeId="2566197375814062165" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062154" fileName="ClassifierUpdater.java" startLine="156" startPosition="68" endLine="159" endPosition="5" />
     <scopeInfo nodeId="2566197375814062234" fileName="ClassifierUpdater.java" startLine="166" startPosition="5" endLine="169" endPosition="5">
       <varInfo nodeId="2566197375814062238" varName="type" />
     </scopeInfo>
@@ -1999,9 +1999,7 @@
       <varInfo nodeId="2566197375814062186" varName="ac" />
       <varInfo nodeId="2566197375814062188" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062522" fileName="ClassifierUpdater.java" startLine="235" startPosition="81" endLine="245" endPosition="5">
-      <varInfo nodeId="2566197375814062526" varName="m" />
-    </scopeInfo>
+    <scopeInfo nodeId="2566197375814062515" fileName="ClassifierUpdater.java" startLine="235" startPosition="81" endLine="245" endPosition="5" />
     <scopeInfo nodeId="2566197375814063343" fileName="ClassifierUpdater.java" startLine="407" startPosition="49" endLine="417" endPosition="16" />
     <scopeInfo nodeId="2566197375814063377" fileName="ClassifierUpdater.java" startLine="420" startPosition="48" endLine="430" endPosition="16" />
     <scopeInfo nodeId="2566197375814063434" fileName="ClassifierUpdater.java" startLine="441" startPosition="60" endLine="451" endPosition="18">
@@ -2410,7 +2408,9 @@
     <scopeInfo nodeId="5122318299906073172" fileName="ClassifierUpdater.java" startLine="1713" startPosition="32" endLine="1731" endPosition="7" />
     <scopeInfo nodeId="5122318299906073218" fileName="ClassifierUpdater.java" startLine="1778" startPosition="32" endLine="1796" endPosition="7" />
     <scopeInfo nodeId="5122318299906073235" fileName="ClassifierUpdater.java" startLine="1809" startPosition="32" endLine="1827" endPosition="7" />
-    <scopeInfo nodeId="2566197375814062263" fileName="ClassifierUpdater.java" startLine="172" startPosition="65" endLine="191" endPosition="5" />
+    <scopeInfo nodeId="2566197375814062270" fileName="ClassifierUpdater.java" startLine="172" startPosition="65" endLine="191" endPosition="5">
+      <varInfo nodeId="2566197375814062274" varName="field" />
+    </scopeInfo>
     <scopeInfo nodeId="2566197375814062409" fileName="ClassifierUpdater.java" startLine="211" startPosition="14" endLine="230" endPosition="101">
       <varInfo nodeId="5122318299906045761" varName="decl" />
     </scopeInfo>
@@ -2576,9 +2576,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2566197375814082191" fileName="ClassifierUpdater.java" startLine="61" startPosition="64" endLine="98" endPosition="13" />
     <scopeInfo nodeId="5122318299906046064" fileName="ClassifierUpdater.java" startLine="954" startPosition="32" endLine="991" endPosition="7" />
-    <scopeInfo nodeId="2566197375814062376" fileName="ClassifierUpdater.java" startLine="194" startPosition="59" endLine="232" endPosition="5">
-      <varInfo nodeId="2566197375814062380" varName="field" />
-    </scopeInfo>
+    <scopeInfo nodeId="2566197375814062369" fileName="ClassifierUpdater.java" startLine="194" startPosition="59" endLine="232" endPosition="5" />
     <scopeInfo nodeId="5122318299906045614" fileName="ClassifierUpdater.java" startLine="741" startPosition="110" endLine="779" endPosition="20">
       <varInfo nodeId="5122318299906045614" varName="_parameterValues_129834374" />
       <varInfo nodeId="5122318299906045614" varName="quotedNode_1" />
@@ -2823,9 +2821,7 @@
       <varInfo nodeId="4350187567640399730" varName="isStatic" />
       <varInfo nodeId="4350187567640399696" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="4350187567640399678" fileName="ClassifierLoader.java" startLine="51" startPosition="82" endLine="82" endPosition="5">
-      <varInfo nodeId="4350187567640399679" varName="cn" />
-    </scopeInfo>
+    <scopeInfo nodeId="4350187567640399677" fileName="ClassifierLoader.java" startLine="51" startPosition="82" endLine="82" endPosition="5" />
     <scopeInfo nodeId="4350187567640399674" fileName="ClassifierLoader.java" startLine="50" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="4350187567640399791" varName="ac" />
       <varInfo nodeId="4350187567640399793" varName="cls" />

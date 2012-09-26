@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5257650213624905145">
+  <root nodeId="5257650213624905145" modelId="r:c78b7b07-f19e-466a-a1b2-aee680cd1d46(jetbrains.mps.textGenTest.test1.package2)">
     <nodeInfo nodeId="5257650213624905147" fileName="Clazz.java" startLine="6" startPosition="20" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Clazz#()V" />
     <nodeInfo nodeId="5257650213624905155" fileName="Clazz.java" startLine="10" startPosition="23" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Nested#()V" />
     <scopeInfo nodeId="5257650213624905150" fileName="Clazz.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />

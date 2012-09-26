@@ -82,7 +82,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
       {
         SNode nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a;
         nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a.getConcept().getId()))) {
           return false;
         }
         {

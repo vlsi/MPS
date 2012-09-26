@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6391517972808555635">
+  <root nodeId="6391517972808555635" modelId="r:40062e7d-2d40-4964-a55f-255e1fee23d7(jetbrains.mps.debugger.java.runtime.configurations.remote)">
     <nodeInfo nodeId="6391517972808555638" fileName="RemoteProcessHandler.java" startLine="16" startPosition="58" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="6391517972808555647" fileName="RemoteProcessHandler.java" startLine="19" startPosition="48" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6391517972808555655" fileName="RemoteProcessHandler.java" startLine="23" startPosition="29" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -106,9 +106,7 @@
       <varInfo nodeId="1215617277226" varName="var" />
       <varInfo nodeId="1215617277219" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11">
-      <varInfo nodeId="1215609104512" varName="operation" />
-    </scopeInfo>
+    <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11" />
     <scopeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="152" startPosition="0" endLine="155" endPosition="0" />
     <scopeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="852155438141188214" varName="node" />
@@ -130,9 +128,7 @@
       <varInfo nodeId="95706764259162137" varName="hasType" />
       <varInfo nodeId="95706764259162025" varName="type1" />
     </scopeInfo>
-    <scopeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="141" startPosition="52" endLine="150" endPosition="5">
-      <varInfo nodeId="1215605336248" varName="nodeToCheck" />
-    </scopeInfo>
+    <scopeInfo nodeId="1215605336230" fileName="SubtreeChecker.java" startLine="141" startPosition="52" endLine="150" endPosition="5" />
     <scopeInfo nodeId="1215610523462" fileName="SubtreeChecker.java" startLine="86" startPosition="25" endLine="96" endPosition="11">
       <varInfo nodeId="7938028138875678861" varName="reporter" />
     </scopeInfo>

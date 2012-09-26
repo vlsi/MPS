@@ -625,9 +625,7 @@
     <scopeInfo nodeId="3161373106581137585" fileName="ClassifierAndSuperClassifiersCache.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="3161373106581137589" fileName="ClassifierAndSuperClassifiersCache.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="3161373106581137593" fileName="ClassifierAndSuperClassifiersCache.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="2146274118877599510" fileName="ClassifierAndSuperClassifiersCache.java" startLine="158" startPosition="110" endLine="162" endPosition="11">
-      <varInfo nodeId="2146274118877599513" varName="type" />
-    </scopeInfo>
+    <scopeInfo nodeId="2146274118877599502" fileName="ClassifierAndSuperClassifiersCache.java" startLine="158" startPosition="110" endLine="162" endPosition="11" />
     <scopeInfo nodeId="3161373106581138259" fileName="ClassifierAndSuperClassifiersCache.java" startLine="173" startPosition="11" endLine="177" endPosition="11">
       <varInfo nodeId="3161373106581138266" varName="classifierType1" />
     </scopeInfo>
@@ -1851,9 +1849,7 @@
     <scopeInfo nodeId="3161373106581140786" fileName="LocalVariablesScope.java" startLine="174" startPosition="11" endLine="179" endPosition="11">
       <varInfo nodeId="3161373106581140791" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4378856834018954281" fileName="LocalVariablesScope.java" startLine="58" startPosition="130" endLine="64" endPosition="11">
-      <varInfo nodeId="4378856834018954282" varName="caseClause" />
-    </scopeInfo>
+    <scopeInfo nodeId="2822718292052026141" fileName="LocalVariablesScope.java" startLine="58" startPosition="130" endLine="64" endPosition="11" />
     <scopeInfo nodeId="3161373106581140487" fileName="LocalVariablesScope.java" startLine="189" startPosition="30" endLine="196" endPosition="40" />
     <scopeInfo nodeId="3161373106581140710" fileName="LocalVariablesScope.java" startLine="156" startPosition="93" endLine="164" endPosition="5">
       <varInfo nodeId="3161373106581140732" varName="containingCatchClause" />
@@ -1899,9 +1895,7 @@
       <varInfo nodeId="4378856834018954302" varName="declNode" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581140757" fileName="LocalVariablesScope.java" startLine="168" startPosition="100" endLine="184" endPosition="72" />
-    <scopeInfo nodeId="4378856834018954319" fileName="LocalVariablesScope.java" startLine="103" startPosition="112" endLine="120" endPosition="5">
-      <varInfo nodeId="4378856834018954301" varName="sNode" />
-    </scopeInfo>
+    <scopeInfo nodeId="4378856834018954313" fileName="LocalVariablesScope.java" startLine="103" startPosition="112" endLine="120" endPosition="5" />
     <scopeInfo nodeId="4378856834018954306" fileName="LocalVariablesScope.java" startLine="102" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="4378856834018954304" varName="beforeStatement" />
       <varInfo nodeId="4378856834018954305" varName="result" />
@@ -2384,10 +2378,10 @@
       <varInfo nodeId="1908213869843319993" varName="member" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581142083" fileName="AbstractClassifiersScope.java" startLine="77" startPosition="130" endLine="82" endPosition="11" />
-    <scopeInfo nodeId="1908213869843320042" fileName="AbstractClassifiersScope.java" startLine="84" startPosition="124" endLine="89" endPosition="11">
-      <varInfo nodeId="1908213869843320043" varName="member" />
+    <scopeInfo nodeId="3161373106581142120" fileName="AbstractClassifiersScope.java" startLine="84" startPosition="124" endLine="89" endPosition="11" />
+    <scopeInfo nodeId="1908213869843320063" fileName="AbstractClassifiersScope.java" startLine="91" startPosition="126" endLine="96" endPosition="11">
+      <varInfo nodeId="1908213869843320064" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581142161" fileName="AbstractClassifiersScope.java" startLine="91" startPosition="126" endLine="96" endPosition="11" />
     <scopeInfo nodeId="3161373106581142205" fileName="AbstractClassifiersScope.java" startLine="98" startPosition="252" endLine="103" endPosition="11" />
     <scopeInfo nodeId="3161373106581142239" fileName="AbstractClassifiersScope.java" startLine="40" startPosition="63" endLine="46" endPosition="7">
       <varInfo nodeId="3161373106581142241" varName="classifier" />
@@ -2395,7 +2389,9 @@
     <scopeInfo nodeId="3161373106581141893" fileName="AbstractClassifiersScope.java" startLine="48" startPosition="44" endLine="104" endPosition="9">
       <varInfo nodeId="1908213869843320123" varName="isClassConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581141888" fileName="AbstractClassifiersScope.java" startLine="47" startPosition="12" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="3161373106581141889" fileName="AbstractClassifiersScope.java" startLine="47" startPosition="12" endLine="105" endPosition="7">
+      <varInfo nodeId="3161373106581141891" varName="classifier" />
+    </scopeInfo>
     <scopeInfo nodeId="3161373106581141865" fileName="AbstractClassifiersScope.java" startLine="35" startPosition="122" endLine="107" endPosition="18">
       <varInfo nodeId="3161373106581141867" varName="result" />
     </scopeInfo>
@@ -3044,7 +3040,9 @@
     <scopeInfo nodeId="4579166930940577286" fileName="ParameterScope.java" startLine="32" startPosition="60" endLine="35" endPosition="9" />
     <scopeInfo nodeId="4579166930940577163" fileName="ParameterScope.java" startLine="43" startPosition="36" endLine="46" endPosition="7" />
     <scopeInfo nodeId="8866852874177057477" fileName="ParameterScope.java" startLine="24" startPosition="31" endLine="28" endPosition="38" />
-    <scopeInfo nodeId="4579166930940577284" fileName="ParameterScope.java" startLine="31" startPosition="31" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="4579166930940577285" fileName="ParameterScope.java" startLine="31" startPosition="31" endLine="36" endPosition="7">
+      <varInfo nodeId="4579166930940577299" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="4579166930940577157" fileName="ParameterScope.java" startLine="42" startPosition="41" endLine="47" endPosition="5">
       <varInfo nodeId="4579166930940577161" varName="node" />
     </scopeInfo>

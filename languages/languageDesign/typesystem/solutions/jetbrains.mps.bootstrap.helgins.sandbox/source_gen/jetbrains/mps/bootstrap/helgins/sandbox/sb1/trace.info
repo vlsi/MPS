@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1186475525107">
+  <root nodeId="1186475525107" modelId="r:00000000-0000-4000-0000-011c895905ca(jetbrains.mps.bootstrap.helgins.sandbox.sb1)">
     <nodeInfo nodeId="1196960455591" fileName="AClssssssssssssssssass.java" startLine="18" startPosition="5" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="20" startPosition="7" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="21" startPosition="44" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -17,7 +17,7 @@
     <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="54" startPosition="110" endLine="55" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_class" />
     <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="61" startPosition="7" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="62" startPosition="64" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="64" startPosition="148" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="64" startPosition="150" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="66" startPosition="9" endLine="67" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="66" startPosition="9" endLine="67" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="68" startPosition="7" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -54,7 +54,7 @@
     <scopeInfo nodeId="1196960455595" fileName="AClssssssssssssssssass.java" startLine="25" startPosition="11" endLine="26" endPosition="82">
       <varInfo nodeId="1196960592999" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="64" startPosition="148" endLine="65" endPosition="23" />
+    <scopeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="64" startPosition="150" endLine="65" endPosition="23" />
     <scopeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="66" startPosition="9" endLine="67" endPosition="103" />
     <scopeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="72" startPosition="40" endLine="73" endPosition="19" />
     <scopeInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="77" startPosition="69" endLine="78" endPosition="77" />

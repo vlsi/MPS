@@ -301,7 +301,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a5a2a7 = SLinkOperations.getTarget(formalParam, "type", true);
             if (matchingNode_5ahx9e_a5a2a7 != null) {
-              matches_5ahx9e_a5a2a7 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+              matches_5ahx9e_a5a2a7 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a7.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
             }
           }
           if (matches_5ahx9e_a5a2a7) {
@@ -460,7 +460,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a0a5a41 = SNodeOperations.getParent(prevStatementList);
             if (matchingNode_5ahx9e_a0a5a41 != null) {
-              matches_5ahx9e_a0a5a41 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a0a5a41.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+              matches_5ahx9e_a0a5a41 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a0a5a41.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
           }
           if (matches_5ahx9e_a0a5a41) {
@@ -531,7 +531,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a1a6a71 = anc;
             if (matchingNode_5ahx9e_a1a6a71 != null) {
-              matches_5ahx9e_a1a6a71 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a6a71.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+              matches_5ahx9e_a1a6a71 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a6a71.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.TryStatement");
             }
           }
           if (matches_5ahx9e_a1a6a71) {
@@ -549,7 +549,7 @@ __switch__:
             {
               SNode matchingNode_5ahx9e_b1a6a71 = anc;
               if (matchingNode_5ahx9e_b1a6a71 != null) {
-                matches_5ahx9e_b1a6a71 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a6a71.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+                matches_5ahx9e_b1a6a71 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a6a71.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
               }
             }
             if (matches_5ahx9e_b1a6a71) {

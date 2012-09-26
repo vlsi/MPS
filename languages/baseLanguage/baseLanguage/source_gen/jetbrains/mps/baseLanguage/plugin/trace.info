@@ -520,7 +520,9 @@
       <varInfo nodeId="6648795410103967254" varName="compiledAnything" />
       <varInfo nodeId="6648795410103967254" varName="skipCompilation" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103967411" fileName="JavaCompile_Facet.java" startLine="324" startPosition="33" endLine="327" endPosition="19" />
+    <scopeInfo nodeId="6648795410103967412" fileName="JavaCompile_Facet.java" startLine="324" startPosition="33" endLine="327" endPosition="19">
+      <varInfo nodeId="6648795410103967416" varName="msg" />
+    </scopeInfo>
     <scopeInfo nodeId="6648795410103967472" fileName="JavaCompile_Facet.java" startLine="408" startPosition="67" endLine="411" endPosition="7" />
     <scopeInfo nodeId="6648795410103967472" fileName="JavaCompile_Facet.java" startLine="412" startPosition="0" endLine="415" endPosition="7">
       <varInfo nodeId="6648795410103967472" varName="skipAuxCompile" />

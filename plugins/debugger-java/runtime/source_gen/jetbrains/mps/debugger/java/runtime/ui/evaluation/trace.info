@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4577525712681038408">
+  <root nodeId="4577525712681038408" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="5498026401458111774" fileName="EditWatchDialog.java" startLine="17" startPosition="140" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="5498026401458099194" fileName="EditWatchDialog.java" startLine="21" startPosition="177" endLine="22" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5498026401458111783" fileName="EditWatchDialog.java" startLine="22" startPosition="50" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -29,7 +29,7 @@
     <scopeInfo nodeId="4577525712681101569" fileName="EditWatchDialog.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="4577525712681038408" fileName="EditWatchDialog.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog" />
   </root>
-  <root nodeId="4577525712681046198">
+  <root nodeId="4577525712681046198" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="4577525712681046225" fileName="AbstractEvaluationDialog.java" startLine="16" startPosition="67" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" />
     <nodeInfo nodeId="4577525712681046228" fileName="AbstractEvaluationDialog.java" startLine="17" startPosition="48" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvaluationPanel" />
     <nodeInfo nodeId="4577525712681046231" fileName="AbstractEvaluationDialog.java" startLine="18" startPosition="52" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySessionStopDisposer" />
@@ -87,7 +87,7 @@
     <unitInfo nodeId="4577525712681046291" fileName="AbstractEvaluationDialog.java" startLine="35" startPosition="32" endLine="43" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$2" />
     <unitInfo nodeId="4577525712681046303" fileName="AbstractEvaluationDialog.java" startLine="37" startPosition="60" endLine="41" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$3" />
   </root>
-  <root nodeId="5600062460044309378">
+  <root nodeId="5600062460044309378" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="5600062460044309381" fileName="WatchesPanel.java" startLine="16" startPosition="48" endLine="17" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySessionStopDisposer" />
     <nodeInfo nodeId="5600062460044309384" fileName="WatchesPanel.java" startLine="17" startPosition="58" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" />
     <nodeInfo nodeId="5600062460044309393" fileName="WatchesPanel.java" startLine="20" startPosition="58" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -133,13 +133,7 @@
     <scopeInfo nodeId="5600062460044309478" fileName="WatchesPanel.java" startLine="51" startPosition="29" endLine="53" endPosition="59" />
     <scopeInfo nodeId="5600062460044309425" fileName="WatchesPanel.java" startLine="29" startPosition="29" endLine="32" endPosition="59" />
     <scopeInfo nodeId="5600062460044309543" fileName="WatchesPanel.java" startLine="77" startPosition="27" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="5600062460044309544" fileName="WatchesPanel.java" startLine="77" startPosition="27" endLine="80" endPosition="5">
-      <varInfo nodeId="5600062460044309548" varName="model" />
-    </scopeInfo>
     <scopeInfo nodeId="5600062460044309559" fileName="WatchesPanel.java" startLine="84" startPosition="26" endLine="87" endPosition="5" />
-    <scopeInfo nodeId="5600062460044309560" fileName="WatchesPanel.java" startLine="84" startPosition="26" endLine="87" endPosition="5">
-      <varInfo nodeId="5600062460044309564" varName="model" />
-    </scopeInfo>
     <scopeInfo nodeId="5600062460044309453" fileName="WatchesPanel.java" startLine="39" startPosition="72" endLine="44" endPosition="0" />
     <scopeInfo nodeId="5600062460044309507" fileName="WatchesPanel.java" startLine="61" startPosition="72" endLine="66" endPosition="0" />
     <scopeInfo nodeId="5600062460044309445" fileName="WatchesPanel.java" startLine="38" startPosition="69" endLine="44" endPosition="11" />
@@ -174,7 +168,7 @@
     <unitInfo nodeId="5600062460044309495" fileName="WatchesPanel.java" startLine="58" startPosition="32" endLine="68" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
     <unitInfo nodeId="5600062460044309506" fileName="WatchesPanel.java" startLine="61" startPosition="60" endLine="66" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$3" />
   </root>
-  <root nodeId="5849716370568348282">
+  <root nodeId="5849716370568348282" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="5849716370568348356" fileName="EvaluationDialog.java" startLine="12" startPosition="133" endLine="13" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="162769737603681293" fileName="EvaluationDialog.java" startLine="17" startPosition="29" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405654937062496985" fileName="EvaluationDialog.java" startLine="18" startPosition="64" endLine="19" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -202,7 +196,7 @@
     <scopeInfo nodeId="162769737603681273" fileName="EvaluationDialog.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="5849716370568348282" fileName="EvaluationDialog.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" />
   </root>
-  <root nodeId="7406771907178597948">
+  <root nodeId="7406771907178597948" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="7406771907178597951" fileName="EvaluationTree.java" startLine="40" startPosition="74" endLine="41" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassFqName" />
     <nodeInfo nodeId="7406771907178597954" fileName="EvaluationTree.java" startLine="41" startPosition="31" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadReference" />
     <nodeInfo nodeId="7406771907178597957" fileName="EvaluationTree.java" startLine="42" startPosition="44" endLine="43" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStates" />
@@ -449,9 +443,6 @@
       <varInfo nodeId="7406771907178598694" varName="error" />
     </scopeInfo>
     <scopeInfo nodeId="7406771907178599397" fileName="EvaluationTree.java" startLine="282" startPosition="66" endLine="285" endPosition="9" />
-    <scopeInfo nodeId="7406771907178599398" fileName="EvaluationTree.java" startLine="282" startPosition="66" endLine="285" endPosition="9">
-      <varInfo nodeId="7406771907178599399" varName="i" />
-    </scopeInfo>
     <scopeInfo nodeId="7406771907178599574" fileName="EvaluationTree.java" startLine="360" startPosition="41" endLine="363" endPosition="38" />
     <scopeInfo nodeId="7406771907178597968" fileName="EvaluationTree.java" startLine="47" startPosition="27" endLine="51" endPosition="17" />
     <scopeInfo nodeId="3994058048873163859" fileName="EvaluationTree.java" startLine="101" startPosition="59" endLine="105" endPosition="0" />
@@ -570,7 +561,6 @@
     <scopeInfo nodeId="612015978684709587" fileName="EvaluationTree.java" startLine="211" startPosition="38" endLine="221" endPosition="40">
       <varInfo nodeId="612015978684709597" varName="watchableNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7406771907178599479" fileName="EvaluationTree.java" startLine="313" startPosition="29" endLine="323" endPosition="7" />
     <scopeInfo nodeId="7406771907178599480" fileName="EvaluationTree.java" startLine="313" startPosition="29" endLine="323" endPosition="7">
       <varInfo nodeId="7406771907178599481" varName="messagePart" />
     </scopeInfo>
@@ -610,7 +600,7 @@
     <unitInfo nodeId="7406771907178598610" fileName="EvaluationTree.java" startLine="190" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ResultState" />
     <unitInfo nodeId="7704359791231501369" fileName="EvaluationTree.java" startLine="227" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree.ResultState$MyWatchableNode" />
   </root>
-  <root nodeId="7406771907178600108">
+  <root nodeId="7406771907178600108" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="7406771907178600403" fileName="EvaluationUi.java" startLine="26" startPosition="51" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="60037598617197268" fileName="EvaluationUi.java" startLine="27" startPosition="73" endLine="28" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EVALUATION_MODEL" />
     <nodeInfo nodeId="7406771907178600393" fileName="EvaluationUi.java" startLine="29" startPosition="0" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
@@ -837,7 +827,7 @@
     <unitInfo nodeId="7406771907178600438" fileName="EvaluationUi.java" startLine="148" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$IErrorTextListener" />
     <unitInfo nodeId="3196684409401005392" fileName="EvaluationUi.java" startLine="152" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter" />
   </root>
-  <root nodeId="920354110794004331">
+  <root nodeId="920354110794004331" modelId="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
     <nodeInfo nodeId="920354110794004952" fileName="EvaluationPanel.java" startLine="26" startPosition="51" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTabbedPane" />
     <nodeInfo nodeId="920354110794004963" fileName="EvaluationPanel.java" startLine="27" startPosition="61" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
     <nodeInfo nodeId="920354110794004966" fileName="EvaluationPanel.java" startLine="28" startPosition="36" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultEditor" />

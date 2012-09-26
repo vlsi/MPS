@@ -51,7 +51,9 @@
       <varInfo nodeId="1347577327951781540" varName="newConceptName" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="24" startPosition="60" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="1347577327951781586" fileName="RenameConcept.java" startLine="49" startPosition="33" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="49" startPosition="33" endLine="52" endPosition="7">
+      <varInfo nodeId="1347577327951781588" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">

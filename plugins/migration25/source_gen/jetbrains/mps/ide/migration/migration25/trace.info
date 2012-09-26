@@ -2442,7 +2442,9 @@
       <varInfo nodeId="5948516512857665272" varName="_params" />
       <varInfo nodeId="5948516512857665272" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5948516512857672826" fileName="UpgradePersistence_Action.java" startLine="69" startPosition="68" endLine="77" endPosition="9" />
+    <scopeInfo nodeId="5948516512857672827" fileName="UpgradePersistence_Action.java" startLine="69" startPosition="68" endLine="77" endPosition="9">
+      <varInfo nodeId="5948516512857672832" varName="smd" />
+    </scopeInfo>
     <scopeInfo nodeId="5948516512857672820" fileName="UpgradePersistence_Action.java" startLine="68" startPosition="123" endLine="78" endPosition="7">
       <varInfo nodeId="5948516512857672824" varName="module" />
     </scopeInfo>
@@ -3424,9 +3426,7 @@
     <scopeInfo nodeId="902710015953247113" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="60" startPosition="145" endLine="72" endPosition="22">
       <varInfo nodeId="902710015953321086" varName="usedNow" />
     </scopeInfo>
-    <scopeInfo nodeId="902710015953247110" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="59" startPosition="9" endLine="73" endPosition="7">
-      <varInfo nodeId="902710015953247111" varName="module" />
-    </scopeInfo>
+    <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="59" startPosition="9" endLine="73" endPosition="7" />
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="58" startPosition="96" endLine="78" endPosition="5" />
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="57" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="902710015953231731" varName="_params" />
@@ -3530,7 +3530,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="81" startPosition="27" endLine="84" endPosition="7" />
     <scopeInfo nodeId="9065176582222574591" fileName="UpdateRefactoringVersions_Action.java" startLine="91" startPosition="40" endLine="94" endPosition="7" />
-    <scopeInfo nodeId="9065176582222574620" fileName="UpdateRefactoringVersions_Action.java" startLine="97" startPosition="71" endLine="100" endPosition="7" />
+    <scopeInfo nodeId="9065176582222574621" fileName="UpdateRefactoringVersions_Action.java" startLine="97" startPosition="71" endLine="100" endPosition="7" />
     <scopeInfo nodeId="9065176582222574671" fileName="UpdateRefactoringVersions_Action.java" startLine="111" startPosition="68" endLine="114" endPosition="9" />
     <scopeInfo nodeId="9065176582222574707" fileName="UpdateRefactoringVersions_Action.java" startLine="117" startPosition="75" endLine="120" endPosition="9" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44">

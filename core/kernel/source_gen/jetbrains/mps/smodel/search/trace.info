@@ -127,7 +127,9 @@
       <varInfo nodeId="4642948870877886585" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="4642948870877886609" fileName="ModelAndImportedModelsScope.java" startLine="33" startPosition="27" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="4642948870877886729" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="22" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="22" endLine="54" endPosition="7">
+      <varInfo nodeId="4642948870877886732" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="4642948870877886604" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="45" endLine="41" endPosition="20" />
     <scopeInfo nodeId="4642948870877886684" fileName="ModelAndImportedModelsScope.java" startLine="57" startPosition="13" endLine="69" endPosition="11" />
     <scopeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="30" startPosition="0" endLine="43" endPosition="0" />
@@ -1425,18 +1427,14 @@
     <scopeInfo nodeId="8484262519286307191" fileName="Datasets.java" startLine="475" startPosition="80" endLine="480" endPosition="9">
       <varInfo nodeId="8484262519286307193" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8484262519286307442" fileName="Datasets.java" startLine="58" startPosition="68" endLine="64" endPosition="11">
-      <varInfo nodeId="8484262519286307445" varName="interfaceDeclaration" />
-    </scopeInfo>
+    <scopeInfo nodeId="8484262519286307441" fileName="Datasets.java" startLine="58" startPosition="68" endLine="64" endPosition="11" />
     <scopeInfo nodeId="8484262519286307414" fileName="Datasets.java" startLine="71" startPosition="11" endLine="77" endPosition="11">
       <varInfo nodeId="8484262519286307417" varName="interfaceDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="8484262519286306060" fileName="Datasets.java" startLine="115" startPosition="73" endLine="121" endPosition="11">
       <varInfo nodeId="8484262519286306063" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="8484262519286306048" fileName="Datasets.java" startLine="123" startPosition="64" endLine="129" endPosition="11">
-      <varInfo nodeId="8484262519286306051" varName="n" />
-    </scopeInfo>
+    <scopeInfo nodeId="8484262519286306047" fileName="Datasets.java" startLine="123" startPosition="64" endLine="129" endPosition="11" />
     <scopeInfo nodeId="8484262519286306660" fileName="Datasets.java" startLine="319" startPosition="71" endLine="325" endPosition="7">
       <varInfo nodeId="8484262519286306662" varName="link" />
     </scopeInfo>

@@ -1179,7 +1179,9 @@
       <varInfo nodeId="5881102044690182602" varName="testMethods" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182684" fileName="TestRunState.java" startLine="92" startPosition="29" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="5881102044690182699" fileName="TestRunState.java" startLine="98" startPosition="27" endLine="101" endPosition="5" />
+    <scopeInfo nodeId="5881102044690182700" fileName="TestRunState.java" startLine="98" startPosition="27" endLine="101" endPosition="5">
+      <varInfo nodeId="5881102044690182704" varName="view" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690182882" fileName="TestRunState.java" startLine="157" startPosition="25" endLine="160" endPosition="24" />
     <scopeInfo nodeId="5881102044690183089" fileName="TestRunState.java" startLine="215" startPosition="41" endLine="218" endPosition="9" />
     <scopeInfo nodeId="5881102044690183366" fileName="TestRunState.java" startLine="42" startPosition="96" endLine="46" endPosition="0">
@@ -1234,7 +1236,9 @@
     <scopeInfo nodeId="5881102044690182543" fileName="TestRunState.java" startLine="57" startPosition="54" endLine="62" endPosition="9">
       <varInfo nodeId="5881102044690182574" varName="testCase" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690182596" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="5881102044690182597" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5">
+      <varInfo nodeId="5881102044690182598" varName="testCase" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690183019" fileName="TestRunState.java" startLine="200" startPosition="25" endLine="205" endPosition="24" />
     <scopeInfo nodeId="5881102044690182681" fileName="TestRunState.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="5881102044690182696" fileName="TestRunState.java" startLine="97" startPosition="0" endLine="103" endPosition="0" />
@@ -1629,7 +1633,7 @@
     <scopeInfo nodeId="6062668769034833257" fileName="Junit_Command.java" startLine="169" startPosition="49" endLine="171" endPosition="64">
       <varInfo nodeId="6062668769034833259" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833215" fileName="Junit_Command.java" startLine="157" startPosition="49" endLine="160" endPosition="7" />
+    <scopeInfo nodeId="6062668769034833216" fileName="Junit_Command.java" startLine="157" startPosition="49" endLine="160" endPosition="7" />
     <scopeInfo nodeId="6062668769034833283" fileName="Junit_Command.java" startLine="175" startPosition="77" endLine="178" endPosition="5">
       <varInfo nodeId="6062668769034833295" varName="module" />
     </scopeInfo>
@@ -1651,7 +1655,9 @@
     <scopeInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="150" startPosition="61" endLine="154" endPosition="0">
       <varInfo nodeId="6062668769034833203" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833255" fileName="Junit_Command.java" startLine="168" startPosition="25" endLine="172" endPosition="9" />
+    <scopeInfo nodeId="6062668769034833256" fileName="Junit_Command.java" startLine="168" startPosition="25" endLine="172" endPosition="9">
+      <varInfo nodeId="6062668769034833274" varName="testable" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="195" startPosition="82" endLine="199" endPosition="16" />
     <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="202" startPosition="84" endLine="206" endPosition="17" />

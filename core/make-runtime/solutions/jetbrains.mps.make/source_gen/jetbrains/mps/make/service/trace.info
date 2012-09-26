@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2298333944697014852">
+  <root nodeId="2298333944697014852" modelId="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)">
     <nodeInfo nodeId="2298333944697085127" fileName="AbstractMakeService.java" startLine="31" startPosition="158" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298333944697085133" fileName="AbstractMakeService.java" startLine="32" startPosition="134" endLine="33" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298333944697085141" fileName="AbstractMakeService.java" startLine="35" startPosition="27" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -110,7 +110,7 @@
     <unitInfo nodeId="2298333944697085272" fileName="AbstractMakeService.java" startLine="74" startPosition="57" endLine="78" endPosition="9" unitName="jetbrains.mps.make.service.AbstractMakeService$4" />
     <unitInfo nodeId="2298333944697025522" fileName="AbstractMakeService.java" startLine="27" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.service.AbstractMakeService$AbstractInputProcessor" />
   </root>
-  <root nodeId="7184932954667864779">
+  <root nodeId="7184932954667864779" modelId="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)">
     <nodeInfo nodeId="5278788114521227636" fileName="CoreMakeTask.java" startLine="26" startPosition="27" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2298333944697014183" fileName="CoreMakeTask.java" startLine="28" startPosition="0" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="2298333944697014170" fileName="CoreMakeTask.java" startLine="29" startPosition="34" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />

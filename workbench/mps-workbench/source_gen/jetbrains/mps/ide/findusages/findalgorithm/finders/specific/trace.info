@@ -464,9 +464,7 @@
       <varInfo nodeId="7228605397000827626" varName="searchResults" />
       <varInfo nodeId="7228605397000827622" varName="searchedLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="7228605397000827678" fileName="LanguageUsagesFinder.java" startLine="95" startPosition="109" endLine="104" endPosition="5">
-      <varInfo nodeId="7228605397000827682" varName="modelDescriptor" />
-    </scopeInfo>
+    <scopeInfo nodeId="7228605397000827677" fileName="LanguageUsagesFinder.java" startLine="95" startPosition="109" endLine="104" endPosition="5" />
     <scopeInfo nodeId="7228605397000827488" fileName="LanguageUsagesFinder.java" startLine="62" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="7228605397000827495" varName="searchResults" />
       <varInfo nodeId="7228605397000827491" varName="searchedLanguage" />

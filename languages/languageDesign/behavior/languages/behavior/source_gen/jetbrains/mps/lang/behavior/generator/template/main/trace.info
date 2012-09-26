@@ -552,7 +552,9 @@
     <scopeInfo nodeId="7923290658387314480" fileName="QueriesGenerated.java" startLine="592" startPosition="0" endLine="597" endPosition="5">
       <varInfo nodeId="7923290658387314499" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7923290658387314508" fileName="QueriesGenerated.java" startLine="605" startPosition="212" endLine="610" endPosition="9" />
+    <scopeInfo nodeId="7923290658387314509" fileName="QueriesGenerated.java" startLine="605" startPosition="212" endLine="610" endPosition="9">
+      <varInfo nodeId="7923290658387314527" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="7923290658387314504" fileName="QueriesGenerated.java" startLine="603" startPosition="9" endLine="611" endPosition="7" />
     <scopeInfo nodeId="7923290658387314323" fileName="QueriesGenerated.java" startLine="161" startPosition="154" endLine="173" endPosition="108">
       <varInfo nodeId="7923290658387314354" varName="behaviorModel" />

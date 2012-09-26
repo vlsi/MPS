@@ -2683,7 +2683,9 @@
       <varInfo nodeId="1224065748759" varName="baseMethodDeclaration" />
       <varInfo nodeId="1224249207786" varName="oldBMD" />
     </scopeInfo>
-    <scopeInfo nodeId="1224062580254" fileName="QueriesGenerated.java" startLine="2496" startPosition="139" endLine="2545" endPosition="5" />
+    <scopeInfo nodeId="1224065295451" fileName="QueriesGenerated.java" startLine="2496" startPosition="139" endLine="2545" endPosition="5">
+      <varInfo nodeId="1224065295455" varName="instanceMethodCall" />
+    </scopeInfo>
     <unitInfo nodeId="1224065748795" fileName="QueriesGenerated.java" startLine="3223" startPosition="0" endLine="3240" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a7a5a0a864" />
     <unitInfo nodeId="1224065863923" fileName="QueriesGenerated.java" startLine="3198" startPosition="0" endLine="3222" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0b0a0e0c0a0h0f0a0as" />
     <unitInfo nodeId="1224065622106" fileName="QueriesGenerated.java" startLine="3104" startPosition="0" endLine="3121" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0b0a0h0f0a0as" />

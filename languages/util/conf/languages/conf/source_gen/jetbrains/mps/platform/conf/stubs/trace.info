@@ -493,7 +493,9 @@
     <scopeInfo nodeId="4372437818008128090" fileName="ConfReader.java" startLine="406" startPosition="68" endLine="409" endPosition="63">
       <varInfo nodeId="4372437818008128092" varName="bea" />
     </scopeInfo>
-    <scopeInfo nodeId="4372437818008128135" fileName="ConfReader.java" startLine="416" startPosition="25" endLine="419" endPosition="7" />
+    <scopeInfo nodeId="4372437818008128136" fileName="ConfReader.java" startLine="416" startPosition="25" endLine="419" endPosition="7">
+      <varInfo nodeId="4372437818008128151" varName="or" />
+    </scopeInfo>
     <scopeInfo nodeId="4372437818008128404" fileName="ConfReader.java" startLine="457" startPosition="82" endLine="460" endPosition="249">
       <varInfo nodeId="4372437818008128406" varName="trgsmref" />
     </scopeInfo>
@@ -650,7 +652,9 @@
       <varInfo nodeId="4372437818008128029" varName="impl" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008127262" fileName="ConfReader.java" startLine="248" startPosition="60" endLine="263" endPosition="9" />
-    <scopeInfo nodeId="4372437818008127629" fileName="ConfReader.java" startLine="317" startPosition="55" endLine="332" endPosition="5" />
+    <scopeInfo nodeId="4372437818008127630" fileName="ConfReader.java" startLine="317" startPosition="55" endLine="332" endPosition="5">
+      <varInfo nodeId="4372437818008127700" varName="ext" />
+    </scopeInfo>
     <scopeInfo nodeId="4372437818008127724" fileName="ConfReader.java" startLine="338" startPosition="23" endLine="353" endPosition="155">
       <varInfo nodeId="4372437818008127779" varName="lastSlash" />
       <varInfo nodeId="4372437818008127775" varName="name" />

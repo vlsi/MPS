@@ -140,10 +140,10 @@
       <varInfo nodeId="8911572761289376739" varName="project" />
       <varInfo nodeId="4003657351907887217" varName="projectFile" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907889874" fileName="TestBrokenReferencesWorker.java" startLine="71" startPosition="25" endLine="83" endPosition="9" />
-    <scopeInfo nodeId="4003657351907889788" fileName="TestBrokenReferencesWorker.java" startLine="112" startPosition="47" endLine="124" endPosition="7">
-      <varInfo nodeId="4003657351907889792" varName="ref" />
+    <scopeInfo nodeId="4003657351907889875" fileName="TestBrokenReferencesWorker.java" startLine="71" startPosition="25" endLine="83" endPosition="9">
+      <varInfo nodeId="4003657351907889879" varName="sm" />
     </scopeInfo>
+    <scopeInfo nodeId="4003657351907889787" fileName="TestBrokenReferencesWorker.java" startLine="112" startPosition="47" endLine="124" endPosition="7" />
     <scopeInfo nodeId="4003657351907889779" fileName="TestBrokenReferencesWorker.java" startLine="111" startPosition="5" endLine="125" endPosition="5">
       <varInfo nodeId="4003657351907889785" varName="node" />
     </scopeInfo>

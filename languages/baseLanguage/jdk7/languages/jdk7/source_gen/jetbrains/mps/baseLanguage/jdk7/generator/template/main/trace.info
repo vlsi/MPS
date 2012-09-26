@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl" />
-  <root nodeId="400642802550418959">
+  <root nodeId="400642802550418959" modelId="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)">
     <nodeInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="24" startPosition="66" endLine="25" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
     <nodeInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="25" startPosition="207" endLine="26" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_417xrn_a0a0a4a" />
     <nodeInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="27" startPosition="0" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain" />
     <unitInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="84" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain$ReductionRule0" />
   </root>
-  <root nodeId="400642802550420129">
+  <root nodeId="400642802550420129" modelId="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)">
     <nodeInfo nodeId="3708576844065084050" fileName="QueriesGenerated.java" startLine="20" startPosition="153" endLine="21" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3708576844065084085" fileName="QueriesGenerated.java" startLine="21" startPosition="196" endLine="22" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="23" startPosition="98" endLine="24" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_wjpymb_a0a0a1a1" />

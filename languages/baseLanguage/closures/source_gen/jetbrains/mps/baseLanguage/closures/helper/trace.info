@@ -326,7 +326,9 @@
       <varInfo nodeId="1240926467092" varName="parentLabels" />
       <varInfo nodeId="1210772062394" varName="topIfStmt" />
     </scopeInfo>
-    <scopeInfo nodeId="1209326263198" fileName="PrepStatementUtil.java" startLine="147" startPosition="102" endLine="156" endPosition="7" />
+    <scopeInfo nodeId="1209326273840" fileName="PrepStatementUtil.java" startLine="147" startPosition="102" endLine="156" endPosition="7">
+      <varInfo nodeId="1209326273853" varName="eicls" />
+    </scopeInfo>
     <scopeInfo nodeId="1201379745356" fileName="PrepStatementUtil.java" startLine="186" startPosition="69" endLine="195" endPosition="91">
       <varInfo nodeId="1240926434560" varName="data" />
       <varInfo nodeId="1201427229759" varName="endCaseLabel" />
@@ -1330,9 +1332,7 @@
     <scopeInfo nodeId="2684739085678641137" fileName="TypeMatcher.java" startLine="43" startPosition="160" endLine="46" endPosition="9">
       <varInfo nodeId="2684739085678641147" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2684739085678641193" fileName="TypeMatcher.java" startLine="54" startPosition="101" endLine="57" endPosition="7">
-      <varInfo nodeId="2684739085678641200" varName="arg" />
-    </scopeInfo>
+    <scopeInfo nodeId="2684739085678641192" fileName="TypeMatcher.java" startLine="54" startPosition="101" endLine="57" endPosition="7" />
     <scopeInfo nodeId="2684739085678641244" fileName="TypeMatcher.java" startLine="68" startPosition="116" endLine="71" endPosition="9">
       <varInfo nodeId="2684739085678641253" varName="superType" />
     </scopeInfo>

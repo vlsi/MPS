@@ -518,9 +518,7 @@
     <scopeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="5426775851424578122" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5426775851424580938" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="39" startPosition="52" endLine="48" endPosition="9">
-      <varInfo nodeId="5426775851424580939" varName="property" />
-    </scopeInfo>
+    <scopeInfo nodeId="5426775851424580248" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="39" startPosition="52" endLine="48" endPosition="9" />
     <scopeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="38" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="5426775851424578122" varName="node" />
     </scopeInfo>

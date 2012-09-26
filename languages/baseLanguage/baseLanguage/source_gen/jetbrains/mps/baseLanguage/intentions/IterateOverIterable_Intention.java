@@ -87,7 +87,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       {
         SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0;
         nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getConcept().getId()))) {
           return false;
         }
         {
@@ -141,7 +141,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       {
         SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0;
         nodeToMatch_IterateOverIterable_6isygg_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getConcept().getId()))) {
           return false;
         }
         {

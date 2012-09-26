@@ -43,9 +43,7 @@
     <scopeInfo nodeId="1238593789931" fileName="LineList_Behavior.java" startLine="14" startPosition="75" endLine="17" endPosition="7">
       <varInfo nodeId="1238593789933" varName="linePart" />
     </scopeInfo>
-    <scopeInfo nodeId="1238593771905" fileName="LineList_Behavior.java" startLine="13" startPosition="162" endLine="18" endPosition="5">
-      <varInfo nodeId="1238593771907" varName="line" />
-    </scopeInfo>
+    <scopeInfo nodeId="1238593666755" fileName="LineList_Behavior.java" startLine="13" startPosition="162" endLine="18" endPosition="5" />
     <scopeInfo nodeId="1238593663511" fileName="LineList_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1238593709765" varName="concept" />
       <varInfo nodeId="1238595437161" varName="conceptsToTargets" />

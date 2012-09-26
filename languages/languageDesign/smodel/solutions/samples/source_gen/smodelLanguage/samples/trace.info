@@ -991,9 +991,7 @@
       <varInfo nodeId="1241018693383" varName="name" />
       <varInfo nodeId="1241018645360" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5">
-      <varInfo nodeId="1241018438640" varName="member" />
-    </scopeInfo>
+    <scopeInfo nodeId="1241018421133" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />
     <scopeInfo nodeId="1241018421130" fileName="StructureLanguageEnums.java" startLine="9" startPosition="37" endLine="18" endPosition="0" />
     <unitInfo nodeId="1241018402608" fileName="StructureLanguageEnums.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="smodelLanguage.samples.StructureLanguageEnums" />
   </root>

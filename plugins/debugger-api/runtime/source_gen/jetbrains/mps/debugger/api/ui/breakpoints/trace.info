@@ -627,10 +627,10 @@
     </scopeInfo>
     <scopeInfo nodeId="4474271214083123958" fileName="BreakpointsUiComponent.java" startLine="65" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4474271214083124136" fileName="BreakpointsUiComponent.java" startLine="121" startPosition="100" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="4474271214083125117" fileName="BreakpointsUiComponent.java" startLine="138" startPosition="25" endLine="144" endPosition="9">
-      <varInfo nodeId="4474271214083125119" varName="locationBreakpoint" />
+    <scopeInfo nodeId="4474271214083125116" fileName="BreakpointsUiComponent.java" startLine="138" startPosition="25" endLine="144" endPosition="9" />
+    <scopeInfo nodeId="4474271214083124542" fileName="BreakpointsUiComponent.java" startLine="177" startPosition="35" endLine="183" endPosition="7">
+      <varInfo nodeId="4474271214083124544" varName="mpsBreakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083124541" fileName="BreakpointsUiComponent.java" startLine="177" startPosition="35" endLine="183" endPosition="7" />
     <scopeInfo nodeId="4474271214083125024" fileName="BreakpointsUiComponent.java" startLine="325" startPosition="27" endLine="331" endPosition="11" />
     <scopeInfo nodeId="4474271214083123918" fileName="BreakpointsUiComponent.java" startLine="57" startPosition="0" endLine="64" endPosition="3">
       <varInfo nodeId="4474271214083123923" varName="breakpointsManagerComponent" />
@@ -903,7 +903,9 @@
     <scopeInfo nodeId="4474271214083118729" fileName="BreakpointsTree.java" startLine="45" startPosition="46" endLine="47" endPosition="94" />
     <scopeInfo nodeId="4474271214083118748" fileName="BreakpointsTree.java" startLine="50" startPosition="47" endLine="52" endPosition="95" />
     <scopeInfo nodeId="4474271214083118710" fileName="BreakpointsTree.java" startLine="39" startPosition="48" endLine="42" endPosition="96" />
-    <scopeInfo nodeId="4474271214083118816" fileName="BreakpointsTree.java" startLine="79" startPosition="25" endLine="82" endPosition="9" />
+    <scopeInfo nodeId="4474271214083118817" fileName="BreakpointsTree.java" startLine="79" startPosition="25" endLine="82" endPosition="9">
+      <varInfo nodeId="4474271214083118818" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214083118642" fileName="BreakpointsTree.java" startLine="12" startPosition="100" endLine="16" endPosition="26" />
     <scopeInfo nodeId="4474271214083118762" fileName="BreakpointsTree.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="4474271214083118770" fileName="BreakpointsTree.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
@@ -1812,7 +1814,9 @@
       <varInfo nodeId="418270182880377856" varName="addActionGroup" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083122901" fileName="BreakpointsBrowserDialog.java" startLine="331" startPosition="44" endLine="352" endPosition="9" />
-    <scopeInfo nodeId="4474271214083122896" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="41" endLine="353" endPosition="5" />
+    <scopeInfo nodeId="4474271214083122897" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="41" endLine="353" endPosition="5">
+      <varInfo nodeId="4474271214083122899" varName="myView" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214083122401" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="35" endLine="140" endPosition="5">
       <varInfo nodeId="4474271214083122464" varName="selectedBreakpoint" />
     </scopeInfo>

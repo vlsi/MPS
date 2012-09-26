@@ -920,7 +920,9 @@
     <scopeInfo nodeId="7082523601896466059" fileName="NodeCopier.java" startLine="68" startPosition="12" endLine="73" endPosition="57">
       <varInfo nodeId="7082523601896466063" varName="stubNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7082523601896466132" fileName="NodeCopier.java" startLine="88" startPosition="39" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="7082523601896466133" fileName="NodeCopier.java" startLine="88" startPosition="39" endLine="93" endPosition="5">
+      <varInfo nodeId="7082523601896466134" varName="id" />
+    </scopeInfo>
     <scopeInfo nodeId="7082523601896466193" fileName="NodeCopier.java" startLine="105" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="7082523601896466198" varName="model" />
       <varInfo nodeId="7082523601896466194" varName="state" />
@@ -931,7 +933,9 @@
     <scopeInfo nodeId="7082523601896466157" fileName="NodeCopier.java" startLine="96" startPosition="43" endLine="103" endPosition="17">
       <varInfo nodeId="7082523601896466159" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7082523601896466088" fileName="NodeCopier.java" startLine="77" startPosition="33" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="7082523601896466089" fileName="NodeCopier.java" startLine="77" startPosition="33" endLine="85" endPosition="5">
+      <varInfo nodeId="7082523601896466090" varName="id" />
+    </scopeInfo>
     <scopeInfo nodeId="7082523601896466129" fileName="NodeCopier.java" startLine="87" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="7082523601896466211" fileName="NodeCopier.java" startLine="110" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="7082523601896465951" fileName="NodeCopier.java" startLine="35" startPosition="112" endLine="44" endPosition="7">

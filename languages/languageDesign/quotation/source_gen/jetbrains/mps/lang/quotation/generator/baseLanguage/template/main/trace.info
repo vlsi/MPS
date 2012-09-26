@@ -1278,9 +1278,7 @@
     <scopeInfo nodeId="9181472308624882657" fileName="QueriesGenerated.java" startLine="315" startPosition="5" endLine="321" endPosition="5">
       <varInfo nodeId="9181472308624882658" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="937236280924642920" fileName="QueriesGenerated.java" startLine="333" startPosition="35" endLine="339" endPosition="9">
-      <varInfo nodeId="937236280924642924" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="937236280924642919" fileName="QueriesGenerated.java" startLine="333" startPosition="35" endLine="339" endPosition="9" />
     <scopeInfo nodeId="937236280924643094" fileName="QueriesGenerated.java" startLine="361" startPosition="47" endLine="367" endPosition="15">
       <varInfo nodeId="937236280924643115" varName="grandChild" />
     </scopeInfo>

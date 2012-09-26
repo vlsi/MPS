@@ -1185,7 +1185,9 @@
       <varInfo nodeId="2378354490355101483" varName="end" />
       <varInfo nodeId="2378354490355101470" varName="start" />
     </scopeInfo>
-    <scopeInfo nodeId="264380905730924690" fileName="Module_Behavior.java" startLine="157" startPosition="36" endLine="164" endPosition="9" />
+    <scopeInfo nodeId="264380905730923652" fileName="Module_Behavior.java" startLine="157" startPosition="36" endLine="164" endPosition="9">
+      <varInfo nodeId="264380905730923653" varName="runtimeDependency" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877514764" fileName="Module_Behavior.java" startLine="201" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="1213877514764" varName="thisNode" />
     </scopeInfo>

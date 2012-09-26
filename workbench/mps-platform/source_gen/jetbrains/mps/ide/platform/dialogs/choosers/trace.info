@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="397101727194120959">
+  <root nodeId="397101727194120959" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
     <nodeInfo nodeId="397101727194125937" fileName="NodeChooserDialog.java" startLine="21" startPosition="54" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
     <nodeInfo nodeId="397101727194120976" fileName="NodeChooserDialog.java" startLine="24" startPosition="74" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="397101727194120992" fileName="NodeChooserDialog.java" startLine="25" startPosition="25" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -1493,9 +1493,7 @@
     <scopeInfo nodeId="7181125477683419160" fileName="VisibleArtifacts.java" startLine="95" startPosition="34" endLine="98" endPosition="5">
       <varInfo nodeId="7181125477683419166" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132263416" fileName="VisibleArtifacts.java" startLine="109" startPosition="108" endLine="112" endPosition="7">
-      <varInfo nodeId="4701820937132263422" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="4701820937132263379" fileName="VisibleArtifacts.java" startLine="109" startPosition="108" endLine="112" endPosition="7" />
     <scopeInfo nodeId="6684802082773181583" fileName="VisibleArtifacts.java" startLine="115" startPosition="27" endLine="118" endPosition="9">
       <varInfo nodeId="6684802082773181584" varName="child" />
     </scopeInfo>
@@ -2437,9 +2435,7 @@
       <varInfo nodeId="7880069565647313608" varName="moduleDep" />
     </scopeInfo>
     <scopeInfo nodeId="7880069565647313600" fileName="JavaModulesClosure.java" startLine="41" startPosition="80" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="7880069565647313599" fileName="JavaModulesClosure.java" startLine="40" startPosition="66" endLine="91" endPosition="5">
-      <varInfo nodeId="7880069565647313663" varName="dep" />
-    </scopeInfo>
+    <scopeInfo nodeId="7880069565647313598" fileName="JavaModulesClosure.java" startLine="40" startPosition="66" endLine="91" endPosition="5" />
     <scopeInfo nodeId="7880069565647313595" fileName="JavaModulesClosure.java" startLine="39" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="7880069565647313668" varName="module" />
       <varInfo nodeId="7880069565647313670" varName="reexportOnly" />

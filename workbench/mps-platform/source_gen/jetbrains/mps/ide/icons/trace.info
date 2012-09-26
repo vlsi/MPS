@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2434140849679604371">
+  <root nodeId="2434140849679604371" modelId="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)">
     <nodeInfo nodeId="2434140849679604373" fileName="IconManager.java" startLine="54" startPosition="26" endLine="55" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2434140849679604378" fileName="IconManager.java" startLine="55" startPosition="71" endLine="56" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IMAGE_LOADED" />
     <nodeInfo nodeId="2434140849679604388" fileName="IconManager.java" startLine="56" startPosition="114" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPathsToIcons" />

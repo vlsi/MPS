@@ -744,7 +744,9 @@
       <varInfo nodeId="8432634623182579005" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579135" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="81" endLine="116" endPosition="9" />
-    <scopeInfo nodeId="8432634623182579175" fileName="OverrideMethodsChecker.java" startLine="125" startPosition="108" endLine="129" endPosition="11" />
+    <scopeInfo nodeId="8432634623182579176" fileName="OverrideMethodsChecker.java" startLine="125" startPosition="108" endLine="129" endPosition="11">
+      <varInfo nodeId="8432634623182579177" varName="enumConstant" />
+    </scopeInfo>
     <scopeInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="136" startPosition="134" endLine="140" endPosition="0">
       <varInfo nodeId="8432634623182579229" varName="it" />
     </scopeInfo>

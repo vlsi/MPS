@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841896545">
+  <root nodeId="5487985028841896545" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841896545" fileName="PrintDFAResult_Action.java" startLine="18" startPosition="55" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841896545" fileName="PrintDFAResult_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841896545" fileName="PrintDFAResult_Action.java" startLine="22" startPosition="34" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -78,7 +78,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841896545" fileName="PrintDFAResult_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.PrintDFAResult_Action" />
   </root>
-  <root nodeId="5487985028841896569">
+  <root nodeId="5487985028841896569" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841896569" fileName="DFAActions_ActionGroup.java" startLine="8" startPosition="66" endLine="9" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841896569" fileName="DFAActions_ActionGroup.java" startLine="9" startPosition="77" endLine="10" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841896569" fileName="DFAActions_ActionGroup.java" startLine="12" startPosition="35" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -97,7 +97,7 @@
     <scopeInfo nodeId="5487985028841896569" fileName="DFAActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="5487985028841896569" fileName="DFAActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />
   </root>
-  <root nodeId="5487985028841896573">
+  <root nodeId="5487985028841896573" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841896573" fileName="ShowDFA_Action.java" startLine="21" startPosition="48" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841896573" fileName="ShowDFA_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841896573" fileName="ShowDFA_Action.java" startLine="25" startPosition="27" endLine="26" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -187,7 +187,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841896573" fileName="ShowDFA_Action.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.ShowDFA_Action" />
   </root>
-  <root nodeId="5487985028841896603">
+  <root nodeId="5487985028841896603" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841896603" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="22" startPosition="77" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841896603" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841896603" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="26" startPosition="56" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -267,7 +267,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841896603" fileName="PrintReachingDefinintionsInformation_Action.java" startLine="22" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.PrintReachingDefinintionsInformation_Action" />
   </root>
-  <root nodeId="5487985028841896636">
+  <root nodeId="5487985028841896636" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841896636" fileName="PrintInitializationInformation_Action.java" startLine="21" startPosition="71" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841896636" fileName="PrintInitializationInformation_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841896636" fileName="PrintInitializationInformation_Action.java" startLine="25" startPosition="50" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -347,7 +347,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841896636" fileName="PrintInitializationInformation_Action.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.PrintInitializationInformation_Action" />
   </root>
-  <root nodeId="5487985028841896728">
+  <root nodeId="5487985028841896728" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841896728" fileName="DataFlowInternal_ActionGroup.java" startLine="8" startPosition="72" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841896728" fileName="DataFlowInternal_ActionGroup.java" startLine="9" startPosition="83" endLine="10" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841896728" fileName="DataFlowInternal_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -368,7 +368,7 @@
     <scopeInfo nodeId="5487985028841896728" fileName="DataFlowInternal_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" />
     <unitInfo nodeId="5487985028841896728" fileName="DataFlowInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DataFlowInternal_ActionGroup" />
   </root>
-  <root nodeId="7162597690967657576">
+  <root nodeId="7162597690967657576" modelId="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967657576" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967657576" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967657576" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

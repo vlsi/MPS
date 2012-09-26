@@ -34,9 +34,7 @@
     <scopeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="3" />
     <scopeInfo nodeId="1213104844364" fileName="IMemberOperation_Constraints.java" startLine="57" startPosition="150" endLine="60" endPosition="19" />
     <scopeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="39" startPosition="85" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1213104844357" fileName="IMemberOperation_Constraints.java" startLine="56" startPosition="52" endLine="61" endPosition="17">
-      <varInfo nodeId="1213104844362" varName="member" />
-    </scopeInfo>
+    <scopeInfo nodeId="1213104844356" fileName="IMemberOperation_Constraints.java" startLine="56" startPosition="52" endLine="61" endPosition="17" />
     <scopeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="53" startPosition="13" endLine="63" endPosition="15">
       <varInfo nodeId="1213104844351" varName="coercedNode_dyvyal_c0a0" />

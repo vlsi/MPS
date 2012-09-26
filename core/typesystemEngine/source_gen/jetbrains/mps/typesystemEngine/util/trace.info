@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1883223317720973623">
+  <root nodeId="1883223317720973623" modelId="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)">
     <nodeInfo nodeId="1883223317721339522" fileName="LatticeUtil.java" startLine="21" startPosition="5" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1883223317721339532" fileName="LatticeUtil.java" startLine="24" startPosition="84" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1883223317721339536" fileName="LatticeUtil.java" startLine="26" startPosition="11" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -192,11 +192,7 @@
     <scopeInfo nodeId="1883223317720979874" fileName="LatticeUtil.java" startLine="23" startPosition="103" endLine="36" endPosition="9">
       <varInfo nodeId="1883223317720979879" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1883223317721339524" fileName="LatticeUtil.java" startLine="23" startPosition="103" endLine="36" endPosition="9" />
     <scopeInfo nodeId="1883223317721340764" fileName="LatticeUtil.java" startLine="41" startPosition="103" endLine="54" endPosition="9" />
-    <scopeInfo nodeId="1883223317721340765" fileName="LatticeUtil.java" startLine="41" startPosition="103" endLine="54" endPosition="9">
-      <varInfo nodeId="1883223317721340769" varName="child" />
-    </scopeInfo>
     <scopeInfo nodeId="6007597446559172594" fileName="LatticeUtil.java" startLine="117" startPosition="51" endLine="131" endPosition="29">
       <varInfo nodeId="6007597446559177567" varName="iterator" />
       <varInfo nodeId="6007597446559177574" varName="node1" />
@@ -241,7 +237,7 @@
     </scopeInfo>
     <unitInfo nodeId="1883223317720973623" fileName="LatticeUtil.java" startLine="16" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.LatticeUtil" />
   </root>
-  <root nodeId="6321644624958548836">
+  <root nodeId="6321644624958548836" modelId="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)">
     <nodeInfo nodeId="3635379492312128764" fileName="CoerceUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CoerceUtil#()V" />
     <nodeInfo nodeId="3635379492312128739" fileName="CoerceUtil.java" startLine="13" startPosition="72" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

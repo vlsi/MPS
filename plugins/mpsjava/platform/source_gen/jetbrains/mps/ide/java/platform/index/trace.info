@@ -172,9 +172,7 @@
     <scopeInfo nodeId="4183391441819864470" fileName="ClassifierSuccessorsFinder.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="4183391441819864479" fileName="ClassifierSuccessorsFinder.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="4183391441819864096" fileName="ClassifierSuccessorsFinder.java" startLine="107" startPosition="153" endLine="111" endPosition="24" />
-    <scopeInfo nodeId="4183391441819864163" fileName="ClassifierSuccessorsFinder.java" startLine="128" startPosition="31" endLine="132" endPosition="9">
-      <varInfo nodeId="4183391441819864164" varName="successor" />
-    </scopeInfo>
+    <scopeInfo nodeId="4183391441819864162" fileName="ClassifierSuccessorsFinder.java" startLine="128" startPosition="31" endLine="132" endPosition="9" />
     <scopeInfo nodeId="4183391441819864324" fileName="ClassifierSuccessorsFinder.java" startLine="184" startPosition="0" endLine="188" endPosition="5">
       <varInfo nodeId="4183391441819864328" varName="queue" />
       <varInfo nodeId="4183391441819864326" varName="result" />

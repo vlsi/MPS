@@ -48,6 +48,7 @@
   <dep model="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)" hash="3r8afck1zsa9pu1lky2uix567ogybqh" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="a2y05xsgpsj7ucsg694tugjcs1qiray" />
   <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="-4l9ecfc6vmjqywdztr7kpf8rd86a2b3" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
   <dep model="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)" hash="7f0fwp62gm0n8d0wk5cbp7p3xsx1df6" />
   <dep model="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" hash="elhvkj3hk6o6xao9tjeamd2a70l35zc" />
   <dep model="r:64af8966-9a33-4cc7-8f2a-fe243f26c38f(jetbrains.mps.baseLanguage.jdk7.structure)" hash="86433i85vrrfejih7k12khi4bvgtd0d" />
@@ -177,6 +178,7 @@
     <dep model="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)" />
     <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
+    <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
     <dep model="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />

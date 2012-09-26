@@ -382,7 +382,9 @@
     <scopeInfo nodeId="334613783244104665" fileName="RenameMethod.java" startLine="56" startPosition="113" endLine="57" endPosition="236" />
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="9" startPosition="64" endLine="11" endPosition="3" />
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="23" startPosition="25" endLine="25" endPosition="53" />
-    <scopeInfo nodeId="1494876485718558703" fileName="RenameMethod.java" startLine="42" startPosition="76" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="1494876485718558725" fileName="RenameMethod.java" startLine="42" startPosition="76" endLine="45" endPosition="7">
+      <varInfo nodeId="1494876485718558726" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">

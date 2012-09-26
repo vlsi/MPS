@@ -46,7 +46,7 @@ public class DependenciesCollector {
             {
               SNode matchingNode_bcwvc2_a1a2a5a0 = parent;
               if (matchingNode_bcwvc2_a1a2a5a0 != null) {
-                matches_bcwvc2_a1a2a5a0 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_a1a2a5a0.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression");
+                matches_bcwvc2_a1a2a5a0 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_a1a2a5a0.getConcept().getId(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression");
               }
             }
             if (matches_bcwvc2_a1a2a5a0) {
@@ -58,7 +58,7 @@ public class DependenciesCollector {
               {
                 SNode matchingNode_bcwvc2_b1a2a5a0 = parent;
                 if (matchingNode_bcwvc2_b1a2a5a0 != null) {
-                  matches_bcwvc2_b1a2a5a0 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_b1a2a5a0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+                  matches_bcwvc2_b1a2a5a0 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_b1a2a5a0.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
                 }
               }
               if (matches_bcwvc2_b1a2a5a0) {
@@ -70,7 +70,7 @@ public class DependenciesCollector {
                 {
                   SNode matchingNode_bcwvc2_c1a2a5a0 = parent;
                   if (matchingNode_bcwvc2_c1a2a5a0 != null) {
-                    matches_bcwvc2_c1a2a5a0 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_c1a2a5a0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+                    matches_bcwvc2_c1a2a5a0 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_c1a2a5a0.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
                   }
                 }
                 if (matches_bcwvc2_c1a2a5a0) {
@@ -84,7 +84,7 @@ public class DependenciesCollector {
                     {
                       SNode matchingNode_bcwvc2_a0b0c0f0a = node;
                       if (matchingNode_bcwvc2_a0b0c0f0a != null) {
-                        matches_bcwvc2_a0b0c0f0a = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_a0b0c0f0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+                        matches_bcwvc2_a0b0c0f0a = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_a0b0c0f0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
                       }
                     }
                     if (matches_bcwvc2_a0b0c0f0a) {
@@ -98,7 +98,7 @@ public class DependenciesCollector {
                       {
                         SNode matchingNode_bcwvc2_b0b0c0f0a = node;
                         if (matchingNode_bcwvc2_b0b0c0f0a != null) {
-                          matches_bcwvc2_b0b0c0f0a = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_b0b0c0f0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
+                          matches_bcwvc2_b0b0c0f0a = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_b0b0c0f0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.VariableReference");
                         }
                       }
                       if (matches_bcwvc2_b0b0c0f0a) {
