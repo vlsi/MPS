@@ -59,7 +59,7 @@ public class ChangePropertyWithNonEmpty_Intention extends BaseIntention implemen
       node.removeChild(child);
       nonEmpty.addChild(role, child);
     }
-    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
+    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).entrySet())) {
       nonEmpty.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {

@@ -66,7 +66,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
 
       IArrayValueProxy properties = ((IArrayValueProxy) value.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
-        for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;", getThreadReference())).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
+        for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.util.SNodeOperations", "getProperties", "(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;", getThreadReference(), value)).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
           result.add(new SNodeWatchables.MyWatchable_property(ValueUtil.getInstance().fromJDI(property.getJDIValue(), getThreadReference()), "property"));
         }
       }

@@ -48,7 +48,7 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention impleme
       node.removeChild(child);
       transactional.addChild(role, child);
     }
-    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
+    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).entrySet())) {
       transactional.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {

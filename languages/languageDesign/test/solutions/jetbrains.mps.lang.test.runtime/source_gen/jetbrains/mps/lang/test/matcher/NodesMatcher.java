@@ -146,8 +146,8 @@ public class NodesMatcher {
     propertes.addAll(SNodeOperations.getProperties(a).keySet());
     propertes.addAll(SNodeOperations.getProperties(b).keySet());
     for (String key : propertes) {
-      String p1 = a.getProperties().get(key);
-      String p2 = b.getProperties().get(key);
+      String p1 = SNodeOperations.getProperties(a).get(key);
+      String p2 = SNodeOperations.getProperties(b).get(key);
       if (p1 == null || p2 == null || !(p1.equals(p2))) {
         difference.add(new PropertyDifferense(key));
       }

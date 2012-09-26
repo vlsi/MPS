@@ -61,7 +61,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
 
-    for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
+    for (String propname : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
       if (node.getPropertyDeclaration(propname) == null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

@@ -51,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
   </dependency>
   <dependency className="jetbrains.mps.util.SNodeOperations" file="SNodeOperations.java">
     <classNode dependClassName="java.lang.Deprecated" />
