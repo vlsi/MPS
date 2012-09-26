@@ -783,9 +783,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return findConceptProperty(propertyName) != null;
   }
 
-  public Set<String> addChildRoles(final Set<String> augend) {
-    return addChildRoles(augend, false);
-  }
 
   public boolean isDescendantOf(SNode node, boolean includeThis) {
     SNode current;
@@ -856,21 +853,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return list;
   }
 
-  public Set<String> addChildRoles(final Set<String> augend, boolean includeAttributeRoles) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      String roleOf = child.getRole();
-      assert roleOf != null;
-      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
-        augend.add(roleOf);
-      }
-    }
-    return augend;
-  }
 
   public void setName(String name) {
     setProperty(SNodeUtil.property_INamedConcept_name, name);
@@ -1110,10 +1092,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return new PropertiesMap(myProperties);
   }
 
-  public Set<String> getChildRoles(boolean includeAttributeRoles) {
-    return addChildRoles(new HashSet<String>(), includeAttributeRoles);
-  }
-
   public List<SNode> getReferents() {
     ModelAccess.assertLegalRead(this);
 
@@ -1172,6 +1150,43 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Set<String> getChildRoles(boolean includeAttributeRoles) {
+    return addChildRoles(new HashSet<String>(), includeAttributeRoles);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Set<String> addChildRoles(final Set<String> augend) {
+    return addChildRoles(augend, false);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
+    visitChildren(new ChildVisitor() {
+      public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
+        String roleOf = child.getRole();
+        assert roleOf != null;
+        if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
+          augend.add(roleOf);
+        }
+        return true;
+      }
+    });
+    return augend;
+  }
 
   @Deprecated
   /**
