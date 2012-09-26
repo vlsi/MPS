@@ -17,6 +17,6 @@ public class BuildMps_IdeaPluginModule_Behavior {
         return SLinkOperations.getTarget(thisNode, "target", false) == node;
       }
     }
-    return BuildMps_IdeaPluginContent_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", object);
+    return BuildMps_IdeaPluginContent_Behavior.callSuperNew_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", object);
   }
 }

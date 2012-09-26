@@ -33,10 +33,20 @@ public class ResetFrom_Function_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519720, new Object[]{});
   }
 
+  public static SNode callSuperNew_getJavaMethod_946964771156067021(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156067021, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getPublicJavaMethod_203908296139519720(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519720, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getJavaMethod_946964771156067021(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156067021, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getPublicJavaMethod_203908296139519720(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519720, new Object[]{});
   }

@@ -24,6 +24,11 @@ public class CharacterSymbolClassPart_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650574, new Object[]{});
   }
 
+  public static String callSuperNew_getRepresentation_8173814113624650574(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650574, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getRepresentation_8173814113624650574(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650574, new Object[]{});
   }

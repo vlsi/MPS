@@ -46,10 +46,20 @@ public class Statement_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, new Object[]{throwables, ignoreMayBeThrowables});
   }
 
+  public static boolean callSuperNew_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995, new Object[]{});
+  }
+
+  public static void callSuperNew_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, String callerConceptFqName, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, new Object[]{throwables, ignoreMayBeThrowables});
+  }
+
+  @Deprecated
   public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995, new Object[]{});
   }
 
+  @Deprecated
   public static void callSuper_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, String callerConceptFqName, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, new Object[]{throwables, ignoreMayBeThrowables});
   }

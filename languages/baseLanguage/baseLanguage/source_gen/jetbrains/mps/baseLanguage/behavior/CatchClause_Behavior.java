@@ -43,6 +43,11 @@ public class CatchClause_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981, new Object[]{});
   }
 
+  public static List<SNode> callSuperNew_getScopeVariables_2496361171403550981(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981, new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getScopeVariables_2496361171403550981(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981, new Object[]{});
   }

@@ -24,6 +24,11 @@ public class ComparisonRule_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913, new Object[]{});
   }
 
+  public static SNode callSuperNew_getSecondNodeCondition_4484478261143589913(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getSecondNodeCondition_4484478261143589913(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913, new Object[]{});
   }

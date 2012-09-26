@@ -22,6 +22,11 @@ public class LinkPatternVariableReference_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, new Object[]{o});
   }
 
+  public static void callSuperNew_abxcdef_1225210740874(SNode thisNode, String callerConceptFqName, @Deprecated Object o) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), callerConceptFqName, "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, new Object[]{o});
+  }
+
+  @Deprecated
   public static void callSuper_abxcdef_1225210740874(SNode thisNode, String callerConceptFqName, @Deprecated Object o) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), callerConceptFqName, "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, new Object[]{o});
   }

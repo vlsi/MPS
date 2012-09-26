@@ -67,26 +67,56 @@ public class IMPSLiteConcept_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createAdditionalEditor_1239891670850", PARAMETERS_1239891670850, new Object[]{conceptsToTargets, partsToLinks});
   }
 
+  public static boolean callSuperNew_isRootable_1239714833738(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_isRootable_1239714833738", PARAMETERS_1239714833738, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isAbstract_1239715026284(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_isAbstract_1239715026284", PARAMETERS_1239715026284, new Object[]{});
+  }
+
+  public static void callSuperNew_fillConcept_1239891562930(SNode thisNode, String callerConceptFqName, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_fillConcept_1239891562930", PARAMETERS_1239891562930, new Object[]{concept, conceptsToTargets, partsToLinks});
+  }
+
+  public static SNode callSuperNew_createEditor_1239890004879(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createEditor_1239890004879", PARAMETERS_1239890004879, new Object[]{conceptsToTargets, partsToLinks});
+  }
+
+  public static SNode callSuperNew_createAdditionalConcept_1239817368042(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createAdditionalConcept_1239817368042", PARAMETERS_1239817368042, new Object[]{conceptsToTargets, partsToLinks});
+  }
+
+  public static SNode callSuperNew_createAdditionalEditor_1239891670850(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createAdditionalEditor_1239891670850", PARAMETERS_1239891670850, new Object[]{conceptsToTargets, partsToLinks});
+  }
+
+  @Deprecated
   public static boolean callSuper_isRootable_1239714833738(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_isRootable_1239714833738", PARAMETERS_1239714833738, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isAbstract_1239715026284(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_isAbstract_1239715026284", PARAMETERS_1239715026284, new Object[]{});
   }
 
+  @Deprecated
   public static void callSuper_fillConcept_1239891562930(SNode thisNode, String callerConceptFqName, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_fillConcept_1239891562930", PARAMETERS_1239891562930, new Object[]{concept, conceptsToTargets, partsToLinks});
   }
 
+  @Deprecated
   public static SNode callSuper_createEditor_1239890004879(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createEditor_1239890004879", PARAMETERS_1239890004879, new Object[]{conceptsToTargets, partsToLinks});
   }
 
+  @Deprecated
   public static SNode callSuper_createAdditionalConcept_1239817368042(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createAdditionalConcept_1239817368042", PARAMETERS_1239817368042, new Object[]{conceptsToTargets, partsToLinks});
   }
 
+  @Deprecated
   public static SNode callSuper_createAdditionalEditor_1239891670850(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createAdditionalEditor_1239891670850", PARAMETERS_1239891670850, new Object[]{conceptsToTargets, partsToLinks});
   }

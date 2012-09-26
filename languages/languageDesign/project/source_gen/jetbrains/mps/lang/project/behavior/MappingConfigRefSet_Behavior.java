@@ -30,6 +30,11 @@ public class MappingConfigRefSet_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigRefSet"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110391056, new Object[]{});
   }
 
+  public static boolean callSuperNew_isComplete_2721285250110391056(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigRefSet"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110391056, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isComplete_2721285250110391056(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigRefSet"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110391056, new Object[]{});
   }

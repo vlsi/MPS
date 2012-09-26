@@ -80,6 +80,11 @@ public class BuildLayout_Jar_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Jar"), "virtual_getExpectedExtension_6967233722066020217", PARAMETERS_6967233722066020217, new Object[]{});
   }
 
+  public static String callSuperNew_getExpectedExtension_6967233722066020217(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Jar"), callerConceptFqName, "virtual_getExpectedExtension_6967233722066020217", PARAMETERS_6967233722066020217, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getExpectedExtension_6967233722066020217(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Jar"), callerConceptFqName, "virtual_getExpectedExtension_6967233722066020217", PARAMETERS_6967233722066020217, new Object[]{});
   }

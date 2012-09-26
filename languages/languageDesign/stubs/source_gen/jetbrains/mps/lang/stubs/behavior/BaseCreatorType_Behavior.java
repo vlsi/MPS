@@ -26,6 +26,11 @@ public class BaseCreatorType_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, new Object[]{contextNode});
   }
 
+  public static List<SNode> callSuperNew_getMembers_5553449326502623283(SNode thisNode, String callerConceptFqName, SNode contextNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, new Object[]{contextNode});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getMembers_5553449326502623283(SNode thisNode, String callerConceptFqName, SNode contextNode) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, new Object[]{contextNode});
   }

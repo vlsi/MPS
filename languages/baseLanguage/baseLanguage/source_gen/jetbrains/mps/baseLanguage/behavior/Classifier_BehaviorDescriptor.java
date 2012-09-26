@@ -81,6 +81,7 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getSuperTypes_7405920559687237523(thisNode);
   }
 
+  @Deprecated
   public Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
     return Classifier_Behavior.virtual_getVisibleMembers_8083692786967356611(thisNode, contextNode, kind);
   }

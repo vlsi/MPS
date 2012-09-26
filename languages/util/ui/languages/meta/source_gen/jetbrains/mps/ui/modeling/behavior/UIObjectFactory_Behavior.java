@@ -54,10 +54,20 @@ public class UIObjectFactory_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868, new Object[]{});
   }
 
+  public static SNode callSuperNew_getExpectedReturnType_7655275107718262770(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getParameters_1642651187739434868(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getExpectedReturnType_7655275107718262770(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getParameters_1642651187739434868(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868, new Object[]{});
   }

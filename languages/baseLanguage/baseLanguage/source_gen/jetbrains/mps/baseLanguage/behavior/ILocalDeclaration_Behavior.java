@@ -69,10 +69,20 @@ public class ILocalDeclaration_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751, new Object[]{});
   }
 
+  public static boolean callSuperNew_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751, new Object[]{});
   }

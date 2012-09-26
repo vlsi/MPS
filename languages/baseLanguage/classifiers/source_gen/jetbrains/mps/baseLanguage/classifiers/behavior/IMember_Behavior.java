@@ -77,22 +77,47 @@ public class IMember_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), "virtual_canOperationBeChild_4593153787954614840", PARAMETERS_4593153787954614840, new Object[]{parentNode});
   }
 
+  public static SNode callSuperNew_getVisiblity_1213877352965(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getVisiblity_1213877352965", PARAMETERS_1213877352965, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getOperationConcept_1213877352972(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getOperationConcept_1213877352972", PARAMETERS_1213877352972, new Object[]{});
+  }
+
+  public static SNode callSuperNew_createOperation_1213877353000(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_createOperation_1213877353000", PARAMETERS_1213877353000, new Object[]{});
+  }
+
+  public static boolean callSuperNew_canBeReferent_8179323502814657526(SNode thisNode, String callerConceptFqName, SNode referentConcept) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_canBeReferent_8179323502814657526", PARAMETERS_8179323502814657526, new Object[]{referentConcept});
+  }
+
+  public static boolean callSuperNew_canOperationBeChild_4593153787954614840(SNode thisNode, String callerConceptFqName, SNode parentNode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_canOperationBeChild_4593153787954614840", PARAMETERS_4593153787954614840, new Object[]{parentNode});
+  }
+
+  @Deprecated
   public static SNode callSuper_getVisiblity_1213877352965(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getVisiblity_1213877352965", PARAMETERS_1213877352965, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getOperationConcept_1213877352972(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getOperationConcept_1213877352972", PARAMETERS_1213877352972, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_createOperation_1213877353000(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_createOperation_1213877353000", PARAMETERS_1213877353000, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_canBeReferent_8179323502814657526(SNode thisNode, String callerConceptFqName, SNode referentConcept) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_canBeReferent_8179323502814657526", PARAMETERS_8179323502814657526, new Object[]{referentConcept});
   }
 
+  @Deprecated
   public static boolean callSuper_canOperationBeChild_4593153787954614840(SNode thisNode, String callerConceptFqName, SNode parentNode) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_canOperationBeChild_4593153787954614840", PARAMETERS_4593153787954614840, new Object[]{parentNode});
   }

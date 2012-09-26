@@ -85,7 +85,7 @@ public class BuildLayout_Folder_Behavior {
         }
       }
     }
-    return BuildLayout_Node_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.structure.BuildLayout_Folder", object);
+    return BuildLayout_Node_Behavior.callSuperNew_exports_6547494638219603457(thisNode, "jetbrains.mps.build.structure.BuildLayout_NamedContainer", object);
   }
 
   public static Iterable<SNode> call_getImportContentChildren_7045211410692956036(SNode thisNode) {

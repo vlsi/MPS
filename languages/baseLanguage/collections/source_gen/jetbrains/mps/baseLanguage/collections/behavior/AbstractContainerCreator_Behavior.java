@@ -29,10 +29,20 @@ public class AbstractContainerCreator_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229, new Object[]{});
+  }
+
+  public static boolean callSuperNew_canHaveParameter_2261417478150191157(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_canHaveParameter_2261417478150191157(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157, new Object[]{});
   }

@@ -40,10 +40,20 @@ public class BeanBuilder_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864, new Object[]{});
   }
 
+  public static SNode callSuperNew_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860, new Object[]{parentRef});
+  }
+
+  public static SNode callSuperNew_getResultType_6666322667909649864(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860, new Object[]{parentRef});
   }
 
+  @Deprecated
   public static SNode callSuper_getResultType_6666322667909649864(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864, new Object[]{});
   }

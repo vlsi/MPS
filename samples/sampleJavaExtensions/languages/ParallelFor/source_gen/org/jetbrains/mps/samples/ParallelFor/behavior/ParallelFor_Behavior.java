@@ -30,7 +30,7 @@ public class ParallelFor_Behavior {
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }
 
-    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", kind, child);
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", kind, child);
   }
 
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {

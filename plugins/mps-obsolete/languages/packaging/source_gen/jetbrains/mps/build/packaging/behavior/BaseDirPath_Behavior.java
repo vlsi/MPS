@@ -12,7 +12,7 @@ public class BaseDirPath_Behavior {
   }
 
   public static String virtual_getName_1221141245424(SNode thisNode) {
-    String name = Path_Behavior.callSuper_getName_1221141245424(thisNode, "jetbrains.mps.build.packaging.structure.BaseDirPath");
+    String name = Path_Behavior.callSuperNew_getName_1221141245424(thisNode, "jetbrains.mps.build.packaging.structure.Path");
     if (name.equals("")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "path");
     }

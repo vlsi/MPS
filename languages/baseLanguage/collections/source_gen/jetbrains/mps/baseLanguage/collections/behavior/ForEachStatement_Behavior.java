@@ -20,6 +20,6 @@ public class ForEachStatement_Behavior {
         return Scopes.forVariables(kind, SLinkOperations.getTarget(thisNode, "variable", true), ScopeUtils.lazyParentScope(thisNode, kind));
       }
     }
-    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", kind, child);
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", kind, child);
   }
 }

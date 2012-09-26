@@ -39,7 +39,7 @@ public class ForStatement_Behavior {
       }
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }
-    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement", kind, child);
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractForStatement", kind, child);
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {
@@ -47,6 +47,11 @@ public class ForStatement_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550965, new Object[]{});
   }
 
+  public static List<SNode> callSuperNew_getScopeVariables_2496361171403550965(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550965, new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getScopeVariables_2496361171403550965(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550965, new Object[]{});
   }

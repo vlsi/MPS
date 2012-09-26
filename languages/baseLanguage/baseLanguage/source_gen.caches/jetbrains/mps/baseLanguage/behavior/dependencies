@@ -185,6 +185,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior" file="AnonymousClass_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -365,6 +366,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior" file="BaseAssignmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -410,6 +412,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" file="BaseMethodDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -767,6 +770,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.BooleanType_Behavior" file="BooleanType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -832,6 +836,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.CatchClause_Behavior" file="CatchClause_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -900,6 +905,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" file="ClassConcept_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1001,6 +1007,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior" file="ClassifierMember_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -1032,6 +1039,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior" file="ClassifierType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -1212,6 +1220,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.CommentPart_Behavior" file="CommentPart_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1267,6 +1276,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior" file="ConceptFunctionParameter_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -1294,6 +1304,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior" file="ConceptFunction_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -1333,6 +1344,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior" file="ConstructorDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -1479,6 +1491,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior" file="DotExpression_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.reflect.Method" />
@@ -1570,6 +1583,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" file="EnumConstantDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1683,6 +1697,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" file="Expression_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -1706,6 +1721,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.FieldDeclaration_Behavior" file="FieldDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -1836,6 +1852,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ForStatement_Behavior" file="ForStatement_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1867,6 +1884,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ForeachStatement_Behavior" file="ForeachStatement_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1944,6 +1962,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior" file="HasAnnotation_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1981,6 +2000,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IClassifierMember_Behavior" file="IClassifierMember_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" />
@@ -1996,6 +2016,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior" file="IClassifierType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -2017,6 +2038,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior" file="IClassifier_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -2035,6 +2057,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" file="IContainsStatementList_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
@@ -2052,6 +2075,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor" file="IControlFlowInterrupter_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_Behavior" file="IExtractMethodAvailable_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -2071,6 +2095,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IFinalWrapper_BehaviorDescriptor" file="IFinalWrapper_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior" file="IInternalType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2085,6 +2110,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior" file="ILocalDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -2102,6 +2128,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior" file="ILocalReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2115,6 +2142,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior" file="ILocalVariableElementList_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -2130,6 +2158,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior" file="ILocalVariableElement_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2143,6 +2172,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" file="IMemberContainer_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2159,6 +2189,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" file="IMethodCall_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2200,6 +2231,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" file="IMethodLike_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2220,6 +2252,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" file="IOperation_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
@@ -2236,6 +2269,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IParameter_Behavior" file="IParameter_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2252,6 +2286,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" file="IStatementListContainer_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2265,6 +2300,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior" file="IStaticContainerForMethods_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
@@ -2281,6 +2317,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IThisExpression_BehaviorDescriptor" file="IThisExpression_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior" file="ITryCatchStatement_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -2304,6 +2341,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior" file="IVariableAssignment_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2321,6 +2359,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior" file="IVariableReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -2342,6 +2381,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor" file="IVisible_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior" file="IWillBeClassifier_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -2400,6 +2440,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationMethodKind_BehaviorDescriptor" file="ImplicitAnnotationMethodKind_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.InstanceInitializer_Behavior" file="InstanceInitializer_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -2468,6 +2509,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_Behavior" file="InstanceMethodDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -2553,6 +2595,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.Interface_Behavior" file="Interface_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -2722,6 +2765,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior" file="LocalVariableDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -2756,6 +2800,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior" file="LocalVariableReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -2933,6 +2978,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_Behavior" file="ParameterDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -3084,6 +3130,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.PropertyImplementation_Behavior" file="PropertyImplementation_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -3117,6 +3164,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.Property_Behavior" file="Property_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -3306,6 +3354,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" file="StatementList_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -3346,6 +3395,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" file="Statement_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -3377,6 +3427,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.StaticFieldDeclaration_Behavior" file="StaticFieldDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -3447,6 +3498,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.StaticInitializer_Behavior" file="StaticInitializer_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -3504,6 +3556,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior" file="StaticMethodDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -3832,6 +3885,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.TypeAnnotable_Behavior" file="TypeAnnotable_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -3845,6 +3899,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior" file="TypeDerivable_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -3858,6 +3913,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior" file="TypeVariableDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
@@ -4059,6 +4115,7 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior" file="VariableDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />

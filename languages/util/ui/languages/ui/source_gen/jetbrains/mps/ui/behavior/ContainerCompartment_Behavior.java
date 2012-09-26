@@ -34,10 +34,20 @@ public class ContainerCompartment_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492, new Object[]{});
   }
 
+  public static SNode callSuperNew_getContext_8923564134258348484(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getContainer_8923564134258348492(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getContext_8923564134258348484(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getContainer_8923564134258348492(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492, new Object[]{});
   }

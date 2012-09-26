@@ -93,10 +93,20 @@ public class StringLiteralRegexp_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313, new Object[]{});
   }
 
+  public static String callSuperNew_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222431822198, new Object[]{vars});
+  }
+
+  public static boolean callSuperNew_isValid_4759120547781297313(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222431822198, new Object[]{vars});
   }
 
+  @Deprecated
   public static boolean callSuper_isValid_4759120547781297313(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313, new Object[]{});
   }

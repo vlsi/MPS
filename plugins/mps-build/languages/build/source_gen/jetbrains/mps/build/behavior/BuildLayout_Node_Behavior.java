@@ -77,18 +77,38 @@ public class BuildLayout_Node_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), "virtual_isFile_1368030936106753986", PARAMETERS_1368030936106753986, new Object[]{});
   }
 
+  public static void callSuperNew_unpack_7128123785277723766(SNode thisNode, String callerConceptFqName, UnpackHelper helper, Iterable<Object> artifacts) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277723766, new Object[]{helper, artifacts});
+  }
+
+  public static boolean callSuperNew_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object artifactId) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, new Object[]{artifactId});
+  }
+
+  public static boolean callSuperNew_isFolder_1368030936106753980(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_isFolder_1368030936106753980", PARAMETERS_1368030936106753980, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isFile_1368030936106753986(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_isFile_1368030936106753986", PARAMETERS_1368030936106753986, new Object[]{});
+  }
+
+  @Deprecated
   public static void callSuper_unpack_7128123785277723766(SNode thisNode, String callerConceptFqName, UnpackHelper helper, Iterable<Object> artifacts) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277723766, new Object[]{helper, artifacts});
   }
 
+  @Deprecated
   public static boolean callSuper_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object artifactId) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, new Object[]{artifactId});
   }
 
+  @Deprecated
   public static boolean callSuper_isFolder_1368030936106753980(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_isFolder_1368030936106753980", PARAMETERS_1368030936106753980, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isFile_1368030936106753986(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_isFile_1368030936106753986", PARAMETERS_1368030936106753986, new Object[]{});
   }

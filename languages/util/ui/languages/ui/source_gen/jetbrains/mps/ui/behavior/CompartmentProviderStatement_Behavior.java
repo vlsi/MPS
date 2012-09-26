@@ -65,14 +65,29 @@ public class CompartmentProviderStatement_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348474, new Object[]{});
   }
 
+  public static boolean callSuperNew_shouldReturnValue_8923564134259851767(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259851767, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getContextExpression_8923564134258345463(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345463, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getContainer_8923564134258348474(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348474, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_shouldReturnValue_8923564134259851767(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259851767, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getContextExpression_8923564134258345463(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345463, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getContainer_8923564134258348474(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348474, new Object[]{});
   }

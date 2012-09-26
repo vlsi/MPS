@@ -8,6 +8,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.ActionReference_Behavior" file="ActionReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -103,6 +104,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.BootstrapActionReference_Behavior" file="BootstrapActionReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -220,6 +222,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.MPSActionReference_Behavior" file="MPSActionReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
@@ -264,6 +267,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeOperation_Behavior" file="NodeOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

@@ -16,6 +16,6 @@ public class DecisionTable_Behavior {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
       return new EmptyScope();
     }
-    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.debugger.decisionTable.structure.DecisionTable", kind, child);
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", kind, child);
   }
 }

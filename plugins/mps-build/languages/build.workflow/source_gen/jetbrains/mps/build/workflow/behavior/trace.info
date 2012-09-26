@@ -27,19 +27,22 @@
   <unitInfo fileName="BwfTaskLibrary_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskLibrary_BehaviorDescriptor" />
   <unitInfo fileName="BwfTaskPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskPart_BehaviorDescriptor" />
   <unitInfo fileName="BwfTask_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
-  <root nodeId="2059109515400548715">
+  <root nodeId="2059109515400548715" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="11" startPosition="38" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2059109515400548718" />
     <nodeInfo nodeId="2059109515400548723" fileName="BwfProjectPart_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="26" startPosition="107" endLine="27" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="26" startPosition="110" endLine="27" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="31" startPosition="107" endLine="32" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
     <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
     <scopeInfo nodeId="2059109515400548717" fileName="BwfProjectPart_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="2059109515400548721" fileName="BwfProjectPart_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="15" />
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="26" startPosition="107" endLine="27" endPosition="279" />
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="26" startPosition="110" endLine="27" endPosition="282" />
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="31" startPosition="107" endLine="32" endPosition="279" />
     <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="21" startPosition="74" endLine="23" endPosition="234">
       <varInfo nodeId="2059109515400548715" varName="descriptor" />
     </scopeInfo>
@@ -56,9 +59,13 @@
     <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="2059109515400548715" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior" />
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2059109515400548715" varName="callerConceptFqName" />
+      <varInfo nodeId="2059109515400548715" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior" />
   </root>
-  <root nodeId="2059109515400548735">
+  <root nodeId="2059109515400548735" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="2059109515400548747" fileName="BwfMacro_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2059109515400548735" fileName="BwfMacro_Behavior.java" startLine="7" startPosition="32" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2059109515400548735" fileName="BwfMacro_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
@@ -72,7 +79,7 @@
     </scopeInfo>
     <unitInfo nodeId="2059109515400548735" fileName="BwfMacro_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfMacro_Behavior" />
   </root>
-  <root nodeId="2059109515400548749">
+  <root nodeId="2059109515400548749" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="2059109515400548761" fileName="BwfMacroListImport_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2059109515400548749" fileName="BwfMacroListImport_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2059109515400548749" fileName="BwfMacroListImport_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
@@ -86,7 +93,7 @@
     </scopeInfo>
     <unitInfo nodeId="2059109515400548749" fileName="BwfMacroListImport_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfMacroListImport_Behavior" />
   </root>
-  <root nodeId="2059109515400548763">
+  <root nodeId="2059109515400548763" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="2059109515400548775" fileName="BwfAntTaskDeclaration_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2059109515400548763" fileName="BwfAntTaskDeclaration_Behavior.java" startLine="7" startPosition="45" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2059109515400548763" fileName="BwfAntTaskDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
@@ -100,7 +107,7 @@
     </scopeInfo>
     <unitInfo nodeId="2059109515400548763" fileName="BwfAntTaskDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration_Behavior" />
   </root>
-  <root nodeId="244868996532667552">
+  <root nodeId="244868996532667552" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="244868996532669401" fileName="BwfCustomMacro_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="244868996532667552" fileName="BwfCustomMacro_Behavior.java" startLine="7" startPosition="38" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="244868996532667552" fileName="BwfCustomMacro_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
@@ -114,7 +121,7 @@
     </scopeInfo>
     <unitInfo nodeId="244868996532667552" fileName="BwfCustomMacro_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfCustomMacro_Behavior" />
   </root>
-  <root nodeId="2769948622284605897">
+  <root nodeId="2769948622284605897" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="3961775458390497509" fileName="BwfTask_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3961775458390497570" fileName="BwfTask_Behavior.java" startLine="21" startPosition="235" endLine="22" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2769948622284605916" fileName="BwfTask_Behavior.java" startLine="24" startPosition="7" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -150,7 +157,7 @@
     </scopeInfo>
     <unitInfo nodeId="2769948622284605897" fileName="BwfTask_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_Behavior" />
   </root>
-  <root nodeId="3961775458390352366">
+  <root nodeId="3961775458390352366" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="3961775458390497445" fileName="BwfTaskPart_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3961775458390497491" fileName="BwfTaskPart_Behavior.java" startLine="20" startPosition="99" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3961775458390352387" fileName="BwfTaskPart_Behavior.java" startLine="22" startPosition="7" endLine="23" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -175,7 +182,7 @@
     </scopeInfo>
     <unitInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskPart_Behavior" />
   </root>
-  <root nodeId="3961775458390497598">
+  <root nodeId="3961775458390497598" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="3961775458390497644" fileName="BwfSubTask_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3961775458390497859" fileName="BwfSubTask_Behavior.java" startLine="18" startPosition="26" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3961775458390497847" fileName="BwfSubTask_Behavior.java" startLine="22" startPosition="49" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -209,7 +216,7 @@
     <unitInfo nodeId="3961775458390497598" fileName="BwfSubTask_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_Behavior" />
     <unitInfo nodeId="3961775458390497833" fileName="BwfSubTask_Behavior.java" startLine="20" startPosition="19" endLine="25" endPosition="9" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_Behavior$1" />
   </root>
-  <root nodeId="6647099934207210772">
+  <root nodeId="6647099934207210772" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="6647099934207210780" fileName="BwfPathDeclaration_Behavior.java" startLine="12" startPosition="75" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2059109515400548729" fileName="BwfPathDeclaration_Behavior.java" startLine="16" startPosition="77" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6647099934207210772" fileName="BwfPathDeclaration_Behavior.java" startLine="8" startPosition="42" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -229,7 +236,7 @@
     </scopeInfo>
     <unitInfo nodeId="6647099934207210772" fileName="BwfPathDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior" />
   </root>
-  <root nodeId="6647099934207246775">
+  <root nodeId="6647099934207246775" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="6647099934207246775" fileName="BwfJavaDependency_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="6647099934207246777" fileName="BwfJavaDependency_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="6647099934207246775" fileName="BwfJavaDependency_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0">
@@ -237,7 +244,7 @@
     </scopeInfo>
     <unitInfo nodeId="6647099934207246775" fileName="BwfJavaDependency_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_Behavior" />
   </root>
-  <root nodeId="6647099934207246785">
+  <root nodeId="6647099934207246785" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="6647099934207246785" fileName="BwfJavaModuleReference_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="6647099934207246787" fileName="BwfJavaModuleReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="6647099934207246785" fileName="BwfJavaModuleReference_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0">
@@ -245,7 +252,7 @@
     </scopeInfo>
     <unitInfo nodeId="6647099934207246785" fileName="BwfJavaModuleReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference_Behavior" />
   </root>
-  <root nodeId="7306485738221487431">
+  <root nodeId="7306485738221487431" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="7306485738221487485" fileName="BwfProject_Behavior.java" startLine="14" startPosition="110" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7306485738221487459" fileName="BwfProject_Behavior.java" startLine="16" startPosition="5" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7306485738221487431" fileName="BwfProject_Behavior.java" startLine="9" startPosition="34" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -264,7 +271,7 @@
     </scopeInfo>
     <unitInfo nodeId="7306485738221487431" fileName="BwfProject_Behavior.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProject_Behavior" />
   </root>
-  <root nodeId="7385586609667776608">
+  <root nodeId="7385586609667776608" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="7385586609667776622" fileName="BwfJavaModule_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="8" startPosition="37" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAntTargetName_7385586609667776611#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />

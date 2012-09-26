@@ -78,26 +78,56 @@ public class Expression_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1239211900844, new Object[]{});
   }
 
+  public static Object callSuperNew_eval_1213877519769(SNode thisNode, String callerConceptFqName, IModule module) {
+    return (Object) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_eval_1213877519769", PARAMETERS_1213877519769, new Object[]{module});
+  }
+
+  public static String callSuperNew_getVariableExpectedName_1213877519781(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getVariableExpectedName_1213877519781", PARAMETERS_1213877519781, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isLValue_1213877519786(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isCompileTimeConstant_1238860258777(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isCompileTimeConstant_1238860258777", PARAMETERS_1238860258777, new Object[]{});
+  }
+
+  public static Object callSuperNew_getCompileTimeConstantValue_1238860310638(SNode thisNode, String callerConceptFqName, IModule module) {
+    return (Object) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getCompileTimeConstantValue_1238860310638", PARAMETERS_1238860310638, new Object[]{module});
+  }
+
+  public static boolean callSuperNew_isLegalAsStatement_1239211900844(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1239211900844, new Object[]{});
+  }
+
+  @Deprecated
   public static Object callSuper_eval_1213877519769(SNode thisNode, String callerConceptFqName, IModule module) {
     return (Object) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_eval_1213877519769", PARAMETERS_1213877519769, new Object[]{module});
   }
 
+  @Deprecated
   public static String callSuper_getVariableExpectedName_1213877519781(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getVariableExpectedName_1213877519781", PARAMETERS_1213877519781, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isLValue_1213877519786(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isCompileTimeConstant_1238860258777(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isCompileTimeConstant_1238860258777", PARAMETERS_1238860258777, new Object[]{});
   }
 
+  @Deprecated
   public static Object callSuper_getCompileTimeConstantValue_1238860310638(SNode thisNode, String callerConceptFqName, IModule module) {
     return (Object) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getCompileTimeConstantValue_1238860310638", PARAMETERS_1238860310638, new Object[]{module});
   }
 
+  @Deprecated
   public static boolean callSuper_isLegalAsStatement_1239211900844(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1239211900844, new Object[]{});
   }

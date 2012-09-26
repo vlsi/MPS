@@ -157,6 +157,11 @@ public class BuildMps_Module_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
   }
 
+  public static boolean callSuperNew_isCompilable_7454762407073969360(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isCompilable_7454762407073969360(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
   }

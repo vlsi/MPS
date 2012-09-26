@@ -19,6 +19,11 @@ public class BuildStringContainer_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, new Object[]{propertyValue, role});
   }
 
+  public static boolean callSuperNew_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, new Object[]{propertyValue, role});
+  }
+
+  @Deprecated
   public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, new Object[]{propertyValue, role});
   }

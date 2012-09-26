@@ -19,6 +19,11 @@ public class PropertyImplementation_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658, new Object[]{});
   }
 
+  public static boolean callSuperNew_hasSetter_1213877430658(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), callerConceptFqName, "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_hasSetter_1213877430658(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), callerConceptFqName, "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658, new Object[]{});
   }

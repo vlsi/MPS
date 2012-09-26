@@ -38,6 +38,11 @@ public class SNodeTypeCastExpression_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841, new Object[]{});
   }
 
+  public static String callSuperNew_getPresentation_2749027262099690841(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getPresentation_2749027262099690841(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841, new Object[]{});
   }

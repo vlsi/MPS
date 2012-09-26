@@ -76,6 +76,11 @@ public class Path_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), "virtual_getName_1221141245424", PARAMETERS_1221141245424, new Object[]{});
   }
 
+  public static String callSuperNew_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424, new Object[]{});
   }

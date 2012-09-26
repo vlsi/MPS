@@ -60,6 +60,11 @@ public class TypeVariableDeclaration_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270, new Object[]{});
   }
 
+  public static String callSuperNew_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270, new Object[]{});
   }

@@ -44,10 +44,20 @@ public class SymbolClassRegexp_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650627, new Object[]{});
   }
 
+  public static String callSuperNew_getString_1222857578599(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222857578599, new Object[]{vars});
+  }
+
+  public static String callSuperNew_getRepresentation_8173814113624650627(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650627, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getString_1222857578599(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222857578599, new Object[]{vars});
   }
 
+  @Deprecated
   public static String callSuper_getRepresentation_8173814113624650627(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650627, new Object[]{});
   }

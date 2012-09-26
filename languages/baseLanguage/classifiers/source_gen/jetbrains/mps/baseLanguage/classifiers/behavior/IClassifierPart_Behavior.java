@@ -32,6 +32,11 @@ public class IClassifierPart_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), "virtual_getMainClassifier_1213877255428", PARAMETERS_1213877255428, new Object[]{});
   }
 
+  public static SNode callSuperNew_getMainClassifier_1213877255428(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), callerConceptFqName, "virtual_getMainClassifier_1213877255428", PARAMETERS_1213877255428, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getMainClassifier_1213877255428(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), callerConceptFqName, "virtual_getMainClassifier_1213877255428", PARAMETERS_1213877255428, new Object[]{});
   }

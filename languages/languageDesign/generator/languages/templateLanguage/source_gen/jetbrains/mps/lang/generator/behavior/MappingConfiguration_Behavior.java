@@ -75,10 +75,20 @@ public class MappingConfiguration_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "virtual_isApplicable_7839831476331657915", PARAMETERS_390427525177434695, new Object[]{candidate});
   }
 
+  public static List<SNode> callSuperNew_getBaseConceptCollection_8360039740498071265(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498071265, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isApplicable_390427525177434695(SNode thisNode, String callerConceptFqName, SNode candidate) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", PARAMETERS_390427525177434695, new Object[]{candidate});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getBaseConceptCollection_8360039740498071265(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498071265, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isApplicable_390427525177434695(SNode thisNode, String callerConceptFqName, SNode candidate) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", PARAMETERS_390427525177434695, new Object[]{candidate});
   }

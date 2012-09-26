@@ -24,6 +24,11 @@ public class UIObjectReference_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectReference"), "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800965875, new Object[]{});
   }
 
+  public static SNode callSuperNew_getDeclaration_3262277503800965875(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800965875, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getDeclaration_3262277503800965875(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800965875, new Object[]{});
   }

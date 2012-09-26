@@ -23,6 +23,11 @@ public class XmlBaseAttribute_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"), "virtual_isMultiline_3080189811177259788", PARAMETERS_3080189811177259788, new Object[]{});
   }
 
+  public static boolean callSuperNew_isMultiline_3080189811177259788(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"), callerConceptFqName, "virtual_isMultiline_3080189811177259788", PARAMETERS_3080189811177259788, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isMultiline_3080189811177259788(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"), callerConceptFqName, "virtual_isMultiline_3080189811177259788", PARAMETERS_3080189811177259788, new Object[]{});
   }

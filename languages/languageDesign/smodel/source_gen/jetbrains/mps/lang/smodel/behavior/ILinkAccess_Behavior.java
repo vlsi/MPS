@@ -31,14 +31,29 @@ public class ILinkAccess_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), "virtual_getTargetConcept_4024382256428848859", PARAMETERS_4024382256428848859, new Object[]{});
   }
 
+  public static boolean callSuperNew_isSingularCardinality_4024382256428848847(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_4024382256428848847, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isAggregation_4024382256428848854(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", PARAMETERS_4024382256428848854, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getTargetConcept_4024382256428848859(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_4024382256428848859, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isSingularCardinality_4024382256428848847(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_4024382256428848847, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isAggregation_4024382256428848854(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", PARAMETERS_4024382256428848854, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getTargetConcept_4024382256428848859(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_4024382256428848859, new Object[]{});
   }

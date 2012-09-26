@@ -25,6 +25,11 @@ public class OptionType_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), "virtual_classifierName_4609636120081351397", PARAMETERS_4125795553994047768, new Object[]{});
   }
 
+  public static String callSuperNew_classifierName_4125795553994047768(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_4125795553994047768, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_classifierName_4125795553994047768(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_4125795553994047768, new Object[]{});
   }

@@ -25,10 +25,20 @@ public class ITestRef_Behavior {
     return (Iterable<String>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), "virtual_testNames_4089647634160960707", PARAMETERS_4089647634160960707, new Object[]{});
   }
 
+  public static String callSuperNew_fqClassName_2956932267233324537(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_fqClassName_2956932267233324537", PARAMETERS_2956932267233324537, new Object[]{});
+  }
+
+  public static Iterable<String> callSuperNew_testNames_4089647634160960707(SNode thisNode, String callerConceptFqName) {
+    return (Iterable<String>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_testNames_4089647634160960707", PARAMETERS_4089647634160960707, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_fqClassName_2956932267233324537(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_fqClassName_2956932267233324537", PARAMETERS_2956932267233324537, new Object[]{});
   }
 
+  @Deprecated
   public static Iterable<String> callSuper_testNames_4089647634160960707(SNode thisNode, String callerConceptFqName) {
     return (Iterable<String>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_testNames_4089647634160960707", PARAMETERS_4089647634160960707, new Object[]{});
   }

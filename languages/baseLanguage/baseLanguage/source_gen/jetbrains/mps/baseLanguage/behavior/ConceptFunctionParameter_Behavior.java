@@ -69,14 +69,29 @@ public class ConceptFunctionParameter_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
   }
 
+  public static boolean callSuperNew_getFromParameterObject_1213877522908(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isParameterObjectUsed_1213877522926(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926, new Object[]{});
+  }
+
+  public static boolean callSuperNew_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_getFromParameterObject_1213877522908(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isParameterObjectUsed_1213877522926(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
   }

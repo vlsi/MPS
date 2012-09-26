@@ -23,6 +23,11 @@ public class ResultStatement_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697, new Object[]{});
   }
 
+  public static boolean callSuperNew_isGuardClauseStatement_2974008768272238697(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isGuardClauseStatement_2974008768272238697(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697, new Object[]{});
   }

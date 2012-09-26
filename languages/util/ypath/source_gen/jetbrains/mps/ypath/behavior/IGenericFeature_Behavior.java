@@ -26,10 +26,20 @@ public class IGenericFeature_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, new Object[]{srcExpr, param, generator});
   }
 
+  public static boolean callSuperNew_isSingleCardinality_1213877249147(SNode thisNode, String callerConceptFqName, SNode param) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, new Object[]{param});
+  }
+
+  public static SNode callSuperNew_getterExpression_1213877249152(SNode thisNode, String callerConceptFqName, SNode srcExpr, SNode param, ITemplateGenerator generator) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, new Object[]{srcExpr, param, generator});
+  }
+
+  @Deprecated
   public static boolean callSuper_isSingleCardinality_1213877249147(SNode thisNode, String callerConceptFqName, SNode param) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, new Object[]{param});
   }
 
+  @Deprecated
   public static SNode callSuper_getterExpression_1213877249152(SNode thisNode, String callerConceptFqName, SNode srcExpr, SNode param, ITemplateGenerator generator) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, new Object[]{srcExpr, param, generator});
   }

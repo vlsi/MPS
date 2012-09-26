@@ -30,6 +30,11 @@ public class ReportExecutionError_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), "virtual_getException_856705193941282181", PARAMETERS_856705193941282173, new Object[]{});
   }
 
+  public static SNode callSuperNew_getException_856705193941282173(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), callerConceptFqName, "virtual_getException_856705193941282181", PARAMETERS_856705193941282173, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getException_856705193941282173(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), callerConceptFqName, "virtual_getException_856705193941282181", PARAMETERS_856705193941282173, new Object[]{});
   }

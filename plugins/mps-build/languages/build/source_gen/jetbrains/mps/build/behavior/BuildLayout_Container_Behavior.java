@@ -32,14 +32,29 @@ public class BuildLayout_Container_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052, new Object[]{});
   }
 
+  public static String callSuperNew_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, String callerConceptFqName, Context context) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", PARAMETERS_4701820937132344011, new Object[]{context});
+  }
+
+  public static String callSuperNew_getPrepareSubTaskId_4701820937132344041(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getPrepareSubTaskId_4701820937132344041", PARAMETERS_4701820937132344041, new Object[]{});
+  }
+
+  public static String callSuperNew_getAssembleSubTaskId_4701820937132344052(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, String callerConceptFqName, Context context) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", PARAMETERS_4701820937132344011, new Object[]{context});
   }
 
+  @Deprecated
   public static String callSuper_getPrepareSubTaskId_4701820937132344041(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getPrepareSubTaskId_4701820937132344041", PARAMETERS_4701820937132344041, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getAssembleSubTaskId_4701820937132344052(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052, new Object[]{});
   }

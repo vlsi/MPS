@@ -33,10 +33,20 @@ public class IDeprecatable_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_getMessage_1225207468592", PARAMETERS_1225207468592, new Object[]{});
   }
 
+  public static boolean callSuperNew_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727, new Object[]{});
+  }
+
+  public static String callSuperNew_getMessage_1225207468592(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getMessage_1225207468592(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592, new Object[]{});
   }

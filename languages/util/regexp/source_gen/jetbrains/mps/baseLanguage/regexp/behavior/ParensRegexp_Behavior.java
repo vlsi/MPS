@@ -25,6 +25,11 @@ public class ParensRegexp_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222434892303, new Object[]{vars});
   }
 
+  public static String callSuperNew_getString_1222434892303(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222434892303, new Object[]{vars});
+  }
+
+  @Deprecated
   public static String callSuper_getString_1222434892303(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222434892303, new Object[]{vars});
   }

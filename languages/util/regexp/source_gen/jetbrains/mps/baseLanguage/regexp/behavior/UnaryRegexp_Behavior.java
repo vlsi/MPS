@@ -37,6 +37,11 @@ public class UnaryRegexp_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222867684394, new Object[]{vars});
   }
 
+  public static String callSuperNew_getString_1222867684394(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222867684394, new Object[]{vars});
+  }
+
+  @Deprecated
   public static String callSuper_getString_1222867684394(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222867684394, new Object[]{vars});
   }

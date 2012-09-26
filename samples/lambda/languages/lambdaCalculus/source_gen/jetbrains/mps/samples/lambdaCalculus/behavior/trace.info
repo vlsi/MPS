@@ -135,20 +135,23 @@
     <nodeInfo nodeId="8981808925914844647" fileName="LambdaAbstraction_Behavior.java" startLine="38" startPosition="86" endLine="39" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="42" startPosition="83" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="43" startPosition="113" endLine="44" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="47" startPosition="116" endLine="48" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="47" startPosition="119" endLine="48" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="52" startPosition="116" endLine="53" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5066394162984540359" fileName="LambdaAbstraction_Behavior.java" startLine="21" startPosition="77" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5066394162984559876" fileName="LambdaAbstraction_Behavior.java" startLine="31" startPosition="125" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariables_8981808925914841576#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVariables_8981808925914844638#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getVariables_8981808925914844638#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVariables_8981808925914844638#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVariables_8981808925914844638#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getInnerBody_5066394162984540354#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAllVariables_5066394162984559815#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="5066394162984540353" fileName="LambdaAbstraction_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="5066394162984540361" fileName="LambdaAbstraction_Behavior.java" startLine="22" startPosition="158" endLine="23" endPosition="219" />
     <scopeInfo nodeId="5066394162984559877" fileName="LambdaAbstraction_Behavior.java" startLine="32" startPosition="158" endLine="33" endPosition="281" />
     <scopeInfo nodeId="8981808925914844640" fileName="LambdaAbstraction_Behavior.java" startLine="38" startPosition="86" endLine="39" endPosition="66" />
-    <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="47" startPosition="116" endLine="48" endPosition="294" />
+    <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="47" startPosition="119" endLine="48" endPosition="297" />
+    <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="52" startPosition="116" endLine="53" endPosition="294" />
     <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="42" startPosition="83" endLine="44" endPosition="249">
       <varInfo nodeId="5066394162984540351" varName="descriptor" />
     </scopeInfo>
@@ -166,6 +169,10 @@
     <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="5066394162984540351" varName="thisNode" />
     </scopeInfo>
+    <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5066394162984540351" varName="callerConceptFqName" />
+      <varInfo nodeId="5066394162984540351" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="5066394162984540351" varName="thisNode" />
     </scopeInfo>
@@ -175,7 +182,7 @@
     <scopeInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5066394162984540351" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior" />
+    <unitInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior" />
   </root>
   <root nodeId="5066394162984555386" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
     <nodeInfo nodeId="5066394162984555456" fileName="LambdaApplication_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -227,12 +234,15 @@
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="12" startPosition="37" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8981808925914841576" />
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="19" startPosition="113" endLine="20" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="23" startPosition="116" endLine="24" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="23" startPosition="119" endLine="24" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="28" startPosition="116" endLine="29" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVariables_8981808925914841576#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getVariables_8981808925914841576#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVariables_8981808925914841576#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVariables_8981808925914841576#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <scopeInfo nodeId="5249919352014727816" fileName="VariableOwner_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="23" startPosition="116" endLine="24" endPosition="290" />
+    <scopeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="23" startPosition="119" endLine="24" endPosition="293" />
+    <scopeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="28" startPosition="116" endLine="29" endPosition="290" />
     <scopeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="18" startPosition="83" endLine="20" endPosition="245">
       <varInfo nodeId="5249919352014727814" varName="descriptor" />
     </scopeInfo>
@@ -246,7 +256,11 @@
     <scopeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="5249919352014727814" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior" />
+    <scopeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5249919352014727814" varName="callerConceptFqName" />
+      <varInfo nodeId="5249919352014727814" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior" />
   </root>
   <root nodeId="5400493247431796468" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="15" startPosition="37" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8981808925914844606" />
@@ -255,13 +269,16 @@
     <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="28" startPosition="113" endLine="29" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="32" startPosition="116" endLine="33" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="32" startPosition="119" endLine="33" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="37" startPosition="116" endLine="38" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVariables_8981808925914844606#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getVariables_8981808925914844606#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVariables_8981808925914844606#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVariables_8981808925914844606#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariables_8981808925914841576#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="5400493247431796470" fileName="LetExpression_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="32" startPosition="116" endLine="33" endPosition="290" />
+    <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="32" startPosition="119" endLine="33" endPosition="293" />
+    <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="37" startPosition="116" endLine="38" endPosition="290" />
     <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="27" startPosition="83" endLine="29" endPosition="245">
       <varInfo nodeId="5400493247431796468" varName="descriptor" />
     </scopeInfo>
@@ -278,10 +295,14 @@
     <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5400493247431796468" varName="thisNode" />
     </scopeInfo>
+    <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5400493247431796468" varName="callerConceptFqName" />
+      <varInfo nodeId="5400493247431796468" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5400493247431796468" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_Behavior" />
+    <unitInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_Behavior" />
   </root>
   <root nodeId="926857988255581399" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
     <nodeInfo nodeId="926857988255582853" fileName="LetRef_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

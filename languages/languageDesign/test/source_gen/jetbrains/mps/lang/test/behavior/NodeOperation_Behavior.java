@@ -44,10 +44,20 @@ public class NodeOperation_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
   }
 
+  public static String callSuperNew_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
+  }
+
+  public static void callSuperNew_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
+  }
+
+  @Deprecated
   public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
   }
 
+  @Deprecated
   public static void callSuper_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
   }

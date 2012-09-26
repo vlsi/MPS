@@ -104,10 +104,20 @@ public class ClassifierMember_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, new Object[]{contextClassifier, contextNode});
   }
 
+  public static boolean callSuperNew_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextClassifier, SNode contextNode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, new Object[]{contextClassifier, contextNode});
+  }
+
+  @Deprecated
   public static boolean callSuper_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextClassifier, SNode contextNode) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, new Object[]{contextClassifier, contextNode});
   }

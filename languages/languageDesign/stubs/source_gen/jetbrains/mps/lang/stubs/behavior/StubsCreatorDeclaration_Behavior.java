@@ -27,6 +27,11 @@ public class StubsCreatorDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), "virtual_createType_1213877527970", PARAMETERS_5516999836374144781, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_5516999836374144781(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5516999836374144781, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_5516999836374144781(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5516999836374144781, new Object[]{});
   }

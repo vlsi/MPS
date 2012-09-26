@@ -29,6 +29,11 @@ public class UniformScopeProvider_Behavior {
     return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, new Object[]{kind, context});
   }
 
+  public static Scope callSuperNew_getScope_2995585510566823862(SNode thisNode, String callerConceptFqName, SNode kind, ScopeProviderContext context) {
+    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), callerConceptFqName, "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, new Object[]{kind, context});
+  }
+
+  @Deprecated
   public static Scope callSuper_getScope_2995585510566823862(SNode thisNode, String callerConceptFqName, SNode kind, ScopeProviderContext context) {
     return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), callerConceptFqName, "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, new Object[]{kind, context});
   }

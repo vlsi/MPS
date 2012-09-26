@@ -36,6 +36,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractRule_Behavior" file="AbstractRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -90,6 +91,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_Behavior" file="ApplicableNodeCondition_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -273,6 +275,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ComparisonRule_Behavior" file="ComparisonRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -414,6 +417,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_Behavior" file="DefaultGroupReference_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -522,6 +526,7 @@
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IRuleWithOneNode_BehaviorDescriptor" file="IRuleWithOneNode_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_Behavior" file="IRuleWithTwoNodes_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -547,6 +552,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule_Behavior" file="InequationReplacementRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -568,6 +574,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InferenceRule_Behavior" file="InferenceRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -771,6 +778,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule_Behavior" file="NonTypesystemRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

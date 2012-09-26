@@ -27,6 +27,11 @@ public class CommandBuilderExpression_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282164, new Object[]{});
   }
 
+  public static boolean callSuperNew_isLegalAsStatement_856705193941282164(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282164, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLegalAsStatement_856705193941282164(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282164, new Object[]{});
   }

@@ -19,6 +19,11 @@ public class IUIObjectDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596, new Object[]{});
   }
 
+  public static SNode callSuperNew_getType_6410919744913609596(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getType_6410919744913609596(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596, new Object[]{});
   }

@@ -231,6 +231,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation_Behavior" file="ContextMemberOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -423,6 +424,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_Behavior" file="MainProjectOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -460,6 +462,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_Behavior" file="ModelDescriptorOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -521,6 +524,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_Behavior" file="ModuleOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -588,6 +592,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior" file="NodeOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -623,6 +628,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior" file="NodesOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -674,6 +680,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_Behavior" file="OperationContextOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -705,6 +712,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_Behavior" file="ProjectOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -798,6 +806,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.Refactoring_Behavior" file="Refactoring_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -859,6 +868,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_Behavior" file="ScopeOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />

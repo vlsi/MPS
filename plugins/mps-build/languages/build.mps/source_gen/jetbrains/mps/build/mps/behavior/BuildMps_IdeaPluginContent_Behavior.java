@@ -23,6 +23,11 @@ public class BuildMps_IdeaPluginContent_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"), "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, new Object[]{object});
   }
 
+  public static boolean callSuperNew_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object object) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"), callerConceptFqName, "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, new Object[]{object});
+  }
+
+  @Deprecated
   public static boolean callSuper_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object object) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"), callerConceptFqName, "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, new Object[]{object});
   }

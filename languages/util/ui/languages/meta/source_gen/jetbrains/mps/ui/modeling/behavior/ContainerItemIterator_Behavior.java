@@ -30,6 +30,11 @@ public class ContainerItemIterator_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747, new Object[]{});
   }
 
+  public static SNode callSuperNew_getExpectedReturnType_7798684637310718747(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getExpectedReturnType_7798684637310718747(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747, new Object[]{});
   }

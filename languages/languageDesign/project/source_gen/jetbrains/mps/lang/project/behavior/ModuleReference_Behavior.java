@@ -24,6 +24,11 @@ public class ModuleReference_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.ModuleReference"), "virtual_getModuleReference_1250389701475344624", PARAMETERS_1250389701475344624, new Object[]{});
   }
 
+  public static String callSuperNew_getModuleReference_1250389701475344624(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.ModuleReference"), callerConceptFqName, "virtual_getModuleReference_1250389701475344624", PARAMETERS_1250389701475344624, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getModuleReference_1250389701475344624(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.ModuleReference"), callerConceptFqName, "virtual_getModuleReference_1250389701475344624", PARAMETERS_1250389701475344624, new Object[]{});
   }

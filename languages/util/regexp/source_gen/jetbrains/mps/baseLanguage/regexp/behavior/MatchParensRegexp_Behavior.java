@@ -45,10 +45,20 @@ public class MatchParensRegexp_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), "virtual_getValue_1224857430232", PARAMETERS_4204903511793602684, new Object[]{});
   }
 
+  public static String callSuperNew_getString_1222435297321(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222435297321, new Object[]{vars});
+  }
+
+  public static SNode callSuperNew_getValue_4204903511793602684(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4204903511793602684, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getString_1222435297321(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222435297321, new Object[]{vars});
   }
 
+  @Deprecated
   public static SNode callSuper_getValue_4204903511793602684(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4204903511793602684, new Object[]{});
   }

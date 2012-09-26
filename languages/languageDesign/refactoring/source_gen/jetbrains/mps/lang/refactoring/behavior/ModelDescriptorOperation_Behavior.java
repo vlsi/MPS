@@ -30,6 +30,11 @@ public class ModelDescriptorOperation_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"), "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652478, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_7012097027058652478(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652478, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_7012097027058652478(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652478, new Object[]{});
   }

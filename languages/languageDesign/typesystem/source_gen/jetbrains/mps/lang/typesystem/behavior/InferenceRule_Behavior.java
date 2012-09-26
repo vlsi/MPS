@@ -17,7 +17,7 @@ public class InferenceRule_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    IConceptAspect_Behavior.callSuper_setBaseConcept_6261424444345963020(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule", baseConcept);
+    IConceptAspect_Behavior.callSuperNew_setBaseConcept_6261424444345963020(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", baseConcept);
     SPropertyOperations.set(thisNode, "name", "typeof_" + SPropertyOperations.getString(baseConcept, "name"));
   }
 
@@ -26,6 +26,11 @@ public class InferenceRule_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, new Object[]{baseConcept});
   }
 
+  public static void callSuperNew_setBaseConcept_590757823759239749(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, new Object[]{baseConcept});
+  }
+
+  @Deprecated
   public static void callSuper_setBaseConcept_590757823759239749(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, new Object[]{baseConcept});
   }

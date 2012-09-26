@@ -19,7 +19,7 @@ public class QueryFunction_Substitute_Handler_Behavior {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
       return false;
     }
-    return ConceptFunction_Behavior.callSuper_usesParameterObjectFor_1213877374432(thisNode, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", parameter);
+    return ConceptFunction_Behavior.callSuperNew_usesParameterObjectFor_1213877374432(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", parameter);
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {

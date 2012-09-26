@@ -18,6 +18,6 @@ public class BuildMps_IdeaPluginGroup_Behavior {
         return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "group", false), "modules", true)).contains(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
       }
     }
-    return BuildMps_IdeaPluginContent_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", object);
+    return BuildMps_IdeaPluginContent_Behavior.callSuperNew_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", object);
   }
 }

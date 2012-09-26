@@ -23,6 +23,11 @@ public class SortOperation_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SortOperation"), "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_3185788474596486344, new Object[]{});
   }
 
+  public static boolean callSuperNew_isDotExpressionLegalAsStatement_3185788474596486344(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SortOperation"), callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_3185788474596486344, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isDotExpressionLegalAsStatement_3185788474596486344(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SortOperation"), callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_3185788474596486344, new Object[]{});
   }

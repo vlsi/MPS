@@ -19,6 +19,11 @@ public class ActionReference_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762, new Object[]{});
   }
 
+  public static String callSuperNew_getActionId_1101347953350122762(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getActionId_1101347953350122762(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762, new Object[]{});
   }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="689680155165915392">
+  <root nodeId="689680155165915392" modelId="r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)">
     <nodeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="23" startPosition="77" endLine="24" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6gh6zs_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="26" startPosition="41" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

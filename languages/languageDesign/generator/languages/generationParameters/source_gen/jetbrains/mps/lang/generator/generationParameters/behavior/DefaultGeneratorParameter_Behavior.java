@@ -28,6 +28,11 @@ public class DefaultGeneratorParameter_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087, new Object[]{});
   }
 
+  public static String callSuperNew_getUniqueId_8484425748929510087(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getUniqueId_8484425748929510087(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087, new Object[]{});
   }

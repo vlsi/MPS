@@ -33,10 +33,20 @@ public class IStringExpression_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982, new Object[]{});
   }
 
+  public static String callSuperNew_getValue_1213877173054(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getValue_1213877173054", PARAMETERS_1213877173054, new Object[]{});
+  }
+
+  public static String callSuperNew_getAntValue_8148924375507875982(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getValue_1213877173054(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getValue_1213877173054", PARAMETERS_1213877173054, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getAntValue_8148924375507875982(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982, new Object[]{});
   }

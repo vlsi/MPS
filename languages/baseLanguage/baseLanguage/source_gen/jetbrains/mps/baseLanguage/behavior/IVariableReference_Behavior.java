@@ -19,6 +19,11 @@ public class IVariableReference_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableReference"), "virtual_getVariable_1023687332192481693", PARAMETERS_1023687332192481693, new Object[]{});
   }
 
+  public static SNode callSuperNew_getVariable_1023687332192481693(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableReference"), callerConceptFqName, "virtual_getVariable_1023687332192481693", PARAMETERS_1023687332192481693, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getVariable_1023687332192481693(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableReference"), callerConceptFqName, "virtual_getVariable_1023687332192481693", PARAMETERS_1023687332192481693, new Object[]{});
   }

@@ -30,7 +30,7 @@ public class Block_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
       return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SLinkOperations.getTarget(thisNode, "layout", false), macroName);
     }
-    return IMacroHolder_Behavior.callSuper_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.Block", macroName);
+    return IMacroHolder_Behavior.callSuperNew_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", macroName);
   }
 
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {

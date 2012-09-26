@@ -33,14 +33,29 @@ public class BuildLayout_PathElement_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), "virtual_location_7117056644539862594", PARAMETERS_7117056644539862594, new Object[]{helper, artifactId});
   }
 
+  public static void callSuperNew_unpack_7128123785277710736(SNode thisNode, String callerConceptFqName, UnpackHelper helper, Iterable<Object> artifacts) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277710736, new Object[]{helper, artifacts});
+  }
+
+  public static void callSuperNew_appendName_1368030936106665465(SNode thisNode, String callerConceptFqName, SNode parent, StringBuilder sb) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_appendName_1368030936106665465", PARAMETERS_1368030936106665465, new Object[]{parent, sb});
+  }
+
+  public static String callSuperNew_location_7117056644539862594(SNode thisNode, String callerConceptFqName, DependenciesHelper helper, Object artifactId) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_location_7117056644539862594", PARAMETERS_7117056644539862594, new Object[]{helper, artifactId});
+  }
+
+  @Deprecated
   public static void callSuper_unpack_7128123785277710736(SNode thisNode, String callerConceptFqName, UnpackHelper helper, Iterable<Object> artifacts) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277710736, new Object[]{helper, artifacts});
   }
 
+  @Deprecated
   public static void callSuper_appendName_1368030936106665465(SNode thisNode, String callerConceptFqName, SNode parent, StringBuilder sb) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_appendName_1368030936106665465", PARAMETERS_1368030936106665465, new Object[]{parent, sb});
   }
 
+  @Deprecated
   public static String callSuper_location_7117056644539862594(SNode thisNode, String callerConceptFqName, DependenciesHelper helper, Object artifactId) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_location_7117056644539862594", PARAMETERS_7117056644539862594, new Object[]{helper, artifactId});
   }

@@ -34,10 +34,20 @@ public class GenerationContextOp_PropertyPatternRef_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, new Object[]{target});
   }
 
+  public static SNode callSuperNew_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432, new Object[]{});
+  }
+
+  public static void callSuperNew_setTarget_1758784108620254578(SNode thisNode, String callerConceptFqName, SNode target) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, new Object[]{target});
+  }
+
+  @Deprecated
   public static SNode callSuper_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432, new Object[]{});
   }
 
+  @Deprecated
   public static void callSuper_setTarget_1758784108620254578(SNode thisNode, String callerConceptFqName, SNode target) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, new Object[]{target});
   }

@@ -135,14 +135,29 @@ public class IMethodCall_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, new Object[]{methodName});
   }
 
+  public static SNode callSuperNew_getInstanceType_8008512149545154471(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471, new Object[]{});
+  }
+
+  public static Map<SNode, SNode> callSuperNew_getTypesByTypeVars_851115533308208851(SNode thisNode, String callerConceptFqName) {
+    return (Map<SNode, SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, new Object[]{methodName});
+  }
+
+  @Deprecated
   public static SNode callSuper_getInstanceType_8008512149545154471(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471, new Object[]{});
   }
 
+  @Deprecated
   public static Map<SNode, SNode> callSuper_getTypesByTypeVars_851115533308208851(SNode thisNode, String callerConceptFqName) {
     return (Map<SNode, SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, new Object[]{methodName});
   }

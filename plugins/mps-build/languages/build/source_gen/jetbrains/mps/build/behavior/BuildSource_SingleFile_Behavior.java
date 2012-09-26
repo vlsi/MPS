@@ -19,6 +19,11 @@ public class BuildSource_SingleFile_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878, new Object[]{});
   }
 
+  public static String callSuperNew_getApproximateName_5610619299013425878(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), callerConceptFqName, "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getApproximateName_5610619299013425878(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), callerConceptFqName, "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878, new Object[]{});
   }

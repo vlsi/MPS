@@ -52,10 +52,20 @@ public class Order_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958, new Object[]{});
   }
 
+  public static boolean callSuperNew_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, new Object[]{tab});
+  }
+
+  public static SNode callSuperNew_getOrder_3038738109029048958(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, new Object[]{tab});
   }
 
+  @Deprecated
   public static SNode callSuper_getOrder_3038738109029048958(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958, new Object[]{});
   }

@@ -28,6 +28,11 @@ public class INamedConcept_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", PARAMETERS_1213877404258, new Object[]{});
   }
 
+  public static String callSuperNew_getFqName_1213877404258(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_1213877404258, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getFqName_1213877404258(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_1213877404258, new Object[]{});
   }

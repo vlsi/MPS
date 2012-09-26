@@ -26,6 +26,11 @@ public class IExtractMethodAvailable_Behavior {
     return (IExtractMethodRefactoringProcessor) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), "virtual_getExtractMethodRefactoringProcessor_1221393367929", PARAMETERS_1221393367929, new Object[]{nodesToExtract});
   }
 
+  public static IExtractMethodRefactoringProcessor callSuperNew_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, String callerConceptFqName, List<SNode> nodesToExtract) {
+    return (IExtractMethodRefactoringProcessor) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), callerConceptFqName, "virtual_getExtractMethodRefactoringProcessor_1221393367929", PARAMETERS_1221393367929, new Object[]{nodesToExtract});
+  }
+
+  @Deprecated
   public static IExtractMethodRefactoringProcessor callSuper_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, String callerConceptFqName, List<SNode> nodesToExtract) {
     return (IExtractMethodRefactoringProcessor) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), callerConceptFqName, "virtual_getExtractMethodRefactoringProcessor_1221393367929", PARAMETERS_1221393367929, new Object[]{nodesToExtract});
   }

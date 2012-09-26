@@ -20,7 +20,7 @@ public class XmlWhitespace_Behavior {
   }
 
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
-    XmlPart_Behavior.callSuper_onNewLine_2133624044437631588(thisNode, "jetbrains.mps.core.xml.structure.XmlWhitespace");
+    XmlPart_Behavior.callSuperNew_onNewLine_2133624044437631588(thisNode, "jetbrains.mps.core.xml.structure.XmlPrologElement");
     if (isEmpty_vw0lry_a0a1a2(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlPart_Behavior.call_onNewLine_2133624044437631588(thisNode));
     }

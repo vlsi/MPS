@@ -71,6 +71,11 @@ public class UnrestrictedFunctionType_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754, new Object[]{});
   }
 
+  public static String callSuperNew_getRuntimeSignature_3841277577642912754(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getRuntimeSignature_3841277577642912754(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754, new Object[]{});
   }

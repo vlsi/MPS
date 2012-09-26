@@ -45,7 +45,7 @@ public class BuildLayout_AbstractCopy_Behavior {
       }
       return;
     }
-    BuildLayout_PathElement_Behavior.callSuper_appendName_1368030936106665465(thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", parent, sb);
+    BuildLayout_PathElement_Behavior.callSuperNew_appendName_1368030936106665465(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", parent, sb);
   }
 
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {

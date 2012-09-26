@@ -23,6 +23,11 @@ public class DefaultGroupReference_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"), "virtual_createGeneratedNodeId_7342618720440051599", PARAMETERS_7342618720440051599, new Object[]{});
   }
 
+  public static String callSuperNew_createGeneratedNodeId_7342618720440051599(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"), callerConceptFqName, "virtual_createGeneratedNodeId_7342618720440051599", PARAMETERS_7342618720440051599, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_createGeneratedNodeId_7342618720440051599(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"), callerConceptFqName, "virtual_createGeneratedNodeId_7342618720440051599", PARAMETERS_7342618720440051599, new Object[]{});
   }
