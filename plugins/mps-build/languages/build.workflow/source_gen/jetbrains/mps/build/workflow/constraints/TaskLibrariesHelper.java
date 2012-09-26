@@ -43,7 +43,7 @@ public class TaskLibrariesHelper {
     List<SNode> libs = new ArrayList<SNode>(libsSet);
     for (SNode lib : libs) {
       for (SNode n : SNodeOperations.getDescendants(lib, null, true)) {
-        for (SReference ref : n.getReferencesIterable()) {
+        for (SReference ref : SNodeOperations.getReferences(n)) {
           SNode targetNode = ref.getTargetNodeSilently();
           if (targetNode == null) {
             genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, "name") + "': unresolved reference");

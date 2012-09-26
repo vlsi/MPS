@@ -777,7 +777,9 @@
     <scopeInfo nodeId="8360039740498071776" fileName="AbstractConceptDeclaration_Behavior.java" startLine="82" startPosition="5" endLine="87" endPosition="5">
       <varInfo nodeId="8360039740498071796" varName="aspectConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877394319" fileName="AbstractConceptDeclaration_Behavior.java" startLine="171" startPosition="30" endLine="176" endPosition="9" />
+    <scopeInfo nodeId="1213877394320" fileName="AbstractConceptDeclaration_Behavior.java" startLine="171" startPosition="30" endLine="176" endPosition="9">
+      <varInfo nodeId="1213877394324" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877394026" fileName="AbstractConceptDeclaration_Behavior.java" startLine="227" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="1213877394026" varName="thisNode" />
     </scopeInfo>
@@ -919,7 +921,9 @@
       <varInfo nodeId="2165772098013606221" varName="language" />
       <varInfo nodeId="2165772098013606280" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877394247" fileName="AbstractConceptDeclaration_Behavior.java" startLine="138" startPosition="30" endLine="161" endPosition="9" />
+    <scopeInfo nodeId="1213877394248" fileName="AbstractConceptDeclaration_Behavior.java" startLine="138" startPosition="30" endLine="161" endPosition="9">
+      <varInfo nodeId="1213877394252" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877394026" fileName="AbstractConceptDeclaration_Behavior.java" startLine="296" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="1213877394026" varName="thisNode" />
     </scopeInfo>
