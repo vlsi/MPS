@@ -4297,7 +4297,7 @@ public class ApiTransformations {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_17 = quotedNode_3;
-          quotedNode1_17.addReference(SReference.create("baseMethodDeclaration", quotedNode1_17, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.insertChild(jetbrains.mps.smodel.SNodeBase,java.lang.String,jetbrains.mps.smodel.SNode):void")));
+          quotedNode1_17.addReference(SReference.create("baseMethodDeclaration", quotedNode1_17, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.insertChild(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):void")));
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_18 = quotedNode_5;
@@ -4312,7 +4312,7 @@ public class ApiTransformations {
               {
                 quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_21 = quotedNode_11;
-                quotedNode1_21.addReference(SReference.create("classifier", quotedNode1_21, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeBase")));
+                quotedNode1_21.addReference(SReference.create("classifier", quotedNode1_21, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
                 quotedNode_8.addChild("type", quotedNode1_21);
               }
               quotedNode_5.addChild("expression", quotedNode1_19);
@@ -4476,7 +4476,7 @@ public class ApiTransformations {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_18 = quotedNode_3;
-          quotedNode1_18.addReference(SReference.create("baseMethodDeclaration", quotedNode1_18, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.insertChild(jetbrains.mps.smodel.SNodeBase,java.lang.String,jetbrains.mps.smodel.SNode,boolean):void")));
+          quotedNode1_18.addReference(SReference.create("baseMethodDeclaration", quotedNode1_18, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.insertChild(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode,boolean):void")));
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_19 = quotedNode_5;
@@ -4491,7 +4491,7 @@ public class ApiTransformations {
               {
                 quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_22 = quotedNode_12;
-                quotedNode1_22.addReference(SReference.create("classifier", quotedNode1_22, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeBase")));
+                quotedNode1_22.addReference(SReference.create("classifier", quotedNode1_22, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
                 quotedNode_9.addChild("type", quotedNode1_22);
               }
               quotedNode_5.addChild("expression", quotedNode1_20);
