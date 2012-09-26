@@ -36,18 +36,19 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
-      final SNode node = getNode();
-      if (node == null) {
-        throw new RuntimeConfigurationException("Node is not specified.");
-      }
-      final Wrappers._boolean accept = new Wrappers._boolean();
+      final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          accept.value = myIsValid.invoke(node);
+          SNode node = getNode();
+          if (node == null) {
+            errorText.value = "Node is not specified.";
+          } else if (!(myIsValid.invoke(node))) {
+            errorText.value = "Node is not valid.";
+          }
         }
       });
-      if (!(accept.value)) {
-        throw new RuntimeConfigurationException("Node is not valid.");
+      if (isNotEmpty_trwdw3_a0c0a0a(errorText.value)) {
+        throw new RuntimeConfigurationException(errorText.value);
       }
     }
   }
@@ -83,13 +84,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
 
   @Nullable
   public SNode getNode() {
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-      public SNode invoke() {
-        return node.value = check_h3hwcn_a0a0a1a0(getNodePointer());
-      }
-    }));
-    return node.value;
+    return check_h3hwcn_a0a0(getNodePointer());
   }
 
   public SNodePointer getNodePointer() {
@@ -99,17 +94,13 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return new SNodePointer(this.getModelId(), this.getNodeId());
   }
 
-  public void setNode(@Nullable final SNode node) {
+  public void setNode(@Nullable SNode node) {
     if (node == null) {
       this.setModelId(null);
       this.setNodeId(null);
     } else {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          NodeByConcept_Configuration.this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
-          NodeByConcept_Configuration.this.setNodeId(node.getId());
-        }
-      });
+      this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
+      this.setNodeId(node.getId());
     }
   }
 
@@ -143,11 +134,15 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return myEditorEx;
   }
 
-  private static SNode check_h3hwcn_a0a0a1a0(SNodePointer checkedDotOperand) {
+  private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }
     return null;
+  }
+
+  public static boolean isNotEmpty_trwdw3_a0c0a0a(String str) {
+    return str != null && str.length() > 0;
   }
 
   public class MyState {

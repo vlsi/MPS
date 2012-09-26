@@ -21,7 +21,7 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
   private IGraphCreator<T> myGraphCreator;
   private IProgram<T> myProgram;
   private Component myComponent;
-  private List<IBlock<T>> myBlocks = new ArrayList<IBlock<T>>();
+  private List<IBlock> myBlocks = new ArrayList<IBlock>();
   private List<Line> myLines = new ArrayList<Line>();
   private Set<ArrowHead> myArrowHeads = new HashSet<ArrowHead>();
   private Map<Integer, FreeZone> myFreeZoneMap = new HashMap<Integer, FreeZone>();
@@ -30,18 +30,27 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
   private int myWidth;
   private int myHeight;
 
-  public ControlFlowGraph(IProgram<T> program, IGraphCreator<T> graphCreator, Component component) {
+  public ControlFlowGraph(IProgram<T> program, IGraphCreator<T> graphCreator) {
     this.myProgram = program;
     this.myGraphCreator = graphCreator;
-    this.myComponent = component;
     ControlFlowGraph.this.buildBlocks();
   }
 
   public void buildBlocks() {
+    Map<IInstruction<T>, IBlock> instructionToBlock = new HashMap<IInstruction<T>, IBlock>();
     for (IInstruction<T> instruction : this.myProgram.getInstructions()) {
-      this.myBlocks.add(this.myGraphCreator.createBlock((T) instruction, MARGIN_X, 0, 0, 0));
+      IBlock block = this.myGraphCreator.createBlock((T) instruction, MARGIN_X, 0, 0, 0);
+      this.myBlocks.add(block);
+      instructionToBlock.put(instruction, block);
     }
-    ControlFlowGraph.this.relayout();
+    for (IInstruction<T> instruction : this.myProgram.getInstructions()) {
+      IBlock block = instructionToBlock.get(instruction);
+      Set<IBlock> succ = new HashSet<IBlock>();
+      for (IInstruction<T> instructionSucc : instruction.succ()) {
+        succ.add(instructionToBlock.get(instructionSucc));
+      }
+      block.setSucc(succ);
+    }
   }
 
   public void paint(Graphics g) {
@@ -58,23 +67,27 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     }
   }
 
+  public void setComponent(Component component) {
+    this.myComponent = component;
+  }
+
   public void relayout() {
     this.myLines.clear();
     this.myArrowHeads.clear();
     this.myMaxLineIndentRight = 0;
     this.myMaxLineIndentLeft = 0;
     this.myFreeZoneMap = new HashMap<Integer, FreeZone>();
-    for (IBlock<T> block : this.myBlocks) {
+    for (IBlock block : this.myBlocks) {
       block.relayout(this.myComponent);
     }
     int maxWidth = 0;
     int maxHeight = 0;
-    for (IBlock<T> block : this.myBlocks) {
+    for (IBlock block : this.myBlocks) {
       maxWidth = Math.max(maxWidth, block.getWidth());
       maxHeight = Math.max(maxHeight, block.getHeight());
     }
     int y = MARGIN_Y;
-    for (IBlock<T> block : this.myBlocks) {
+    for (IBlock block : this.myBlocks) {
       block.setWidth(maxWidth);
       block.setX(MARGIN_X);
       block.setY(y);
@@ -82,9 +95,8 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
       y += maxHeight / 2;
     }
     for (int i = 0; i < this.myBlocks.size(); i++) {
-      IBlock<T> block = this.myBlocks.get(i);
-      for (IInstruction<T> succInstruction : block.getSourceObject().succ()) {
-        IBlock<T> succBlock = this.myGraphCreator.findBlockWith(succInstruction);
+      IBlock block = this.myBlocks.get(i);
+      for (IBlock succBlock : block.succ()) {
         if (this.myBlocks.indexOf(succBlock) == i + 1) {
           ControlFlowGraph.this.createSimpleLine(block, succBlock);
         } else {
@@ -109,7 +121,7 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     }
   }
 
-  private void createAdditionalLine(IBlock<T> startBlock, IBlock<T> endBlock) {
+  private void createAdditionalLine(IBlock startBlock, IBlock endBlock) {
     int startIndex = this.myBlocks.indexOf(startBlock);
     int endIndex = this.myBlocks.indexOf(endBlock);
     int rightIndent = 0;
@@ -174,20 +186,20 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     return this.myHeight;
   }
 
-  public void addBlockListener(IBlockListener<T> listener) {
-    for (IBlock<T> block : this.myBlocks) {
+  public void addBlockListener(IBlockListener listener) {
+    for (IBlock block : this.myBlocks) {
       block.addBlockListener(listener);
     }
   }
 
-  public void removeBlockListener(IBlockListener<T> listener) {
-    for (IBlock<T> block : this.myBlocks) {
+  public void removeBlockListener(IBlockListener listener) {
+    for (IBlock block : this.myBlocks) {
       block.removeBlockListener(listener);
     }
   }
 
   public void processMousePressed(MouseEvent event) {
-    for (IBlock<T> block : this.myBlocks) {
+    for (IBlock block : this.myBlocks) {
       if (block.processMousePressed(event)) {
         return;
       }

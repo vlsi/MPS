@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="tu7qq3euuyz8j4irhh3xkbvfks2jx0">
+<dependencies version="2" modelHash="1qtsiva9v72v9i34ci1vcr26io9fmqz">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="-4iv38643b336rgds590u3shyjqnrivh" />
@@ -19,7 +19,7 @@
   <common hash="c95sy96k7jwjoycn1fcmv5cqmkrc13n">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="7926701909975931624" name="buildCore" hash="-8afgx3h4nl8s2080gly11c75pfttjwb">
+  <source id="7926701909975931624" name="buildCore" hash="66mvi2gnc9o0gqt42ou5bnt9prw4r23">
     <dep root="7181125477683264500" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -132,7 +132,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildPlugins.xml" />
   </source>
-  <source id="8524659923334108558" name="buildBuild" hash="-8aabv6bexceudf3isycvl64672pwod6">
+  <source id="8524659923334108558" name="buildBuild" hash="a5hf1k0qhjhvr0ag6fbllmvdunurglr">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -297,7 +297,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
     <file name="installer.nsi" />
   </source>
-  <source id="4197214709894135186" name="buildObsolete" hash="4je36gta1ugsf7mj42l4h6z2y1n6b3e">
+  <source id="4197214709894135186" name="buildObsolete" hash="-4trjplcijjs3g7cacpeaemwk06hjm8w">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />
@@ -317,7 +317,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildObsolete.xml" />
   </source>
-  <source id="4061567211001166715" name="buildDates" hash="cul5pe8wrdyany2lgk1n1nzb92uxc5b">
+  <source id="4061567211001166715" name="buildDates" hash="-9wqn7phw5a6tc6njpxzwwoo8blkdhes">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />

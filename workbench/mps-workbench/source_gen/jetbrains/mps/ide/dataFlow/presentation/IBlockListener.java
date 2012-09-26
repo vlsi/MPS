@@ -4,6 +4,6 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import java.awt.event.MouseEvent;
 
-public interface IBlockListener<T extends IInstruction<T>> {
-  public void mousePressed(MouseEvent event, IInstruction<T> instruction);
+public interface IBlockListener {
+  public void mousePressed(MouseEvent event, IBlock block);
 }

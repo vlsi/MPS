@@ -5,15 +5,19 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
@@ -21,25 +25,25 @@ import java.awt.Dimension;
 public class NodeChooserDialog extends DialogWrapper {
   private ChooseByNamePanel myChooser;
 
-  public NodeChooserDialog(Project project, final Iterable<SNode> nodes) {
+  public NodeChooserDialog(Project project, final Iterable<SNodePointer> nodes) {
     super(project, true);
     setTitle("Choose Node");
 
-    BaseNodeModel goToNodeModel = new BaseNodeModel(project) {
+    BaseNodePointerModel goToNodeModel = new BaseNodePointerModel(project) {
       @Override
-      public NavigationItem doGetNavigationItem(SNode node) {
-        return new BaseNodeItem(node) {
+      public NavigationItem doGetNavigationItem(SNodePointer node) {
+        return new BaseNodePointerItem(node) {
           public void navigate(boolean requestFocus) {
           }
         };
       }
 
       @Override
-      public SNode[] find(boolean checkboxState) {
-        return Sequence.fromIterable(nodes).toGenericArray(SNode.class);
+      public SNodePointer[] find(boolean checkboxState) {
+        return Sequence.fromIterable(nodes).toGenericArray(SNodePointer.class);
       }
 
-      public SNode[] find(IScope scope) {
+      public SNodePointer[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
@@ -62,19 +66,40 @@ public class NodeChooserDialog extends DialogWrapper {
     init();
   }
 
+  public NodeChooserDialog(Project project, final List<SNode> nodes) {
+    this(project, ListSequence.fromList(nodes).select(new ISelector<SNode, SNodePointer>() {
+      public SNodePointer select(SNode it) {
+        return new SNodePointer(it);
+      }
+    }));
+  }
+
   @Nullable
   protected JComponent createCenterPanel() {
     myChooser.getPanel().setPreferredSize(new Dimension(400, 500));
     return myChooser.getPanel();
   }
 
-  public SNode getResult() {
+  @Nullable
+  public SNode getResultNode() {
     if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
       return null;
     }
-    BaseNodeItem nodeItem = (BaseNodeItem) myChooser.getChosenElement();
+    BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
     return (nodeItem != null ?
       nodeItem.getNode() :
+      null
+    );
+  }
+
+  @Nullable
+  public SNodePointer getResult() {
+    if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
+      return null;
+    }
+    BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
+    return (nodeItem != null ?
+      nodeItem.getNodePointer() :
       null
     );
   }
