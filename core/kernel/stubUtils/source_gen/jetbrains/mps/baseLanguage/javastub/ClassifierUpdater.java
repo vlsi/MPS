@@ -622,7 +622,7 @@ public class ClassifierUpdater {
     resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
-    sourceNode.addReference(ref);
+    sourceNode.setReference(ref.getRole(), ref);
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
@@ -634,7 +634,7 @@ public class ClassifierUpdater {
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     String resolve = method;
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
-    sourceNode.addReference(ref);
+    sourceNode.setReference(ref.getRole(), ref);
   }
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
@@ -649,7 +649,7 @@ public class ClassifierUpdater {
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
 
-    sourceNode.addReference(ref);
+    sourceNode.setReference(ref.getRole(), ref);
   }
 
   public boolean isSkipPrivate() {

@@ -66,7 +66,7 @@ public class SetReferenceChange extends NodeChange {
         reference = new StaticReference(myRole, node, targetModelReference, myTargetNodeId, myResolveInfo);
       }
       node.setReferenceTarget(myRole, null);
-      node.addReference(reference);
+      node.setReference(reference.getRole(), reference);
     }
   }
 

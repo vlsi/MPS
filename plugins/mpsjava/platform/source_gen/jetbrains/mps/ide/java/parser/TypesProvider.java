@@ -132,7 +132,7 @@ public class TypesProvider {
         ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding;
         ReferenceBinding originalType = parameterizedTypeBinding.genericType();
         SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-        result.addReference(createClassifierReference(originalType, "classifier", result));
+        result.setReference(createClassifierReference(originalType, "classifier", result).getRole(), createClassifierReference(originalType, "classifier", result));
         if (!((parameterizedTypeBinding instanceof RawTypeBinding))) {
           TypeBinding[] typeBindings = parameterizedTypeBinding.arguments;
           if (typeBindings != null) {
@@ -152,14 +152,14 @@ public class TypesProvider {
       if (binding instanceof MissingTypeBinding || binding instanceof ProblemReferenceBinding) {
         SNode classifierType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SReference reference = createErrorClassifierReference("classifier", (ReferenceBinding) binding, classifierType);
-        classifierType.addReference(reference);
+        classifierType.setReference(reference.getRole(), reference);
         return classifierType;
       }
       if (binding instanceof BinaryTypeBinding) {
         SNode classifierType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding;
         SReference reference = createClassifierReference(binaryTypeBinding, "classifier", classifierType);
-        classifierType.addReference(reference);
+        classifierType.setReference(reference.getRole(), reference);
         return classifierType;
       }
     }

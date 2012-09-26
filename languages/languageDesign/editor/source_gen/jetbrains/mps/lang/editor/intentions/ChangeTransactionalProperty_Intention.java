@@ -52,7 +52,7 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention impleme
       transactional.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
-      transactional.addReference(reference);
+      transactional.setReference(reference.getRole(), reference);
     }
     SNodeOperations.replaceWithAnother(node, transactional);
   }

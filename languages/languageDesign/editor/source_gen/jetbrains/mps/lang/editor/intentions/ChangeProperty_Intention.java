@@ -51,7 +51,7 @@ public class ChangeProperty_Intention extends BaseIntention implements Intention
       transactional.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
-      transactional.addReference(reference);
+      transactional.setReference(reference.getRole(), reference);
     }
     jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, transactional);
   }

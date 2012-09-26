@@ -51,7 +51,7 @@ public class ChangeNonEmptyProperty_Intention extends BaseIntention implements I
       property.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
-      property.addReference(reference);
+      property.setReference(reference.getRole(), reference);
     }
     jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, property);
   }

@@ -170,7 +170,7 @@ public class CopyPasteUtil {
           continue;
         }
       }
-      newSourceNode.addReference(newReference);
+      newSourceNode.setReference(newReference.getRole(), newReference);
     }
   }
 
@@ -206,7 +206,7 @@ public class CopyPasteUtil {
           }
         }
       }
-      newSourceNode.addReference(newReference);
+      newSourceNode.setReference(newReference.getRole(), newReference);
     }
   }
 

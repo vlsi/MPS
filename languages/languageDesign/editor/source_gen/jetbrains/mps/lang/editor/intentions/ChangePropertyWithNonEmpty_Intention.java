@@ -63,7 +63,7 @@ public class ChangePropertyWithNonEmpty_Intention extends BaseIntention implemen
       nonEmpty.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
-      nonEmpty.addReference(reference);
+      nonEmpty.setReference(reference.getRole(), reference);
     }
     SNodeOperations.replaceWithAnother(node, nonEmpty);
   }
