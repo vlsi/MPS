@@ -495,7 +495,7 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat40 = "insertChild(a,r,c,b)->insertChild()";
+    String cat40 = "insertChild(a,r,c,b)->SNodeOperations.insertChild()";
     SNode md40 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0rl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer40 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {

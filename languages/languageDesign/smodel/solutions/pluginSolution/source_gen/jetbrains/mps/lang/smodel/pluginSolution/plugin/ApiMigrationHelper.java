@@ -212,6 +212,9 @@ public class ApiMigrationHelper {
     if (eq_yke5lt_a0b0c(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
       return false;
     }
+    if (eq_yke5lt_a0c0c(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", "")).getSModel()))) {
+      return false;
+    }
     SNode root = SNodeOperations.getContainingRoot(n);
     if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(jetbrains.mps.util.SNodeOperations.class.getName())) {
       return false;
@@ -300,6 +303,13 @@ public class ApiMigrationHelper {
   }
 
   private static boolean eq_yke5lt_a0b0c(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_yke5lt_a0c0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
