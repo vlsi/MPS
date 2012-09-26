@@ -338,7 +338,45 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChild(((SNode) anchor), role, ((SNode) child));
+    enforceModelLoad();
+
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+    }
+    final String role1 = role;
+    SNode parentOfChild = ((SNode) child).getParent();
+    if (parentOfChild != null) {
+      throw new RuntimeException(((SNode) child).getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
+        "Couldn't add it to: " + this.getDebugText());
+    }
+
+    if (((SNode) child).isRoot()) {
+      throw new RuntimeException(((SNode) child).getDebugText() + " is root node. Can't add it as a child");
+    }
+
+    if (getTopmostAncestor() == ((SNode) child)) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    ModelChange.assertLegalNodeChange(this);
+
+    children_insertAfter(((SNode) anchor), ((SNode) child));
+    ((SNode) child).setRoleInParent(role1);
+
+    SModel model = getModel();
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+      ((SNode) child).registerInModel(model);
+    } else {
+      ((SNode) child).changeModel(model);
+    }
+
+    if (model == null) return;
+
+    model.performUndoableAction(new InsertChildAtUndoableAction(this, ((SNode) anchor), role, ((SNode) child)));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireChildAddedEvent(this, role1, ((SNode) child), ((SNode) anchor));
+    }
   }
 
   @Override
@@ -432,7 +470,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void visitUserObjects(UserObjectVisitor v) {
-    if (myUserObjects == null) return ;
+    if (myUserObjects == null) return;
     for (int i = 0; i < myUserObjects.length; i += 2) {
       v.visitObject(myUserObjects[i], myUserObjects[i + 1]);
     }
@@ -1160,50 +1198,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
-  public void insertChild(final SNode anchor, String _role, final SNode child) {
-    enforceModelLoad();
-
-    if (ourMemberAccessModifier != null) {
-      _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
-    }
-    final String role = _role;
-    SNode parentOfChild = child.getParent();
-    if (parentOfChild != null) {
-      throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
-        "Couldn't add it to: " + this.getDebugText());
-    }
-
-    if (child.isRoot()) {
-      throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
-    }
-
-    if (getTopmostAncestor() == child) {
-      throw new RuntimeException("Trying to create a cyclic tree");
-    }
-
-    ModelChange.assertLegalNodeChange(this);
-
-    children_insertAfter(anchor, child);
-    child.setRoleInParent(role);
-
-    SModel model = getModel();
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
-      child.registerInModel(model);
-    } else {
-      child.changeModel(model);
-    }
-
-    if (model == null) return;
-
-    model.performUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
-
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireChildAddedEvent(this, role, child, anchor);
-    }
-  }
-
-
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void insertChild(final SNode anchor, String role, final SNode child) {
+    insertChild(role, child, anchor);
+  }
 
   @Deprecated
   /**
@@ -1257,7 +1261,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     final Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
     visitUserObjects(new UserObjectVisitor() {
       public boolean visitObject(Object key, Object value) {
-        userObjects.put(key,value);
+        userObjects.put(key, value);
         return true;
       }
     });
