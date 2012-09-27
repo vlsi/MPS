@@ -279,7 +279,7 @@
     <scopeInfo nodeId="7521671656020565114" fileName="TraceInfoCache.java" startLine="133" startPosition="0" endLine="136" endPosition="9">
       <varInfo nodeId="7521671656020565121" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7922457109334009527" fileName="TraceInfoCache.java" startLine="133" startPosition="31" endLine="136" endPosition="9" />
+    <scopeInfo nodeId="7521671656020565115" fileName="TraceInfoCache.java" startLine="133" startPosition="31" endLine="136" endPosition="9" />
     <scopeInfo nodeId="7521671656020564923" fileName="TraceInfoCache.java" startLine="213" startPosition="46" endLine="216" endPosition="5" />
     <scopeInfo nodeId="7922457109334008381" fileName="TraceInfoCache.java" startLine="46" startPosition="34" endLine="50" endPosition="22" />
     <scopeInfo nodeId="7521671656020564960" fileName="TraceInfoCache.java" startLine="53" startPosition="75" endLine="57" endPosition="0" />

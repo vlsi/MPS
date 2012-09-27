@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="15" startPosition="0" endLine="100" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="33" startPosition="0" endLine="99" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
-  <root nodeId="1790427706118391928">
+  <root nodeId="1790427706118391928" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="1790427706118395556" fileName="typeof_ConvertTo_InferenceRule.java" startLine="16" startPosition="123" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1790427706118391928" fileName="typeof_ConvertTo_InferenceRule.java" startLine="20" startPosition="46" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1790427706118391928" fileName="typeof_ConvertTo_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -35,7 +35,7 @@
     </scopeInfo>
     <unitInfo nodeId="1790427706118391928" fileName="typeof_ConvertTo_InferenceRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.typeof_ConvertTo_InferenceRule" />
   </root>
-  <root nodeId="3694786099210003295">
+  <root nodeId="3694786099210003295" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="3694786099210006965" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3694786099210003295" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="26" startPosition="46" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3694786099210003295" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="31" startPosition="5" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -116,7 +116,7 @@
     <unitInfo nodeId="3694786099210003295" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.Money_extends_java_lang_Object_SubtypingRule" />
     <unitInfo nodeId="3694786099210006967" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.Money_extends_java_lang_Object_SubtypingRule$QuotationClass_ni8w3q_a0a0a" />
   </root>
-  <root nodeId="5447719361346490733">
+  <root nodeId="5447719361346490733" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="5447719361346490740" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5447719361346490740" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="22" startPosition="44" endLine="23" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5447719361346490740" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="23" startPosition="208" endLine="24" endPosition="371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -202,7 +202,7 @@
     <unitInfo nodeId="5447719361346490733" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.typeof_MoneyLiteral_InferenceRule" />
     <unitInfo nodeId="5447719361346496417" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.typeof_MoneyLiteral_InferenceRule$QuotationClass_1il3t_a0a0a0" />
   </root>
-  <root nodeId="5447719361346552309">
+  <root nodeId="5447719361346552309" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="5447719361346552330" fileName="TypesystemDescriptor.java" startLine="44" startPosition="99" endLine="45" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5447719361346552331" fileName="TypesystemDescriptor.java" startLine="52" startPosition="33" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5447719361346552331" fileName="TypesystemDescriptor.java" startLine="53" startPosition="28" endLine="54" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
