@@ -478,9 +478,7 @@
     <scopeInfo nodeId="4972886494893402055" fileName="LongestCommonSubsequenceFinder.java" startLine="67" startPosition="16" endLine="72" endPosition="11" />
     <scopeInfo nodeId="4972886494893402216" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="21" endLine="125" endPosition="29" />
     <scopeInfo nodeId="4972886494893402303" fileName="LongestCommonSubsequenceFinder.java" startLine="135" startPosition="42" endLine="140" endPosition="26" />
-    <scopeInfo nodeId="4972886494893401767" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="72" endLine="46" endPosition="9">
-      <varInfo nodeId="4972886494893401768" varName="j" />
-    </scopeInfo>
+    <scopeInfo nodeId="4972886494893401766" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="72" endLine="46" endPosition="9" />
     <scopeInfo nodeId="4972886494893401765" fileName="LongestCommonSubsequenceFinder.java" startLine="38" startPosition="0" endLine="47" endPosition="7">
       <varInfo nodeId="4972886494893401836" varName="i" />
     </scopeInfo>

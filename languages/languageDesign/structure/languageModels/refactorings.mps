@@ -27,36 +27,35 @@
   <import index="tp3b" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="1347577327951781517">
-      <property name="name" nameId="tpck.1169194664001" value="RenameConcept" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Rename Concept" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameConcept" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.1347577327951770664" resolveInfo="Rename" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="1347577327951781638">
-      <property name="name" nameId="tpck.1169194664001" value="RenameLink" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Rename Link" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameLink" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.1347577327951770664" resolveInfo="Rename" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="1347577327951781764">
-      <property name="name" nameId="tpck.1169194664001" value="RenameProperty" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Rename Property" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameProperty" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.1347577327951770664" resolveInfo="Rename" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="3068114543317961454">
-      <property name="name" nameId="tpck.1169194664001" value="MoveConcepts" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Concepts" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveConcepts" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="3068114543317979887">
-      <property name="name" nameId="tpck.1169194664001" value="MoveLinkUp" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Link Up" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveLinkUp" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="3068114543317980424">
-      <property name="name" nameId="tpck.1169194664001" value="MovePropertyUp" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Property Up" />
+      <property name="name" nameId="tpck.1169194664001" value="MovePropertyUp" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3883347270486219802">
@@ -1700,7 +1699,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7313603104358600853">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
                     </node>
                   </node>
                   <node role="whatToMove" roleId="tp1h.1199619459778" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980705">
@@ -2139,7 +2138,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7313603104358600976">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
                       </node>
                     </node>
                     <node role="whatToMove" roleId="tp1h.1199619459778" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980678">
@@ -2163,7 +2162,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7313603104358600990">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
               </node>
             </node>
             <node role="whatToMove" roleId="tp1h.1199619459778" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980684">

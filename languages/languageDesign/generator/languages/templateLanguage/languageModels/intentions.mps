@@ -76,8 +76,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1169569792945" resolveInfo="WeaveEach_RuleConsequence" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1216320260188">
-      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInReductionRule" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInReductionRule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create template" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1167327847730" resolveInfo="Reduction_MappingRule" />
     </node>
@@ -146,8 +146,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create macro.parameterized" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="8699312839322230162">
-      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInWeavingRule" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInWeavingRule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create template" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1167171569011" resolveInfo="Weaving_MappingRule" />
     </node>
@@ -156,8 +156,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1195502151594" resolveInfo="MappingScriptReference" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="8004199436029426156">
-      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInSwitchCase" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInSwitchCase" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create template" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1167327847730" resolveInfo="Reduction_MappingRule" />
     </node>
@@ -167,8 +167,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1195158154974" resolveInfo="InlineSwitch_RuleConsequence" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="8004199436029429362">
-      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInInlineSwitchCase" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="NewTemplateInInlineSwitchCase" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create template" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1195158388553" resolveInfo="InlineSwitch_Case" />
     </node>
@@ -186,13 +186,13 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3462145372628250475">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
       <property name="name" nameId="tpck.1169194664001" value="AddContext" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1177093525992" resolveInfo="InlineTemplate_RuleConsequence" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7834938100936599479">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migrations" />
       <property name="name" nameId="tpck.1169194664001" value="ConvertLoopWithCopySrc" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migrations" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpf8.1118786554307" resolveInfo="LoopMacro" />
     </node>
   </roots>
@@ -5931,8 +5931,8 @@
                 <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="2925366645633385713">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2925366645633385714">
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="2925366645633385715">
-                      <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
+                      <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                     </node>
                   </node>
                 </node>
@@ -5973,8 +5973,8 @@
                     <node role="patternNode" roleId="tp3t.1136720037778" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="2925366645633385700">
                       <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2925366645633385701">
                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="2925366645633385702">
-                          <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                           <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
+                          <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                         </node>
                       </node>
                     </node>
@@ -7996,7 +7996,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7313603104358600796">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="34229510189818294">
