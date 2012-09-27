@@ -405,9 +405,12 @@ public class QueriesGenerated {
     final List<SNode> result = new ArrayList<SNode>();
     _context.getNode().visitProperties(new org.jetbrains.mps.openapi.model.SNode.PropertyVisitor() {
       public boolean visitProperty(String n, String v) {
+        if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), n)) != null)) {
+          return true;
+        }
         SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         propertyNode.setProperty("propertyName", n);
-        propertyNode.setProperty("propertyValue", _context.getNode().getProperty(v));
+        propertyNode.setProperty("propertyValue", v);
         ListSequence.fromList(result).addElement(propertyNode);
         return true;
       }
@@ -435,6 +438,9 @@ public class QueriesGenerated {
     final List<SNode> result = new ArrayList<SNode>();
     _context.getNode().visitReferences(new org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor() {
       public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+        if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role)) != null)) {
+          return true;
+        }
         SNode targetNode = ((SNode) ref.getTargetNode());
         if (SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
           return true;
