@@ -1066,8 +1066,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  private Set<com.intellij.openapi.util.Pair<Intention, SNode>> getAvailableIntentions() {
-    final Set<com.intellij.openapi.util.Pair<Intention, SNode>> result = new LinkedHashSet<com.intellij.openapi.util.Pair<Intention, SNode>>();
+  private Set<Pair<Intention, SNode>> getAvailableIntentions() {
+    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();

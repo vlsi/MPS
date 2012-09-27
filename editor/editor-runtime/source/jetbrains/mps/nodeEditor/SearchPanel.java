@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.util.Pair;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -182,10 +182,10 @@ public class SearchPanel extends AbstractSearchPanel {
 
   private void selectCell(boolean requestFocus) {
     Pair<List<EditorCell_Label>, String> pair = allCellsAndContent();
-    final List<EditorCell_Label> cells = pair.first;
+    final List<EditorCell_Label> cells = pair.o1;
     List<Integer> startCellPosition = new ArrayList<Integer>();
     List<Integer> endCellPosition = new ArrayList<Integer>();
-    String content = pair.second;
+    String content = pair.o2;
     int current = 0;
     List<EditorCell> emptyCells = new ArrayList<EditorCell>();
     for (EditorCell_Label cell : cells) {
@@ -288,10 +288,11 @@ public class SearchPanel extends AbstractSearchPanel {
 
   public void exportToFindTool() {
     final List<SearchPanelEditorMessage> searchMessages = getMessages();
+    final List<EditorCell_Label> editorLabels = allCellsAndContent().o1;
     Collections.sort(searchMessages, new Comparator<SearchPanelEditorMessage>() {
       public int compare(SearchPanelEditorMessage o1, SearchPanelEditorMessage o2) {
-        Integer i1 = allCellsAndContent().first.indexOf(o1.getCell(myEditor));
-        Integer i2 = allCellsAndContent().first.indexOf(o2.getCell(myEditor));
+        Integer i1 = editorLabels.indexOf(o1.getCell(myEditor));
+        Integer i2 = editorLabels.indexOf(o2.getCell(myEditor));
         return i1.compareTo(i2);
       }
     });
@@ -375,8 +376,8 @@ public class SearchPanel extends AbstractSearchPanel {
       if (cell == null || !(cell instanceof EditorCell_Label)) return;
       EditorCell_Label editorCell = (EditorCell_Label) cell;
       for (Pair position : myPositions) {
-        int startPosition = (Integer) position.first;
-        int endPosition = (Integer) position.second;
+        int startPosition = (Integer) position.o1;
+        int endPosition = (Integer) position.o2;
         if (editorCell.getRenderedText().length() >= endPosition) {
           FontMetrics metrics = g.getFontMetrics();
           String text = editorCell.getRenderedText().substring(startPosition, endPosition);

@@ -21,7 +21,6 @@ import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -37,6 +36,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
@@ -298,21 +298,21 @@ public class IntentionsSupport {
     // TODO sort actions & intentions together
     Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
       public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
-        Intention intention1 = o1.getFirst();
-        Intention intention2 = o2.getFirst();
+        Intention intention1 = o1.o1;
+        Intention intention2 = o2.o1;
         boolean disabled1 = IntentionsManager.getInstance().intentionIsDisabled(intention1);
         boolean disabled2 = IntentionsManager.getInstance().intentionIsDisabled(intention2);
         if (disabled1 && !disabled2) return 1;
         if (!disabled1 && disabled2) return -1;
-        SNode node1 = o1.getSecond();
-        SNode node2 = o2.getSecond();
+        SNode node1 = o1.o2;
+        SNode node2 = o2.o2;
         EditorContext context = myEditor.getEditorContext();
         return intention1.getDescription(node1, context).compareTo(intention2.getDescription(node2, context));
       }
     });
     BaseGroup group = new BaseGroup("");
     for (final Pair<Intention, SNode> pair : groupItems) {
-      group.add(getIntentionGroup(pair.getFirst(), pair.getSecond()));
+      group.add(getIntentionGroup(pair.o1, pair.o2));
     }
     group.addAll(actions);
     return group;
@@ -374,8 +374,8 @@ public class IntentionsSupport {
 
     IntentionType typeToShow = IntentionType.getLowestPriorityType();
     for (Pair<Intention, SNode> pair : enabledIntentions) {
-      if (pair.first.getType().getPriority() < typeToShow.getPriority()) {
-        typeToShow = pair.first.getType();
+      if (pair.o1.getType().getPriority() < typeToShow.getPriority()) {
+        typeToShow = pair.o1.getType();
       }
     }
     showLightBulbComponent(typeToShow == IntentionType.NORMAL ? Icons.INTENTION : typeToShow.getIcon());

@@ -21,7 +21,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
@@ -37,6 +36,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -417,8 +417,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
       Set<Intention> disabled = IntentionsManager.getInstance().getDisabledIntentions();
       for (Pair<Intention, SNode> p : intentions) {
-        if (myIntentionClass == null || myIntentionClass.isAssignableFrom(p.getFirst().getClass())) {
-          if (!(myEnabledOnly && disabled.contains(p.first))) {
+        if (myIntentionClass == null || myIntentionClass.isAssignableFrom(p.o1.getClass())) {
+          if (!(myEnabledOnly && disabled.contains(p.o1))) {
             result.add(p);
           }
         }
