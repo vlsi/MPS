@@ -314,9 +314,7 @@
     <scopeInfo nodeId="1213877228349" fileName="Layout_Behavior.java" startLine="100" startPosition="71" endLine="103" endPosition="5">
       <varInfo nodeId="1213877228350" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="9027273598492143744" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7">
-      <varInfo nodeId="9027273598492143745" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="9027273598492143622" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7" />
     <scopeInfo nodeId="9027273598492144043" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7">
       <varInfo nodeId="9027273598492144044" varName="child" />
     </scopeInfo>

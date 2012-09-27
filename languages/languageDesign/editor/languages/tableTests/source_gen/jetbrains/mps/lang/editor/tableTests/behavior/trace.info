@@ -137,9 +137,7 @@
     <scopeInfo nodeId="2422839104779457220" fileName="HierarchycalTable_Behavior.java" startLine="14" startPosition="101" endLine="17" endPosition="104">
       <varInfo nodeId="2422839104779457222" varName="dataCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2422839104779457219" fileName="HierarchycalTable_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5">
-      <varInfo nodeId="2422839104779457242" varName="i" />
-    </scopeInfo>
+    <scopeInfo nodeId="8506335436194799576" fileName="HierarchycalTable_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5" />
     <scopeInfo nodeId="8506335436194799574" fileName="HierarchycalTable_Behavior.java" startLine="12" startPosition="41" endLine="20" endPosition="0">
       <varInfo nodeId="8506335436194799574" varName="thisNode" />
     </scopeInfo>

@@ -335,9 +335,7 @@
     <scopeInfo nodeId="3816167865390595154" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="3816167865390595154" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7782956297805866079" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="30" startPosition="116" endLine="35" endPosition="7">
-      <varInfo nodeId="7782956297805866083" varName="dcl" />
-    </scopeInfo>
+    <scopeInfo nodeId="5199967550912567491" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="30" startPosition="116" endLine="35" endPosition="7" />
     <scopeInfo nodeId="7782956297805903960" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="54" startPosition="111" endLine="59" endPosition="7">
       <varInfo nodeId="7782956297805903987" varName="dcl" />
     </scopeInfo>

@@ -2948,9 +2948,7 @@
       <varInfo nodeId="2970389781192938027" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="2970389781192937837" fileName="DefaultEditorBuilder.java" startLine="176" startPosition="69" endLine="188" endPosition="7" />
-    <scopeInfo nodeId="2970389781192937835" fileName="DefaultEditorBuilder.java" startLine="175" startPosition="56" endLine="189" endPosition="5">
-      <varInfo nodeId="2970389781192937836" varName="linkDeclaration" />
-    </scopeInfo>
+    <scopeInfo nodeId="2970389781192937834" fileName="DefaultEditorBuilder.java" startLine="175" startPosition="56" endLine="189" endPosition="5" />
     <scopeInfo nodeId="2970389781192937541" fileName="DefaultEditorBuilder.java" startLine="81" startPosition="69" endLine="96" endPosition="22" />
     <scopeInfo nodeId="2970389781192938296" fileName="DefaultEditorBuilder.java" startLine="302" startPosition="41" endLine="317" endPosition="9" />
     <scopeInfo nodeId="2970389781192937538" fileName="DefaultEditorBuilder.java" startLine="80" startPosition="7" endLine="97" endPosition="7">
@@ -3619,7 +3617,7 @@
     <nodeInfo nodeId="8255250703325737458" fileName="ScriptKindClassItem_Behavior.java" startLine="13" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8255250703325737460" fileName="ScriptKindClassItem_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="21" startPosition="48" endLine="22" endPosition="172" />
-    <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
+    <scopeInfo nodeId="8255250703325740978" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
     <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="176" />
     <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
     <scopeInfo nodeId="8255250703325737458" fileName="ScriptKindClassItem_Behavior.java" startLine="10" startPosition="43" endLine="13" endPosition="0">
@@ -3673,7 +3671,7 @@
     <nodeInfo nodeId="8598098202018087054" fileName="DefaultBaseLine_Behavior.java" startLine="13" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8598098202018087056" fileName="DefaultBaseLine_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="8598098202018154477" fileName="DefaultBaseLine_Behavior.java" startLine="21" startPosition="49" endLine="22" endPosition="175" />
-    <scopeInfo nodeId="8598098202018154477" fileName="DefaultBaseLine_Behavior.java" startLine="25" startPosition="34" endLine="26" endPosition="497" />
+    <scopeInfo nodeId="8598098202018154479" fileName="DefaultBaseLine_Behavior.java" startLine="25" startPosition="34" endLine="26" endPosition="497" />
     <scopeInfo nodeId="8598098202018154481" fileName="DefaultBaseLine_Behavior.java" startLine="31" startPosition="51" endLine="32" endPosition="176" />
     <scopeInfo nodeId="8598098202018154481" fileName="DefaultBaseLine_Behavior.java" startLine="35" startPosition="36" endLine="36" endPosition="499" />
     <scopeInfo nodeId="8598098202018087054" fileName="DefaultBaseLine_Behavior.java" startLine="10" startPosition="39" endLine="13" endPosition="0">

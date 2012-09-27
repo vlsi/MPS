@@ -29,9 +29,7 @@
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="4965160547087600900" fileName="NotEditableVaraileReference_Constraints.java" startLine="46" startPosition="93" endLine="49" endPosition="17" />
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="32" startPosition="111" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4965160547087600898" fileName="NotEditableVaraileReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15">
-      <varInfo nodeId="4965160547087600899" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="4965160547087600897" fileName="NotEditableVaraileReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15" />
     <scopeInfo nodeId="4965160547087600886" fileName="NotEditableVaraileReference_Constraints.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="4965160547087600896" fileName="NotEditableVaraileReference_Constraints.java" startLine="44" startPosition="56" endLine="51" endPosition="13">
       <varInfo nodeId="4965160547087600916" varName="block" />
@@ -81,7 +79,9 @@
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="2340678293597469831" fileName="VariableDeclarationReference_Constraints.java" startLine="46" startPosition="93" endLine="49" endPosition="17" />
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="32" startPosition="79" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2340678293597344738" fileName="VariableDeclarationReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15" />
+    <scopeInfo nodeId="2340678293597469828" fileName="VariableDeclarationReference_Constraints.java" startLine="45" startPosition="161" endLine="50" endPosition="15">
+      <varInfo nodeId="2340678293597469829" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="7428162988805013921" fileName="VariableDeclarationReference_Constraints.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="2340678293597344737" fileName="VariableDeclarationReference_Constraints.java" startLine="44" startPosition="56" endLine="51" endPosition="13">
       <varInfo nodeId="2340678293597344760" varName="block" />

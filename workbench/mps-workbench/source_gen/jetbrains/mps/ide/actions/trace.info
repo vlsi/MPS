@@ -1227,9 +1227,7 @@
       <varInfo nodeId="1218628312772" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="1218628302807" fileName="CloneRoot_Action.java" startLine="84" startPosition="9" endLine="91" endPosition="7">
-      <varInfo nodeId="1218628302808" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="84" startPosition="9" endLine="91" endPosition="7" />
     <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="89" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="66" startPosition="5" endLine="75" endPosition="7">
       <varInfo nodeId="1215874930420" varName="error" />
@@ -3674,7 +3672,7 @@
     <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="52" startPosition="62" endLine="53" endPosition="19" />
     <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="147" />
     <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="86" />
-    <scopeInfo nodeId="8131292300541655368" fileName="GoToBookmark_Action.java" startLine="36" startPosition="9" endLine="38" endPosition="184" />
+    <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="36" startPosition="9" endLine="38" endPosition="184" />
     <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="72" startPosition="20" endLine="74" endPosition="20" />
     <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1234018313905" fileName="GoToBookmark_Action.java" startLine="61" startPosition="0" endLine="64" endPosition="7">
@@ -6339,9 +6337,7 @@
     <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="248" startPosition="18" endLine="250" endPosition="41" />
     <scopeInfo nodeId="1818770337282929049" fileName="OverrideConceptMethodsHelper.java" startLine="59" startPosition="29" endLine="62" endPosition="7" />
     <scopeInfo nodeId="1818770337282929163" fileName="OverrideConceptMethodsHelper.java" startLine="82" startPosition="143" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="1818770337282929250" fileName="OverrideConceptMethodsHelper.java" startLine="106" startPosition="12" endLine="109" endPosition="7">
-      <varInfo nodeId="1818770337282929254" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="1818770337282929249" fileName="OverrideConceptMethodsHelper.java" startLine="106" startPosition="12" endLine="109" endPosition="7" />
     <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="156" startPosition="58" endLine="159" endPosition="13">
       <varInfo nodeId="1818770337282929329" varName="child" />
     </scopeInfo>
@@ -8210,7 +8206,7 @@
     <scopeInfo nodeId="8243555296290550312" fileName="AddToNewFavoritesList_Action.java" startLine="83" startPosition="25" endLine="84" endPosition="62" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="88" startPosition="33" endLine="89" endPosition="95" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="29" startPosition="41" endLine="32" endPosition="41" />
-    <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="41" startPosition="9" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="8243555296290550346" fileName="AddToNewFavoritesList_Action.java" startLine="41" startPosition="9" endLine="44" endPosition="7" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" />
     <scopeInfo nodeId="2834677590307342574" fileName="AddToNewFavoritesList_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="7">
       <varInfo nodeId="2834677590307342574" varName="t" />
@@ -8708,8 +8704,8 @@
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -8969,9 +8965,7 @@
     <scopeInfo nodeId="3575273646046443882" fileName="DeleteModels_Action.java" startLine="84" startPosition="135" endLine="88" endPosition="212" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="3" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="3575273646046443877" fileName="DeleteModels_Action.java" startLine="83" startPosition="27" endLine="89" endPosition="11">
-      <varInfo nodeId="3575273646046443878" varName="model" />
-    </scopeInfo>
+    <scopeInfo nodeId="3575273646046443876" fileName="DeleteModels_Action.java" startLine="83" startPosition="27" endLine="89" endPosition="11" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="39" startPosition="89" endLine="47" endPosition="5" />
     <scopeInfo nodeId="3575273646046443875" fileName="DeleteModels_Action.java" startLine="82" startPosition="69" endLine="91" endPosition="0" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
@@ -9428,7 +9422,7 @@
     <nodeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="32" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="50" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="50" />
+    <scopeInfo nodeId="3906874221886742267" fileName="GoToAction_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="50" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="37" startPosition="33" endLine="38" endPosition="85" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" />
     <scopeInfo nodeId="3906874221886742260" fileName="GoToAction_Action.java" startLine="56" startPosition="33" endLine="57" endPosition="84" />
@@ -9924,7 +9918,7 @@
     <nodeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="44" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="50" />
+    <scopeInfo nodeId="3906874221886749873" fileName="FileDelete_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="50" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="38" startPosition="33" endLine="39" endPosition="85" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="46" startPosition="53" endLine="47" endPosition="19" />
     <scopeInfo nodeId="3906874221886749855" fileName="FileDelete_Action.java" startLine="50" startPosition="67" endLine="51" endPosition="19" />
@@ -13012,7 +13006,9 @@
       <varInfo nodeId="6840593892233920055" varName="newPackage" />
       <varInfo nodeId="6840593892233920038" varName="oldPackage" />
     </scopeInfo>
-    <scopeInfo nodeId="6840593892233920029" fileName="RenamePackage_Action.java" startLine="87" startPosition="27" endLine="95" endPosition="11" />
+    <scopeInfo nodeId="8536960582516089680" fileName="RenamePackage_Action.java" startLine="87" startPosition="27" endLine="95" endPosition="11">
+      <varInfo nodeId="8536960582516089716" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6840593892233919195" fileName="RenamePackage_Action.java" startLine="43" startPosition="89" endLine="54" endPosition="5" />
     <scopeInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="86" startPosition="69" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6840593892233919195" fileName="RenamePackage_Action.java" startLine="57" startPosition="95" endLine="69" endPosition="16" />
@@ -13573,7 +13569,9 @@
     <scopeInfo nodeId="7318050879424155903" fileName="AnalyzeDependencies_Action.java" startLine="32" startPosition="39" endLine="35" endPosition="40" />
     <scopeInfo nodeId="7318050879424155903" fileName="AnalyzeDependencies_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
     <scopeInfo nodeId="449423548053247360" fileName="AnalyzeDependencies_Action.java" startLine="76" startPosition="92" endLine="79" endPosition="9" />
-    <scopeInfo nodeId="449423548053247386" fileName="AnalyzeDependencies_Action.java" startLine="81" startPosition="84" endLine="84" endPosition="9" />
+    <scopeInfo nodeId="3476022648979713778" fileName="AnalyzeDependencies_Action.java" startLine="81" startPosition="84" endLine="84" endPosition="9">
+      <varInfo nodeId="3476022648979713781" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="7318050879424155903" fileName="AnalyzeDependencies_Action.java" startLine="97" startPosition="0" endLine="100" endPosition="7">
       <varInfo nodeId="7318050879424155903" varName="t" />
     </scopeInfo>
@@ -14108,7 +14106,7 @@
     <scopeInfo nodeId="7420326557580751623" fileName="InternalActionsUtils.java" startLine="104" startPosition="0" endLine="107" endPosition="19">
       <varInfo nodeId="7420326557580751624" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751628" fileName="InternalActionsUtils.java" startLine="104" startPosition="39" endLine="107" endPosition="19" />
+    <scopeInfo nodeId="7420326557580751626" fileName="InternalActionsUtils.java" startLine="104" startPosition="39" endLine="107" endPosition="19" />
     <scopeInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="70" startPosition="120" endLine="74" endPosition="0">
       <varInfo nodeId="7420326557580750074" varName="it" />
     </scopeInfo>
@@ -14333,15 +14331,15 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="48" startPosition="87" endLine="53" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="109" startPosition="59" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="85" startPosition="26" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="85" startPosition="26" endLine="91" endPosition="9">
+      <varInfo nodeId="7889360268649425705" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="123" startPosition="111" endLine="129" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
       <varInfo nodeId="7889360268649425705" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1680229125543349046" fileName="SetNodePackage_Action.java" startLine="122" startPosition="27" endLine="130" endPosition="11">
-      <varInfo nodeId="1680229125543349047" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="1680229125543349042" fileName="SetNodePackage_Action.java" startLine="122" startPosition="27" endLine="130" endPosition="11" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="56" startPosition="89" endLine="67" endPosition="5" />
     <scopeInfo nodeId="1680229125543349041" fileName="SetNodePackage_Action.java" startLine="121" startPosition="69" endLine="132" endPosition="0" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0">
