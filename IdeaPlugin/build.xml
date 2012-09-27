@@ -43,6 +43,10 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
     </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-java/stubs"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-java/stubs">
+      <fileset dir="${base_dir}/plugins/mpsjava/stubs"/>
+    </copy>
   </target>
 
   <target name="clean">

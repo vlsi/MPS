@@ -147,6 +147,12 @@ public class NodesMatcher {
     for (String key : propertes) {
       String p1 = a.getProperties().get(key);
       String p2 = b.getProperties().get(key);
+      if (p1 == null && "false".equals(p2)) {
+        continue;
+      }
+      if (p2 == null && "false".equals(p1)) {
+        continue;
+      }
       if (p1 == null || p2 == null || !(p1.equals(p2))) {
         difference.add(new PropertyDifferense(key));
       }
