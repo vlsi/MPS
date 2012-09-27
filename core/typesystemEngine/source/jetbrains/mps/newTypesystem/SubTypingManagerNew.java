@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
@@ -27,6 +28,7 @@ import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.util.HashSet;
@@ -47,40 +49,38 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   @Override
-  public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
+  public boolean isSubtype(final SNode subType, final SNode superType, final boolean isWeak) {
     if (TypesUtil.isVariable(subType)) return false;
     if (TypesUtil.isVariable(superType)) return false;
 
-    LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      subType.getLanguage().getDependenciesManager().getAllExtendedLanguages(),
-      superType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
-    try{
-      LanguageScope.pushCurrent(languageScope, this);
-      SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
-      return subtypingResolver.calcIsSubType(subType, superType);
-    }
-    finally {
-      LanguageScope.popCurrent(languageScope, this);
-    }
+    return LanguageScopeExecutor.execWithTwoLanguageScope(
+      subType != null ? subType.getLanguage() : null,
+      superType != null ? superType.getLanguage() : null,
+      new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
+          return subtypingResolver.calcIsSubType(subType, superType);
+        }
+      });
   }
 
   @Override
-  public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
-    LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      subType.getLanguage().getDependenciesManager().getAllExtendedLanguages(),
-      superType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
-    try{
-      LanguageScope.pushCurrent(languageScope, this);
-      for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-        if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
-          return true;
+  public boolean isSubTypeByReplacementRules(final SNode subType, final SNode superType, final boolean isWeak) {
+    return LanguageScopeExecutor.execWithTwoLanguageScope(
+      subType != null ? subType.getLanguage() : null,
+      superType != null ? superType.getLanguage() : null,
+      new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+            if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
+              return true;
+            }
+          }
+          return false;
         }
-      }
-      return false;
-    }
-    finally {
-      LanguageScope.popCurrent(languageScope, this);
-    }
+      });
   }
 
   @Override
@@ -106,27 +106,27 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   @Override
-  public void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
+  public void collectImmediateSuperTypes(final SNode term, final boolean isWeak, final StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
       return;
     }
-    LanguageScope languageScope = LanguageScope.getGlobal();
-//      LanguageScopeFactory.getInstance().getLanguageScope(term.getLanguage().getDependenciesManager().getAllExtendedLanguages());
-    try{
-      LanguageScope.pushCurrent(languageScope, this);
-      List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-      if (subtypingRule_runtimes != null) {
-        for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-          List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
-          if (superTypes != null) {
-            result.addAll(superTypes);
+
+    // use global language scope as the context is unknown
+    LanguageScopeExecutor.execWithLanguageScope(null, new Computable<Object>() {
+      @Override
+      public Object compute() {
+        List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+        if (subtypingRule_runtimes != null) {
+          for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+            List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
+            if (superTypes != null) {
+              result.addAll(superTypes);
+            }
           }
         }
+        return result;
       }
-    }
-    finally {
-      LanguageScope.popCurrent(languageScope, this);
-    }
+    });
   }
 
   @Override

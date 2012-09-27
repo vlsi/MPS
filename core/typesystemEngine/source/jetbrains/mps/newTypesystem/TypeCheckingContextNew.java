@@ -25,6 +25,7 @@ import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
@@ -56,14 +57,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
   private boolean myIsSingleTypeComputation = false;
-  private LanguageScope myLangScope;
+
   //normal mode - all types calculation, generation mode - single type computation
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     myState = new State(this);
     myRootNode = rootNode;
-    myLangScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      rootNode.getModel().getModelDepsManager().getAllImportedLanguages());
     myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
@@ -72,8 +71,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myIsSingleTypeComputation = computeSingleType;
     myState = new State(this);
     myRootNode = rootNode;
-    myLangScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      rootNode.getModel().getModelDepsManager().getAllImportedLanguages());
     myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
@@ -96,14 +93,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
-      try {
-        LanguageScope.pushCurrent(myLangScope, this);
-        myNodeTypesComponent.computeTypes(refreshTypes);
-        myNodeTypesComponent.setCheckedTypesystem();
-      }
-      finally {
-        LanguageScope.popCurrent(myLangScope, this);
-      }
+      LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
+        @Override
+        public Object compute() {
+          myNodeTypesComponent.computeTypes(refreshTypes);
+          myNodeTypesComponent.setCheckedTypesystem();
+          return null;
+        }
+      });
     }
   }
 
