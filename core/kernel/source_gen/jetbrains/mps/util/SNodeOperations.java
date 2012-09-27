@@ -250,7 +250,7 @@ public class SNodeOperations {
     }
 
     public boolean hasNext() {
-      return queue.peek() != null;
+      return !(queue.isEmpty());
     }
 
     public jetbrains.mps.smodel.SNode next() {
