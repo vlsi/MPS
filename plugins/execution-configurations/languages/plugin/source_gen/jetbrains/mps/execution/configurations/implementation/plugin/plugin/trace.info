@@ -203,7 +203,7 @@
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="176" startPosition="48" endLine="177" endPosition="119" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="22" startPosition="139" endLine="24" endPosition="36" />
     <scopeInfo nodeId="6062668769033909531" fileName="Java_Configuration_Editor.java" startLine="49" startPosition="99" endLine="51" endPosition="68" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="56" endPosition="70" />
+    <scopeInfo nodeId="6062668769033909515" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="56" endPosition="70" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="180" startPosition="24" endLine="182" endPosition="5" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="185" startPosition="61" endLine="187" endPosition="19">
       <varInfo nodeId="6062668769033909448" varName="state" />
@@ -288,7 +288,7 @@
       <varInfo nodeId="6062668769033909461" varName="nodeChooser" />
       <varInfo nodeId="6062668769033909467" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="62" startPosition="73" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="6062668769033909600" fileName="Java_Configuration.java" startLine="62" startPosition="73" endLine="74" endPosition="5" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="129" startPosition="37" endLine="142" endPosition="17">
       <varInfo nodeId="6062668769033909448" varName="clone" />
     </scopeInfo>
@@ -812,7 +812,7 @@
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="243" startPosition="32" endLine="244" endPosition="48" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="246" startPosition="34" endLine="247" endPosition="52" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration_Editor.java" startLine="19" startPosition="150" endLine="21" endPosition="44" />
-    <scopeInfo nodeId="6062668769034010886" fileName="JUnitTests_Configuration_Editor.java" startLine="40" startPosition="105" endLine="42" endPosition="68" />
+    <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration_Editor.java" startLine="40" startPosition="105" endLine="42" endPosition="68" />
     <scopeInfo nodeId="4503513239970411761" fileName="JUnitTests_Configuration.java" startLine="146" startPosition="51" endLine="148" endPosition="26" />
     <scopeInfo nodeId="4503513239970411793" fileName="JUnitTests_Configuration.java" startLine="150" startPosition="52" endLine="152" endPosition="27" />
     <scopeInfo nodeId="4503513239970411816" fileName="JUnitTests_Configuration.java" startLine="154" startPosition="74" endLine="156" endPosition="30" />
@@ -828,7 +828,7 @@
       <varInfo nodeId="6062668769034010590" varName="name" />
       <varInfo nodeId="6062668769034010590" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration_Editor.java" startLine="45" startPosition="77" endLine="48" endPosition="70" />
+    <scopeInfo nodeId="6062668769034010872" fileName="JUnitTests_Configuration_Editor.java" startLine="45" startPosition="77" endLine="48" endPosition="70" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="53" startPosition="5" endLine="56" endPosition="39">
       <varInfo nodeId="6062668769034010590" varName="fieldElement" />
     </scopeInfo>
@@ -2104,7 +2104,7 @@
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration_Factory.java" startLine="14" startPosition="72" endLine="15" endPosition="77" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="20" />
     <scopeInfo nodeId="6391517972808447562" fileName="Remote_Configuration_Editor.java" startLine="19" startPosition="46" endLine="20" endPosition="49" />
-    <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration_Editor.java" startLine="23" startPosition="101" endLine="24" endPosition="48" />
+    <scopeInfo nodeId="6391517972808447578" fileName="Remote_Configuration_Editor.java" startLine="23" startPosition="101" endLine="24" endPosition="48" />
     <scopeInfo nodeId="6391517972808447569" fileName="Remote_Configuration_Editor.java" startLine="27" startPosition="73" endLine="28" endPosition="48" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="34" startPosition="99" endLine="35" endPosition="34" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="42" startPosition="76" endLine="43" endPosition="57" />
@@ -2477,8 +2477,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -2578,8 +2578,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="32" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="35" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="35" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="54" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />

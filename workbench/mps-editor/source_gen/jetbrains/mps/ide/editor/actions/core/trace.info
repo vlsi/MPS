@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7711023363876674047">
+  <root nodeId="7711023363876674047" modelId="r:cb723a04-ead3-4054-b750-edbb165cca03(jetbrains.mps.ide.editor.actions.core)">
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="24" startPosition="57" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="28" startPosition="36" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

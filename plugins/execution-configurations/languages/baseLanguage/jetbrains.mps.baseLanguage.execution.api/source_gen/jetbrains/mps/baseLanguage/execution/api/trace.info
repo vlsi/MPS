@@ -400,7 +400,9 @@
     <scopeInfo nodeId="8475766493858861794" fileName="Java_Command.java" startLine="545" startPosition="74" endLine="547" endPosition="5" />
     <scopeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="293" startPosition="32" endLine="296" endPosition="11" />
     <scopeInfo nodeId="8475766493858788116" fileName="Java_Command.java" startLine="300" startPosition="61" endLine="303" endPosition="13" />
-    <scopeInfo nodeId="1240470842553275544" fileName="Java_Command.java" startLine="363" startPosition="27" endLine="366" endPosition="11" />
+    <scopeInfo nodeId="5834962427367093270" fileName="Java_Command.java" startLine="363" startPosition="27" endLine="366" endPosition="11">
+      <varInfo nodeId="5834962427367093270" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="1240470842553275761" fileName="Java_Command.java" startLine="427" startPosition="58" endLine="430" endPosition="7" />
     <scopeInfo nodeId="1240470842553275815" fileName="Java_Command.java" startLine="445" startPosition="50" endLine="448" endPosition="5">
       <varInfo nodeId="1240470842553275815" varName="line" />
@@ -796,7 +798,7 @@
     <scopeInfo nodeId="1240470842553276035" fileName="JavaRunParameters_Configuration_Editor.java" startLine="27" startPosition="43" endLine="28" endPosition="31" />
     <scopeInfo nodeId="1240470842553276028" fileName="JavaRunParameters_Configuration.java" startLine="31" startPosition="76" endLine="32" endPosition="57" />
     <scopeInfo nodeId="1240470842553276028" fileName="JavaRunParameters_Configuration_Editor.java" startLine="31" startPosition="112" endLine="32" endPosition="68" />
-    <scopeInfo nodeId="1240470842553276039" fileName="JavaRunParameters_Configuration_Editor.java" startLine="35" startPosition="84" endLine="36" endPosition="68" />
+    <scopeInfo nodeId="1240470842553276028" fileName="JavaRunParameters_Configuration_Editor.java" startLine="35" startPosition="84" endLine="36" endPosition="68" />
     <scopeInfo nodeId="1240470842553276028" fileName="JavaRunParameters_Configuration.java" startLine="37" startPosition="26" endLine="38" endPosition="81" />
     <scopeInfo nodeId="1240470842553276028" fileName="JavaRunParameters_Configuration.java" startLine="43" startPosition="51" endLine="44" endPosition="39" />
     <scopeInfo nodeId="1240470842553276028" fileName="JavaRunParameters_Configuration.java" startLine="47" startPosition="61" endLine="48" endPosition="40" />

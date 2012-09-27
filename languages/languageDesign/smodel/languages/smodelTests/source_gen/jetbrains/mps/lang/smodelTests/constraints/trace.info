@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="8758390115029091794">
+  <root nodeId="8758390115029091794" modelId="r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)">
     <nodeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="20" startPosition="79" endLine="21" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_5tia2e_a0a3a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="21" startPosition="197" endLine="22" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_5tia2e_a0a3a0a0a1a0b0a2a0" />
     <nodeInfo nodeId="8758390115029091794" fileName="ReferenceContainer_Constraints.java" startLine="22" startPosition="197" endLine="23" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_5tia2e_a0a3a0a0a1a0b0a3a0" />

@@ -13,7 +13,7 @@
     <nodeInfo nodeId="4474271214082913222" fileName="IBreakpointPropertiesUi.java" startLine="7" startPosition="65" endLine="8" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBreakpoint#(null)V" />
     <nodeInfo nodeId="4474271214082913228" fileName="IBreakpointPropertiesUi.java" startLine="8" startPosition="42" endLine="9" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
     <scopeInfo nodeId="4474271214082913222" fileName="IBreakpointPropertiesUi.java" startLine="7" startPosition="65" endLine="8" endPosition="42">
-      <varInfo nodeId="4474271214082913225" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="breakpoint" />
+      <varInfo nodeId="4474271214082913225" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082913228" fileName="IBreakpointPropertiesUi.java" startLine="8" startPosition="42" endLine="9" endPosition="39" />
     <unitInfo nodeId="4474271214082912939" fileName="IBreakpointPropertiesUi.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi" />
@@ -29,35 +29,35 @@
     <nodeInfo nodeId="4474271214082913013" fileName="IBreakpointsProvider.java" startLine="26" startPosition="65" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveToState#(null)Lorg/jdom/Element;" />
     <nodeInfo nodeId="4474271214082913021" fileName="IBreakpointsProvider.java" startLine="28" startPosition="52" endLine="30" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(nullLjetbrains/mps/debug/api/AbstractDebugSession;)Ljavax/swing/Icon;" />
     <scopeInfo nodeId="4474271214082912956" fileName="IBreakpointsProvider.java" startLine="16" startPosition="31" endLine="17" endPosition="50">
-      <varInfo nodeId="4474271214082912959" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
+      <varInfo nodeId="4474271214082912959" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082912963" fileName="IBreakpointsProvider.java" startLine="17" startPosition="50" endLine="18" endPosition="52">
-      <varInfo nodeId="4474271214082912966" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
+      <varInfo nodeId="4474271214082912966" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082912950" fileName="IBreakpointsProvider.java" startLine="14" startPosition="92" endLine="16" endPosition="31" />
     <scopeInfo nodeId="4474271214082912970" fileName="IBreakpointsProvider.java" startLine="18" startPosition="52" endLine="20" endPosition="58">
-      <varInfo nodeId="4474271214082912973" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
-      <varInfo nodeId="4474271214082912976" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="project" />
+      <varInfo nodeId="4474271214082912973" varName="kind" />
+      <varInfo nodeId="4474271214082912976" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082912980" fileName="IBreakpointsProvider.java" startLine="20" startPosition="58" endLine="22" endPosition="99">
-      <varInfo nodeId="4474271214082912986" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
-      <varInfo nodeId="4474271214082912983" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="node" />
-      <varInfo nodeId="4474271214082912989" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="project" />
+      <varInfo nodeId="4474271214082912986" varName="kind" />
+      <varInfo nodeId="4474271214082912983" varName="node" />
+      <varInfo nodeId="4474271214082912989" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082912993" fileName="IBreakpointsProvider.java" startLine="22" startPosition="99" endLine="24" endPosition="76">
-      <varInfo nodeId="4474271214082912997" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
+      <varInfo nodeId="4474271214082912997" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082913002" fileName="IBreakpointsProvider.java" startLine="24" startPosition="76" endLine="26" endPosition="65">
-      <varInfo nodeId="4474271214082913007" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
-      <varInfo nodeId="4474271214082913009" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="project" />
-      <varInfo nodeId="4474271214082913005" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="state" />
+      <varInfo nodeId="4474271214082913007" varName="kind" />
+      <varInfo nodeId="4474271214082913009" varName="project" />
+      <varInfo nodeId="4474271214082913005" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082913013" fileName="IBreakpointsProvider.java" startLine="26" startPosition="65" endLine="28" endPosition="52">
-      <varInfo nodeId="4474271214082913016" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="breakpoint" />
+      <varInfo nodeId="4474271214082913016" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082913021" fileName="IBreakpointsProvider.java" startLine="28" startPosition="52" endLine="30" endPosition="85">
-      <varInfo nodeId="4474271214082913024" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="breakpoint" />
-      <varInfo nodeId="4474271214082913027" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="session" />
+      <varInfo nodeId="4474271214082913024" varName="breakpoint" />
+      <varInfo nodeId="4474271214082913027" varName="session" />
     </scopeInfo>
     <unitInfo nodeId="4474271214082912942" fileName="IBreakpointsProvider.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
   </root>
@@ -69,8 +69,8 @@
   <root nodeId="4474271214082913209" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)">
     <nodeInfo nodeId="4474271214082913211" fileName="IBreakpointListener.java" startLine="6" startPosition="38" endLine="7" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointEnabledStateToggled#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;Z)V" />
     <scopeInfo nodeId="4474271214082913211" fileName="IBreakpointListener.java" startLine="6" startPosition="38" endLine="7" endPosition="85">
-      <varInfo nodeId="4474271214082913214" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="breakpoint" />
-      <varInfo nodeId="4474271214082913216" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="enabled" />
+      <varInfo nodeId="4474271214082913214" varName="breakpoint" />
+      <varInfo nodeId="4474271214082913216" varName="enabled" />
     </scopeInfo>
     <unitInfo nodeId="4474271214082913209" fileName="IBreakpointListener.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.debug.api.breakpoints.IBreakpointListener" />
   </root>
@@ -155,13 +155,13 @@
     <scopeInfo nodeId="5993398393052609578" fileName="BreakpointLocation.java" startLine="114" startPosition="55" endLine="115" endPosition="19" />
     <scopeInfo nodeId="4474271214082916081" fileName="BreakpointLocation.java" startLine="25" startPosition="64" endLine="27" endPosition="94" />
     <scopeInfo nodeId="4474271214082916297" fileName="BreakpointLocation.java" startLine="95" startPosition="27" endLine="97" endPosition="117">
-      <varInfo nodeId="4474271214082916299" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="root" />
+      <varInfo nodeId="4474271214082916299" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916101" fileName="BreakpointLocation.java" startLine="29" startPosition="0" endLine="32" endPosition="3">
-      <varInfo nodeId="4474271214082916104" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="node" />
+      <varInfo nodeId="4474271214082916104" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916075" fileName="BreakpointLocation.java" startLine="24" startPosition="0" endLine="28" endPosition="3">
-      <varInfo nodeId="4474271214082916078" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="nodePointer" />
+      <varInfo nodeId="4474271214082916078" varName="nodePointer" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916114" fileName="BreakpointLocation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="9176678381422283496" fileName="BreakpointLocation.java" startLine="54" startPosition="57" endLine="58" endPosition="0" />
@@ -170,23 +170,23 @@
     <scopeInfo nodeId="5993398393052609664" fileName="BreakpointLocation.java" startLine="131" startPosition="62" endLine="135" endPosition="6" />
     <scopeInfo nodeId="4474271214082916120" fileName="BreakpointLocation.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="4474271214082916173" fileName="BreakpointLocation.java" startLine="62" startPosition="37" endLine="67" endPosition="77">
-      <varInfo nodeId="4474271214082916175" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="debugInfo" />
+      <varInfo nodeId="4474271214082916175" varName="debugInfo" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916207" fileName="BreakpointLocation.java" startLine="74" startPosition="35" endLine="79" endPosition="39">
-      <varInfo nodeId="4474271214082916209" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="position" />
+      <varInfo nodeId="4474271214082916209" varName="position" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916229" fileName="BreakpointLocation.java" startLine="82" startPosition="31" endLine="87" endPosition="38">
-      <varInfo nodeId="4474271214082916231" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="positionInfo" />
+      <varInfo nodeId="4474271214082916231" varName="positionInfo" />
     </scopeInfo>
     <scopeInfo nodeId="5993398393052609627" fileName="BreakpointLocation.java" startLine="122" startPosition="25" endLine="128" endPosition="18">
-      <varInfo nodeId="5993398393052609630" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="result" />
+      <varInfo nodeId="5993398393052609630" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916268" fileName="BreakpointLocation.java" startLine="93" startPosition="31" endLine="100" endPosition="9">
-      <varInfo nodeId="4474271214082916270" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="node" />
+      <varInfo nodeId="4474271214082916270" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5993398393052609664" fileName="BreakpointLocation.java" startLine="130" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="5993398393052609664" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="a" />
-      <varInfo nodeId="5993398393052609664" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="b" />
+      <varInfo nodeId="5993398393052609664" varName="a" />
+      <varInfo nodeId="5993398393052609664" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916170" fileName="BreakpointLocation.java" startLine="61" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="4474271214082916204" fileName="BreakpointLocation.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
@@ -196,12 +196,12 @@
     <scopeInfo nodeId="4474271214082916257" fileName="BreakpointLocation.java" startLine="91" startPosition="74" endLine="102" endPosition="0" />
     <scopeInfo nodeId="4474271214082916248" fileName="BreakpointLocation.java" startLine="90" startPosition="35" endLine="102" endPosition="7" />
     <scopeInfo nodeId="5993398393052609566" fileName="BreakpointLocation.java" startLine="108" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="5993398393052609621" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="o" />
+      <varInfo nodeId="5993398393052609621" varName="o" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916132" fileName="BreakpointLocation.java" startLine="44" startPosition="56" endLine="59" endPosition="33">
-      <varInfo nodeId="4474271214082916147" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="debugInfo" />
-      <varInfo nodeId="4474271214082916134" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="model" />
-      <varInfo nodeId="9176678381422283435" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="positionForNode" />
+      <varInfo nodeId="4474271214082916147" varName="debugInfo" />
+      <varInfo nodeId="4474271214082916134" varName="model" />
+      <varInfo nodeId="9176678381422283435" varName="positionForNode" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916245" fileName="BreakpointLocation.java" startLine="89" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="4474271214082916129" fileName="BreakpointLocation.java" startLine="42" startPosition="0" endLine="61" endPosition="0" />
@@ -270,42 +270,42 @@
     <scopeInfo nodeId="4474271214082916523" fileName="AbstractBreakpoint.java" startLine="82" startPosition="54" endLine="83" endPosition="60" />
     <scopeInfo nodeId="4474271214082916533" fileName="AbstractBreakpoint.java" startLine="88" startPosition="28" endLine="89" endPosition="16" />
     <scopeInfo nodeId="4474271214082916380" fileName="AbstractBreakpoint.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="4474271214082916383" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="project" />
+      <varInfo nodeId="4474271214082916383" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916519" fileName="AbstractBreakpoint.java" startLine="81" startPosition="38" endLine="84" endPosition="5">
-      <varInfo nodeId="4474271214082916521" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="listener" />
+      <varInfo nodeId="4474271214082916521" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916390" fileName="AbstractBreakpoint.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="4474271214082916396" fileName="AbstractBreakpoint.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="4474271214082916404" fileName="AbstractBreakpoint.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4474271214082916407" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="time" />
+      <varInfo nodeId="4474271214082916407" varName="time" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916439" fileName="AbstractBreakpoint.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="4474271214082916450" fileName="AbstractBreakpoint.java" startLine="46" startPosition="49" endLine="50" endPosition="5">
-      <varInfo nodeId="4474271214082916452" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="toggled" />
+      <varInfo nodeId="4474271214082916452" varName="toggled" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916495" fileName="AbstractBreakpoint.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4474271214082916501" fileName="AbstractBreakpoint.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4474271214082916507" fileName="AbstractBreakpoint.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="4474271214082916518" fileName="AbstractBreakpoint.java" startLine="80" startPosition="69" endLine="84" endPosition="5" />
     <scopeInfo nodeId="4474271214082916414" fileName="AbstractBreakpoint.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="4474271214082916417" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="listener" />
+      <varInfo nodeId="4474271214082916417" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916427" fileName="AbstractBreakpoint.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="4474271214082916430" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="listener" />
+      <varInfo nodeId="4474271214082916430" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916530" fileName="AbstractBreakpoint.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="4474271214082916445" fileName="AbstractBreakpoint.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="4474271214082916448" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="enabled" />
+      <varInfo nodeId="4474271214082916448" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916477" fileName="AbstractBreakpoint.java" startLine="55" startPosition="35" endLine="62" endPosition="20" />
     <scopeInfo nodeId="4474271214082916513" fileName="AbstractBreakpoint.java" startLine="79" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="4474271214082916516" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="enabled" />
+      <varInfo nodeId="4474271214082916516" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916472" fileName="AbstractBreakpoint.java" startLine="54" startPosition="38" endLine="63" endPosition="7" />
     <scopeInfo nodeId="4474271214082916467" fileName="AbstractBreakpoint.java" startLine="53" startPosition="55" endLine="65" endPosition="17" />
     <scopeInfo nodeId="4474271214082916462" fileName="AbstractBreakpoint.java" startLine="52" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="4474271214082916465" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="enabled" />
+      <varInfo nodeId="4474271214082916465" varName="enabled" />
     </scopeInfo>
     <unitInfo nodeId="4474271214082916358" fileName="AbstractBreakpoint.java" startLine="10" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.debug.api.breakpoints.AbstractBreakpoint" />
   </root>
@@ -328,16 +328,16 @@
     <scopeInfo nodeId="4474271214082916556" fileName="IBreakpoint.java" startLine="14" startPosition="29" endLine="15" endPosition="32" />
     <scopeInfo nodeId="4474271214082916560" fileName="IBreakpoint.java" startLine="15" startPosition="32" endLine="16" endPosition="27" />
     <scopeInfo nodeId="4474271214082916564" fileName="IBreakpoint.java" startLine="16" startPosition="27" endLine="17" endPosition="40">
-      <varInfo nodeId="4474271214082916567" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="value" />
+      <varInfo nodeId="4474271214082916567" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916575" fileName="IBreakpoint.java" startLine="19" startPosition="34" endLine="20" endPosition="49">
-      <varInfo nodeId="4474271214082916578" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="creationTime" />
+      <varInfo nodeId="4474271214082916578" varName="creationTime" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916581" fileName="IBreakpoint.java" startLine="20" startPosition="49" endLine="21" endPosition="75">
-      <varInfo nodeId="4474271214082916584" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="listener" />
+      <varInfo nodeId="4474271214082916584" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916588" fileName="IBreakpoint.java" startLine="21" startPosition="75" endLine="22" endPosition="69">
-      <varInfo nodeId="4474271214082916591" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="listener" />
+      <varInfo nodeId="4474271214082916591" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916594" fileName="IBreakpoint.java" startLine="22" startPosition="69" endLine="23" endPosition="30" />
     <scopeInfo nodeId="4474271214082916539" fileName="IBreakpoint.java" startLine="9" startPosition="30" endLine="11" endPosition="35" />
@@ -390,44 +390,44 @@
     <scopeInfo nodeId="4474271214082916642" fileName="BreakpointProvidersManager.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="4474271214082916691" fileName="BreakpointProvidersManager.java" startLine="40" startPosition="57" endLine="42" endPosition="45" />
     <scopeInfo nodeId="4474271214082916745" fileName="BreakpointProvidersManager.java" startLine="51" startPosition="76" endLine="53" endPosition="50">
-      <varInfo nodeId="4474271214082916747" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="component" />
+      <varInfo nodeId="4474271214082916747" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916765" fileName="BreakpointProvidersManager.java" startLine="55" startPosition="57" endLine="57" endPosition="42" />
     <scopeInfo nodeId="4474271214082916706" fileName="BreakpointProvidersManager.java" startLine="43" startPosition="5" endLine="46" endPosition="5">
-      <varInfo nodeId="4474271214082916710" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="project" />
+      <varInfo nodeId="4474271214082916710" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916778" fileName="BreakpointProvidersManager.java" startLine="58" startPosition="5" endLine="61" endPosition="5">
-      <varInfo nodeId="4474271214082916782" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="component" />
+      <varInfo nodeId="4474271214082916782" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916663" fileName="BreakpointProvidersManager.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="4474271214082916668" fileName="BreakpointProvidersManager.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="4474271214082916685" fileName="BreakpointProvidersManager.java" startLine="39" startPosition="37" endLine="43" endPosition="5">
-      <varInfo nodeId="4474271214082916689" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
+      <varInfo nodeId="4474271214082916689" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916739" fileName="BreakpointProvidersManager.java" startLine="50" startPosition="105" endLine="54" endPosition="5">
-      <varInfo nodeId="4474271214082916743" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="project" />
+      <varInfo nodeId="4474271214082916743" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916759" fileName="BreakpointProvidersManager.java" startLine="54" startPosition="5" endLine="58" endPosition="5">
-      <varInfo nodeId="4474271214082916763" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
+      <varInfo nodeId="4474271214082916763" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916817" fileName="BreakpointProvidersManager.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="4474271214082916646" fileName="BreakpointProvidersManager.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="4474271214082916793" fileName="BreakpointProvidersManager.java" startLine="63" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="4474271214082916796" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="kind" />
+      <varInfo nodeId="4474271214082916796" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916805" fileName="BreakpointProvidersManager.java" startLine="68" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="4474271214082916808" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="name" />
+      <varInfo nodeId="4474271214082916808" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916655" fileName="BreakpointProvidersManager.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4474271214082916684" fileName="BreakpointProvidersManager.java" startLine="38" startPosition="136" endLine="46" endPosition="5" />
     <scopeInfo nodeId="4474271214082916673" fileName="BreakpointProvidersManager.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="4474271214082916676" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="provider" />
+      <varInfo nodeId="4474271214082916676" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916729" fileName="BreakpointProvidersManager.java" startLine="49" startPosition="138" endLine="61" endPosition="5">
-      <varInfo nodeId="4474271214082916731" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="states" />
+      <varInfo nodeId="4474271214082916731" varName="states" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082916718" fileName="BreakpointProvidersManager.java" startLine="48" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="4474271214082916721" modelId="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" varName="provider" />
+      <varInfo nodeId="4474271214082916721" varName="provider" />
     </scopeInfo>
     <unitInfo nodeId="4474271214082916621" fileName="BreakpointProvidersManager.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager" />
   </root>
