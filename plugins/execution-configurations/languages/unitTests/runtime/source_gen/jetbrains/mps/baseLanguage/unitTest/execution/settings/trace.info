@@ -214,7 +214,9 @@
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
+      <varInfo nodeId="6062668769034853016" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034853016" fileName="ModuleChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6062668769034853016" varName="newValue" />
     </scopeInfo>
@@ -569,7 +571,9 @@
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="121" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5" />
+    <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5">
+      <varInfo nodeId="6062668769034853020" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="255" startPosition="52" endLine="260" endPosition="21">
       <varInfo nodeId="6062668769034853020" varName="component" />
     </scopeInfo>
@@ -1039,9 +1043,7 @@
     <scopeInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="46" startPosition="25" endLine="51" endPosition="5">
-      <varInfo nodeId="6062668769034854227" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="46" startPosition="25" endLine="51" endPosition="5" />
     <scopeInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel" />
     <unitInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="15" startPosition="32" endLine="21" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$1" />
@@ -1197,7 +1199,9 @@
     <scopeInfo nodeId="6062668769034854296" fileName="ListPanel.java" startLine="72" startPosition="23" endLine="74" endPosition="36" />
     <scopeInfo nodeId="6062668769034854480" fileName="ListPanel.java" startLine="122" startPosition="45" endLine="124" endPosition="20" />
     <scopeInfo nodeId="6062668769034854793" fileName="ListPanel.java" startLine="222" startPosition="63" endLine="224" endPosition="5" />
-    <scopeInfo nodeId="2335605876461843372" fileName="ListPanel.java" startLine="164" startPosition="31" endLine="167" endPosition="15" />
+    <scopeInfo nodeId="6062668769034854640" fileName="ListPanel.java" startLine="164" startPosition="31" endLine="167" endPosition="15">
+      <varInfo nodeId="6062668769034854641" varName="concept" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034854273" fileName="ListPanel.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6062668769034854283" varName="listener" />
     </scopeInfo>
@@ -1230,14 +1234,18 @@
     </scopeInfo>
     <scopeInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="163" startPosition="63" endLine="169" endPosition="0" />
     <scopeInfo nodeId="6062668769034854754" fileName="ListPanel.java" startLine="208" startPosition="27" endLine="214" endPosition="26" />
-    <scopeInfo nodeId="6062668769034854675" fileName="ListPanel.java" startLine="173" startPosition="33" endLine="180" endPosition="17" />
+    <scopeInfo nodeId="6062668769034854676" fileName="ListPanel.java" startLine="173" startPosition="33" endLine="180" endPosition="17">
+      <varInfo nodeId="6062668769034854697" varName="testCase" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034854718" fileName="ListPanel.java" startLine="189" startPosition="39" endLine="198" endPosition="38" />
     <scopeInfo nodeId="6062668769034854466" fileName="ListPanel.java" startLine="115" startPosition="71" endLine="125" endPosition="13">
       <varInfo nodeId="6062668769034854468" varName="fqName" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="172" startPosition="65" endLine="182" endPosition="0" />
     <scopeInfo nodeId="6062668769034854715" fileName="ListPanel.java" startLine="188" startPosition="33" endLine="199" endPosition="17" />
-    <scopeInfo nodeId="6062668769034854464" fileName="ListPanel.java" startLine="114" startPosition="81" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="6062668769034854465" fileName="ListPanel.java" startLine="114" startPosition="81" endLine="126" endPosition="11">
+      <varInfo nodeId="6062668769034854496" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034854456" fileName="ListPanel.java" startLine="113" startPosition="49" endLine="127" endPosition="9">
       <varInfo nodeId="6062668769034854462" varName="value" />
     </scopeInfo>
@@ -1484,9 +1492,9 @@
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="37" startPosition="40" endLine="37" endPosition="40" />
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="216" startPosition="22" endLine="216" endPosition="22" />
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration_Editor.java" startLine="15" startPosition="51" endLine="16" endPosition="49" />
-    <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration_Editor.java" startLine="21" startPosition="31" endLine="22" endPosition="23" />
-    <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration_Editor.java" startLine="31" startPosition="108" endLine="32" endPosition="34" />
-    <scopeInfo nodeId="6062668769034855216" fileName="JUnitSettings_Configuration_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="34" />
+    <scopeInfo nodeId="6062668769034855230" fileName="JUnitSettings_Configuration_Editor.java" startLine="21" startPosition="31" endLine="22" endPosition="23" />
+    <scopeInfo nodeId="6062668769034855223" fileName="JUnitSettings_Configuration_Editor.java" startLine="31" startPosition="108" endLine="32" endPosition="34" />
+    <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="34" />
     <scopeInfo nodeId="6062668769034855238" fileName="JUnitSettings_Configuration.java" startLine="41" startPosition="36" endLine="42" endPosition="76" />
     <scopeInfo nodeId="6062668769034855253" fileName="JUnitSettings_Configuration.java" startLine="47" startPosition="128" endLine="48" endPosition="80" />
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="54" startPosition="76" endLine="55" endPosition="57" />
@@ -2045,12 +2053,8 @@
     <scopeInfo nodeId="6062668769034856009" fileName="JUnitRunTypes2.java" startLine="87" startPosition="107" endLine="92" endPosition="46">
       <varInfo nodeId="6062668769034856011" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034855797" fileName="JUnitRunTypes2.java" startLine="26" startPosition="51" endLine="32" endPosition="9">
-      <varInfo nodeId="6062668769034855798" varName="method" />
-    </scopeInfo>
-    <scopeInfo nodeId="6062668769034855880" fileName="JUnitRunTypes2.java" startLine="48" startPosition="49" endLine="54" endPosition="9">
-      <varInfo nodeId="6062668769034855881" varName="testCase" />
-    </scopeInfo>
+    <scopeInfo nodeId="6062668769034855796" fileName="JUnitRunTypes2.java" startLine="26" startPosition="51" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="6062668769034855879" fileName="JUnitRunTypes2.java" startLine="48" startPosition="49" endLine="54" endPosition="9" />
     <scopeInfo nodeId="6062668769034856086" fileName="JUnitRunTypes2.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="6062668769034856087" varName="configuration" />
       <varInfo nodeId="6062668769034856089" varName="project" />
