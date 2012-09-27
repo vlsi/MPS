@@ -28,6 +28,7 @@
   <import index="oknb" modelUID="r:cb0e6d2d-ec81-42b2-9b52-0e516db74d49(jetbrains.mps.ide.java.stubManagers)" version="-1" />
   <import index="rkxj" modelUID="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)" version="-1" />
   <import index="gksz" modelUID="f:java_stub#77cb6858-037c-4d16-bec3-aa1eda698a48#jetbrains.mps.ide.java.stubManagers(jetbrains.mps.ide.java.sourceStubs/jetbrains.mps.ide.java.stubManagers@java_stub)" version="-1" />
+  <import index="jdco" modelUID="r:04c99548-6fc3-4aa6-947d-2dc4e95a3572(jetbrains.mps.ide.java.parser)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
@@ -200,9 +201,9 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_GetLongNameOperation" typeId="tp25.1212008292747" id="5121535539820608554" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5121535539820608556" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1218582063869330509">
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rkxj.3493766494546492981" resolveInfo="ParseDepth" />
-                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rkxj.3493766494546492983" resolveInfo="TOPLEVEL" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="719036592319873750">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="jdco.2537348641689790181" resolveInfo="CLASS_STUB" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="jdco.5646944109420325187" resolveInfo="FeatureKind" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1218582063869330510">
                   <property name="value" nameId="tpee.1068580123138" value="true" />

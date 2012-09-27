@@ -5002,10 +5002,10 @@
     <unitInfo nodeId="5646944109420325155" fileName="ForeignReferencesConvertor.java" startLine="25" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ForeignReferencesConvertor" />
   </root>
   <root nodeId="5646944109420325187">
-    <nodeInfo nodeId="5646944109420333258" fileName="FeatureKind.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureKind#()V" />
-    <scopeInfo nodeId="5646944109420333261" fileName="FeatureKind.java" startLine="14" startPosition="17" endLine="14" endPosition="17" />
-    <scopeInfo nodeId="5646944109420333258" fileName="FeatureKind.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
-    <unitInfo nodeId="5646944109420325187" fileName="FeatureKind.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ide.java.parser.FeatureKind" />
+    <nodeInfo nodeId="5646944109420333258" fileName="FeatureKind.java" startLine="14" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureKind#()V" />
+    <scopeInfo nodeId="5646944109420333261" fileName="FeatureKind.java" startLine="15" startPosition="17" endLine="15" endPosition="17" />
+    <scopeInfo nodeId="5646944109420333258" fileName="FeatureKind.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
+    <unitInfo nodeId="5646944109420325187" fileName="FeatureKind.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ide.java.parser.FeatureKind" />
   </root>
   <root nodeId="5646944109420325914">
     <nodeInfo nodeId="5646944109420325916" fileName="ClasspathObserver.java" startLine="7" startPosition="36" endLine="8" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPathAdded#(Ljetbrains/mps/reloading/IClassPathItem;)V" />

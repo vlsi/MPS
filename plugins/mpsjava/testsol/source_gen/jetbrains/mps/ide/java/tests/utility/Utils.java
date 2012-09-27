@@ -19,7 +19,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.ide.java.newparser.ParseDepth;
+import jetbrains.mps.ide.java.parser.FeatureKind;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -62,7 +62,7 @@ public class Utils {
     SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b")).getModuleReference());
 
     SModel mdl = new SModel(modRef);
-    List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), null, ParseDepth.TOPLEVEL, true);
+    List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), null, FeatureKind.CLASS_STUB, true);
     Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
     SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");

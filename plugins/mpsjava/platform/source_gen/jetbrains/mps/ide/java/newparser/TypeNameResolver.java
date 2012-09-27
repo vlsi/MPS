@@ -36,7 +36,7 @@ public class TypeNameResolver {
     myImports = ListSequence.fromList(new ArrayList<TypeNameResolver.Import>());
     myNestNamespace = new TypeNameResolver.NestNamespace();
 
-    myTVarNamespace = null;
+    myTVarNamespace = new TypeNameResolver.TypeVarNamespace(null);
 
 
     List<SModelDescriptor> mDescs = SModelRepository.getInstance().getModelDescriptorsByModelName("java.lang");

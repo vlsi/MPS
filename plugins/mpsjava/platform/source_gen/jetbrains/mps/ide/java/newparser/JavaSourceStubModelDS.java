@@ -23,6 +23,7 @@ import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
@@ -75,7 +76,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
 
       try {
 
-        List<SNode> nodes = parser.parse(code, model.getLongName(), null, ParseDepth.TOPLEVEL, true);
+        List<SNode> nodes = parser.parse(code, model.getLongName(), null, FeatureKind.CLASS_STUB, true);
         for (SNode n : ListSequence.fromList(nodes)) {
           model.addRoot(n);
         }
@@ -94,7 +95,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
 
   public List<SNode> parseFile(String contents, SModel model) {
     JavaParser parser = new JavaParser();
-    return parser.parse(contents, SModelOperations.getModelName(model), null, ParseDepth.TOPLEVEL, true);
+    return parser.parse(contents, SModelOperations.getModelName(model), null, FeatureKind.CLASS_STUB, true);
   }
 
   public Collection<NodeDescriptor> getNodeDescriptors() {

@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.newparser;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.java.parser.FeatureKind;
 import java.util.Map;
 import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
@@ -14,13 +15,15 @@ import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 
 public class JavaParser {
   public JavaParser() {
   }
 
-  public List<SNode> parse(String code, String pkg, SNode parent, ParseDepth depth, boolean recovery) {
+  public List<SNode> parse(String code, String pkg, SNode parent, FeatureKind depth, boolean recovery) {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
@@ -31,8 +34,8 @@ public class JavaParser {
 
     List<SNode> res = new ArrayList<SNode>();
 
-    if (ParseDepth.TOPLEVEL.equals(depth)) {
-      boolean ignoreMethodBodies = true;
+    if (FeatureKind.CLASS.equals(depth) || FeatureKind.CLASS_STUB.equals(depth)) {
+      boolean ignoreMethodBodies = FeatureKind.CLASS_STUB.equals(depth);
 
       CodeSnippetParsingUtil util = new CodeSnippetParsingUtil(ignoreMethodBodies);
       CompilationUnitDeclaration compRes = util.parseCompilationUnit(source, settings, true);
@@ -57,7 +60,7 @@ public class JavaParser {
         }
       }
 
-    } else if (ParseDepth.STATEMENTS.equals(depth)) {
+    } else if (FeatureKind.STATEMENTS.equals(depth)) {
 
       CodeSnippetParsingUtil util = new CodeSnippetParsingUtil();
       AbstractMethodDeclaration absMethod = util.parseStatements(source, settings, true, recovery);
@@ -68,8 +71,14 @@ public class JavaParser {
 
       TypeNameResolver typeResolver = new TypeNameResolver(pkg);
       // TODO construct typeResolver from parent node context 
-      ASTConverter converter = new ASTConverter(pkg, null, typeResolver);
-      ListSequence.fromList(res).addSequence(ListSequence.fromList(converter.convertStatements(stmts)));
+      ASTConverter converter = new ASTConverter(pkg, parent, null, typeResolver);
+      // statement list is needed to make a proper position, so that scopes work 
+      SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+      List<SNode> nodes = converter.convertStatements(new ASTConverter.Position(stmtList, "statement"), stmts);
+      for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(stmtList))) {
+        stmtList.removeChild(n);
+      }
+      ListSequence.fromList(res).addSequence(ListSequence.fromList(nodes));
 
     } else {
       throw new IllegalArgumentException("Parsing depth other than top-level is not supported yet ");
