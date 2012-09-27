@@ -4134,6 +4134,22 @@
                                           </node>
                                         </node>
                                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3150398590429416618">
+                                          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="512638967673817207">
+                                            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="512638967673817208">
+                                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="512638967673817617">
+                                                <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="512638967673817753">
+                                                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                            <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="512638967673817481">
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.6407023681583065763" resolveInfo="isAttribute" />
+                                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.6407023681582958584" resolveInfo="AttributeOperations" />
+                                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="512638967673817549">
+                                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3150398590429416616" resolveInfo="child" />
+                                              </node>
+                                            </node>
+                                          </node>
                                           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1190931378042">
                                             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1190931378043">
                                               <property name="name" nameId="tpck.1169194664001" value="childRoleNode" />
