@@ -70,6 +70,13 @@ public class LanguageScope {
     return myNsBitSet.get(myFactory.getIndexOf(namespace));
   }
 
+  public LanguageScope disjunction(LanguageScope that) {
+    if (this.myFactory != that.myFactory) throw new IllegalArgumentException("incompatible language scope");
+    BitSet nsBitSet = this.myNsBitSet;
+    nsBitSet.or(that.myNsBitSet);
+    return new LanguageScope(this.myFactory, nsBitSet);
+  }
+
   @Override
   public boolean equals(Object that) {
     if (that == this) return true;
@@ -81,7 +88,7 @@ public class LanguageScope {
 
   @Override
   public int hashCode() {
-    return myNsBitSet.hashCode()*37;
+    return myNsBitSet.hashCode()*37 + myFactory.hashCode()*43;
   }
 
 

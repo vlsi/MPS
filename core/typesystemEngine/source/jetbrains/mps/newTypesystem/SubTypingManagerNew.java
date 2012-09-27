@@ -51,8 +51,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (TypesUtil.isVariable(subType)) return false;
     if (TypesUtil.isVariable(superType)) return false;
 
-    LanguageScope languageScope = LanguageScope.getGlobal();
-//      LanguageScopeFactory.getInstance().getLanguageScope(subType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
+    LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
+      subType.getLanguage().getDependenciesManager().getAllExtendedLanguages(),
+      superType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
     try{
       LanguageScope.pushCurrent(languageScope, this);
       SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
@@ -65,8 +66,9 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   @Override
   public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
-    LanguageScope languageScope = LanguageScope.getGlobal();
-//      LanguageScopeFactory.getInstance().getLanguageScope(subType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
+    LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
+      subType.getLanguage().getDependenciesManager().getAllExtendedLanguages(),
+      superType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
     try{
       LanguageScope.pushCurrent(languageScope, this);
       for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {

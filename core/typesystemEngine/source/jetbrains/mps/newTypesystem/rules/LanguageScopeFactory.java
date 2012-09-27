@@ -61,6 +61,20 @@ public class LanguageScopeFactory {
     return myNamespaceIndices.get(namespace);
   }
 
+
+  /**
+   * Produces a new <code>LanguageScope</code> from the two corresponding to the parameters <code>langs1</code> and
+   * <code>langs2</code> by merging.
+   * @param langs1
+   * @param langs2
+   * @return
+   */
+  public LanguageScope getLanguageScope (Iterable<ModuleReference> langs1, Iterable<ModuleReference> langs2) {
+    LanguageScope langScope1 = getLanguageScope(langs1);
+    LanguageScope langScope2 = getLanguageScope(langs2);
+    return langScope1.disjunction(langScope2);
+  }
+
   /**
    * The parameter <code>langs</code> is expected to change relatively seldom. As a result, we can cache the calculated
    * scope value and index it with the identity hash of the parameter.
