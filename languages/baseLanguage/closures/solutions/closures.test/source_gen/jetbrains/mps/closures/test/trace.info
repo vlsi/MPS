@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.closures.test._Adapters" />
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.closures.test._Adapters$_return_P1_E0_to__void_P1_E0_adapter" />
-  <root nodeId="1052694437380217074">
+  <root nodeId="1052694437380217074" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1052694437380224178" fileName="MPS14656_helper.java" startLine="15" startPosition="47" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1052694437380438448" fileName="MPS14656_helper.java" startLine="23" startPosition="47" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1052694437380217094" fileName="MPS14656_helper.java" startLine="29" startPosition="94" endLine="30" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -32,7 +32,7 @@
     <unitInfo nodeId="1052694437380224176" fileName="MPS14656_helper.java" startLine="14" startPosition="12" endLine="18" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14656_helper$1" />
     <unitInfo nodeId="1052694437380224191" fileName="MPS14656_helper.java" startLine="22" startPosition="12" endLine="26" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14656_helper$2" />
   </root>
-  <root nodeId="1052694437380230815">
+  <root nodeId="1052694437380230815" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1052694437380230840" fileName="MPS14656_Test.java" startLine="11" startPosition="9" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="12" startPosition="30" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1052694437380230836" fileName="MPS14656_Test.java" startLine="14" startPosition="29" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -59,7 +59,7 @@
     <scopeInfo nodeId="1052694437380230829" fileName="MPS14656_Test.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="1052694437380230815" fileName="MPS14656_Test.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14656_Test" />
   </root>
-  <root nodeId="1201432919093">
+  <root nodeId="1201432919093" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1201433490823" fileName="YieldClosures_Test.java" startLine="100" startPosition="27" endLine="100" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201433566944" fileName="YieldClosures_Test.java" startLine="103" startPosition="27" endLine="103" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201433566952" fileName="YieldClosures_Test.java" startLine="106" startPosition="27" endLine="106" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1733,7 +1733,6 @@
     <scopeInfo nodeId="1203355658537" fileName="YieldClosures_Test.java" startLine="607" startPosition="27" endLine="609" endPosition="28" />
     <scopeInfo nodeId="1203355658539" fileName="YieldClosures_Test.java" startLine="610" startPosition="28" endLine="612" endPosition="28" />
     <scopeInfo nodeId="1203356455704" fileName="YieldClosures_Test.java" startLine="613" startPosition="28" endLine="615" endPosition="28" />
-    <scopeInfo nodeId="1203356455705" fileName="YieldClosures_Test.java" startLine="613" startPosition="28" endLine="615" endPosition="28" />
     <scopeInfo nodeId="1201785662500" fileName="YieldClosures_Test.java" startLine="642" startPosition="25" endLine="644" endPosition="20" />
     <scopeInfo nodeId="1201785597955" fileName="YieldClosures_Test.java" startLine="645" startPosition="20" endLine="647" endPosition="20" />
     <scopeInfo nodeId="1201785509884" fileName="YieldClosures_Test.java" startLine="665" startPosition="28" endLine="667" endPosition="35" />
@@ -1746,10 +1745,8 @@
     <scopeInfo nodeId="1201785745581" fileName="YieldClosures_Test.java" startLine="712" startPosition="27" endLine="714" endPosition="28" />
     <scopeInfo nodeId="1201785745593" fileName="YieldClosures_Test.java" startLine="719" startPosition="27" endLine="721" endPosition="28" />
     <scopeInfo nodeId="1201785745593" fileName="YieldClosures_Test.java" startLine="722" startPosition="28" endLine="724" endPosition="28" />
-    <scopeInfo nodeId="1201785745598" fileName="YieldClosures_Test.java" startLine="722" startPosition="28" endLine="724" endPosition="28" />
     <scopeInfo nodeId="1201785745600" fileName="YieldClosures_Test.java" startLine="725" startPosition="28" endLine="727" endPosition="28" />
     <scopeInfo nodeId="1201785745600" fileName="YieldClosures_Test.java" startLine="728" startPosition="28" endLine="730" endPosition="28" />
-    <scopeInfo nodeId="1201785772456" fileName="YieldClosures_Test.java" startLine="728" startPosition="28" endLine="730" endPosition="28" />
     <scopeInfo nodeId="1209326150938" fileName="YieldClosures_Test.java" startLine="775" startPosition="28" endLine="777" endPosition="35" />
     <scopeInfo nodeId="1209326157809" fileName="YieldClosures_Test.java" startLine="781" startPosition="42" endLine="783" endPosition="30" />
     <scopeInfo nodeId="1209326157814" fileName="YieldClosures_Test.java" startLine="792" startPosition="42" endLine="794" endPosition="30" />
@@ -1795,14 +1792,9 @@
     <scopeInfo nodeId="3376587159404841535" fileName="YieldClosures_Test.java" startLine="1193" startPosition="27" endLine="1195" endPosition="28" />
     <scopeInfo nodeId="3376587159404841545" fileName="YieldClosures_Test.java" startLine="1196" startPosition="28" endLine="1198" endPosition="28" />
     <scopeInfo nodeId="3376587159404841552" fileName="YieldClosures_Test.java" startLine="1203" startPosition="28" endLine="1205" endPosition="28" />
-    <scopeInfo nodeId="3376587159404841553" fileName="YieldClosures_Test.java" startLine="1203" startPosition="28" endLine="1205" endPosition="28" />
-    <scopeInfo nodeId="3376587159404841564" fileName="YieldClosures_Test.java" startLine="1206" startPosition="28" endLine="1208" endPosition="28" />
     <scopeInfo nodeId="3376587159404841565" fileName="YieldClosures_Test.java" startLine="1206" startPosition="28" endLine="1208" endPosition="28" />
-    <scopeInfo nodeId="3376587159404841568" fileName="YieldClosures_Test.java" startLine="1209" startPosition="28" endLine="1211" endPosition="28" />
     <scopeInfo nodeId="3376587159404841569" fileName="YieldClosures_Test.java" startLine="1209" startPosition="28" endLine="1211" endPosition="28" />
-    <scopeInfo nodeId="3376587159404841572" fileName="YieldClosures_Test.java" startLine="1212" startPosition="28" endLine="1214" endPosition="28" />
     <scopeInfo nodeId="3376587159404841573" fileName="YieldClosures_Test.java" startLine="1212" startPosition="28" endLine="1214" endPosition="28" />
-    <scopeInfo nodeId="3376587159404841575" fileName="YieldClosures_Test.java" startLine="1215" startPosition="28" endLine="1217" endPosition="28" />
     <scopeInfo nodeId="3376587159404841576" fileName="YieldClosures_Test.java" startLine="1215" startPosition="28" endLine="1217" endPosition="28" />
     <scopeInfo nodeId="1229019456123" fileName="YieldClosures_Test.java" startLine="1237" startPosition="46" endLine="1239" endPosition="80" />
     <scopeInfo nodeId="1229019599670" fileName="YieldClosures_Test.java" startLine="1263" startPosition="28" endLine="1265" endPosition="35" />
@@ -1973,9 +1965,6 @@
     <scopeInfo nodeId="6473362057510545288" fileName="YieldClosures_Test.java" startLine="2054" startPosition="27" endLine="2057" endPosition="34" />
     <scopeInfo nodeId="8293956702610759622" fileName="YieldClosures_Test.java" startLine="2111" startPosition="52" endLine="2114" endPosition="44" />
     <scopeInfo nodeId="1201534562500" fileName="YieldClosures_Test.java" startLine="354" startPosition="37" endLine="358" endPosition="11" />
-    <scopeInfo nodeId="1201534588348" fileName="YieldClosures_Test.java" startLine="354" startPosition="37" endLine="358" endPosition="11">
-      <varInfo nodeId="1201534588349" varName="j" />
-    </scopeInfo>
     <scopeInfo nodeId="1201535808439" fileName="YieldClosures_Test.java" startLine="440" startPosition="51" endLine="444" endPosition="11">
       <varInfo nodeId="1201535808443" varName="j" />
     </scopeInfo>
@@ -1998,9 +1987,6 @@
     <scopeInfo nodeId="1201528336758" fileName="YieldClosures_Test.java" startLine="270" startPosition="27" endLine="276" endPosition="28" />
     <scopeInfo nodeId="1201528336767" fileName="YieldClosures_Test.java" startLine="277" startPosition="28" endLine="283" endPosition="28" />
     <scopeInfo nodeId="1201534543802" fileName="YieldClosures_Test.java" startLine="353" startPosition="45" endLine="359" endPosition="9" />
-    <scopeInfo nodeId="1201534562497" fileName="YieldClosures_Test.java" startLine="353" startPosition="45" endLine="359" endPosition="9">
-      <varInfo nodeId="1201534562498" varName="i" />
-    </scopeInfo>
     <scopeInfo nodeId="1201534637408" fileName="YieldClosures_Test.java" startLine="380" startPosition="27" endLine="386" endPosition="28" />
     <scopeInfo nodeId="1201534637413" fileName="YieldClosures_Test.java" startLine="393" startPosition="27" endLine="399" endPosition="28" />
     <scopeInfo nodeId="1201535668309" fileName="YieldClosures_Test.java" startLine="439" startPosition="29" endLine="445" endPosition="55" />
@@ -2047,14 +2033,12 @@
     <scopeInfo nodeId="1201528266335" fileName="YieldClosures_Test.java" startLine="239" startPosition="12" endLine="247" endPosition="14">
       <varInfo nodeId="1201528299293" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="1201535652901" fileName="YieldClosures_Test.java" startLine="438" startPosition="45" endLine="446" endPosition="9" />
     <scopeInfo nodeId="1201535668305" fileName="YieldClosures_Test.java" startLine="438" startPosition="45" endLine="446" endPosition="9">
       <varInfo nodeId="1201535668307" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1201534543801" fileName="YieldClosures_Test.java" startLine="352" startPosition="77" endLine="361" endPosition="0">
       <varInfo nodeId="1201534543801" varName="exp" />
     </scopeInfo>
-    <scopeInfo nodeId="1203355552936" fileName="YieldClosures_Test.java" startLine="529" startPosition="38" endLine="538" endPosition="11" />
     <scopeInfo nodeId="1203355592308" fileName="YieldClosures_Test.java" startLine="529" startPosition="38" endLine="538" endPosition="11">
       <varInfo nodeId="1203355592312" varName="j" />
     </scopeInfo>
@@ -2090,11 +2074,9 @@
     <scopeInfo nodeId="1201439804503" fileName="YieldClosures_Test.java" startLine="130" startPosition="45" endLine="144" endPosition="36">
       <varInfo nodeId="1201439825866" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1201785477031" fileName="YieldClosures_Test.java" startLine="635" startPosition="45" endLine="649" endPosition="9" />
     <scopeInfo nodeId="1201785603459" fileName="YieldClosures_Test.java" startLine="635" startPosition="45" endLine="649" endPosition="9">
       <varInfo nodeId="1201785603463" varName="fr" />
     </scopeInfo>
-    <scopeInfo nodeId="1209325983792" fileName="YieldClosures_Test.java" startLine="746" startPosition="45" endLine="760" endPosition="9" />
     <scopeInfo nodeId="1209326000121" fileName="YieldClosures_Test.java" startLine="746" startPosition="45" endLine="760" endPosition="9">
       <varInfo nodeId="1209326000122" varName="i" />
     </scopeInfo>
@@ -2506,7 +2488,7 @@
     <unitInfo nodeId="1201535652897" fileName="YieldClosures_Test.java" startLine="437" startPosition="32" endLine="448" endPosition="5" unitName="jetbrains.mps.closures.test.YieldClosures_Test$9" />
     <unitInfo nodeId="1201534555460" fileName="YieldClosures_Test.java" startLine="363" startPosition="19" endLine="429" endPosition="9" unitName="jetbrains.mps.closures.test.YieldClosures_Test$9" />
   </root>
-  <root nodeId="1201439711541">
+  <root nodeId="1201439711541" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7376433222636454399" fileName="ClosuresBase_Test.java" startLine="14" startPosition="44" endLine="15" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1201439728646" fileName="ClosuresBase_Test.java" startLine="18" startPosition="158" endLine="19" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201439728650" fileName="ClosuresBase_Test.java" startLine="19" startPosition="81" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2548,7 +2530,7 @@
     </scopeInfo>
     <unitInfo nodeId="1201439711541" fileName="ClosuresBase_Test.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.closures.test.ClosuresBase_Test" />
   </root>
-  <root nodeId="1201632597646">
+  <root nodeId="1201632597646" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1215512593633" fileName="FunctionTypes_Test.java" startLine="105" startPosition="29" endLine="105" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1215512584916" fileName="FunctionTypes_Test.java" startLine="171" startPosition="29" endLine="171" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1215512584921" fileName="FunctionTypes_Test.java" startLine="174" startPosition="29" endLine="174" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2946,7 +2928,7 @@
     <unitInfo nodeId="1214835545673" fileName="FunctionTypes_Test.java" startLine="61" startPosition="113" endLine="69" endPosition="5" unitName="jetbrains.mps.closures.test.FunctionTypes_Test$8" />
     <unitInfo nodeId="1215512593632" fileName="FunctionTypes_Test.java" startLine="79" startPosition="80" endLine="120" endPosition="7" unitName="jetbrains.mps.closures.test.FunctionTypes_Test$9" />
   </root>
-  <root nodeId="1201773926206">
+  <root nodeId="1201773926206" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1227876790690" fileName="SequenceFunctionTypes_Test.java" startLine="39" startPosition="27" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201774158169" fileName="SequenceFunctionTypes_Test.java" startLine="82" startPosition="27" endLine="82" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201774171139" fileName="SequenceFunctionTypes_Test.java" startLine="115" startPosition="27" endLine="115" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3190,7 +3172,7 @@
     <unitInfo nodeId="1201774552987" fileName="SequenceFunctionTypes_Test.java" startLine="186" startPosition="32" endLine="190" endPosition="5" unitName="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
     <unitInfo nodeId="1227876789544" fileName="SequenceFunctionTypes_Test.java" startLine="147" startPosition="19" endLine="183" endPosition="9" unitName="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
   </root>
-  <root nodeId="1201777863134">
+  <root nodeId="1201777863134" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1201777949199" fileName="AdvancedFunctionTypes_Test.java" startLine="14" startPosition="35" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201778636779" fileName="AdvancedFunctionTypes_Test.java" startLine="25" startPosition="39" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201780023571" fileName="AdvancedFunctionTypes_Test.java" startLine="32" startPosition="6" endLine="33" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3283,13 +3265,13 @@
     <unitInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="85" endLine="56" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$5" />
     <unitInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="15" endLine="66" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$6" />
   </root>
-  <root nodeId="1201785418374">
+  <root nodeId="1201785418374" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7084823572004219848" fileName="Fruits.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Fruits#()V" />
     <scopeInfo nodeId="7084823572004219850" fileName="Fruits.java" startLine="11" startPosition="12" endLine="11" endPosition="12" />
     <scopeInfo nodeId="7084823572004219848" fileName="Fruits.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <unitInfo nodeId="1201785418374" fileName="Fruits.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.closures.test.Fruits" />
   </root>
-  <root nodeId="1202741841877">
+  <root nodeId="1202741841877" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1203187295150" fileName="ClassifierAdapters_Test.java" startLine="93" startPosition="27" endLine="93" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203270587980" fileName="ClassifierAdapters_Test.java" startLine="143" startPosition="27" endLine="143" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3294521177951978022" fileName="ClassifierAdapters_Test.java" startLine="366" startPosition="27" endLine="366" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3840,9 +3822,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="279" startPosition="0" endLine="381" endPosition="0" />
     <unitInfo nodeId="5988816933596123665" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="21" endLine="24" endPosition="0" />
-    <unitInfo nodeId="1202741841877" fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="0" endLine="492" endPosition="0" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test" />
-    <unitInfo nodeId="1202778458188" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="21" endLine="30" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$1" />
-    <unitInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="32" endLine="218" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$10" />
     <unitInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="32" endLine="233" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
     <unitInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="26" endLine="247" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
     <unitInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="76" endLine="269" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$13" />
@@ -3877,14 +3856,14 @@
     <unitInfo nodeId="1214828754112" fileName="ClassifierAdapters_Test.java" startLine="180" startPosition="23" endLine="187" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$8" />
     <unitInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="31" endLine="208" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$9" />
   </root>
-  <root nodeId="1202741884865">
+  <root nodeId="1202741884865" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1202741897838" fileName="Worker.java" startLine="6" startPosition="25" endLine="7" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
     <scopeInfo nodeId="1202741897838" fileName="Worker.java" startLine="6" startPosition="25" endLine="7" endPosition="41">
       <varInfo nodeId="1202741904102" varName="duration" />
     </scopeInfo>
     <unitInfo nodeId="1202741884865" fileName="Worker.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.closures.test.Worker" />
   </root>
-  <root nodeId="1202834707004">
+  <root nodeId="1202834707004" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1202834740475" fileName="ExternalReferences_Test.java" startLine="15" startPosition="64" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202834760204" fileName="ExternalReferences_Test.java" startLine="18" startPosition="31" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202834771939" fileName="ExternalReferences_Test.java" startLine="21" startPosition="15" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4106,7 +4085,6 @@
     <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="43" startPosition="42" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="42" startPosition="43" endLine="72" endPosition="12" />
     <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="74" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1207154763059" fileName="ExternalReferences_Test.java" startLine="40" startPosition="34" endLine="75" endPosition="7" />
     <scopeInfo nodeId="1207247577646" fileName="ExternalReferences_Test.java" startLine="40" startPosition="34" endLine="75" endPosition="7">
       <varInfo nodeId="1207247577650" varName="j" />
     </scopeInfo>
@@ -4136,7 +4114,7 @@
     <unitInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="141" startPosition="14" endLine="145" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
     <unitInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="150" startPosition="42" endLine="154" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$9" />
   </root>
-  <root nodeId="1202990080856">
+  <root nodeId="1202990080856" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1202990085056" fileName="Parent_Test.java" startLine="7" startPosition="43" endLine="8" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foo" />
     <nodeInfo nodeId="7376433222636453797" fileName="Parent_Test.java" startLine="13" startPosition="26" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7084823572004219828" fileName="Parent_Test.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parent_Test#()V" />
@@ -4147,7 +4125,7 @@
     <scopeInfo nodeId="1202996617180" fileName="Parent_Test.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="1202990080856" fileName="Parent_Test.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.closures.test.Parent_Test" />
   </root>
-  <root nodeId="1202990098458">
+  <root nodeId="1202990098458" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1202996305706" fileName="Child_Test.java" startLine="12" startPosition="25" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202996257466" fileName="Child_Test.java" startLine="13" startPosition="19" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202996321666" fileName="Child_Test.java" startLine="16" startPosition="31" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4177,17 +4155,17 @@
     <unitInfo nodeId="1202990098458" fileName="Child_Test.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.closures.test.Child_Test" />
     <unitInfo nodeId="1202996321664" fileName="Child_Test.java" startLine="15" startPosition="18" endLine="19" endPosition="5" unitName="jetbrains.mps.closures.test.Child_Test$1" />
   </root>
-  <root nodeId="1203187245811">
+  <root nodeId="1203187245811" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1203187270410" fileName="NumberGenerator.java" startLine="6" startPosition="34" endLine="7" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1203187270410" fileName="NumberGenerator.java" startLine="6" startPosition="34" endLine="7" endPosition="38" />
     <unitInfo nodeId="1203187245811" fileName="NumberGenerator.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.closures.test.NumberGenerator" />
   </root>
-  <root nodeId="1203268478989">
+  <root nodeId="1203268478989" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1203268498760" fileName="Generator.java" startLine="6" startPosition="31" endLine="7" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1203268498760" fileName="Generator.java" startLine="6" startPosition="31" endLine="7" endPosition="32" />
     <unitInfo nodeId="1203268478989" fileName="Generator.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.closures.test.Generator" />
   </root>
-  <root nodeId="1213266193343">
+  <root nodeId="1213266193343" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1213280665220" fileName="ThisExpression_Test.java" startLine="11" startPosition="35" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foo" />
     <nodeInfo nodeId="1213280665214" fileName="ThisExpression_Test.java" startLine="16" startPosition="35" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213280754796" fileName="ThisExpression_Test.java" startLine="19" startPosition="19" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4216,7 +4194,7 @@
     <unitInfo nodeId="1213280665204" fileName="ThisExpression_Test.java" startLine="11" startPosition="23" endLine="22" endPosition="5" unitName="jetbrains.mps.closures.test.ThisExpression_Test$1" />
     <unitInfo nodeId="1213280665212" fileName="ThisExpression_Test.java" startLine="15" startPosition="12" endLine="19" endPosition="9" unitName="jetbrains.mps.closures.test.ThisExpression_Test$2" />
   </root>
-  <root nodeId="1213348224964">
+  <root nodeId="1213348224964" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1213348273313" fileName="ThisProvider.java" startLine="8" startPosition="27" endLine="9" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bar" />
     <nodeInfo nodeId="1213354287609" fileName="ThisProvider.java" startLine="14" startPosition="36" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235748548324" fileName="ThisProvider.java" startLine="17" startPosition="31" endLine="18" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4234,14 +4212,14 @@
     <unitInfo nodeId="1213348224964" fileName="ThisProvider.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.closures.test.ThisProvider" />
     <unitInfo nodeId="1235748548322" fileName="ThisProvider.java" startLine="16" startPosition="8" endLine="20" endPosition="5" unitName="jetbrains.mps.closures.test.ThisProvider$1" />
   </root>
-  <root nodeId="1214828471394">
+  <root nodeId="1214828471394" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1214828478115" fileName="Processor.java" startLine="6" startPosition="28" endLine="7" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/lang/String;)I" />
     <scopeInfo nodeId="1214828478115" fileName="Processor.java" startLine="6" startPosition="28" endLine="7" endPosition="62">
       <varInfo nodeId="1214828501062" varName="instr" />
     </scopeInfo>
     <unitInfo nodeId="1214828471394" fileName="Processor.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.closures.test.Processor" />
   </root>
-  <root nodeId="1214829198457">
+  <root nodeId="1214829198457" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1214829269802" fileName="ProcessingException.java" startLine="10" startPosition="42" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1214829198459" fileName="ProcessingException.java" startLine="6" startPosition="52" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessingException#()V" />
     <nodeInfo nodeId="1214829233309" fileName="ProcessingException.java" startLine="9" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessingException#(Ljava/lang/String;)V" />
@@ -4253,7 +4231,7 @@
     </scopeInfo>
     <unitInfo nodeId="1214829198457" fileName="ProcessingException.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.closures.test.ProcessingException" />
   </root>
-  <root nodeId="1226351732110">
+  <root nodeId="1226351732110" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1226351923705" fileName="FinalClosureParameter_Test.java" startLine="11" startPosition="48" endLine="12" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226351934814" fileName="FinalClosureParameter_Test.java" startLine="16" startPosition="29" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226351945575" fileName="FinalClosureParameter_Test.java" startLine="19" startPosition="10" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4302,7 +4280,7 @@
     <unitInfo nodeId="1226351897872" fileName="FinalClosureParameter_Test.java" startLine="15" startPosition="25" endLine="19" endPosition="9" unitName="jetbrains.mps.closures.test.FinalClosureParameter_Test$2" />
     <unitInfo nodeId="7759808016291059449" fileName="FinalClosureParameter_Test.java" startLine="28" startPosition="23" endLine="32" endPosition="5" unitName="jetbrains.mps.closures.test.FinalClosureParameter_Test$2" />
   </root>
-  <root nodeId="1226422463301">
+  <root nodeId="1226422463301" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="1226422746479" fileName="Functions.java" startLine="13" startPosition="39" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226422786668" fileName="Functions.java" startLine="21" startPosition="39" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226422463303" fileName="Functions.java" startLine="7" startPosition="24" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Functions#()V" />
@@ -4330,7 +4308,7 @@
     <unitInfo nodeId="1226422583666" fileName="Functions.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test.Functions$1" />
     <unitInfo nodeId="1226422606518" fileName="Functions.java" startLine="20" startPosition="15" endLine="24" endPosition="5" unitName="jetbrains.mps.closures.test.Functions$2" />
   </root>
-  <root nodeId="191691165076055588">
+  <root nodeId="191691165076055588" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="3841277577643043643" fileName="MPS9465.java" startLine="16" startPosition="47" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3841277577643043650" fileName="MPS9465.java" startLine="18" startPosition="18" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="191691165076055590" fileName="MPS9465.java" startLine="7" startPosition="22" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS9465#()V" />
@@ -4361,7 +4339,7 @@
     <unitInfo nodeId="191691165076055588" fileName="MPS9465.java" startLine="7" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9465" />
     <unitInfo nodeId="3841277577643043630" fileName="MPS9465.java" startLine="12" startPosition="13" endLine="23" endPosition="5" unitName="jetbrains.mps.closures.test.MPS9465$1" />
   </root>
-  <root nodeId="2619154382620884837">
+  <root nodeId="2619154382620884837" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="2619154382620884890" fileName="mps8150.java" startLine="17" startPosition="46" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2619154382620884901" fileName="mps8150.java" startLine="20" startPosition="9" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2619154382620906366" fileName="mps8150.java" startLine="26" startPosition="46" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4400,14 +4378,14 @@
     <unitInfo nodeId="2619154382620884845" fileName="mps8150.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.closures.test.mps8150$Bar" />
     <unitInfo nodeId="2619154382620884856" fileName="mps8150.java" startLine="35" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.closures.test.mps8150$Qux" />
   </root>
-  <root nodeId="4923436771430617439">
+  <root nodeId="4923436771430617439" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="4923436771430617441" fileName="IFilter.java" startLine="6" startPosition="26" endLine="7" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filter#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="4923436771430617441" fileName="IFilter.java" startLine="6" startPosition="26" endLine="7" endPosition="37">
       <varInfo nodeId="4923436771430617446" varName="name" />
     </scopeInfo>
     <unitInfo nodeId="4923436771430617439" fileName="IFilter.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.closures.test.IFilter" />
   </root>
-  <root nodeId="5340426812923603351">
+  <root nodeId="5340426812923603351" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="5340426812923603357" fileName="MPS9808.java" startLine="11" startPosition="22" endLine="12" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="beforeListeners" />
     <nodeInfo nodeId="5340426812923603372" fileName="MPS9808.java" startLine="12" startPosition="196" endLine="13" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="afterListeners" />
     <nodeInfo nodeId="5340426812923603403" fileName="MPS9808.java" startLine="20" startPosition="90" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4443,7 +4421,7 @@
     <unitInfo nodeId="5340426812923603401" fileName="MPS9808.java" startLine="19" startPosition="56" endLine="23" endPosition="5" unitName="jetbrains.mps.closures.test.MPS9808$1" />
     <unitInfo nodeId="5340426812923603424" fileName="MPS9808.java" startLine="27" startPosition="55" endLine="31" endPosition="5" unitName="jetbrains.mps.closures.test.MPS9808$2" />
   </root>
-  <root nodeId="5501998944439577529">
+  <root nodeId="5501998944439577529" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="5501998944439589586" fileName="MPS14653_Test.java" startLine="10" startPosition="51" endLine="11" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5501998944439589601" fileName="MPS14653_Test.java" startLine="12" startPosition="9" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5501998944439589597" fileName="MPS14653_Test.java" startLine="13" startPosition="24" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4481,7 +4459,7 @@
     <unitInfo nodeId="5501998944439577529" fileName="MPS14653_Test.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14653_Test" />
     <unitInfo nodeId="5501998944440406887" fileName="MPS14653_Test.java" startLine="21" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.closures.test.MPS14653_Test$1" />
   </root>
-  <root nodeId="5501998944439577540">
+  <root nodeId="5501998944439577540" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="5501998944440278198" fileName="MPS14653_helper.java" startLine="17" startPosition="47" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5501998944440296923" fileName="MPS14653_helper.java" startLine="23" startPosition="86" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5501998944439577542" fileName="MPS14653_helper.java" startLine="7" startPosition="30" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS14653_helper#()V" />
@@ -4506,7 +4484,7 @@
     <unitInfo nodeId="5501998944440278196" fileName="MPS14653_helper.java" startLine="16" startPosition="59" endLine="20" endPosition="7" unitName="jetbrains.mps.closures.test.MPS14653_helper$1" />
     <unitInfo nodeId="5501998944439577548" fileName="MPS14653_helper.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.closures.test.MPS14653_helper$Context" />
   </root>
-  <root nodeId="5902225204490666277">
+  <root nodeId="5902225204490666277" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="5902225204490711783" fileName="WhileBreak_Test.java" startLine="63" startPosition="27" endLine="63" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5902225204490685003" fileName="WhileBreak_Test.java" startLine="70" startPosition="27" endLine="70" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5902225204490685005" fileName="WhileBreak_Test.java" startLine="73" startPosition="28" endLine="73" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4605,9 +4583,7 @@
     <scopeInfo nodeId="5902225204490685003" fileName="WhileBreak_Test.java" startLine="70" startPosition="27" endLine="72" endPosition="28" />
     <scopeInfo nodeId="5902225204490685005" fileName="WhileBreak_Test.java" startLine="73" startPosition="28" endLine="75" endPosition="28" />
     <scopeInfo nodeId="5902225204490685009" fileName="WhileBreak_Test.java" startLine="76" startPosition="28" endLine="78" endPosition="28" />
-    <scopeInfo nodeId="5902225204490685010" fileName="WhileBreak_Test.java" startLine="76" startPosition="28" endLine="78" endPosition="28" />
     <scopeInfo nodeId="5902225204490685014" fileName="WhileBreak_Test.java" startLine="79" startPosition="28" endLine="81" endPosition="28" />
-    <scopeInfo nodeId="5902225204490685015" fileName="WhileBreak_Test.java" startLine="79" startPosition="28" endLine="81" endPosition="28" />
     <scopeInfo nodeId="5902225204490685016" fileName="WhileBreak_Test.java" startLine="104" startPosition="28" endLine="106" endPosition="35" />
     <scopeInfo nodeId="5902225204490685017" fileName="WhileBreak_Test.java" startLine="111" startPosition="27" endLine="113" endPosition="28" />
     <scopeInfo nodeId="5902225204490685006" fileName="WhileBreak_Test.java" startLine="55" startPosition="28" endLine="58" endPosition="34" />
@@ -4642,7 +4618,7 @@
     <unitInfo nodeId="5902225204490684995" fileName="WhileBreak_Test.java" startLine="15" startPosition="23" endLine="88" endPosition="13" unitName="jetbrains.mps.closures.test.WhileBreak_Test$3" />
     <unitInfo nodeId="5902225204490685016" fileName="WhileBreak_Test.java" startLine="96" startPosition="23" endLine="120" endPosition="13" unitName="jetbrains.mps.closures.test.WhileBreak_Test$4" />
   </root>
-  <root nodeId="7026901688661322616">
+  <root nodeId="7026901688661322616" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7026901688661325620" fileName="MPS7448.java" startLine="14" startPosition="21" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7026901688661325628" fileName="MPS7448.java" startLine="16" startPosition="9" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7026901688661325632" fileName="MPS7448.java" startLine="17" startPosition="0" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4672,7 +4648,7 @@
     <unitInfo nodeId="7026901688661325611" fileName="MPS7448.java" startLine="12" startPosition="23" endLine="20" endPosition="5" unitName="jetbrains.mps.closures.test.MPS7448$1" />
     <unitInfo nodeId="7026901688661322631" fileName="MPS7448.java" startLine="26" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.closures.test.MPS7448$Aaa" />
   </root>
-  <root nodeId="7179096584831896774">
+  <root nodeId="7179096584831896774" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7179096584831949146" fileName="MPS7440.java" startLine="13" startPosition="46" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7179096584831896776" fileName="MPS7440.java" startLine="7" startPosition="22" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS7440#()V" />
     <nodeInfo nodeId="7179096584831896784" fileName="MPS7440.java" startLine="19" startPosition="31" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XyzUtil#()V" />
@@ -4702,7 +4678,7 @@
     <unitInfo nodeId="7179096584831896790" fileName="MPS7440.java" startLine="27" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.closures.test.MPS7440$Abc" />
     <unitInfo nodeId="7179096584831896782" fileName="MPS7440.java" startLine="19" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.closures.test.MPS7440$XyzUtil" />
   </root>
-  <root nodeId="7312086843227482247">
+  <root nodeId="7312086843227482247" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7312086843227556453" fileName="MPS9324.java" startLine="17" startPosition="41" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doIt#(null)V" />
     <nodeInfo nodeId="7312086843227482249" fileName="MPS9324.java" startLine="6" startPosition="25" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS9324#()V" />
     <nodeInfo nodeId="7312086843227556464" fileName="MPS9324.java" startLine="21" startPosition="38" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameter#()V" />
@@ -4729,7 +4705,7 @@
     <unitInfo nodeId="7312086843227556462" fileName="MPS9324.java" startLine="21" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9324$Parameter" />
     <unitInfo nodeId="7312086843227556451" fileName="MPS9324.java" startLine="17" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9324$Predicate" />
   </root>
-  <root nodeId="7706726851185799228">
+  <root nodeId="7706726851185799228" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7706726851185802214" fileName="MPS9760.java" startLine="13" startPosition="30" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7706726851185799230" fileName="MPS9760.java" startLine="7" startPosition="22" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS9760#()V" />
     <nodeInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="12" startPosition="55" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
@@ -4744,7 +4720,7 @@
     <unitInfo nodeId="7706726851185799228" fileName="MPS9760.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9760" />
     <unitInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test.MPS9760$1" />
   </root>
-  <root nodeId="7789098498783517693">
+  <root nodeId="7789098498783517693" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7789098498783522752" fileName="GenericFTAcceptor.java" startLine="11" startPosition="31" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="31512844700171956" fileName="GenericFTAcceptor.java" startLine="12" startPosition="18" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7789098498783517695" fileName="GenericFTAcceptor.java" startLine="7" startPosition="109" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenericFTAcceptor#()V" />
@@ -4757,7 +4733,7 @@
     </scopeInfo>
     <unitInfo nodeId="7789098498783517693" fileName="GenericFTAcceptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.closures.test.GenericFTAcceptor" />
   </root>
-  <root nodeId="7854901761081544254">
+  <root nodeId="7854901761081544254" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="7854901761081544293" fileName="MPS9119.java" startLine="19" startPosition="43" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7854901761081544301" fileName="MPS9119.java" startLine="20" startPosition="72" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7854901761081544256" fileName="MPS9119.java" startLine="10" startPosition="22" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS9119#()V" />
@@ -4782,7 +4758,7 @@
     <unitInfo nodeId="7854901761081544254" fileName="MPS9119.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9119" />
     <unitInfo nodeId="7854901761081544282" fileName="MPS9119.java" startLine="18" startPosition="11" endLine="23" endPosition="5" unitName="jetbrains.mps.closures.test.MPS9119$1" />
   </root>
-  <root nodeId="9188746615686005184">
+  <root nodeId="9188746615686005184" modelId="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)">
     <nodeInfo nodeId="9188746615686005201" fileName="MPS7432.java" startLine="12" startPosition="79" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9188746615686005227" fileName="MPS7432.java" startLine="15" startPosition="28" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9188746615686005257" fileName="MPS7432.java" startLine="18" startPosition="7" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

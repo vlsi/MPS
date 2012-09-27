@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4kytg9dim1h4jn1uri1b4992u0qbwfa">
+<dependencies version="2" modelHash="-3j0icx413r17wo250jmebtr9k5scxhb">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -86,8 +86,14 @@
     <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" />
     <file name="EditorExtensions_CustomApplicationPlugin.java" />
   </source>
-  <source id="5487985028841949378" name="EditorExtensionHelper" hash="6ft6tkfx2maqopr6xc6n7080sqjn86f">
+  <source id="5487985028841949378" name="EditorExtensionHelper" hash="-7l8llndg2hrhuehwt49b8q16fp1wjcg" dependsOnNodes="true">
+    <dep root="5487985028841948850" />
     <dep root="5487985028841948869" />
+    <dep root="5487985028841949670" />
+    <dep root="5487985028841949686" />
+    <dep root="5487985028841949736" />
+    <dep root="5487985028841949863" />
+    <dep root="7162597690967883845" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

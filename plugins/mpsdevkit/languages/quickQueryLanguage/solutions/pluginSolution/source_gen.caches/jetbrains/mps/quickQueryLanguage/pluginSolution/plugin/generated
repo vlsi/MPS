@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6y0v74l94oemdf9dlad1talggjk1jgc">
+<dependencies version="2" modelHash="7g6puot7zhg2w59ug06c1erowhzsa6f">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.dnd(JDK/java.awt.dnd@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
@@ -138,7 +138,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FindInstancesContext.java" />
   </source>
-  <source id="5487985028841942759" name="FindInstancesDialog" hash="-18rp335ne3gaspozv4jitxtprkynfpy">
+  <source id="5487985028841942759" name="FindInstancesDialog" hash="5apzhdghz9jpfl7dha88fv4vekgf1rs">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.dnd(JDK/java.awt.dnd@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
@@ -183,7 +183,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindInstancesDialog.java" />
   </source>
-  <source id="5487985028841943302" name="ReplaceDialog" hash="1culhirl3pcdjhwgw213mhc6v4mcpt6">
+  <source id="5487985028841943302" name="ReplaceDialog" hash="c3paptyna3tnzfb6vmbuuaog3lek4rp">
     <dep root="5487985028841944176" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.dnd(JDK/java.awt.dnd@java_stub)" />
