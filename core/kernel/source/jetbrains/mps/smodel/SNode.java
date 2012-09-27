@@ -38,6 +38,7 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.util.*;
@@ -1022,7 +1023,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public SNode findParent(Condition<SNode> condition) {
-    return jetbrains.mps.util.SNodeOperations.findParent(this, condition);
+    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(this, condition));
   }
 
   @Deprecated

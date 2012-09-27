@@ -38,6 +38,13 @@ public class SNodeOperations {
     return isAncestor(ancestor, parentOfChild);
   }
 
+  public static String getRoleInParent(jetbrains.mps.smodel.SNode n) {
+    return (n.getParent() == null ?
+      null :
+      n.getParent().getRoleOf(n)
+    );
+  }
+
   public static List<jetbrains.mps.smodel.SNode> getChildren(SNode node, boolean includeAttributes) {
     List<jetbrains.mps.smodel.SNode> res = new ArrayList<jetbrains.mps.smodel.SNode>();
     for (SNode child : node.getChildren()) {
@@ -60,7 +67,7 @@ public class SNodeOperations {
     ), cond);
   }
 
-  public static jetbrains.mps.smodel.SNode findParent(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
+  public static SNode findParent(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
     jetbrains.mps.smodel.SNode parent = ((jetbrains.mps.smodel.SNode) node.getParent());
     while (parent != null) {
       if (condition.met(parent)) {
@@ -295,7 +302,7 @@ public class SNodeOperations {
       SNode parent;
       do {
         parent = curr.getParent();
-        jetbrains.mps.smodel.SNode s = ((jetbrains.mps.smodel.SNode) curr).nextSibling();
+        jetbrains.mps.smodel.SNode s = ((jetbrains.mps.smodel.SNode) ((jetbrains.mps.smodel.SNode) curr).nextSibling());
         if (s != null) {
           return s;
         }
