@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="428466863025296200">
+  <root nodeId="428466863025296200" modelId="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)">
     <nodeInfo nodeId="1227316931926" fileName="AttachMappingLabel_Action.java" startLine="164" startPosition="29" endLine="164" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227316931929" fileName="AttachMappingLabel_Action.java" startLine="167" startPosition="29" endLine="167" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="38" startPosition="59" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -198,15 +198,15 @@
       <varInfo nodeId="428466863025296200" varName="_params" />
       <varInfo nodeId="428466863025296200" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="38" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action" />
     <unitInfo nodeId="8900764248744327489" fileName="AttachMappingLabel_Action.java" startLine="76" startPosition="97" endLine="80" endPosition="7" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$1" />
     <unitInfo nodeId="1227303582021" fileName="AttachMappingLabel_Action.java" startLine="84" startPosition="97" endLine="88" endPosition="7" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$2" />
-    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="133" startPosition="88" endLine="180" endPosition="7" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$3" />
     <unitInfo nodeId="1227316931941" fileName="AttachMappingLabel_Action.java" startLine="181" startPosition="37" endLine="186" endPosition="7" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$4" />
-    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="135" startPosition="21" endLine="178" endPosition="11" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$4" />
     <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="137" startPosition="25" endLine="176" endPosition="15" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$5" />
+    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="135" startPosition="21" endLine="178" endPosition="11" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$4" />
+    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="133" startPosition="88" endLine="180" endPosition="7" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$3" />
+    <unitInfo nodeId="428466863025296200" fileName="AttachMappingLabel_Action.java" startLine="38" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action" />
   </root>
-  <root nodeId="428466863025296238">
+  <root nodeId="428466863025296238" modelId="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)">
     <nodeInfo nodeId="428466863025296439" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="58" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
     <nodeInfo nodeId="428466863025296442" fileName="AttachMappingLabelDialog.java" startLine="30" startPosition="42" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
     <nodeInfo nodeId="428466863025296445" fileName="AttachMappingLabelDialog.java" startLine="31" startPosition="27" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTemplateNode" />
@@ -316,11 +316,11 @@
       <varInfo nodeId="428466863025296244" varName="namePanel" />
     </scopeInfo>
     <scopeInfo nodeId="428466863025296239" fileName="AttachMappingLabelDialog.java" startLine="43" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="428466863025296238" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog" />
     <unitInfo nodeId="428466863025296319" fileName="AttachMappingLabelDialog.java" startLine="56" startPosition="36" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog$1" />
     <unitInfo nodeId="428466863025296501" fileName="AttachMappingLabelDialog.java" startLine="90" startPosition="55" endLine="107" endPosition="5" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog$2" />
+    <unitInfo nodeId="428466863025296238" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog" />
   </root>
-  <root nodeId="428466863025296645">
+  <root nodeId="428466863025296645" modelId="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)">
     <nodeInfo nodeId="428466863025296655" fileName="MappingLabelUtil.java" startLine="20" startPosition="93" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="428466863025296659" fileName="MappingLabelUtil.java" startLine="21" startPosition="30" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="428466863025296686" fileName="MappingLabelUtil.java" startLine="25" startPosition="74" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -379,10 +379,10 @@
       <varInfo nodeId="428466863025296783" varName="labelName" />
       <varInfo nodeId="428466863025296781" varName="templateNode" />
     </scopeInfo>
-    <unitInfo nodeId="428466863025296645" fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil" />
     <unitInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="36" startPosition="55" endLine="40" endPosition="9" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil$1" />
+    <unitInfo nodeId="428466863025296645" fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil" />
   </root>
-  <root nodeId="428466863025296807">
+  <root nodeId="428466863025296807" modelId="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)">
     <nodeInfo nodeId="428466863025296807" fileName="ShowAsIntentions_ActionGroup.java" startLine="8" startPosition="72" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="428466863025296807" fileName="ShowAsIntentions_ActionGroup.java" startLine="9" startPosition="83" endLine="10" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="428466863025296807" fileName="ShowAsIntentions_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -401,7 +401,7 @@
     <scopeInfo nodeId="428466863025296807" fileName="ShowAsIntentions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="428466863025296807" fileName="ShowAsIntentions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
   </root>
-  <root nodeId="7162597690967657580">
+  <root nodeId="7162597690967657580" modelId="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967657580" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="77" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967657580" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967657580" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

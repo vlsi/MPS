@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1482618131069247085">
+  <root nodeId="1482618131069247085" modelId="r:b844984f-e192-4128-bae9-ea8360d94146(jetbrains.mps.debugger.api.ui.executionPoint)">
     <nodeInfo nodeId="1482618131069247171" fileName="CurrentLinePositionComponent.java" startLine="21" startPosition="132" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
     <nodeInfo nodeId="1482618131069247176" fileName="CurrentLinePositionComponent.java" startLine="22" startPosition="116" endLine="23" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
     <nodeInfo nodeId="1482618131069247189" fileName="CurrentLinePositionComponent.java" startLine="25" startPosition="93" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -100,11 +100,11 @@
     <scopeInfo nodeId="1482618131069247259" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1482618131069247292" varName="session" />
     </scopeInfo>
-    <unitInfo nodeId="1482618131069247085" fileName="CurrentLinePositionComponent.java" startLine="21" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent" />
-    <unitInfo nodeId="1482618131069247088" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent$MyCurrentDebugSessionListener" />
     <unitInfo nodeId="1482618131069247134" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent$MySessionChangeListener" />
+    <unitInfo nodeId="1482618131069247088" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent$MyCurrentDebugSessionListener" />
+    <unitInfo nodeId="1482618131069247085" fileName="CurrentLinePositionComponent.java" startLine="21" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent" />
   </root>
-  <root nodeId="1482618131069247297">
+  <root nodeId="1482618131069247297" modelId="r:b844984f-e192-4128-bae9-ea8360d94146(jetbrains.mps.debugger.api.ui.executionPoint)">
     <nodeInfo nodeId="1482618131069247379" fileName="InTextPositionComponent.java" startLine="35" startPosition="66" endLine="36" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
     <nodeInfo nodeId="1482618131069247384" fileName="InTextPositionComponent.java" startLine="36" startPosition="111" endLine="37" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
     <nodeInfo nodeId="1482618131069247389" fileName="InTextPositionComponent.java" startLine="37" startPosition="158" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -394,15 +394,15 @@
     <scopeInfo nodeId="1482618131069247696" fileName="InTextPositionComponent.java" startLine="180" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="1482618131069247784" varName="location" />
     </scopeInfo>
-    <unitInfo nodeId="1482618131069247297" fileName="InTextPositionComponent.java" startLine="35" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent" />
-    <unitInfo nodeId="5595781640636123242" fileName="InTextPositionComponent.java" startLine="58" startPosition="78" endLine="68" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$1" />
+    <unitInfo nodeId="1482618131069247614" fileName="InTextPositionComponent.java" startLine="149" startPosition="56" endLine="153" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$5" />
     <unitInfo nodeId="1482618131069247498" fileName="InTextPositionComponent.java" startLine="95" startPosition="58" endLine="100" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$2" />
     <unitInfo nodeId="95346096440186363" fileName="InTextPositionComponent.java" startLine="109" startPosition="58" endLine="114" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$3" />
-    <unitInfo nodeId="1482618131069247547" fileName="InTextPositionComponent.java" startLine="129" startPosition="15" endLine="136" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$4" />
-    <unitInfo nodeId="1482618131069247614" fileName="InTextPositionComponent.java" startLine="149" startPosition="56" endLine="153" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$5" />
     <unitInfo nodeId="1482618131069247633" fileName="InTextPositionComponent.java" startLine="158" startPosition="17" endLine="164" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$6" />
-    <unitInfo nodeId="1482618131069247298" fileName="InTextPositionComponent.java" startLine="230" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$MyCurrentDebugSessionListener" />
+    <unitInfo nodeId="1482618131069247547" fileName="InTextPositionComponent.java" startLine="129" startPosition="15" endLine="136" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$4" />
+    <unitInfo nodeId="5595781640636123242" fileName="InTextPositionComponent.java" startLine="58" startPosition="78" endLine="68" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$1" />
     <unitInfo nodeId="1482618131069247343" fileName="InTextPositionComponent.java" startLine="251" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$MySessionChangeListener" />
+    <unitInfo nodeId="1482618131069247298" fileName="InTextPositionComponent.java" startLine="230" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent$MyCurrentDebugSessionListener" />
+    <unitInfo nodeId="1482618131069247297" fileName="InTextPositionComponent.java" startLine="35" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.InTextPositionComponent" />
   </root>
 </debugInfo>
 

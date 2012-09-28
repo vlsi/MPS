@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1225980323340">
+  <root nodeId="1225980323340" modelId="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)">
     <nodeInfo nodeId="1225980328125" fileName="Constants.java" startLine="6" startPosition="24" endLine="7" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE" />
     <nodeInfo nodeId="1235405933531" fileName="Constants.java" startLine="7" startPosition="69" endLine="8" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_CLOSURE_PARAMETERS" />
     <nodeInfo nodeId="1235405969792" fileName="Constants.java" startLine="8" startPosition="48" endLine="9" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_CLOSURE_EXCEPTIONS" />

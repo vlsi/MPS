@@ -328,9 +328,9 @@
       <varInfo nodeId="8267733531687412475" varName="monitor" />
       <varInfo nodeId="8267733531687412473" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="8267733531687412365" fileName="GeneratedFinder.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
     <unitInfo nodeId="8267733531687412418" fileName="GeneratedFinder.java" startLine="45" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$1" />
     <unitInfo nodeId="8644192182231329549" fileName="GeneratedFinder.java" startLine="80" startPosition="63" endLine="84" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$2" />
+    <unitInfo nodeId="8267733531687412365" fileName="GeneratedFinder.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </root>
   <root nodeId="8267733531687413132" modelId="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)">
     <nodeInfo nodeId="8267733531687413135" fileName="IInterfacedFinder.java" startLine="10" startPosition="52" endLine="11" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />

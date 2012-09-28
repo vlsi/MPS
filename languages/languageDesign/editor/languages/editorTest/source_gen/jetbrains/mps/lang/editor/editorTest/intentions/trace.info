@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.intentions.IntentionsDescriptor" />
-  <root nodeId="7658393498702987309">
+  <root nodeId="7658393498702987309" modelId="r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)">
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

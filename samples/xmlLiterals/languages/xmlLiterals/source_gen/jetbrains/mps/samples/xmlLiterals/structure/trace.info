@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.StructureAspectDescriptor" />
   <unitInfo fileName="XmlLiterals_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.XmlLiterals_Language" />
-  <root nodeId="9152904044274328259">
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.StructureAspectDescriptor" />
+  <root nodeId="9152904044274328259" modelId="r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)">
     <nodeInfo nodeId="9152904044274328259" fileName="XmlLiteral.java" startLine="12" startPosition="44" endLine="13" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9152904044274328259" fileName="XmlLiteral.java" startLine="13" startPosition="96" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT" />
     <nodeInfo nodeId="9152904044274328259" fileName="XmlLiteral.java" startLine="16" startPosition="33" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -36,7 +36,7 @@
     </scopeInfo>
     <unitInfo nodeId="9152904044274328259" fileName="XmlLiteral.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral" />
   </root>
-  <root nodeId="9152904044274469601">
+  <root nodeId="9152904044274469601" modelId="r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)">
     <nodeInfo nodeId="9152904044274469601" fileName="TextMacro.java" startLine="12" startPosition="41" endLine="13" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9152904044274469601" fileName="TextMacro.java" startLine="13" startPosition="95" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
     <nodeInfo nodeId="9152904044274469601" fileName="TextMacro.java" startLine="16" startPosition="32" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -70,7 +70,7 @@
     </scopeInfo>
     <unitInfo nodeId="9152904044274469601" fileName="TextMacro.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.TextMacro" />
   </root>
-  <root nodeId="9152904044274518122">
+  <root nodeId="9152904044274518122" modelId="r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)">
     <nodeInfo nodeId="9152904044274518122" fileName="ElementMacro.java" startLine="12" startPosition="43" endLine="13" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9152904044274518122" fileName="ElementMacro.java" startLine="13" startPosition="98" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
     <nodeInfo nodeId="9152904044274518122" fileName="ElementMacro.java" startLine="16" startPosition="35" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

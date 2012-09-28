@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="CustomViewers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomViewers_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.StructureAspectDescriptor" />
-  <root nodeId="1842653058274900914">
+  <root nodeId="1842653058274900914" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="11" startPosition="60" endLine="12" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="14" startPosition="44" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="18" startPosition="76" endLine="19" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     </scopeInfo>
     <unitInfo nodeId="1842653058274900914" fileName="WatchablesListCreator.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator" />
   </root>
-  <root nodeId="1842653058274900915">
+  <root nodeId="1842653058274900915" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="11" startPosition="45" endLine="12" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="18" startPosition="72" endLine="19" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -48,7 +48,7 @@
     </scopeInfo>
     <unitInfo nodeId="1842653058274900915" fileName="WatchableListType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.WatchableListType" />
   </root>
-  <root nodeId="1843851250586690702">
+  <root nodeId="1843851250586690702" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="15" startPosition="75" endLine="16" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="16" startPosition="112" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -130,7 +130,7 @@
     </scopeInfo>
     <unitInfo nodeId="1843851250586690702" fileName="ClassNameOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ClassNameOperation" />
   </root>
-  <root nodeId="1843851250586694536">
+  <root nodeId="1843851250586694536" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="15" startPosition="77" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="16" startPosition="114" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -212,7 +212,7 @@
     </scopeInfo>
     <unitInfo nodeId="1843851250586694536" fileName="ClassFqNameOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ClassFqNameOperation" />
   </root>
-  <root nodeId="1843851250586694559">
+  <root nodeId="1843851250586694559" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="15" startPosition="70" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="16" startPosition="107" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -294,7 +294,7 @@
     </scopeInfo>
     <unitInfo nodeId="1843851250586694559" fileName="SizeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.SizeOperation" />
   </root>
-  <root nodeId="1843851250586697538">
+  <root nodeId="1843851250586697538" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="15" startPosition="77" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="16" startPosition="114" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -376,7 +376,7 @@
     </scopeInfo>
     <unitInfo nodeId="1843851250586697538" fileName="AllElementsOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.AllElementsOperation" />
   </root>
-  <root nodeId="1843851250586697564">
+  <root nodeId="1843851250586697564" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="16" startPosition="79" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="17" startPosition="116" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -480,7 +480,7 @@
     </scopeInfo>
     <unitInfo nodeId="1843851250586697564" fileName="ElementsRangeOperation.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ElementsRangeOperation" />
   </root>
-  <root nodeId="2488554353950280317">
+  <root nodeId="2488554353950280317" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="15" startPosition="76" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="16" startPosition="113" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -562,7 +562,7 @@
     </scopeInfo>
     <unitInfo nodeId="2488554353950280317" fileName="FieldsListOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.FieldsListOperation" />
   </root>
-  <root nodeId="2488554353950312668">
+  <root nodeId="2488554353950312668" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="16" startPosition="71" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="17" startPosition="108" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -655,7 +655,7 @@
     </scopeInfo>
     <unitInfo nodeId="2488554353950312668" fileName="FieldOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.FieldOperation" />
   </root>
-  <root nodeId="2488554353950312745">
+  <root nodeId="2488554353950312745" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="16" startPosition="73" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="17" startPosition="110" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -748,7 +748,7 @@
     </scopeInfo>
     <unitInfo nodeId="2488554353950312745" fileName="ElementOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ElementOperation" />
   </root>
-  <root nodeId="4089989733346803658">
+  <root nodeId="4089989733346803658" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="11" startPosition="75" endLine="12" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="14" startPosition="59" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="18" startPosition="91" endLine="19" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -771,7 +771,7 @@
     </scopeInfo>
     <unitInfo nodeId="4089989733346803658" fileName="GetValuePresentation_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.GetValuePresentation_ConceptFunction" />
   </root>
-  <root nodeId="4089989733346839773">
+  <root nodeId="4089989733346839773" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="11" startPosition="67" endLine="12" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="14" startPosition="51" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="18" startPosition="83" endLine="19" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -794,7 +794,7 @@
     </scopeInfo>
     <unitInfo nodeId="4089989733346839773" fileName="CanWrapValue_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CanWrapValue_ConceptFunction" />
   </root>
-  <root nodeId="43370322128194514">
+  <root nodeId="43370322128194514" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="11" startPosition="84" endLine="12" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="14" startPosition="68" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="18" startPosition="100" endLine="19" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -817,7 +817,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128194514" fileName="GetHighLevelValuePresentation_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction" />
   </root>
-  <root nodeId="43370322128194518">
+  <root nodeId="43370322128194518" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="11" startPosition="82" endLine="12" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="14" startPosition="66" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="18" startPosition="98" endLine="19" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -840,7 +840,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128194518" fileName="GetHighLevelWatchablesBlock_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction" />
   </root>
-  <root nodeId="43370322128194523">
+  <root nodeId="43370322128194523" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="11" startPosition="76" endLine="12" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="14" startPosition="60" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="18" startPosition="92" endLine="19" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -863,7 +863,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128194523" fileName="CanWrapHighLevelValue_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction" />
   </root>
-  <root nodeId="43370322128272301">
+  <root nodeId="43370322128272301" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="12" startPosition="87" endLine="13" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="13" startPosition="133" endLine="14" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE_PROXY_TYPE" />
     <nodeInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="16" startPosition="62" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -897,7 +897,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128272301" fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter" />
   </root>
-  <root nodeId="43370322128285902">
+  <root nodeId="43370322128285902" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="12" startPosition="64" endLine="13" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="13" startPosition="119" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCHABLE" />
     <nodeInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="14" startPosition="53" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
@@ -942,7 +942,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128285902" fileName="HighLevelWatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator" />
   </root>
-  <root nodeId="5117350825036234462">
+  <root nodeId="5117350825036234462" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="11" startPosition="37" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="14" startPosition="32" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="18" startPosition="64" endLine="19" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -965,7 +965,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036234462" fileName="ValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ValueType" />
   </root>
-  <root nodeId="5117350825036234467">
+  <root nodeId="5117350825036234467" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="11" startPosition="42" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="14" startPosition="37" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="18" startPosition="69" endLine="19" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -988,7 +988,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036234467" fileName="ArrayValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ArrayValueType" />
   </root>
-  <root nodeId="5117350825036234473">
+  <root nodeId="5117350825036234473" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="11" startPosition="43" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="18" startPosition="70" endLine="19" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1011,7 +1011,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036234473" fileName="ObjectValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ObjectValueType" />
   </root>
-  <root nodeId="5117350825036234478">
+  <root nodeId="5117350825036234478" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="11" startPosition="46" endLine="12" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="14" startPosition="41" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="18" startPosition="73" endLine="19" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1034,7 +1034,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036234478" fileName="PrimitiveValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.PrimitiveValueType" />
   </root>
-  <root nodeId="5117350825036234483">
+  <root nodeId="5117350825036234483" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="15" startPosition="75" endLine="16" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="16" startPosition="109" endLine="17" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON_PATH" />
     <nodeInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="17" startPosition="52" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
@@ -1138,7 +1138,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036234483" fileName="CustomWatchable.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable" />
   </root>
-  <root nodeId="5117350825036256317">
+  <root nodeId="5117350825036256317" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="15" startPosition="85" endLine="16" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="16" startPosition="119" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1257,7 +1257,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036256317" fileName="CustomWatchablesContainer.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer" />
   </root>
-  <root nodeId="5117350825036256331">
+  <root nodeId="5117350825036256331" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="15" startPosition="72" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="16" startPosition="106" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1383,7 +1383,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036256331" fileName="CustomViewer.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CustomViewer" />
   </root>
-  <root nodeId="5117350825036256333">
+  <root nodeId="5117350825036256333" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="11" startPosition="41" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="14" startPosition="36" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="18" startPosition="68" endLine="19" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1406,7 +1406,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036256333" fileName="WatchableType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.WatchableType" />
   </root>
-  <root nodeId="5117350825036256338">
+  <root nodeId="5117350825036256338" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="12" startPosition="55" endLine="13" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="13" startPosition="110" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCHABLE" />
     <nodeInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="14" startPosition="53" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
@@ -1451,7 +1451,7 @@
     </scopeInfo>
     <unitInfo nodeId="5117350825036256338" fileName="WatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.WatchableCreator" />
   </root>
-  <root nodeId="5264817233616806004">
+  <root nodeId="5264817233616806004" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="11" startPosition="73" endLine="12" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="14" startPosition="57" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="18" startPosition="89" endLine="19" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1474,7 +1474,7 @@
     </scopeInfo>
     <unitInfo nodeId="5264817233616806004" fileName="GetWatchablesBlock_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.GetWatchablesBlock_ConceptFunction" />
   </root>
-  <root nodeId="5264817233616809557">
+  <root nodeId="5264817233616809557" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="11" startPosition="86" endLine="12" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="14" startPosition="61" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="18" startPosition="93" endLine="19" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1497,7 +1497,7 @@
     </scopeInfo>
     <unitInfo nodeId="5264817233616809557" fileName="OriginalValue_ConceptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.OriginalValue_ConceptFunctionParameter" />
   </root>
-  <root nodeId="680105146889009728">
+  <root nodeId="680105146889009728" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="16" startPosition="81" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="17" startPosition="115" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1634,7 +1634,7 @@
     </scopeInfo>
     <unitInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer" />
   </root>
-  <root nodeId="721063219978402832">
+  <root nodeId="721063219978402832" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="11" startPosition="52" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="18" startPosition="70" endLine="19" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1657,7 +1657,7 @@
     </scopeInfo>
     <unitInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod" />
   </root>
-  <root nodeId="7430908097350531683">
+  <root nodeId="7430908097350531683" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="11" startPosition="43" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="18" startPosition="70" endLine="19" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1680,7 +1680,7 @@
     </scopeInfo>
     <unitInfo nodeId="7430908097350531683" fileName="StringValueType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.StringValueType" />
   </root>
-  <root nodeId="7471356136625957315">
+  <root nodeId="7471356136625957315" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="15" startPosition="77" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="16" startPosition="114" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1762,7 +1762,7 @@
     </scopeInfo>
     <unitInfo nodeId="7471356136625957315" fileName="StringValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.StringValueOperation" />
   </root>
-  <root nodeId="7744028807303021417">
+  <root nodeId="7744028807303021417" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="16" startPosition="76" endLine="17" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="17" startPosition="113" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1892,7 +1892,7 @@
     </scopeInfo>
     <unitInfo nodeId="7744028807303021417" fileName="CallMethodOperation.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.CallMethodOperation" />
   </root>
-  <root nodeId="7744028807303050605">
+  <root nodeId="7744028807303050605" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="15" startPosition="75" endLine="16" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="16" startPosition="112" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1974,7 +1974,7 @@
     </scopeInfo>
     <unitInfo nodeId="7744028807303050605" fileName="JavaValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.JavaValueOperation" />
   </root>
-  <root nodeId="929171734855789933">
+  <root nodeId="929171734855789933" modelId="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
     <nodeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="16" startPosition="78" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="17" startPosition="115" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="929171734855789933" fileName="IsInstanceOfOperation.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />

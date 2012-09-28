@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="testRefactoringTargetLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="TestRefactoringTargetLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoringTargetLang.structure.TestRefactoringTargetLang_Language" />
-  <root nodeId="1198682124373">
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="testRefactoringTargetLang.structure.StructureAspectDescriptor" />
+  <root nodeId="1198682124373" modelId="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)">
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="11" startPosition="54" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="18" startPosition="74" endLine="19" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     </scopeInfo>
     <unitInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="testRefactoringTargetLang.structure.AnsotherGoodConcept" />
   </root>
-  <root nodeId="1199636171010">
+  <root nodeId="1199636171010" modelId="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)">
     <nodeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="13" startPosition="54" endLine="14" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="14" startPosition="97" endLine="15" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VERY_NICE_PROPERTY" />
     <nodeInfo nodeId="1199636171010" fileName="AbstractGoodConcept.java" startLine="15" startPosition="69" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANOTHER_GOOD_CONCEPT" />

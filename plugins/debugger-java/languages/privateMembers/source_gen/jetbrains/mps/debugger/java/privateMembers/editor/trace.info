@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5619723216767159054">
+  <root nodeId="5619723216767159054" modelId="r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)">
     <nodeInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="40" startPosition="79" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="44" startPosition="89" endLine="45" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="45" startPosition="96" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -297,13 +297,13 @@
       <varInfo nodeId="5619723216767159064" varName="editorContext" />
       <varInfo nodeId="5619723216767159064" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="39" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor" />
-    <unitInfo nodeId="5619723216767159216" fileName="PrivateStaticFieldReference_Editor.java" startLine="109" startPosition="62" endLine="114" endPosition="7" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$1" />
-    <unitInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="104" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_customReplace_cellMenu_c0c0" />
-    <unitInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="140" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_generic_cellMenu_a0c0" />
     <unitInfo nodeId="5619723216767159088" fileName="PrivateStaticFieldReference_Editor.java" startLine="135" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_b0c0" />
+    <unitInfo nodeId="5619723216767159216" fileName="PrivateStaticFieldReference_Editor.java" startLine="109" startPosition="62" endLine="114" endPosition="7" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$1" />
+    <unitInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="140" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_generic_cellMenu_a0c0" />
+    <unitInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="104" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_customReplace_cellMenu_c0c0" />
     <unitInfo nodeId="5619723216767159059" fileName="PrivateStaticFieldReference_Editor.java" startLine="155" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$_Inline_62ivzp_a0a" />
     <unitInfo nodeId="5619723216767159063" fileName="PrivateStaticFieldReference_Editor.java" startLine="188" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$_Inline_62ivzp_a2a" />
+    <unitInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="39" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor" />
   </root>
 </debugInfo>
 

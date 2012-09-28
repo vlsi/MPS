@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest$1" />
-  <root nodeId="834312300517849416">
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest" />
+  <root nodeId="834312300517849416" modelId="r:f614deea-8cff-4e4a-82d2-ec479420b091(jetbrains.mps.build.custommps.plugin)">
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="37" startPosition="59" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="38" startPosition="82" endLine="39" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="41" startPosition="37" endLine="42" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -244,15 +244,15 @@
     </scopeInfo>
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="29" endLine="126" endPosition="8" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="77" startPosition="0" endLine="128" endPosition="0" />
-    <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="37" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet" />
-    <unitInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="17" endLine="126" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$1" />
+    <unitInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="110" startPosition="67" endLine="114" endPosition="25" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$4" />
+    <unitInfo nodeId="3736430118459669525" fileName="CopyBuildArtifacts_Facet.java" startLine="108" startPosition="60" endLine="116" endPosition="21" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$3" />
     <unitInfo nodeId="1670948443106485492" fileName="CopyBuildArtifacts_Facet.java" startLine="91" startPosition="67" endLine="102" endPosition="21" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$2" />
     <unitInfo nodeId="1986840443401665513" fileName="CopyBuildArtifacts_Facet.java" startLine="106" startPosition="53" endLine="118" endPosition="17" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$2" />
-    <unitInfo nodeId="3736430118459669525" fileName="CopyBuildArtifacts_Facet.java" startLine="108" startPosition="60" endLine="116" endPosition="21" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$3" />
-    <unitInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="110" startPosition="67" endLine="114" endPosition="25" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$4" />
-    <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="209" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$TargetProperties" />
-    <unitInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="69" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$Target_copyFiles" />
     <unitInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="185" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet.Target_copyFiles$Parameters" />
+    <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="209" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$TargetProperties" />
+    <unitInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="17" endLine="126" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$1" />
+    <unitInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="69" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$Target_copyFiles" />
+    <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="37" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet" />
   </root>
 </debugInfo>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5797068448049410625">
+  <root nodeId="5797068448049410625" modelId="r:b522c221-948b-4fac-886a-2badf29b5fb4(jetbrains.mps.ide.hierarchy.toggle)">
     <nodeInfo nodeId="5797068448049415441" fileName="GroupedToggleAction.java" startLine="9" startPosition="64" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
     <nodeInfo nodeId="5797068448049415445" fileName="GroupedToggleAction.java" startLine="10" startPosition="37" endLine="11" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroup" />
     <nodeInfo nodeId="5797068448049415461" fileName="GroupedToggleAction.java" startLine="13" startPosition="101" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -51,7 +51,7 @@
     </scopeInfo>
     <unitInfo nodeId="5797068448049410625" fileName="GroupedToggleAction.java" startLine="9" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction" />
   </root>
-  <root nodeId="5797068448049415641">
+  <root nodeId="5797068448049415641" modelId="r:b522c221-948b-4fac-886a-2badf29b5fb4(jetbrains.mps.ide.hierarchy.toggle)">
     <nodeInfo nodeId="5797068448049415643" fileName="ToggleActionGroup.java" startLine="8" startPosition="32" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />
     <nodeInfo nodeId="5797068448049415660" fileName="ToggleActionGroup.java" startLine="14" startPosition="47" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049415665" fileName="ToggleActionGroup.java" startLine="15" startPosition="26" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

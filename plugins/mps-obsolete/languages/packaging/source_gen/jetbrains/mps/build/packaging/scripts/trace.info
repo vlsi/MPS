@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="462257719548498247">
+  <root nodeId="462257719548498247" modelId="r:b0216b35-f2a6-4584-8a8d-009581b87b4c(jetbrains.mps.build.packaging.scripts)">
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="18" startPosition="81" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="21" startPosition="31" endLine="22" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="25" startPosition="41" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -352,14 +352,14 @@
     <scopeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="17" startPosition="77" endLine="103" endPosition="3">
       <varInfo nodeId="462257719548498247" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="17" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript" />
+    <unitInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="78" startPosition="28" endLine="102" endPosition="5" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$3" />
     <unitInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="20" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$1" />
     <unitInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="49" startPosition="28" endLine="77" endPosition="5" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$2" />
-    <unitInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="78" startPosition="28" endLine="102" endPosition="5" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$3" />
-    <unitInfo nodeId="462257719548525296" fileName="DirctoriesInLayout_MigrationScript.java" startLine="153" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0" />
     <unitInfo nodeId="462257719548525336" fileName="DirctoriesInLayout_MigrationScript.java" startLine="227" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0" />
-    <unitInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="109" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a" />
+    <unitInfo nodeId="462257719548525296" fileName="DirctoriesInLayout_MigrationScript.java" startLine="153" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0" />
     <unitInfo nodeId="462257719548525316" fileName="DirctoriesInLayout_MigrationScript.java" startLine="190" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a" />
+    <unitInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="109" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript$QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a" />
+    <unitInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="17" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.DirctoriesInLayout_MigrationScript" />
   </root>
 </debugInfo>
 

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Facet_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.structure.Facet_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.make.facet.structure.StructureAspectDescriptor" />
-  <root nodeId="119022571401949652">
+  <root nodeId="119022571401949652" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="119022571401949652" fileName="ResourceTypeDeclaration.java" startLine="13" startPosition="58" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="119022571401949652" fileName="ResourceTypeDeclaration.java" startLine="14" startPosition="100" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RESOURCE_TYPE" />
     <nodeInfo nodeId="119022571401949652" fileName="ResourceTypeDeclaration.java" startLine="17" startPosition="46" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -51,7 +51,7 @@
     </scopeInfo>
     <unitInfo nodeId="119022571401949652" fileName="ResourceTypeDeclaration.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourceTypeDeclaration" />
   </root>
-  <root nodeId="119022571402207412">
+  <root nodeId="119022571402207412" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="119022571402207412" fileName="ResourceClassifierType.java" startLine="12" startPosition="60" endLine="13" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="119022571402207412" fileName="ResourceClassifierType.java" startLine="15" startPosition="45" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="119022571402207412" fileName="ResourceClassifierType.java" startLine="19" startPosition="35" endLine="20" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -84,7 +84,7 @@
     </scopeInfo>
     <unitInfo nodeId="119022571402207412" fileName="ResourceClassifierType.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourceClassifierType" />
   </root>
-  <root nodeId="1675547159918562083">
+  <root nodeId="1675547159918562083" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -195,10 +195,10 @@
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1675547159918562083" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy" />
     <unitInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy_PropertySupport" />
+    <unitInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy" />
   </root>
-  <root nodeId="1919086248986845077">
+  <root nodeId="1919086248986845077" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="1919086248986845077" fileName="NamedFacetReference.java" startLine="10" startPosition="57" endLine="11" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1919086248986845077" fileName="NamedFacetReference.java" startLine="13" startPosition="42" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1919086248986845077" fileName="NamedFacetReference.java" startLine="17" startPosition="74" endLine="18" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -221,7 +221,7 @@
     </scopeInfo>
     <unitInfo nodeId="1919086248986845077" fileName="NamedFacetReference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.structure.NamedFacetReference" />
   </root>
-  <root nodeId="2191561637326275574">
+  <root nodeId="2191561637326275574" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="2191561637326275574" fileName="ResourceSpecificPropertiesExpression.java" startLine="11" startPosition="70" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2191561637326275574" fileName="ResourceSpecificPropertiesExpression.java" startLine="12" startPosition="113" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTIES" />
     <nodeInfo nodeId="2191561637326275574" fileName="ResourceSpecificPropertiesExpression.java" startLine="13" startPosition="55" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RESOURCE" />
@@ -266,7 +266,7 @@
     </scopeInfo>
     <unitInfo nodeId="2191561637326275574" fileName="ResourceSpecificPropertiesExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression" />
   </root>
-  <root nodeId="2191561637326275576">
+  <root nodeId="2191561637326275576" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="2191561637326275576" fileName="IPropertyExpression.java" startLine="8" startPosition="59" endLine="9" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2191561637326275576" fileName="IPropertyExpression.java" startLine="9" startPosition="96" endLine="10" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RESOURCE" />
     <nodeInfo nodeId="2191561637326275576" fileName="IPropertyExpression.java" startLine="11" startPosition="0" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResource#()Ljetbrains/mps/smodel/INodeAdapter;" />
@@ -277,7 +277,7 @@
     </scopeInfo>
     <unitInfo nodeId="2191561637326275576" fileName="IPropertyExpression.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.structure.IPropertyExpression" />
   </root>
-  <root nodeId="3344436107830227888">
+  <root nodeId="3344436107830227888" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="3344436107830227888" fileName="ForeignParametersExpression.java" startLine="11" startPosition="61" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3344436107830227888" fileName="ForeignParametersExpression.java" startLine="12" startPosition="104" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET" />
     <nodeInfo nodeId="3344436107830227888" fileName="ForeignParametersExpression.java" startLine="15" startPosition="50" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -311,7 +311,7 @@
     </scopeInfo>
     <unitInfo nodeId="3344436107830227888" fileName="ForeignParametersExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ForeignParametersExpression" />
   </root>
-  <root nodeId="3344436107830227889">
+  <root nodeId="3344436107830227889" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="3344436107830227889" fileName="ForeignParametersComponentExpression.java" startLine="15" startPosition="104" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3344436107830227889" fileName="ForeignParametersComponentExpression.java" startLine="16" startPosition="113" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="3344436107830227889" fileName="ForeignParametersComponentExpression.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -414,11 +414,11 @@
     </scopeInfo>
     <unitInfo nodeId="3344436107830227889" fileName="ForeignParametersComponentExpression.java" startLine="15" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression" />
   </root>
-  <root nodeId="6418371274763029521">
+  <root nodeId="6418371274763029521" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="6418371274763029521" fileName="IFacet.java" startLine="7" startPosition="46" endLine="8" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="6418371274763029521" fileName="IFacet.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.facet.structure.IFacet" />
   </root>
-  <root nodeId="6418371274763029523">
+  <root nodeId="6418371274763029523" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="6418371274763029523" fileName="FacetDeclaration.java" startLine="16" startPosition="95" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6418371274763029523" fileName="FacetDeclaration.java" startLine="17" startPosition="93" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6418371274763029523" fileName="FacetDeclaration.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -615,7 +615,7 @@
     </scopeInfo>
     <unitInfo nodeId="6418371274763029523" fileName="FacetDeclaration.java" startLine="16" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetDeclaration" />
   </root>
-  <root nodeId="6418371274763029565">
+  <root nodeId="6418371274763029565" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="6418371274763029565" fileName="TargetDeclaration.java" startLine="16" startPosition="77" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6418371274763029565" fileName="TargetDeclaration.java" startLine="17" startPosition="94" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6418371274763029565" fileName="TargetDeclaration.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -814,7 +814,7 @@
     <scopeInfo nodeId="6418371274763029565" fileName="TargetDeclaration.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
     <unitInfo nodeId="6418371274763029565" fileName="TargetDeclaration.java" startLine="16" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
   </root>
-  <root nodeId="6418371274763029600">
+  <root nodeId="6418371274763029600" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="6418371274763029600" fileName="TargetDependency.java" startLine="11" startPosition="51" endLine="12" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6418371274763029600" fileName="TargetDependency.java" startLine="12" startPosition="93" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="QUALIFIER" />
     <nodeInfo nodeId="6418371274763029600" fileName="TargetDependency.java" startLine="13" startPosition="53" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDS_ON" />
@@ -862,7 +862,7 @@
     <scopeInfo nodeId="6418371274763029600" fileName="TargetDependency.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="6418371274763029600" fileName="TargetDependency.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependency" />
   </root>
-  <root nodeId="6447445394688422642">
+  <root nodeId="6447445394688422642" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="6447445394688422642" fileName="FacetReference.java" startLine="11" startPosition="49" endLine="12" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6447445394688422642" fileName="FacetReference.java" startLine="12" startPosition="91" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FACET" />
     <nodeInfo nodeId="6447445394688422642" fileName="FacetReference.java" startLine="15" startPosition="37" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -896,7 +896,7 @@
     </scopeInfo>
     <unitInfo nodeId="6447445394688422642" fileName="FacetReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetReference" />
   </root>
-  <root nodeId="6447445394688555033">
+  <root nodeId="6447445394688555033" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="6447445394688555033" fileName="ExtendsFacetReference.java" startLine="10" startPosition="59" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6447445394688555033" fileName="ExtendsFacetReference.java" startLine="13" startPosition="44" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6447445394688555033" fileName="ExtendsFacetReference.java" startLine="17" startPosition="76" endLine="18" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -919,7 +919,7 @@
     </scopeInfo>
     <unitInfo nodeId="6447445394688555033" fileName="ExtendsFacetReference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ExtendsFacetReference" />
   </root>
-  <root nodeId="7178445679340358576">
+  <root nodeId="7178445679340358576" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="7178445679340358576" fileName="FacetReferenceExpression.java" startLine="11" startPosition="58" endLine="12" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7178445679340358576" fileName="FacetReferenceExpression.java" startLine="12" startPosition="101" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFERENCE" />
     <nodeInfo nodeId="7178445679340358576" fileName="FacetReferenceExpression.java" startLine="15" startPosition="47" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -953,7 +953,7 @@
     </scopeInfo>
     <unitInfo nodeId="7178445679340358576" fileName="FacetReferenceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetReferenceExpression" />
   </root>
-  <root nodeId="7320828025189345662">
+  <root nodeId="7320828025189345662" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="7320828025189345662" fileName="ParametersDeclaration.java" startLine="11" startPosition="66" endLine="12" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7320828025189345662" fileName="ParametersDeclaration.java" startLine="14" startPosition="44" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7320828025189345662" fileName="ParametersDeclaration.java" startLine="18" startPosition="76" endLine="19" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -976,7 +976,7 @@
     </scopeInfo>
     <unitInfo nodeId="7320828025189345662" fileName="ParametersDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ParametersDeclaration" />
   </root>
-  <root nodeId="7320828025189375154">
+  <root nodeId="7320828025189375154" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="7320828025189375154" fileName="LocalParametersExpression.java" startLine="11" startPosition="59" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7320828025189375154" fileName="LocalParametersExpression.java" startLine="14" startPosition="48" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7320828025189375154" fileName="LocalParametersExpression.java" startLine="18" startPosition="80" endLine="19" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -999,7 +999,7 @@
     </scopeInfo>
     <unitInfo nodeId="7320828025189375154" fileName="LocalParametersExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.structure.LocalParametersExpression" />
   </root>
-  <root nodeId="7320828025189375155">
+  <root nodeId="7320828025189375155" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="7320828025189375155" fileName="LocalParametersComponentExpression.java" startLine="15" startPosition="102" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7320828025189375155" fileName="LocalParametersComponentExpression.java" startLine="16" startPosition="111" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7320828025189375155" fileName="LocalParametersComponentExpression.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1102,7 +1102,7 @@
     </scopeInfo>
     <unitInfo nodeId="7320828025189375155" fileName="LocalParametersComponentExpression.java" startLine="15" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.structure.LocalParametersComponentExpression" />
   </root>
-  <root nodeId="8351679702044320297">
+  <root nodeId="8351679702044320297" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="8351679702044320297" fileName="RelatedFacetReference.java" startLine="10" startPosition="59" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8351679702044320297" fileName="RelatedFacetReference.java" startLine="13" startPosition="44" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8351679702044320297" fileName="RelatedFacetReference.java" startLine="17" startPosition="76" endLine="18" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1125,7 +1125,7 @@
     </scopeInfo>
     <unitInfo nodeId="8351679702044320297" fileName="RelatedFacetReference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.structure.RelatedFacetReference" />
   </root>
-  <root nodeId="8351679702044326370">
+  <root nodeId="8351679702044326370" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -1236,10 +1236,10 @@
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8351679702044326370" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
     <unitInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier_PropertySupport" />
+    <unitInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
   </root>
-  <root nodeId="8703512757937156087">
+  <root nodeId="8703512757937156087" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
     <nodeInfo nodeId="8703512757937156087" fileName="TargetReferenceExpression.java" startLine="11" startPosition="59" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8703512757937156087" fileName="TargetReferenceExpression.java" startLine="12" startPosition="102" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET" />
     <nodeInfo nodeId="8703512757937156087" fileName="TargetReferenceExpression.java" startLine="13" startPosition="47" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FACET_REF" />

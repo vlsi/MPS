@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2084096332909492403">
+  <root nodeId="2084096332909492403" modelId="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.xmlQuery.runtime)">
     <nodeInfo nodeId="2084096332909499883" fileName="XMLSAXHandler.java" startLine="11" startPosition="24" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2084096332909492405" fileName="XMLSAXHandler.java" startLine="7" startPosition="54" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XMLSAXHandler#()V" />
     <nodeInfo nodeId="2084096332909495080" fileName="XMLSAXHandler.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()null" />
@@ -10,7 +10,7 @@
     <scopeInfo nodeId="2084096332909495080" fileName="XMLSAXHandler.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="2084096332909492403" fileName="XMLSAXHandler.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
   </root>
-  <root nodeId="2603967516254988460">
+  <root nodeId="2603967516254988460" modelId="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.xmlQuery.runtime)">
     <nodeInfo nodeId="108366216419412903" fileName="AttributeUtils.java" startLine="34" startPosition="39" endLine="35" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3903783035314778095" fileName="AttributeUtils.java" startLine="40" startPosition="26" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3903783035314778102" fileName="AttributeUtils.java" startLine="42" startPosition="12" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -56,7 +56,7 @@
     </scopeInfo>
     <unitInfo nodeId="2603967516254988460" fileName="AttributeUtils.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
   </root>
-  <root nodeId="8666712036583221658">
+  <root nodeId="8666712036583221658" modelId="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.xmlQuery.runtime)">
     <nodeInfo nodeId="8666712036583221660" fileName="BreakParseSAXException.java" startLine="7" startPosition="58" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakParseSAXException#()V" />
     <scopeInfo nodeId="8666712036583221663" fileName="BreakParseSAXException.java" startLine="8" startPosition="35" endLine="8" endPosition="35" />
     <scopeInfo nodeId="8666712036583221660" fileName="BreakParseSAXException.java" startLine="7" startPosition="58" endLine="9" endPosition="3" />

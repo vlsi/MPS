@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Data_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.Data_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.StructureAspectDescriptor" />
-  <root nodeId="6186432342008318668">
+  <root nodeId="6186432342008318668" modelId="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)">
     <nodeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="15" startPosition="71" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="16" startPosition="113" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -199,7 +199,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008318668" fileName="RootConcept.java" startLine="15" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept" />
   </root>
-  <root nodeId="6186432342008329114">
+  <root nodeId="6186432342008329114" modelId="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)">
     <nodeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="15" startPosition="81" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="16" startPosition="123" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -292,7 +292,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008329114" fileName="ChildConceptWeaveEach.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach" />
   </root>
-  <root nodeId="6186432342008329116">
+  <root nodeId="6186432342008329116" modelId="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)">
     <nodeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="15" startPosition="77" endLine="16" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="16" startPosition="119" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -385,7 +385,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008329116" fileName="ChildConceptWeave.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave" />
   </root>
-  <root nodeId="6186432342008533337">
+  <root nodeId="6186432342008533337" modelId="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)">
     <nodeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="15" startPosition="81" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="16" startPosition="123" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -478,7 +478,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008533337" fileName="ChildConceptWeaveMany.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany" />
   </root>
-  <root nodeId="6186432342008533347">
+  <root nodeId="6186432342008533347" modelId="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)">
     <nodeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="15" startPosition="85" endLine="16" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="16" startPosition="127" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6186432342008533347" fileName="ChildConceptWeaveEachMany.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

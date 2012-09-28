@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.IntentionsDescriptor" />
-  <root nodeId="1195490883262">
+  <root nodeId="1195490883262" modelId="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)">
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -77,7 +77,7 @@
     </scopeInfo>
     <unitInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
   </root>
-  <root nodeId="3302086321380606109">
+  <root nodeId="3302086321380606109" modelId="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)">
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -228,11 +228,11 @@
       <varInfo nodeId="3302086321380616757" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3302086321380616757" fileName="CreateTypesystemIntention_Intention.java" startLine="72" startPosition="0" endLine="105" endPosition="0" />
-    <unitInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
-    <unitInfo nodeId="3302086321380616757" fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />
     <unitInfo nodeId="3302086321380616790" fileName="CreateTypesystemIntention_Intention.java" startLine="107" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a2a7" />
+    <unitInfo nodeId="3302086321380616757" fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />
+    <unitInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
   </root>
-  <root nodeId="6840209722389643031">
+  <root nodeId="6840209722389643031" modelId="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)">
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -301,7 +301,7 @@
     </scopeInfo>
     <unitInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />
   </root>
-  <root nodeId="6840209722389750234">
+  <root nodeId="6840209722389750234" modelId="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)">
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -346,7 +346,7 @@
     </scopeInfo>
     <unitInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />
   </root>
-  <root nodeId="8293956702610699517">
+  <root nodeId="8293956702610699517" modelId="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)">
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="31" startPosition="36" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="35" startPosition="37" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -564,14 +564,14 @@
       <varInfo nodeId="8293956702610709803" varName="parameter_8" />
       <varInfo nodeId="8293956702610709803" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="23" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention" />
     <unitInfo nodeId="8293956702610709745" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="48" startPosition="118" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$1" />
     <unitInfo nodeId="8293956702610709912" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="54" startPosition="117" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$2" />
     <unitInfo nodeId="8293956702610709849" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="59" startPosition="159" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$3" />
     <unitInfo nodeId="8293956702610709946" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$4" />
-    <unitInfo nodeId="8293956702610709748" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="74" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$QuotationClass_5rn0la_a0a0a0a0a0a0a0f" />
     <unitInfo nodeId="8293956702610709958" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="152" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$QuotationClass_5rn0la_a1a0a0a0a0a3a5" />
+    <unitInfo nodeId="8293956702610709748" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="74" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$QuotationClass_5rn0la_a0a0a0a0a0a0a0f" />
     <unitInfo nodeId="8293956702610709803" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="112" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention$QuotationClass_5rn0la_a1a0b0f" />
+    <unitInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="23" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention" />
   </root>
 </debugInfo>
 

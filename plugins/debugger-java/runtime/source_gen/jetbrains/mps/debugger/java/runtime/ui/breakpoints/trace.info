@@ -193,16 +193,17 @@
       <varInfo nodeId="742486944792922351" varName="descriptors" />
       <varInfo nodeId="742486944792922324" varName="hasStubs" />
     </scopeInfo>
+    <scopeInfo nodeId="742486944792921410" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="25" endLine="58" endPosition="9" />
     <scopeInfo nodeId="742486944792922316" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="25" endLine="58" endPosition="9">
       <varInfo nodeId="742486944792922320" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="742486944792921409" fileName="ChooseFromStubsByNameModel.java" startLine="32" startPosition="57" endLine="60" endPosition="0" />
     <scopeInfo nodeId="742486944792820993" fileName="ChooseFromStubsByNameModel.java" startLine="31" startPosition="44" endLine="60" endPosition="7" />
     <scopeInfo nodeId="742486944792820991" fileName="ChooseFromStubsByNameModel.java" startLine="30" startPosition="0" endLine="61" endPosition="3" />
-    <unitInfo nodeId="742486944792816688" fileName="ChooseFromStubsByNameModel.java" startLine="28" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel" />
-    <unitInfo nodeId="742486944792921409" fileName="ChooseFromStubsByNameModel.java" startLine="32" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$1" />
     <unitInfo nodeId="742486944792922401" fileName="ChooseFromStubsByNameModel.java" startLine="67" startPosition="45" endLine="72" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
     <unitInfo nodeId="742486944792821118" fileName="ChooseFromStubsByNameModel.java" startLine="124" startPosition="42" endLine="134" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$3" />
+    <unitInfo nodeId="742486944792921409" fileName="ChooseFromStubsByNameModel.java" startLine="32" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$1" />
+    <unitInfo nodeId="742486944792816688" fileName="ChooseFromStubsByNameModel.java" startLine="28" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel" />
   </root>
   <root nodeId="742486944792820722" modelId="r:0bb5e892-3294-41a6-b5db-b1bdf3480f53(jetbrains.mps.debugger.java.runtime.ui.breakpoints)">
     <nodeInfo nodeId="742486944792820725" fileName="StubsClassChooserDialog.java" startLine="18" startPosition="66" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
@@ -264,9 +265,9 @@
       <varInfo nodeId="742486944792820737" varName="mainFrame" />
       <varInfo nodeId="742486944792820739" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="742486944792820722" fileName="StubsClassChooserDialog.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog" />
-    <unitInfo nodeId="742486944792820750" fileName="StubsClassChooserDialog.java" startLine="25" startPosition="18" endLine="34" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog$1" />
     <unitInfo nodeId="742486944792820775" fileName="StubsClassChooserDialog.java" startLine="36" startPosition="23" endLine="41" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog$2" />
+    <unitInfo nodeId="742486944792820750" fileName="StubsClassChooserDialog.java" startLine="25" startPosition="18" endLine="34" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog$1" />
+    <unitInfo nodeId="742486944792820722" fileName="StubsClassChooserDialog.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.StubsClassChooserDialog" />
   </root>
   <root nodeId="742486944792833383" modelId="r:0bb5e892-3294-41a6-b5db-b1bdf3480f53(jetbrains.mps.debugger.java.runtime.ui.breakpoints)">
     <nodeInfo nodeId="742486944792833386" fileName="ExceptionChooserDialog.java" startLine="14" startPosition="69" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThrowableClassifier" />
@@ -305,8 +306,8 @@
       <varInfo nodeId="742486944792833392" varName="mainFrame" />
       <varInfo nodeId="742486944792833394" varName="title" />
     </scopeInfo>
-    <unitInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
     <unitInfo nodeId="742486944792924340" fileName="ExceptionChooserDialog.java" startLine="20" startPosition="45" endLine="24" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog$1" />
+    <unitInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
   </root>
 </debugInfo>
 

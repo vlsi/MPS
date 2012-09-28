@@ -70,8 +70,8 @@
       <varInfo nodeId="3671170675134081157" varName="reference" />
       <varInfo nodeId="3671170675134104144" varName="sourceNode" />
     </scopeInfo>
-    <unitInfo nodeId="3671170675134061970" fileName="ScopeResolver.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.resolve.ScopeResolver" />
     <unitInfo nodeId="3671170675134081219" fileName="ScopeResolver.java" startLine="32" startPosition="65" endLine="65" endPosition="5" unitName="jetbrains.mps.resolve.ScopeResolver$1" />
+    <unitInfo nodeId="3671170675134061970" fileName="ScopeResolver.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.resolve.ScopeResolver" />
   </root>
   <root nodeId="3840495236046418263" modelId="r:f77c2bf1-6f5c-4cb2-b314-a84dd502542e(jetbrains.mps.resolve)">
     <nodeInfo nodeId="3671170675134061814" fileName="ResolverComponent.java" startLine="16" startPosition="57" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -184,8 +184,8 @@
       <varInfo nodeId="1802459475176537106" varName="operationContext" />
       <varInfo nodeId="1802459475176537100" varName="references" />
     </scopeInfo>
-    <unitInfo nodeId="3840495236046418263" fileName="ResolverComponent.java" startLine="16" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.resolve.ResolverComponent" />
     <unitInfo nodeId="1802459475176462972" fileName="ResolverComponent.java" startLine="18" startPosition="67" endLine="30" endPosition="3" unitName="jetbrains.mps.resolve.ResolverComponent$1" />
+    <unitInfo nodeId="3840495236046418263" fileName="ResolverComponent.java" startLine="16" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.resolve.ResolverComponent" />
   </root>
 </debugInfo>
 

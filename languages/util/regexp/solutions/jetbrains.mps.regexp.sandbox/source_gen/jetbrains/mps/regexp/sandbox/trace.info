@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1174921457453">
+  <root nodeId="1174921457453" modelId="r:00000000-0000-4000-0000-011c89590520(jetbrains.mps.regexp.sandbox)">
     <nodeInfo nodeId="1175254972364" fileName="YYY.java" startLine="8" startPosition="23" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_y3g_b0a0a" />
     <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a0.java" startLine="8" startPosition="55" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
     <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a0.java" startLine="9" startPosition="34" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />

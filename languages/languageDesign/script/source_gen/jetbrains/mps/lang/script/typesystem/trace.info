@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.TypesystemDescriptor" />
-  <root nodeId="1177463041902">
+  <root nodeId="1177463041902" modelId="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)">
     <nodeInfo nodeId="1177463235295" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="22" startPosition="117" endLine="23" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209063748602" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209063748602" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="25" startPosition="46" endLine="26" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -92,8 +92,8 @@
     <scopeInfo nodeId="1196777967634" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1196777967634" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="1177463041902" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" />
     <unitInfo nodeId="1196777967634" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule$QuotationClass_4okgzg_a0a1a0" />
+    <unitInfo nodeId="1177463041902" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" />
   </root>
 </debugInfo>
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ConceptBehavior_BehaviorDescriptor.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
   <unitInfo fileName="ConceptConstructorDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptConstructorDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="InternalConceptDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationReference_BehaviorDescriptor" />
-  <unitInfo fileName="InternalConceptDeclarationsHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
-  <unitInfo fileName="LocalBehaviorMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="StaticConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="SuperNodeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
   <unitInfo fileName="ThisNodeExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
+  <unitInfo fileName="LocalBehaviorMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="StaticConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="InternalConceptDeclarationsHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConceptBehavior_BehaviorDescriptor.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
   <root nodeId="1225194243289" modelId="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)">
     <nodeInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="38" startPosition="39" endLine="39" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_6261424444345978650" />
     <nodeInfo nodeId="1225194243307" fileName="ConceptBehavior_Behavior.java" startLine="44" startPosition="78" endLine="45" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -186,6 +186,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1225194243363" fileName="ConceptBehavior_Behavior.java" startLine="57" startPosition="154" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1225194243428" fileName="ConceptBehavior_Behavior.java" startLine="69" startPosition="76" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="5466054087443746072" fileName="ConceptBehavior_Behavior.java" startLine="205" startPosition="29" endLine="208" endPosition="9" />
     <scopeInfo nodeId="5466054087443746073" fileName="ConceptBehavior_Behavior.java" startLine="205" startPosition="29" endLine="208" endPosition="9">
       <varInfo nodeId="5466054087443746077" varName="method" />
     </scopeInfo>
@@ -251,6 +252,9 @@
       <varInfo nodeId="4892662966716545708" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="4892662966716545627" fileName="ConceptBehavior_Behavior.java" startLine="182" startPosition="122" endLine="188" endPosition="9" />
+    <scopeInfo nodeId="4892662966716545810" fileName="ConceptBehavior_Behavior.java" startLine="182" startPosition="122" endLine="188" endPosition="9">
+      <varInfo nodeId="4892662966716545829" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1818770337282950311" fileName="ConceptBehavior_Behavior.java" startLine="191" startPosition="48" endLine="197" endPosition="5">
       <varInfo nodeId="1818770337282950317" varName="concept" />
     </scopeInfo>
@@ -262,6 +266,7 @@
       <varInfo nodeId="1225194243289" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="3430761957596392608" fileName="ConceptBehavior_Behavior.java" startLine="98" startPosition="38" endLine="105" endPosition="9" />
+    <scopeInfo nodeId="1240544041071409902" fileName="ConceptBehavior_Behavior.java" startLine="127" startPosition="109" endLine="134" endPosition="7" />
     <scopeInfo nodeId="1240544041071409908" fileName="ConceptBehavior_Behavior.java" startLine="127" startPosition="109" endLine="134" endPosition="7">
       <varInfo nodeId="1240544041071409911" varName="meth" />
     </scopeInfo>
@@ -350,10 +355,10 @@
     <scopeInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="160" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="1225194243289" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="38" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior" />
-    <unitInfo nodeId="1225194243466" fileName="ConceptBehavior_Behavior.java" startLine="79" startPosition="59" endLine="107" endPosition="5" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior$1" />
     <unitInfo nodeId="1225194243582" fileName="ConceptBehavior_Behavior.java" startLine="112" startPosition="15" endLine="120" endPosition="5" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior$2" />
     <unitInfo nodeId="1225220804853" fileName="ConceptBehavior_Behavior.java" startLine="231" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior$QuotationClass_xahq23_a0a0b0a0a0e" />
+    <unitInfo nodeId="1225194243466" fileName="ConceptBehavior_Behavior.java" startLine="79" startPosition="59" endLine="107" endPosition="5" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior$1" />
+    <unitInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="38" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior" />
   </root>
   <root nodeId="1225196403919" modelId="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)">
     <nodeInfo nodeId="1225196403923" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

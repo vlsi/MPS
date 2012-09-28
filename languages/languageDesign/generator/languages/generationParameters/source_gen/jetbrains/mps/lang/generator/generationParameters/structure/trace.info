@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="GenerationParameters_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.GenerationParameters_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.StructureAspectDescriptor" />
-  <root nodeId="3064182000795631740">
+  <root nodeId="3064182000795631740" modelId="r:41fb14d2-a085-41df-8256-2db786d90029(jetbrains.mps.lang.generator.generationParameters.structure)">
     <nodeInfo nodeId="3064182000795631740" fileName="DefaultGenerationParameterId.java" startLine="11" startPosition="62" endLine="12" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3064182000795631740" fileName="DefaultGenerationParameterId.java" startLine="12" startPosition="130" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTAINER" />
     <nodeInfo nodeId="3064182000795631740" fileName="DefaultGenerationParameterId.java" startLine="13" startPosition="53" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETER" />
@@ -47,7 +47,7 @@
     </scopeInfo>
     <unitInfo nodeId="3064182000795631740" fileName="DefaultGenerationParameterId.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId" />
   </root>
-  <root nodeId="8484425748929510068">
+  <root nodeId="8484425748929510068" modelId="r:41fb14d2-a085-41df-8256-2db786d90029(jetbrains.mps.lang.generator.generationParameters.structure)">
     <nodeInfo nodeId="8484425748929510068" fileName="DefaultGeneratorParameter.java" startLine="17" startPosition="106" endLine="18" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8484425748929510068" fileName="DefaultGeneratorParameter.java" startLine="18" startPosition="127" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="8484425748929510068" fileName="DefaultGeneratorParameter.java" startLine="19" startPosition="43" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -151,7 +151,7 @@
     </scopeInfo>
     <unitInfo nodeId="8484425748929510068" fileName="DefaultGeneratorParameter.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter" />
   </root>
-  <root nodeId="8484425748929510072">
+  <root nodeId="8484425748929510072" modelId="r:41fb14d2-a085-41df-8256-2db786d90029(jetbrains.mps.lang.generator.generationParameters.structure)">
     <nodeInfo nodeId="8484425748929510072" fileName="DefaultGeneratorParameterContainer.java" startLine="15" startPosition="94" endLine="16" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8484425748929510072" fileName="DefaultGeneratorParameterContainer.java" startLine="16" startPosition="136" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="8484425748929510072" fileName="DefaultGeneratorParameterContainer.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

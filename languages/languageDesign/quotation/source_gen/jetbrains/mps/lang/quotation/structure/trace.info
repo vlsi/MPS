@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Quotation_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Quotation_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.StructureAspectDescriptor" />
-  <root nodeId="1196350785110">
+  <root nodeId="1196350785110" modelId="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
     <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="10" startPosition="102" endLine="11" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="11" startPosition="102" endLine="12" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
     <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="12" startPosition="45" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
@@ -20,7 +20,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" />
   </root>
-  <root nodeId="1196350785112">
+  <root nodeId="1196350785112" modelId="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
     <nodeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="15" startPosition="83" endLine="16" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="16" startPosition="94" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
     <nodeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="17" startPosition="45" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -124,7 +124,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Antiquotation" />
   </root>
-  <root nodeId="1196350785113">
+  <root nodeId="1196350785113" modelId="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
     <nodeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="17" startPosition="89" endLine="18" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="18" startPosition="90" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -228,7 +228,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196350785113" fileName="Quotation.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Quotation" />
   </root>
-  <root nodeId="1196350785117">
+  <root nodeId="1196350785117" modelId="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
     <nodeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="15" startPosition="92" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="16" startPosition="103" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
     <nodeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="17" startPosition="45" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -332,7 +332,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" />
   </root>
-  <root nodeId="1196350785118">
+  <root nodeId="1196350785118" modelId="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
     <nodeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="15" startPosition="87" endLine="16" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="16" startPosition="98" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
     <nodeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="17" startPosition="45" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -436,7 +436,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation" />
   </root>
-  <root nodeId="1196866233735">
+  <root nodeId="1196866233735" modelId="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
     <nodeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="15" startPosition="95" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="16" startPosition="102" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
     <nodeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="17" startPosition="45" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

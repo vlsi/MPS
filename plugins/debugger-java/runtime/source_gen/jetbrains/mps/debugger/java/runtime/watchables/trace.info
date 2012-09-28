@@ -217,8 +217,8 @@
     <scopeInfo nodeId="3187167456722650284" fileName="JavaMethodWatchable.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="3187167456722650354" fileName="JavaMethodWatchable.java" startLine="50" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="3187167456722650321" fileName="JavaMethodWatchable.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="3187167456722650243" fileName="JavaMethodWatchable.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.watchables.JavaMethodWatchable" />
     <unitInfo nodeId="3187167456722650246" fileName="JavaMethodWatchable.java" startLine="57" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.watchables.JavaMethodWatchable$JavaMethodValue" />
+    <unitInfo nodeId="3187167456722650243" fileName="JavaMethodWatchable.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.watchables.JavaMethodWatchable" />
   </root>
   <root nodeId="3187167456722650363" modelId="r:50efd6f2-8d02-4682-b313-bd69c46e78df(jetbrains.mps.debugger.java.runtime.watchables)">
     <nodeInfo nodeId="3187167456722650366" fileName="JavaExceptionWatchable.java" startLine="16" startPosition="64" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myException" />

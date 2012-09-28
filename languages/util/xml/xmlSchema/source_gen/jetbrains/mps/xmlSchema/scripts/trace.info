@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8298759866585064520">
+  <root nodeId="8298759866585064520" modelId="r:8996fad8-0a6c-446b-8ae7-67b57cefce33(jetbrains.mps.xmlSchema.scripts)">
     <nodeInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="22" startPosition="87" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="25" startPosition="31" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="29" startPosition="41" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -93,11 +93,11 @@
     <scopeInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="21" startPosition="83" endLine="65" endPosition="3">
       <varInfo nodeId="8298759866585064520" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript" />
-    <unitInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="24" startPosition="28" endLine="64" endPosition="5" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript$1" />
     <unitInfo nodeId="8227085049521403375" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="47" startPosition="78" endLine="51" endPosition="9" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript$2" />
     <unitInfo nodeId="8227085049521403436" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="54" startPosition="179" endLine="58" endPosition="9" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript$2" />
     <unitInfo nodeId="8227085049521403439" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="74" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript$QuotationClass_zghlll_a0a0a0a0a0a0i0e0a0a0b0a" />
+    <unitInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="24" startPosition="28" endLine="64" endPosition="5" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript$1" />
+    <unitInfo nodeId="8298759866585064520" fileName="ConvertXMLSchemaComments_MigrationScript.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.xmlSchema.scripts.ConvertXMLSchemaComments_MigrationScript" />
   </root>
 </debugInfo>
 

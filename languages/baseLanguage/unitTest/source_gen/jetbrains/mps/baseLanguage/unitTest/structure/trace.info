@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
   <unitInfo fileName="UnitTest_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.UnitTest_Language" />
-  <root nodeId="1171931690126">
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
+  <root nodeId="1171931690126" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171931690126" fileName="TestMethod.java" startLine="14" startPosition="82" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171931690126" fileName="TestMethod.java" startLine="15" startPosition="98" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="METHOD_NAME" />
     <nodeInfo nodeId="1171931690126" fileName="TestMethod.java" startLine="16" startPosition="56" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -95,7 +95,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171931690126" fileName="TestMethod.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" />
   </root>
-  <root nodeId="1171931851043">
+  <root nodeId="1171931851043" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="14" startPosition="66" endLine="15" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="15" startPosition="97" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_CASE_NAME" />
     <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="16" startPosition="61" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
@@ -232,7 +232,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" />
   </root>
-  <root nodeId="1171931858461">
+  <root nodeId="1171931858461" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171931858461" fileName="TestMethodList.java" startLine="13" startPosition="49" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171931858461" fileName="TestMethodList.java" startLine="14" startPosition="102" endLine="15" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_METHOD" />
     <nodeInfo nodeId="1171931858461" fileName="TestMethodList.java" startLine="17" startPosition="37" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -281,7 +281,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171931858461" fileName="TestMethodList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" />
   </root>
-  <root nodeId="1171978097730">
+  <root nodeId="1171978097730" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171978097730" fileName="AssertEquals.java" startLine="10" startPosition="48" endLine="11" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171978097730" fileName="AssertEquals.java" startLine="13" startPosition="35" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1171978097730" fileName="AssertEquals.java" startLine="17" startPosition="67" endLine="18" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -304,7 +304,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171978097730" fileName="AssertEquals.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" />
   </root>
-  <root nodeId="1171981022339">
+  <root nodeId="1171981022339" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171981022339" fileName="AssertTrue.java" startLine="15" startPosition="68" endLine="16" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171981022339" fileName="AssertTrue.java" startLine="16" startPosition="98" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1171981022339" fileName="AssertTrue.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -408,7 +408,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171981022339" fileName="AssertTrue.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" />
   </root>
-  <root nodeId="1171983834376">
+  <root nodeId="1171983834376" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171983834376" fileName="AssertFalse.java" startLine="15" startPosition="69" endLine="16" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171983834376" fileName="AssertFalse.java" startLine="16" startPosition="99" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1171983834376" fileName="AssertFalse.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -512,7 +512,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171983834376" fileName="AssertFalse.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" />
   </root>
-  <root nodeId="1171985735491">
+  <root nodeId="1171985735491" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1171985735491" fileName="AssertSame.java" startLine="10" startPosition="46" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171985735491" fileName="AssertSame.java" startLine="13" startPosition="33" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1171985735491" fileName="AssertSame.java" startLine="17" startPosition="65" endLine="18" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -535,7 +535,7 @@
     </scopeInfo>
     <unitInfo nodeId="1171985735491" fileName="AssertSame.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" />
   </root>
-  <root nodeId="1172017222794">
+  <root nodeId="1172017222794" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1172017222794" fileName="Fail.java" startLine="14" startPosition="62" endLine="15" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1172017222794" fileName="Fail.java" startLine="15" startPosition="92" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1172017222794" fileName="Fail.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -628,7 +628,7 @@
     </scopeInfo>
     <unitInfo nodeId="1172017222794" fileName="Fail.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.Fail" />
   </root>
-  <root nodeId="1172028177041">
+  <root nodeId="1172028177041" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1172028177041" fileName="AssertIsNull.java" startLine="15" startPosition="70" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1172028177041" fileName="AssertIsNull.java" startLine="16" startPosition="100" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1172028177041" fileName="AssertIsNull.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -732,7 +732,7 @@
     </scopeInfo>
     <unitInfo nodeId="1172028177041" fileName="AssertIsNull.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" />
   </root>
-  <root nodeId="1172069869612">
+  <root nodeId="1172069869612" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1172069869612" fileName="AssertThrows.java" startLine="15" startPosition="70" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1172069869612" fileName="AssertThrows.java" startLine="16" startPosition="100" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1172069869612" fileName="AssertThrows.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -847,7 +847,7 @@
     </scopeInfo>
     <unitInfo nodeId="1172069869612" fileName="AssertThrows.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows" />
   </root>
-  <root nodeId="1172073500303">
+  <root nodeId="1172073500303" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1172073500303" fileName="Message.java" startLine="12" startPosition="42" endLine="13" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1172073500303" fileName="Message.java" startLine="13" startPosition="95" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE" />
     <nodeInfo nodeId="1172073500303" fileName="Message.java" startLine="16" startPosition="30" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -881,7 +881,7 @@
     </scopeInfo>
     <unitInfo nodeId="1172073500303" fileName="Message.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.Message" />
   </root>
-  <root nodeId="1172075514136">
+  <root nodeId="1172075514136" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1172075514136" fileName="MessageHolder.java" startLine="7" startPosition="53" endLine="8" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1172075514136" fileName="MessageHolder.java" startLine="8" startPosition="101" endLine="9" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE" />
     <nodeInfo nodeId="1172075514136" fileName="MessageHolder.java" startLine="10" startPosition="0" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#()Ljetbrains/mps/smodel/INodeAdapter;" />
@@ -892,19 +892,19 @@
     </scopeInfo>
     <unitInfo nodeId="1172075514136" fileName="MessageHolder.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder" />
   </root>
-  <root nodeId="1215620452633">
+  <root nodeId="1215620452633" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1215620452633" fileName="ITestable.java" startLine="7" startPosition="49" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1215620452633" fileName="ITestable.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.ITestable" />
   </root>
-  <root nodeId="1216130694486">
+  <root nodeId="1216130694486" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1216130694486" fileName="ITestCase.java" startLine="7" startPosition="61" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1216130694486" fileName="ITestCase.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.ITestCase" />
   </root>
-  <root nodeId="1216134482493">
+  <root nodeId="1216134482493" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="1216134482493" fileName="ITestMethod.java" startLine="6" startPosition="48" endLine="7" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1216134482493" fileName="ITestMethod.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod" />
   </root>
-  <root nodeId="7080278351417106679">
+  <root nodeId="7080278351417106679" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="15" startPosition="73" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="16" startPosition="103" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1008,7 +1008,7 @@
     </scopeInfo>
     <unitInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" />
   </root>
-  <root nodeId="8243879142738608185">
+  <root nodeId="8243879142738608185" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="10" startPosition="47" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="13" startPosition="33" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="17" startPosition="65" endLine="18" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1031,7 +1031,7 @@
     </scopeInfo>
     <unitInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" />
   </root>
-  <root nodeId="8243879142738613213">
+  <root nodeId="8243879142738613213" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="10" startPosition="46" endLine="11" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="13" startPosition="32" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="17" startPosition="64" endLine="18" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1054,7 +1054,7 @@
     </scopeInfo>
     <unitInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" />
   </root>
-  <root nodeId="8243879142738615226">
+  <root nodeId="8243879142738615226" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="11" startPosition="52" endLine="12" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="14" startPosition="36" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="18" startPosition="68" endLine="19" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1077,7 +1077,7 @@
     </scopeInfo>
     <unitInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod" />
   </root>
-  <root nodeId="8427750732757990717">
+  <root nodeId="8427750732757990717" modelId="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
     <nodeInfo nodeId="8427750732757990717" fileName="BinaryAssert.java" startLine="15" startPosition="70" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8427750732757990717" fileName="BinaryAssert.java" startLine="16" startPosition="100" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="8427750732757990717" fileName="BinaryAssert.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />

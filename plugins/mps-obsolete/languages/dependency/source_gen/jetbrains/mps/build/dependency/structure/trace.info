@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Dependency_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Dependency_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor" />
-  <root nodeId="1216745453338">
+  <root nodeId="1216745453338" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1216745453338" fileName="ProjectDescription.java" startLine="15" startPosition="78" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216745453338" fileName="ProjectDescription.java" startLine="16" startPosition="101" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BASEDIR" />
     <nodeInfo nodeId="1216745453338" fileName="ProjectDescription.java" startLine="17" startPosition="49" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTIES_FILE" />
@@ -195,7 +195,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216745453338" fileName="ProjectDescription.java" startLine="15" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ProjectDescription" />
   </root>
-  <root nodeId="1216745525843">
+  <root nodeId="1216745525843" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1216745525843" fileName="ModuleDescription.java" startLine="15" startPosition="77" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216745525843" fileName="ModuleDescription.java" startLine="16" startPosition="100" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INCLUDE_RESOURCES" />
     <nodeInfo nodeId="1216745525843" fileName="ModuleDescription.java" startLine="17" startPosition="68" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXCLUDE_RESOURCES" />
@@ -373,7 +373,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216745525843" fileName="ModuleDescription.java" startLine="15" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ModuleDescription" />
   </root>
-  <root nodeId="1216904128547">
+  <root nodeId="1216904128547" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1216904128547" fileName="Cycle.java" startLine="15" startPosition="65" endLine="16" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216904128547" fileName="Cycle.java" startLine="16" startPosition="88" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1216904128547" fileName="Cycle.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -544,7 +544,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216904128547" fileName="Cycle.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Cycle" />
   </root>
-  <root nodeId="1216907456863">
+  <root nodeId="1216907456863" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1216907456863" fileName="PathHolder.java" startLine="11" startPosition="45" endLine="12" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216907456863" fileName="PathHolder.java" startLine="12" startPosition="93" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
     <nodeInfo nodeId="1216907456863" fileName="PathHolder.java" startLine="13" startPosition="43" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MACRO" />
@@ -589,7 +589,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216907456863" fileName="PathHolder.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.PathHolder" />
   </root>
-  <root nodeId="1216913230927">
+  <root nodeId="1216913230927" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1216913230927" fileName="CycleReference.java" startLine="11" startPosition="49" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216913230927" fileName="CycleReference.java" startLine="12" startPosition="97" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CYCLE" />
     <nodeInfo nodeId="1216913230927" fileName="CycleReference.java" startLine="15" startPosition="37" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -623,7 +623,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216913230927" fileName="CycleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.CycleReference" />
   </root>
-  <root nodeId="1219418780635">
+  <root nodeId="1219418780635" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1219418780635" fileName="Macros.java" startLine="15" startPosition="66" endLine="16" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1219418780635" fileName="Macros.java" startLine="16" startPosition="89" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1219418780635" fileName="Macros.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -716,7 +716,7 @@
     </scopeInfo>
     <unitInfo nodeId="1219418780635" fileName="Macros.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Macros" />
   </root>
-  <root nodeId="1224775496043">
+  <root nodeId="1224775496043" modelId="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)">
     <nodeInfo nodeId="1224775496043" fileName="ProjectDescriptionReference.java" startLine="11" startPosition="64" endLine="12" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1224775496043" fileName="ProjectDescriptionReference.java" startLine="12" startPosition="110" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DESCRIPTION" />
     <nodeInfo nodeId="1224775496043" fileName="ProjectDescriptionReference.java" startLine="15" startPosition="50" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

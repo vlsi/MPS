@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841950172">
+  <root nodeId="5487985028841950172" modelId="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841950333" fileName="Variants.java" startLine="16" startPosition="23" endLine="17" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGS" />
     <nodeInfo nodeId="5487985028841950344" fileName="Variants.java" startLine="17" startPosition="161" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="5487985028841950348" fileName="Variants.java" startLine="18" startPosition="42" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISPOSED" />
@@ -83,11 +83,11 @@
     <scopeInfo nodeId="5487985028841950286" fileName="Variants.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="5487985028841950308" varName="regBlock" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841950172" fileName="Variants.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants" />
     <unitInfo nodeId="5487985028841950251" fileName="Variants.java" startLine="53" startPosition="76" endLine="57" endPosition="5" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants$1" />
     <unitInfo nodeId="5487985028841950272" fileName="Variants.java" startLine="61" startPosition="79" endLine="65" endPosition="5" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants$2" />
+    <unitInfo nodeId="5487985028841950172" fileName="Variants.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants" />
   </root>
-  <root nodeId="5487985028841950363">
+  <root nodeId="5487985028841950363" modelId="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841950364" fileName="Variants_CustomApplicationPlugin.java" startLine="7" startPosition="83" endLine="8" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="variants" />
     <nodeInfo nodeId="5487985028841950369" fileName="Variants_CustomApplicationPlugin.java" startLine="13" startPosition="24" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950376" fileName="Variants_CustomApplicationPlugin.java" startLine="14" startPosition="68" endLine="15" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -104,7 +104,7 @@
     <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants_CustomApplicationPlugin" />
   </root>
-  <root nodeId="7162597690967997054">
+  <root nodeId="7162597690967997054" modelId="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

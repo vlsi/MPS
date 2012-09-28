@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Builders_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.Builders_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor" />
-  <root nodeId="2679357232283750087">
+  <root nodeId="2679357232283750087" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="2679357232283750087" fileName="BeanPropertyBuilder.java" startLine="12" startPosition="50" endLine="13" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2679357232283750087" fileName="BeanPropertyBuilder.java" startLine="13" startPosition="107" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SETTER" />
     <nodeInfo nodeId="2679357232283750087" fileName="BeanPropertyBuilder.java" startLine="14" startPosition="47" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
@@ -47,7 +47,7 @@
     </scopeInfo>
     <unitInfo nodeId="2679357232283750087" fileName="BeanPropertyBuilder.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder" />
   </root>
-  <root nodeId="5389689214216557332">
+  <root nodeId="5389689214216557332" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5389689214216557332" fileName="AsTypeBuilder.java" startLine="11" startPosition="44" endLine="12" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5389689214216557332" fileName="AsTypeBuilder.java" startLine="12" startPosition="101" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
     <nodeInfo nodeId="5389689214216557332" fileName="AsTypeBuilder.java" startLine="15" startPosition="36" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -81,7 +81,7 @@
     </scopeInfo>
     <unitInfo nodeId="5389689214216557332" fileName="AsTypeBuilder.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder" />
   </root>
-  <root nodeId="5389689214216990954">
+  <root nodeId="5389689214216990954" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5389689214216990954" fileName="SimpleBuilderProperty.java" startLine="17" startPosition="81" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5389689214216990954" fileName="SimpleBuilderProperty.java" startLine="18" startPosition="109" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5389689214216990954" fileName="SimpleBuilderProperty.java" startLine="19" startPosition="43" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -196,7 +196,7 @@
     </scopeInfo>
     <unitInfo nodeId="5389689214216990954" fileName="SimpleBuilderProperty.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty" />
   </root>
-  <root nodeId="5389689214217242850">
+  <root nodeId="5389689214217242850" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5389689214217242850" fileName="SimpleBuilderPropertyExpression.java" startLine="11" startPosition="65" endLine="12" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5389689214217242850" fileName="SimpleBuilderPropertyExpression.java" startLine="14" startPosition="54" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5389689214217242850" fileName="SimpleBuilderPropertyExpression.java" startLine="18" startPosition="86" endLine="19" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -219,7 +219,7 @@
     </scopeInfo>
     <unitInfo nodeId="5389689214217242850" fileName="SimpleBuilderPropertyExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression" />
   </root>
-  <root nodeId="5389689214217248368">
+  <root nodeId="5389689214217248368" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5389689214217248368" fileName="SimpleBuilderPropertyParent.java" startLine="10" startPosition="82" endLine="11" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5389689214217248368" fileName="SimpleBuilderPropertyParent.java" startLine="13" startPosition="50" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5389689214217248368" fileName="SimpleBuilderPropertyParent.java" startLine="17" startPosition="82" endLine="18" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -242,7 +242,7 @@
     </scopeInfo>
     <unitInfo nodeId="5389689214217248368" fileName="SimpleBuilderPropertyParent.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent" />
   </root>
-  <root nodeId="5389689214217248394">
+  <root nodeId="5389689214217248394" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5389689214217248394" fileName="SimpleBuilderPropertyValue.java" startLine="10" startPosition="81" endLine="11" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5389689214217248394" fileName="SimpleBuilderPropertyValue.java" startLine="13" startPosition="49" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5389689214217248394" fileName="SimpleBuilderPropertyValue.java" startLine="17" startPosition="81" endLine="18" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -265,7 +265,7 @@
     </scopeInfo>
     <unitInfo nodeId="5389689214217248394" fileName="SimpleBuilderPropertyValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue" />
   </root>
-  <root nodeId="5389689214217404511">
+  <root nodeId="5389689214217404511" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5389689214217404511" fileName="SimpleBuilderPropertyBuilder.java" startLine="11" startPosition="59" endLine="12" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5389689214217404511" fileName="SimpleBuilderPropertyBuilder.java" startLine="12" startPosition="116" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DECLARATION" />
     <nodeInfo nodeId="5389689214217404511" fileName="SimpleBuilderPropertyBuilder.java" startLine="13" startPosition="57" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
@@ -310,7 +310,7 @@
     </scopeInfo>
     <unitInfo nodeId="5389689214217404511" fileName="SimpleBuilderPropertyBuilder.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder" />
   </root>
-  <root nodeId="5425713840853682520">
+  <root nodeId="5425713840853682520" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5425713840853682520" fileName="SimpleBuilderParameter.java" startLine="16" startPosition="82" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5425713840853682520" fileName="SimpleBuilderParameter.java" startLine="17" startPosition="110" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5425713840853682520" fileName="SimpleBuilderParameter.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -414,7 +414,7 @@
     </scopeInfo>
     <unitInfo nodeId="5425713840853682520" fileName="SimpleBuilderParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter" />
   </root>
-  <root nodeId="5425713840853785828">
+  <root nodeId="5425713840853785828" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="5425713840853785828" fileName="SimpleBuilderParameterReference.java" startLine="11" startPosition="65" endLine="12" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5425713840853785828" fileName="SimpleBuilderParameterReference.java" startLine="12" startPosition="119" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETER" />
     <nodeInfo nodeId="5425713840853785828" fileName="SimpleBuilderParameterReference.java" startLine="15" startPosition="54" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -448,7 +448,7 @@
     </scopeInfo>
     <unitInfo nodeId="5425713840853785828" fileName="SimpleBuilderParameterReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference" />
   </root>
-  <root nodeId="6254726786820421041">
+  <root nodeId="6254726786820421041" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="6254726786820421041" fileName="BaseSimpleBuilderDeclaration.java" startLine="11" startPosition="63" endLine="12" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6254726786820421041" fileName="BaseSimpleBuilderDeclaration.java" startLine="14" startPosition="51" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6254726786820421041" fileName="BaseSimpleBuilderDeclaration.java" startLine="18" startPosition="83" endLine="19" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -471,7 +471,7 @@
     </scopeInfo>
     <unitInfo nodeId="6254726786820421041" fileName="BaseSimpleBuilderDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration" />
   </root>
-  <root nodeId="6254726786820459251">
+  <root nodeId="6254726786820459251" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="6254726786820459251" fileName="SimpleBuilderExtensionDeclaration.java" startLine="12" startPosition="85" endLine="13" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6254726786820459251" fileName="SimpleBuilderExtensionDeclaration.java" startLine="13" startPosition="121" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXTENDED" />
     <nodeInfo nodeId="6254726786820459251" fileName="SimpleBuilderExtensionDeclaration.java" startLine="14" startPosition="51" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHILD" />
@@ -557,7 +557,7 @@
     </scopeInfo>
     <unitInfo nodeId="6254726786820459251" fileName="SimpleBuilderExtensionDeclaration.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration" />
   </root>
-  <root nodeId="6666322667909540799">
+  <root nodeId="6666322667909540799" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="6666322667909540799" fileName="BeanBuilder.java" startLine="17" startPosition="65" endLine="18" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6666322667909540799" fileName="BeanBuilder.java" startLine="18" startPosition="99" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="6666322667909540799" fileName="BeanBuilder.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -686,7 +686,7 @@
     </scopeInfo>
     <unitInfo nodeId="6666322667909540799" fileName="BeanBuilder.java" startLine="17" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BeanBuilder" />
   </root>
-  <root nodeId="7057666463730155275">
+  <root nodeId="7057666463730155275" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7057666463730155275" fileName="Builder.java" startLine="11" startPosition="42" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7057666463730155275" fileName="Builder.java" startLine="12" startPosition="95" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_Leaf" />
     <nodeInfo nodeId="7057666463730155275" fileName="Builder.java" startLine="15" startPosition="30" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -710,7 +710,7 @@
     </scopeInfo>
     <unitInfo nodeId="7057666463730155275" fileName="Builder.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.Builder" />
   </root>
-  <root nodeId="7057666463730155278">
+  <root nodeId="7057666463730155278" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7057666463730155278" fileName="BuilderCreator.java" startLine="16" startPosition="106" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7057666463730155278" fileName="BuilderCreator.java" startLine="17" startPosition="102" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7057666463730155278" fileName="BuilderCreator.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -814,7 +814,7 @@
     </scopeInfo>
     <unitInfo nodeId="7057666463730155278" fileName="BuilderCreator.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator" />
   </root>
-  <root nodeId="7057666463730155299">
+  <root nodeId="7057666463730155299" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7057666463730155299" fileName="BuilderStatement.java" startLine="15" startPosition="77" endLine="16" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7057666463730155299" fileName="BuilderStatement.java" startLine="16" startPosition="104" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7057666463730155299" fileName="BuilderStatement.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -918,7 +918,7 @@
     </scopeInfo>
     <unitInfo nodeId="7057666463730155299" fileName="BuilderStatement.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" />
   </root>
-  <root nodeId="7288041816792292064">
+  <root nodeId="7288041816792292064" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792292064" fileName="ResultExpression.java" startLine="11" startPosition="50" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792292064" fileName="ResultExpression.java" startLine="14" startPosition="39" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7288041816792292064" fileName="ResultExpression.java" startLine="18" startPosition="71" endLine="19" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -941,7 +941,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792292064" fileName="ResultExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.ResultExpression" />
   </root>
-  <root nodeId="7288041816792374840">
+  <root nodeId="7288041816792374840" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792374840" fileName="SimpleBuilderDeclaration.java" startLine="16" startPosition="101" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792374840" fileName="SimpleBuilderDeclaration.java" startLine="17" startPosition="112" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="7288041816792374840" fileName="SimpleBuilderDeclaration.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1178,7 +1178,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792374840" fileName="SimpleBuilderDeclaration.java" startLine="16" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" />
   </root>
-  <root nodeId="7288041816792374843">
+  <root nodeId="7288041816792374843" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792374843" fileName="SimpleBuilders.java" startLine="15" startPosition="74" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792374843" fileName="SimpleBuilders.java" startLine="16" startPosition="102" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="7288041816792374843" fileName="SimpleBuilders.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1308,7 +1308,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792374843" fileName="SimpleBuilders.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders" />
   </root>
-  <root nodeId="7288041816792577338">
+  <root nodeId="7288041816792577338" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792577338" fileName="SimpleBuilderChild.java" startLine="12" startPosition="53" endLine="13" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792577338" fileName="SimpleBuilderChild.java" startLine="13" startPosition="106" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHILD" />
     <nodeInfo nodeId="7288041816792577338" fileName="SimpleBuilderChild.java" startLine="14" startPosition="45" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ATTACH_STATEMENT" />
@@ -1353,7 +1353,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792577338" fileName="SimpleBuilderChild.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild" />
   </root>
-  <root nodeId="7288041816792577340">
+  <root nodeId="7288041816792577340" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792577340" fileName="SimpleBuilderParentExpression.java" startLine="10" startPosition="76" endLine="11" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792577340" fileName="SimpleBuilderParentExpression.java" startLine="13" startPosition="52" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7288041816792577340" fileName="SimpleBuilderParentExpression.java" startLine="17" startPosition="84" endLine="18" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1376,7 +1376,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792577340" fileName="SimpleBuilderParentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression" />
   </root>
-  <root nodeId="7288041816792577342">
+  <root nodeId="7288041816792577342" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792577342" fileName="SimpleBuilderChildExpression.java" startLine="10" startPosition="75" endLine="11" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792577342" fileName="SimpleBuilderChildExpression.java" startLine="13" startPosition="51" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7288041816792577342" fileName="SimpleBuilderChildExpression.java" startLine="17" startPosition="83" endLine="18" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1399,7 +1399,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792577342" fileName="SimpleBuilderChildExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression" />
   </root>
-  <root nodeId="7288041816792577344">
+  <root nodeId="7288041816792577344" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816792577344" fileName="SimpleBuilderExpression.java" startLine="11" startPosition="57" endLine="12" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816792577344" fileName="SimpleBuilderExpression.java" startLine="14" startPosition="46" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7288041816792577344" fileName="SimpleBuilderExpression.java" startLine="18" startPosition="78" endLine="19" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1422,7 +1422,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816792577344" fileName="SimpleBuilderExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression" />
   </root>
-  <root nodeId="7288041816793071802">
+  <root nodeId="7288041816793071802" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7288041816793071802" fileName="SimpleBuilder.java" startLine="13" startPosition="44" endLine="14" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7288041816793071802" fileName="SimpleBuilder.java" startLine="14" startPosition="101" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DECLARATION" />
     <nodeInfo nodeId="7288041816793071802" fileName="SimpleBuilder.java" startLine="15" startPosition="57" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARGUMENT" />
@@ -1482,7 +1482,7 @@
     </scopeInfo>
     <unitInfo nodeId="7288041816793071802" fileName="SimpleBuilder.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" />
   </root>
-  <root nodeId="7802271442981707292">
+  <root nodeId="7802271442981707292" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7802271442981707292" fileName="AsBuilderStatement.java" startLine="17" startPosition="103" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7802271442981707292" fileName="AsBuilderStatement.java" startLine="18" startPosition="106" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7802271442981707292" fileName="AsBuilderStatement.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1597,7 +1597,7 @@
     </scopeInfo>
     <unitInfo nodeId="7802271442981707292" fileName="AsBuilderStatement.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement" />
   </root>
-  <root nodeId="7802271442981792228">
+  <root nodeId="7802271442981792228" modelId="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
     <nodeInfo nodeId="7802271442981792228" fileName="BuilderContainer.java" startLine="8" startPosition="56" endLine="9" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7802271442981792228" fileName="BuilderContainer.java" startLine="9" startPosition="104" endLine="10" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BUILDER" />
     <nodeInfo nodeId="7802271442981792228" fileName="BuilderContainer.java" startLine="10" startPosition="49" endLine="11" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BODY" />

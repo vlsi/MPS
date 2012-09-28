@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2206718243407875628">
+  <root nodeId="2206718243407875628" modelId="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)">
     <nodeInfo nodeId="2206718243407918213" fileName="ForeignPathsProvider.java" startLine="7" startPosition="39" endLine="8" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="belongsToForeignPath#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
     <scopeInfo nodeId="2206718243407918213" fileName="ForeignPathsProvider.java" startLine="7" startPosition="39" endLine="8" endPosition="49">
       <varInfo nodeId="2206718243407918218" varName="path" />
     </scopeInfo>
     <unitInfo nodeId="2206718243407875628" fileName="ForeignPathsProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.generator.info.ForeignPathsProvider" />
   </root>
-  <root nodeId="3736427613779562236">
+  <root nodeId="3736427613779562236" modelId="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)">
     <nodeInfo nodeId="3736427613779562237" fileName="GeneratedFilesInfo.java" startLine="7" startPosition="37" endLine="8" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="listGenerated#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="3736427613779562237" fileName="GeneratedFilesInfo.java" startLine="7" startPosition="37" endLine="8" endPosition="51">
       <varInfo nodeId="3736427613779562238" varName="dir" />
     </scopeInfo>
     <unitInfo nodeId="3736427613779562236" fileName="GeneratedFilesInfo.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratedFilesInfo" />
   </root>
-  <root nodeId="3736427613779562245">
+  <root nodeId="3736427613779562245" modelId="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)">
     <nodeInfo nodeId="3736427613779562246" fileName="GeneratorPathsComponent.java" startLine="20" startPosition="63" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3736427613779562360" fileName="GeneratorPathsComponent.java" startLine="21" startPosition="78" endLine="22" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2206718243407920859" fileName="GeneratorPathsComponent.java" startLine="22" startPosition="50" endLine="23" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_LIST" />
@@ -113,11 +113,11 @@
     <scopeInfo nodeId="3736427613779562295" fileName="GeneratorPathsComponent.java" startLine="60" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="3736427613779562296" varName="cachesOutputDir" />
     </scopeInfo>
-    <unitInfo nodeId="3736427613779562245" fileName="GeneratorPathsComponent.java" startLine="20" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent" />
     <unitInfo nodeId="2206718243407920498" fileName="GeneratorPathsComponent.java" startLine="42" startPosition="66" endLine="46" endPosition="5" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$1" />
-    <unitInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="97" startPosition="67" endLine="101" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$1" />
     <unitInfo nodeId="2243001920226359822" fileName="GeneratorPathsComponent.java" startLine="52" startPosition="60" endLine="56" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$2" />
+    <unitInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="97" startPosition="67" endLine="101" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$1" />
     <unitInfo nodeId="3736427613779562251" fileName="GeneratorPathsComponent.java" startLine="88" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$MyGeneratedCacheInfo" />
+    <unitInfo nodeId="3736427613779562245" fileName="GeneratorPathsComponent.java" startLine="20" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent" />
   </root>
 </debugInfo>
 

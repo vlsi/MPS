@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1733398552130474119">
+  <root nodeId="1733398552130474119" modelId="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)">
     <nodeInfo nodeId="9047349009208173141" fileName="RuleUtil.java" startLine="16" startPosition="23" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_AbstractMacro" />
     <nodeInfo nodeId="2831583045484016344" fileName="RuleUtil.java" startLine="17" startPosition="108" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_ITemplateCall" />
     <nodeInfo nodeId="9047349009208100995" fileName="RuleUtil.java" startLine="18" startPosition="108" endLine="19" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_NodeMacro" />
@@ -460,7 +460,7 @@
     </scopeInfo>
     <unitInfo nodeId="1733398552130474119" fileName="RuleUtil.java" startLine="16" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.generator.impl.RuleUtil" />
   </root>
-  <root nodeId="263434549788570114">
+  <root nodeId="263434549788570114" modelId="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)">
     <nodeInfo nodeId="263434549788570146" fileName="RootTemplateAnnotator.java" startLine="24" startPosition="52" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="263434549788717052" fileName="RootTemplateAnnotator.java" startLine="28" startPosition="215" endLine="29" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="18" startPosition="61" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotator#(Ljetbrains/mps/smodel/GlobalSModelEventsManager;)V" />
@@ -488,10 +488,10 @@
     </scopeInfo>
     <scopeInfo nodeId="263434549788570132" fileName="RootTemplateAnnotator.java" startLine="22" startPosition="22" endLine="34" endPosition="7" />
     <scopeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="21" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="263434549788570114" fileName="RootTemplateAnnotator.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
     <unitInfo nodeId="263434549788570139" fileName="RootTemplateAnnotator.java" startLine="23" startPosition="71" endLine="34" endPosition="5" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator$1" />
+    <unitInfo nodeId="263434549788570114" fileName="RootTemplateAnnotator.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
   </root>
-  <root nodeId="4814657600604696799">
+  <root nodeId="4814657600604696799" modelId="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)">
     <nodeInfo nodeId="4814657600604696802" fileName="DismissTopMappingRuleException.java" startLine="7" startPosition="73" endLine="8" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageType" />
     <nodeInfo nodeId="4814657600604696811" fileName="DismissTopMappingRuleException.java" startLine="10" startPosition="97" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4814657600604696819" fileName="DismissTopMappingRuleException.java" startLine="14" startPosition="36" endLine="15" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -518,10 +518,10 @@
     <scopeInfo nodeId="4814657600604696823" fileName="DismissTopMappingRuleException.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="4814657600604696835" fileName="DismissTopMappingRuleException.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="4814657600604696847" fileName="DismissTopMappingRuleException.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="4814657600604696799" fileName="DismissTopMappingRuleException.java" startLine="7" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
     <unitInfo nodeId="4814657600604696862" fileName="DismissTopMappingRuleException.java" startLine="30" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.generator.impl.DismissTopMappingRuleException$MessageType" />
+    <unitInfo nodeId="4814657600604696799" fileName="DismissTopMappingRuleException.java" startLine="7" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
   </root>
-  <root nodeId="8341644365990734226">
+  <root nodeId="8341644365990734226" modelId="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)">
     <nodeInfo nodeId="8341644365990734232" fileName="TemplateModelScanner.java" startLine="16" startPosition="35" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTemplateModel" />
     <nodeInfo nodeId="8341644365990734242" fileName="TemplateModelScanner.java" startLine="17" startPosition="33" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetLanguages" />
     <nodeInfo nodeId="8341644365990734248" fileName="TemplateModelScanner.java" startLine="18" startPosition="40" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueryLanguages" />
@@ -662,7 +662,7 @@
     <scopeInfo nodeId="8341644365990734238" fileName="TemplateModelScanner.java" startLine="26" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="8341644365990734226" fileName="TemplateModelScanner.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.generator.impl.TemplateModelScanner" />
   </root>
-  <root nodeId="894226751621690778">
+  <root nodeId="894226751621690778" modelId="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)">
     <nodeInfo nodeId="3381130103055956466" fileName="GeneratorUtilEx.java" startLine="21" startPosition="30" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3381130103055826406" fileName="GeneratorUtilEx.java" startLine="27" startPosition="60" endLine="28" endPosition="472" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3381130103055956148" fileName="GeneratorUtilEx.java" startLine="31" startPosition="72" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1347577327951770664">
+  <root nodeId="1347577327951770664" modelId="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)">
     <nodeInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="17" startPosition="19" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -63,10 +63,10 @@
     <scopeInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1347577327951770668" varName="entity" />
     </scopeInfo>
-    <unitInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename" />
     <unitInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename_Target" />
+    <unitInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename" />
   </root>
-  <root nodeId="7012097027058633272">
+  <root nodeId="7012097027058633272" modelId="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)">
     <nodeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="11" startPosition="52" endLine="12" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="15" startPosition="41" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="19" startPosition="58" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -235,11 +235,11 @@
     <scopeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="44" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="7012097027058633272" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="30" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes" />
-    <unitInfo nodeId="3548249452606313472" fileName="MoveNodes.java" startLine="49" startPosition="45" endLine="89" endPosition="5" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$1" />
     <unitInfo nodeId="3548249452606313529" fileName="MoveNodes.java" startLine="56" startPosition="100" endLine="60" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
     <unitInfo nodeId="3548249452606313560" fileName="MoveNodes.java" startLine="61" startPosition="101" endLine="65" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
     <unitInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="7" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes_Target" />
+    <unitInfo nodeId="3548249452606313472" fileName="MoveNodes.java" startLine="49" startPosition="45" endLine="89" endPosition="5" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$1" />
+    <unitInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="30" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes" />
   </root>
 </debugInfo>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3990508698139423538">
+  <root nodeId="3990508698139423538" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139427238" fileName="BreakpointRequestor.java" startLine="6" startPosition="64" endLine="7" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceFile" />
     <nodeInfo nodeId="3990508698139427241" fileName="BreakpointRequestor.java" startLine="7" startPosition="30" endLine="8" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFunction" />
     <nodeInfo nodeId="3990508698139427244" fileName="BreakpointRequestor.java" startLine="8" startPosition="28" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
@@ -29,7 +29,7 @@
     <scopeInfo nodeId="3990508698139427275" fileName="BreakpointRequestor.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="3990508698139423538" fileName="BreakpointRequestor.java" startLine="6" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.BreakpointRequestor" />
   </root>
-  <root nodeId="3990508698139424666">
+  <root nodeId="3990508698139424666" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139425417" fileName="RemoveBreakpointRequestor.java" startLine="6" startPosition="70" endLine="7" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointGDBNumber" />
     <nodeInfo nodeId="3990508698139425426" fileName="RemoveBreakpointRequestor.java" startLine="9" startPosition="58" endLine="10" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139425434" fileName="RemoveBreakpointRequestor.java" startLine="13" startPosition="39" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -43,7 +43,7 @@
     <scopeInfo nodeId="3990508698139425430" fileName="RemoveBreakpointRequestor.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="3990508698139424666" fileName="RemoveBreakpointRequestor.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.RemoveBreakpointRequestor" />
   </root>
-  <root nodeId="3990508698139424667">
+  <root nodeId="3990508698139424667" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139426900" fileName="ResumeRequest.java" startLine="10" startPosition="39" endLine="11" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139426892" fileName="ResumeRequest.java" startLine="6" startPosition="58" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResumeRequest#()V" />
     <nodeInfo nodeId="3990508698139426896" fileName="ResumeRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRequestString#()Ljava/lang/String;" />
@@ -53,7 +53,7 @@
     <scopeInfo nodeId="3990508698139426896" fileName="ResumeRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="3990508698139424667" fileName="ResumeRequest.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.ResumeRequest" />
   </root>
-  <root nodeId="3990508698139424668">
+  <root nodeId="3990508698139424668" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139427309" fileName="PauseRequest.java" startLine="10" startPosition="39" endLine="11" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139427301" fileName="PauseRequest.java" startLine="6" startPosition="57" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PauseRequest#()V" />
     <nodeInfo nodeId="3990508698139427305" fileName="PauseRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRequestString#()Ljava/lang/String;" />
@@ -63,7 +63,7 @@
     <scopeInfo nodeId="3990508698139427305" fileName="PauseRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="3990508698139424668" fileName="PauseRequest.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.PauseRequest" />
   </root>
-  <root nodeId="3990508698139424669">
+  <root nodeId="3990508698139424669" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139426913" fileName="StepRequest.java" startLine="10" startPosition="39" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139426905" fileName="StepRequest.java" startLine="6" startPosition="56" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepRequest#()V" />
     <nodeInfo nodeId="3990508698139426909" fileName="StepRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRequestString#()Ljava/lang/String;" />
@@ -73,7 +73,7 @@
     <scopeInfo nodeId="3990508698139426909" fileName="StepRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="3990508698139424669" fileName="StepRequest.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.StepRequest" />
   </root>
-  <root nodeId="3990508698139424670">
+  <root nodeId="3990508698139424670" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139429832" fileName="StackInfoRequest.java" startLine="10" startPosition="39" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139429824" fileName="StackInfoRequest.java" startLine="6" startPosition="61" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StackInfoRequest#()V" />
     <nodeInfo nodeId="3990508698139429828" fileName="StackInfoRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRequestString#()Ljava/lang/String;" />
@@ -83,7 +83,7 @@
     <scopeInfo nodeId="3990508698139429828" fileName="StackInfoRequest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="3990508698139424670" fileName="StackInfoRequest.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.StackInfoRequest" />
   </root>
-  <root nodeId="3990508698139426796">
+  <root nodeId="3990508698139426796" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139426798" fileName="GDBRequestor.java" startLine="11" startPosition="36" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourCounter" />
     <nodeInfo nodeId="3990508698139426803" fileName="GDBRequestor.java" startLine="13" startPosition="0" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="3990508698139426831" fileName="GDBRequestor.java" startLine="20" startPosition="20" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -111,7 +111,7 @@
     <scopeInfo nodeId="3990508698139426822" fileName="GDBRequestor.java" startLine="18" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="3990508698139426796" fileName="GDBRequestor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestor" />
   </root>
-  <root nodeId="3990508698139429011">
+  <root nodeId="3990508698139429011" modelId="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)">
     <nodeInfo nodeId="3990508698139429013" fileName="GDBRequestManager.java" startLine="18" startPosition="32" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsHandler" />
     <nodeInfo nodeId="3990508698139429016" fileName="GDBRequestManager.java" startLine="19" startPosition="49" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRequestors" />
     <nodeInfo nodeId="3990508698139429025" fileName="GDBRequestManager.java" startLine="20" startPosition="89" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointManager" />
@@ -170,8 +170,8 @@
       <varInfo nodeId="3990508698139429066" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429064" varName="resultAnswer" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
     <unitInfo nodeId="3990508698139429050" fileName="GDBRequestManager.java" startLine="26" startPosition="41" endLine="30" endPosition="5" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager$1" />
+    <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
   </root>
 </debugInfo>
 

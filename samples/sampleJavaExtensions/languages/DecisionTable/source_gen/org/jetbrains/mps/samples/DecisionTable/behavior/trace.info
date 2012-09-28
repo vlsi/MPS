@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="DecisionTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1987251859606942546" modelId="r:313b0e77-ca79-4386-be7b-42bffe9745bf(org.jetbrains.mps.samples.DecisionTable.behavior)">
     <nodeInfo nodeId="1987251859606942549" fileName="DecisionTable_Behavior.java" startLine="15" startPosition="43" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1987251859606976803" fileName="DecisionTable_Behavior.java" startLine="16" startPosition="107" endLine="17" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -48,9 +48,9 @@
     <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="14" startPosition="37" endLine="25" endPosition="0">
       <varInfo nodeId="1987251859606942546" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" />
     <unitInfo nodeId="3863300516938155447" fileName="DecisionTable_Behavior.java" startLine="28" startPosition="202" endLine="32" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior$1" />
     <unitInfo nodeId="3863300516938159659" fileName="DecisionTable_Behavior.java" startLine="38" startPosition="201" endLine="42" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior$2" />
+    <unitInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" />
   </root>
 </debugInfo>
 

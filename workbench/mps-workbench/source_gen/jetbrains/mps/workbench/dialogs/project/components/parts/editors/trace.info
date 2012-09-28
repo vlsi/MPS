@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499489240">
+  <root nodeId="1560298786499489240" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="1560298786499490391" fileName="BooleanEditor.java" startLine="12" startPosition="26" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499490409" fileName="BooleanEditor.java" startLine="16" startPosition="118" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499490425" fileName="BooleanEditor.java" startLine="20" startPosition="135" endLine="21" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -33,7 +33,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499489240" fileName="BooleanEditor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" />
   </root>
-  <root nodeId="1560298786499490028">
+  <root nodeId="1560298786499490028" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="1560298786499490031" fileName="ModuleEditor.java" startLine="11" startPosition="53" endLine="12" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
     <nodeInfo nodeId="1560298786499490037" fileName="ModuleEditor.java" startLine="14" startPosition="25" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499490040" fileName="ModuleEditor.java" startLine="15" startPosition="28" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499490028" fileName="ModuleEditor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
   </root>
-  <root nodeId="1560298786499491170">
+  <root nodeId="1560298786499491170" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="1560298786499491173" fileName="RuleOperandEditor.java" startLine="20" startPosition="64" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperand" />
     <nodeInfo nodeId="1560298786499491176" fileName="RuleOperandEditor.java" startLine="21" startPosition="46" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="1560298786499491179" fileName="RuleOperandEditor.java" startLine="22" startPosition="32" endLine="23" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDepGens" />
@@ -132,10 +132,10 @@
       <varInfo nodeId="1560298786499491264" varName="table" />
       <varInfo nodeId="1560298786499491266" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499491170" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor" />
     <unitInfo nodeId="1560298786499491287" fileName="RuleOperandEditor.java" startLine="54" startPosition="35" endLine="67" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor$1" />
+    <unitInfo nodeId="1560298786499491170" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor" />
   </root>
-  <root nodeId="1560298786499495476">
+  <root nodeId="1560298786499495476" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="4256903895781701718" fileName="ManagerTableCellEditor.java" startLine="28" startPosition="63" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCombo" />
     <nodeInfo nodeId="4256903895781701715" fileName="ManagerTableCellEditor.java" startLine="31" startPosition="60" endLine="32" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4256903895781788797" fileName="ManagerTableCellEditor.java" startLine="32" startPosition="129" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -216,12 +216,12 @@
     <scopeInfo nodeId="4256903895781788718" fileName="ManagerTableCellEditor.java" startLine="46" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4256903895781786636" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499495476" fileName="ManagerTableCellEditor.java" startLine="28" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" />
-    <unitInfo nodeId="4256903895781784707" fileName="ManagerTableCellEditor.java" startLine="35" startPosition="28" endLine="44" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$1" />
     <unitInfo nodeId="4256903895781786764" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$2" />
+    <unitInfo nodeId="4256903895781784707" fileName="ManagerTableCellEditor.java" startLine="35" startPosition="28" endLine="44" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$1" />
     <unitInfo nodeId="8571970830724169285" fileName="ManagerTableCellEditor.java" startLine="67" startPosition="45" endLine="78" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$3" />
+    <unitInfo nodeId="1560298786499495476" fileName="ManagerTableCellEditor.java" startLine="28" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" />
   </root>
-  <root nodeId="1560298786499498080">
+  <root nodeId="1560298786499498080" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="1560298786499498086" fileName="RuleTypeEditor.java" startLine="11" startPosition="27" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499498089" fileName="RuleTypeEditor.java" startLine="12" startPosition="27" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499498097" fileName="RuleTypeEditor.java" startLine="13" startPosition="47" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

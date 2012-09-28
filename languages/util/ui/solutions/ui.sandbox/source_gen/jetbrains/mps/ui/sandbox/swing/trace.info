@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1880762541167901329">
+  <root nodeId="1880762541167901329" modelId="r:e1d5070f-d69f-450c-87c6-b8c61ca08d04(jetbrains.mps.ui.sandbox.swing)">
     <nodeInfo nodeId="1880762541167901346" fileName="SwingDemo.java" startLine="14" startPosition="28" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1880762541167901352" fileName="SwingDemo.java" startLine="15" startPosition="38" endLine="16" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1880762541167901357" fileName="SwingDemo.java" startLine="16" startPosition="54" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -39,8 +39,8 @@
     <scopeInfo nodeId="1880762541167901394" fileName="SwingDemo.java" startLine="25" startPosition="22" endLine="34" endPosition="5" />
     <scopeInfo nodeId="1880762541167901342" fileName="SwingDemo.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1880762541167901391" fileName="SwingDemo.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1880762541167901329" fileName="SwingDemo.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo" />
     <unitInfo nodeId="1880762541167901399" fileName="SwingDemo.java" startLine="27" startPosition="37" endLine="31" endPosition="7" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo$1" />
+    <unitInfo nodeId="1880762541167901329" fileName="SwingDemo.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo" />
   </root>
 </debugInfo>
 

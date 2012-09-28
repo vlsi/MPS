@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1835794636205154554">
+  <root nodeId="1835794636205154554" modelId="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)">
     <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="18" startPosition="72" endLine="19" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="19" startPosition="115" endLine="20" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -22,8 +22,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
     <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody" />
+    <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
   </root>
 </debugInfo>
 

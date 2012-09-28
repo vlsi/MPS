@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1184606474174">
+  <root nodeId="1184606474174" modelId="r:00000000-0000-4000-0000-011c8959030f(jetbrains.mps.lang.constraints.generator.baseLanguage.template.util)">
     <nodeInfo nodeId="1227876798399" fileName="QueriesUtil.java" startLine="17" startPosition="39" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184606720404" fileName="QueriesUtil.java" startLine="20" startPosition="15" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876804170" fileName="QueriesUtil.java" startLine="26" startPosition="39" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -34,9 +34,9 @@
     <scopeInfo nodeId="1184606770434" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1184606770461" varName="clazz" />
     </scopeInfo>
-    <unitInfo nodeId="1184606474174" fileName="QueriesUtil.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
     <unitInfo nodeId="1227876798395" fileName="QueriesUtil.java" startLine="16" startPosition="113" endLine="20" endPosition="5" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$1" />
     <unitInfo nodeId="1227876804166" fileName="QueriesUtil.java" startLine="25" startPosition="115" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$2" />
+    <unitInfo nodeId="1184606474174" fileName="QueriesUtil.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
   </root>
 </debugInfo>
 

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Refactoring_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.Refactoring_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.StructureAspectDescriptor" />
-  <root nodeId="1209559274358">
+  <root nodeId="1209559274358" modelId="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)">
     <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="15" startPosition="0" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -117,8 +117,8 @@
     <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1209559274358" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum" />
     <unitInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum_PropertySupport" />
+    <unitInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum" />
   </root>
 </debugInfo>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor" />
-  <root nodeId="2975785153735208385">
+  <root nodeId="2975785153735208385" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -59,7 +59,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735208385" fileName="MarkAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsThreadSafe_Intention" />
   </root>
-  <root nodeId="2975785153735222149">
+  <root nodeId="2975785153735222149" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -127,7 +127,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsThreadSafe_Intention" />
   </root>
-  <root nodeId="2975785153735230347">
+  <root nodeId="2975785153735230347" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="2975785153735230347" fileName="MarkAsNonThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735230347" fileName="MarkAsNonThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735230347" fileName="MarkAsNonThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -185,7 +185,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735230347" fileName="MarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsNonThreadSafe_Intention" />
   </root>
-  <root nodeId="2975785153735235995">
+  <root nodeId="2975785153735235995" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -253,7 +253,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention" />
   </root>
-  <root nodeId="2975785153735290139">
+  <root nodeId="2975785153735290139" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -310,7 +310,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735290139" fileName="MarkVariableDeclarationAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkVariableDeclarationAsThreadSafe_Intention" />
   </root>
-  <root nodeId="2975785153735291445">
+  <root nodeId="2975785153735291445" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -378,7 +378,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkVariableAsThreadSafe_Intention" />
   </root>
-  <root nodeId="3540747636396475561">
+  <root nodeId="3540747636396475561" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -446,7 +446,7 @@
     </scopeInfo>
     <unitInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkLocalStaticMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="3540747636396569313">
+  <root nodeId="3540747636396569313" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -514,7 +514,7 @@
     </scopeInfo>
     <unitInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkLocalStaticMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="3540747636396569349">
+  <root nodeId="3540747636396569349" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -582,7 +582,7 @@
     </scopeInfo>
     <unitInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkLocalInstanceMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="3540747636396581099">
+  <root nodeId="3540747636396581099" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -650,7 +650,7 @@
     </scopeInfo>
     <unitInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkLocalInstanceMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="5384012304952490058">
+  <root nodeId="5384012304952490058" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -718,7 +718,7 @@
     </scopeInfo>
     <unitInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkInstanceMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="5384012304952498864">
+  <root nodeId="5384012304952498864" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -786,7 +786,7 @@
     </scopeInfo>
     <unitInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkStaticMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="5384012304952503177">
+  <root nodeId="5384012304952503177" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -854,7 +854,7 @@
     </scopeInfo>
     <unitInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkStaticMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="5384012304952504715">
+  <root nodeId="5384012304952504715" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -919,11 +919,11 @@
       <varInfo nodeId="5384012304952504715" varName="editorContext" />
       <varInfo nodeId="5384012304952504715" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
     <unitInfo nodeId="5384012304952506653" fileName="TurnToForEachStatement_Intention.java" startLine="47" startPosition="201" endLine="51" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$1" />
     <unitInfo nodeId="5384012304952506742" fileName="TurnToForEachStatement_Intention.java" startLine="51" startPosition="20" endLine="57" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$2" />
+    <unitInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
   </root>
-  <root nodeId="5384012304952529816">
+  <root nodeId="5384012304952529816" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1006,11 +1006,11 @@
       <varInfo nodeId="5384012304952529816" varName="editorContext" />
       <varInfo nodeId="5384012304952529816" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
     <unitInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="60" startPosition="215" endLine="64" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$1" />
     <unitInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="64" startPosition="20" endLine="70" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$2" />
+    <unitInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
   </root>
-  <root nodeId="5384012304952537573">
+  <root nodeId="5384012304952537573" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1078,7 +1078,7 @@
     </scopeInfo>
     <unitInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkInstanceMethodCallAsThreadSafe_Intention" />
   </root>
-  <root nodeId="633195941006988431">
+  <root nodeId="633195941006988431" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="633195941006988431" fileName="DetachFromThreadPool_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="633195941006988431" fileName="DetachFromThreadPool_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="633195941006988431" fileName="DetachFromThreadPool_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

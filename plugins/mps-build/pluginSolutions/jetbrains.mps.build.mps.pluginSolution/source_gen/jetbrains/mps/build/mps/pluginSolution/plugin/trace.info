@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2213834095232627418">
+  <root nodeId="2213834095232627418" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="1021458544535492598" fileName="DependencyStep.java" startLine="16" startPosition="50" endLine="17" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="1021458544535492607" fileName="DependencyStep.java" startLine="17" startPosition="51" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandler" />
     <nodeInfo nodeId="1021458544535403319" fileName="DependencyStep.java" startLine="18" startPosition="40" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedIndex" />
@@ -83,11 +83,11 @@
       <varInfo nodeId="2213834095232630426" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="2213834095232630402" fileName="DependencyStep.java" startLine="25" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="2213834095232627418" fileName="DependencyStep.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
     <unitInfo nodeId="1021458544535492356" fileName="DependencyStep.java" startLine="36" startPosition="35" endLine="42" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep$1" />
     <unitInfo nodeId="1021458544535352465" fileName="DependencyStep.java" startLine="74" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep$DependencyKind" />
+    <unitInfo nodeId="2213834095232627418" fileName="DependencyStep.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
   </root>
-  <root nodeId="6937807405124198153">
+  <root nodeId="6937807405124198153" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="34" startPosition="67" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="35" startPosition="66" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="38" startPosition="46" endLine="39" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -262,11 +262,11 @@
       <varInfo nodeId="6937807405124198153" varName="_params" />
       <varInfo nodeId="6937807405124198153" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="34" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" />
     <unitInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="98" startPosition="47" endLine="105" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action$1" />
     <unitInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="120" startPosition="49" endLine="147" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action$2" />
+    <unitInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="34" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" />
   </root>
-  <root nodeId="6937807405124297516">
+  <root nodeId="6937807405124297516" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="6937807405124297516" fileName="IntentionsEx_ActionGroup.java" startLine="8" startPosition="68" endLine="9" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6937807405124297516" fileName="IntentionsEx_ActionGroup.java" startLine="9" startPosition="79" endLine="10" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="6937807405124297516" fileName="IntentionsEx_ActionGroup.java" startLine="12" startPosition="37" endLine="13" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -285,7 +285,7 @@
     <scopeInfo nodeId="6937807405124297516" fileName="IntentionsEx_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="6937807405124297516" fileName="IntentionsEx_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.IntentionsEx_ActionGroup" />
   </root>
-  <root nodeId="7162597690968047816">
+  <root nodeId="7162597690968047816" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690968047816" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968047816" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968047816" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -310,7 +310,7 @@
     <scopeInfo nodeId="7162597690968047816" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="7162597690968047816" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
-  <root nodeId="8503529127541541729">
+  <root nodeId="8503529127541541729" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8503529127541541729" fileName="ImportModuleHelper.java" startLine="22" startPosition="33" endLine="23" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8503529127541542114" fileName="ImportModuleHelper.java" startLine="24" startPosition="0" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
     <nodeInfo nodeId="8503529127541542123" fileName="ImportModuleHelper.java" startLine="25" startPosition="24" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="moduleFile" />
@@ -396,7 +396,7 @@
     <scopeInfo nodeId="8503529127541542261" fileName="ImportModuleHelper.java" startLine="37" startPosition="0" endLine="61" endPosition="0" />
     <unitInfo nodeId="8503529127541541729" fileName="ImportModuleHelper.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportModuleHelper" />
   </root>
-  <root nodeId="8722937377469654773">
+  <root nodeId="8722937377469654773" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469654774" fileName="ModuleData.java" startLine="16" startPosition="45" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
     <nodeInfo nodeId="8722937377469654777" fileName="ModuleData.java" startLine="17" startPosition="33" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
     <nodeInfo nodeId="8722937377469654785" fileName="ModuleData.java" startLine="20" startPosition="37" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -457,7 +457,7 @@
     </scopeInfo>
     <unitInfo nodeId="8722937377469654773" fileName="ModuleData.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModuleData" />
   </root>
-  <root nodeId="8722937377469654897">
+  <root nodeId="8722937377469654897" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469654898" fileName="ModulesListData.java" startLine="12" startPosition="50" endLine="13" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />
     <nodeInfo nodeId="8722937377469654905" fileName="ModulesListData.java" startLine="13" startPosition="90" endLine="14" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
     <nodeInfo nodeId="8722937377469654922" fileName="ModulesListData.java" startLine="17" startPosition="31" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -519,10 +519,10 @@
     <scopeInfo nodeId="8722937377469654913" fileName="ModulesListData.java" startLine="15" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="8722937377469654957" varName="modules" />
     </scopeInfo>
-    <unitInfo nodeId="8722937377469654897" fileName="ModulesListData.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModulesListData" />
     <unitInfo nodeId="8722937377469654941" fileName="ModulesListData.java" startLine="21" startPosition="51" endLine="25" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModulesListData$1" />
+    <unitInfo nodeId="8722937377469654897" fileName="ModulesListData.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModulesListData" />
   </root>
-  <root nodeId="8722937377469655024">
+  <root nodeId="8722937377469655024" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655025" fileName="NamespaceData.java" startLine="12" startPosition="48" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
     <nodeInfo nodeId="8722937377469655028" fileName="NamespaceData.java" startLine="13" startPosition="24" endLine="14" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />
     <nodeInfo nodeId="8722937377469655035" fileName="NamespaceData.java" startLine="14" startPosition="90" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
@@ -574,7 +574,7 @@
     </scopeInfo>
     <unitInfo nodeId="8722937377469655024" fileName="NamespaceData.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.NamespaceData" />
   </root>
-  <root nodeId="8722937377469655134">
+  <root nodeId="8722937377469655134" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655135" fileName="CheckBoxCellRenderrer.java" startLine="15" startPosition="79" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckBox" />
     <nodeInfo nodeId="8722937377469655138" fileName="CheckBoxCellRenderrer.java" startLine="16" startPosition="37" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />
     <nodeInfo nodeId="8722937377469655146" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="34" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -631,7 +631,7 @@
     <scopeInfo nodeId="8722937377469655290" fileName="CheckBoxCellRenderrer.java" startLine="43" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="8722937377469655134" fileName="CheckBoxCellRenderrer.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxCellRenderrer" />
   </root>
-  <root nodeId="8722937377469655376">
+  <root nodeId="8722937377469655376" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655382" fileName="CheckBoxNamespaceNode.java" startLine="7" startPosition="52" endLine="8" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8722937377469655393" fileName="CheckBoxNamespaceNode.java" startLine="11" startPosition="27" endLine="12" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8722937377469655405" fileName="CheckBoxNamespaceNode.java" startLine="15" startPosition="36" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -650,7 +650,7 @@
     </scopeInfo>
     <unitInfo nodeId="8722937377469655376" fileName="CheckBoxNamespaceNode.java" startLine="6" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNamespaceNode" />
   </root>
-  <root nodeId="8722937377469655412">
+  <root nodeId="8722937377469655412" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655413" fileName="CheckBoxNode.java" startLine="8" startPosition="67" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />
     <nodeInfo nodeId="8722937377469655416" fileName="CheckBoxNode.java" startLine="9" startPosition="27" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsChecked" />
     <nodeInfo nodeId="8722937377469655476" fileName="CheckBoxNode.java" startLine="12" startPosition="59" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -705,7 +705,7 @@
     </scopeInfo>
     <unitInfo nodeId="8722937377469655412" fileName="CheckBoxNode.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNode" />
   </root>
-  <root nodeId="8722937377469655541">
+  <root nodeId="8722937377469655541" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655773" fileName="CheckBoxTree.java" startLine="18" startPosition="62" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
     <nodeInfo nodeId="8722937377469655776" fileName="CheckBoxTree.java" startLine="19" startPosition="29" endLine="20" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedItems" />
     <nodeInfo nodeId="8722937377469655788" fileName="CheckBoxTree.java" startLine="22" startPosition="42" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -806,10 +806,10 @@
       <varInfo nodeId="8722937377469655627" varName="x" />
       <varInfo nodeId="8722937377469655629" varName="y" />
     </scopeInfo>
-    <unitInfo nodeId="8722937377469655541" fileName="CheckBoxTree.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxTree" />
     <unitInfo nodeId="8722937377469655824" fileName="CheckBoxTree.java" startLine="27" startPosition="37" endLine="31" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxTree$1" />
+    <unitInfo nodeId="8722937377469655541" fileName="CheckBoxTree.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxTree" />
   </root>
-  <root nodeId="8722937377469655854">
+  <root nodeId="8722937377469655854" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655855" fileName="NodeData.java" startLine="8" startPosition="27" endLine="9" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
     <nodeInfo nodeId="8722937377469655860" fileName="NodeData.java" startLine="9" startPosition="38" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
     <nodeInfo nodeId="8722937377469655864" fileName="NodeData.java" startLine="10" startPosition="26" endLine="11" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Z)Ljavax/swing/Icon;" />
@@ -832,7 +832,7 @@
     </scopeInfo>
     <unitInfo nodeId="8722937377469655854" fileName="NodeData.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
   </root>
-  <root nodeId="8722937377469655891">
+  <root nodeId="8722937377469655891" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469655891" fileName="AbstractStep.java" startLine="33" startPosition="56" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8722937377469655892" fileName="AbstractStep.java" startLine="35" startPosition="0" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
     <nodeInfo nodeId="8722937377469655899" fileName="AbstractStep.java" startLine="41" startPosition="23" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -978,14 +978,14 @@
     <scopeInfo nodeId="8722937377469655991" fileName="AbstractStep.java" startLine="68" startPosition="0" endLine="101" endPosition="0" />
     <unitInfo nodeId="8722937377469655891" fileName="AbstractStep.java" startLine="33" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
   </root>
-  <root nodeId="8722937377469656070">
+  <root nodeId="8722937377469656070" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469656071" fileName="IErrorHandler.java" startLine="6" startPosition="32" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setErrorText#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="8722937377469656071" fileName="IErrorHandler.java" startLine="6" startPosition="32" endLine="7" endPosition="40">
       <varInfo nodeId="8722937377469656075" varName="text" />
     </scopeInfo>
     <unitInfo nodeId="8722937377469656070" fileName="IErrorHandler.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
   </root>
-  <root nodeId="8722937377469656078">
+  <root nodeId="8722937377469656078" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469656660" fileName="LanguagesStep.java" startLine="31" startPosition="49" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8722937377469656663" fileName="LanguagesStep.java" startLine="32" startPosition="34" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="8722937377469656707" fileName="LanguagesStep.java" startLine="33" startPosition="51" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckTree" />
@@ -1209,13 +1209,13 @@
       <varInfo nodeId="8722937377469656379" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="8722937377469656247" fileName="LanguagesStep.java" startLine="58" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="8722937377469656078" fileName="LanguagesStep.java" startLine="31" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" />
+    <unitInfo nodeId="8722937377469656506" fileName="LanguagesStep.java" startLine="114" startPosition="43" endLine="123" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$2" />
     <unitInfo nodeId="8722937377469656276" fileName="LanguagesStep.java" startLine="63" startPosition="45" endLine="78" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$1" />
     <unitInfo nodeId="8722937377469656091" fileName="LanguagesStep.java" startLine="158" startPosition="16" endLine="174" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$1" />
-    <unitInfo nodeId="8722937377469656506" fileName="LanguagesStep.java" startLine="114" startPosition="43" endLine="123" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$2" />
     <unitInfo nodeId="8722937377469656079" fileName="LanguagesStep.java" startLine="154" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$MyTreeBuilder" />
+    <unitInfo nodeId="8722937377469656078" fileName="LanguagesStep.java" startLine="31" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" />
   </root>
-  <root nodeId="8722937377469656716">
+  <root nodeId="8722937377469656716" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469656722" fileName="ModelStep.java" startLine="23" startPosition="99" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8722937377469656740" fileName="ModelStep.java" startLine="27" startPosition="46" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8722937377469656751" fileName="ModelStep.java" startLine="31" startPosition="34" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1339,11 +1339,11 @@
       <varInfo nodeId="8722937377469656828" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="8722937377469656822" fileName="ModelStep.java" startLine="62" startPosition="0" endLine="93" endPosition="0" />
-    <unitInfo nodeId="8722937377469656716" fileName="ModelStep.java" startLine="22" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" />
-    <unitInfo nodeId="8722937377469656865" fileName="ModelStep.java" startLine="69" startPosition="92" endLine="89" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep$1" />
     <unitInfo nodeId="8722937377469656875" fileName="ModelStep.java" startLine="71" startPosition="61" endLine="87" endPosition="11" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep$2" />
+    <unitInfo nodeId="8722937377469656865" fileName="ModelStep.java" startLine="69" startPosition="92" endLine="89" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep$1" />
+    <unitInfo nodeId="8722937377469656716" fileName="ModelStep.java" startLine="22" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" />
   </root>
-  <root nodeId="8722937377469656986">
+  <root nodeId="8722937377469656986" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469657021" fileName="SolutionStep.java" startLine="17" startPosition="59" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMpsProject" />
     <nodeInfo nodeId="8722937377469657004" fileName="SolutionStep.java" startLine="20" startPosition="97" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8722937377469657008" fileName="SolutionStep.java" startLine="21" startPosition="39" endLine="22" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1442,11 +1442,11 @@
       <varInfo nodeId="8722937377469657056" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8722937377469657126" fileName="SolutionStep.java" startLine="68" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="8722937377469656986" fileName="SolutionStep.java" startLine="17" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep" />
     <unitInfo nodeId="8722937377469657065" fileName="SolutionStep.java" startLine="42" startPosition="52" endLine="46" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep$1" />
     <unitInfo nodeId="8722937377469657143" fileName="SolutionStep.java" startLine="70" startPosition="92" endLine="74" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep$2" />
+    <unitInfo nodeId="8722937377469656986" fileName="SolutionStep.java" startLine="17" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep" />
   </root>
-  <root nodeId="8722937377469657199">
+  <root nodeId="8722937377469657199" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469657638" fileName="TwoOptionsStep.java" startLine="25" startPosition="62" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="8722937377469657641" fileName="TwoOptionsStep.java" startLine="26" startPosition="53" endLine="27" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8722937377469657644" fileName="TwoOptionsStep.java" startLine="27" startPosition="36" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
@@ -1617,11 +1617,11 @@
     </scopeInfo>
     <scopeInfo nodeId="8722937377469657694" fileName="TwoOptionsStep.java" startLine="140" startPosition="0" endLine="153" endPosition="0" />
     <scopeInfo nodeId="8722937377469657265" fileName="TwoOptionsStep.java" startLine="66" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="8722937377469657199" fileName="TwoOptionsStep.java" startLine="25" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" />
-    <unitInfo nodeId="8722937377469657471" fileName="TwoOptionsStep.java" startLine="100" startPosition="29" endLine="106" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep$1" />
     <unitInfo nodeId="8722937377469657535" fileName="TwoOptionsStep.java" startLine="116" startPosition="35" endLine="120" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep$2" />
+    <unitInfo nodeId="8722937377469657471" fileName="TwoOptionsStep.java" startLine="100" startPosition="29" endLine="106" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep$1" />
+    <unitInfo nodeId="8722937377469657199" fileName="TwoOptionsStep.java" startLine="25" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" />
   </root>
-  <root nodeId="8722937377469657759">
+  <root nodeId="8722937377469657759" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469657760" fileName="AbstractBuildGenerator.java" startLine="16" startPosition="46" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectName" />
     <nodeInfo nodeId="8722937377469657763" fileName="AbstractBuildGenerator.java" startLine="17" startPosition="31" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolutionName" />
     <nodeInfo nodeId="8722937377469657766" fileName="AbstractBuildGenerator.java" startLine="18" startPosition="32" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolution" />
@@ -1766,7 +1766,7 @@
     <scopeInfo nodeId="8722937377469657826" fileName="AbstractBuildGenerator.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <unitInfo nodeId="8722937377469657759" fileName="AbstractBuildGenerator.java" startLine="16" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
   </root>
-  <root nodeId="8722937377469658098">
+  <root nodeId="8722937377469658098" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469658168" fileName="GenerateBuildWizard.java" startLine="10" startPosition="57" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8722937377469658171" fileName="GenerateBuildWizard.java" startLine="11" startPosition="34" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="8722937377469658187" fileName="GenerateBuildWizard.java" startLine="14" startPosition="43" endLine="15" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1828,10 +1828,10 @@
       <varInfo nodeId="8722937377469658230" varName="moduleStep" />
     </scopeInfo>
     <scopeInfo nodeId="8722937377469658225" fileName="GenerateBuildWizard.java" startLine="47" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="8722937377469658098" fileName="GenerateBuildWizard.java" startLine="10" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildWizard" />
     <unitInfo nodeId="8722937377469658179" fileName="GenerateBuildWizard.java" startLine="13" startPosition="47" endLine="17" endPosition="3" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildWizard$1" />
+    <unitInfo nodeId="8722937377469658098" fileName="GenerateBuildWizard.java" startLine="10" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildWizard" />
   </root>
-  <root nodeId="8722937377469658290">
+  <root nodeId="8722937377469658290" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="1622688651539133305" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="64" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICONS" />
     <nodeInfo nodeId="8722937377469658290" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="46" endLine="71" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8722937377469658526" fileName="BuildGeneratorImpl.java" startLine="72" startPosition="0" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -8806,83 +8806,83 @@
       <varInfo nodeId="3730845620957014381" varName="parameter_181" />
       <varInfo nodeId="3730845620957014381" varName="parameter_182" />
     </scopeInfo>
-    <unitInfo nodeId="8722937377469658290" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="0" endLine="4465" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl" />
-    <unitInfo nodeId="8722937377469658536" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="47" endLine="111" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$1" />
-    <unitInfo nodeId="8668191939852724801" fileName="BuildGeneratorImpl.java" startLine="97" startPosition="59" endLine="102" endPosition="9" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$2" />
-    <unitInfo nodeId="1622688651539229459" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="53" endLine="134" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$2" />
     <unitInfo nodeId="3256085672520562226" fileName="BuildGeneratorImpl.java" startLine="286" startPosition="127" endLine="290" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$3" />
     <unitInfo nodeId="440909057400845601" fileName="BuildGeneratorImpl.java" startLine="297" startPosition="442" endLine="301" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$4" />
     <unitInfo nodeId="3730845620956964960" fileName="BuildGeneratorImpl.java" startLine="342" startPosition="139" endLine="346" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$5" />
-    <unitInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="0" endLine="1632" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k" />
-    <unitInfo nodeId="3256085672520562274" fileName="BuildGeneratorImpl.java" startLine="1142" startPosition="0" endLine="1473" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0gb0j" />
-    <unitInfo nodeId="3256085672520562319" fileName="BuildGeneratorImpl.java" startLine="1505" startPosition="0" endLine="1541" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a23a9" />
-    <unitInfo nodeId="1021458544535498076" fileName="BuildGeneratorImpl.java" startLine="539" startPosition="0" endLine="556" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0s0j" />
-    <unitInfo nodeId="8722937377469659107" fileName="BuildGeneratorImpl.java" startLine="1027" startPosition="0" endLine="1044" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0t0j" />
-    <unitInfo nodeId="3256085672520549800" fileName="BuildGeneratorImpl.java" startLine="639" startPosition="0" endLine="663" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a1s0j" />
-    <unitInfo nodeId="8633283924066318506" fileName="BuildGeneratorImpl.java" startLine="4377" startPosition="0" endLine="4408" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a5a31" />
-    <unitInfo nodeId="8633283924066318516" fileName="BuildGeneratorImpl.java" startLine="4409" startPosition="0" endLine="4440" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a5a31_0" />
+    <unitInfo nodeId="8668191939852724801" fileName="BuildGeneratorImpl.java" startLine="97" startPosition="59" endLine="102" endPosition="9" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$2" />
+    <unitInfo nodeId="1622688651539229459" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="53" endLine="134" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$2" />
     <unitInfo nodeId="3256085672520489630" fileName="BuildGeneratorImpl.java" startLine="496" startPosition="0" endLine="513" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a81a9" />
-    <unitInfo nodeId="1021458544535498170" fileName="BuildGeneratorImpl.java" startLine="514" startPosition="0" endLine="538" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0c0s0j" />
-    <unitInfo nodeId="1021458544535498065" fileName="BuildGeneratorImpl.java" startLine="557" startPosition="0" endLine="581" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0d0a81a9" />
-    <unitInfo nodeId="3730845620956910433" fileName="BuildGeneratorImpl.java" startLine="1542" startPosition="0" endLine="1559" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0d0k" />
-    <unitInfo nodeId="8633283924066318490" fileName="BuildGeneratorImpl.java" startLine="4345" startPosition="0" endLine="4376" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0f0n" />
-    <unitInfo nodeId="3256085672520549781" fileName="BuildGeneratorImpl.java" startLine="719" startPosition="0" endLine="743" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0g0b81a9" />
-    <unitInfo nodeId="3256085672520429516" fileName="BuildGeneratorImpl.java" startLine="614" startPosition="0" endLine="638" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0h0a81a9" />
-    <unitInfo nodeId="2645375767751463018" fileName="BuildGeneratorImpl.java" startLine="744" startPosition="0" endLine="768" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0h0b81a9" />
-    <unitInfo nodeId="3256085672520549876" fileName="BuildGeneratorImpl.java" startLine="769" startPosition="0" endLine="1026" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a11a1s0j" />
-    <unitInfo nodeId="3730845620957014381" fileName="BuildGeneratorImpl.java" startLine="2018" startPosition="0" endLine="2688" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a12a01" />
-    <unitInfo nodeId="8633283924066273044" fileName="BuildGeneratorImpl.java" startLine="4441" startPosition="0" endLine="4464" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a1a51" />
-    <unitInfo nodeId="3256085672520549813" fileName="BuildGeneratorImpl.java" startLine="664" startPosition="0" endLine="700" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a2a1s0j" />
-    <unitInfo nodeId="3730845620957031505" fileName="BuildGeneratorImpl.java" startLine="3414" startPosition="0" endLine="3826" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a42a01" />
-    <unitInfo nodeId="3256085672520429490" fileName="BuildGeneratorImpl.java" startLine="582" startPosition="0" endLine="613" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a4a0s0j" />
+    <unitInfo nodeId="1021458544535498076" fileName="BuildGeneratorImpl.java" startLine="539" startPosition="0" endLine="556" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0s0j" />
     <unitInfo nodeId="3256085672520549760" fileName="BuildGeneratorImpl.java" startLine="701" startPosition="0" endLine="718" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a4a1s0j" />
-    <unitInfo nodeId="3256085672520562217" fileName="BuildGeneratorImpl.java" startLine="1045" startPosition="0" endLine="1070" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a62a9" />
-    <unitInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1633" startPosition="0" endLine="1855" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a71a01" />
-    <unitInfo nodeId="3256085672520562237" fileName="BuildGeneratorImpl.java" startLine="1071" startPosition="0" endLine="1141" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a72a9" />
+    <unitInfo nodeId="8722937377469659107" fileName="BuildGeneratorImpl.java" startLine="1027" startPosition="0" endLine="1044" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0t0j" />
+    <unitInfo nodeId="3730845620956910433" fileName="BuildGeneratorImpl.java" startLine="1542" startPosition="0" endLine="1559" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0d0k" />
     <unitInfo nodeId="3730845620956955137" fileName="BuildGeneratorImpl.java" startLine="1560" startPosition="0" endLine="1577" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a7a01" />
-    <unitInfo nodeId="3730845620956983376" fileName="BuildGeneratorImpl.java" startLine="1578" startPosition="0" endLine="1614" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a8a01" />
-    <unitInfo nodeId="440909057400845560" fileName="BuildGeneratorImpl.java" startLine="1474" startPosition="0" endLine="1504" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a0a0a0gb0j" />
-    <unitInfo nodeId="3730845620957014396" fileName="BuildGeneratorImpl.java" startLine="2689" startPosition="0" endLine="2719" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a12a01" />
-    <unitInfo nodeId="8722937377469658510" fileName="BuildGeneratorImpl.java" startLine="4315" startPosition="0" endLine="4344" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a21" />
-    <unitInfo nodeId="3730845620956943881" fileName="BuildGeneratorImpl.java" startLine="1856" startPosition="0" endLine="1893" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a71a01" />
-    <unitInfo nodeId="3730845620957014405" fileName="BuildGeneratorImpl.java" startLine="2720" startPosition="0" endLine="2750" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0c0a0a12a01" />
-    <unitInfo nodeId="3730845620957031657" fileName="BuildGeneratorImpl.java" startLine="3827" startPosition="0" endLine="3878" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0c0a0a42a01" />
-    <unitInfo nodeId="3730845620956943891" fileName="BuildGeneratorImpl.java" startLine="1894" startPosition="0" endLine="1931" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0c0a0a71a01" />
-    <unitInfo nodeId="3730845620957014418" fileName="BuildGeneratorImpl.java" startLine="2751" startPosition="0" endLine="2781" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0a12a01" />
-    <unitInfo nodeId="3730845620957031671" fileName="BuildGeneratorImpl.java" startLine="3879" startPosition="0" endLine="3930" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0a42a01" />
-    <unitInfo nodeId="3730845620956943902" fileName="BuildGeneratorImpl.java" startLine="1932" startPosition="0" endLine="1962" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0a71a01" />
+    <unitInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="0" endLine="1632" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k" />
     <unitInfo nodeId="8633283924066318715" fileName="BuildGeneratorImpl.java" startLine="4297" startPosition="0" endLine="4314" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0m" />
-    <unitInfo nodeId="3730845620957014429" fileName="BuildGeneratorImpl.java" startLine="2782" startPosition="0" endLine="2812" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0e0a0a12a01" />
-    <unitInfo nodeId="3730845620957031682" fileName="BuildGeneratorImpl.java" startLine="3931" startPosition="0" endLine="3975" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0e0a0a42a01" />
-    <unitInfo nodeId="3730845620956943913" fileName="BuildGeneratorImpl.java" startLine="1963" startPosition="0" endLine="1993" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0e0a0a71a01" />
-    <unitInfo nodeId="3730845620957014441" fileName="BuildGeneratorImpl.java" startLine="2813" startPosition="0" endLine="2843" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0f0a0a12a01" />
-    <unitInfo nodeId="3730845620957031694" fileName="BuildGeneratorImpl.java" startLine="3976" startPosition="0" endLine="4013" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0f0a0a42a01" />
+    <unitInfo nodeId="8722937377469658536" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="47" endLine="111" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$1" />
     <unitInfo nodeId="3730845620956943925" fileName="BuildGeneratorImpl.java" startLine="1994" startPosition="0" endLine="2017" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0f0a0a71a01" />
-    <unitInfo nodeId="3730845620957014450" fileName="BuildGeneratorImpl.java" startLine="2844" startPosition="0" endLine="2881" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0g0a0a12a01" />
-    <unitInfo nodeId="3730845620957031704" fileName="BuildGeneratorImpl.java" startLine="4014" startPosition="0" endLine="4051" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0g0a0a42a01" />
-    <unitInfo nodeId="3730845620957014460" fileName="BuildGeneratorImpl.java" startLine="2882" startPosition="0" endLine="2919" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0h0a0a12a01" />
-    <unitInfo nodeId="3730845620957031714" fileName="BuildGeneratorImpl.java" startLine="4052" startPosition="0" endLine="4089" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0h0a0a42a01" />
-    <unitInfo nodeId="3730845620957014474" fileName="BuildGeneratorImpl.java" startLine="2920" startPosition="0" endLine="2950" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0i0a0a12a01" />
-    <unitInfo nodeId="3730845620957031724" fileName="BuildGeneratorImpl.java" startLine="4090" startPosition="0" endLine="4127" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0i0a0a42a01" />
-    <unitInfo nodeId="3730845620957014486" fileName="BuildGeneratorImpl.java" startLine="2951" startPosition="0" endLine="2988" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0j0a0a12a01" />
-    <unitInfo nodeId="3730845620957031734" fileName="BuildGeneratorImpl.java" startLine="4128" startPosition="0" endLine="4165" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0j0a0a42a01" />
-    <unitInfo nodeId="3730845620957014496" fileName="BuildGeneratorImpl.java" startLine="2989" startPosition="0" endLine="3026" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0k0a0a12a01" />
-    <unitInfo nodeId="3730845620957031744" fileName="BuildGeneratorImpl.java" startLine="4166" startPosition="0" endLine="4203" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0k0a0a42a01" />
-    <unitInfo nodeId="3730845620957014506" fileName="BuildGeneratorImpl.java" startLine="3027" startPosition="0" endLine="3064" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0l0a0a12a01" />
-    <unitInfo nodeId="3730845620957031754" fileName="BuildGeneratorImpl.java" startLine="4204" startPosition="0" endLine="4241" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0l0a0a42a01" />
-    <unitInfo nodeId="3730845620957014516" fileName="BuildGeneratorImpl.java" startLine="3065" startPosition="0" endLine="3102" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0m0a0a12a01" />
-    <unitInfo nodeId="3730845620957031763" fileName="BuildGeneratorImpl.java" startLine="4242" startPosition="0" endLine="4272" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0m0a0a42a01" />
-    <unitInfo nodeId="3730845620957014526" fileName="BuildGeneratorImpl.java" startLine="3103" startPosition="0" endLine="3140" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0n0a0a12a01" />
-    <unitInfo nodeId="3730845620957031774" fileName="BuildGeneratorImpl.java" startLine="4273" startPosition="0" endLine="4296" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0n0a0a42a01" />
-    <unitInfo nodeId="3730845620957014536" fileName="BuildGeneratorImpl.java" startLine="3141" startPosition="0" endLine="3178" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0o0a0a12a01" />
-    <unitInfo nodeId="3730845620957014546" fileName="BuildGeneratorImpl.java" startLine="3179" startPosition="0" endLine="3216" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0p0a0a12a01" />
-    <unitInfo nodeId="3730845620957014700" fileName="BuildGeneratorImpl.java" startLine="3217" startPosition="0" endLine="3268" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0q0a0a12a01" />
-    <unitInfo nodeId="3730845620957014729" fileName="BuildGeneratorImpl.java" startLine="3269" startPosition="0" endLine="3320" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0r0a0a12a01" />
-    <unitInfo nodeId="3730845620957014719" fileName="BuildGeneratorImpl.java" startLine="3321" startPosition="0" endLine="3365" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0s0a0a12a01" />
     <unitInfo nodeId="3730845620957014747" fileName="BuildGeneratorImpl.java" startLine="3366" startPosition="0" endLine="3389" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0t0a0a12a01" />
     <unitInfo nodeId="3730845620957014757" fileName="BuildGeneratorImpl.java" startLine="3390" startPosition="0" endLine="3413" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0u0a0a12a01" />
+    <unitInfo nodeId="3730845620957031774" fileName="BuildGeneratorImpl.java" startLine="4273" startPosition="0" endLine="4296" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0n0a0a42a01" />
+    <unitInfo nodeId="8633283924066273044" fileName="BuildGeneratorImpl.java" startLine="4441" startPosition="0" endLine="4464" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a1a51" />
+    <unitInfo nodeId="1021458544535498170" fileName="BuildGeneratorImpl.java" startLine="514" startPosition="0" endLine="538" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0c0s0j" />
+    <unitInfo nodeId="1021458544535498065" fileName="BuildGeneratorImpl.java" startLine="557" startPosition="0" endLine="581" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0d0a81a9" />
+    <unitInfo nodeId="3256085672520429516" fileName="BuildGeneratorImpl.java" startLine="614" startPosition="0" endLine="638" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0h0a81a9" />
+    <unitInfo nodeId="3256085672520549800" fileName="BuildGeneratorImpl.java" startLine="639" startPosition="0" endLine="663" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a1s0j" />
+    <unitInfo nodeId="3256085672520549781" fileName="BuildGeneratorImpl.java" startLine="719" startPosition="0" endLine="743" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0g0b81a9" />
+    <unitInfo nodeId="2645375767751463018" fileName="BuildGeneratorImpl.java" startLine="744" startPosition="0" endLine="768" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0h0b81a9" />
+    <unitInfo nodeId="3256085672520562217" fileName="BuildGeneratorImpl.java" startLine="1045" startPosition="0" endLine="1070" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a62a9" />
+    <unitInfo nodeId="8722937377469658510" fileName="BuildGeneratorImpl.java" startLine="4315" startPosition="0" endLine="4344" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a21" />
+    <unitInfo nodeId="440909057400845560" fileName="BuildGeneratorImpl.java" startLine="1474" startPosition="0" endLine="1504" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a0a0a0gb0j" />
+    <unitInfo nodeId="3730845620956943902" fileName="BuildGeneratorImpl.java" startLine="1932" startPosition="0" endLine="1962" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0a71a01" />
+    <unitInfo nodeId="3730845620956943913" fileName="BuildGeneratorImpl.java" startLine="1963" startPosition="0" endLine="1993" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0e0a0a71a01" />
+    <unitInfo nodeId="3730845620957014396" fileName="BuildGeneratorImpl.java" startLine="2689" startPosition="0" endLine="2719" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a12a01" />
+    <unitInfo nodeId="3730845620957014405" fileName="BuildGeneratorImpl.java" startLine="2720" startPosition="0" endLine="2750" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0c0a0a12a01" />
+    <unitInfo nodeId="3730845620957014418" fileName="BuildGeneratorImpl.java" startLine="2751" startPosition="0" endLine="2781" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0a12a01" />
+    <unitInfo nodeId="3730845620957014429" fileName="BuildGeneratorImpl.java" startLine="2782" startPosition="0" endLine="2812" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0e0a0a12a01" />
+    <unitInfo nodeId="3730845620957014441" fileName="BuildGeneratorImpl.java" startLine="2813" startPosition="0" endLine="2843" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0f0a0a12a01" />
+    <unitInfo nodeId="3730845620957014474" fileName="BuildGeneratorImpl.java" startLine="2920" startPosition="0" endLine="2950" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0i0a0a12a01" />
+    <unitInfo nodeId="3730845620957031763" fileName="BuildGeneratorImpl.java" startLine="4242" startPosition="0" endLine="4272" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0m0a0a42a01" />
+    <unitInfo nodeId="3256085672520429490" fileName="BuildGeneratorImpl.java" startLine="582" startPosition="0" endLine="613" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a4a0s0j" />
+    <unitInfo nodeId="8633283924066318490" fileName="BuildGeneratorImpl.java" startLine="4345" startPosition="0" endLine="4376" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0f0n" />
+    <unitInfo nodeId="8633283924066318506" fileName="BuildGeneratorImpl.java" startLine="4377" startPosition="0" endLine="4408" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a5a31" />
+    <unitInfo nodeId="8633283924066318516" fileName="BuildGeneratorImpl.java" startLine="4409" startPosition="0" endLine="4440" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a5a31_0" />
+    <unitInfo nodeId="3256085672520549813" fileName="BuildGeneratorImpl.java" startLine="664" startPosition="0" endLine="700" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a2a1s0j" />
+    <unitInfo nodeId="3256085672520562319" fileName="BuildGeneratorImpl.java" startLine="1505" startPosition="0" endLine="1541" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a23a9" />
+    <unitInfo nodeId="3730845620956983376" fileName="BuildGeneratorImpl.java" startLine="1578" startPosition="0" endLine="1614" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a8a01" />
+    <unitInfo nodeId="3730845620956943881" fileName="BuildGeneratorImpl.java" startLine="1856" startPosition="0" endLine="1893" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0b0a0a71a01" />
+    <unitInfo nodeId="3730845620956943891" fileName="BuildGeneratorImpl.java" startLine="1894" startPosition="0" endLine="1931" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0c0a0a71a01" />
+    <unitInfo nodeId="3730845620957014450" fileName="BuildGeneratorImpl.java" startLine="2844" startPosition="0" endLine="2881" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0g0a0a12a01" />
+    <unitInfo nodeId="3730845620957014460" fileName="BuildGeneratorImpl.java" startLine="2882" startPosition="0" endLine="2919" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0h0a0a12a01" />
+    <unitInfo nodeId="3730845620957014486" fileName="BuildGeneratorImpl.java" startLine="2951" startPosition="0" endLine="2988" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0j0a0a12a01" />
+    <unitInfo nodeId="3730845620957014496" fileName="BuildGeneratorImpl.java" startLine="2989" startPosition="0" endLine="3026" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0k0a0a12a01" />
+    <unitInfo nodeId="3730845620957014506" fileName="BuildGeneratorImpl.java" startLine="3027" startPosition="0" endLine="3064" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0l0a0a12a01" />
+    <unitInfo nodeId="3730845620957014516" fileName="BuildGeneratorImpl.java" startLine="3065" startPosition="0" endLine="3102" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0m0a0a12a01" />
+    <unitInfo nodeId="3730845620957014526" fileName="BuildGeneratorImpl.java" startLine="3103" startPosition="0" endLine="3140" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0n0a0a12a01" />
+    <unitInfo nodeId="3730845620957014536" fileName="BuildGeneratorImpl.java" startLine="3141" startPosition="0" endLine="3178" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0o0a0a12a01" />
+    <unitInfo nodeId="3730845620957014546" fileName="BuildGeneratorImpl.java" startLine="3179" startPosition="0" endLine="3216" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0p0a0a12a01" />
+    <unitInfo nodeId="3730845620957031694" fileName="BuildGeneratorImpl.java" startLine="3976" startPosition="0" endLine="4013" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0f0a0a42a01" />
+    <unitInfo nodeId="3730845620957031704" fileName="BuildGeneratorImpl.java" startLine="4014" startPosition="0" endLine="4051" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0g0a0a42a01" />
+    <unitInfo nodeId="3730845620957031714" fileName="BuildGeneratorImpl.java" startLine="4052" startPosition="0" endLine="4089" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0h0a0a42a01" />
+    <unitInfo nodeId="3730845620957031724" fileName="BuildGeneratorImpl.java" startLine="4090" startPosition="0" endLine="4127" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0i0a0a42a01" />
+    <unitInfo nodeId="3730845620957031734" fileName="BuildGeneratorImpl.java" startLine="4128" startPosition="0" endLine="4165" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0j0a0a42a01" />
+    <unitInfo nodeId="3730845620957031744" fileName="BuildGeneratorImpl.java" startLine="4166" startPosition="0" endLine="4203" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0k0a0a42a01" />
+    <unitInfo nodeId="3730845620957031754" fileName="BuildGeneratorImpl.java" startLine="4204" startPosition="0" endLine="4241" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0l0a0a42a01" />
+    <unitInfo nodeId="3730845620957014719" fileName="BuildGeneratorImpl.java" startLine="3321" startPosition="0" endLine="3365" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0s0a0a12a01" />
+    <unitInfo nodeId="3730845620957031682" fileName="BuildGeneratorImpl.java" startLine="3931" startPosition="0" endLine="3975" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0e0a0a42a01" />
+    <unitInfo nodeId="3730845620957014700" fileName="BuildGeneratorImpl.java" startLine="3217" startPosition="0" endLine="3268" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0q0a0a12a01" />
+    <unitInfo nodeId="3730845620957014729" fileName="BuildGeneratorImpl.java" startLine="3269" startPosition="0" endLine="3320" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0r0a0a12a01" />
+    <unitInfo nodeId="3730845620957031657" fileName="BuildGeneratorImpl.java" startLine="3827" startPosition="0" endLine="3878" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0c0a0a42a01" />
+    <unitInfo nodeId="3730845620957031671" fileName="BuildGeneratorImpl.java" startLine="3879" startPosition="0" endLine="3930" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0d0a0a42a01" />
+    <unitInfo nodeId="3256085672520562237" fileName="BuildGeneratorImpl.java" startLine="1071" startPosition="0" endLine="1141" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a72a9" />
+    <unitInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1633" startPosition="0" endLine="1855" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a71a01" />
+    <unitInfo nodeId="3256085672520549876" fileName="BuildGeneratorImpl.java" startLine="769" startPosition="0" endLine="1026" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a11a1s0j" />
+    <unitInfo nodeId="3256085672520562274" fileName="BuildGeneratorImpl.java" startLine="1142" startPosition="0" endLine="1473" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0gb0j" />
+    <unitInfo nodeId="3730845620957031505" fileName="BuildGeneratorImpl.java" startLine="3414" startPosition="0" endLine="3826" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a42a01" />
+    <unitInfo nodeId="3730845620957014381" fileName="BuildGeneratorImpl.java" startLine="2018" startPosition="0" endLine="2688" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a12a01" />
+    <unitInfo nodeId="8722937377469658290" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="0" endLine="4465" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl" />
   </root>
-  <root nodeId="8722937377469659230">
+  <root nodeId="8722937377469659230" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469659243" fileName="BuildGeneratorUtil.java" startLine="25" startPosition="89" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8722937377469659248" fileName="BuildGeneratorUtil.java" startLine="26" startPosition="75" endLine="27" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8722937377469659255" fileName="BuildGeneratorUtil.java" startLine="27" startPosition="83" endLine="28" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -8979,11 +8979,11 @@
       <varInfo nodeId="8722937377469659410" varName="solutionBaseDirFile" />
       <varInfo nodeId="8722937377469659408" varName="solutionName" />
     </scopeInfo>
-    <unitInfo nodeId="8722937377469659230" fileName="BuildGeneratorUtil.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
     <unitInfo nodeId="8722937377469659281" fileName="BuildGeneratorUtil.java" startLine="36" startPosition="48" endLine="40" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil$1" />
     <unitInfo nodeId="8722937377469659354" fileName="BuildGeneratorUtil.java" startLine="62" startPosition="64" endLine="66" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil$2" />
+    <unitInfo nodeId="8722937377469659230" fileName="BuildGeneratorUtil.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
   </root>
-  <root nodeId="8722937377469659497">
+  <root nodeId="8722937377469659497" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="21" startPosition="70" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="22" startPosition="72" endLine="23" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="25" startPosition="49" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -9068,10 +9068,10 @@
       <varInfo nodeId="8722937377469659497" varName="_params" />
       <varInfo nodeId="8722937377469659497" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action" />
     <unitInfo nodeId="8722937377469659532" fileName="GenerateBuildForProjectAction_Action.java" startLine="69" startPosition="58" endLine="73" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action$1" />
+    <unitInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action" />
   </root>
-  <root nodeId="8722937377469659543">
+  <root nodeId="8722937377469659543" modelId="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)">
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="8" startPosition="82" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="9" startPosition="93" endLine="10" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="12" startPosition="51" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
