@@ -126,8 +126,8 @@ public class Patternv3_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v3_1fi_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_field = nodeToMatch_v3_1fi_a0a.getReferent("variableDeclaration");
                 patternVar_className = nodeToMatch_v3_1fi_a0a.getReferent("classifier");
+                patternVar_field = nodeToMatch_v3_1fi_a0a.getReferent("variableDeclaration");
               }
             }
           }

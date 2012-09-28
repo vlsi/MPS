@@ -166,7 +166,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
           }
           result = quotedNode1_17;
         }
-        quotedNode_12.setReferent("variableDeclaration", quotedNode_5);
+        quotedNode_12.setReferenceTarget("variableDeclaration", quotedNode_5);
         return result;
       }
     }
@@ -215,29 +215,29 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                         return false;
                       }
                       {
-                        String childRole_v2_1fi__1 = "leftExpression";
+                        String childRole_v2_1fi__1 = "rightExpression";
                         if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_a1a0, childRole_v2_1fi__1, 1))) {
                           return false;
                         }
                         {
                           SNode childVar_v2_1fi_a0b0a = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__1).get(0);
-                          this.patternVar_p = childVar_v2_1fi_a0b0a;
+                          {
+                            SNode nodeToMatch_v2_1fi_a0b0a;
+                            nodeToMatch_v2_1fi_a0b0a = childVar_v2_1fi_a0b0a;
+                            if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_v2_1fi_a0b0a.getConcept().getId()))) {
+                              return false;
+                            }
+                          }
                         }
                       }
                       {
-                        String childRole_v2_1fi__2 = "rightExpression";
+                        String childRole_v2_1fi__2 = "leftExpression";
                         if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_a1a0, childRole_v2_1fi__2, 1))) {
                           return false;
                         }
                         {
                           SNode childVar_v2_1fi_a0b0a_0 = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__2).get(0);
-                          {
-                            SNode nodeToMatch_v2_1fi_a0b0a;
-                            nodeToMatch_v2_1fi_a0b0a = childVar_v2_1fi_a0b0a_0;
-                            if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_v2_1fi_a0b0a.getConcept().getId()))) {
-                              return false;
-                            }
-                          }
+                          this.patternVar_p = childVar_v2_1fi_a0b0a_0;
                         }
                       }
                     }

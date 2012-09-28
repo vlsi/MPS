@@ -123,8 +123,8 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_Property_ru5khm_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_field = nodeToMatch_Property_ru5khm_a0a.getReferent("variableDeclaration");
                 patternVar_className = nodeToMatch_Property_ru5khm_a0a.getReferent("classifier");
+                patternVar_field = nodeToMatch_Property_ru5khm_a0a.getReferent("variableDeclaration");
               }
             }
           }

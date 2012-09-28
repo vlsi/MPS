@@ -142,8 +142,8 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_ListPattern_9twfax_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_field = nodeToMatch_ListPattern_9twfax_a0a.getReferent("variableDeclaration");
                 patternVar_className = nodeToMatch_ListPattern_9twfax_a0a.getReferent("classifier");
+                patternVar_field = nodeToMatch_ListPattern_9twfax_a0a.getReferent("variableDeclaration");
               }
             }
           }
