@@ -19,6 +19,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -549,6 +550,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1767704432736121442(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "action", true);
+  }
+
+  public static SNode sourceNodeQuery_7236394192440107561(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "variable", false));
   }
 
   public static Iterable sourceNodesQuery_4855904478357020857(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
