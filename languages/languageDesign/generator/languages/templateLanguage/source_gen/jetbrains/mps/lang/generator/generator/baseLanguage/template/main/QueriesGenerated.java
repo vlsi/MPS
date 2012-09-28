@@ -3563,21 +3563,20 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4155486055398183512(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
-    List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), _context.getNode().getPropertyNames());
-    for (SNode child : _context.getNode().getChildren(true)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.PropertyMacro")) {
-        String role = AttributeOperations.getPropertyName(SNodeOperations.cast(child, "jetbrains.mps.lang.generator.structure.PropertyMacro"));
-        ListSequence.fromList(propertyNames).removeElement(role);
+    final List<SNode> result = new ArrayList<SNode>();
+    _context.getNode().visitProperties(new org.jetbrains.mps.openapi.model.SNode.PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro"), name)) != null)) {
+          return true;
+        }
+        SNode propertyNode = SModelOperations.createNewNode(_context.getInputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        propertyNode.setProperty("propertyName", name);
+        propertyNode.setProperty("propertyValue", value);
+        ListSequence.fromList(result).addElement(propertyNode);
+
+        return true;
       }
-    }
-    Collections.sort(propertyNames);
-    for (String property : propertyNames) {
-      SNode propertyNode = SModelOperations.createNewNode(_context.getInputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      propertyNode.setProperty("propertyName", property);
-      propertyNode.setProperty("propertyValue", _context.getNode().getProperty(property));
-      ListSequence.fromList(result).addElement(propertyNode);
-    }
+    });
     return result;
   }
 
