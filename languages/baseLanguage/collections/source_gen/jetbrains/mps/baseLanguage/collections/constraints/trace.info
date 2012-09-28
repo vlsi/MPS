@@ -291,7 +291,9 @@
       <varInfo nodeId="1224668254828" varName="operationContext" />
       <varInfo nodeId="1224668254828" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6801639034384669007" fileName="SequenceOperation_Constraints.java" startLine="53" startPosition="13" endLine="66" endPosition="11" />
+    <scopeInfo nodeId="6801639034384669016" fileName="SequenceOperation_Constraints.java" startLine="53" startPosition="13" endLine="66" endPosition="11">
+      <varInfo nodeId="6801639034384669025" varName="exptype" />
+    </scopeInfo>
     <scopeInfo nodeId="6801639034384668220" fileName="SequenceOperation_Constraints.java" startLine="48" startPosition="67" endLine="67" endPosition="9">
       <varInfo nodeId="6801639034384668224" varName="cld" />
     </scopeInfo>

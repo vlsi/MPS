@@ -30,9 +30,7 @@ import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class TypesUtil {
 
@@ -45,16 +43,16 @@ public class TypesUtil {
   }
 
   public static boolean hasVariablesInside(SNode node) {
-    if (isVariable(node)) {
+    if (TypesUtil.isVariable(node)) {
       return true;
     }
     for (SNode child : node.getChildren()) {
-      if (hasVariablesInside(child)) {
+      if (TypesUtil.hasVariablesInside(child)) {
         return true;
       }
     }
     for (SNode referent : node.getReferents()) {
-      if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
+      if (referent != null && TypesUtil.isVariable(referent)) {
         return true;
       }
     }
@@ -107,37 +105,44 @@ public class TypesUtil {
   }
 
   public static boolean match(SNode left, SNode right) {
-    return match(left, right, null, null);
+    return match(left, right, null);
   }
 
-  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
-    if (left == right) {
-      return true;
-    }
-    if (left == null || right == null) {
-      return false;
-    }
+  public static boolean match(SNode left, SNode right, /*out*/ Collection<Pair<SNode,SNode>> matchingPairs) {
+    if (left == right) return true;
+    if (left == null || right == null) return false;
+
     if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
-      if (equations != null) {
-        equations.addEquation(left, right, info);
+      if (matchingPairs != null) {
+        matchingPairs.add(new Pair<SNode, SNode>(left, right));
       }
       return true;
     }
-    TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
-    boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
-    if (result) {
-      if (equations != null) {
-        equations.addEquations(typeMatchModifier.getChildEqs(), info);
-      }
+
+    MatchingNodesCollector matchingNodesCollector = new MatchingNodesCollector();
+    boolean match = MatchingUtil.matchNodes(left, right, matchingNodesCollector, false);
+    if (match && matchingPairs != null) {
+      matchingPairs.addAll(matchingNodesCollector.myMatchingPairs);
     }
-    return result;
+
+    return match;
   }
 
-  private static class TypeMatchModifier implements IMatchModifier {
-    final Set<Pair<SNode, SNode>> childEQs = new THashSet<Pair<SNode, SNode>>();
+  @Deprecated
+  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    boolean match = match(left, right, matchingPairs);
+    if (match && equations != null) {
+      equations.addEquations(matchingPairs, info);
+    }
+    return match;
+  }
+
+  private static class MatchingNodesCollector implements IMatchModifier {
+    private final Set<Pair<SNode, SNode>> myMatchingPairs = new THashSet<Pair<SNode, SNode>>();
 
     public boolean accept(SNode node1, SNode node2) {
-      return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
+      return TypesUtil.isVariable(node1) || TypesUtil.isVariable(node2);
     }
 
     public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
@@ -145,18 +150,12 @@ public class TypesUtil {
     }
 
     public void performAction(SNode node1, SNode node2) {
-      childEQs.add(new Pair<SNode, SNode>(node1, node2));
+      if (myMatchingPairs != null) {
+        myMatchingPairs.add(new Pair<SNode, SNode>(node1, node2));
+      }
     }
 
     public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
-    }
-
-    public Set<Pair<SNode, SNode>> getChildEqs() {
-      return childEQs;
-    }
-
-    public void clear() {
-      childEQs.clear();
     }
   }
 

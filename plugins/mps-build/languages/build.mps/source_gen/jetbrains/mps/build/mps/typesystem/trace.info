@@ -183,9 +183,7 @@
       <varInfo nodeId="1392391688313350145" varName="runtimeDependencies" />
       <varInfo nodeId="1392391688313350277" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364739" fileName="IdeaPluginDependenciesHelper.java" startLine="77" startPosition="103" endLine="85" endPosition="5">
-      <varInfo nodeId="1392391688313364741" varName="uns" />
-    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364713" fileName="IdeaPluginDependenciesHelper.java" startLine="77" startPosition="103" endLine="85" endPosition="5" />
     <scopeInfo nodeId="1392391688313364710" fileName="IdeaPluginDependenciesHelper.java" startLine="76" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1392391688313364719" varName="includeModuleName" />
       <varInfo nodeId="1392391688313364716" varName="module" />

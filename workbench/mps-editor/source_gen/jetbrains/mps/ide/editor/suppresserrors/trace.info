@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7348309840067517697">
+  <root nodeId="7348309840067517697" modelId="r:ae9ec0c8-644a-4abb-bd37-ca2f4eb2d3d9(jetbrains.mps.ide.editor.suppresserrors)">
     <nodeInfo nodeId="7348309840067517718" fileName="SuppressErrorsChecker.java" startLine="24" startPosition="117" endLine="25" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7348309840067517725" fileName="SuppressErrorsChecker.java" startLine="25" startPosition="90" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7348309840067517734" fileName="SuppressErrorsChecker.java" startLine="28" startPosition="201" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -28,7 +28,7 @@
     </scopeInfo>
     <unitInfo nodeId="7348309840067517697" fileName="SuppressErrorsChecker.java" startLine="20" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker" />
   </root>
-  <root nodeId="7348309840067517756">
+  <root nodeId="7348309840067517756" modelId="r:ae9ec0c8-644a-4abb-bd37-ca2f4eb2d3d9(jetbrains.mps.ide.editor.suppresserrors)">
     <nodeInfo nodeId="7348309840067517757" fileName="SuppressErrorsMessage.java" startLine="20" startPosition="81" endLine="21" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
     <nodeInfo nodeId="7348309840067517763" fileName="SuppressErrorsMessage.java" startLine="21" startPosition="123" endLine="22" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON_PATH" />
     <nodeInfo nodeId="7348309840067517780" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="86" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

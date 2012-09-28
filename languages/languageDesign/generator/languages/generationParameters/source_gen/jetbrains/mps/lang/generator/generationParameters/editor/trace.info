@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1646518082434566195">
+  <root nodeId="1646518082434566195" modelId="r:deb6d2ec-081d-477c-be0d-cb6048dca9ea(jetbrains.mps.lang.generator.generationParameters.editor)">
     <nodeInfo nodeId="1646518082434566195" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1646518082434566197" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1646518082434566197" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="32" startPosition="96" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -187,7 +187,7 @@
     <unitInfo nodeId="1646518082434566195" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="26" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameterContainer_Editor" />
     <unitInfo nodeId="1646518082434566204" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="93" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameterContainer_Editor$parametersListHandler_lay3s1_d0" />
   </root>
-  <root nodeId="3064182000795631812">
+  <root nodeId="3064182000795631812" modelId="r:deb6d2ec-081d-477c-be0d-cb6048dca9ea(jetbrains.mps.lang.generator.generationParameters.editor)">
     <nodeInfo nodeId="3064182000795631823" fileName="DefaultGenerationParameterId_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3064182000795631828" fileName="DefaultGenerationParameterId_Editor.java" startLine="86" startPosition="58" endLine="86" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -448,7 +448,7 @@
     <unitInfo nodeId="3064182000795631824" fileName="DefaultGenerationParameterId_Editor.java" startLine="98" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGenerationParameterId_Editor$_Inline_38ix8g_a1a" />
     <unitInfo nodeId="3064182000795631829" fileName="DefaultGenerationParameterId_Editor.java" startLine="135" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGenerationParameterId_Editor$_Inline_38ix8g_a3a" />
   </root>
-  <root nodeId="8484425748929510077">
+  <root nodeId="8484425748929510077" modelId="r:deb6d2ec-081d-477c-be0d-cb6048dca9ea(jetbrains.mps.lang.generator.generationParameters.editor)">
     <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="94" startPosition="58" endLine="94" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8484425748929510077" fileName="DefaultGeneratorParameter_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510077" fileName="DefaultGeneratorParameter_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

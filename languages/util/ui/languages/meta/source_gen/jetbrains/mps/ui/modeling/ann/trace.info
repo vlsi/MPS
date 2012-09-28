@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8568902829141635451">
+  <root nodeId="8568902829141635451" modelId="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)">
     <unitInfo nodeId="8568902829141635451" fileName="Local.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ui.modeling.ann.Local" />
   </root>
 </debugInfo>

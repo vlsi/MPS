@@ -2356,7 +2356,9 @@
     <scopeInfo nodeId="2476748692227885381" fileName="TransformatorImpl.java" startLine="316" startPosition="0" endLine="323" endPosition="5">
       <varInfo nodeId="2476748692227885382" varName="variableRef" />
     </scopeInfo>
-    <scopeInfo nodeId="2476748692227885410" fileName="TransformatorImpl.java" startLine="326" startPosition="57" endLine="333" endPosition="5" />
+    <scopeInfo nodeId="2476748692227885411" fileName="TransformatorImpl.java" startLine="326" startPosition="57" endLine="333" endPosition="5">
+      <varInfo nodeId="2476748692227885412" varName="baseAssignment" />
+    </scopeInfo>
     <scopeInfo nodeId="2476748692227885470" fileName="TransformatorImpl.java" startLine="344" startPosition="5" endLine="351" endPosition="5">
       <varInfo nodeId="2476748692227885471" varName="classExpression" />
     </scopeInfo>

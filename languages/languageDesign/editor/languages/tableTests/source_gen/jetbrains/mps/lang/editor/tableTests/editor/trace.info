@@ -186,8 +186,12 @@
     <scopeInfo nodeId="2882388703616283629" fileName="Table_Editor.java" startLine="97" startPosition="125" endLine="100" endPosition="13">
       <varInfo nodeId="2882388703616283640" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="6814837785823339810" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13" />
-    <scopeInfo nodeId="6814837785823339820" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13" />
+    <scopeInfo nodeId="6814837785823339862" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13">
+      <varInfo nodeId="6814837785823339863" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="6814837785823339832" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13">
+      <varInfo nodeId="6814837785823339833" varName="row" />
+    </scopeInfo>
     <scopeInfo nodeId="2882388703616228151" fileName="Table_Editor.java" startLine="27" startPosition="53" endLine="31" endPosition="0">
       <varInfo nodeId="2882388703616228151" varName="editorContext" />
       <varInfo nodeId="2882388703616228151" varName="node" />

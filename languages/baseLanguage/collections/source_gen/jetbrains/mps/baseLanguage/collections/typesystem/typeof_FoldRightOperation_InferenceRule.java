@@ -38,10 +38,12 @@ public class typeof_FoldRightOperation_InferenceRule extends AbstractInferenceRu
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069421908", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069421912", true), (SNode) typeCheckingContext.getRepresentative(seedType_typevar_1522217801069421888), _info_12389875345);
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "closure", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069421916", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069421930", true), (SNode) new typeof_FoldRightOperation_InferenceRule.QuotationClass_tdnv4o_a0a5a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1522217801069421887), typeCheckingContext.getRepresentative(seedType_typevar_1522217801069421888), typeCheckingContext.getRepresentative(seedType_typevar_1522217801069421888), typeCheckingContext), false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "closure", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069421916", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069421930", true), (SNode) new typeof_FoldRightOperation_InferenceRule.QuotationClass_tdnv4o_a0a5a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1522217801069421887), typeCheckingContext.getRepresentative(seedType_typevar_1522217801069421888), typeCheckingContext.getRepresentative(seedType_typevar_1522217801069421888), typeCheckingContext), true, true, _info_12389875345);
+      }
     }
   }
 

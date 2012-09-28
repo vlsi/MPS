@@ -934,7 +934,9 @@
       <varInfo nodeId="4415110399252644418" varName="nodeChanges" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265895" fileName="MergeSession.java" startLine="61" startPosition="86" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="4515621863031788005" fileName="MergeSession.java" startLine="99" startPosition="39" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="4515621863031788006" fileName="MergeSession.java" startLine="99" startPosition="39" endLine="115" endPosition="5">
+      <varInfo nodeId="4515621863031788007" varName="change" />
+    </scopeInfo>
     <scopeInfo nodeId="4124845871897266021" fileName="MergeSession.java" startLine="267" startPosition="53" endLine="283" endPosition="73">
       <varInfo nodeId="8037826462425846543" varName="stateCopy" />
     </scopeInfo>

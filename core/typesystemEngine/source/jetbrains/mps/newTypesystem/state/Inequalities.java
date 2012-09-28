@@ -192,13 +192,18 @@ public class Inequalities {
       SNode input = myState.getRepresentative(pair.o1);
       SNode output = myState.getRepresentative(pair.o2);
       if (input == null || output == null) continue;
-      if (TypesUtil.isVariable(input)) {
-        myNodesInc.add(input);
-        myNodesToBlocksInc.addLink(input, inequality);
+
+      for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
+        if (TypesUtil.isVariable(inputVar)) {
+          myNodesInc.add(inputVar);
+          myNodesToBlocksInc.addLink(inputVar, inequality);
+        }
       }
-      if (TypesUtil.isVariable(output)) {
-        myNodesInc.add(output);
-        myNodesToBlocksInc.addLink(output, inequality);
+      for (SNode outputVar : TypesUtil.getVariables(output, myState)) {
+        if (TypesUtil.isVariable(outputVar)) {
+          myNodesInc.add(outputVar);
+          myNodesToBlocksInc.addLink(outputVar, inequality);
+        }
       }
       if (input != output) {
         for (SNode inputVar : TypesUtil.getVariables(input, myState)) {

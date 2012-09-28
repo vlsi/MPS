@@ -371,7 +371,9 @@
     <scopeInfo nodeId="5778265495851109961" fileName="StubResolver.java" startLine="51" startPosition="25" endLine="53" endPosition="24" />
     <scopeInfo nodeId="9073603541474867759" fileName="StubResolver.java" startLine="80" startPosition="91" endLine="82" endPosition="56" />
     <scopeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="112" startPosition="88" endLine="115" endPosition="5" />
-    <scopeInfo nodeId="2082194532791124435" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5" />
+    <scopeInfo nodeId="2082194532791126333" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5">
+      <varInfo nodeId="2082194532791126334" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="9164503229271486529" fileName="StubResolver.java" startLine="129" startPosition="93" endLine="132" endPosition="9" />
     <scopeInfo nodeId="2742102018362199454" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" />
     <scopeInfo nodeId="5778265495851109958" fileName="StubResolver.java" startLine="50" startPosition="0" endLine="54" endPosition="3" />
@@ -406,9 +408,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9164503229271455507" fileName="StubResolver.java" startLine="125" startPosition="86" endLine="133" endPosition="7" />
     <scopeInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="153" startPosition="121" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="9164503229271455504" fileName="StubResolver.java" startLine="124" startPosition="79" endLine="134" endPosition="5">
-      <varInfo nodeId="9164503229271455505" varName="module" />
-    </scopeInfo>
+    <scopeInfo nodeId="4326588611400152020" fileName="StubResolver.java" startLine="124" startPosition="79" endLine="134" endPosition="5" />
     <scopeInfo nodeId="9073603541474871836" fileName="StubResolver.java" startLine="123" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="4326588611400153916" varName="context" />
       <varInfo nodeId="4326588611400153914" varName="project" />

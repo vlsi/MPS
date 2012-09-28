@@ -7,26 +7,33 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import java.util.HashSet;
+import java.util.List;
+import javax.swing.tree.TreePath;
+import java.util.ArrayList;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import java.util.Collection;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.newTypesystem.state.blocks.BlockKind;
 import java.awt.Color;
-import java.util.List;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
-import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
-import java.util.ArrayList;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import java.util.Collections;
 import java.util.Comparator;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.JPopupMenu;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -36,16 +43,27 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import java.awt.Graphics;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.tree.TreeSelectionModel;
 
 public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private IOperationContext myOperationContext;
   private State myState;
   private EditorComponent myEditorComponent;
+  private NodeHighlightManager myHighlightManager;
+  private EditorMessageOwner myMessageOwner;
 
   public TypeSystemStateTree(IOperationContext operationContext, State state, EditorComponent editorComponent) {
     myOperationContext = operationContext;
     myState = state;
     myEditorComponent = editorComponent;
+    this.myHighlightManager = editorComponent.getHighlightManager();
+    this.myMessageOwner = new EditorMessageOwner() {};
+    this.getSelectionModel().addTreeSelectionListener(new TypeSystemStateTree.EditorMessageUpdater());
     this.rebuildNow();
     expandAll();
   }
@@ -54,11 +72,62 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     myState = state;
     rebuildNow();
     expandAll();
+    clearSelection();
+  }
+
+  public void updateState(State state) {
+    HashSet<String> existing = null;
+    if (myState == state) {
+      existing = new HashSet<String>();
+      collectExisting(getRootNode(), existing);
+    }
+    myState = state;
+    rebuildNow();
+    expandAll();
+    if (existing != null) {
+      List<TreePath> newNodes = new ArrayList<TreePath>();
+      collectNew(new TreePath(getRootNode()), existing, newNodes);
+      setSelectionPaths(newNodes.toArray(new TreePath[newNodes.size()]));
+    }
+  }
+
+  @Override
+  public void dispose() {
+    clearHighlighting();
+    super.dispose();
   }
 
   @Override
   protected MPSTreeNode rebuild() {
+    clearHighlighting();
     return createNode();
+  }
+
+  private void collectExisting(MPSTreeNode node, Collection<String> existing) {
+    for (int idx = 0; idx < node.getChildCount(); idx++) {
+      TreeNode child = node.getChildAt(idx);
+      if (child instanceof MPSTreeNode) {
+        existing.add(child.toString());
+        collectExisting(((MPSTreeNode) child), existing);
+      }
+    }
+  }
+
+  private void collectNew(TreePath path, Collection<String> existing, Collection<TreePath> newNodes) {
+    Object lastPathComponent = path.getLastPathComponent();
+    if (lastPathComponent instanceof MPSTreeNode) {
+      MPSTreeNode node = ((MPSTreeNode) lastPathComponent);
+      for (int idx = 0; idx < node.getChildCount(); idx++) {
+        TreeNode child = node.getChildAt(idx);
+        if (child instanceof MPSTreeNode) {
+          TreePath childPath = path.pathByAddingChild(child);
+          if (!(existing.contains(child.toString()))) {
+            newNodes.add(childPath);
+          }
+          collectNew(childPath, existing, newNodes);
+        }
+      }
+    }
   }
 
   private TypeSystemStateTreeNode createNode() {
@@ -155,6 +224,39 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     return result;
   }
 
+  private void clearHighlighting() {
+    myHighlightManager.clearForOwner(myMessageOwner);
+  }
+
+  private void highlightNodesWithTypes(final Collection<? extends MPSTreeNode> treeNodes) {
+    clearHighlighting();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        NodeMaps maps = myState.getNodeMaps();
+        List<EditorMessage> messages = new ArrayList<EditorMessage>();
+        for (MPSTreeNode treeNode : treeNodes) {
+          TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
+          List<SNode> vars = stateNode.getVariables();
+          if (null == vars) {
+            continue;
+          }
+          for (SNode var : vars) {
+            SNode node = check_x8yvv7_a0a0d0c0a0a0a0b0n(maps, var);
+            if (node != null && node.isRegistered()) {
+              EditorCell nodeCell = myEditorComponent.findNodeCell(node);
+              if (nodeCell != null) {
+                messages.add(new TypeSystemStateTree.TypeEditorMessage(nodeCell, String.valueOf(var)));
+              }
+            }
+          }
+          if (messages.size() > 0) {
+            myHighlightManager.mark(messages);
+          }
+        }
+      }
+    });
+  }
+
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
     BaseAction goToNode = null;
@@ -168,7 +270,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           return;
         }
         for (SNode var : vars) {
-          SNode node = check_x8yvv7_a0a0d0a0a0a0d0i(maps, var);
+          SNode node = check_x8yvv7_a0a0d0a0a0a0d0o(maps, var);
           if (node != null && node.isRegistered()) {
             final SNodePointer pointer = new SNodePointer(node);
             group.add(new BaseAction("Go to node with type " + var) {
@@ -208,10 +310,97 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static SNode check_x8yvv7_a0a0d0a0a0a0d0i(NodeMaps checkedDotOperand, SNode var) {
+  private static SNode check_x8yvv7_a0a0d0c0a0a0a0b0n(NodeMaps checkedDotOperand, SNode var) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(var);
     }
     return null;
+  }
+
+  private static SNode check_x8yvv7_a0a0d0a0a0a0d0o(NodeMaps checkedDotOperand, SNode var) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode(var);
+    }
+    return null;
+  }
+
+  private class TypeEditorMessage extends DefaultEditorMessage {
+    private EditorCell myCell;
+
+    public TypeEditorMessage(EditorCell cell, String message) {
+      super(cell.getSNode(), Color.blue, message, myMessageOwner);
+      this.myCell = cell;
+    }
+
+    @Override
+    public EditorCell getCell(EditorComponent component) {
+      return myCell;
+    }
+
+    @Override
+    public boolean acceptCell(EditorCell cell, EditorComponent component) {
+      return myCell == cell;
+    }
+
+    @Override
+    protected void paintWithColor(Graphics graphics, EditorCell cell, Color color) {
+      int x = cell.getX() + cell.getLeftInset();
+      int y = cell.getY() + cell.getTopInset();
+      int width = cell.getWidth() - cell.getLeftInset() - cell.getRightInset() - 1;
+      int height = cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1;
+
+      graphics.setColor(color);
+      ColorAndGraphicsUtil.drawDashedRect(graphics, x, y, width, height);
+    }
+
+    @Override
+    public boolean isBackground() {
+      return true;
+    }
+
+    @Override
+    public boolean sameAs(EditorMessage that) {
+      return super.sameAs(that) && this.equals(that);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null) {
+        return false;
+      }
+      if (this == that) {
+        return true;
+      }
+      if (that.getClass() != TypeSystemStateTree.TypeEditorMessage.class) {
+        return false;
+      }
+      return this.myCell.equals(((TypeSystemStateTree.TypeEditorMessage) that).myCell);
+    }
+
+    @Override
+    public int hashCode() {
+      return myCell.hashCode() * 37;
+    }
+  }
+
+  private class EditorMessageUpdater implements TreeSelectionListener {
+    public EditorMessageUpdater() {
+    }
+
+    public void valueChanged(TreeSelectionEvent event) {
+      List<MPSTreeNode> selection = new ArrayList<MPSTreeNode>();
+      TreePath[] selectionPaths = getSelectionPaths();
+      if (selectionPaths == null) {
+        clearHighlighting();
+        return;
+      }
+      for (TreePath path : selectionPaths) {
+        if (((TreeSelectionModel) event.getSource()).isPathSelected(path)) {
+          MPSTreeNode selected = (MPSTreeNode) path.getLastPathComponent();
+          selection.add(selected);
+        }
+      }
+      highlightNodesWithTypes(selection);
+    }
   }
 }

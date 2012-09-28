@@ -100,7 +100,9 @@
       <varInfo nodeId="6586015060859882844" varName="generator" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790561936" fileName="AbstractMigrationScriptHelper.java" startLine="88" startPosition="42" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="7316415153790561969" fileName="AbstractMigrationScriptHelper.java" startLine="97" startPosition="35" endLine="100" endPosition="9" />
+    <scopeInfo nodeId="7316415153790561970" fileName="AbstractMigrationScriptHelper.java" startLine="97" startPosition="35" endLine="100" endPosition="9">
+      <varInfo nodeId="7316415153790561974" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="7316415153790561774" fileName="AbstractMigrationScriptHelper.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7316415153790561782" varName="context" />
       <varInfo nodeId="7316415153790561780" varName="scope" />

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Project_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Project_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StructureAspectDescriptor" />
-  <root nodeId="6370754048397540921">
+  <root nodeId="6370754048397540921" modelId="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)">
     <nodeInfo nodeId="6370754048397540921" fileName="RuleType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6370754048397540921" fileName="RuleType_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6370754048397540921" fileName="RuleType.java" startLine="15" startPosition="0" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

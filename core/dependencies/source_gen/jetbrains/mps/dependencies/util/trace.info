@@ -180,7 +180,9 @@
     <scopeInfo nodeId="4067778876497063279" fileName="DependencyUtil.java" startLine="51" startPosition="88" endLine="55" endPosition="0">
       <varInfo nodeId="4067778876497063279" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4067778876496964382" fileName="DependencyUtil.java" startLine="68" startPosition="51" endLine="73" endPosition="9" />
+    <scopeInfo nodeId="4067778876496964395" fileName="DependencyUtil.java" startLine="68" startPosition="51" endLine="73" endPosition="9">
+      <varInfo nodeId="4067778876496964396" varName="next" />
+    </scopeInfo>
     <scopeInfo nodeId="4067778876497055300" fileName="DependencyUtil.java" startLine="43" startPosition="62" endLine="49" endPosition="7">
       <varInfo nodeId="4067778876497055265" varName="cp" />
     </scopeInfo>

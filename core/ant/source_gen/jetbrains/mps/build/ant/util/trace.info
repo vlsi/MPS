@@ -1569,7 +1569,9 @@
       <varInfo nodeId="5198178184416573009" varName="urls" />
     </scopeInfo>
     <scopeInfo nodeId="6740693110299867812" fileName="ClassPath.java" startLine="46" startPosition="31" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="5198178184416573094" fileName="ClassPath.java" startLine="53" startPosition="27" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="5198178184416573096" fileName="ClassPath.java" startLine="53" startPosition="27" endLine="56" endPosition="7">
+      <varInfo nodeId="5198178184416573097" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="6740693110299868393" fileName="ClassPath.java" startLine="77" startPosition="31" endLine="80" endPosition="11" />
     <scopeInfo nodeId="5198178184416561061" fileName="ClassPath.java" startLine="150" startPosition="49" endLine="153" endPosition="7" />
     <scopeInfo nodeId="5198178184416560826" fileName="ClassPath.java" startLine="199" startPosition="14" endLine="202" endPosition="33">

@@ -613,9 +613,7 @@
     <scopeInfo nodeId="754691077499761785" fileName="MigrationScriptFinder.java" startLine="96" startPosition="63" endLine="97" endPosition="40" />
     <scopeInfo nodeId="754691077499761812" fileName="MigrationScriptFinder.java" startLine="101" startPosition="83" endLine="102" endPosition="30" />
     <scopeInfo nodeId="7316415153790565224" fileName="MigrationScriptFinder.java" startLine="34" startPosition="87" endLine="36" endPosition="33" />
-    <scopeInfo nodeId="754691077499761809" fileName="MigrationScriptFinder.java" startLine="100" startPosition="37" endLine="103" endPosition="5">
-      <varInfo nodeId="754691077499761810" varName="rl" />
-    </scopeInfo>
+    <scopeInfo nodeId="754691077499761801" fileName="MigrationScriptFinder.java" startLine="100" startPosition="37" endLine="103" endPosition="5" />
     <scopeInfo nodeId="7316415153790565216" fileName="MigrationScriptFinder.java" startLine="33" startPosition="0" endLine="37" endPosition="3">
       <varInfo nodeId="7316415153790565222" varName="context" />
       <varInfo nodeId="7316415153790565219" varName="scripts" />

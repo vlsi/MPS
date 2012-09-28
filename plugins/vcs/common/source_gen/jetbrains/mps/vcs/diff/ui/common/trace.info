@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4652592318748334972">
+  <root nodeId="4652592318748334972" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748334972" fileName="Bounds.java" startLine="9" startPosition="19" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4652592318748334972" fileName="Bounds.java" startLine="13" startPosition="45" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4652592318748334972" fileName="Bounds.java" startLine="17" startPosition="39" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -56,7 +56,7 @@
     </scopeInfo>
     <unitInfo nodeId="4652592318748334972" fileName="Bounds.java" startLine="8" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
   </root>
-  <root nodeId="4652592318748335014">
+  <root nodeId="4652592318748335014" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748335043" fileName="BaseDiffModelTreeAction.java" startLine="14" startPosition="58" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4652592318748335047" fileName="BaseDiffModelTreeAction.java" startLine="15" startPosition="28" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748335050" fileName="BaseDiffModelTreeAction.java" startLine="16" startPosition="35" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -100,7 +100,7 @@
     </scopeInfo>
     <unitInfo nodeId="4652592318748335014" fileName="BaseDiffModelTreeAction.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.BaseDiffModelTreeAction" />
   </root>
-  <root nodeId="4652592318748335093">
+  <root nodeId="4652592318748335093" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748335094" fileName="ButtonsPainter.java" startLine="25" startPosition="73" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON_SIZE" />
     <nodeInfo nodeId="4652592318748335098" fileName="ButtonsPainter.java" startLine="26" startPosition="42" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GAP" />
     <nodeInfo nodeId="4652592318748335102" fileName="ButtonsPainter.java" startLine="27" startPosition="35" endLine="28" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LEFT_MARGIN" />
@@ -278,7 +278,7 @@
     <unitInfo nodeId="4652592318748335182" fileName="ButtonsPainter.java" startLine="42" startPosition="50" endLine="46" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter$1" />
     <unitInfo nodeId="4652592318748335403" fileName="ButtonsPainter.java" startLine="131" startPosition="58" endLine="135" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter$2" />
   </root>
-  <root nodeId="4652592318748335554">
+  <root nodeId="4652592318748335554" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748335579" fileName="ChangeColors.java" startLine="13" startPosition="27" endLine="14" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourColors" />
     <nodeInfo nodeId="4652592318748335589" fileName="ChangeColors.java" startLine="14" startPosition="107" endLine="15" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourTreeColors" />
     <nodeInfo nodeId="4652592318748335659" fileName="ChangeColors.java" startLine="15" startPosition="111" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ADD" />
@@ -314,7 +314,7 @@
     <scopeInfo nodeId="4652592318748335605" fileName="ChangeColors.java" startLine="34" startPosition="10" endLine="45" endPosition="111" />
     <unitInfo nodeId="4652592318748335554" fileName="ChangeColors.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
   </root>
-  <root nodeId="4652592318748335691">
+  <root nodeId="4652592318748335691" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="5867320353744002957" fileName="ChangeEditorMessage.java" startLine="275" startPosition="27" endLine="275" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5867320353744002962" fileName="ChangeEditorMessage.java" startLine="278" startPosition="27" endLine="278" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5867320353744002965" fileName="ChangeEditorMessage.java" startLine="281" startPosition="27" endLine="281" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -902,7 +902,7 @@
     <unitInfo nodeId="5867320353744002956" fileName="ChangeEditorMessage.java" startLine="225" startPosition="23" endLine="296" endPosition="13" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$5" />
     <unitInfo nodeId="4652592318748337075" fileName="ChangeEditorMessage.java" startLine="485" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$ConflictChecker" />
   </root>
-  <root nodeId="4652592318748337083">
+  <root nodeId="4652592318748337083" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748337084" fileName="ChangeGroup.java" startLine="14" startPosition="26" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftBounds" />
     <nodeInfo nodeId="4652592318748337087" fileName="ChangeGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightBounds" />
     <nodeInfo nodeId="4652592318748337090" fileName="ChangeGroup.java" startLine="16" startPosition="31" endLine="17" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChanges" />
@@ -968,7 +968,7 @@
     <unitInfo nodeId="4652592318748337130" fileName="ChangeGroup.java" startLine="28" startPosition="22" endLine="35" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup$2" />
     <unitInfo nodeId="4652592318748337156" fileName="ChangeGroup.java" startLine="36" startPosition="74" endLine="40" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup$3" />
   </root>
-  <root nodeId="4652592318748337213">
+  <root nodeId="4652592318748337213" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="6402272430682029912" fileName="ChangeGroupLayout.java" startLine="26" startPosition="41" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConflictChecker" />
     <nodeInfo nodeId="4652592318748337649" fileName="ChangeGroupLayout.java" startLine="27" startPosition="64" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInspector" />
     <nodeInfo nodeId="8026003490916163944" fileName="ChangeGroupLayout.java" startLine="28" startPosition="40" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeAdjacent" />
@@ -1039,7 +1039,7 @@
     <nodeInfo nodeId="4652592318748337513" fileName="ChangeGroupLayout.java" startLine="81" startPosition="59" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="88" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="4652592318748337540" fileName="ChangeGroupLayout.java" startLine="90" startPosition="59" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-    <nodeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="107" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="109" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="4248833377599976638" fileName="ChangeGroupLayout.java" startLine="99" startPosition="59" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="4652592318748337573" fileName="ChangeGroupLayout.java" startLine="106" startPosition="103" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="4652592318748337585" fileName="ChangeGroupLayout.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addInvalidateListener#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupInvalidateListener;)V" />
@@ -1122,7 +1122,7 @@
       <varInfo nodeId="4652592318748337540" varName="a" />
       <varInfo nodeId="4652592318748337540" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="107" endLine="99" endPosition="0">
+    <scopeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="109" endLine="99" endPosition="0">
       <varInfo nodeId="4248833377599976626" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="4248833377599976638" fileName="ChangeGroupLayout.java" startLine="99" startPosition="59" endLine="103" endPosition="0">
@@ -1159,9 +1159,6 @@
       <varInfo nodeId="8026003490916165917" varName="mergeAdjacent" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748337411" fileName="ChangeGroupLayout.java" startLine="68" startPosition="56" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="4652592318748337412" fileName="ChangeGroupLayout.java" startLine="68" startPosition="56" endLine="73" endPosition="7">
-      <varInfo nodeId="4652592318748337413" varName="b" />
-    </scopeInfo>
     <scopeInfo nodeId="4652592318748337613" fileName="ChangeGroupLayout.java" startLine="122" startPosition="46" endLine="127" endPosition="26" />
     <scopeInfo nodeId="8026003490916188822" fileName="ChangeGroupLayout.java" startLine="173" startPosition="87" endLine="178" endPosition="102">
       <varInfo nodeId="1214268015959816391" varName="tolerance" />
@@ -1229,15 +1226,15 @@
     <unitInfo nodeId="4652592318748337513" fileName="ChangeGroupLayout.java" startLine="81" startPosition="24" endLine="85" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$5" />
     <unitInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="54" endLine="90" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$6" />
     <unitInfo nodeId="4652592318748337540" fileName="ChangeGroupLayout.java" startLine="90" startPosition="24" endLine="94" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$7" />
-    <unitInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="72" endLine="99" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$8" />
+    <unitInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="74" endLine="99" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$8" />
     <unitInfo nodeId="4248833377599976638" fileName="ChangeGroupLayout.java" startLine="99" startPosition="24" endLine="103" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$9" />
   </root>
-  <root nodeId="4652592318748337772">
+  <root nodeId="4652592318748337772" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748337773" fileName="ChangeGroupInvalidateListener.java" startLine="6" startPosition="48" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeGroupsInvalidated#()V" />
     <scopeInfo nodeId="4652592318748337773" fileName="ChangeGroupInvalidateListener.java" startLine="6" startPosition="48" endLine="7" endPosition="40" />
     <unitInfo nodeId="4652592318748337772" fileName="ChangeGroupInvalidateListener.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupInvalidateListener" />
   </root>
-  <root nodeId="4652592318748337778">
+  <root nodeId="4652592318748337778" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748337794" fileName="DiffEditorSeparator.java" startLine="30" startPosition="81" endLine="31" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WIDTH" />
     <nodeInfo nodeId="4652592318748337779" fileName="DiffEditorSeparator.java" startLine="32" startPosition="0" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupLayout" />
     <nodeInfo nodeId="4652592318748337782" fileName="DiffEditorSeparator.java" startLine="33" startPosition="48" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroupsWithBounds" />
@@ -1429,7 +1426,7 @@
     <unitInfo nodeId="4652592318748338104" fileName="DiffEditorSeparator.java" startLine="48" startPosition="50" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$3" />
     <unitInfo nodeId="4652592318748338180" fileName="DiffEditorSeparator.java" startLine="130" startPosition="117" endLine="138" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$4" />
   </root>
-  <root nodeId="4652592318748338308">
+  <root nodeId="4652592318748338308" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748338357" fileName="DiffEditor.java" startLine="33" startPosition="55" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainEditorComponent" />
     <nodeInfo nodeId="4652592318748338360" fileName="DiffEditor.java" startLine="34" startPosition="63" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTopComponent" />
     <nodeInfo nodeId="4652592318748338363" fileName="DiffEditor.java" startLine="35" startPosition="32" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInspector" />
@@ -1628,7 +1625,7 @@
     <unitInfo nodeId="4652592318748338674" fileName="DiffEditor.java" startLine="144" startPosition="62" endLine="148" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.DiffEditor$6" />
     <unitInfo nodeId="4652592318748338309" fileName="DiffEditor.java" startLine="163" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffEditor$MainEditorComponent" />
   </root>
-  <root nodeId="4652592318748338723">
+  <root nodeId="4652592318748338723" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748339059" fileName="DiffEditorsGroup.java" startLine="24" startPosition="31" endLine="25" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffEditors" />
     <nodeInfo nodeId="4652592318748339066" fileName="DiffEditorsGroup.java" startLine="25" startPosition="94" endLine="26" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCellSelectionListener" />
     <nodeInfo nodeId="4652592318748339071" fileName="DiffEditorsGroup.java" startLine="26" startPosition="124" endLine="27" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViewportSetInProgress" />
@@ -1738,9 +1735,6 @@
     <scopeInfo nodeId="4652592318748338974" fileName="DiffEditorsGroup.java" startLine="130" startPosition="82" endLine="132" endPosition="5" />
     <scopeInfo nodeId="4652592318748339031" fileName="DiffEditorsGroup.java" startLine="32" startPosition="42" endLine="35" endPosition="122" />
     <scopeInfo nodeId="4652592318748338952" fileName="DiffEditorsGroup.java" startLine="139" startPosition="36" endLine="142" endPosition="13" />
-    <scopeInfo nodeId="4652592318748338953" fileName="DiffEditorsGroup.java" startLine="139" startPosition="36" endLine="142" endPosition="13">
-      <varInfo nodeId="4652592318748338954" varName="diffEditor" />
-    </scopeInfo>
     <scopeInfo nodeId="4652592318748339018" fileName="DiffEditorsGroup.java" startLine="151" startPosition="0" endLine="154" endPosition="5">
       <varInfo nodeId="4652592318748339026" varName="diffEditor" />
     </scopeInfo>
@@ -1825,7 +1819,7 @@
     <unitInfo nodeId="4652592318748338926" fileName="DiffEditorsGroup.java" startLine="130" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$MyCellSelectionListener" />
     <unitInfo nodeId="4652592318748338978" fileName="DiffEditorsGroup.java" startLine="149" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$MyViewportChangeListener" />
   </root>
-  <root nodeId="4652592318748339080">
+  <root nodeId="4652592318748339080" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748339081" fileName="DiffModelTree.java" startLine="46" startPosition="80" endLine="47" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NODE_ID_DATAKEY" />
     <nodeInfo nodeId="4652592318748339671" fileName="DiffModelTree.java" startLine="48" startPosition="0" endLine="49" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootNodes" />
     <nodeInfo nodeId="4652592318748339675" fileName="DiffModelTree.java" startLine="49" startPosition="55" endLine="50" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />
@@ -2153,9 +2147,6 @@
     </scopeInfo>
     <scopeInfo nodeId="8694267608197378168" fileName="DiffModelTree.java" startLine="282" startPosition="73" endLine="293" endPosition="41" />
     <scopeInfo nodeId="4652592318748339415" fileName="DiffModelTree.java" startLine="89" startPosition="60" endLine="102" endPosition="9" />
-    <scopeInfo nodeId="4652592318748339416" fileName="DiffModelTree.java" startLine="89" startPosition="60" endLine="102" endPosition="9">
-      <varInfo nodeId="4652592318748339417" varName="sub" />
-    </scopeInfo>
     <scopeInfo nodeId="4652592318748339605" fileName="DiffModelTree.java" startLine="151" startPosition="74" endLine="164" endPosition="5">
       <varInfo nodeId="4652592318748339607" varName="index" />
     </scopeInfo>
@@ -2211,7 +2202,7 @@
     <unitInfo nodeId="4652592318748339138" fileName="DiffModelTree.java" startLine="207" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$RootTreeNode" />
     <unitInfo nodeId="8694267608197375767" fileName="DiffModelTree.java" startLine="271" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$TreeNode" />
   </root>
-  <root nodeId="4652592318748339723">
+  <root nodeId="4652592318748339723" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748340067" fileName="DiffTemporaryModule.java" startLine="37" startPosition="57" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="4652592318748340070" fileName="DiffTemporaryModule.java" startLine="38" startPosition="25" endLine="39" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="4652592318748340083" fileName="DiffTemporaryModule.java" startLine="41" startPosition="78" endLine="42" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2484,7 +2475,7 @@
     <unitInfo nodeId="4652592318748339860" fileName="DiffTemporaryModule.java" startLine="156" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffModuleScope" />
     <unitInfo nodeId="4652592318748339915" fileName="DiffTemporaryModule.java" startLine="177" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffSModelDescriptor" />
   </root>
-  <root nodeId="4652592318748340259">
+  <root nodeId="4652592318748340259" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748340260" fileName="FoldingAreaButton.java" startLine="8" startPosition="41" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroup" />
     <nodeInfo nodeId="4652592318748340263" fileName="FoldingAreaButton.java" startLine="9" startPosition="36" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myX" />
     <nodeInfo nodeId="4652592318748340266" fileName="FoldingAreaButton.java" startLine="10" startPosition="18" endLine="11" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myY" />
@@ -2530,7 +2521,7 @@
     </scopeInfo>
     <unitInfo nodeId="4652592318748340259" fileName="FoldingAreaButton.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
   </root>
-  <root nodeId="4652592318748340352">
+  <root nodeId="4652592318748340352" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748340441" fileName="GoToNeighbourRootActions.java" startLine="15" startPosition="48" endLine="16" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREVIOUS_ROOT_ICON" />
     <nodeInfo nodeId="4652592318748340447" fileName="GoToNeighbourRootActions.java" startLine="16" startPosition="93" endLine="17" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NEXT_ROOT_ICON" />
     <nodeInfo nodeId="4652592318748340476" fileName="GoToNeighbourRootActions.java" startLine="27" startPosition="38" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2585,7 +2576,7 @@
     <unitInfo nodeId="4652592318748340352" fileName="GoToNeighbourRootActions.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
     <unitInfo nodeId="4652592318748340353" fileName="GoToNeighbourRootActions.java" startLine="35" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions$TheAction" />
   </root>
-  <root nodeId="4652592318748340561">
+  <root nodeId="4652592318748340561" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748340562" fileName="NextPreviousTraverser.java" startLine="36" startPosition="36" endLine="37" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREVIOUS_ICON" />
     <nodeInfo nodeId="4652592318748340568" fileName="NextPreviousTraverser.java" startLine="37" startPosition="97" endLine="38" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NEXT_ICON" />
     <nodeInfo nodeId="4652592318748340561" fileName="NextPreviousTraverser.java" startLine="38" startPosition="89" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -2753,7 +2744,6 @@
     <scopeInfo nodeId="4652592318748340605" fileName="NextPreviousTraverser.java" startLine="52" startPosition="117" endLine="54" endPosition="24" />
     <scopeInfo nodeId="4652592318748341037" fileName="NextPreviousTraverser.java" startLine="216" startPosition="41" endLine="218" endPosition="32" />
     <scopeInfo nodeId="4652592318748341107" fileName="NextPreviousTraverser.java" startLine="266" startPosition="76" endLine="268" endPosition="54" />
-    <scopeInfo nodeId="4652592318748340744" fileName="NextPreviousTraverser.java" startLine="115" startPosition="10" endLine="118" endPosition="7" />
     <scopeInfo nodeId="4652592318748340745" fileName="NextPreviousTraverser.java" startLine="115" startPosition="10" endLine="118" endPosition="7" />
     <scopeInfo nodeId="4652592318748340911" fileName="NextPreviousTraverser.java" startLine="161" startPosition="7" endLine="164" endPosition="37">
       <varInfo nodeId="4652592318748340911" varName="_tmp_mf966z_a0j0g" />
@@ -2828,7 +2818,6 @@
       <varInfo nodeId="4652592318748341122" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340679" fileName="NextPreviousTraverser.java" startLine="81" startPosition="32" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="4652592318748341075" fileName="NextPreviousTraverser.java" startLine="225" startPosition="12" endLine="232" endPosition="7" />
     <scopeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="225" startPosition="12" endLine="232" endPosition="7" />
     <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="235" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="4652592318748340849" varName="checkedDotOperand" />
@@ -2908,7 +2897,7 @@
     <unitInfo nodeId="4652592318748340812" fileName="NextPreviousTraverser.java" startLine="133" startPosition="69" endLine="137" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$9" />
     <unitInfo nodeId="4652592318748341094" fileName="NextPreviousTraverser.java" startLine="250" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$TheAction" />
   </root>
-  <root nodeId="4652592318748341187">
+  <root nodeId="4652592318748341187" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748341188" fileName="SimpleDiffRequest.java" startLine="17" startPosition="52" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentTitles" />
     <nodeInfo nodeId="8398535039686069478" fileName="SimpleDiffRequest.java" startLine="18" startPosition="35" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContents" />
     <nodeInfo nodeId="7890429894027177750" fileName="SimpleDiffRequest.java" startLine="21" startPosition="114" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2944,7 +2933,7 @@
     <unitInfo nodeId="4652592318748341187" fileName="SimpleDiffRequest.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
     <unitInfo nodeId="7890429894027177838" fileName="SimpleDiffRequest.java" startLine="25" startPosition="80" endLine="29" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest$1" />
   </root>
-  <root nodeId="6402272430682108518">
+  <root nodeId="6402272430682108518" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="6402272430682108982" fileName="DiffChangeGroupLayout.java" startLine="12" startPosition="62" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftEditor" />
     <nodeInfo nodeId="6402272430682108985" fileName="DiffChangeGroupLayout.java" startLine="13" startPosition="34" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightEditor" />
     <nodeInfo nodeId="8859108093044337370" fileName="DiffChangeGroupLayout.java" startLine="14" startPosition="35" endLine="15" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
@@ -3001,7 +2990,7 @@
     <unitInfo nodeId="6402272430682108518" fileName="DiffChangeGroupLayout.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" />
     <unitInfo nodeId="6402272430682109030" fileName="DiffChangeGroupLayout.java" startLine="23" startPosition="60" endLine="27" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout$1" />
   </root>
-  <root nodeId="739457190729175664">
+  <root nodeId="739457190729175664" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="3477558405266089730" fileName="ChangeGroupMessages.java" startLine="14" startPosition="34" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourOwner" />
     <nodeInfo nodeId="739457190729175670" fileName="ChangeGroupMessages.java" startLine="16" startPosition="0" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLayout" />
     <nodeInfo nodeId="739457190729177641" fileName="ChangeGroupMessages.java" startLine="17" startPosition="37" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeft" />
@@ -3081,11 +3070,13 @@
     <scopeInfo nodeId="739457190729177668" fileName="ChangeGroupMessages.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="739457190729189660" fileName="ChangeGroupMessages.java" startLine="29" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="14" endPosition="0" />
+    <unitInfo nodeId="739457190729175664" fileName="ChangeGroupMessages.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
+    <unitInfo nodeId="739457190729183679" fileName="ChangeGroupMessages.java" startLine="31" startPosition="39" endLine="39" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
     <unitInfo nodeId="9208869176467556553" fileName="ChangeGroupMessages.java" startLine="33" startPosition="60" endLine="37" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183618" fileName="ChangeGroupMessages.java" startLine="48" startPosition="67" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183512" fileName="ChangeGroupMessages.java" startLine="60" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />
   </root>
-  <root nodeId="8733553229778921962">
+  <root nodeId="8733553229778921962" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4435250098740535444" fileName="InvokeTextDiffAction.java" startLine="15" startPosition="75" endLine="16" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEXT_ICON" />
     <nodeInfo nodeId="8733553229778921963" fileName="InvokeTextDiffAction.java" startLine="17" startPosition="0" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffRequest" />
     <nodeInfo nodeId="8733553229778921966" fileName="InvokeTextDiffAction.java" startLine="18" startPosition="36" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />
@@ -3117,7 +3108,7 @@
     </scopeInfo>
     <unitInfo nodeId="8733553229778921962" fileName="InvokeTextDiffAction.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" />
   </root>
-  <root nodeId="9170101780449072521">
+  <root nodeId="9170101780449072521" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="9170101780449072542" fileName="ChangeEditorMessageFactory.java" startLine="30" startPosition="198" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170101780449072549" fileName="ChangeEditorMessageFactory.java" startLine="31" startPosition="102" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170101780449072552" fileName="ChangeEditorMessageFactory.java" startLine="32" startPosition="15" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

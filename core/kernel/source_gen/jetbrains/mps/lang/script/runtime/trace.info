@@ -254,9 +254,7 @@
       <varInfo nodeId="1173268376299572174" varName="targetModelRef" />
       <varInfo nodeId="1173268376299572195" varName="targetModule" />
     </scopeInfo>
-    <scopeInfo nodeId="1173268376299572156" fileName="StubRefUtil.java" startLine="100" startPosition="70" endLine="116" endPosition="5">
-      <varInfo nodeId="1173268376299572157" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="1173268376299572155" fileName="StubRefUtil.java" startLine="100" startPosition="70" endLine="116" endPosition="5" />
     <scopeInfo nodeId="1173268376299572153" fileName="StubRefUtil.java" startLine="99" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="1173268376299572231" varName="model" />
       <varInfo nodeId="1173268376299572233" varName="newNode" />

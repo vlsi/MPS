@@ -393,7 +393,9 @@
     <scopeInfo nodeId="6859736767834855066" fileName="BuildMps_Module_Behavior.java" startLine="87" startPosition="77" endLine="109" endPosition="9">
       <varInfo nodeId="202934866058962899" varName="jarRuntime" />
     </scopeInfo>
-    <scopeInfo nodeId="6859736767834900794" fileName="BuildMps_Module_Behavior.java" startLine="86" startPosition="79" endLine="110" endPosition="7" />
+    <scopeInfo nodeId="6859736767834855065" fileName="BuildMps_Module_Behavior.java" startLine="86" startPosition="79" endLine="110" endPosition="7">
+      <varInfo nodeId="6859736767834855085" varName="runtime" />
+    </scopeInfo>
     <scopeInfo nodeId="6859736767834900791" fileName="BuildMps_Module_Behavior.java" startLine="85" startPosition="0" endLine="111" endPosition="5">
       <varInfo nodeId="6859736767834900792" varName="lr" />
     </scopeInfo>

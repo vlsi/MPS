@@ -133,7 +133,12 @@ public class Equations {
     if (left == right) {
       return true;
     }
-    return TypesUtil.match(left, right, this, info);
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    boolean match = TypesUtil.match(left, right, matchingPairs);
+    if (match) {
+      addEquations(matchingPairs, info);
+    }
+    return match;
   }
 
   private boolean processEquation(SNode var, SNode type, EquationInfo info) {

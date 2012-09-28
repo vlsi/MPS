@@ -3228,9 +3228,7 @@
       <varInfo nodeId="8004978336433033299" varName="problems" />
       <varInfo nodeId="8004978336433033197" varName="refLangs" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028094968" fileName="PluginMoveHelper.java" startLine="91" startPosition="35" endLine="126" endPosition="5">
-      <varInfo nodeId="5318937080028094969" varName="solution" />
-    </scopeInfo>
+    <scopeInfo nodeId="5318937080028094936" fileName="PluginMoveHelper.java" startLine="91" startPosition="35" endLine="126" endPosition="5" />
     <scopeInfo nodeId="8004978336433031546" fileName="PluginMoveHelper.java" startLine="53" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="5318937080028094933" fileName="PluginMoveHelper.java" startLine="90" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="8004978336433012721" fileName="PluginMoveHelper.java" startLine="150" startPosition="42" endLine="194" endPosition="45">
@@ -3425,7 +3423,9 @@
     <scopeInfo nodeId="902710015953247113" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="60" startPosition="145" endLine="72" endPosition="22">
       <varInfo nodeId="902710015953321086" varName="usedNow" />
     </scopeInfo>
-    <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="59" startPosition="9" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="902710015953247110" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="59" startPosition="9" endLine="73" endPosition="7">
+      <varInfo nodeId="902710015953247111" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="58" startPosition="96" endLine="78" endPosition="5" />
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="57" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="902710015953231731" varName="_params" />

@@ -877,7 +877,7 @@
     <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration.java" startLine="170" startPosition="61" endLine="174" endPosition="19">
       <varInfo nodeId="8278380780105899265" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="8278380780105899456" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="38" startPosition="116" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="38" startPosition="116" endLine="43" endPosition="7" />
     <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration_Editor.java" startLine="46" startPosition="88" endLine="51" endPosition="7" />
     <scopeInfo nodeId="8278380780105899265" fileName="NodeBySeveralConcepts_Configuration.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8278380780105899265" varName="element" />

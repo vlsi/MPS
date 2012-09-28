@@ -113,18 +113,14 @@
     <scopeInfo nodeId="1117643560963218891" fileName="TaskLibrariesHelper.java" startLine="109" startPosition="57" endLine="116" endPosition="7">
       <varInfo nodeId="1117643560963218893" varName="lib" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218983" fileName="TaskLibrariesHelper.java" startLine="45" startPosition="62" endLine="53" endPosition="9">
-      <varInfo nodeId="1117643560963218984" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="1117643560963218982" fileName="TaskLibrariesHelper.java" startLine="45" startPosition="62" endLine="53" endPosition="9" />
     <scopeInfo nodeId="1117643560963219083" fileName="TaskLibrariesHelper.java" startLine="65" startPosition="48" endLine="74" endPosition="9">
       <varInfo nodeId="1117643560963219085" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="6547494638219585392" fileName="TaskLibrariesHelper.java" startLine="92" startPosition="34" endLine="101" endPosition="7">
       <varInfo nodeId="6547494638219585446" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218973" fileName="TaskLibrariesHelper.java" startLine="44" startPosition="28" endLine="54" endPosition="7">
-      <varInfo nodeId="1117643560963218974" varName="n" />
-    </scopeInfo>
+    <scopeInfo nodeId="1117643560963218972" fileName="TaskLibrariesHelper.java" startLine="44" startPosition="28" endLine="54" endPosition="7" />
     <scopeInfo nodeId="1117643560963219075" fileName="TaskLibrariesHelper.java" startLine="64" startPosition="64" endLine="75" endPosition="7" />
     <scopeInfo nodeId="1117643560963218877" fileName="TaskLibrariesHelper.java" startLine="106" startPosition="47" endLine="117" endPosition="5">
       <varInfo nodeId="1117643560963218879" varName="queue" />

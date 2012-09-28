@@ -434,6 +434,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="29" startPosition="0" endLine="84" endPosition="0" />
     <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="79" startPosition="19" endLine="23" endPosition="0" />
+    <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="42" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
+    <unitInfo nodeId="1224178310365" fileName="Antcall_Constraints.java" startLine="58" startPosition="34" endLine="81" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
   </root>
   <root nodeId="1226494817331" modelId="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)">
     <nodeInfo nodeId="1226494817331" fileName="BaseDirPath_Constraints.java" startLine="13" startPosition="72" endLine="14" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

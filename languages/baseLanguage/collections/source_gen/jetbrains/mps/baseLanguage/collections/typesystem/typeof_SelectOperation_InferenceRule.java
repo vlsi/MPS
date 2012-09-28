@@ -34,10 +34,12 @@ public class typeof_SelectOperation_InferenceRule extends AbstractInferenceRule_
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240677325769", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240677325771", true), (SNode) new typeof_SelectOperation_InferenceRule.QuotationClass_jxb36x_a0a4a0().createNode(typeCheckingContext.getRepresentative(selectorParamType_typevar_1240677567421), typeCheckingContext.getRepresentative(resType_typevar_1203177754378), typeCheckingContext), _info_12389875345);
     }
-    {
-      SNode _nodeToCheck_1029348928467 = so;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "6523931710140214764", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(selectorParamType_typevar_1240677567421), (SNode) typeCheckingContext.getRepresentative(sequenceParamType_typevar_1225884177658), false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = so;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "6523931710140214764", 0, null);
+        typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(selectorParamType_typevar_1240677567421), (SNode) typeCheckingContext.getRepresentative(sequenceParamType_typevar_1225884177658), true, true, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = so;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4063774604867744443">
+  <root nodeId="4063774604867744443" modelId="r:d0deafb6-c4af-4c30-b09c-3ec1bfe23ece(jetbrains.mps.baseLanguage.stubs)">
     <nodeInfo nodeId="4063774604867752371" fileName="JavaStubs.java" startLine="31" startPosition="85" endLine="32" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4063774604867752378" fileName="JavaStubs.java" startLine="32" startPosition="93" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4063774604867752385" fileName="JavaStubs.java" startLine="33" startPosition="62" endLine="34" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -73,9 +73,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4063774604867752483" fileName="JavaStubs.java" startLine="49" startPosition="57" endLine="64" endPosition="96" />
     <scopeInfo nodeId="4063774604867752449" fileName="JavaStubs.java" startLine="48" startPosition="158" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="4063774604867752476" fileName="JavaStubs.java" startLine="48" startPosition="158" endLine="65" endPosition="5">
-      <varInfo nodeId="4063774604867752481" varName="subpackage" />
-    </scopeInfo>
     <scopeInfo nodeId="4063774604867752447" fileName="JavaStubs.java" startLine="47" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4063774604867752463" varName="cp" />
       <varInfo nodeId="4063774604867752470" varName="languageId" />

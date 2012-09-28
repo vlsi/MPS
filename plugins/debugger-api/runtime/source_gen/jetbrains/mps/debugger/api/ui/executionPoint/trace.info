@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1482618131069247085">
+  <root nodeId="1482618131069247085" modelId="r:b844984f-e192-4128-bae9-ea8360d94146(jetbrains.mps.debugger.api.ui.executionPoint)">
     <nodeInfo nodeId="1482618131069247171" fileName="CurrentLinePositionComponent.java" startLine="21" startPosition="132" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
     <nodeInfo nodeId="1482618131069247176" fileName="CurrentLinePositionComponent.java" startLine="22" startPosition="116" endLine="23" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
     <nodeInfo nodeId="1482618131069247189" fileName="CurrentLinePositionComponent.java" startLine="25" startPosition="93" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -104,7 +104,7 @@
     <unitInfo nodeId="1482618131069247088" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent$MyCurrentDebugSessionListener" />
     <unitInfo nodeId="1482618131069247134" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.executionPoint.CurrentLinePositionComponent$MySessionChangeListener" />
   </root>
-  <root nodeId="1482618131069247297">
+  <root nodeId="1482618131069247297" modelId="r:b844984f-e192-4128-bae9-ea8360d94146(jetbrains.mps.debugger.api.ui.executionPoint)">
     <nodeInfo nodeId="1482618131069247379" fileName="InTextPositionComponent.java" startLine="35" startPosition="66" endLine="36" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
     <nodeInfo nodeId="1482618131069247384" fileName="InTextPositionComponent.java" startLine="36" startPosition="111" endLine="37" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
     <nodeInfo nodeId="1482618131069247389" fileName="InTextPositionComponent.java" startLine="37" startPosition="158" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

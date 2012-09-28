@@ -504,7 +504,9 @@
       <varInfo nodeId="8325325470383877058" varName="usages" />
     </scopeInfo>
     <scopeInfo nodeId="2183214647889839650" fileName="RefactoringFacade.java" startLine="198" startPosition="56" endLine="201" endPosition="80" />
-    <scopeInfo nodeId="2183214647889839778" fileName="RefactoringFacade.java" startLine="230" startPosition="27" endLine="233" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839779" fileName="RefactoringFacade.java" startLine="230" startPosition="27" endLine="233" endPosition="9">
+      <varInfo nodeId="2183214647889839783" varName="anotherModel" />
+    </scopeInfo>
     <scopeInfo nodeId="2183214647889839950" fileName="RefactoringFacade.java" startLine="272" startPosition="104" endLine="275" endPosition="7">
       <varInfo nodeId="2183214647889839954" varName="modelRef" />
     </scopeInfo>

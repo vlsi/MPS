@@ -93,10 +93,8 @@
     <scopeInfo nodeId="4474271214083120615" fileName="DebuggerToolContentBuilder.java" startLine="124" startPosition="31" endLine="125" endPosition="71" />
     <scopeInfo nodeId="4474271214083120652" fileName="DebuggerToolContentBuilder.java" startLine="140" startPosition="47" endLine="141" endPosition="31" />
     <scopeInfo nodeId="4474271214083120655" fileName="DebuggerToolContentBuilder.java" startLine="144" startPosition="27" endLine="146" endPosition="22" />
-    <scopeInfo nodeId="4474271214083120345" fileName="DebuggerToolContentBuilder.java" startLine="59" startPosition="25" endLine="62" endPosition="5">
-      <varInfo nodeId="4474271214083120347" varName="disposable" />
-    </scopeInfo>
-    <scopeInfo nodeId="6225536200579577638" fileName="DebuggerToolContentBuilder.java" startLine="90" startPosition="31" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="4474271214083120344" fileName="DebuggerToolContentBuilder.java" startLine="59" startPosition="25" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="6225536200579577618" fileName="DebuggerToolContentBuilder.java" startLine="90" startPosition="31" endLine="93" endPosition="7" />
     <scopeInfo nodeId="4474271214083120628" fileName="DebuggerToolContentBuilder.java" startLine="134" startPosition="201" endLine="137" endPosition="52" />
     <scopeInfo nodeId="4474271214083120434" fileName="DebuggerToolContentBuilder.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="4474271214083120439" varName="profile" />

@@ -18,7 +18,6 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -55,7 +54,7 @@ public class RenameLink extends BaseLoggableRefactoring {
     }
     Map<IModule, List<SModel>> modelMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage);
     for (List<SModel> modelList : CollectionSequence.fromCollection(modelMap.values())) {
-      ListSequence.fromList(result).addSequence(Sequence.fromIterable(modelList));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
     }
     return result;
   }

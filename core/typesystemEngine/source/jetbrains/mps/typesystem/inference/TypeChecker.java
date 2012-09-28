@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
@@ -61,7 +63,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
 
   private SubtypingCache mySubtypingCache = null;
-  private SubtypingCache myGlobalSubtypingCache = null;
+  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
   private SubtypingCache myGenerationSubTypingCache = null;
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
@@ -156,15 +158,16 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public SubtypingCache getGlobalSubtypingCache() {
-    return myGlobalSubtypingCache;
+    return myGlobalSubtypingCachePool != null ? myGlobalSubtypingCachePool.getCurrent() : null;
   }
 
   public void enableGlobalSubtypingCache() {
-    myGlobalSubtypingCache = createSubtypingCache();
+    myGlobalSubtypingCachePool = new SubtypingCachePool();
   }
 
   public void clearGlobalSubtypingCache() {
-    myGlobalSubtypingCache = null;
+    if (myGlobalSubtypingCachePool != null) myGlobalSubtypingCachePool.clear();
+    myGlobalSubtypingCachePool = null;
   }
 
   public RulesManager getRulesManager() {
@@ -340,5 +343,27 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     if (typesReadListener != null) {
       typesReadListener.nodeTypeAccessed(term);
     }
+  }
+
+  private class SubtypingCachePool {
+
+    private volatile ConcurrentHashMap<LanguageScope, SubtypingCache> myPool = new ConcurrentHashMap<LanguageScope, SubtypingCache>();
+    private volatile ConcurrentHashMap<LanguageScope, Boolean> myPoolGuard = new ConcurrentHashMap<LanguageScope, Boolean>();
+
+    private SubtypingCache getCurrent() {
+      LanguageScope langScope = LanguageScope.getCurrent();
+      if (!myPool.containsKey(langScope)) {
+        if (myPoolGuard.putIfAbsent(langScope, Boolean.TRUE) == null) {
+          myPool.put(langScope,createSubtypingCache());
+        }
+      }
+      return myPool.get(langScope);
+    }
+
+    private void clear () {
+      myPoolGuard.clear();
+      myPool.clear();
+    }
+
   }
 }

@@ -21,12 +21,10 @@ public class typeof_AsSynchronizedOperation_InferenceRule extends AbstractInfere
 
   public void applyRule(final SNode aso, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode ELEMENT_typevar_4611582986551020949 = typeCheckingContext.createNewRuntimeTypesVariable();
-    if (!(typeCheckingContext.isSingleTypeComputation())) {
-      {
-        SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(aso);
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "4611582986551020950", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "4611582986551020958", true), (SNode) new typeof_AsSynchronizedOperation_InferenceRule.QuotationClass_cpvb10_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_typevar_4611582986551020949), typeCheckingContext), true, true, _info_12389875345);
-      }
+    {
+      SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(aso);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859018362", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_AsSynchronizedOperation_InferenceRule.QuotationClass_cpvb10_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_typevar_4611582986551020949), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120352", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = aso;

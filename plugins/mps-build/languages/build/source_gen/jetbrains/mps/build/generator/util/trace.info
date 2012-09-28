@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8775597636506088045">
+  <root nodeId="8775597636506088045" modelId="r:9a95c968-dcbf-4b0d-8fd9-b8db00f89883(jetbrains.mps.build.generator.util)">
     <nodeInfo nodeId="8775597636506088069" fileName="JavaExternalLibraryHelper.java" startLine="26" startPosition="40" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="library" />
     <nodeInfo nodeId="8775597636506088078" fileName="JavaExternalLibraryHelper.java" startLine="27" startPosition="24" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
     <nodeInfo nodeId="8775597636506120595" fileName="JavaExternalLibraryHelper.java" startLine="28" startPosition="36" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
@@ -250,7 +250,6 @@
     <scopeInfo nodeId="6853883513540407202" fileName="JavaExternalLibraryHelper.java" startLine="41" startPosition="94" endLine="87" endPosition="7">
       <varInfo nodeId="6853883513540407203" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="6853883513540510780" fileName="JavaExternalLibraryHelper.java" startLine="41" startPosition="94" endLine="87" endPosition="7" />
     <scopeInfo nodeId="8775597636506088067" fileName="JavaExternalLibraryHelper.java" startLine="37" startPosition="38" endLine="127" endPosition="18">
       <varInfo nodeId="8775597636506120628" varName="artifacts" />
       <varInfo nodeId="8775597636506120651" varName="jarContainers" />
