@@ -1205,10 +1205,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
     visitChildren(new ChildVisitor() {
       public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-        String roleOf = getRoleOf(child);
-        assert roleOf != null;
         if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
-          augend.add(roleOf);
+          augend.add(role);
         }
         return true;
       }
