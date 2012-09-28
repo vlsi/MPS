@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -17,7 +16,7 @@ public abstract class SimpleScope extends Scope {
 
   public SimpleScope(Iterable<SNode> nodes) {
     // why i need hash set? 
-    this.nodes = ListSequence.fromList(new ArrayList<SNode>(Sequence.fromIterable(nodes).count()));
+    this.nodes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode node : nodes) {
       if ((node != null)) {
         this.nodes.add(node);
