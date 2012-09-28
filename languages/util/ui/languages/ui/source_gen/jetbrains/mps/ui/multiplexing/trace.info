@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8590671622324268192">
+  <root nodeId="8590671622324268192" modelId="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)">
     <nodeInfo nodeId="8590671622324287920" fileName="GenerateVariants.java" startLine="6" startPosition="36" endLine="7" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()[Ljava/lang/String;" />
     <scopeInfo nodeId="8590671622324287920" fileName="GenerateVariants.java" startLine="6" startPosition="36" endLine="7" endPosition="19" />
     <unitInfo nodeId="8590671622324268192" fileName="GenerateVariants.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.GenerateVariants" />
   </root>
-  <root nodeId="8590671622324574702">
+  <root nodeId="8590671622324574702" modelId="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)">
     <nodeInfo nodeId="8590671622324574704" fileName="Variant.java" startLine="6" startPosition="27" endLine="7" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()Ljava/lang/String;" />
     <scopeInfo nodeId="8590671622324574704" fileName="Variant.java" startLine="6" startPosition="27" endLine="7" endPosition="17" />
     <unitInfo nodeId="8590671622324574702" fileName="Variant.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ui.multiplexing.Variant" />
   </root>
-  <root nodeId="8590671622326856376">
+  <root nodeId="8590671622326856376" modelId="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)">
     <nodeInfo nodeId="8590671622326856391" fileName="VariantsUtil.java" startLine="29" startPosition="39" endLine="30" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8590671622326856402" fileName="VariantsUtil.java" startLine="32" startPosition="7" endLine="33" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8590671622326856425" fileName="VariantsUtil.java" startLine="38" startPosition="39" endLine="39" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

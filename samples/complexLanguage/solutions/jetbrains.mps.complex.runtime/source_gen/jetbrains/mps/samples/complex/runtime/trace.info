@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1196259667740">
+  <root nodeId="1196259667740" modelId="r:00000000-0000-4000-0000-011c89590428(jetbrains.mps.samples.complex.runtime)">
     <nodeInfo nodeId="1196263513821" fileName="Complex.java" startLine="6" startPosition="22" endLine="7" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EPSILON" />
     <nodeInfo nodeId="1196434090541" fileName="Complex.java" startLine="7" startPosition="43" endLine="8" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="I" />
     <nodeInfo nodeId="1196259679368" fileName="Complex.java" startLine="9" startPosition="0" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReal" />

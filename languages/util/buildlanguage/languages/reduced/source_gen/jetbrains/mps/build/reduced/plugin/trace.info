@@ -133,7 +133,9 @@
       <varInfo nodeId="10342590403667037" varName="props" />
     </scopeInfo>
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="35" startPosition="0" endLine="38" endPosition="3" />
-    <scopeInfo nodeId="10342590403670665" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21" />
+    <scopeInfo nodeId="10342590403677933" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21">
+      <varInfo nodeId="10342590403677935" varName="file" />
+    </scopeInfo>
     <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="155" startPosition="79" endLine="158" endPosition="7" />
     <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="159" startPosition="0" endLine="162" endPosition="7">
       <varInfo nodeId="10342590403670681" varName="fileHashes" />

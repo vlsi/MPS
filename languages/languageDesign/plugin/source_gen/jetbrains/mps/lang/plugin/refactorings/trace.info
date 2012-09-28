@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6237653430913268254">
+  <root nodeId="6237653430913268254" modelId="r:1f77f547-8d39-49b3-a638-0476f0430bcb(jetbrains.mps.lang.plugin.refactorings)">
     <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="21" startPosition="39" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,9 +41,6 @@
     <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="6237653430913268258" varName="entity" />
-    </scopeInfo>
     <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
     <scopeInfo nodeId="6237653430913463681" fileName="SortKeymapMembers.java" startLine="33" startPosition="162" endLine="37" endPosition="0">

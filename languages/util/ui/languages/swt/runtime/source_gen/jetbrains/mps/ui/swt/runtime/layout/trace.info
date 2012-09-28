@@ -150,15 +150,9 @@
       <varInfo nodeId="1917449282171811218" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="1045595646440037646" fileName="GridLayoutUtil.java" startLine="93" startPosition="42" endLine="96" endPosition="9" />
-    <scopeInfo nodeId="6308192764808326613" fileName="GridLayoutUtil.java" startLine="101" startPosition="40" endLine="104" endPosition="7">
-      <varInfo nodeId="6308192764808326614" varName="j" />
-    </scopeInfo>
-    <scopeInfo nodeId="7646166816927151785" fileName="GridLayoutUtil.java" startLine="131" startPosition="37" endLine="134" endPosition="7">
-      <varInfo nodeId="7646166816927151786" varName="j" />
-    </scopeInfo>
-    <scopeInfo nodeId="6502165566452100067" fileName="GridLayoutUtil.java" startLine="191" startPosition="43" endLine="194" endPosition="9">
-      <varInfo nodeId="6502165566452100079" varName="j" />
-    </scopeInfo>
+    <scopeInfo nodeId="6308192764808326612" fileName="GridLayoutUtil.java" startLine="101" startPosition="40" endLine="104" endPosition="7" />
+    <scopeInfo nodeId="7646166816927151784" fileName="GridLayoutUtil.java" startLine="131" startPosition="37" endLine="134" endPosition="7" />
+    <scopeInfo nodeId="6502165566452100066" fileName="GridLayoutUtil.java" startLine="191" startPosition="43" endLine="194" endPosition="9" />
     <scopeInfo nodeId="7646166816927223436" fileName="GridLayoutUtil.java" startLine="75" startPosition="38" endLine="79" endPosition="9">
       <varInfo nodeId="7646166816927223774" varName="c" />
     </scopeInfo>
@@ -182,12 +176,16 @@
     <scopeInfo nodeId="6502165566452100065" fileName="GridLayoutUtil.java" startLine="190" startPosition="7" endLine="195" endPosition="7">
       <varInfo nodeId="6502165566452100089" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7646166816927223256" fileName="GridLayoutUtil.java" startLine="74" startPosition="39" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="7646166816927223433" fileName="GridLayoutUtil.java" startLine="74" startPosition="39" endLine="80" endPosition="7">
+      <varInfo nodeId="7646166816927223434" varName="j" />
+    </scopeInfo>
     <scopeInfo nodeId="1045595646440037498" fileName="GridLayoutUtil.java" startLine="92" startPosition="27" endLine="98" endPosition="15" />
     <scopeInfo nodeId="1513919493268390110" fileName="GridLayoutUtil.java" startLine="141" startPosition="24" endLine="147" endPosition="5">
       <varInfo nodeId="1513919493268390129" varName="z" />
     </scopeInfo>
-    <scopeInfo nodeId="1513919493268390138" fileName="GridLayoutUtil.java" startLine="148" startPosition="23" endLine="154" endPosition="7" />
+    <scopeInfo nodeId="1513919493268390139" fileName="GridLayoutUtil.java" startLine="148" startPosition="23" endLine="154" endPosition="7">
+      <varInfo nodeId="1513919493268390158" varName="a" />
+    </scopeInfo>
     <scopeInfo nodeId="1917449282171773905" fileName="GridLayoutUtil.java" startLine="172" startPosition="27" endLine="178" endPosition="11" />
     <scopeInfo nodeId="1045595646440107260" fileName="GridLayoutUtil.java" startLine="58" startPosition="37" endLine="65" endPosition="11" />
     <scopeInfo nodeId="1917449282171769938" fileName="GridLayoutUtil.java" startLine="41" startPosition="67" endLine="49" endPosition="30">
@@ -203,7 +201,9 @@
     <scopeInfo nodeId="7646166816927222987" fileName="GridLayoutUtil.java" startLine="72" startPosition="87" endLine="81" endPosition="5">
       <varInfo nodeId="1045595646440036224" varName="rows" />
     </scopeInfo>
-    <scopeInfo nodeId="1917449282171769927" fileName="GridLayoutUtil.java" startLine="40" startPosition="60" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="1917449282171769936" fileName="GridLayoutUtil.java" startLine="40" startPosition="60" endLine="50" endPosition="5">
+      <varInfo nodeId="1917449282171769937" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="1045595646440038388" fileName="GridLayoutUtil.java" startLine="107" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="1045595646440038990" varName="hspan" />
       <varInfo nodeId="1045595646440038541" varName="matrix" />
@@ -222,9 +222,7 @@
       <varInfo nodeId="1917449282171769933" varName="cols" />
       <varInfo nodeId="1917449282171769929" varName="matrix" />
     </scopeInfo>
-    <scopeInfo nodeId="1513919493268395339" fileName="GridLayoutUtil.java" startLine="54" startPosition="37" endLine="68" endPosition="7">
-      <varInfo nodeId="1513919493268395340" varName="j" />
-    </scopeInfo>
+    <scopeInfo nodeId="1513919493268395203" fileName="GridLayoutUtil.java" startLine="54" startPosition="37" endLine="68" endPosition="7" />
     <scopeInfo nodeId="8508807536212520503" fileName="GridLayoutUtil.java" startLine="22" startPosition="69" endLine="37" endPosition="35">
       <varInfo nodeId="6502165566452098548" varName="cdata" />
       <varInfo nodeId="8508807536212530904" varName="columns" />

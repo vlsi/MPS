@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7048923897762709721">
+  <root nodeId="7048923897762709721" modelId="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util)">
     <nodeInfo nodeId="7048923897762709793" fileName="Flags.java" startLine="10" startPosition="0" endLine="11" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="7048923897762709749" fileName="Flags.java" startLine="16" startPosition="32" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7048923897762709760" fileName="Flags.java" startLine="20" startPosition="33" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

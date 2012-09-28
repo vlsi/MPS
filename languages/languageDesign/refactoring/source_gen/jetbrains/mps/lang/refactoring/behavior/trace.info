@@ -292,9 +292,7 @@
       <varInfo nodeId="478744034994716001" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="478744034994717552" fileName="RefactoringArgument_Behavior.java" startLine="23" startPosition="63" endLine="26" endPosition="9" />
-    <scopeInfo nodeId="478744034994717551" fileName="RefactoringArgument_Behavior.java" startLine="22" startPosition="40" endLine="27" endPosition="7">
-      <varInfo nodeId="478744034994717555" varName="sreference" />
-    </scopeInfo>
+    <scopeInfo nodeId="478744034994716033" fileName="RefactoringArgument_Behavior.java" startLine="22" startPosition="40" endLine="27" endPosition="7" />
     <scopeInfo nodeId="478744034994716032" fileName="RefactoringArgument_Behavior.java" startLine="21" startPosition="222" endLine="28" endPosition="5">
       <varInfo nodeId="478744034994716044" varName="reference" />
     </scopeInfo>

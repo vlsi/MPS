@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1230052406553">
+  <root nodeId="1230052406553" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052406553" fileName="ChangeMethodParametersForStatement_Test.java" startLine="25" startPosition="74" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406553" fileName="ChangeMethodParametersForStatement_Test.java" startLine="26" startPosition="114" endLine="27" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406639" fileName="ChangeMethodParametersForStatement_Test.java" startLine="32" startPosition="76" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -36,7 +36,7 @@
     <unitInfo nodeId="1230052406553" fileName="ChangeMethodParametersForStatement_Test.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test" />
     <unitInfo nodeId="1230052406553" fileName="ChangeMethodParametersForStatement_Test.java" startLine="30" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test$TestBody" />
   </root>
-  <root nodeId="1230052406741">
+  <root nodeId="1230052406741" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052406741" fileName="ConceptFunctioParameterTest_Test.java" startLine="19" startPosition="67" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406741" fileName="ConceptFunctioParameterTest_Test.java" startLine="20" startPosition="114" endLine="21" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406767" fileName="ConceptFunctioParameterTest_Test.java" startLine="26" startPosition="69" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -53,7 +53,7 @@
     <unitInfo nodeId="1230052406741" fileName="ConceptFunctioParameterTest_Test.java" startLine="16" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test" />
     <unitInfo nodeId="1230052406741" fileName="ConceptFunctioParameterTest_Test.java" startLine="24" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test$TestBody" />
   </root>
-  <root nodeId="1230052406787">
+  <root nodeId="1230052406787" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="23" startPosition="53" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406874" fileName="ConceptMethod_Test.java" startLine="30" startPosition="55" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,7 +86,7 @@
     <unitInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptMethod_Test" />
     <unitInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="28" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptMethod_Test$TestBody" />
   </root>
-  <root nodeId="1230052406933">
+  <root nodeId="1230052406933" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052406933" fileName="ExtractFromAnonymous_Test.java" startLine="22" startPosition="60" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406933" fileName="ExtractFromAnonymous_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406934" fileName="ExtractFromAnonymous_Test.java" startLine="29" startPosition="62" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -108,7 +108,7 @@
     <unitInfo nodeId="1230052406933" fileName="ExtractFromAnonymous_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromAnonymous_Test" />
     <unitInfo nodeId="1230052406933" fileName="ExtractFromAnonymous_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromAnonymous_Test$TestBody" />
   </root>
-  <root nodeId="1230052407024">
+  <root nodeId="1230052407024" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052407024" fileName="ExtractFromStatements_Test.java" startLine="22" startPosition="61" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052407024" fileName="ExtractFromStatements_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052407103" fileName="ExtractFromStatements_Test.java" startLine="29" startPosition="63" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -130,7 +130,7 @@
     <unitInfo nodeId="1230052407024" fileName="ExtractFromStatements_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromStatements_Test" />
     <unitInfo nodeId="1230052407024" fileName="ExtractFromStatements_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromStatements_Test$TestBody" />
   </root>
-  <root nodeId="1230052407134">
+  <root nodeId="1230052407134" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052407134" fileName="ExtractMethodFromConstructor_Test.java" startLine="22" startPosition="68" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052407134" fileName="ExtractMethodFromConstructor_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052407164" fileName="ExtractMethodFromConstructor_Test.java" startLine="29" startPosition="70" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -152,7 +152,7 @@
     <unitInfo nodeId="1230052407134" fileName="ExtractMethodFromConstructor_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodFromConstructor_Test" />
     <unitInfo nodeId="1230052407134" fileName="ExtractMethodFromConstructor_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodFromConstructor_Test$TestBody" />
   </root>
-  <root nodeId="1230052444309">
+  <root nodeId="1230052444309" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052444309" fileName="FindInputVariables_Test.java" startLine="21" startPosition="58" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052444309" fileName="FindInputVariables_Test.java" startLine="22" startPosition="114" endLine="23" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052444345" fileName="FindInputVariables_Test.java" startLine="28" startPosition="60" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -172,7 +172,7 @@
     <unitInfo nodeId="1230052444309" fileName="FindInputVariables_Test.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindInputVariables_Test" />
     <unitInfo nodeId="1230052444309" fileName="FindInputVariables_Test.java" startLine="26" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindInputVariables_Test$TestBody" />
   </root>
-  <root nodeId="1230052480263">
+  <root nodeId="1230052480263" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052480263" fileName="BreakStatement_Test.java" startLine="19" startPosition="48" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052480263" fileName="BreakStatement_Test.java" startLine="20" startPosition="114" endLine="21" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052480263" fileName="BreakStatement_Test.java" startLine="25" startPosition="48" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -216,7 +216,7 @@
     <unitInfo nodeId="1230052480263" fileName="BreakStatement_Test.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.refactoringTest.BreakStatement_Test" />
     <unitInfo nodeId="1230052480263" fileName="BreakStatement_Test.java" startLine="42" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody" />
   </root>
-  <root nodeId="1230052480332">
+  <root nodeId="1230052480332" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052480332" fileName="ExtractBreak_Test.java" startLine="23" startPosition="52" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052480332" fileName="ExtractBreak_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052480405" fileName="ExtractBreak_Test.java" startLine="30" startPosition="54" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -239,7 +239,7 @@
     <unitInfo nodeId="1230052480332" fileName="ExtractBreak_Test.java" startLine="20" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractBreak_Test" />
     <unitInfo nodeId="1230052480332" fileName="ExtractBreak_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractBreak_Test$TestBody" />
   </root>
-  <root nodeId="1230052480438">
+  <root nodeId="1230052480438" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052480438" fileName="ExtractContinue_Test.java" startLine="23" startPosition="55" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052480438" fileName="ExtractContinue_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052480494" fileName="ExtractContinue_Test.java" startLine="30" startPosition="57" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -262,7 +262,7 @@
     <unitInfo nodeId="1230052480438" fileName="ExtractContinue_Test.java" startLine="20" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractContinue_Test" />
     <unitInfo nodeId="1230052480438" fileName="ExtractContinue_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractContinue_Test$TestBody" />
   </root>
-  <root nodeId="1230052509258">
+  <root nodeId="1230052509258" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052509258" fileName="ExtractDefaultClassifierMethodDeclaration_Test.java" startLine="22" startPosition="57" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052509258" fileName="ExtractDefaultClassifierMethodDeclaration_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052509258" fileName="ExtractDefaultClassifierMethodDeclaration_Test.java" startLine="28" startPosition="58" endLine="29" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -304,7 +304,7 @@
     <unitInfo nodeId="1230052509258" fileName="ExtractDefaultClassifierMethodDeclaration_Test.java" startLine="19" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test" />
     <unitInfo nodeId="1230052509258" fileName="ExtractDefaultClassifierMethodDeclaration_Test.java" startLine="33" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test$TestBody" />
   </root>
-  <root nodeId="1230052551970">
+  <root nodeId="1230052551970" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052551970" fileName="ExtractFromExpression_Test.java" startLine="22" startPosition="61" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052551970" fileName="ExtractFromExpression_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052552031" fileName="ExtractFromExpression_Test.java" startLine="29" startPosition="63" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -326,7 +326,7 @@
     <unitInfo nodeId="1230052551970" fileName="ExtractFromExpression_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromExpression_Test" />
     <unitInfo nodeId="1230052551970" fileName="ExtractFromExpression_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromExpression_Test$TestBody" />
   </root>
-  <root nodeId="1230052552060">
+  <root nodeId="1230052552060" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052552060" fileName="ExtractFromExpressionWithoutReturn_Test.java" startLine="22" startPosition="74" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052552060" fileName="ExtractFromExpressionWithoutReturn_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052552101" fileName="ExtractFromExpressionWithoutReturn_Test.java" startLine="29" startPosition="76" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -348,7 +348,7 @@
     <unitInfo nodeId="1230052552060" fileName="ExtractFromExpressionWithoutReturn_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromExpressionWithoutReturn_Test" />
     <unitInfo nodeId="1230052552060" fileName="ExtractFromExpressionWithoutReturn_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromExpressionWithoutReturn_Test$TestBody" />
   </root>
-  <root nodeId="1230052641811">
+  <root nodeId="1230052641811" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052641811" fileName="ExtractDifferentReturns_Test.java" startLine="23" startPosition="63" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052641811" fileName="ExtractDifferentReturns_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052641880" fileName="ExtractDifferentReturns_Test.java" startLine="30" startPosition="65" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -371,7 +371,7 @@
     <unitInfo nodeId="1230052641811" fileName="ExtractDifferentReturns_Test.java" startLine="20" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractDifferentReturns_Test" />
     <unitInfo nodeId="1230052641811" fileName="ExtractDifferentReturns_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractDifferentReturns_Test$TestBody" />
   </root>
-  <root nodeId="1230052641913">
+  <root nodeId="1230052641913" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052641913" fileName="ExtractFromStatementWithReturnValue_Test.java" startLine="22" startPosition="75" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052641913" fileName="ExtractFromStatementWithReturnValue_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642008" fileName="ExtractFromStatementWithReturnValue_Test.java" startLine="29" startPosition="77" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -393,7 +393,7 @@
     <unitInfo nodeId="1230052641913" fileName="ExtractFromStatementWithReturnValue_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromStatementWithReturnValue_Test" />
     <unitInfo nodeId="1230052641913" fileName="ExtractFromStatementWithReturnValue_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromStatementWithReturnValue_Test$TestBody" />
   </root>
-  <root nodeId="1230052642039">
+  <root nodeId="1230052642039" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052642039" fileName="ExtractFromStatementsEndsWithReturn_Test.java" startLine="22" startPosition="75" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642039" fileName="ExtractFromStatementsEndsWithReturn_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642071" fileName="ExtractFromStatementsEndsWithReturn_Test.java" startLine="29" startPosition="77" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -415,7 +415,7 @@
     <unitInfo nodeId="1230052642039" fileName="ExtractFromStatementsEndsWithReturn_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromStatementsEndsWithReturn_Test" />
     <unitInfo nodeId="1230052642039" fileName="ExtractFromStatementsEndsWithReturn_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromStatementsEndsWithReturn_Test$TestBody" />
   </root>
-  <root nodeId="1230052642100">
+  <root nodeId="1230052642100" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052642100" fileName="MethodsWithoutReturnStatement_Test.java" startLine="22" startPosition="64" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642100" fileName="MethodsWithoutReturnStatement_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642145" fileName="MethodsWithoutReturnStatement_Test.java" startLine="29" startPosition="66" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -437,7 +437,7 @@
     <unitInfo nodeId="1230052642100" fileName="MethodsWithoutReturnStatement_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.MethodsWithoutReturnStatement_Test" />
     <unitInfo nodeId="1230052642100" fileName="MethodsWithoutReturnStatement_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.MethodsWithoutReturnStatement_Test$TestBody" />
   </root>
-  <root nodeId="1230052642174">
+  <root nodeId="1230052642174" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052642174" fileName="OneReturnStatement_Test.java" startLine="19" startPosition="58" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642174" fileName="OneReturnStatement_Test.java" startLine="20" startPosition="114" endLine="21" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642174" fileName="OneReturnStatement_Test.java" startLine="25" startPosition="60" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -461,7 +461,7 @@
     <unitInfo nodeId="1230052642174" fileName="OneReturnStatement_Test.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnStatement_Test" />
     <unitInfo nodeId="1230052642174" fileName="OneReturnStatement_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnStatement_Test$TestBody" />
   </root>
-  <root nodeId="1230052642255">
+  <root nodeId="1230052642255" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052642255" fileName="OneReturnTransformation_Test.java" startLine="22" startPosition="63" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642255" fileName="OneReturnTransformation_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642315" fileName="OneReturnTransformation_Test.java" startLine="29" startPosition="65" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -483,7 +483,7 @@
     <unitInfo nodeId="1230052642255" fileName="OneReturnTransformation_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnTransformation_Test" />
     <unitInfo nodeId="1230052642255" fileName="OneReturnTransformation_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnTransformation_Test$TestBody" />
   </root>
-  <root nodeId="1230052642344">
+  <root nodeId="1230052642344" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052642344" fileName="ReturnStatement_Test.java" startLine="19" startPosition="52" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642344" fileName="ReturnStatement_Test.java" startLine="20" startPosition="114" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052642344" fileName="ReturnStatement_Test.java" startLine="25" startPosition="61" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -518,7 +518,7 @@
     <unitInfo nodeId="1230052642344" fileName="ReturnStatement_Test.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.refactoringTest.ReturnStatement_Test" />
     <unitInfo nodeId="1230052642344" fileName="ReturnStatement_Test.java" startLine="36" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody" />
   </root>
-  <root nodeId="1230052684456">
+  <root nodeId="1230052684456" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052684456" fileName="ExtractFromIntention_Test.java" startLine="24" startPosition="57" endLine="25" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052684456" fileName="ExtractFromIntention_Test.java" startLine="25" startPosition="114" endLine="26" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052684457" fileName="ExtractFromIntention_Test.java" startLine="31" startPosition="59" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -546,7 +546,7 @@
     <unitInfo nodeId="1230052684456" fileName="ExtractFromIntention_Test.java" startLine="21" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromIntention_Test" />
     <unitInfo nodeId="1230052684456" fileName="ExtractFromIntention_Test.java" startLine="29" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractFromIntention_Test$TestBody" />
   </root>
-  <root nodeId="1230052684553">
+  <root nodeId="1230052684553" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052684553" fileName="staticContainerBehaviorTest_Test.java" startLine="24" startPosition="67" endLine="25" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052684553" fileName="staticContainerBehaviorTest_Test.java" startLine="25" startPosition="114" endLine="26" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052684606" fileName="staticContainerBehaviorTest_Test.java" startLine="31" startPosition="69" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -580,7 +580,7 @@
     <unitInfo nodeId="1230052684553" fileName="staticContainerBehaviorTest_Test.java" startLine="21" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.refactoringTest.staticContainerBehaviorTest_Test" />
     <unitInfo nodeId="1230052684553" fileName="staticContainerBehaviorTest_Test.java" startLine="29" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.refactoringTest.staticContainerBehaviorTest_Test$TestBody" />
   </root>
-  <root nodeId="1230052684686">
+  <root nodeId="1230052684686" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052684686" fileName="staticContainerClassTest_Test.java" startLine="24" startPosition="64" endLine="25" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052684686" fileName="staticContainerClassTest_Test.java" startLine="25" startPosition="114" endLine="26" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052684722" fileName="staticContainerClassTest_Test.java" startLine="31" startPosition="66" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -610,7 +610,7 @@
     <unitInfo nodeId="1230052684686" fileName="staticContainerClassTest_Test.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.staticContainerClassTest_Test" />
     <unitInfo nodeId="1230052684686" fileName="staticContainerClassTest_Test.java" startLine="29" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.refactoringTest.staticContainerClassTest_Test$TestBody" />
   </root>
-  <root nodeId="1230052902925">
+  <root nodeId="1230052902925" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="29" startPosition="59" endLine="30" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="30" startPosition="114" endLine="31" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="36" startPosition="61" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -657,7 +657,7 @@
     <unitInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="34" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test$TestBody" />
     <unitInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="46" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test.TestBody$QuotationClass_njbq9a_a0a0d0a0" />
   </root>
-  <root nodeId="1230052902977">
+  <root nodeId="1230052902977" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052902977" fileName="ChangeMethodName_Test.java" startLine="22" startPosition="56" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052902977" fileName="ChangeMethodName_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052902995" fileName="ChangeMethodName_Test.java" startLine="29" startPosition="58" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -679,7 +679,7 @@
     <unitInfo nodeId="1230052902977" fileName="ChangeMethodName_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeMethodName_Test" />
     <unitInfo nodeId="1230052902977" fileName="ChangeMethodName_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeMethodName_Test$TestBody" />
   </root>
-  <root nodeId="1230052903026">
+  <root nodeId="1230052903026" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052903026" fileName="ChangeReturningType_Test.java" startLine="22" startPosition="59" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052903026" fileName="ChangeReturningType_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052903045" fileName="ChangeReturningType_Test.java" startLine="29" startPosition="61" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -701,7 +701,7 @@
     <unitInfo nodeId="1230052903026" fileName="ChangeReturningType_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeReturningType_Test" />
     <unitInfo nodeId="1230052903026" fileName="ChangeReturningType_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeReturningType_Test$TestBody" />
   </root>
-  <root nodeId="1230052903078">
+  <root nodeId="1230052903078" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052903078" fileName="ChangeSignatureOfStaticMethod_Test.java" startLine="23" startPosition="69" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052903078" fileName="ChangeSignatureOfStaticMethod_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052903138" fileName="ChangeSignatureOfStaticMethod_Test.java" startLine="30" startPosition="71" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -734,7 +734,7 @@
     <unitInfo nodeId="1230052903078" fileName="ChangeSignatureOfStaticMethod_Test.java" startLine="20" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeSignatureOfStaticMethod_Test" />
     <unitInfo nodeId="1230052903078" fileName="ChangeSignatureOfStaticMethod_Test.java" startLine="28" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeSignatureOfStaticMethod_Test$TestBody" />
   </root>
-  <root nodeId="1230052943763">
+  <root nodeId="1230052943763" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="26" startPosition="52" endLine="27" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="27" startPosition="114" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="33" startPosition="54" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -792,7 +792,7 @@
     <unitInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="31" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddParameter_Test$TestBody" />
     <unitInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="43" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddParameter_Test.TestBody$QuotationClass_pqwgtw_a0a0d0a0" />
   </root>
-  <root nodeId="1230052943817">
+  <root nodeId="1230052943817" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052943817" fileName="ChangeParameterName_Test.java" startLine="23" startPosition="59" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943817" fileName="ChangeParameterName_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943847" fileName="ChangeParameterName_Test.java" startLine="30" startPosition="61" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -814,7 +814,7 @@
     <unitInfo nodeId="1230052943817" fileName="ChangeParameterName_Test.java" startLine="20" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterName_Test" />
     <unitInfo nodeId="1230052943817" fileName="ChangeParameterName_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterName_Test$TestBody" />
   </root>
-  <root nodeId="1230052943883">
+  <root nodeId="1230052943883" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="26" startPosition="59" endLine="27" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="27" startPosition="114" endLine="28" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="33" startPosition="61" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -860,7 +860,7 @@
     <unitInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="31" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterType_Test$TestBody" />
     <unitInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="43" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterType_Test.TestBody$QuotationClass_69x5rj_a2a3a0a" />
   </root>
-  <root nodeId="1230052943946">
+  <root nodeId="1230052943946" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052943946" fileName="ChangeParametersOrder_Test.java" startLine="23" startPosition="61" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943946" fileName="ChangeParametersOrder_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052943993" fileName="ChangeParametersOrder_Test.java" startLine="30" startPosition="63" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -892,7 +892,7 @@
     <unitInfo nodeId="1230052943946" fileName="ChangeParametersOrder_Test.java" startLine="20" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParametersOrder_Test" />
     <unitInfo nodeId="1230052943946" fileName="ChangeParametersOrder_Test.java" startLine="28" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParametersOrder_Test$TestBody" />
   </root>
-  <root nodeId="1230052944081">
+  <root nodeId="1230052944081" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052944081" fileName="RemoveParameter_Test.java" startLine="22" startPosition="55" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052944081" fileName="RemoveParameter_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052944101" fileName="RemoveParameter_Test.java" startLine="29" startPosition="57" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -914,7 +914,7 @@
     <unitInfo nodeId="1230052944081" fileName="RemoveParameter_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.RemoveParameter_Test" />
     <unitInfo nodeId="1230052944081" fileName="RemoveParameter_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.RemoveParameter_Test$TestBody" />
   </root>
-  <root nodeId="1230052944132">
+  <root nodeId="1230052944132" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052944132" fileName="TwoParametersWithSameType_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052944132" fileName="TwoParametersWithSameType_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052944162" fileName="TwoParametersWithSameType_Test.java" startLine="30" startPosition="67" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -937,7 +937,7 @@
     <unitInfo nodeId="1230052944132" fileName="TwoParametersWithSameType_Test.java" startLine="20" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.TwoParametersWithSameType_Test" />
     <unitInfo nodeId="1230052944132" fileName="TwoParametersWithSameType_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.TwoParametersWithSameType_Test$TestBody" />
   </root>
-  <root nodeId="1230052989007">
+  <root nodeId="1230052989007" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052989007" fileName="DeclarationVariablesInMethod_Test.java" startLine="20" startPosition="68" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989007" fileName="DeclarationVariablesInMethod_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989065" fileName="DeclarationVariablesInMethod_Test.java" startLine="27" startPosition="70" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -956,7 +956,7 @@
     <unitInfo nodeId="1230052989007" fileName="DeclarationVariablesInMethod_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.DeclarationVariablesInMethod_Test" />
     <unitInfo nodeId="1230052989007" fileName="DeclarationVariablesInMethod_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.DeclarationVariablesInMethod_Test$TestBody" />
   </root>
-  <root nodeId="1230052989081">
+  <root nodeId="1230052989081" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052989081" fileName="InlineFromAnotherClass_Test.java" startLine="20" startPosition="62" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989081" fileName="InlineFromAnotherClass_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989156" fileName="InlineFromAnotherClass_Test.java" startLine="27" startPosition="64" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -975,7 +975,7 @@
     <unitInfo nodeId="1230052989081" fileName="InlineFromAnotherClass_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromAnotherClass_Test" />
     <unitInfo nodeId="1230052989081" fileName="InlineFromAnotherClass_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromAnotherClass_Test$TestBody" />
   </root>
-  <root nodeId="1230052989172">
+  <root nodeId="1230052989172" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052989172" fileName="InlineFromExpression_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989172" fileName="InlineFromExpression_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989266" fileName="InlineFromExpression_Test.java" startLine="27" startPosition="62" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -994,7 +994,7 @@
     <unitInfo nodeId="1230052989172" fileName="InlineFromExpression_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromExpression_Test" />
     <unitInfo nodeId="1230052989172" fileName="InlineFromExpression_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromExpression_Test$TestBody" />
   </root>
-  <root nodeId="1230052989282">
+  <root nodeId="1230052989282" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052989282" fileName="InlineRecursiveMethod_Test.java" startLine="16" startPosition="61" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989282" fileName="InlineRecursiveMethod_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989295" fileName="InlineRecursiveMethod_Test.java" startLine="23" startPosition="63" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1008,7 +1008,7 @@
     <unitInfo nodeId="1230052989282" fileName="InlineRecursiveMethod_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test" />
     <unitInfo nodeId="1230052989282" fileName="InlineRecursiveMethod_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test$TestBody" />
   </root>
-  <root nodeId="1230052989306">
+  <root nodeId="1230052989306" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052989306" fileName="InlineWithNoSourcesAttached_Test.java" startLine="16" startPosition="67" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989306" fileName="InlineWithNoSourcesAttached_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989322" fileName="InlineWithNoSourcesAttached_Test.java" startLine="23" startPosition="69" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1022,7 +1022,7 @@
     <unitInfo nodeId="1230052989306" fileName="InlineWithNoSourcesAttached_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test" />
     <unitInfo nodeId="1230052989306" fileName="InlineWithNoSourcesAttached_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test$TestBody" />
   </root>
-  <root nodeId="1230052989334">
+  <root nodeId="1230052989334" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230052989334" fileName="SimpleInlineWithOneReturn_Test.java" startLine="20" startPosition="65" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989334" fileName="SimpleInlineWithOneReturn_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052989378" fileName="SimpleInlineWithOneReturn_Test.java" startLine="27" startPosition="67" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1041,7 +1041,7 @@
     <unitInfo nodeId="1230052989334" fileName="SimpleInlineWithOneReturn_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleInlineWithOneReturn_Test" />
     <unitInfo nodeId="1230052989334" fileName="SimpleInlineWithOneReturn_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleInlineWithOneReturn_Test$TestBody" />
   </root>
-  <root nodeId="1230053040715">
+  <root nodeId="1230053040715" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053040715" fileName="InlineFromBehavior_Test.java" startLine="20" startPosition="58" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053040715" fileName="InlineFromBehavior_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053040751" fileName="InlineFromBehavior_Test.java" startLine="27" startPosition="60" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1060,7 +1060,7 @@
     <unitInfo nodeId="1230053040715" fileName="InlineFromBehavior_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromBehavior_Test" />
     <unitInfo nodeId="1230053040715" fileName="InlineFromBehavior_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromBehavior_Test$TestBody" />
   </root>
-  <root nodeId="1230053040767">
+  <root nodeId="1230053040767" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053040767" fileName="InlineFromBehaviorWithMethods_Test.java" startLine="20" startPosition="69" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053040767" fileName="InlineFromBehaviorWithMethods_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053040872" fileName="InlineFromBehaviorWithMethods_Test.java" startLine="27" startPosition="71" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1081,7 +1081,7 @@
     <unitInfo nodeId="1230053040767" fileName="InlineFromBehaviorWithMethods_Test.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromBehaviorWithMethods_Test" />
     <unitInfo nodeId="1230053040767" fileName="InlineFromBehaviorWithMethods_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromBehaviorWithMethods_Test$TestBody" />
   </root>
-  <root nodeId="1230053040888">
+  <root nodeId="1230053040888" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053040888" fileName="InlineInBehaviorWithThis_Test.java" startLine="20" startPosition="64" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053040888" fileName="InlineInBehaviorWithThis_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053040922" fileName="InlineInBehaviorWithThis_Test.java" startLine="27" startPosition="66" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1100,7 +1100,7 @@
     <unitInfo nodeId="1230053040888" fileName="InlineInBehaviorWithThis_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineInBehaviorWithThis_Test" />
     <unitInfo nodeId="1230053040888" fileName="InlineInBehaviorWithThis_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineInBehaviorWithThis_Test$TestBody" />
   </root>
-  <root nodeId="1230053073153">
+  <root nodeId="1230053073153" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053073153" fileName="InlineMethodThatChangesParameters_Test.java" startLine="20" startPosition="73" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073153" fileName="InlineMethodThatChangesParameters_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073230" fileName="InlineMethodThatChangesParameters_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1119,7 +1119,7 @@
     <unitInfo nodeId="1230053073153" fileName="InlineMethodThatChangesParameters_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodThatChangesParameters_Test" />
     <unitInfo nodeId="1230053073153" fileName="InlineMethodThatChangesParameters_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodThatChangesParameters_Test$TestBody" />
   </root>
-  <root nodeId="1230053073246">
+  <root nodeId="1230053073246" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053073246" fileName="InlineModelWithConstants_Test.java" startLine="20" startPosition="64" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073246" fileName="InlineModelWithConstants_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073320" fileName="InlineModelWithConstants_Test.java" startLine="27" startPosition="66" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1138,7 +1138,7 @@
     <unitInfo nodeId="1230053073246" fileName="InlineModelWithConstants_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineModelWithConstants_Test" />
     <unitInfo nodeId="1230053073246" fileName="InlineModelWithConstants_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineModelWithConstants_Test$TestBody" />
   </root>
-  <root nodeId="1230053073336">
+  <root nodeId="1230053073336" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053073336" fileName="OneReturnWithNotVariableParameters_Test.java" startLine="20" startPosition="74" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073336" fileName="OneReturnWithNotVariableParameters_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073419" fileName="OneReturnWithNotVariableParameters_Test.java" startLine="27" startPosition="76" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1157,7 +1157,7 @@
     <unitInfo nodeId="1230053073336" fileName="OneReturnWithNotVariableParameters_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnWithNotVariableParameters_Test" />
     <unitInfo nodeId="1230053073336" fileName="OneReturnWithNotVariableParameters_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnWithNotVariableParameters_Test$TestBody" />
   </root>
-  <root nodeId="1230053073435">
+  <root nodeId="1230053073435" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053073435" fileName="OneReturnWithParameteres_Test.java" startLine="20" startPosition="64" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073435" fileName="OneReturnWithParameteres_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053073498" fileName="OneReturnWithParameteres_Test.java" startLine="27" startPosition="66" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1176,7 +1176,7 @@
     <unitInfo nodeId="1230053073435" fileName="OneReturnWithParameteres_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnWithParameteres_Test" />
     <unitInfo nodeId="1230053073435" fileName="OneReturnWithParameteres_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.OneReturnWithParameteres_Test$TestBody" />
   </root>
-  <root nodeId="1230053114801">
+  <root nodeId="1230053114801" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053114801" fileName="CheckStaticVisibility_Test.java" startLine="16" startPosition="61" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053114801" fileName="CheckStaticVisibility_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053114842" fileName="CheckStaticVisibility_Test.java" startLine="23" startPosition="63" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1197,7 +1197,7 @@
     <unitInfo nodeId="1230053114801" fileName="CheckStaticVisibility_Test.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckStaticVisibility_Test" />
     <unitInfo nodeId="1230053114801" fileName="CheckStaticVisibility_Test.java" startLine="21" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckStaticVisibility_Test$TestBody" />
   </root>
-  <root nodeId="1230053114873">
+  <root nodeId="1230053114873" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053114873" fileName="CheckVisibility_Test.java" startLine="16" startPosition="55" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053114873" fileName="CheckVisibility_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053114946" fileName="CheckVisibility_Test.java" startLine="23" startPosition="57" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1219,7 +1219,7 @@
     <unitInfo nodeId="1230053114873" fileName="CheckVisibility_Test.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckVisibility_Test" />
     <unitInfo nodeId="1230053114873" fileName="CheckVisibility_Test.java" startLine="21" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckVisibility_Test$TestBody" />
   </root>
-  <root nodeId="1230053187317">
+  <root nodeId="1230053187317" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187317" fileName="CheckInlineCanBePerformed_Test.java" startLine="16" startPosition="65" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187317" fileName="CheckInlineCanBePerformed_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187445" fileName="CheckInlineCanBePerformed_Test.java" startLine="23" startPosition="67" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1238,7 +1238,7 @@
     <unitInfo nodeId="1230053187317" fileName="CheckInlineCanBePerformed_Test.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test" />
     <unitInfo nodeId="1230053187317" fileName="CheckInlineCanBePerformed_Test.java" startLine="21" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test$TestBody" />
   </root>
-  <root nodeId="1230053187488">
+  <root nodeId="1230053187488" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187488" fileName="CheckInlineWithThrow_Test.java" startLine="16" startPosition="60" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187488" fileName="CheckInlineWithThrow_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187522" fileName="CheckInlineWithThrow_Test.java" startLine="23" startPosition="62" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1252,7 +1252,7 @@
     <unitInfo nodeId="1230053187488" fileName="CheckInlineWithThrow_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test" />
     <unitInfo nodeId="1230053187488" fileName="CheckInlineWithThrow_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test$TestBody" />
   </root>
-  <root nodeId="1230053187531">
+  <root nodeId="1230053187531" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187531" fileName="InlineManyReturns_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187531" fileName="InlineManyReturns_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187631" fileName="InlineManyReturns_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1271,7 +1271,7 @@
     <unitInfo nodeId="1230053187531" fileName="InlineManyReturns_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineManyReturns_Test" />
     <unitInfo nodeId="1230053187531" fileName="InlineManyReturns_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineManyReturns_Test$TestBody" />
   </root>
-  <root nodeId="1230053187647">
+  <root nodeId="1230053187647" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187647" fileName="InlineMethodWithReturnAtTheEnd_Test.java" startLine="20" startPosition="70" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187647" fileName="InlineMethodWithReturnAtTheEnd_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187736" fileName="InlineMethodWithReturnAtTheEnd_Test.java" startLine="27" startPosition="72" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1290,7 +1290,7 @@
     <unitInfo nodeId="1230053187647" fileName="InlineMethodWithReturnAtTheEnd_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithReturnAtTheEnd_Test" />
     <unitInfo nodeId="1230053187647" fileName="InlineMethodWithReturnAtTheEnd_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithReturnAtTheEnd_Test$TestBody" />
   </root>
-  <root nodeId="1230053187752">
+  <root nodeId="1230053187752" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187752" fileName="InlineMethodWithVoidType_Test.java" startLine="20" startPosition="64" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187752" fileName="InlineMethodWithVoidType_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187828" fileName="InlineMethodWithVoidType_Test.java" startLine="27" startPosition="66" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1309,7 +1309,7 @@
     <unitInfo nodeId="1230053187752" fileName="InlineMethodWithVoidType_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithVoidType_Test" />
     <unitInfo nodeId="1230053187752" fileName="InlineMethodWithVoidType_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithVoidType_Test$TestBody" />
   </root>
-  <root nodeId="1230053187844">
+  <root nodeId="1230053187844" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187844" fileName="InlineWithVoidTypeAndBug_Test.java" startLine="20" startPosition="64" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187844" fileName="InlineWithVoidTypeAndBug_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187884" fileName="InlineWithVoidTypeAndBug_Test.java" startLine="27" startPosition="66" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1328,7 +1328,7 @@
     <unitInfo nodeId="1230053187844" fileName="InlineWithVoidTypeAndBug_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithVoidTypeAndBug_Test" />
     <unitInfo nodeId="1230053187844" fileName="InlineWithVoidTypeAndBug_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithVoidTypeAndBug_Test$TestBody" />
   </root>
-  <root nodeId="1230053187900">
+  <root nodeId="1230053187900" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053187900" fileName="InlineWithoutReturnStatement_Test.java" startLine="20" startPosition="68" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187900" fileName="InlineWithoutReturnStatement_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053187901" fileName="InlineWithoutReturnStatement_Test.java" startLine="27" startPosition="70" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1347,7 +1347,7 @@
     <unitInfo nodeId="1230053187900" fileName="InlineWithoutReturnStatement_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithoutReturnStatement_Test" />
     <unitInfo nodeId="1230053187900" fileName="InlineWithoutReturnStatement_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithoutReturnStatement_Test$TestBody" />
   </root>
-  <root nodeId="1230053223832">
+  <root nodeId="1230053223832" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053223832" fileName="InlineStaticFromAnotherClass_Test.java" startLine="20" startPosition="68" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053223832" fileName="InlineStaticFromAnotherClass_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053223867" fileName="InlineStaticFromAnotherClass_Test.java" startLine="27" startPosition="70" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1367,7 +1367,7 @@
     <unitInfo nodeId="1230053223832" fileName="InlineStaticFromAnotherClass_Test.java" startLine="17" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineStaticFromAnotherClass_Test" />
     <unitInfo nodeId="1230053223832" fileName="InlineStaticFromAnotherClass_Test.java" startLine="25" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineStaticFromAnotherClass_Test$TestBody" />
   </root>
-  <root nodeId="1230053223883">
+  <root nodeId="1230053223883" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053223883" fileName="StaticMethod_Test.java" startLine="20" startPosition="52" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053223883" fileName="StaticMethod_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053223936" fileName="StaticMethod_Test.java" startLine="27" startPosition="54" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1386,7 +1386,7 @@
     <unitInfo nodeId="1230053223883" fileName="StaticMethod_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.StaticMethod_Test" />
     <unitInfo nodeId="1230053223883" fileName="StaticMethod_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.StaticMethod_Test$TestBody" />
   </root>
-  <root nodeId="1230053266365">
+  <root nodeId="1230053266365" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053266365" fileName="InlineFromConceptFunction_Test.java" startLine="22" startPosition="49" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266365" fileName="InlineFromConceptFunction_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266365" fileName="InlineFromConceptFunction_Test.java" startLine="28" startPosition="49" endLine="29" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1420,7 +1420,7 @@
     <unitInfo nodeId="1230053266365" fileName="InlineFromConceptFunction_Test.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test" />
     <unitInfo nodeId="1230053266365" fileName="InlineFromConceptFunction_Test.java" startLine="33" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test$TestBody" />
   </root>
-  <root nodeId="1230053266420">
+  <root nodeId="1230053266420" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053266420" fileName="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java" startLine="20" startPosition="94" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266420" fileName="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266421" fileName="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java" startLine="27" startPosition="96" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1439,7 +1439,7 @@
     <unitInfo nodeId="1230053266420" fileName="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineLocalVariableReferenceWithoutDeclarationDeleting_Test" />
     <unitInfo nodeId="1230053266420" fileName="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineLocalVariableReferenceWithoutDeclarationDeleting_Test$TestBody" />
   </root>
-  <root nodeId="1230053266477">
+  <root nodeId="1230053266477" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053266477" fileName="InlineLocalVariableReferense_Test.java" startLine="20" startPosition="68" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266477" fileName="InlineLocalVariableReferense_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266511" fileName="InlineLocalVariableReferense_Test.java" startLine="27" startPosition="70" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1458,7 +1458,7 @@
     <unitInfo nodeId="1230053266477" fileName="InlineLocalVariableReferense_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineLocalVariableReferense_Test" />
     <unitInfo nodeId="1230053266477" fileName="InlineLocalVariableReferense_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineLocalVariableReferense_Test$TestBody" />
   </root>
-  <root nodeId="1230053266526">
+  <root nodeId="1230053266526" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053266526" fileName="InlineReferenceWithAssignment_Test.java" startLine="20" startPosition="69" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266526" fileName="InlineReferenceWithAssignment_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266527" fileName="InlineReferenceWithAssignment_Test.java" startLine="27" startPosition="71" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1477,7 +1477,7 @@
     <unitInfo nodeId="1230053266526" fileName="InlineReferenceWithAssignment_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineReferenceWithAssignment_Test" />
     <unitInfo nodeId="1230053266526" fileName="InlineReferenceWithAssignment_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineReferenceWithAssignment_Test$TestBody" />
   </root>
-  <root nodeId="1230053266582">
+  <root nodeId="1230053266582" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053266582" fileName="InlineWithoutDeclarationDeletion_Test.java" startLine="20" startPosition="72" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266582" fileName="InlineWithoutDeclarationDeletion_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266623" fileName="InlineWithoutDeclarationDeletion_Test.java" startLine="27" startPosition="74" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1496,7 +1496,7 @@
     <unitInfo nodeId="1230053266582" fileName="InlineWithoutDeclarationDeletion_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithoutDeclarationDeletion_Test" />
     <unitInfo nodeId="1230053266582" fileName="InlineWithoutDeclarationDeletion_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineWithoutDeclarationDeletion_Test$TestBody" />
   </root>
-  <root nodeId="1230053266638">
+  <root nodeId="1230053266638" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053266638" fileName="SimpleInlineVariable_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266638" fileName="SimpleInlineVariable_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053266639" fileName="SimpleInlineVariable_Test.java" startLine="27" startPosition="62" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1515,7 +1515,7 @@
     <unitInfo nodeId="1230053266638" fileName="SimpleInlineVariable_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleInlineVariable_Test" />
     <unitInfo nodeId="1230053266638" fileName="SimpleInlineVariable_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleInlineVariable_Test$TestBody" />
   </root>
-  <root nodeId="1230053302505">
+  <root nodeId="1230053302505" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053302505" fileName="MoveMethodWithFields_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302505" fileName="MoveMethodWithFields_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302506" fileName="MoveMethodWithFields_Test.java" startLine="27" startPosition="62" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1536,7 +1536,7 @@
     <unitInfo nodeId="1230053302505" fileName="MoveMethodWithFields_Test.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithFields_Test" />
     <unitInfo nodeId="1230053302505" fileName="MoveMethodWithFields_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithFields_Test$TestBody" />
   </root>
-  <root nodeId="1230053302564">
+  <root nodeId="1230053302564" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053302564" fileName="MoveMethodWithMethods_Test.java" startLine="20" startPosition="61" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302564" fileName="MoveMethodWithMethods_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302565" fileName="MoveMethodWithMethods_Test.java" startLine="27" startPosition="63" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1557,7 +1557,7 @@
     <unitInfo nodeId="1230053302564" fileName="MoveMethodWithMethods_Test.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithMethods_Test" />
     <unitInfo nodeId="1230053302564" fileName="MoveMethodWithMethods_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithMethods_Test$TestBody" />
   </root>
-  <root nodeId="1230053302625">
+  <root nodeId="1230053302625" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053302625" fileName="MoveMethodWithUssages_Test.java" startLine="20" startPosition="45" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302625" fileName="MoveMethodWithUssages_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302626" fileName="MoveMethodWithUssages_Test.java" startLine="27" startPosition="47" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1579,7 +1579,7 @@
     <unitInfo nodeId="1230053302625" fileName="MoveMethodWithUssages_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithUssages_Test" />
     <unitInfo nodeId="1230053302625" fileName="MoveMethodWithUssages_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithUssages_Test$TestBody" />
   </root>
-  <root nodeId="1230053302691">
+  <root nodeId="1230053302691" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230053302691" fileName="SimpleMoveMethod_Test.java" startLine="20" startPosition="45" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302691" fileName="SimpleMoveMethod_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230053302692" fileName="SimpleMoveMethod_Test.java" startLine="27" startPosition="47" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1600,7 +1600,7 @@
     <unitInfo nodeId="1230053302691" fileName="SimpleMoveMethod_Test.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleMoveMethod_Test" />
     <unitInfo nodeId="1230053302691" fileName="SimpleMoveMethod_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleMoveMethod_Test$TestBody" />
   </root>
-  <root nodeId="1230057984816">
+  <root nodeId="1230057984816" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1230057984816" fileName="InlineMethodInTest_Test.java" startLine="20" startPosition="56" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230057984816" fileName="InlineMethodInTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230057984846" fileName="InlineMethodInTest_Test.java" startLine="27" startPosition="58" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1619,7 +1619,7 @@
     <unitInfo nodeId="1230057984816" fileName="InlineMethodInTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodInTest_Test" />
     <unitInfo nodeId="1230057984816" fileName="InlineMethodInTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodInTest_Test$TestBody" />
   </root>
-  <root nodeId="1300615610528534002">
+  <root nodeId="1300615610528534002" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1300615610528534002" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="23" startPosition="79" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1300615610528534002" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1300615610528534093" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="30" startPosition="81" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1651,7 +1651,7 @@
     <unitInfo nodeId="1300615610528534002" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindForMethodWithIVariableLikeNodes_Test" />
     <unitInfo nodeId="1300615610528534002" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindForMethodWithIVariableLikeNodes_Test$TestBody" />
   </root>
-  <root nodeId="1998477585418803771">
+  <root nodeId="1998477585418803771" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="1998477585418803771" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="23" startPosition="74" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1998477585418803771" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1998477585418805710" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="30" startPosition="76" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1683,7 +1683,7 @@
     <unitInfo nodeId="1998477585418803771" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractWithReturn_Test" />
     <unitInfo nodeId="1998477585418803771" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractWithReturn_Test$TestBody" />
   </root>
-  <root nodeId="2004738378939035560">
+  <root nodeId="2004738378939035560" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="2004738378939035560" fileName="ExtractMethodWithUnusedAssignments_Test.java" startLine="22" startPosition="78" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2004738378939035560" fileName="ExtractMethodWithUnusedAssignments_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2004738378939038667" fileName="ExtractMethodWithUnusedAssignments_Test.java" startLine="29" startPosition="80" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1707,7 +1707,7 @@
     <unitInfo nodeId="2004738378939035560" fileName="ExtractMethodWithUnusedAssignments_Test.java" startLine="19" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithUnusedAssignments_Test" />
     <unitInfo nodeId="2004738378939035560" fileName="ExtractMethodWithUnusedAssignments_Test.java" startLine="27" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithUnusedAssignments_Test$TestBody" />
   </root>
-  <root nodeId="2163048091639854868">
+  <root nodeId="2163048091639854868" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="2163048091639854868" fileName="IntroduceConstantFromAnonimousClass_Test.java" startLine="21" startPosition="79" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2163048091639854868" fileName="IntroduceConstantFromAnonimousClass_Test.java" startLine="22" startPosition="114" endLine="23" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2163048091639855068" fileName="IntroduceConstantFromAnonimousClass_Test.java" startLine="28" startPosition="81" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1730,7 +1730,7 @@
     <unitInfo nodeId="2163048091639854868" fileName="IntroduceConstantFromAnonimousClass_Test.java" startLine="18" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceConstantFromAnonimousClass_Test" />
     <unitInfo nodeId="2163048091639854868" fileName="IntroduceConstantFromAnonimousClass_Test.java" startLine="26" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceConstantFromAnonimousClass_Test$TestBody" />
   </root>
-  <root nodeId="2230400082817266597">
+  <root nodeId="2230400082817266597" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="2230400082817266597" fileName="ConvertAnonymousWithTypeVariablesTest_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2230400082817266597" fileName="ConvertAnonymousWithTypeVariablesTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2230400082817279740" fileName="ConvertAnonymousWithTypeVariablesTest_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1747,7 +1747,7 @@
     <unitInfo nodeId="2230400082817266597" fileName="ConvertAnonymousWithTypeVariablesTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeVariablesTest_Test" />
     <unitInfo nodeId="2230400082817266597" fileName="ConvertAnonymousWithTypeVariablesTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeVariablesTest_Test$TestBody" />
   </root>
-  <root nodeId="2230400082818031588">
+  <root nodeId="2230400082818031588" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="2230400082818031588" fileName="ConvertAnonymousToStaticTest_Test.java" startLine="20" startPosition="52" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2230400082818031588" fileName="ConvertAnonymousToStaticTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2230400082818041866" fileName="ConvertAnonymousToStaticTest_Test.java" startLine="27" startPosition="54" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1764,7 +1764,7 @@
     <unitInfo nodeId="2230400082818031588" fileName="ConvertAnonymousToStaticTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousToStaticTest_Test" />
     <unitInfo nodeId="2230400082818031588" fileName="ConvertAnonymousToStaticTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousToStaticTest_Test$TestBody" />
   </root>
-  <root nodeId="3014415391767789119">
+  <root nodeId="3014415391767789119" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="3014415391767789119" fileName="SimpleMoveStaticMethod_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3014415391767789119" fileName="SimpleMoveStaticMethod_Test.java" startLine="19" startPosition="114" endLine="20" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3014415391767789218" fileName="SimpleMoveStaticMethod_Test.java" startLine="25" startPosition="64" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1788,7 +1788,7 @@
     <unitInfo nodeId="3014415391767789119" fileName="SimpleMoveStaticMethod_Test.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleMoveStaticMethod_Test" />
     <unitInfo nodeId="3014415391767789119" fileName="SimpleMoveStaticMethod_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleMoveStaticMethod_Test$TestBody" />
   </root>
-  <root nodeId="3109730807963541425">
+  <root nodeId="3109730807963541425" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="3109730807963541425" fileName="IntroduceVariableFromAnonimousClass_Test.java" startLine="20" startPosition="79" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3109730807963541425" fileName="IntroduceVariableFromAnonimousClass_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3109730807963545055" fileName="IntroduceVariableFromAnonimousClass_Test.java" startLine="27" startPosition="81" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1811,7 +1811,7 @@
     <unitInfo nodeId="3109730807963541425" fileName="IntroduceVariableFromAnonimousClass_Test.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceVariableFromAnonimousClass_Test" />
     <unitInfo nodeId="3109730807963541425" fileName="IntroduceVariableFromAnonimousClass_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceVariableFromAnonimousClass_Test$TestBody" />
   </root>
-  <root nodeId="3109730807963748196">
+  <root nodeId="3109730807963748196" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="3109730807963748196" fileName="ConvertAnonymousWithLocalVariables_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3109730807963748196" fileName="ConvertAnonymousWithLocalVariables_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3109730807963748292" fileName="ConvertAnonymousWithLocalVariables_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1827,7 +1827,7 @@
     <unitInfo nodeId="3109730807963748196" fileName="ConvertAnonymousWithLocalVariables_Test.java" startLine="17" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariables_Test" />
     <unitInfo nodeId="3109730807963748196" fileName="ConvertAnonymousWithLocalVariables_Test.java" startLine="25" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariables_Test$TestBody" />
   </root>
-  <root nodeId="3145818413496050321">
+  <root nodeId="3145818413496050321" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="3145818413496050321" fileName="ConvertAnonymousWithLocalVariablesTest_Test.java" startLine="20" startPosition="62" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3145818413496050321" fileName="ConvertAnonymousWithLocalVariablesTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3145818413496514603" fileName="ConvertAnonymousWithLocalVariablesTest_Test.java" startLine="27" startPosition="64" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1844,7 +1844,7 @@
     <unitInfo nodeId="3145818413496050321" fileName="ConvertAnonymousWithLocalVariablesTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariablesTest_Test" />
     <unitInfo nodeId="3145818413496050321" fileName="ConvertAnonymousWithLocalVariablesTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithLocalVariablesTest_Test$TestBody" />
   </root>
-  <root nodeId="3145818413497245718">
+  <root nodeId="3145818413497245718" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="3145818413497245718" fileName="ConvertAnonymousAbstractClassWithConstructorTest_Test.java" startLine="20" startPosition="72" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3145818413497245718" fileName="ConvertAnonymousAbstractClassWithConstructorTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3145818413497708745" fileName="ConvertAnonymousAbstractClassWithConstructorTest_Test.java" startLine="27" startPosition="74" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1861,7 +1861,7 @@
     <unitInfo nodeId="3145818413497245718" fileName="ConvertAnonymousAbstractClassWithConstructorTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassWithConstructorTest_Test" />
     <unitInfo nodeId="3145818413497245718" fileName="ConvertAnonymousAbstractClassWithConstructorTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassWithConstructorTest_Test$TestBody" />
   </root>
-  <root nodeId="3925159399320841060">
+  <root nodeId="3925159399320841060" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="3925159399320841060" fileName="ChangeSigantureOfInterface_Test.java" startLine="22" startPosition="66" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3925159399320841060" fileName="ChangeSigantureOfInterface_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418758558327028827" fileName="ChangeSigantureOfInterface_Test.java" startLine="29" startPosition="68" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1884,7 +1884,7 @@
     <unitInfo nodeId="3925159399320841060" fileName="ChangeSigantureOfInterface_Test.java" startLine="19" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeSigantureOfInterface_Test" />
     <unitInfo nodeId="3925159399320841060" fileName="ChangeSigantureOfInterface_Test.java" startLine="27" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeSigantureOfInterface_Test$TestBody" />
   </root>
-  <root nodeId="4038232163186978773">
+  <root nodeId="4038232163186978773" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="4038232163186978773" fileName="IntroduceFinalLocalVariable_Test.java" startLine="20" startPosition="67" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4038232163186978773" fileName="IntroduceFinalLocalVariable_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4038232163186978816" fileName="IntroduceFinalLocalVariable_Test.java" startLine="27" startPosition="69" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1906,7 +1906,7 @@
     <unitInfo nodeId="4038232163186978773" fileName="IntroduceFinalLocalVariable_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceFinalLocalVariable_Test" />
     <unitInfo nodeId="4038232163186978773" fileName="IntroduceFinalLocalVariable_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceFinalLocalVariable_Test$TestBody" />
   </root>
-  <root nodeId="4038232163187008743">
+  <root nodeId="4038232163187008743" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="4038232163187008743" fileName="IntroduceFinalField_Test.java" startLine="22" startPosition="59" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4038232163187008743" fileName="IntroduceFinalField_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4038232163187008791" fileName="IntroduceFinalField_Test.java" startLine="29" startPosition="61" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1930,7 +1930,7 @@
     <unitInfo nodeId="4038232163187008743" fileName="IntroduceFinalField_Test.java" startLine="19" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceFinalField_Test" />
     <unitInfo nodeId="4038232163187008743" fileName="IntroduceFinalField_Test.java" startLine="27" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceFinalField_Test$TestBody" />
   </root>
-  <root nodeId="4412735672778824686">
+  <root nodeId="4412735672778824686" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="4412735672778824686" fileName="InlineMethodWithUnusedParameters_Test.java" startLine="20" startPosition="72" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4412735672778824686" fileName="InlineMethodWithUnusedParameters_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4412735672778826644" fileName="InlineMethodWithUnusedParameters_Test.java" startLine="27" startPosition="74" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1949,7 +1949,7 @@
     <unitInfo nodeId="4412735672778824686" fileName="InlineMethodWithUnusedParameters_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithUnusedParameters_Test" />
     <unitInfo nodeId="4412735672778824686" fileName="InlineMethodWithUnusedParameters_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithUnusedParameters_Test$TestBody" />
   </root>
-  <root nodeId="4412735672780105517">
+  <root nodeId="4412735672780105517" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="4412735672780105517" fileName="InlineMethodWithConceptFunctionParameters_Test.java" startLine="20" startPosition="81" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4412735672780105517" fileName="InlineMethodWithConceptFunctionParameters_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4412735672780107327" fileName="InlineMethodWithConceptFunctionParameters_Test.java" startLine="27" startPosition="83" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1969,7 +1969,7 @@
     <unitInfo nodeId="4412735672780105517" fileName="InlineMethodWithConceptFunctionParameters_Test.java" startLine="17" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithConceptFunctionParameters_Test" />
     <unitInfo nodeId="4412735672780105517" fileName="InlineMethodWithConceptFunctionParameters_Test.java" startLine="25" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineMethodWithConceptFunctionParameters_Test$TestBody" />
   </root>
-  <root nodeId="5142438244427169026">
+  <root nodeId="5142438244427169026" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="5142438244427169026" fileName="MoveMethodWithParameters_Test.java" startLine="20" startPosition="45" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244427169026" fileName="MoveMethodWithParameters_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244427184232" fileName="MoveMethodWithParameters_Test.java" startLine="27" startPosition="47" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1991,7 +1991,7 @@
     <unitInfo nodeId="5142438244427169026" fileName="MoveMethodWithParameters_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithParameters_Test" />
     <unitInfo nodeId="5142438244427169026" fileName="MoveMethodWithParameters_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveMethodWithParameters_Test$TestBody" />
   </root>
-  <root nodeId="5161277940733600913">
+  <root nodeId="5161277940733600913" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="5161277940733600913" fileName="ExtractMethodFromClosure_Test.java" startLine="23" startPosition="64" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5161277940733600913" fileName="ExtractMethodFromClosure_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5161277940733601053" fileName="ExtractMethodFromClosure_Test.java" startLine="30" startPosition="66" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2021,7 +2021,7 @@
     <unitInfo nodeId="5161277940733600913" fileName="ExtractMethodFromClosure_Test.java" startLine="20" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodFromClosure_Test" />
     <unitInfo nodeId="5161277940733600913" fileName="ExtractMethodFromClosure_Test.java" startLine="28" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodFromClosure_Test$TestBody" />
   </root>
-  <root nodeId="5907083257159818727">
+  <root nodeId="5907083257159818727" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="5907083257159818727" fileName="ConvertAnonymousGenGenericFields_Test.java" startLine="20" startPosition="58" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5907083257159818727" fileName="ConvertAnonymousGenGenericFields_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5907083257159871973" fileName="ConvertAnonymousGenGenericFields_Test.java" startLine="27" startPosition="60" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2037,7 +2037,7 @@
     <unitInfo nodeId="5907083257159818727" fileName="ConvertAnonymousGenGenericFields_Test.java" startLine="17" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousGenGenericFields_Test" />
     <unitInfo nodeId="5907083257159818727" fileName="ConvertAnonymousGenGenericFields_Test.java" startLine="25" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousGenGenericFields_Test$TestBody" />
   </root>
-  <root nodeId="6195342755328023609">
+  <root nodeId="6195342755328023609" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="6195342755328023609" fileName="ExtractAddingNewDeclaration_Test.java" startLine="22" startPosition="67" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195342755328023609" fileName="ExtractAddingNewDeclaration_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195342755328023704" fileName="ExtractAddingNewDeclaration_Test.java" startLine="29" startPosition="69" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2059,7 +2059,7 @@
     <unitInfo nodeId="6195342755328023609" fileName="ExtractAddingNewDeclaration_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractAddingNewDeclaration_Test" />
     <unitInfo nodeId="6195342755328023609" fileName="ExtractAddingNewDeclaration_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractAddingNewDeclaration_Test$TestBody" />
   </root>
-  <root nodeId="6195342755328044201">
+  <root nodeId="6195342755328044201" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="6195342755328044201" fileName="FindForMethodWithOutputVariable_Test.java" startLine="23" startPosition="75" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195342755328044201" fileName="FindForMethodWithOutputVariable_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195342755328044297" fileName="FindForMethodWithOutputVariable_Test.java" startLine="30" startPosition="77" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2091,7 +2091,7 @@
     <unitInfo nodeId="6195342755328044201" fileName="FindForMethodWithOutputVariable_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindForMethodWithOutputVariable_Test" />
     <unitInfo nodeId="6195342755328044201" fileName="FindForMethodWithOutputVariable_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindForMethodWithOutputVariable_Test$TestBody" />
   </root>
-  <root nodeId="6351584993764365770">
+  <root nodeId="6351584993764365770" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="6351584993764365770" fileName="InlineAssingmentInClosure_Test.java" startLine="20" startPosition="65" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6351584993764365770" fileName="InlineAssingmentInClosure_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6351584993764365829" fileName="InlineAssingmentInClosure_Test.java" startLine="27" startPosition="67" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2110,7 +2110,7 @@
     <unitInfo nodeId="6351584993764365770" fileName="InlineAssingmentInClosure_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineAssingmentInClosure_Test" />
     <unitInfo nodeId="6351584993764365770" fileName="InlineAssingmentInClosure_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineAssingmentInClosure_Test$TestBody" />
   </root>
-  <root nodeId="6791439617122300870">
+  <root nodeId="6791439617122300870" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="6791439617122300870" fileName="ConvertAnonymousInterfaceTest_Test.java" startLine="20" startPosition="53" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6791439617122300870" fileName="ConvertAnonymousInterfaceTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6791439617122315497" fileName="ConvertAnonymousInterfaceTest_Test.java" startLine="27" startPosition="55" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2127,7 +2127,7 @@
     <unitInfo nodeId="6791439617122300870" fileName="ConvertAnonymousInterfaceTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousInterfaceTest_Test" />
     <unitInfo nodeId="6791439617122300870" fileName="ConvertAnonymousInterfaceTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousInterfaceTest_Test$TestBody" />
   </root>
-  <root nodeId="6791439617122628436">
+  <root nodeId="6791439617122628436" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="6791439617122628436" fileName="ConvertAnonymousAbstractClassTest_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6791439617122628436" fileName="ConvertAnonymousAbstractClassTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6791439617122640167" fileName="ConvertAnonymousAbstractClassTest_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2144,7 +2144,7 @@
     <unitInfo nodeId="6791439617122628436" fileName="ConvertAnonymousAbstractClassTest_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassTest_Test" />
     <unitInfo nodeId="6791439617122628436" fileName="ConvertAnonymousAbstractClassTest_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassTest_Test$TestBody" />
   </root>
-  <root nodeId="6974242407276765599">
+  <root nodeId="6974242407276765599" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="6974242407276765599" fileName="IntroduceVariableFromWildcards_Test.java" startLine="20" startPosition="74" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6974242407276765599" fileName="IntroduceVariableFromWildcards_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6974242407276777307" fileName="IntroduceVariableFromWildcards_Test.java" startLine="27" startPosition="76" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2174,7 +2174,7 @@
     <unitInfo nodeId="6974242407276765599" fileName="IntroduceVariableFromWildcards_Test.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceVariableFromWildcards_Test" />
     <unitInfo nodeId="6974242407276765599" fileName="IntroduceVariableFromWildcards_Test.java" startLine="25" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.refactoringTest.IntroduceVariableFromWildcards_Test$TestBody" />
   </root>
-  <root nodeId="7093131866560585661">
+  <root nodeId="7093131866560585661" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7093131866560585661" fileName="InlineInsideClosure_Test.java" startLine="21" startPosition="63" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7093131866560585661" fileName="InlineInsideClosure_Test.java" startLine="22" startPosition="114" endLine="23" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7093131866560585733" fileName="InlineInsideClosure_Test.java" startLine="28" startPosition="65" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2193,7 +2193,7 @@
     <unitInfo nodeId="7093131866560585661" fileName="InlineInsideClosure_Test.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineInsideClosure_Test" />
     <unitInfo nodeId="7093131866560585661" fileName="InlineInsideClosure_Test.java" startLine="26" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineInsideClosure_Test$TestBody" />
   </root>
-  <root nodeId="7093131866560585771">
+  <root nodeId="7093131866560585771" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7093131866560585771" fileName="InlineInClosureWithOutsideAssingment_Test.java" startLine="21" startPosition="80" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7093131866560585771" fileName="InlineInClosureWithOutsideAssingment_Test.java" startLine="22" startPosition="114" endLine="23" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7093131866560585851" fileName="InlineInClosureWithOutsideAssingment_Test.java" startLine="28" startPosition="82" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2212,7 +2212,7 @@
     <unitInfo nodeId="7093131866560585771" fileName="InlineInClosureWithOutsideAssingment_Test.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssingment_Test" />
     <unitInfo nodeId="7093131866560585771" fileName="InlineInClosureWithOutsideAssingment_Test.java" startLine="26" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssingment_Test$TestBody" />
   </root>
-  <root nodeId="7568753874916167799">
+  <root nodeId="7568753874916167799" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7568753874916167799" fileName="SimpleFindAndMoveForIntroduceLocalVar_Test.java" startLine="20" startPosition="81" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916167799" fileName="SimpleFindAndMoveForIntroduceLocalVar_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916167933" fileName="SimpleFindAndMoveForIntroduceLocalVar_Test.java" startLine="27" startPosition="83" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2234,7 +2234,7 @@
     <unitInfo nodeId="7568753874916167799" fileName="SimpleFindAndMoveForIntroduceLocalVar_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindAndMoveForIntroduceLocalVar_Test" />
     <unitInfo nodeId="7568753874916167799" fileName="SimpleFindAndMoveForIntroduceLocalVar_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindAndMoveForIntroduceLocalVar_Test$TestBody" />
   </root>
-  <root nodeId="7568753874916187325">
+  <root nodeId="7568753874916187325" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7568753874916187325" fileName="SimpleFindForIntroduceConstant_Test.java" startLine="21" startPosition="74" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916187325" fileName="SimpleFindForIntroduceConstant_Test.java" startLine="22" startPosition="114" endLine="23" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916187418" fileName="SimpleFindForIntroduceConstant_Test.java" startLine="28" startPosition="76" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2257,7 +2257,7 @@
     <unitInfo nodeId="7568753874916187325" fileName="SimpleFindForIntroduceConstant_Test.java" startLine="18" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForIntroduceConstant_Test" />
     <unitInfo nodeId="7568753874916187325" fileName="SimpleFindForIntroduceConstant_Test.java" startLine="26" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForIntroduceConstant_Test$TestBody" />
   </root>
-  <root nodeId="7568753874916226562">
+  <root nodeId="7568753874916226562" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7568753874916226562" fileName="SimpleFindForIntroduceLocalVariable_Test.java" startLine="20" startPosition="86" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916226562" fileName="SimpleFindForIntroduceLocalVariable_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916226583" fileName="SimpleFindForIntroduceLocalVariable_Test.java" startLine="27" startPosition="88" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2279,7 +2279,7 @@
     <unitInfo nodeId="7568753874916226562" fileName="SimpleFindForIntroduceLocalVariable_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test" />
     <unitInfo nodeId="7568753874916226562" fileName="SimpleFindForIntroduceLocalVariable_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test$TestBody" />
   </root>
-  <root nodeId="7568753874916244224">
+  <root nodeId="7568753874916244224" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7568753874916244224" fileName="FindAndMoveFromIfForIntroduceLocalVar_Test.java" startLine="20" startPosition="81" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916244224" fileName="FindAndMoveFromIfForIntroduceLocalVar_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7568753874916244267" fileName="FindAndMoveFromIfForIntroduceLocalVar_Test.java" startLine="27" startPosition="83" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2301,7 +2301,7 @@
     <unitInfo nodeId="7568753874916244224" fileName="FindAndMoveFromIfForIntroduceLocalVar_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindAndMoveFromIfForIntroduceLocalVar_Test" />
     <unitInfo nodeId="7568753874916244224" fileName="FindAndMoveFromIfForIntroduceLocalVar_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.FindAndMoveFromIfForIntroduceLocalVar_Test$TestBody" />
   </root>
-  <root nodeId="7793057097608406463">
+  <root nodeId="7793057097608406463" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="7793057097608406463" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="23" startPosition="82" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7793057097608406463" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7793057097608416373" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="30" startPosition="84" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2333,7 +2333,7 @@
     <unitInfo nodeId="7793057097608406463" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractFromManyStatements_Test" />
     <unitInfo nodeId="7793057097608406463" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractFromManyStatements_Test$TestBody" />
   </root>
-  <root nodeId="8155843501976326915">
+  <root nodeId="8155843501976326915" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8155843501976326915" fileName="ExtractMethodWithOutputVaryableFromStatement_Test.java" startLine="22" startPosition="88" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8155843501976326915" fileName="ExtractMethodWithOutputVaryableFromStatement_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8155843501976328851" fileName="ExtractMethodWithOutputVaryableFromStatement_Test.java" startLine="29" startPosition="90" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2355,7 +2355,7 @@
     <unitInfo nodeId="8155843501976326915" fileName="ExtractMethodWithOutputVaryableFromStatement_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromStatement_Test" />
     <unitInfo nodeId="8155843501976326915" fileName="ExtractMethodWithOutputVaryableFromStatement_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromStatement_Test$TestBody" />
   </root>
-  <root nodeId="8155843501977546256">
+  <root nodeId="8155843501977546256" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8155843501977546256" fileName="ReplaceOutputVaryable_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8155843501977546256" fileName="ReplaceOutputVaryable_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8155843501977560935" fileName="ReplaceOutputVaryable_Test.java" startLine="30" startPosition="67" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2387,7 +2387,7 @@
     <unitInfo nodeId="8155843501977546256" fileName="ReplaceOutputVaryable_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.ReplaceOutputVaryable_Test" />
     <unitInfo nodeId="8155843501977546256" fileName="ReplaceOutputVaryable_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.ReplaceOutputVaryable_Test$TestBody" />
   </root>
-  <root nodeId="8155843501978460076">
+  <root nodeId="8155843501978460076" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8155843501978460076" fileName="ExtractMethodWithOutputVaryableFromExpression_Test.java" startLine="22" startPosition="88" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8155843501978460076" fileName="ExtractMethodWithOutputVaryableFromExpression_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8155843501978461957" fileName="ExtractMethodWithOutputVaryableFromExpression_Test.java" startLine="29" startPosition="90" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2409,7 +2409,7 @@
     <unitInfo nodeId="8155843501978460076" fileName="ExtractMethodWithOutputVaryableFromExpression_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromExpression_Test" />
     <unitInfo nodeId="8155843501978460076" fileName="ExtractMethodWithOutputVaryableFromExpression_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromExpression_Test$TestBody" />
   </root>
-  <root nodeId="8495840634674645158">
+  <root nodeId="8495840634674645158" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8495840634674645158" fileName="MoveStaticFieldSimpleTest_Test.java" startLine="20" startPosition="50" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8495840634674645158" fileName="MoveStaticFieldSimpleTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8495840634674645236" fileName="MoveStaticFieldSimpleTest_Test.java" startLine="27" startPosition="52" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2430,7 +2430,7 @@
     <unitInfo nodeId="8495840634674645158" fileName="MoveStaticFieldSimpleTest_Test.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveStaticFieldSimpleTest_Test" />
     <unitInfo nodeId="8495840634674645158" fileName="MoveStaticFieldSimpleTest_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveStaticFieldSimpleTest_Test$TestBody" />
   </root>
-  <root nodeId="8495840634675243977">
+  <root nodeId="8495840634675243977" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8495840634675243977" fileName="MoveStaticFieldWithUsageTest_Test.java" startLine="20" startPosition="49" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8495840634675243977" fileName="MoveStaticFieldWithUsageTest_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8495840634675285753" fileName="MoveStaticFieldWithUsageTest_Test.java" startLine="27" startPosition="51" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2452,7 +2452,7 @@
     <unitInfo nodeId="8495840634675243977" fileName="MoveStaticFieldWithUsageTest_Test.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveStaticFieldWithUsageTest_Test" />
     <unitInfo nodeId="8495840634675243977" fileName="MoveStaticFieldWithUsageTest_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.refactoringTest.MoveStaticFieldWithUsageTest_Test$TestBody" />
   </root>
-  <root nodeId="8556882668095192252">
+  <root nodeId="8556882668095192252" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8556882668095192252" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="23" startPosition="78" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8556882668095192252" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8556882668095202192" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="30" startPosition="80" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2484,7 +2484,7 @@
     <unitInfo nodeId="8556882668095192252" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractFromExpression_Test" />
     <unitInfo nodeId="8556882668095192252" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractFromExpression_Test$TestBody" />
   </root>
-  <root nodeId="8556882668095222061">
+  <root nodeId="8556882668095222061" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8556882668095222061" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="23" startPosition="77" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8556882668095222061" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8556882668095222213" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="30" startPosition="79" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2516,7 +2516,7 @@
     <unitInfo nodeId="8556882668095222061" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractFromStatement_Test" />
     <unitInfo nodeId="8556882668095222061" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.refactoringTest.SimpleFindForExtractFromStatement_Test$TestBody" />
   </root>
-  <root nodeId="8823815475437525602">
+  <root nodeId="8823815475437525602" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="8823815475437525602" fileName="ExtractMethodWithThrows_Test.java" startLine="22" startPosition="67" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8823815475437525602" fileName="ExtractMethodWithThrows_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8823815475437525729" fileName="ExtractMethodWithThrows_Test.java" startLine="29" startPosition="69" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2538,7 +2538,7 @@
     <unitInfo nodeId="8823815475437525602" fileName="ExtractMethodWithThrows_Test.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithThrows_Test" />
     <unitInfo nodeId="8823815475437525602" fileName="ExtractMethodWithThrows_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.refactoringTest.ExtractMethodWithThrows_Test$TestBody" />
   </root>
-  <root nodeId="9118878263582083310">
+  <root nodeId="9118878263582083310" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="9118878263582083310" fileName="InlineAssingmentWithClosures_Test.java" startLine="20" startPosition="68" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9118878263582083310" fileName="InlineAssingmentWithClosures_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9118878263582085165" fileName="InlineAssingmentWithClosures_Test.java" startLine="27" startPosition="70" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2557,7 +2557,7 @@
     <unitInfo nodeId="9118878263582083310" fileName="InlineAssingmentWithClosures_Test.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineAssingmentWithClosures_Test" />
     <unitInfo nodeId="9118878263582083310" fileName="InlineAssingmentWithClosures_Test.java" startLine="25" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.InlineAssingmentWithClosures_Test$TestBody" />
   </root>
-  <root nodeId="9160497614871931685">
+  <root nodeId="9160497614871931685" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="9160497614871931685" fileName="ConvertAnonymousWithTypeParameters_Test.java" startLine="20" startPosition="58" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9160497614871931685" fileName="ConvertAnonymousWithTypeParameters_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9160497614872188985" fileName="ConvertAnonymousWithTypeParameters_Test.java" startLine="27" startPosition="60" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2573,7 +2573,7 @@
     <unitInfo nodeId="9160497614871931685" fileName="ConvertAnonymousWithTypeParameters_Test.java" startLine="17" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeParameters_Test" />
     <unitInfo nodeId="9160497614871931685" fileName="ConvertAnonymousWithTypeParameters_Test.java" startLine="25" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeParameters_Test$TestBody" />
   </root>
-  <root nodeId="995475547969867885">
+  <root nodeId="995475547969867885" modelId="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)">
     <nodeInfo nodeId="995475547969867885" fileName="ConvertAnonymousWithParameterReference_Test.java" startLine="20" startPosition="66" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="995475547969867885" fileName="ConvertAnonymousWithParameterReference_Test.java" startLine="21" startPosition="114" endLine="22" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="995475547969868020" fileName="ConvertAnonymousWithParameterReference_Test.java" startLine="27" startPosition="68" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

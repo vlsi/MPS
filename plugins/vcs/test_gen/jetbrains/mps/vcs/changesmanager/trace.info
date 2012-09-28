@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3089989024970166387">
+  <root nodeId="3089989024970166387" modelId="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)">
     <nodeInfo nodeId="3089989024970167949" fileName="ChangesManagerTest.java" startLine="88" startPosition="33" endLine="89" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DESTINATION_PROJECT_DIR" />
     <nodeInfo nodeId="3089989024970174146" fileName="ChangesManagerTest.java" startLine="89" startPosition="103" endLine="90" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROJECT_ARCHIVE" />
     <nodeInfo nodeId="3089989024970174155" fileName="ChangesManagerTest.java" startLine="90" startPosition="86" endLine="91" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROJECT_FILE" />
@@ -1082,7 +1082,6 @@
       <varInfo nodeId="6372684221198335659" varName="changes" />
     </scopeInfo>
     <scopeInfo nodeId="599918025274815306" fileName="ChangesManagerTest.java" startLine="899" startPosition="37" endLine="912" endPosition="0" />
-    <scopeInfo nodeId="3619977242337326269" fileName="ChangesManagerTest.java" startLine="291" startPosition="25" endLine="305" endPosition="9" />
     <scopeInfo nodeId="3619977242337326270" fileName="ChangesManagerTest.java" startLine="291" startPosition="25" endLine="305" endPosition="9">
       <varInfo nodeId="3619977242337326271" varName="r" />
     </scopeInfo>
@@ -1301,7 +1300,7 @@
     <unitInfo nodeId="5364815602089923610" fileName="ChangesManagerTest.java" startLine="345" startPosition="46" endLine="349" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$9" />
     <unitInfo nodeId="599918025274823000" fileName="ChangesManagerTest.java" startLine="1077" startPosition="0" endLine="1090" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$MyReloadListener" />
   </root>
-  <root nodeId="3619977242337243528">
+  <root nodeId="3619977242337243528" modelId="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)">
     <nodeInfo nodeId="3619977242337243705" fileName="DummyFileEditor.java" startLine="26" startPosition="84" endLine="27" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="3619977242337243696" fileName="DummyFileEditor.java" startLine="29" startPosition="57" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3619977242337243537" fileName="DummyFileEditor.java" startLine="34" startPosition="36" endLine="35" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />

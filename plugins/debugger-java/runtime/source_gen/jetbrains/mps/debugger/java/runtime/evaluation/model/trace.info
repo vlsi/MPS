@@ -77,7 +77,7 @@
     <scopeInfo nodeId="1247371618987947404" fileName="EvaluationAuxModule.java" startLine="104" startPosition="0" endLine="107" endPosition="9">
       <varInfo nodeId="1247371618987947405" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1247371618987947408" fileName="EvaluationAuxModule.java" startLine="104" startPosition="29" endLine="107" endPosition="9" />
+    <scopeInfo nodeId="1247371618987947407" fileName="EvaluationAuxModule.java" startLine="104" startPosition="29" endLine="107" endPosition="9" />
     <scopeInfo nodeId="1247371618987947156" fileName="EvaluationAuxModule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1247371618987947237" fileName="EvaluationAuxModule.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1247371618987947243" fileName="EvaluationAuxModule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
@@ -911,7 +911,7 @@
     <scopeInfo nodeId="7757449281563190692" fileName="LowLevelEvaluationModel.java" startLine="336" startPosition="0" endLine="339" endPosition="7">
       <varInfo nodeId="7757449281563190693" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8736635924683069495" fileName="LowLevelEvaluationModel.java" startLine="336" startPosition="44" endLine="339" endPosition="7" />
+    <scopeInfo nodeId="7757449281563190695" fileName="LowLevelEvaluationModel.java" startLine="336" startPosition="44" endLine="339" endPosition="7" />
     <scopeInfo nodeId="7328148232284256051" fileName="LowLevelEvaluationModel.java" startLine="363" startPosition="63" endLine="366" endPosition="28">
       <varInfo nodeId="7328148232284256053" varName="newEvaluator" />
     </scopeInfo>
@@ -1499,7 +1499,7 @@
     <scopeInfo nodeId="2416198621220205876" fileName="StackFrameContext.java" startLine="114" startPosition="18" endLine="117" endPosition="71">
       <varInfo nodeId="5600437724825490460" varName="variableDescription" />
     </scopeInfo>
-    <scopeInfo nodeId="3518105840231414138" fileName="StackFrameContext.java" startLine="122" startPosition="41" endLine="125" endPosition="15" />
+    <scopeInfo nodeId="8736635924683038535" fileName="StackFrameContext.java" startLine="122" startPosition="41" endLine="125" endPosition="15" />
     <scopeInfo nodeId="3518105840231414157" fileName="StackFrameContext.java" startLine="126" startPosition="20" endLine="129" endPosition="73">
       <varInfo nodeId="5600437724825490485" varName="variableDescription" />
     </scopeInfo>
@@ -1512,7 +1512,7 @@
     <scopeInfo nodeId="2416198621220213786" fileName="StackFrameContext.java" startLine="271" startPosition="0" endLine="274" endPosition="13">
       <varInfo nodeId="2416198621220213787" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="2416198621220213789" fileName="StackFrameContext.java" startLine="271" startPosition="48" endLine="274" endPosition="13" />
+    <scopeInfo nodeId="8736635924683038559" fileName="StackFrameContext.java" startLine="271" startPosition="48" endLine="274" endPosition="13" />
     <scopeInfo nodeId="7757449281563191082" fileName="StackFrameContext.java" startLine="345" startPosition="7" endLine="348" endPosition="31">
       <varInfo nodeId="7757449281563191082" varName="quotedNode1_2" />
     </scopeInfo>

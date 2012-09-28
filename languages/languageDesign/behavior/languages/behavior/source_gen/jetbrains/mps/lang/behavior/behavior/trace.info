@@ -256,9 +256,7 @@
     <scopeInfo nodeId="4892662966716545705" fileName="ConceptBehavior_Behavior.java" startLine="175" startPosition="9" endLine="181" endPosition="9">
       <varInfo nodeId="4892662966716545708" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4892662966716545810" fileName="ConceptBehavior_Behavior.java" startLine="182" startPosition="122" endLine="188" endPosition="9">
-      <varInfo nodeId="4892662966716545829" varName="i" />
-    </scopeInfo>
+    <scopeInfo nodeId="4892662966716545627" fileName="ConceptBehavior_Behavior.java" startLine="182" startPosition="122" endLine="188" endPosition="9" />
     <scopeInfo nodeId="1818770337282950311" fileName="ConceptBehavior_Behavior.java" startLine="191" startPosition="48" endLine="197" endPosition="5">
       <varInfo nodeId="1818770337282950317" varName="concept" />
     </scopeInfo>
@@ -270,7 +268,9 @@
       <varInfo nodeId="1225194243289" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="3430761957596392608" fileName="ConceptBehavior_Behavior.java" startLine="98" startPosition="38" endLine="105" endPosition="9" />
-    <scopeInfo nodeId="1240544041071409902" fileName="ConceptBehavior_Behavior.java" startLine="127" startPosition="109" endLine="134" endPosition="7" />
+    <scopeInfo nodeId="1240544041071409908" fileName="ConceptBehavior_Behavior.java" startLine="127" startPosition="109" endLine="134" endPosition="7">
+      <varInfo nodeId="1240544041071409911" varName="meth" />
+    </scopeInfo>
     <scopeInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="152" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="1225194243289" varName="thisNode" />
     </scopeInfo>

@@ -1468,9 +1468,7 @@
       <varInfo nodeId="9051163691968353692" varName="model" />
       <varInfo nodeId="9051163691968353703" varName="modificationLog" />
     </scopeInfo>
-    <scopeInfo nodeId="489412339685421479" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7">
-      <varInfo nodeId="489412339685421480" varName="importElement" />
-    </scopeInfo>
+    <scopeInfo nodeId="489412339685402747" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7" />
     <scopeInfo nodeId="1190334391238652051" fileName="StructureModificationProcessor.java" startLine="128" startPosition="56" endLine="135" endPosition="5">
       <varInfo nodeId="1190334391238652052" varName="entry" />
     </scopeInfo>

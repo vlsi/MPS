@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Ypath_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.structure.Ypath_Language" />
-  <root nodeId="1168457888645">
+  <root nodeId="1168457888645" modelId="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -136,7 +136,7 @@
     <unitInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="9" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis" />
     <unitInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis_PropertySupport" />
   </root>
-  <root nodeId="1196419521949">
+  <root nodeId="1196419521949" modelId="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.IntentionsDescriptor" />
-  <root nodeId="6030013275786405059">
+  <root nodeId="6030013275786405059" modelId="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)">
     <nodeInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.ChildAspectDefinition_makeOptional_Intention" />
   </root>
-  <root nodeId="6247544121092588774">
+  <root nodeId="6247544121092588774" modelId="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)">
     <nodeInfo nodeId="6247544121092588774" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6247544121092588774" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6247544121092588774" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -153,7 +153,9 @@
     <scopeInfo nodeId="9201869079511517291" fileName="ExpandController.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="9201869079511517296" varName="ei" />
     </scopeInfo>
-    <scopeInfo nodeId="9201869079511518058" fileName="ExpandController.java" startLine="85" startPosition="29" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="9201869079511518060" fileName="ExpandController.java" startLine="85" startPosition="29" endLine="89" endPosition="5">
+      <varInfo nodeId="9201869079511518061" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="9201869079511518165" fileName="ExpandController.java" startLine="44" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="9201869079511555510" fileName="ExpandController.java" startLine="61" startPosition="45" endLine="66" endPosition="11" />
     <scopeInfo nodeId="9201869079511517352" fileName="ExpandController.java" startLine="36" startPosition="64" endLine="42" endPosition="11">

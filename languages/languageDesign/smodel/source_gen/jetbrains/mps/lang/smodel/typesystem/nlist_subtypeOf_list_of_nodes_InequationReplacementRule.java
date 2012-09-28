@@ -15,6 +15,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -171,7 +172,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
         }
         {
           String childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_ = "elementType";
-          if (nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getChildCount(childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0, childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_, 1))) {
             return false;
           }
           {

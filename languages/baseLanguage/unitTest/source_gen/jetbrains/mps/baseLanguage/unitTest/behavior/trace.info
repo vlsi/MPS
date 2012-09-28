@@ -170,7 +170,9 @@
     <scopeInfo nodeId="1596174191051133108" fileName="BTestCase_Behavior.java" startLine="48" startPosition="88" endLine="53" endPosition="5">
       <varInfo nodeId="1596174191051133109" varName="annotationInstance" />
     </scopeInfo>
-    <scopeInfo nodeId="7691748101595465164" fileName="BTestCase_Behavior.java" startLine="54" startPosition="134" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="7691748101595466420" fileName="BTestCase_Behavior.java" startLine="54" startPosition="134" endLine="59" endPosition="7">
+      <varInfo nodeId="7691748101595466422" varName="annotationInstance" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1213877487741" varName="thisNode" />
     </scopeInfo>

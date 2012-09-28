@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.integration.ui.icons.IconContainer" />
-  <root nodeId="3432969378036014082">
+  <root nodeId="3432969378036014082" modelId="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debug.integration.ui.icons)">
     <nodeInfo nodeId="1247371618987935931" fileName="Icons.java" startLine="7" startPosition="20" endLine="8" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_PRIMITIVE" />
     <nodeInfo nodeId="1247371618987935922" fileName="Icons.java" startLine="8" startPosition="70" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_OBJECT" />
     <nodeInfo nodeId="1247371618987935859" fileName="Icons.java" startLine="9" startPosition="67" endLine="10" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCH" />

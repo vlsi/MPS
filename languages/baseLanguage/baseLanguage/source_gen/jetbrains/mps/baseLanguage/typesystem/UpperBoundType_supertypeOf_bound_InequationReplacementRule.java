@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -76,7 +77,7 @@ public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends 
         }
         {
           String childRole_UpperBoundType_supertypeOf_bound_y9xgfl_ = "bound";
-          if (nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a.getChildCount(childRole_UpperBoundType_supertypeOf_bound_y9xgfl_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a, childRole_UpperBoundType_supertypeOf_bound_y9xgfl_, 1))) {
             return false;
           }
           {

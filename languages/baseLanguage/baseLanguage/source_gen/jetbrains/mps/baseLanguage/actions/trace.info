@@ -947,9 +947,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1212605402158" fileName="QueriesGenerated.java" startLine="4295" startPosition="70" endLine="4297" endPosition="5" />
     <scopeInfo nodeId="1181216848516" fileName="QueriesGenerated.java" startLine="1038" startPosition="150" endLine="1041" endPosition="19" />
-    <scopeInfo nodeId="1181219632457" fileName="QueriesGenerated.java" startLine="1083" startPosition="151" endLine="1086" endPosition="19">
-      <varInfo nodeId="1181219632458" varName="argument" />
-    </scopeInfo>
+    <scopeInfo nodeId="1181216536232" fileName="QueriesGenerated.java" startLine="1083" startPosition="151" endLine="1086" endPosition="19" />
     <scopeInfo nodeId="1212605402158" fileName="QueriesGenerated.java" startLine="4303" startPosition="7" endLine="4307" endPosition="31">
       <varInfo nodeId="1212605402158" varName="quotedNode1_2" />
     </scopeInfo>
@@ -1014,7 +1012,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4341187996988292516" fileName="QueriesGenerated.java" startLine="1123" startPosition="127" endLine="1127" endPosition="19" />
     <scopeInfo nodeId="4341187996988292514" fileName="QueriesGenerated.java" startLine="1122" startPosition="145" endLine="1128" endPosition="17" />
-    <scopeInfo nodeId="4341187996988292500" fileName="QueriesGenerated.java" startLine="1121" startPosition="86" endLine="1129" endPosition="15" />
+    <scopeInfo nodeId="4341187996988292513" fileName="QueriesGenerated.java" startLine="1121" startPosition="86" endLine="1129" endPosition="15">
+      <varInfo nodeId="4341187996988292533" varName="parentClassifier" />
+    </scopeInfo>
     <scopeInfo nodeId="1218491527255" fileName="QueriesGenerated.java" startLine="1117" startPosition="35" endLine="1131" endPosition="26">
       <varInfo nodeId="4341187996988253488" varName="classifier" />
       <varInfo nodeId="4341187996988177213" varName="result" />

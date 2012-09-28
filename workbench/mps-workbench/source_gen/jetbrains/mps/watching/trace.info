@@ -60,9 +60,7 @@
     <scopeInfo nodeId="3316697760692356793" fileName="ModelFocusSynchronizer.java" startLine="56" startPosition="62" endLine="67" endPosition="15">
       <varInfo nodeId="3316697760692356795" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="3316697760692356729" fileName="ModelFocusSynchronizer.java" startLine="40" startPosition="84" endLine="52" endPosition="15">
-      <varInfo nodeId="3316697760692356730" varName="vf" />
-    </scopeInfo>
+    <scopeInfo nodeId="3316697760692356728" fileName="ModelFocusSynchronizer.java" startLine="40" startPosition="84" endLine="52" endPosition="15" />
     <scopeInfo nodeId="3316697760692356790" fileName="ModelFocusSynchronizer.java" startLine="55" startPosition="96" endLine="68" endPosition="13">
       <varInfo nodeId="3316697760692356791" varName="model" />
     </scopeInfo>

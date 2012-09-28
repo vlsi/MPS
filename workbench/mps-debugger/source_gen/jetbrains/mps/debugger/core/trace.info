@@ -245,7 +245,9 @@
     <scopeInfo nodeId="1053276000964508410" fileName="CurrentLinePositionComponentEx.java" startLine="130" startPosition="121" endLine="133" endPosition="5">
       <varInfo nodeId="1053276000964508411" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045923" fileName="CurrentLinePositionComponentEx.java" startLine="156" startPosition="67" endLine="159" endPosition="5" />
+    <scopeInfo nodeId="5658809246031045924" fileName="CurrentLinePositionComponentEx.java" startLine="156" startPosition="67" endLine="159" endPosition="5">
+      <varInfo nodeId="5658809246031045928" varName="editor" />
+    </scopeInfo>
     <scopeInfo nodeId="5658809246031046058" fileName="CurrentLinePositionComponentEx.java" startLine="198" startPosition="25" endLine="201" endPosition="9">
       <varInfo nodeId="5658809246031046062" varName="editorComponent" />
     </scopeInfo>
@@ -283,7 +285,9 @@
       <varInfo nodeId="5658809246031045920" varName="painter" />
     </scopeInfo>
     <scopeInfo nodeId="5574644062438401411" fileName="CurrentLinePositionComponentEx.java" startLine="175" startPosition="27" endLine="181" endPosition="11" />
-    <scopeInfo nodeId="5658809246031046018" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7" />
+    <scopeInfo nodeId="5658809246031046019" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7">
+      <varInfo nodeId="5658809246031046020" varName="session" />
+    </scopeInfo>
     <scopeInfo nodeId="1053276000964508307" fileName="CurrentLinePositionComponentEx.java" startLine="128" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="1053276000964508310" varName="painter" />
     </scopeInfo>

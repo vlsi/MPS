@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Conf_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Conf_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.StructureAspectDescriptor" />
-  <root nodeId="1740160309778171009">
+  <root nodeId="1740160309778171009" modelId="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)">
     <nodeInfo nodeId="1740160309778171009" fileName="Level_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1740160309778171009" fileName="Level.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1740160309778171009" fileName="Level_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="1740160309778171009" fileName="Level.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Level" />
     <unitInfo nodeId="1740160309778171009" fileName="Level_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Level_PropertySupport" />
   </root>
-  <root nodeId="6536266708345477902">
+  <root nodeId="6536266708345477902" modelId="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)">
     <nodeInfo nodeId="6536266708345477902" fileName="PluginDetail_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6536266708345477902" fileName="PluginDetail_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6536266708345477902" fileName="PluginDetail.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -226,7 +226,7 @@
     <unitInfo nodeId="6536266708345477902" fileName="PluginDetail.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDetail" />
     <unitInfo nodeId="6536266708345477902" fileName="PluginDetail_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDetail_PropertySupport" />
   </root>
-  <root nodeId="8605160448689289377">
+  <root nodeId="8605160448689289377" modelId="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)">
     <nodeInfo nodeId="8605160448689289377" fileName="GroupPosition_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8605160448689289377" fileName="GroupPosition_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8605160448689289377" fileName="GroupPosition.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

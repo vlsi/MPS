@@ -185,7 +185,9 @@
       <varInfo nodeId="5881102044690168064" varName="tokenPrefix" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168079" fileName="TestRunner.java" startLine="25" startPosition="43" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="5881102044690168077" fileName="TestRunner.java" startLine="24" startPosition="131" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="5881102044690168078" fileName="TestRunner.java" startLine="24" startPosition="131" endLine="55" endPosition="5">
+      <varInfo nodeId="5881102044690168225" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690168069" fileName="TestRunner.java" startLine="23" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="5881102044690168071" varName="argv" />
       <varInfo nodeId="5881102044690168074" varName="requests" />

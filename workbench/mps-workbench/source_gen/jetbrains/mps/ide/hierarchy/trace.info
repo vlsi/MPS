@@ -769,7 +769,9 @@
     <scopeInfo nodeId="5797068448049410654" fileName="HierarchyViewTool.java" startLine="30" startPosition="59" endLine="32" endPosition="41" />
     <scopeInfo nodeId="5797068448049410725" fileName="HierarchyViewTool.java" startLine="55" startPosition="31" endLine="57" endPosition="30" />
     <scopeInfo nodeId="5797068448049410709" fileName="HierarchyViewTool.java" startLine="47" startPosition="81" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="5797068448049410749" fileName="HierarchyViewTool.java" startLine="80" startPosition="31" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="5797068448049410753" fileName="HierarchyViewTool.java" startLine="80" startPosition="31" endLine="83" endPosition="5">
+      <varInfo nodeId="5797068448049410755" varName="md" />
+    </scopeInfo>
     <scopeInfo nodeId="5797068448049410770" fileName="HierarchyViewTool.java" startLine="86" startPosition="33" endLine="89" endPosition="5">
       <varInfo nodeId="5797068448049410772" varName="md" />
     </scopeInfo>

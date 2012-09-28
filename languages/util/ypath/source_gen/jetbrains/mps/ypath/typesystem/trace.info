@@ -529,7 +529,7 @@
     <scopeInfo nodeId="1178551167090" fileName="typeof_TreePathOperation_InferenceRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1178551167090" fileName="typeof_TreePathOperation_InferenceRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1178551167090" fileName="typeof_TreePathOperation_InferenceRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1178551167099" fileName="typeof_TreePathOperation_InferenceRule.java" startLine="33" startPosition="33" endLine="38" endPosition="11" />
+    <scopeInfo nodeId="1178551167100" fileName="typeof_TreePathOperation_InferenceRule.java" startLine="33" startPosition="33" endLine="38" endPosition="11" />
     <scopeInfo nodeId="1178551167090" fileName="typeof_TreePathOperation_InferenceRule.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1178551167090" varName="argument" />
     </scopeInfo>
@@ -1769,7 +1769,7 @@
     <scopeInfo nodeId="4234084459083990109" fileName="typeof_WhereOperation_InferenceRule.java" startLine="50" startPosition="5" endLine="52" endPosition="45">
       <varInfo nodeId="4234084459083990109" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4234084459083990124" fileName="typeof_WhereOperation_InferenceRule.java" startLine="33" startPosition="33" endLine="36" endPosition="11" />
+    <scopeInfo nodeId="4234084459083990122" fileName="typeof_WhereOperation_InferenceRule.java" startLine="33" startPosition="33" endLine="36" endPosition="11" />
     <scopeInfo nodeId="4234084459083990122" fileName="typeof_WhereOperation_InferenceRule.java" startLine="27" startPosition="9" endLine="31" endPosition="11">
       <varInfo nodeId="4234084459083990122" varName="matchingNode_55k1k7_a1a" />
     </scopeInfo>

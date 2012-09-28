@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Xml_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.xml.structure.Xml_Language" />
-  <root nodeId="3374336260035925079">
+  <root nodeId="3374336260035925079" modelId="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)">
     <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20,7 +20,7 @@
     </scopeInfo>
     <unitInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.core.xml.structure.xmlEncoding_PropertySupport" />
   </root>
-  <root nodeId="3374336260035925081">
+  <root nodeId="3374336260035925081" modelId="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)">
     <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.core.xml.structure.yesNoString_PropertySupport" />
   </root>
-  <root nodeId="5491461270226117666">
+  <root nodeId="5491461270226117666" modelId="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)">
     <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

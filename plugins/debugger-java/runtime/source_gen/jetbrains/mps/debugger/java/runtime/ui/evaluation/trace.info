@@ -442,9 +442,7 @@
     <scopeInfo nodeId="7406771907178598686" fileName="EvaluationTree.java" startLine="260" startPosition="0" endLine="263" endPosition="5">
       <varInfo nodeId="7406771907178598694" varName="error" />
     </scopeInfo>
-    <scopeInfo nodeId="7406771907178599398" fileName="EvaluationTree.java" startLine="282" startPosition="66" endLine="285" endPosition="9">
-      <varInfo nodeId="7406771907178599399" varName="i" />
-    </scopeInfo>
+    <scopeInfo nodeId="7406771907178599397" fileName="EvaluationTree.java" startLine="282" startPosition="66" endLine="285" endPosition="9" />
     <scopeInfo nodeId="7406771907178599574" fileName="EvaluationTree.java" startLine="360" startPosition="41" endLine="363" endPosition="38" />
     <scopeInfo nodeId="7406771907178597968" fileName="EvaluationTree.java" startLine="47" startPosition="27" endLine="51" endPosition="17" />
     <scopeInfo nodeId="3994058048873163859" fileName="EvaluationTree.java" startLine="101" startPosition="59" endLine="105" endPosition="0" />
