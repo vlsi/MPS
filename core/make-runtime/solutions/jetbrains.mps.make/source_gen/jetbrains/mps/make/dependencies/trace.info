@@ -114,9 +114,7 @@
     <scopeInfo nodeId="198406549333194312" fileName="ModulesClusterizer.java" startLine="52" startPosition="112" endLine="60" endPosition="0">
       <varInfo nodeId="198406549333194312" varName="cl" />
     </scopeInfo>
-    <scopeInfo nodeId="5541828167401370184" fileName="ModulesClusterizer.java" startLine="121" startPosition="29" endLine="130" endPosition="13">
-      <varInfo nodeId="5541828167401370193" varName="tm" />
-    </scopeInfo>
+    <scopeInfo nodeId="3861256696861030152" fileName="ModulesClusterizer.java" startLine="121" startPosition="29" endLine="130" endPosition="13" />
     <scopeInfo nodeId="6987891284706391816" fileName="ModulesClusterizer.java" startLine="85" startPosition="37" endLine="95" endPosition="12">
       <varInfo nodeId="6987891284706391861" varName="genModels" />
     </scopeInfo>
@@ -367,7 +365,9 @@
     <scopeInfo nodeId="7902446790715915657" fileName="ModulesCluster.java" startLine="35" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="1077540970775393600" varName="mods" />
     </scopeInfo>
-    <scopeInfo nodeId="3429507295688670714" fileName="ModulesCluster.java" startLine="44" startPosition="46" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="7902446790715915700" fileName="ModulesCluster.java" startLine="44" startPosition="46" endLine="47" endPosition="5">
+      <varInfo nodeId="7902446790715915702" varName="mod" />
+    </scopeInfo>
     <scopeInfo nodeId="7902446790715915841" fileName="ModulesCluster.java" startLine="63" startPosition="60" endLine="66" endPosition="22" />
     <scopeInfo nodeId="3429507295688670720" fileName="ModulesCluster.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="7959437477381204313" fileName="ModulesCluster.java" startLine="135" startPosition="27" endLine="138" endPosition="34" />

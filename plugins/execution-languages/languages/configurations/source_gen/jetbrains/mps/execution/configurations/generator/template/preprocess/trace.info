@@ -133,7 +133,9 @@
     <scopeInfo nodeId="2797684467150976412" fileName="QueriesGenerated.java" startLine="105" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="2797684467150976412" varName="parameter_5" />
     </scopeInfo>
-    <scopeInfo nodeId="5916922432461074997" fileName="QueriesGenerated.java" startLine="27" startPosition="145" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="5916922432461075158" fileName="QueriesGenerated.java" startLine="27" startPosition="145" endLine="51" endPosition="5">
+      <varInfo nodeId="5916922432461075159" varName="executor" />
+    </scopeInfo>
     <scopeInfo nodeId="2797684467151013938" fileName="QueriesGenerated.java" startLine="68" startPosition="7" endLine="96" endPosition="31">
       <varInfo nodeId="2797684467151013938" varName="quotedNode1_8" />
     </scopeInfo>

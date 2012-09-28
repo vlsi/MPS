@@ -652,9 +652,7 @@
     <scopeInfo nodeId="4128185861943386002" fileName="ProjectTestHelper.java" startLine="355" startPosition="40" endLine="360" endPosition="11" />
     <scopeInfo nodeId="8597743085639790195" fileName="ProjectTestHelper.java" startLine="403" startPosition="0" endLine="408" endPosition="0" />
     <scopeInfo nodeId="3416062119153941763" fileName="ProjectTestHelper.java" startLine="340" startPosition="17" endLine="346" endPosition="9" />
-    <scopeInfo nodeId="3037398679707966819" fileName="ProjectTestHelper.java" startLine="149" startPosition="25" endLine="156" endPosition="9">
-      <varInfo nodeId="3037398679707966821" varName="mod" />
-    </scopeInfo>
+    <scopeInfo nodeId="3037398679707966654" fileName="ProjectTestHelper.java" startLine="149" startPosition="25" endLine="156" endPosition="9" />
     <scopeInfo nodeId="2120492242099858652" fileName="ProjectTestHelper.java" startLine="222" startPosition="27" endLine="229" endPosition="11">
       <varInfo nodeId="5031229775986953946" varName="context" />
       <varInfo nodeId="5031229775986953937" varName="scr" />

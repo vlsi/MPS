@@ -382,11 +382,11 @@
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="18" startPosition="82" endLine="19" endPosition="18" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="24" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="22" startPosition="31" endLine="23" endPosition="29" />
-    <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="34" startPosition="104" endLine="35" endPosition="50" />
+    <scopeInfo nodeId="5487985028841967472" fileName="NanoCFile_Configuration_Editor.java" startLine="34" startPosition="104" endLine="35" endPosition="50" />
     <scopeInfo nodeId="5487985028841967463" fileName="NanoCFile_Configuration_Editor.java" startLine="38" startPosition="76" endLine="39" endPosition="52" />
     <scopeInfo nodeId="5487985028841967433" fileName="NanoCFile_Configuration.java" startLine="40" startPosition="39" endLine="41" endPosition="18" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="45" startPosition="105" endLine="46" endPosition="34" />
-    <scopeInfo nodeId="5487985028841967482" fileName="NanoCFile_Configuration.java" startLine="49" startPosition="73" endLine="50" endPosition="40" />
+    <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="49" startPosition="73" endLine="50" endPosition="40" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="65" startPosition="26" endLine="66" endPosition="81" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="71" startPosition="33" endLine="72" endPosition="42" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="74" startPosition="35" endLine="75" endPosition="95" />
@@ -630,7 +630,7 @@
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="42" startPosition="42" endLine="44" endPosition="18" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
     <scopeInfo nodeId="5487985028841967594" fileName="CompileWithGcc_BeforeTask.java" startLine="52" startPosition="56" endLine="55" endPosition="15" />
-    <scopeInfo nodeId="5487985028841967605" fileName="CompileWithGcc_BeforeTask.java" startLine="56" startPosition="20" endLine="59" endPosition="15" />
+    <scopeInfo nodeId="5487985028841967604" fileName="CompileWithGcc_BeforeTask.java" startLine="56" startPosition="20" endLine="59" endPosition="15" />
     <scopeInfo nodeId="5487985028841967641" fileName="CompileWithGcc_BeforeTask.java" startLine="68" startPosition="38" endLine="71" endPosition="9" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />

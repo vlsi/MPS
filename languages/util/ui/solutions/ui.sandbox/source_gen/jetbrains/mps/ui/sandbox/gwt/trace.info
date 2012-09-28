@@ -254,7 +254,7 @@
     <nodeInfo nodeId="7046856741208198644" fileName="gwtdemo.css" startLine="60" startPosition="1" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="7046856741208198646" fileName="gwtdemo.css" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="7046856741208198646" fileName="gwtdemo.css" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <unitInfo nodeId="7046856741208198535" fileName="gwtdemo.css" startLine="1" startPosition="0" endLine="62" endPosition="0" unitName="gwtdemo.css" />
+    <unitInfo nodeId="7046856741208198535" fileName="gwtdemo.css" startLine="1" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.sandbox.gwt.gwtdemo$css" />
   </root>
   <root nodeId="7046856741208198647" modelId="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)">
     <nodeInfo nodeId="7046856741208198655" fileName="MyResources.java" startLine="9" startPosition="51" endLine="10" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />

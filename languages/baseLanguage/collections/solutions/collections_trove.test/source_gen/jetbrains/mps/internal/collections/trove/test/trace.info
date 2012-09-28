@@ -138,9 +138,7 @@
     <scopeInfo nodeId="5332044122260427100" fileName="PrimMap_Test.java" startLine="37" startPosition="50" endLine="40" endPosition="59">
       <varInfo nodeId="5332044122260427102" varName="mbo" />
     </scopeInfo>
-    <scopeInfo nodeId="6227590151851174830" fileName="PrimMap_Test.java" startLine="66" startPosition="38" endLine="69" endPosition="7">
-      <varInfo nodeId="6227590151851174833" varName="y" />
-    </scopeInfo>
+    <scopeInfo nodeId="6227590151851174815" fileName="PrimMap_Test.java" startLine="66" startPosition="38" endLine="69" endPosition="7" />
     <scopeInfo nodeId="6227590151851201086" fileName="PrimMap_Test.java" startLine="84" startPosition="50" endLine="87" endPosition="74">
       <varInfo nodeId="6227590151851201088" varName="mss" />
     </scopeInfo>

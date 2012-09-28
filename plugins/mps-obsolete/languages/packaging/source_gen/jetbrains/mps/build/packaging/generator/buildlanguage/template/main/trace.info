@@ -1630,7 +1630,9 @@
     <scopeInfo nodeId="5934900624260320517" fileName="QueriesGenerated.java" startLine="1763" startPosition="100" endLine="1768" endPosition="7">
       <varInfo nodeId="5934900624260320518" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="5934900624260317375" fileName="QueriesGenerated.java" startLine="1762" startPosition="145" endLine="1769" endPosition="5" />
+    <scopeInfo nodeId="5934900624260320507" fileName="QueriesGenerated.java" startLine="1762" startPosition="145" endLine="1769" endPosition="5">
+      <varInfo nodeId="5934900624260320508" varName="root" />
+    </scopeInfo>
   </root>
   <root nodeId="6108265972537179238" modelId="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)">
     <nodeInfo nodeId="3497141547781583164" fileName="QueriesGenerated.java" startLine="475" startPosition="154" endLine="476" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

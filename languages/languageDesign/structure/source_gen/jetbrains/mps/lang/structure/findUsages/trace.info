@@ -209,7 +209,9 @@
     <scopeInfo nodeId="1206463363236" fileName="LinkInstances_Finder.java" startLine="75" startPosition="45" endLine="76" endPosition="28" />
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
     <scopeInfo nodeId="1236788293559" fileName="LinkInstances_Finder.java" startLine="45" startPosition="10" endLine="47" endPosition="79" />
-    <scopeInfo nodeId="1236788630747" fileName="LinkInstances_Finder.java" startLine="58" startPosition="24" endLine="61" endPosition="13" />
+    <scopeInfo nodeId="1236789129904" fileName="LinkInstances_Finder.java" startLine="58" startPosition="24" endLine="61" endPosition="13">
+      <varInfo nodeId="1236789129905" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
@@ -220,9 +222,7 @@
       <varInfo nodeId="1201275992898" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1236788630744" fileName="LinkInstances_Finder.java" startLine="57" startPosition="56" endLine="67" endPosition="11" />
-    <scopeInfo nodeId="1236788630741" fileName="LinkInstances_Finder.java" startLine="56" startPosition="191" endLine="68" endPosition="9">
-      <varInfo nodeId="1236788630742" varName="role" />
-    </scopeInfo>
+    <scopeInfo nodeId="1236788630740" fileName="LinkInstances_Finder.java" startLine="56" startPosition="191" endLine="68" endPosition="9" />
     <scopeInfo nodeId="1236788630738" fileName="LinkInstances_Finder.java" startLine="55" startPosition="42" endLine="69" endPosition="7">
       <varInfo nodeId="1236788630739" varName="instance" />
     </scopeInfo>

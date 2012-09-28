@@ -246,9 +246,7 @@
     <scopeInfo nodeId="7048923897762709824" fileName="QueriesGenerated.java" startLine="322" startPosition="138" endLine="327" endPosition="7">
       <varInfo nodeId="4276824325038550538" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="7048923897762709820" fileName="QueriesGenerated.java" startLine="321" startPosition="145" endLine="328" endPosition="5">
-      <varInfo nodeId="7048923897762709822" varName="expr" />
-    </scopeInfo>
+    <scopeInfo nodeId="7048923897762709816" fileName="QueriesGenerated.java" startLine="321" startPosition="145" endLine="328" endPosition="5" />
   </root>
   <root nodeId="7048923897763035668" modelId="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="7048923897763036421" fileName="QueriesGenerated.java" startLine="130" startPosition="154" endLine="131" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -82,9 +82,7 @@
     <scopeInfo nodeId="5546896804536307455" fileName="QueriesGenerated.java" startLine="289" startPosition="148" endLine="296" endPosition="7">
       <varInfo nodeId="5546896804536307457" varName="all" />
     </scopeInfo>
-    <scopeInfo nodeId="5546896804536307454" fileName="QueriesGenerated.java" startLine="288" startPosition="145" endLine="297" endPosition="5">
-      <varInfo nodeId="5546896804536307501" varName="nn" />
-    </scopeInfo>
+    <scopeInfo nodeId="5546896804536307449" fileName="QueriesGenerated.java" startLine="288" startPosition="145" endLine="297" endPosition="5" />
   </root>
   <root nodeId="5822086619725756059" modelId="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)">
     <nodeInfo nodeId="9181472308624885443" fileName="QueriesGenerated.java" startLine="58" startPosition="206" endLine="59" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

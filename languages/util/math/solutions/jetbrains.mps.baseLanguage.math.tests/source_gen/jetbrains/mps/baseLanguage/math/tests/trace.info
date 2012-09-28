@@ -76,7 +76,9 @@
     <scopeInfo nodeId="1650644170366802030" fileName="IntervalTest.java" startLine="77" startPosition="45" endLine="79" endPosition="62">
       <varInfo nodeId="1650644170366802032" varName="interval" />
     </scopeInfo>
-    <scopeInfo nodeId="1650644170366802108" fileName="IntervalTest.java" startLine="103" startPosition="39" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="1650644170366802109" fileName="IntervalTest.java" startLine="103" startPosition="39" endLine="105" endPosition="5">
+      <varInfo nodeId="1650644170366802117" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="1650644170366802140" fileName="IntervalTest.java" startLine="109" startPosition="40" endLine="112" endPosition="5">
       <varInfo nodeId="1650644170366802142" varName="t" />
     </scopeInfo>
