@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6bb6493ubx8avay8vzldxx6mtunn5yx">
+<dependencies version="2" modelHash="5qya2kgmu3jfbhrlbidjlxl4ye4j769">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.cache(MPS.Core/jetbrains.mps.cache@java_stub)" />
@@ -43,12 +43,12 @@
   <dep model="r:d64ba0fe-173d-44e2-ab7b-bde40d7e9b7e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.pre@generator)" hash="-euzt3ktzv3vcy6g082fb8yheyvv8tbe" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ewgblj5m32jyc5zc1n1eup4emffkdql" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="s3tv1frpwve3ihtsua8rcflzhi3fe4" />
-  <common hash="-65ue73u46ltyh6fpy58z6jowioggmqi">
+  <common hash="-6lqd80ok0u9qoyg0hq906gedy007o4a">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="3161373106581136688" name="ClassifiersCache" hash="b5j97skkwoqop4a33tgk5dagvozbw3q">
+  <source id="3161373106581136688" name="ClassifiersCache" hash="-5elhnh8mxyrjgo0yc9l1c1hqb2ev35j">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.cache(MPS.Core/jetbrains.mps.cache@java_stub)" />
@@ -81,7 +81,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClassifiersCache.java" />
   </source>
-  <source id="3161373106581137350" name="VisibilityUtil" hash="d7rcmp4h2q5szvch3yi2kkn3lkd52cf">
+  <source id="3161373106581137350" name="VisibilityUtil" hash="-3fz54zbntgr7vqvshht1msi7h5oz877">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -113,7 +113,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="VisibilityUtil.java" />
   </source>
-  <source id="3161373106581136687" name="ClassifierAndSuperClassifiersCache" hash="bfmczk6euzkkaxe53m5w03dk3ut0ezn">
+  <source id="3161373106581136687" name="ClassifierAndSuperClassifiersCache" hash="-4uoncda9asdkdhrz9a7040g55n2zo1j">
     <dep root="3161373106581139869" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -272,7 +272,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StaticMethodReferenceInfoResolver.java" />
   </source>
-  <source id="3161373106581140309" name="LocalVariablesScope" hash="-c4vjwzy0cp9r7bim4dht4zg81l5sd3o">
+  <source id="3161373106581140309" name="LocalVariablesScope" hash="-2lsrgg5p0khjf77oc0541u7v9qd3qvw">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -337,7 +337,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClassifierAndSuperClassifiersScope.java" />
   </source>
-  <source id="3161373106581141431" name="IClassifiersSearchScope" hash="5xmfwx6pc49wxeg9oaedvxk9le2xpw6">
+  <source id="3161373106581141431" name="IClassifiersSearchScope" hash="cbl1im8g5xngj1z9gss6ebson45lpb7">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -348,7 +348,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="IClassifiersSearchScope.java" />
   </source>
-  <source id="3161373106581141525" name="AllSubclassifiersScope" hash="-cqokzf4ugoir9jjfgabgb6sfh0py1ab">
+  <source id="3161373106581141525" name="AllSubclassifiersScope" hash="-2nph90qk5hjq2j0fu5gmvktwta5vij8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -379,7 +379,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AllSubclassifiersScope.java" />
   </source>
-  <source id="3161373106581141805" name="AbstractClassifiersScope" hash="792y3gontscntkna3s8qptegla9yjio">
+  <source id="3161373106581141805" name="AbstractClassifiersScope" hash="-2u4pc3pbmp9irshdj24xd67g91xjq4e">
     <dep root="3161373106581141431" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -444,7 +444,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VisibleClassifiersScope.java" />
   </source>
-  <source id="3161373106581142361" name="MethodResolveUtil" hash="3hha74asiks9woir0f35yszbd4q1mgw">
+  <source id="3161373106581142361" name="MethodResolveUtil" hash="7l5zzlql3d5iwu7m8u4bvj0mtmxdypg">
     <dep root="3161373106581136687" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -478,7 +478,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MethodResolveUtil.java" />
   </source>
-  <source id="3161373106581143187" name="ClassifierVisibleMembersScope" hash="-c9sn47zwrnyy20yu9uus8r9iwrlq5hf">
+  <source id="3161373106581143187" name="ClassifierVisibleMembersScope" hash="vibkvp2uj6oq8i3vx1xdcitvxjkm2a">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#d95e286a-03bd-41d2-a04d-9db8f070e89c#org.apache.commons.logging(jetbrains.mps.baseLanguage.logging#1167240554582/org.apache.commons.logging@java_stub)" />
@@ -537,7 +537,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="VisibleThrowablesScope.java" />
   </source>
-  <source id="3161373106581143470" name="ClassifierVisibleStaticMembersScope" hash="-37nen3ik1smeiif7vbsrumei9mgzp2y">
+  <source id="3161373106581143470" name="ClassifierVisibleStaticMembersScope" hash="4eb7bf4offiq6a89gtmsegtcb3487lo">
     <dep root="3161373106581141431" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -692,7 +692,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="VisibleClassConstructorsScope.java" />
   </source>
-  <source id="1289622777586550823" name="MPSBaseLanguage" hash="-evypqgagankv67e8ocrxjm6im377q62">
+  <source id="1289622777586550823" name="MPSBaseLanguage" hash="b1iap3p3m80de0kvbqon22cnkwbawc4">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -712,7 +712,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MPSBaseLanguage.java" />
   </source>
-  <source id="3896109655413979709" name="ClassifierSuccessors" hash="-32okhaj364jf7h9ttjji6h14tzxnepc">
+  <source id="3896109655413979709" name="ClassifierSuccessors" hash="-b8yq06yki4s9cocvvj652ddghr91u6d">
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
