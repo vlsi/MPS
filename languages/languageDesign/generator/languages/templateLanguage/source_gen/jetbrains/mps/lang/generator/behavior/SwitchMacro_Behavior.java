@@ -37,7 +37,7 @@ public class SwitchMacro_Behavior {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SwitchMacro_Behavior_i6m7ss_a0a0a0.getConcept().getId()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_SwitchMacro_Behavior_i6m7ss_a0a0a0.getReferent("concept");
+        patternVar_concept = nodeToMatch_SwitchMacro_Behavior_i6m7ss_a0a0a0.getReferenceTarget("concept");
       }
       return true;
     }

@@ -166,7 +166,7 @@ public class IMethodCall_Behavior {
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getReferent("classifier") != referent) {
+          if (nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

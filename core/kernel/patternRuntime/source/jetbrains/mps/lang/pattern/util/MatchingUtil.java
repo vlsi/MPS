@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.pattern.util;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
@@ -113,7 +114,7 @@ public class MatchingUtil {
     return true;
   }
 
-  public static int hash(SNode node, boolean useAttributes) {
+  public static int hash(SNode node) {
     int result = node.getConceptFqName().hashCode();
     for (SReference reference : node.getReferences()) {
       SNode targetNode = reference.getTargetNodeSilently();
@@ -129,9 +130,10 @@ public class MatchingUtil {
     for (String propertyValue : properties.values()) {
       result = 31 * result + propertyValue.hashCode();
     }
-    for (SNode child : node.getChildren(useAttributes)) {
+    for (SNode child : node.getChildren()) {
+      if (AttributeOperations.isAttribute(child)) continue;
       result = 31 * result + child.getRole().hashCode();
-      result = 31 * result + hash(child, useAttributes);
+      result = 31 * result + hash(child);
     }
     return result;
   }

@@ -151,7 +151,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
 
     private SNodeWrapper(SNode node) {
       myNode = node;
-      myHashCode = MatchingUtil.hash(myNode, false);
+      myHashCode = MatchingUtil.hash(myNode);
     }
 
     @Override

@@ -51,7 +51,7 @@ public class MapSrcListMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getConcept().getId()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getReferent("concept");
+              patternVar_concept = nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getReferenceTarget("concept");
             }
           }
         }

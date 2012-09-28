@@ -577,7 +577,7 @@ public class Classifier_Behavior {
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a42;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferent("classifier") != referent) {
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

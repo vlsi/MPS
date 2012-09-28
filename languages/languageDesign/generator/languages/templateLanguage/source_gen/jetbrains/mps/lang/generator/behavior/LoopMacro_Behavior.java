@@ -51,7 +51,7 @@ public class LoopMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getConcept().getId()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getReferent("concept");
+              patternVar_concept = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getReferenceTarget("concept");
             }
           }
         }

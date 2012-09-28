@@ -67,7 +67,7 @@ public class CopySrcListMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a.getConcept().getId()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a.getReferent("concept");
+              patternVar_concept = nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a.getReferenceTarget("concept");
             }
           }
         }
