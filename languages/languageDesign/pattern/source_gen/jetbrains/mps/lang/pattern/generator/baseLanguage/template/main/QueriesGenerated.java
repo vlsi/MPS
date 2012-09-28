@@ -25,6 +25,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
+import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Collections;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class QueriesGenerated {
@@ -660,20 +663,17 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    final List<SNode> result = new ArrayList<SNode>();
-    _context.getNode().visitChildren(new org.jetbrains.mps.openapi.model.SNode.ChildVisitor() {
-      public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-        if (AttributeOperations.isAttribute(child)) {
-          return true;
-        }
-        SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", null);
-        SPropertyOperations.set(childRoleNode, "role", role);
-        SLinkOperations.setTarget(childRoleNode, "childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), role), false);
-        SLinkOperations.setTarget(childRoleNode, "mainNode", _context.getNode(), false);
-        ListSequence.fromList(result).addElement(childRoleNode);
-        return true;
-      }
-    });
+    List<SNode> result = new ArrayList<SNode>();
+    List<String> roles = new LinkedList<String>();
+    ListSequence.fromList(roles).addSequence(SetSequence.fromSet(_context.getNode().getChildRoles()));
+    Collections.sort(roles);
+    for (String childRole : roles) {
+      SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", null);
+      SPropertyOperations.set(childRoleNode, "role", childRole);
+      SLinkOperations.setTarget(childRoleNode, "childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), childRole), false);
+      SLinkOperations.setTarget(childRoleNode, "mainNode", _context.getNode(), false);
+      ListSequence.fromList(result).addElement(childRoleNode);
+    }
     return result;
   }
 
