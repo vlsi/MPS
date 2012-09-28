@@ -314,14 +314,12 @@
     <scopeInfo nodeId="1213877228349" fileName="Layout_Behavior.java" startLine="100" startPosition="71" endLine="103" endPosition="5">
       <varInfo nodeId="1213877228350" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="9027273598492143622" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7" />
-    <scopeInfo nodeId="9027273598492144043" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7">
-      <varInfo nodeId="9027273598492144044" varName="child" />
+    <scopeInfo nodeId="9027273598492143744" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7">
+      <varInfo nodeId="9027273598492143745" varName="child" />
     </scopeInfo>
+    <scopeInfo nodeId="9027273598492143649" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7" />
     <scopeInfo nodeId="1226509010732" fileName="Layout_Behavior.java" startLine="137" startPosition="55" endLine="140" endPosition="22" />
-    <scopeInfo nodeId="1233317262398" fileName="Layout_Behavior.java" startLine="152" startPosition="113" endLine="155" endPosition="7">
-      <varInfo nodeId="1233317262399" varName="entry" />
-    </scopeInfo>
+    <scopeInfo nodeId="1233317262397" fileName="Layout_Behavior.java" startLine="152" startPosition="113" endLine="155" endPosition="7" />
     <scopeInfo nodeId="1240564979377" fileName="Layout_Behavior.java" startLine="157" startPosition="211" endLine="160" endPosition="7">
       <varInfo nodeId="1240564979378" varName="child" />
     </scopeInfo>
@@ -1235,9 +1233,7 @@
       <varInfo nodeId="2378354490355101483" varName="end" />
       <varInfo nodeId="2378354490355101470" varName="start" />
     </scopeInfo>
-    <scopeInfo nodeId="264380905730923652" fileName="Module_Behavior.java" startLine="157" startPosition="36" endLine="164" endPosition="9">
-      <varInfo nodeId="264380905730923653" varName="runtimeDependency" />
-    </scopeInfo>
+    <scopeInfo nodeId="264380905730924690" fileName="Module_Behavior.java" startLine="157" startPosition="36" endLine="164" endPosition="9" />
     <scopeInfo nodeId="1213877514764" fileName="Module_Behavior.java" startLine="201" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="1213877514764" varName="thisNode" />
     </scopeInfo>

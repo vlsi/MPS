@@ -189,9 +189,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1225194243363" fileName="ConceptBehavior_Behavior.java" startLine="57" startPosition="154" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1225194243428" fileName="ConceptBehavior_Behavior.java" startLine="69" startPosition="76" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="5466054087443746073" fileName="ConceptBehavior_Behavior.java" startLine="205" startPosition="29" endLine="208" endPosition="9">
-      <varInfo nodeId="5466054087443746077" varName="method" />
-    </scopeInfo>
+    <scopeInfo nodeId="5466054087443746072" fileName="ConceptBehavior_Behavior.java" startLine="205" startPosition="29" endLine="208" endPosition="9" />
     <scopeInfo nodeId="1225220804853" fileName="ConceptBehavior_Behavior.java" startLine="251" startPosition="56" endLine="254" endPosition="11">
       <varInfo nodeId="1225220804853" varName="child" />
     </scopeInfo>
