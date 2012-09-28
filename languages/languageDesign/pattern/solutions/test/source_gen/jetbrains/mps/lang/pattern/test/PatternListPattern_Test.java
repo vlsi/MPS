@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 @MPSLaunch
 public class PatternListPattern_Test extends BaseTransformationTest4 {
@@ -130,7 +131,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_ListPattern_9twfax_ = "operand";
-            if (nodeToMatch_ListPattern_9twfax_a0.getChildCount(childRole_ListPattern_9twfax_) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_ListPattern_9twfax_a0, childRole_ListPattern_9twfax_, 1))) {
               return false;
             }
             {
@@ -148,7 +149,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_ListPattern_9twfax__0 = "operation";
-            if (nodeToMatch_ListPattern_9twfax_a0.getChildCount(childRole_ListPattern_9twfax__0) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_ListPattern_9twfax_a0, childRole_ListPattern_9twfax__0, 1))) {
               return false;
             }
             {

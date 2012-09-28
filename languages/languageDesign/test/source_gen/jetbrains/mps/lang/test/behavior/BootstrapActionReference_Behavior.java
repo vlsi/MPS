@@ -24,6 +24,11 @@ public class BootstrapActionReference_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914, new Object[]{});
   }
 
+  public static String callSuperNew_getActionId_1101347953350127914(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getActionId_1101347953350127914(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914, new Object[]{});
   }

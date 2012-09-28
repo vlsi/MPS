@@ -612,7 +612,9 @@ public abstract class AbstractModule implements IModule {
     if (d == null) return result;
 
     for (ModelRoot root : d.getModelRoots()) {
-      result.add(root.getPath());
+      String path = root.getPath();
+      String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
+      result.add(path + suffix);
     }
 
     return result;

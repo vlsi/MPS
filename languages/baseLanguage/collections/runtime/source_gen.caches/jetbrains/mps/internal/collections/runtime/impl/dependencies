@@ -42,6 +42,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IEnumerator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

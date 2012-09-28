@@ -15,8 +15,6 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.mps.openapi.language.scope.SLinkScopeProvider;
-
 /**
  * evgeny, 7/25/12
  */

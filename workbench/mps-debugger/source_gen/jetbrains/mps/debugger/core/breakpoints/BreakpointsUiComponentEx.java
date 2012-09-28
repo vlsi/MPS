@@ -13,8 +13,8 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -77,13 +77,16 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   protected EditorCell findTraceableCell(EditorCell foundCell) {
-    final TraceInfoCache traceInfoCache = TraceInfoCache.getInstance();
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(foundCell.getEditor().getEditedNode().getModel().getModelDescriptor());
+    if (debugInfo == null) {
+      return null;
+    }
+
     EditorCell cell = foundCell;
     while (cell != null) {
       SNode node = cell.getSNode();
       if (node != null) {
-        DebugInfo debugInfo = traceInfoCache.get(node.getModel().getModelDescriptor());
-        if (debugInfo != null && debugInfo.getPositionForNode(node.getId()) != null) {
+        if (!(debugInfo.getPositions(node).isEmpty())) {
           break;
         }
       }

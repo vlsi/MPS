@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -77,19 +77,28 @@ public class NamedTupleDeclaration_Behavior {
     return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0e().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
   }
 
-  public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      return new InstanceMethodDeclarationScope(thisNode, ListSequence.fromList(Classifier_Behavior.call_getExtendedClassifierTypes_2201875424516179426(thisNode)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "classifier", false) != null);
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "classifier", false);
-        }
-      }));
+  public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    // populate own members 
+    for (SNode method : SLinkOperations.getTargets(thisNode, "method", true)) {
+      IClassifierMember_Behavior.call_populateMember_7405920559687254644(method, context, classifierType);
     }
-    return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", kind);
+
+    // populate super tuple members 
+    SNode superTuple = SLinkOperations.getTarget(thisNode, "extended", true);
+    if ((superTuple != null)) {
+      IClassifierType_Behavior.call_populateMembers_7405920559687241253(superTuple, context, classifierType);
+    }
+
+    // populate implemented interfaces members  
+    for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    })) {
+      IClassifierType_Behavior.call_populateMembers_7405920559687241253(implementedInterface, context, classifierType);
+    }
+
+    IClassifier_Behavior.callSuperNew_populateMembers_7405920559687241403(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", context, classifierType);
   }
 
   public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
@@ -97,6 +106,11 @@ public class NamedTupleDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), "virtual_getThisType_3305065273710880775", PARAMETERS_6742265879766289824, new Object[]{});
   }
 
+  public static SNode callSuperNew_getThisType_6742265879766289824(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", PARAMETERS_6742265879766289824, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getThisType_6742265879766289824(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", PARAMETERS_6742265879766289824, new Object[]{});
   }

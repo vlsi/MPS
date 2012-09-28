@@ -37,10 +37,20 @@ public class InsertUIObjectStatement_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889662, new Object[]{belongsTo});
   }
 
+  public static boolean callSuperNew_shouldReturnValue_3091159734392475596(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), callerConceptFqName, "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_3091159734392475596, new Object[]{});
+  }
+
+  public static SNode callSuperNew_expectedContextType_5197527271413889662(SNode thisNode, String callerConceptFqName, SNode belongsTo) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), callerConceptFqName, "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889662, new Object[]{belongsTo});
+  }
+
+  @Deprecated
   public static boolean callSuper_shouldReturnValue_3091159734392475596(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), callerConceptFqName, "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_3091159734392475596, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_expectedContextType_5197527271413889662(SNode thisNode, String callerConceptFqName, SNode belongsTo) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), callerConceptFqName, "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889662, new Object[]{belongsTo});
   }

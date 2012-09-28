@@ -13,7 +13,7 @@ public class PrivateFieldReferenceOperation_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "fieldDeclaration", false) == null)) {
-      return BaseConcept_Behavior.callSuper_getPresentation_1213877396640(thisNode, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation");
+      return BaseConcept_Behavior.callSuperNew_getPresentation_1213877396640(thisNode, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
   }

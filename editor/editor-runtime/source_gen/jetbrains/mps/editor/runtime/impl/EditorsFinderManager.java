@@ -152,7 +152,7 @@ public class EditorsFinderManager implements ApplicationComponent {
               }
             });
           } else if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
-            ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), "implements", true)).visitAll(new IVisitor<SNode>() {
+            ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), "extends", true)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 QueueSequence.fromQueue(conceptQueue).addLastElement(SLinkOperations.getTarget(it, "intfc", false));
               }

@@ -10,8 +10,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_0" file="BL_CopyPasteHandlers_PastePostProcessor_0.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -29,7 +28,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -92,6 +92,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior" />
@@ -99,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />

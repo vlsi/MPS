@@ -9,7 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -36,7 +38,7 @@ public class typeof_LocalInstanceFieldReference_InferenceRule extends AbstractIn
     }
     final SNode InstanceType_typevar_2233570453276392932 = typeCheckingContext.createNewRuntimeTypesVariable();
     SNode currentClassifier = SNodeOperations.getAncestor(fieldReference, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    while (currentClassifier != null && !(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(currentClassifier, fieldReference, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).contains(fieldDeclaration))) {
+    while (currentClassifier != null && !(Sequence.fromIterable(Members.visibleInstanceFields(IClassifier_Behavior.call_getThisType_7405920559687254782(currentClassifier), fieldReference)).contains(fieldDeclaration))) {
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     if ((currentClassifier == null)) {

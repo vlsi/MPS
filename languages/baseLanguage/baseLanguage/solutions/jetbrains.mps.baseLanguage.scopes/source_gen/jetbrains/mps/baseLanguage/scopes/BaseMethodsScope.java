@@ -6,16 +6,16 @@ import jetbrains.mps.scope.Scope;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+@Deprecated
 public abstract class BaseMethodsScope extends Scope {
   private final Map<String, List<SNode>> nameToMethods;
   protected final SNode kind;
@@ -32,7 +33,18 @@ public abstract class BaseMethodsScope extends Scope {
   protected final Iterable<SNode> extendedClassifiers;
   private SNode[] allMethods;
 
+  @Deprecated
   public BaseMethodsScope(final SNode kind, SNode classifier, Iterable<SNode> extendedClassifiers) {
+    // all extendedClassifiers should be not null 
+    if (Sequence.fromIterable(extendedClassifiers).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it == null);
+      }
+    })) {
+      // todo: make macro like methodParamsToString()? 
+      throw new IllegalArgumentException("One of extended classifiers is null. Kind: " + NameUtil.nodeFQName(kind) + "; classifier: " + classifier + "; extendedClassifiers: " + extendedClassifiers);
+    }
+
     this.kind = kind;
     this.classifier = classifier;
     this.extendedClassifiers = extendedClassifiers;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3882421039144497491">
+  <root nodeId="3882421039144497491" modelId="r:95d22feb-0fb2-45bb-8dc4-fee131cf897f(jetbrains.mps.quickQueryLanguage.runtime)">
     <nodeInfo nodeId="3882421039144497493" fileName="Query.java" startLine="7" startPosition="24" endLine="8" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="3882421039144497497" fileName="Query.java" startLine="8" startPosition="29" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doReplace#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3882421039144497503" fileName="Query.java" startLine="9" startPosition="36" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSatisfies#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -13,7 +13,7 @@
     </scopeInfo>
     <unitInfo nodeId="3882421039144497491" fileName="Query.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
   </root>
-  <root nodeId="8605904462131236214">
+  <root nodeId="8605904462131236214" modelId="r:95d22feb-0fb2-45bb-8dc4-fee131cf897f(jetbrains.mps.quickQueryLanguage.runtime)">
     <nodeInfo nodeId="5487985028841942622" fileName="QueryExecutor.java" startLine="6" startPosition="28" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED_QUERY_NAME" />
     <nodeInfo nodeId="8605904462131236216" fileName="QueryExecutor.java" startLine="8" startPosition="0" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExecutor#()V" />
     <scopeInfo nodeId="8605904462131236219" fileName="QueryExecutor.java" startLine="9" startPosition="26" endLine="9" endPosition="26" />

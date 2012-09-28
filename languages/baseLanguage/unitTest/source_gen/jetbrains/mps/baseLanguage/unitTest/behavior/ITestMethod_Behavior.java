@@ -25,10 +25,20 @@ public class ITestMethod_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestName_1216136419751", PARAMETERS_1216136419751, new Object[]{});
   }
 
+  public static SNode callSuperNew_getTestCase_1216134500045(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestCase_1216134500045", PARAMETERS_1216134500045, new Object[]{});
+  }
+
+  public static String callSuperNew_getTestName_1216136419751(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestName_1216136419751", PARAMETERS_1216136419751, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getTestCase_1216134500045(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestCase_1216134500045", PARAMETERS_1216134500045, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getTestName_1216136419751(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestName_1216136419751", PARAMETERS_1216136419751, new Object[]{});
   }

@@ -27,6 +27,11 @@ public class ExpectedOption_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858, new Object[]{});
   }
 
+  public static String callSuperNew_classifierName_8853708281362145858(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_classifierName_8853708281362145858(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858, new Object[]{});
   }

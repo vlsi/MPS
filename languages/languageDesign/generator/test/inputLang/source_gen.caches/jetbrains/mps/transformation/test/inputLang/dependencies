@@ -10,6 +10,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.Language" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModule" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.Language" file="Language.java">

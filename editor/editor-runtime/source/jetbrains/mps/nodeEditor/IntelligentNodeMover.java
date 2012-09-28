@@ -147,14 +147,14 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        current.addPrevSibling(node);
+        current.getParent().insertChild(current.getRole(), node, current.getPrevSibling());
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        current.addNextSibling(node);
+        current.getParent().insertChild(current.getRole(), node, current);
       }
     }
   }

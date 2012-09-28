@@ -24,13 +24,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_uhv5x2_a0a3a0a0a1a0b0a1a0 = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "2679357232283837712");
@@ -70,16 +66,7 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
             List<SNode> methods = new ArrayList<SNode>();
-            for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getEnclosingNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-              }
-            }).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-              }
-            })) {
-
+            for (SNode method : Members.visibleInstanceMethods(classifierType, _context.getEnclosingNode())) {
               if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && BeanPropertyBuilder_Behavior.getPropertyName_2679357232284040711(SPropertyOperations.getString(method, "name")) != null) {
                 ListSequence.fromList(methods).addElement(method);
               }

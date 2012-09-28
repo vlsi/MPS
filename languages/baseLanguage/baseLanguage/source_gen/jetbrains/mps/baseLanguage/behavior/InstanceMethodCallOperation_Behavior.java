@@ -12,14 +12,11 @@ import java.util.Map;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import java.util.List;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class InstanceMethodCallOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -53,9 +50,12 @@ public class InstanceMethodCallOperation_Behavior {
     return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<SNode> methods = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), "classifier", false), IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
-    return methods;
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
+    return Sequence.fromIterable(Members.visibleInstanceMethods(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_xykbjj_a0a0a0a0a0a0a4(SPropertyOperations.getString(it, "name"), methodName);
+      }
+    }).toListSequence();
   }
 
   public static boolean call_canBeConvertedToLocal_5311267937735225328(SNode thisNode) {
@@ -75,15 +75,7 @@ public class InstanceMethodCallOperation_Behavior {
       return false;
     }
     while (classifier != declarationClassifier) {
-      for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).getAvailableElements(SPropertyOperations.getString(declaration, "name"))).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        }
-      })) {
+      for (SNode method : Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), thisNode)) {
         if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
           return false;
         }
@@ -97,5 +89,12 @@ public class InstanceMethodCallOperation_Behavior {
     SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
     ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
+  }
+
+  private static boolean eq_xykbjj_a0a0a0a0a0a0a4(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

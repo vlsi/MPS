@@ -19,6 +19,11 @@ public class IMetaLevelChanger_Behavior {
     return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), "virtual_getMetaLevelChange_201537367881074474", PARAMETERS_201537367881074474, new Object[]{});
   }
 
+  public static int callSuperNew_getMetaLevelChange_201537367881074474(SNode thisNode, String callerConceptFqName) {
+    return (Integer) BehaviorManager.getInstance().invokeSuperNew(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), callerConceptFqName, "virtual_getMetaLevelChange_201537367881074474", PARAMETERS_201537367881074474, new Object[]{});
+  }
+
+  @Deprecated
   public static int callSuper_getMetaLevelChange_201537367881074474(SNode thisNode, String callerConceptFqName) {
     return (Integer) BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), callerConceptFqName, "virtual_getMetaLevelChange_201537367881074474", PARAMETERS_201537367881074474, new Object[]{});
   }

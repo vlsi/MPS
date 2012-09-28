@@ -24,6 +24,11 @@ public class ConceptCondition_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4943044633101739075, new Object[]{});
   }
 
+  public static SNode callSuperNew_getApplicableConcept_4943044633101739075(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), callerConceptFqName, "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4943044633101739075, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getApplicableConcept_4943044633101739075(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), callerConceptFqName, "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4943044633101739075, new Object[]{});
   }

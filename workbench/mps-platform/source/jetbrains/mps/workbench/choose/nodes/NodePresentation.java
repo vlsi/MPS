@@ -20,20 +20,31 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
+/**
+ * Use NodePointerPresentation
+ */
+@Deprecated
+@ToRemove(version = 3.0)
 public class NodePresentation extends BasePresentation {
   private SNode myNode;
   private String myModelName = null;
 
-  public NodePresentation(SNode node) {
+  public NodePresentation(@Nullable SNode node) {
     myNode = node;
   }
 
   public String getModelName() {
+    if (myNode == null) {
+      return "null node";
+    }
+
     if (myModelName == null) {
       myModelName = ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
@@ -46,6 +57,10 @@ public class NodePresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
+    if (myNode == null) {
+      return "null node";
+    }
+
     String text = NodePresentationUtil.matchingText(myNode);
     return text != null ? text : "";
   }
@@ -55,6 +70,6 @@ public class NodePresentation extends BasePresentation {
   }
 
   public Icon doGetIcon() {
-    return IconManager.getIconFor(myNode);
+    return myNode != null ? IconManager.getIconFor(myNode) : null;
   }
 }

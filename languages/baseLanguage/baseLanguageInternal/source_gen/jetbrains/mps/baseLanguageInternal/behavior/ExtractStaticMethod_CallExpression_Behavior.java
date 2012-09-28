@@ -43,6 +43,11 @@ public class ExtractStaticMethod_CallExpression_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, new Object[]{methodName});
   }
 
+  public static List<SNode> callSuperNew_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String callerConceptFqName, String methodName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, new Object[]{methodName});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String callerConceptFqName, String methodName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, new Object[]{methodName});
   }

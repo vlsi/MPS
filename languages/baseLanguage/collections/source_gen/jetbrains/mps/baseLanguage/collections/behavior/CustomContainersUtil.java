@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class CustomContainersUtil {
   public CustomContainersUtil() {
@@ -69,10 +68,6 @@ with_ctParams:
     return ListSequence.fromList(CollectionsLanguage.getInstance().getCustomContainersRegistry().accessibleCustomContainerDeclarations(model)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode ccd) {
         return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(ccd, "containerType", true)) == SNodeOperations.getConceptDeclaration(type);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode ccd) {
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ccd, "containerType", true), type);
       }
     });
   }

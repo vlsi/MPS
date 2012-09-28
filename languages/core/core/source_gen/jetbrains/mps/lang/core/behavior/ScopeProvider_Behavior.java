@@ -34,10 +34,20 @@ public class ScopeProvider_Behavior {
     return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_7722139651431880752", PARAMETERS_7722139651431880752, new Object[]{kind, role, index});
   }
 
+  public static Scope callSuperNew_getScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind, SNode child) {
+    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind, child});
+  }
+
+  public static Scope callSuperNew_getScope_7722139651431880752(SNode thisNode, String callerConceptFqName, SNode kind, String role, int index) {
+    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_7722139651431880752", PARAMETERS_7722139651431880752, new Object[]{kind, role, index});
+  }
+
+  @Deprecated
   public static Scope callSuper_getScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind, SNode child) {
     return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind, child});
   }
 
+  @Deprecated
   public static Scope callSuper_getScope_7722139651431880752(SNode thisNode, String callerConceptFqName, SNode kind, String role, int index) {
     return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_7722139651431880752", PARAMETERS_7722139651431880752, new Object[]{kind, role, index});
   }

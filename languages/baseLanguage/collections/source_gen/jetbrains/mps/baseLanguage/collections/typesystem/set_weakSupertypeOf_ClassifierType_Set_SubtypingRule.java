@@ -124,7 +124,7 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
         }
         {
           String childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_ = "parameter";
-          if (nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getChildCount(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a, childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_, 1))) {
             return false;
           }
           {

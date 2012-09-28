@@ -138,8 +138,8 @@ public class AttributeOperations {
     return SLinkOperations.getTargets(node, "smodelAttribute", true);
   }
 
-  public static List<SNode> getNodeAttributes(SNode node) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(null))).toListSequence();
+  public static Iterable<SNode> getNodeAttributes(SNode node) {
+    return getAttributes(node, new IAttributeDescriptor.NodeAttributeString(null));
     // <node> 
   }
 

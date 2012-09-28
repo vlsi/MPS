@@ -63,18 +63,38 @@ public class IOperation_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413, new Object[]{});
   }
 
+  public static boolean callSuperNew_isLValue_1213877410080(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080, new Object[]{});
+  }
+
+  public static boolean callSuperNew_operandCanBeNull_323410281720656291(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_operandCanBeNull_323410281720656291", PARAMETERS_323410281720656291, new Object[]{});
+  }
+
+  public static String callSuperNew_getVariableExpectedName_1213877410087(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLValue_1213877410080(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_operandCanBeNull_323410281720656291(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_operandCanBeNull_323410281720656291", PARAMETERS_323410281720656291, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getVariableExpectedName_1213877410087(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413, new Object[]{});
   }

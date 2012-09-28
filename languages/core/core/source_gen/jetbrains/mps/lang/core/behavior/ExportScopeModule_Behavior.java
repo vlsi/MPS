@@ -23,6 +23,11 @@ public class ExportScopeModule_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, new Object[]{sourceNamespace, targetNode});
   }
 
+  public static boolean callSuperNew_checkExport_402007580867586263(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, new Object[]{sourceNamespace, targetNode});
+  }
+
+  @Deprecated
   public static boolean callSuper_checkExport_402007580867586263(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, new Object[]{sourceNamespace, targetNode});
   }

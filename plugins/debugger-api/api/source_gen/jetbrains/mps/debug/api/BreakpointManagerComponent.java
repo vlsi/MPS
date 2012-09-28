@@ -92,23 +92,20 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNode root = node.getContainingRoot();
-      if (root != null) {
-        SNodePointer rootPointer = new SNodePointer(root);
-        Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-        if (breakpointsForRoot == null) {
-          breakpointsForRoot = new HashSet<ILocationBreakpoint>();
-          myRootsToBreakpointsMap.put(rootPointer, breakpointsForRoot);
-        }
-        //  check the following assumption: one breakpoint for one node 
-        for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
-          if (breakpointForRoot.getLocation().getNodePointer().equals(breakpoint.getLocation().getNodePointer())) {
-            LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getSNode());
-            break;
-          }
-        }
-        breakpointsForRoot.add(breakpoint);
+      SNodePointer rootPointer = new SNodePointer(node.getTopmostAncestor());
+      Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
+      if (breakpointsForRoot == null) {
+        breakpointsForRoot = new HashSet<ILocationBreakpoint>();
+        myRootsToBreakpointsMap.put(rootPointer, breakpointsForRoot);
       }
+      //  check the following assumption: one breakpoint for one node 
+      for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
+        if (breakpointForRoot.getLocation().getNodePointer().equals(breakpoint.getLocation().getNodePointer())) {
+          LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getSNode());
+          break;
+        }
+      }
+      breakpointsForRoot.add(breakpoint);
     }
   }
 
@@ -131,13 +128,11 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNode root = node.getContainingRoot();
-      if (root != null) {
-        SNodePointer rootPointer = new SNodePointer(root);
-        Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-        if (breakpointsForRoot != null) {
-          breakpointsForRoot.remove(breakpoint);
-        }
+      SNode root = node.getTopmostAncestor();
+      SNodePointer rootPointer = new SNodePointer(root);
+      Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
+      if (breakpointsForRoot != null) {
+        breakpointsForRoot.remove(breakpoint);
       }
     }
   }

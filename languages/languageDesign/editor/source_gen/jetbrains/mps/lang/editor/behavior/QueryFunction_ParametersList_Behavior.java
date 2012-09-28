@@ -34,6 +34,11 @@ public class QueryFunction_ParametersList_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632, new Object[]{});
   }
 
+  public static SNode callSuperNew_getExpectedReturnType_7806530711846755632(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getExpectedReturnType_7806530711846755632(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632, new Object[]{});
   }

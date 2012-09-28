@@ -6,7 +6,6 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
-  <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5617550519002745363">
       <property name="name" nameId="tpck.1169194664001" value="BuildProject" />
@@ -607,6 +606,36 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Files" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6967233722066057020">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_War" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848050074" resolveInfo="BuildLayout_Jar" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469642724">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSource_JavaJar" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469642264">
+      <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSource_JavaModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="342830306171203038">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaDependencyExternalJarInFolder" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2754769020641646199" resolveInfo="BuildSource_JavaDependency" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469642863">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSource_JavaLibrary" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469642570">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSource_SingleFile" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -1192,6 +1221,11 @@
       <property name="role" nameId="tpce.1071599776563" value="path" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8706695667516275782">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="customLocation" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5610619299014309452" resolveInfo="BuildSource_JavaExternalJarRef" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1258644073388922141">
       <property name="value" nameId="tpce.1105725733873" value="jar" />
@@ -1984,6 +2018,71 @@
       <property name="role" nameId="tpce.1071599776563" value="parameters" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="9126048691955220772" resolveInfo="BuildLayout_CopyParameter" />
+    </node>
+  </root>
+  <root id="6967233722066057020">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6967233722066057021">
+      <property name="value" nameId="tpce.1105725733873" value="war" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="4964617264469642724">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4964617264469642725">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="targetJar" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1258644073388922138" resolveInfo="BuildSource_JavaJar" />
+    </node>
+  </root>
+  <root id="4964617264469642264">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4964617264469642265">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="targetModule" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848073784" resolveInfo="BuildSource_JavaModule" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4964617264469642266">
+      <property name="name" nameId="tpck.1169194664001" value="targetReexport" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+  </root>
+  <root id="342830306171203038">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="342830306171234561">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="extFolder" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5610619299014531647" resolveInfo="BuildSource_JavaExternalJarFolderRef" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="342830306171234560">
+      <property name="name" nameId="tpck.1169194664001" value="reexport" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="342830306171239596">
+      <property name="name" nameId="tpck.1169194664001" value="suffix" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="342830306171203040">
+      <property name="value" nameId="tpce.1105725733873" value="external jar in folder" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="342830306171203039">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="841011766566205091" resolveInfo="BuildExternalDependency" />
+    </node>
+  </root>
+  <root id="4964617264469642863">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4964617264469642864">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="targetLibrary" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
+    </node>
+  </root>
+  <root id="4964617264469642570">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4964617264469642571">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="targetFile" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5610619299013425874" resolveInfo="BuildSource_SingleFile" />
     </node>
   </root>
 </model>

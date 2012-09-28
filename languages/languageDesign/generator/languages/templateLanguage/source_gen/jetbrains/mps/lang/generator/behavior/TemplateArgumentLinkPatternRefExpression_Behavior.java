@@ -25,6 +25,11 @@ public class TemplateArgumentLinkPatternRefExpression_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064503, new Object[]{});
   }
 
+  public static String callSuperNew_getVariableName_2902001550282064503(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), callerConceptFqName, "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064503, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getVariableName_2902001550282064503(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), callerConceptFqName, "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064503, new Object[]{});
   }

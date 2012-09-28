@@ -120,10 +120,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       @Override
       public SNodePointer compute() {
-        final SNode rootNode = editedNode.getContainingRoot();
-        if (rootNode == null) {
-          return null;
-        }
+        final SNode rootNode = editedNode.getTopmostAncestor();
         return new SNodePointer(rootNode);
       }
     });
@@ -173,10 +170,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
   }
 
   protected void toggleBreakpoint(@NotNull SNode node) {
-    SNode root = node.getContainingRoot();
-    if (root == null) {
-      return;
-    }
+    SNode root = node.getTopmostAncestor();
     IBreakpoint breakpoint = null;
     Set<ILocationBreakpoint> mpsBreakpointSet = myBreakpointsManagerComponent.getBreakpoints(new SNodePointer(root));
     if (mpsBreakpointSet != null) {

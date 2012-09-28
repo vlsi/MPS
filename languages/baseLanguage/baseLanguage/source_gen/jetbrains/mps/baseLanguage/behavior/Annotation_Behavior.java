@@ -13,7 +13,7 @@ public class Annotation_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.Annotation");
+    List<SNode> members = IMemberContainer_Behavior.callSuperNew_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.Interface");
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     return members;
   }

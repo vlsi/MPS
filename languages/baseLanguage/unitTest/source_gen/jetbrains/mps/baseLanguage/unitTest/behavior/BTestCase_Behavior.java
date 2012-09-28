@@ -73,7 +73,7 @@ public class BTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
+    List<SNode> members = IMemberContainer_Behavior.callSuperNew_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
     return members;
   }
@@ -87,6 +87,11 @@ public class BTestCase_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), "virtual_getSimpleClassName_1229278847513", PARAMETERS_4520990320128651400, new Object[]{});
   }
 
+  public static String callSuperNew_getSimpleClassName_4520990320128651400(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", PARAMETERS_4520990320128651400, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getSimpleClassName_4520990320128651400(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", PARAMETERS_4520990320128651400, new Object[]{});
   }

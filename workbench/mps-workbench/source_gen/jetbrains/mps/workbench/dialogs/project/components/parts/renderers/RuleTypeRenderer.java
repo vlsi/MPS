@@ -19,7 +19,10 @@ public class RuleTypeRenderer extends DefaultTableCellRenderer {
 
   @Override
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-    String caption = ((RuleType) value).getPresentation();
+    String caption = (value instanceof RuleType ?
+      ((RuleType) value).getPresentation() :
+      "null"
+    );
     JComponent comp = (JComponent) super.getTableCellRendererComponent(table, caption, isSelected, hasFocus, row, column);
     return RuleTypeRenderer.createCenterAlignmentInCell(comp);
   }

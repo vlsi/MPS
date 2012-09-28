@@ -43,9 +43,11 @@ public class TextGenManager {
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
+  @Deprecated
   public static final String IMPORT = "IMPORT";
   public static final String OUTPUT_ENCODING = "OUTPUT_ENCODING";
-  //temp hack
+  public static final String ROOT_NODE = "ROOT_NODE";
+  @Deprecated
   public static final String ADDED_IMPORT = "ADDED_IMPORT";
 
   public static void reset() {
@@ -66,6 +68,7 @@ public class TextGenManager {
 
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
+    buffer.putUserObject(ROOT_NODE, node);
     appendNodeText(context, buffer, node, null);
     myClassesCache = null;
     String topBufferText = buffer.getTopBufferText();

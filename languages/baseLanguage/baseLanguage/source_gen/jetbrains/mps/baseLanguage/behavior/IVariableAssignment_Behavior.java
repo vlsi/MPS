@@ -29,10 +29,20 @@ public class IVariableAssignment_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_getValue_1224857430232", PARAMETERS_1224857430232, new Object[]{});
   }
 
+  public static boolean callSuperNew_isCanBeUnused_1223985713603(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getValue_1224857430232(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_1224857430232, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isCanBeUnused_1223985713603(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getValue_1224857430232(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_1224857430232, new Object[]{});
   }

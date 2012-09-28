@@ -37,6 +37,11 @@ public class ModelManagerDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), "virtual_createType_1213877527970", PARAMETERS_5553449326502622488, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_5553449326502622488(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5553449326502622488, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_5553449326502622488(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5553449326502622488, new Object[]{});
   }

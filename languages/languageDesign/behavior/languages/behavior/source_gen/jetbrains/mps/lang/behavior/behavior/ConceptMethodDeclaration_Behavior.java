@@ -82,6 +82,10 @@ public class ConceptMethodDeclaration_Behavior {
   }
 
   public static String call_getSuperCallerMethodName_1225196404049(SNode thisNode) {
+    return "callSuperNew_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
+  }
+
+  public static String call_getOldSuperCallerMethodName_5914983970298756775(SNode thisNode) {
     return "callSuper_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
   }
 
@@ -102,6 +106,11 @@ public class ConceptMethodDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520836, new Object[]{});
   }
 
+  public static SNode callSuperNew_getNearestOverriddenMethod_5014346297260520836(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520836, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getNearestOverriddenMethod_5014346297260520836(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520836, new Object[]{});
   }

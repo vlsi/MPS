@@ -73,7 +73,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
         }
         {
           String childRole_sequence_type_comparableWith_Iterable_wnlwmt_ = "parameter";
-          if (nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getChildCount(childRole_sequence_type_comparableWith_Iterable_wnlwmt_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a, childRole_sequence_type_comparableWith_Iterable_wnlwmt_, 1))) {
             return false;
           }
           {

@@ -9,6 +9,7 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.AbstractMacro_BehaviorDescriptor" file="AbstractMacro_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Behavior" file="BaseMappingRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -116,7 +117,12 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior" file="CopySrcListMacro_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
@@ -135,7 +141,11 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior" file="CopySrcNodeMacro_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
@@ -218,6 +228,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" file="IGeneratorParameter_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -234,6 +245,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ITemplateCall_Behavior" file="ITemplateCall_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -350,6 +362,7 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" file="LoopMacro_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
@@ -367,6 +380,7 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" file="MapSrcListMacro_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
@@ -402,6 +416,7 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior" file="MappingConfiguration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -474,6 +489,7 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" file="NodeMacro_Behavior.java">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -612,6 +628,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.RuleConsequence_Behavior" file="RuleConsequence_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -666,6 +683,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_Behavior" file="TemplateArgumentLinkPatternRefExpression_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
@@ -692,6 +710,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_Behavior" file="TemplateArgumentPatternRef_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -709,6 +728,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_Behavior" file="TemplateArgumentPatternVarRefExpression_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
@@ -729,6 +749,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_Behavior" file="TemplateArgumentPropertyPatternRefExpression_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
@@ -755,6 +776,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior" file="TemplateArgumentQuery_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -821,6 +843,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" file="TemplateDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -903,10 +926,19 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_Behavior" file="TemplateQueryBase_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.scope.EmptyScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_BehaviorDescriptor" file="TemplateQueryBase_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_Behavior" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" file="TemplateSwitchReference_BehaviorDescriptor.java">
@@ -917,6 +949,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitch_Behavior" file="TemplateSwitch_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

@@ -15,17 +15,12 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
-import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.lang.scopes.runtime.LazyScope;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_5039675756633082276 = {SNode.class};
@@ -40,7 +35,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuperNew_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
@@ -50,7 +45,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
@@ -90,49 +85,12 @@ public class StaticFieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, final SNode interfaceNode, SNode[] extendsInterfaces) {
-    if (ClassifierScopeUtils.isHierarchyCyclic(interfaceNode)) {
-      return new EmptyScope();
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    if (!((context.isElementVisible(thisNode)))) {
+      return;
     }
-
-    List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
-    for (final SNode extendsClassifier : extendsInterfaces) {
-      if ((extendsClassifier != null)) {
-        ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
-          public Scope invoke() {
-            return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, interfaceNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
-          }
-        }));
-      }
-    }
-    // todo: staticField??? 
-    return new StaticFieldDeclarationScope(SLinkOperations.getTargets(interfaceNode, "staticField", true), extendsScopes);
-  }
-
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
-    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
-      return new EmptyScope();
-    }
-
-    List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
-    if ((extendsClass != null)) {
-      ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
-        public Scope invoke() {
-          return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClass, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
-        }
-      }));
-    }
-    for (final SNode extendsClassifier : implementsInterfaces) {
-      if ((extendsClassifier != null)) {
-        ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
-          public Scope invoke() {
-            return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
-          }
-        }));
-      }
-    }
-    // todo: staticField??? 
-    return new StaticFieldDeclarationScope(SLinkOperations.getTargets(classNode, "staticField", true), extendsScopes);
+    context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+    context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {
@@ -170,30 +128,65 @@ public class StaticFieldDeclaration_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550872, new Object[]{});
   }
 
+  public static List<Icon> callSuperNew_getMarkIcons_5039675756633082276(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459921, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isStatic_8986964027630472415(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472415, new Object[]{});
+  }
+
+  public static Icon callSuperNew_getAdditionalIcon_8884554759541381553(SNode thisNode, String callerConceptFqName) {
+    return (Icon) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381553, new Object[]{});
+  }
+
+  public static String callSuperNew_getSuffix_3012473318495506818(SNode thisNode, String callerConceptFqName, Project project) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506818, new Object[]{project});
+  }
+
+  public static String callSuperNew_getPrefix_3012473318495506812(SNode thisNode, String callerConceptFqName, Project project) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506812, new Object[]{project});
+  }
+
+  public static String callSuperNew_getTraceableProperty_2496361171403550872(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550872, new Object[]{});
+  }
+
+  @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633082276(SNode thisNode, String callerConceptFqName) {
     return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459921, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isStatic_8986964027630472415(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472415, new Object[]{});
   }
 
+  @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541381553(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381553, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getSuffix_3012473318495506818(SNode thisNode, String callerConceptFqName, Project project) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506818, new Object[]{project});
   }
 
+  @Deprecated
   public static String callSuper_getPrefix_3012473318495506812(SNode thisNode, String callerConceptFqName, Project project) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506812, new Object[]{project});
   }
 
+  @Deprecated
   public static String callSuper_getTraceableProperty_2496361171403550872(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550872, new Object[]{});
   }

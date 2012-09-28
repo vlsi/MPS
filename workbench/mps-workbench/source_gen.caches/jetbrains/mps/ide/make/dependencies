@@ -125,6 +125,7 @@
     <classNode dependClassName="java.nio.charset.Charset" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

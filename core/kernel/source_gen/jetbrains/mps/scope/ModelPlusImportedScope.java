@@ -42,6 +42,11 @@ public class ModelPlusImportedScope extends Scope {
     return myModels;
   }
 
+  @Override
+  public boolean contains(SNode node) {
+    return node.isInstanceOfConcept(myTargetConcept) && (!(myRootsOnly) || node.isRoot()) && getModels().contains(node.getModel().getModelDescriptor());
+  }
+
   public SNode resolve(SNode contextNode, String refText) {
     Collection<SModelDescriptor> models = getModels();
     SNode result = null;

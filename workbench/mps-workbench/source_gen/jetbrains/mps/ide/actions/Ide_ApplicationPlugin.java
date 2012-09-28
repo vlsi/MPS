@@ -29,6 +29,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AnalyzeDependencies_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());
+    addAction(new CalcClassifiersInRootsStatistic_Action());
     addAction(new CalcSNodeStatistic_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
@@ -38,6 +39,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyNodeReference_Action());
     addAction(new CopyNode_Action());
     addAction(new CreateAspect_Action());
+    addAction(new CreateNewRoot_Action());
     addAction(new CutNode_Action());
     addAction(new DeleteFavoritesList_Action());
     addAction(new DeleteModels_Action());
@@ -53,6 +55,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindPrevious_Action());
     addAction(new FindRootableConceptsWithoutIcons_Action());
     addAction(new FindSpecificNodeUsages_Action());
+    addAction(new FindUnusedAndDeprecatedConcepts_Action());
     addAction(new Find_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToModel_Action());

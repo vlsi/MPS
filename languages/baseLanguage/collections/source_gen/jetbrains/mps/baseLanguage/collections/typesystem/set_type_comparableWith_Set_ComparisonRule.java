@@ -73,7 +73,7 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
         }
         {
           String childRole_set_type_comparableWith_Set_plg4lh_ = "parameter";
-          if (nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getChildCount(childRole_set_type_comparableWith_Set_plg4lh_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a, childRole_set_type_comparableWith_Set_plg4lh_, 1))) {
             return false;
           }
           {

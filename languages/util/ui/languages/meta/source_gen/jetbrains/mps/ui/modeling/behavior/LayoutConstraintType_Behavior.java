@@ -28,6 +28,11 @@ public class LayoutConstraintType_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429, new Object[]{});
   }
 
+  public static String callSuperNew_getPresentation_5572604531249685429(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getPresentation_5572604531249685429(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429, new Object[]{});
   }

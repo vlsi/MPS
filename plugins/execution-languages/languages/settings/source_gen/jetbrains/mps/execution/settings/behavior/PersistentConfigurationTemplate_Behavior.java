@@ -27,6 +27,11 @@ public class PersistentConfigurationTemplate_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), "virtual_createType_1213877527970", PARAMETERS_946964771156066826, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_946964771156066826(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066826, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_946964771156066826(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066826, new Object[]{});
   }

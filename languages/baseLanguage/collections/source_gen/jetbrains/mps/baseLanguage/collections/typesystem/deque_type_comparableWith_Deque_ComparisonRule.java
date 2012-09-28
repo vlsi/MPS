@@ -73,7 +73,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
         }
         {
           String childRole_deque_type_comparableWith_Deque_drfijn_ = "parameter";
-          if (nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getChildCount(childRole_deque_type_comparableWith_Deque_drfijn_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a, childRole_deque_type_comparableWith_Deque_drfijn_, 1))) {
             return false;
           }
           {

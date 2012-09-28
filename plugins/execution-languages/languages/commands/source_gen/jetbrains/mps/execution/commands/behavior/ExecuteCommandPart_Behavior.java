@@ -85,14 +85,29 @@ public class ExecuteCommandPart_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775, new Object[]{});
   }
 
+  public static List<SNode> callSuperNew_getThrowableTypes_558680274511380755(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_558680274511380755, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getBody_558680274511380765(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_558680274511380765, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getExpectedRetType_558680274511380775(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775, new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getThrowableTypes_558680274511380755(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_558680274511380755, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getBody_558680274511380765(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_558680274511380765, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getExpectedRetType_558680274511380775(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775, new Object[]{});
   }

@@ -34,7 +34,7 @@ public class EnumClass_Behavior {
   }
 
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    List<SNode> extended = Classifier_Behavior.callSuper_getExtendedClassifierTypes_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass");
+    List<SNode> extended = Classifier_Behavior.callSuperNew_getExtendedClassifierTypes_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode enumType = Classifier_Behavior.call_getThisType_3305065273710880775(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"));
     if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
@@ -44,7 +44,7 @@ public class EnumClass_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass");
+    List<SNode> members = IMemberContainer_Behavior.callSuperNew_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)));
     return members;
   }

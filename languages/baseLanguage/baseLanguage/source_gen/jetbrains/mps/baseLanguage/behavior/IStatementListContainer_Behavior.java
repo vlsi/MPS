@@ -33,10 +33,20 @@ public class IStatementListContainer_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736, new Object[]{});
   }
 
+  public static boolean callSuperNew_isClosure_3262277503800835439(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), callerConceptFqName, "virtual_isClosure_3262277503800835439", PARAMETERS_3262277503800835439, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isExecuteSynchronous_1230212745736(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), callerConceptFqName, "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isClosure_3262277503800835439(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), callerConceptFqName, "virtual_isClosure_3262277503800835439", PARAMETERS_3262277503800835439, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isExecuteSynchronous_1230212745736(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), callerConceptFqName, "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736, new Object[]{});
   }

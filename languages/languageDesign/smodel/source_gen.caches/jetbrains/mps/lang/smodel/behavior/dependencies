@@ -15,6 +15,7 @@
   <dependency className="jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior" file="AttributeAccess_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -48,6 +49,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" file="AttributeQualifier_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -114,7 +116,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_AddAllOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_AddChildOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_AddNewChildOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_GetCountOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_InsertChildFirstOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_RemoveAllChildrenOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkNameRefExpression_BehaviorDescriptor" />
@@ -361,6 +362,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior" file="ILinkAccessQualifierContainer_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -378,6 +380,7 @@
   <dependency className="jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior" file="ILinkAccess_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -466,12 +469,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.LinkList_AddNewChildOperation_BehaviorDescriptor" file="LinkList_AddNewChildOperation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.LinkList_GetCountOperation_BehaviorDescriptor" file="LinkList_GetCountOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor" />
@@ -607,6 +604,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior" file="ModuleReferenceExpression_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -907,6 +905,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.OperationParm_LinkQualifier_Behavior" file="OperationParm_LinkQualifier_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -1310,6 +1309,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior" file="SNodeTypeCastExpression_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />

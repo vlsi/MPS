@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 
 public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor {
@@ -55,7 +55,7 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
             if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false) == null)) {
               return new EmptyScope();
             }
-            return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
+            return new NamedElementsScope(Members.visibleStaticFields(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false), _context.getContextNode()));
           }
         };
       }

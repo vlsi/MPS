@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4193578441191911527">
+  <root nodeId="4193578441191911527" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
     <nodeInfo nodeId="4193578441191970303" fileName="JavaCopyPasteDataConverter.java" startLine="18" startPosition="103" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MIN_TEXT_LENGTH_TO_CONVERT" />
     <nodeInfo nodeId="4193578441191921069" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="31" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4193578441191921073" fileName="JavaCopyPasteDataConverter.java" startLine="28" startPosition="34" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -61,7 +61,7 @@
     </scopeInfo>
     <unitInfo nodeId="4193578441191911527" fileName="JavaCopyPasteDataConverter.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter" />
   </root>
-  <root nodeId="5646944109420335310">
+  <root nodeId="5646944109420335310" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
     <nodeInfo nodeId="5646944109420336544" fileName="JavaPaster.java" startLine="34" startPosition="25" endLine="35" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5646944109420336563" fileName="JavaPaster.java" startLine="40" startPosition="117" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420336572" fileName="JavaPaster.java" startLine="42" startPosition="27" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -259,7 +259,7 @@
     <unitInfo nodeId="5646944109420335310" fileName="JavaPaster.java" startLine="34" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaPaster" />
     <unitInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="93" startPosition="52" endLine="97" endPosition="11" unitName="jetbrains.mps.ide.java.util.JavaPaster$1" />
   </root>
-  <root nodeId="5778265495851109956">
+  <root nodeId="5778265495851109956" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
     <nodeInfo nodeId="5778265495851109972" fileName="StubResolver.java" startLine="45" startPosition="27" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JAVA_STUB" />
     <nodeInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="46" startPosition="99" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="9073603541474867540" fileName="StubResolver.java" startLine="48" startPosition="0" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedModels" />
@@ -372,12 +372,8 @@
     <scopeInfo nodeId="9073603541474867759" fileName="StubResolver.java" startLine="80" startPosition="91" endLine="82" endPosition="56" />
     <scopeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="112" startPosition="88" endLine="115" endPosition="5" />
     <scopeInfo nodeId="2082194532791124435" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5" />
-    <scopeInfo nodeId="2082194532791126333" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5">
-      <varInfo nodeId="2082194532791126334" varName="model" />
-    </scopeInfo>
     <scopeInfo nodeId="9164503229271486529" fileName="StubResolver.java" startLine="129" startPosition="93" endLine="132" endPosition="9" />
     <scopeInfo nodeId="2742102018362199454" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" />
-    <scopeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" />
     <scopeInfo nodeId="5778265495851109958" fileName="StubResolver.java" startLine="50" startPosition="0" endLine="54" endPosition="3" />
     <scopeInfo nodeId="9073603541474867580" fileName="StubResolver.java" startLine="58" startPosition="160" endLine="62" endPosition="0">
       <varInfo nodeId="9073603541474867580" varName="it" />
@@ -410,7 +406,6 @@
     </scopeInfo>
     <scopeInfo nodeId="9164503229271455507" fileName="StubResolver.java" startLine="125" startPosition="86" endLine="133" endPosition="7" />
     <scopeInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="153" startPosition="121" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="4326588611400152020" fileName="StubResolver.java" startLine="124" startPosition="79" endLine="134" endPosition="5" />
     <scopeInfo nodeId="9164503229271455504" fileName="StubResolver.java" startLine="124" startPosition="79" endLine="134" endPosition="5">
       <varInfo nodeId="9164503229271455505" varName="module" />
     </scopeInfo>
@@ -424,9 +419,6 @@
       <varInfo nodeId="9073603541474867707" varName="targetModelRef" />
     </scopeInfo>
     <scopeInfo nodeId="9073603541474867699" fileName="StubResolver.java" startLine="68" startPosition="92" endLine="84" endPosition="7" />
-    <scopeInfo nodeId="9073603541474867700" fileName="StubResolver.java" startLine="68" startPosition="92" endLine="84" endPosition="7">
-      <varInfo nodeId="9073603541474867701" varName="ref" />
-    </scopeInfo>
     <scopeInfo nodeId="9073603541474867694" fileName="StubResolver.java" startLine="67" startPosition="81" endLine="85" endPosition="5">
       <varInfo nodeId="9073603541474867695" varName="node" />
     </scopeInfo>

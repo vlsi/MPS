@@ -15,7 +15,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProcessor {
@@ -56,11 +57,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
         }
 
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
-          if (Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(nextClassConcept, pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-            }
-          }).where(new IWhereFilter<SNode>() {
+          if (Sequence.fromIterable(Members.visibleInstanceFields(IClassifier_Behavior.call_getThisType_7405920559687254782(nextClassConcept), pastedNode)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString(it, "name").equals(resolveInfo);
             }

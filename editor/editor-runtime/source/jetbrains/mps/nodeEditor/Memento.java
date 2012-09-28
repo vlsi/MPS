@@ -26,9 +26,25 @@ import java.util.*;
 import java.util.Map.Entry;
 
 class Memento {
+  private static final Comparator<EditorCell> FOLDED_CELLS_COMPARATOR = new Comparator<EditorCell>() {
+    @Override
+    public int compare(EditorCell c1, EditorCell c2) {
+      return getDepth(c2) - getDepth(c1);
+    }
+
+    private int getDepth(EditorCell cell) {
+      int depth = 0;
+      while (cell.getParent() != null) {
+        cell = cell.getParent();
+        depth++;
+      }
+      return depth;
+    }
+  };
+
   private Stack<SelectionInfo> mySelectionStack = new Stack<SelectionInfo>();
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
-  private Set<CellInfo> myFolded = new HashSet<CellInfo>();
+  private List<CellInfo> myFolded = new ArrayList<CellInfo>();
 
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
   private Point myViewPosition;
@@ -40,8 +56,9 @@ class Memento {
     SNode editedNode = nodeEditor.getEditedNode();
     if (editedNode == null || (!editedNode.isDisposed() && editedNode.getModel() != null && !editedNode.getModel().isDisposed())) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
-
-      for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
+      ArrayList<EditorCell> foldedCells = new ArrayList<EditorCell>(nodeEditor.getFoldedCells());
+      Collections.sort(foldedCells, FOLDED_CELLS_COMPARATOR);
+      for (EditorCell foldedCell : foldedCells) {
         myFolded.add(foldedCell.getCellInfo());
       }
       for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {

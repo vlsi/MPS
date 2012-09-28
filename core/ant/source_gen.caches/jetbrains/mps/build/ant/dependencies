@@ -41,6 +41,7 @@
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="jetbrains.mps.logging.ILoggingHandler" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -51,6 +52,7 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.SimpleLayout" />
+    <classNode dependClassName="org.apache.tools.ant.Project" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
     <classNode dependClassName="java.io.File" />
@@ -249,6 +251,7 @@
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.build.ant.AntLogger" />
     <classNode extendsClassName="jetbrains.mps.logging.ILoggingHandler" />

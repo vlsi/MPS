@@ -62,7 +62,7 @@ public class MacrosFactory {
           if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
             anchorFolder = anchorFolder.getParent();
           }
-          String modelRelativePath = removePrefix(path, d);
+          String modelRelativePath = removePrefix(path);
           return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
         }
       }
@@ -88,7 +88,7 @@ public class MacrosFactory {
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(PROJECT)) {
         IFile anchorFolder = anchorFile.getParent();
-        String modelRelativePath = removePrefix(path, PROJECT);
+        String modelRelativePath = removePrefix(path);
         return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
 
@@ -120,7 +120,7 @@ public class MacrosFactory {
   private static class HomeMacros extends Macros {
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(MPS_HOME)) {
-        String relativePath = removePrefix(path, MPS_HOME);
+        String relativePath = removePrefix(path);
         IFile file = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant(relativePath);
         return IFileUtils.getCanonicalPath(file);
       }
@@ -142,32 +142,20 @@ public class MacrosFactory {
     private static final Logger LOG = Logger.getLogger(Macros.class);
 
     protected String expand(String path, IFile anchorFile) {
-      IFile result = null;
+      if (!path.startsWith("${") || !path.contains("}")) return path;
+      String macro = path.substring(2, path.indexOf("}"));
 
-      Set<String> macroNames = PathMacros.getInstance().getNames();
-      for (String macro : macroNames) {
-        String prefix = "${" + macro + "}";
-        if (path.startsWith(prefix)) {
-          String relativePath = removePrefix(path, prefix);
-          String macroValue = PathMacros.getInstance().getValue(macro);
-          result = macroValue == null ? null : FileSystem.getInstance().getFileByPath(macroValue).getDescendant(relativePath);
-          break;
-        }
-      }
-      if (result != null) return IFileUtils.getCanonicalPath(result);
+      String relativePath = removePrefix(path);
 
+      String macroValue = PathMacros.getInstance().getValue(macro);
+      if (macroValue != null) return getFullPath(macroValue, relativePath);
 
-      if (!path.startsWith("${")) {
-        result = FileSystem.getInstance().getFileByPath(path);
-        return IFileUtils.getCanonicalPath(result);
-      }
-
-      int end = path.indexOf("}");
-      if (end != -1) {
-        LOG.error("Wasn't able to expand path " + path);
-        LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
-      }
+      PathMacros.getInstance().report("Please define path variable in path variables section of settings", macro);
       return path;
+    }
+
+    private String getFullPath(String anchorPath, String relativePath) {
+      return IFileUtils.getCanonicalPath(FileSystem.getInstance().getFileByPath(anchorPath).getDescendant(relativePath));
     }
 
     protected String shrink(String absolutePath, IFile anchorFile) {
@@ -197,8 +185,8 @@ public class MacrosFactory {
       return File.separator + FileUtil.getRelativePath(path, prefix, File.separator);
     }
 
-    protected String removePrefix(String path, String prefix) {
-      String result = path.substring(prefix.length());
+    protected String removePrefix(String path) {
+      String result = path.substring(path.indexOf("}") + 1);
       if (result.startsWith(File.separator)) result = result.substring(1);
       return result;
     }

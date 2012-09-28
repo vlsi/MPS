@@ -25,7 +25,7 @@ public class TreeSetCreator_Behavior {
   }
 
   public static boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
-    return AbstractContainerCreator_Behavior.callSuper_canHaveParameter_2261417478150191157(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator") && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
+    return AbstractContainerCreator_Behavior.callSuperNew_canHaveParameter_2261417478150191157(thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator") && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
   }
 
   public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
@@ -33,6 +33,11 @@ public class TreeSetCreator_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
   }
 
+  public static boolean callSuperNew_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
   }

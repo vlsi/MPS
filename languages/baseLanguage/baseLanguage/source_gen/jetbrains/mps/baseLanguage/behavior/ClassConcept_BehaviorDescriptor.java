@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.scope.Scope;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
@@ -60,6 +61,10 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
 
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
+  }
+
+  public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    ClassConcept_Behavior.virtual_populateMembers_7405920559687241403(thisNode, context, classifierType);
   }
 
   public List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {

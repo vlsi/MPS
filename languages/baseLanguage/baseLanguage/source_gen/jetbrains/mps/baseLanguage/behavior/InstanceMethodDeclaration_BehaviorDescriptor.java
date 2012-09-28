@@ -5,8 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
 
 public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
@@ -15,6 +14,10 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
 
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
   public boolean virtual_isAbstract_1232982539764(SNode thisNode) {
@@ -29,8 +32,8 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
     return InstanceMethodDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    return InstanceMethodDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
   }
 
   public SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
@@ -41,12 +44,12 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
-  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    return InstanceMethodDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    InstanceMethodDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return InstanceMethodDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
+  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
+    return InstanceMethodDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {

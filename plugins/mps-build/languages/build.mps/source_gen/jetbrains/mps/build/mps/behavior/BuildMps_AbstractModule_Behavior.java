@@ -28,6 +28,11 @@ public class BuildMps_AbstractModule_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
   }
 
+  public static boolean callSuperNew_isCompact_8369506495128693730(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isCompact_8369506495128693730(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
   }

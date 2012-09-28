@@ -52,10 +52,20 @@ public class ICompositeComponent_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "virtual_getIncludes_1213877279430", PARAMETERS_1213877279430, new Object[]{});
   }
 
+  public static String callSuperNew_getExcludes_1213877279373(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), callerConceptFqName, "virtual_getExcludes_1213877279373", PARAMETERS_1213877279373, new Object[]{});
+  }
+
+  public static String callSuperNew_getIncludes_1213877279430(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), callerConceptFqName, "virtual_getIncludes_1213877279430", PARAMETERS_1213877279430, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getExcludes_1213877279373(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), callerConceptFqName, "virtual_getExcludes_1213877279373", PARAMETERS_1213877279373, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getIncludes_1213877279430(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), callerConceptFqName, "virtual_getIncludes_1213877279430", PARAMETERS_1213877279430, new Object[]{});
   }

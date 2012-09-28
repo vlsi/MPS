@@ -7,13 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -33,11 +32,14 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) :
         SNodeOperations.getAncestor(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)
       );
-      String name = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name");
-      Scope staticMethodsScope = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classConcept, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+      final String name = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name");
       List<SNode> staticMethods = ((name == null) ?
         ListSequence.fromList(new ArrayList<SNode>()) :
-        (List<SNode>) Sequence.fromIterable(staticMethodsScope.getAvailableElements(name)).toListSequence()
+        Sequence.fromIterable(Members.visibleStaticMethods(classConcept, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SPropertyOperations.getString(it, "name").startsWith(name);
+          }
+        }).toListSequence()
       );
       for (SNode methodDecl : staticMethods) {
         Iterable<SNode> parameterTypes = ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "parameter", true)).select(new ISelector<SNode, SNode>() {

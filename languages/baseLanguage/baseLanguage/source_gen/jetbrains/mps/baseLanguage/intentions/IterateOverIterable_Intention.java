@@ -98,7 +98,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         }
         {
           String childRole_IterateOverIterable_6isygg__0 = "parameter";
-          if (nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildCount(childRole_IterateOverIterable_6isygg__0) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0, childRole_IterateOverIterable_6isygg__0, 1))) {
             return false;
           }
           {
@@ -152,7 +152,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         }
         {
           String childRole_IterateOverIterable_6isygg_ = "parameter";
-          if (nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildCount(childRole_IterateOverIterable_6isygg_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_IterateOverIterable_6isygg_a0a0a0, childRole_IterateOverIterable_6isygg_, 1))) {
             return false;
           }
           {

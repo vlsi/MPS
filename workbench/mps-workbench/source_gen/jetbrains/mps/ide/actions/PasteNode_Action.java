@@ -131,7 +131,7 @@ public class PasteNode_Action extends BaseAction {
           ResolverComponent.getInstance().resolveScopesOnly(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
           if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
-            final SNode root = pasteNodes.get(0).getContainingRoot();
+            final SNode root = pasteNodes.get(0).getTopmostAncestor();
             assert root != null;
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {

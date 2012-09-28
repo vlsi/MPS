@@ -60,6 +60,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" file="BTestCase_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -134,6 +135,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior" file="ITestCase_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -155,6 +157,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior" file="ITestMethod_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -172,6 +175,7 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior" file="ITestable_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

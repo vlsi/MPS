@@ -58,6 +58,7 @@ public class TransientModelsProvider {
       space.clear();
     }
     mySessionId = null;
+    myKeptModels = 0;
   }
 
   public synchronized void publishAll() {
@@ -104,11 +105,11 @@ public class TransientModelsProvider {
   }
 
   public void decreaseKeptModels() {
-    if(myModelsToKeepMax <= 0) {
+    if (myModelsToKeepMax <= 0) {
       return;
     }
     synchronized (this) {
-      if(myKeptModels > 0) {
+      if (myKeptModels > 0) {
         myKeptModels--;
       }
     }
@@ -154,9 +155,10 @@ public class TransientModelsProvider {
   }
 
   public void startGeneration(int numberOfModelsToKeep) {
-    clearAll();
-    mySessionId = newSessionId();
-    myKeptModels = 0;
+    if (mySessionId == null) {
+      mySessionId = newSessionId();
+      myKeptModels = 0;
+    }
     myModelsToKeepMax = numberOfModelsToKeep;
   }
 

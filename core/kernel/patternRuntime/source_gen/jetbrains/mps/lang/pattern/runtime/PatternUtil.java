@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import java.util.Iterator;
 
 public class PatternUtil {
   public PatternUtil() {
@@ -26,5 +27,16 @@ public class PatternUtil {
       return false;
     }
     return true;
+  }
+
+  public static boolean hasNChildren(org.jetbrains.mps.openapi.model.SNode parent, String role, int num) {
+    Iterator<? extends org.jetbrains.mps.openapi.model.SNode> it = parent.getChildren(role).iterator();
+    for (int i = 0; i < num; i++) {
+      if (!(it.hasNext())) {
+        return false;
+      }
+      it.next();
+    }
+    return !(it.hasNext());
   }
 }

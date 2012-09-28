@@ -42,7 +42,7 @@ public class SubtreeChecker {
   public static void checkNodeForErrors(SNode node, boolean allowErrors, boolean allowWarnings) {
     Assert.assertFalse("should be false (never used anyway)", allowErrors || allowWarnings);
     ITypeContextOwner owner = new ITypeContextOwner() {};
-    SNode containingRoot = node.getContainingRoot();
+    SNode containingRoot = node.getTopmostAncestor();
     TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().getOrCreateContext(containingRoot, owner, true);
     try {
       typeCheckingContext.checkIfNotChecked(node, true);

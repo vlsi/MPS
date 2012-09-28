@@ -32,6 +32,11 @@ public class ExplicitCommandParameterDeclaration_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
   }
 
+  public static boolean callSuperNew_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4871586248217809898">
+  <root nodeId="4871586248217809898" modelId="r:9e383f3b-cf02-4e9f-861b-72b030ba5e68(jetbrains.mps.debug.evaluation.transform)">
     <nodeInfo nodeId="4871586248217809912" fileName="TransformatorBuilder.java" startLine="8" startPosition="44" endLine="9" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="7494124042451449896" fileName="TransformatorBuilder.java" startLine="9" startPosition="49" endLine="10" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCK" />
     <nodeInfo nodeId="7494124042451491863" fileName="TransformatorBuilder.java" startLine="26" startPosition="25" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

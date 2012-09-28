@@ -21,7 +21,7 @@ public class SwitchMacro_Behavior {
       } else {
       }
     }
-    return NodeMacro_Behavior.callSuper_getInputNodeTypeInsideOfMacro_1213877290799(thisNode, "jetbrains.mps.lang.generator.structure.SwitchMacro");
+    return NodeMacro_Behavior.callSuperNew_getInputNodeTypeInsideOfMacro_1213877290799(thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro");
   }
 
   public static class Pattern_i6m7ss_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {

@@ -23,6 +23,11 @@ public class AccessUIPropertyOperation_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AccessUIPropertyOperation"), "virtual_isLValue_1213877410080", PARAMETERS_1870423755832759935, new Object[]{});
   }
 
+  public static boolean callSuperNew_isLValue_1870423755832759935(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AccessUIPropertyOperation"), callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1870423755832759935, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLValue_1870423755832759935(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AccessUIPropertyOperation"), callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1870423755832759935, new Object[]{});
   }

@@ -13,7 +13,7 @@ import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
@@ -35,7 +35,7 @@ public class ScopePositionInfo extends PositionInfo {
   }
 
   @Override
-  public void saveTo(Element element) {
+  protected void saveTo(Element element) {
     super.saveTo(element);
     for (VarInfo varInfo : MapSequence.fromMap(myVars).values()) {
       Element child = new Element(ScopePositionInfo.VAR_INFO);
@@ -44,12 +44,12 @@ public class ScopePositionInfo extends PositionInfo {
     }
   }
 
-  public SNode getVarNode(String varName, @NotNull SModel model) {
+  public SNode getVarNode(String varName) {
     VarInfo varInfo = MapSequence.fromMap(myVars).get(varName);
     if (varInfo == null) {
       return null;
     }
-    return model.getNodeById(varInfo.getNodeId());
+    return DebugInfo.nodeFrom(MultiTuple.<String,String>from(varInfo.getNodeId(), getModelId()));
   }
 
   public void addVarInfo(@NotNull SNode node) {
@@ -66,17 +66,15 @@ public class ScopePositionInfo extends PositionInfo {
     }
   }
 
-  public Map<SNode, VarInfo> getTempVarInfoMap() {
-    Map<SNode, VarInfo> result = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
-    MapSequence.fromMap(result).putAll(myTempNodeToVarMap);
-    return result;
+  /*package*/ Map<SNode, VarInfo> getTempVarInfoMap() {
+    return myTempNodeToVarMap;
   }
 
-  public void clearTempVarInfoMap() {
+  /*package*/ void clearTempVarInfoMap() {
     MapSequence.fromMap(myTempNodeToVarMap).clear();
   }
 
-  public void removeVarInfo(VarInfo varInfo) {
+  /*package*/ void removeVarInfo(VarInfo varInfo) {
     MapSequence.fromMap(myVars).removeKey(varInfo.getVarName());
   }
 

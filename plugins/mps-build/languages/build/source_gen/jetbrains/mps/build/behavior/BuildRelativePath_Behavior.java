@@ -79,6 +79,11 @@ public class BuildRelativePath_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, new Object[]{context});
   }
 
+  public static String callSuperNew_getBasePath_4959435991187140515(SNode thisNode, String callerConceptFqName, Context context) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, new Object[]{context});
+  }
+
+  @Deprecated
   public static String callSuper_getBasePath_4959435991187140515(SNode thisNode, String callerConceptFqName, Context context) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, new Object[]{context});
   }
@@ -87,21 +92,21 @@ public class BuildRelativePath_Behavior {
     if ((SLinkOperations.getTarget(cp, "tail", true) == null)) {
       return null;
     }
-    if (isEmpty_wij6l5_a0b0i(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
+    if (isEmpty_wij6l5_a0b0j(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
       return BuildRelativePath_Behavior.next_8654221991637156927(SLinkOperations.getTarget(cp, "tail", true));
     }
     return SLinkOperations.getTarget(cp, "tail", true);
   }
 
   public static boolean isEmptyTail_8654221991637157686(SNode cp) {
-    return cp == null || isEmpty_wij6l5_a0a0a0j(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
+    return cp == null || isEmpty_wij6l5_a0a0a0k(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
   }
 
-  public static boolean isEmpty_wij6l5_a0b0i(String str) {
+  public static boolean isEmpty_wij6l5_a0b0j(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_wij6l5_a0a0a0j(String str) {
+  public static boolean isEmpty_wij6l5_a0a0a0k(String str) {
     return str == null || str.length() == 0;
   }
 }

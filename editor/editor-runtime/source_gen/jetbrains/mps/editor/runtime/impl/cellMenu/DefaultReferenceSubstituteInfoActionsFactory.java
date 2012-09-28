@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 
@@ -58,7 +59,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
       SNode parent = SNodeOperations.getParent(mySourceNode);
       String role = SNodeOperations.getContainingLinkRole(mySourceNode);
-      SNode roleLink = SNodeOperations.cast(parent.getLinkDeclaration(role), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      SNode roleLink = ((SNode) SModelSearchUtil.findLinkDeclaration(SNodeOperations.getConceptDeclaration(parent), role));
       return ModelActions.createChildSubstituteActions(parent, mySourceNode, SLinkOperations.getTarget(roleLink, "target", false), new DefaultChildNodeSetter(roleLink), mySubstituteInfo.getOperationContext());
     }
     return ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, mySubstituteInfo.getOperationContext());

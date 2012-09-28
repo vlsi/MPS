@@ -84,26 +84,56 @@ public class IMethodLike_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_supportsCheckedExceptions_8510677279630867629", PARAMETERS_8510677279630867629, new Object[]{});
   }
 
+  public static SNode callSuperNew_getExpectedRetType_1239354342632(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getLastStatement_1239354409446(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getLastStatement_1239354409446", PARAMETERS_1239354409446, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getBody_1239354440022(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_1239354440022, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getThrowableTypes_6204026822016975623(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_6204026822016975623, new Object[]{});
+  }
+
+  public static boolean callSuperNew_implicitThrows_4989157187872658723(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_implicitThrows_4989157187872658723", PARAMETERS_4989157187872658723, new Object[]{});
+  }
+
+  public static boolean callSuperNew_supportsCheckedExceptions_8510677279630867629(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_supportsCheckedExceptions_8510677279630867629", PARAMETERS_8510677279630867629, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getExpectedRetType_1239354342632(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getLastStatement_1239354409446(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getLastStatement_1239354409446", PARAMETERS_1239354409446, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getBody_1239354440022(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_1239354440022, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getThrowableTypes_6204026822016975623(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_6204026822016975623, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_implicitThrows_4989157187872658723(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_implicitThrows_4989157187872658723", PARAMETERS_4989157187872658723, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_supportsCheckedExceptions_8510677279630867629(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_supportsCheckedExceptions_8510677279630867629", PARAMETERS_8510677279630867629, new Object[]{});
   }

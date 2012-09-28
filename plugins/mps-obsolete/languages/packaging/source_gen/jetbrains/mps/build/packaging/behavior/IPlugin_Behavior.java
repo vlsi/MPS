@@ -26,10 +26,20 @@ public class IPlugin_Behavior {
     return (List<String>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPlugin"), "virtual_getDependency_3033860308390155295", PARAMETERS_3033860308390155295, new Object[]{});
   }
 
+  public static String callSuperNew_getId_3033860308390151510(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPlugin"), callerConceptFqName, "virtual_getId_3033860308390151510", PARAMETERS_3033860308390151510, new Object[]{});
+  }
+
+  public static List<String> callSuperNew_getDependency_3033860308390155295(SNode thisNode, String callerConceptFqName) {
+    return (List<String>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPlugin"), callerConceptFqName, "virtual_getDependency_3033860308390155295", PARAMETERS_3033860308390155295, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getId_3033860308390151510(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPlugin"), callerConceptFqName, "virtual_getId_3033860308390151510", PARAMETERS_3033860308390151510, new Object[]{});
   }
 
+  @Deprecated
   public static List<String> callSuper_getDependency_3033860308390155295(SNode thisNode, String callerConceptFqName) {
     return (List<String>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPlugin"), callerConceptFqName, "virtual_getDependency_3033860308390155295", PARAMETERS_3033860308390155295, new Object[]{});
   }

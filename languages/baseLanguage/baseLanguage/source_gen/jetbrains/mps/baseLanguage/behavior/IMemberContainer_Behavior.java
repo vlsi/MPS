@@ -41,14 +41,29 @@ public class IMemberContainer_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToImplement_5418393554803775106", PARAMETERS_5418393554803775106, new Object[]{});
   }
 
+  public static List<SNode> callSuperNew_getMembers_1213877531970(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMembers_1213877531970", PARAMETERS_1213877531970, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getMethodsToOverride_5418393554803767537(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMethodsToOverride_5418393554803767537", PARAMETERS_5418393554803767537, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getMethodsToImplement_5418393554803775106(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMethodsToImplement_5418393554803775106", PARAMETERS_5418393554803775106, new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getMembers_1213877531970(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMembers_1213877531970", PARAMETERS_1213877531970, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getMethodsToOverride_5418393554803767537(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMethodsToOverride_5418393554803767537", PARAMETERS_5418393554803767537, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getMethodsToImplement_5418393554803775106(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMethodsToImplement_5418393554803775106", PARAMETERS_5418393554803775106, new Object[]{});
   }

@@ -235,6 +235,7 @@
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5060092229902868344">
       <property name="name" nameId="tpck.1169194664001" value="getModelReference" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6277750378633134026">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
       </node>
@@ -937,7 +938,7 @@
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="5060092229902868626">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5060092229902868382" resolveInfo="equals" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6277750378633134102" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5060092229902868627">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5060092229902868609" resolveInfo="object" />
               </node>
@@ -1117,7 +1118,7 @@
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="5060092229902868703">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5060092229902868382" resolveInfo="equals" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6277750378633134102" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5060092229902868704">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5060092229902868686" resolveInfo="object" />
               </node>

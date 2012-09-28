@@ -19,9 +19,9 @@ public class IGeneratedToClass_Behavior {
   private static Class[] PARAMETERS_946964771156905488 = {SNode.class};
   private static Class[] PARAMETERS_946964771156905503 = {SNode.class};
   private static Class[] PARAMETERS_4366236229294148974 = {SNode.class};
-  private static Pattern REGEXP_tq53pp_b0a1a71 = Pattern.compile("(\\w)\\W+(\\w)", 0);
-  private static Pattern REGEXP_tq53pp_b0a3a71 = Pattern.compile("(.)\\W+$", 0);
-  private static Pattern REGEXP_tq53pp_b0a5a71 = Pattern.compile("^\\W+(\\w)", 0);
+  private static Pattern REGEXP_tq53pp_b0a1a12 = Pattern.compile("(\\w)\\W+(\\w)", 0);
+  private static Pattern REGEXP_tq53pp_b0a3a12 = Pattern.compile("(.)\\W+$", 0);
+  private static Pattern REGEXP_tq53pp_b0a5a12 = Pattern.compile("^\\W+(\\w)", 0);
 
   public static void init(SNode thisNode) {
   }
@@ -74,18 +74,38 @@ public class IGeneratedToClass_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974, new Object[]{});
   }
 
+  public static String callSuperNew_getSuffix_946964771156905483(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483, new Object[]{});
+  }
+
+  public static String callSuperNew_getGeneratedClassName_946964771156905488(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488, new Object[]{});
+  }
+
+  public static String callSuperNew_getFullName_946964771156905503(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503, new Object[]{});
+  }
+
+  public static String callSuperNew_getBaseName_4366236229294148974(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getSuffix_946964771156905483(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getGeneratedClassName_946964771156905488(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getFullName_946964771156905503(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getBaseName_4366236229294148974(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974, new Object[]{});
   }
@@ -110,11 +130,11 @@ public class IGeneratedToClass_Behavior {
 
   public static String getValidClassName_3754131050835940481(@NonNls String name) {
     // in between 
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a71, new _Replacer_tq53pp_a0a0b0r(null, null));
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a12, new _Replacer_tq53pp_a0a0b0v(null, null));
     // in the end 
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a3a71, new _Replacer_tq53pp_a0a0d0r(null, null));
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a3a12, new _Replacer_tq53pp_a0a0d0v(null, null));
     // in the beggining 
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a5a71, new _Replacer_tq53pp_a0a0f0r(null, null));
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a5a12, new _Replacer_tq53pp_a0a0f0v(null, null));
     return IGeneratedToClass_Behavior.makeUpperCase_946964771156905431(name, 0);
   }
 }

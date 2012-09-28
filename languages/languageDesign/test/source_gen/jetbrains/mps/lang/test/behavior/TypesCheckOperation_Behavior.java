@@ -28,7 +28,7 @@ public class TypesCheckOperation_Behavior {
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "operationName") == null || SPropertyOperations.getString(thisNode, "operationName").length() == 0) {
-      return ITestMethod_Behavior.callSuper_getTestName_1216136419751(thisNode, "jetbrains.mps.lang.test.structure.TypesCheckOperation");
+      return ITestMethod_Behavior.callSuperNew_getTestName_1216136419751(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation");
     } else {
       return SPropertyOperations.getString(thisNode, "operationName");
     }

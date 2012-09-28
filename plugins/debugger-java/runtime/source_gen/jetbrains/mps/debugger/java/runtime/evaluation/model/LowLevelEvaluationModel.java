@@ -343,7 +343,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   @Override
   public List<Language> getRequiredLanguages() {
-    SModelDescriptor descriptor = SNodeOperations.getModel(myEvaluationContext.getLocationNode()).getModelDescriptor();
+    SNode locationNode = myEvaluationContext.getLocationNode();
+    if (locationNode == null) {
+      return super.getRequiredLanguages();
+    }
+    SModelDescriptor descriptor = SNodeOperations.getModel(locationNode).getModelDescriptor();
     return ListSequence.fromList(super.getRequiredLanguages()).union(CollectionSequence.fromCollection(descriptor.getModule().getImplicitlyImportedLanguages(descriptor))).toListSequence();
   }
 

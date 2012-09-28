@@ -39,7 +39,7 @@ public class ClassifierTypeUtil {
     }
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode at = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
-      SLinkOperations.setTarget(at, "componentType", coerceToClassifierTypeOrPrimitive(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(purified, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true))), true);
+      SLinkOperations.setTarget(at, "componentType", SNodeOperations.copyNode(coerceToClassifierTypeOrPrimitive(SLinkOperations.getTarget(SNodeOperations.cast(purified, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true))), true);
       return at;
     }
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.NullType")) {

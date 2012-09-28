@@ -23,6 +23,11 @@ public class AbstractAppendPart_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), "virtual_withIndent_1237466287046", PARAMETERS_1237466287046, new Object[]{});
   }
 
+  public static boolean callSuperNew_withIndent_1237466287046(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), callerConceptFqName, "virtual_withIndent_1237466287046", PARAMETERS_1237466287046, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_withIndent_1237466287046(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), callerConceptFqName, "virtual_withIndent_1237466287046", PARAMETERS_1237466287046, new Object[]{});
   }

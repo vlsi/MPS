@@ -124,7 +124,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
         }
         {
           String childRole_supertypesOf_ClassifierType_Iterator_2lqiec_ = "parameter";
-          if (nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a.getChildCount(childRole_supertypesOf_ClassifierType_Iterator_2lqiec_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a, childRole_supertypesOf_ClassifierType_Iterator_2lqiec_, 1))) {
             return false;
           }
           {

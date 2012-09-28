@@ -110,10 +110,20 @@ public class CommandDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
   }
 
+  public static String callSuperNew_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
+  }
+
+  public static SNode callSuperNew_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
   }

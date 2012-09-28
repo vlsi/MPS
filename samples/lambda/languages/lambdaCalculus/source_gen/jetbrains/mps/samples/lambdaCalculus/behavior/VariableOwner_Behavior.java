@@ -20,6 +20,11 @@ public class VariableOwner_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914841576, new Object[]{});
   }
 
+  public static List<SNode> callSuperNew_getVariables_8981808925914841576(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), callerConceptFqName, "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914841576, new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getVariables_8981808925914841576(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), callerConceptFqName, "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914841576, new Object[]{});
   }

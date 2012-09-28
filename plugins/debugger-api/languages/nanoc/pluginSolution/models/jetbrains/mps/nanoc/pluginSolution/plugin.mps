@@ -583,8 +583,8 @@
                                         <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="5487985028841967427" resolveInfo="myNode" />
                                       </node>
                                     </node>
-                                    <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="5487985028841967514">
-                                      <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381336" resolveInfo="getNode" />
+                                    <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2522309100156890856">
+                                      <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768315" resolveInfo="getNode" />
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="5487985028841967515" />
@@ -644,8 +644,8 @@
                               <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="5487985028841967427" resolveInfo="myNode" />
                             </node>
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="5487985028841967537">
-                            <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381336" resolveInfo="getNode" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2522309100156890853">
+                            <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768315" resolveInfo="getNode" />
                           </node>
                         </node>
                       </node>
@@ -709,8 +709,8 @@
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
           </node>
           <node role="initValue" roleId="tp2q.1237721435808" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967560">
-            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="5487985028841967561">
-              <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381357" resolveInfo="getNodePointer" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2522309100156890851">
+              <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768336" resolveInfo="getNodePointer" />
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967562">
               <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="5487985028841967563" />
@@ -733,8 +733,8 @@
               <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="5487985028841967427" resolveInfo="myNode" />
             </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="5487985028841967571">
-            <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381336" resolveInfo="getNode" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2522309100156890849">
+            <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768315" resolveInfo="getNode" />
           </node>
         </node>
       </node>
@@ -1102,10 +1102,10 @@
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841967725">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967704" resolveInfo="sourceName" />
                   </node>
-                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841967726">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtil" resolveInfo="TraceInfoUtil" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil%dgetUnitName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getUnitName" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5487985028841967727">
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="941063590543708051">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceDown%danyUnitName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="anyUnitName" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceDown" resolveInfo="TraceDown" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="941063590543708052">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967695" resolveInfo="file" />
                     </node>
                   </node>

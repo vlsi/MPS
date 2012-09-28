@@ -31,14 +31,29 @@ public class BuildLayout_ContainerAcceptingFileSet_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasFileModeAttribute_6408167411310575237", PARAMETERS_6408167411310575237, new Object[]{});
   }
 
+  public static String callSuperNew_getFileSetExtension_6408167411310575216(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), callerConceptFqName, "virtual_getFileSetExtension_6408167411310575216", PARAMETERS_6408167411310575216, new Object[]{});
+  }
+
+  public static boolean callSuperNew_hasPrefixAttribute_6408167411310575232(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), callerConceptFqName, "virtual_hasPrefixAttribute_6408167411310575232", PARAMETERS_6408167411310575232, new Object[]{});
+  }
+
+  public static boolean callSuperNew_hasFileModeAttribute_6408167411310575237(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), callerConceptFqName, "virtual_hasFileModeAttribute_6408167411310575237", PARAMETERS_6408167411310575237, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getFileSetExtension_6408167411310575216(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), callerConceptFqName, "virtual_getFileSetExtension_6408167411310575216", PARAMETERS_6408167411310575216, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_hasPrefixAttribute_6408167411310575232(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), callerConceptFqName, "virtual_hasPrefixAttribute_6408167411310575232", PARAMETERS_6408167411310575232, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_hasFileModeAttribute_6408167411310575237(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), callerConceptFqName, "virtual_hasFileModeAttribute_6408167411310575237", PARAMETERS_6408167411310575237, new Object[]{});
   }

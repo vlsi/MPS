@@ -19,8 +19,14 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Use BaseNodePointerItem
+ */
+@Deprecated
+@ToRemove(version = 3.0)
 public abstract class BaseNodeItem implements NavigationItem {
   private SNode myNode;
 

@@ -51,6 +51,9 @@ public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescripto
             ISearchScope searchScope;
             if ((snodeType != null)) {
               SNode concept = SLinkOperations.getTarget(snodeType, "concept", false);
+              if ((concept == null)) {
+                concept = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+              }
               List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode());
               searchScope = new SimpleSearchScope(methods);
             } else {

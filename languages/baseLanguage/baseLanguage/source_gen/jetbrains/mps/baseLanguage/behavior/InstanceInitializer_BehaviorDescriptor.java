@@ -5,8 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor {
   public InstanceInitializer_BehaviorDescriptor() {
@@ -20,6 +19,10 @@ public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_Behavior
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
   }
 
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  }
+
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return InstanceInitializer_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
@@ -28,16 +31,16 @@ public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_Behavior
     return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    return InstanceInitializer_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  }
-
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return InstanceInitializer_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   @Override

@@ -9,9 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.importRefPart(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), this);
     BaseLanguageTextGen.methodTypeArguments(node, this);
-    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), true));
+    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), this);
     BaseLanguageTextGen.typeParameters(SLinkOperations.getTargets(node, "typeParameter", true), this);
     BaseLanguageTextGen.arguments(node, this);
   }

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 @MPSLaunch
 public class Patternv2_Test extends BaseTransformationTest4 {
@@ -186,7 +187,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_v2_1fi_ = "statement";
-            if (nodeToMatch_v2_1fi_a0.getChildCount(childRole_v2_1fi_) != 3) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_a0, childRole_v2_1fi_, 3))) {
               return false;
             }
             {
@@ -202,7 +203,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                 }
                 {
                   String childRole_v2_1fi__0 = "condition";
-                  if (nodeToMatch_v2_1fi_b0a.getChildCount(childRole_v2_1fi__0) != 1) {
+                  if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_b0a, childRole_v2_1fi__0, 1))) {
                     return false;
                   }
                   {
@@ -215,7 +216,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                       }
                       {
                         String childRole_v2_1fi__1 = "leftExpression";
-                        if (nodeToMatch_v2_1fi_a1a0.getChildCount(childRole_v2_1fi__1) != 1) {
+                        if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_a1a0, childRole_v2_1fi__1, 1))) {
                           return false;
                         }
                         {
@@ -225,7 +226,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                       }
                       {
                         String childRole_v2_1fi__2 = "rightExpression";
-                        if (nodeToMatch_v2_1fi_a1a0.getChildCount(childRole_v2_1fi__2) != 1) {
+                        if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_a1a0, childRole_v2_1fi__2, 1))) {
                           return false;
                         }
                         {
@@ -244,7 +245,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                 }
                 {
                   String childRole_v2_1fi__3 = "ifTrue";
-                  if (nodeToMatch_v2_1fi_b0a.getChildCount(childRole_v2_1fi__3) != 1) {
+                  if (!(PatternUtil.hasNChildren(nodeToMatch_v2_1fi_b0a, childRole_v2_1fi__3, 1))) {
                     return false;
                   }
                   {

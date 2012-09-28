@@ -43,7 +43,7 @@ public class ModelLinkMap {
   public ModelLinkMap build() {
     // build map based on already loaded model 
     for (SNode node : myModel.nodes()) {
-      addRoleLocation(ptr(node.getRoleLink()), node);
+      addRoleLocation(ptr(SNodeOperations.getContainingLinkDeclaration(node)), node);
       addTypeLocation(ptr(SNodeOperations.getConceptDeclaration(node)), node);
       for (String prop : SetSequence.fromSet(node.getPropertyNames())) {
         addNameLocation(ptr(node.getPropertyDeclaration(prop)), node, prop);
@@ -272,7 +272,7 @@ public class ModelLinkMap {
   }
 
   private static <K, T> void addValue(Map<K, List<T>> map, K key, T value) {
-    if (value == null) {
+    if (key == null || value == null) {
       return;
     }
     List<T> list = MapSequence.fromMap(map).get(key);

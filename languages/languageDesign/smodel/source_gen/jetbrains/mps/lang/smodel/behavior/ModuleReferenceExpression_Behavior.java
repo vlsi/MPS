@@ -43,6 +43,11 @@ public class ModuleReferenceExpression_Behavior {
     return (List<IModule>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), "virtual_getVisibleModules_4040588429969394404", PARAMETERS_4040588429969394404, new Object[]{scope});
   }
 
+  public static List<IModule> callSuperNew_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName, IScope scope) {
+    return (List<IModule>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", PARAMETERS_4040588429969394404, new Object[]{scope});
+  }
+
+  @Deprecated
   public static List<IModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName, IScope scope) {
     return (List<IModule>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", PARAMETERS_4040588429969394404, new Object[]{scope});
   }

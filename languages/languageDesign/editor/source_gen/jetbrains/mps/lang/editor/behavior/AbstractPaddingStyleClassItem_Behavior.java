@@ -27,6 +27,11 @@ public class AbstractPaddingStyleClassItem_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000, new Object[]{});
   }
 
+  public static boolean callSuperNew_canUseSpaces_1226492824000(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), callerConceptFqName, "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_canUseSpaces_1226492824000(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), callerConceptFqName, "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000, new Object[]{});
   }

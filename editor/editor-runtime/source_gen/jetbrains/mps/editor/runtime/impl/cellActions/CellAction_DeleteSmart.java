@@ -32,7 +32,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       SNodeOperations.deleteNode(myTarget);
       if (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1")) {
         SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, "target", false), SNodeOperations.getModel(mySource));
-        mySource.setChild(SPropertyOperations.getString(genuineLinkDeclaration, "role"), defaultTarget);
+        SLinkOperations.setTarget(mySource, SPropertyOperations.getString(genuineLinkDeclaration, "role"), defaultTarget, true);
       }
     } else {
       // <node> 

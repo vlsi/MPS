@@ -15,18 +15,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
-import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
-import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.scopes.runtime.LazyScope;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -56,7 +50,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
@@ -122,27 +116,12 @@ public class FieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return new EmptyScope();
-  }
-
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
-    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
-      return new EmptyScope();
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    if (!((context.isElementVisible(thisNode)))) {
+      return;
     }
-
-    // todo: not .field but .children.filter, .field only as optimize 
-    Scope fields = new NamedElementsScope(SLinkOperations.getTargets(classNode, "field", true));
-    if ((extendsClass != null)) {
-      // hiding based on name 
-      return Scopes.defaultWithNameHiding(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), fields, new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {
-        public Scope invoke() {
-          return ((Scope) BehaviorManager.getInstance().invoke(Object.class, extendsClass, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
-        }
-      }));
-    } else {
-      return fields;
-    }
+    context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+    context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377970(SNode thisNode) {
@@ -170,22 +149,47 @@ public class FieldDeclaration_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550861, new Object[]{});
   }
 
+  public static Icon callSuperNew_getAdditionalIcon_8884554759541377970(SNode thisNode, String callerConceptFqName) {
+    return (Icon) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377970, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459890, new Object[]{});
+  }
+
+  public static String callSuperNew_getSuffix_3012473318495506736(SNode thisNode, String callerConceptFqName, Project project) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506736, new Object[]{project});
+  }
+
+  public static String callSuperNew_getPrefix_3012473318495506730(SNode thisNode, String callerConceptFqName, Project project) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506730, new Object[]{project});
+  }
+
+  public static String callSuperNew_getTraceableProperty_2496361171403550861(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550861, new Object[]{});
+  }
+
+  @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541377970(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377970, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459890, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getSuffix_3012473318495506736(SNode thisNode, String callerConceptFqName, Project project) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506736, new Object[]{project});
   }
 
+  @Deprecated
   public static String callSuper_getPrefix_3012473318495506730(SNode thisNode, String callerConceptFqName, Project project) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506730, new Object[]{project});
   }
 
+  @Deprecated
   public static String callSuper_getTraceableProperty_2496361171403550861(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550861, new Object[]{});
   }

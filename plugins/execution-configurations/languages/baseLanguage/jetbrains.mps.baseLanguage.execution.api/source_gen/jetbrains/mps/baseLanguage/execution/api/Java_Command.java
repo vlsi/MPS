@@ -10,7 +10,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.CommandPart;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -28,15 +27,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
+import jetbrains.mps.generator.traceInfo.TraceDown;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.reloading.ClasspathStringCollector;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import java.util.Set;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -46,7 +44,6 @@ import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
@@ -71,76 +68,6 @@ public class Java_Command {
   private CommandPart myVirtualMachineParameter_ProcessBuilderCommandPart;
 
   public Java_Command() {
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setWorkingDirectory(File workingDirectory) {
-    // this methods only exist to not make users regenerate their code 
-    if (workingDirectory != null) {
-      myWorkingDirectory_File = workingDirectory;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setJrePath(String jrePath) {
-    // this methods only exist to not make users regenerate their code 
-    if (jrePath != null) {
-      myJrePath_String = jrePath;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setProgramParameter(String programParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (programParameter != null) {
-      myProgramParameter_String = programParameter;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setVirtualMachineParameter(String virtualMachineParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (virtualMachineParameter != null) {
-      myVirtualMachineParameter_String = virtualMachineParameter;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setClassPath(List<String> classPath) {
-    // this methods only exist to not make users regenerate their code 
-    if (classPath != null) {
-      myClassPath_ListString = classPath;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setDebuggerSettings(String debuggerSettings) {
-    // this methods only exist to not make users regenerate their code 
-    if (debuggerSettings != null) {
-      myDebuggerSettings_String = debuggerSettings;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setVirtualMachineParameter(CommandPart virtualMachineParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (virtualMachineParameter != null) {
-      myVirtualMachineParameter_ProcessBuilderCommandPart = virtualMachineParameter;
-    }
-    return this;
   }
 
   public Java_Command setWorkingDirectory_File(File workingDirectory) {
@@ -276,31 +203,20 @@ public class Java_Command {
           }
           className.value = null;
         } else {
-          List<UnitPositionInfo> unitForNode = debugInfo.getUnitsForNode(node.getId());
-          if (ListSequence.fromList(unitForNode).isEmpty()) {
+          Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
+          if (Sequence.fromIterable(unitNames).isEmpty()) {
             if (log.isErrorEnabled()) {
               log.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
             }
             className.value = null;
-          } else if ((int) ListSequence.fromList(unitForNode).count() == 1) {
-            className.value = ListSequence.fromList(unitForNode).first().getUnitName();
+          } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
+            className.value = Sequence.fromIterable(unitNames).first();
           } else {
-            DebugInfoRoot infoRoot = debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node).getId());
-            for (final TraceablePositionInfo position : SetSequence.fromSet(infoRoot.getPositions())) {
-              if (eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-                if (eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class})))) {
-                  UnitPositionInfo unit = ListSequence.fromList(unitForNode).findFirst(new IWhereFilter<UnitPositionInfo>() {
-                    public boolean accept(UnitPositionInfo it) {
-                      return it.isPositionInside(position.getFileName(), position.getStartLine());
-                    }
-                  });
-                  if (unit != null) {
-                    className.value = unit.getUnitName();
-                    break;
-                  }
-                }
+            className.value = TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
+              public Boolean invoke(TraceablePositionInfo position) {
+                return (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c_0(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}))));
               }
-            }
+            });
           }
         }
       }
@@ -341,7 +257,9 @@ public class Java_Command {
     if (withDependencies) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), false).accept(visitor);
+          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE))) {
+            m.getClassPathItem().accept(visitor);
+          }
         }
       });
     }
@@ -502,14 +420,14 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -520,8 +438,8 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  public static class QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2 {
-    public QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2() {
+  public static class QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2 {
+    public QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2() {
     }
 
     public SNode createNode() {

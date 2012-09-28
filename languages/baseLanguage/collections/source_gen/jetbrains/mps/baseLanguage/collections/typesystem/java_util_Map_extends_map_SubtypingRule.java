@@ -153,7 +153,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
         }
         {
           String childRole_java_util_Map_extends_map_4xhv5l_ = "parameter";
-          if (nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildCount(childRole_java_util_Map_extends_map_4xhv5l_) != 2) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a, childRole_java_util_Map_extends_map_4xhv5l_, 2))) {
             return false;
           }
           {

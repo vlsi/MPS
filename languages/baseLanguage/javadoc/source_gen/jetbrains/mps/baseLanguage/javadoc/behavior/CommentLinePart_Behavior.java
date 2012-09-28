@@ -25,6 +25,11 @@ public class CommentLinePart_Behavior {
     return (NodeCaretPair) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, new Object[]{isBeginning});
   }
 
+  public static NodeCaretPair callSuperNew_smartDelete_9042833497008205283(SNode thisNode, String callerConceptFqName, boolean isBeginning) {
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, new Object[]{isBeginning});
+  }
+
+  @Deprecated
   public static NodeCaretPair callSuper_smartDelete_9042833497008205283(SNode thisNode, String callerConceptFqName, boolean isBeginning) {
     return (NodeCaretPair) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, new Object[]{isBeginning});
   }

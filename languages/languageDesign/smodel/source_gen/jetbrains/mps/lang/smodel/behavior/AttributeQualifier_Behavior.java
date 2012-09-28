@@ -41,6 +41,11 @@ public class AttributeQualifier_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
   }
 
+  public static SNode callSuperNew_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
   }

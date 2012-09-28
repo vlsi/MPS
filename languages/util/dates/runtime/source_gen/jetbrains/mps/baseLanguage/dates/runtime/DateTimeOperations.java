@@ -151,6 +151,7 @@ public class DateTimeOperations {
           defValues :
           0L
         ));
+        formatter = formatter.withDefaultYear(mdt.getYear());
         int res = formatter.parseInto(mdt, datetimeString, 0);
         if (res <= 0) {
           throw new IllegalArgumentException(datetimeString);
@@ -175,6 +176,7 @@ public class DateTimeOperations {
     try {
       if (defValue != null) {
         MutableDateTime mdt = new MutableDateTime(defValue);
+        formatter = formatter.withDefaultYear(mdt.getYear());
         int res = formatter.parseInto(mdt, datetimeString, 0);
         if (res <= 0) {
           throw new IllegalArgumentException(datetimeString);
@@ -363,7 +365,7 @@ public class DateTimeOperations {
     if (leftExpression == null || rightExpression == null) {
       result = null;
     } else {
-      result = new Period(rightExpression, leftExpression, periodType);
+      result = new Period((long) rightExpression, (long) leftExpression, periodType);
     }
     return result;
   }

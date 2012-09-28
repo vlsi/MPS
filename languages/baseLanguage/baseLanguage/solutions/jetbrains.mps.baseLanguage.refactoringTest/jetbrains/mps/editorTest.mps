@@ -374,10 +374,6 @@
       <property name="name" nameId="tpck.1169194664001" value="PriorityCheckTest" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
     </node>
-    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7164702912147669285">
-      <property name="name" nameId="tpck.1169194664001" value="SubstitutionOfMethodWithNameSimularToStaticMethod" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="intelligentInputUtil" />
-    </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8547191361977403062">
       <property name="name" nameId="tpck.1169194664001" value="ReturnFollowerByVarName" />
       <property name="description" nameId="tp5g.1883175908513350760" value="Checking tight transform action on typing variable name after return statement (see http://youtrack.jetbrains.net/issue/MPS-6152)" />
@@ -3612,7 +3608,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5423119640845749264">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getOperationContext" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srng.~EditorComponent%dgetOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getOperationContext" />
             </node>
           </node>
         </node>
@@ -5836,76 +5832,6 @@
           </node>
           <node role="after" roleId="tp5g.1211979322383" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="773876005319340035">
             <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="773876005319283383" resolveInfo="toCheck" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="7164702912147669285">
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7164702912147697389">
-      <property name="name" nameId="tpck.1169194664001" value="Clazz" />
-      <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2567318117465220477">
-        <property name="name" nameId="tpck.1169194664001" value="tmp" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2567318117465220478" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2567318117465220479" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2567318117465220480" />
-      </node>
-      <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7164702912147697401">
-        <property name="name" nameId="tpck.1169194664001" value="tmp" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7164702912147697402" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7164702912147697403" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7164702912147697404" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7164702912147697390" />
-      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7164702912147697391">
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7164702912147697392" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7164702912147697393" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7164702912147697394">
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2576168041330184809">
-            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
-            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
-            <property name="cellId" nameId="tp5g.1229194968595" value="Constant_u338ov_a0a" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="result" roleId="tp5g.1229187707859" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7164702912147697395">
-      <property name="name" nameId="tpck.1169194664001" value="Clazz" />
-      <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2567318117465220485">
-        <property name="name" nameId="tpck.1169194664001" value="tmp" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2567318117465220486" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2567318117465220487" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2567318117465220488" />
-      </node>
-      <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7164702912147697405">
-        <property name="name" nameId="tpck.1169194664001" value="tmp" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7164702912147697406" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7164702912147697407" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7164702912147697408" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7164702912147697396" />
-      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7164702912147697397">
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7164702912147697398" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7164702912147697399" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7164702912147697400" />
-      </node>
-    </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7164702912147724012">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7164702912147724013">
-        <property name="keys" nameId="tp5g.1227184461946" value="tmp" />
-      </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="7164702912147739104">
-        <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7164702912147739106">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7164702912147739107">
-            <node role="operand" roleId="tpee.1197027771414" type="tp5g.EditorComponentExpression" typeId="tp5g.5773579205429866751" id="7164702912147739108" />
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7164702912147739109">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
-            </node>
-          </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7164702912147739110">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolveInfo="isVisible" />
           </node>
         </node>
       </node>

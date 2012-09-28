@@ -19,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.Icons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

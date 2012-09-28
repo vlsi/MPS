@@ -8,5 +8,8 @@
   <dependency className="jetbrains.mps.build.sandbox.build1.buildD" file="buildD.xml" />
   <dependency className="jetbrains.mps.build.sandbox.build1.buildE" file="buildE.xml" />
   <dependency className="jetbrains.mps.build.sandbox.build1.buildPlugin" file="buildPlugin.xml" />
+  <dependency className="jetbrains.mps.build.sandbox.build1.buildY" file="buildY.xml" />
+  <dependency className="jetbrains.mps.build.sandbox.build1.buildZ" file="buildZ.xml" />
+  <dependency className="jetbrains.mps.build.sandbox.build1.buildZZ" file="buildZZ.xml" />
 </dependenciesRoot>
 

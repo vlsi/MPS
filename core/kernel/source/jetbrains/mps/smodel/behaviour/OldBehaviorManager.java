@@ -219,28 +219,32 @@ public final class OldBehaviorManager implements CoreComponent {
     });
   }
 
+  @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return _invokeInternal(returnType, node, null, methodName, parametersTypes, parameters);
+    return _invokeInternal(returnType, node, node.getConceptFqName(), true, methodName, parametersTypes, parameters);
   }
 
+  @Deprecated
+  public <T> T invokeWithConceptFqName(Class<T> returnType, SNode node, String conceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
+    return _invokeInternal(returnType, node, conceptFqName, true, methodName, parametersTypes, parameters);
+  }
+
+  @Deprecated
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return _invokeInternal(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+    return _invokeInternal(returnType, node, callerConceptFqName, false, methodName, parametersTypes, parameters);
   }
 
-  private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
+  @Deprecated
+  private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, @NotNull String conceptFqName, boolean includeSelf, String methodName, Class[] parametersTypes, Object... parameters) {
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (concept == null) {
+      concept = SModelUtil.getBaseConcept();
+    }
+
     List<SNode> superConcepts;
-    SNode concept;
-    if (callerConceptFqName == null) {
-      concept = node.getConceptDeclarationNode();
-      if (concept == null) {
-        concept = SModelUtil.getBaseConcept();
-      }
+    if (includeSelf) {
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
-      concept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
-      if (concept == null) {
-        concept = SModelUtil.getBaseConcept();
-      }
       superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(concept));
       superConcepts.remove(concept);
     }

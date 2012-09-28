@@ -19,6 +19,11 @@ public class IInternalType_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IInternalType"), "virtual_getPublicType_1213877443338", PARAMETERS_1213877443338, new Object[]{});
   }
 
+  public static SNode callSuperNew_getPublicType_1213877443338(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IInternalType"), callerConceptFqName, "virtual_getPublicType_1213877443338", PARAMETERS_1213877443338, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getPublicType_1213877443338(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IInternalType"), callerConceptFqName, "virtual_getPublicType_1213877443338", PARAMETERS_1213877443338, new Object[]{});
   }

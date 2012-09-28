@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InternalStaticFieldReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
+    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     this.append(".");
     this.append(SPropertyOperations.getString(node, "fieldName"));
   }

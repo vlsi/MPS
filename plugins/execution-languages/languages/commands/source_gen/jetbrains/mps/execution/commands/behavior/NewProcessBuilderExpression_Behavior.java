@@ -23,6 +23,11 @@ public class NewProcessBuilderExpression_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870, new Object[]{});
   }
 
+  public static boolean callSuperNew_isLegalAsStatement_889694274152026870(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLegalAsStatement_889694274152026870(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870, new Object[]{});
   }

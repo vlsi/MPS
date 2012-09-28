@@ -12,7 +12,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class InternalClassifierType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     String fqClassName = SPropertyOperations.getString(node, "fqClassName");
-    BaseLangInternal.className(fqClassName, this);
+    BaseLangInternal.className(fqClassName, node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {

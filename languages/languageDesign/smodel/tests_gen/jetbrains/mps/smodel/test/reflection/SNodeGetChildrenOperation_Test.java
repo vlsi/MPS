@@ -158,7 +158,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest4 {
 
     public String addUnspecifiedChild(SNode input, SNode unspecifiedChild) {
       String unspecifiedChildRole = "unspecifiedChild";
-      input.setChild(unspecifiedChildRole, unspecifiedChild);
+      input.addChild(unspecifiedChildRole, unspecifiedChild);
       return unspecifiedChildRole;
     }
   }

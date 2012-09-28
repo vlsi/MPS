@@ -109,26 +109,56 @@ public class BaseConcept_Behavior {
     return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMetaLevel_3981318653438234726", PARAMETERS_3981318653438234726, new Object[]{});
   }
 
+  public static Icon callSuperNew_getAdditionalIcon_5017341185733863694(SNode thisNode, String callerConceptFqName) {
+    return (Icon) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694, new Object[]{});
+  }
+
+  public static List<Icon> callSuperNew_getMarkIcons_3923831204883340393(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_3923831204883340393, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isRunnable_7941158526576616752(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616752, new Object[]{});
+  }
+
+  public static String callSuperNew_getPresentation_1213877396640(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640, new Object[]{});
+  }
+
+  public static String callSuperNew_getDetailedPresentation_2354269628709769373(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getDetailedPresentation_2354269628709769373", PARAMETERS_2354269628709769373, new Object[]{});
+  }
+
+  public static int callSuperNew_getMetaLevel_3981318653438234726(SNode thisNode, String callerConceptFqName) {
+    return (Integer) BehaviorManager.getInstance().invokeSuperNew(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getMetaLevel_3981318653438234726", PARAMETERS_3981318653438234726, new Object[]{});
+  }
+
+  @Deprecated
   public static Icon callSuper_getAdditionalIcon_5017341185733863694(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694, new Object[]{});
   }
 
+  @Deprecated
   public static List<Icon> callSuper_getMarkIcons_3923831204883340393(SNode thisNode, String callerConceptFqName) {
     return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_3923831204883340393, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isRunnable_7941158526576616752(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616752, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getPresentation_1213877396640(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getDetailedPresentation_2354269628709769373(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getDetailedPresentation_2354269628709769373", PARAMETERS_2354269628709769373, new Object[]{});
   }
 
+  @Deprecated
   public static int callSuper_getMetaLevel_3981318653438234726(SNode thisNode, String callerConceptFqName) {
     return (Integer) BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getMetaLevel_3981318653438234726", PARAMETERS_3981318653438234726, new Object[]{});
   }

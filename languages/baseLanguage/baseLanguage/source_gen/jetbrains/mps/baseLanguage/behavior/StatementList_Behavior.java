@@ -157,6 +157,11 @@ public class StatementList_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550911, new Object[]{});
   }
 
+  public static List<SNode> callSuperNew_getScopeVariables_2496361171403550911(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550911, new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getScopeVariables_2496361171403550911(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550911, new Object[]{});
   }

@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
@@ -14,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
@@ -22,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.LocalArtifacts" />
+    <classNode dependClassName="jetbrains.mps.build.util.LocalSourcePathArtifact" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />

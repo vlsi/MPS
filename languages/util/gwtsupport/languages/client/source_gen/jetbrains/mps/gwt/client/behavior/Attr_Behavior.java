@@ -19,6 +19,11 @@ public class Attr_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Attr"), "virtual_getXmlAttr_3852159904898525999", PARAMETERS_3852159904898525999, new Object[]{});
   }
 
+  public static String callSuperNew_getXmlAttr_3852159904898525999(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Attr"), callerConceptFqName, "virtual_getXmlAttr_3852159904898525999", PARAMETERS_3852159904898525999, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getXmlAttr_3852159904898525999(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Attr"), callerConceptFqName, "virtual_getXmlAttr_3852159904898525999", PARAMETERS_3852159904898525999, new Object[]{});
   }

@@ -60,18 +60,38 @@ public class IConceptAspect_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, new Object[]{candidate});
   }
 
+  public static SNode callSuperNew_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getBaseConceptCollection_5270353093116013036(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116013036, new Object[]{});
+  }
+
+  public static void callSuperNew_setBaseConcept_6261424444345963020(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345963020, new Object[]{baseConcept});
+  }
+
+  public static boolean callSuperNew_isApplicable_7839831476331657915(SNode thisNode, String callerConceptFqName, SNode candidate) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, new Object[]{candidate});
+  }
+
+  @Deprecated
   public static SNode callSuper_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getBaseConceptCollection_5270353093116013036(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116013036, new Object[]{});
   }
 
+  @Deprecated
   public static void callSuper_setBaseConcept_6261424444345963020(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345963020, new Object[]{baseConcept});
   }
 
+  @Deprecated
   public static boolean callSuper_isApplicable_7839831476331657915(SNode thisNode, String callerConceptFqName, SNode candidate) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, new Object[]{candidate});
   }

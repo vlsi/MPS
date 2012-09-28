@@ -24,7 +24,6 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="53gy" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" version="-1" />
-  <import index="uekr" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.newTypesystem(MPS.Core/jetbrains.mps.newTypesystem@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -10875,11 +10874,15 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
                   </node>
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3288205023339551747">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~SubtypingUtil%dmostSpecificTypes(java%dutil%dSet)%cjava%dutil%dSet" resolveInfo="mostSpecificTypes" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="uekr.~SubtypingUtil" resolveInfo="SubtypingUtil" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2706803607794600005">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2706803607794599992" resolveInfo="goodParamTypes" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2706803607794600002">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2706803607794600003">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2706803607794599802" resolveInfo="subtypingManager" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2706803607794600004">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~SubtypingManager%dmostSpecificTypes(java%dutil%dSet)%cjava%dutil%dSet" resolveInfo="mostSpecificTypes" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2706803607794600005">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2706803607794599992" resolveInfo="goodParamTypes" />
+                    </node>
                   </node>
                 </node>
               </node>

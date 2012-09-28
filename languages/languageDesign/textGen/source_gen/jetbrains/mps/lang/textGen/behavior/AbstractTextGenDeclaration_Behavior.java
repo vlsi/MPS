@@ -34,10 +34,20 @@ public class AbstractTextGenDeclaration_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746, new Object[]{});
   }
 
+  public static String callSuperNew_getTextGenNode_1234784577703(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getAvailableOperations_1234781444746(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getTextGenNode_1234784577703(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getAvailableOperations_1234781444746(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746, new Object[]{});
   }

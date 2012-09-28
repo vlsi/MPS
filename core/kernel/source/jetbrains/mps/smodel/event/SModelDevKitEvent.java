@@ -21,10 +21,12 @@ import jetbrains.mps.smodel.SNode;
 
 public class SModelDevKitEvent extends SModelEvent {
   private ModuleReference myDevKit;
+  private boolean myAdded;
 
-  public SModelDevKitEvent(SModel model, ModuleReference devKit) {
+  public SModelDevKitEvent(SModel model, ModuleReference devKit, boolean added) {
     super(model);
     myDevKit = devKit;
+    myAdded = added;
   }
 
   public SNode getAffectedRoot() {
@@ -33,6 +35,10 @@ public class SModelDevKitEvent extends SModelEvent {
 
   public ModuleReference getDevkitNamespace() {
     return myDevKit;
+  }
+
+  public boolean isAdded() {
+    return myAdded;
   }
 
   public void accept(SModelEventVisitor visitor) {

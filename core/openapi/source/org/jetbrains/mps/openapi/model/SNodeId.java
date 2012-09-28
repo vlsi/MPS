@@ -15,5 +15,8 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.mps.annotations.Immutable;
+
+@Immutable
 public interface SNodeId {
 }

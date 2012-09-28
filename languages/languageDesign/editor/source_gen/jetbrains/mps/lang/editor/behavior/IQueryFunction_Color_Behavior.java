@@ -33,10 +33,20 @@ public class IQueryFunction_Color_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), "virtual_getRGBValue_1225468086082", PARAMETERS_1225468086082, new Object[]{});
   }
 
+  public static boolean callSuperNew_isFunction_1225463329531(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_isFunction_1225463329531", PARAMETERS_1225463329531, new Object[]{});
+  }
+
+  public static String callSuperNew_getRGBValue_1225468086082(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_getRGBValue_1225468086082", PARAMETERS_1225468086082, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isFunction_1225463329531(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_isFunction_1225463329531", PARAMETERS_1225463329531, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getRGBValue_1225468086082(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_getRGBValue_1225468086082", PARAMETERS_1225468086082, new Object[]{});
   }

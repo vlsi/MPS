@@ -97,6 +97,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior" file="LambdaAbstraction_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -160,6 +161,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_Behavior" file="LetExpression_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -268,6 +270,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior" file="VariableOwner_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />

@@ -34,6 +34,11 @@ public class InlineTagCommentLinePart_Behavior {
     return (NodeCaretPair) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, new Object[]{isBegining});
   }
 
+  public static NodeCaretPair callSuperNew_smartDelete_3633133276124360200(SNode thisNode, String callerConceptFqName, boolean isBegining) {
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, new Object[]{isBegining});
+  }
+
+  @Deprecated
   public static NodeCaretPair callSuper_smartDelete_3633133276124360200(SNode thisNode, String callerConceptFqName, boolean isBegining) {
     return (NodeCaretPair) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, new Object[]{isBegining});
   }

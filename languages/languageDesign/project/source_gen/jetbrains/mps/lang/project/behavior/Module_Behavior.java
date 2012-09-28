@@ -44,14 +44,29 @@ public class Module_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628, new Object[]{});
   }
 
+  public static String callSuperNew_getFqName_6370754048397730432(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432, new Object[]{});
+  }
+
+  public static String callSuperNew_getPresentation_6370754048397730452(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_6370754048397730452, new Object[]{});
+  }
+
+  public static String callSuperNew_getModuleReference_9020561928507315628(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getFqName_6370754048397730432(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getPresentation_6370754048397730452(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_6370754048397730452, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getModuleReference_9020561928507315628(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628, new Object[]{});
   }

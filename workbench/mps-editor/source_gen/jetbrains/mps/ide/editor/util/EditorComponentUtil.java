@@ -80,7 +80,7 @@ public class EditorComponentUtil {
       SNode editedNode = component.getEditedNode();
       return editedNode != null && editedNode.isAncestorOf(node) && (editedNode != node);
     } else {
-      return component.getEditedNode() == node.getContainingRoot();
+      return component.getEditedNode() == node.getTopmostAncestor();
     }
   }
 

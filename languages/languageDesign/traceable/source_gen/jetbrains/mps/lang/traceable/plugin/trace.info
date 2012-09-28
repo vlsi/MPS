@@ -4,7 +4,7 @@
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.traceable.plugin.FacetAspectDescriptor$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.traceable.plugin.FacetManifest$1" />
-  <root nodeId="258639336594455174">
+  <root nodeId="258639336594455174" modelId="r:5f0c27e5-e1ec-4f3f-b291-f998455a0103(jetbrains.mps.lang.traceable.plugin)">
     <nodeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="33" startPosition="54" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="34" startPosition="82" endLine="35" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="37" startPosition="32" endLine="38" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

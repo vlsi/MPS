@@ -21,10 +21,12 @@ import jetbrains.mps.smodel.SNode;
 
 public class SModelImportEvent extends SModelEvent {
   private SModelReference myModelReference;
+  private boolean myAdded;
 
-  public SModelImportEvent(SModel model, SModelReference modelReference) {
+  public SModelImportEvent(SModel model, SModelReference modelReference, boolean added) {
     super(model);
     myModelReference = modelReference;
+    myAdded = added;
   }
 
   public SNode getAffectedRoot() {
@@ -33,6 +35,10 @@ public class SModelImportEvent extends SModelEvent {
 
   public SModelReference getModelUID() {
     return myModelReference;
+  }
+
+  public boolean isAdded() {
+    return myAdded;
   }
 
   public void accept(SModelEventVisitor visitor) {

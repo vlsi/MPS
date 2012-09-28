@@ -40,7 +40,9 @@ public class ClassifierScopeUtils {
     return result.toString();
   }
 
+  @Deprecated
   public static String getMethodSignatureForOverriding(SNode contextClassifier, SNode method) {
+    // use MethodSignature instead 
     return SPropertyOperations.getString(method, "name") + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
   }
 

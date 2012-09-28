@@ -445,7 +445,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9003987136928266182" resolveInfo="comp" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9003987136928266197">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Scrollable%dgetClientArea()%corg%declipse%dswt%dgraphics%dRectangle" resolveInfo="getClientArea" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Composite%dgetClientArea()%corg%declipse%dswt%dgraphics%dRectangle" resolveInfo="getClientArea" />
               </node>
             </node>
           </node>
@@ -2527,7 +2527,7 @@
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1045595646440107368">
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1045595646440107369">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Widget%dgetData(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getData" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dgetData(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getData" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="1045595646440107383">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6502165566452098002" resolveInfo="PADDING" />
                                       </node>
@@ -3303,7 +3303,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1513919493268405299" resolveInfo="pad" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1513919493268405463">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Widget%dgetData(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getData" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dgetData(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getData" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="1513919493268405509">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6502165566452098002" resolveInfo="PADDING" />
                   </node>

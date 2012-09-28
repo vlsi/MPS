@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" file="AbstractComponent_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -22,6 +23,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.AbstractPaddingStyleClassItem_Behavior" file="AbstractPaddingStyleClassItem_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -276,6 +278,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior" file="BooleanStyleSheetItem_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
@@ -312,6 +315,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_Behavior" file="CellActionMapDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -355,6 +359,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapDeclaration_Behavior" file="CellKeyMapDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -518,6 +523,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuComponent_Behavior" file="CellMenuComponent_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1061,6 +1067,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_Behavior" file="CellModel_RefNodeList_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
@@ -1117,6 +1124,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_URL_Behavior" file="CellModel_URL_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1137,6 +1145,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior" file="CellModel_WithRole_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1167,6 +1176,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_Behavior" file="ConceptEditorDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -1321,6 +1331,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.Object" />
@@ -1355,6 +1366,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.EditorComponentDeclaration_Behavior" file="EditorComponentDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1455,6 +1467,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior" file="IQueryFunction_Color_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1469,6 +1482,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior" file="IStyleContainer_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1795,6 +1809,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" file="QueryFunction_ParametersList_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -1949,6 +1964,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" file="StyleClassItem_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

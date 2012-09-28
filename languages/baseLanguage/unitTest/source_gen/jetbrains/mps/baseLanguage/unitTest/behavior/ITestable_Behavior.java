@@ -23,6 +23,11 @@ public class ITestable_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089, new Object[]{});
   }
 
+  public static boolean callSuperNew_isMpsStartRequired_3310779261129403089(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isMpsStartRequired_3310779261129403089(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089, new Object[]{});
   }

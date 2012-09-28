@@ -26,6 +26,11 @@ public class PersistentConfigurationType_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), "virtual_getMembers_1213877402148", PARAMETERS_946964771156066373, new Object[]{contextNode});
   }
 
+  public static List<SNode> callSuperNew_getMembers_946964771156066373(SNode thisNode, String callerConceptFqName, SNode contextNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_946964771156066373, new Object[]{contextNode});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getMembers_946964771156066373(SNode thisNode, String callerConceptFqName, SNode contextNode) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_946964771156066373, new Object[]{contextNode});
   }

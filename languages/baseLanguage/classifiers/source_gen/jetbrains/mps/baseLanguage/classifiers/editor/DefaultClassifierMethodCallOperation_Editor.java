@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -14,8 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
@@ -41,6 +41,10 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   private EditorCell createCollection_c9gv4j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c9gv4j_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new DefaultClassifierMethodParameterInformationQuery());
+    }
     editorCell.addEditorCell(this.createRefCell_c9gv4j_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c9gv4j_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_c9gv4j_c0(editorContext, node));

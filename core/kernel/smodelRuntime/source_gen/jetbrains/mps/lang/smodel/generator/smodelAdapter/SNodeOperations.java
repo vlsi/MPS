@@ -22,6 +22,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SReference;
 
 public class SNodeOperations {
@@ -680,7 +681,12 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    return childNode.getRoleLink();
+    String role = childNode.getRole();
+    if (role == null) {
+      return null;
+    }
+    SNode c = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(childNode));
+    return SModelSearchUtil.findLinkDeclaration(c, role);
   }
 
   public static String getContainingLinkRole(org.jetbrains.mps.openapi.model.SNode childNode) {

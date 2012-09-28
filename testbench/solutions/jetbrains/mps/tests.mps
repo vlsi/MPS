@@ -54,6 +54,7 @@
   <import index="rq2b" modelUID="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" version="-1" />
   <import index="msle" modelUID="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" version="-1" />
   <import index="537h" modelUID="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" version="-1" />
+  <import index="v569" modelUID="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -88,6 +89,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3323419009398480325" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3186742424690919238" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2684968190509519315" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7327404875649061237" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -342,9 +344,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707830929">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.3852894662483397197" resolveInfo="PriorityCheckTest" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707830930">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.7164702912147669285" resolveInfo="SubstitutionOfMethodWithNameSimularToStaticMethod" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707830931">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.8547191361977403062" resolveInfo="ReturnFollowerByVarName" />
@@ -1869,6 +1868,15 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2684968190509543952">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.4045247515868358877" resolveInfo="TestTemporalPaths" />
+    </node>
+  </root>
+  <root id="7327404875649061237">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7327404875649061239">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.traceable.operations.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="f5b70e84-5208-49eb-a417-d53c9f82bdf2" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7327404875649067732">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="v569.7327404875649026840" resolveInfo="CopyWithTrace" />
     </node>
   </root>
 </model>

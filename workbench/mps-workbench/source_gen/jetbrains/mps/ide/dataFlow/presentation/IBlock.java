@@ -4,12 +4,14 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import java.awt.Graphics;
 import java.awt.Component;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.Set;
 import java.awt.event.MouseEvent;
 
-public interface IBlock<T extends IInstruction<T>> {
+public interface IBlock {
   public void paint(Graphics g);
   public void relayout(Component component);
-  public T getSourceObject();
+  public SNodePointer getSourceNode();
   public int getX();
   public int getY();
   public int getWidth();
@@ -18,7 +20,9 @@ public interface IBlock<T extends IInstruction<T>> {
   public void setHeight(int height);
   public void setX(int x);
   public void setY(int y);
-  public void addBlockListener(IBlockListener<T> listener);
-  public void removeBlockListener(IBlockListener<T> listener);
+  public void addBlockListener(IBlockListener listener);
+  public void removeBlockListener(IBlockListener listener);
+  public void setSucc(Set<IBlock> succ);
+  public Set<IBlock> succ();
   public boolean processMousePressed(MouseEvent mEvent);
 }

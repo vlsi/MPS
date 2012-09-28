@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2742566862758590074">
+  <root nodeId="2742566862758590074" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="2742566862758590080" fileName="HistoryWriter.java" startLine="15" startPosition="28" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_HISTORY" />
     <nodeInfo nodeId="2742566862758590088" fileName="HistoryWriter.java" startLine="16" startPosition="62" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_ELEMENT" />
     <nodeInfo nodeId="2742566862758590094" fileName="HistoryWriter.java" startLine="17" startPosition="76" endLine="18" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" />
@@ -136,7 +136,7 @@
     <unitInfo nodeId="2742566862758593200" fileName="HistoryWriter.java" startLine="39" startPosition="61" endLine="43" endPosition="5" unitName="jetbrains.mps.refactoring.HistoryWriter$1" />
     <unitInfo nodeId="2742566862758593405" fileName="HistoryWriter.java" startLine="63" startPosition="63" endLine="67" endPosition="5" unitName="jetbrains.mps.refactoring.HistoryWriter$2" />
   </root>
-  <root nodeId="2742566862758593747">
+  <root nodeId="2742566862758593747" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="18" startPosition="83" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="20" startPosition="0" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="historyhandler" />
     <nodeInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="21" startPosition="119" endLine="22" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="elementhandler" />
@@ -584,7 +584,7 @@
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="357" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$RenameModelElementHandler" />
     <unitInfo nodeId="2742566862758593747" fileName="HistoryReaderHandler.java" startLine="321" startPosition="0" endLine="356" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler$RenameNodeElementHandler" />
   </root>
-  <root nodeId="5817662974489412297">
+  <root nodeId="5817662974489412297" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="2742566862758589996" fileName="StructureModification.java" startLine="20" startPosition="36" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependencies" />
     <nodeInfo nodeId="1445347747076238419" fileName="StructureModification.java" startLine="21" startPosition="118" endLine="22" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModificationList" />
     <nodeInfo nodeId="2742566862758590026" fileName="StructureModification.java" startLine="27" startPosition="73" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -779,7 +779,7 @@
     <unitInfo nodeId="2742566862758589896" fileName="StructureModification.java" startLine="118" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameNode" />
     <unitInfo nodeId="3796120688729065935" fileName="StructureModification.java" startLine="148" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification.RenameNode$RenameType" />
   </root>
-  <root nodeId="5817662974489429544">
+  <root nodeId="5817662974489429544" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="4136069314959834669" fileName="ModelLinkMap.java" startLine="30" startPosition="27" endLine="31" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="2742566862758577606" fileName="ModelLinkMap.java" startLine="31" startPosition="25" endLine="32" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetMap" />
     <nodeInfo nodeId="2742566862758577624" fileName="ModelLinkMap.java" startLine="32" startPosition="137" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeTypeMap" />
@@ -789,8 +789,8 @@
     <nodeInfo nodeId="5817662974489429700" fileName="ModelLinkMap.java" startLine="36" startPosition="147" endLine="37" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDynRefMap" />
     <nodeInfo nodeId="3729328437991306870" fileName="ModelLinkMap.java" startLine="39" startPosition="37" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4525791269560335710" fileName="ModelLinkMap.java" startLine="43" startPosition="31" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4525791269560356742" fileName="ModelLinkMap.java" startLine="45" startPosition="40" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4525791269560356918" fileName="ModelLinkMap.java" startLine="46" startPosition="53" endLine="47" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4525791269560356742" fileName="ModelLinkMap.java" startLine="45" startPosition="40" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4525791269560356918" fileName="ModelLinkMap.java" startLine="46" startPosition="85" endLine="47" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4525791269560356942" fileName="ModelLinkMap.java" startLine="48" startPosition="72" endLine="49" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4525791269560364543" fileName="ModelLinkMap.java" startLine="51" startPosition="89" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4525791269560364742" fileName="ModelLinkMap.java" startLine="53" startPosition="58" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -861,7 +861,7 @@
     <nodeInfo nodeId="980809437931347446" fileName="ModelLinkMap.java" startLine="252" startPosition="38" endLine="253" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="980809437931347482" fileName="ModelLinkMap.java" startLine="259" startPosition="43" endLine="260" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="980809437931347519" fileName="ModelLinkMap.java" startLine="266" startPosition="53" endLine="267" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2742566862758577748" fileName="ModelLinkMap.java" startLine="275" startPosition="24" endLine="276" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2742566862758577748" fileName="ModelLinkMap.java" startLine="275" startPosition="39" endLine="276" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2742566862758577754" fileName="ModelLinkMap.java" startLine="277" startPosition="5" endLine="278" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742566862758577778" fileName="ModelLinkMap.java" startLine="279" startPosition="23" endLine="280" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742566862758577795" fileName="ModelLinkMap.java" startLine="281" startPosition="5" endLine="282" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1003,7 +1003,7 @@
     <scopeInfo nodeId="980809437931347445" fileName="ModelLinkMap.java" startLine="252" startPosition="38" endLine="253" endPosition="49" />
     <scopeInfo nodeId="980809437931347481" fileName="ModelLinkMap.java" startLine="259" startPosition="43" endLine="260" endPosition="55" />
     <scopeInfo nodeId="980809437931347518" fileName="ModelLinkMap.java" startLine="266" startPosition="53" endLine="267" endPosition="65" />
-    <scopeInfo nodeId="2742566862758577742" fileName="ModelLinkMap.java" startLine="275" startPosition="24" endLine="276" endPosition="13" />
+    <scopeInfo nodeId="2742566862758577742" fileName="ModelLinkMap.java" startLine="275" startPosition="39" endLine="276" endPosition="13" />
     <scopeInfo nodeId="2742566862758577770" fileName="ModelLinkMap.java" startLine="279" startPosition="23" endLine="280" endPosition="90" />
     <scopeInfo nodeId="2742566862758577830" fileName="ModelLinkMap.java" startLine="287" startPosition="23" endLine="288" endPosition="19" />
     <scopeInfo nodeId="2742566862758577850" fileName="ModelLinkMap.java" startLine="291" startPosition="31" endLine="292" endPosition="21" />
@@ -1293,7 +1293,7 @@
     <unitInfo nodeId="2742566862758589460" fileName="ModelLinkMap.java" startLine="107" startPosition="43" endLine="111" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$8" />
     <unitInfo nodeId="2742566862758589471" fileName="ModelLinkMap.java" startLine="112" startPosition="44" endLine="116" endPosition="5" unitName="jetbrains.mps.refactoring.ModelLinkMap$9" />
   </root>
-  <root nodeId="9051163691968345406">
+  <root nodeId="9051163691968345406" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="9051163691968345412" fileName="StructureModificationLog.java" startLine="12" startPosition="39" endLine="13" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataList" />
     <nodeInfo nodeId="9051163691968350258" fileName="StructureModificationLog.java" startLine="18" startPosition="51" endLine="19" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3294668569473090973" fileName="StructureModificationLog.java" startLine="22" startPosition="68" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1322,7 +1322,7 @@
     </scopeInfo>
     <unitInfo nodeId="9051163691968345406" fileName="StructureModificationLog.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModificationLog" />
   </root>
-  <root nodeId="9051163691968353666">
+  <root nodeId="9051163691968353666" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor.java" startLine="28" startPosition="45" endLine="29" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="9051163691968378153" fileName="StructureModificationProcessor.java" startLine="30" startPosition="0" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelMap" />
     <nodeInfo nodeId="9051163691968378188" fileName="StructureModificationProcessor.java" startLine="31" startPosition="34" endLine="32" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -1468,7 +1468,6 @@
       <varInfo nodeId="9051163691968353692" varName="model" />
       <varInfo nodeId="9051163691968353703" varName="modificationLog" />
     </scopeInfo>
-    <scopeInfo nodeId="489412339685402747" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7" />
     <scopeInfo nodeId="489412339685421479" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7">
       <varInfo nodeId="489412339685421480" varName="importElement" />
     </scopeInfo>

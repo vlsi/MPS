@@ -9,7 +9,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.scope.SLinkScopeProvider;
+import org.jetbrains.mps.openapi.language.SLinkScopeProvider;
 
 public class SLinkNodeAdapter implements SLink {
   private SNode myNode;

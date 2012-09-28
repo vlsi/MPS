@@ -23,6 +23,11 @@ public class EntryPoint_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.EntryPoint"), "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527443, new Object[]{});
   }
 
+  public static String callSuperNew_getXmlElement_4204903511793527443(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.EntryPoint"), callerConceptFqName, "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527443, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getXmlElement_4204903511793527443(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.EntryPoint"), callerConceptFqName, "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527443, new Object[]{});
   }

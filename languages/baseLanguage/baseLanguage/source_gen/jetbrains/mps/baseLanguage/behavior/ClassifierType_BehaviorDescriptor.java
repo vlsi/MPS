@@ -7,7 +7,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
-public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
+public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IClassifierType_BehaviorDescriptor {
   public ClassifierType_BehaviorDescriptor() {
   }
 
@@ -21,6 +21,10 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
 
   public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return ClassifierType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
+  }
+
+  public SNode virtual_getClassifier_7405920559687237513(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_getClassifier_7405920559687237513(thisNode);
   }
 
   public String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
@@ -37,6 +41,10 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
 
   public SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return ClassifierType_Behavior.virtual_createDefaultTypeExpression_3359611512358152580(thisNode);
+  }
+
+  public Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_getTypeParameters_7405920559687237518(thisNode);
   }
 
   public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

@@ -23,6 +23,11 @@ public class BuildMacro_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113, new Object[]{});
   }
 
+  public static boolean callSuperNew_isPublic_6547494638219688113(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), callerConceptFqName, "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isPublic_6547494638219688113(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), callerConceptFqName, "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113, new Object[]{});
   }

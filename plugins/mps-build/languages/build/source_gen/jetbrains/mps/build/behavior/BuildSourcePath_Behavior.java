@@ -57,18 +57,38 @@ public class BuildSourcePath_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), "virtual_getParent_8654221991637145399", PARAMETERS_8654221991637145399, new Object[]{});
   }
 
+  public static String callSuperNew_getLocalPath_5481553824944787364(SNode thisNode, String callerConceptFqName, Context context) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getLocalPath_5481553824944787364", PARAMETERS_5481553824944787364, new Object[]{context});
+  }
+
+  public static String callSuperNew_getRelativePath_5481553824944787371(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getRelativePath_5481553824944787371", PARAMETERS_5481553824944787371, new Object[]{});
+  }
+
+  public static String callSuperNew_getLastSegment_1368030936106771141(SNode thisNode, String callerConceptFqName, MacroHelper helper) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getLastSegment_1368030936106771141", PARAMETERS_1368030936106771141, new Object[]{helper});
+  }
+
+  public static SNode callSuperNew_getParent_8654221991637145399(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getParent_8654221991637145399", PARAMETERS_8654221991637145399, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getLocalPath_5481553824944787364(SNode thisNode, String callerConceptFqName, Context context) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getLocalPath_5481553824944787364", PARAMETERS_5481553824944787364, new Object[]{context});
   }
 
+  @Deprecated
   public static String callSuper_getRelativePath_5481553824944787371(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getRelativePath_5481553824944787371", PARAMETERS_5481553824944787371, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getLastSegment_1368030936106771141(SNode thisNode, String callerConceptFqName, MacroHelper helper) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getLastSegment_1368030936106771141", PARAMETERS_1368030936106771141, new Object[]{helper});
   }
 
+  @Deprecated
   public static SNode callSuper_getParent_8654221991637145399(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getParent_8654221991637145399", PARAMETERS_8654221991637145399, new Object[]{});
   }

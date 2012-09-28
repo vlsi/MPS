@@ -51,14 +51,29 @@ public class BeanPropertyBuilder_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), "virtual_getAttachStatementChild_4797501453850305563", PARAMETERS_4797501453850342017, new Object[]{parentBuilder, parentRef, childRef});
   }
 
+  public static SNode callSuperNew_getResultType_2679357232284060725(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_2679357232284060725, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getCreatorExpression_2679357232284060737(SNode thisNode, String callerConceptFqName, SNode parentRef) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_2679357232284060737, new Object[]{parentRef});
+  }
+
+  public static SNode callSuperNew_getAttachStatementChild_4797501453850342017(SNode thisNode, String callerConceptFqName, SNode parentBuilder, SNode parentRef, SNode childRef) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getAttachStatementChild_4797501453850305563", PARAMETERS_4797501453850342017, new Object[]{parentBuilder, parentRef, childRef});
+  }
+
+  @Deprecated
   public static SNode callSuper_getResultType_2679357232284060725(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_2679357232284060725, new Object[]{});
   }
 
+  @Deprecated
   public static SNode callSuper_getCreatorExpression_2679357232284060737(SNode thisNode, String callerConceptFqName, SNode parentRef) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_2679357232284060737, new Object[]{parentRef});
   }
 
+  @Deprecated
   public static SNode callSuper_getAttachStatementChild_4797501453850342017(SNode thisNode, String callerConceptFqName, SNode parentBuilder, SNode parentRef, SNode childRef) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), callerConceptFqName, "virtual_getAttachStatementChild_4797501453850305563", PARAMETERS_4797501453850342017, new Object[]{parentBuilder, parentRef, childRef});
   }

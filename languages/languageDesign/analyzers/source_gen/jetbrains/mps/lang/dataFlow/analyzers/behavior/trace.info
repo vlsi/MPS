@@ -30,7 +30,7 @@
   <unitInfo fileName="PatternCondition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.PatternCondition_BehaviorDescriptor" />
   <unitInfo fileName="RuleReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.RuleReference_BehaviorDescriptor" />
   <unitInfo fileName="Rule_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.Rule_BehaviorDescriptor" />
-  <root nodeId="178770917832626022">
+  <root nodeId="178770917832626022" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="178770917832626030" fileName="Analyzer_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="178770917832652120" fileName="Analyzer_Behavior.java" startLine="23" startPosition="88" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="178770917832652131" fileName="Analyzer_Behavior.java" startLine="25" startPosition="30" endLine="26" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -79,7 +79,7 @@
     </scopeInfo>
     <unitInfo nodeId="178770917832626022" fileName="Analyzer_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.Analyzer_Behavior" />
   </root>
-  <root nodeId="430844094082161345">
+  <root nodeId="430844094082161345" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="430844094082161350" fileName="AnalyzerFunFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="9" startPosition="43" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -93,7 +93,7 @@
     </scopeInfo>
     <unitInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunFunction_Behavior" />
   </root>
-  <root nodeId="430844094082161366">
+  <root nodeId="430844094082161366" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="430844094082161371" fileName="AnalyzerMergeFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -107,7 +107,7 @@
     </scopeInfo>
     <unitInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerMergeFunction_Behavior" />
   </root>
-  <root nodeId="430844094082161381">
+  <root nodeId="430844094082161381" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="430844094082161386" fileName="AnalyzerInitialFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="9" startPosition="47" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -121,19 +121,22 @@
     </scopeInfo>
     <unitInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerInitialFunction_Behavior" />
   </root>
-  <root nodeId="4413230749907681645">
+  <root nodeId="4413230749907681645" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="12" startPosition="40" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4413230749907681660" />
     <nodeInfo nodeId="4413230749907681664" fileName="PatternCondition_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="22" startPosition="85" endLine="23" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="23" startPosition="113" endLine="24" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="27" startPosition="121" endLine="28" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="32" startPosition="118" endLine="33" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApplicableConcept_4413230749907681660#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getApplicableConcept_4413230749907681660#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApplicableConcept_4413230749907681660#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApplicableConcept_4413230749907681660#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4413230749907681647" fileName="PatternCondition_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="4413230749907681662" fileName="PatternCondition_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="151" />
-    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="296" />
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="27" startPosition="121" endLine="28" endPosition="299" />
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="32" startPosition="118" endLine="33" endPosition="296" />
     <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="22" startPosition="85" endLine="24" endPosition="251">
       <varInfo nodeId="4413230749907681645" varName="descriptor" />
     </scopeInfo>
@@ -150,18 +153,25 @@
     <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4413230749907681645" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.PatternCondition_Behavior" />
+    <scopeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4413230749907681645" varName="callerConceptFqName" />
+      <varInfo nodeId="4413230749907681645" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.PatternCondition_Behavior" />
   </root>
-  <root nodeId="4413230749907681648">
+  <root nodeId="4413230749907681648" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="11" startPosition="43" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4413230749907681652" />
     <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="17" startPosition="85" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="22" startPosition="118" endLine="23" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="22" startPosition="121" endLine="23" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4413230749907681650" fileName="ApplicableCondition_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="22" startPosition="118" endLine="23" endPosition="299" />
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="22" startPosition="121" endLine="23" endPosition="302" />
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="299" />
     <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="17" startPosition="85" endLine="19" endPosition="254">
       <varInfo nodeId="4413230749907681648" varName="descriptor" />
     </scopeInfo>
@@ -175,21 +185,28 @@
     <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4413230749907681648" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.ApplicableCondition_Behavior" />
+    <scopeInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4413230749907681648" varName="callerConceptFqName" />
+      <varInfo nodeId="4413230749907681648" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4413230749907681648" fileName="ApplicableCondition_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.ApplicableCondition_Behavior" />
   </root>
-  <root nodeId="4943044633101739072">
+  <root nodeId="4943044633101739072" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="12" startPosition="40" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4943044633101739075" />
     <nodeInfo nodeId="4943044633101742730" fileName="ConceptCondition_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="22" startPosition="85" endLine="23" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="23" startPosition="113" endLine="24" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="27" startPosition="121" endLine="28" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="32" startPosition="118" endLine="33" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConcept_4413230749907681652#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApplicableConcept_4943044633101739075#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getApplicableConcept_4943044633101739075#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApplicableConcept_4943044633101739075#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApplicableConcept_4943044633101739075#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4943044633101739074" fileName="ConceptCondition_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="4943044633101739077" fileName="ConceptCondition_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="65" />
-    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="27" startPosition="118" endLine="28" endPosition="296" />
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="27" startPosition="121" endLine="28" endPosition="299" />
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="32" startPosition="118" endLine="33" endPosition="296" />
     <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="22" startPosition="85" endLine="24" endPosition="251">
       <varInfo nodeId="4943044633101739072" varName="descriptor" />
     </scopeInfo>
@@ -206,9 +223,13 @@
     <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4943044633101739072" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.ConceptCondition_Behavior" />
+    <scopeInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4943044633101739072" varName="callerConceptFqName" />
+      <varInfo nodeId="4943044633101739072" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4943044633101739072" fileName="ConceptCondition_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.ConceptCondition_Behavior" />
   </root>
-  <root nodeId="8424563347437838494">
+  <root nodeId="8424563347437838494" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="8424563347437838496" fileName="EmitInstruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0">
@@ -216,7 +237,7 @@
     </scopeInfo>
     <unitInfo nodeId="8424563347437838494" fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.EmitInstruction_Behavior" />
   </root>
-  <root nodeId="8656002014371076002">
+  <root nodeId="8656002014371076002" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="8656002014371076004" fileName="Instruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="35" endLine="10" endPosition="0">
@@ -224,7 +245,7 @@
     </scopeInfo>
     <unitInfo nodeId="8656002014371076002" fileName="Instruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.Instruction_Behavior" />
   </root>
-  <root nodeId="8656002014371076039">
+  <root nodeId="8656002014371076039" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="8656002014371076046" fileName="InstructionReference_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8656002014371076060" fileName="InstructionReference_Behavior.java" startLine="14" startPosition="117" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -241,7 +262,7 @@
     </scopeInfo>
     <unitInfo nodeId="8656002014371076039" fileName="InstructionReference_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionReference_Behavior" />
   </root>
-  <root nodeId="8716397433969715146">
+  <root nodeId="8716397433969715146" modelId="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)">
     <nodeInfo nodeId="8716397433969716520" fileName="Rule_Behavior.java" startLine="13" startPosition="75" endLine="14" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8716397433969716531" fileName="Rule_Behavior.java" startLine="15" startPosition="30" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8716397433969716539" fileName="Rule_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -12,11 +12,18 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph;
+import jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper;
+import jetbrains.mps.ide.dataFlow.presentation.GraphCreator;
 import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 
 public class ShowDFA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -25,7 +32,7 @@ public class ShowDFA_Action extends BaseAction {
   public ShowDFA_Action() {
     super("Show Data Flow Graph", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -61,8 +68,8 @@ public class ShowDFA_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -70,8 +77,15 @@ public class ShowDFA_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
-      new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")));
+      final Wrappers._T<Program> program = new Wrappers._T<Program>();
+      final Wrappers._T<ControlFlowGraph<InstructionWrapper>> graph = new Wrappers._T<ControlFlowGraph<InstructionWrapper>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          program.value = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
+          graph.value = new ControlFlowGraph<InstructionWrapper>(new ProgramWrapper(program.value), new GraphCreator());
+        }
+      });
+      new ShowCFGDialog(graph.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project"))).show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDFA", t);

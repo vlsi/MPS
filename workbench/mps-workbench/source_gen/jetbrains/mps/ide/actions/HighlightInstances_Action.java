@@ -85,7 +85,7 @@ public class HighlightInstances_Action extends BaseAction {
 
       Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
       for (SNode ref : SetSequence.fromSet(usages)) {
-        if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
+        if (ref.getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
       }

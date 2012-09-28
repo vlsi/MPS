@@ -47,13 +47,13 @@ public class NewModuleUtil {
   }
 
   public static String check(String extension, String namespace, String rootPath) {
-    if (!(extension.equals(MPSExtentions.DOT_DEVKIT)) && !(SourceVersion.isName(namespace))) {
-      return "Module namespace should be valid Java package";
+    if (MPSExtentions.DOT_LANGUAGE.equals(extension) && !(SourceVersion.isName(namespace))) {
+      return "Language namespace should be valid Java package";
     }
     if (rootPath.length() == 0) {
       return "Path should be specified";
     }
-    String message = NewModuleCheckUtil.checkModuleDirectory(new File(rootPath), MPSExtentions.DOT_LANGUAGE, "Module");
+    String message = NewModuleCheckUtil.checkModuleDirectory(new File(rootPath), extension, "Module");
     if (message != null) {
       return message;
     }

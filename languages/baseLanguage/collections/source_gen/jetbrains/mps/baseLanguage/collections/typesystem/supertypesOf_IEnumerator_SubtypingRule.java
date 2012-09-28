@@ -124,7 +124,7 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
         }
         {
           String childRole_supertypesOf_IEnumerator_4sudxd_ = "parameter";
-          if (nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getChildCount(childRole_supertypesOf_IEnumerator_4sudxd_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a, childRole_supertypesOf_IEnumerator_4sudxd_, 1))) {
             return false;
           }
           {

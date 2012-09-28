@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,19 +19,16 @@ public class InstanceInitializer_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    throw new UnsupportedOperationException();
-  }
-
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    throw new UnsupportedOperationException();
-  }
-
   public static Icon call_getAdditionalIcon_8884554759541377996(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996, new Object[]{});
   }
 
+  public static Icon callSuperNew_getAdditionalIcon_8884554759541377996(SNode thisNode, String callerConceptFqName) {
+    return (Icon) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996, new Object[]{});
+  }
+
+  @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541377996(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996, new Object[]{});
   }

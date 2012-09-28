@@ -81,18 +81,38 @@ public class XmlBasePrologElement_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), "virtual_isLastPositionAllowed_2133624044437631519", PARAMETERS_2133624044437631956, new Object[]{});
   }
 
+  public static boolean callSuperNew_onNewLine_5491461270226170010(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_onNewLine_2133624044437631588", PARAMETERS_5491461270226170010, new Object[]{});
+  }
+
+  public static boolean callSuperNew_hasNewLineAfter_2133624044437592936(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_hasNewLineAfter_2133624044437631594", PARAMETERS_2133624044437592936, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isFirstPositionAllowed_2133624044437631900(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_isFirstPositionAllowed_2133624044437631446", PARAMETERS_2133624044437631900, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isLastPositionAllowed_2133624044437631956(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_isLastPositionAllowed_2133624044437631519", PARAMETERS_2133624044437631956, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_onNewLine_5491461270226170010(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_onNewLine_2133624044437631588", PARAMETERS_5491461270226170010, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_hasNewLineAfter_2133624044437592936(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_hasNewLineAfter_2133624044437631594", PARAMETERS_2133624044437592936, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isFirstPositionAllowed_2133624044437631900(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_isFirstPositionAllowed_2133624044437631446", PARAMETERS_2133624044437631900, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isLastPositionAllowed_2133624044437631956(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_isLastPositionAllowed_2133624044437631519", PARAMETERS_2133624044437631956, new Object[]{});
   }

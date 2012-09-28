@@ -1341,7 +1341,7 @@
                                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~DefaultChildNodeSetter%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="DefaultChildNodeSetter" />
                                             <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6645285158565208821" />
                                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6645285158565208824">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~DefaultChildNodeSetter%dgetLinkDeclaration()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getLinkDeclaration" />
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~DefaultChildSubstituteInfo%dgetLinkDeclaration()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getLinkDeclaration" />
                                             </node>
                                             <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6645285158565208826">
                                               <property name="name" nameId="tpck.1169194664001" value="doExecute" />

@@ -54,11 +54,11 @@ public class Layout_Behavior {
     if (macroName.equals(Layout_Behavior.getScriptsDirName_462257719548547202())) {
       return Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "scriptsDirectory", true));
     }
-    return IMacroHolder_Behavior.callSuper_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.Layout", macroName);
+    return IMacroHolder_Behavior.callSuperNew_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", macroName);
   }
 
   public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    List<String> allMacroNames = IMacroHolder_Behavior.callSuper_getAllMacroNames_1234975567387(thisNode, "jetbrains.mps.build.packaging.structure.Layout", addBasedir);
+    List<String> allMacroNames = IMacroHolder_Behavior.callSuperNew_getAllMacroNames_1234975567387(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", addBasedir);
     ListSequence.fromList(allMacroNames).addElement(Layout_Behavior.getScriptsDirName_462257719548547202());
     return allMacroNames;
   }

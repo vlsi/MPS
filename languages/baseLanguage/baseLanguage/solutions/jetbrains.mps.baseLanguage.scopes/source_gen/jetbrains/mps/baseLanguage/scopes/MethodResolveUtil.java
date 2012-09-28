@@ -29,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MethodResolveUtil {
   public MethodResolveUtil() {
@@ -222,12 +223,12 @@ public class MethodResolveUtil {
     return result;
   }
 
-  public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, List<SNode> typeParameters) {
+  public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, Iterable<SNode> typeParameters) {
     Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierScopeUtils.resolveClassifierTypeVars(classifier))) {
       typeByTypeVar.put(elem.key(), elem.value());
     }
-    Iterator<SNode> typeParms = ListSequence.fromList(typeParameters).iterator();
+    Iterator<SNode> typeParms = Sequence.fromIterable(typeParameters).iterator();
     for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true))) {
       if (!(typeParms.hasNext())) {
         break;

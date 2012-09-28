@@ -23,6 +23,11 @@ public class RuleConsequence_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185, new Object[]{});
   }
 
+  public static SNode callSuperNew_getTemplateType_7933327286924651185(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), callerConceptFqName, "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getTemplateType_7933327286924651185(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), callerConceptFqName, "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185, new Object[]{});
   }

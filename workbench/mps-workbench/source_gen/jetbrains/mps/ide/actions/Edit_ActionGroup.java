@@ -20,6 +20,7 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
     try {
       Edit_ActionGroup.this.addSeparator();
       Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.QuickCreate_Action");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CreateNewRoot_Action");
       Edit_ActionGroup.this.addSeparator();
       Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action");
       Edit_ActionGroup.this.addSeparator();

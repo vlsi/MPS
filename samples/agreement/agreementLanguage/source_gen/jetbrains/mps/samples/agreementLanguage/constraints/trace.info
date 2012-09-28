@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1214253504159">
+  <root nodeId="1214253504159" modelId="r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)">
     <nodeInfo nodeId="1214253504159" fileName="ValueReference_Constraints.java" startLine="20" startPosition="75" endLine="21" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_r7tp2g_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1214253504159" fileName="ValueReference_Constraints.java" startLine="23" startPosition="39" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1214253504159" fileName="ValueReference_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -41,7 +41,7 @@
     <unitInfo nodeId="1214253504159" fileName="ValueReference_Constraints.java" startLine="30" startPosition="32" endLine="52" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$1" />
     <unitInfo nodeId="1214253504159" fileName="ValueReference_Constraints.java" startLine="39" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$2" />
   </root>
-  <root nodeId="1214253593082">
+  <root nodeId="1214253593082" modelId="r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)">
     <nodeInfo nodeId="1214253593082" fileName="EventVariableReference_Constraints.java" startLine="21" startPosition="83" endLine="22" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_lcwlw6_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1214253593082" fileName="EventVariableReference_Constraints.java" startLine="24" startPosition="47" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1214253593082" fileName="EventVariableReference_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

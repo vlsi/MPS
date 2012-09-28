@@ -75,4 +75,8 @@ public final class JavaNameUtil {
   public static String className(@Nullable SNode conceptDeclaration) {
     return NameUtil.nodeFQName(conceptDeclaration);
   }
+
+  public static String nestedClassName(String packageName, String fqClassName) {
+    return fqClassName.substring(packageName.length() + 1);
+  }
 }

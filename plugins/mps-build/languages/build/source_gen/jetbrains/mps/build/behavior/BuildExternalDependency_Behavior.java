@@ -21,6 +21,11 @@ public class BuildExternalDependency_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, new Object[]{artifacts, builder});
   }
 
+  public static void callSuperNew_fetchDependencies_5908258303322131137(SNode thisNode, String callerConceptFqName, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, new Object[]{artifacts, builder});
+  }
+
+  @Deprecated
   public static void callSuper_fetchDependencies_5908258303322131137(SNode thisNode, String callerConceptFqName, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, new Object[]{artifacts, builder});
   }

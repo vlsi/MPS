@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
@@ -30,7 +31,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1816315258006259689(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "method", false)), "jetbrains.mps.debug.sampleLanguage.structure.WannabeClass"), "name");
+    return JavaNameUtil.packageName(SNodeOperations.getModel(_context.getNode())) + "." + SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "method", false)), "jetbrains.mps.debug.sampleLanguage.structure.WannabeClass"), "name");
   }
 
   public static boolean ifMacro_Condition_1816315258006258225(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -24,5 +24,6 @@ public interface BehaviorDescriptor {
 
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters);
 
+  @Deprecated
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters);
 }

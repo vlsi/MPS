@@ -13,7 +13,9 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -36,7 +38,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, methodCall, SLinkOperations.getTarget(methodDeclaration, "returnType", true), mmap);
     SNode currentClassifier = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    while (currentClassifier != null && currentClassifier != methodClassifier && !(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(currentClassifier, methodCall, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).contains(methodDeclaration))) {
+    while (currentClassifier != null && currentClassifier != methodClassifier && !(Sequence.fromIterable(Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(currentClassifier), methodCall)).contains(methodDeclaration))) {
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     SNode constructedType = new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a8a0().createNode(currentClassifier, typeCheckingContext);

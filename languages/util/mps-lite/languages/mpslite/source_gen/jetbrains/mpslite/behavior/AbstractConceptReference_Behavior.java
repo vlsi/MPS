@@ -20,6 +20,11 @@ public class AbstractConceptReference_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, new Object[]{conceptsToTargets});
   }
 
+  public static SNode callSuperNew_getConcept_1238594571574(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), callerConceptFqName, "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, new Object[]{conceptsToTargets});
+  }
+
+  @Deprecated
   public static SNode callSuper_getConcept_1238594571574(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), callerConceptFqName, "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, new Object[]{conceptsToTargets});
   }

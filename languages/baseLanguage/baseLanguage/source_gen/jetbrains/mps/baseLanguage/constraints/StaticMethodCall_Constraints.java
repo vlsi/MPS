@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.MethodsScope;
+import jetbrains.mps.baseLanguage.scopes.Members;
 
 public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137643");
@@ -53,7 +53,7 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
             if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) == null)) {
               return new EmptyScope();
             }
-            return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+            return new MethodsScope(Members.visibleStaticMethods(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false), _context.getContextNode()));
           }
         };
       }

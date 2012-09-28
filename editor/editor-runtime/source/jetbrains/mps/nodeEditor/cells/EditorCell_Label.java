@@ -273,11 +273,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public int getTextLineWidth() {
     int textLineWidth;
-    FontMetrics metrics = myTextLine.getFontMetrics();
     if (myNoTextSet && myTextLine.getText().length() == 0) {
-      textLineWidth = myNullTextLine.getEffectiveWidth(metrics);
+      textLineWidth = myNullTextLine.getEffectiveWidth();
     } else {
-      textLineWidth = myTextLine.getEffectiveWidth(metrics);
+      textLineWidth = myTextLine.getEffectiveWidth();
     }
     if (isDrawBrackets()) textLineWidth += 2 * BRACKET_WIDTH;
     return textLineWidth;

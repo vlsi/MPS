@@ -44,14 +44,11 @@
       <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action"/>
+      <reference ref="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action"/>
       <reference ref="Migrations25_ActionGroupoptional"/>
       <add-to-group group-id="ToolsMenu" anchor="last"/>
-    </group>
-    <group id="jetbrains.mps.ide.migration.migration25.FixAfterMigration_ActionGroup" text="Fixes" popup="true">
-      <reference ref="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"/>
-      <add-to-group group-id="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" anchor="last"/>
     </group>
   </actions>
 </components>

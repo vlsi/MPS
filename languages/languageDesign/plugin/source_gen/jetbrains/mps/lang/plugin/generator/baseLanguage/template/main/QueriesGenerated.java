@@ -23,6 +23,7 @@ import jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
@@ -340,7 +341,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7458954884160510520(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false));
+    SNode actionGroup = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
+    return JavaNameUtil.packageName(SNodeOperations.getModel(actionGroup)) + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(actionGroup);
   }
 
   public static Object propertyMacro_GetPropertyValue_7458954884160510542(final IOperationContext operationContext, final PropertyMacroContext _context) {

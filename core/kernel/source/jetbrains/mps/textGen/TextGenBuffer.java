@@ -115,7 +115,8 @@ public final class TextGenBuffer {
     myDepth--;
   }
 
-  protected void append(String s) {
+  public void append(String s) {
+    // todo: is public ok?
     if (s == null) {
       return;
     }

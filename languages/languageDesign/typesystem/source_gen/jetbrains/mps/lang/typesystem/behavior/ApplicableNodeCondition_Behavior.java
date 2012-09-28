@@ -19,6 +19,11 @@ public class ApplicableNodeCondition_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), "virtual_getApplicableConcept_1213877307633", PARAMETERS_1213877307633, new Object[]{});
   }
 
+  public static SNode callSuperNew_getApplicableConcept_1213877307633(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), callerConceptFqName, "virtual_getApplicableConcept_1213877307633", PARAMETERS_1213877307633, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getApplicableConcept_1213877307633(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), callerConceptFqName, "virtual_getApplicableConcept_1213877307633", PARAMETERS_1213877307633, new Object[]{});
   }

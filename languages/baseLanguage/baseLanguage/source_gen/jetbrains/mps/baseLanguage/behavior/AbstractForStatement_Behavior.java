@@ -22,6 +22,6 @@ public class AbstractForStatement_Behavior {
         return ScopeUtils.lazyParentScope(thisNode, kind);
       }
     }
-    return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractForStatement", kind, child);
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", kind, child);
   }
 }

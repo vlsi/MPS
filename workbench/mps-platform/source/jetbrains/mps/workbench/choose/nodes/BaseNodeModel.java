@@ -22,8 +22,14 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
+/**
+ * Use BaseNodePointerModel
+ */
+@Deprecated
+@ToRemove(version = 3.0)
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   public BaseNodeModel(Project project) {
     this(project, "node");

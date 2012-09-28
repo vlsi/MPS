@@ -153,7 +153,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
         }
         {
           String childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_ = "parameter";
-          if (nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildCount(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_) != 2) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a, childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_, 2))) {
             return false;
           }
           {

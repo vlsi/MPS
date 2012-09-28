@@ -34,7 +34,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
@@ -612,7 +611,7 @@ __switch__:
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
-            intentionProvider.putArgument("throwableType", SetSequence.fromSet(throwables).first());
+            intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }

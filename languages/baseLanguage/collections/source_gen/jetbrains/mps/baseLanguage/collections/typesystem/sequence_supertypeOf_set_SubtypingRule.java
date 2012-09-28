@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -114,7 +115,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
         }
         {
           String childRole_sequence_supertypeOf_set_twopzc_ = "elementType";
-          if (nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getChildCount(childRole_sequence_supertypeOf_set_twopzc_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a, childRole_sequence_supertypeOf_set_twopzc_, 1))) {
             return false;
           }
           {

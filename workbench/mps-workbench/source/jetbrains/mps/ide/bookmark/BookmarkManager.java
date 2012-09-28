@@ -113,7 +113,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       SNodePointer nodePointer = myBookmarks[i];
       if (nodePointer != null) {
         SNode node = nodePointer.getNode();
-        if (node != null && node.getContainingRoot() == root) {
+        if (node != null && node.getTopmostAncestor() == root) {
           result.add(new Pair<SNode, Integer>(node, i));
         }
       }
@@ -121,7 +121,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     for (SNodePointer nodePointer : myUnnumberedBookmarks) {
       if (nodePointer != null) {
         SNode node = nodePointer.getNode();
-        if (node != null && node.getContainingRoot() == root) {
+        if (node != null && node.getTopmostAncestor() == root) {
           result.add(new Pair<SNode, Integer>(node, -1));
         }
       }

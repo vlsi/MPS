@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -119,7 +120,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
         }
         {
           String childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_ = "elementType";
-          if (nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildCount(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a, childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_, 1))) {
             return false;
           }
           {

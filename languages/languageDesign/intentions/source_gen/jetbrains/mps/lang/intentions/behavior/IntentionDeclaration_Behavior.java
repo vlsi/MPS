@@ -54,6 +54,11 @@ public class IntentionDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384724184, new Object[]{});
   }
 
+  public static SNode callSuperNew_getBaseConcept_8952337903384724184(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384724184, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getBaseConcept_8952337903384724184(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384724184, new Object[]{});
   }

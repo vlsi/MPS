@@ -228,7 +228,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4183391441819863910" resolveInfo="emd" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4183391441819863930">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rhwp.~EditableSModelDescriptor%disChanged()%cboolean" resolveInfo="isChanged" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModelDescriptor%disChanged()%cboolean" resolveInfo="isChanged" />
                 </node>
               </node>
               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4183391441819863931">

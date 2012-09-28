@@ -54,12 +54,16 @@
   </project-components>
 
   <actions>
+    <action id="jetbrains.mps.idea.scopes.CheckScopesAction"
+            class="jetbrains.mps.idea.scopes.CheckScopesAction">
+      <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" />
+    </action>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir=""/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
-    <mps.LanguageLibrary dir="/platform"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

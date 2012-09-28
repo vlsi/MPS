@@ -15,19 +15,34 @@
  */
 package jetbrains.mps.ide.project;
 
+import com.intellij.application.options.pathMacros.PathMacroConfigurable;
+import com.intellij.ide.DataManager;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationListener;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.options.ShowSettingsUtil;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.PathMacrosProvider;
+import jetbrains.mps.util.misc.hash.HashMap;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkEvent.EventType;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-/**
- * evgeny, 10/19/11
- */
 public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProvider {
-
   public WorkbenchPathMacros(MPSCoreComponents coreComponents, PathMacros ideaPathMacros) {
   }
 
@@ -60,5 +75,54 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   @Override
   public String getValue(String name) {
     return PathMacros.getInstance().getValue(name);
+  }
+
+  @Override
+  public void report(String message, String macro) {
+    Notifications.Bus.notify(new Notification(Notifications.SYSTEM_MESSAGES_GROUP_ID, "Undefined macro", macro + " <html><a href=''>fix...</a></html>", NotificationType.ERROR, new NotificationListener() {
+      public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent event) {
+        if (event.getEventType() != EventType.ACTIVATED) return;
+        DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+          public void run(DataContext dataContext) {
+            Project project = PlatformDataKeys.PROJECT.getData(dataContext);
+
+            Map<String, String> oldMacroses = collectMacroses();
+            ShowSettingsUtil.getInstance().showSettingsDialog(project, new PathMacroConfigurable().getDisplayName());
+            Map<String, String> newMacroses = collectMacroses();
+            if (sameMaps(oldMacroses, newMacroses)) return;
+
+            int res = Messages.showYesNoDialog(
+              "All opened projects should be reloaded in order to apply changes.\n" +
+                "Reload all opened projects?", "Reload Projects", null);
+            if (res == Messages.NO) return;
+
+            ProjectManager pm = ProjectManager.getInstance();
+            for (Project p : pm.getOpenProjects()) {
+              pm.reloadProject(p);
+            }
+          }
+        });
+      }
+    }));
+  }
+
+  private boolean sameMaps(Map<String, String> m1, Map<String, String> m2) {
+    Set<String> keys = new HashSet<String>();
+    keys.addAll(m1.keySet());
+    keys.addAll(m2.keySet());
+
+    for (String key : keys) {
+      if (!ObjectUtils.equals(m1.get(key), m2.get(key))) return false;
+    }
+    return true;
+  }
+
+  private Map<String, String> collectMacroses() {
+    HashMap<String, String> res = new HashMap<String, String>();
+    PathMacros pm = PathMacros.getInstance();
+    for (String name : pm.getUserMacroNames()) {
+      res.put(name, pm.getValue(name));
+    }
+    return res;
   }
 }

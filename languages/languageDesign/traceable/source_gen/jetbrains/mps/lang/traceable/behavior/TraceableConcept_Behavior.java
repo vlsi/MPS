@@ -25,6 +25,11 @@ public class TraceableConcept_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
   }
 
+  public static String callSuperNew_getTraceableProperty_5067982036267369901(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getTraceableProperty_5067982036267369901(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
   }

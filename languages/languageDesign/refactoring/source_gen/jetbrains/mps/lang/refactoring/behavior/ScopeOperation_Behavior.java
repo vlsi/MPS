@@ -30,6 +30,11 @@ public class ScopeOperation_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_7012097027058652550(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_7012097027058652550(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550, new Object[]{});
   }

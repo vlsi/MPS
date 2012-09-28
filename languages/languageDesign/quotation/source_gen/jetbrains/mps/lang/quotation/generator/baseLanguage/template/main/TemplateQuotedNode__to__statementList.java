@@ -644,7 +644,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a3a2a2a1a5a1a3a1a1a1a5a1a1);
                                     environment.nodeCopied(context29, tnode33, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933353546");
-                                    tnode33.addReference(SReference.create("baseMethodDeclaration", tnode33, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+                                    tnode33.addReference(SReference.create("baseMethodDeclaration", tnode33, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
 
                                     {
                                       final SNode tnode34 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
@@ -764,7 +764,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a3a2a2a1a6a1a3a1a1a1a5a1a1);
                                     environment.nodeCopied(context37, tnode41, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933352225");
-                                    tnode41.addReference(SReference.create("baseMethodDeclaration", tnode41, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+                                    tnode41.addReference(SReference.create("baseMethodDeclaration", tnode41, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
 
                                     {
                                       final SNode tnode42 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
@@ -1451,7 +1451,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a1a1a1a11a1a3a1a1a1a5a1a1);
                                   environment.nodeCopied(context, tnode86, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933351660");
-                                  tnode86.addReference(SReference.create("baseMethodDeclaration", tnode86, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                  tnode86.addReference(SReference.create("baseMethodDeclaration", tnode86, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                   {
                                     final SNode tnode87 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
@@ -2280,7 +2280,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                         try {
                                           environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a1a1a1a4a1a3a1a6a1a3a1a1a1a6a1a1);
                                           environment.nodeCopied(context, tnode137, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933354620");
-                                          tnode137.addReference(SReference.create("baseMethodDeclaration", tnode137, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                          tnode137.addReference(SReference.create("baseMethodDeclaration", tnode137, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                           {
                                             final SNode tnode138 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
@@ -2680,7 +2680,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                         try {
                                           environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a1a1a1a3a1a5a1a4a1a3a1a1a1a7a1a1);
                                           environment.nodeCopied(context, tnode164, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933350851");
-                                          tnode164.addReference(SReference.create("baseMethodDeclaration", tnode164, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                          tnode164.addReference(SReference.create("baseMethodDeclaration", tnode164, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                           {
                                             final SNode tnode165 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);

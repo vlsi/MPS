@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />

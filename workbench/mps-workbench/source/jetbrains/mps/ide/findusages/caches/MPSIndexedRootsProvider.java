@@ -23,13 +23,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 4/19/12
- * Time: 5:07 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSIndexedRootsProvider extends IndexableSetContributor {
   @Override
   public Set<VirtualFile> getAdditionalRootsToIndex() {

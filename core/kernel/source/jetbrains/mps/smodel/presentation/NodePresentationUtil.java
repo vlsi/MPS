@@ -120,7 +120,7 @@ public class NodePresentationUtil {
       return NameUtil.shortNameFromLongName(node.getConceptFqName()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
-    return node.getRole_() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
+    return node.getRole_() + " (" + NameUtil.compactNodeFQName(node.getTopmostAncestor()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {

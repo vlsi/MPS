@@ -37,10 +37,20 @@ public class CellModel_WithRole_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889, new Object[]{});
   }
 
+  public static String callSuperNew_getRoleForCell_1216377898846(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846, new Object[]{});
+  }
+
+  public static String callSuperNew_getCellProviderClassName_1216378357889(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getRoleForCell_1216377898846(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846, new Object[]{});
   }
 
+  @Deprecated
   public static String callSuper_getCellProviderClassName_1216378357889(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889, new Object[]{});
   }

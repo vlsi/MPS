@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SReference;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.GlobalScopeMinusTransient;
 
 public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
   public BaseLanguageHierarchyViewTool(Project project) {
@@ -80,7 +80,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<SReference> usages = myUsagesManager.findUsages(Collections.singleton(node), SearchType.USAGES, GlobalScope.getInstance(), null);
+      Set<SReference> usages = myUsagesManager.findUsages(Collections.singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null);
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

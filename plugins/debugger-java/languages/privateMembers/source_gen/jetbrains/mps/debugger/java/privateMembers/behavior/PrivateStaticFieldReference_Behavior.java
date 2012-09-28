@@ -13,7 +13,7 @@ public class PrivateStaticFieldReference_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "variableDeclaration", false) == null)) {
-      return BaseConcept_Behavior.callSuper_getPresentation_1213877396640(thisNode, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference");
+      return BaseConcept_Behavior.callSuperNew_getPresentation_1213877396640(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
     }
     String classifierPresentation = "";
     if ((SLinkOperations.getTarget(thisNode, "classifier", false) != null)) {

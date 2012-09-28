@@ -20,6 +20,11 @@ public class IPath_Behavior {
     return (File) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999, new Object[]{});
   }
 
+  public static File callSuperNew_getFile_1233322718999(SNode thisNode, String callerConceptFqName) {
+    return (File) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", PARAMETERS_1233322718999, new Object[]{});
+  }
+
+  @Deprecated
   public static File callSuper_getFile_1233322718999(SNode thisNode, String callerConceptFqName) {
     return (File) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", PARAMETERS_1233322718999, new Object[]{});
   }

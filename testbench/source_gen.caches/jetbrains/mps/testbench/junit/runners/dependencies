@@ -98,6 +98,7 @@
     <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MakeRunner" file="MakeRunner.java">
@@ -134,6 +135,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />

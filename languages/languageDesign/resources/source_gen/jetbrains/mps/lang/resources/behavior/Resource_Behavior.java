@@ -19,6 +19,11 @@ public class Resource_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.Resource"), "virtual_generate_8974276187400030152", PARAMETERS_8974276187400030152, new Object[]{});
   }
 
+  public static void callSuperNew_generate_8974276187400030152(SNode thisNode, String callerConceptFqName) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.Resource"), callerConceptFqName, "virtual_generate_8974276187400030152", PARAMETERS_8974276187400030152, new Object[]{});
+  }
+
+  @Deprecated
   public static void callSuper_generate_8974276187400030152(SNode thisNode, String callerConceptFqName) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.Resource"), callerConceptFqName, "virtual_generate_8974276187400030152", PARAMETERS_8974276187400030152, new Object[]{});
   }

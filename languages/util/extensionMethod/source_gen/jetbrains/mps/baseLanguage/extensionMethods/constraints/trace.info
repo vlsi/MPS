@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1550313277221324861">
+  <root nodeId="1550313277221324861" modelId="r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)">
     <nodeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="33" startPosition="80" endLine="34" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="36" startPosition="44" endLine="37" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="41" startPosition="83" endLine="42" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -52,13 +52,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="43" startPosition="115" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6235310215814037900" fileName="ExtensionMethodCall_Constraints.java" startLine="61" startPosition="276" endLine="66" endPosition="21" />
-    <scopeInfo nodeId="6235310215814037901" fileName="ExtensionMethodCall_Constraints.java" startLine="61" startPosition="276" endLine="66" endPosition="21">
-      <varInfo nodeId="6235310215814037902" varName="method" />
-    </scopeInfo>
     <scopeInfo nodeId="6235310215814037939" fileName="ExtensionMethodCall_Constraints.java" startLine="70" startPosition="118" endLine="75" endPosition="21" />
     <scopeInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="92" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6235310215814037898" fileName="ExtensionMethodCall_Constraints.java" startLine="60" startPosition="228" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="6235310215814037936" fileName="ExtensionMethodCall_Constraints.java" startLine="69" startPosition="246" endLine="76" endPosition="19" />
     <scopeInfo nodeId="6235310215814037937" fileName="ExtensionMethodCall_Constraints.java" startLine="69" startPosition="246" endLine="76" endPosition="19">
       <varInfo nodeId="6235310215814037938" varName="method" />
     </scopeInfo>
@@ -94,7 +90,7 @@
     <unitInfo nodeId="1550313277221324861" fileName="ExtensionMethodCall_Constraints.java" startLine="52" startPosition="19" endLine="97" endPosition="9" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$2" />
     <unitInfo nodeId="6235310215814037767" fileName="ExtensionMethodCall_Constraints.java" startLine="55" startPosition="23" endLine="87" endPosition="13" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$3" />
   </root>
-  <root nodeId="2763618064981525308">
+  <root nodeId="2763618064981525308" modelId="r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)">
     <nodeInfo nodeId="2763618064981525308" fileName="ExtensionMethodDeclaration_Constraints.java" startLine="14" startPosition="87" endLine="15" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
     <nodeInfo nodeId="2763618064981525308" fileName="ExtensionMethodDeclaration_Constraints.java" startLine="17" startPosition="51" endLine="18" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2763618064981525308" fileName="ExtensionMethodDeclaration_Constraints.java" startLine="22" startPosition="44" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -138,7 +134,7 @@
     </scopeInfo>
     <unitInfo nodeId="2763618064981525308" fileName="ExtensionMethodDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodDeclaration_Constraints" />
   </root>
-  <root nodeId="3316739663067166481">
+  <root nodeId="3316739663067166481" modelId="r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)">
     <nodeInfo nodeId="3316739663067166481" fileName="ThisExtensionExpression_Constraints.java" startLine="13" startPosition="84" endLine="14" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="3316739663067166481" fileName="ThisExtensionExpression_Constraints.java" startLine="16" startPosition="48" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3316739663067166481" fileName="ThisExtensionExpression_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -179,7 +175,7 @@
     </scopeInfo>
     <unitInfo nodeId="3316739663067166481" fileName="ThisExtensionExpression_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ThisExtensionExpression_Constraints" />
   </root>
-  <root nodeId="52119067404165172">
+  <root nodeId="52119067404165172" modelId="r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)">
     <nodeInfo nodeId="52119067404165172" fileName="TypeExtension_Constraints.java" startLine="15" startPosition="74" endLine="16" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="52119067404165172" fileName="TypeExtension_Constraints.java" startLine="16" startPosition="195" endLine="17" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
     <nodeInfo nodeId="52119067404165172" fileName="TypeExtension_Constraints.java" startLine="19" startPosition="38" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -257,7 +253,7 @@
     </scopeInfo>
     <unitInfo nodeId="52119067404165172" fileName="TypeExtension_Constraints.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.TypeExtension_Constraints" />
   </root>
-  <root nodeId="5431167396203858786">
+  <root nodeId="5431167396203858786" modelId="r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)">
     <nodeInfo nodeId="5431167396203858786" fileName="ExtensionStaticFieldReference_Constraints.java" startLine="20" startPosition="90" endLine="21" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_xefsui_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="5431167396203858786" fileName="ExtensionStaticFieldReference_Constraints.java" startLine="23" startPosition="54" endLine="24" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5431167396203858786" fileName="ExtensionStaticFieldReference_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -297,97 +293,85 @@
     <unitInfo nodeId="5431167396203858786" fileName="ExtensionStaticFieldReference_Constraints.java" startLine="30" startPosition="46" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_Constraints$1" />
     <unitInfo nodeId="5431167396203858786" fileName="ExtensionStaticFieldReference_Constraints.java" startLine="39" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_Constraints$2" />
   </root>
-  <root nodeId="7685333756920187171">
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="33" startPosition="84" endLine="34" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="34" startPosition="195" endLine="35" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_rxyf25_a0a1a0a0a1a0b0a1a2" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="37" startPosition="48" endLine="38" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="42" startPosition="43" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="47" startPosition="200" endLine="48" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="48" startPosition="96" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="50" startPosition="51" endLine="51" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="53" startPosition="0" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="58" startPosition="83" endLine="59" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="62" startPosition="44" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7517860079983420349" fileName="LocalExtendedMethodCall_Constraints.java" startLine="71" startPosition="142" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983420357" fileName="LocalExtendedMethodCall_Constraints.java" startLine="73" startPosition="161" endLine="74" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7517860079983420366" fileName="LocalExtendedMethodCall_Constraints.java" startLine="75" startPosition="13" endLine="76" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983420378" fileName="LocalExtendedMethodCall_Constraints.java" startLine="77" startPosition="37" endLine="78" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5500967171011680108" fileName="LocalExtendedMethodCall_Constraints.java" startLine="79" startPosition="13" endLine="80" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983420387" fileName="LocalExtendedMethodCall_Constraints.java" startLine="80" startPosition="139" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7517860079983420388" fileName="LocalExtendedMethodCall_Constraints.java" startLine="81" startPosition="0" endLine="82" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5500967171012052590" fileName="LocalExtendedMethodCall_Constraints.java" startLine="85" startPosition="49" endLine="86" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5500967171012052600" fileName="LocalExtendedMethodCall_Constraints.java" startLine="89" startPosition="47" endLine="90" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5500967171012052608" fileName="LocalExtendedMethodCall_Constraints.java" startLine="92" startPosition="17" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7517860079983420406" fileName="LocalExtendedMethodCall_Constraints.java" startLine="95" startPosition="108" endLine="96" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517860079983420429" fileName="LocalExtendedMethodCall_Constraints.java" startLine="99" startPosition="44" endLine="100" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5500967171012052609" fileName="LocalExtendedMethodCall_Constraints.java" startLine="101" startPosition="15" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7517860079983420443" fileName="LocalExtendedMethodCall_Constraints.java" startLine="102" startPosition="0" endLine="103" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517860079983420451" fileName="LocalExtendedMethodCall_Constraints.java" startLine="104" startPosition="13" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="109" startPosition="61" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="114" startPosition="7" endLine="115" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187174" fileName="LocalExtendedMethodCall_Constraints.java" startLine="118" startPosition="148" endLine="119" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="36" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalExtendedMethodCall_Constraints#()V" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="49" startPosition="0" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7517860079983420355" fileName="LocalExtendedMethodCall_Constraints.java" startLine="72" startPosition="56" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7517860079983420376" fileName="LocalExtendedMethodCall_Constraints.java" startLine="76" startPosition="262" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7517860079983420404" fileName="LocalExtendedMethodCall_Constraints.java" startLine="94" startPosition="44" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7517860079983420425" fileName="LocalExtendedMethodCall_Constraints.java" startLine="98" startPosition="15" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5500967171012052588" fileName="LocalExtendedMethodCall_Constraints.java" startLine="84" startPosition="239" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5500967171012052598" fileName="LocalExtendedMethodCall_Constraints.java" startLine="88" startPosition="55" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="60" startPosition="115" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="7517860079983420400" fileName="LocalExtendedMethodCall_Constraints.java" startLine="93" startPosition="0" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="5500967171012052573" fileName="LocalExtendedMethodCall_Constraints.java" startLine="83" startPosition="40" endLine="92" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="7517860079983420395" fileName="LocalExtendedMethodCall_Constraints.java" startLine="82" startPosition="75" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="69" startPosition="49" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="68" startPosition="56" endLine="112" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="65" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="59" startPosition="75" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="56" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="37" startPosition="48" endLine="38" endPosition="91" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="42" startPosition="43" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="50" startPosition="51" endLine="51" endPosition="67" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="62" startPosition="44" endLine="63" endPosition="20" />
-    <scopeInfo nodeId="7517860079983420356" fileName="LocalExtendedMethodCall_Constraints.java" startLine="73" startPosition="161" endLine="74" endPosition="28" />
-    <scopeInfo nodeId="7517860079983420377" fileName="LocalExtendedMethodCall_Constraints.java" startLine="77" startPosition="37" endLine="78" endPosition="28" />
-    <scopeInfo nodeId="5500967171012052589" fileName="LocalExtendedMethodCall_Constraints.java" startLine="85" startPosition="49" endLine="86" endPosition="124" />
-    <scopeInfo nodeId="5500967171012052599" fileName="LocalExtendedMethodCall_Constraints.java" startLine="89" startPosition="47" endLine="90" endPosition="116" />
-    <scopeInfo nodeId="7517860079983420405" fileName="LocalExtendedMethodCall_Constraints.java" startLine="95" startPosition="108" endLine="96" endPosition="67" />
-    <scopeInfo nodeId="7517860079983420428" fileName="LocalExtendedMethodCall_Constraints.java" startLine="99" startPosition="44" endLine="100" endPosition="101" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="109" startPosition="61" endLine="110" endPosition="58" />
-    <scopeInfo nodeId="7685333756920187173" fileName="LocalExtendedMethodCall_Constraints.java" startLine="118" startPosition="148" endLine="119" endPosition="156" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="36" startPosition="0" endLine="39" endPosition="3" />
-    <scopeInfo nodeId="7517860079983420403" fileName="LocalExtendedMethodCall_Constraints.java" startLine="94" startPosition="44" endLine="97" endPosition="17" />
-    <scopeInfo nodeId="7517860079983420425" fileName="LocalExtendedMethodCall_Constraints.java" startLine="98" startPosition="15" endLine="101" endPosition="15">
+  <root nodeId="7685333756920187171" modelId="r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)">
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="31" startPosition="84" endLine="32" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="32" startPosition="195" endLine="33" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_rxyf25_a0a1a0a0a1a0b0a1a2" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="35" startPosition="48" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="40" startPosition="43" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="45" startPosition="200" endLine="46" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="46" startPosition="96" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="48" startPosition="51" endLine="49" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="50" startPosition="5" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="51" startPosition="0" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="56" startPosition="83" endLine="57" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="60" startPosition="44" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7517860079983420349" fileName="LocalExtendedMethodCall_Constraints.java" startLine="69" startPosition="142" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7517860079983420357" fileName="LocalExtendedMethodCall_Constraints.java" startLine="71" startPosition="161" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7517860079983420366" fileName="LocalExtendedMethodCall_Constraints.java" startLine="73" startPosition="13" endLine="74" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7517860079983420378" fileName="LocalExtendedMethodCall_Constraints.java" startLine="75" startPosition="37" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5500967171011680108" fileName="LocalExtendedMethodCall_Constraints.java" startLine="77" startPosition="13" endLine="78" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7517860079983420387" fileName="LocalExtendedMethodCall_Constraints.java" startLine="78" startPosition="139" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7517860079983420388" fileName="LocalExtendedMethodCall_Constraints.java" startLine="79" startPosition="0" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5500967171012052573" fileName="LocalExtendedMethodCall_Constraints.java" startLine="81" startPosition="40" endLine="82" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5500967171012052608" fileName="LocalExtendedMethodCall_Constraints.java" startLine="82" startPosition="171" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7517860079983420406" fileName="LocalExtendedMethodCall_Constraints.java" startLine="85" startPosition="108" endLine="86" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7517860079983420429" fileName="LocalExtendedMethodCall_Constraints.java" startLine="89" startPosition="44" endLine="90" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5500967171012052609" fileName="LocalExtendedMethodCall_Constraints.java" startLine="91" startPosition="15" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7517860079983420443" fileName="LocalExtendedMethodCall_Constraints.java" startLine="92" startPosition="0" endLine="93" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7517860079983420451" fileName="LocalExtendedMethodCall_Constraints.java" startLine="94" startPosition="13" endLine="95" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="99" startPosition="61" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="104" startPosition="7" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187174" fileName="LocalExtendedMethodCall_Constraints.java" startLine="108" startPosition="148" endLine="109" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalExtendedMethodCall_Constraints#()V" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="47" startPosition="0" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7517860079983420355" fileName="LocalExtendedMethodCall_Constraints.java" startLine="70" startPosition="56" endLine="73" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7517860079983420376" fileName="LocalExtendedMethodCall_Constraints.java" startLine="74" startPosition="262" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7517860079983420404" fileName="LocalExtendedMethodCall_Constraints.java" startLine="84" startPosition="44" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7517860079983420425" fileName="LocalExtendedMethodCall_Constraints.java" startLine="88" startPosition="15" endLine="91" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="58" startPosition="115" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="7517860079983420400" fileName="LocalExtendedMethodCall_Constraints.java" startLine="83" startPosition="0" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="43" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="7517860079983420395" fileName="LocalExtendedMethodCall_Constraints.java" startLine="80" startPosition="75" endLine="94" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="67" startPosition="49" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="66" startPosition="56" endLine="102" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="63" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="57" startPosition="75" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="54" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="35" startPosition="48" endLine="36" endPosition="91" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="40" startPosition="43" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="48" startPosition="51" endLine="49" endPosition="67" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="60" startPosition="44" endLine="61" endPosition="20" />
+    <scopeInfo nodeId="7517860079983420356" fileName="LocalExtendedMethodCall_Constraints.java" startLine="71" startPosition="161" endLine="72" endPosition="28" />
+    <scopeInfo nodeId="7517860079983420377" fileName="LocalExtendedMethodCall_Constraints.java" startLine="75" startPosition="37" endLine="76" endPosition="28" />
+    <scopeInfo nodeId="7517860079983420405" fileName="LocalExtendedMethodCall_Constraints.java" startLine="85" startPosition="108" endLine="86" endPosition="67" />
+    <scopeInfo nodeId="7517860079983420428" fileName="LocalExtendedMethodCall_Constraints.java" startLine="89" startPosition="44" endLine="90" endPosition="101" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="99" startPosition="61" endLine="100" endPosition="58" />
+    <scopeInfo nodeId="7685333756920187173" fileName="LocalExtendedMethodCall_Constraints.java" startLine="108" startPosition="148" endLine="109" endPosition="156" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="3" />
+    <scopeInfo nodeId="7517860079983420403" fileName="LocalExtendedMethodCall_Constraints.java" startLine="84" startPosition="44" endLine="87" endPosition="17" />
+    <scopeInfo nodeId="7517860079983420425" fileName="LocalExtendedMethodCall_Constraints.java" startLine="88" startPosition="15" endLine="91" endPosition="15">
       <varInfo nodeId="7517860079983420426" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5500967171012052588" fileName="LocalExtendedMethodCall_Constraints.java" startLine="84" startPosition="239" endLine="88" endPosition="0">
-      <varInfo nodeId="5500967171012052588" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5500967171012052598" fileName="LocalExtendedMethodCall_Constraints.java" startLine="88" startPosition="55" endLine="92" endPosition="0">
-      <varInfo nodeId="5500967171012052598" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="7685333756920187171" varName="childConcept" />
       <varInfo nodeId="7685333756920187171" varName="link" />
       <varInfo nodeId="7685333756920187171" varName="node" />
       <varInfo nodeId="7685333756920187171" varName="operationContext" />
       <varInfo nodeId="7685333756920187171" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="60" startPosition="115" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="7517860079983420400" fileName="LocalExtendedMethodCall_Constraints.java" startLine="93" startPosition="0" endLine="98" endPosition="15">
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="58" startPosition="115" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="7517860079983420400" fileName="LocalExtendedMethodCall_Constraints.java" startLine="83" startPosition="0" endLine="88" endPosition="15">
       <varInfo nodeId="7517860079983420401" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="47" startPosition="200" endLine="54" endPosition="18">
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="97" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="45" startPosition="200" endLine="52" endPosition="18">
       <varInfo nodeId="7685333756920187171" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="43" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="7685333756920187171" varName="checkingNodeContext" />
       <varInfo nodeId="7685333756920187171" varName="childConcept" />
       <varInfo nodeId="7685333756920187171" varName="link" />
@@ -395,30 +379,28 @@
       <varInfo nodeId="7685333756920187171" varName="operationContext" />
       <varInfo nodeId="7685333756920187171" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7517860079983420399" fileName="LocalExtendedMethodCall_Constraints.java" startLine="83" startPosition="40" endLine="103" endPosition="132">
+    <scopeInfo nodeId="7517860079983420399" fileName="LocalExtendedMethodCall_Constraints.java" startLine="81" startPosition="40" endLine="93" endPosition="132">
       <varInfo nodeId="5500967171012052574" varName="methods" />
     </scopeInfo>
-    <scopeInfo nodeId="7517860079983420348" fileName="LocalExtendedMethodCall_Constraints.java" startLine="71" startPosition="142" endLine="105" endPosition="26">
+    <scopeInfo nodeId="7517860079983420348" fileName="LocalExtendedMethodCall_Constraints.java" startLine="69" startPosition="142" endLine="95" endPosition="26">
       <varInfo nodeId="7517860079983420367" varName="classifier" />
       <varInfo nodeId="5500967171011680109" varName="constraint" />
       <varInfo nodeId="7517860079983420389" varName="names" />
       <varInfo nodeId="7517860079983420350" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="69" startPosition="49" endLine="107" endPosition="0">
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="67" startPosition="49" endLine="97" endPosition="0">
       <varInfo nodeId="7685333756920187171" varName="_context" />
       <varInfo nodeId="7685333756920187171" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="68" startPosition="56" endLine="112" endPosition="10" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="65" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="58" startPosition="83" endLine="115" endPosition="22">
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="66" startPosition="56" endLine="102" endPosition="10" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="63" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="56" startPosition="83" endLine="105" endPosition="22">
       <varInfo nodeId="7685333756920187171" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="56" startPosition="0" endLine="117" endPosition="0" />
-    <unitInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="33" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints" />
-    <unitInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="60" startPosition="48" endLine="114" endPosition="5" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$1" />
-    <unitInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="69" startPosition="19" endLine="112" endPosition="9" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$2" />
-    <unitInfo nodeId="5500967171012052588" fileName="LocalExtendedMethodCall_Constraints.java" startLine="84" startPosition="216" endLine="88" endPosition="15" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$3" />
-    <unitInfo nodeId="5500967171012052598" fileName="LocalExtendedMethodCall_Constraints.java" startLine="88" startPosition="28" endLine="92" endPosition="15" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$3" />
+    <scopeInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="54" startPosition="0" endLine="107" endPosition="0" />
+    <unitInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="31" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints" />
+    <unitInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="58" startPosition="48" endLine="104" endPosition="5" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$1" />
+    <unitInfo nodeId="7685333756920187171" fileName="LocalExtendedMethodCall_Constraints.java" startLine="67" startPosition="19" endLine="102" endPosition="9" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$2" />
   </root>
 </debugInfo>
 

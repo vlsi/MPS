@@ -124,7 +124,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
         }
         {
           String childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_ = "parameter";
-          if (nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getChildCount(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a, childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_, 1))) {
             return false;
           }
           {

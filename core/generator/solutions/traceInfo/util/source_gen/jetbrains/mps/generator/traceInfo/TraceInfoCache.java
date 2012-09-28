@@ -19,9 +19,14 @@ import jetbrains.mps.project.IModule;
 import java.net.URL;
 import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
-import org.jdom.Element;
+import org.jdom.JDOMException;
 import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
+import java.net.MalformedURLException;
+import org.jdom.Element;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
@@ -44,20 +49,20 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       }
       INSTANCE = this;
     }
-    // todo: move (but remember that java provider is used in idea plugin as well) 
-    myProviders.add(myJavaTraceInfoProvider);
     super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         cleanup();
       }
     });
+    // todo: move (but remember that java provider is used in idea plugin as well) 
+    myProviders.add(myJavaTraceInfoProvider);
   }
 
   @Override
   public void dispose() {
-    super.dispose();
     myProviders.remove(myJavaTraceInfoProvider);
+    super.dispose();
     synchronized (INSTANCE_LOCK) {
       INSTANCE = null;
     }
@@ -114,8 +119,11 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       if (stream == null) {
         return null;
       }
-      return load(stream);
+      Document doc = JDOMUtil.loadDocument(stream);
+      return DebugInfo.fromXml(doc.getRootElement(), sm);
     } catch (IOException e) {
+      return null;
+    } catch (JDOMException e) {
       return null;
     } finally {
       try {
@@ -128,6 +136,11 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         }
       }
     }
+  }
+
+  @Override
+  protected DebugInfo load(InputStream stream) throws IOException {
+    throw new UnsupportedOperationException();
   }
 
   @Nullable
@@ -156,6 +169,24 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME;
   }
 
+  @Nullable
+  public DebugInfo getLastGeneratedDebugInfo(@NotNull SModelDescriptor descriptor) {
+    String generatorOutputPath = descriptor.getModule().getGeneratorOutputPath();
+    if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
+      return null;
+    }
+    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(generatorOutputPath).getDescendant(traceInfoResourceName(descriptor));
+    if (!(traceInfoFile.exists())) {
+      return null;
+    }
+    try {
+      URL url = new File(traceInfoFile.getPath().replace("/", File.separator)).toURI().toURL();
+      return loadCacheFromUrl(url, descriptor);
+    } catch (MalformedURLException e) {
+      return null;
+    }
+  }
+
   @Override
   protected boolean isCache() {
     return false;
@@ -168,7 +199,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   protected DebugInfo fromXml(Element e) {
-    return DebugInfo.fromXml(e);
+    throw new UnsupportedOperationException();
   }
 
   public void addResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {

@@ -79,6 +79,7 @@
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
+    <editorOptionsProvider instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable$EditorSettingsConfigurableOptionsProvider"/>
     <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>

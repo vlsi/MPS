@@ -18,7 +18,7 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
+    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {

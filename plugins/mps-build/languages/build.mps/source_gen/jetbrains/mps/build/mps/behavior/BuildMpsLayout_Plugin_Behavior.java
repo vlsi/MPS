@@ -80,7 +80,7 @@ public class BuildMpsLayout_Plugin_Behavior {
         return null;
       }
     }
-    return BuildLayout_PathElement_Behavior.callSuper_location_7117056644539862594(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", helper, artifactId);
+    return BuildLayout_PathElement_Behavior.callSuperNew_location_7117056644539862594(thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", helper, artifactId);
   }
 
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, final Object artifactId) {
@@ -102,7 +102,7 @@ public class BuildMpsLayout_Plugin_Behavior {
         });
       }
     }
-    return BuildLayout_Node_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", artifactId);
+    return BuildLayout_Node_Behavior.callSuperNew_exports_6547494638219603457(thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", artifactId);
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {

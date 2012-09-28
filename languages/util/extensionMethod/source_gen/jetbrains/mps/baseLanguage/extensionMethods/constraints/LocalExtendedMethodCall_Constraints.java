@@ -23,10 +23,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -81,15 +79,7 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
 
             Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {
-              Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, _context.getEnclosingNode(), constraint).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-                }
-              }).select(new ISelector<SNode, SNode>() {
-                public SNode select(SNode it) {
-                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-                }
-              });
+              Iterable<SNode> methods = Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), _context.getEnclosingNode());
 
               for (SNode method : methods) {
                 if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {

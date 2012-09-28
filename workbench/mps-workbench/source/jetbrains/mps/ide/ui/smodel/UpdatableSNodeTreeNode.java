@@ -116,7 +116,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     private Set<SNode> getNodesInThisRoot(Set<SNode> candidates) {
       Set<SNode> nodesInThisRoot = new HashSet<SNode>();
       for (SNode node : candidates) {
-        SNode root = (node.isRoot()) ? node : node.getContainingRoot();
+        SNode root = (node.isRoot()) ? node : node.getTopmostAncestor();
         if (myTreeNode.getSNode().equals(root)) {
           nodesInThisRoot.add(node);
         }

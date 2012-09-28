@@ -15,12 +15,17 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
+
+  //common properties
+
   SNodeId getNodeId();
 
   SNodeReference getReference();
@@ -33,43 +38,50 @@ public interface SNode {
 
   SModel getModel();
 
-  //tree traversal
-
-  SNode getParent();
-
-  SNode getTopmostAncestor();
-
-  String getRole();
-
-  SNode getPrevSibling();
-
-  SNode getNextSibling();
-
-  void addNextSibling(SNode newSibling);
-
-  void addPrevSibling(SNode newSibling);
-
-  void delete();
-
-  // single
-
-  SNode getChild(String role);
-
-  void setChild(String role, SNode childNode);
-
-  // multiple
+  // tree operation
 
   void addChild(String role, SNode child);
 
+  /**
+   * Inserts the given node as a child of current after anchor node in specified role.<br/>
+   * If the given role is multiple, this method inserts a new child.<br/>
+   * If the given role is single and currently has no children in it, a new child is added.
+   * Last parameter is ignored in this case.<br/>
+   * If the given role is single and currently has a child in it, the current child is replaced
+   * with a new one. Last parameter is ignored in this case.<br/>
+   *
+   * @param role a role to insert new child into
+   * @param child a node to insert
+   * @param anchor a new child node will be inserted after this node. If specified,
+   *               anchor must be in the same role as inserted child. If not specified,
+   *               a new child is inserted into first position in the given role
+   */
+  void insertChild(String role, SNode child, @Nullable SNode anchor);
+
+  //note this has different semantics than child.delete()
   void removeChild(SNode child);
 
+  void delete();
+
+  //base tree queries
+
+  SNode getParent();
+
+  @NotNull
+  SNode getTopmostAncestor();
+
+  //non-modifiable
   Iterable<? extends SNode> getChildren(String role);
 
-  Iterable<? extends SNode> getChildren();
+  SNode getPrevChild(SNode child);
 
-  boolean isEmpty(String role);
+  SNode getNextChild(SNode child);
 
-  int getChildCount(String role);
+  @Nullable String getRole();
+
+  String getRoleOf(SNode child);
+
+  void visitChildren(ChildVisitor v);
 
   // refs
 
@@ -85,7 +97,7 @@ public interface SNode {
 
   void removeReference(SReference ref);
 
-  Iterable<? extends SReference> getReferences();
+  void visitReferences(ReferenceVisitor v);
 
   // props
 
@@ -95,11 +107,31 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
+  void visitProperties(PropertyVisitor v);
+
   // user objects
 
   Object getUserObject(Object key);
 
   void putUserObject(Object key, @Nullable Object value);
 
-  Iterable<Object> getUserObjectsKeys();
+  void visitUserObjects(UserObjectVisitor v);
+
+  //visitors
+
+  public interface ChildVisitor {
+    boolean visitChild(String role, SNode child);
+  }
+
+  public interface ReferenceVisitor {
+    boolean visitReference(String role, SReference ref);
+  }
+
+  public interface PropertyVisitor {
+    boolean visitProperty(String name, String value);
+  }
+
+  public interface UserObjectVisitor {
+    boolean visitObject(Object key, Object value);
+  }
 }

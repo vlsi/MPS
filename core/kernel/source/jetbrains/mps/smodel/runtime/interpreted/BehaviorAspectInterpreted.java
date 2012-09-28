@@ -74,7 +74,7 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
     }
 
     public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-      return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invoke(returnType, node, methodName, parametersTypes, parameters);
+      return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeWithConceptFqName(returnType, node, getConceptFqName(), methodName, parametersTypes, parameters);
     }
 
     public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {

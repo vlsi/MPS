@@ -196,6 +196,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kdzh.7832771629084799699" resolveInfo="BuildMps_IdeaPluginVendor" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4964617264469341041">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kdzh.4964617264469340766" resolveInfo="GeneratorInternal_BuildSourcePath" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4964617264469341044">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kdzh.4964617264469340623" resolveInfo="GeneratorInternal_BuildMps_Module" />
+    </node>
   </roots>
   <root id="5253498789149412570">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6057319140845478665">
@@ -2973,6 +2981,16 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7832771629084799722">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.7832771629084799700" />
       </node>
+    </node>
+  </root>
+  <root id="4964617264469341041">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4964617264469341043">
+      <property name="text" nameId="tpc2.1073389577007" value="path" />
+    </node>
+  </root>
+  <root id="4964617264469341044">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4964617264469341046">
+      <property name="text" nameId="tpc2.1073389577007" value="module" />
     </node>
   </root>
 </model>

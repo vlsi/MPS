@@ -23,6 +23,11 @@ public class RelayQueryExpression_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.RelayQueryExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1977954644795510058, new Object[]{});
   }
 
+  public static boolean callSuperNew_isLegalAsStatement_1977954644795510058(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.RelayQueryExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1977954644795510058, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLegalAsStatement_1977954644795510058(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.RelayQueryExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1977954644795510058, new Object[]{});
   }

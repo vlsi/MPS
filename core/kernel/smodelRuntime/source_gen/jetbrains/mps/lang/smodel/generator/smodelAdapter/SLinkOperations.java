@@ -6,12 +6,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 
+@Deprecated
 public class SLinkOperations {
+  @Deprecated
   public SLinkOperations() {
   }
 
@@ -24,7 +27,11 @@ public class SLinkOperations {
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {
-        return node.getChild(role);
+        Iterator<SNode> it = node.getChildren(role).iterator();
+        return (it.hasNext() ?
+          it.next() :
+          null
+        );
       }
       return node.getReferent(role);
     }
@@ -34,15 +41,18 @@ public class SLinkOperations {
   public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
-        if (targetNode == null) {
-          node.setChild(role, null);
-        } else {
+        SNode oldChild = node.getChild(role);
+        if (oldChild != null) {
+          node.removeChild(oldChild);
+        }
+
+        if (targetNode != null) {
           SNode targetParent = targetNode.getParent();
           if (targetParent != node) {
             if (targetParent != null) {
               targetParent.removeChild(targetNode);
             }
-            node.setChild(role, targetNode);
+            node.addChild(role, targetNode);
           }
         }
       } else {
@@ -55,7 +65,7 @@ public class SLinkOperations {
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
-      node.setChild(role, newChild);
+      SLinkOperations.setTarget(node, role, newChild, true);
       return newChild;
     }
     return null;
@@ -114,7 +124,11 @@ public class SLinkOperations {
     if (parent == null) {
       return null;
     }
-    SNode child = parent.getChild(role);
+    Iterator<SNode> it = parent.getChildren(role).iterator();
+    SNode child = (it.hasNext() ?
+      it.next() :
+      null
+    );
     if (child != null) {
       parent.removeChild(child);
       return child;
@@ -133,13 +147,6 @@ public class SLinkOperations {
     return children;
   }
 
-  public static int getCount(SNode parent, String role) {
-    if (parent != null) {
-      return parent.getChildCount(role);
-    }
-    return 0;
-  }
-
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {
     if (node == null) {
       return new ArrayList<SNode>();
@@ -151,7 +158,7 @@ public class SLinkOperations {
     if (reference == null) {
       return null;
     }
-    return (SNode) reference.getSourceNode().getLinkDeclaration(reference.getRole());
+    return ((SNode) SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(((SNode) reference.getSourceNode())), reference.getRole()));
   }
 
   public static SNode getTargetNode(SReference reference) {

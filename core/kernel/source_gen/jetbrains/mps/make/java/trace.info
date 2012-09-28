@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="757342313568246027">
+  <root nodeId="757342313568246027" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
     <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="13" startPosition="77" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="15" startPosition="0" endLine="16" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependenciesRoothandler" />
     <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="16" startPosition="148" endLine="17" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependencyhandler" />
@@ -298,7 +298,7 @@
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="161" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="96" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />
   </root>
-  <root nodeId="757342313568265361">
+  <root nodeId="757342313568265361" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
     <nodeInfo nodeId="757342313568265492" fileName="ModelDependencies.java" startLine="13" startPosition="32" endLine="14" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCY" />
     <nodeInfo nodeId="757342313568265496" fileName="ModelDependencies.java" startLine="14" startPosition="56" endLine="15" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES_ROOT" />
     <nodeInfo nodeId="757342313568265501" fileName="ModelDependencies.java" startLine="16" startPosition="0" endLine="17" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependencies" />
@@ -364,7 +364,7 @@
     <scopeInfo nodeId="757342313568265445" fileName="ModelDependencies.java" startLine="37" startPosition="0" endLine="49" endPosition="0" />
     <unitInfo nodeId="757342313568265361" fileName="ModelDependencies.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.java.ModelDependencies" />
   </root>
-  <root nodeId="757342313568265510">
+  <root nodeId="757342313568265510" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
     <nodeInfo nodeId="757342313568265719" fileName="RootDependencies.java" startLine="15" startPosition="71" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS_NAME" />
     <nodeInfo nodeId="757342313568265723" fileName="RootDependencies.java" startLine="16" startPosition="55" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE_NAME" />
     <nodeInfo nodeId="757342313568265727" fileName="RootDependencies.java" startLine="17" startPosition="49" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPEND_CLASS" />
@@ -387,7 +387,7 @@
     <nodeInfo nodeId="757342313568265865" fileName="RootDependencies.java" startLine="55" startPosition="55" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757342313568265874" fileName="RootDependencies.java" startLine="56" startPosition="67" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="757342313568265535" fileName="RootDependencies.java" startLine="62" startPosition="39" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="757342313568265543" fileName="RootDependencies.java" startLine="64" startPosition="30" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="757342313568265543" fileName="RootDependencies.java" startLine="64" startPosition="29" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="757342313568265554" fileName="RootDependencies.java" startLine="67" startPosition="54" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757342313568265560" fileName="RootDependencies.java" startLine="68" startPosition="44" endLine="69" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="757342313568265566" fileName="RootDependencies.java" startLine="69" startPosition="56" endLine="70" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -433,7 +433,7 @@
     <scopeInfo nodeId="757342313568265774" fileName="RootDependencies.java" startLine="36" startPosition="31" endLine="37" endPosition="98" />
     <scopeInfo nodeId="757342313568265817" fileName="RootDependencies.java" startLine="44" startPosition="23" endLine="45" endPosition="54" />
     <scopeInfo nodeId="757342313568265834" fileName="RootDependencies.java" startLine="48" startPosition="22" endLine="49" endPosition="17" />
-    <scopeInfo nodeId="757342313568265542" fileName="RootDependencies.java" startLine="64" startPosition="30" endLine="65" endPosition="50" />
+    <scopeInfo nodeId="757342313568265542" fileName="RootDependencies.java" startLine="64" startPosition="29" endLine="65" endPosition="50" />
     <scopeInfo nodeId="757342313568265606" fileName="RootDependencies.java" startLine="79" startPosition="40" endLine="80" endPosition="51" />
     <scopeInfo nodeId="757342313568265617" fileName="RootDependencies.java" startLine="83" startPosition="35" endLine="84" endPosition="52" />
     <scopeInfo nodeId="757342313568265626" fileName="RootDependencies.java" startLine="87" startPosition="44" endLine="88" endPosition="55" />

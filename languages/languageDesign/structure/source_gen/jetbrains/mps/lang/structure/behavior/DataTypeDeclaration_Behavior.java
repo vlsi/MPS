@@ -92,6 +92,11 @@ public class DataTypeDeclaration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), "virtual_toBaseLanguageType_1213877229718", PARAMETERS_1213877229718, new Object[]{});
   }
 
+  public static SNode callSuperNew_toBaseLanguageType_1213877229718(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), callerConceptFqName, "virtual_toBaseLanguageType_1213877229718", PARAMETERS_1213877229718, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_toBaseLanguageType_1213877229718(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), callerConceptFqName, "virtual_toBaseLanguageType_1213877229718", PARAMETERS_1213877229718, new Object[]{});
   }

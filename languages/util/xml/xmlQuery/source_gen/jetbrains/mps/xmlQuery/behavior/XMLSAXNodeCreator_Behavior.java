@@ -24,6 +24,11 @@ public class XMLSAXNodeCreator_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541, new Object[]{});
   }
 
+  public static SNode callSuperNew_getExpectedReturnType_2268737274628969541(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getExpectedReturnType_2268737274628969541(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541, new Object[]{});
   }

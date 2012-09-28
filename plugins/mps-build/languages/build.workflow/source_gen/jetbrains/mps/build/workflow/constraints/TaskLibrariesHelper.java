@@ -67,7 +67,7 @@ public class TaskLibrariesHelper {
         if (map.containsKey(targetNode)) {
           n.setReferent(ref.getRole(), map.get(targetNode));
         } else {
-          SNode containingRoot = targetNode.getContainingRoot();
+          SNode containingRoot = targetNode.getTopmostAncestor();
           if (SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {
             genContext.showErrorMessage(n, "task library is not imported");
           }

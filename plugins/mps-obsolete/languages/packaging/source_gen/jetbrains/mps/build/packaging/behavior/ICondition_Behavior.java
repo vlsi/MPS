@@ -25,10 +25,20 @@ public class ICondition_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), "virtual_isTrueWhileGeneration_1233161599461", PARAMETERS_1233161599461, new Object[]{});
   }
 
+  public static boolean callSuperNew_canCalculateWhileGenerating_1233161185181(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), callerConceptFqName, "virtual_canCalculateWhileGenerating_1233161185181", PARAMETERS_1233161185181, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isTrueWhileGeneration_1233161599461(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), callerConceptFqName, "virtual_isTrueWhileGeneration_1233161599461", PARAMETERS_1233161599461, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_canCalculateWhileGenerating_1233161185181(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), callerConceptFqName, "virtual_canCalculateWhileGenerating_1233161185181", PARAMETERS_1233161185181, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isTrueWhileGeneration_1233161599461(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), callerConceptFqName, "virtual_isTrueWhileGeneration_1233161599461", PARAMETERS_1233161599461, new Object[]{});
   }

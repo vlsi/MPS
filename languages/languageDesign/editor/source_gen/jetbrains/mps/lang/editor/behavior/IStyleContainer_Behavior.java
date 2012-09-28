@@ -41,6 +41,11 @@ public class IStyleContainer_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), "virtual_getParent_1219419981626", PARAMETERS_1219419981626, new Object[]{});
   }
 
+  public static SNode callSuperNew_getParent_1219419981626(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", PARAMETERS_1219419981626, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getParent_1219419981626(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", PARAMETERS_1219419981626, new Object[]{});
   }

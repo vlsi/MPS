@@ -8,17 +8,16 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.scope.EmptyScope;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.Signature;
+import jetbrains.mps.baseLanguage.scopes.MethodSignature;
+import java.util.Collections;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -38,7 +37,7 @@ public class StaticMethodDeclaration_Behavior {
   }
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuperNew_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
@@ -47,12 +46,19 @@ public class StaticMethodDeclaration_Behavior {
     return true;
   }
 
-  public static boolean call_isMainMethod_1213877536670(SNode thisNode) {
-    return "main".equals(SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_qyxuoz_a1a0a0a3().createNode(), false);
+  public static boolean call_isMainMethod_1213877536670(final SNode thisNode) {
+    // if we do not use resolve action, type system would compute all types in the root 
+    // while in resolve mode only types required for calculating typeof are computed 
+    // the difference between two methods is very visible in main node selection in java run configuation () 
+    return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return "main".equals(SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_qyxuoz_a1a0a0a0a0a0a3a3().createNode(), false);
+      }
+    });
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
@@ -65,26 +71,13 @@ public class StaticMethodDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
-  public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return new EmptyScope();
-  }
-
-  public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
-      return new EmptyScope();
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    if (!((context.isElementVisible(thisNode)))) {
+      return;
     }
-
-    // collect extended classifiers 
-    List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
-    if ((extendsClass != null)) {
-      ListSequence.fromList(extendedClassifiers).addElement(extendsClass);
-    }
-    ListSequence.fromList(extendedClassifiers).addSequence(Sequence.fromIterable(Sequence.fromArray(implementsInterfaces)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }));
-    return new StaticMethodDeclarationScope(classNode, extendedClassifiers);
+    Signature signature = new MethodSignature(thisNode, Collections.<SNode,SNode>emptyMap());
+    context.addMember(thisNode, signature);
+    context.hideMembers(signature);
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082235(SNode thisNode) {
@@ -107,24 +100,44 @@ public class StaticMethodDeclaration_Behavior {
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381569, new Object[]{});
   }
 
+  public static List<Icon> callSuperNew_getMarkIcons_5039675756633082235(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082235, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getChildrenToDisplayIntention_4025276038182459944(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459944, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isStatic_8986964027630472427(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472427, new Object[]{});
+  }
+
+  public static Icon callSuperNew_getAdditionalIcon_8884554759541381569(SNode thisNode, String callerConceptFqName) {
+    return (Icon) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381569, new Object[]{});
+  }
+
+  @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633082235(SNode thisNode, String callerConceptFqName) {
     return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082235, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459944(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459944, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_isStatic_8986964027630472427(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472427, new Object[]{});
   }
 
+  @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541381569(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381569, new Object[]{});
   }
 
-  public static class QuotationClass_qyxuoz_a1a0a0a3 {
-    public QuotationClass_qyxuoz_a1a0a0a3() {
+  public static class QuotationClass_qyxuoz_a1a0a0a0a0a0a3a3 {
+    public QuotationClass_qyxuoz_a1a0a0a0a0a0a3a3() {
     }
 
     public SNode createNode() {

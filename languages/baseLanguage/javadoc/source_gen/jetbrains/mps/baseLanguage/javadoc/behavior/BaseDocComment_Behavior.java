@@ -25,6 +25,11 @@ public class BaseDocComment_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795, new Object[]{});
   }
 
+  public static boolean callSuperNew_isTagSectionEmpty_8465538089690623795(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), callerConceptFqName, "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isTagSectionEmpty_8465538089690623795(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), callerConceptFqName, "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795, new Object[]{});
   }

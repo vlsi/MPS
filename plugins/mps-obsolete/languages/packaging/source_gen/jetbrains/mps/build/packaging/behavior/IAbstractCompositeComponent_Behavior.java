@@ -19,6 +19,11 @@ public class IAbstractCompositeComponent_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"), "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202, new Object[]{});
   }
 
+  public static String callSuperNew_getChildrenTargetDir_1237389224202(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"), callerConceptFqName, "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202, new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getChildrenTargetDir_1237389224202(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"), callerConceptFqName, "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202, new Object[]{});
   }

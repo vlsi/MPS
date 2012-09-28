@@ -35,10 +35,20 @@ public class StyleClassItem_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594, new Object[]{});
   }
 
+  public static boolean callSuperNew_isApplicableTo_1214304723440(SNode thisNode, String callerConceptFqName, SNode cellModel) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, new Object[]{cellModel});
+  }
+
+  public static SNode callSuperNew_getStyleConstant_1215703564594(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isApplicableTo_1214304723440(SNode thisNode, String callerConceptFqName, SNode cellModel) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, new Object[]{cellModel});
   }
 
+  @Deprecated
   public static SNode callSuper_getStyleConstant_1215703564594(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594, new Object[]{});
   }

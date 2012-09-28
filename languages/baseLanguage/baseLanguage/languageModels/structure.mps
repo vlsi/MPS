@@ -1161,6 +1161,18 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7405920559687209277">
+      <property name="name" nameId="tpck.1169194664001" value="IClassifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7405920559687209278">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
+      <property name="name" nameId="tpck.1169194664001" value="IClassifierMember" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7405920559687237502">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
+      <property name="name" nameId="tpck.1169194664001" value="IClassifierType" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -2301,6 +2313,12 @@
       <property name="role" nameId="tpce.1071599776563" value="staticInnerClassifiers" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7405920559687605081">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7405920559687209277" resolveInfo="IClassifier" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="794874978493704474">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1188208561367">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1188208481402" resolveInfo="HasAnnotation" />
     </node>
@@ -2341,6 +2359,9 @@
       <property name="role" nameId="tpce.1071599776563" value="parameter" />
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7405920559687605197">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7405920559687237502" resolveInfo="IClassifierType" />
     </node>
   </root>
   <root id="1107796713796">
@@ -3150,6 +3171,9 @@
   <root id="1178285077437">
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178549989306">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178549954367" resolveInfo="IVisible" />
+    </node>
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7405920559687647667">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7405920559687209278" resolveInfo="IClassifierMember" />
     </node>
   </root>
   <root id="1178549954367">
@@ -4374,5 +4398,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1070534760951" resolveInfo="ArrayType" />
     </node>
   </root>
+  <root id="7405920559687209277" />
+  <root id="7405920559687209278" />
+  <root id="7405920559687237502" />
 </model>
 

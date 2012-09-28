@@ -34,6 +34,11 @@ public class BooleanStyleSheetItem_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946, new Object[]{});
   }
 
+  public static boolean callSuperNew_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946, new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946, new Object[]{});
   }

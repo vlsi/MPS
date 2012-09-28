@@ -122,14 +122,14 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
 
     // clean rtypes and ltypes 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
-      if (node.getChild(LTYPE) != null) {
-        node.removeChild(node.getChild(LTYPE));
+      if (node.getUserObject(LTYPE) != null) {
+        node.removeUserObject(LTYPE);
       }
-      if (node.getChild(RTYPE) != null) {
-        node.removeChild(node.getChild(RTYPE));
+      if (node.getUserObject(RTYPE) != null) {
+        node.removeUserObject(RTYPE);
       }
-      if (node.getChild(CTYPE) != null) {
-        node.removeChild(node.getChild(CTYPE));
+      if (node.getUserObject(CTYPE) != null) {
+        node.removeUserObject(CTYPE);
       }
     }
 
@@ -159,14 +159,14 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     for (SNode binaryOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{}))) {
       SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true));
       SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true));
-      binaryOperation.addChild(TransformatorImpl.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(ltype)));
-      binaryOperation.addChild(TransformatorImpl.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(rtype)));
+      binaryOperation.putUserObject(TransformatorImpl.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(ltype)));
+      binaryOperation.putUserObject(TransformatorImpl.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(rtype)));
     }
 
     // we also calculate types for all array access operations 
     for (SNode arrayAccess : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", false, new String[]{}))) {
       SNode ltype = TypeChecker.getInstance().getTypeOf(arrayAccess);
-      arrayAccess.addChild(TransformatorImpl.LTYPE, SNodeOperations.copyNode(ltype));
+      arrayAccess.putUserObject(TransformatorImpl.LTYPE, SNodeOperations.copyNode(ltype));
     }
 
     // and for all assignments 
@@ -175,15 +175,15 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
       }
     })) {
-      baseAssignment.addChild(TransformatorImpl.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(baseAssignment, "lValue", true)))));
-      baseAssignment.addChild(TransformatorImpl.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(baseAssignment, "rValue", true)))));
+      baseAssignment.putUserObject(TransformatorImpl.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(baseAssignment, "lValue", true)))));
+      baseAssignment.putUserObject(TransformatorImpl.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(baseAssignment, "rValue", true)))));
     }
 
     // and for all ternary operators 
     for (SNode ternaryOperator : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", false, new String[]{}))) {
-      ternaryOperator.addChild(TransformatorImpl.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "ifTrue", true)))));
-      ternaryOperator.addChild(TransformatorImpl.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "ifFalse", true)))));
-      ternaryOperator.addChild(TransformatorImpl.CTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "condition", true)))));
+      ternaryOperator.putUserObject(TransformatorImpl.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "ifTrue", true)))));
+      ternaryOperator.putUserObject(TransformatorImpl.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "ifFalse", true)))));
+      ternaryOperator.putUserObject(TransformatorImpl.CTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "condition", true)))));
     }
   }
 
@@ -485,21 +485,21 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         finished = false;
       } else {
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(binaryOperation, "leftExpression", true))) {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(TransformatorImpl.RTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a0c0b0q().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(TransformatorImpl.RTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a0a2a1a61().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a0c0b0q_0().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(TransformatorImpl.LTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a2a1a61().createNode()))) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) binaryOperation.getUserObject(RTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a0c0b0q().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) binaryOperation.getUserObject(RTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a0a2a1a61().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a0c0b0q_0().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) binaryOperation.getUserObject(LTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0a2a1a61().createNode()))) {
             SLinkOperations.setTarget(binaryOperation, "leftExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a0a2a1a61().createNode(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
             finished = false;
           } else {
-            SLinkOperations.setTarget(binaryOperation, "leftExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a0a0c0b0q().createNode(binaryOperation.getChild(LTYPE), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
+            SLinkOperations.setTarget(binaryOperation, "leftExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a0a0c0b0q().createNode(((SNode) binaryOperation.getUserObject(LTYPE)), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
             finished = false;
           }
         }
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(binaryOperation, "rightExpression", true))) {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(TransformatorImpl.LTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a1a0c0b0q().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(TransformatorImpl.LTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0b0a2a1a61().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a1a0c0b0q_0().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(TransformatorImpl.RTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0b0a2a1a61().createNode()))) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) binaryOperation.getUserObject(LTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a1a0c0b0q().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) binaryOperation.getUserObject(LTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a0b0a2a1a61().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0a1a0c0b0q_0().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) binaryOperation.getUserObject(RTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0a0b0a2a1a61().createNode()))) {
             SLinkOperations.setTarget(binaryOperation, "rightExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0b0a2a1a61().createNode(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
             finished = false;
 
           } else {
-            SLinkOperations.setTarget(binaryOperation, "rightExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a1a0c0b0q().createNode(binaryOperation.getChild(RTYPE), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
+            SLinkOperations.setTarget(binaryOperation, "rightExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a1a0c0b0q().createNode(((SNode) binaryOperation.getUserObject(RTYPE)), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
             finished = false;
           }
         }
@@ -519,10 +519,10 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(ternaryOperator, "condition", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(ctype, new TransformatorImpl.QuotationClass_s72qk1_a1a0a1a1a71().createNode())) {
         SLinkOperations.setTarget(ternaryOperator, "condition", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0b0b0r().createNode(SLinkOperations.getTarget(ternaryOperator, "condition", true)), true);
       }
-      if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(ternaryOperator, "ifTrue", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(ternaryOperator.getChild(TransformatorImpl.LTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a2a1a71().createNode())) {
+      if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(ternaryOperator, "ifTrue", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) ternaryOperator.getUserObject(LTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a2a1a71().createNode())) {
         SLinkOperations.setTarget(ternaryOperator, "ifTrue", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0c0b0r().createNode(SLinkOperations.getTarget(ternaryOperator, "ifTrue", true)), true);
       }
-      if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(ternaryOperator, "ifFalse", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(ternaryOperator.getChild(TransformatorImpl.RTYPE), new TransformatorImpl.QuotationClass_s72qk1_a1a0a3a1a71().createNode())) {
+      if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(ternaryOperator, "ifFalse", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(((SNode) ternaryOperator.getUserObject(RTYPE)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a3a1a71().createNode())) {
         SLinkOperations.setTarget(ternaryOperator, "ifFalse", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0d0b0r().createNode(SLinkOperations.getTarget(ternaryOperator, "ifFalse", true)), true);
       }
     }
@@ -668,8 +668,8 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     })) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(arrayAccess, "array", true)), new TransformatorImpl.QuotationClass_s72qk1_a1a0a0b0bb().createNode())) {
         SNode returnType = new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a1a72().createNode();
-        if (arrayAccess.getChild(TransformatorImpl.LTYPE) != null) {
-          returnType = TransformationUtil.getValueProxyTypeFromType(arrayAccess.getChild(TransformatorImpl.LTYPE));
+        if (arrayAccess.getUserObject(TransformatorImpl.LTYPE) != null) {
+          returnType = TransformationUtil.getValueProxyTypeFromType(((SNode) arrayAccess.getUserObject(LTYPE)));
         }
         SNodeOperations.replaceWithAnother(arrayAccess, new TransformatorImpl.QuotationClass_s72qk1_a0a0c0a0b0bb().createNode(returnType, SLinkOperations.getTarget(arrayAccess, "index", true), returnType, SLinkOperations.getTarget(arrayAccess, "array", true)));
         finished = false;

@@ -65,7 +65,7 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    List<SNode> allMemebers = IClassifier_Behavior.callSuper_getMembers_1213877528020(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration", contextNode);
+    List<SNode> allMemebers = IClassifier_Behavior.callSuperNew_getMembers_1213877528020(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", contextNode);
     if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
       return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -81,6 +81,11 @@ public class PersistentConfiguration_Behavior {
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
   }
 
+  public static SNode callSuperNew_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
   }
@@ -93,7 +98,7 @@ public class PersistentConfiguration_Behavior {
         configuration = SLinkOperations.getTarget(executor, "configuration", false);
       }
     }
-    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0l().createNode(configuration);
+    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0m().createNode(configuration);
   }
 
   public static List<SNode> getContextPersistentProperties_946964771156066434(SNode node) {
@@ -126,8 +131,8 @@ public class PersistentConfiguration_Behavior {
     }
   }
 
-  public static class QuotationClass_4ves9l_a0c0l {
-    public QuotationClass_4ves9l_a0c0l() {
+  public static class QuotationClass_4ves9l_a0c0m {
+    public QuotationClass_4ves9l_a0c0m() {
     }
 
     public SNode createNode(Object parameter_3) {

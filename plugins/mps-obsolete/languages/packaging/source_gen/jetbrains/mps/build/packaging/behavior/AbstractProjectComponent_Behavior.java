@@ -48,7 +48,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.callSuper_getFqName_1213877404258(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent");
+    return INamedConcept_Behavior.callSuperNew_getFqName_1213877404258(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept");
   }
 
   public static boolean call_included_1213877333807(SNode thisNode, SNode config) {
@@ -98,14 +98,29 @@ public class AbstractProjectComponent_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_equals_1213877333900", PARAMETERS_1213877333900, new Object[]{snode});
   }
 
+  public static File callSuperNew_getPath_1213877333777(SNode thisNode, String callerConceptFqName) {
+    return (File) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_getPath_1213877333777", PARAMETERS_1213877333777, new Object[]{});
+  }
+
+  public static List<SNode> callSuperNew_getPostProcessingTasks_1213877333861(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_getPostProcessingTasks_1213877333861", PARAMETERS_1213877333861, new Object[]{});
+  }
+
+  public static boolean callSuperNew_equals_1213877333900(SNode thisNode, String callerConceptFqName, SNode snode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_equals_1213877333900", PARAMETERS_1213877333900, new Object[]{snode});
+  }
+
+  @Deprecated
   public static File callSuper_getPath_1213877333777(SNode thisNode, String callerConceptFqName) {
     return (File) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_getPath_1213877333777", PARAMETERS_1213877333777, new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> callSuper_getPostProcessingTasks_1213877333861(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_getPostProcessingTasks_1213877333861", PARAMETERS_1213877333861, new Object[]{});
   }
 
+  @Deprecated
   public static boolean callSuper_equals_1213877333900(SNode thisNode, String callerConceptFqName, SNode snode) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_equals_1213877333900", PARAMETERS_1213877333900, new Object[]{snode});
   }

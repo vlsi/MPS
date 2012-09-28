@@ -8,8 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.scope.Scope;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor {
   public EnumConstantDeclaration_BehaviorDescriptor() {
@@ -27,12 +26,20 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return EnumConstantDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  }
+
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return IMethodCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }
 
   public Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypesByTypeVars_851115533308208851(thisNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    EnumConstantDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
@@ -55,8 +62,8 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return EnumConstantDeclaration_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
-  public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
-    return EnumConstantDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
@@ -65,10 +72,6 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
-  }
-
-  public Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
-    return EnumConstantDeclaration_Behavior.virtual_getScopeForInterface_1251851371723365208(thisNode, interfaceNode, extendsInterfaces);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

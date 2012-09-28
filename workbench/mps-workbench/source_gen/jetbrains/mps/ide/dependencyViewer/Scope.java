@@ -32,7 +32,7 @@ public class Scope {
     if (node == null) {
       return false;
     }
-    SNode root = node.getContainingRoot();
+    SNode root = node.getTopmostAncestor();
     if (ListSequence.fromList(myRoots).contains(root)) {
       return true;
     }

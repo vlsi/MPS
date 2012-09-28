@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -16,32 +16,38 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
       case 1:
         return new AsPattern_BehaviorDescriptor();
-      case 9:
-        return new PatternExpression_BehaviorDescriptor();
-      case 10:
-        return new PatternVariableDeclaration_BehaviorDescriptor();
       case 12:
-        return new PropertyPatternVariableDeclaration_BehaviorDescriptor();
+        return new PatternExpression_BehaviorDescriptor();
       case 13:
+        return new PatternVariableDeclaration_BehaviorDescriptor();
+      case 15:
+        return new PropertyPatternVariableDeclaration_BehaviorDescriptor();
+      case 16:
         return new WildcardPattern_BehaviorDescriptor();
-      case 5:
+      case 8:
         return new ListPattern_BehaviorDescriptor();
-      case 4:
+      case 7:
         return new LinkPatternVariableDeclaration_BehaviorDescriptor();
       case 0:
         return new ActionAsPattern_BehaviorDescriptor();
-      case 11:
+      case 14:
         return new PatternVariableReference_BehaviorDescriptor();
-      case 6:
+      case 9:
         return new OrPattern_BehaviorDescriptor();
-      case 7:
+      case 10:
         return new OrPatternClause_BehaviorDescriptor();
-      case 8:
+      case 11:
         return new OrPatternVariableReference_BehaviorDescriptor();
-      case 2:
+      case 5:
         return new InsertAfterPosition_BehaviorDescriptor();
-      case 3:
+      case 6:
         return new InsertBeforePosition_BehaviorDescriptor();
+      case 2:
+        return new GeneratorInternal_ChildDescriptor_BehaviorDescriptor();
+      case 4:
+        return new GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor();
+      case 3:
+        return new GeneratorInternal_PropertyDescriptor_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

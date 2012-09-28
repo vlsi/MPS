@@ -270,7 +270,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitAdded(new SModelDevKitEvent(this, ref));
+        sModelListener.devkitAdded(new SModelDevKitEvent(this, ref, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -281,7 +281,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitRemoved(new SModelDevKitEvent(this, ref));
+        sModelListener.devkitRemoved(new SModelDevKitEvent(this, ref, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -292,7 +292,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageAdded(new SModelLanguageEvent(this, ref));
+        sModelListener.languageAdded(new SModelLanguageEvent(this, ref, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -303,7 +303,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageRemoved(new SModelLanguageEvent(this, ref));
+        sModelListener.languageRemoved(new SModelLanguageEvent(this, ref, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -314,7 +314,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(this, modelReference));
+        sModelListener.importAdded(new SModelImportEvent(this, modelReference, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -325,7 +325,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(this, modelReference));
+        sModelListener.importAdded(new SModelImportEvent(this, modelReference, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -367,9 +367,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
     if (!canFireEvent()) return;
+    int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
@@ -379,9 +379,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
     if (!canFireEvent()) return;
+    int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.childRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
@@ -391,9 +391,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
     if (!canFireEvent()) return;
+    int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);

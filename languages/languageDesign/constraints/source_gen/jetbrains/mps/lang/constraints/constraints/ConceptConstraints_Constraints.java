@@ -36,6 +36,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
@@ -162,7 +163,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.CONSTRAINTS.is(model);
+    return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SModel check_guz8cy_a0c0a0(DefaultSModelDescriptor checkedDotOperand) {
