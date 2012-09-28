@@ -43,7 +43,7 @@ public class NullableAnalyzerRules {
   }
 
   public void apply(SNode nodeToApply, Program program) {
-    for (SNode descendant : nodeToApply.getDescendants()) {
+    for (SNode descendant : SNodeOperations.getDescendants(((SNode) nodeToApply), null, false, new String[]{})) {
       String key = descendant.getConcept().getId();
       if (myApplicableMap.containsKey(key)) {
         for (DataFlowConstructor rule : myApplicableMap.get(key)) {
