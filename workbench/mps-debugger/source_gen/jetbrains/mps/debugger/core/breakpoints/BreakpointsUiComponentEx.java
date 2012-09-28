@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -86,7 +87,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     while (cell != null) {
       SNode node = cell.getSNode();
       if (node != null) {
-        if (!(debugInfo.getPositions(node).isEmpty())) {
+        if (!(TraceDown.isTraceable(node, debugInfo))) {
           break;
         }
       }

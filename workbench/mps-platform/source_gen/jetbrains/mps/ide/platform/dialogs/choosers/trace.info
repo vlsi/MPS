@@ -1058,7 +1058,7 @@
     <unitInfo nodeId="121110127371512985" fileName="FileStructurePopup.java" startLine="718" startPosition="0" endLine="765" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$FileStructurePopupFilter" />
     <unitInfo nodeId="121110127371513691" fileName="FileStructurePopup.java" startLine="912" startPosition="0" endLine="963" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$FileStructureTree" />
     <unitInfo nodeId="121110127371513137" fileName="FileStructurePopup.java" startLine="766" startPosition="0" endLine="911" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch" />
-    <unitInfo nodeId="121110127371512981" fileName="FileStructurePopup.java" startLine="878" startPosition="0" endLine="910" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup.MyTreeSpeedSearch$ObjectWithWeight" />
+    <unitInfo nodeId="121110127371512981" fileName="FileStructurePopup.java" startLine="878" startPosition="0" endLine="910" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch$ObjectWithWeight" />
   </root>
   <root nodeId="121110127371584518" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
     <nodeInfo nodeId="121110127371584520" fileName="TreeStructureActionsOwner.java" startLine="16" startPosition="73" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />

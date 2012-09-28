@@ -219,7 +219,8 @@ public class ClassConcept_Behavior {
     if (index <= 0) {
       return fqName;
     }
-    return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
+    int length = SNodeOperations.getModel(thisNode).getLongName().length();
+    return fqName.substring(0, length) + "." + fqName.substring(length + 1).replace(".", "$");
   }
 
   public static List<SNode> call_getAllSuperClassifiers_4892662966716545618(SNode thisNode) {

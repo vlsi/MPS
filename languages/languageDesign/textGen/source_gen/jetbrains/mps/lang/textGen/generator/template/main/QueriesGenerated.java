@@ -246,15 +246,15 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable") && (SLinkOperations.getTarget(_context.getNode(), "encoding", true) != null);
   }
 
-  public static boolean ifMacro_Condition_2352568442779188177(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4456552156417887088(final IOperationContext operationContext, final IfMacroContext _context) {
     return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept");
   }
 
-  public static boolean ifMacro_Condition_2352568442779188181(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4456552156417887173(final IOperationContext operationContext, final IfMacroContext _context) {
     return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept");
   }
 
-  public static boolean ifMacro_Condition_2352568442779188185(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4456552156417887245(final IOperationContext operationContext, final IfMacroContext _context) {
     return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
   }
 
