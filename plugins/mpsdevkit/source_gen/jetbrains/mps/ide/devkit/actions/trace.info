@@ -2463,7 +2463,9 @@
     <scopeInfo nodeId="2565896126719599788" fileName="Generator_TabDescriptor.java" startLine="180" startPosition="47" endLine="184" endPosition="72" />
     <scopeInfo nodeId="2565896126719599486" fileName="Generator_TabDescriptor.java" startLine="72" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="2565896126719599688" fileName="Generator_TabDescriptor.java" startLine="130" startPosition="57" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="2565896126719599753" fileName="Generator_TabDescriptor.java" startLine="166" startPosition="25" endLine="171" endPosition="9" />
+    <scopeInfo nodeId="2565896126719599754" fileName="Generator_TabDescriptor.java" startLine="166" startPosition="25" endLine="171" endPosition="9">
+      <varInfo nodeId="2565896126719599756" varName="generator" />
+    </scopeInfo>
     <scopeInfo nodeId="2565896126719599486" fileName="Generator_TabDescriptor.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="2565896126719599486" varName="node" />
     </scopeInfo>
@@ -2495,9 +2497,7 @@
       <varInfo nodeId="2254732680176829848" varName="firstGen" />
       <varInfo nodeId="2254732680176829854" varName="templateModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2565896126719599604" fileName="Generator_TabDescriptor.java" startLine="102" startPosition="31" endLine="115" endPosition="9">
-      <varInfo nodeId="2565896126719599657" varName="moduleRef" />
-    </scopeInfo>
+    <scopeInfo nodeId="2565896126719599603" fileName="Generator_TabDescriptor.java" startLine="102" startPosition="31" endLine="115" endPosition="9" />
     <scopeInfo nodeId="2565896126719599779" fileName="Generator_TabDescriptor.java" startLine="178" startPosition="27" endLine="191" endPosition="59">
       <varInfo nodeId="2565896126719599781" varName="model" />
       <varInfo nodeId="2565896126719599821" varName="node" />
@@ -3077,9 +3077,7 @@
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="86" startPosition="33" endLine="87" endPosition="99" />
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="28" startPosition="45" endLine="31" endPosition="41" />
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="2662234144540708462" fileName="HighlightCellDependencies_Action.java" startLine="71" startPosition="26" endLine="74" endPosition="9">
-      <varInfo nodeId="2662234144540708463" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="2662234144540708461" fileName="HighlightCellDependencies_Action.java" startLine="71" startPosition="26" endLine="74" endPosition="9" />
     <scopeInfo nodeId="2662234144540708494" fileName="HighlightCellDependencies_Action.java" startLine="78" startPosition="80" endLine="81" endPosition="11" />
     <scopeInfo nodeId="2662234144540708417" fileName="HighlightCellDependencies_Action.java" startLine="85" startPosition="0" endLine="88" endPosition="7">
       <varInfo nodeId="2662234144540708417" varName="t" />
@@ -4188,7 +4186,9 @@
       <varInfo nodeId="3465865320786328040" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" />
-    <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="18" startPosition="9" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="3465865320786328043" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="18" startPosition="9" endLine="21" endPosition="7">
+      <varInfo nodeId="3465865320786328049" varName="aspect" />
+    </scopeInfo>
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="14" startPosition="53" endLine="24" endPosition="5" />
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="13" startPosition="0" endLine="25" endPosition="3" />
     <unitInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
@@ -5461,8 +5461,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -5526,8 +5526,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
