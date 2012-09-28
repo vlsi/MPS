@@ -457,7 +457,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public void visitChildren(ChildVisitor v) {
     for (SNode child : getChildren()) {
-      if (!v.visitChild(child.getRole(), child)) return;
+      if (!v.visitChild(getRoleOf(child), child)) return;
     }
   }
 
