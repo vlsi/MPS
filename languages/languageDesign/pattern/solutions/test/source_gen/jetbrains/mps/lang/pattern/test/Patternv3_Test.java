@@ -126,8 +126,8 @@ public class Patternv3_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v3_1fi_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_className = nodeToMatch_v3_1fi_a0a.getReferent("classifier");
-                patternVar_field = nodeToMatch_v3_1fi_a0a.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_v3_1fi_a0a.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_v3_1fi_a0a.getReferenceTarget("variableDeclaration");
               }
             }
           }
@@ -144,7 +144,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v3_1fi_a0a_0.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_v3_1fi_a0a_0.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_v3_1fi_a0a_0.getReferenceTarget("baseMethodDeclaration");
                 {
                   String childRole_v3_1fi__1 = "actualArgument";
                   if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0a_0, childRole_v3_1fi__1, 1))) {

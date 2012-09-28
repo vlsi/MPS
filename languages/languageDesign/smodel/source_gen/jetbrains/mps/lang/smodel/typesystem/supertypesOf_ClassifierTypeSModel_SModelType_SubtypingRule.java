@@ -87,7 +87,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
         }
         {
           SNodePointer pointer = SNODE_POINTER_fggx2c_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

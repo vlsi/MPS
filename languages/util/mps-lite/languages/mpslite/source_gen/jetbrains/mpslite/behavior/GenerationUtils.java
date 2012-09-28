@@ -95,11 +95,11 @@ public class GenerationUtils {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_19 = quotedNode_1;
-        quotedNode1_19.setReferent("applicableConcept", (SNode) parameter_39);
+        quotedNode1_19.setReferenceTarget("applicableConcept", (SNode) parameter_39);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_20 = quotedNode_2;
-          quotedNode1_20.setReferent("concept", (SNode) parameter_38);
+          quotedNode1_20.setReferenceTarget("concept", (SNode) parameter_38);
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_21 = quotedNode_3;
@@ -148,7 +148,7 @@ public class GenerationUtils {
                     {
                       quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, GlobalScope.getInstance(), false);
                       SNode quotedNode1_32 = quotedNode_17;
-                      quotedNode1_32.setReferent("link", (SNode) parameter_37);
+                      quotedNode1_32.setReferenceTarget("link", (SNode) parameter_37);
                       quotedNode_13.addChild("operation", quotedNode1_32);
                     }
                     quotedNode_9.addChild("operand", quotedNode1_30);
@@ -218,11 +218,11 @@ public class GenerationUtils {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_19 = quotedNode_1;
         quotedNode1_19.setProperty("side", "left");
-        quotedNode1_19.setReferent("applicableConcept", (SNode) parameter_39);
+        quotedNode1_19.setReferenceTarget("applicableConcept", (SNode) parameter_39);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_20 = quotedNode_2;
-          quotedNode1_20.setReferent("concept", (SNode) parameter_38);
+          quotedNode1_20.setReferenceTarget("concept", (SNode) parameter_38);
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_21 = quotedNode_3;
@@ -271,7 +271,7 @@ public class GenerationUtils {
                     {
                       quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, GlobalScope.getInstance(), false);
                       SNode quotedNode1_32 = quotedNode_17;
-                      quotedNode1_32.setReferent("link", (SNode) parameter_37);
+                      quotedNode1_32.setReferenceTarget("link", (SNode) parameter_37);
                       quotedNode_13.addChild("operation", quotedNode1_32);
                     }
                     quotedNode_9.addChild("operand", quotedNode1_30);

@@ -67,7 +67,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("enum", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("enum", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -80,7 +80,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("enum", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("enum", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

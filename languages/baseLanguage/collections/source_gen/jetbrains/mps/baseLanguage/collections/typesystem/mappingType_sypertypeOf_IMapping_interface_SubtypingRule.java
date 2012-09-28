@@ -147,7 +147,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
         }
         {
           SNodePointer pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

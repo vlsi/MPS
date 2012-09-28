@@ -55,7 +55,7 @@ public class typeof_ForeignParametersExpression_InferenceRule extends AbstractIn
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -68,7 +68,7 @@ public class typeof_ForeignParametersExpression_InferenceRule extends AbstractIn
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

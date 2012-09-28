@@ -2080,7 +2080,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         }
         result = quotedNode1_32;
       }
-      quotedNode_31.setReferent("variableDeclaration", quotedNode_18);
+      quotedNode_31.setReferenceTarget("variableDeclaration", quotedNode_18);
       return result;
     }
   }

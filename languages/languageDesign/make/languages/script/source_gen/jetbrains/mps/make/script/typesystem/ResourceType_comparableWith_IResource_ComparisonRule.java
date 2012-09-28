@@ -65,7 +65,7 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
         }
         {
           SNodePointer pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

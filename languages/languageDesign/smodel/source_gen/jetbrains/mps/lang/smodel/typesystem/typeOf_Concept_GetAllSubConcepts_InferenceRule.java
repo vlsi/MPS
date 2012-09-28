@@ -137,7 +137,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("conceptDeclaraton", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("conceptDeclaraton", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -150,7 +150,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("conceptDeclaraton", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("conceptDeclaraton", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -172,7 +172,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("conceptDeclaraton", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("conceptDeclaraton", (SNode) parameter_5);
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -191,7 +191,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("conceptDeclaraton", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("conceptDeclaraton", (SNode) parameter_5);
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
         result = quotedNode1_3;

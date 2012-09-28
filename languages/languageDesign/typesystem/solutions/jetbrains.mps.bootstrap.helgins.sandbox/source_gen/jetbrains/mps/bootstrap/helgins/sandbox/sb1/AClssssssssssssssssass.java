@@ -64,7 +64,7 @@ public class AClssssssssssssssssass {
         if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a.getConcept().getId()))) {
           return false;
         }
-        patternVar_class = nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a.getReferent("classifier");
+        patternVar_class = nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a.getReferenceTarget("classifier");
       }
       return true;
     }

@@ -118,7 +118,7 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
         }
         {
           SNodePointer pointer = SNODE_POINTER_lt6k7h_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

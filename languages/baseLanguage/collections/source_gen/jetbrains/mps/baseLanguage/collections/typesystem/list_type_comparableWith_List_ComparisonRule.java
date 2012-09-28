@@ -67,7 +67,7 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
         }
         {
           SNodePointer pointer = SNODE_POINTER_ovtchh_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

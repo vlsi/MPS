@@ -65,7 +65,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
         }
         {
           SNodePointer pointer = SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a.getReferent("concept")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a.getReferenceTarget("concept")))) {
             return false;
           }
         }

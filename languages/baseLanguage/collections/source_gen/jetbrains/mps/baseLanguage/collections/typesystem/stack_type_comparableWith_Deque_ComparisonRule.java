@@ -67,7 +67,7 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
         }
         {
           SNodePointer pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

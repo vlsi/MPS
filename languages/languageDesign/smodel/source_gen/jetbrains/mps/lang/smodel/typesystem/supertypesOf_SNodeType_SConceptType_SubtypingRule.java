@@ -127,7 +127,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
         }
         {
           SNodePointer pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a.getReferent("concept")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a.getReferenceTarget("concept")))) {
             return false;
           }
         }

@@ -83,7 +83,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
         }
         {
           SNodePointer pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0a;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

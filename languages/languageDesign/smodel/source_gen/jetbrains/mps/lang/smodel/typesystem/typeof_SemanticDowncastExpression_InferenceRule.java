@@ -212,7 +212,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("concept", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("concept", (SNode) parameter_5);
           quotedNode_1.addChild("parameter", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -232,7 +232,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("concept", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("concept", (SNode) parameter_5);
           quotedNode_1.addChild("parameter", quotedNode1_4);
         }
         result = quotedNode1_3;

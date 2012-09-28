@@ -87,7 +87,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
         }
         {
           SNodePointer pointer = SNODE_POINTER_cxnqcy_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_lang_String_extends_string_imi2rc_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_lang_String_extends_string_imi2rc_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

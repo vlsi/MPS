@@ -115,7 +115,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("quickFix", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("quickFix", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

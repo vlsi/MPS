@@ -170,7 +170,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
               }
               {
                 SNodePointer pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0c;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferent("classifier")))) {
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferenceTarget("classifier")))) {
                   return false;
                 }
               }

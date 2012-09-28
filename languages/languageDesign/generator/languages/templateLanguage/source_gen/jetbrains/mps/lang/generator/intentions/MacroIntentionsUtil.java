@@ -105,7 +105,7 @@ public class MacroIntentionsUtil {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getConcept().getId()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getReferent("concept");
+        patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getReferenceTarget("concept");
       }
       return true;
     }
@@ -157,7 +157,7 @@ public class MacroIntentionsUtil {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getConcept().getId()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getReferent("concept");
+              patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getReferenceTarget("concept");
             }
           }
         }

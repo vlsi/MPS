@@ -4471,7 +4471,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -4586,7 +4586,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_5);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -4658,7 +4658,7 @@ __switch__:
             {
               quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
-              quotedNode1_8.setReferent("classifier", (SNode) parameter_9);
+              quotedNode1_8.setReferenceTarget("classifier", (SNode) parameter_9);
               quotedNode_3.addChild("componentType", quotedNode1_8);
             }
             quotedNode_2.addChild("type", quotedNode1_7);

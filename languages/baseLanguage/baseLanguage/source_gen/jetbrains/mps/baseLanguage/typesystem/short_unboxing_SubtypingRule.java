@@ -87,7 +87,7 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
         }
         {
           SNodePointer pointer = SNODE_POINTER_8bm4vn_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_short_unboxing_l759a1_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_short_unboxing_l759a1_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

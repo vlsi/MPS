@@ -344,7 +344,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("workStatement", (SNode) parameter_5);
+        quotedNode1_3.setReferenceTarget("workStatement", (SNode) parameter_5);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -367,7 +367,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("workStatement", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("workStatement", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

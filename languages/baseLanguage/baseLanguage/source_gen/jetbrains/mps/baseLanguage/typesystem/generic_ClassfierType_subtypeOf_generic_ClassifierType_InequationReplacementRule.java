@@ -173,7 +173,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a0;
-          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getReferent("classifier") != referent) {
+          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
@@ -213,7 +213,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
-          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getReferent("classifier") != referent) {
+          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
@@ -253,7 +253,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a_0;
-          if (nodeToMatch_null_a0a0a.getReferent("classifier") != referent) {
+          if (nodeToMatch_null_a0a0a.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

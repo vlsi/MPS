@@ -727,7 +727,7 @@ public class ClassifierUpdater {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", (SModel) parameter_3, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;

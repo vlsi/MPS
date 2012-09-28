@@ -67,7 +67,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
         }
         {
           SNodePointer pointer = SNODE_POINTER_ma7wq5_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

@@ -142,8 +142,8 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_ListPattern_9twfax_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_className = nodeToMatch_ListPattern_9twfax_a0a.getReferent("classifier");
-                patternVar_field = nodeToMatch_ListPattern_9twfax_a0a.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_ListPattern_9twfax_a0a.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_ListPattern_9twfax_a0a.getReferenceTarget("variableDeclaration");
               }
             }
           }
@@ -160,7 +160,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_ListPattern_9twfax_a0a_0.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_ListPattern_9twfax_a0a_0.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_ListPattern_9twfax_a0a_0.getReferenceTarget("baseMethodDeclaration");
                 {
                   String childRole_ListPattern_9twfax__1 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());

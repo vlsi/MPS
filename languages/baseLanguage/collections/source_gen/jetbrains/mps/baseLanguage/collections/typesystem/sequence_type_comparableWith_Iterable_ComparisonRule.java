@@ -67,7 +67,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
         }
         {
           SNodePointer pointer = SNODE_POINTER_sh3asd_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

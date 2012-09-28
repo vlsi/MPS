@@ -276,8 +276,8 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a7a1a1);
           environment.nodeCopied(context, tnode15, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670195");
-          tnode15.setProperty("isAbstract", "false");
           tnode15.setProperty("name", "init");
+          tnode15.setProperty("isAbstract", "false");
 
           {
             final SNode tnode16 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);

@@ -67,7 +67,7 @@ public class collection_comparableWith_Collection_ComparisonRule extends Compari
         }
         {
           SNodePointer pointer = SNODE_POINTER_5x9es4_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

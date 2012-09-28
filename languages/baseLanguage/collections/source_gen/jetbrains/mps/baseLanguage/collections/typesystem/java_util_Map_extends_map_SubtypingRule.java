@@ -147,7 +147,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
         }
         {
           SNodePointer pointer = SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

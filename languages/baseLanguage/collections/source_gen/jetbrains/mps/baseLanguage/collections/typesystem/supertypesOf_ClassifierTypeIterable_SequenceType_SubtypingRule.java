@@ -118,7 +118,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
         }
         {
           SNodePointer pointer = SNODE_POINTER_x5x8gb_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

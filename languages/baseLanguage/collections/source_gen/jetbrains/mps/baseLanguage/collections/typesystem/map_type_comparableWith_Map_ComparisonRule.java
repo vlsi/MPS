@@ -68,7 +68,7 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
         }
         {
           SNodePointer pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

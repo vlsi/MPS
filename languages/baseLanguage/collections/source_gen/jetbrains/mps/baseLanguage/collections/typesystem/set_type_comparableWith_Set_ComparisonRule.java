@@ -67,7 +67,7 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
         }
         {
           SNodePointer pointer = SNODE_POINTER_3k2v7g_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

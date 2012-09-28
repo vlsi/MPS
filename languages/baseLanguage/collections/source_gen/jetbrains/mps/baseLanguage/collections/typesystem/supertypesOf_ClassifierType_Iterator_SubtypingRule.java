@@ -118,7 +118,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
         }
         {
           SNodePointer pointer = SNODE_POINTER_36aa7y_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

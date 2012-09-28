@@ -147,7 +147,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
         }
         {
           SNodePointer pointer = SNODE_POINTER_nagdzg_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

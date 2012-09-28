@@ -769,7 +769,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
@@ -789,7 +789,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
@@ -813,7 +813,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -826,7 +826,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

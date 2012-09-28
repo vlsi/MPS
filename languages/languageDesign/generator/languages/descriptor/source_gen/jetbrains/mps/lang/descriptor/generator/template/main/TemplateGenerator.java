@@ -309,8 +309,8 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a1a1a6a1a1);
               environment.nodeCopied(context, tnode11, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710807075");
-              tnode11.setProperty("isFinal", "true");
               tnode11.setProperty("name", "priorities");
+              tnode11.setProperty("isFinal", "true");
 
               {
                 final SNode tnode12 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PrivateVisibility", false);
@@ -1333,9 +1333,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a31a1a1);
           environment.nodeCopied(context, tnode85, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646507");
           tnode85.setProperty("isAbstract", "false");
-          tnode85.setProperty("isDeprecated", "false");
-          tnode85.setProperty("isFinal", "false");
           tnode85.setProperty("name", "getAlias");
+          tnode85.setProperty("isFinal", "false");
+          tnode85.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode86 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -1428,9 +1428,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a41a1a1);
           environment.nodeCopied(context, tnode91, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646511");
           tnode91.setProperty("isAbstract", "false");
-          tnode91.setProperty("isDeprecated", "false");
-          tnode91.setProperty("isFinal", "false");
           tnode91.setProperty("name", "getModels");
+          tnode91.setProperty("isFinal", "false");
+          tnode91.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode92 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -1562,9 +1562,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a51a1a1);
           environment.nodeCopied(context, tnode101, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646516");
           tnode101.setProperty("isAbstract", "false");
-          tnode101.setProperty("isDeprecated", "false");
-          tnode101.setProperty("isFinal", "false");
           tnode101.setProperty("name", "getPriorities");
+          tnode101.setProperty("isFinal", "false");
+          tnode101.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode102 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -1696,9 +1696,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a61a1a1);
           environment.nodeCopied(context, tnode111, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646521");
           tnode111.setProperty("isAbstract", "false");
-          tnode111.setProperty("isDeprecated", "false");
-          tnode111.setProperty("isFinal", "false");
           tnode111.setProperty("name", "getReference");
+          tnode111.setProperty("isFinal", "false");
+          tnode111.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode112 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -1792,9 +1792,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a71a1a1);
           environment.nodeCopied(context, tnode117, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475280636");
           tnode117.setProperty("isAbstract", "false");
-          tnode117.setProperty("isDeprecated", "false");
-          tnode117.setProperty("isFinal", "false");
           tnode117.setProperty("name", "getUsedLanguages");
+          tnode117.setProperty("isFinal", "false");
+          tnode117.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode118 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -1904,9 +1904,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a81a1a1);
           environment.nodeCopied(context, tnode124, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8847459826362570445");
           tnode124.setProperty("isAbstract", "false");
-          tnode124.setProperty("isDeprecated", "false");
-          tnode124.setProperty("isFinal", "false");
           tnode124.setProperty("name", "getSourceLanguage");
+          tnode124.setProperty("isFinal", "false");
+          tnode124.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode125 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -2000,9 +2000,9 @@ public class TemplateGenerator implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a91a1a1);
           environment.nodeCopied(context, tnode130, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475280641");
           tnode130.setProperty("isAbstract", "false");
-          tnode130.setProperty("isDeprecated", "false");
-          tnode130.setProperty("isFinal", "false");
           tnode130.setProperty("name", "getReferencedModules");
+          tnode130.setProperty("isFinal", "false");
+          tnode130.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode131 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);

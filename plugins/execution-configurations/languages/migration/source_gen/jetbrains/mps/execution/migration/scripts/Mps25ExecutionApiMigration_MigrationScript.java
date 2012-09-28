@@ -2412,7 +2412,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_3;
-          quotedNode1_12.setReferent("baseMethodDeclaration", (SNode) parameter_13);
+          quotedNode1_12.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_13);
           quotedNode_1.addChild("operation", quotedNode1_12);
         }
         result = quotedNode1_7;
@@ -2479,7 +2479,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_3;
-          quotedNode1_12.setReferent("baseMethodDeclaration", (SNode) parameter_13);
+          quotedNode1_12.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_13);
           quotedNode_1.addChild("operation", quotedNode1_12);
         }
         result = quotedNode1_7;
@@ -2546,7 +2546,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_3;
-          quotedNode1_12.setReferent("baseMethodDeclaration", (SNode) parameter_13);
+          quotedNode1_12.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_13);
           quotedNode_1.addChild("operation", quotedNode1_12);
         }
         result = quotedNode1_7;
@@ -2613,7 +2613,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_3;
-          quotedNode1_12.setReferent("baseMethodDeclaration", (SNode) parameter_13);
+          quotedNode1_12.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_13);
           quotedNode_1.addChild("operation", quotedNode1_12);
         }
         result = quotedNode1_7;
@@ -2651,7 +2651,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2687,7 +2687,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

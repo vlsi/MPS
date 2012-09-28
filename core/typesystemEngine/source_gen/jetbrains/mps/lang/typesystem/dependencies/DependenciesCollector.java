@@ -203,8 +203,8 @@ public class DependenciesCollector {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_4);
-      quotedNode_10.setReferent("variableDeclaration", quotedNode_4);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
+      quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
       return result;
     }
   }
@@ -278,8 +278,8 @@ public class DependenciesCollector {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_4);
-      quotedNode_10.setReferent("variableDeclaration", quotedNode_4);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
+      quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
       return result;
     }
   }
@@ -353,8 +353,8 @@ public class DependenciesCollector {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_4);
-      quotedNode_10.setReferent("variableDeclaration", quotedNode_4);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
+      quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
       return result;
     }
   }
@@ -428,8 +428,8 @@ public class DependenciesCollector {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_4);
-      quotedNode_10.setReferent("variableDeclaration", quotedNode_4);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
+      quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
       return result;
     }
   }

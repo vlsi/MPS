@@ -92,7 +92,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         }
         {
           SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -146,7 +146,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         }
         {
           SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0h;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
         }

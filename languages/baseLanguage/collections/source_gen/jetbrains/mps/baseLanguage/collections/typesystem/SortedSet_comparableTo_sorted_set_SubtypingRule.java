@@ -118,7 +118,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
         }
         {
           SNodePointer pointer = SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

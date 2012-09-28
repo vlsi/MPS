@@ -87,7 +87,7 @@ public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRul
         }
         {
           SNodePointer pointer = SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

@@ -558,7 +558,7 @@ public class QueriesGenerated {
           return false;
         }
         patternVar_null = nodeToMatch_QueriesGenerated_x583g4_a0a0a73.getProperty("name");
-        patternVar_aaa = nodeToMatch_QueriesGenerated_x583g4_a0a0a73.getReferent("myStatement");
+        patternVar_aaa = nodeToMatch_QueriesGenerated_x583g4_a0a0a73.getReferenceTarget("myStatement");
       }
       return true;
     }
@@ -604,7 +604,7 @@ public class QueriesGenerated {
         if (!("0".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a83.getProperty("ii")))) {
           return false;
         }
-        patternVar_ref = nodeToMatch_QueriesGenerated_x583g4_a0a0a83.getReferent("myStatement");
+        patternVar_ref = nodeToMatch_QueriesGenerated_x583g4_a0a0a83.getReferenceTarget("myStatement");
       }
       return true;
     }
@@ -646,7 +646,7 @@ public class QueriesGenerated {
         if (!("12".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a93.getProperty("ii")))) {
           return false;
         }
-        patternVar_ref = nodeToMatch_QueriesGenerated_x583g4_a0a0a93.getReferent("myStatement");
+        patternVar_ref = nodeToMatch_QueriesGenerated_x583g4_a0a0a93.getReferenceTarget("myStatement");
       }
       return true;
     }
@@ -688,7 +688,7 @@ public class QueriesGenerated {
         if (!("13".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a04.getProperty("ii")))) {
           return false;
         }
-        patternVar_ref = nodeToMatch_QueriesGenerated_x583g4_a0a0a04.getReferent("myStatement");
+        patternVar_ref = nodeToMatch_QueriesGenerated_x583g4_a0a0a04.getReferenceTarget("myStatement");
       }
       return true;
     }
