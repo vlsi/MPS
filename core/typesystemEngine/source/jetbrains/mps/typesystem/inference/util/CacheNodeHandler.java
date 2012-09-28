@@ -27,7 +27,7 @@ public class CacheNodeHandler {
 
   public CacheNodeHandler(SNode node) {
     myNodeRef = new WeakReference<SNode>(node);
-    myHash = MatchingUtil.hash(node, false);
+    myHash = MatchingUtil.hash(node);
   }
 
   public int hashCode() {

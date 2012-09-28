@@ -556,7 +556,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public List<SNode> getChildren() {
-    return getChildren(true);
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    SNode firstChild = firstChild();
+    return new ChildrenList(firstChild);
   }
 
   public List<SReference> getReferences() {
@@ -864,19 +869,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return foundChild;
   }
 
-  public List<SNode> getChildren(boolean includeAttributes) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    SNode firstChild = firstChild();
-    if (includeAttributes) {
-      return new ChildrenList(firstChild);
-    } else {
-      return new SkipAttributesChildrenList(firstChild);
-    }
-  }
-
   public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
@@ -886,6 +878,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Filter attributes out manually
+   * @Deprecated in 3.0
+   */
+  public List<SNode> getChildren(boolean includeAttributes) {
+    if (includeAttributes) return getChildren();
+    ArrayList<SNode> res = new ArrayList<SNode>();
+    for (SNode child:getChildren()){
+      if (AttributeOperations.isAttribute(child)) continue;
+      res.add(child);
+    }
+    return res;
+  }
 
   @Deprecated
   /**
@@ -1806,39 +1813,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     @Override
     protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
       return new ChildrenList(elem, size);
-    }
-  }
-
-  private static class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
-    public SkipAttributesChildrenList(SNode first) {
-      super(skipAttributes(first));
-    }
-
-    public SkipAttributesChildrenList(SNode first, int size) {
-      super(skipAttributes(first), size);
-    }
-
-    private static SNode skipAttributes(SNode node) {
-      while (node != null && AttributeOperations.isAttribute(node)) {
-        node = node.nextSibling();
-      }
-      return node;
-    }
-
-    protected SNode next(SNode node) {
-      return skipAttributes(node.nextSibling());
-    }
-
-    protected SNode prev(SNode node) {
-      SNode result = myFirst == node ? null : node.prevSibling();
-      while (result != null && AttributeOperations.isAttribute(result)) {
-        result = myFirst == result ? null : result.prevSibling();
-      }
-      return result;
-    }
-
-    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
-      return new SkipAttributesChildrenList(elem, size);
     }
   }
 
