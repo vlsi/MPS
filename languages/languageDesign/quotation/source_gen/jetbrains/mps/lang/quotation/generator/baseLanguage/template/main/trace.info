@@ -373,11 +373,11 @@
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="109" startPosition="17" endLine="110" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="110" startPosition="93" endLine="111" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="111" startPosition="120" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="937236280924642971" fileName="QueriesGenerated.java" startLine="112" startPosition="150" endLine="113" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="937236280924642971" fileName="QueriesGenerated.java" startLine="112" startPosition="150" endLine="113" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="113" startPosition="15" endLine="114" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="115" startPosition="21" endLine="116" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="116" startPosition="101" endLine="117" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5577480965331709472" fileName="QueriesGenerated.java" startLine="116" startPosition="151" endLine="117" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5577480965331709472" fileName="QueriesGenerated.java" startLine="116" startPosition="151" endLine="117" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="117" startPosition="124" endLine="118" endPosition="339" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="118" startPosition="339" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="120" startPosition="27" endLine="121" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1057,8 +1057,8 @@
     <scopeInfo nodeId="937236280924642860" fileName="QueriesGenerated.java" startLine="36" startPosition="153" endLine="37" endPosition="90" />
     <scopeInfo nodeId="5577480965331709461" fileName="QueriesGenerated.java" startLine="40" startPosition="154" endLine="41" endPosition="50" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="90" startPosition="41" endLine="91" endPosition="164" />
-    <scopeInfo nodeId="937236280924642970" fileName="QueriesGenerated.java" startLine="112" startPosition="150" endLine="113" endPosition="209" />
-    <scopeInfo nodeId="5577480965331709471" fileName="QueriesGenerated.java" startLine="116" startPosition="151" endLine="117" endPosition="209" />
+    <scopeInfo nodeId="937236280924642970" fileName="QueriesGenerated.java" startLine="112" startPosition="150" endLine="113" endPosition="216" />
+    <scopeInfo nodeId="5577480965331709471" fileName="QueriesGenerated.java" startLine="116" startPosition="151" endLine="117" endPosition="216" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="124" startPosition="37" endLine="125" endPosition="53" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="133" startPosition="33" endLine="134" endPosition="49" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="151" startPosition="42" endLine="152" endPosition="31" />
@@ -1278,9 +1278,7 @@
     <scopeInfo nodeId="9181472308624882657" fileName="QueriesGenerated.java" startLine="316" startPosition="5" endLine="322" endPosition="5">
       <varInfo nodeId="9181472308624882658" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="937236280924642920" fileName="QueriesGenerated.java" startLine="334" startPosition="35" endLine="340" endPosition="9">
-      <varInfo nodeId="937236280924642924" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="937236280924642919" fileName="QueriesGenerated.java" startLine="334" startPosition="35" endLine="340" endPosition="9" />
     <scopeInfo nodeId="937236280924643094" fileName="QueriesGenerated.java" startLine="362" startPosition="47" endLine="368" endPosition="15">
       <varInfo nodeId="937236280924643115" varName="grandChild" />
     </scopeInfo>
@@ -1395,9 +1393,7 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="521" startPosition="38" endLine="548" endPosition="33">
       <varInfo nodeId="1196351886669" varName="inputChanged35" />
     </scopeInfo>
-    <scopeInfo nodeId="937236280924643048" fileName="QueriesGenerated.java" startLine="355" startPosition="35" endLine="383" endPosition="9">
-      <varInfo nodeId="937236280924643052" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="937236280924643047" fileName="QueriesGenerated.java" startLine="355" startPosition="35" endLine="383" endPosition="9" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="107" startPosition="11" endLine="136" endPosition="35">
       <varInfo nodeId="1196351886669" varName="tnode3" />
     </scopeInfo>

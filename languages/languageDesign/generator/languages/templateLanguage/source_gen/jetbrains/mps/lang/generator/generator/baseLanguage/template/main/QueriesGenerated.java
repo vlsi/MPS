@@ -2802,7 +2802,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4565390460241641355(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode().getReferent("originalNode");
+    return _context.getNode().getReferenceTarget("originalNode");
   }
 
   public static SNode sourceNodeQuery_1246578104714226092(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

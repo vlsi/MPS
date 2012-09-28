@@ -1402,7 +1402,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_5680938682773841398(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (SNode) _context.getNode().getReferent("targetJar");
+    return (SNode) _context.getNode().getReferenceTarget("targetJar");
   }
 
   public static Object templateArgumentQuery_5680938682773841635(final IOperationContext operationContext, final TemplateQueryContext _context) {
