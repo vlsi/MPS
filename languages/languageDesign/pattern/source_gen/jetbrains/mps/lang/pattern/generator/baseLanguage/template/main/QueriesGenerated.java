@@ -25,6 +25,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class QueriesGenerated {
@@ -661,11 +664,17 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
+    final Set<String> processedRoles = SetSequence.fromSet(new HashSet<String>());
     _context.getNode().visitChildren(new org.jetbrains.mps.openapi.model.SNode.ChildVisitor() {
       public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
         if (AttributeOperations.isAttribute(child)) {
           return true;
         }
+        if (SetSequence.fromSet(processedRoles).contains(role)) {
+          return true;
+        }
+
+        SetSequence.fromSet(processedRoles).addElement(role);
         SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", null);
         SPropertyOperations.set(childRoleNode, "role", role);
         SLinkOperations.setTarget(childRoleNode, "childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), role), false);
