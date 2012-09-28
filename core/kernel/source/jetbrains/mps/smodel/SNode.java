@@ -808,18 +808,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
-  public List<SNode> getAncestors(boolean includeThis) {
-    List<SNode> result = new ArrayList<SNode>();
-    if (includeThis) {
-      result.add(this);
-    }
-    SNode parent = getParent();
-    if (parent != null) {
-      result.addAll(parent.getAncestors(true));
-    }
-    return result;
-  }
-
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
@@ -846,29 +834,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public SNode getChild(String role) {
-    ModelAccess.assertLegalRead(this);
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
-    }
-    fireNodeReadAccess();
-    int count = 0;
-    SNode foundChild = null;
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole())) {
-        foundChild = child;
-        count++;
-      }
-    }
-    if (count > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
-      errorMessage += "they are : " + getChildren(role);
-      LOG.error(errorMessage, new Throwable(), this);
-    }
-    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
-    return foundChild;
-  }
-
   public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
@@ -878,6 +843,40 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Use smodel language instead
+   * @Deprecated in 3.0
+   */
+  public SNode getChild(String role) {
+    List<SNode> children = getChildren(role);
+    int size = children.size();
+    if (size >1){
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
+      errorMessage += "they are : " + getChildren(role);
+      LOG.error(errorMessage, new Throwable(), this);
+    }
+    if (size ==0) return null;
+    return children.get(0);
+  }
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Use smodel language instead
+   * @Deprecated in 3.0
+   */
+  public List<SNode> getAncestors(boolean includeThis) {
+    List<SNode> result = new ArrayList<SNode>();
+    if (includeThis) {
+      result.add(this);
+    }
+    SNode parent = getParent();
+    if (parent != null) {
+      result.addAll(parent.getAncestors(true));
+    }
+    return result;
+  }
 
   @Deprecated
   /**
