@@ -10,13 +10,14 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReferenceConceptLink_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_hf6dqv_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847457");
+  private static SNodePointer breakingNode_hf6dqv_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607878");
 
   public ReferenceConceptLink_Constraints() {
     super("jetbrains.mps.lang.structure.structure.ReferenceConceptLink");
@@ -34,19 +35,19 @@ public class ReferenceConceptLink_Constraints extends BaseConstraintsDescriptor 
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_hf6dqv_a0a0a0a0a1a0b0a1a0;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // only nodes assignable to target type specified in concept link declaration 
             if (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptLinkDeclaration", false), "targetType", false) == null) {
               return null;
             }
             return new ReferenceConceptLinkTargetSearchScope(_context.getReferenceNode(), operationContext.getScope());
-          }
-
-          @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_hf6dqv_a0a1a0a0a1a0b0a1a0;
           }
         };
       }
