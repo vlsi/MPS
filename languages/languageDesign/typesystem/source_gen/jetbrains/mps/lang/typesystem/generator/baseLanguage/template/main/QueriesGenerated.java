@@ -3087,8 +3087,8 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("isFinal", "true");
         quotedNode1_3.setProperty("name", "typeCheckingContext");
+        quotedNode1_3.setProperty("isFinal", "true");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -3156,8 +3156,8 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("isFinal", "true");
         quotedNode1_3.setProperty("name", "typeCheckingContext");
+        quotedNode1_3.setProperty("isFinal", "true");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;

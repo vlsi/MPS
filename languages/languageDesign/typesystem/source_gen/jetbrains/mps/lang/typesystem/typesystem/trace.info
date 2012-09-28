@@ -3965,9 +3965,7 @@
     <scopeInfo nodeId="2888402081996283949" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="26" startPosition="117" endLine="31" endPosition="9" />
     <scopeInfo nodeId="2888402081996299041" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="58" startPosition="32" endLine="64" endPosition="7" />
     <scopeInfo nodeId="2888402081996299041" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="71" startPosition="32" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="2888402081996283946" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="32" endPosition="7">
-      <varInfo nodeId="2888402081996283947" varName="opConcept" />
-    </scopeInfo>
+    <scopeInfo nodeId="1236083449676" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="32" endPosition="7" />
     <scopeInfo nodeId="1236083447582" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1236083447582" varName="argument" />
     </scopeInfo>

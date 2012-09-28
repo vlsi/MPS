@@ -287,9 +287,7 @@
     <scopeInfo nodeId="1207313722800" fileName="WhenConcreteStatement_DataFlow.java" startLine="17" startPosition="160" endLine="21" endPosition="7">
       <varInfo nodeId="1207313815849" varName="variableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1207313722796" fileName="WhenConcreteStatement_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5">
-      <varInfo nodeId="1207313722798" varName="lvr" />
-    </scopeInfo>
+    <scopeInfo nodeId="1207313278289" fileName="WhenConcreteStatement_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" />
     <scopeInfo nodeId="1207313278287" fileName="WhenConcreteStatement_DataFlow.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1207313278287" varName="_context" />
       <varInfo nodeId="1207313278287" varName="operationContext" />

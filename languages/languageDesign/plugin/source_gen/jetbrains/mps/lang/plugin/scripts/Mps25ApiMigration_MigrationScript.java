@@ -1941,9 +1941,9 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
                   quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_42 = quotedNode_15;
                   quotedNode1_42.setProperty("isAbstract", "false");
-                  quotedNode1_42.setProperty("isDeprecated", "false");
-                  quotedNode1_42.setProperty("isFinal", "false");
                   quotedNode1_42.setProperty("name", "run");
+                  quotedNode1_42.setProperty("isFinal", "false");
+                  quotedNode1_42.setProperty("isDeprecated", "false");
                   {
                     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_43 = quotedNode_16;

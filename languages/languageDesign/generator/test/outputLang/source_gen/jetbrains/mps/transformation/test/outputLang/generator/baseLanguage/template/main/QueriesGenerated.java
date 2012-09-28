@@ -263,27 +263,27 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_QueriesGenerated_x583g4__0 = "lValue";
+                String childRole_QueriesGenerated_x583g4__0 = "rValue";
                 if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0hb, childRole_QueriesGenerated_x583g4__0, 1))) {
                   return false;
                 }
                 {
                   SNode childVar_QueriesGenerated_x583g4_a0a0a0a33 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0hb.getChildren(childRole_QueriesGenerated_x583g4__0).get(0);
-                  this.patternVar_yy = childVar_QueriesGenerated_x583g4_a0a0a0a33;
-                }
-              }
-              {
-                String childRole_QueriesGenerated_x583g4__1 = "rValue";
-                if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0hb, childRole_QueriesGenerated_x583g4__1, 1))) {
-                  return false;
-                }
-                {
-                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a33_0 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0hb.getChildren(childRole_QueriesGenerated_x583g4__1).get(0);
                   {
                     SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33;
-                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33 = childVar_QueriesGenerated_x583g4_a0a0a0a33_0;
+                    nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33 = childVar_QueriesGenerated_x583g4_a0a0a0a33;
                     if (!("jetbrains.mps.baseLanguage.structure.MulExpression".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33.getConcept().getId()))) {
                       return false;
+                    }
+                    {
+                      String childRole_QueriesGenerated_x583g4__1 = "rightExpression";
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33, childRole_QueriesGenerated_x583g4__1, 1))) {
+                        return false;
+                      }
+                      {
+                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0hb = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33.getChildren(childRole_QueriesGenerated_x583g4__1).get(0);
+                        this.patternVar_right = childVar_QueriesGenerated_x583g4_a0a0a0a0hb;
+                      }
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__2 = "leftExpression";
@@ -291,21 +291,21 @@ public class QueriesGenerated {
                         return false;
                       }
                       {
-                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0hb = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33.getChildren(childRole_QueriesGenerated_x583g4__2).get(0);
-                        this.patternVar_xx = childVar_QueriesGenerated_x583g4_a0a0a0a0hb;
-                      }
-                    }
-                    {
-                      String childRole_QueriesGenerated_x583g4__3 = "rightExpression";
-                      if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33, childRole_QueriesGenerated_x583g4__3, 1))) {
-                        return false;
-                      }
-                      {
-                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0hb_0 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33.getChildren(childRole_QueriesGenerated_x583g4__3).get(0);
-                        this.patternVar_right = childVar_QueriesGenerated_x583g4_a0a0a0a0hb_0;
+                        SNode childVar_QueriesGenerated_x583g4_a0a0a0a0hb_0 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0a33.getChildren(childRole_QueriesGenerated_x583g4__2).get(0);
+                        this.patternVar_xx = childVar_QueriesGenerated_x583g4_a0a0a0a0hb_0;
                       }
                     }
                   }
+                }
+              }
+              {
+                String childRole_QueriesGenerated_x583g4__3 = "lValue";
+                if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0hb, childRole_QueriesGenerated_x583g4__3, 1))) {
+                  return false;
+                }
+                {
+                  SNode childVar_QueriesGenerated_x583g4_a0a0a0a33_0 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0hb.getChildren(childRole_QueriesGenerated_x583g4__3).get(0);
+                  this.patternVar_yy = childVar_QueriesGenerated_x583g4_a0a0a0a33_0;
                 }
               }
             }
@@ -435,23 +435,23 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_QueriesGenerated_x583g4__7 = "leftExpression";
+                String childRole_QueriesGenerated_x583g4__7 = "rightExpression";
                 if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0jb, childRole_QueriesGenerated_x583g4__7, 1))) {
                   return false;
                 }
                 {
                   SNode childVar_QueriesGenerated_x583g4_a0a0a0a53 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0jb.getChildren(childRole_QueriesGenerated_x583g4__7).get(0);
-                  this.patternVar_left = childVar_QueriesGenerated_x583g4_a0a0a0a53;
+                  this.patternVar_right = childVar_QueriesGenerated_x583g4_a0a0a0a53;
                 }
               }
               {
-                String childRole_QueriesGenerated_x583g4__8 = "rightExpression";
+                String childRole_QueriesGenerated_x583g4__8 = "leftExpression";
                 if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0jb, childRole_QueriesGenerated_x583g4__8, 1))) {
                   return false;
                 }
                 {
                   SNode childVar_QueriesGenerated_x583g4_a0a0a0a53_0 = nodeToMatch_QueriesGenerated_x583g4_a0a0a0jb.getChildren(childRole_QueriesGenerated_x583g4__8).get(0);
-                  this.patternVar_right = childVar_QueriesGenerated_x583g4_a0a0a0a53_0;
+                  this.patternVar_left = childVar_QueriesGenerated_x583g4_a0a0a0a53_0;
                 }
               }
             }

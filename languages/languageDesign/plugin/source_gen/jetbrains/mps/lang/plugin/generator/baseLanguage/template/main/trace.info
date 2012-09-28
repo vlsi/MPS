@@ -1031,9 +1031,7 @@
       <varInfo nodeId="466361829302878487" varName="newNode" />
       <varInfo nodeId="466361829302878457" varName="typecastNode" />
     </scopeInfo>
-    <scopeInfo nodeId="466361829302878441" fileName="QueriesGenerated.java" startLine="1663" startPosition="144" endLine="1671" endPosition="5">
-      <varInfo nodeId="466361829302878442" varName="component" />
-    </scopeInfo>
+    <scopeInfo nodeId="466361829302878439" fileName="QueriesGenerated.java" startLine="1663" startPosition="144" endLine="1671" endPosition="5" />
   </root>
   <root nodeId="5003188907305740061" modelId="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="5003188907305740079" fileName="QueriesGenerated.java" startLine="156" startPosition="152" endLine="157" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
