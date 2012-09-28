@@ -63,7 +63,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
 
   private SubtypingCache mySubtypingCache = null;
-  private SubtypingCachePool myGlobalSubtypingCachePool = null;
+  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
   private SubtypingCache myGenerationSubTypingCache = null;
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
@@ -162,9 +162,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public void enableGlobalSubtypingCache() {
-    SubtypingCachePool subtypingCachePool = new SubtypingCachePool();
-    // ensure the object is fully constructed before being assigned to the field
-    myGlobalSubtypingCachePool = subtypingCachePool;
+    myGlobalSubtypingCachePool = new SubtypingCachePool();
   }
 
   public void clearGlobalSubtypingCache() {
@@ -349,13 +347,13 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   private class SubtypingCachePool {
 
-    private ConcurrentHashMap<LanguageScope, SubtypingCache> myPool = new ConcurrentHashMap<LanguageScope, SubtypingCache>();
-    private ConcurrentHashMap<LanguageScope, Boolean> myPoolGuard = new ConcurrentHashMap<LanguageScope, Boolean>();
+    private volatile ConcurrentHashMap<LanguageScope, SubtypingCache> myPool = new ConcurrentHashMap<LanguageScope, SubtypingCache>();
+    private volatile ConcurrentHashMap<LanguageScope, Boolean> myPoolGuard = new ConcurrentHashMap<LanguageScope, Boolean>();
 
     private SubtypingCache getCurrent() {
       LanguageScope langScope = LanguageScope.getCurrent();
       if (!myPool.containsKey(langScope)) {
-        if (myPoolGuard.putIfAbsent(langScope, Boolean.TRUE)) {
+        if (myPoolGuard.putIfAbsent(langScope, Boolean.TRUE) == null) {
           myPool.put(langScope,createSubtypingCache());
         }
       }
