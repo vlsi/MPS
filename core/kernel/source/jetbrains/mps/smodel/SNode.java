@@ -38,7 +38,6 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.util.*;
@@ -462,13 +461,23 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
-    return getPrevChild(((SNode) child));
+  public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
+    String childRole = ((SNode) child).getRole();
+    assert childRole != null : "role must be not null";
+    List<SNode> children = getChildren(childRole);
+    int index = children.indexOf(child);
+    if (index <= 0) return null;
+    return children.get(index - 1);
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
-    return getNextChild(((SNode) child));
+  public SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
+    String childRole = ((SNode) child).getRole();
+    assert childRole != null : "role must be not null";
+    List<SNode> children = getChildren(childRole);
+    int index = children.indexOf(child);
+    if (index < 0 || index >= children.size() - 1) return null;
+    return children.get(index + 1);
   }
 
   @Override
@@ -848,24 +857,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public SNode getNextChild(SNode child) {
-    String childRole = child.getRole();
-    assert childRole != null : "role must be not null";
-    List<SNode> children = getChildren(childRole);
-    int index = children.indexOf(child);
-    if (index < 0 || index >= children.size() - 1) return null;
-    return children.get(index + 1);
-  }
-
-  public SNode getPrevChild(SNode child) {
-    String childRole = child.getRole();
-    assert childRole != null : "role must be not null";
-    List<SNode> children = getChildren(childRole);
-    int index = children.indexOf(child);
-    if (index <= 0) return null;
-    return children.get(index - 1);
-  }
-
   public SNode getChild(String role) {
     ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
@@ -917,6 +908,24 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
+  public SNode getNextChild(SNode child) {
+    return getNextChild(((org.jetbrains.mps.openapi.model.SNode) child));
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode getPrevChild(SNode child) {
+    return getPrevChild(((org.jetbrains.mps.openapi.model.SNode) child));
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public List<SNode> getDescendants() {
     return getDescendants(null);
   }
@@ -927,7 +936,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public List<SNode> getDescendants(Condition<SNode> condition) {
-    return jetbrains.mps.util.SNodeOperations.getDescendants(this,condition);
+    return jetbrains.mps.util.SNodeOperations.getDescendants(this, condition);
   }
 
   @Deprecated
