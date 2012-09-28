@@ -300,10 +300,10 @@
     <scopeInfo nodeId="1213877228349" fileName="Layout_Behavior.java" startLine="100" startPosition="71" endLine="103" endPosition="5">
       <varInfo nodeId="1213877228350" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="9027273598492143622" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7" />
-    <scopeInfo nodeId="9027273598492144043" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7">
-      <varInfo nodeId="9027273598492144044" varName="child" />
+    <scopeInfo nodeId="9027273598492143744" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7">
+      <varInfo nodeId="9027273598492143745" varName="child" />
     </scopeInfo>
+    <scopeInfo nodeId="9027273598492143649" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7" />
     <scopeInfo nodeId="1226509010732" fileName="Layout_Behavior.java" startLine="137" startPosition="55" endLine="140" endPosition="22" />
     <scopeInfo nodeId="1233317262398" fileName="Layout_Behavior.java" startLine="152" startPosition="113" endLine="155" endPosition="7">
       <varInfo nodeId="1233317262399" varName="entry" />
@@ -1533,9 +1533,7 @@
     <scopeInfo nodeId="1219230088825" fileName="ModuleUtil.java" startLine="45" startPosition="50" endLine="50" endPosition="7" />
     <scopeInfo nodeId="1040213783748331933" fileName="ModuleUtil.java" startLine="58" startPosition="49" endLine="63" endPosition="65" />
     <scopeInfo nodeId="1040213783748331946" fileName="ModuleUtil.java" startLine="66" startPosition="52" endLine="71" endPosition="73" />
-    <scopeInfo nodeId="1219230088822" fileName="ModuleUtil.java" startLine="44" startPosition="69" endLine="51" endPosition="5">
-      <varInfo nodeId="1219230088823" varName="m" />
-    </scopeInfo>
+    <scopeInfo nodeId="1219230047141" fileName="ModuleUtil.java" startLine="44" startPosition="69" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1040213783748331928" fileName="ModuleUtil.java" startLine="57" startPosition="50" endLine="65" endPosition="0">
       <varInfo nodeId="1040213783748331931" varName="item" />
     </scopeInfo>
@@ -1591,8 +1589,8 @@
     <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="107" startPosition="162" endLine="108" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="108" startPosition="43" endLine="109" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="109" startPosition="68" endLine="110" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="110" startPosition="78" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="111" startPosition="65" endLine="112" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="110" startPosition="78" endLine="111" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="111" startPosition="72" endLine="112" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="55204148067466601" fileName="PathHolder_Behavior.java" startLine="113" startPosition="7" endLine="114" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7235580512916925077" fileName="PathHolder_Behavior.java" startLine="122" startPosition="49" endLine="123" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7235580512916925077" fileName="PathHolder_Behavior.java" startLine="123" startPosition="26" endLine="124" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

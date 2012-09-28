@@ -103,7 +103,7 @@ public class NodeGroupChange extends ModelChange {
     );
     SNode parent = model.getNodeById(myParentNodeId);
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
-      parent.insertChild(anchor, myRole, newNode);
+      parent.insertChild(myRole, newNode, anchor);
     }
   }
 

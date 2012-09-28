@@ -93,7 +93,7 @@ public class CopyThisDown_Action extends BaseAction {
           }
           if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, link, "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
-            parent.insertChild(nodeToCopy, role, copy);
+            parent.insertChild(role, copy, nodeToCopy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectWRTFocusPolicy(copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
             return;
@@ -110,7 +110,7 @@ public class CopyThisDown_Action extends BaseAction {
           return;
         }
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
-          parent.insertChild(lastNode, role, SNodeOperations.copyNode(node));
+          parent.insertChild(role, SNodeOperations.copyNode(node), lastNode);
         }
         ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectRange(firstNode, lastNode);
       }
