@@ -38,8 +38,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -3581,18 +3579,19 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4155486055398183657(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> propertyMacros = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : _context.getNode().getChildren(true)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.PropertyMacro")) {
-        ListSequence.fromList(propertyMacros).addElement(SNodeOperations.cast(child, "jetbrains.mps.lang.generator.structure.PropertyMacro"));
+    return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.PropertyMacro");
       }
-    }
-    Collections.sort(propertyMacros, new Comparator<SNode>() {
-      public int compare(SNode node1, SNode node2) {
-        return node1.getRole().compareTo(node2.getRole());
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.PropertyMacro");
       }
-    });
-    return propertyMacros;
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return it.getRole();
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_4155486055398183756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -3655,18 +3654,19 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4155486055398184137(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> referenceMacros = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : _context.getNode().getChildren(true)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.ReferenceMacro")) {
-        ListSequence.fromList(referenceMacros).addElement(SNodeOperations.cast(child, "jetbrains.mps.lang.generator.structure.ReferenceMacro"));
+    return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.ReferenceMacro");
       }
-    }
-    Collections.sort(referenceMacros, new Comparator<SNode>() {
-      public int compare(SNode node1, SNode node2) {
-        return node1.getRole().compareTo(node2.getRole());
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.ReferenceMacro");
       }
-    });
-    return referenceMacros;
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return it.getRole();
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_4155486055398184348(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
