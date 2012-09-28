@@ -24,7 +24,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SReference;
-import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.getLogger(SNodeOperations.class);
