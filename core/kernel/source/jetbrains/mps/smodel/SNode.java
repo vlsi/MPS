@@ -795,22 +795,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
-  public boolean hasConceptProperty(String propertyName) {
-    if ("root".equals(propertyName)) {
-      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
-        return SNodeUtil.getConceptDeclaration_IsRootable(this);
-      } else {
-        SNode conceptDeclaration = getConceptDeclarationNode();
-        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
-          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
-        }
-      }
-      return false;
-    }
-
-    return findConceptProperty(propertyName) != null;
-  }
-
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
   }
@@ -902,6 +886,29 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
+   * by converting to BaseConcept properties mostly, and considering other
+   * cases individually
+   * @Deprecated in 3.0
+   */
+  public boolean hasConceptProperty(String propertyName) {
+    if ("root".equals(propertyName)) {
+      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
+        return SNodeUtil.getConceptDeclaration_IsRootable(this);
+      } else {
+        SNode conceptDeclaration = getConceptDeclarationNode();
+        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
+          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
+        }
+      }
+      return false;
+    }
+
+    return findConceptProperty(propertyName) != null;
+  }
 
   @Deprecated
   /**
