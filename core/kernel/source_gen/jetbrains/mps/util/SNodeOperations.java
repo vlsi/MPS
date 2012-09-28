@@ -240,25 +240,34 @@ public class SNodeOperations {
   private static class DescendantsIterable implements Iterator<jetbrains.mps.smodel.SNode>, Iterable<jetbrains.mps.smodel.SNode> {
     private Condition<jetbrains.mps.smodel.SNode> condition;
     private Queue<SNode> queue = new LinkedList<SNode>();
+    private SNode current;
 
     /*package*/ DescendantsIterable(SNode original, @Nullable Condition<jetbrains.mps.smodel.SNode> condition, boolean includeFirst) {
       this.condition = condition;
-      queue.offer(original);
+      current = original;
+      if (current != null) {
+        for (SNode child : current.getChildren()) {
+          queue.offer(child);
+        }
+      }
       if (!(includeFirst)) {
-        nextInternal();
+        current = nextInternal();
+      }
+      while (current != null && condition != null && !(current instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) current)))) {
+        current = nextInternal();
       }
     }
 
     public boolean hasNext() {
-      return !(queue.isEmpty());
+      return current != null;
     }
 
     public jetbrains.mps.smodel.SNode next() {
-      SNode next;
+      SNode result = current;
       do {
-        next = nextInternal();
-      } while (next != null && condition != null && !(next instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) next))));
-      return ((jetbrains.mps.smodel.SNode) next);
+        current = nextInternal();
+      } while (current != null && condition != null && !(current instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) current))));
+      return ((jetbrains.mps.smodel.SNode) result);
     }
 
     public void remove() {
@@ -266,14 +275,14 @@ public class SNodeOperations {
     }
 
     private SNode nextInternal() {
-      SNode curr = queue.poll();
-      if (curr == null) {
+      SNode next = queue.poll();
+      if (next == null) {
         return null;
       }
-      for (SNode child : curr.getChildren()) {
+      for (SNode child : next.getChildren()) {
         queue.offer(child);
       }
-      return curr;
+      return next;
     }
 
     public Iterator<jetbrains.mps.smodel.SNode> iterator() {
