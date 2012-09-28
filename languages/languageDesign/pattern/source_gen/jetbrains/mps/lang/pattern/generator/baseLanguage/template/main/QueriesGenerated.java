@@ -587,8 +587,8 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration");
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "propertyName");
       }
     }, true).select(new ISelector<SNode, SNode>() {
@@ -630,8 +630,8 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration");
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "linkRole");
       }
     }, true).select(new ISelector<SNode, SNode>() {
