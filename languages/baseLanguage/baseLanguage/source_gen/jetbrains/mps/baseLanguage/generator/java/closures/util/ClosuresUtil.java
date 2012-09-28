@@ -79,7 +79,7 @@ public class ClosuresUtil {
 
   private static void ensureClosureContextOwnerProcessed(SNode node, ITemplateGenerator generator) {
     if (!(isClosureContextOwner(node))) {
-      throw new RuntimeException("node can't be owner of a closure context " + node.getDebugText());
+      throw new RuntimeException("node can't be owner of a closure context " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
     if (getClosureContextData(node, generator) == null) {
       MapSequence.fromMap(ClosuresUtil.getClosureContext(generator)).put(node, new ClosuresUtil.ClosureContextData());
