@@ -499,10 +499,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc.getProperty("shortEmptyNotation")))) {
+              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc.getProperty("tagName")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc.getProperty("tagName")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
               {
@@ -591,10 +591,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc.getProperty("shortEmptyNotation")))) {
+              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc.getProperty("tagName")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc.getProperty("tagName")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
               {
@@ -683,10 +683,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getProperty("shortEmptyNotation")))) {
+              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getProperty("tagName")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getProperty("tagName")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
               {
@@ -775,10 +775,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getProperty("shortEmptyNotation")))) {
+              if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getProperty("tagName")))) {
                 return false;
               }
-              if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getProperty("tagName")))) {
+              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getProperty("shortEmptyNotation")))) {
                 return false;
               }
               {
