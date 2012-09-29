@@ -14816,7 +14816,7 @@
         </node>
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="1450448041999523575">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="1450448041999523576">
-            <property name="text" nameId="m373.8970989240999019144" value="Note that thread, explicitly paused by user is not considered as&#10;" />
+            <property name="text" nameId="m373.8970989240999019144" value="Note that thread, explicitly paused by user is not considered as" />
           </node>
         </node>
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="1450448041999523577">
