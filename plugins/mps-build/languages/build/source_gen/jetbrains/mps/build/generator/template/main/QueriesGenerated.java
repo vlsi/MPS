@@ -17,6 +17,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.behavior.BuildLayout_Container_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior;
+import jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -124,6 +125,15 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268231(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148504888(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode node = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_JarManifest");
+      }
+    }), "jetbrains.mps.build.structure.BuildLayout_JarManifest");
+    return BuildLayout_JarManifest_Behavior.call_getOutputPath_WithMacro_6837653846148442229(node, Context.defaultContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394521(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -526,6 +536,34 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4701820937132337491(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "layout." + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442221(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_JarManifest_Behavior.call_getOutputPath_WithMacro_6837653846148442229(_context.getNode(), Context.defaultContext(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442060(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "name", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442076(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442102(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "name", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442118(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442142(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "name", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6837653846148442043(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + "." + _context.getNode().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_5368511706901764962(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -990,6 +1028,14 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
   }
 
+  public static Object referenceMacro_GetReferent_6837653846148442003(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
+  public static Object referenceMacro_GetReferent_6837653846148442033(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+  }
+
   public static Object referenceMacro_GetReferent_144710003695561045(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("library")), "javalibrary");
   }
@@ -1029,16 +1075,24 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
   }
 
+  public static boolean ifMacro_Condition_6837653846148504892(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_JarManifest");
+      }
+    }) != null;
+  }
+
   public static boolean ifMacro_Condition_7801138212747394539(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0ah(SPropertyOperations.getString(_context.getNode(), "filemode"));
+    return isNotEmpty_x583g4_a0a0lh(SPropertyOperations.getString(_context.getNode(), "filemode"));
   }
 
   public static boolean ifMacro_Condition_7801138212747394681(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0bh(SPropertyOperations.getString(_context.getNode(), "dirmode"));
+    return isNotEmpty_x583g4_a0a0mh(SPropertyOperations.getString(_context.getNode(), "dirmode"));
   }
 
   public static boolean ifMacro_Condition_7801138212747420804(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0ch(((String) _context.getVariable("var:prefix")));
+    return isNotEmpty_x583g4_a0a0nh(((String) _context.getVariable("var:prefix")));
   }
 
   public static boolean ifMacro_Condition_1117643560963351259(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1058,15 +1112,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7801138212747394835(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0hh(SPropertyOperations.getString(_context.getNode(), "filemode"));
+    return isNotEmpty_x583g4_a0a0sh(SPropertyOperations.getString(_context.getNode(), "filemode"));
   }
 
   public static boolean ifMacro_Condition_7801138212747394853(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0ih(SPropertyOperations.getString(_context.getNode(), "dirmode"));
+    return isNotEmpty_x583g4_a0a0th(SPropertyOperations.getString(_context.getNode(), "dirmode"));
   }
 
   public static boolean ifMacro_Condition_7801138212747420762(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0jh(((String) _context.getVariable("var:prefix")));
+    return isNotEmpty_x583g4_a0a0uh(((String) _context.getVariable("var:prefix")));
   }
 
   public static boolean ifMacro_Condition_1117643560963358578(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1090,15 +1144,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7801138212747394913(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0ph(SPropertyOperations.getString(_context.getNode(), "filemode"));
+    return isNotEmpty_x583g4_a0a0ai(SPropertyOperations.getString(_context.getNode(), "filemode"));
   }
 
   public static boolean ifMacro_Condition_7801138212747394931(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0qh(SPropertyOperations.getString(_context.getNode(), "dirmode"));
+    return isNotEmpty_x583g4_a0a0bi(SPropertyOperations.getString(_context.getNode(), "dirmode"));
   }
 
   public static boolean ifMacro_Condition_7801138212747420622(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0rh(((String) _context.getVariable("var:prefix")));
+    return isNotEmpty_x583g4_a0a0ci(((String) _context.getVariable("var:prefix")));
   }
 
   public static boolean ifMacro_Condition_8577651205286952586(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1224,6 +1278,14 @@ public class QueriesGenerated {
     return ((SNode) _context.getVariable("var:javaOpts")) != null;
   }
 
+  public static boolean ifMacro_Condition_6837653846148441984(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_6837653846148442014(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+  }
+
   public static boolean ifMacro_Condition_9126048691954996134(final IOperationContext operationContext, final IfMacroContext _context) {
     if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "layout", true), "children", true)).first(), "jetbrains.mps.build.structure.BuildLayout_Folder")) {
       return false;
@@ -1250,7 +1312,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6408167411310656502(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0xi(((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1());
+    return isNotEmpty_x583g4_a0a0kj(((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1());
   }
 
   public static boolean ifMacro_Condition_7801138212747257284(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1262,7 +1324,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6408167411310656480(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0aj(((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1());
+    return isNotEmpty_x583g4_a0a0nj(((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1());
   }
 
   public static boolean ifMacro_Condition_7801138212747257240(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1274,7 +1336,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6408167411310656070(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0dj(((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1());
+    return isNotEmpty_x583g4_a0a0qj(((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1());
   }
 
   public static boolean ifMacro_Condition_7801138212747256991(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1286,7 +1348,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6408167411310656284(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0gj(((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._1());
+    return isNotEmpty_x583g4_a0a0tj(((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._1());
   }
 
   public static boolean ifMacro_Condition_7801138212747257196(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1694,6 +1756,18 @@ public class QueriesGenerated {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.structure.BuildLayout_Node", false, new String[]{});
   }
 
+  public static Iterable sourceNodesQuery_6837653846148442091(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return BuildLayout_JarManifest_Behavior.call_getAttributes_8563603456895840897(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_6837653846148442133(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "attribute", true);
+  }
+
+  public static Iterable sourceNodesQuery_6837653846148442156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return BuildLayout_JarManifest_Behavior.call_getSections_8563603456895840664(_context.getNode());
+  }
+
   public static Iterable sourceNodesQuery_1117643560963307378(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "macros", true);
   }
@@ -1910,7 +1984,7 @@ public class QueriesGenerated {
     if (options == null) {
       options = ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isEmpty_x583g4_a0a0a0a0a0a0a0a0b0bn(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isEmpty_x583g4_a0a0a0a0a0a0a0a0b0rn(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -2060,59 +2134,59 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0ah(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0lh(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0bh(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0mh(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0ch(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0nh(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0hh(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0sh(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0ih(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0th(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0jh(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0uh(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0ph(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0ai(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0qh(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0bi(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0rh(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0ci(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0xi(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0kj(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0aj(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0nj(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0dj(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0qj(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0gj(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0tj(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_x583g4_a0a0a0a0a0a0a0a0b0bn(String str) {
+  public static boolean isEmpty_x583g4_a0a0a0a0a0a0a0a0b0rn(String str) {
     return str == null || str.length() == 0;
   }
 }
