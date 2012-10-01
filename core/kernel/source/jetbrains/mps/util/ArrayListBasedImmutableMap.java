@@ -49,10 +49,8 @@ public class ArrayListBasedImmutableMap<K, V> extends SmallMap<K, V> {
     int hash = key.hashCode();
 
     for (int i = 0; i < keys.length; i++) {
-      if (keys[i].hashCode() == hash) {
-        if (org.apache.commons.lang.ObjectUtils.equals(keys[i], key)) {
-          return true;
-        }
+      if (keys[i].hashCode() == hash && EqualUtil.equals(keys[i], key)) {
+        return true;
       }
     }
 
@@ -64,10 +62,8 @@ public class ArrayListBasedImmutableMap<K, V> extends SmallMap<K, V> {
     int hash = key.hashCode();
 
     for (int i = 0; i < keys.length; i++) {
-      if (keys[i].hashCode() == hash) {
-        if (org.apache.commons.lang.ObjectUtils.equals(keys[i], key)) {
-          return (V) values[i];
-        }
+      if (keys[i].hashCode() == hash && EqualUtil.equals(keys[i], key)) {
+        return (V) values[i];
       }
     }
 

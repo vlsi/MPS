@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1036071220598694533">
+  <root nodeId="1036071220598694533" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="1178539434126727742" fileName="ModuleSymbolicSuite.java" startLine="21" startPosition="63" endLine="22" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NO_TESTS" />
     <nodeInfo nodeId="1036071220598694544" fileName="ModuleSymbolicSuite.java" startLine="23" startPosition="0" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
     <nodeInfo nodeId="1036071220598721011" fileName="ModuleSymbolicSuite.java" startLine="24" startPosition="59" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleRef" />
@@ -107,14 +107,10 @@
     <scopeInfo nodeId="1036071220598720958" fileName="ModuleSymbolicSuite.java" startLine="70" startPosition="143" endLine="73" endPosition="5">
       <varInfo nodeId="1036071220598720961" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1036071220598709579" fileName="ModuleSymbolicSuite.java" startLine="114" startPosition="38" endLine="117" endPosition="9" />
     <scopeInfo nodeId="1178539434126776514" fileName="ModuleSymbolicSuite.java" startLine="114" startPosition="38" endLine="117" endPosition="9">
       <varInfo nodeId="1178539434126776522" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="1178539434126727729" fileName="ModuleSymbolicSuite.java" startLine="127" startPosition="14" endLine="130" endPosition="9" />
-    <scopeInfo nodeId="4089647634161021265" fileName="ModuleSymbolicSuite.java" startLine="127" startPosition="14" endLine="130" endPosition="9">
-      <varInfo nodeId="4089647634161021268" varName="test" />
-    </scopeInfo>
     <scopeInfo nodeId="1178539434126735612" fileName="ModuleSymbolicSuite.java" startLine="142" startPosition="90" endLine="145" endPosition="42" />
     <scopeInfo nodeId="4089647634161020034" fileName="ModuleSymbolicSuite.java" startLine="33" startPosition="66" endLine="37" endPosition="10" />
     <scopeInfo nodeId="1036071220598694599" fileName="ModuleSymbolicSuite.java" startLine="41" startPosition="0" endLine="45" endPosition="3">
@@ -195,7 +191,7 @@
     <unitInfo nodeId="1036071220598694537" fileName="ModuleSymbolicSuite.java" startLine="154" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite$ModuleClassSymbols" />
     <unitInfo nodeId="1036071220598694766" fileName="ModuleSymbolicSuite.java" startLine="161" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite$ModuleReference" />
   </root>
-  <root nodeId="1209415647739046624">
+  <root nodeId="1209415647739046624" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="1209415647739118411" fileName="MPSOpenProjectRunner.java" startLine="27" startPosition="50" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_PROJECT_NAME" />
     <nodeInfo nodeId="4101410806532129318" fileName="MPSOpenProjectRunner.java" startLine="28" startPosition="68" endLine="29" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_PREFIX_PATH_MACRO" />
     <nodeInfo nodeId="7906452883299947570" fileName="MPSOpenProjectRunner.java" startLine="29" startPosition="76" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourMPSProject" />
@@ -287,7 +283,6 @@
       <varInfo nodeId="4101410806532132363" varName="propertyKey" />
       <varInfo nodeId="4101410806532132378" varName="propertyValue" />
     </scopeInfo>
-    <scopeInfo nodeId="4101410806532131327" fileName="MPSOpenProjectRunner.java" startLine="75" startPosition="33" endLine="90" endPosition="5" />
     <scopeInfo nodeId="4101410806532131329" fileName="MPSOpenProjectRunner.java" startLine="75" startPosition="33" endLine="90" endPosition="5">
       <varInfo nodeId="4101410806532131330" varName="property" />
     </scopeInfo>
@@ -301,7 +296,7 @@
     <unitInfo nodeId="1209415647739046624" fileName="MPSOpenProjectRunner.java" startLine="27" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" />
     <unitInfo nodeId="1209415647739118533" fileName="MPSOpenProjectRunner.java" startLine="109" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner$MPSProject" />
   </root>
-  <root nodeId="5503298173333910467">
+  <root nodeId="5503298173333910467" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="5503298173333996383" fileName="MPSProjectITestsSuite.java" startLine="28" startPosition="50" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_MODULE_UUID" />
     <nodeInfo nodeId="5503298173333996390" fileName="MPSProjectITestsSuite.java" startLine="29" startPosition="83" endLine="30" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_MODEL_NAME" />
     <nodeInfo nodeId="5503298173333996394" fileName="MPSProjectITestsSuite.java" startLine="30" startPosition="85" endLine="31" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_TESTCLASS_NAME" />
@@ -423,7 +418,6 @@
     <scopeInfo nodeId="5503298173333995899" fileName="MPSProjectITestsSuite.java" startLine="67" startPosition="25" endLine="73" endPosition="9">
       <varInfo nodeId="5503298173333995900" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5503298173334000160" fileName="MPSProjectITestsSuite.java" startLine="67" startPosition="25" endLine="73" endPosition="9" />
     <scopeInfo nodeId="5503298173333997583" fileName="MPSProjectITestsSuite.java" startLine="83" startPosition="29" endLine="89" endPosition="165" />
     <scopeInfo nodeId="5503298173333998832" fileName="MPSProjectITestsSuite.java" startLine="93" startPosition="32" endLine="99" endPosition="171" />
     <scopeInfo nodeId="5503298173333995914" fileName="MPSProjectITestsSuite.java" startLine="136" startPosition="39" endLine="142" endPosition="19" />
@@ -470,7 +464,7 @@
     <unitInfo nodeId="5503298173333995913" fileName="MPSProjectITestsSuite.java" startLine="134" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MPSProjectITestsSuite$ModuleUUID" />
     <unitInfo nodeId="5503298173333995951" fileName="MPSProjectITestsSuite.java" startLine="156" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MPSProjectITestsSuite$TestClass" />
   </root>
-  <root nodeId="6219666460876673637">
+  <root nodeId="6219666460876673637" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="6219666460876678666" fileName="DisposeMPSStatement.java" startLine="11" startPosition="52" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPrev" />
     <nodeInfo nodeId="6219666460876678670" fileName="DisposeMPSStatement.java" startLine="14" startPosition="46" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6219666460876699306" fileName="DisposeMPSStatement.java" startLine="18" startPosition="43" endLine="19" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -506,7 +500,7 @@
     <scopeInfo nodeId="6219666460876678676" fileName="DisposeMPSStatement.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="6219666460876673637" fileName="DisposeMPSStatement.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.DisposeMPSStatement" />
   </root>
-  <root nodeId="6791703723376742374">
+  <root nodeId="6791703723376742374" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="6791703723376742538" fileName="MakeRunner.java" startLine="20" startPosition="40" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescription" />
     <nodeInfo nodeId="6791703723376742541" fileName="MakeRunner.java" startLine="23" startPosition="38" endLine="24" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6791703723376743113" fileName="MakeRunner.java" startLine="27" startPosition="47" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -564,7 +558,7 @@
     <unitInfo nodeId="6791703723376743179" fileName="MakeRunner.java" startLine="40" startPosition="39" endLine="48" endPosition="7" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$2" />
     <unitInfo nodeId="6791703723376743191" fileName="MakeRunner.java" startLine="42" startPosition="52" endLine="46" endPosition="11" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$3" />
   </root>
-  <root nodeId="6791703723376744293">
+  <root nodeId="6791703723376744293" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="6791703723376744310" fileName="WatchingSuiteWithMake.java" startLine="11" startPosition="58" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
     <nodeInfo nodeId="6791703723376744305" fileName="WatchingSuiteWithMake.java" startLine="14" startPosition="98" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6791703723376744322" fileName="WatchingSuiteWithMake.java" startLine="20" startPosition="28" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -584,7 +578,7 @@
     <scopeInfo nodeId="6791703723376744314" fileName="WatchingSuiteWithMake.java" startLine="17" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="6791703723376744293" fileName="WatchingSuiteWithMake.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingSuiteWithMake" />
   </root>
-  <root nodeId="7906452883299897332">
+  <root nodeId="7906452883299897332" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="7906452883299929239" fileName="MPSOpenProjectSuite.java" startLine="11" startPosition="96" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="7906452883299897365" fileName="MPSOpenProjectSuite.java" startLine="15" startPosition="137" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7906452883299946297" fileName="MPSOpenProjectSuite.java" startLine="16" startPosition="26" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -609,7 +603,7 @@
     </scopeInfo>
     <unitInfo nodeId="7906452883299897332" fileName="MPSOpenProjectSuite.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MPSOpenProjectSuite" />
   </root>
-  <root nodeId="7906452883299946826">
+  <root nodeId="7906452883299946826" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="7906452883299947070" fileName="ParameterizedSuite.java" startLine="21" startPosition="47" endLine="22" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
     <nodeInfo nodeId="7906452883299946838" fileName="ParameterizedSuite.java" startLine="24" startPosition="85" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7906452883299947181" fileName="ParameterizedSuite.java" startLine="26" startPosition="89" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -668,7 +662,7 @@
     <unitInfo nodeId="7906452883299946826" fileName="ParameterizedSuite.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedSuite" />
     <unitInfo nodeId="7906452883299946922" fileName="ParameterizedSuite.java" startLine="61" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedSuite$SuiteClasses" />
   </root>
-  <root nodeId="8816956192715451485">
+  <root nodeId="8816956192715451485" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="8816956192715460199" fileName="WatchingParameterizedWithMake.java" startLine="9" startPosition="74" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
     <nodeInfo nodeId="8816956192715453275" fileName="WatchingParameterizedWithMake.java" startLine="12" startPosition="73" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8816956192715460216" fileName="WatchingParameterizedWithMake.java" startLine="18" startPosition="28" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -687,7 +681,7 @@
     <scopeInfo nodeId="8816956192715453278" fileName="WatchingParameterizedWithMake.java" startLine="15" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="8816956192715451485" fileName="WatchingParameterizedWithMake.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake" />
   </root>
-  <root nodeId="935017990628671485">
+  <root nodeId="935017990628671485" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="935017990628671497" fileName="WatchingSuite.java" startLine="13" startPosition="90" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="935017990628671509" fileName="WatchingSuite.java" startLine="18" startPosition="64" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="935017990628671526" fileName="WatchingSuite.java" startLine="20" startPosition="9" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -712,7 +706,7 @@
     </scopeInfo>
     <unitInfo nodeId="935017990628671485" fileName="WatchingSuite.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
   </root>
-  <root nodeId="935017990628671531">
+  <root nodeId="935017990628671531" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="935017990628671582" fileName="FilepathParameterized.java" startLine="19" startPosition="50" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="runners" />
     <nodeInfo nodeId="935017990628671596" fileName="FilepathParameterized.java" startLine="22" startPosition="65" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="935017990628671600" fileName="FilepathParameterized.java" startLine="23" startPosition="50" endLine="24" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -825,7 +819,7 @@
     <unitInfo nodeId="935017990628671531" fileName="FilepathParameterized.java" startLine="19" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
     <unitInfo nodeId="935017990628671534" fileName="FilepathParameterized.java" startLine="52" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.FilepathParameterized$TestClassRunnerForParameters" />
   </root>
-  <root nodeId="935017990628671834">
+  <root nodeId="935017990628671834" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="935017990628671845" fileName="SymbolicSuite.java" startLine="19" startPosition="57" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
     <nodeInfo nodeId="935017990628671858" fileName="SymbolicSuite.java" startLine="22" startPosition="93" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="935017990628671874" fileName="SymbolicSuite.java" startLine="26" startPosition="97" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
@@ -918,7 +912,7 @@
     <unitInfo nodeId="935017990628671834" fileName="SymbolicSuite.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.SymbolicSuite" />
     <unitInfo nodeId="935017990628671835" fileName="SymbolicSuite.java" startLine="78" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.SymbolicSuite$SuiteClassSymbols" />
   </root>
-  <root nodeId="935017990628672065">
+  <root nodeId="935017990628672065" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="935017990628672075" fileName="WatchingParameterized.java" startLine="13" startPosition="65" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="935017990628672086" fileName="WatchingParameterized.java" startLine="18" startPosition="64" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="935017990628672097" fileName="WatchingParameterized.java" startLine="20" startPosition="37" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

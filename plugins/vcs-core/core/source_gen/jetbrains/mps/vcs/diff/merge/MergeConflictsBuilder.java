@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.util.SNodeCompare;
@@ -138,7 +138,7 @@ public class MergeConflictsBuilder {
     for (Tuples._2<SNodeId, String> nodeName : SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
       SetPropertyChange mineChange = MapSequence.fromMap(arranged._0()).get(nodeName);
       SetPropertyChange repositoryChange = MapSequence.fromMap(arranged._1()).get(nodeName);
-      if (ObjectUtils.equals(mineChange.getNewValue(), repositoryChange.getNewValue())) {
+      if (EqualUtil.equals(mineChange.getNewValue(), repositoryChange.getNewValue())) {
         addSymmetric(mineChange, repositoryChange);
       } else {
         addConflict(mineChange, repositoryChange);
@@ -156,7 +156,7 @@ public class MergeConflictsBuilder {
     for (Tuples._2<SNodeId, String> nodeName : SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
       SetReferenceChange mineChange = MapSequence.fromMap(arranged._0()).get(nodeName);
       SetReferenceChange repositoryChange = MapSequence.fromMap(arranged._1()).get(nodeName);
-      if (ObjectUtils.equals(mineChange.getTargetNodeId(), repositoryChange.getTargetNodeId()) && ObjectUtils.equals(mineChange.getTargetModelReference(), repositoryChange.getTargetModelReference()) && ObjectUtils.equals(mineChange.getResolveInfo(), repositoryChange.getResolveInfo())) {
+      if (EqualUtil.equals(mineChange.getTargetNodeId(), repositoryChange.getTargetNodeId()) && EqualUtil.equals(mineChange.getTargetModelReference(), repositoryChange.getTargetModelReference()) && EqualUtil.equals(mineChange.getResolveInfo(), repositoryChange.getResolveInfo())) {
         addSymmetric(mineChange, repositoryChange);
       } else {
         addConflict(mineChange, repositoryChange);

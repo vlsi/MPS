@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1218793625941">
+  <root nodeId="1218793625941" modelId="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)">
     <nodeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="116" startPosition="58" endLine="116" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="133" startPosition="58" endLine="133" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -297,7 +297,7 @@
     <unitInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="23" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor" />
     <unitInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="145" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor$_Inline_1kyme_a1b0" />
   </root>
-  <root nodeId="1219745771774">
+  <root nodeId="1219745771774" modelId="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)">
     <nodeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="163" startPosition="58" endLine="163" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="180" startPosition="58" endLine="180" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="197" startPosition="58" endLine="197" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

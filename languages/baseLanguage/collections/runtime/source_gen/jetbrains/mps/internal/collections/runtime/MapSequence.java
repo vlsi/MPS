@@ -274,43 +274,43 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
   }
 
   @SuppressWarnings(value = "unchecked")
-  private class MappingsSetSequence extends CollectionSequence implements ISetSequence, Set {
+  private class MappingsSetSequence extends CollectionSequence<IMapping<U, V>> implements ISetSequence<IMapping<U, V>>, Set<IMapping<U, V>> {
     private MappingsSetSequence() {
     }
 
-    public Object addElement(Object t) {
+    public IMapping<U, V> addElement(IMapping<U, V> t) {
       throw new UnsupportedOperationException();
     }
 
-    public ISetSequence addSequence(ISequence seq) {
+    public ISetSequence<IMapping<U, V>> addSequence(ISequence<? extends IMapping<U, V>> seq) {
       throw new UnsupportedOperationException();
     }
 
-    public Object removeElement(Object t) {
+    public IMapping<U, V> removeElement(IMapping<U, V> t) {
       if (map.entrySet().remove(((IMapping<U, V>) t).toEntry())) {
         return t;
       }
       return null;
     }
 
-    public ISetSequence removeSequence(ISequence seq) {
+    public ISetSequence<IMapping<U, V>> removeSequence(ISequence<? extends IMapping<U, V>> seq) {
       if (Sequence.USE_NULL_SEQUENCE) {
         if (seq == null) {
           return this;
         }
       }
-      for (Object t : seq.toIterable()) {
-        map.entrySet().remove(((IMapping<U, V>) t).toEntry());
+      for (IMapping<U, V> t : seq.toIterable()) {
+        map.entrySet().remove(t.toEntry());
       }
       return this;
     }
 
-    public boolean contains(Object t) {
-      return map.entrySet().contains(((IMapping<U, V>) t).toEntry());
+    public boolean contains(IMapping<U, V> t) {
+      return map.entrySet().contains(t.toEntry());
     }
 
-    public Object[] toGenericArray() {
-      Object[] result = new Object[size()];
+    public IMapping<U, V>[] toGenericArray() {
+      IMapping<U, V>[] result = (IMapping<U, V>[]) ArrayUtils.newArrayInstance(IMapping.class, size());
       Iterator<IMapping<U, V>> it = MapSequence.this.iterator();
       for (int i = 0; it.hasNext(); i++) {
         result[i] = it.next();
@@ -318,8 +318,8 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
       return result;
     }
 
-    public Object[] toGenericArray(Class runtimeClass) {
-      Object[] arr = (Object[]) ArrayUtils.newArrayInstance(runtimeClass, size());
+    public IMapping<U, V>[] toGenericArray(Class runtimeClass) {
+      IMapping<U, V>[] arr = (IMapping<U, V>[]) ArrayUtils.newArrayInstance(runtimeClass, size());
       return toArray(arr);
     }
 
@@ -331,7 +331,7 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
       return MapSequence.this.iterator();
     }
 
-    public boolean add(Object o) {
+    public boolean add(IMapping<U, V> o) {
       throw new UnsupportedOperationException();
     }
 
@@ -386,12 +386,12 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
       return toGenericArray();
     }
 
-    public Object[] toArray(Object[] arr) {
+    public IMapping<U, V>[] toArray(IMapping<U, V>[] arr) {
       int size = size();
       if (arr.length < size) {
-        arr = (Object[]) ArrayUtils.newArrayInstance(arr.getClass().getComponentType(), size);
+        arr = (IMapping<U, V>[]) ArrayUtils.newArrayInstance(arr.getClass().getComponentType(), size);
       }
-      Iterator it = iterator();
+      Iterator<IMapping<U, V>> it = iterator();
       for (int i = 0; i < size; i++) {
         arr[i] = it.next();
       }
@@ -402,12 +402,12 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
     }
 
     @Override
-    public ISetSequence<Object> asUnmodifiable() {
+    public ISetSequence<IMapping<U, V>> asUnmodifiable() {
       throw new UnsupportedOperationException();
     }
 
     @Override
-    public ISetSequence<Object> asSynchronized() {
+    public ISetSequence<IMapping<U, V>> asSynchronized() {
       throw new UnsupportedOperationException();
     }
 

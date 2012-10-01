@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.TemplateModelImpl" />
-  <root nodeId="6186432342008486850">
+  <root nodeId="6186432342008486850" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="27" startPosition="66" endLine="28" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="rootMappingRule_417xrn_a0a0a" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="28" startPosition="266" endLine="29" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="dropRule_417xrn_a0a0b" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="29" startPosition="259" endLine="30" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weavingRule_417xrn_a0a0c" />
@@ -443,7 +443,7 @@
     <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="253" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$WeavingRule2" />
     <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="306" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$WeavingRule3" />
   </root>
-  <root nodeId="6186432342008490321">
+  <root nodeId="6186432342008490321" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="16" startPosition="70" endLine="17" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_56x90y_a0a0" />
     <nodeInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="17" startPosition="258" endLine="18" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_56x90y_a0a0a1a1" />
     <nodeInfo nodeId="6186432342008490333" fileName="QueriesGenerated.java" startLine="18" startPosition="154" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -567,7 +567,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="16" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Templatemap__RootConcept" />
   </root>
-  <root nodeId="6186432342008522510">
+  <root nodeId="6186432342008522510" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="19" startPosition="90" endLine="20" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_asyc93_a0a0a1a1" />
     <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="20" startPosition="266" endLine="21" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="propertyMacro_asyc93_c0b0b0a2a1a1" />
     <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="21" startPosition="271" endLine="22" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_asyc93_a0a0a1a4a1a1" />
@@ -810,7 +810,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="19" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Templateweave__ChildConceptWeave" />
   </root>
-  <root nodeId="6186432342008533395">
+  <root nodeId="6186432342008533395" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="19" startPosition="94" endLine="20" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_es4xty_a0a0a1a1" />
     <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="20" startPosition="266" endLine="21" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="propertyMacro_es4xty_c0b0b0a2a1a1" />
     <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="21" startPosition="271" endLine="22" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_es4xty_a0a0a1a4a1a1" />

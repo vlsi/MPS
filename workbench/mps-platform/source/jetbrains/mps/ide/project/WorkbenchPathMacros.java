@@ -32,8 +32,8 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.PathMacrosProvider;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.event.HyperlinkEvent;
@@ -112,7 +112,7 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
     keys.addAll(m2.keySet());
 
     for (String key : keys) {
-      if (!ObjectUtils.equals(m1.get(key), m2.get(key))) return false;
+      if (!EqualUtil.equals(m1.get(key), m2.get(key))) return false;
     }
     return true;
   }

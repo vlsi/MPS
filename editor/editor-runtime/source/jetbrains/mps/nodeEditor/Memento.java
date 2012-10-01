@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 
 import java.awt.Point;
@@ -122,7 +122,7 @@ class Memento {
       if (cell != null) {
         String text = cell.getText();
         String oldText = entry.getValue();
-        if (!ObjectUtils.equals(text, oldText) && (!cell.isValidText(oldText) || !cell.isEditable())) {
+        if (!EqualUtil.equals(text, oldText) && (!cell.isValidText(oldText) || !cell.isEditable())) {
           cell.changeText(oldText);
           needsRelayout = true;
         }
@@ -135,9 +135,9 @@ class Memento {
     if (object == this) return true;
     if (object instanceof Memento) {
       Memento m = (Memento) object;
-      if (ObjectUtils.equals(mySelectionStack, m.mySelectionStack) &&
-        ObjectUtils.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-        ObjectUtils.equals(myFolded, m.myFolded)) {
+      if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
+        EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
+        EqualUtil.equals(myFolded, m.myFolded)) {
 
         return true;
       }

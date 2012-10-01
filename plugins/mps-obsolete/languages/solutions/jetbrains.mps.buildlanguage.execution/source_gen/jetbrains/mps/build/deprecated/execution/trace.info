@@ -627,7 +627,7 @@
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="54" startPosition="5" endLine="57" endPosition="39">
       <varInfo nodeId="4197214709893770506" varName="fieldElement" />
     </scopeInfo>
-    <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration_Editor.java" startLine="56" startPosition="115" endLine="59" endPosition="60" />
+    <scopeInfo nodeId="4197214709893770662" fileName="BuildLanguageProject_Configuration_Editor.java" startLine="56" startPosition="115" endLine="59" endPosition="60" />
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="59" startPosition="5" endLine="62" endPosition="39">
       <varInfo nodeId="4197214709893770506" varName="fieldElement" />
     </scopeInfo>
@@ -903,7 +903,7 @@
     <scopeInfo nodeId="4197214709893770708" fileName="PackagingBuildScript_Configuration.java" startLine="63" startPosition="5" endLine="66" endPosition="39">
       <varInfo nodeId="4197214709893770708" varName="fieldElement" />
     </scopeInfo>
-    <scopeInfo nodeId="4197214709893770708" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" />
+    <scopeInfo nodeId="4197214709893770846" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" />
     <scopeInfo nodeId="4197214709893770708" fileName="PackagingBuildScript_Configuration.java" startLine="68" startPosition="5" endLine="71" endPosition="39">
       <varInfo nodeId="4197214709893770708" varName="fieldElement" />
     </scopeInfo>
@@ -1287,7 +1287,7 @@
       <varInfo nodeId="4197214709893770974" varName="name" />
       <varInfo nodeId="4197214709893770974" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4197214709893770974" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="62" startPosition="115" endLine="65" endPosition="78" />
+    <scopeInfo nodeId="4197214709893771146" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="62" startPosition="115" endLine="65" endPosition="78" />
     <scopeInfo nodeId="4197214709893770974" fileName="CustomMPSApplication_Configuration.java" startLine="68" startPosition="5" endLine="71" endPosition="39">
       <varInfo nodeId="4197214709893770974" varName="fieldElement" />
     </scopeInfo>
@@ -1333,7 +1333,7 @@
       <varInfo nodeId="4197214709893771179" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="4197214709893770974" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4197214709893771177" fileName="CustomMPSApplication_Configuration.java" startLine="57" startPosition="73" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="4197214709893770974" fileName="CustomMPSApplication_Configuration.java" startLine="57" startPosition="73" endLine="62" endPosition="5" />
     <scopeInfo nodeId="4197214709893770974" fileName="CustomMPSApplication_Configuration.java" startLine="137" startPosition="9" endLine="142" endPosition="19" />
     <scopeInfo nodeId="4197214709893770974" fileName="CustomMPSApplication_Configuration.java" startLine="150" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="4197214709893770974" varName="environment" />
@@ -1877,8 +1877,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -1990,8 +1990,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="32" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="33" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="33" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="33" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="33" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="33" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="35" endLine="26" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="35" endLine="26" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="54" endLine="26" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -2129,7 +2129,7 @@
     <scopeInfo nodeId="6893245555985399815" fileName="Execution_PluginInitializer.java" startLine="13" startPosition="74" endLine="27" endPosition="3" />
     <unitInfo nodeId="6893245555985399815" fileName="Execution_PluginInitializer.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.Execution_PluginInitializer" />
     <unitInfo nodeId="6893245555985399815" fileName="Execution_PluginInitializer.java" startLine="15" startPosition="54" endLine="26" endPosition="5" unitName="jetbrains.mps.build.deprecated.execution.Execution_PluginInitializer$1" />
-    <unitInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="30" endPosition="0" unitName="plugin.xml" />
+    <unitInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.plugin$xml" />
   </root>
   <root nodeId="7162597690968026150" modelId="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution)">
     <nodeInfo nodeId="7162597690968026150" fileName="Execution_ApplicationPlugin.java" startLine="13" startPosition="72" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />

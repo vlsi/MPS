@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1203684597238">
+  <root nodeId="1203684597238" modelId="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.devkit.newLanguageDialog)">
     <nodeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="12" startPosition="51" endLine="13" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentPane" />
     <nodeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="15" startPosition="41" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="19" startPosition="82" endLine="20" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -305,7 +305,7 @@
     <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="35" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" />
     <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="49" startPosition="32" endLine="55" endPosition="3" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$1" />
   </root>
-  <root nodeId="1203685087824">
+  <root nodeId="1203685087824" modelId="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.devkit.newLanguageDialog)">
     <nodeInfo nodeId="1203686051499" fileName="NewLanguageDialogContentPane.java" startLine="67" startPosition="31" endLine="68" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203686057306" fileName="NewLanguageDialogContentPane.java" startLine="68" startPosition="36" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237027856122" fileName="NewLanguageDialogContentPane.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

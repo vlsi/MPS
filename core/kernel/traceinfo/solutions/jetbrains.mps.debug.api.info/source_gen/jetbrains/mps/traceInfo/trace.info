@@ -1213,9 +1213,7 @@
     <scopeInfo nodeId="2522627450234088682" fileName="DebugInfoBuilder.java" startLine="71" startPosition="70" endLine="75" endPosition="9">
       <varInfo nodeId="2522627450234088684" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088852" fileName="DebugInfoBuilder.java" startLine="78" startPosition="32" endLine="82" endPosition="7">
-      <varInfo nodeId="2522627450234088856" varName="out" />
-    </scopeInfo>
+    <scopeInfo nodeId="2522627450234088851" fileName="DebugInfoBuilder.java" startLine="78" startPosition="32" endLine="82" endPosition="7" />
     <scopeInfo nodeId="6204170386629146225" fileName="DebugInfoBuilder.java" startLine="102" startPosition="62" endLine="106" endPosition="7">
       <varInfo nodeId="6204170386629146291" varName="cachedRootInfo" />
     </scopeInfo>
@@ -1225,9 +1223,7 @@
     <scopeInfo nodeId="2522627450234088676" fileName="DebugInfoBuilder.java" startLine="70" startPosition="33" endLine="76" endPosition="7">
       <varInfo nodeId="2522627450234088680" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="6204170386629146222" fileName="DebugInfoBuilder.java" startLine="101" startPosition="156" endLine="107" endPosition="5">
-      <varInfo nodeId="6204170386629146223" varName="root" />
-    </scopeInfo>
+    <scopeInfo nodeId="6204170386629146199" fileName="DebugInfoBuilder.java" startLine="101" startPosition="156" endLine="107" endPosition="5" />
     <scopeInfo nodeId="5066864551128496282" fileName="DebugInfoBuilder.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5066864551128497849" varName="fileName" />
       <varInfo nodeId="5066864551128496411" varName="inputModel" />

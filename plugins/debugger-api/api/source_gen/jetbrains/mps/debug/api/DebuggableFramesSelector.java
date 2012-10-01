@@ -8,7 +8,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.source.PositionProvider;
 import org.jetbrains.annotations.NonNls;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.debug.api.source.SourcePosition;
 
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
@@ -60,7 +60,7 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
 
   @Override
   public boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount, String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount) {
-    if (ObjectUtils.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
+    if (EqualUtil.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
       return true;
     }
     SourcePosition lastPointer = PositionProvider.getInstance(myProject).getPosition(lastUnitName, lastFileName, lastLineNumber, mySession);

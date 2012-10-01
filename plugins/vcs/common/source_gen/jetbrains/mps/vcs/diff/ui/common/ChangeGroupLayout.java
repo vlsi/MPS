@@ -92,7 +92,7 @@ public abstract class ChangeGroupLayout {
           return a.merge(b);
         }
       });
-      List<ModelChange> sortedChanges = SetSequence.fromSet(s).sort(new ISelector<ModelChange, Integer>() {
+      List<ModelChange> sortedChanges = Sequence.fromIterable(s).sort(new ISelector<ModelChange, Integer>() {
         public Integer select(ModelChange ch) {
           return (int) MapSequence.fromMap(right).get(ch).start();
         }

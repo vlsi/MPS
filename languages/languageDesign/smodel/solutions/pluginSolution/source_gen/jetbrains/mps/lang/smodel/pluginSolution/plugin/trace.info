@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin._Adapters" />
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin._Adapters$_return_P1_E0_to__void_P1_E0_adapter" />
-  <root nodeId="1719872688913296344">
+  <root nodeId="1719872688913296344" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="1719872688913296344" fileName="MigrateToNewSNodeMethods_Action.java" startLine="18" startPosition="65" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1719872688913296344" fileName="MigrateToNewSNodeMethods_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="1719872688913296344" fileName="MigrateToNewSNodeMethods_Action.java" startLine="22" startPosition="44" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -76,7 +76,7 @@
     </scopeInfo>
     <unitInfo nodeId="1719872688913296344" fileName="MigrateToNewSNodeMethods_Action.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToNewSNodeMethods_Action" />
   </root>
-  <root nodeId="5487985028841902721">
+  <root nodeId="5487985028841902721" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="32" startPosition="67" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="33" startPosition="40" endLine="34" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="36" startPosition="46" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -179,9 +179,6 @@
     <scopeInfo nodeId="5487985028841902763" fileName="CheckLangForJavaStubModels_Action.java" startLine="86" startPosition="116" endLine="95" endPosition="11" />
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="51" startPosition="89" endLine="62" endPosition="5" />
     <scopeInfo nodeId="5487985028841902756" fileName="CheckLangForJavaStubModels_Action.java" startLine="85" startPosition="119" endLine="96" endPosition="9" />
-    <scopeInfo nodeId="5487985028841902757" fileName="CheckLangForJavaStubModels_Action.java" startLine="85" startPosition="119" endLine="96" endPosition="9">
-      <varInfo nodeId="5487985028841902758" varName="model" />
-    </scopeInfo>
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="65" startPosition="95" endLine="77" endPosition="16" />
     <scopeInfo nodeId="5487985028841902751" fileName="CheckLangForJavaStubModels_Action.java" startLine="84" startPosition="79" endLine="97" endPosition="7">
       <varInfo nodeId="5487985028841902752" varName="md" />
@@ -209,7 +206,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="32" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.CheckLangForJavaStubModels_Action" />
   </root>
-  <root nodeId="5487985028841902885">
+  <root nodeId="5487985028841902885" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="8" startPosition="80" endLine="9" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="9" startPosition="91" endLine="10" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="12" startPosition="49" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -229,7 +226,7 @@
     <scopeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
     <unitInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.LanguageInternalAddition_ActionGroup" />
   </root>
-  <root nodeId="7039601390004640869">
+  <root nodeId="7039601390004640869" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="7039601390004645165" fileName="ApiTransformations.java" startLine="27" startPosition="169" endLine="28" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7039601390004645188" fileName="ApiTransformations.java" startLine="28" startPosition="332" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7039601390004645189" fileName="ApiTransformations.java" startLine="29" startPosition="0" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -8633,7 +8630,7 @@
     <unitInfo nodeId="7039601390004649034" fileName="ApiTransformations.java" startLine="4934" startPosition="0" endLine="5022" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiTransformations$QuotationClass_f4dkew_a0a0b0a0a0a0a653a0" />
     <unitInfo nodeId="7039601390004648909" fileName="ApiTransformations.java" startLine="4749" startPosition="0" endLine="4832" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiTransformations$QuotationClass_f4dkew_a0a0b0a0a0a0a743a0" />
   </root>
-  <root nodeId="7162597690967691224">
+  <root nodeId="7162597690967691224" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="77" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="27" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="30" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -8660,7 +8657,7 @@
     <scopeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
-  <root nodeId="7949796796600715200">
+  <root nodeId="7949796796600715200" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="1719872688913255232" fileName="ApiMigrationHelper.java" startLine="46" startPosition="33" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="p" />
     <nodeInfo nodeId="1719872688913255241" fileName="ApiMigrationHelper.java" startLine="47" startPosition="23" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ip" />
     <nodeInfo nodeId="1719872688913255250" fileName="ApiMigrationHelper.java" startLine="48" startPosition="21" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="scope" />
@@ -9074,9 +9071,6 @@
       <varInfo nodeId="4390395606403266325" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="4390395606403266494" fileName="ApiMigrationHelper.java" startLine="256" startPosition="29" endLine="265" endPosition="13" />
-    <scopeInfo nodeId="4390395606403294388" fileName="ApiMigrationHelper.java" startLine="256" startPosition="29" endLine="265" endPosition="13">
-      <varInfo nodeId="4390395606403294443" varName="i" />
-    </scopeInfo>
     <scopeInfo nodeId="7949796796600715756" fileName="ApiMigrationHelper.java" startLine="279" startPosition="0" endLine="289" endPosition="0">
       <varInfo nodeId="7949796796600715762" varName="old" />
     </scopeInfo>
@@ -9215,7 +9209,7 @@
     <unitInfo nodeId="7949796796600715476" fileName="ApiMigrationHelper.java" startLine="358" startPosition="0" endLine="395" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0c0e0a0a0a0c0a0a1a0lb0a" />
     <unitInfo nodeId="1719872688913246154" fileName="ApiMigrationHelper.java" startLine="340" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a1a0b0e0a0a0a0c0a0a1a0lb0a" />
   </root>
-  <root nodeId="8418469470840880071">
+  <root nodeId="8418469470840880071" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="8418469470840880071" fileName="MigrateToOpenAPI_Action.java" startLine="18" startPosition="57" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8418469470840880071" fileName="MigrateToOpenAPI_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="8418469470840880071" fileName="MigrateToOpenAPI_Action.java" startLine="22" startPosition="36" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -9289,7 +9283,7 @@
     </scopeInfo>
     <unitInfo nodeId="8418469470840880071" fileName="MigrateToOpenAPI_Action.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToOpenAPI_Action" />
   </root>
-  <root nodeId="8418469470841235721">
+  <root nodeId="8418469470841235721" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="8418469470841235721" fileName="Migration30_ActionGroup.java" startLine="8" startPosition="67" endLine="9" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8418469470841235721" fileName="Migration30_ActionGroup.java" startLine="9" startPosition="78" endLine="10" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="8418469470841235721" fileName="Migration30_ActionGroup.java" startLine="12" startPosition="36" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

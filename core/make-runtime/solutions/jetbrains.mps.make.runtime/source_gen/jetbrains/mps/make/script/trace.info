@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1291978361072214397">
+  <root nodeId="1291978361072214397" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="1291978361072214431" fileName="IResult.java" startLine="7" startPosition="26" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" />
     <nodeInfo nodeId="1291978361072214460" fileName="IResult.java" startLine="8" startPosition="31" endLine="9" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4629164904928188039" fileName="IResult.java" startLine="10" startPosition="50" endLine="11" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="output" />
@@ -39,7 +39,7 @@
     <unitInfo nodeId="4629164904928188010" fileName="IResult.java" startLine="26" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.script.IResult$FAILURE" />
     <unitInfo nodeId="4629164904928187994" fileName="IResult.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.script.IResult$SUCCESS" />
   </root>
-  <root nodeId="1479818508463261244">
+  <root nodeId="1479818508463261244" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="1479818508463261245" fileName="ScriptBuilder.java" startLine="28" startPosition="28" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7809317858929169443" fileName="ScriptBuilder.java" startLine="30" startPosition="0" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="facets" />
     <nodeInfo nodeId="1479818508463261259" fileName="ScriptBuilder.java" startLine="31" startPosition="84" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requestedTargets" />
@@ -272,7 +272,6 @@
     <scopeInfo nodeId="7809317858929255058" fileName="ScriptBuilder.java" startLine="114" startPosition="56" endLine="121" endPosition="7">
       <varInfo nodeId="7809317858929255060" varName="fct" />
     </scopeInfo>
-    <scopeInfo nodeId="1479818508463261669" fileName="ScriptBuilder.java" startLine="152" startPosition="119" endLine="159" endPosition="5" />
     <scopeInfo nodeId="1479818508463261670" fileName="ScriptBuilder.java" startLine="152" startPosition="119" endLine="159" endPosition="5">
       <varInfo nodeId="1479818508463261671" varName="fct" />
     </scopeInfo>
@@ -304,10 +303,6 @@
       <varInfo nodeId="1479818508463261798" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="1479818508463261865" fileName="ScriptBuilder.java" startLine="199" startPosition="134" endLine="208" endPosition="5" />
-    <scopeInfo nodeId="1479818508463261866" fileName="ScriptBuilder.java" startLine="199" startPosition="134" endLine="208" endPosition="5">
-      <varInfo nodeId="1479818508463261867" varName="req" />
-    </scopeInfo>
-    <scopeInfo nodeId="1479818508463261916" fileName="ScriptBuilder.java" startLine="211" startPosition="134" endLine="220" endPosition="5" />
     <scopeInfo nodeId="1479818508463261917" fileName="ScriptBuilder.java" startLine="211" startPosition="134" endLine="220" endPosition="5">
       <varInfo nodeId="1479818508463261918" varName="opt" />
     </scopeInfo>
@@ -362,12 +357,12 @@
     <unitInfo nodeId="1479818508463261809" fileName="ScriptBuilder.java" startLine="181" startPosition="91" endLine="185" endPosition="9" unitName="jetbrains.mps.make.script.ScriptBuilder$4" />
     <unitInfo nodeId="1479818508463261983" fileName="ScriptBuilder.java" startLine="232" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.make.script.ScriptBuilder$FacetRefs" />
   </root>
-  <root nodeId="2551169102353043399">
+  <root nodeId="2551169102353043399" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="2551169102353043401" fileName="IOption.java" startLine="6" startPosition="26" endLine="7" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
     <scopeInfo nodeId="2551169102353043401" fileName="IOption.java" startLine="6" startPosition="26" endLine="7" endPosition="26" />
     <unitInfo nodeId="2551169102353043399" fileName="IOption.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.script.IOption" />
   </root>
-  <root nodeId="4648565975300663454">
+  <root nodeId="4648565975300663454" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="4648565975300663473" fileName="IScriptController.java" startLine="10" startPosition="36" endLine="11" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
     <nodeInfo nodeId="4648565975300663456" fileName="IScriptController.java" startLine="11" startPosition="92" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
     <nodeInfo nodeId="8075512910924608489" fileName="IScriptController.java" startLine="14" startPosition="43" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
@@ -438,7 +433,7 @@
     <unitInfo nodeId="4648565975300663454" fileName="IScriptController.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.script.IScriptController" />
     <unitInfo nodeId="5646063728432391389" fileName="IScriptController.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.script.IScriptController$Stub" />
   </root>
-  <root nodeId="6168415856807657202">
+  <root nodeId="6168415856807657202" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="3390441279428732804" fileName="IJob.java" startLine="8" startPosition="23" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;)Ljetbrains/mps/make/script/IResult;" />
     <nodeInfo nodeId="1936666589466013279" fileName="IJob.java" startLine="14" startPosition="96" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3353120829256410616" fileName="IJob.java" startLine="10" startPosition="44" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
@@ -459,7 +454,7 @@
     <unitInfo nodeId="6168415856807657202" fileName="IJob.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.script.IJob" />
     <unitInfo nodeId="3353120829256410614" fileName="IJob.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.script.IJob$Stub" />
   </root>
-  <root nodeId="6168415856807657227">
+  <root nodeId="6168415856807657227" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="6168415856807657228" fileName="IScript.java" startLine="10" startPosition="26" endLine="11" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
     <nodeInfo nodeId="5012541157864944184" fileName="IScript.java" startLine="11" startPosition="27" endLine="12" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validationErrors#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2892614774105532331" fileName="IScript.java" startLine="12" startPosition="47" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startingTarget#()Ljetbrains/mps/make/facet/ITarget;" />
@@ -478,7 +473,7 @@
     </scopeInfo>
     <unitInfo nodeId="6168415856807657227" fileName="IScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.script.IScript" />
   </root>
-  <root nodeId="6168415856807657250">
+  <root nodeId="6168415856807657250" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="6168415856807657251" fileName="IJobMonitor.java" startLine="6" startPosition="30" endLine="7" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" />
     <nodeInfo nodeId="7797884084018629453" fileName="IJobMonitor.java" startLine="7" startPosition="33" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
     <nodeInfo nodeId="3668957831723303232" fileName="IJobMonitor.java" startLine="8" startPosition="37" endLine="9" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
@@ -514,7 +509,7 @@
     <unitInfo nodeId="6168415856807657250" fileName="IJobMonitor.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.script.IJobMonitor" />
     <unitInfo nodeId="5646063728432307501" fileName="IJobMonitor.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.script.IJobMonitor$Stub" />
   </root>
-  <root nodeId="6872280991287216857">
+  <root nodeId="6872280991287216857" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="87636868215269587" fileName="IPropertiesPool.java" startLine="7" startPosition="34" endLine="8" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasProperties#(Ljetbrains/mps/make/facet/ITarget/Name;)Z" />
     <nodeInfo nodeId="6872280991287216866" fileName="IPropertiesPool.java" startLine="8" startPosition="52" endLine="9" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="properties#(Ljetbrains/mps/make/facet/ITarget/Name;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="3754120030656252184" fileName="IPropertiesPool.java" startLine="9" startPosition="61" endLine="10" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPredecessor#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
@@ -530,7 +525,7 @@
     </scopeInfo>
     <unitInfo nodeId="6872280991287216857" fileName="IPropertiesPool.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.script.IPropertiesPool" />
   </root>
-  <root nodeId="7797884084018455875">
+  <root nodeId="7797884084018455875" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="7797884084018527781" fileName="IFeedback.java" startLine="7" startPosition="28" endLine="8" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSeverity#()Ljetbrains/mps/make/script/IFeedback/Severity;" />
     <nodeInfo nodeId="7797884084018455910" fileName="IFeedback.java" startLine="8" startPosition="42" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#()Ljava/lang/String;" />
     <nodeInfo nodeId="4374815845151980309" fileName="IFeedback.java" startLine="9" startPosition="29" endLine="10" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljava/lang/Object;" />
@@ -687,7 +682,7 @@
     <unitInfo nodeId="4374815845151980290" fileName="IFeedback.java" startLine="29" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.script.IFeedback$Stub" />
     <unitInfo nodeId="7797884084018527635" fileName="IFeedback.java" startLine="125" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.make.script.IFeedback$WARNING" />
   </root>
-  <root nodeId="7797884084018559880">
+  <root nodeId="7797884084018559880" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="7797884084018559916" fileName="IProgress.java" startLine="6" startPosition="28" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" />
     <nodeInfo nodeId="7797884084018559904" fileName="IProgress.java" startLine="7" startPosition="24" endLine="8" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" />
     <nodeInfo nodeId="7797884084018559887" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;I)V" />
@@ -746,7 +741,7 @@
     <unitInfo nodeId="7797884084018559880" fileName="IProgress.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.script.IProgress" />
     <unitInfo nodeId="9000373783400679478" fileName="IProgress.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.script.IProgress$Stub" />
   </root>
-  <root nodeId="8339029394034910088">
+  <root nodeId="8339029394034910088" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="8339029394035014642" fileName="IConfigMonitor.java" startLine="6" startPosition="53" endLine="7" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="4374815845151980262" fileName="IConfigMonitor.java" startLine="9" startPosition="19" endLine="10" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4374815845151980285" fileName="IConfigMonitor.java" startLine="13" startPosition="32" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -770,7 +765,7 @@
     <unitInfo nodeId="8339029394034910088" fileName="IConfigMonitor.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.script.IConfigMonitor" />
     <unitInfo nodeId="5646063728432307524" fileName="IConfigMonitor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.script.IConfigMonitor$Stub" />
   </root>
-  <root nodeId="8339029394035014655">
+  <root nodeId="8339029394035014655" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="5537134633111714193" fileName="IConfig.java" startLine="7" startPosition="26" endLine="8" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configure#(Ljetbrains/mps/make/script/IConfigMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;)Z" />
     <nodeInfo nodeId="6908938625125649394" fileName="IConfig.java" startLine="13" startPosition="75" endLine="14" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5537134633111714178" fileName="IConfig.java" startLine="9" startPosition="47" endLine="11" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
@@ -789,7 +784,7 @@
     <unitInfo nodeId="8339029394035014655" fileName="IConfig.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.make.script.IConfig" />
     <unitInfo nodeId="5537134633111714176" fileName="IConfig.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.make.script.IConfig$Stub" />
   </root>
-  <root nodeId="8486446835277348318">
+  <root nodeId="8486446835277348318" modelId="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)">
     <nodeInfo nodeId="2551169102352991965" fileName="IQuery.java" startLine="7" startPosition="44" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
     <nodeInfo nodeId="3958190066764310447" fileName="IQuery.java" startLine="8" startPosition="31" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
     <nodeInfo nodeId="2551169102353050445" fileName="IQuery.java" startLine="9" startPosition="27" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />

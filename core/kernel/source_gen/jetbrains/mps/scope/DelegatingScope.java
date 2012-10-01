@@ -17,6 +17,10 @@ public class DelegatingScope extends Scope {
     this.wrapped = wrapped;
   }
 
+  public DelegatingScope() {
+    // setup wrapped field later, before using the scope! 
+  }
+
   public SNode resolve(SNode contextNode, String refText) {
     return wrapped.resolve(contextNode, refText);
   }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.IntentionsDescriptor" />
-  <root nodeId="1228398444440">
+  <root nodeId="1228398444440" modelId="r:e0c736f5-141d-492a-8ea5-d9cfc3978a00(jetbrains.mps.build.packaging.intentions)">
     <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -79,7 +79,7 @@
     </scopeInfo>
     <unitInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.CreateNewBuildLanguageProject_Intention" />
   </root>
-  <root nodeId="1228400780252">
+  <root nodeId="1228400780252" modelId="r:e0c736f5-141d-492a-8ea5-d9cfc3978a00(jetbrains.mps.build.packaging.intentions)">
     <nodeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

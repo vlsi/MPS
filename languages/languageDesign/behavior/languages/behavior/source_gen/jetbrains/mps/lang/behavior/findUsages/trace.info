@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FindUsagesDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.behavior.findUsages.FindUsagesDescriptor" />
-  <root nodeId="1227530810320">
+  <root nodeId="1227530810320" modelId="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)">
     <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="16" startPosition="63" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="22" startPosition="34" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="26" startPosition="38" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,9 +41,6 @@
     <scopeInfo nodeId="1227530893130" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="283" endLine="46" endPosition="11" />
     <scopeInfo nodeId="1227530893128" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="172" endLine="47" endPosition="9" />
     <scopeInfo nodeId="1227530810322" fileName="OverridingMethods_Finder.java" startLine="40" startPosition="9" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="1227530893124" fileName="OverridingMethods_Finder.java" startLine="40" startPosition="9" endLine="48" endPosition="7">
-      <varInfo nodeId="1227530893125" varName="nodeUsage" />
-    </scopeInfo>
     <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="38" startPosition="98" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="37" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1227530810320" varName="_results" />

@@ -5,10 +5,10 @@ package jetbrains.mps.ide.typesystem.trace;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.Map;
 import java.awt.Color;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -18,7 +18,7 @@ import jetbrains.mps.newTypesystem.operation.PresentationKind;
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
   private static final Map<String, Color> COLOR_MAP = initColors();
 
-  public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext, State state, EditorComponent editorComponent) {
+  public TypeSystemTraceTreeNode(AbstractOperation userObject, IOperationContext operationContext, State state, EditorComponent editorComponent) {
     super(userObject, operationContext);
     AbstractOperation operation = (AbstractOperation) userObject;
     this.setAutoExpandable(true);
@@ -38,7 +38,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     setText(operation.getPresentation());
   }
 
-  public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
+  public TypeSystemTraceTreeNode(AbstractOperation userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
     AbstractOperation operation = (AbstractOperation) userObject;
     setNodeIdentifier(operation.getPresentation());
@@ -48,8 +48,10 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
 
   public void doUpdatePresentation() {
     super.doUpdatePresentation();
-    AbstractOperation difference = (AbstractOperation) getUserObject();
-    setColor(getOperationColor(difference));
+    if (getUserObject() instanceof AbstractOperation) {
+      AbstractOperation difference = (AbstractOperation) getUserObject();
+      setColor(getOperationColor(difference));
+    }
   }
 
   private Color getOperationColor(AbstractOperation difference) {

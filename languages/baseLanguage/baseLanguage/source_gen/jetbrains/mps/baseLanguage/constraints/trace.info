@@ -194,7 +194,7 @@
     <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="17" startPosition="35" endLine="18" endPosition="61" />
     <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="22" startPosition="47" endLine="23" endPosition="16" />
     <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="30" startPosition="57" endLine="31" endPosition="46" />
-    <scopeInfo nodeId="7898359107948133147" fileName="Annotation_Constraints.java" startLine="35" startPosition="118" endLine="36" endPosition="118" />
+    <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="35" startPosition="118" endLine="36" endPosition="118" />
     <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
     <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1213104840484" fileName="Annotation_Constraints.java" startLine="28" startPosition="36" endLine="33" endPosition="0" />
@@ -480,7 +480,7 @@
       <varInfo nodeId="1213104846934" varName="operationContext" />
       <varInfo nodeId="1213104846934" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104846934" fileName="ThisExpression_Constraints.java" startLine="68" startPosition="122" endLine="82" endPosition="14" />
+    <scopeInfo nodeId="7898359107948137649" fileName="ThisExpression_Constraints.java" startLine="68" startPosition="122" endLine="82" endPosition="14" />
     <scopeInfo nodeId="1213104846934" fileName="ThisExpression_Constraints.java" startLine="66" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1213104846934" varName="_context" />
       <varInfo nodeId="1213104846934" varName="operationContext" />
@@ -587,7 +587,7 @@
       <varInfo nodeId="1213104847359" varName="_context" />
       <varInfo nodeId="1213104847359" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7898359107948137440" fileName="StaticFieldReference_Constraints.java" startLine="51" startPosition="122" endLine="58" endPosition="256" />
+    <scopeInfo nodeId="1213104847359" fileName="StaticFieldReference_Constraints.java" startLine="51" startPosition="122" endLine="58" endPosition="256" />
     <scopeInfo nodeId="1213104847359" fileName="StaticFieldReference_Constraints.java" startLine="49" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="1213104847359" varName="_context" />
       <varInfo nodeId="1213104847359" varName="operationContext" />
@@ -727,7 +727,7 @@
     <scopeInfo nodeId="1382946559831559078" fileName="ClassConcept_Constraints.java" startLine="37" startPosition="64" endLine="38" endPosition="62" />
     <scopeInfo nodeId="1213104847625" fileName="ClassConcept_Constraints.java" startLine="44" startPosition="47" endLine="45" endPosition="16" />
     <scopeInfo nodeId="1213104847625" fileName="ClassConcept_Constraints.java" startLine="52" startPosition="57" endLine="53" endPosition="46" />
-    <scopeInfo nodeId="1213104847625" fileName="ClassConcept_Constraints.java" startLine="57" startPosition="118" endLine="58" endPosition="111" />
+    <scopeInfo nodeId="7898359107948133173" fileName="ClassConcept_Constraints.java" startLine="57" startPosition="118" endLine="58" endPosition="111" />
     <scopeInfo nodeId="1213104847625" fileName="ClassConcept_Constraints.java" startLine="68" startPosition="37" endLine="69" endPosition="20" />
     <scopeInfo nodeId="4980874121082275160" fileName="ClassConcept_Constraints.java" startLine="74" startPosition="41" endLine="75" endPosition="68" />
     <scopeInfo nodeId="1213104847625" fileName="ClassConcept_Constraints.java" startLine="79" startPosition="37" endLine="80" endPosition="20" />
@@ -2202,7 +2202,7 @@
     <scopeInfo nodeId="6768994795312000101" fileName="ClassifierClassExpression_Constraints.java" startLine="42" startPosition="44" endLine="43" endPosition="24" />
     <scopeInfo nodeId="6768994795312010553" fileName="ClassifierClassExpression_Constraints.java" startLine="49" startPosition="47" endLine="50" endPosition="46" />
     <scopeInfo nodeId="6768994795312000101" fileName="ClassifierClassExpression_Constraints.java" startLine="56" startPosition="61" endLine="57" endPosition="58" />
-    <scopeInfo nodeId="7898359107948136858" fileName="ClassifierClassExpression_Constraints.java" startLine="61" startPosition="122" endLine="62" endPosition="126" />
+    <scopeInfo nodeId="6768994795312000101" fileName="ClassifierClassExpression_Constraints.java" startLine="61" startPosition="122" endLine="62" endPosition="126" />
     <scopeInfo nodeId="6768994795312000101" fileName="ClassifierClassExpression_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
     <scopeInfo nodeId="6768994795312000101" fileName="ClassifierClassExpression_Constraints.java" startLine="31" startPosition="93" endLine="36" endPosition="0" />
     <scopeInfo nodeId="6768994795312000101" fileName="ClassifierClassExpression_Constraints.java" startLine="40" startPosition="40" endLine="45" endPosition="0" />

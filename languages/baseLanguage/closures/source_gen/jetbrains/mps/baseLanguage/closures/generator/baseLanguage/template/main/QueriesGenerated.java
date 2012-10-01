@@ -1626,7 +1626,7 @@ public class QueriesGenerated {
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
-        return FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(ListSequence.fromList(imds).getElement(0), "returnType", true), ct));
+        return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(ListSequence.fromList(imds).getElement(0), "returnType", true), ct)));
       }
     }
     return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(SNodeOperations.cast(((SNode) _context.getVariable("var:nodeType")), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
@@ -1637,7 +1637,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1215429260858(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionTypeUtil.unbound(_context.getNode());
+    return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_1203249955325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1662,7 +1662,7 @@ public class QueriesGenerated {
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
-        return FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(ListSequence.fromList(imds).getElement(0), "returnType", true), ct));
+        return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(ListSequence.fromList(imds).getElement(0), "returnType", true), ct)));
       }
     }
     return null;
@@ -1677,7 +1677,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201019303193(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionTypeUtil.unbound(SLinkOperations.getTarget(_context.getNode(), "type", true));
+    return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(SLinkOperations.getTarget(_context.getNode(), "type", true)));
   }
 
   public static SNode sourceNodeQuery_1201359394958(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2040,7 +2040,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_349397194808798629(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionTypeUtil.unbound(_context.getNode());
+    return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_349397194808798718(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2054,7 +2054,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3381384562914378119(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, _context.getNode());
     SNode mdecl = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true)).first();
-    return FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mdecl, "returnType", true), ct));
+    return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mdecl, "returnType", true), ct)));
   }
 
   public static SNode sourceNodeQuery_3381384562914378177(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2062,7 +2062,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3381384562914378337(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionTypeUtil.unbound(_context.getNode());
+    return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(_context.getNode()));
   }
 
   public static Iterable sourceNodesQuery_1219916821059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2168,7 +2168,7 @@ public class QueriesGenerated {
             break;
           }
           SNode newpd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-          SLinkOperations.setTarget(newpd, "type", FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct)), true);
+          SLinkOperations.setTarget(newpd, "type", FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct))), true);
           SPropertyOperations.set(newpd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
           SPropertyOperations.set(newpd, "isFinal", "" + (SPropertyOperations.getBoolean(ListSequence.fromList(paramDecls).getElement(idx), "isFinal")));
           idx++;
@@ -2210,7 +2210,7 @@ public class QueriesGenerated {
     SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
-      ListSequence.fromList(res).addElement(FunctionTypeUtil.unbound(pt));
+      ListSequence.fromList(res).addElement(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(pt)));
     }
     return res;
   }
@@ -2502,7 +2502,7 @@ public class QueriesGenerated {
     List<SNode> parameter = SLinkOperations.getTargets(SNodeOperations.cast(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"))), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
     return ListSequence.fromList(parameter).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode pt) {
-        return FunctionTypeUtil.unbound(pt);
+        return FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(pt));
       }
     });
   }

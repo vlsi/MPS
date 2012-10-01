@@ -8,6 +8,8 @@ import java.util.HashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 
 public class LanguageChecker implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
@@ -19,12 +21,16 @@ public class LanguageChecker implements INodeChecker {
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
   }
 
-  public Set<IErrorReporter> getErrors(SNode rootNode, IOperationContext context) {
-    LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(rootNode);
-    errorsComponent.check(rootNode, myRules, context);
-    Set<IErrorReporter> result = errorsComponent.getErrors();
-    errorsComponent.dispose();
-    return result;
+  public Set<IErrorReporter> getErrors(final SNode rootNode, final IOperationContext context) {
+    return TypeContextManager.getInstance().runResolveAction(new Computable<Set<IErrorReporter>>() {
+      public Set<IErrorReporter> compute() {
+        LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(rootNode);
+        errorsComponent.check(rootNode, myRules, context);
+        Set<IErrorReporter> result = errorsComponent.getErrors();
+        errorsComponent.dispose();
+        return result;
+      }
+    });
   }
 
   public String getCategory() {

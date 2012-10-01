@@ -87,8 +87,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2810982631457564929">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wloa.~FastFindSupportRegistry%daddFastFindSupport(java%dlang%dString,jetbrains%dmps%dfindUsages%dfastfind%dFastFindSupport)%cvoid" resolveInfo="addFastFindSupport" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2810982631457564930">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="yt7t.~JavaStubModelDataSource%dFAST_FIND_ID" resolveInfo="FAST_FIND_ID" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5wgu.230599087727050842" resolveInfo="JavaStubModelDataSource" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5wgu.3895130647134150941" resolveInfo="FAST_FIND_ID" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2810982631457564931" />
             </node>
@@ -112,8 +112,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2810982631457564939">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wloa.~FastFindSupportRegistry%dremoveFastFindSupport(java%dlang%dString)%cvoid" resolveInfo="removeFastFindSupport" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2810982631457564940">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="yt7t.~JavaStubModelDataSource%dFAST_FIND_ID" resolveInfo="FAST_FIND_ID" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5wgu.230599087727050842" resolveInfo="JavaStubModelDataSource" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5wgu.3895130647134150941" resolveInfo="FAST_FIND_ID" />
               </node>
             </node>
           </node>

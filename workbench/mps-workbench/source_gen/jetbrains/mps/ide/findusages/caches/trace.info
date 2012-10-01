@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2810982631457564914">
+  <root nodeId="2810982631457564914" modelId="r:b2a7657d-6c68-41ef-9453-bffc0c6d445b(jetbrains.mps.ide.findusages.caches)">
     <nodeInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="42" startPosition="89" endLine="43" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="2810982631457564926" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="31" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2810982631457564936" fileName="StubModelsFastFindSupport.java" startLine="52" startPosition="34" endLine="53" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -88,7 +88,6 @@
     <scopeInfo nodeId="2810982631457565121" fileName="StubModelsFastFindSupport.java" startLine="145" startPosition="65" endLine="146" endPosition="35" />
     <scopeInfo nodeId="2810982631457564918" fileName="StubModelsFastFindSupport.java" startLine="44" startPosition="0" endLine="46" endPosition="3" />
     <scopeInfo nodeId="4614401897484748141" fileName="StubModelsFastFindSupport.java" startLine="116" startPosition="25" endLine="119" endPosition="11" />
-    <scopeInfo nodeId="2810982631457565113" fileName="StubModelsFastFindSupport.java" startLine="144" startPosition="46" endLine="147" endPosition="9" />
     <scopeInfo nodeId="2810982631457565114" fileName="StubModelsFastFindSupport.java" startLine="144" startPosition="46" endLine="147" endPosition="9">
       <varInfo nodeId="2810982631457565119" varName="m" />
     </scopeInfo>
@@ -169,7 +168,7 @@
     <unitInfo nodeId="368138058575806226" fileName="StubModelsFastFindSupport.java" startLine="83" startPosition="116" endLine="87" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$3" />
     <unitInfo nodeId="4614401897484748097" fileName="StubModelsFastFindSupport.java" startLine="122" startPosition="53" endLine="130" endPosition="9" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$4" />
   </root>
-  <root nodeId="2810982631457565446">
+  <root nodeId="2810982631457565446" modelId="r:b2a7657d-6c68-41ef-9453-bffc0c6d445b(jetbrains.mps.ide.findusages.caches)">
     <nodeInfo nodeId="2810982631457565446" fileName="StubModelsIndexer.java" startLine="22" startPosition="64" endLine="23" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="2810982631457565470" fileName="StubModelsIndexer.java" startLine="28" startPosition="31" endLine="29" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2810982631457565483" fileName="StubModelsIndexer.java" startLine="36" startPosition="36" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -230,7 +229,7 @@
     <unitInfo nodeId="2810982631457565446" fileName="StubModelsIndexer.java" startLine="22" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsIndexer" />
     <unitInfo nodeId="2810982631457565449" fileName="StubModelsIndexer.java" startLine="40" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsIndexer$MyFileTypeIdIndexer" />
   </root>
-  <root nodeId="3822554386093951004">
+  <root nodeId="3822554386093951004" modelId="r:b2a7657d-6c68-41ef-9453-bffc0c6d445b(jetbrains.mps.ide.findusages.caches)">
     <nodeInfo nodeId="303301571174689096" fileName="ClassifierCacher.java" startLine="33" startPosition="31" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="303301571174689387" fileName="ClassifierCacher.java" startLine="39" startPosition="49" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="303301571174689335" fileName="ClassifierCacher.java" startLine="43" startPosition="41" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -647,11 +646,9 @@
     <scopeInfo nodeId="2566197375814061840" fileName="ClassifierCacher.java" startLine="121" startPosition="7" endLine="124" endPosition="7">
       <varInfo nodeId="2566197375814061844" varName="act" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062130" fileName="ClassifierCacher.java" startLine="128" startPosition="47" endLine="131" endPosition="5" />
     <scopeInfo nodeId="2566197375814062131" fileName="ClassifierCacher.java" startLine="128" startPosition="47" endLine="131" endPosition="5">
       <varInfo nodeId="2566197375814062135" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062154" fileName="ClassifierCacher.java" startLine="134" startPosition="55" endLine="137" endPosition="5" />
     <scopeInfo nodeId="2566197375814062161" fileName="ClassifierCacher.java" startLine="134" startPosition="55" endLine="137" endPosition="5">
       <varInfo nodeId="2566197375814062165" varName="type" />
     </scopeInfo>
@@ -691,7 +688,6 @@
     <scopeInfo nodeId="303301571174692645" fileName="ClassifierCacher.java" startLine="478" startPosition="46" endLine="481" endPosition="36">
       <varInfo nodeId="2566197375814064191" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064256" fileName="ClassifierCacher.java" startLine="489" startPosition="74" endLine="492" endPosition="5" />
     <scopeInfo nodeId="2566197375814064264" fileName="ClassifierCacher.java" startLine="489" startPosition="74" endLine="492" endPosition="5">
       <varInfo nodeId="2566197375814064266" varName="tv" />
     </scopeInfo>
@@ -758,7 +754,6 @@
       <varInfo nodeId="2566197375814063693" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="5122318299906045829" fileName="ClassifierCacher.java" startLine="184" startPosition="30" endLine="192" endPosition="11" />
-    <scopeInfo nodeId="2566197375814062515" fileName="ClassifierCacher.java" startLine="198" startPosition="57" endLine="206" endPosition="5" />
     <scopeInfo nodeId="2566197375814062522" fileName="ClassifierCacher.java" startLine="198" startPosition="57" endLine="206" endPosition="5">
       <varInfo nodeId="2566197375814062526" varName="m" />
     </scopeInfo>
@@ -804,21 +799,13 @@
       <varInfo nodeId="2566197375814063430" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814061674" fileName="ClassifierCacher.java" startLine="94" startPosition="50" endLine="107" endPosition="5" />
-    <scopeInfo nodeId="2566197375814061675" fileName="ClassifierCacher.java" startLine="94" startPosition="50" endLine="107" endPosition="5">
-      <varInfo nodeId="2566197375814061679" varName="tv" />
-    </scopeInfo>
     <scopeInfo nodeId="2566197375814062829" fileName="ClassifierCacher.java" startLine="262" startPosition="49" endLine="275" endPosition="26" />
     <scopeInfo nodeId="5122318299906072522" fileName="ClassifierCacher.java" startLine="280" startPosition="49" endLine="293" endPosition="26" />
     <scopeInfo nodeId="2566197375814062263" fileName="ClassifierCacher.java" startLine="150" startPosition="54" endLine="164" endPosition="5" />
-    <scopeInfo nodeId="2566197375814062270" fileName="ClassifierCacher.java" startLine="150" startPosition="54" endLine="164" endPosition="5">
-      <varInfo nodeId="2566197375814062274" varName="field" />
-    </scopeInfo>
     <scopeInfo nodeId="2566197375814061757" fileName="ClassifierCacher.java" startLine="110" startPosition="54" endLine="125" endPosition="5" />
-    <scopeInfo nodeId="2566197375814062816" fileName="ClassifierCacher.java" startLine="261" startPosition="51" endLine="276" endPosition="5" />
     <scopeInfo nodeId="2566197375814062823" fileName="ClassifierCacher.java" startLine="261" startPosition="51" endLine="276" endPosition="5">
       <varInfo nodeId="2566197375814062827" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5122318299906072515" fileName="ClassifierCacher.java" startLine="279" startPosition="70" endLine="294" endPosition="5" />
     <scopeInfo nodeId="5122318299906072516" fileName="ClassifierCacher.java" startLine="279" startPosition="70" endLine="294" endPosition="5">
       <varInfo nodeId="5122318299906072520" varName="m" />
     </scopeInfo>
@@ -858,7 +845,6 @@
       <varInfo nodeId="5122318299906065240" varName="pt" />
       <varInfo nodeId="5122318299906065238" varName="pt_iterator" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062369" fileName="ClassifierCacher.java" startLine="167" startPosition="48" endLine="195" endPosition="5" />
     <scopeInfo nodeId="2566197375814062376" fileName="ClassifierCacher.java" startLine="167" startPosition="48" endLine="195" endPosition="5">
       <varInfo nodeId="2566197375814062380" varName="field" />
     </scopeInfo>
@@ -880,9 +866,6 @@
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062621" fileName="ClassifierCacher.java" startLine="210" startPosition="54" endLine="257" endPosition="7" />
     <scopeInfo nodeId="2566197375814062608" fileName="ClassifierCacher.java" startLine="209" startPosition="48" endLine="258" endPosition="5" />
-    <scopeInfo nodeId="2566197375814062615" fileName="ClassifierCacher.java" startLine="209" startPosition="48" endLine="258" endPosition="5">
-      <varInfo nodeId="2566197375814062619" varName="c" />
-    </scopeInfo>
     <scopeInfo nodeId="2566197375814062601" fileName="ClassifierCacher.java" startLine="208" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="2566197375814062604" varName="ac" />
     </scopeInfo>

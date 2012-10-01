@@ -14,10 +14,12 @@ import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.lang.test.behavior.ActionReference_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
+import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -71,6 +73,22 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1221570038189(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4484885613884807181(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), operationContext);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4484885613884807191(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4484885613884830953(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return TestInfo_Behavior.isUITest_4484885613884830715(SNodeOperations.getModel(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1031873601093426077(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return TestInfo_Behavior.reOpenProject_1031873601093419509(SNodeOperations.getModel(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -171,6 +189,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode()));
+  }
+
+  public static boolean ifMacro_Condition_4484885613884740503(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(TestInfo_Behavior.isUITest_4484885613884830715(SNodeOperations.getModel(_context.getNode())) || TestInfo_Behavior.reOpenProject_1031873601093419509(SNodeOperations.getModel(_context.getNode())));
   }
 
   public static SNode sourceNodeQuery_4277730795458378995(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

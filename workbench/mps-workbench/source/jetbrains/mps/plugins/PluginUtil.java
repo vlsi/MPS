@@ -16,6 +16,8 @@
 package jetbrains.mps.plugins;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -46,7 +48,8 @@ public class PluginUtil {
 
     for (Solution s : (List<Solution>) ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
       if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
-      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()) continue;
+      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
+        && IdeMain.getTestMode() != TestMode.UI_TEST) continue;
       modules.add(s);
     }
 

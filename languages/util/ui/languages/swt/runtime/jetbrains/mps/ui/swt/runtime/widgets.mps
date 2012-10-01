@@ -631,7 +631,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9201869079511508347" resolveInfo="eb" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9201869079511554300">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Scrollable%dgetClientArea()%corg%declipse%dswt%dgraphics%dRectangle" resolveInfo="getClientArea" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Composite%dgetClientArea()%corg%declipse%dswt%dgraphics%dRectangle" resolveInfo="getClientArea" />
                                   </node>
                                 </node>
                               </node>
@@ -885,7 +885,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9201869079511508347" resolveInfo="eb" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9201869079511555489">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Scrollable%dgetClientArea()%corg%declipse%dswt%dgraphics%dRectangle" resolveInfo="getClientArea" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Composite%dgetClientArea()%corg%declipse%dswt%dgraphics%dRectangle" resolveInfo="getClientArea" />
                               </node>
                             </node>
                           </node>
@@ -1140,7 +1140,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2172278393548617252" resolveInfo="shell" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2172278393548617905">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Widget%dgetData(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3c2k.~Control%dgetData(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2172278393548617906">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4983682755224323286" resolveInfo="StubDialog" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2172278393548617889" resolveInfo="STUB_DIALOG" />

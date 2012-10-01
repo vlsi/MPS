@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FindUsagesDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.FindUsagesDescriptor" />
-  <root nodeId="1200309609796">
+  <root nodeId="1200309609796" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="17" startPosition="63" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,11 +41,9 @@
     <scopeInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1200309609796" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1200413446952" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="201" endLine="47" endPosition="9" />
     <scopeInfo nodeId="1200413471959" fileName="OverridingMethods_Finder.java" startLine="42" startPosition="201" endLine="47" endPosition="9">
       <varInfo nodeId="1200413471960" varName="sMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1200309609800" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1200413446949" fileName="OverridingMethods_Finder.java" startLine="41" startPosition="9" endLine="48" endPosition="7">
       <varInfo nodeId="1200413446950" varName="classNode" />
     </scopeInfo>
@@ -58,7 +56,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200309609796" fileName="OverridingMethods_Finder.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" />
   </root>
-  <root nodeId="1200310248824">
+  <root nodeId="1200310248824" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="17" startPosition="65" endLine="18" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -144,7 +142,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200310248824" fileName="ImplementingClasses_Finder.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder" />
   </root>
-  <root nodeId="1200310287391">
+  <root nodeId="1200310287391" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="16" startPosition="63" endLine="17" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="22" startPosition="34" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="26" startPosition="38" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -206,7 +204,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200310287391" fileName="DerivedInterfaces_Finder.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" />
   </root>
-  <root nodeId="1200310473077">
+  <root nodeId="1200310473077" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="16" startPosition="60" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="22" startPosition="34" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="26" startPosition="38" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -266,7 +264,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200310473077" fileName="DerivedClasses_Finder.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" />
   </root>
-  <root nodeId="1200317943493">
+  <root nodeId="1200317943493" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="17" startPosition="61" endLine="18" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -342,9 +340,6 @@
     </scopeInfo>
     <scopeInfo nodeId="1200422478133" fileName="AllMethodUsages_Finder.java" startLine="49" startPosition="121" endLine="54" endPosition="9" />
     <scopeInfo nodeId="1200420377472" fileName="AllMethodUsages_Finder.java" startLine="60" startPosition="58" endLine="66" endPosition="9" />
-    <scopeInfo nodeId="1206454288717" fileName="AllMethodUsages_Finder.java" startLine="60" startPosition="58" endLine="66" endPosition="9">
-      <varInfo nodeId="1206454288718" varName="nodeUsage" />
-    </scopeInfo>
     <scopeInfo nodeId="1200317943495" fileName="AllMethodUsages_Finder.java" startLine="35" startPosition="43" endLine="42" endPosition="16" />
     <scopeInfo nodeId="1200420377471" fileName="AllMethodUsages_Finder.java" startLine="59" startPosition="9" endLine="67" endPosition="7">
       <varInfo nodeId="1200420377475" varName="methodDeclaration" />
@@ -372,7 +367,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200317943493" fileName="AllMethodUsages_Finder.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder" />
   </root>
-  <root nodeId="1200405628545">
+  <root nodeId="1200405628545" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="17" startPosition="57" endLine="18" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -418,14 +413,10 @@
     <scopeInfo nodeId="1206537111493" fileName="FieldUsages_Finder.java" startLine="67" startPosition="184" endLine="68" endPosition="62" />
     <scopeInfo nodeId="1206463233017" fileName="FieldUsages_Finder.java" startLine="73" startPosition="45" endLine="74" endPosition="26" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1206537147100" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1206537167248" fileName="FieldUsages_Finder.java" startLine="54" startPosition="79" endLine="57" endPosition="9">
       <varInfo nodeId="1206537167249" varName="fieldUsage" />
     </scopeInfo>
     <scopeInfo nodeId="1206537064530" fileName="FieldUsages_Finder.java" startLine="66" startPosition="119" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="1206537111490" fileName="FieldUsages_Finder.java" startLine="66" startPosition="119" endLine="69" endPosition="7">
-      <varInfo nodeId="1206537111491" varName="fieldNode" />
-    </scopeInfo>
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
@@ -457,7 +448,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200405628545" fileName="FieldUsages_Finder.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder" />
   </root>
-  <root nodeId="1200420731716">
+  <root nodeId="1200420731716" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="19" startPosition="62" endLine="20" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="29" startPosition="38" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -516,7 +507,6 @@
     <scopeInfo nodeId="1200497698881" fileName="OverridingFields_Finder.java" startLine="50" startPosition="201" endLine="61" endPosition="9">
       <varInfo nodeId="1200497698891" varName="fieldsOfSameKind" />
     </scopeInfo>
-    <scopeInfo nodeId="1200420731720" fileName="OverridingFields_Finder.java" startLine="49" startPosition="9" endLine="62" endPosition="7" />
     <scopeInfo nodeId="1200497698878" fileName="OverridingFields_Finder.java" startLine="49" startPosition="9" endLine="62" endPosition="7">
       <varInfo nodeId="1200497698879" varName="classNode" />
     </scopeInfo>
@@ -529,7 +519,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder" />
   </root>
-  <root nodeId="1200425321273">
+  <root nodeId="1200425321273" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="76" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="29" startPosition="38" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -583,9 +573,6 @@
       <varInfo nodeId="1200425321273" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1200425862979" fileName="InterfaceMethodImplementations_Finder.java" startLine="52" startPosition="11" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="52" startPosition="11" endLine="57" endPosition="9">
-      <varInfo nodeId="1200425863013" varName="sMethod" />
-    </scopeInfo>
     <scopeInfo nodeId="1200425862976" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="7" endLine="58" endPosition="7">
       <varInfo nodeId="1200425862977" varName="classNode" />
     </scopeInfo>
@@ -602,7 +589,7 @@
     <unitInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
     <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="92" endLine="52" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
   </root>
-  <root nodeId="1200502085335">
+  <root nodeId="1200502085335" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="15" startPosition="60" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1216397986864" fileName="ClassAncestors_Finder.java" startLine="21" startPosition="54" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -659,7 +646,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
   </root>
-  <root nodeId="1201091722183">
+  <root nodeId="1201091722183" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="17" startPosition="61" endLine="18" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -746,7 +733,7 @@
     </scopeInfo>
     <unitInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder" />
   </root>
-  <root nodeId="1204121124763">
+  <root nodeId="1204121124763" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="18" startPosition="63" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="24" startPosition="34" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="28" startPosition="38" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -849,14 +836,9 @@
       <varInfo nodeId="1204127398185" varName="thisConstructor" />
     </scopeInfo>
     <scopeInfo nodeId="1204121678255" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="1204121808317" fileName="ConstructorUsages_Finder.java" startLine="75" startPosition="29" endLine="90" endPosition="9">
-      <varInfo nodeId="1204121808318" varName="enumConstant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1204127076384" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11" />
     <scopeInfo nodeId="1204127350109" fileName="ConstructorUsages_Finder.java" startLine="50" startPosition="201" endLine="70" endPosition="11">
       <varInfo nodeId="1204127350110" varName="invocation" />
     </scopeInfo>
-    <scopeInfo nodeId="1204127040741" fileName="ConstructorUsages_Finder.java" startLine="49" startPosition="283" endLine="71" endPosition="9" />
     <scopeInfo nodeId="1204127076381" fileName="ConstructorUsages_Finder.java" startLine="49" startPosition="283" endLine="71" endPosition="9">
       <varInfo nodeId="1204127076382" varName="constructorNode" />
     </scopeInfo>
@@ -876,7 +858,7 @@
     <unitInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
     <unitInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="51" startPosition="144" endLine="55" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$1" />
   </root>
-  <root nodeId="1204122859723">
+  <root nodeId="1204122859723" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="15" startPosition="68" endLine="16" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="21" startPosition="34" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="25" startPosition="38" endLine="26" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -911,7 +893,6 @@
       <varInfo nodeId="1204122859723" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1204123335973" fileName="StraightDerivedClasses_Finder.java" startLine="36" startPosition="149" endLine="41" endPosition="9" />
-    <scopeInfo nodeId="1204122859727" fileName="StraightDerivedClasses_Finder.java" startLine="35" startPosition="9" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1204123335972" fileName="StraightDerivedClasses_Finder.java" startLine="35" startPosition="9" endLine="42" endPosition="7">
       <varInfo nodeId="1204123336001" varName="nodeUsage" />
     </scopeInfo>
@@ -924,7 +905,7 @@
     </scopeInfo>
     <unitInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" />
   </root>
-  <root nodeId="1204898641595">
+  <root nodeId="1204898641595" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="21" startPosition="56" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="27" startPosition="34" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1030,7 +1011,7 @@
     </scopeInfo>
     <unitInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
   </root>
-  <root nodeId="1204899453042">
+  <root nodeId="1204899453042" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="64" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1216398061275" fileName="InterfaceAncestors_Finder.java" startLine="21" startPosition="54" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1096,7 +1077,7 @@
     </scopeInfo>
     <unitInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
   </root>
-  <root nodeId="1216385454403">
+  <root nodeId="1216385454403" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="17" startPosition="62" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1138,9 +1119,6 @@
     <scopeInfo nodeId="1216386272408" fileName="BaseMethodUsages_Finder.java" startLine="67" startPosition="45" endLine="68" endPosition="32" />
     <scopeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
     <scopeInfo nodeId="1216386159395" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1216386170455" fileName="BaseMethodUsages_Finder.java" startLine="49" startPosition="63" endLine="52" endPosition="9">
-      <varInfo nodeId="1216386170456" varName="usage" />
-    </scopeInfo>
     <scopeInfo nodeId="1216386130657" fileName="BaseMethodUsages_Finder.java" startLine="61" startPosition="56" endLine="64" endPosition="5">
       <varInfo nodeId="1216386130658" varName="method" />
     </scopeInfo>
@@ -1177,7 +1155,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder" />
   </root>
-  <root nodeId="1216392046439">
+  <root nodeId="1216392046439" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="17" startPosition="67" endLine="18" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1222,7 +1200,6 @@
     <scopeInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1216392046439" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1216392203371" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9" />
     <scopeInfo nodeId="1216392459935" fileName="ImplementedInterfaces_Finder.java" startLine="41" startPosition="65" endLine="46" endPosition="9">
       <varInfo nodeId="1216392459936" varName="implementedInterface" />
     </scopeInfo>
@@ -1242,7 +1219,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216392046439" fileName="ImplementedInterfaces_Finder.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" />
   </root>
-  <root nodeId="1227527031007">
+  <root nodeId="1227527031007" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="16" startPosition="63" endLine="17" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="22" startPosition="34" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="26" startPosition="38" endLine="27" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1278,9 +1255,6 @@
     </scopeInfo>
     <scopeInfo nodeId="1227527192373" fileName="ExactMethodUsages_Finder.java" startLine="41" startPosition="172" endLine="46" endPosition="9" />
     <scopeInfo nodeId="1227527031009" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="1227527192369" fileName="ExactMethodUsages_Finder.java" startLine="40" startPosition="9" endLine="47" endPosition="7">
-      <varInfo nodeId="1227527192370" varName="nodeUsage" />
-    </scopeInfo>
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="38" startPosition="98" endLine="50" endPosition="5" />
     <scopeInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1227527031007" varName="_results" />
@@ -1290,7 +1264,7 @@
     </scopeInfo>
     <unitInfo nodeId="1227527031007" fileName="ExactMethodUsages_Finder.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
   </root>
-  <root nodeId="1237738696198">
+  <root nodeId="1237738696198" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="15" startPosition="57" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="21" startPosition="34" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="25" startPosition="38" endLine="26" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1327,7 +1301,6 @@
     <scopeInfo nodeId="1237738774628" fileName="ClassUsages_Finder.java" startLine="35" startPosition="9" endLine="38" endPosition="7">
       <varInfo nodeId="1237738774629" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1237742023497" fileName="ClassUsages_Finder.java" startLine="39" startPosition="110" endLine="42" endPosition="9" />
     <scopeInfo nodeId="1237742045352" fileName="ClassUsages_Finder.java" startLine="39" startPosition="110" endLine="42" endPosition="9">
       <varInfo nodeId="1237742045353" varName="result" />
     </scopeInfo>
@@ -1359,7 +1332,7 @@
     </scopeInfo>
     <unitInfo nodeId="1237738696198" fileName="ClassUsages_Finder.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder" />
   </root>
-  <root nodeId="4151347580001021181">
+  <root nodeId="4151347580001021181" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="19" startPosition="60" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4151347580001021181" fileName="DerivedMethods_Finder.java" startLine="29" startPosition="38" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1420,9 +1393,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4717960406884169438" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="201" endLine="66" endPosition="15" />
     <scopeInfo nodeId="4717960406884169424" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11" />
-    <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="112" endLine="67" endPosition="11">
-      <varInfo nodeId="4717960406884169436" varName="enumConstant" />
-    </scopeInfo>
     <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="138" endLine="68" endPosition="9" />
     <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="45" startPosition="40" endLine="69" endPosition="7">
       <varInfo nodeId="4151347580001030693" varName="derivedClassifier" />

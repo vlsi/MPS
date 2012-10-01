@@ -39,10 +39,10 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145352982", true), _info_12389875345);
           }
           {
-            final SNode _representatorVar_knbqle_c0a0b0a0a = typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005);
-            typeCheckingContext.whenConcrete(_representatorVar_knbqle_c0a0b0a0a, new Runnable() {
+            final SNode st = typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005);
+            typeCheckingContext.whenConcrete(st, new Runnable() {
               public void run() {
-                SNode targetType = FeatureUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
+                SNode targetType = FeatureUtil.getTargetType(SNodeOperations.cast(SLinkOperations.getTarget(op, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature"), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getExpandedNode(st), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
                   MessageTarget errorTarget = new NodeMessageTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(tpoe, "Received null target type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196269826366", null, errorTarget);

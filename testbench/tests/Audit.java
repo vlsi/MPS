@@ -103,12 +103,11 @@ public class Audit {
     List<String> errors = HELPER.checkTypeSystem(handle);
     Assert.assertTrue("Type system errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
-  /*
+
   @Test
   @Order(2)
   public void checkConstraints() {
-    List<String> errors = HELPER.checkConstraints(TOKEN, Collections.singletonList(file));
+    List<String> errors = HELPER.checkConstraints(handle);
     Assert.assertTrue("Constraints and scopes errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
-      */
 }

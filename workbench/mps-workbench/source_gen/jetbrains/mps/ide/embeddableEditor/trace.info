@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1219405202223">
+  <root nodeId="1219405202223" modelId="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)">
     <nodeInfo nodeId="1220438174600" fileName="EmbeddableEditor.java" startLine="57" startPosition="31" endLine="58" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileNodeEditor" />
     <nodeInfo nodeId="1220433430382" fileName="EmbeddableEditor.java" startLine="58" startPosition="45" endLine="59" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
     <nodeInfo nodeId="1219408662419" fileName="EmbeddableEditor.java" startLine="59" startPosition="40" endLine="60" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
@@ -294,7 +294,7 @@
     <unitInfo nodeId="8119021187637935509" fileName="EmbeddableEditor.java" startLine="230" startPosition="46" endLine="234" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$5" />
     <unitInfo nodeId="7501380561942084" fileName="EmbeddableEditor.java" startLine="243" startPosition="48" endLine="247" endPosition="7" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$6" />
   </root>
-  <root nodeId="1219411663047">
+  <root nodeId="1219411663047" modelId="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)">
     <nodeInfo nodeId="1219412374874" fileName="GenerationResult.java" startLine="11" startPosition="55" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="6516969602351205800" fileName="GenerationResult.java" startLine="12" startPosition="23" endLine="13" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandler" />
     <nodeInfo nodeId="1219415867591" fileName="GenerationResult.java" startLine="13" startPosition="50" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
@@ -355,7 +355,7 @@
     </scopeInfo>
     <unitInfo nodeId="1219411663047" fileName="GenerationResult.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.GenerationResult" />
   </root>
-  <root nodeId="1220433141274">
+  <root nodeId="1220433141274" modelId="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)">
     <nodeInfo nodeId="1220433350457" fileName="EmbeddableEditorPanel.java" startLine="13" startPosition="80" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileNodeEditor" />
     <nodeInfo nodeId="1220433474908" fileName="EmbeddableEditorPanel.java" startLine="16" startPosition="63" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7184256428677640941" fileName="EmbeddableEditorPanel.java" startLine="17" startPosition="30" endLine="18" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -258,9 +258,7 @@
     <scopeInfo nodeId="4892662966716545705" fileName="ConceptBehavior_Behavior.java" startLine="175" startPosition="9" endLine="181" endPosition="9">
       <varInfo nodeId="4892662966716545708" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4892662966716545810" fileName="ConceptBehavior_Behavior.java" startLine="182" startPosition="122" endLine="188" endPosition="9">
-      <varInfo nodeId="4892662966716545829" varName="i" />
-    </scopeInfo>
+    <scopeInfo nodeId="4892662966716545627" fileName="ConceptBehavior_Behavior.java" startLine="182" startPosition="122" endLine="188" endPosition="9" />
     <scopeInfo nodeId="1818770337282950311" fileName="ConceptBehavior_Behavior.java" startLine="191" startPosition="48" endLine="197" endPosition="5">
       <varInfo nodeId="1818770337282950317" varName="concept" />
     </scopeInfo>

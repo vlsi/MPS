@@ -120,10 +120,16 @@
     <scopeInfo nodeId="4474271214082917012" fileName="AbstractDebugSession.java" startLine="84" startPosition="54" endLine="87" endPosition="21">
       <varInfo nodeId="4474271214082917014" varName="listeners" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082917030" fileName="AbstractDebugSession.java" startLine="90" startPosition="37" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="4474271214082917031" fileName="AbstractDebugSession.java" startLine="90" startPosition="37" endLine="93" endPosition="5">
+      <varInfo nodeId="4474271214082917033" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214082917046" fileName="AbstractDebugSession.java" startLine="96" startPosition="71" endLine="99" endPosition="5" />
-    <scopeInfo nodeId="4474271214082917062" fileName="AbstractDebugSession.java" startLine="102" startPosition="72" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="4474271214082917078" fileName="AbstractDebugSession.java" startLine="108" startPosition="70" endLine="111" endPosition="5" />
+    <scopeInfo nodeId="4474271214082917063" fileName="AbstractDebugSession.java" startLine="102" startPosition="72" endLine="105" endPosition="5">
+      <varInfo nodeId="4474271214082917065" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="4474271214082917079" fileName="AbstractDebugSession.java" startLine="108" startPosition="70" endLine="111" endPosition="5">
+      <varInfo nodeId="4474271214082917081" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214082917158" fileName="AbstractDebugSession.java" startLine="146" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="4474271214082917161" varName="manager" />
     </scopeInfo>
@@ -463,7 +469,7 @@
     <nodeInfo nodeId="4474271214082913585" fileName="DebuggableFramesSelector.java" startLine="47" startPosition="5" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214082913621" fileName="DebuggableFramesSelector.java" startLine="52" startPosition="64" endLine="53" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214082913643" fileName="DebuggableFramesSelector.java" startLine="57" startPosition="103" endLine="58" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913681" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="129" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913681" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="127" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1053276000964841970" fileName="DebuggableFramesSelector.java" startLine="65" startPosition="5" endLine="66" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1053276000964841997" fileName="DebuggableFramesSelector.java" startLine="66" startPosition="140" endLine="67" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214082913697" fileName="DebuggableFramesSelector.java" startLine="67" startPosition="140" endLine="68" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -488,7 +494,7 @@
     <scopeInfo nodeId="4474271214082913582" fileName="DebuggableFramesSelector.java" startLine="45" startPosition="27" endLine="46" endPosition="38" />
     <scopeInfo nodeId="4474271214082913594" fileName="DebuggableFramesSelector.java" startLine="52" startPosition="64" endLine="53" endPosition="103" />
     <scopeInfo nodeId="4474271214082913635" fileName="DebuggableFramesSelector.java" startLine="57" startPosition="103" endLine="58" endPosition="112" />
-    <scopeInfo nodeId="4474271214082913680" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="129" endLine="64" endPosition="18" />
+    <scopeInfo nodeId="4474271214082913680" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="127" endLine="64" endPosition="18" />
     <scopeInfo nodeId="4474271214082913521" fileName="DebuggableFramesSelector.java" startLine="18" startPosition="82" endLine="20" endPosition="24" />
     <scopeInfo nodeId="4474271214082913533" fileName="DebuggableFramesSelector.java" startLine="25" startPosition="38" endLine="28" endPosition="7" />
     <scopeInfo nodeId="4474271214082913518" fileName="DebuggableFramesSelector.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
@@ -665,7 +671,9 @@
     <scopeInfo nodeId="4474271214082913746" fileName="DebugSessionManagerComponent.java" startLine="169" startPosition="68" endLine="171" endPosition="5" />
     <scopeInfo nodeId="4474271214082914107" fileName="DebugSessionManagerComponent.java" startLine="176" startPosition="31" endLine="178" endPosition="54" />
     <scopeInfo nodeId="4474271214082913912" fileName="DebugSessionManagerComponent.java" startLine="80" startPosition="83" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="4474271214082913928" fileName="DebugSessionManagerComponent.java" startLine="86" startPosition="71" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="4474271214082913929" fileName="DebugSessionManagerComponent.java" startLine="86" startPosition="71" endLine="89" endPosition="5">
+      <varInfo nodeId="4474271214082913931" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214082913945" fileName="DebugSessionManagerComponent.java" startLine="92" startPosition="73" endLine="95" endPosition="5">
       <varInfo nodeId="4474271214082913947" varName="listener" />
     </scopeInfo>
@@ -1380,7 +1388,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4474271214082915688" fileName="BreakpointManagerComponent.java" startLine="139" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="7545670749296011276" fileName="BreakpointManagerComponent.java" startLine="270" startPosition="38" endLine="279" endPosition="58" />
-    <scopeInfo nodeId="4474271214082915802" fileName="BreakpointManagerComponent.java" startLine="191" startPosition="34" endLine="201" endPosition="7" />
+    <scopeInfo nodeId="4474271214082915803" fileName="BreakpointManagerComponent.java" startLine="191" startPosition="34" endLine="201" endPosition="7">
+      <varInfo nodeId="4474271214082915805" varName="breakpoint" />
+    </scopeInfo>
     <scopeInfo nodeId="7545670749296010043" fileName="BreakpointManagerComponent.java" startLine="77" startPosition="57" endLine="88" endPosition="0" />
     <scopeInfo nodeId="4474271214082915628" fileName="BreakpointManagerComponent.java" startLine="113" startPosition="57" endLine="124" endPosition="0" />
     <scopeInfo nodeId="2015070616778193439" fileName="BreakpointManagerComponent.java" startLine="172" startPosition="80" endLine="183" endPosition="9">

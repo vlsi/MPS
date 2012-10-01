@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Plugin_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Plugin_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
-  <root nodeId="1205676676847">
+  <root nodeId="1205676676847" modelId="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)">
     <nodeInfo nodeId="1205676676847" fileName="mnemonic_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1205676676847" fileName="mnemonic_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205676676847" fileName="mnemonic_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20,7 +20,7 @@
     </scopeInfo>
     <unitInfo nodeId="1205676676847" fileName="mnemonic_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.mnemonic_PropertySupport" />
   </root>
-  <root nodeId="1212578595463">
+  <root nodeId="1212578595463" modelId="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)">
     <nodeInfo nodeId="1212578595463" fileName="digit_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1212578595463" fileName="digit_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1212578595463" fileName="digit_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="1212578595463" fileName="digit_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.digit_PropertySupport" />
   </root>
-  <root nodeId="1562714432501166200">
+  <root nodeId="1562714432501166200" modelId="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)">
     <nodeInfo nodeId="1562714432501166200" fileName="Keymap_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1562714432501166200" fileName="Keymap_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1562714432501166200" fileName="Keymap.java" startLine="15" startPosition="0" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -156,7 +156,7 @@
     <unitInfo nodeId="1562714432501166200" fileName="Keymap.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap" />
     <unitInfo nodeId="1562714432501166200" fileName="Keymap_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap_PropertySupport" />
   </root>
-  <root nodeId="2498620720770664567">
+  <root nodeId="2498620720770664567" modelId="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)">
     <nodeInfo nodeId="2498620720770664567" fileName="ToolPosition_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2498620720770664567" fileName="ToolPosition_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2498620720770664567" fileName="ToolPosition.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

@@ -777,7 +777,7 @@
     <unitInfo nodeId="6035828529853895986" fileName="StructureModification.java" startLine="177" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$Relation" />
     <unitInfo nodeId="4136069314959823738" fileName="StructureModification.java" startLine="159" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameModel" />
     <unitInfo nodeId="2742566862758589896" fileName="StructureModification.java" startLine="118" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameNode" />
-    <unitInfo nodeId="3796120688729065935" fileName="StructureModification.java" startLine="148" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification.RenameNode$RenameType" />
+    <unitInfo nodeId="3796120688729065935" fileName="StructureModification.java" startLine="148" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModification$RenameNode$RenameType" />
   </root>
   <root nodeId="5817662974489429544" modelId="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)">
     <nodeInfo nodeId="4136069314959834669" fileName="ModelLinkMap.java" startLine="30" startPosition="27" endLine="31" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -1468,9 +1468,7 @@
       <varInfo nodeId="9051163691968353692" varName="model" />
       <varInfo nodeId="9051163691968353703" varName="modificationLog" />
     </scopeInfo>
-    <scopeInfo nodeId="489412339685421479" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7">
-      <varInfo nodeId="489412339685421480" varName="importElement" />
-    </scopeInfo>
+    <scopeInfo nodeId="489412339685402747" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7" />
     <scopeInfo nodeId="1190334391238652051" fileName="StructureModificationProcessor.java" startLine="128" startPosition="56" endLine="135" endPosition="5">
       <varInfo nodeId="1190334391238652052" varName="entry" />
     </scopeInfo>

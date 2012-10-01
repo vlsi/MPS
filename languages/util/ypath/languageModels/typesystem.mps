@@ -349,19 +349,22 @@
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1186145368540">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpkr.4581582910845361824" resolveInfo="FeatureUtil" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpkr.4581582910845362114" resolveInfo="getTargetType" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227941573">
-                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1186145377791">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1184839711124" resolveInfo="op" />
-                              </node>
-                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1196269259015">
-                                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpki.1184147586245" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="2112552551406751239">
+                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpki.1184659060758" resolveInfo="IParamFeature" />
+                              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227941573">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1186145377791">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1184839711124" resolveInfo="op" />
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2112552551406751212">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpki.1184147586245" />
+                                </node>
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227904853">
                               <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1186145443888">
                                 <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpki.1168428529658" resolveInfo="TreePathType" />
-                                <node role="leftExpression" roleId="tp25.1140138123956" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1186145440418">
-                                  <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1186145333005" resolveInfo="SourceType" />
+                                <node role="leftExpression" roleId="tp25.1140138123956" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="2112552551406751243">
+                                  <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2112552551406751241" resolveInfo="st" />
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1186145368545">
@@ -433,6 +436,10 @@
                     </node>
                     <node role="argument" roleId="tpd4.1185805056450" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1186145363864">
                       <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1186145333005" resolveInfo="SourceType" />
+                    </node>
+                    <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="2112552551406751241">
+                      <property name="name" nameId="tpck.1169194664001" value="st" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2112552551406751242" />
                     </node>
                   </node>
                 </node>

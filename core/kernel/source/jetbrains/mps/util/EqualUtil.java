@@ -22,4 +22,10 @@ public class EqualUtil {
     if (o1 == null || o2 == null) return false;
     return o1.equals(o2);
   }
+
+  public static int hashCode(Object o) {
+    if (o == null) return 0;
+    return o.hashCode();
+  }
+
 }

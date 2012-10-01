@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1170283270068">
+  <root nodeId="1170283270068" modelId="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)">
     <nodeInfo nodeId="1224596675357" fileName="ForEach_Test1.java" startLine="66" startPosition="27" endLine="66" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596675362" fileName="ForEach_Test1.java" startLine="69" startPosition="27" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1170283344335" fileName="ForEach_Test1.java" startLine="21" startPosition="24" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -109,7 +109,7 @@
     <unitInfo nodeId="1224596675545" fileName="ForEach_Test1.java" startLine="95" startPosition="45" endLine="99" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.query_operations.ForEach_Test1$4" />
     <unitInfo nodeId="1224596675356" fileName="ForEach_Test1.java" startLine="37" startPosition="23" endLine="78" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.query_operations.ForEach_Test1$4" />
   </root>
-  <root nodeId="1170287058578">
+  <root nodeId="1170287058578" modelId="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)">
     <nodeInfo nodeId="1224596674784" fileName="ForEach_loop_Test1.java" startLine="62" startPosition="27" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596674789" fileName="ForEach_loop_Test1.java" startLine="65" startPosition="27" endLine="65" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1170287058582" fileName="ForEach_loop_Test1.java" startLine="19" startPosition="24" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -197,7 +197,7 @@
     <unitInfo nodeId="1224596674783" fileName="ForEach_loop_Test1.java" startLine="31" startPosition="19" endLine="76" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.query_operations.ForEach_loop_Test1$2" />
     <unitInfo nodeId="1224596674783" fileName="ForEach_loop_Test1.java" startLine="33" startPosition="23" endLine="74" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.query_operations.ForEach_loop_Test1$3" />
   </root>
-  <root nodeId="1571838961922998404">
+  <root nodeId="1571838961922998404" modelId="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)">
     <nodeInfo nodeId="1571838961922998429" fileName="Mapping_Test1_Test.java" startLine="51" startPosition="27" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1571838961922998451" fileName="Mapping_Test1_Test.java" startLine="123" startPosition="27" endLine="123" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1571838961922998454" fileName="Mapping_Test1_Test.java" startLine="126" startPosition="27" endLine="126" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -395,7 +395,6 @@
     <scopeInfo nodeId="1571838961922998451" fileName="Mapping_Test1_Test.java" startLine="123" startPosition="27" endLine="125" endPosition="28" />
     <scopeInfo nodeId="1571838961922998454" fileName="Mapping_Test1_Test.java" startLine="126" startPosition="27" endLine="128" endPosition="28" />
     <scopeInfo nodeId="1571838961922998464" fileName="Mapping_Test1_Test.java" startLine="135" startPosition="27" endLine="137" endPosition="28" />
-    <scopeInfo nodeId="1571838961922998465" fileName="Mapping_Test1_Test.java" startLine="135" startPosition="27" endLine="137" endPosition="28" />
     <scopeInfo nodeId="1571838961922998552" fileName="Mapping_Test1_Test.java" startLine="177" startPosition="30" endLine="179" endPosition="37" />
     <scopeInfo nodeId="1571838961922998555" fileName="Mapping_Test1_Test.java" startLine="184" startPosition="29" endLine="186" endPosition="30" />
     <scopeInfo nodeId="1571838961923394407" fileName="Mapping_Test1_Test.java" startLine="213" startPosition="30" endLine="215" endPosition="37" />
@@ -504,7 +503,7 @@
     <unitInfo nodeId="1571838961922998581" fileName="Mapping_Test1_Test.java" startLine="244" startPosition="19" endLine="272" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test$6" />
     <unitInfo nodeId="1571838961922998581" fileName="Mapping_Test1_Test.java" startLine="246" startPosition="23" endLine="270" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test$7" />
   </root>
-  <root nodeId="1571838961923334327">
+  <root nodeId="1571838961923334327" modelId="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)">
     <nodeInfo nodeId="1571838961923334345" fileName="Where_Select_Test1_Test.java" startLine="53" startPosition="27" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1571838961923334350" fileName="Where_Select_Test1_Test.java" startLine="56" startPosition="27" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1571838961923334344" fileName="Where_Select_Test1_Test.java" startLine="24" startPosition="52" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />

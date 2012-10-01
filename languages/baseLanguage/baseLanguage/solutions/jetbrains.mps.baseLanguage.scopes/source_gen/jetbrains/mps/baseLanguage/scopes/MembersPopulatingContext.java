@@ -27,6 +27,7 @@ public class MembersPopulatingContext {
   private final List<SNode> members = new ArrayList<SNode>();
   private final Set<Signature> hidedSignatures = new HashSet<Signature>();
   private Map<SNode, SNode> typeByTypeVariable = new HashMap<SNode, SNode>();
+  private Map<Object, Object> userObjects = new HashMap<Object, Object>();
 
   public MembersPopulatingContext() {
     // java collections for speed 
@@ -46,6 +47,18 @@ public class MembersPopulatingContext {
     List<SNode> members = new ArrayList<SNode>();
     members.addAll(this.members);
     return members;
+  }
+
+  public void putUserObject(Object key, Object value) {
+    userObjects.put(key, value);
+  }
+
+  public Object getUserObject(Object key) {
+    return userObjects.get(key);
+  }
+
+  public boolean containsUserObject(Object key) {
+    return userObjects.containsKey(key);
   }
 
   public boolean enterClassifierInternal(SNode classifierType) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4372437818008126015">
+  <root nodeId="4372437818008126015" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
     <nodeInfo nodeId="4372437818008126028" fileName="ConfPathItem.java" startLine="13" startPosition="44" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SUFFIX" />
     <nodeInfo nodeId="4372437818008126144" fileName="ConfPathItem.java" startLine="16" startPosition="36" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4372437818008126042" fileName="ConfPathItem.java" startLine="22" startPosition="49" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -64,7 +64,7 @@
     </scopeInfo>
     <unitInfo nodeId="4372437818008126015" fileName="ConfPathItem.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfPathItem" />
   </root>
-  <root nodeId="4372437818008126147">
+  <root nodeId="4372437818008126147" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
     <nodeInfo nodeId="4372437818008126148" fileName="ConfReader.java" startLine="27" startPosition="25" endLine="28" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="XI" />
     <nodeInfo nodeId="4372437818008126154" fileName="ConfReader.java" startLine="28" startPosition="102" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IDEA_PLUGIN" />
     <nodeInfo nodeId="4372437818008126158" fileName="ConfReader.java" startLine="29" startPosition="58" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPONENT" />
@@ -494,9 +494,6 @@
       <varInfo nodeId="4372437818008128092" varName="bea" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008128135" fileName="ConfReader.java" startLine="416" startPosition="25" endLine="419" endPosition="7" />
-    <scopeInfo nodeId="4372437818008128136" fileName="ConfReader.java" startLine="416" startPosition="25" endLine="419" endPosition="7">
-      <varInfo nodeId="4372437818008128151" varName="or" />
-    </scopeInfo>
     <scopeInfo nodeId="4372437818008128404" fileName="ConfReader.java" startLine="457" startPosition="82" endLine="460" endPosition="130">
       <varInfo nodeId="4372437818008128406" varName="trgsmref" />
     </scopeInfo>
@@ -643,9 +640,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4372437818008126853" fileName="ConfReader.java" startLine="177" startPosition="68" endLine="190" endPosition="9" />
     <scopeInfo nodeId="4372437818008126999" fileName="ConfReader.java" startLine="199" startPosition="57" endLine="212" endPosition="5" />
-    <scopeInfo nodeId="4372437818008127000" fileName="ConfReader.java" startLine="199" startPosition="57" endLine="212" endPosition="5">
-      <varInfo nodeId="4372437818008127062" varName="item" />
-    </scopeInfo>
     <scopeInfo nodeId="4372437818008127631" fileName="ConfReader.java" startLine="318" startPosition="38" endLine="331" endPosition="7" />
     <scopeInfo nodeId="4372437818008127946" fileName="ConfReader.java" startLine="382" startPosition="0" endLine="396" endPosition="0">
       <varInfo nodeId="4372437818008127949" varName="level" />
@@ -657,9 +651,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4372437818008127262" fileName="ConfReader.java" startLine="248" startPosition="60" endLine="263" endPosition="9" />
     <scopeInfo nodeId="4372437818008127629" fileName="ConfReader.java" startLine="317" startPosition="55" endLine="332" endPosition="5" />
-    <scopeInfo nodeId="4372437818008127630" fileName="ConfReader.java" startLine="317" startPosition="55" endLine="332" endPosition="5">
-      <varInfo nodeId="4372437818008127700" varName="ext" />
-    </scopeInfo>
     <scopeInfo nodeId="4372437818008127724" fileName="ConfReader.java" startLine="338" startPosition="23" endLine="353" endPosition="155">
       <varInfo nodeId="4372437818008127779" varName="lastSlash" />
       <varInfo nodeId="4372437818008127775" varName="name" />
@@ -699,9 +690,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4372437818008126670" fileName="ConfReader.java" startLine="150" startPosition="62" endLine="170" endPosition="9" />
     <scopeInfo nodeId="4372437818008126849" fileName="ConfReader.java" startLine="175" startPosition="57" endLine="196" endPosition="5" />
-    <scopeInfo nodeId="4372437818008126850" fileName="ConfReader.java" startLine="175" startPosition="57" endLine="196" endPosition="5">
-      <varInfo nodeId="4372437818008126982" varName="container" />
-    </scopeInfo>
     <scopeInfo nodeId="4372437818008127090" fileName="ConfReader.java" startLine="217" startPosition="166" endLine="238" endPosition="5">
       <varInfo nodeId="4372437818008127226" varName="elm" />
     </scopeInfo>
@@ -740,9 +728,6 @@
       <varInfo nodeId="4372437818008127362" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008127481" fileName="ConfReader.java" startLine="286" startPosition="61" endLine="314" endPosition="5" />
-    <scopeInfo nodeId="4372437818008127482" fileName="ConfReader.java" startLine="286" startPosition="61" endLine="314" endPosition="5">
-      <varInfo nodeId="4372437818008127617" varName="ep" />
-    </scopeInfo>
     <scopeInfo nodeId="4372437818008127707" fileName="ConfReader.java" startLine="335" startPosition="56" endLine="365" endPosition="5">
       <varInfo nodeId="4372437818008127717" varName="href" />
       <varInfo nodeId="4372437818008127840" varName="m" />
@@ -765,7 +750,7 @@
     <unitInfo nodeId="4372437818008126147" fileName="ConfReader.java" startLine="27" startPosition="0" endLine="522" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader" />
     <unitInfo nodeId="4372437818008128437" fileName="ConfReader.java" startLine="518" startPosition="0" endLine="521" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader$Resolver" />
   </root>
-  <root nodeId="4372437818008128704">
+  <root nodeId="4372437818008128704" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
     <nodeInfo nodeId="4372437818008129016" fileName="ConfStubSource.java" startLine="44" startPosition="118" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="roots" />
     <nodeInfo nodeId="4372437818008128710" fileName="ConfStubSource.java" startLine="47" startPosition="65" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4372437818008128712" fileName="ConfStubSource.java" startLine="48" startPosition="18" endLine="49" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -904,7 +889,7 @@
     <unitInfo nodeId="4372437818008128905" fileName="ConfStubSource.java" startLine="84" startPosition="43" endLine="88" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubSource$2" />
     <unitInfo nodeId="4372437818008128914" fileName="ConfStubSource.java" startLine="88" startPosition="11" endLine="92" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubSource$3" />
   </root>
-  <root nodeId="8382013213872090899">
+  <root nodeId="8382013213872090899" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
     <nodeInfo nodeId="8382013213872090910" fileName="ConfStubs.java" startLine="26" startPosition="85" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4372437818008125829" fileName="ConfStubs.java" startLine="29" startPosition="91" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2906282062545455191" fileName="ConfStubs.java" startLine="33" startPosition="43" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

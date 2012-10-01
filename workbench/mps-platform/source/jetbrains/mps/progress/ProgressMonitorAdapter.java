@@ -17,7 +17,6 @@ package jetbrains.mps.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.util.EqualUtil;
-import org.apache.commons.lang.StringUtils;
 
 /**
  * Evgeny Gryaznov, 9/30/11
@@ -77,7 +76,7 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
     myIndicator.cancel();
   }
 
-    @Override
+  @Override
   protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
     return new ProgressMonitorAdapter.SubProgressMonitor(this, work, kind);
   }

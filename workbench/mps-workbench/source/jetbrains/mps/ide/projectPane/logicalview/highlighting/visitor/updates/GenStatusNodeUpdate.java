@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 
 public class GenStatusNodeUpdate extends NodeUpdate {
   private String myText;
@@ -26,7 +26,7 @@ public class GenStatusNodeUpdate extends NodeUpdate {
   }
 
   public boolean needed(MPSTreeNode node) {
-    return !ObjectUtils.equals(node.getAdditionalText(), myText);
+    return !EqualUtil.equals(node.getAdditionalText(), myText);
   }
 
   public void update(MPSTreeNode node) {

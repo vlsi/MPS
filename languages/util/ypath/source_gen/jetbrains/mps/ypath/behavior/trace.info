@@ -70,9 +70,9 @@
   <unitInfo fileName="WhereBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ypath.behavior.WhereBlock_BehaviorDescriptor" />
   <unitInfo fileName="WhereOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ypath.behavior.WhereOperation_BehaviorDescriptor" />
   <root nodeId="1213877220697" modelId="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)">
-    <nodeInfo nodeId="1213877220700" fileName="ParameterQueryFun_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877220700" fileName="ParameterQueryFun_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877220711" fileName="ParameterQueryFun_Behavior.java" startLine="20" startPosition="34" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877220716" fileName="ParameterQueryFun_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877220716" fileName="ParameterQueryFun_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="30" startPosition="49" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="31" startPosition="26" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="32" startPosition="67" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -89,7 +89,7 @@
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="52" startPosition="7" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="26" startPosition="51" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_rcl51k_a0c0b#()V" />
     <nodeInfo nodeId="1213877220697" fileName="ParameterQueryFun_Behavior.java" startLine="14" startPosition="41" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877220709" fileName="ParameterQueryFun_Behavior.java" startLine="19" startPosition="170" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877220709" fileName="ParameterQueryFun_Behavior.java" startLine="19" startPosition="175" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="43" startPosition="16" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="46" startPosition="11" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877220717" fileName="ParameterQueryFun_Behavior.java" startLine="40" startPosition="30" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -109,7 +109,7 @@
     <scopeInfo nodeId="1213877220697" fileName="ParameterQueryFun_Behavior.java" startLine="14" startPosition="41" endLine="17" endPosition="0">
       <varInfo nodeId="1213877220697" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877220699" fileName="ParameterQueryFun_Behavior.java" startLine="18" startPosition="83" endLine="23" endPosition="228">
+    <scopeInfo nodeId="1213877220699" fileName="ParameterQueryFun_Behavior.java" startLine="18" startPosition="83" endLine="23" endPosition="233">
       <varInfo nodeId="1213877220701" varName="parameterType" />
     </scopeInfo>
     <scopeInfo nodeId="1213877220697" fileName="ParameterQueryFun_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0">

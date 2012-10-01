@@ -28,7 +28,7 @@
     <nodeInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="53" startPosition="44" endLine="54" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="87" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="87" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967296" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="55" startPosition="81" endLine="56" endPosition="492" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967296" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="55" startPosition="81" endLine="56" endPosition="488" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="55" startPosition="129" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967358" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="59" startPosition="31" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBLocation" />
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="59" startPosition="36" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -79,7 +79,7 @@
     <scopeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="49" startPosition="35" endLine="50" endPosition="54" />
     <scopeInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="49" startPosition="82" endLine="50" endPosition="24" />
     <scopeInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="87" endLine="55" endPosition="129" />
-    <scopeInfo nodeId="5487985028841967295" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="55" startPosition="81" endLine="56" endPosition="492" />
+    <scopeInfo nodeId="5487985028841967295" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="55" startPosition="81" endLine="56" endPosition="488" />
     <scopeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="59" startPosition="36" endLine="60" endPosition="28" />
     <scopeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="64" startPosition="35" endLine="65" endPosition="54" />
     <scopeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="75" startPosition="32" endLine="76" endPosition="26" />
@@ -383,7 +383,7 @@
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="24" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="22" startPosition="31" endLine="23" endPosition="29" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="34" startPosition="104" endLine="35" endPosition="50" />
-    <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="38" startPosition="76" endLine="39" endPosition="52" />
+    <scopeInfo nodeId="5487985028841967463" fileName="NanoCFile_Configuration_Editor.java" startLine="38" startPosition="76" endLine="39" endPosition="52" />
     <scopeInfo nodeId="5487985028841967433" fileName="NanoCFile_Configuration.java" startLine="40" startPosition="39" endLine="41" endPosition="18" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="45" startPosition="105" endLine="46" endPosition="34" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="49" startPosition="73" endLine="50" endPosition="40" />

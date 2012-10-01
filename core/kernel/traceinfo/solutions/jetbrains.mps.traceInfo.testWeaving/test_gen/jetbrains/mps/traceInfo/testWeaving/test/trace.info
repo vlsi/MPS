@@ -22,7 +22,9 @@
     <scopeInfo nodeId="2819311507031225992" fileName="TestUtil.java" startLine="17" startPosition="23" endLine="19" endPosition="3" />
     <scopeInfo nodeId="2819311507031226019" fileName="TestUtil.java" startLine="25" startPosition="35" endLine="27" endPosition="28" />
     <scopeInfo nodeId="2819311507031226129" fileName="TestUtil.java" startLine="38" startPosition="43" endLine="40" endPosition="30" />
-    <scopeInfo nodeId="2819311507031226091" fileName="TestUtil.java" startLine="37" startPosition="35" endLine="41" endPosition="9" />
+    <scopeInfo nodeId="2819311507031226128" fileName="TestUtil.java" startLine="37" startPosition="35" endLine="41" endPosition="9">
+      <varInfo nodeId="2819311507031226131" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="2819311507031226018" fileName="TestUtil.java" startLine="24" startPosition="65" endLine="29" endPosition="0">
       <varInfo nodeId="2819311507031226018" varName="it" />
     </scopeInfo>

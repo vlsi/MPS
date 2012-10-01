@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -171,7 +171,7 @@ public class Style {
 
         Object newValue = attribute.combine(parentValue, currentValue);
 
-        if (!ObjectUtils.equals(newValue, oldValue)) {
+        if (!EqualUtil.equals(newValue, oldValue)) {
           changedAttributes.add(attribute);
         }
 

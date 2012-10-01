@@ -68,9 +68,7 @@
       <varInfo nodeId="3445893456317757772" varName="calledDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="3445893456317768105" fileName="QueriesGenerated.java" startLine="804" startPosition="79" endLine="817" endPosition="9" />
-    <scopeInfo nodeId="3445893456317757738" fileName="QueriesGenerated.java" startLine="483" startPosition="112" endLine="498" endPosition="11">
-      <varInfo nodeId="3445893456317757739" varName="commandBuilder" />
-    </scopeInfo>
+    <scopeInfo nodeId="3445893456317757727" fileName="QueriesGenerated.java" startLine="483" startPosition="112" endLine="498" endPosition="11" />
     <scopeInfo nodeId="3445893456317757724" fileName="QueriesGenerated.java" startLine="482" startPosition="90" endLine="499" endPosition="9">
       <varInfo nodeId="3445893456317757725" varName="part" />
     </scopeInfo>

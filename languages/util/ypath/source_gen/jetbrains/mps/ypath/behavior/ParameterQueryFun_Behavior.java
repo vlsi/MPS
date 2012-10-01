@@ -16,11 +16,11 @@ public class ParameterQueryFun_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode parameterType = SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true);
+    SNode parameterType = SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IParamFeature", false, false), "parameterType", true);
     if ((parameterType == null)) {
       return null;
     }
-    return new ParameterQueryFun_Behavior.QuotationClass_rcl51k_a0c0b().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true));
+    return new ParameterQueryFun_Behavior.QuotationClass_rcl51k_a0c0b().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IParamFeature", false, false), "parameterType", true));
   }
 
   public static class QuotationClass_rcl51k_a0c0b {

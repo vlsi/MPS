@@ -70,6 +70,7 @@
   </dependency>
   <dependency className="jetbrains.mps.scope.ModelPlusImportedScope" file="ModelPlusImportedScope.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />

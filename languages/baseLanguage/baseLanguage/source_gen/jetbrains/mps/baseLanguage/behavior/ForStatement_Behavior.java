@@ -29,13 +29,19 @@ public class ForStatement_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
-      // todo: change logic =( 
       List<SNode> variables = new ArrayList<SNode>();
       if (!(ScopeUtils.comeFrom("variable", thisNode, child))) {
         ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
-      }
-      if (ScopeUtils.comeFrom("body", thisNode, child)) {
-        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "additionalVar", true)));
+        if (ScopeUtils.comeFrom("additionalVar", thisNode, child)) {
+          for (SNode variable : SLinkOperations.getTargets(thisNode, "additionalVar", true)) {
+            if (variable == child) {
+              break;
+            }
+            ListSequence.fromList(variables).addElement(variable);
+          }
+        } else {
+          ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "additionalVar", true)));
+        }
       }
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }

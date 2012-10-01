@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -103,7 +103,7 @@ class PropertiesMap implements Map<String, String> {
 
   private int getIndex(String propertyName, boolean value) {
     for (int i = value ? 1 : 0; i < myProperties.length; i += 2) {
-      if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
+      if (EqualUtil.equals(myProperties[i], propertyName)) return i;
     }
     return -1;
   }

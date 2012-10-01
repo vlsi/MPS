@@ -2115,9 +2115,7 @@
       <varInfo nodeId="2808756344206305969" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="2808756344206305969" fileName="GoToOverridenMethod_Action.java" startLine="132" startPosition="27" endLine="135" endPosition="7" />
-    <scopeInfo nodeId="2808756344206306038" fileName="GoToOverridenMethod_Action.java" startLine="152" startPosition="35" endLine="155" endPosition="7">
-      <varInfo nodeId="2808756344206306053" varName="entry" />
-    </scopeInfo>
+    <scopeInfo nodeId="2808756344206306037" fileName="GoToOverridenMethod_Action.java" startLine="152" startPosition="35" endLine="155" endPosition="7" />
     <scopeInfo nodeId="2808756344206305969" fileName="GoToOverridenMethod_Action.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="2808756344206305969" varName="_params" />
       <varInfo nodeId="2808756344206305969" varName="event" />
@@ -2349,9 +2347,7 @@
     <scopeInfo nodeId="2808756344206306292" fileName="GoToInheritedClassifier_Action.java" startLine="136" startPosition="79" endLine="155" endPosition="20">
       <varInfo nodeId="2808756344206306294" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206306289" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="31" endLine="156" endPosition="15">
-      <varInfo nodeId="2808756344206306290" varName="finderClass" />
-    </scopeInfo>
+    <scopeInfo nodeId="2808756344206306288" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="31" endLine="156" endPosition="15" />
     <scopeInfo nodeId="2808756344206306287" fileName="GoToInheritedClassifier_Action.java" startLine="134" startPosition="63" endLine="158" endPosition="0" />
     <scopeInfo nodeId="2808756344206306285" fileName="GoToInheritedClassifier_Action.java" startLine="133" startPosition="61" endLine="158" endPosition="13" />
     <scopeInfo nodeId="2808756344206306279" fileName="GoToInheritedClassifier_Action.java" startLine="132" startPosition="135" endLine="160" endPosition="0">
@@ -4824,7 +4820,7 @@
     <nodeInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="2" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <unitInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="149" endPosition="0" unitName="JavaActions.xml" />
+    <unitInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.ide.java.actions.JavaActions$xml" />
   </root>
   <root nodeId="4326588611400152009" modelId="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)">
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="20" startPosition="73" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -12514,9 +12510,7 @@
     <scopeInfo nodeId="8838506468326693767" fileName="OverrideImplementMethodsHelper.java" startLine="301" startPosition="18" endLine="303" endPosition="41" />
     <scopeInfo nodeId="8838506468326693589" fileName="OverrideImplementMethodsHelper.java" startLine="71" startPosition="29" endLine="74" endPosition="7" />
     <scopeInfo nodeId="8838506468326693703" fileName="OverrideImplementMethodsHelper.java" startLine="102" startPosition="143" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="8838506468326693789" fileName="OverrideImplementMethodsHelper.java" startLine="126" startPosition="12" endLine="129" endPosition="7">
-      <varInfo nodeId="8838506468326693793" varName="child" />
-    </scopeInfo>
+    <scopeInfo nodeId="8838506468326693788" fileName="OverrideImplementMethodsHelper.java" startLine="126" startPosition="12" endLine="129" endPosition="7" />
     <scopeInfo nodeId="8838506468326693908" fileName="OverrideImplementMethodsHelper.java" startLine="155" startPosition="5" endLine="158" endPosition="5">
       <varInfo nodeId="8838506468326693917" varName="child" />
     </scopeInfo>

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="20" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
-  <root nodeId="1195164863269">
+  <root nodeId="1195164863269" modelId="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)">
     <nodeInfo nodeId="1202245325859" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195172404158" fileName="QueriesGenerated.java" startLine="25" startPosition="146" endLine="26" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195164863269" fileName="Mappingmain.java" startLine="27" startPosition="66" endLine="28" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
@@ -297,7 +297,7 @@
     <unitInfo nodeId="1195164863269" fileName="Mappingmain.java" startLine="171" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$ReductionRule1" />
     <unitInfo nodeId="1195164863269" fileName="Mappingmain.java" startLine="210" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$RootMappingRule0" />
   </root>
-  <root nodeId="1195166061402">
+  <root nodeId="1195166061402" modelId="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)">
     <nodeInfo nodeId="1195166061402" fileName="TemplateOutputRoot__By__RootRule.java" startLine="15" startPosition="78" endLine="16" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_l7bj61_a0a0" />
     <nodeInfo nodeId="1195166061402" fileName="TemplateOutputRoot__By__RootRule.java" startLine="16" startPosition="237" endLine="17" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_l7bj61_a0a0a1a1" />
     <nodeInfo nodeId="1195166061402" fileName="TemplateOutputRoot__By__RootRule.java" startLine="22" startPosition="41" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -329,7 +329,7 @@
     </scopeInfo>
     <unitInfo nodeId="1195166061402" fileName="TemplateOutputRoot__By__RootRule.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot__By__RootRule" />
   </root>
-  <root nodeId="1195168984336">
+  <root nodeId="1195168984336" modelId="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)">
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="17" startPosition="81" endLine="18" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_d5hm2j_a0a0" />
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="18" startPosition="237" endLine="19" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_d5hm2j_a0a0a1a1" />
     <nodeInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="19" startPosition="245" endLine="20" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="propertyMacro_d5hm2j_c0b0b0a3a1a1" />
@@ -388,7 +388,7 @@
     </scopeInfo>
     <unitInfo nodeId="1195168984336" fileName="TemplateOutputRoot__by__MappingRule.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot__by__MappingRule" />
   </root>
-  <root nodeId="1195509228077">
+  <root nodeId="1195509228077" modelId="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)">
     <nodeInfo nodeId="1195509228077" fileName="Scripttest__preMappingScript.java" startLine="11" startPosition="76" endLine="12" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="mappingScriptNode" />
     <nodeInfo nodeId="1195509228077" fileName="Scripttest__preMappingScript.java" startLine="17" startPosition="39" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195509228077" fileName="Scripttest__preMappingScript.java" startLine="21" startPosition="31" endLine="22" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -430,7 +430,7 @@
     </scopeInfo>
     <unitInfo nodeId="1195509228077" fileName="Scripttest__preMappingScript.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest__preMappingScript" />
   </root>
-  <root nodeId="1195510384868">
+  <root nodeId="1195510384868" modelId="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)">
     <nodeInfo nodeId="1195510384868" fileName="Scripttest__postMappingScript.java" startLine="11" startPosition="77" endLine="12" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="mappingScriptNode" />
     <nodeInfo nodeId="1195510384868" fileName="Scripttest__postMappingScript.java" startLine="17" startPosition="39" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195510384868" fileName="Scripttest__postMappingScript.java" startLine="21" startPosition="31" endLine="22" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

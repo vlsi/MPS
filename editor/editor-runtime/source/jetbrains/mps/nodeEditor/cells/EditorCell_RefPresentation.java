@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 
 public class EditorCell_RefPresentation {
 
@@ -111,7 +111,7 @@ public class EditorCell_RefPresentation {
     }
 
     public boolean isValidText(String text) {
-      return ObjectUtils.equals(getText(), text);
+      return EqualUtil.equals(getText(), text);
     }
   }
 }

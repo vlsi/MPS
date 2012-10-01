@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.typesystem.TypesystemDescriptor" />
-  <root nodeId="3990190717072396550">
+  <root nodeId="3990190717072396550" modelId="r:b7bbbd3b-af8b-4b1e-9ab8-def9512d9413(org.jetbrains.mps.samples.Constants.typesystem)">
     <nodeInfo nodeId="3990190717072396557" fileName="typeof_ConstantReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990190717072396557" fileName="typeof_ConstantReference_InferenceRule.java" startLine="20" startPosition="59" endLine="21" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990190717072396557" fileName="typeof_ConstantReference_InferenceRule.java" startLine="21" startPosition="212" endLine="22" endPosition="463" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -41,7 +41,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990190717072396550" fileName="typeof_ConstantReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.typesystem.typeof_ConstantReference_InferenceRule" />
   </root>
-  <root nodeId="3990190717072396570">
+  <root nodeId="3990190717072396570" modelId="r:b7bbbd3b-af8b-4b1e-9ab8-def9512d9413(org.jetbrains.mps.samples.Constants.typesystem)">
     <nodeInfo nodeId="3990190717072396577" fileName="typeof_Constant_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990190717072396577" fileName="typeof_Constant_InferenceRule.java" startLine="20" startPosition="50" endLine="21" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990190717072396577" fileName="typeof_Constant_InferenceRule.java" startLine="21" startPosition="212" endLine="22" endPosition="456" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

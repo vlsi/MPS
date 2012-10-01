@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8294989614925456943">
+  <root nodeId="8294989614925456943" modelId="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.dependencyViewer)">
     <nodeInfo nodeId="8294989614925457236" fileName="DependenciesPanel.java" startLine="36" startPosition="47" endLine="37" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitTree" />
     <nodeInfo nodeId="8294989614925457239" fileName="DependenciesPanel.java" startLine="37" startPosition="36" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetsView" />
     <nodeInfo nodeId="8294989614925457242" fileName="DependenciesPanel.java" startLine="38" startPosition="36" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferencesView" />
@@ -167,7 +167,7 @@
     <unitInfo nodeId="2921823006583088303" fileName="DependenciesPanel.java" startLine="144" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel$CloseAction" />
     <unitInfo nodeId="613965280098045490" fileName="DependenciesPanel.java" startLine="154" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel$RerunAction" />
   </root>
-  <root nodeId="8294989614925457277">
+  <root nodeId="8294989614925457277" modelId="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.dependencyViewer)">
     <nodeInfo nodeId="8294989614925457412" fileName="DependencyTree.java" startLine="23" startPosition="45" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
     <nodeInfo nodeId="8294989614925457415" fileName="DependencyTree.java" startLine="24" startPosition="24" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8294989614925457418" fileName="DependencyTree.java" startLine="25" startPosition="31" endLine="26" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
@@ -246,9 +246,6 @@
       <varInfo nodeId="8294989614925457392" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="7483384340730011953" fileName="DependencyTree.java" startLine="91" startPosition="42" endLine="94" endPosition="11" />
-    <scopeInfo nodeId="7483384340730015198" fileName="DependencyTree.java" startLine="91" startPosition="42" endLine="94" endPosition="11">
-      <varInfo nodeId="7483384340730015205" varName="nodeUnder" />
-    </scopeInfo>
     <scopeInfo nodeId="8294989614925457422" fileName="DependencyTree.java" startLine="27" startPosition="0" endLine="31" endPosition="3">
       <varInfo nodeId="8294989614925457434" varName="parent" />
     </scopeInfo>
@@ -286,7 +283,7 @@
     <unitInfo nodeId="8294989614925457277" fileName="DependencyTree.java" startLine="23" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.DependencyTree" />
     <unitInfo nodeId="8294989614925457278" fileName="DependencyTree.java" startLine="62" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.DependencyTree$MyTreeSelectionListener" />
   </root>
-  <root nodeId="8294989614925457551">
+  <root nodeId="8294989614925457551" modelId="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.dependencyViewer)">
     <nodeInfo nodeId="8294989614925457552" fileName="ReferencesFinder.java" startLine="20" startPosition="31" endLine="21" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelsRefsCache" />
     <nodeInfo nodeId="8294989614925457567" fileName="ReferencesFinder.java" startLine="26" startPosition="101" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8294989614925457574" fileName="ReferencesFinder.java" startLine="28" startPosition="9" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -408,7 +405,6 @@
     <scopeInfo nodeId="8294989614925457877" fileName="ReferencesFinder.java" startLine="111" startPosition="64" endLine="118" endPosition="5">
       <varInfo nodeId="8294989614925457898" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925457933" fileName="ReferencesFinder.java" startLine="127" startPosition="93" endLine="134" endPosition="11" />
     <scopeInfo nodeId="8294989614925457934" fileName="ReferencesFinder.java" startLine="127" startPosition="93" endLine="134" endPosition="11">
       <varInfo nodeId="8294989614925457958" varName="ref" />
     </scopeInfo>
@@ -417,9 +413,6 @@
       <varInfo nodeId="8294989614925457808" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8294989614925457931" fileName="ReferencesFinder.java" startLine="126" startPosition="25" endLine="135" endPosition="9" />
-    <scopeInfo nodeId="8294989614925457932" fileName="ReferencesFinder.java" startLine="126" startPosition="25" endLine="135" endPosition="9">
-      <varInfo nodeId="8294989614925457963" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="8294989614925457650" fileName="ReferencesFinder.java" startLine="47" startPosition="47" endLine="58" endPosition="27" />
     <scopeInfo nodeId="8294989614925457798" fileName="ReferencesFinder.java" startLine="93" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="8294989614925457799" varName="module" />
@@ -473,7 +466,7 @@
     <unitInfo nodeId="8294989614925457652" fileName="ReferencesFinder.java" startLine="48" startPosition="49" endLine="54" endPosition="9" unitName="jetbrains.mps.ide.dependencyViewer.ReferencesFinder$1" />
     <unitInfo nodeId="8294989614925457930" fileName="ReferencesFinder.java" startLine="125" startPosition="45" endLine="137" endPosition="5" unitName="jetbrains.mps.ide.dependencyViewer.ReferencesFinder$2" />
   </root>
-  <root nodeId="8294989614925457978">
+  <root nodeId="8294989614925457978" modelId="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.dependencyViewer)">
     <nodeInfo nodeId="8294989614925457979" fileName="ReferencesView.java" startLine="22" startPosition="48" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8294989614925458069" fileName="ReferencesView.java" startLine="25" startPosition="71" endLine="26" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8294989614925458079" fileName="ReferencesView.java" startLine="26" startPosition="78" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -545,7 +538,7 @@
     <unitInfo nodeId="8294989614925457978" fileName="ReferencesView.java" startLine="22" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.ReferencesView" />
     <unitInfo nodeId="8294989614925457982" fileName="ReferencesView.java" startLine="38" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.ReferencesView$MyNodeRepresentator" />
   </root>
-  <root nodeId="8294989614925458096">
+  <root nodeId="8294989614925458096" modelId="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.dependencyViewer)">
     <nodeInfo nodeId="8294989614925458114" fileName="Scope.java" startLine="16" startPosition="20" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
     <nodeInfo nodeId="8294989614925458118" fileName="Scope.java" startLine="17" startPosition="34" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
     <nodeInfo nodeId="8294989614925458122" fileName="Scope.java" startLine="18" startPosition="42" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoots" />
@@ -736,7 +729,7 @@
     <unitInfo nodeId="8294989614925458231" fileName="Scope.java" startLine="76" startPosition="45" endLine="82" endPosition="5" unitName="jetbrains.mps.ide.dependencyViewer.Scope$1" />
     <unitInfo nodeId="8294989614925458250" fileName="Scope.java" startLine="89" startPosition="45" endLine="95" endPosition="5" unitName="jetbrains.mps.ide.dependencyViewer.Scope$2" />
   </root>
-  <root nodeId="8294989614925458531">
+  <root nodeId="8294989614925458531" modelId="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.dependencyViewer)">
     <nodeInfo nodeId="8294989614925458532" fileName="TargetsView.java" startLine="33" startPosition="45" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
     <nodeInfo nodeId="8294989614925458763" fileName="TargetsView.java" startLine="36" startPosition="65" endLine="37" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8294989614925458773" fileName="TargetsView.java" startLine="37" startPosition="76" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

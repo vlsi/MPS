@@ -338,8 +338,8 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1221219519623">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;choose mapping label&gt;" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1216860049628" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLabelReference" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1221219379823" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1221219519624">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1221219519625">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
@@ -358,7 +358,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1221219519628">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no input node&gt;" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1216860049632" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1221219370977" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1221219525391">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
