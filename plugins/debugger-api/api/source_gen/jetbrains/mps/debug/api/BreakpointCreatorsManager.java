@@ -29,13 +29,13 @@ import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class DebugInfoManager implements ApplicationComponent {
-  protected static Log log = LogFactory.getLog(DebugInfoManager.class);
+public class BreakpointCreatorsManager implements ApplicationComponent {
+  protected static Log log = LogFactory.getLog(BreakpointCreatorsManager.class);
 
   private Set<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new LinkedHashSet<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
   private Map<String, Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myAddedByConceptCreators = MapSequence.fromMap(new LinkedHashMap<String, Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>(16, (float) 0.75, false));
 
-  public DebugInfoManager() {
+  public BreakpointCreatorsManager() {
   }
 
   @NotNull
@@ -127,7 +127,7 @@ public class DebugInfoManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  public static DebugInfoManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
+  public static BreakpointCreatorsManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(BreakpointCreatorsManager.class);
   }
 }

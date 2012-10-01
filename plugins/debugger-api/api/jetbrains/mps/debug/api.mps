@@ -99,7 +99,7 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4474271214082914913">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="DebugInfoManager" />
+      <property name="name" nameId="tpck.1169194664001" value="BreakpointCreatorsManager" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4474271214082915164">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -3796,7 +3796,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getInstance" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4474271214082914941" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4474271214082914942">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4474271214082914913" resolveInfo="DebugInfoManager" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4474271214082914913" resolveInfo="BreakpointCreatorsManager" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4474271214082914943">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4474271214082914944">
@@ -3808,7 +3808,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4474271214082914947">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t7eg.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4474271214082914948">
-                <link role="classifier" roleId="tpee.1116615189566" targetNodeId="4474271214082914913" resolveInfo="DebugInfoManager" />
+                <link role="classifier" roleId="tpee.1116615189566" targetNodeId="4474271214082914913" resolveInfo="BreakpointCreatorsManager" />
               </node>
             </node>
           </node>
