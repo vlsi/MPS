@@ -146,7 +146,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
-    <classNode dependClassName="jetbrains.mps.debug.api.ToDebugAPI" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHandler" />

@@ -212,8 +212,5 @@
   <dependency className="jetbrains.mps.debug.api.SessionChangeListener" file="SessionChangeListener.java">
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.ToDebugAPI" file="ToDebugAPI.java">
-    <classNode extendsClassName="java.lang.annotation.Annotation" />
-  </dependency>
 </dependenciesRoot>
 

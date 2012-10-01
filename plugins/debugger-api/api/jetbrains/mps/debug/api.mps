@@ -55,9 +55,6 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="4474271214082913334">
       <property name="name" nameId="tpck.1169194664001" value="IDebuggerSettings" />
     </node>
-    <node type="tpee.Annotation" typeId="tpee.1188206331916" id="4474271214082913450">
-      <property name="name" nameId="tpck.1169194664001" value="ToDebugAPI" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4474271214082913453">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
@@ -590,12 +587,6 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4474271214082913344" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4474271214082913345" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4474271214082913346" />
-    </node>
-  </root>
-  <root id="4474271214082913450">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4474271214082913451" />
-    <node role="extendedInterface" roleId="tpee.1107797138135" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4474271214082913452">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rzz2.~Annotation" resolveInfo="Annotation" />
     </node>
   </root>
   <root id="4474271214082913453">

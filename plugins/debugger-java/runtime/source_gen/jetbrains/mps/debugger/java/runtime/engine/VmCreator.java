@@ -21,7 +21,6 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debug.api.ToDebugAPI;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ProgramRunner;
 import jetbrains.mps.ide.ThreadUtils;
@@ -80,7 +79,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
   }
 
   @Nullable
-  @ToDebugAPI
   public ExecutionResult startSession(final Executor executor, final ProgramRunner runner, final RunProfileState state, Project project) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     myConnectionSettings = createLocalConnectionSettings(state);
