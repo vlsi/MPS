@@ -128,7 +128,9 @@
     <scopeInfo nodeId="3990508698139429228" fileName="GDBEventsHandler.java" startLine="75" startPosition="40" endLine="78" endPosition="5">
       <varInfo nodeId="3990508698139429230" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429241" fileName="GDBEventsHandler.java" startLine="81" startPosition="43" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429242" fileName="GDBEventsHandler.java" startLine="81" startPosition="43" endLine="84" endPosition="5">
+      <varInfo nodeId="3990508698139429244" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="3990508698139429258" fileName="GDBEventsHandler.java" startLine="87" startPosition="50" endLine="90" endPosition="5">
       <varInfo nodeId="3990508698139429260" varName="listener" />
     </scopeInfo>

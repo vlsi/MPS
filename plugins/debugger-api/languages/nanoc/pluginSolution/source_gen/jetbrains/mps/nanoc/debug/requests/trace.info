@@ -149,7 +149,9 @@
       <varInfo nodeId="3990508698139429102" varName="id" />
       <varInfo nodeId="3990508698139429114" varName="requestString" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429133" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5">
+      <varInfo nodeId="3990508698139429138" varName="breakpoint" />
+    </scopeInfo>
     <scopeInfo nodeId="3990508698139429069" fileName="GDBRequestManager.java" startLine="33" startPosition="107" endLine="39" endPosition="73">
       <varInfo nodeId="3990508698139429077" varName="gdbRequestor" />
       <varInfo nodeId="3990508698139429071" varName="token" />
