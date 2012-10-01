@@ -141,15 +141,11 @@
     </scopeInfo>
     <scopeInfo nodeId="4474271214083125557" fileName="GroupedTree.java" startLine="127" startPosition="85" endLine="130" endPosition="20" />
     <scopeInfo nodeId="4474271214083125594" fileName="GroupedTree.java" startLine="150" startPosition="26" endLine="153" endPosition="9" />
-    <scopeInfo nodeId="4474271214083125615" fileName="GroupedTree.java" startLine="168" startPosition="47" endLine="171" endPosition="7">
-      <varInfo nodeId="4474271214083125617" varName="d" />
-    </scopeInfo>
+    <scopeInfo nodeId="4474271214083125614" fileName="GroupedTree.java" startLine="168" startPosition="47" endLine="171" endPosition="7" />
     <scopeInfo nodeId="4474271214083125748" fileName="GroupedTree.java" startLine="192" startPosition="33" endLine="195" endPosition="9">
       <varInfo nodeId="4474271214083125750" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083125721" fileName="GroupedTree.java" startLine="201" startPosition="18" endLine="204" endPosition="13">
-      <varInfo nodeId="4474271214083125726" varName="d" />
-    </scopeInfo>
+    <scopeInfo nodeId="4474271214083125720" fileName="GroupedTree.java" startLine="201" startPosition="18" endLine="204" endPosition="13" />
     <scopeInfo nodeId="4474271214083125765" fileName="GroupedTree.java" startLine="28" startPosition="80" endLine="32" endPosition="20">
       <varInfo nodeId="4474271214083125767" varName="data" />
     </scopeInfo>
@@ -576,7 +572,9 @@
     <scopeInfo nodeId="4474271214083125038" fileName="BreakpointsUiComponent.java" startLine="326" startPosition="122" endLine="329" endPosition="13">
       <varInfo nodeId="4474271214083125040" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083125077" fileName="BreakpointsUiComponent.java" startLine="359" startPosition="27" endLine="362" endPosition="11" />
+    <scopeInfo nodeId="4474271214083125078" fileName="BreakpointsUiComponent.java" startLine="359" startPosition="27" endLine="362" endPosition="11">
+      <varInfo nodeId="4474271214083125082" varName="editorComponent" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214083124015" fileName="BreakpointsUiComponent.java" startLine="86" startPosition="34" endLine="90" endPosition="20">
       <varInfo nodeId="4474271214083124026" varName="component" />
     </scopeInfo>
@@ -631,10 +629,10 @@
     </scopeInfo>
     <scopeInfo nodeId="4474271214083123958" fileName="BreakpointsUiComponent.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="4474271214083124136" fileName="BreakpointsUiComponent.java" startLine="120" startPosition="100" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="4474271214083125117" fileName="BreakpointsUiComponent.java" startLine="137" startPosition="25" endLine="143" endPosition="9">
-      <varInfo nodeId="4474271214083125119" varName="locationBreakpoint" />
+    <scopeInfo nodeId="4474271214083125116" fileName="BreakpointsUiComponent.java" startLine="137" startPosition="25" endLine="143" endPosition="9" />
+    <scopeInfo nodeId="4474271214083124542" fileName="BreakpointsUiComponent.java" startLine="176" startPosition="35" endLine="182" endPosition="7">
+      <varInfo nodeId="4474271214083124544" varName="mpsBreakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083124541" fileName="BreakpointsUiComponent.java" startLine="176" startPosition="35" endLine="182" endPosition="7" />
     <scopeInfo nodeId="4474271214083125024" fileName="BreakpointsUiComponent.java" startLine="324" startPosition="27" endLine="330" endPosition="11" />
     <scopeInfo nodeId="4474271214083123918" fileName="BreakpointsUiComponent.java" startLine="56" startPosition="0" endLine="63" endPosition="3">
       <varInfo nodeId="4474271214083123923" varName="breakpointsManagerComponent" />
@@ -907,9 +905,7 @@
     <scopeInfo nodeId="4474271214083118729" fileName="BreakpointsTree.java" startLine="45" startPosition="46" endLine="47" endPosition="94" />
     <scopeInfo nodeId="4474271214083118748" fileName="BreakpointsTree.java" startLine="50" startPosition="47" endLine="52" endPosition="95" />
     <scopeInfo nodeId="4474271214083118710" fileName="BreakpointsTree.java" startLine="39" startPosition="48" endLine="42" endPosition="96" />
-    <scopeInfo nodeId="4474271214083118817" fileName="BreakpointsTree.java" startLine="79" startPosition="25" endLine="82" endPosition="9">
-      <varInfo nodeId="4474271214083118818" varName="i" />
-    </scopeInfo>
+    <scopeInfo nodeId="4474271214083118816" fileName="BreakpointsTree.java" startLine="79" startPosition="25" endLine="82" endPosition="9" />
     <scopeInfo nodeId="4474271214083118642" fileName="BreakpointsTree.java" startLine="12" startPosition="100" endLine="16" endPosition="26" />
     <scopeInfo nodeId="4474271214083118762" fileName="BreakpointsTree.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="4474271214083118770" fileName="BreakpointsTree.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
@@ -1013,7 +1009,9 @@
       <varInfo nodeId="4474271214083122126" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083122006" fileName="BreakpointsView.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122091" fileName="BreakpointsView.java" startLine="58" startPosition="75" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="4474271214083122092" fileName="BreakpointsView.java" startLine="58" startPosition="75" endLine="61" endPosition="5">
+      <varInfo nodeId="4474271214083122094" varName="l" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214083122102" fileName="BreakpointsView.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="4474271214083122118" fileName="BreakpointsView.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4474271214083121994" fileName="BreakpointsView.java" startLine="21" startPosition="0" endLine="25" endPosition="3">

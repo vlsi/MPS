@@ -16,7 +16,6 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
-import org.apache.commons.lang.StringUtils;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -74,7 +73,7 @@ public class PathManager {
     }
 
     ourHomePath = root.getAbsolutePath();
-    if(ourHomePath.equals("/")) {
+    if (ourHomePath.equals("/")) {
       throw new IllegalStateException("cannot detect MPS location");
     }
     return ourHomePath;
@@ -83,7 +82,7 @@ public class PathManager {
   public static String getBootstrapPath() {
     // TODO temp fix
     String mpsJar = getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
-    if(new File(mpsJar).exists()) {
+    if (new File(mpsJar).exists()) {
       return mpsJar + MODULES_PREFIX;
     }
     return getHomePath() + File.separator + "core";
@@ -95,7 +94,7 @@ public class PathManager {
     if (lib.exists() && lib.isDirectory()) {
       paths = new ArrayList<String>();
       for (File jar : lib.listFiles(MPS_JARS)) {
-        paths.add(jar.getAbsolutePath()+ MODULES_PREFIX);
+        paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
       }
       if (paths.size() > 0) {
         return Collections.unmodifiableCollection(paths);
@@ -175,7 +174,7 @@ public class PathManager {
       resultPath = resultPath.substring(0, resultPath.length() - 1);
     }
 
-    resultPath = StringUtils.replace(resultPath, "%20", " ");
+    resultPath = resultPath != null ? StringUtil.replace(resultPath, "%20", " ") : null;
     return resultPath;
   }
 }

@@ -24,8 +24,8 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
-import org.apache.commons.lang.StringEscapeUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -87,7 +87,7 @@ public class ModelPersistence7 extends ModelPersistence6 {
         while (e < end && chars[e] != '.') ++e;
         if (e > offset && e + 1 < end && chars[e] == '.')
           offset = e + 1;
-        String test = unescape(new String(chars, offset, end - offset)).replace("%d", ".").replace("%c", ":");
+        String test = JDOMUtil.unescapeText(new String(chars, offset, end - offset)).replace("%d", ".").replace("%c", ":");
         result.put(new IndexEntry(test, true), offset);
       }
     } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
@@ -99,7 +99,7 @@ public class ModelPersistence7 extends ModelPersistence6 {
       while (start >= offset && chars[start] != '.') --start;
       offset = start + 1;
       if (end > offset) {
-        result.put(new IndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        result.put(new IndexEntry(JDOMUtil.unescapeText(new String(chars, offset, end - offset)), true), offset);
       }
     }
   }
@@ -135,7 +135,4 @@ public class ModelPersistence7 extends ModelPersistence6 {
     return true;
   }
 
-  private String unescape(String s) {
-    return StringEscapeUtils.unescapeXml(s);
-  }
 }

@@ -24,7 +24,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
@@ -36,6 +35,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -259,7 +259,7 @@ public class CellExplorerView extends BaseProjectTool {
         final SNode node = myCell.getSNode();
         String name = node.getName();
         name = name != null ? name : "<no name>";
-        String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ")";
+        String text = "<html><b>Node</b> " + StringUtil.escapeXml(name) + " (" + StringUtil.escapeXml(node.getConceptShortName()) + ")";
         add(new TextTreeNode(text) {
           {
             setIcon(IconManager.getIconFor(node));

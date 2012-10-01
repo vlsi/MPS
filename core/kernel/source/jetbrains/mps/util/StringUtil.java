@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * evgeny, 10/1/12
  */
@@ -39,5 +43,57 @@ public class StringUtil {
 
   public static boolean isEmpty(String s) {
     return s == null || s.length() == 0;
+  }
+
+  @NonNls
+  private static final String[] REPLACES_REFS = {"&lt;", "&gt;", "&amp;", "&#39;", "&quot;"};
+  @NonNls
+  private static final String[] REPLACES_DISP = {"<", ">", "&", "'", "\""};
+
+  @Nullable
+  public static String unescapeXml(@Nullable final String text) {
+    if (text == null) return null;
+    return replace(text, REPLACES_REFS, REPLACES_DISP);
+  }
+
+  @Nullable
+  public static String escapeXml(@Nullable final String text) {
+    if (text == null) return null;
+    return replace(text, REPLACES_DISP, REPLACES_REFS);
+  }
+
+  @NotNull
+  public static String replace(@NotNull String text, @NotNull String[] from, @NotNull String[] to) {
+    final StringBuilder result = new StringBuilder(text.length());
+    replace:
+    for (int i = 0; i < text.length(); i++) {
+      for (int j = 0; j < from.length; j += 1) {
+        String toReplace = from[j];
+
+        final int len = toReplace.length();
+        if (text.regionMatches(i, toReplace, 0, len)) {
+          result.append(to[j]);
+          i += len - 1;
+          continue replace;
+        }
+      }
+      result.append(text.charAt(i));
+    }
+    return result.toString();
+  }
+
+  @NotNull
+  public static String replace(@NotNull String text, @NotNull String from, @NotNull String to) {
+    final StringBuilder result = new StringBuilder(text.length());
+    final int len = from.length();
+    for (int i = 0; i < text.length(); i++) {
+      if (text.regionMatches(i, from, 0, len)) {
+        result.append(to);
+        i += len - 1;
+        continue;
+      }
+      result.append(text.charAt(i));
+    }
+    return result.toString();
   }
 }

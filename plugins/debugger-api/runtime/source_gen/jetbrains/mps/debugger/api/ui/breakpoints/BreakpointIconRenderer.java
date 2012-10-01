@@ -9,7 +9,7 @@ import java.awt.Component;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.ide.DataManager;
-import org.apache.commons.lang.StringEscapeUtils;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.JPopupMenu;
@@ -37,7 +37,7 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 
   @Override
   public String getTooltipText() {
-    return "<html><body>" + StringEscapeUtils.escapeHtml(myBreakpoint.getKind().getPresentation()) + "<br>" + StringEscapeUtils.escapeHtml(myBreakpoint.getPresentation()) + ((myBreakpoint.isValid() ?
+    return "<html><body>" + StringUtil.escapeXml(myBreakpoint.getKind().getPresentation()) + "<br>" + StringUtil.escapeXml(myBreakpoint.getPresentation()) + ((myBreakpoint.isValid() ?
       "" :
       "<br><font color='red'>Invalid</br>"
     )) + "</html></body>";
