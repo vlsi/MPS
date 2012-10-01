@@ -32,7 +32,6 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -95,13 +94,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
-    final Project project = ProjectHelper.toIdeaProject(editor.getNodeEditor().getOperationContext().getProject());
-
-    DumbService.getInstance(project).smartInvokeLater(new Runnable() {
+    DumbService.getInstance(myProject).smartInvokeLater(new Runnable() {
       public void run() {
         final Runnable task = new Runnable() {
           public void run() {
-            doUpdateWarnings(editor, project);
+            doUpdateWarnings(editor);
           }
         };
         Boolean aBoolean = ModelAccess.instance().tryRead(new Computable<Boolean>() {
@@ -118,7 +115,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     });
   }
 
-  private void doUpdateWarnings(final MPSFileNodeEditor editor, Project project) {
+  private void doUpdateWarnings(final MPSFileNodeEditor editor) {
     List<WarningPanel> newWarnings = new ArrayList<WarningPanel>();
 
     Editor nodeEditor = editor.getNodeEditor();
@@ -133,7 +130,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     EditorWarningsProvider[] providers = Extensions.getExtensions(EditorWarningsProvider.EP_NAME);
 
     for (EditorWarningsProvider provider : providers) {
-      WarningPanel panel = provider.getWarningPanel(node, project);
+      WarningPanel panel = provider.getWarningPanel(node, myProject);
       if (panel != null) {
         newWarnings.add(panel);
       }

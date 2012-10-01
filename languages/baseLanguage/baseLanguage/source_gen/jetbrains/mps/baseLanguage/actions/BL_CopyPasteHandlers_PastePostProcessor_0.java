@@ -28,12 +28,19 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
     Iterable<SNode> visibleStaticFields = Members.visibleStaticFields(containingClassifier, pastedNode);
     SNode staticFieldDecl = Sequence.fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals(SLinkOperations.getResolveInfo(staticFieldRef));
+        return eq_nqjmzy_a0a0a0a0a0a0e0b(SPropertyOperations.getString(it, "name"), SLinkOperations.getResolveInfo(staticFieldRef));
       }
     }).first();
     if (staticFieldDecl != null) {
       SNode localStatisFieldReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
       SLinkOperations.setTarget(localStatisFieldReference, "variableDeclaration", staticFieldDecl, false);
     }
+  }
+
+  private static boolean eq_nqjmzy_a0a0a0a0a0a0e0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
