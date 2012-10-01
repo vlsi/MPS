@@ -6,21 +6,21 @@ import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.debugger.java.runtime.DebugSession;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debug.evaluation.Evaluator;
-import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
-import jetbrains.mps.debug.evaluation.EvaluationException;
-import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
-import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
+import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
+import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException;
+import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public abstract class EvaluationUi extends JPanel {

@@ -12,6 +12,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.source.NodeSourcePosition;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 
 public class JavaNodePositionProvider extends NodePositionProvider implements ProjectComponent {
   private final PositionProvider myProvider;

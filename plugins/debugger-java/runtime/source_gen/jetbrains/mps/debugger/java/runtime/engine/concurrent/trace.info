@@ -109,7 +109,7 @@
     <scopeInfo nodeId="6460341978864345841" fileName="ManagerThread.java" startLine="124" startPosition="0" endLine="127" endPosition="9">
       <varInfo nodeId="6460341978864345828" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864345844" fileName="ManagerThread.java" startLine="124" startPosition="29" endLine="127" endPosition="9" />
+    <scopeInfo nodeId="6460341978864345843" fileName="ManagerThread.java" startLine="124" startPosition="29" endLine="127" endPosition="9" />
     <scopeInfo nodeId="6460341978864393893" fileName="ManagerThread.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="6460341978864585123" fileName="ManagerThread.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="6460341978864585130" fileName="ManagerThread.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />

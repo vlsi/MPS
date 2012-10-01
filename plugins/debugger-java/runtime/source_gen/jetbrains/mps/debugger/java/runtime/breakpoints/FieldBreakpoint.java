@@ -13,7 +13,7 @@ import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import com.sun.jdi.Field;
-import jetbrains.mps.debug.evaluation.EvaluationUtils;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 import com.sun.jdi.ClassType;
 import com.sun.jdi.request.AccessWatchpointRequest;
 import com.sun.jdi.request.ModificationWatchpointRequest;

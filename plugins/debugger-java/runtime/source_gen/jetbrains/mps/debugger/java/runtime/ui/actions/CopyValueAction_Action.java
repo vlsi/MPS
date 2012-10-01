@@ -11,15 +11,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import jetbrains.mps.debug.runtime.JavaUiState;
+import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.debug.evaluation.EvaluationUtils;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
   private static final Icon ICON = null;

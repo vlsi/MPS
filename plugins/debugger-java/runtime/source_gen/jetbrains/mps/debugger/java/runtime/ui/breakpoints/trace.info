@@ -193,9 +193,7 @@
       <varInfo nodeId="742486944792922351" varName="descriptors" />
       <varInfo nodeId="742486944792922324" varName="hasStubs" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792922316" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="25" endLine="58" endPosition="9">
-      <varInfo nodeId="742486944792922320" varName="m" />
-    </scopeInfo>
+    <scopeInfo nodeId="742486944792921410" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="25" endLine="58" endPosition="9" />
     <scopeInfo nodeId="742486944792921409" fileName="ChooseFromStubsByNameModel.java" startLine="32" startPosition="57" endLine="60" endPosition="0" />
     <scopeInfo nodeId="742486944792820993" fileName="ChooseFromStubsByNameModel.java" startLine="31" startPosition="44" endLine="60" endPosition="7" />
     <scopeInfo nodeId="742486944792820991" fileName="ChooseFromStubsByNameModel.java" startLine="30" startPosition="0" endLine="61" endPosition="3" />
