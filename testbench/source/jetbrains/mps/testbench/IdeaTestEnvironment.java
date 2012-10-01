@@ -13,11 +13,11 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.util.StringUtil;
 import org.apache.log4j.*;
 import org.jdom.JDOMException;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
@@ -91,7 +91,7 @@ public class IdeaTestEnvironment extends Environment {
     super.configureMPS(true);
     //   Value of this property is comma-separated list of plugin IDs intended to load by platform  
     String loadPlugins = "idea.load.plugins.id";
-    if (StringUtils.isEmpty(System.getProperty(loadPlugins))) {
+    if (StringUtil.isEmpty(System.getProperty(loadPlugins))) {
       System.setProperty(loadPlugins, "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make");
     }
     try {

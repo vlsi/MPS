@@ -24,7 +24,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
   </component>
 </module>

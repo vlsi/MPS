@@ -946,9 +946,7 @@
       <varInfo nodeId="1181216848444" varName="thisConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1212605402158" fileName="QueriesGenerated.java" startLine="4295" startPosition="70" endLine="4297" endPosition="5" />
-    <scopeInfo nodeId="1181219582318" fileName="QueriesGenerated.java" startLine="1038" startPosition="150" endLine="1041" endPosition="19">
-      <varInfo nodeId="1181219582319" varName="argument" />
-    </scopeInfo>
+    <scopeInfo nodeId="1181216848516" fileName="QueriesGenerated.java" startLine="1038" startPosition="150" endLine="1041" endPosition="19" />
     <scopeInfo nodeId="1181216536232" fileName="QueriesGenerated.java" startLine="1083" startPosition="151" endLine="1086" endPosition="19" />
     <scopeInfo nodeId="1212605402158" fileName="QueriesGenerated.java" startLine="4303" startPosition="7" endLine="4307" endPosition="31">
       <varInfo nodeId="1212605402158" varName="quotedNode1_2" />
@@ -1014,9 +1012,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4341187996988292516" fileName="QueriesGenerated.java" startLine="1123" startPosition="127" endLine="1127" endPosition="19" />
     <scopeInfo nodeId="4341187996988292514" fileName="QueriesGenerated.java" startLine="1122" startPosition="145" endLine="1128" endPosition="17" />
-    <scopeInfo nodeId="4341187996988292513" fileName="QueriesGenerated.java" startLine="1121" startPosition="86" endLine="1129" endPosition="15">
-      <varInfo nodeId="4341187996988292533" varName="parentClassifier" />
-    </scopeInfo>
+    <scopeInfo nodeId="4341187996988292500" fileName="QueriesGenerated.java" startLine="1121" startPosition="86" endLine="1129" endPosition="15" />
     <scopeInfo nodeId="1218491527255" fileName="QueriesGenerated.java" startLine="1117" startPosition="35" endLine="1131" endPosition="26">
       <varInfo nodeId="4341187996988253488" varName="classifier" />
       <varInfo nodeId="4341187996988177213" varName="result" />
@@ -2925,7 +2921,7 @@
     <nodeInfo nodeId="600115726757809749" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="26" startPosition="5" endLine="27" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8029744757020229025" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="27" startPosition="48" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="600115726757809897" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="27" startPosition="203" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2119160620185679035" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="30" startPosition="39" endLine="31" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2119160620185679035" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="30" startPosition="39" endLine="31" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8029744757020228988" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="30" startPosition="39" endLine="31" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8029744757020228976" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="33" startPosition="19" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2119160620185679167" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="34" startPosition="34" endLine="35" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2958,11 +2954,13 @@
     <nodeInfo nodeId="2119160620185679033" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="29" startPosition="104" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8029744757020228986" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="29" startPosition="169" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2119160620185679156" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="33" startPosition="15" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5426409147633948502" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="40" startPosition="72" endLine="44" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8029744757020496323" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="60" startPosition="189" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2119160620185679024" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="28" startPosition="104" endLine="33" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5948027493683405579" fileName="BL_CopyPasteHandlers_CopyPreProcessor_0.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="preProcesNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8029744757020496250" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="51" startPosition="67" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="8029744757020228974" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="28" startPosition="0" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5426409147633948502" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_nqjmzy_a0a0a0a0a0a0e0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="8029744757020496281" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="64" startPosition="28" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8029744757020496279" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="59" startPosition="85" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8029744757020496276" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="58" startPosition="0" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -2974,7 +2972,7 @@
     <scopeInfo nodeId="1260466273709986259" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="18" startPosition="39" endLine="19" endPosition="114" />
     <scopeInfo nodeId="5948027493683148075" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="23" startPosition="39" endLine="24" endPosition="108" />
     <scopeInfo nodeId="7667708318090841483" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="24" startPosition="41" endLine="25" endPosition="13" />
-    <scopeInfo nodeId="2119160620185679034" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="30" startPosition="39" endLine="31" endPosition="112" />
+    <scopeInfo nodeId="2119160620185679034" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="30" startPosition="39" endLine="31" endPosition="132" />
     <scopeInfo nodeId="8029744757020228975" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="33" startPosition="19" endLine="34" endPosition="13" />
     <scopeInfo nodeId="8029744757020229016" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="37" startPosition="34" endLine="38" endPosition="13" />
     <scopeInfo nodeId="8029744757020496251" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="55" startPosition="12" endLine="56" endPosition="73" />
@@ -2998,6 +2996,7 @@
     <scopeInfo nodeId="8029744757020228986" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="29" startPosition="169" endLine="33" endPosition="0">
       <varInfo nodeId="8029744757020228986" varName="it" />
     </scopeInfo>
+    <scopeInfo nodeId="5426409147633948502" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="40" startPosition="72" endLine="44" endPosition="6" />
     <scopeInfo nodeId="8029744757020496323" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="60" startPosition="189" endLine="64" endPosition="0">
       <varInfo nodeId="8029744757020496323" varName="it" />
     </scopeInfo>
@@ -3007,6 +3006,10 @@
     </scopeInfo>
     <scopeInfo nodeId="8029744757020496250" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="51" startPosition="67" endLine="57" endPosition="9">
       <varInfo nodeId="8029744757020496257" varName="clazz" />
+    </scopeInfo>
+    <scopeInfo nodeId="5426409147633948502" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="5426409147633948502" varName="a" />
+      <varInfo nodeId="5426409147633948502" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="8029744757020496280" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="64" startPosition="28" endLine="72" endPosition="18" />
     <scopeInfo nodeId="8029744757020496278" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="59" startPosition="85" endLine="73" endPosition="11" />
@@ -3038,7 +3041,7 @@
       <varInfo nodeId="5948027493683148075" varName="pastedNode" />
     </scopeInfo>
     <unitInfo nodeId="5948027493683405579" fileName="BL_CopyPasteHandlers_CopyPreProcessor_0.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_CopyPreProcessor_0" />
-    <unitInfo nodeId="1260466273709986259" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_0" />
+    <unitInfo nodeId="1260466273709986259" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_0" />
     <unitInfo nodeId="2119160620185679033" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="29" startPosition="81" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_0$1" />
     <unitInfo nodeId="5948027493683148075" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1" />
     <unitInfo nodeId="8029744757020228986" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="29" startPosition="146" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$1" />

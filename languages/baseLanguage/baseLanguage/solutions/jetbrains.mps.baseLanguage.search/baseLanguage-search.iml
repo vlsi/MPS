@@ -16,7 +16,6 @@
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="Annotations" level="project" />

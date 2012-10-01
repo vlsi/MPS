@@ -62,7 +62,7 @@ import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
@@ -444,7 +444,7 @@ public class ChangesManagerTest {
   }
 
   private String getChangeSetString(List<ModelChange> modelChanges) {
-    return StringUtils.join(ListSequence.fromList(modelChanges).select(new ISelector<ModelChange, String>() {
+    return IterableUtils.join(ListSequence.fromList(modelChanges).select(new ISelector<ModelChange, String>() {
       public String select(ModelChange c) {
         return c.toString();
       }
@@ -452,7 +452,7 @@ public class ChangesManagerTest {
       public String select(String s) {
         return s;
       }
-    }, true).toListSequence(), "|");
+    }, true), "|");
   }
 
   private void assertChangeSetIsCorrect(final ChangeSet changeSet) {
