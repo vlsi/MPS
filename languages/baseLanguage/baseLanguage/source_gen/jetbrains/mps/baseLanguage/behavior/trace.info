@@ -2253,7 +2253,7 @@
     <scopeInfo nodeId="6699851228396682176" fileName="Classifier_Behavior.java" startLine="312" startPosition="12" endLine="313" endPosition="106" />
     <scopeInfo nodeId="8967654016644708010" fileName="Classifier_Behavior.java" startLine="329" startPosition="75" endLine="330" endPosition="47" />
     <scopeInfo nodeId="4108288078926480243" fileName="Classifier_Behavior.java" startLine="332" startPosition="24" endLine="333" endPosition="56" />
-    <scopeInfo nodeId="2832018561209150554" fileName="Classifier_Behavior.java" startLine="341" startPosition="122" endLine="342" endPosition="71" />
+    <scopeInfo nodeId="229277139747537792" fileName="Classifier_Behavior.java" startLine="341" startPosition="122" endLine="342" endPosition="71" />
     <scopeInfo nodeId="5967160216353655816" fileName="Classifier_Behavior.java" startLine="346" startPosition="33" endLine="347" endPosition="156" />
     <scopeInfo nodeId="3050821798734721025" fileName="Classifier_Behavior.java" startLine="348" startPosition="16" endLine="349" endPosition="60" />
     <scopeInfo nodeId="7497677991178027472" fileName="Classifier_Behavior.java" startLine="356" startPosition="35" endLine="357" endPosition="219" />
@@ -3321,7 +3321,9 @@
     <scopeInfo nodeId="1213877315889" fileName="ClassifierType_Behavior.java" startLine="71" startPosition="82" endLine="76" endPosition="75">
       <varInfo nodeId="1213877315891" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="2817265908000529962" fileName="ClassifierType_Behavior.java" startLine="193" startPosition="102" endLine="198" endPosition="7" />
+    <scopeInfo nodeId="2817265908000610197" fileName="ClassifierType_Behavior.java" startLine="193" startPosition="102" endLine="198" endPosition="7">
+      <varInfo nodeId="2817265908000610201" varName="parameter" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877315813" fileName="ClassifierType_Behavior.java" startLine="210" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="1213877315813" varName="thisNode" />
     </scopeInfo>
@@ -5852,7 +5854,9 @@
     <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1213877352267" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1447667470349157986" fileName="ArrayType_Behavior.java" startLine="51" startPosition="137" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200578" fileName="ArrayType_Behavior.java" startLine="51" startPosition="137" endLine="56" endPosition="9">
+      <varInfo nodeId="1447667470349200579" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1213877352267" varName="thisNode" />
     </scopeInfo>
@@ -6299,7 +6303,9 @@
     <scopeInfo nodeId="4892662966716545705" fileName="ClassConcept_Behavior.java" startLine="240" startPosition="9" endLine="246" endPosition="9">
       <varInfo nodeId="4892662966716545708" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4892662966716545627" fileName="ClassConcept_Behavior.java" startLine="247" startPosition="102" endLine="253" endPosition="9" />
+    <scopeInfo nodeId="4892662966716545810" fileName="ClassConcept_Behavior.java" startLine="247" startPosition="102" endLine="253" endPosition="9">
+      <varInfo nodeId="4892662966716545829" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="387" startPosition="206" endLine="393" endPosition="7">
       <varInfo nodeId="8008512149545173446" varName="param" />
     </scopeInfo>
@@ -6627,7 +6633,7 @@
     <scopeInfo nodeId="2866018809101869435" fileName="ConceptFunction_Behavior.java" startLine="101" startPosition="37" endLine="102" endPosition="28" />
     <scopeInfo nodeId="2866018809101869442" fileName="ConceptFunction_Behavior.java" startLine="103" startPosition="12" endLine="104" endPosition="97" />
     <scopeInfo nodeId="2866018809101869464" fileName="ConceptFunction_Behavior.java" startLine="110" startPosition="34" endLine="111" endPosition="30" />
-    <scopeInfo nodeId="2832018561209150700" fileName="ConceptFunction_Behavior.java" startLine="125" startPosition="124" endLine="126" endPosition="32" />
+    <scopeInfo nodeId="2832018561209150695" fileName="ConceptFunction_Behavior.java" startLine="125" startPosition="124" endLine="126" endPosition="32" />
     <scopeInfo nodeId="2832018561209150695" fileName="ConceptFunction_Behavior.java" startLine="128" startPosition="120" endLine="129" endPosition="32" />
     <scopeInfo nodeId="1213877374431" fileName="ConceptFunction_Behavior.java" startLine="155" startPosition="136" endLine="156" endPosition="289" />
     <scopeInfo nodeId="1213877374431" fileName="ConceptFunction_Behavior.java" startLine="159" startPosition="116" endLine="160" endPosition="276" />
@@ -7361,11 +7367,11 @@
     <nodeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="20" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="17" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="1228124415662" fileName="AnnotationInstance_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="6694311595176645025" fileName="AnnotationInstance_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="47" />
+    <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="47" />
     <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="42" endLine="17" endPosition="0">
       <varInfo nodeId="1213877419060" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="31" endPosition="10" />
+    <scopeInfo nodeId="6694311595176645028" fileName="AnnotationInstance_Behavior.java" startLine="27" startPosition="128" endLine="31" endPosition="10" />
     <scopeInfo nodeId="6694311595176645020" fileName="AnnotationInstance_Behavior.java" startLine="21" startPosition="5" endLine="32" endPosition="7">
       <varInfo nodeId="6694311595176645020" varName="concept_c0a" />
     </scopeInfo>
@@ -10875,9 +10881,7 @@
     <scopeInfo nodeId="1220005182656" fileName="VariableArityType_Behavior.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1220005182656" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2251110901304794544" fileName="VariableArityType_Behavior.java" startLine="29" startPosition="137" endLine="34" endPosition="9">
-      <varInfo nodeId="2251110901304794545" varName="suffix" />
-    </scopeInfo>
+    <scopeInfo nodeId="2251110901304794543" fileName="VariableArityType_Behavior.java" startLine="29" startPosition="137" endLine="34" endPosition="9" />
     <scopeInfo nodeId="2251110901304794541" fileName="VariableArityType_Behavior.java" startLine="28" startPosition="79" endLine="39" endPosition="7" />
     <scopeInfo nodeId="8426011552597617131" fileName="VariableArityType_Behavior.java" startLine="64" startPosition="9" endLine="75" endPosition="11">
       <varInfo nodeId="8426011552597617131" varName="quotedNode1_4" />
@@ -11605,7 +11609,9 @@
       <varInfo nodeId="1237547325601" varName="thisNode" />
       <varInfo nodeId="5412515780383134228" varName="throwables" />
     </scopeInfo>
-    <scopeInfo nodeId="5412515780383112987" fileName="Statement_Behavior.java" startLine="68" startPosition="141" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="5412515780383112988" fileName="Statement_Behavior.java" startLine="68" startPosition="141" endLine="73" endPosition="7">
+      <varInfo nodeId="5412515780383113009" varName="throwable" />
+    </scopeInfo>
     <scopeInfo nodeId="1237547325601" fileName="Statement_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5412515780383134680" varName="ignoreMayBeThrowables" />
       <varInfo nodeId="1237547325601" varName="thisNode" />
@@ -12235,9 +12241,7 @@
       <varInfo nodeId="2496361171403550962" varName="callerConceptFqName" />
       <varInfo nodeId="2496361171403550962" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8200806759315884284" fileName="ForStatement_Behavior.java" startLine="35" startPosition="68" endLine="41" endPosition="11">
-      <varInfo nodeId="8200806759315884287" varName="variable" />
-    </scopeInfo>
+    <scopeInfo nodeId="8200806759316031702" fileName="ForStatement_Behavior.java" startLine="35" startPosition="68" endLine="41" endPosition="11" />
     <scopeInfo nodeId="8200806759316031695" fileName="ForStatement_Behavior.java" startLine="33" startPosition="64" endLine="44" endPosition="9" />
     <scopeInfo nodeId="2832018561209150738" fileName="ForStatement_Behavior.java" startLine="31" startPosition="111" endLine="46" endPosition="94">
       <varInfo nodeId="2832018561209150770" varName="variables" />
@@ -12744,7 +12748,9 @@
     <scopeInfo nodeId="4313092516462065717" fileName="UsingStatement_Behavior.java" startLine="10" startPosition="38" endLine="13" endPosition="0">
       <varInfo nodeId="4313092516462065717" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4313092516462065740" fileName="UsingStatement_Behavior.java" startLine="15" startPosition="35" endLine="18" endPosition="7" />
+    <scopeInfo nodeId="4313092516462065769" fileName="UsingStatement_Behavior.java" startLine="15" startPosition="35" endLine="18" endPosition="7">
+      <varInfo nodeId="4313092516462065770" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4313092516462065723" fileName="UsingStatement_Behavior.java" startLine="14" startPosition="152" endLine="20" endPosition="164" />
     <scopeInfo nodeId="4313092516462065717" fileName="UsingStatement_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4313092516462065727" varName="ignoreMayBeThrowables" />
@@ -14576,15 +14582,15 @@
       <varInfo nodeId="1066446677183245505" varName="parameterType_it" />
       <varInfo nodeId="1066446677183245505" varName="parameterType_var" />
     </scopeInfo>
-    <scopeInfo nodeId="9103527268106341980" fileName="ResolveUtil.java" startLine="48" startPosition="93" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="9103527268106341981" fileName="ResolveUtil.java" startLine="48" startPosition="93" endLine="60" endPosition="7">
+      <varInfo nodeId="9103527268106342042" varName="typeVar" />
+    </scopeInfo>
     <scopeInfo nodeId="9103527268106342061" fileName="ResolveUtil.java" startLine="65" startPosition="94" endLine="77" endPosition="18">
       <varInfo nodeId="9103527268106342077" varName="params" />
       <varInfo nodeId="9103527268106342063" varName="result" />
       <varInfo nodeId="9103527268106342069" varName="varRefs" />
     </scopeInfo>
-    <scopeInfo nodeId="9103527268106342417" fileName="ResolveUtil.java" startLine="145" startPosition="38" endLine="157" endPosition="7">
-      <varInfo nodeId="9103527268106342471" varName="varRef" />
-    </scopeInfo>
+    <scopeInfo nodeId="9103527268106342416" fileName="ResolveUtil.java" startLine="145" startPosition="38" endLine="157" endPosition="7" />
     <scopeInfo nodeId="9103527268106342458" fileName="ResolveUtil.java" startLine="231" startPosition="0" endLine="244" endPosition="0" />
     <scopeInfo nodeId="9103527268106341979" fileName="ResolveUtil.java" startLine="47" startPosition="149" endLine="61" endPosition="5">
       <varInfo nodeId="9103527268106342048" varName="paramType" />
