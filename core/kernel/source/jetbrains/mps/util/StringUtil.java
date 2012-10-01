@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,21 +15,29 @@
  */
 package jetbrains.mps.util;
 
-public class EqualUtil {
+/**
+ * evgeny, 10/1/12
+ */
+public class StringUtil {
 
-  public static boolean equals(Object o1, Object o2) {
-    if (o1 == o2) return true;
-    if (o1 == null || o2 == null) return false;
-    return o1.equals(o2);
+  private StringUtil() {
   }
 
-  public static boolean equalsIgnoreCase(String s1, String s2) {
-    return s1 == null ? s2 == null : s1.equalsIgnoreCase(s2);
+  public static int compare(String left, String right) {
+    //noinspection StringEquality
+    if (left == right) {
+      return 0;
+    }
+    if (left == null) {
+      return -1;
+    }
+    if (right == null) {
+      return 1;
+    }
+    return left.compareTo(right);
   }
 
-  public static int hashCode(Object o) {
-    if (o == null) return 0;
-    return o.hashCode();
+  public static boolean isEmpty(String s) {
+    return s == null || s.length() == 0;
   }
-
 }

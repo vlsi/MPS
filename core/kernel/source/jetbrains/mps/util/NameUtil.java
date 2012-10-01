@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -203,7 +202,7 @@ public class NameUtil {
   }
 
   public static String multiWordDecapitalize(String s) {
-    if (StringUtils.isEmpty(s)) {
+    if (StringUtil.isEmpty(s)) {
       return s;
     }
     StringBuilder result = new StringBuilder(s.length());
@@ -216,7 +215,7 @@ public class NameUtil {
 
   // ----- Pluralize/singularize utils -----
   public static String pluralize(String singular) {
-    if (StringUtils.isEmpty(singular)) return singular;
+    if (StringUtil.isEmpty(singular)) return singular;
     // This condition is to distinguish "berry"->"berries" and "array"->"arrays"
     if (singular.endsWith("y") && singular.length() > 1
       && isConsonant(singular.charAt(singular.length() - 2))) {
@@ -231,7 +230,7 @@ public class NameUtil {
   }
 
   public static String singularize(String plural) {
-    if (StringUtils.isEmpty(plural)) return plural;
+    if (StringUtil.isEmpty(plural)) return plural;
 
     if (plural.endsWith("ies")) {
       return plural.substring(0, plural.length() - 3) + "y";
@@ -374,7 +373,7 @@ public class NameUtil {
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
-    if (StringUtils.isEmpty(namespace)) {
+    if (StringUtil.isEmpty(namespace)) {
       return name;
     }
     return namespace + '.' + name;
@@ -560,6 +559,9 @@ public class NameUtil {
   public static String getPropertyNameFromGetterOrSetter(String name) {
     assert name.startsWith("get") || name.startsWith("set");
     String propertyName = name.substring(3);
-    return StringUtils.uncapitalize(propertyName);
+    if (propertyName.isEmpty()) return propertyName;
+    char[] result = propertyName.toCharArray();
+    result[0] = Character.toLowerCase(result[0]);
+    return new String(result);
   }
 }

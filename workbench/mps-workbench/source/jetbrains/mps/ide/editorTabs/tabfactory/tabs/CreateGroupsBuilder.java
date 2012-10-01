@@ -18,16 +18,16 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.relations.RelationComparator;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.relations.RelationComparator;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -76,7 +76,7 @@ public class CreateGroupsBuilder {
 
   private static String getConceptAlias(SNode concept) {
     String alias = SNodeUtil.getConceptAlias(concept);
-    if (StringUtils.isEmpty(alias)) {
+    if (StringUtil.isEmpty(alias)) {
       return concept.getName();
     } else {
       return alias;

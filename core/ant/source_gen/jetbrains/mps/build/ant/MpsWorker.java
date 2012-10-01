@@ -12,7 +12,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.apache.commons.lang.StringUtils;
 import org.apache.tools.ant.BuildException;
 import java.util.Set;
 import java.io.File;
@@ -152,7 +151,9 @@ public abstract class MpsWorker {
 
   protected StringBuffer formatErrorsReport(String taskName) {
     StringBuffer sb = new StringBuffer();
-    sb.append(StringUtils.repeat("*", 100));
+    for (int i = 0; i < 100; i++) {
+      sb.append('*');
+    }
     sb.append("\n");
     sb.append(myErrors.size());
     sb.append(" errors during " + taskName + ":\n");
@@ -160,7 +161,9 @@ public abstract class MpsWorker {
       sb.append(error);
       sb.append("\n");
     }
-    sb.append(StringUtils.repeat("*", 100));
+    for (int i = 0; i < 100; i++) {
+      sb.append('*');
+    }
     return sb;
   }
 

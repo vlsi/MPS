@@ -21,13 +21,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import org.apache.commons.lang.builder.CompareToBuilder;
+import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import java.awt.Component;
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class IntentionsPreferencesPage implements Configurable {
   private List<IntentionEnabledCheckBox> myCheckBoxes = null;
@@ -88,10 +89,9 @@ public class IntentionsPreferencesPage implements Configurable {
     Collections.sort(allIntentions, new Comparator<Intention>() {
       @Override
       public int compare(Intention o1, Intention o2) {
-        return new CompareToBuilder()
-          .append(o1.getClass().getPackage().getName(), o2.getClass().getPackage().getName())
-          .append(o1.getClass().getSimpleName(), o2.getClass().getSimpleName())
-          .toComparison();
+        int result = StringUtil.compare(o1.getClass().getPackage().getName(), o2.getClass().getPackage().getName());
+        if (result != 0) return result;
+        return StringUtil.compare(o1.getClass().getSimpleName(), o2.getClass().getSimpleName());
       }
     });
     for (Intention intention : allIntentions) {
