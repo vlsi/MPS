@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -53,6 +56,19 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
             ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Constraints.QuotationClass_lb7xg4_a0a0a0a0b0a0a0a0b0a1a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
             ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Constraints.QuotationClass_lb7xg4_a0a0a0a0c0a0a0a0b0a1a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
             ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Constraints.QuotationClass_lb7xg4_a0a0a0a0d0a0a0a0b0a1a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+
+            // add MPSDataKeys if mps.workbench is imported 
+            for (SModelDescriptor importedModel : SModelOperations.allImportedModels(_context.getModel(), operationContext.getScope())) {
+              if (importedModel.getLongName().equals("jetbrains.mps.workbench")) {
+                for (SNode root : importedModel.getSModel().roots()) {
+                  if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && "MPSDataKeys".equals(SPropertyOperations.getString(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "name"))) {
+                    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+                  }
+                }
+                importedModel.getSModel().roots();
+              }
+            }
+
             return dataKeys;
           }
 
