@@ -74,10 +74,10 @@
       <varInfo nodeId="397101727194120998" varName="nodes" />
       <varInfo nodeId="397101727194120973" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
-    <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="28" startPosition="38" endLine="54" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
     <unitInfo nodeId="397101727194124269" fileName="NodeChooserDialog.java" startLine="31" startPosition="19" endLine="34" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
     <unitInfo nodeId="397101727194137596" fileName="NodeChooserDialog.java" startLine="56" startPosition="25" endLine="60" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
+    <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="28" startPosition="38" endLine="54" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
+    <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
   </root>
 </debugInfo>
 

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MessageHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.MessageHolder_BehaviorDescriptor" />
+  <unitInfo fileName="ITestable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
+  <unitInfo fileName="ITestMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
+  <unitInfo fileName="ITestCase_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
   <unitInfo fileName="AfterTest_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AfterTest_BehaviorDescriptor" />
   <unitInfo fileName="AssertEquals_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertEquals_BehaviorDescriptor" />
+  <unitInfo fileName="AssertSame_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertSame_BehaviorDescriptor" />
+  <unitInfo fileName="BeforeTest_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
   <unitInfo fileName="AssertFalse_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />
   <unitInfo fileName="AssertInNotNull_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
   <unitInfo fileName="AssertIsNull_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNull_BehaviorDescriptor" />
-  <unitInfo fileName="AssertSame_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertSame_BehaviorDescriptor" />
   <unitInfo fileName="AssertThrows_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertThrows_BehaviorDescriptor" />
   <unitInfo fileName="AssertTrue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertTrue_BehaviorDescriptor" />
-  <unitInfo fileName="BTestCase_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
-  <unitInfo fileName="BeforeTest_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BinaryAssert_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BinaryAssert_BehaviorDescriptor" />
   <unitInfo fileName="Fail_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.Fail_BehaviorDescriptor" />
-  <unitInfo fileName="ITestCase_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
-  <unitInfo fileName="ITestMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
-  <unitInfo fileName="ITestable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
-  <unitInfo fileName="MessageHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.MessageHolder_BehaviorDescriptor" />
   <unitInfo fileName="Message_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" />
   <unitInfo fileName="PrepareMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
   <unitInfo fileName="TestMethodList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" />
   <unitInfo fileName="TestMethod_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_BehaviorDescriptor" />
+  <unitInfo fileName="BTestCase_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877238815" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
     <nodeInfo nodeId="1216135819363" fileName="TestMethod_Behavior.java" startLine="24" startPosition="73" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1216135832838" fileName="TestMethod_Behavior.java" startLine="25" startPosition="28" endLine="26" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -80,8 +80,8 @@
       <varInfo nodeId="7727541049306224048" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7727541049306224048" fileName="TestMethod_Behavior.java" startLine="44" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="1213877238815" fileName="TestMethod_Behavior.java" startLine="20" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_Behavior" />
     <unitInfo nodeId="7727541049306224048" fileName="TestMethod_Behavior.java" startLine="41" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_Behavior$QuotationClass_6y0hvj_a0a0c0d" />
+    <unitInfo nodeId="1213877238815" fileName="TestMethod_Behavior.java" startLine="20" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_Behavior" />
   </root>
   <root nodeId="1213877487741" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
     <nodeInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="19" startPosition="33" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4520990320128651400" />
@@ -168,6 +168,9 @@
       <varInfo nodeId="1596174191051133108" varName="annotationInstance" />
     </scopeInfo>
     <scopeInfo nodeId="7691748101595465164" fileName="BTestCase_Behavior.java" startLine="54" startPosition="134" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="7691748101595466420" fileName="BTestCase_Behavior.java" startLine="54" startPosition="134" endLine="59" endPosition="7">
+      <varInfo nodeId="7691748101595466422" varName="annotationInstance" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1213877487741" varName="thisNode" />
     </scopeInfo>
@@ -197,9 +200,9 @@
     <scopeInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="24" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1213877487741" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" />
-    <unitInfo nodeId="8084800926155112048" fileName="BTestCase_Behavior.java" startLine="32" startPosition="184" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior$1" />
     <unitInfo nodeId="8084800926155112057" fileName="BTestCase_Behavior.java" startLine="34" startPosition="108" endLine="38" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior$2" />
+    <unitInfo nodeId="8084800926155112048" fileName="BTestCase_Behavior.java" startLine="32" startPosition="184" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior$1" />
+    <unitInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" />
   </root>
   <root nodeId="1215620458415" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
     <nodeInfo nodeId="1215620458415" fileName="ITestable_Behavior.java" startLine="11" startPosition="33" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3310779261129403089" />

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="InputLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputLang_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor" />
-  <root nodeId="1195168316083">
+  <root nodeId="1195168316083" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1195168316083" fileName="InputRoot.java" startLine="15" startPosition="69" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1195168316083" fileName="InputRoot.java" startLine="16" startPosition="105" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1195168316083" fileName="InputRoot.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -135,7 +135,7 @@
     <scopeInfo nodeId="1195168316083" fileName="InputRoot.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <unitInfo nodeId="1195168316083" fileName="InputRoot.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" />
   </root>
-  <root nodeId="1195169091918">
+  <root nodeId="1195169091918" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1195169091918" fileName="InputNode.java" startLine="15" startPosition="69" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1195169091918" fileName="InputNode.java" startLine="16" startPosition="105" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1195169091918" fileName="InputNode.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -254,7 +254,7 @@
     </scopeInfo>
     <unitInfo nodeId="1195169091918" fileName="InputNode.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode" />
   </root>
-  <root nodeId="1195169251499">
+  <root nodeId="1195169251499" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195169251499" fileName="Option.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -361,10 +361,10 @@
     <scopeInfo nodeId="1195169251499" fileName="Option.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1195169251499" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1195169251499" fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
     <unitInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option_PropertySupport" />
+    <unitInfo nodeId="1195169251499" fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
   </root>
-  <root nodeId="1195171011194">
+  <root nodeId="1195171011194" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1195171011194" fileName="InputNode_A.java" startLine="10" startPosition="44" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1195171011194" fileName="InputNode_A.java" startLine="11" startPosition="107" endLine="12" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OPTION" />
     <nodeInfo nodeId="1195171011194" fileName="InputNode_A.java" startLine="14" startPosition="34" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -401,7 +401,7 @@
     <scopeInfo nodeId="1195171011194" fileName="InputNode_A.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="1195171011194" fileName="InputNode_A.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" />
   </root>
-  <root nodeId="1202242680337">
+  <root nodeId="1202242680337" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -528,10 +528,10 @@
     <scopeInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="55" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1202242680337" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
     <unitInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
+    <unitInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
   </root>
-  <root nodeId="1206459872650">
+  <root nodeId="1206459872650" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1206459872650" fileName="InputNode_B.java" startLine="10" startPosition="46" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1206459872650" fileName="InputNode_B.java" startLine="13" startPosition="34" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1206459872650" fileName="InputNode_B.java" startLine="17" startPosition="66" endLine="18" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -554,7 +554,7 @@
     </scopeInfo>
     <unitInfo nodeId="1206459872650" fileName="InputNode_B.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode_B" />
   </root>
-  <root nodeId="1206462895210">
+  <root nodeId="1206462895210" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1206462895210" fileName="InputNode_C.java" startLine="10" startPosition="46" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1206462895210" fileName="InputNode_C.java" startLine="13" startPosition="34" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1206462895210" fileName="InputNode_C.java" startLine="17" startPosition="66" endLine="18" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -577,7 +577,7 @@
     </scopeInfo>
     <unitInfo nodeId="1206462895210" fileName="InputNode_C.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode_C" />
   </root>
-  <root nodeId="1209146548167">
+  <root nodeId="1209146548167" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1209146548167" fileName="ExpressionToReduceToStatement.java" startLine="11" startPosition="63" endLine="12" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1209146548167" fileName="ExpressionToReduceToStatement.java" startLine="14" startPosition="52" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1209146548167" fileName="ExpressionToReduceToStatement.java" startLine="18" startPosition="84" endLine="19" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -600,7 +600,7 @@
     </scopeInfo>
     <unitInfo nodeId="1209146548167" fileName="ExpressionToReduceToStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement" />
   </root>
-  <root nodeId="1209149421970">
+  <root nodeId="1209149421970" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1209149421970" fileName="InputRootWithStatementList.java" startLine="16" startPosition="86" endLine="17" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1209149421970" fileName="InputRootWithStatementList.java" startLine="17" startPosition="122" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1209149421970" fileName="InputRootWithStatementList.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -718,7 +718,7 @@
     <scopeInfo nodeId="1209149421970" fileName="InputRootWithStatementList.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
     <unitInfo nodeId="1209149421970" fileName="InputRootWithStatementList.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList" />
   </root>
-  <root nodeId="3315811491560119803">
+  <root nodeId="3315811491560119803" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="3315811491560119803" fileName="RefTestClass.java" startLine="16" startPosition="87" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3315811491560119803" fileName="RefTestClass.java" startLine="17" startPosition="108" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="3315811491560119803" fileName="RefTestClass.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -848,7 +848,7 @@
     </scopeInfo>
     <unitInfo nodeId="3315811491560119803" fileName="RefTestClass.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.RefTestClass" />
   </root>
-  <root nodeId="3315811491560119806">
+  <root nodeId="3315811491560119806" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="3315811491560119806" fileName="RefTestMethod.java" startLine="16" startPosition="88" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3315811491560119806" fileName="RefTestMethod.java" startLine="17" startPosition="109" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="3315811491560119806" fileName="RefTestMethod.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -993,7 +993,7 @@
     </scopeInfo>
     <unitInfo nodeId="3315811491560119806" fileName="RefTestMethod.java" startLine="16" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod" />
   </root>
-  <root nodeId="3315811491560119808">
+  <root nodeId="3315811491560119808" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="3315811491560119808" fileName="RefTestParam.java" startLine="15" startPosition="72" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3315811491560119808" fileName="RefTestParam.java" startLine="16" startPosition="108" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="3315811491560119808" fileName="RefTestParam.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1086,7 +1086,7 @@
     </scopeInfo>
     <unitInfo nodeId="3315811491560119808" fileName="RefTestParam.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.RefTestParam" />
   </root>
-  <root nodeId="3315811491560119809">
+  <root nodeId="3315811491560119809" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="3315811491560119809" fileName="RefTestExpression.java" startLine="11" startPosition="52" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3315811491560119809" fileName="RefTestExpression.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3315811491560119809" fileName="RefTestExpression.java" startLine="18" startPosition="72" endLine="19" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1109,7 +1109,7 @@
     </scopeInfo>
     <unitInfo nodeId="3315811491560119809" fileName="RefTestExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression" />
   </root>
-  <root nodeId="3315811491560119815">
+  <root nodeId="3315811491560119815" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="3315811491560119815" fileName="RefTestParamRef.java" startLine="10" startPosition="56" endLine="11" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3315811491560119815" fileName="RefTestParamRef.java" startLine="11" startPosition="111" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DECLARATION" />
     <nodeInfo nodeId="3315811491560119815" fileName="RefTestParamRef.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1143,7 +1143,7 @@
     </scopeInfo>
     <unitInfo nodeId="3315811491560119815" fileName="RefTestParamRef.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef" />
   </root>
-  <root nodeId="3315811491560119817">
+  <root nodeId="3315811491560119817" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="3315811491560119817" fileName="RefTestMethodCall.java" startLine="10" startPosition="58" endLine="11" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3315811491560119817" fileName="RefTestMethodCall.java" startLine="11" startPosition="113" endLine="12" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="METHOD" />
     <nodeInfo nodeId="3315811491560119817" fileName="RefTestMethodCall.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

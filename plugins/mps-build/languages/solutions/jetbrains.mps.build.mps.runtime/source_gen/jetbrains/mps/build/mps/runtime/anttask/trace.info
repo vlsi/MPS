@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="233723665931928285">
+  <root nodeId="233723665931928285" modelId="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)">
     <nodeInfo nodeId="233723665931928291" fileName="ModuleXml.java" startLine="16" startPosition="44" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleRef" />
     <nodeInfo nodeId="233723665931928297" fileName="ModuleXml.java" startLine="17" startPosition="34" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleXmlPath" />
     <nodeInfo nodeId="535979196343143715" fileName="ModuleXml.java" startLine="18" startPosition="38" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInnerText" />
@@ -79,10 +79,10 @@
     </scopeInfo>
     <unitInfo nodeId="233723665931928285" fileName="ModuleXml.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.build.mps.runtime.anttask.ModuleXml" />
   </root>
-  <root nodeId="233723665931928522">
+  <root nodeId="233723665931928522" modelId="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)">
     <unitInfo nodeId="233723665931928522" fileName="antlib.xml" startLine="1" startPosition="0" endLine="4" endPosition="9" unitName="jetbrains.mps.build.mps.runtime.anttask.antlib" />
   </root>
-  <root nodeId="3770557172457097731">
+  <root nodeId="3770557172457097731" modelId="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)">
     <nodeInfo nodeId="4003657351907890371" fileName="MPSTask.java" startLine="30" startPosition="35" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFIGURATION_NAME" />
     <nodeInfo nodeId="4003657351907890375" fileName="MPSTask.java" startLine="31" startPosition="71" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BUILD_NUMBER" />
     <nodeInfo nodeId="3770557172457100547" fileName="MPSTask.java" startLine="32" startPosition="59" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_HOME" />
@@ -366,7 +366,7 @@
     <scopeInfo nodeId="427539573527808137" fileName="MPSTask.java" startLine="171" startPosition="0" endLine="203" endPosition="0" />
     <unitInfo nodeId="3770557172457097731" fileName="MPSTask.java" startLine="30" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.build.mps.runtime.anttask.MPSTask" />
   </root>
-  <root nodeId="6690493898470434339">
+  <root nodeId="6690493898470434339" modelId="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)">
     <nodeInfo nodeId="535979196343168566" fileName="GenModuleXmlWorker.java" startLine="28" startPosition="51" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDENT_WITH" />
     <nodeInfo nodeId="535979196343168494" fileName="GenModuleXmlWorker.java" startLine="29" startPosition="48" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDENT_INNER_XML" />
     <nodeInfo nodeId="6690493898470434345" fileName="GenModuleXmlWorker.java" startLine="32" startPosition="48" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -510,11 +510,11 @@
       <varInfo nodeId="6690493898470501232" varName="module" />
       <varInfo nodeId="6690493898470501230" varName="moduleRef" />
     </scopeInfo>
-    <unitInfo nodeId="6690493898470434339" fileName="GenModuleXmlWorker.java" startLine="28" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker" />
     <unitInfo nodeId="6690493898470434452" fileName="GenModuleXmlWorker.java" startLine="71" startPosition="62" endLine="75" endPosition="5" unitName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker$1" />
     <unitInfo nodeId="2856694665814340547" fileName="GenModuleXmlWorker.java" startLine="119" startPosition="45" endLine="123" endPosition="5" unitName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker$2" />
+    <unitInfo nodeId="6690493898470434339" fileName="GenModuleXmlWorker.java" startLine="28" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker" />
   </root>
-  <root nodeId="7799088097575503432">
+  <root nodeId="7799088097575503432" modelId="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)">
     <nodeInfo nodeId="535979196343218508" fileName="GenModuleXmlTask.java" startLine="14" startPosition="51" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClasspath" />
     <nodeInfo nodeId="7799088097575503554" fileName="GenModuleXmlTask.java" startLine="20" startPosition="57" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6690493898470458932" fileName="GenModuleXmlTask.java" startLine="24" startPosition="59" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -590,7 +590,7 @@
     </scopeInfo>
     <unitInfo nodeId="7799088097575503432" fileName="GenModuleXmlTask.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlTask" />
   </root>
-  <root nodeId="8779166285900255041">
+  <root nodeId="8779166285900255041" modelId="r:80f91b12-d5d0-4cb4-a0ae-c5484358b460(jetbrains.mps.build.mps.runtime.anttask)">
     <nodeInfo nodeId="8779166285900255043" fileName="MPSTaskWorker.java" startLine="6" startPosition="28" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSTaskWorker#()V" />
     <scopeInfo nodeId="8779166285900255046" fileName="MPSTaskWorker.java" startLine="7" startPosition="26" endLine="7" endPosition="26" />
     <scopeInfo nodeId="8779166285900255043" fileName="MPSTaskWorker.java" startLine="6" startPosition="28" endLine="8" endPosition="3" />

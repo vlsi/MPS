@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Outlook_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.outlook.structure.Outlook_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
-  <root nodeId="5608160002100057298">
+  <root nodeId="5608160002100057298" modelId="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)">
     <nodeInfo nodeId="5608160002100057298" fileName="Outlook.java" startLine="16" startPosition="67" endLine="17" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5608160002100057298" fileName="Outlook.java" startLine="17" startPosition="86" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5608160002100057298" fileName="Outlook.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

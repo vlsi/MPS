@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="PlainText_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.plainText.structure.PlainText_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.plainText.structure.StructureAspectDescriptor" />
-  <root nodeId="6528405377109488086">
+  <root nodeId="6528405377109488086" modelId="r:b811cbc0-91e0-4068-a8a4-c569027a39e7(jetbrains.mps.samples.plainText.structure)">
     <nodeInfo nodeId="6528405377109488086" fileName="TextFile.java" startLine="15" startPosition="68" endLine="16" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6528405377109488086" fileName="TextFile.java" startLine="16" startPosition="92" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEXT" />
     <nodeInfo nodeId="6528405377109488086" fileName="TextFile.java" startLine="17" startPosition="43" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />

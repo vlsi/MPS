@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="37" startPosition="108" endLine="48" endPosition="5" unitName="jetbrains.mps.build.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />
+  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <root nodeId="3767587139140991018" modelId="r:baa8d683-513d-4695-bd7b-2c1c3e940d01(jetbrains.mps.build.pluginSolution.plugin)">
     <nodeInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="17" startPosition="35" endLine="18" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFIGURATION_FACTORY_CLASS_NAME" />
     <nodeInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="23" startPosition="102" endLine="24" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -51,8 +51,8 @@
     <scopeInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="3767587139140991018" varName="source" />
     </scopeInfo>
-    <unitInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Producer" />
     <unitInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="29" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Producer$ProducerPart_Node_3e34ca_a" />
+    <unitInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Producer" />
   </root>
   <root nodeId="4468328282078607076" modelId="r:baa8d683-513d-4695-bd7b-2c1c3e940d01(jetbrains.mps.build.pluginSolution.plugin)">
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Factory.java" startLine="10" startPosition="67" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -191,7 +191,9 @@
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="148" startPosition="48" endLine="149" endPosition="76" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="152" startPosition="48" endLine="153" endPosition="119" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Editor.java" startLine="22" startPosition="127" endLine="24" endPosition="26" />
+    <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Editor.java" startLine="47" startPosition="106" endLine="49" endPosition="58" />
     <scopeInfo nodeId="4468328282078708483" fileName="BuildScript_Configuration_Editor.java" startLine="47" startPosition="106" endLine="49" endPosition="58" />
+    <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Editor.java" startLine="52" startPosition="78" endLine="54" endPosition="60" />
     <scopeInfo nodeId="4468328282078708453" fileName="BuildScript_Configuration_Editor.java" startLine="52" startPosition="78" endLine="54" endPosition="60" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="156" startPosition="24" endLine="158" endPosition="5" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="161" startPosition="61" endLine="163" endPosition="19">
@@ -281,11 +283,11 @@
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="67" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="4468328282078607076" varName="element" />
     </scopeInfo>
-    <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="34" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" />
     <unitInfo nodeId="4468328282078706028" fileName="BuildScript_Configuration.java" startLine="39" startPosition="129" endLine="43" endPosition="3" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration$1" />
     <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="156" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration$MyState" />
-    <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Editor.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Editor" />
     <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory" />
+    <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration_Editor.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Editor" />
+    <unitInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="34" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" />
   </root>
   <root nodeId="4468328282078639071" modelId="r:baa8d683-513d-4695-bd7b-2c1c3e940d01(jetbrains.mps.build.pluginSolution.plugin)">
     <nodeInfo nodeId="4468328282078639072" fileName="BuildScript_Kind.java" startLine="26" startPosition="26" endLine="27" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -356,8 +358,8 @@
       <varInfo nodeId="4468328282078639072" varName="shortPath" />
     </scopeInfo>
     <scopeInfo nodeId="4468328282078639072" fileName="BuildScript_Kind.java" startLine="25" startPosition="77" endLine="44" endPosition="0" />
-    <unitInfo nodeId="4468328282078639071" fileName="BuildScript_Kind.java" startLine="24" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Kind" />
     <unitInfo nodeId="4468328282078639072" fileName="BuildScript_Kind.java" startLine="25" startPosition="39" endLine="44" endPosition="3" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Kind$1" />
+    <unitInfo nodeId="4468328282078639071" fileName="BuildScript_Kind.java" startLine="24" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Kind" />
   </root>
   <root nodeId="4468328282078708516" modelId="r:baa8d683-513d-4695-bd7b-2c1c3e940d01(jetbrains.mps.build.pluginSolution.plugin)">
     <nodeInfo nodeId="4468328282078708516" fileName="BuildScript_Configuration_RunProfileState.java" startLine="44" startPosition="173" endLine="45" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -432,10 +434,10 @@
       <varInfo nodeId="4468328282078708516" varName="executor" />
       <varInfo nodeId="4468328282078708516" varName="runner" />
     </scopeInfo>
-    <unitInfo nodeId="4468328282078708516" fileName="BuildScript_Configuration_RunProfileState.java" startLine="38" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState" />
-    <unitInfo nodeId="352677614185351917" fileName="BuildScript_Configuration_RunProfileState.java" startLine="62" startPosition="45" endLine="75" endPosition="5" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState$1" />
     <unitInfo nodeId="3767587139140991001" fileName="BuildScript_Configuration_RunProfileState.java" startLine="69" startPosition="291" endLine="73" endPosition="9" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState$2" />
     <unitInfo nodeId="4468328282078709742" fileName="BuildScript_Configuration_RunProfileState.java" startLine="83" startPosition="118" endLine="87" endPosition="7" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState$2" />
+    <unitInfo nodeId="352677614185351917" fileName="BuildScript_Configuration_RunProfileState.java" startLine="62" startPosition="45" endLine="75" endPosition="5" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState$1" />
+    <unitInfo nodeId="4468328282078708516" fileName="BuildScript_Configuration_RunProfileState.java" startLine="38" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState" />
   </root>
   <root nodeId="6171629945286892181" modelId="r:baa8d683-513d-4695-bd7b-2c1c3e940d01(jetbrains.mps.build.pluginSolution.plugin)">
     <nodeInfo nodeId="6171629945286892181" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />

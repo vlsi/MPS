@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl" />
-  <root nodeId="1209150022679">
+  <root nodeId="1209150022679" modelId="r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)">
     <nodeInfo nodeId="1209150621175" fileName="QueriesGenerated.java" startLine="16" startPosition="146" endLine="17" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209150505329" fileName="QueriesGenerated.java" startLine="20" startPosition="146" endLine="21" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="25" startPosition="66" endLine="26" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
@@ -187,11 +187,11 @@
       <varInfo nodeId="1209150022679" varName="context" />
       <varInfo nodeId="1209150022679" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
-    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="154" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$RootMappingRule0" />
+    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
+    <unitInfo nodeId="1209150022679" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
   </root>
-  <root nodeId="1209150125542">
+  <root nodeId="1209150125542" modelId="r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)">
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="16" startPosition="64" endLine="17" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_lohefm_a0a0" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="17" startPosition="247" endLine="18" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_lohefm_a0a0a1a1" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="18" startPosition="255" endLine="19" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_lohefm_a0a0a1a4a1a1" />

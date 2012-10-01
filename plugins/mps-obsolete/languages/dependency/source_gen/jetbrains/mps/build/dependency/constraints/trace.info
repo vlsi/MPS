@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1224776365671">
+  <root nodeId="1224776365671" modelId="r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)">
     <nodeInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="18" startPosition="88" endLine="19" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_all8lr_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="21" startPosition="52" endLine="22" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="26" startPosition="83" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -34,9 +34,9 @@
       <varInfo nodeId="1224776365671" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints" />
-    <unitInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="28" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints$1" />
     <unitInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints$2" />
+    <unitInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="28" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints$1" />
+    <unitInfo nodeId="1224776365671" fileName="ProjectDescriptionReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints" />
   </root>
 </debugInfo>
 

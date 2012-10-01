@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Jdk7_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.structure.Jdk7_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.structure.StructureAspectDescriptor" />
-  <root nodeId="400642802549924137">
+  <root nodeId="400642802549924137" modelId="r:64af8966-9a33-4cc7-8f2a-fe243f26c38f(jetbrains.mps.baseLanguage.jdk7.structure)">
     <nodeInfo nodeId="400642802549924137" fileName="StringSwitchStatement.java" startLine="11" startPosition="60" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="400642802549924137" fileName="StringSwitchStatement.java" startLine="14" startPosition="44" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="400642802549924137" fileName="StringSwitchStatement.java" startLine="18" startPosition="76" endLine="19" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

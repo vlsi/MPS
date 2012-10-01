@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2613454275903805306">
+  <root nodeId="2613454275903805306" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="2613454275903805306" fileName="AttractsFocusBlock_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2613454275903805308" fileName="AttractsFocusBlock_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2613454275903805308" fileName="AttractsFocusBlock_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -78,7 +78,7 @@
     </scopeInfo>
     <unitInfo nodeId="2613454275903805306" fileName="AttractsFocusBlock_Editor.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.AttractsFocusBlock_Editor" />
   </root>
-  <root nodeId="2613454275903852517">
+  <root nodeId="2613454275903852517" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="2613454275903852517" fileName="VariableDeclarationBlock_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2613454275903852519" fileName="VariableDeclarationBlock_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2613454275903852519" fileName="VariableDeclarationBlock_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -154,7 +154,7 @@
     </scopeInfo>
     <unitInfo nodeId="2613454275903852517" fileName="VariableDeclarationBlock_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationBlock_Editor" />
   </root>
-  <root nodeId="2613454275903920990">
+  <root nodeId="2613454275903920990" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="2613454275903920995" fileName="VariableDeclarationReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2613454275903920990" fileName="VariableDeclarationReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2613454275903920992" fileName="VariableDeclarationReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -262,10 +262,10 @@
       <varInfo nodeId="2613454275903920998" varName="editorContext" />
       <varInfo nodeId="2613454275903920998" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2613454275903920990" fileName="VariableDeclarationReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_Editor" />
     <unitInfo nodeId="2613454275903920996" fileName="VariableDeclarationReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_Editor$_Inline_yti90v_a0a" />
+    <unitInfo nodeId="2613454275903920990" fileName="VariableDeclarationReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_Editor" />
   </root>
-  <root nodeId="3582597462265868789">
+  <root nodeId="3582597462265868789" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="3582597462265868799" fileName="InspectorBlock_Editor.java" startLine="47" startPosition="58" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3582597462265868789" fileName="InspectorBlock_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3582597462265868789" fileName="InspectorBlock_Editor.java" startLine="24" startPosition="82" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -385,7 +385,7 @@
     </scopeInfo>
     <unitInfo nodeId="3582597462265868789" fileName="InspectorBlock_Editor.java" startLine="19" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.InspectorBlock_Editor" />
   </root>
-  <root nodeId="3702466984434609596">
+  <root nodeId="3702466984434609596" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="3702466984434609596" fileName="TestBlockList_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3702466984434609598" fileName="TestBlockList_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3702466984434609598" fileName="TestBlockList_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -531,10 +531,10 @@
       <varInfo nodeId="3702466984434609605" varName="editorContext" />
       <varInfo nodeId="3702466984434609605" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3702466984434609596" fileName="TestBlockList_Editor.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.TestBlockList_Editor" />
     <unitInfo nodeId="3702466984434609605" fileName="TestBlockList_Editor.java" startLine="70" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.TestBlockList_Editor$statementListHandler_mkv9rd_b0" />
+    <unitInfo nodeId="3702466984434609596" fileName="TestBlockList_Editor.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.TestBlockList_Editor" />
   </root>
-  <root nodeId="3702466984434806354">
+  <root nodeId="3702466984434806354" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="3702466984434806354" fileName="IBaseTestBlock_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3702466984434806356" fileName="IBaseTestBlock_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3702466984434806356" fileName="IBaseTestBlock_Editor.java" startLine="17" startPosition="86" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -558,7 +558,7 @@
     </scopeInfo>
     <unitInfo nodeId="3702466984434806354" fileName="IBaseTestBlock_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.IBaseTestBlock_Editor" />
   </root>
-  <root nodeId="3702466984434806358">
+  <root nodeId="3702466984434806358" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="3702466984434806358" fileName="BracesBlock_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8497577741384827846" fileName="BracesBlock_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8497577741384827846" fileName="BracesBlock_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -676,10 +676,10 @@
       <varInfo nodeId="8497577741384754885" varName="elementNode" />
       <varInfo nodeId="8497577741384754885" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="3702466984434806358" fileName="BracesBlock_Editor.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.BracesBlock_Editor" />
     <unitInfo nodeId="8497577741384754885" fileName="BracesBlock_Editor.java" startLine="41" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.BracesBlock_Editor$statementListHandler_nhnpdb_a0" />
+    <unitInfo nodeId="3702466984434806358" fileName="BracesBlock_Editor.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.BracesBlock_Editor" />
   </root>
-  <root nodeId="3702466984434811406">
+  <root nodeId="3702466984434811406" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="3702466984434811406" fileName="StubBlock_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3702466984434811408" fileName="StubBlock_Editor.java" startLine="19" startPosition="87" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3702466984434811408" fileName="StubBlock_Editor.java" startLine="20" startPosition="90" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -709,7 +709,7 @@
     </scopeInfo>
     <unitInfo nodeId="3702466984434811406" fileName="StubBlock_Editor.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.StubBlock_Editor" />
   </root>
-  <root nodeId="4965160547087302662">
+  <root nodeId="4965160547087302662" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="4965160547087302664" fileName="NotEditableVaraileReference_Editor.java" startLine="38" startPosition="58" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4965160547087302662" fileName="NotEditableVaraileReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4965160547087302664" fileName="NotEditableVaraileReference_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -823,10 +823,10 @@
       <varInfo nodeId="4965160547087302667" varName="editorContext" />
       <varInfo nodeId="4965160547087302667" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4965160547087302662" fileName="NotEditableVaraileReference_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_Editor" />
     <unitInfo nodeId="4965160547087302665" fileName="NotEditableVaraileReference_Editor.java" startLine="50" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_Editor$_Inline_836mu1_a0a" />
+    <unitInfo nodeId="4965160547087302662" fileName="NotEditableVaraileReference_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_Editor" />
   </root>
-  <root nodeId="5110219550149792115">
+  <root nodeId="5110219550149792115" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="5110219550149792115" fileName="SideTranformWrapper_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -980,7 +980,7 @@
     </scopeInfo>
     <unitInfo nodeId="5110219550149792115" fileName="SideTranformWrapper_Editor.java" startLine="20" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.SideTranformWrapper_Editor" />
   </root>
-  <root nodeId="5110219550150152699">
+  <root nodeId="5110219550150152699" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="5110219550150152699" fileName="SideTransformWrapperActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5110219550150152699" fileName="SideTransformWrapperActionMap.java" startLine="17" startPosition="94" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="5110219550150152699" fileName="SideTransformWrapperActionMap.java" startLine="20" startPosition="70" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1009,10 +1009,10 @@
       <varInfo nodeId="5110219550150152699" varName="editorContext" />
       <varInfo nodeId="5110219550150152699" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5110219550150152699" fileName="SideTransformWrapperActionMap.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.SideTransformWrapperActionMap" />
     <unitInfo nodeId="5110219550150152699" fileName="SideTransformWrapperActionMap.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.SideTransformWrapperActionMap$SideTransformWrapperActionMap_RIGHT_TRANSFORM" />
+    <unitInfo nodeId="5110219550150152699" fileName="SideTransformWrapperActionMap.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.SideTransformWrapperActionMap" />
   </root>
-  <root nodeId="5110219550150295501">
+  <root nodeId="5110219550150295501" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="5110219550150295501" fileName="IntegerLiteral_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5110219550150295503" fileName="IntegerLiteral_Editor.java" startLine="19" startPosition="87" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5110219550150295503" fileName="IntegerLiteral_Editor.java" startLine="20" startPosition="82" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1055,7 +1055,7 @@
     </scopeInfo>
     <unitInfo nodeId="5110219550150295501" fileName="IntegerLiteral_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.IntegerLiteral_Editor" />
   </root>
-  <root nodeId="5110219550150400715">
+  <root nodeId="5110219550150400715" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="5110219550150400721" fileName="BinaryExpression_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5110219550150400725" fileName="BinaryExpression_Editor.java" startLine="52" startPosition="58" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5110219550150400715" fileName="BinaryExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1184,7 +1184,7 @@
     </scopeInfo>
     <unitInfo nodeId="5110219550150400715" fileName="BinaryExpression_Editor.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.BinaryExpression_Editor" />
   </root>
-  <root nodeId="5633355289409839144">
+  <root nodeId="5633355289409839144" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="5633355289409839144" fileName="NonEmptyProperty_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5633355289409839144" fileName="NonEmptyProperty_Editor.java" startLine="22" startPosition="82" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5633355289409839146" fileName="NonEmptyProperty_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1356,7 +1356,7 @@
     </scopeInfo>
     <unitInfo nodeId="5633355289409839144" fileName="NonEmptyProperty_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.NonEmptyProperty_Editor" />
   </root>
-  <root nodeId="6859592652550843067">
+  <root nodeId="6859592652550843067" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="6859592652550843067" fileName="VerticalLayoutBlockList_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6859592652550843076" fileName="VerticalLayoutBlockList_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6859592652550843076" fileName="VerticalLayoutBlockList_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1486,10 +1486,10 @@
       <varInfo nodeId="6859592652550843072" varName="elementNode" />
       <varInfo nodeId="6859592652550843072" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="6859592652550843067" fileName="VerticalLayoutBlockList_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor" />
     <unitInfo nodeId="6859592652550843072" fileName="VerticalLayoutBlockList_Editor.java" startLine="56" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor$statementListHandler_s783cw_a1a" />
+    <unitInfo nodeId="6859592652550843067" fileName="VerticalLayoutBlockList_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor" />
   </root>
-  <root nodeId="7301049412170117872">
+  <root nodeId="7301049412170117872" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="7301049412170117872" fileName="TestLanguage_StyleSheet_StyleSheet.java" startLine="11" startPosition="59" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7301049412170117872" fileName="TestLanguage_StyleSheet_StyleSheet.java" startLine="12" startPosition="34" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7301049412170117872" fileName="TestLanguage_StyleSheet_StyleSheet.java" startLine="13" startPosition="58" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1502,7 +1502,7 @@
     </scopeInfo>
     <unitInfo nodeId="7301049412170117872" fileName="TestLanguage_StyleSheet_StyleSheet.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.TestLanguage_StyleSheet_StyleSheet" />
   </root>
-  <root nodeId="7658393498702771297">
+  <root nodeId="7658393498702771297" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="7658393498702861284" fileName="ReferenceAnnotataion_Editor.java" startLine="51" startPosition="67" endLine="51" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7658393498702771297" fileName="ReferenceAnnotataion_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7658393498702771299" fileName="ReferenceAnnotataion_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1584,7 +1584,7 @@
     </scopeInfo>
     <unitInfo nodeId="7658393498702771297" fileName="ReferenceAnnotataion_Editor.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.editor.ReferenceAnnotataion_Editor" />
   </root>
-  <root nodeId="8497577741385080310">
+  <root nodeId="8497577741385080310" modelId="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
     <nodeInfo nodeId="8497577741385080310" fileName="BracesStubBlock_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8497577741385080316" fileName="BracesStubBlock_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8497577741385080316" fileName="BracesStubBlock_Editor.java" startLine="21" startPosition="99" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

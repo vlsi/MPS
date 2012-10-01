@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3432969378036014081">
+  <root nodeId="3432969378036014081" modelId="r:535dc87e-b3d8-417a-a023-34eabbcb3ec6(jetbrains.mps.debug.runtime.java.programState)">
     <nodeInfo nodeId="3432969378036015178" fileName="JavaWatchablesCategory.java" startLine="7" startPosition="64" endLine="8" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCAL_VARIABLE" />
     <nodeInfo nodeId="3432969378036015185" fileName="JavaWatchablesCategory.java" startLine="8" startPosition="106" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THIS_OBJECT" />
     <nodeInfo nodeId="3432969378036015192" fileName="JavaWatchablesCategory.java" startLine="9" startPosition="93" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CALCULATED_VALUE" />

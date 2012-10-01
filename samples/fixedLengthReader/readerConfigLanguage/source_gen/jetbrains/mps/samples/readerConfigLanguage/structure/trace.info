@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ReaderConfigLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfigLanguage_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.StructureAspectDescriptor" />
-  <root nodeId="1116534870455">
+  <root nodeId="1116534870455" modelId="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)">
     <nodeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="15" startPosition="79" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="16" startPosition="114" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -121,7 +121,7 @@
     </scopeInfo>
     <unitInfo nodeId="1116534870455" fileName="ReaderConfiguration.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" />
   </root>
-  <root nodeId="1116534914096">
+  <root nodeId="1116534914096" modelId="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)">
     <nodeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="15" startPosition="67" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="16" startPosition="102" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CODE" />
     <nodeInfo nodeId="1116534914096" fileName="Mapping.java" startLine="17" startPosition="43" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET_CLASS" />
@@ -262,7 +262,7 @@
     </scopeInfo>
     <unitInfo nodeId="1116534914096" fileName="Mapping.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.structure.Mapping" />
   </root>
-  <root nodeId="1116534962441">
+  <root nodeId="1116534962441" modelId="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)">
     <nodeInfo nodeId="1116534962441" fileName="Field.java" startLine="15" startPosition="65" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1116534962441" fileName="Field.java" startLine="16" startPosition="100" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1116534962441" fileName="Field.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

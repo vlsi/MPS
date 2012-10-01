@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="AgreementLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.AgreementLanguage_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.StructureAspectDescriptor" />
-  <root nodeId="1111790951422">
+  <root nodeId="1111790951422" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111790951422" fileName="Plan.java" startLine="15" startPosition="64" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111790951422" fileName="Plan.java" startLine="16" startPosition="96" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1111790951422" fileName="Plan.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -147,7 +147,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111790951422" fileName="Plan.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Plan" />
   </root>
-  <root nodeId="1111791020814">
+  <root nodeId="1111791020814" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111791020814" fileName="Value.java" startLine="15" startPosition="65" endLine="16" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111791020814" fileName="Value.java" startLine="16" startPosition="97" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1111791020814" fileName="Value.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -280,7 +280,7 @@
     <scopeInfo nodeId="1111791020814" fileName="Value.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <unitInfo nodeId="1111791020814" fileName="Value.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Value" />
   </root>
-  <root nodeId="1111791038612">
+  <root nodeId="1111791038612" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111791038612" fileName="Event.java" startLine="13" startPosition="40" endLine="14" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111791038612" fileName="Event.java" startLine="14" startPosition="97" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TAXABLE" />
     <nodeInfo nodeId="1111791038612" fileName="Event.java" startLine="15" startPosition="49" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
@@ -354,7 +354,7 @@
     <scopeInfo nodeId="1111791038612" fileName="Event.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="1111791038612" fileName="Event.java" startLine="13" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Event" />
   </root>
-  <root nodeId="1111792102248">
+  <root nodeId="1111792102248" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111792102248" fileName="Quantity.java" startLine="12" startPosition="40" endLine="13" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111792102248" fileName="Quantity.java" startLine="13" startPosition="100" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNIT" />
     <nodeInfo nodeId="1111792102248" fileName="Quantity.java" startLine="14" startPosition="43" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AMOUNT" />
@@ -402,7 +402,7 @@
     <scopeInfo nodeId="1111792102248" fileName="Quantity.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="1111792102248" fileName="Quantity.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Quantity" />
   </root>
-  <root nodeId="1111792355423">
+  <root nodeId="1111792355423" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111792355423" fileName="TemporalProperty.java" startLine="11" startPosition="51" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111792355423" fileName="TemporalProperty.java" startLine="12" startPosition="108" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DATE" />
     <nodeInfo nodeId="1111792355423" fileName="TemporalProperty.java" startLine="13" startPosition="43" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
@@ -447,7 +447,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111792355423" fileName="TemporalProperty.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty" />
   </root>
-  <root nodeId="1111792389581">
+  <root nodeId="1111792389581" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111792389581" fileName="Date.java" startLine="11" startPosition="39" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111792389581" fileName="Date.java" startLine="12" startPosition="96" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="YEAR" />
     <nodeInfo nodeId="1111792389581" fileName="Date.java" startLine="13" startPosition="43" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MONTH" />
@@ -503,7 +503,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111792389581" fileName="Date.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Date" />
   </root>
-  <root nodeId="1111792520557">
+  <root nodeId="1111792520557" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111792520557" fileName="QuantityTemporalProperty.java" startLine="10" startPosition="64" endLine="11" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111792520557" fileName="QuantityTemporalProperty.java" startLine="13" startPosition="47" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1111792520557" fileName="QuantityTemporalProperty.java" startLine="17" startPosition="33" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -536,7 +536,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111792520557" fileName="QuantityTemporalProperty.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty" />
   </root>
-  <root nodeId="1111792867434">
+  <root nodeId="1111792867434" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1111792867434" fileName="ValueType.java" startLine="12" startPosition="0" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -639,10 +639,10 @@
     <scopeInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1111792867434" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1111792867434" fileName="ValueType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType" />
     <unitInfo nodeId="1111792867434" fileName="ValueType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType_PropertySupport" />
+    <unitInfo nodeId="1111792867434" fileName="ValueType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType" />
   </root>
-  <root nodeId="1111793238658">
+  <root nodeId="1111793238658" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1111793238658" fileName="Unit.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -749,10 +749,10 @@
     <scopeInfo nodeId="1111793238658" fileName="Unit.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1111793238658" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1111793238658" fileName="Unit.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit" />
     <unitInfo nodeId="1111793238658" fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit_PropertySupport" />
+    <unitInfo nodeId="1111793238658" fileName="Unit.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit" />
   </root>
-  <root nodeId="1111793698243">
+  <root nodeId="1111793698243" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111793698243" fileName="EventType.java" startLine="15" startPosition="69" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111793698243" fileName="EventType.java" startLine="16" startPosition="101" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1111793698243" fileName="EventType.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -871,7 +871,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111793698243" fileName="EventType.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventType" />
   </root>
-  <root nodeId="1111793755198">
+  <root nodeId="1111793755198" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111793755198" fileName="EventVariable.java" startLine="15" startPosition="73" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111793755198" fileName="EventVariable.java" startLine="16" startPosition="105" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1111793755198" fileName="EventVariable.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -978,7 +978,7 @@
     <scopeInfo nodeId="1111793755198" fileName="EventVariable.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
     <unitInfo nodeId="1111793755198" fileName="EventVariable.java" startLine="15" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventVariable" />
   </root>
-  <root nodeId="1111794734295">
+  <root nodeId="1111794734295" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111794734295" fileName="PostingRuleTemporalProperty.java" startLine="10" startPosition="67" endLine="11" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111794734295" fileName="PostingRuleTemporalProperty.java" startLine="13" startPosition="50" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1111794734295" fileName="PostingRuleTemporalProperty.java" startLine="17" startPosition="39" endLine="18" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1011,7 +1011,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111794734295" fileName="PostingRuleTemporalProperty.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty" />
   </root>
-  <root nodeId="1111794888922">
+  <root nodeId="1111794888922" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111794888922" fileName="PostingRule.java" startLine="11" startPosition="42" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111794888922" fileName="PostingRule.java" startLine="12" startPosition="103" endLine="13" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ACCOUNT" />
     <nodeInfo nodeId="1111794888922" fileName="PostingRule.java" startLine="15" startPosition="34" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1045,7 +1045,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111794888922" fileName="PostingRule.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.PostingRule" />
   </root>
-  <root nodeId="1111795284642">
+  <root nodeId="1111795284642" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1111795284642" fileName="AccountType.java" startLine="15" startPosition="71" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1111795284642" fileName="AccountType.java" startLine="16" startPosition="103" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1111795284642" fileName="AccountType.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1138,7 +1138,7 @@
     </scopeInfo>
     <unitInfo nodeId="1111795284642" fileName="AccountType.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.AccountType" />
   </root>
-  <root nodeId="1112036490295">
+  <root nodeId="1112036490295" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1112036490295" fileName="EventVariableReference.java" startLine="11" startPosition="56" endLine="12" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1112036490295" fileName="EventVariableReference.java" startLine="12" startPosition="114" endLine="13" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EVENT_VARIABLE" />
     <nodeInfo nodeId="1112036490295" fileName="EventVariableReference.java" startLine="15" startPosition="45" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1172,7 +1172,7 @@
     </scopeInfo>
     <unitInfo nodeId="1112036490295" fileName="EventVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference" />
   </root>
-  <root nodeId="1112038445100">
+  <root nodeId="1112038445100" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1112038445100" fileName="ValueReference.java" startLine="11" startPosition="48" endLine="12" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1112038445100" fileName="ValueReference.java" startLine="12" startPosition="106" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
     <nodeInfo nodeId="1112038445100" fileName="ValueReference.java" startLine="15" startPosition="37" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1206,7 +1206,7 @@
     </scopeInfo>
     <unitInfo nodeId="1112038445100" fileName="ValueReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueReference" />
   </root>
-  <root nodeId="1112310944779">
+  <root nodeId="1112310944779" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1112310944779" fileName="AgreementDeclarations.java" startLine="13" startPosition="56" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1112310944779" fileName="AgreementDeclarations.java" startLine="14" startPosition="113" endLine="15" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EVENT_TYPE" />
     <nodeInfo nodeId="1112310944779" fileName="AgreementDeclarations.java" startLine="15" startPosition="54" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ACCOUNT_TYPE" />
@@ -1281,7 +1281,7 @@
     </scopeInfo>
     <unitInfo nodeId="1112310944779" fileName="AgreementDeclarations.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations" />
   </root>
-  <root nodeId="1116367977407">
+  <root nodeId="1116367977407" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1116367977407" fileName="Taxable.java" startLine="12" startPosition="0" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1384,10 +1384,10 @@
     <scopeInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1116367977407" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1116367977407" fileName="Taxable.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable" />
     <unitInfo nodeId="1116367977407" fileName="Taxable_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable_PropertySupport" />
+    <unitInfo nodeId="1116367977407" fileName="Taxable.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable" />
   </root>
-  <root nodeId="1116445695828">
+  <root nodeId="1116445695828" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1116445695828" fileName="Date_Past.java" startLine="10" startPosition="37" endLine="11" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1116445695828" fileName="Date_Past.java" startLine="13" startPosition="32" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1116445695828" fileName="Date_Past.java" startLine="17" startPosition="64" endLine="18" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1410,7 +1410,7 @@
     </scopeInfo>
     <unitInfo nodeId="1116445695828" fileName="Date_Past.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" />
   </root>
-  <root nodeId="1116445809270">
+  <root nodeId="1116445809270" modelId="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
     <nodeInfo nodeId="1116445809270" fileName="Date_Future.java" startLine="10" startPosition="39" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1116445809270" fileName="Date_Future.java" startLine="13" startPosition="34" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1116445809270" fileName="Date_Future.java" startLine="17" startPosition="66" endLine="18" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

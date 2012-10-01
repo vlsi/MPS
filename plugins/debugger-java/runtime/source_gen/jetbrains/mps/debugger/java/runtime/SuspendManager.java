@@ -22,7 +22,6 @@ public class SuspendManager {
   /**
    * Contexts, paused at breakpoint or another debugger event requests.
    * Note that thread, explicitly paused by user is not considered as
-
    * "paused at breakpoint" and JDI prohibits data queries on its stackframes
    */
   private final LinkedList<SuspendContext> myPausedContexts = new LinkedList<SuspendContext>();

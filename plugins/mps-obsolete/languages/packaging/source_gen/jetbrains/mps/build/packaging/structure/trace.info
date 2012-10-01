@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Packaging_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Packaging_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
-  <root nodeId="1223640176546">
+  <root nodeId="1223640176546" modelId="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)">
     <nodeInfo nodeId="1223640176546" fileName="StringWithoutSpaces_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223640176546" fileName="StringWithoutSpaces_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1223640176546" fileName="StringWithoutSpaces_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

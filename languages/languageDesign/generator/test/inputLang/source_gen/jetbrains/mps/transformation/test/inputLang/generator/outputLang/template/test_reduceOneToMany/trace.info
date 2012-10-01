@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="16" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
-  <root nodeId="1892993302480251689">
+  <root nodeId="1892993302480251689" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="15" startPosition="96" endLine="16" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_11yy5k_a0a0a1a1" />
     <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="16" startPosition="249" endLine="17" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_11yy5k_a0a0a1a2" />
     <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="17" startPosition="249" endLine="18" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_11yy5k_a0b0e" />
@@ -80,7 +80,7 @@
     </scopeInfo>
     <unitInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__included" />
   </root>
-  <root nodeId="1892993302480310366">
+  <root nodeId="1892993302480310366" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="17" startPosition="74" endLine="18" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_t87kqm_a0a2a" />
     <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="18" startPosition="247" endLine="19" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_t87kqm_a0a0a4a" />
     <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="20" startPosition="0" endLine="21" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
@@ -161,10 +161,10 @@
       <varInfo nodeId="1892993302480310366" varName="context" />
       <varInfo nodeId="1892993302480310366" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A" />
     <unitInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="46" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A$ReductionRule0" />
+    <unitInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A" />
   </root>
-  <root nodeId="1892993302480311955">
+  <root nodeId="1892993302480311955" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="15" startPosition="94" endLine="16" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_mkvwhw_a0a0a1a1" />
     <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="16" startPosition="249" endLine="17" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_mkvwhw_a0a0a1a2" />
     <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="17" startPosition="249" endLine="18" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_mkvwhw_a0b0e" />
@@ -242,7 +242,7 @@
     </scopeInfo>
     <unitInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__switch" />
   </root>
-  <root nodeId="3893401255414084744">
+  <root nodeId="3893401255414084744" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="3893401255414132236" fileName="QueriesGenerated.java" startLine="17" startPosition="152" endLine="18" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414131864" fileName="QueriesGenerated.java" startLine="21" startPosition="152" endLine="22" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="25" startPosition="66" endLine="26" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
@@ -399,11 +399,11 @@
       <varInfo nodeId="3893401255414084744" varName="context" />
       <varInfo nodeId="3893401255414084744" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
-    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="89" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="128" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
+    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="89" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
+    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
   </root>
-  <root nodeId="3893401255414086886">
+  <root nodeId="3893401255414086886" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="16" startPosition="64" endLine="17" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_q702qm_a0a0" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="17" startPosition="241" endLine="18" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_q702qm_a0a0a1a1" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="18" startPosition="249" endLine="19" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="copySrcListMacro_q702qm_a0a0a1a5a1a1" />
@@ -459,7 +459,7 @@
     </scopeInfo>
     <unitInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="16" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
   </root>
-  <root nodeId="3893401255414100167">
+  <root nodeId="3893401255414100167" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="18" startPosition="86" endLine="19" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="loopMacroRef_b8tv7e_a0a0a1a1" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="19" startPosition="249" endLine="20" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_b8tv7e_a0a0a3a2a2a1a1" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="20" startPosition="255" endLine="21" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_b8tv7e_a0a0a1a2" />
@@ -667,7 +667,7 @@
     </scopeInfo>
     <unitInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="18" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A" />
   </root>
-  <root nodeId="8371596541809066874">
+  <root nodeId="8371596541809066874" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="18" startPosition="66" endLine="19" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_duaj4c_a0a2a" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="19" startPosition="247" endLine="20" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_duaj4c_a0a0a4a" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="20" startPosition="242" endLine="21" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_duaj4c_a0a0a3" />
@@ -759,10 +759,10 @@
       <varInfo nodeId="8371596541809066874" varName="context" />
       <varInfo nodeId="8371596541809066874" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch" />
     <unitInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="51" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch$ReductionRule0" />
+    <unitInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch" />
   </root>
-  <root nodeId="8371596541809075900">
+  <root nodeId="8371596541809075900" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="16" startPosition="69" endLine="17" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_r4cs19_a0a0a3" />
     <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="17" startPosition="241" endLine="18" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_r4cs19_a0a0a2a3" />
     <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="23" startPosition="39" endLine="24" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -810,7 +810,7 @@
     </scopeInfo>
     <unitInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter__switch2" />
   </root>
-  <root nodeId="8371596541809075904">
+  <root nodeId="8371596541809075904" modelId="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)">
     <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="16" startPosition="69" endLine="17" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_r4cs19_a0a0a3_0" />
     <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="22" startPosition="39" endLine="23" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="26" startPosition="43" endLine="27" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

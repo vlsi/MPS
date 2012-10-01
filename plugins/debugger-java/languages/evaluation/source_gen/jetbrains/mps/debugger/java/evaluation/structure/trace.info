@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Evaluation_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.Evaluation_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.StructureAspectDescriptor" />
-  <root nodeId="1707366700950402060">
+  <root nodeId="1707366700950402060" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="1707366700950402060" fileName="GenerationHelperAnnotation.java" startLine="11" startPosition="63" endLine="12" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1707366700950402060" fileName="GenerationHelperAnnotation.java" startLine="14" startPosition="49" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1707366700950402060" fileName="GenerationHelperAnnotation.java" startLine="18" startPosition="81" endLine="19" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     </scopeInfo>
     <unitInfo nodeId="1707366700950402060" fileName="GenerationHelperAnnotation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation" />
   </root>
-  <root nodeId="4336756357323803637">
+  <root nodeId="4336756357323803637" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="4336756357323803637" fileName="UnitNode.java" startLine="11" startPosition="43" endLine="12" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4336756357323803637" fileName="UnitNode.java" startLine="12" startPosition="99" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HIGH_LEVEL_NODE_ID" />
     <nodeInfo nodeId="4336756357323803637" fileName="UnitNode.java" startLine="13" startPosition="68" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEBUGGED_TYPE" />
@@ -70,7 +70,7 @@
     </scopeInfo>
     <unitInfo nodeId="4336756357323803637" fileName="UnitNode.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.UnitNode" />
   </root>
-  <root nodeId="4544608336420691672">
+  <root nodeId="4544608336420691672" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="4544608336420691672" fileName="DebuggedType.java" startLine="11" startPosition="40" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4544608336420691672" fileName="DebuggedType.java" startLine="12" startPosition="103" endLine="13" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_HIGH" />
     <nodeInfo nodeId="4544608336420691672" fileName="DebuggedType.java" startLine="13" startPosition="48" endLine="14" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOW_TYPE" />
@@ -126,7 +126,7 @@
     </scopeInfo>
     <unitInfo nodeId="4544608336420691672" fileName="DebuggedType.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.DebuggedType" />
   </root>
-  <root nodeId="4698880862823893381">
+  <root nodeId="4698880862823893381" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="4698880862823893381" fileName="ToEvaluateAnnotation.java" startLine="10" startPosition="70" endLine="11" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4698880862823893381" fileName="ToEvaluateAnnotation.java" startLine="13" startPosition="43" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4698880862823893381" fileName="ToEvaluateAnnotation.java" startLine="17" startPosition="75" endLine="18" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -149,7 +149,7 @@
     </scopeInfo>
     <unitInfo nodeId="4698880862823893381" fileName="ToEvaluateAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation" />
   </root>
-  <root nodeId="5816417461675171490">
+  <root nodeId="5816417461675171490" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="5816417461675171490" fileName="UnprocessedAnnotation.java" startLine="10" startPosition="71" endLine="11" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5816417461675171490" fileName="UnprocessedAnnotation.java" startLine="13" startPosition="44" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5816417461675171490" fileName="UnprocessedAnnotation.java" startLine="17" startPosition="76" endLine="18" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -172,7 +172,7 @@
     </scopeInfo>
     <unitInfo nodeId="5816417461675171490" fileName="UnprocessedAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation" />
   </root>
-  <root nodeId="6036237525966182693">
+  <root nodeId="6036237525966182693" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="6036237525966182693" fileName="EvaluatorConcept.java" startLine="17" startPosition="93" endLine="18" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6036237525966182693" fileName="EvaluatorConcept.java" startLine="18" startPosition="107" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="6036237525966182693" fileName="EvaluatorConcept.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -346,7 +346,7 @@
     </scopeInfo>
     <unitInfo nodeId="6036237525966182693" fileName="EvaluatorConcept.java" startLine="17" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept" />
   </root>
-  <root nodeId="6036237525966182694">
+  <root nodeId="6036237525966182694" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="11" startPosition="63" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="12" startPosition="107" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HIGH_LEVEL_NODE_ID" />
     <nodeInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="13" startPosition="68" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOW_LEVEL_NAME" />
@@ -412,7 +412,7 @@
     </scopeInfo>
     <unitInfo nodeId="6036237525966182694" fileName="LowLevelVariable.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable" />
   </root>
-  <root nodeId="6036237525966315974">
+  <root nodeId="6036237525966315974" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="6036237525966315974" fileName="EvaluatorsThisExpression.java" startLine="11" startPosition="58" endLine="12" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6036237525966315974" fileName="EvaluatorsThisExpression.java" startLine="14" startPosition="47" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6036237525966315974" fileName="EvaluatorsThisExpression.java" startLine="18" startPosition="79" endLine="19" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -435,7 +435,7 @@
     </scopeInfo>
     <unitInfo nodeId="6036237525966315974" fileName="EvaluatorsThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression" />
   </root>
-  <root nodeId="6036237525966316030">
+  <root nodeId="6036237525966316030" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="6036237525966316030" fileName="EvaluatorsSuperMethodCall.java" startLine="12" startPosition="63" endLine="13" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6036237525966316030" fileName="EvaluatorsSuperMethodCall.java" startLine="15" startPosition="48" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6036237525966316030" fileName="EvaluatorsSuperMethodCall.java" startLine="19" startPosition="67" endLine="20" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -468,7 +468,7 @@
     </scopeInfo>
     <unitInfo nodeId="6036237525966316030" fileName="EvaluatorsSuperMethodCall.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall" />
   </root>
-  <root nodeId="7915630211773477333">
+  <root nodeId="7915630211773477333" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="7915630211773477333" fileName="DownCastToLowLevel.java" startLine="11" startPosition="52" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7915630211773477333" fileName="DownCastToLowLevel.java" startLine="12" startPosition="109" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
     <nodeInfo nodeId="7915630211773477333" fileName="DownCastToLowLevel.java" startLine="15" startPosition="41" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -502,7 +502,7 @@
     </scopeInfo>
     <unitInfo nodeId="7915630211773477333" fileName="DownCastToLowLevel.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel" />
   </root>
-  <root nodeId="9050639307831392587">
+  <root nodeId="9050639307831392587" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="9050639307831392587" fileName="LowLevelVariableReference.java" startLine="11" startPosition="70" endLine="12" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9050639307831392587" fileName="LowLevelVariableReference.java" startLine="14" startPosition="48" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9050639307831392587" fileName="LowLevelVariableReference.java" startLine="18" startPosition="52" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -535,7 +535,7 @@
     </scopeInfo>
     <unitInfo nodeId="9050639307831392587" fileName="LowLevelVariableReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference" />
   </root>
-  <root nodeId="9146111288436274341">
+  <root nodeId="9146111288436274341" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="9146111288436274341" fileName="DoNotTransformAnnotation.java" startLine="10" startPosition="74" endLine="11" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9146111288436274341" fileName="DoNotTransformAnnotation.java" startLine="13" startPosition="47" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9146111288436274341" fileName="DoNotTransformAnnotation.java" startLine="17" startPosition="79" endLine="18" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -558,7 +558,7 @@
     </scopeInfo>
     <unitInfo nodeId="9146111288436274341" fileName="DoNotTransformAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation" />
   </root>
-  <root nodeId="9172312269976647291">
+  <root nodeId="9172312269976647291" modelId="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)">
     <nodeInfo nodeId="9172312269976647291" fileName="IEvaluatorConcept.java" startLine="7" startPosition="57" endLine="8" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="9172312269976647291" fileName="IEvaluatorConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept" />
   </root>

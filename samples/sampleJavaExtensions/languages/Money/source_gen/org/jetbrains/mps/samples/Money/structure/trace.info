@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Money_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.Money_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
-  <root nodeId="1790427706118304177">
+  <root nodeId="1790427706118304177" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="15" startPosition="68" endLine="16" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="16" startPosition="95" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -84,7 +84,7 @@
     </scopeInfo>
     <unitInfo nodeId="1790427706118304177" fileName="GetCurrency.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.GetCurrency" />
   </root>
-  <root nodeId="1790427706118381722">
+  <root nodeId="1790427706118381722" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="16" startPosition="66" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="17" startPosition="93" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET_CURRENCY" />
     <nodeInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="18" startPosition="64" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -188,7 +188,7 @@
     </scopeInfo>
     <unitInfo nodeId="1790427706118381722" fileName="ConvertTo.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.ConvertTo" />
   </root>
-  <root nodeId="1790427706118391955">
+  <root nodeId="1790427706118391955" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="11" startPosition="47" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="18" startPosition="74" endLine="19" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -211,7 +211,7 @@
     </scopeInfo>
     <unitInfo nodeId="1790427706118391955" fileName="MoneyConversionType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.MoneyConversionType" />
   </root>
-  <root nodeId="3607579524910560662">
+  <root nodeId="3607579524910560662" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="13" startPosition="51" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="14" startPosition="100" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNITS" />
     <nodeInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="17" startPosition="39" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -260,7 +260,7 @@
     </scopeInfo>
     <unitInfo nodeId="3607579524910560662" fileName="CurrencyDefTable.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.CurrencyDefTable" />
   </root>
-  <root nodeId="3607579524910560663">
+  <root nodeId="3607579524910560663" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="15" startPosition="72" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="16" startPosition="96" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -353,7 +353,7 @@
     </scopeInfo>
     <unitInfo nodeId="3607579524910560663" fileName="CurrencyUnit.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.CurrencyUnit" />
   </root>
-  <root nodeId="5447719361346490674">
+  <root nodeId="5447719361346490674" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="11" startPosition="46" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="12" startPosition="96" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AMOUNT" />
     <nodeInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="13" startPosition="47" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNIT" />
@@ -398,7 +398,7 @@
     </scopeInfo>
     <unitInfo nodeId="5447719361346490674" fileName="MoneyLiteral.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.MoneyLiteral" />
   </root>
-  <root nodeId="5447719361346490730">
+  <root nodeId="5447719361346490730" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="11" startPosition="37" endLine="12" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="14" startPosition="32" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="18" startPosition="64" endLine="19" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -421,7 +421,7 @@
     </scopeInfo>
     <unitInfo nodeId="5447719361346490730" fileName="MoneyType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="org.jetbrains.mps.samples.Money.structure.MoneyType" />
   </root>
-  <root nodeId="5447719361346519865">
+  <root nodeId="5447719361346519865" modelId="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
     <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="15" startPosition="66" endLine="16" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="16" startPosition="93" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="5447719361346519865" fileName="GetAmount.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />

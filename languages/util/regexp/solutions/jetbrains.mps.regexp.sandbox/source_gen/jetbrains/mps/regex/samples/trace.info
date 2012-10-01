@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1174939589143">
+  <root nodeId="1174939589143" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1174939637318" fileName="SimpleMatch.java" startLine="8" startPosition="31" endLine="9" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_1x0l1l_a0a0b0a" />
     <nodeInfo nodeId="1174939679354" fileName="SimpleMatch.java" startLine="9" startPosition="75" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_1x0l1l_a0a0b0b" />
     <nodeInfo nodeId="1174939782302" fileName="SimpleMatch.java" startLine="10" startPosition="85" endLine="11" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_1x0l1l_a0a0b0c" />
@@ -56,7 +56,7 @@
     <scopeInfo nodeId="1174939655340" fileName="SimpleMatch.java" startLine="25" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="1174939589143" fileName="SimpleMatch.java" startLine="8" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.regex.samples.SimpleMatch" />
   </root>
-  <root nodeId="1174939813279">
+  <root nodeId="1174939813279" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1174939838797" fileName="SimpleReplace.java" startLine="8" startPosition="33" endLine="9" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x5qji9_b0a1a0" />
     <nodeInfo nodeId="1174939833887" fileName="_Replacer_x5qji9_a0a0b0a.java" startLine="8" startPosition="59" endLine="9" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
     <nodeInfo nodeId="1174939860207" fileName="_Replacer_x5qji9_a0a0b0b.java" startLine="8" startPosition="59" endLine="9" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
@@ -108,11 +108,11 @@
     </scopeInfo>
     <scopeInfo nodeId="1174939818421" fileName="SimpleReplace.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="1174939848617" fileName="SimpleReplace.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="1174939813279" fileName="SimpleReplace.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.regex.samples.SimpleReplace" />
     <unitInfo nodeId="1174939833887" fileName="_Replacer_x5qji9_a0a0b0a.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0a" />
     <unitInfo nodeId="1174939860207" fileName="_Replacer_x5qji9_a0a0b0b.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0b" />
+    <unitInfo nodeId="1174939813279" fileName="SimpleReplace.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.regex.samples.SimpleReplace" />
   </root>
-  <root nodeId="1174939949624">
+  <root nodeId="1174939949624" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1174940022270" fileName="_Replacer_90k4hu_a0a0b0b.java" startLine="8" startPosition="59" endLine="9" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
     <nodeInfo nodeId="1174939971324" fileName="PredefinedRegexps.java" startLine="9" startPosition="37" endLine="10" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_90k4hu_a0a0b0a" />
     <nodeInfo nodeId="1174940022270" fileName="_Replacer_90k4hu_a0a0b0b.java" startLine="9" startPosition="48" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
@@ -158,10 +158,10 @@
       <varInfo nodeId="1174939967446" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1174939957359" fileName="PredefinedRegexps.java" startLine="15" startPosition="0" endLine="27" endPosition="0" />
-    <unitInfo nodeId="1174939949624" fileName="PredefinedRegexps.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.regex.samples.PredefinedRegexps" />
     <unitInfo nodeId="1174940022270" fileName="_Replacer_90k4hu_a0a0b0b.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.regex.samples._Replacer_90k4hu_a0a0b0b" />
+    <unitInfo nodeId="1174939949624" fileName="PredefinedRegexps.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.regex.samples.PredefinedRegexps" />
   </root>
-  <root nodeId="1175155050941">
+  <root nodeId="1175155050941" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1175155150546" fileName="MatchIteration.java" startLine="8" startPosition="34" endLine="9" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_m02t0c_a0a0b0a" />
     <nodeInfo nodeId="1175155160052" fileName="MatchIteration.java" startLine="14" startPosition="35" endLine="15" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175155078945" fileName="MatchIteration.java" startLine="16" startPosition="5" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -184,7 +184,7 @@
     <scopeInfo nodeId="1175155055598" fileName="MatchIteration.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="1175155050941" fileName="MatchIteration.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.regex.samples.MatchIteration" />
   </root>
-  <root nodeId="1175164538647">
+  <root nodeId="1175164538647" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1175164634872" fileName="Split.java" startLine="8" startPosition="25" endLine="9" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_nud8d_b0b0a" />
     <nodeInfo nodeId="1178105990839" fileName="Split.java" startLine="9" startPosition="73" endLine="10" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_nud8d_b0a0b" />
     <nodeInfo nodeId="1175164544444" fileName="Split.java" startLine="15" startPosition="32" endLine="16" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -215,7 +215,7 @@
     <scopeInfo nodeId="1175164540913" fileName="Split.java" startLine="14" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="1175164538647" fileName="Split.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.regex.samples.Split" />
   </root>
-  <root nodeId="1175169338798">
+  <root nodeId="1175169338798" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1175169491959" fileName="FindMatch.java" startLine="8" startPosition="29" endLine="9" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_jzh4fq_a0a0b0a" />
     <nodeInfo nodeId="1175169364198" fileName="FindMatch.java" startLine="14" startPosition="27" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175169487423" fileName="FindMatch.java" startLine="16" startPosition="5" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -238,7 +238,7 @@
     <scopeInfo nodeId="1175169343112" fileName="FindMatch.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="1175169338798" fileName="FindMatch.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.regex.samples.FindMatch" />
   </root>
-  <root nodeId="1175170722314">
+  <root nodeId="1175170722314" modelId="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)">
     <nodeInfo nodeId="1175170752088" fileName="Options.java" startLine="8" startPosition="27" endLine="9" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_3flcu7_a0a0a0a" />
     <nodeInfo nodeId="1175170748755" fileName="Options.java" startLine="15" startPosition="5" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175170748755" fileName="Options.java" startLine="16" startPosition="49" endLine="17" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

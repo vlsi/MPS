@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2533362239921665181">
+  <root nodeId="2533362239921665181" modelId="r:00000000-0000-4000-0000-011c895902e7(jetbrains.mps.lang.generator.scripts)">
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="17" startPosition="84" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -102,9 +102,9 @@
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="16" startPosition="80" endLine="90" endPosition="3">
       <varInfo nodeId="2533362239921665181" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="16" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.UpdateGeneratorMacros_MigrationScript" />
-    <unitInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="19" startPosition="28" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.UpdateGeneratorMacros_MigrationScript$1" />
     <unitInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="59" startPosition="28" endLine="89" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.UpdateGeneratorMacros_MigrationScript$2" />
+    <unitInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="19" startPosition="28" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.UpdateGeneratorMacros_MigrationScript$1" />
+    <unitInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="16" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.UpdateGeneratorMacros_MigrationScript" />
   </root>
 </debugInfo>
 

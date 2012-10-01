@@ -60,6 +60,9 @@
       <varInfo nodeId="3316697760692356803" varName="modelFile" />
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356728" fileName="ModelFocusSynchronizer.java" startLine="39" startPosition="84" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="3316697760692356729" fileName="ModelFocusSynchronizer.java" startLine="39" startPosition="84" endLine="51" endPosition="15">
+      <varInfo nodeId="3316697760692356729" varName="vf" />
+    </scopeInfo>
     <scopeInfo nodeId="3316697760692356726" fileName="ModelFocusSynchronizer.java" startLine="38" startPosition="76" endLine="52" endPosition="13">
       <varInfo nodeId="3316697760692356726" varName="project" />
     </scopeInfo>
@@ -80,9 +83,9 @@
     <scopeInfo nodeId="3316697760692356693" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="69" endLine="76" endPosition="3">
       <varInfo nodeId="3316697760692356845" varName="frameStateManager" />
     </scopeInfo>
-    <unitInfo nodeId="3316697760692356691" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
-    <unitInfo nodeId="3316697760692356703" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="38" endLine="75" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
     <unitInfo nodeId="3316697760692356717" fileName="ModelFocusSynchronizer.java" startLine="36" startPosition="48" endLine="73" endPosition="9" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
+    <unitInfo nodeId="3316697760692356703" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="38" endLine="75" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
+    <unitInfo nodeId="3316697760692356691" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
   </root>
   <root nodeId="4707157387247361035" modelId="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
     <nodeInfo nodeId="4707157387247361038" fileName="WatchedRoots.java" startLine="25" startPosition="59" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraryManager" />
@@ -170,6 +173,7 @@
       <varInfo nodeId="4707157387247361215" varName="toAdd" />
       <varInfo nodeId="4707157387247361206" varName="toRemove" />
     </scopeInfo>
+    <scopeInfo nodeId="4707157387247361241" fileName="WatchedRoots.java" startLine="90" startPosition="115" endLine="94" endPosition="5" />
     <scopeInfo nodeId="4707157387247361242" fileName="WatchedRoots.java" startLine="90" startPosition="115" endLine="94" endPosition="5">
       <varInfo nodeId="4707157387247361244" varName="l" />
     </scopeInfo>
@@ -208,6 +212,9 @@
       <varInfo nodeId="4707157387247361234" varName="toAdd" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247361273" fileName="WatchedRoots.java" startLine="97" startPosition="121" endLine="104" endPosition="5" />
+    <scopeInfo nodeId="4707157387247361274" fileName="WatchedRoots.java" startLine="97" startPosition="121" endLine="104" endPosition="5">
+      <varInfo nodeId="4707157387247361276" varName="l" />
+    </scopeInfo>
     <scopeInfo nodeId="4707157387247361162" fileName="WatchedRoots.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="4707157387247361263" fileName="WatchedRoots.java" startLine="96" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4707157387247361269" varName="librariesRequests" />
@@ -228,9 +235,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247361112" fileName="WatchedRoots.java" startLine="47" startPosition="31" endLine="67" endPosition="73" />
     <scopeInfo nodeId="4707157387247361109" fileName="WatchedRoots.java" startLine="46" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="4707157387247361035" fileName="WatchedRoots.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.watching.WatchedRoots" />
     <unitInfo nodeId="4707157387247361118" fileName="WatchedRoots.java" startLine="48" startPosition="26" endLine="53" endPosition="5" unitName="jetbrains.mps.watching.WatchedRoots$1" />
     <unitInfo nodeId="4707157387247361134" fileName="WatchedRoots.java" startLine="56" startPosition="35" endLine="66" endPosition="5" unitName="jetbrains.mps.watching.WatchedRoots$2" />
+    <unitInfo nodeId="4707157387247361035" fileName="WatchedRoots.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.watching.WatchedRoots" />
   </root>
 </debugInfo>
 

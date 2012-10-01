@@ -21,8 +21,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5015601397718077905" fileName="SourceRevision.java" startLine="15" startPosition="68" endLine="20" endPosition="0" />
     <scopeInfo nodeId="5015601397718077927" fileName="SourceRevision.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
     <unitInfo nodeId="5015601397718077904" fileName="SourceRevision.java" startLine="15" startPosition="50" endLine="20" endPosition="3" unitName="jetbrains.mps.ide.vcs.SourceRevision$1" />
+    <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
   </root>
   <root nodeId="5015601397718560603" modelId="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)">
     <nodeInfo nodeId="5015601397718560606" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="14" startPosition="77" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

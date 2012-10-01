@@ -177,13 +177,13 @@
     <scopeInfo nodeId="3990508698139426979" fileName="GDBBreakpoint.java" startLine="54" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="3990508698139426982" varName="requestManager" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139426916" fileName="GDBBreakpoint.java" startLine="25" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
     <unitInfo nodeId="3990508698139426956" fileName="GDBBreakpoint.java" startLine="40" startPosition="60" endLine="44" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$1" />
     <unitInfo nodeId="3990508698139426972" fileName="GDBBreakpoint.java" startLine="48" startPosition="60" endLine="52" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$2" />
-    <unitInfo nodeId="3990508698139426991" fileName="GDBBreakpoint.java" startLine="56" startPosition="37" endLine="64" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$3" />
     <unitInfo nodeId="3990508698139427014" fileName="GDBBreakpoint.java" startLine="68" startPosition="37" endLine="73" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$4" />
-    <unitInfo nodeId="226334238991962249" fileName="GDBBreakpoint.java" startLine="107" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$GDBBreakpointKind" />
     <unitInfo nodeId="1443474765164027423" fileName="GDBBreakpoint.java" startLine="99" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$GdbBreakpointState" />
+    <unitInfo nodeId="3990508698139426991" fileName="GDBBreakpoint.java" startLine="56" startPosition="37" endLine="64" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$3" />
+    <unitInfo nodeId="226334238991962249" fileName="GDBBreakpoint.java" startLine="107" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$GDBBreakpointKind" />
+    <unitInfo nodeId="3990508698139426916" fileName="GDBBreakpoint.java" startLine="25" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
   </root>
 </debugInfo>
 

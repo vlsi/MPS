@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2891782949125146377">
+  <root nodeId="2891782949125146377" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.requests)">
     <unitInfo nodeId="2891782949125146377" fileName="Requestor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
   </root>
-  <root nodeId="2891782949125170507">
+  <root nodeId="2891782949125170507" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.requests)">
     <nodeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepare#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/sun/jdi/ReferenceType;)V" />
     <scopeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="108">
       <varInfo nodeId="2891782949125170515" varName="classType" />
@@ -11,7 +11,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125170507" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.requests.ClassPrepareRequestor" />
   </root>
-  <root nodeId="2891782949125205202">
+  <root nodeId="2891782949125205202" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.requests)">
     <nodeInfo nodeId="2891782949125205205" fileName="LocatableEventRequestor.java" startLine="8" startPosition="60" endLine="9" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processLocatableEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContextCommand;Lcom/sun/jdi/event/LocatableEvent;)Z" />
     <nodeInfo nodeId="2891782949125205213" fileName="LocatableEventRequestor.java" startLine="9" startPosition="91" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuspendPolicy#()I" />
     <scopeInfo nodeId="2891782949125205205" fileName="LocatableEventRequestor.java" startLine="8" startPosition="60" endLine="9" endPosition="91">

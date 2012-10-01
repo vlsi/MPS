@@ -39,16 +39,20 @@ public class UnitPositionInfo extends PositionInfo {
   @Override
   public int compareTo(PositionInfo p) {
     UnitPositionInfo upi = (UnitPositionInfo) p;
-    if (eq_9jw0bh_a0b0d(myUnitName, upi.myUnitName)) {
-      return super.compareTo(upi);
+    int compareTo = super.compareTo(upi);
+    if (compareTo != 0) {
+      return compareTo;
     }
-    if (myUnitName != null && upi.myUnitName != null) {
-      return myUnitName.compareTo(upi.myUnitName);
+    if (myUnitName == null) {
+      if (upi.myUnitName == null) {
+        return 0;
+      }
+      return 1;
     }
-    return (upi.myUnitName == null ?
-      0 :
-      -1
-    );
+    if (upi.myUnitName == null) {
+      return -1;
+    }
+    return myUnitName.compareTo(upi.myUnitName);
   }
 
   private static String check_9jw0bh_a0b0b(Attribute checkedDotOperand) {
@@ -56,12 +60,5 @@ public class UnitPositionInfo extends PositionInfo {
       return checkedDotOperand.getValue();
     }
     return null;
-  }
-
-  private static boolean eq_9jw0bh_a0b0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }

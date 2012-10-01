@@ -100,9 +100,9 @@
     <scopeInfo nodeId="2295870045929267303" fileName="IFeatureDescriptor.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="2295870045929267306" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="2295870045929265511" fileName="IFeatureDescriptor.java" startLine="7" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
-    <unitInfo nodeId="2295870045929267308" fileName="IFeatureDescriptor.java" startLine="42" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ypath.runtime.IFeatureDescriptor$Stub" />
     <unitInfo nodeId="2295870045929265521" fileName="IFeatureDescriptor.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ypath.runtime.IFeatureDescriptor$Type" />
+    <unitInfo nodeId="2295870045929267308" fileName="IFeatureDescriptor.java" startLine="42" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ypath.runtime.IFeatureDescriptor$Stub" />
+    <unitInfo nodeId="2295870045929265511" fileName="IFeatureDescriptor.java" startLine="7" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
   </root>
   <root nodeId="2295870045929265512" modelId="r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)">
     <nodeInfo nodeId="2295870045929267441" fileName="IFilter.java" startLine="6" startPosition="29" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(null)Z" />
@@ -350,13 +350,13 @@
     </scopeInfo>
     <scopeInfo nodeId="2295870045929268061" fileName="TreePath.java" startLine="156" startPosition="31" endLine="175" endPosition="7" />
     <scopeInfo nodeId="2295870045929267701" fileName="TreePath.java" startLine="155" startPosition="0" endLine="177" endPosition="0" />
-    <unitInfo nodeId="2295870045929265522" fileName="TreePath.java" startLine="13" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ypath.runtime.TreePath" />
-    <unitInfo nodeId="2295870045929267876" fileName="TreePath.java" startLine="59" startPosition="17" endLine="67" endPosition="7" unitName="jetbrains.mps.ypath.runtime.TreePath$1" />
-    <unitInfo nodeId="2295870045929268172" fileName="TreePath.java" startLine="61" startPosition="57" endLine="65" endPosition="11" unitName="jetbrains.mps.ypath.runtime.TreePath$2" />
-    <unitInfo nodeId="2295870045929267901" fileName="TreePath.java" startLine="74" startPosition="17" endLine="82" endPosition="7" unitName="jetbrains.mps.ypath.runtime.TreePath$2" />
-    <unitInfo nodeId="2295870045929268194" fileName="TreePath.java" startLine="76" startPosition="57" endLine="80" endPosition="11" unitName="jetbrains.mps.ypath.runtime.TreePath$3" />
-    <unitInfo nodeId="2295870045929267662" fileName="TreePath.java" startLine="135" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.ypath.runtime.TreePath$AllFeaturesIterator" />
     <unitInfo nodeId="2295870045929265523" fileName="TreePath.java" startLine="196" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ypath.runtime.TreePath$FeatureFilter" />
+    <unitInfo nodeId="2295870045929268172" fileName="TreePath.java" startLine="61" startPosition="57" endLine="65" endPosition="11" unitName="jetbrains.mps.ypath.runtime.TreePath$2" />
+    <unitInfo nodeId="2295870045929268194" fileName="TreePath.java" startLine="76" startPosition="57" endLine="80" endPosition="11" unitName="jetbrains.mps.ypath.runtime.TreePath$3" />
+    <unitInfo nodeId="2295870045929267876" fileName="TreePath.java" startLine="59" startPosition="17" endLine="67" endPosition="7" unitName="jetbrains.mps.ypath.runtime.TreePath$1" />
+    <unitInfo nodeId="2295870045929267901" fileName="TreePath.java" startLine="74" startPosition="17" endLine="82" endPosition="7" unitName="jetbrains.mps.ypath.runtime.TreePath$2" />
+    <unitInfo nodeId="2295870045929267662" fileName="TreePath.java" startLine="135" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.ypath.runtime.TreePath$AllFeaturesIterator" />
+    <unitInfo nodeId="2295870045929265522" fileName="TreePath.java" startLine="13" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ypath.runtime.TreePath" />
   </root>
   <root nodeId="2295870045929265710" modelId="r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)">
     <nodeInfo nodeId="2295870045929265715" fileName="CompositeFilter.java" startLine="8" startPosition="55" endLine="9" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="filters" />

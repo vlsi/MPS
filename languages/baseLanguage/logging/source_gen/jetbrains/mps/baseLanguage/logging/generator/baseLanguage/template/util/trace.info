@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1210176650661">
+  <root nodeId="1210176650661" modelId="r:00000000-0000-4000-0000-011c89590581(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util)">
     <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="28" startPosition="59" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="62" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="32" startPosition="83" endLine="33" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -120,9 +120,9 @@
       <varInfo nodeId="1210176706194" varName="parameter_7" />
       <varInfo nodeId="1210176706194" varName="parameter_8" />
     </scopeInfo>
-    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil" />
     <unitInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="80" endLine="51" endPosition="7" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil$1" />
     <unitInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil$QuotationClass_gd2srw_a0a0a1a1a0" />
+    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil" />
   </root>
 </debugInfo>
 

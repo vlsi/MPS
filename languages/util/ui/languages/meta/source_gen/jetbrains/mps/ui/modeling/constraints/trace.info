@@ -78,9 +78,9 @@
       <varInfo nodeId="1412244996131807617" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="45" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="22" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_Constraints" />
-    <unitInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="49" startPosition="35" endLine="76" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_Constraints$1" />
     <unitInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="58" startPosition="19" endLine="74" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_Constraints$2" />
+    <unitInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="49" startPosition="35" endLine="76" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_Constraints$1" />
+    <unitInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="22" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_Constraints" />
   </root>
   <root nodeId="1642651187739181637" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="1642651187739181637" fileName="Context_Constraints.java" startLine="8" startPosition="32" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -142,10 +142,10 @@
       <varInfo nodeId="1719339442170193745" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="32" startPosition="0" endLine="74" endPosition="0" />
-    <unitInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="26" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints" />
-    <unitInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="36" startPosition="36" endLine="71" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints$1" />
-    <unitInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="45" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints$2" />
     <unitInfo nodeId="1719339442170198211" fileName="UIObject_Constraints.java" startLine="56" startPosition="59" endLine="60" endPosition="15" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints$3" />
+    <unitInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="45" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints$2" />
+    <unitInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="36" startPosition="36" endLine="71" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints$1" />
+    <unitInfo nodeId="1719339442170193745" fileName="UIObject_Constraints.java" startLine="26" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.UIObject_Constraints" />
   </root>
   <root nodeId="4391079257750389361" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="26" startPosition="78" endLine="27" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_cxbh0p_a0a1a0a0a1a0b0a1a0" />
@@ -217,14 +217,14 @@
       <varInfo nodeId="4391079257750389361" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="32" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="26" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints" />
-    <unitInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="36" startPosition="36" endLine="80" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$1" />
-    <unitInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="45" startPosition="19" endLine="78" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$2" />
     <unitInfo nodeId="380233880019464263" fileName="ContainerTemplate_Constraints.java" startLine="48" startPosition="281" endLine="52" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$3" />
     <unitInfo nodeId="380233880019464691" fileName="ContainerTemplate_Constraints.java" startLine="53" startPosition="289" endLine="57" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$3" />
     <unitInfo nodeId="380233880019464700" fileName="ContainerTemplate_Constraints.java" startLine="57" startPosition="26" endLine="61" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$3" />
     <unitInfo nodeId="380233880019464709" fileName="ContainerTemplate_Constraints.java" startLine="61" startPosition="25" endLine="65" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$3" />
     <unitInfo nodeId="380233880019464818" fileName="ContainerTemplate_Constraints.java" startLine="66" startPosition="232" endLine="70" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$3" />
+    <unitInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="45" startPosition="19" endLine="78" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$2" />
+    <unitInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="36" startPosition="36" endLine="80" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints$1" />
+    <unitInfo nodeId="4391079257750389361" fileName="ContainerTemplate_Constraints.java" startLine="26" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.ContainerTemplate_Constraints" />
   </root>
   <root nodeId="4643695836679345169" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="23" startPosition="81" endLine="24" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -299,10 +299,10 @@
       <varInfo nodeId="4643695836679345169" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="46" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints" />
-    <unitInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="50" startPosition="35" endLine="75" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints$1" />
-    <unitInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="59" startPosition="19" endLine="73" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints$2" />
     <unitInfo nodeId="8938819815716373363" fileName="UIPropertyAccessCode_Constraints.java" startLine="62" startPosition="248" endLine="66" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints$3" />
+    <unitInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="59" startPosition="19" endLine="73" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints$2" />
+    <unitInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="50" startPosition="35" endLine="75" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints$1" />
+    <unitInfo nodeId="4643695836679345169" fileName="UIPropertyAccessCode_Constraints.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints" />
   </root>
   <root nodeId="5263857617434470702" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="26" startPosition="80" endLine="27" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -388,10 +388,10 @@
       <varInfo nodeId="5263857617434470702" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="49" startPosition="0" endLine="91" endPosition="0" />
-    <unitInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="26" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints" />
-    <unitInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="53" startPosition="35" endLine="88" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints$1" />
-    <unitInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="62" startPosition="19" endLine="86" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints$2" />
     <unitInfo nodeId="5263857617434470737" fileName="EventPropertyGetter_Constraints.java" startLine="75" startPosition="261" endLine="79" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints$3" />
+    <unitInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="62" startPosition="19" endLine="86" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints$2" />
+    <unitInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="53" startPosition="35" endLine="88" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints$1" />
+    <unitInfo nodeId="5263857617434470702" fileName="EventPropertyGetter_Constraints.java" startLine="26" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints" />
   </root>
   <root nodeId="5572604531249464319" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="19" startPosition="79" endLine="20" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_r04u18_a0a1a0a0a1a0b0a1a0" />
@@ -426,9 +426,9 @@
       <varInfo nodeId="5572604531249464319" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterRef_Constraints" />
-    <unitInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="29" startPosition="40" endLine="50" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterRef_Constraints$1" />
     <unitInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="38" startPosition="19" endLine="48" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterRef_Constraints$2" />
+    <unitInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="29" startPosition="40" endLine="50" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterRef_Constraints$1" />
+    <unitInfo nodeId="5572604531249464319" fileName="AspectParameterRef_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterRef_Constraints" />
   </root>
   <root nodeId="5572604531249543996" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="24" startPosition="80" endLine="25" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_4j5hjt_a0a1a0a0a1a0b0a1a1" />
@@ -487,10 +487,10 @@
       <varInfo nodeId="5572604531249543996" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="48" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="24" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_Constraints" />
+    <unitInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="61" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_Constraints$3" />
     <unitInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="34" startPosition="31" endLine="45" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_Constraints$1" />
     <unitInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="52" startPosition="36" endLine="73" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_Constraints$2" />
-    <unitInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="61" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_Constraints$3" />
+    <unitInfo nodeId="5572604531249543996" fileName="AspectParameterDecl_Constraints.java" startLine="24" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_Constraints" />
   </root>
   <root nodeId="6424935405035112789" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="23" startPosition="70" endLine="24" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_24ye1o_a0a1a0a0a1a0b0a1a0" />
@@ -531,10 +531,10 @@
       <varInfo nodeId="6424935405035112789" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="29" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints" />
-    <unitInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="33" startPosition="38" endLine="58" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints$1" />
-    <unitInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints$2" />
     <unitInfo nodeId="6424935405035112817" fileName="Container_Constraints.java" startLine="45" startPosition="248" endLine="49" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints$3" />
+    <unitInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints$2" />
+    <unitInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="33" startPosition="38" endLine="58" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints$1" />
+    <unitInfo nodeId="6424935405035112789" fileName="Container_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.Container_Constraints" />
   </root>
   <root nodeId="7655275107718250850" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="7655275107718250850" fileName="ContextUIObjectParam_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -593,10 +593,10 @@
       <varInfo nodeId="7930737280446914700" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="29" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="23" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints" />
-    <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="33" startPosition="44" endLine="68" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints$1" />
-    <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="42" startPosition="19" endLine="66" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints$2" />
     <unitInfo nodeId="7930737280446918284" fileName="LayoutConstraintType_Constraints.java" startLine="55" startPosition="238" endLine="59" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints$3" />
+    <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="42" startPosition="19" endLine="66" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints$2" />
+    <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="33" startPosition="44" endLine="68" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints$1" />
+    <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="23" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints" />
   </root>
   <root nodeId="8115675450775148416" modelId="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)">
     <nodeInfo nodeId="8115675450775148416" fileName="EventHandlerTemplate_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -644,10 +644,10 @@
       <varInfo nodeId="8938819815716373406" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="28" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints" />
-    <unitInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="32" startPosition="35" endLine="57" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints$1" />
-    <unitInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints$2" />
     <unitInfo nodeId="8938819815716373419" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="44" startPosition="267" endLine="48" endPosition="13" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints$3" />
+    <unitInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints$2" />
+    <unitInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="32" startPosition="35" endLine="57" endPosition="5" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints$1" />
+    <unitInfo nodeId="8938819815716373406" fileName="EditableUIPropertyAccessCode_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_Constraints" />
   </root>
 </debugInfo>
 

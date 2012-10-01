@@ -108,6 +108,7 @@
     <scopeInfo nodeId="4972886494893402055" fileName="LongestCommonSubsequenceFinder.java" startLine="67" startPosition="16" endLine="72" endPosition="11" />
     <scopeInfo nodeId="4972886494893402216" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="21" endLine="125" endPosition="29" />
     <scopeInfo nodeId="4972886494893402303" fileName="LongestCommonSubsequenceFinder.java" startLine="135" startPosition="42" endLine="140" endPosition="26" />
+    <scopeInfo nodeId="4972886494893401766" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="72" endLine="46" endPosition="9" />
     <scopeInfo nodeId="4972886494893401767" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="72" endLine="46" endPosition="9">
       <varInfo nodeId="4972886494893401768" varName="j" />
     </scopeInfo>
@@ -143,11 +144,11 @@
     </scopeInfo>
     <scopeInfo nodeId="4972886494893402112" fileName="LongestCommonSubsequenceFinder.java" startLine="81" startPosition="106" endLine="128" endPosition="30" />
     <scopeInfo nodeId="4972886494893402109" fileName="LongestCommonSubsequenceFinder.java" startLine="79" startPosition="0" endLine="130" endPosition="0" />
-    <unitInfo nodeId="4972886494893373483" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
-    <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="88" startPosition="118" endLine="120" endPosition="7" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$1" />
     <unitInfo nodeId="4972886494893402352" fileName="LongestCommonSubsequenceFinder.java" startLine="136" startPosition="88" endLine="140" endPosition="7" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$2" />
-    <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="90" startPosition="21" endLine="118" endPosition="11" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$2" />
     <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="92" startPosition="25" endLine="116" endPosition="15" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$3" />
+    <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="90" startPosition="21" endLine="118" endPosition="11" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$2" />
+    <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="88" startPosition="118" endLine="120" endPosition="7" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$1" />
+    <unitInfo nodeId="4972886494893373483" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
   </root>
   <root nodeId="5504093910384079631" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
     <nodeInfo nodeId="5504093910384079639" fileName="StringsIO.java" startLine="24" startPosition="27" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -401,9 +402,9 @@
       <varInfo nodeId="7295777740694849952" varName="a" />
       <varInfo nodeId="7295777740694849954" varName="b" />
     </scopeInfo>
-    <unitInfo nodeId="7295777740694844259" fileName="SNodeCompare.java" startLine="20" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.util.SNodeCompare" />
     <unitInfo nodeId="2732852465125742138" fileName="SNodeCompare.java" startLine="38" startPosition="81" endLine="42" endPosition="5" unitName="jetbrains.mps.util.SNodeCompare$1" />
     <unitInfo nodeId="2732852465125742167" fileName="SNodeCompare.java" startLine="43" startPosition="81" endLine="47" endPosition="5" unitName="jetbrains.mps.util.SNodeCompare$2" />
+    <unitInfo nodeId="7295777740694844259" fileName="SNodeCompare.java" startLine="20" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.util.SNodeCompare" />
   </root>
   <root nodeId="8018595893829093050" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
     <nodeInfo nodeId="8018595893829093195" fileName="DisjointSets.java" startLine="14" startPosition="30" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
@@ -439,6 +440,7 @@
     <scopeInfo nodeId="8018595893829093119" fileName="DisjointSets.java" startLine="39" startPosition="89" endLine="40" endPosition="83" />
     <scopeInfo nodeId="8018595893829093168" fileName="DisjointSets.java" startLine="50" startPosition="60" endLine="51" endPosition="87" />
     <scopeInfo nodeId="8018595893829093221" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="21" endPosition="44" />
+    <scopeInfo nodeId="8018595893829093217" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />
     <scopeInfo nodeId="8018595893829093218" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5">
       <varInfo nodeId="8018595893829093218" varName="e" />
     </scopeInfo>
@@ -465,8 +467,8 @@
       <varInfo nodeId="8018595893829093080" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="8018595893829093137" fileName="DisjointSets.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="8018595893829093050" fileName="DisjointSets.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.util.DisjointSets" />
     <unitInfo nodeId="8018595893829093160" fileName="DisjointSets.java" startLine="47" startPosition="77" endLine="55" endPosition="5" unitName="jetbrains.mps.util.DisjointSets$1" />
+    <unitInfo nodeId="8018595893829093050" fileName="DisjointSets.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.util.DisjointSets" />
   </root>
 </debugInfo>
 

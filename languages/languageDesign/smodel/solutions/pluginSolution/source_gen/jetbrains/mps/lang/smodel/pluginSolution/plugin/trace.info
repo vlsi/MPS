@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841902721">
+  <root nodeId="5487985028841902721" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="32" startPosition="67" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="33" startPosition="40" endLine="34" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="36" startPosition="46" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -133,7 +133,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="32" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.CheckLangForJavaStubModels_Action" />
   </root>
-  <root nodeId="5487985028841902885">
+  <root nodeId="5487985028841902885" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="8" startPosition="80" endLine="9" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="9" startPosition="91" endLine="10" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="12" startPosition="49" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -153,7 +153,7 @@
     <scopeInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
     <unitInfo nodeId="5487985028841902885" fileName="LanguageInternalAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.LanguageInternalAddition_ActionGroup" />
   </root>
-  <root nodeId="7162597690967691224">
+  <root nodeId="7162597690967691224" modelId="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967691224" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

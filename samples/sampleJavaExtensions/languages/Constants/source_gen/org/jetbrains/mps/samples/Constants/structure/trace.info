@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Constants_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.structure.Constants_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.structure.StructureAspectDescriptor" />
-  <root nodeId="1494751830318912535">
+  <root nodeId="1494751830318912535" modelId="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)">
     <nodeInfo nodeId="1494751830318912535" fileName="Constants.java" startLine="15" startPosition="69" endLine="16" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1494751830318912535" fileName="Constants.java" startLine="16" startPosition="97" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1494751830318912535" fileName="Constants.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -121,7 +121,7 @@
     </scopeInfo>
     <unitInfo nodeId="1494751830318912535" fileName="Constants.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.structure.Constants" />
   </root>
-  <root nodeId="1494751830318912537">
+  <root nodeId="1494751830318912537" modelId="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)">
     <nodeInfo nodeId="1494751830318912537" fileName="Constant.java" startLine="16" startPosition="68" endLine="17" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1494751830318912537" fileName="Constant.java" startLine="17" startPosition="96" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1494751830318912537" fileName="Constant.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -225,7 +225,7 @@
     </scopeInfo>
     <unitInfo nodeId="1494751830318912537" fileName="Constant.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.structure.Constant" />
   </root>
-  <root nodeId="3990190717072393829">
+  <root nodeId="3990190717072393829" modelId="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)">
     <nodeInfo nodeId="3990190717072393829" fileName="ConstantReference.java" startLine="11" startPosition="51" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3990190717072393829" fileName="ConstantReference.java" startLine="12" startPosition="105" endLine="13" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ORIGINAL" />
     <nodeInfo nodeId="3990190717072393829" fileName="ConstantReference.java" startLine="15" startPosition="40" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

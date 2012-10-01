@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="5365453833390579711">
+  <root nodeId="5365453833390579711" modelId="r:907f129c-36bd-4484-bcf9-12840f088fab(jetbrains.mps.debugger.api.lang.constraints)">
     <nodeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="16" startPosition="86" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="19" startPosition="50" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,7 +42,7 @@
     </scopeInfo>
     <unitInfo nodeId="5365453833390579711" fileName="CreateBreakpointOperation_Constraints.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.constraints.CreateBreakpointOperation_Constraints" />
   </root>
-  <root nodeId="989489456093734163">
+  <root nodeId="989489456093734163" modelId="r:907f129c-36bd-4484-bcf9-12840f088fab(jetbrains.mps.debugger.api.lang.constraints)">
     <nodeInfo nodeId="989489456093734163" fileName="VariableNodeExpression_Constraints.java" startLine="13" startPosition="83" endLine="14" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="989489456093734163" fileName="VariableNodeExpression_Constraints.java" startLine="16" startPosition="47" endLine="17" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="989489456093734163" fileName="VariableNodeExpression_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

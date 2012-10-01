@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AccessUIPropertyOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.AccessUIPropertyOperation_BehaviorDescriptor" />
-  <unitInfo fileName="AppendUIObjectStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_BehaviorDescriptor" />
+  <unitInfo fileName="IUIObjectDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.behavior.IUIObjectDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="IUIObjectContextProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ui.behavior.IUIObjectContextProvider_BehaviorDescriptor" />
   <unitInfo fileName="BeanPropertyView_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.behavior.BeanPropertyView_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ui.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ExpressionView_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.behavior.ExpressionView_BehaviorDescriptor" />
+  <unitInfo fileName="ValidatingView_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.behavior.ValidatingView_BehaviorDescriptor" />
   <unitInfo fileName="CallUIActionOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.CallUIActionOperation_BehaviorDescriptor" />
   <unitInfo fileName="ChildAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.ChildAspect_BehaviorDescriptor" />
   <unitInfo fileName="ClearCompartmentStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.ClearCompartmentStatement_BehaviorDescriptor" />
-  <unitInfo fileName="CompartmentProviderStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.behavior.CompartmentProviderStatement_BehaviorDescriptor" />
   <unitInfo fileName="CompartmentReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.CompartmentReferenceExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ContainerCompartment_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.behavior.ContainerCompartment_BehaviorDescriptor" />
-  <unitInfo fileName="ContainerType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.ContainerType_BehaviorDescriptor" />
   <unitInfo fileName="ControllerBinding_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.ControllerBinding_BehaviorDescriptor" />
   <unitInfo fileName="Controller_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.Controller_BehaviorDescriptor" />
-  <unitInfo fileName="CreateUIObjectStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.behavior.CreateUIObjectStatement_BehaviorDescriptor" />
   <unitInfo fileName="EnclosingContextCompartmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.EnclosingContextCompartmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="EventHandingBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.EventHandingBlock_BehaviorDescriptor" />
-  <unitInfo fileName="EventPropertyAccessOp_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.behavior.EventPropertyAccessOp_BehaviorDescriptor" />
-  <unitInfo fileName="EventType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.EventType_BehaviorDescriptor" />
-  <unitInfo fileName="ExpressionView_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.behavior.ExpressionView_BehaviorDescriptor" />
   <unitInfo fileName="ForceLayoutStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.ForceLayoutStatement_BehaviorDescriptor" />
   <unitInfo fileName="FunctionParameterDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.FunctionParameterDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="IUIObjectContextProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ui.behavior.IUIObjectContextProvider_BehaviorDescriptor" />
-  <unitInfo fileName="IUIObjectDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.behavior.IUIObjectDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="InlineController_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.behavior.InlineController_BehaviorDescriptor" />
-  <unitInfo fileName="InsertUIObjectStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_BehaviorDescriptor" />
   <unitInfo fileName="IterateContentsStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.IterateContentsStatement_BehaviorDescriptor" />
   <unitInfo fileName="IterateContentsVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.IterateContentsVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="IterateContentsVariable_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.IterateContentsVariable_BehaviorDescriptor" />
   <unitInfo fileName="RemoveUIObjectStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.RemoveUIObjectStatement_BehaviorDescriptor" />
-  <unitInfo fileName="UIObjectProviderStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectProviderStatement_BehaviorDescriptor" />
-  <unitInfo fileName="UIObjectReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectReference_BehaviorDescriptor" />
-  <unitInfo fileName="UIObjectStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_BehaviorDescriptor" />
-  <unitInfo fileName="UIObjectType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectType_BehaviorDescriptor" />
   <unitInfo fileName="ValidateBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.ValidateBlock_BehaviorDescriptor" />
-  <unitInfo fileName="ValidatingView_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.behavior.ValidatingView_BehaviorDescriptor" />
-  <unitInfo fileName="Validator_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_BehaviorDescriptor" />
   <unitInfo fileName="ViewBinding_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.ViewBinding_BehaviorDescriptor" />
   <unitInfo fileName="View_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.behavior.View_BehaviorDescriptor" />
+  <unitInfo fileName="AccessUIPropertyOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.AccessUIPropertyOperation_BehaviorDescriptor" />
+  <unitInfo fileName="ContainerType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.ContainerType_BehaviorDescriptor" />
+  <unitInfo fileName="EventType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.EventType_BehaviorDescriptor" />
+  <unitInfo fileName="UIObjectType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectType_BehaviorDescriptor" />
+  <unitInfo fileName="UIObjectReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectReference_BehaviorDescriptor" />
+  <unitInfo fileName="IterateContentsVariable_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.IterateContentsVariable_BehaviorDescriptor" />
+  <unitInfo fileName="AppendUIObjectStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_BehaviorDescriptor" />
+  <unitInfo fileName="InsertUIObjectStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_BehaviorDescriptor" />
+  <unitInfo fileName="UIObjectStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_BehaviorDescriptor" />
+  <unitInfo fileName="InlineController_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.behavior.InlineController_BehaviorDescriptor" />
+  <unitInfo fileName="Validator_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_BehaviorDescriptor" />
+  <unitInfo fileName="CompartmentProviderStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.behavior.CompartmentProviderStatement_BehaviorDescriptor" />
+  <unitInfo fileName="ContainerCompartment_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.behavior.ContainerCompartment_BehaviorDescriptor" />
+  <unitInfo fileName="UIObjectProviderStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectProviderStatement_BehaviorDescriptor" />
+  <unitInfo fileName="CreateUIObjectStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.behavior.CreateUIObjectStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EventPropertyAccessOp_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.behavior.EventPropertyAccessOp_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ui.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1576918603588684625" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="1576918603588684625" fileName="AppendUIObjectStatement_Behavior.java" startLine="15" startPosition="47" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1576918603588705988" />
     <nodeInfo nodeId="1576918603588684625" fileName="AppendUIObjectStatement_Behavior.java" startLine="16" startPosition="72" endLine="17" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5197527271413889643" />
@@ -119,8 +119,8 @@
     <scopeInfo nodeId="5197527271413889655" fileName="AppendUIObjectStatement_Behavior.java" startLine="51" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="5197527271413889655" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="1576918603588684625" fileName="AppendUIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_Behavior" />
     <unitInfo nodeId="5197527271413889655" fileName="AppendUIObjectStatement_Behavior.java" startLine="48" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_Behavior$QuotationClass_br8013_a0a0c" />
+    <unitInfo nodeId="1576918603588684625" fileName="AppendUIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_Behavior" />
   </root>
   <root nodeId="1719339442170067961" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="1719339442170067961" fileName="UIObjectType_Behavior.java" startLine="10" startPosition="36" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -248,8 +248,8 @@
     <scopeInfo nodeId="5197527271413889666" fileName="InsertUIObjectStatement_Behavior.java" startLine="51" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="5197527271413889666" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="3091159734392454233" fileName="InsertUIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior" />
     <unitInfo nodeId="5197527271413889666" fileName="InsertUIObjectStatement_Behavior.java" startLine="48" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior$QuotationClass_rkt09j_a0a0c" />
+    <unitInfo nodeId="3091159734392454233" fileName="InsertUIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior" />
   </root>
   <root nodeId="3262277503800965872" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="3262277503800965872" fileName="UIObjectReference_Behavior.java" startLine="12" startPosition="41" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3262277503800965875" />
@@ -439,8 +439,8 @@
     <scopeInfo nodeId="5224413709453691506" fileName="Validator_Behavior.java" startLine="25" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="5224413709453691506" varName="parameter_7" />
     </scopeInfo>
-    <unitInfo nodeId="5224413709453691494" fileName="Validator_Behavior.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_Behavior" />
     <unitInfo nodeId="5224413709453691506" fileName="Validator_Behavior.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_Behavior$QuotationClass_fimzcf_a0a0b" />
+    <unitInfo nodeId="5224413709453691494" fileName="Validator_Behavior.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_Behavior" />
   </root>
   <root nodeId="5224413709454208106" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="5224413709454317365" fileName="InlineController_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -503,8 +503,8 @@
     <scopeInfo nodeId="5224413709454317366" fileName="InlineController_Behavior.java" startLine="24" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5224413709454317366" varName="parameter_7" />
     </scopeInfo>
-    <unitInfo nodeId="5224413709454208106" fileName="InlineController_Behavior.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.behavior.InlineController_Behavior" />
     <unitInfo nodeId="5224413709454317366" fileName="InlineController_Behavior.java" startLine="21" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.behavior.InlineController_Behavior$QuotationClass_wgyqse_a0a0b" />
+    <unitInfo nodeId="5224413709454208106" fileName="InlineController_Behavior.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.behavior.InlineController_Behavior" />
   </root>
   <root nodeId="5224413709454215017" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="5224413709454216213" fileName="EventType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -614,8 +614,8 @@
     <scopeInfo nodeId="6410919744913642015" fileName="CreateUIObjectStatement_Behavior.java" startLine="38" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="6410919744913642015" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="6410919744913642007" fileName="CreateUIObjectStatement_Behavior.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ui.behavior.CreateUIObjectStatement_Behavior" />
     <unitInfo nodeId="6410919744913642015" fileName="CreateUIObjectStatement_Behavior.java" startLine="35" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ui.behavior.CreateUIObjectStatement_Behavior$QuotationClass_qpbyzc_a0a0b" />
+    <unitInfo nodeId="6410919744913642007" fileName="CreateUIObjectStatement_Behavior.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ui.behavior.CreateUIObjectStatement_Behavior" />
   </root>
   <root nodeId="7109250785404509289" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="7109250785404509289" fileName="UIObjectStatement_Behavior.java" startLine="15" startPosition="41" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7109250785404509292" />
@@ -722,8 +722,8 @@
     <scopeInfo nodeId="5197527271413889625" fileName="UIObjectStatement_Behavior.java" startLine="67" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="5197527271413889625" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="7109250785404509289" fileName="UIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_Behavior" />
     <unitInfo nodeId="5197527271413889625" fileName="UIObjectStatement_Behavior.java" startLine="64" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_Behavior$QuotationClass_55aimi_a0a0g" />
+    <unitInfo nodeId="7109250785404509289" fileName="UIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_Behavior" />
   </root>
   <root nodeId="8381258131358759638" modelId="r:7d08fc9f-17a7-4f88-97be-c15c3f806bad(jetbrains.mps.ui.behavior)">
     <nodeInfo nodeId="8381258131358762868" fileName="BeanPropertyView_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

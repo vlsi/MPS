@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499491521">
+  <root nodeId="1560298786499491521" modelId="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)">
     <nodeInfo nodeId="1560298786499491542" fileName="ValidateableBoundPanel.java" startLine="35" startPosition="64" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499491545" fileName="ValidateableBoundPanel.java" startLine="36" startPosition="34" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCaption" />
     <nodeInfo nodeId="1560298786499491548" fileName="ValidateableBoundPanel.java" startLine="37" startPosition="29" endLine="38" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
@@ -286,12 +286,12 @@
       <varInfo nodeId="1560298786499492011" varName="toolbar" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499491877" fileName="ValidateableBoundPanel.java" startLine="180" startPosition="0" endLine="211" endPosition="0" />
-    <unitInfo nodeId="1560298786499491521" fileName="ValidateableBoundPanel.java" startLine="35" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" />
     <unitInfo nodeId="1560298786499491681" fileName="ValidateableBoundPanel.java" startLine="76" startPosition="20" endLine="84" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$1" />
     <unitInfo nodeId="1560298786499491532" fileName="ValidateableBoundPanel.java" startLine="251" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyKeyAdapter" />
     <unitInfo nodeId="1560298786499491524" fileName="ValidateableBoundPanel.java" startLine="224" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyValidator" />
+    <unitInfo nodeId="1560298786499491521" fileName="ValidateableBoundPanel.java" startLine="35" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" />
   </root>
-  <root nodeId="1560298786499492437">
+  <root nodeId="1560298786499492437" modelId="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)">
     <nodeInfo nodeId="1560298786499492471" fileName="BoundListPanel.java" startLine="19" startPosition="66" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUIList" />
     <nodeInfo nodeId="1560298786499492486" fileName="BoundListPanel.java" startLine="22" startPosition="74" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499492501" fileName="BoundListPanel.java" startLine="27" startPosition="33" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -371,11 +371,11 @@
     <scopeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="57" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1560298786499492459" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499492437" fileName="BoundListPanel.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
-    <unitInfo nodeId="1560298786499492442" fileName="BoundListPanel.java" startLine="50" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListAddAction" />
     <unitInfo nodeId="1560298786499492461" fileName="BoundListPanel.java" startLine="76" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListRemoveAction" />
+    <unitInfo nodeId="1560298786499492442" fileName="BoundListPanel.java" startLine="50" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListAddAction" />
+    <unitInfo nodeId="1560298786499492437" fileName="BoundListPanel.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
   </root>
-  <root nodeId="1560298786499497595">
+  <root nodeId="1560298786499497595" modelId="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)">
     <nodeInfo nodeId="1560298786499497635" fileName="BoundTablePanel.java" startLine="33" startPosition="67" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />
     <nodeInfo nodeId="1560298786499497638" fileName="BoundTablePanel.java" startLine="34" startPosition="25" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffRow" />
     <nodeInfo nodeId="1560298786499497641" fileName="BoundTablePanel.java" startLine="35" startPosition="28" endLine="36" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myColumns" />
@@ -516,10 +516,10 @@
       <varInfo nodeId="1560298786499497784" varName="tableBinding" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497766" fileName="BoundTablePanel.java" startLine="65" startPosition="0" endLine="111" endPosition="0" />
-    <unitInfo nodeId="1560298786499497595" fileName="BoundTablePanel.java" startLine="33" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel" />
     <unitInfo nodeId="1560298786499497932" fileName="BoundTablePanel.java" startLine="97" startPosition="33" endLine="101" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$1" />
-    <unitInfo nodeId="1560298786499497615" fileName="BoundTablePanel.java" startLine="125" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableAddAction" />
     <unitInfo nodeId="1560298786499497600" fileName="BoundTablePanel.java" startLine="112" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableRemoveAction" />
+    <unitInfo nodeId="1560298786499497615" fileName="BoundTablePanel.java" startLine="125" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableAddAction" />
+    <unitInfo nodeId="1560298786499497595" fileName="BoundTablePanel.java" startLine="33" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel" />
   </root>
 </debugInfo>
 

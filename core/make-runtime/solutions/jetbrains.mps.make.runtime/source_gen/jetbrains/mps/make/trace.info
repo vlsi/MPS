@@ -77,8 +77,8 @@
     <scopeInfo nodeId="2572714605176943594" fileName="IMakeService.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="402740558444338546" fileName="IMakeService.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="8695426379435177666" fileName="IMakeService.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
     <unitInfo nodeId="8695426379435177650" fileName="IMakeService.java" startLine="26" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.IMakeService$INSTANCE" />
+    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
   </root>
   <root nodeId="2958721966247272985" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
     <nodeInfo nodeId="2958721966247272990" fileName="IHName.java" startLine="6" startPosition="28" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parentName#()null" />
@@ -110,8 +110,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8464977774480012329" fileName="MakeNotification.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="8464977774480006573" fileName="MakeNotification.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="8464977774479999203" fileName="MakeNotification.java" startLine="7" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.MakeNotification" />
     <unitInfo nodeId="8464977774480012301" fileName="MakeNotification.java" startLine="24" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.MakeNotification$Kind" />
+    <unitInfo nodeId="8464977774479999203" fileName="MakeNotification.java" startLine="7" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.MakeNotification" />
   </root>
   <root nodeId="8464977774480012290" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
     <nodeInfo nodeId="8464977774480012292" fileName="IMakeNotificationListener.java" startLine="6" startPosition="44" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
@@ -176,8 +176,8 @@
     <scopeInfo nodeId="8464977774480012319" fileName="IMakeNotificationListener.java" startLine="15" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8464977774480012320" varName="notification" />
     </scopeInfo>
-    <unitInfo nodeId="8464977774480012290" fileName="IMakeNotificationListener.java" startLine="6" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener" />
     <unitInfo nodeId="8464977774480012312" fileName="IMakeNotificationListener.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener$Stub" />
+    <unitInfo nodeId="8464977774480012290" fileName="IMakeNotificationListener.java" startLine="6" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener" />
   </root>
   <root nodeId="8695426379435232461" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
     <nodeInfo nodeId="8695426379435237583" fileName="MakeSession.java" startLine="10" startPosition="26" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />

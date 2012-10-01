@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1563914226484898745">
+  <root nodeId="1563914226484898745" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="1563914226484898751" fileName="TestPropertyVariableReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1563914226484898747" fileName="TestPropertyVariableReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -108,10 +108,10 @@
       <varInfo nodeId="1563914226484898754" varName="editorContext" />
       <varInfo nodeId="1563914226484898754" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_Editor" />
     <unitInfo nodeId="1563914226484898752" fileName="TestPropertyVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_Editor$_Inline_qm76pe_a0a" />
+    <unitInfo nodeId="1563914226484898745" fileName="TestPropertyVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_Editor" />
   </root>
-  <root nodeId="1563914226484921026">
+  <root nodeId="1563914226484921026" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1563914226484921028" fileName="PropertyValue_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1563914226484921028" fileName="PropertyValue_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -233,7 +233,7 @@
     </scopeInfo>
     <unitInfo nodeId="1563914226484921026" fileName="PropertyValue_Editor.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PropertyValue_Editor" />
   </root>
-  <root nodeId="1563914226484928846">
+  <root nodeId="1563914226484928846" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="1563914226484928856" fileName="ListValue_Editor.java" startLine="60" startPosition="58" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1563914226484928848" fileName="ListValue_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -395,10 +395,10 @@
       <varInfo nodeId="1563914226484928856" varName="editorContext" />
       <varInfo nodeId="1563914226484928856" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor" />
     <unitInfo nodeId="1563914226484928854" fileName="ListValue_Editor.java" startLine="72" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor$valueListHandler_9xngu4_c0" />
+    <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor" />
   </root>
-  <root nodeId="1563914226484929057">
+  <root nodeId="1563914226484929057" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="1563914226484929062" fileName="TestListReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1563914226484929059" fileName="TestListReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -506,10 +506,10 @@
       <varInfo nodeId="1563914226484929065" varName="editorContext" />
       <varInfo nodeId="1563914226484929065" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_Editor" />
     <unitInfo nodeId="1563914226484929063" fileName="TestListReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_Editor$_Inline_fpz45k_a0a" />
+    <unitInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestListReference_Editor" />
   </root>
-  <root nodeId="8707387027762047763">
+  <root nodeId="8707387027762047763" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="3731303358747471467" fileName="VariableValue_Editor.java" startLine="70" startPosition="58" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8707387027762047764" fileName="VariableValue_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -631,7 +631,7 @@
     </scopeInfo>
     <unitInfo nodeId="8707387027762047763" fileName="VariableValue_Editor.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.VariableValue_Editor" />
   </root>
-  <root nodeId="8707387027762047771">
+  <root nodeId="8707387027762047771" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="8707387027762047773" fileName="TestVariableReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8707387027762047772" fileName="TestVariableReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -739,10 +739,10 @@
       <varInfo nodeId="8707387027762047775" varName="editorContext" />
       <varInfo nodeId="8707387027762047775" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_Editor" />
     <unitInfo nodeId="8707387027762047774" fileName="TestVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_Editor$_Inline_t5xgl3_a0a" />
+    <unitInfo nodeId="8707387027762047771" fileName="TestVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_Editor" />
   </root>
-  <root nodeId="8707387027762047777">
+  <root nodeId="8707387027762047777" modelId="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
     <nodeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="33" startPosition="79" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8707387027762047778" fileName="PatternTest_Editor.java" startLine="37" startPosition="89" endLine="38" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8707387027762047778" fileName="PatternTest_Editor.java" startLine="38" startPosition="96" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1522,10 +1522,10 @@
       <varInfo nodeId="8707387027762047780" varName="editorContext" />
       <varInfo nodeId="8707387027762047780" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="32" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor" />
-    <unitInfo nodeId="5341591979805250590" fileName="PatternTest_Editor.java" startLine="428" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$listListHandler_kasahx_c2i0" />
-    <unitInfo nodeId="5341591979805250567" fileName="PatternTest_Editor.java" startLine="392" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$propertyListHandler_kasahx_c1i0" />
     <unitInfo nodeId="5341591979805250544" fileName="PatternTest_Editor.java" startLine="356" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$variableListHandler_kasahx_c0i0" />
+    <unitInfo nodeId="5341591979805250567" fileName="PatternTest_Editor.java" startLine="392" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$propertyListHandler_kasahx_c1i0" />
+    <unitInfo nodeId="5341591979805250590" fileName="PatternTest_Editor.java" startLine="428" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor$listListHandler_kasahx_c2i0" />
+    <unitInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="32" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.PatternTest_Editor" />
   </root>
 </debugInfo>
 

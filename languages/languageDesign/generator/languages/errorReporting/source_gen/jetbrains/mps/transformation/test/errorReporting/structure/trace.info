@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ErrorReporting_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.errorReporting.structure.ErrorReporting_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.transformation.test.errorReporting.structure.StructureAspectDescriptor" />
-  <root nodeId="7287346816896104019">
+  <root nodeId="7287346816896104019" modelId="r:13099be6-e9be-4c1b-a5cd-d0d83a6c9f0a(jetbrains.mps.transformation.test.errorReporting.structure)">
     <nodeInfo nodeId="7287346816896104019" fileName="ErrorReportingRoot.java" startLine="15" startPosition="78" endLine="16" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7287346816896104019" fileName="ErrorReportingRoot.java" startLine="16" startPosition="119" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="7287346816896104019" fileName="ErrorReportingRoot.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

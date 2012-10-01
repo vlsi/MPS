@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1241010420895">
+  <root nodeId="1241010420895" modelId="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)">
     <nodeInfo nodeId="8911874220955530338" fileName="TupleDeclarationUtil.java" startLine="13" startPosition="63" endLine="14" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8911874220955530346" fileName="TupleDeclarationUtil.java" startLine="14" startPosition="90" endLine="15" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8911874220955530359" fileName="TupleDeclarationUtil.java" startLine="16" startPosition="47" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -20,7 +20,7 @@
     </scopeInfo>
     <unitInfo nodeId="1241010420895" fileName="TupleDeclarationUtil.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.TupleDeclarationUtil" />
   </root>
-  <root nodeId="1241091679770">
+  <root nodeId="1241091679770" modelId="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)">
     <nodeInfo nodeId="1241091679792" fileName="Keys.java" startLine="11" startPosition="0" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="1241091679810" fileName="Keys.java" startLine="14" startPosition="21" endLine="15" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241091679775" fileName="Keys.java" startLine="18" startPosition="35" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,7 +42,7 @@
     </scopeInfo>
     <unitInfo nodeId="1241091679770" fileName="Keys.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Keys" />
   </root>
-  <root nodeId="1241092045116">
+  <root nodeId="1241092045116" modelId="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)">
     <nodeInfo nodeId="1241092045201" fileName="Values.java" startLine="10" startPosition="0" endLine="11" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="1241092045191" fileName="Values.java" startLine="13" startPosition="23" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241092045125" fileName="Values.java" startLine="17" startPosition="45" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

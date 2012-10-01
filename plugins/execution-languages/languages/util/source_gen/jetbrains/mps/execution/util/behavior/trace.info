@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="IMainClass_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_BehaviorDescriptor" />
-  <root nodeId="4666195181811081430">
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.BehaviorAspectDescriptor" />
+  <root nodeId="4666195181811081430" modelId="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)">
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="34" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4666195181811081431" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="15" startPosition="72" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4666195181811081448" />
     <nodeInfo nodeId="4666195181811081435" fileName="IMainClass_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -62,8 +62,8 @@
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4666195181811081430" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
     <unitInfo nodeId="4666195181811081439" fileName="IMainClass_Behavior.java" startLine="23" startPosition="45" endLine="27" endPosition="5" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior$1" />
+    <unitInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
   </root>
 </debugInfo>
 

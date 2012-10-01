@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8382013213871428218">
+  <root nodeId="8382013213871428218" modelId="r:9acd9fb7-dda0-41a1-89d6-47d58448b6ae(jetbrains.mps.lang.project.stubs)">
     <nodeInfo nodeId="8382013213871428358" fileName="ProjectStubs.java" startLine="30" startPosition="85" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8382013213871428365" fileName="ProjectStubs.java" startLine="31" startPosition="93" endLine="32" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8382013213871443204" fileName="ProjectStubs.java" startLine="32" startPosition="124" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -55,8 +55,8 @@
       <varInfo nodeId="8382013213871443225" varName="module" />
       <varInfo nodeId="8382013213871443223" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="26" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs" />
     <unitInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="57" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs$1" />
+    <unitInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="26" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs" />
   </root>
 </debugInfo>
 

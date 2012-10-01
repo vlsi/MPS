@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="286176397450364062">
+  <root nodeId="286176397450364062" modelId="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)">
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="31" startPosition="73" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="32" startPosition="54" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="34" startPosition="0" endLine="35" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
@@ -697,19 +697,19 @@
       <varInfo nodeId="286176397450364062" varName="tagName" />
       <varInfo nodeId="286176397450364062" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="31" startPosition="0" endLine="621" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="281" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$PersistenceElementHandler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="307" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$Module_referenceElementHandler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="369" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$RootsElementHandler" />
     <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="128" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ElementHandler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="550" startPosition="0" endLine="583" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$PropertyElementHandler" />
     <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="333" startPosition="0" endLine="368" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ImportElementHandler" />
     <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="584" startPosition="0" endLine="620" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$LinkElementHandler" />
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="162" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler" />
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="307" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$Module_referenceElementHandler" />
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="444" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$NodeElementHandler" />
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="281" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$PersistenceElementHandler" />
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="550" startPosition="0" endLine="583" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$PropertyElementHandler" />
     <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="397" startPosition="0" endLine="443" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$RootContentElementHandler" />
-    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="369" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$RootsElementHandler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="444" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$NodeElementHandler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="162" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler" />
+    <unitInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="31" startPosition="0" endLine="621" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler" />
   </root>
-  <root nodeId="4362914091961459500">
+  <root nodeId="4362914091961459500" modelId="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)">
     <nodeInfo nodeId="4362914091961464872" fileName="WriteHelper.java" startLine="27" startPosition="26" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL_SEPARATOR_CHAR" />
     <nodeInfo nodeId="4362914091961464868" fileName="WriteHelper.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VERSION_SEPARATOR_CHAR" />
     <nodeInfo nodeId="2742566862758553171" fileName="WriteHelper.java" startLine="29" startPosition="56" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DYNAMIC_REFERENCE_ID" />
@@ -941,7 +941,7 @@
     </scopeInfo>
     <unitInfo nodeId="4362914091961459500" fileName="WriteHelper.java" startLine="27" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.WriteHelper" />
   </root>
-  <root nodeId="4362914091961475519">
+  <root nodeId="4362914091961475519" modelId="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)">
     <nodeInfo nodeId="4362914091961475519" fileName="ReadHelper.java" startLine="18" startPosition="25" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="4362914091961475535" fileName="ReadHelper.java" startLine="20" startPosition="0" endLine="21" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRef" />
     <nodeInfo nodeId="4362914091961475526" fileName="ReadHelper.java" startLine="21" startPosition="37" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelByIx" />
@@ -1073,7 +1073,7 @@
     </scopeInfo>
     <unitInfo nodeId="4362914091961475519" fileName="ReadHelper.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" />
   </root>
-  <root nodeId="5797832288566425370">
+  <root nodeId="5797832288566425370" modelId="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)">
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="17" startPosition="86" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="19" startPosition="0" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="20" startPosition="133" endLine="21" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootshandler" />
@@ -1520,15 +1520,15 @@
       <varInfo nodeId="5797832288566425370" varName="qName" />
       <varInfo nodeId="5797832288566425370" varName="uri" />
     </scopeInfo>
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="17" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler" />
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="111" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$ElementHandler" />
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="355" startPosition="0" endLine="380" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$LinkElementHandler" />
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="145" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$ModelElementHandler" />
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="273" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NodeElementHandler" />
     <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="381" startPosition="0" endLine="387" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NullElementHandler" />
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="329" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$PropertyElementHandler" />
-    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="237" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$RootContentElementHandler" />
     <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="211" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$RootsElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="329" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$PropertyElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="355" startPosition="0" endLine="380" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$LinkElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="111" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$ElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="237" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$RootContentElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="273" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NodeElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="145" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$ModelElementHandler" />
+    <unitInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="17" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler" />
   </root>
 </debugInfo>
 

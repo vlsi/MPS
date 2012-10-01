@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.IntentionsDescriptor" />
-  <root nodeId="1225201879279">
+  <root nodeId="1225201879279" modelId="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)">
     <nodeInfo nodeId="1225201879279" fileName="MakeAbstract_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879279" fileName="MakeAbstract_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879279" fileName="MakeAbstract_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -66,7 +66,7 @@
     </scopeInfo>
     <unitInfo nodeId="1225201879279" fileName="MakeAbstract_Intention.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention" />
   </root>
-  <root nodeId="1225201879322">
+  <root nodeId="1225201879322" modelId="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)">
     <nodeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -131,7 +131,7 @@
     </scopeInfo>
     <unitInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.MakeVirtual_Intention" />
   </root>
-  <root nodeId="6678378332547031548">
+  <root nodeId="6678378332547031548" modelId="r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)">
     <nodeInfo nodeId="6678378332547031548" fileName="RemoveTVD_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6678378332547031548" fileName="RemoveTVD_Intention.java" startLine="20" startPosition="36" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6678378332547031548" fileName="RemoveTVD_Intention.java" startLine="24" startPosition="37" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
