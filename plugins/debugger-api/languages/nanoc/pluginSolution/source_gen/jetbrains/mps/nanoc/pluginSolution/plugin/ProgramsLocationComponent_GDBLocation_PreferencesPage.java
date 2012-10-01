@@ -10,7 +10,7 @@ import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.nanoc.debug.ProgramsLocationUtil;
 import javax.swing.JComponent;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 
 public class ProgramsLocationComponent_GDBLocation_PreferencesPage extends BasePrefsPage {
   private ProgramsLocationEditor myComponent;
@@ -53,7 +53,7 @@ public class ProgramsLocationComponent_GDBLocation_PreferencesPage extends BaseP
   }
 
   private boolean isModified(Project project, ProgramsLocationEditor component) {
-    return !(ObjectUtils.equals(((ProgramsLocationComponent_PreferencesComponent) ProgramsLocationComponent_GDBLocation_PreferencesPage.this.getPrefsComponent()).getStateObject().myGDBLocation, ((ProgramsLocationEditor) component).getGDBLocation())) || !(ObjectUtils.equals(((ProgramsLocationComponent_PreferencesComponent) ProgramsLocationComponent_GDBLocation_PreferencesPage.this.getPrefsComponent()).getStateObject().myGCCLocation, ((ProgramsLocationEditor) component).getGCCLocation()));
+    return !(EqualUtil.equals(((ProgramsLocationComponent_PreferencesComponent) ProgramsLocationComponent_GDBLocation_PreferencesPage.this.getPrefsComponent()).getStateObject().myGDBLocation, ((ProgramsLocationEditor) component).getGDBLocation())) || !(EqualUtil.equals(((ProgramsLocationComponent_PreferencesComponent) ProgramsLocationComponent_GDBLocation_PreferencesPage.this.getPrefsComponent()).getStateObject().myGCCLocation, ((ProgramsLocationEditor) component).getGCCLocation()));
   }
 
   public void disposeUIResources() {

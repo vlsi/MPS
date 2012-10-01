@@ -12,7 +12,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.MPSCore;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -76,7 +76,7 @@ public class ChangeSetBuilder {
 
     String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(name));
     String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(name));
-    if (!(ObjectUtils.equals(oldPresentableValue, newPresentableValue))) {
+    if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
       ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, newNode.getProperty(name)));
     }
   }

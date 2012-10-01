@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.impl.RunManagerImpl;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -100,7 +100,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
       return false;
     }
     BaseConfigCreator configCreator = (BaseConfigCreator) obj;
-    return ObjectUtils.equals(configCreator.myContext, myContext) && ObjectUtils.equals(configCreator.mySourceElement, mySourceElement) && ObjectUtils.equals(configCreator.getClass().getName(), getClass().getName());
+    return EqualUtil.equals(configCreator.myContext, myContext) && EqualUtil.equals(configCreator.mySourceElement, mySourceElement) && EqualUtil.equals(configCreator.getClass().getName(), getClass().getName());
   }
 
   @NotNull

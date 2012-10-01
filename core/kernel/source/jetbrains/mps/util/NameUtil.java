@@ -19,9 +19,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.WordUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -78,11 +76,11 @@ public class NameUtil {
 
   // ------ Naming policy methods --------
   public static boolean satisfiesNamingPolicy(String s) {
-    return ObjectUtils.equals(captionWithNamingPolicy(s), s);
+    return EqualUtil.equals(captionWithNamingPolicy(s), s);
   }
 
   public static boolean satisfiesPartNamingPolicy(String s) {
-    return ObjectUtils.equals(captionPartWithNamingPolicy(s), s);
+    return EqualUtil.equals(captionPartWithNamingPolicy(s), s);
   }
 
   public static String captionWithNamingPolicy(String s) {
@@ -165,11 +163,28 @@ public class NameUtil {
 
   // ------ Capitalization methods methods --------
   public static String capitalize(String s) {
-    return StringUtils.capitalize(s);
+    if (s == null || s.isEmpty()) return s;
+    char[] chars = s.toCharArray();
+    chars[0] = Character.toTitleCase(chars[0]);
+    return new String(chars);
   }
 
   public static String multiWordCapitalize(String s) {
-    return WordUtils.capitalize(s);
+    if (s == null || s.length() == 0) {
+      return s;
+    }
+    char[] result = s.toCharArray();
+    boolean capitalizeNext = true;
+    for (int i = 0; i < result.length; i++) {
+      char ch = result[i];
+      if (Character.isWhitespace(ch)) {
+        capitalizeNext = true;
+      } else if (capitalizeNext) {
+        result[i] = Character.toTitleCase(ch);
+        capitalizeNext = false;
+      }
+    }
+    return new String(result);
   }
 
   public static String decapitalize(String s) {
@@ -527,19 +542,19 @@ public class NameUtil {
   }
 
   public static String getGetterName(String property) {
-    return "get" + StringUtils.capitalize(property);
+    return "get" + capitalize(property);
   }
 
   public static String getSetterName(String property) {
-    return "set" + StringUtils.capitalize(property);
+    return "set" + capitalize(property);
   }
 
   public static String getAdderName(String property) {
-    return "add" + StringUtils.capitalize(property);
+    return "add" + capitalize(property);
   }
 
   public static String getRemoverName(String property) {
-    return "remove" + StringUtils.capitalize(property);
+    return "remove" + capitalize(property);
   }
 
   public static String getPropertyNameFromGetterOrSetter(String name) {

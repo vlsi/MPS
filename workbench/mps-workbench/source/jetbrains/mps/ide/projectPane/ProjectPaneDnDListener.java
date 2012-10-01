@@ -24,10 +24,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -138,9 +138,9 @@ public class ProjectPaneDnDListener implements DropTargetListener {
       SNode snode = node.o1.getNode();
 
       if (snode==null) continue;
-      if (ObjectUtils.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
+      if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
       SModelDescriptor sourceModel = snode.getModel().getModelDescriptor();
-      if (ObjectUtils.equals(sourceModel, targetModel)) {
+      if (EqualUtil.equals(sourceModel, targetModel)) {
         result.add(new Pair(snode, node.o2));
       }
     }

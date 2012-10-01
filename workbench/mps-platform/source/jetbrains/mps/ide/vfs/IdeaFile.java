@@ -21,9 +21,9 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -385,7 +385,7 @@ class IdeaFile implements IFileEx {
 
     IdeaFile ideaFile = (IdeaFile) o;
 
-    return ObjectUtils.equals(getSystemIndependentPath(), ideaFile.getSystemIndependentPath());
+    return EqualUtil.equals(getSystemIndependentPath(), ideaFile.getSystemIndependentPath());
   }
 
   @Override

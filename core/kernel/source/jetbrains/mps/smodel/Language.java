@@ -33,14 +33,10 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -380,7 +376,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   public boolean isAccessoryModel(SModelReference modelReference) {
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      if (ObjectUtils.equals(model, modelReference)) return true;
+      if (EqualUtil.equals(model, modelReference)) return true;
     }
     return false;
   }

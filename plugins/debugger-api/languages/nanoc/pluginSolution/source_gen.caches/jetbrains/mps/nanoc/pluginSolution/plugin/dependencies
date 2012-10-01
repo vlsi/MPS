@@ -241,7 +241,7 @@
     <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" />
     <classNode dependClassName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
     <classNode dependClassName="jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode extendsClassName="jetbrains.mps.plugins.prefs.BasePrefsPage" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" file="ProgramsLocationComponent_PreferencesComponent.java">

@@ -41,9 +41,9 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -318,7 +318,7 @@ public class TabbedEditor extends BaseNodeEditor{
     public boolean equals(Object obj) {
       if (!(obj instanceof TabbedEditorState)) return false;
       if (!super.equals(obj)) return false;
-      return ObjectUtils.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
+      return EqualUtil.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
     }
   }
 

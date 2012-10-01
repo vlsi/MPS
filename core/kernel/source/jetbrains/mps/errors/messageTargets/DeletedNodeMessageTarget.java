@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.errors.messageTargets;
 
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -45,7 +45,7 @@ public class DeletedNodeMessageTarget implements MessageTarget {
   }
 
   public boolean sameAs(@NotNull MessageTarget errorTarget) {
-    return errorTarget instanceof DeletedNodeMessageTarget && ObjectUtils.equals(errorTarget.getRole(), getRole())
+    return errorTarget instanceof DeletedNodeMessageTarget && EqualUtil.equals(errorTarget.getRole(), getRole())
       && myNextChildIndex == ((DeletedNodeMessageTarget) errorTarget).myNextChildIndex;
   }
 }
