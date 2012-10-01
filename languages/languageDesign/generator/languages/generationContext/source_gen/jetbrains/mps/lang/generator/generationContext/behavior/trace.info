@@ -34,7 +34,7 @@
   <unitInfo fileName="GenerationContextOp_VarRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_VarRef_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextType_BehaviorDescriptor" />
   <unitInfo fileName="TemplateFunctionParameter_generationContext_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
-  <root nodeId="1217892542812">
+  <root nodeId="1217892542812" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1217892577742" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1217892577754" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="16" startPosition="193" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1217892577768" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -56,7 +56,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217892542812" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_Behavior" />
   </root>
-  <root nodeId="1758784108620114789">
+  <root nodeId="1758784108620114789" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="11" startPosition="54" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620114792" />
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620254533" />
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="18" startPosition="74" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -100,7 +100,7 @@
     </scopeInfo>
     <unitInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior" />
   </root>
-  <root nodeId="1758784108620115398">
+  <root nodeId="1758784108620115398" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="12" startPosition="58" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620115401" />
     <nodeInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620254540" />
     <nodeInfo nodeId="1758784108620115427" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -157,7 +157,7 @@
     </scopeInfo>
     <unitInfo nodeId="1758784108620115398" fileName="GenerationContextOp_LinkPatternRef_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_Behavior" />
   </root>
-  <root nodeId="1758784108620115413">
+  <root nodeId="1758784108620115413" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="12" startPosition="58" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620115416" />
     <nodeInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620254557" />
     <nodeInfo nodeId="1758784108620115420" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -214,7 +214,7 @@
     </scopeInfo>
     <unitInfo nodeId="1758784108620115413" fileName="GenerationContextOp_NodePatternRef_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_Behavior" />
   </root>
-  <root nodeId="1758784108620115429">
+  <root nodeId="1758784108620115429" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="12" startPosition="62" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620115432" />
     <nodeInfo nodeId="1758784108620115429" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1758784108620254578" />
     <nodeInfo nodeId="1758784108620115436" fileName="GenerationContextOp_PropertyPatternRef_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -28,7 +28,7 @@
   <unitInfo fileName="XmlText_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlText_BehaviorDescriptor" />
   <unitInfo fileName="XmlValuePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlValuePart_BehaviorDescriptor" />
   <unitInfo fileName="XmlWhitespace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlWhitespace_BehaviorDescriptor" />
-  <root nodeId="1622293396949036116">
+  <root nodeId="1622293396949036116" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="1622293396949036116" fileName="XmlContent_Behavior.java" startLine="12" startPosition="34" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1622293396949044231" />
     <nodeInfo nodeId="1622293396949036116" fileName="XmlContent_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_6999033275467334890" />
     <nodeInfo nodeId="1622293396949036116" fileName="XmlContent_Behavior.java" startLine="14" startPosition="72" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_6999033275467334895" />
@@ -181,7 +181,7 @@
     </scopeInfo>
     <unitInfo nodeId="1622293396949036116" fileName="XmlContent_Behavior.java" startLine="12" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlContent_Behavior" />
   </root>
-  <root nodeId="1622293396949044245">
+  <root nodeId="1622293396949044245" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="1622293396949044245" fileName="XmlComment_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1622293396949044247" fileName="XmlComment_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1622293396949044245" fileName="XmlComment_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0">
@@ -189,7 +189,7 @@
     </scopeInfo>
     <unitInfo nodeId="1622293396949044245" fileName="XmlComment_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlComment_Behavior" />
   </root>
-  <root nodeId="2133624044437631432">
+  <root nodeId="2133624044437631432" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="2133624044437631432" fileName="XmlPart_Behavior.java" startLine="11" startPosition="31" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2133624044437631438" />
     <nodeInfo nodeId="2133624044437631432" fileName="XmlPart_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2133624044437631446" />
     <nodeInfo nodeId="2133624044437631432" fileName="XmlPart_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2133624044437631519" />
@@ -299,7 +299,7 @@
     </scopeInfo>
     <unitInfo nodeId="2133624044437631432" fileName="XmlPart_Behavior.java" startLine="11" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
   </root>
-  <root nodeId="2133624044437669771">
+  <root nodeId="2133624044437669771" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="2133624044437669771" fileName="XmlBasePrologElement_Behavior.java" startLine="11" startPosition="44" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5491461270226170010" />
     <nodeInfo nodeId="2133624044437669771" fileName="XmlBasePrologElement_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2133624044437592936" />
     <nodeInfo nodeId="2133624044437669771" fileName="XmlBasePrologElement_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2133624044437631900" />
@@ -435,7 +435,7 @@
     </scopeInfo>
     <unitInfo nodeId="2133624044437669771" fileName="XmlBasePrologElement_Behavior.java" startLine="11" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlBasePrologElement_Behavior" />
   </root>
-  <root nodeId="2133624044437891373">
+  <root nodeId="2133624044437891373" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="2133624044437891488" fileName="XmlProlog_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2133624044437891552" fileName="XmlProlog_Behavior.java" startLine="22" startPosition="30" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2133624044437891560" fileName="XmlProlog_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -463,7 +463,7 @@
     <unitInfo nodeId="2133624044437891373" fileName="XmlProlog_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior" />
     <unitInfo nodeId="2133624044437891486" fileName="XmlProlog_Behavior.java" startLine="17" startPosition="116" endLine="21" endPosition="5" unitName="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior$1" />
   </root>
-  <root nodeId="3080189811177259777">
+  <root nodeId="3080189811177259777" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="3080189811177259824" fileName="XmlAttribute_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3080189811177259897" fileName="XmlAttribute_Behavior.java" startLine="15" startPosition="147" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3080189811177259838" fileName="XmlAttribute_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -488,7 +488,7 @@
     </scopeInfo>
     <unitInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" />
   </root>
-  <root nodeId="3080189811177259785">
+  <root nodeId="3080189811177259785" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="3080189811177259785" fileName="XmlBaseAttribute_Behavior.java" startLine="11" startPosition="40" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3080189811177259788" />
     <nodeInfo nodeId="3080189811177259814" fileName="XmlBaseAttribute_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3080189811177259785" fileName="XmlBaseAttribute_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -519,7 +519,7 @@
     </scopeInfo>
     <unitInfo nodeId="3080189811177259785" fileName="XmlBaseAttribute_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_Behavior" />
   </root>
-  <root nodeId="3080189811177340419">
+  <root nodeId="3080189811177340419" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="3080189811177340419" fileName="XmlValuePart_Behavior.java" startLine="11" startPosition="36" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3080189811177340436" />
     <nodeInfo nodeId="3080189811177340419" fileName="XmlValuePart_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3080189811177340441" />
     <nodeInfo nodeId="3080189811177340419" fileName="XmlValuePart_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3080189811177340422" />
@@ -634,7 +634,7 @@
     </scopeInfo>
     <unitInfo nodeId="3080189811177340419" fileName="XmlValuePart_Behavior.java" startLine="11" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
   </root>
-  <root nodeId="3080189811177366840">
+  <root nodeId="3080189811177366840" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="3080189811177366847" fileName="XmlTextValue_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3080189811177366855" fileName="XmlTextValue_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3080189811177366901" fileName="XmlTextValue_Behavior.java" startLine="21" startPosition="79" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -690,7 +690,7 @@
     </scopeInfo>
     <unitInfo nodeId="3080189811177366840" fileName="XmlTextValue_Behavior.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlTextValue_Behavior" />
   </root>
-  <root nodeId="543355706921831335">
+  <root nodeId="543355706921831335" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="543355706921863332" fileName="XmlFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="543355706921831335" fileName="XmlFile_Behavior.java" startLine="8" startPosition="31" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="543355706921831335" fileName="XmlFile_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_5067982036267369911#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -704,7 +704,7 @@
     </scopeInfo>
     <unitInfo nodeId="543355706921831335" fileName="XmlFile_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlFile_Behavior" />
   </root>
-  <root nodeId="5491461270226117682">
+  <root nodeId="5491461270226117682" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="5491461270226117685" fileName="XmlDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5491461270226117682" fileName="XmlDeclaration_Behavior.java" startLine="8" startPosition="38" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="5491461270226117684" fileName="XmlDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="56" />
@@ -713,7 +713,7 @@
     </scopeInfo>
     <unitInfo nodeId="5491461270226117682" fileName="XmlDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlDeclaration_Behavior" />
   </root>
-  <root nodeId="5491461270226170007">
+  <root nodeId="5491461270226170007" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="5491461270226170007" fileName="XmlPrologElement_Behavior.java" startLine="7" startPosition="40" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="5491461270226170009" fileName="XmlPrologElement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="5491461270226170007" fileName="XmlPrologElement_Behavior.java" startLine="7" startPosition="40" endLine="10" endPosition="0">
@@ -721,7 +721,7 @@
     </scopeInfo>
     <unitInfo nodeId="5491461270226170007" fileName="XmlPrologElement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlPrologElement_Behavior" />
   </root>
-  <root nodeId="5491461270226170017">
+  <root nodeId="5491461270226170017" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="2133624044437620291" fileName="XmlWhitespace_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2133624044437620299" fileName="XmlWhitespace_Behavior.java" startLine="15" startPosition="98" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2133624044437620304" fileName="XmlWhitespace_Behavior.java" startLine="16" startPosition="106" endLine="17" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -790,7 +790,7 @@
     </scopeInfo>
     <unitInfo nodeId="5491461270226170017" fileName="XmlWhitespace_Behavior.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlWhitespace_Behavior" />
   </root>
-  <root nodeId="6999033275467454437">
+  <root nodeId="6999033275467454437" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="6999033275467469857" fileName="XmlText_Behavior.java" startLine="14" startPosition="91" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6999033275467469860" fileName="XmlText_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6999033275467460091" fileName="XmlText_Behavior.java" startLine="23" startPosition="136" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -846,7 +846,7 @@
     </scopeInfo>
     <unitInfo nodeId="6999033275467454437" fileName="XmlText_Behavior.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlText_Behavior" />
   </root>
-  <root nodeId="6999033275467469815">
+  <root nodeId="6999033275467469815" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="6999033275467469835" fileName="XmlBaseElement_Behavior.java" startLine="11" startPosition="92" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6999033275467469838" fileName="XmlBaseElement_Behavior.java" startLine="15" startPosition="91" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6647099934207069230" fileName="XmlBaseElement_Behavior.java" startLine="19" startPosition="85" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -878,7 +878,7 @@
     </scopeInfo>
     <unitInfo nodeId="6999033275467469815" fileName="XmlBaseElement_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlBaseElement_Behavior" />
   </root>
-  <root nodeId="8886258982030574872">
+  <root nodeId="8886258982030574872" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="1622293396948968118" fileName="XmlElement_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1622293396948968152" fileName="XmlElement_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1122581627194165914" fileName="XmlElement_Behavior.java" startLine="20" startPosition="163" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

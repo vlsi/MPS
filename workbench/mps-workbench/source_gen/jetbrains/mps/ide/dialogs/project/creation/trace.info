@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1613125646032871391">
+  <root nodeId="1613125646032871391" modelId="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
     <nodeInfo nodeId="1613125646032871419" fileName="NewModelDialog.java" startLine="40" startPosition="48" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
     <nodeInfo nodeId="1613125646032871422" fileName="NewModelDialog.java" startLine="41" startPosition="38" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
     <nodeInfo nodeId="1613125646032871425" fileName="NewModelDialog.java" startLine="42" startPosition="27" endLine="43" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentPane" />
@@ -187,7 +187,6 @@
     </scopeInfo>
     <scopeInfo nodeId="3298715926002509718" fileName="NewModelDialog.java" startLine="92" startPosition="110" endLine="98" endPosition="74" />
     <scopeInfo nodeId="1613125646032871750" fileName="NewModelDialog.java" startLine="145" startPosition="98" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="1613125646032871963" fileName="NewModelDialog.java" startLine="198" startPosition="39" endLine="205" endPosition="7" />
     <scopeInfo nodeId="1613125646032871964" fileName="NewModelDialog.java" startLine="198" startPosition="39" endLine="205" endPosition="7">
       <varInfo nodeId="1613125646032871966" varName="aspect" />
     </scopeInfo>
@@ -229,7 +228,7 @@
     <unitInfo nodeId="3419827872459024671" fileName="NewModelDialog.java" startLine="128" startPosition="42" endLine="132" endPosition="5" unitName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog$5" />
     <unitInfo nodeId="1613125646032871748" fileName="NewModelDialog.java" startLine="145" startPosition="66" endLine="151" endPosition="5" unitName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog$6" />
   </root>
-  <root nodeId="1613125646032872003">
+  <root nodeId="1613125646032872003" modelId="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
     <nodeInfo nodeId="1613125646032872676" fileName="NewGeneratorDialog.java" startLine="50" startPosition="52" endLine="51" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourDefaultDimensionSettings" />
     <nodeInfo nodeId="1613125646032872003" fileName="NewGeneratorDialog.java" startLine="51" startPosition="161" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="1613125646032872685" fileName="NewGeneratorDialog.java" startLine="53" startPosition="0" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContenetPane" />
