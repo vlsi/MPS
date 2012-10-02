@@ -22,8 +22,8 @@ public class BuildLayout_JarManifest_Attribute_Behavior {
   @Nullable
   public static Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     if (role.equals("name")) {
-      return MPSColors.DARK_BLUE;
+      return MPSColors.DARK_GRAY.darker();
     }
-    return MPSColors.DARK_GREEN;
+    return MPSColors.DARK_GREEN.darker();
   }
 }

@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import java.io.File;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.util.EqualUtil;
@@ -90,9 +90,9 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_n78otj_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        File f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
+        IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
         return (f != null ?
-          f.getAbsolutePath() :
+          f.getPath() :
           "unknown"
         );
       }
@@ -171,7 +171,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
   }
 
   private static Color _StyleParameter_QueryFunction_n78otj_a0a0(SNode node, EditorContext editorContext) {
-    File f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
+    IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
     if (f == null) {
       return Color.BLACK;
     }

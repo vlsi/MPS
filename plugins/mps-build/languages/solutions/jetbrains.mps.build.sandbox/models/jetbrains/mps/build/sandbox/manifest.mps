@@ -6,12 +6,20 @@
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7471276865246050739">
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="." />
       <property name="name" nameId="tpck.1169194664001" value="testmanifest" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="testmanifest.xml" />
     </node>
   </roots>
   <root id="7471276865246050739">
-    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7471276865246050740" />
+    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3189788309732144700">
+      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5780287594867900360">
+        <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.build.sandbox" />
+        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5780287594867900361">
+          <property name="head" nameId="3ior.8618885170173601779" value="samples" />
+        </node>
+      </node>
+    </node>
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="7471276865246050741">
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JarManifest" typeId="3ior.1251221292903960366" id="7471276865246050771">
         <node role="parts" roleId="3ior.8563603456895840659" type="3ior.BuildLayout_JarManifest_Attribute" typeId="3ior.1251221292903960368" id="8563603456896164484">

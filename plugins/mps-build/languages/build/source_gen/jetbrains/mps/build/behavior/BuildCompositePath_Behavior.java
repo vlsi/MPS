@@ -10,9 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.util.Context;
 
 public class BuildCompositePath_Behavior {
@@ -52,28 +53,33 @@ public class BuildCompositePath_Behavior {
       relativePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath"));
     }
 
-    File file = new File(relativePath);
+    IFile file = FileSystem.getInstance().getFileByPath(relativePath);
     if (!(file.exists())) {
       return ListSequence.fromList(new ArrayList<String>());
     }
-    return Sequence.fromIterable(Sequence.fromArray(file.listFiles())).select(new ISelector<File, String>() {
-      public String select(File it) {
+    List<IFile> children = file.getChildren();
+    Iterable<String> names = ListSequence.fromList(children).select(new ISelector<IFile, String>() {
+      public String select(IFile it) {
         return it.getName();
       }
-    }).union(Sequence.fromIterable(Sequence.<String>singleton(".."))).sort(new ISelector<String, Comparable<?>>() {
+    });
+    if (file.getParent() != null) {
+      names = Sequence.fromIterable(names).union(Sequence.fromIterable(Sequence.<String>singleton("..")));
+    }
+    return Sequence.fromIterable(names).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it;
       }
     }, true).toListSequence();
   }
 
-  public static File call_getFile_841084130032784919(SNode thisNode, Context context) {
+  public static IFile call_getFile_841084130032784919(SNode thisNode, Context context) {
     String basePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), context);
     if ((basePath == null || basePath.length() == 0)) {
       return null;
     }
 
     basePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(thisNode);
-    return new File(basePath);
+    return FileSystem.getInstance().getFileByPath(basePath);
   }
 }
