@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Table_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.structure.Table_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.table.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="Table_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.structure.Table_Language" />
   <root nodeId="2253133157536766818" modelId="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)">
     <nodeInfo nodeId="2253133157536766818" fileName="CellModel_HierarchycalTable.java" startLine="12" startPosition="66" endLine="13" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2253133157536766818" fileName="CellModel_HierarchycalTable.java" startLine="13" startPosition="111" endLine="14" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MY_PROP" />

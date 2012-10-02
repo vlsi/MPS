@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TestRefactoringTargetLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoringTargetLang.structure.TestRefactoringTargetLang_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="testRefactoringTargetLang.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="TestRefactoringTargetLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoringTargetLang.structure.TestRefactoringTargetLang_Language" />
   <root nodeId="1198682124373" modelId="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)">
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="11" startPosition="54" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1198682124373" fileName="AnsotherGoodConcept.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

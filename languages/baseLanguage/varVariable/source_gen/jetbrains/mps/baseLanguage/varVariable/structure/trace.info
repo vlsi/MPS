@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="VarVariable_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.structure.VarVariable_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="VarVariable_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.structure.VarVariable_Language" />
   <root nodeId="1236693300889" modelId="r:931e38db-856b-4b95-8ae0-a7cd13da6d32(jetbrains.mps.baseLanguage.varVariable.structure)">
     <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="15" startPosition="95" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="16" startPosition="113" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />

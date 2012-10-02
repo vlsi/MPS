@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Suite_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.Suite_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="Suite_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.Suite_Language" />
   <root nodeId="1280144168199506908" modelId="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)">
     <nodeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="14" startPosition="68" endLine="15" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1280144168199506908" fileName="SolutionRef.java" startLine="15" startPosition="93" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODULE_F_Q_NAME" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.build.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.build.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.build.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.plugin.FacetManifest" />
   <root nodeId="3038073278400308430" modelId="r:ac7793bc-e58c-4954-a5e8-1100255584f9(jetbrains.mps.build.plugin)">
     <nodeInfo nodeId="3038073278400308447" fileName="Utils.java" startLine="10" startPosition="66" endLine="11" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

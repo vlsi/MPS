@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TableTests_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.TableTests_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="TableTests_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.TableTests_Language" />
   <root nodeId="2882388703616155296" modelId="r:ed658292-9fbd-4bc1-94c2-435048f00105(jetbrains.mps.lang.editor.tableTests.structure)">
     <nodeInfo nodeId="2882388703616155296" fileName="Table.java" startLine="15" startPosition="65" endLine="16" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2882388703616155296" fileName="Table.java" startLine="16" startPosition="94" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_InitialRowCount" />

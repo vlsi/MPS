@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TextGen_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TextGen_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="TextGen_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TextGen_Language" />
   <root nodeId="1224137887853744019" modelId="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)">
     <nodeInfo nodeId="1224137887853744019" fileName="EncodingDeclaration.java" startLine="14" startPosition="93" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1224137887853744019" fileName="EncodingDeclaration.java" startLine="15" startPosition="98" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
