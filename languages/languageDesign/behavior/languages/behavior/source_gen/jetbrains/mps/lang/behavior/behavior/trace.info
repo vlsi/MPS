@@ -416,7 +416,7 @@
     <nodeInfo nodeId="1225196404018" fileName="ConceptMethodDeclaration_Behavior.java" startLine="76" startPosition="5" endLine="77" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225196404035" fileName="ConceptMethodDeclaration_Behavior.java" startLine="80" startPosition="79" endLine="81" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225196404052" fileName="ConceptMethodDeclaration_Behavior.java" startLine="84" startPosition="84" endLine="85" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5914983970298756780" fileName="ConceptMethodDeclaration_Behavior.java" startLine="88" startPosition="93" endLine="89" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5914983970298756780" fileName="ConceptMethodDeclaration_Behavior.java" startLine="88" startPosition="93" endLine="89" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1232982707904" fileName="ConceptMethodDeclaration_Behavior.java" startLine="92" startPosition="74" endLine="93" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5014346297260520849" fileName="ConceptMethodDeclaration_Behavior.java" startLine="96" startPosition="94" endLine="97" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8510677279630867739" fileName="ConceptMethodDeclaration_Behavior.java" startLine="100" startPosition="95" endLine="101" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -465,7 +465,7 @@
     <scopeInfo nodeId="1225196404013" fileName="ConceptMethodDeclaration_Behavior.java" startLine="74" startPosition="29" endLine="75" endPosition="96" />
     <scopeInfo nodeId="1225196404034" fileName="ConceptMethodDeclaration_Behavior.java" startLine="80" startPosition="79" endLine="81" endPosition="110" />
     <scopeInfo nodeId="1225196404051" fileName="ConceptMethodDeclaration_Behavior.java" startLine="84" startPosition="84" endLine="85" endPosition="118" />
-    <scopeInfo nodeId="5914983970298756778" fileName="ConceptMethodDeclaration_Behavior.java" startLine="88" startPosition="93" endLine="89" endPosition="99" />
+    <scopeInfo nodeId="5914983970298756778" fileName="ConceptMethodDeclaration_Behavior.java" startLine="88" startPosition="93" endLine="89" endPosition="115" />
     <scopeInfo nodeId="1232982689940" fileName="ConceptMethodDeclaration_Behavior.java" startLine="92" startPosition="74" endLine="93" endPosition="66" />
     <scopeInfo nodeId="5014346297260520838" fileName="ConceptMethodDeclaration_Behavior.java" startLine="96" startPosition="94" endLine="97" endPosition="74" />
     <scopeInfo nodeId="8510677279630867732" fileName="ConceptMethodDeclaration_Behavior.java" startLine="100" startPosition="95" endLine="101" endPosition="17" />

@@ -86,7 +86,7 @@ public class ConceptMethodDeclaration_Behavior {
   }
 
   public static String call_getOldSuperCallerMethodName_5914983970298756775(SNode thisNode) {
-    return "callSuper_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
+    return "callSuper_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getSNodeId().toString();
   }
 
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
