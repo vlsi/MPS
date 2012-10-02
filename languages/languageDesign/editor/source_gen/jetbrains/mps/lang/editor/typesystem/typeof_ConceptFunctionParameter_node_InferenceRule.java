@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -22,17 +21,10 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false));
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.StyleClassItem", false, false) != null) {
-      SNode withRole = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, false);
-      if (withRole != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(withRole, "relationDeclaration", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-        SNode link = SNodeOperations.cast(SLinkOperations.getTarget(withRole, "relationDeclaration", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-        applicableConcept = SLinkOperations.getTarget(link, "target", false);
-      }
-    }
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086114", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086119", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a2a0().createNode(applicableConcept, typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086119", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a1a0().createNode(applicableConcept, typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -51,8 +43,8 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     return false;
   }
 
-  public static class QuotationClass_jo2b2o_a0a2a0 {
-    public QuotationClass_jo2b2o_a0a2a0() {
+  public static class QuotationClass_jo2b2o_a0a1a0 {
+    public QuotationClass_jo2b2o_a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
