@@ -25,14 +25,20 @@ import java.util.*;
 public class AuditHelper {
   public static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {
-    DISABLED_MODULES.add("jetbrains.mps.ui.unittest"); // obsolete
-    DISABLED_MODULES.add("jetbrains.mps.ui.sandbox"); // obsolete
+    // obsolete modules
+    DISABLED_MODULES.add("jetbrains.mps.ui.unittest");
+    DISABLED_MODULES.add("jetbrains.mps.ui.sandbox");
 
     // TransformationUtil_Complex out of scopes is ok,
-    // TransformationUtil_Expressions should be fixed by right ClassifiersScope
+    // TODO: TransformationUtil_Expressions should be fixed by right ClassifiersScope
     DISABLED_MODULES.add("jetbrains.mps.debugger.java.runtime.tests");
 
-    DISABLED_MODULES.add("jetbrains.mps.smodel.test"); // illegal cardinalities is part of test
+    // illegal cardinalities is part of test
+    DISABLED_MODULES.add("jetbrains.mps.smodel.test");
+
+    // TODO: when concrete for foreach doesn't works
+    DISABLED_MODULES.add("jetbrains.mps.debugger.api.api");
+    DISABLED_MODULES.add("jetbrains.mps.graphLayout.orthogonalLayout");
   }
 
   public static void init() {
