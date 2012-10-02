@@ -6,10 +6,10 @@ import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.List;
-import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory;
+import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.debug.customViewers.CustomViewersManager;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 
 public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   protected static Log log = LogFactory.getLog(CustomViewersInitializer_CustomApplicationPlugin.class);

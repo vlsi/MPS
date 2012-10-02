@@ -46,7 +46,7 @@ import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
-import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;

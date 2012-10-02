@@ -4,7 +4,7 @@ package jetbrains.mps.debug.evaluation.transform.tests;
 
 import jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorBuilderImpl;
 import jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl;
-import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
+import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 
 public class DebuggerInitializer {
   public DebuggerInitializer() {
