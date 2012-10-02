@@ -485,7 +485,7 @@
     <nodeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="30" startPosition="49" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="31" startPosition="35" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234869968490316409" fileName="ShowGenerationTraceback_Action.java" startLine="43" startPosition="108" endLine="44" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7201967929020863779" fileName="ShowGenerationTraceback_Action.java" startLine="43" startPosition="108" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234869968490316416" fileName="ShowGenerationTraceback_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234869968490316425" fileName="ShowGenerationTraceback_Action.java" startLine="46" startPosition="157" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234869968490316434" fileName="ShowGenerationTraceback_Action.java" startLine="47" startPosition="68" endLine="48" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -540,7 +540,7 @@
     <scopeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="64" startPosition="25" endLine="64" endPosition="25" />
     <scopeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="78" startPosition="26" endLine="78" endPosition="26" />
     <scopeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="1234869968490316408" fileName="ShowGenerationTraceback_Action.java" startLine="43" startPosition="108" endLine="44" endPosition="79" />
+    <scopeInfo nodeId="1234869968490316408" fileName="ShowGenerationTraceback_Action.java" startLine="43" startPosition="108" endLine="44" endPosition="43" />
     <scopeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="51" startPosition="33" endLine="52" endPosition="98" />
     <scopeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="59" startPosition="53" endLine="60" endPosition="19" />
     <scopeInfo nodeId="1234869968490316371" fileName="ShowGenerationTraceback_Action.java" startLine="68" startPosition="59" endLine="69" endPosition="19" />
