@@ -138,6 +138,9 @@
     <scopeInfo nodeId="6585869519574798193" fileName="VarDeclStatement_TextGen.java" startLine="21" startPosition="5" endLine="23" endPosition="21" />
     <scopeInfo nodeId="6585869519574798206" fileName="VarDeclStatement_TextGen.java" startLine="25" startPosition="76" endLine="29" endPosition="9" />
     <scopeInfo nodeId="6585869519574798206" fileName="VarDeclStatement_TextGen.java" startLine="24" startPosition="96" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="6585869519574798206" fileName="VarDeclStatement_TextGen.java" startLine="24" startPosition="96" endLine="30" endPosition="7">
+      <varInfo nodeId="6585869519574798206" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="6585869519574798190" fileName="VarDeclStatement_TextGen.java" startLine="34" startPosition="7" endLine="41" endPosition="80">
       <varInfo nodeId="6585869519574798190" varName="traceableProperty" />
     </scopeInfo>

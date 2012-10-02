@@ -2144,6 +2144,9 @@
       <varInfo nodeId="6868777471677432036" varName="program" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="48" startPosition="45" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="48" startPosition="45" endLine="53" endPosition="9">
+      <varInfo nodeId="6868777471677432036" varName="rule" />
+    </scopeInfo>
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="67" startPosition="73" endLine="72" endPosition="5">
       <varInfo nodeId="6868777471677432036" varName="rule" />
     </scopeInfo>
@@ -2193,6 +2196,7 @@
     <scopeInfo nodeId="4212311917866530301" fileName="NullableAnalyzerRunner.java" startLine="47" startPosition="77" endLine="58" endPosition="7">
       <varInfo nodeId="4212311917866530302" varName="inputElement" />
     </scopeInfo>
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="45" startPosition="57" endLine="58" endPosition="5" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="45" startPosition="57" endLine="58" endPosition="5">
       <varInfo nodeId="6868777471677432036" varName="descendant" />
     </scopeInfo>

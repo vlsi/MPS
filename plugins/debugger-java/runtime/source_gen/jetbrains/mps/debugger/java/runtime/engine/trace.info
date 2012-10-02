@@ -410,12 +410,12 @@
     <scopeInfo nodeId="8961922059449033264" fileName="RequestManager.java" startLine="99" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="8961922059449033267" varName="requestor" />
     </scopeInfo>
-    <unitInfo nodeId="8961922059449033006" fileName="RequestManager.java" startLine="47" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     <unitInfo nodeId="8961922059449033794" fileName="RequestManager.java" startLine="252" startPosition="60" endLine="256" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager$1" />
-    <unitInfo nodeId="8961922059449033052" fileName="RequestManager.java" startLine="320" startPosition="27" endLine="329" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager$1" />
     <unitInfo nodeId="8961922059449033903" fileName="RequestManager.java" startLine="287" startPosition="110" endLine="293" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager$2" />
     <unitInfo nodeId="8961922059449033930" fileName="RequestManager.java" startLine="297" startPosition="110" endLine="303" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager$3" />
+    <unitInfo nodeId="8961922059449033052" fileName="RequestManager.java" startLine="320" startPosition="27" endLine="329" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager$1" />
     <unitInfo nodeId="8961922059449033007" fileName="RequestManager.java" startLine="306" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager$MyDebugProcessListener" />
+    <unitInfo nodeId="8961922059449033006" fileName="RequestManager.java" startLine="47" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
   </root>
   <root nodeId="8961922059449033946" modelId="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)">
     <nodeInfo nodeId="8961922059449034044" fileName="VMEventsProcessorManagerComponent.java" startLine="24" startPosition="76" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventProcessorToSessionMap" />
@@ -518,19 +518,25 @@
     <scopeInfo nodeId="8961922059449034242" fileName="VMEventsProcessorManagerComponent.java" startLine="99" startPosition="68" endLine="102" endPosition="5" />
     <scopeInfo nodeId="8961922059449034256" fileName="VMEventsProcessorManagerComponent.java" startLine="105" startPosition="71" endLine="108" endPosition="5" />
     <scopeInfo nodeId="8961922059449034269" fileName="VMEventsProcessorManagerComponent.java" startLine="111" startPosition="62" endLine="114" endPosition="5" />
+    <scopeInfo nodeId="8961922059449033959" fileName="VMEventsProcessorManagerComponent.java" startLine="133" startPosition="36" endLine="136" endPosition="7" />
     <scopeInfo nodeId="8961922059449033960" fileName="VMEventsProcessorManagerComponent.java" startLine="133" startPosition="36" endLine="136" endPosition="7">
       <varInfo nodeId="8961922059449033962" varName="listener" />
     </scopeInfo>
+    <scopeInfo nodeId="8961922059449033976" fileName="VMEventsProcessorManagerComponent.java" startLine="139" startPosition="67" endLine="142" endPosition="7" />
     <scopeInfo nodeId="8961922059449033977" fileName="VMEventsProcessorManagerComponent.java" startLine="139" startPosition="67" endLine="142" endPosition="7">
       <varInfo nodeId="8961922059449033979" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="8961922059449033996" fileName="VMEventsProcessorManagerComponent.java" startLine="145" startPosition="89" endLine="148" endPosition="7">
       <varInfo nodeId="8961922059449033998" varName="listener" />
     </scopeInfo>
+    <scopeInfo nodeId="8961922059449034016" fileName="VMEventsProcessorManagerComponent.java" startLine="152" startPosition="58" endLine="155" endPosition="7" />
     <scopeInfo nodeId="8961922059449034017" fileName="VMEventsProcessorManagerComponent.java" startLine="152" startPosition="58" endLine="155" endPosition="7">
       <varInfo nodeId="8961922059449034019" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="8961922059449034033" fileName="VMEventsProcessorManagerComponent.java" startLine="158" startPosition="57" endLine="161" endPosition="7" />
+    <scopeInfo nodeId="8961922059449034034" fileName="VMEventsProcessorManagerComponent.java" startLine="158" startPosition="57" endLine="161" endPosition="7">
+      <varInfo nodeId="8961922059449034036" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="8961922059449034089" fileName="VMEventsProcessorManagerComponent.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="8961922059449034094" fileName="VMEventsProcessorManagerComponent.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="8961922059449034107" fileName="VMEventsProcessorManagerComponent.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
@@ -570,6 +576,7 @@
     <scopeInfo nodeId="8961922059449034027" fileName="VMEventsProcessorManagerComponent.java" startLine="157" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="8961922059449034030" varName="suspendContext" />
     </scopeInfo>
+    <scopeInfo nodeId="8961922059449034194" fileName="VMEventsProcessorManagerComponent.java" startLine="81" startPosition="112" endLine="88" endPosition="5" />
     <scopeInfo nodeId="8961922059449034195" fileName="VMEventsProcessorManagerComponent.java" startLine="81" startPosition="112" endLine="88" endPosition="5">
       <varInfo nodeId="8961922059449034197" varName="processor" />
     </scopeInfo>
@@ -594,10 +601,10 @@
     <scopeInfo nodeId="8961922059449034117" fileName="VMEventsProcessorManagerComponent.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8961922059449034120" varName="session" />
     </scopeInfo>
-    <unitInfo nodeId="8961922059449033946" fileName="VMEventsProcessorManagerComponent.java" startLine="24" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent" />
     <unitInfo nodeId="8961922059449034133" fileName="VMEventsProcessorManagerComponent.java" startLine="58" startPosition="119" endLine="62" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent$1" />
     <unitInfo nodeId="8961922059449034204" fileName="VMEventsProcessorManagerComponent.java" startLine="83" startPosition="27" endLine="87" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent$2" />
     <unitInfo nodeId="8961922059449033949" fileName="VMEventsProcessorManagerComponent.java" startLine="128" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent$MyDebugProcessesMulticaster" />
+    <unitInfo nodeId="8961922059449033946" fileName="VMEventsProcessorManagerComponent.java" startLine="24" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent" />
   </root>
   <root nodeId="8961922059449034278" modelId="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)">
     <nodeInfo nodeId="8961922059449034280" fileName="DebugProcessMulticaster.java" startLine="12" startPosition="38" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -686,11 +693,22 @@
     </scopeInfo>
     <scopeInfo nodeId="8961922059449034296" fileName="DebugProcessMulticaster.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="8961922059449034347" fileName="DebugProcessMulticaster.java" startLine="39" startPosition="34" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="8961922059449034348" fileName="DebugProcessMulticaster.java" startLine="39" startPosition="34" endLine="46" endPosition="5">
+      <varInfo nodeId="8961922059449034350" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="8961922059449034374" fileName="DebugProcessMulticaster.java" startLine="49" startPosition="55" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="8961922059449034375" fileName="DebugProcessMulticaster.java" startLine="49" startPosition="55" endLine="56" endPosition="5">
+      <varInfo nodeId="8961922059449034377" varName="listener" />
+    </scopeInfo>
     <scopeInfo nodeId="8961922059449034402" fileName="DebugProcessMulticaster.java" startLine="59" startPosition="56" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="8961922059449034403" fileName="DebugProcessMulticaster.java" startLine="59" startPosition="56" endLine="66" endPosition="5">
+      <varInfo nodeId="8961922059449034405" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="8961922059449034432" fileName="DebugProcessMulticaster.java" startLine="69" startPosition="87" endLine="76" endPosition="5" />
     <scopeInfo nodeId="8961922059449034433" fileName="DebugProcessMulticaster.java" startLine="69" startPosition="87" endLine="76" endPosition="5">
       <varInfo nodeId="8961922059449034435" varName="listener" />
     </scopeInfo>
+    <scopeInfo nodeId="8961922059449034461" fileName="DebugProcessMulticaster.java" startLine="79" startPosition="65" endLine="86" endPosition="5" />
     <scopeInfo nodeId="8961922059449034462" fileName="DebugProcessMulticaster.java" startLine="79" startPosition="65" endLine="86" endPosition="5">
       <varInfo nodeId="8961922059449034464" varName="listener" />
     </scopeInfo>
@@ -838,8 +856,8 @@
       <varInfo nodeId="8961922059449034670" varName="key" />
       <varInfo nodeId="8961922059449034668" varName="message" />
     </scopeInfo>
-    <unitInfo nodeId="8961922059449034565" fileName="SystemMessagesReporter.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.SystemMessagesReporter" />
     <unitInfo nodeId="8961922059449034567" fileName="SystemMessagesReporter.java" startLine="55" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.SystemMessagesReporter$MyDebugProcessAdapter" />
+    <unitInfo nodeId="8961922059449034565" fileName="SystemMessagesReporter.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.SystemMessagesReporter" />
   </root>
 </debugInfo>
 
