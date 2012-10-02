@@ -20,12 +20,15 @@ import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.vfs.FileSystem;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class AuditHelper {
+  public static final Set<String> OBSOLETE_MODULES = new HashSet<String>();
+  static {
+    OBSOLETE_MODULES.add("jetbrains.mps.ui.unittest");
+    OBSOLETE_MODULES.add("jetbrains.mps.ui.sandbox");
+  }
+
   public static void init() {
     CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
   }
@@ -48,6 +51,9 @@ public class AuditHelper {
     for (ModuleHandle moduleHandle : moduleHandles) {
       if (moduleHandle.getFile().getName().endsWith(".iml")) {
         // temporary ignore .iml files
+        continue;
+      }
+      if (OBSOLETE_MODULES.contains(moduleHandle.getDescriptor().getModuleReference().getModuleFqName())) {
         continue;
       }
 
