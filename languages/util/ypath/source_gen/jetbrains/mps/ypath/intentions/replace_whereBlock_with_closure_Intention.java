@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class replace_whereBlock_with_closure_Intention extends BaseIntention implements Intention {
@@ -49,7 +50,9 @@ public class replace_whereBlock_with_closure_Intention extends BaseIntention imp
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode cl = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
-    SNode scpd = SNodeFactoryOperations.addNewChild(cl, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode parameterType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "parameter", true)), "jetbrains.mps.baseLanguage.structure.Type");
+    SNode scpd = SNodeFactoryOperations.addNewChild(cl, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    SLinkOperations.setTarget(scpd, "type", parameterType, true);
     SNode cp = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "parameter", true);
     SPropertyOperations.set(scpd, "name", SPropertyOperations.getString(cp, "name"));
     SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "body", true)), true);
