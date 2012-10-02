@@ -161,6 +161,49 @@
     <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="53" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody" />
     <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test" />
   </root>
+  <root nodeId="5368511706901688070" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
+    <nodeInfo nodeId="1841835149314679084" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="52" endLine="12" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1841835149314679092" fileName="TestRelativePathHelper_Test.java" startLine="12" startPosition="70" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314679120" fileName="TestRelativePathHelper_Test.java" startLine="13" startPosition="21" endLine="14" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314679148" fileName="TestRelativePathHelper_Test.java" startLine="14" startPosition="21" endLine="15" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314679176" fileName="TestRelativePathHelper_Test.java" startLine="15" startPosition="27" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314687007" fileName="TestRelativePathHelper_Test.java" startLine="16" startPosition="0" endLine="17" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1841835149314687032" fileName="TestRelativePathHelper_Test.java" startLine="17" startPosition="54" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314687027" fileName="TestRelativePathHelper_Test.java" startLine="18" startPosition="21" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314690704" fileName="TestRelativePathHelper_Test.java" startLine="19" startPosition="0" endLine="20" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1841835149314679293" fileName="TestRelativePathHelper_Test.java" startLine="20" startPosition="15" endLine="21" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1841835149314680236" fileName="TestRelativePathHelper_Test.java" startLine="21" startPosition="54" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1841835149314686956" fileName="TestRelativePathHelper_Test.java" startLine="22" startPosition="73" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314679310" fileName="TestRelativePathHelper_Test.java" startLine="23" startPosition="0" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314690696" fileName="TestRelativePathHelper_Test.java" startLine="24" startPosition="106" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314690707" fileName="TestRelativePathHelper_Test.java" startLine="25" startPosition="0" endLine="26" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1841835149314690709" fileName="TestRelativePathHelper_Test.java" startLine="26" startPosition="12" endLine="27" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314781642" fileName="TestRelativePathHelper_Test.java" startLine="27" startPosition="106" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314778424" fileName="TestRelativePathHelper_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314778430" fileName="TestRelativePathHelper_Test.java" startLine="29" startPosition="0" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1841835149314778443" fileName="TestRelativePathHelper_Test.java" startLine="30" startPosition="21" endLine="31" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314778438" fileName="TestRelativePathHelper_Test.java" startLine="31" startPosition="95" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314778510" fileName="TestRelativePathHelper_Test.java" startLine="32" startPosition="0" endLine="33" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1841835149314778484" fileName="TestRelativePathHelper_Test.java" startLine="33" startPosition="12" endLine="34" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314778477" fileName="TestRelativePathHelper_Test.java" startLine="34" startPosition="95" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314779974" fileName="TestRelativePathHelper_Test.java" startLine="35" startPosition="0" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1841835149314780163" fileName="TestRelativePathHelper_Test.java" startLine="36" startPosition="22" endLine="37" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1841835149314779994" fileName="TestRelativePathHelper_Test.java" startLine="37" startPosition="62" endLine="38" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314780116" fileName="TestRelativePathHelper_Test.java" startLine="38" startPosition="90" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1841835149314780128" fileName="TestRelativePathHelper_Test.java" startLine="39" startPosition="0" endLine="40" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1841835149314780130" fileName="TestRelativePathHelper_Test.java" startLine="40" startPosition="12" endLine="41" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841835149314781674" fileName="TestRelativePathHelper_Test.java" startLine="41" startPosition="89" endLine="42" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5368511706901692172" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="59" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRelPaths#()V" />
+    <scopeInfo nodeId="5368511706901692175" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="52" endLine="42" endPosition="90">
+      <varInfo nodeId="1841835149314687008" varName="baseDir" />
+      <varInfo nodeId="1841835149314780164" varName="oneUp" />
+      <varInfo nodeId="1841835149314679294" varName="scriptsFolder" />
+      <varInfo nodeId="1841835149314680237" varName="targetFolder" />
+      <varInfo nodeId="1841835149314679085" varName="tmpFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="5368511706901692172" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="59" endLine="44" endPosition="0" />
+    <unitInfo nodeId="5368511706901688070" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
+  </root>
   <root nodeId="5584673629410321146" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="5584673629410321283" fileName="TestContext.java" startLine="17" startPosition="42" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP_MACRO" />
     <nodeInfo nodeId="193602448594332738" fileName="TestContext.java" startLine="18" startPosition="54" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP" />
