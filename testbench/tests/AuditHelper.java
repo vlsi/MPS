@@ -23,10 +23,16 @@ import jetbrains.mps.vfs.FileSystem;
 import java.util.*;
 
 public class AuditHelper {
-  public static final Set<String> OBSOLETE_MODULES = new HashSet<String>();
+  public static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {
-    OBSOLETE_MODULES.add("jetbrains.mps.ui.unittest");
-    OBSOLETE_MODULES.add("jetbrains.mps.ui.sandbox");
+    DISABLED_MODULES.add("jetbrains.mps.ui.unittest"); // obsolete
+    DISABLED_MODULES.add("jetbrains.mps.ui.sandbox"); // obsolete
+
+    // TransformationUtil_Complex out of scopes is ok,
+    // TransformationUtil_Expressions should be fixed by right ClassifiersScope
+    DISABLED_MODULES.add("jetbrains.mps.debugger.java.runtime.tests");
+
+    DISABLED_MODULES.add("jetbrains.mps.smodel.test"); // illegal cardinalities is part of test
   }
 
   public static void init() {
@@ -53,7 +59,7 @@ public class AuditHelper {
         // temporary ignore .iml files
         continue;
       }
-      if (OBSOLETE_MODULES.contains(moduleHandle.getDescriptor().getModuleReference().getModuleFqName())) {
+      if (DISABLED_MODULES.contains(moduleHandle.getDescriptor().getModuleReference().getModuleFqName())) {
         continue;
       }
 
