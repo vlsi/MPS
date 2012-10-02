@@ -109,8 +109,8 @@
     <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1169670215797" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType" />
     <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType_PropertySupport" />
+    <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType" />
   </root>
   <root nodeId="1195595264961" modelId="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)">
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -215,8 +215,8 @@
     <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1195595264961" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind" />
     <unitInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind_PropertySupport" />
+    <unitInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind" />
   </root>
 </debugInfo>
 

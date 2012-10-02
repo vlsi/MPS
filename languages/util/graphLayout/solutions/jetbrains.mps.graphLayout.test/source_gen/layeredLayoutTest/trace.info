@@ -323,6 +323,7 @@
       <varInfo nodeId="7033456583153162502" varName="firstTarget" />
       <varInfo nodeId="7033456583153162515" varName="secondTarget" />
     </scopeInfo>
+    <scopeInfo nodeId="7033456583153162498" fileName="CheckDummyEdgesCrossing.java" startLine="22" startPosition="87" endLine="32" endPosition="9" />
     <scopeInfo nodeId="7033456583153162499" fileName="CheckDummyEdgesCrossing.java" startLine="22" startPosition="87" endLine="32" endPosition="9">
       <varInfo nodeId="7033456583153162549" varName="second" />
     </scopeInfo>
@@ -339,8 +340,8 @@
     <scopeInfo nodeId="7033456583153162448" fileName="CheckDummyEdgesCrossing.java" startLine="14" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="7033456583153162458" varName="order" />
     </scopeInfo>
-    <unitInfo nodeId="6088058844796081230" fileName="CheckDummyEdgesCrossing.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="layeredLayoutTest.CheckDummyEdgesCrossing" />
     <unitInfo nodeId="7033456583153162489" fileName="CheckDummyEdgesCrossing.java" startLine="17" startPosition="85" endLine="21" endPosition="7" unitName="layeredLayoutTest.CheckDummyEdgesCrossing$1" />
+    <unitInfo nodeId="6088058844796081230" fileName="CheckDummyEdgesCrossing.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="layeredLayoutTest.CheckDummyEdgesCrossing" />
   </root>
   <root nodeId="8780938838750221986" modelId="r:e4338979-215b-4b9c-a1e7-b887743c18eb(layeredLayoutTest)">
     <nodeInfo nodeId="8780938838750221993" fileName="RefineAdjacentNodeSorterProxy.java" startLine="14" startPosition="67" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySorter" />

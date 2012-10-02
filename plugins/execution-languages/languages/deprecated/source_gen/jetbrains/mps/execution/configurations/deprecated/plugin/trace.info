@@ -245,8 +245,8 @@
     <scopeInfo nodeId="314981645427225038" fileName="QueriesGenerated.java" startLine="423" startPosition="135" endLine="437" endPosition="16">
       <varInfo nodeId="314981645427225050" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="314981645427225080" fileName="QueriesGenerated.java" startLine="791" startPosition="0" endLine="808" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.plugin.QueriesGenerated$QuotationClass_x583g4_a0a0e0md" />
     <unitInfo nodeId="314981645427225579" fileName="QueriesGenerated.java" startLine="809" startPosition="0" endLine="825" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.plugin.QueriesGenerated$QuotationClass_x583g4_a1a0a0od" />
+    <unitInfo nodeId="314981645427225080" fileName="QueriesGenerated.java" startLine="791" startPosition="0" endLine="808" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.plugin.QueriesGenerated$QuotationClass_x583g4_a0a0e0md" />
   </root>
   <root nodeId="314981645427225779" modelId="r:b98c22e2-bfcd-40d7-9c1f-9a32895cb7de(jetbrains.mps.execution.configurations.deprecated.plugin@generator)">
     <nodeInfo nodeId="314981645427225818" fileName="QueriesGenerated.java" startLine="47" startPosition="39" endLine="48" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -286,6 +286,9 @@
     <scopeInfo nodeId="314981645427226038" fileName="QueriesGenerated.java" startLine="738" startPosition="50" endLine="739" endPosition="161" />
     <scopeInfo nodeId="314981645427226073" fileName="QueriesGenerated.java" startLine="744" startPosition="208" endLine="745" endPosition="224" />
     <scopeInfo nodeId="314981645427226065" fileName="QueriesGenerated.java" startLine="743" startPosition="213" endLine="746" endPosition="9" />
+    <scopeInfo nodeId="314981645427226066" fileName="QueriesGenerated.java" startLine="743" startPosition="213" endLine="746" endPosition="9">
+      <varInfo nodeId="314981645427226067" varName="parameter" />
+    </scopeInfo>
     <scopeInfo nodeId="314981645427226037" fileName="QueriesGenerated.java" startLine="737" startPosition="156" endLine="741" endPosition="0">
       <varInfo nodeId="314981645427226037" varName="it" />
     </scopeInfo>

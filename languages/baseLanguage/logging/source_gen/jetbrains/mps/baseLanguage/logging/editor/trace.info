@@ -520,8 +520,8 @@
       <varInfo nodeId="1168401913942" varName="elementNode" />
       <varInfo nodeId="1168401913942" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="24" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor" />
     <unitInfo nodeId="1168401913942" fileName="PrintStatement_Editor.java" startLine="82" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor$textExpressionListHandler_nmgex1_c0" />
+    <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="24" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor" />
   </root>
 </debugInfo>
 

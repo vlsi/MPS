@@ -47,6 +47,9 @@
       <varInfo nodeId="3444116434173277236" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="3002214349487398174" fileName="Values.java" startLine="32" startPosition="49" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="3002214349487398187" fileName="Values.java" startLine="32" startPosition="49" endLine="35" endPosition="5">
+      <varInfo nodeId="3002214349487398191" varName="val" />
+    </scopeInfo>
     <scopeInfo nodeId="3444116434173277155" fileName="Values.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3444116434173277156" varName="node" />
       <varInfo nodeId="3444116434173277158" varName="value" />

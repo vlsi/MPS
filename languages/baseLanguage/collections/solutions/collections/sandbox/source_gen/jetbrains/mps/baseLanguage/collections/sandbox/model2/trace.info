@@ -72,8 +72,8 @@
     <scopeInfo nodeId="1164651109606" fileName="FindUserUtil.java" startLine="14" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1164651133750" varName="identity" />
     </scopeInfo>
-    <unitInfo nodeId="1164651095574" fileName="FindUserUtil.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.FindUserUtil" />
     <unitInfo nodeId="1224754248219" fileName="FindUserUtil.java" startLine="17" startPosition="72" endLine="21" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.FindUserUtil$1" />
+    <unitInfo nodeId="1164651095574" fileName="FindUserUtil.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.FindUserUtil" />
   </root>
 </debugInfo>
 

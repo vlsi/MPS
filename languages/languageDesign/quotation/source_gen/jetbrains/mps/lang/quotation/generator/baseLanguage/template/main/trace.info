@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="30" startPosition="0" endLine="481" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="30" startPosition="0" endLine="481" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
   <root nodeId="1196351886629" modelId="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="20" startPosition="95" endLine="21" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_ske5p0_a0a0a1a1" />
     <nodeInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="21" startPosition="214" endLine="22" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_ske5p0_a0a0a1a3a1a1" />
@@ -107,8 +107,8 @@
       <varInfo nodeId="1196351886629" varName="context" />
       <varInfo nodeId="1196351886629" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotationModel__modelToCreate" />
     <unitInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="61" startPosition="34" endLine="73" endPosition="11" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotationModel__modelToCreate$1" />
+    <unitInfo nodeId="1196351886629" fileName="TemplateQuotationModel__modelToCreate.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotationModel__modelToCreate" />
   </root>
   <root nodeId="1196351886651" modelId="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="1196351886651" fileName="TemplateQuotationModel__NullModel.java" startLine="15" startPosition="91" endLine="16" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_or1pk5_a0a0a1a1" />
@@ -252,8 +252,8 @@
       <varInfo nodeId="1196351886655" varName="context" />
       <varInfo nodeId="1196351886655" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotationModel__switch" />
     <unitInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="50" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotationModel__switch$ReductionRule0" />
+    <unitInfo nodeId="1196351886655" fileName="SwitchQuotationModel__switch.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotationModel__switch" />
   </root>
   <root nodeId="1196351886667" modelId="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="1196351886667" fileName="SwitchQuotation__switch.java" startLine="15" startPosition="71" endLine="16" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_jsnd1y_a0a0a3" />
@@ -1279,6 +1279,9 @@
       <varInfo nodeId="9181472308624882658" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="937236280924642919" fileName="QueriesGenerated.java" startLine="333" startPosition="35" endLine="339" endPosition="9" />
+    <scopeInfo nodeId="937236280924642920" fileName="QueriesGenerated.java" startLine="333" startPosition="35" endLine="339" endPosition="9">
+      <varInfo nodeId="937236280924642924" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="937236280924643094" fileName="QueriesGenerated.java" startLine="361" startPosition="47" endLine="367" endPosition="15">
       <varInfo nodeId="937236280924643115" varName="grandChild" />
     </scopeInfo>
@@ -1393,6 +1396,7 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="521" startPosition="38" endLine="548" endPosition="33">
       <varInfo nodeId="1196351886669" varName="inputChanged35" />
     </scopeInfo>
+    <scopeInfo nodeId="937236280924643047" fileName="QueriesGenerated.java" startLine="354" startPosition="35" endLine="382" endPosition="9" />
     <scopeInfo nodeId="937236280924643048" fileName="QueriesGenerated.java" startLine="354" startPosition="35" endLine="382" endPosition="9">
       <varInfo nodeId="937236280924643052" varName="child" />
     </scopeInfo>
@@ -1566,9 +1570,9 @@
       <varInfo nodeId="1196351886669" varName="context" />
       <varInfo nodeId="1196351886669" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="27" startPosition="0" endLine="959" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall" />
     <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="599" startPosition="64" endLine="611" endPosition="41" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall$1" />
     <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="650" startPosition="68" endLine="662" endPosition="45" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall$2" />
+    <unitInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="27" startPosition="0" endLine="959" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__methodCall" />
   </root>
   <root nodeId="1196351886726" modelId="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="27" startPosition="95" endLine="28" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_swz52f_a0a0a1a1" />
@@ -5121,8 +5125,15 @@
       <varInfo nodeId="1196351886726" varName="context" />
       <varInfo nodeId="1196351886726" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="27" startPosition="0" endLine="2827" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="375" startPosition="54" endLine="387" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$1" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="543" startPosition="54" endLine="555" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$2" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="796" startPosition="68" endLine="808" endPosition="45" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$3" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1161" startPosition="68" endLine="1173" endPosition="45" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$4" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1342" startPosition="58" endLine="1354" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$5" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1426" startPosition="58" endLine="1438" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$6" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1578" startPosition="54" endLine="1590" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$7" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1612" startPosition="58" endLine="1624" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$8" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1777" startPosition="66" endLine="1789" endPosition="43" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$9" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1847" startPosition="54" endLine="1859" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$10" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1882" startPosition="58" endLine="1894" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$11" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1952" startPosition="66" endLine="1964" endPosition="43" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$12" />
@@ -5132,14 +5143,7 @@
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2255" startPosition="66" endLine="2267" endPosition="43" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$16" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2525" startPosition="58" endLine="2537" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$17" />
     <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2655" startPosition="66" endLine="2667" endPosition="43" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$18" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="543" startPosition="54" endLine="555" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$2" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="796" startPosition="68" endLine="808" endPosition="45" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$3" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1161" startPosition="68" endLine="1173" endPosition="45" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$4" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1342" startPosition="58" endLine="1354" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$5" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1426" startPosition="58" endLine="1438" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$6" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1578" startPosition="54" endLine="1590" endPosition="31" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$7" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1612" startPosition="58" endLine="1624" endPosition="35" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$8" />
-    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1777" startPosition="66" endLine="1789" endPosition="43" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$9" />
+    <unitInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="27" startPosition="0" endLine="2827" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
   </root>
   <root nodeId="1196351887556" modelId="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)">
     <nodeInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="24" startPosition="66" endLine="25" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
@@ -5248,8 +5252,8 @@
       <varInfo nodeId="1196351887556" varName="context" />
       <varInfo nodeId="1196351887556" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingmain" />
     <unitInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="84" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingmain$ReductionRule0" />
+    <unitInfo nodeId="1196351887556" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingmain" />
   </root>
 </debugInfo>
 

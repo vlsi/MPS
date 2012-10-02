@@ -421,6 +421,9 @@
       <varInfo nodeId="3437556975695846721" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="3437556975695846981" fileName="RandomGraphGenerator.java" startLine="92" startPosition="49" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="3437556975695846982" fileName="RandomGraphGenerator.java" startLine="92" startPosition="49" endLine="95" endPosition="7">
+      <varInfo nodeId="3437556975695846990" varName="j" />
+    </scopeInfo>
     <scopeInfo nodeId="3437556975695847418" fileName="RandomGraphGenerator.java" startLine="171" startPosition="61" endLine="174" endPosition="5">
       <varInfo nodeId="3437556975695847425" varName="i" />
     </scopeInfo>
@@ -791,6 +794,9 @@
       <varInfo nodeId="8527875266531974279" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="8527875266531974449" fileName="SimpleGraphGenerator.java" startLine="30" startPosition="65" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="8527875266531974456" fileName="SimpleGraphGenerator.java" startLine="30" startPosition="65" endLine="35" endPosition="7">
+      <varInfo nodeId="8527875266531974457" varName="target" />
+    </scopeInfo>
     <scopeInfo nodeId="8527875266531974111" fileName="SimpleGraphGenerator.java" startLine="22" startPosition="44" endLine="29" endPosition="5">
       <varInfo nodeId="8527875266531974114" varName="iter" />
     </scopeInfo>
@@ -812,8 +818,8 @@
     <scopeInfo nodeId="8527875266531973891" fileName="SimpleGraphGenerator.java" startLine="20" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="8527875266531973894" varName="graph" />
     </scopeInfo>
-    <unitInfo nodeId="8527875266531973857" fileName="SimpleGraphGenerator.java" startLine="12" startPosition="0" endLine="66" endPosition="0" unitName="sampleGraphs.SimpleGraphGenerator" />
     <unitInfo nodeId="8527875266531974400" fileName="SimpleGraphGenerator.java" startLine="41" startPosition="80" endLine="45" endPosition="5" unitName="sampleGraphs.SimpleGraphGenerator$1" />
+    <unitInfo nodeId="8527875266531973857" fileName="SimpleGraphGenerator.java" startLine="12" startPosition="0" endLine="66" endPosition="0" unitName="sampleGraphs.SimpleGraphGenerator" />
   </root>
 </debugInfo>
 

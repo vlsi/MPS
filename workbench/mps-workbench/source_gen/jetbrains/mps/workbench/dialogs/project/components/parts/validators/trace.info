@@ -52,8 +52,8 @@
     <scopeInfo nodeId="1560298786499498214" fileName="ModelValidator.java" startLine="16" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1560298786499498217" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499498197" fileName="ModelValidator.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator" />
     <unitInfo nodeId="1560298786499498250" fileName="ModelValidator.java" startLine="25" startPosition="52" endLine="29" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator$1" />
+    <unitInfo nodeId="1560298786499498197" fileName="ModelValidator.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator" />
   </root>
 </debugInfo>
 

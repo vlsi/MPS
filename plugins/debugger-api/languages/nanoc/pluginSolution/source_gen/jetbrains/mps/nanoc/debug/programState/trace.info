@@ -97,9 +97,9 @@
       <varInfo nodeId="3990508698139429536" varName="resultAnswer" />
       <varInfo nodeId="3990508698139429538" varName="sourceGen" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
     <unitInfo nodeId="3990508698139429471" fileName="DefaultThread.java" startLine="62" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor1" />
     <unitInfo nodeId="3990508698139429493" fileName="DefaultThread.java" startLine="78" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor2" />
+    <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
   </root>
   <root nodeId="3990508698139427312" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
     <nodeInfo nodeId="3990508698139427315" fileName="GDBLocation.java" startLine="10" startPosition="47" endLine="11" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

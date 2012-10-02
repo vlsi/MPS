@@ -121,8 +121,8 @@
     <scopeInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="51" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1140829206022" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag" />
     <unitInfo nodeId="1140829206022" fileName="SideTransformTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
+    <unitInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag" />
   </root>
   <root nodeId="1215604970641" modelId="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)">
     <nodeInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -227,8 +227,8 @@
     <scopeInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1215604970641" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1215604970641" fileName="Side.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side" />
     <unitInfo nodeId="1215604970641" fileName="Side_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
+    <unitInfo nodeId="1215604970641" fileName="Side.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side" />
   </root>
 </debugInfo>
 

@@ -105,8 +105,8 @@
     <scopeInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5299416737274925392" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="5299416737274925392" fileName="ScriptType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType" />
     <unitInfo nodeId="5299416737274925392" fileName="ScriptType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType_PropertySupport" />
+    <unitInfo nodeId="5299416737274925392" fileName="ScriptType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType" />
   </root>
 </debugInfo>
 

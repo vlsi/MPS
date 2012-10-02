@@ -242,8 +242,8 @@
       <varInfo nodeId="1200505285985" varName="editorContext" />
       <varInfo nodeId="1200505285985" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1200505270682" fileName="PropertyNode_Editor.java" startLine="28" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.build.property.editor.PropertyNode_Editor" />
     <unitInfo nodeId="1200505324007" fileName="PropertyNode_Editor.java" startLine="114" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.build.property.editor.PropertyNode_Editor$declarationListHandler_i7uzyy_c0" />
+    <unitInfo nodeId="1200505270682" fileName="PropertyNode_Editor.java" startLine="28" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.build.property.editor.PropertyNode_Editor" />
   </root>
 </debugInfo>
 

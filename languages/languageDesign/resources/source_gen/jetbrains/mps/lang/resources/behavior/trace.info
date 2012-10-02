@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="IconResourceBundle_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceBundle_BehaviorDescriptor" />
-  <unitInfo fileName="IconResourceDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="Resource_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" />
   <unitInfo fileName="IconResourceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceExpression_BehaviorDescriptor" />
   <unitInfo fileName="IconResourceReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceReference_BehaviorDescriptor" />
   <unitInfo fileName="IconResource_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResource_BehaviorDescriptor" />
-  <unitInfo fileName="Resource_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" />
+  <unitInfo fileName="IconResourceBundle_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceBundle_BehaviorDescriptor" />
+  <unitInfo fileName="IconResourceDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
   <root nodeId="8974276187400029987" modelId="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)">
     <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="21" startPosition="36" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8974276187400029990" />
     <nodeInfo nodeId="8974276187400029999" fileName="IconResource_Behavior.java" startLine="29" startPosition="25" endLine="30" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -102,8 +102,8 @@
     <scopeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="43" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="8974276187400029987" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
     <unitInfo nodeId="8974276187400029997" fileName="IconResource_Behavior.java" startLine="28" startPosition="47" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior$1" />
+    <unitInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
   </root>
   <root nodeId="8974276187400030151" modelId="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)">
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="11" startPosition="32" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8974276187400030152" />

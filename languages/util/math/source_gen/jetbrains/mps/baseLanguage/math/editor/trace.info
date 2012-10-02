@@ -118,8 +118,8 @@
       <varInfo nodeId="1235747377645" varName="editorContext" />
       <varInfo nodeId="1235747377645" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235747377639" fileName="InIntervalExpression_Editor.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.InIntervalExpression_Editor" />
     <unitInfo nodeId="1235747377644" fileName="InIntervalExpression_Editor.java" startLine="80" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.InIntervalExpression_Editor$ReplaceWith_BinaryOperation_cellMenu_a0b0" />
+    <unitInfo nodeId="1235747377639" fileName="InIntervalExpression_Editor.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.InIntervalExpression_Editor" />
   </root>
   <root nodeId="1235747377646" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1235747377646" fileName="IntervalContainsExpression_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -239,8 +239,8 @@
       <varInfo nodeId="1235747377652" varName="editorContext" />
       <varInfo nodeId="1235747377652" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235747377646" fileName="IntervalContainsExpression_Editor.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalContainsExpression_Editor" />
     <unitInfo nodeId="1235747377651" fileName="IntervalContainsExpression_Editor.java" startLine="80" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalContainsExpression_Editor$ReplaceWith_BinaryOperation_cellMenu_a0b0_0" />
+    <unitInfo nodeId="1235747377646" fileName="IntervalContainsExpression_Editor.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalContainsExpression_Editor" />
   </root>
   <root nodeId="1235747377653" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="33" startPosition="79" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -653,13 +653,13 @@
       <varInfo nodeId="1235747377655" varName="editorContext" />
       <varInfo nodeId="1235747377655" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="32" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor" />
+    <unitInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="224" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_a0a0" />
+    <unitInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="237" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_b0a0" />
+    <unitInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="250" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_a0e0" />
+    <unitInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="263" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_b0e0" />
     <unitInfo nodeId="1235747377655" fileName="IntervalLiteral_Editor.java" startLine="88" startPosition="83" endLine="103" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$1" />
     <unitInfo nodeId="1235747377697" fileName="IntervalLiteral_Editor.java" startLine="115" startPosition="83" endLine="130" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$2" />
-    <unitInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="224" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_a0a0" />
-    <unitInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="250" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_a0e0" />
-    <unitInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="237" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_b0a0" />
-    <unitInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="263" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_b0e0" />
+    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="32" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor" />
   </root>
   <root nodeId="1235747377742" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1235747377748" fileName="IntervalType_Editor.java" startLine="70" startPosition="58" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1499,8 +1499,8 @@
       <varInfo nodeId="1236427978281" varName="editorContext" />
       <varInfo nodeId="1236427978281" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor" />
     <unitInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor$_Inline_ez8int_a0a" />
+    <unitInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor" />
   </root>
   <root nodeId="1236589729677" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1236589745904" fileName="MathSymbolFromToIndex_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1801,8 +1801,8 @@
       <varInfo nodeId="1237102973375" varName="editorContext" />
       <varInfo nodeId="1237102973375" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1237100894352" fileName="DivExpressionFraction_Editor.java" startLine="22" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DivExpressionFraction_Editor" />
     <unitInfo nodeId="9151122427738029062" fileName="DivExpressionFraction_Editor.java" startLine="51" startPosition="40" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.DivExpressionFraction_Editor$1" />
+    <unitInfo nodeId="1237100894352" fileName="DivExpressionFraction_Editor.java" startLine="22" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DivExpressionFraction_Editor" />
   </root>
   <root nodeId="1237214636558" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1237546631835" fileName="MathTypeCast_Editor.java" startLine="64" startPosition="58" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2485,8 +2485,8 @@
       <varInfo nodeId="1238343911367" varName="editorContext" />
       <varInfo nodeId="1238343911367" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1238343907176" fileName="MathFuncExpression_Editor.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathFuncExpression_Editor" />
     <unitInfo nodeId="1238344045698" fileName="MathFuncExpression_Editor.java" startLine="103" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathFuncExpression_Editor$ReplaceWith_MathFuncExpression_cellMenu_a0a0" />
+    <unitInfo nodeId="1238343907176" fileName="MathFuncExpression_Editor.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathFuncExpression_Editor" />
   </root>
   <root nodeId="1238403050830" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1904947163751462530" fileName="DecimalBinaryOperation_Editor.java" startLine="56" startPosition="58" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2717,9 +2717,9 @@
       <varInfo nodeId="1238940056323" varName="editorContext" />
       <varInfo nodeId="1238940056323" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="25" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor" />
     <unitInfo nodeId="1238944106277" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$ReplaceWith_BinaryOperation_cellMenu_a0b0_1" />
     <unitInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="135" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$_Inline_sl2ryj_a0a" />
+    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="25" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor" />
   </root>
   <root nodeId="1418611629041138657" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1418611629041138657" fileName="MatrixUnit_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3262,9 +3262,9 @@
       <varInfo nodeId="1418611629042457286" varName="editorContext" />
       <varInfo nodeId="1418611629042457286" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="37" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
     <unitInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="227" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$_Inline_kydwvz_a0a" />
     <unitInfo nodeId="1418611629042457288" fileName="LinearSolveOperation_Editor.java" startLine="247" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$annotationListHandler_kydwvz_a0a" />
+    <unitInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="37" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
   </root>
   <root nodeId="1418611629042580034" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="7255837154369796307" fileName="MatrixInverseOperation_Editor.java" startLine="37" startPosition="69" endLine="37" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3392,8 +3392,8 @@
       <varInfo nodeId="1904947163751464668" varName="editorContext" />
       <varInfo nodeId="1904947163751464668" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor" />
     <unitInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="66" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor$_Inline_j4oyiy_a1a" />
+    <unitInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor" />
   </root>
   <root nodeId="1418611629042593538" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1418611629042593538" fileName="deleteUpperIndex.java" startLine="14" startPosition="95" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3424,8 +3424,8 @@
       <varInfo nodeId="1418611629042593538" varName="editorContext" />
       <varInfo nodeId="1418611629042593538" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1418611629042593538" fileName="deleteUpperIndex.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.deleteUpperIndex" />
     <unitInfo nodeId="1418611629042593538" fileName="deleteUpperIndex.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.deleteUpperIndex$deleteUpperIndex_DELETE" />
+    <unitInfo nodeId="1418611629042593538" fileName="deleteUpperIndex.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.deleteUpperIndex" />
   </root>
   <root nodeId="1904947163751448713" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="1904947163751448713" fileName="MathContextEditorPart.java" startLine="21" startPosition="44" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -5314,9 +5314,9 @@
       <varInfo nodeId="3498370411873438956" varName="editorContext" />
       <varInfo nodeId="3498370411873438956" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4815887568697232016" fileName="MatrixConstructor_Editor.java" startLine="32" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor" />
     <unitInfo nodeId="9151122427738542259" fileName="MatrixConstructor_Editor.java" startLine="176" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor$componentsListHandler_lhhqxl_b0a" />
     <unitInfo nodeId="6510001722514119233" fileName="MatrixConstructor_Editor.java" startLine="212" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor$componentsListHandler_lhhqxl_b0a_0" />
+    <unitInfo nodeId="4815887568697232016" fileName="MatrixConstructor_Editor.java" startLine="32" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor" />
   </root>
   <root nodeId="5948968788443470493" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="5948968788443470493" fileName="delete_numerator.java" startLine="14" startPosition="95" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5347,8 +5347,8 @@
       <varInfo nodeId="5948968788443470493" varName="editorContext" />
       <varInfo nodeId="5948968788443470493" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5948968788443470493" fileName="delete_numerator.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_numerator" />
     <unitInfo nodeId="5948968788443470493" fileName="delete_numerator.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_numerator$delete_numerator_DELETE" />
+    <unitInfo nodeId="5948968788443470493" fileName="delete_numerator.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_numerator" />
   </root>
   <root nodeId="5948968788443483973" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="5948968788443483973" fileName="delete_denominator.java" startLine="14" startPosition="95" endLine="15" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5379,8 +5379,8 @@
       <varInfo nodeId="5948968788443483973" varName="editorContext" />
       <varInfo nodeId="5948968788443483973" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5948968788443483973" fileName="delete_denominator.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_denominator" />
     <unitInfo nodeId="5948968788443483973" fileName="delete_denominator.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_denominator$delete_denominator_DELETE" />
+    <unitInfo nodeId="5948968788443483973" fileName="delete_denominator.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_denominator" />
   </root>
   <root nodeId="6219660258344738889" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="6219660258345042262" fileName="MatrixInitializer_Editor.java" startLine="142" startPosition="58" endLine="142" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5928,8 +5928,8 @@
       <varInfo nodeId="6219660258344759929" varName="editorContext" />
       <varInfo nodeId="6219660258344759929" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor" />
     <unitInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor$_Inline_sfo61_a0a" />
+    <unitInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor" />
   </root>
   <root nodeId="6219660258344759895" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="6219660258344759895" fileName="MatrixInitializerIndex_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6749,8 +6749,8 @@
       <varInfo nodeId="7255837154369796261" varName="editorContext" />
       <varInfo nodeId="7255837154369796261" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7255837154369782738" fileName="ExponentOperation_Component.java" startLine="34" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component" />
     <unitInfo nodeId="7255837154369796264" fileName="ExponentOperation_Component.java" startLine="106" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component$ExponentialOperation_generic_cellMenu_a0b0" />
+    <unitInfo nodeId="7255837154369782738" fileName="ExponentOperation_Component.java" startLine="34" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component" />
   </root>
   <root nodeId="920952925470358964" modelId="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)">
     <nodeInfo nodeId="758819215871161913" fileName="MatrixNorm_Editor.java" startLine="54" startPosition="58" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6916,8 +6916,8 @@
       <varInfo nodeId="963844843316139392" varName="editorContext" />
       <varInfo nodeId="963844843316139392" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="963844843316139392" fileName="delete_exponent.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_exponent" />
     <unitInfo nodeId="963844843316139392" fileName="delete_exponent.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_exponent$delete_exponent_DELETE" />
+    <unitInfo nodeId="963844843316139392" fileName="delete_exponent.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.delete_exponent" />
   </root>
 </debugInfo>
 

@@ -126,8 +126,8 @@
     <scopeInfo nodeId="5332097447638335792" fileName="ReplaceWithFieldReference_Intention.java" startLine="55" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="5332097447638335792" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention" />
     <unitInfo nodeId="5332097447638335792" fileName="ReplaceWithFieldReference_Intention.java" startLine="52" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention$QuotationClass_9v79qk_a0a0a5" />
+    <unitInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention" />
   </root>
   <root nodeId="5332097447638335764" modelId="r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)">
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -196,8 +196,8 @@
     <scopeInfo nodeId="5332097447638335774" fileName="ReplaceWithConstantValue_Intention.java" startLine="52" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="5332097447638335774" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention" />
     <unitInfo nodeId="5332097447638335774" fileName="ReplaceWithConstantValue_Intention.java" startLine="49" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention$QuotationClass_1199yo_a0a0a5" />
+    <unitInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention" />
   </root>
 </debugInfo>
 

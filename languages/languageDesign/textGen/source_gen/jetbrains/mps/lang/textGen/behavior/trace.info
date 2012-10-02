@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AbstractAppendPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractTextGenDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractTextGenParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_BehaviorDescriptor" />
-  <unitInfo fileName="AppendOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AppendOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="EncodingDeclarationBase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.EncodingDeclarationBase_BehaviorDescriptor" />
   <unitInfo fileName="BufferParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
   <unitInfo fileName="CollectionAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptTextGenDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ConstantStringAppendPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_BehaviorDescriptor" />
   <unitInfo fileName="ContextParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ContextParameter_BehaviorDescriptor" />
   <unitInfo fileName="DecreaseDepthOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.DecreaseDepthOperation_BehaviorDescriptor" />
-  <unitInfo fileName="EncodingDeclarationBase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.EncodingDeclarationBase_BehaviorDescriptor" />
+  <unitInfo fileName="IncreaseDepthOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.IncreaseDepthOperation_BehaviorDescriptor" />
+  <unitInfo fileName="IndentBufferOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
+  <unitInfo fileName="InfoAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.InfoAppendPart_BehaviorDescriptor" />
+  <unitInfo fileName="NewLineAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
+  <unitInfo fileName="OperationCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.OperationCall_BehaviorDescriptor" />
+  <unitInfo fileName="ReferenceAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ReferenceAppendPart_BehaviorDescriptor" />
+  <unitInfo fileName="AppendOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AppendOperation_BehaviorDescriptor" />
   <unitInfo fileName="EncodingDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.EncodingDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="EncodingLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.EncodingLiteral_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ExtensionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="FoundErrorOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.FoundErrorOperation_BehaviorDescriptor" />
   <unitInfo fileName="GenerateTextDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.GenerateTextDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="IncreaseDepthOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.IncreaseDepthOperation_BehaviorDescriptor" />
-  <unitInfo fileName="IndentBufferOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
-  <unitInfo fileName="InfoAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.InfoAppendPart_BehaviorDescriptor" />
-  <unitInfo fileName="LanguageTextGenDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="NewLineAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
-  <unitInfo fileName="NodeAppendPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
-  <unitInfo fileName="NodeParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.NodeParameter_BehaviorDescriptor" />
-  <unitInfo fileName="OperationCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.OperationCall_BehaviorDescriptor" />
-  <unitInfo fileName="OperationDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ReferenceAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ReferenceAppendPart_BehaviorDescriptor" />
-  <unitInfo fileName="SimpleTextGenOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_BehaviorDescriptor" />
-  <unitInfo fileName="UtilityMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="UtilityMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UtilityMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="WithIndentOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.WithIndentOperation_BehaviorDescriptor" />
+  <unitInfo fileName="ConstantStringAppendPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_BehaviorDescriptor" />
+  <unitInfo fileName="NodeAppendPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
+  <unitInfo fileName="NodeParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.NodeParameter_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractAppendPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleTextGenOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_BehaviorDescriptor" />
+  <unitInfo fileName="UtilityMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractTextGenParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_BehaviorDescriptor" />
+  <unitInfo fileName="LanguageTextGenDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="OperationDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractTextGenDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptTextGenDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1234257860776" modelId="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)">
     <nodeInfo nodeId="1234257871250" fileName="OperationDeclaration_Behavior.java" startLine="11" startPosition="43" endLine="12" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234265138564" fileName="OperationDeclaration_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -103,6 +103,7 @@
     <scopeInfo nodeId="1234781318164" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="29" startPosition="36" endLine="34" endPosition="7">
       <varInfo nodeId="1234781318181" varName="func" />
     </scopeInfo>
+    <scopeInfo nodeId="1234781318218" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1234781318219" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7">
       <varInfo nodeId="1234781318236" varName="func" />
     </scopeInfo>

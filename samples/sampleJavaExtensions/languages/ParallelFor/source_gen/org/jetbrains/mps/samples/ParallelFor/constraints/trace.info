@@ -31,8 +31,8 @@
       <varInfo nodeId="633195941006921799" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints" />
     <unitInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="22" startPosition="42" endLine="33" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints$1" />
+    <unitInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints" />
   </root>
   <root nodeId="7793246093816048068" modelId="r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)">
     <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="81" endLine="20" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -98,8 +98,8 @@
       <varInfo nodeId="7793246093816048068" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="41" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
     <unitInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="45" startPosition="34" endLine="56" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints$1" />
+    <unitInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
   </root>
 </debugInfo>
 

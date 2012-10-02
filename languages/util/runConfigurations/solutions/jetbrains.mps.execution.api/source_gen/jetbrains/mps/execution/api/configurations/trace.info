@@ -224,18 +224,22 @@
     <scopeInfo nodeId="6314556899428532832" fileName="BaseMpsBeforeTaskProvider.java" startLine="65" startPosition="0" endLine="68" endPosition="7">
       <varInfo nodeId="6314556899428532833" varName="t" />
     </scopeInfo>
+    <scopeInfo nodeId="6314556899428532835" fileName="BaseMpsBeforeTaskProvider.java" startLine="65" startPosition="27" endLine="68" endPosition="7" />
     <scopeInfo nodeId="6314556899428532845" fileName="BaseMpsBeforeTaskProvider.java" startLine="65" startPosition="27" endLine="68" endPosition="7" />
     <scopeInfo nodeId="7012936564564596253" fileName="BaseMpsBeforeTaskProvider.java" startLine="87" startPosition="0" endLine="90" endPosition="7">
       <varInfo nodeId="7012936564564596233" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="7012936564564596254" fileName="BaseMpsBeforeTaskProvider.java" startLine="87" startPosition="43" endLine="90" endPosition="7" />
     <scopeInfo nodeId="7012936564564596255" fileName="BaseMpsBeforeTaskProvider.java" startLine="87" startPosition="43" endLine="90" endPosition="7" />
     <scopeInfo nodeId="7012936564564596259" fileName="BaseMpsBeforeTaskProvider.java" startLine="91" startPosition="0" endLine="94" endPosition="7">
       <varInfo nodeId="7012936564564596234" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="7012936564564596260" fileName="BaseMpsBeforeTaskProvider.java" startLine="91" startPosition="40" endLine="94" endPosition="7" />
     <scopeInfo nodeId="7012936564564596261" fileName="BaseMpsBeforeTaskProvider.java" startLine="91" startPosition="40" endLine="94" endPosition="7" />
     <scopeInfo nodeId="7012936564564596265" fileName="BaseMpsBeforeTaskProvider.java" startLine="95" startPosition="0" endLine="98" endPosition="7">
       <varInfo nodeId="7012936564564596235" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="7012936564564596266" fileName="BaseMpsBeforeTaskProvider.java" startLine="95" startPosition="36" endLine="98" endPosition="7" />
     <scopeInfo nodeId="7012936564564596267" fileName="BaseMpsBeforeTaskProvider.java" startLine="95" startPosition="36" endLine="98" endPosition="7" />
     <scopeInfo nodeId="7037083547576022724" fileName="BaseMpsBeforeTaskProvider.java" startLine="132" startPosition="75" endLine="135" endPosition="5" />
     <scopeInfo nodeId="6396510228602725935" fileName="BaseMpsBeforeTaskProvider.java" startLine="27" startPosition="0" endLine="31" endPosition="3">
@@ -290,9 +294,9 @@
       <varInfo nodeId="7012936564564596240" varName="runConfiguration" />
       <varInfo nodeId="7012936564564596241" varName="task" />
     </scopeInfo>
-    <unitInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="18" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" />
     <unitInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="80" startPosition="117" endLine="84" endPosition="7" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider$1" />
     <unitInfo nodeId="7037083547576022722" fileName="BaseMpsBeforeTaskProvider.java" startLine="132" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider$BaseMpsBeforeRunTask" />
+    <unitInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="18" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" />
   </root>
 </debugInfo>
 

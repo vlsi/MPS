@@ -123,8 +123,8 @@
     <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1237383987373" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
     <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum_PropertySupport" />
+    <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
   </root>
 </debugInfo>
 

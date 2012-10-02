@@ -220,6 +220,7 @@
     <scopeInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="250" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="63" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="68" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="95" startPosition="25" endLine="100" endPosition="5" />
     <scopeInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="95" startPosition="25" endLine="100" endPosition="5">
       <varInfo nodeId="1202829285111" varName="binding" />
     </scopeInfo>
@@ -300,15 +301,15 @@
       <varInfo nodeId="1202829285111" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="102" startPosition="0" endLine="157" endPosition="0" />
-    <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="26" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo" />
+    <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="227" startPosition="36" endLine="231" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$7" />
+    <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="239" startPosition="36" endLine="243" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$8" />
     <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="43" startPosition="32" endLine="49" endPosition="3" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$1" />
     <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="107" startPosition="57" endLine="115" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$2" />
     <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="116" startPosition="57" endLine="124" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$3" />
     <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="125" startPosition="57" endLine="134" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$4" />
     <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="135" startPosition="57" endLine="144" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$5" />
     <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="145" startPosition="57" endLine="154" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$6" />
-    <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="227" startPosition="36" endLine="231" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$7" />
-    <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="239" startPosition="36" endLine="243" endPosition="5" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo$8" />
+    <unitInfo nodeId="1202829285111" fileName="DialogDemo.java" startLine="26" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo" />
   </root>
   <root nodeId="1202832184362" modelId="r:00000000-0000-4000-0000-011c8959055c(jetbrains.mps.uiLanguage.samples.dialogs)">
     <nodeInfo nodeId="1202833166011" fileName="DialogDemo.java" startLine="267" startPosition="27" endLine="268" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

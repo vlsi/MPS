@@ -28,8 +28,12 @@
     <nodeInfo nodeId="2535050848643235301" fileName="QueriesGenerated.java" startLine="661" startPosition="145" endLine="668" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="2535050848643255954" fileName="QueriesGenerated.java" startLine="664" startPosition="35" endLine="665" endPosition="130" />
     <scopeInfo nodeId="2535050848643255928" fileName="QueriesGenerated.java" startLine="663" startPosition="103" endLine="666" endPosition="9" />
+    <scopeInfo nodeId="2535050848643255954" fileName="QueriesGenerated.java" startLine="663" startPosition="103" endLine="666" endPosition="9" />
     <scopeInfo nodeId="2535050848643235304" fileName="QueriesGenerated.java" startLine="662" startPosition="175" endLine="667" endPosition="7" />
     <scopeInfo nodeId="2535050848643235300" fileName="QueriesGenerated.java" startLine="661" startPosition="145" endLine="668" endPosition="5" />
+    <scopeInfo nodeId="2535050848643235301" fileName="QueriesGenerated.java" startLine="661" startPosition="145" endLine="668" endPosition="5">
+      <varInfo nodeId="2535050848643235302" varName="runConfiguration" />
+    </scopeInfo>
   </root>
   <root nodeId="2572811016744697074" modelId="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)">
     <nodeInfo nodeId="6519221734259390329" fileName="QueriesGenerated.java" startLine="214" startPosition="154" endLine="215" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

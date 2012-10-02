@@ -100,8 +100,8 @@
       <varInfo nodeId="4391314372875430618" varName="enumDataType" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875424931" fileName="EnumPropertySubstituteInfo.java" startLine="25" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="4391314372875337327" fileName="EnumPropertySubstituteInfo.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
     <unitInfo nodeId="4391314372875510220" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="52" endLine="42" endPosition="7" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
+    <unitInfo nodeId="4391314372875337327" fileName="EnumPropertySubstituteInfo.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
   </root>
 </debugInfo>
 

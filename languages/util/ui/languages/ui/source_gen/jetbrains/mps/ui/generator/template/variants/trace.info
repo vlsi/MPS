@@ -269,8 +269,8 @@
     <unitInfo nodeId="8586335042091303268" fileName="QueriesGenerated.java" startLine="172" startPosition="96" endLine="176" endPosition="5" unitName="jetbrains.mps.ui.generator.template.variants.QueriesGenerated$3" />
     <unitInfo nodeId="8586335042091303311" fileName="QueriesGenerated.java" startLine="179" startPosition="117" endLine="183" endPosition="7" unitName="jetbrains.mps.ui.generator.template.variants.QueriesGenerated$4" />
     <unitInfo nodeId="8586335042091303314" fileName="QueriesGenerated.java" startLine="245" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.ui.generator.template.variants.QueriesGenerated$QuotationClass_x583g4_a0a0a0a0a0a0a0d0eb" />
-    <unitInfo nodeId="8586335042091303327" fileName="QueriesGenerated.java" startLine="263" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.ui.generator.template.variants.QueriesGenerated$QuotationClass_x583g4_a0a0b0d0eb" />
     <unitInfo nodeId="8586335042091303286" fileName="QueriesGenerated.java" startLine="213" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.ui.generator.template.variants.QueriesGenerated$QuotationClass_x583g4_a0a0c0eb" />
+    <unitInfo nodeId="8586335042091303327" fileName="QueriesGenerated.java" startLine="263" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.ui.generator.template.variants.QueriesGenerated$QuotationClass_x583g4_a0a0b0d0eb" />
   </root>
   <root nodeId="8590671622324544147" modelId="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)">
     <nodeInfo nodeId="8590671622325733982" fileName="QueriesGenerated.java" startLine="35" startPosition="146" endLine="36" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

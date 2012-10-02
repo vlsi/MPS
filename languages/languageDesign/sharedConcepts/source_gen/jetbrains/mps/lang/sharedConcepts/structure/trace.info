@@ -105,8 +105,8 @@
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1161807239261" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom" />
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom_PropertySupport" />
+    <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom" />
   </root>
   <root nodeId="1165007009656" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -215,8 +215,8 @@
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1165007009656" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions" />
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions_PropertySupport" />
+    <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions" />
   </root>
   <root nodeId="1177964585679" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -321,8 +321,8 @@
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1177964585679" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue" />
     <unitInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue_PropertySupport" />
+    <unitInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue" />
   </root>
 </debugInfo>
 

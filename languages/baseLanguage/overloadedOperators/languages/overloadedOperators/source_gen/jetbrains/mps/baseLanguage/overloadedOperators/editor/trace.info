@@ -180,8 +180,8 @@
       <varInfo nodeId="1141736782993463027" varName="editorContext" />
       <varInfo nodeId="1141736782993463027" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1569627462441399921" fileName="CustomOperatorUsage_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperatorUsage_Editor" />
     <unitInfo nodeId="1141736782993463025" fileName="CustomOperatorUsage_Editor.java" startLine="88" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperatorUsage_Editor$_Inline_fe04xc_a1a" />
+    <unitInfo nodeId="1569627462441399921" fileName="CustomOperatorUsage_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperatorUsage_Editor" />
   </root>
   <root nodeId="2838654975956757964" modelId="r:13d16a02-6fc1-4986-8d3c-61aadbaeccd7(jetbrains.mps.baseLanguage.overloadedOperators.editor)">
     <nodeInfo nodeId="2838654975956757964" fileName="CustomOperatorDeclaration_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -366,8 +366,8 @@
       <varInfo nodeId="2838654975957155520" varName="editorContext" />
       <varInfo nodeId="2838654975957155520" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="17" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor" />
     <unitInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="47" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor$_Inline_mfrs1f_a0a" />
+    <unitInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="17" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor" />
   </root>
   <root nodeId="2838654975957402170" modelId="r:13d16a02-6fc1-4986-8d3c-61aadbaeccd7(jetbrains.mps.baseLanguage.overloadedOperators.editor)">
     <nodeInfo nodeId="1569627462442536641" fileName="CustomOperator_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -477,8 +477,8 @@
       <varInfo nodeId="1569627462442536644" varName="editorContext" />
       <varInfo nodeId="1569627462442536644" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2838654975957402170" fileName="CustomOperator_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperator_Editor" />
     <unitInfo nodeId="1569627462442536642" fileName="CustomOperator_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperator_Editor$_Inline_h0tfbv_a0a" />
+    <unitInfo nodeId="2838654975957402170" fileName="CustomOperator_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperator_Editor" />
   </root>
   <root nodeId="483844232470139401" modelId="r:13d16a02-6fc1-4986-8d3c-61aadbaeccd7(jetbrains.mps.baseLanguage.overloadedOperators.editor)">
     <nodeInfo nodeId="483844232470139401" fileName="OverloadedOperatorContainer_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -988,9 +988,9 @@
       <varInfo nodeId="483844232470139410" varName="editorContext" />
       <varInfo nodeId="483844232470139410" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="483844232470139401" fileName="OverloadedOperatorContainer_Editor.java" startLine="31" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.OverloadedOperatorContainer_Editor" />
     <unitInfo nodeId="3622867488195023771" fileName="OverloadedOperatorContainer_Editor.java" startLine="220" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.OverloadedOperatorContainer_Editor$customOperatorsListHandler_2ntrw4_b1b3a" />
     <unitInfo nodeId="3622867488195023777" fileName="OverloadedOperatorContainer_Editor.java" startLine="267" startPosition="0" endLine="313" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.OverloadedOperatorContainer_Editor$operatorsListHandler_2ntrw4_c1b3a" />
+    <unitInfo nodeId="483844232470139401" fileName="OverloadedOperatorContainer_Editor.java" startLine="31" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.OverloadedOperatorContainer_Editor" />
   </root>
   <root nodeId="483844232470139749" modelId="r:13d16a02-6fc1-4986-8d3c-61aadbaeccd7(jetbrains.mps.baseLanguage.overloadedOperators.editor)">
     <nodeInfo nodeId="2838654975957155522" fileName="OverloadedBinaryOperator_Editor.java" startLine="130" startPosition="58" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

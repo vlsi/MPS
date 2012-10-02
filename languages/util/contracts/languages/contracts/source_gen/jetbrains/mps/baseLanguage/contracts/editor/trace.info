@@ -397,8 +397,8 @@
       <varInfo nodeId="332248429538012452" varName="editorContext" />
       <varInfo nodeId="332248429538012452" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="332248429538012448" fileName="MethodConditions_Editor.java" startLine="23" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.MethodConditions_Editor" />
     <unitInfo nodeId="332248429538012452" fileName="MethodConditions_Editor.java" startLine="56" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.MethodConditions_Editor$conditionListHandler_p1nx89_a0" />
+    <unitInfo nodeId="332248429538012448" fileName="MethodConditions_Editor.java" startLine="23" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.MethodConditions_Editor" />
   </root>
 </debugInfo>
 

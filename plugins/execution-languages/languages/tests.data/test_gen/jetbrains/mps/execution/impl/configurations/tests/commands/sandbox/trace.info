@@ -32,8 +32,8 @@
     <scopeInfo nodeId="8128243960970299097" fileName="Main.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="8128243960970299098" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="8128243960970299091" fileName="Main.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" />
     <unitInfo nodeId="3354566406403962792" fileName="Main.java" startLine="17" startPosition="8" endLine="21" endPosition="5" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main$1" />
+    <unitInfo nodeId="8128243960970299091" fileName="Main.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" />
   </root>
 </debugInfo>
 

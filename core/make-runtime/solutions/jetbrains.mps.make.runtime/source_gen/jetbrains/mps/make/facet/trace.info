@@ -55,9 +55,9 @@
     <scopeInfo nodeId="1521318412423199202" fileName="IFacet.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1521318412423199207" fileName="IFacet.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1521318412423300473" fileName="IFacet.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="6168415856807657096" fileName="IFacet.java" startLine="8" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet" />
     <unitInfo nodeId="6168415856807657097" fileName="IFacet.java" startLine="15" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet$Name" />
     <unitInfo nodeId="1521318412423199178" fileName="IFacet.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet$Stub" />
+    <unitInfo nodeId="6168415856807657096" fileName="IFacet.java" startLine="8" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet" />
   </root>
   <root nodeId="6168415856807657134" modelId="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)">
     <nodeInfo nodeId="6168415856807657147" fileName="ITarget.java" startLine="10" startPosition="26" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
@@ -103,8 +103,8 @@
     <scopeInfo nodeId="1150121516825542489" fileName="ITarget.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1150121516825542490" varName="parentFqName" />
     </scopeInfo>
-    <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
     <unitInfo nodeId="6168415856807657135" fileName="ITarget.java" startLine="24" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget$Name" />
+    <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
   </root>
   <root nodeId="6168415856807659069" modelId="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)">
     <nodeInfo nodeId="6168415856807662021" fileName="FacetRegistry.java" startLine="13" startPosition="28" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

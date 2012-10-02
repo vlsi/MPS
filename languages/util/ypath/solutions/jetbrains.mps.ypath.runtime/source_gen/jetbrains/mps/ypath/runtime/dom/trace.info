@@ -31,8 +31,8 @@
     <scopeInfo nodeId="2295870045929265813" fileName="NodeListIterableAdapter.java" startLine="31" startPosition="24" endLine="35" endPosition="41" />
     <scopeInfo nodeId="2295870045929265778" fileName="NodeListIterableAdapter.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2295870045929265775" fileName="NodeListIterableAdapter.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="2295870045929265758" fileName="NodeListIterableAdapter.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NodeListIterableAdapter" />
     <unitInfo nodeId="2295870045929265762" fileName="NodeListIterableAdapter.java" startLine="21" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NodeListIterableAdapter$NodeListIterator" />
+    <unitInfo nodeId="2295870045929265758" fileName="NodeListIterableAdapter.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NodeListIterableAdapter" />
   </root>
   <root nodeId="2295870045929266190" modelId="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)">
     <nodeInfo nodeId="2295870045929266195" fileName="ChainedIterable.java" startLine="10" startPosition="56" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="iterables" />
@@ -132,8 +132,8 @@
     <scopeInfo nodeId="2295870045929268262" fileName="NamedNodeMapIterableAdapter.java" startLine="31" startPosition="24" endLine="35" endPosition="41" />
     <scopeInfo nodeId="2295870045929268227" fileName="NamedNodeMapIterableAdapter.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2295870045929268224" fileName="NamedNodeMapIterableAdapter.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="2295870045929268207" fileName="NamedNodeMapIterableAdapter.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NamedNodeMapIterableAdapter" />
     <unitInfo nodeId="2295870045929268211" fileName="NamedNodeMapIterableAdapter.java" startLine="21" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NamedNodeMapIterableAdapter$NamedNodeMapIterator" />
+    <unitInfo nodeId="2295870045929268207" fileName="NamedNodeMapIterableAdapter.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NamedNodeMapIterableAdapter" />
   </root>
 </debugInfo>
 

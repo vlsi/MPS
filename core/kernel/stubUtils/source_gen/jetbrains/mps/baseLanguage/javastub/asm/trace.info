@@ -364,10 +364,14 @@
     <scopeInfo nodeId="7241381882860006022" fileName="ASMMethod.java" startLine="71" startPosition="98" endLine="75" endPosition="49" />
     <scopeInfo nodeId="7241381882860006073" fileName="ASMMethod.java" startLine="79" startPosition="100" endLine="83" endPosition="49" />
     <scopeInfo nodeId="7241381882860006137" fileName="ASMMethod.java" startLine="97" startPosition="12" endLine="101" endPosition="7" />
+    <scopeInfo nodeId="7241381882860006257" fileName="ASMMethod.java" startLine="112" startPosition="48" endLine="116" endPosition="9" />
     <scopeInfo nodeId="7241381882860006258" fileName="ASMMethod.java" startLine="112" startPosition="48" endLine="116" endPosition="9">
       <varInfo nodeId="7241381882860006267" varName="an" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860006291" fileName="ASMMethod.java" startLine="118" startPosition="50" endLine="122" endPosition="9" />
+    <scopeInfo nodeId="7241381882860006292" fileName="ASMMethod.java" startLine="118" startPosition="50" endLine="122" endPosition="9">
+      <varInfo nodeId="7241381882860006301" varName="an" />
+    </scopeInfo>
     <scopeInfo nodeId="6678934770475968071" fileName="ASMMethod.java" startLine="148" startPosition="0" endLine="152" endPosition="0" />
     <scopeInfo nodeId="7241381882860006384" fileName="ASMMethod.java" startLine="152" startPosition="0" endLine="156" endPosition="0" />
     <scopeInfo nodeId="7241381882860006394" fileName="ASMMethod.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
@@ -398,7 +402,13 @@
       <varInfo nodeId="1157126008575868567" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860006008" fileName="ASMMethod.java" startLine="70" startPosition="108" endLine="76" endPosition="9" />
+    <scopeInfo nodeId="7241381882860006009" fileName="ASMMethod.java" startLine="70" startPosition="108" endLine="76" endPosition="9">
+      <varInfo nodeId="7241381882860006020" varName="an" />
+    </scopeInfo>
     <scopeInfo nodeId="7241381882860006059" fileName="ASMMethod.java" startLine="78" startPosition="112" endLine="84" endPosition="9" />
+    <scopeInfo nodeId="7241381882860006060" fileName="ASMMethod.java" startLine="78" startPosition="112" endLine="84" endPosition="9">
+      <varInfo nodeId="7241381882860006071" varName="an" />
+    </scopeInfo>
     <scopeInfo nodeId="1157126008575868539" fileName="ASMMethod.java" startLine="134" startPosition="10" endLine="141" endPosition="9">
       <varInfo nodeId="1157126008575868543" varName="lv" />
     </scopeInfo>
@@ -995,12 +1005,12 @@
     <scopeInfo nodeId="7241381882860007581" fileName="TypeUtil.java" startLine="89" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="7241381882860007585" varName="signature" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860007306" fileName="TypeUtil.java" startLine="13" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" />
     <unitInfo nodeId="7241381882860007513" fileName="TypeUtil.java" startLine="62" startPosition="22" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$1" />
     <unitInfo nodeId="7241381882860007553" fileName="TypeUtil.java" startLine="76" startPosition="22" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$2" />
-    <unitInfo nodeId="7241381882860007614" fileName="TypeUtil.java" startLine="96" startPosition="22" endLine="153" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$3" />
     <unitInfo nodeId="7241381882860007680" fileName="TypeUtil.java" startLine="163" startPosition="22" endLine="169" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$4" />
+    <unitInfo nodeId="7241381882860007614" fileName="TypeUtil.java" startLine="96" startPosition="22" endLine="153" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$3" />
     <unitInfo nodeId="7241381882860007307" fileName="TypeUtil.java" startLine="187" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$TypeBuilderVisitor" />
+    <unitInfo nodeId="7241381882860007306" fileName="TypeUtil.java" startLine="13" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" />
   </root>
   <root nodeId="7241381882860008653" modelId="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)">
     <nodeInfo nodeId="7241381882860008655" fileName="ASMType.java" startLine="6" startPosition="22" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMType#()V" />
@@ -1284,10 +1294,14 @@
     <scopeInfo nodeId="7241381882860009395" fileName="ASMClass.java" startLine="168" startPosition="0" endLine="171" endPosition="5">
       <varInfo nodeId="7241381882860009397" varName="parentVisitor" />
     </scopeInfo>
+    <scopeInfo nodeId="7241381882860009713" fileName="ASMClass.java" startLine="83" startPosition="46" endLine="87" endPosition="9" />
     <scopeInfo nodeId="7241381882860009714" fileName="ASMClass.java" startLine="83" startPosition="46" endLine="87" endPosition="9">
       <varInfo nodeId="7241381882860009723" varName="an" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860009747" fileName="ASMClass.java" startLine="89" startPosition="48" endLine="93" endPosition="9" />
+    <scopeInfo nodeId="7241381882860009748" fileName="ASMClass.java" startLine="89" startPosition="48" endLine="93" endPosition="9">
+      <varInfo nodeId="7241381882860009757" varName="an" />
+    </scopeInfo>
     <scopeInfo nodeId="7241381882860009773" fileName="ASMClass.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="303301571174692715" fileName="ASMClass.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
     <scopeInfo nodeId="7241381882860009788" fileName="ASMClass.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
@@ -1344,12 +1358,12 @@
     <scopeInfo nodeId="7241381882860009454" fileName="ASMClass.java" startLine="27" startPosition="0" endLine="96" endPosition="3">
       <varInfo nodeId="7241381882860009456" varName="reader" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860009362" fileName="ASMClass.java" startLine="18" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />
-    <unitInfo nodeId="7241381882860009553" fileName="ASMClass.java" startLine="33" startPosition="28" endLine="51" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
-    <unitInfo nodeId="7241381882860009999" fileName="ASMClass.java" startLine="174" startPosition="17" endLine="193" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
     <unitInfo nodeId="7241381882860010111" fileName="ASMClass.java" startLine="35" startPosition="21" endLine="40" endPosition="11" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
     <unitInfo nodeId="7241381882860010119" fileName="ASMClass.java" startLine="44" startPosition="21" endLine="49" endPosition="11" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
+    <unitInfo nodeId="7241381882860009553" fileName="ASMClass.java" startLine="33" startPosition="28" endLine="51" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
+    <unitInfo nodeId="7241381882860009999" fileName="ASMClass.java" startLine="174" startPosition="17" endLine="193" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
     <unitInfo nodeId="7241381882860002145" fileName="ASMClass.java" startLine="161" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$ClassifierSignatureVisitor" />
+    <unitInfo nodeId="7241381882860009362" fileName="ASMClass.java" startLine="18" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />
   </root>
 </debugInfo>
 

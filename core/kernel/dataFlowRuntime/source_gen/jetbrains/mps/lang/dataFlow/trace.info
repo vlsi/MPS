@@ -354,12 +354,13 @@
     <scopeInfo nodeId="8204202203348315646" fileName="DataFlowManager.java" startLine="79" startPosition="91" endLine="93" endPosition="7">
       <varInfo nodeId="8204202203348315629" varName="dfaModel" />
     </scopeInfo>
+    <scopeInfo nodeId="8204202203348315638" fileName="DataFlowManager.java" startLine="78" startPosition="23" endLine="94" endPosition="5" />
     <scopeInfo nodeId="8204202203348315639" fileName="DataFlowManager.java" startLine="78" startPosition="23" endLine="94" endPosition="5">
       <varInfo nodeId="8204202203348315628" varName="l" />
     </scopeInfo>
     <scopeInfo nodeId="8204202203348315635" fileName="DataFlowManager.java" startLine="77" startPosition="0" endLine="96" endPosition="0" />
-    <unitInfo nodeId="4282822416100099058" fileName="DataFlowManager.java" startLine="19" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <unitInfo nodeId="4958544726713861132" fileName="DataFlowManager.java" startLine="27" startPosition="46" endLine="31" endPosition="3" unitName="jetbrains.mps.lang.dataFlow.DataFlowManager$1" />
+    <unitInfo nodeId="4282822416100099058" fileName="DataFlowManager.java" startLine="19" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
   </root>
 </debugInfo>
 

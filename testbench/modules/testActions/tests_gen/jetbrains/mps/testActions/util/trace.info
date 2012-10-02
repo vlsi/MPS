@@ -55,6 +55,7 @@
     <scopeInfo nodeId="2283592493588086040" fileName="FlyingActionsFinder.java" startLine="34" startPosition="0" endLine="37" endPosition="5">
       <varInfo nodeId="2283592493588086043" varName="element" />
     </scopeInfo>
+    <scopeInfo nodeId="4484885613884963102" fileName="FlyingActionsFinder.java" startLine="51" startPosition="51" endLine="54" endPosition="9" />
     <scopeInfo nodeId="4484885613884972083" fileName="FlyingActionsFinder.java" startLine="51" startPosition="51" endLine="54" endPosition="9">
       <varInfo nodeId="4484885613884972086" varName="child" />
     </scopeInfo>

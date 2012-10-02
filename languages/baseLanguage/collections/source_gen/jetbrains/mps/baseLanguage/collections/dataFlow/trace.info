@@ -21,8 +21,8 @@
       <varInfo nodeId="1207060282352" varName="_context" />
       <varInfo nodeId="1207060282352" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1207060282352" fileName="ForEachStatement_DataFlow.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachStatement_DataFlow" />
     <unitInfo nodeId="1207323226795" fileName="ForEachStatement_DataFlow.java" startLine="21" startPosition="51" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachStatement_DataFlow$1" />
+    <unitInfo nodeId="1207060282352" fileName="ForEachStatement_DataFlow.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachStatement_DataFlow" />
   </root>
   <root nodeId="1207062862628" modelId="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)">
     <nodeInfo nodeId="1207062865350" fileName="AddAllElementsOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -658,8 +658,8 @@
       <varInfo nodeId="8293956702610517978" varName="_context" />
       <varInfo nodeId="8293956702610517978" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="8293956702610517978" fileName="MultiForEachStatement_DataFlow.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MultiForEachStatement_DataFlow" />
     <unitInfo nodeId="8293956702610518011" fileName="MultiForEachStatement_DataFlow.java" startLine="24" startPosition="51" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MultiForEachStatement_DataFlow$1" />
+    <unitInfo nodeId="8293956702610517978" fileName="MultiForEachStatement_DataFlow.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MultiForEachStatement_DataFlow" />
   </root>
   <root nodeId="8844961370230998012" modelId="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)">
     <nodeInfo nodeId="8844961370230998015" fileName="ContainsKeyOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -710,6 +710,9 @@
     <scopeInfo nodeId="8844961370230999986" fileName="MapInitializer_DataFlow.java" startLine="16" startPosition="89" endLine="17" endPosition="49" />
     <scopeInfo nodeId="8844961370230999979" fileName="MapInitializer_DataFlow.java" startLine="11" startPosition="62" endLine="13" endPosition="3" />
     <scopeInfo nodeId="8844961370230999981" fileName="MapInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="8844961370230999982" fileName="MapInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+      <varInfo nodeId="8844961370230999984" varName="entry" />
+    </scopeInfo>
     <scopeInfo nodeId="8844961370230999979" fileName="MapInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="8844961370230999979" varName="_context" />
       <varInfo nodeId="8844961370230999979" varName="operationContext" />

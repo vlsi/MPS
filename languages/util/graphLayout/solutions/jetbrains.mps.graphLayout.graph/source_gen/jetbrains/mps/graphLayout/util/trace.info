@@ -88,6 +88,9 @@
       <varInfo nodeId="6220135881201387312" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="5180427534212036523" fileName="NodeMap.java" startLine="85" startPosition="35" endLine="88" endPosition="7" />
+    <scopeInfo nodeId="5180427534212036524" fileName="NodeMap.java" startLine="85" startPosition="35" endLine="88" endPosition="7">
+      <varInfo nodeId="5180427534212036525" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="5180427534212034622" fileName="NodeMap.java" startLine="95" startPosition="34" endLine="98" endPosition="5">
       <varInfo nodeId="5180427534212034625" varName="i" />
     </scopeInfo>

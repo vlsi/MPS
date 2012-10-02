@@ -97,16 +97,16 @@
       <varInfo nodeId="6216065619544939788" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="32" startPosition="0" endLine="119" endPosition="0" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="36" startPosition="51" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="45" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="62" startPosition="46" endLine="87" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
     <unitInfo nodeId="6216065619544941667" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="48" startPosition="262" endLine="52" endPosition="13" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="71" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="88" startPosition="52" endLine="116" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
     <unitInfo nodeId="6216065619544944300" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="74" startPosition="262" endLine="78" endPosition="13" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="97" startPosition="19" endLine="114" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
     <unitInfo nodeId="6216065619544946267" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="103" startPosition="268" endLine="107" endPosition="13" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$5" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="45" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="71" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="97" startPosition="19" endLine="114" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="36" startPosition="51" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="62" startPosition="46" endLine="87" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="88" startPosition="52" endLine="116" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
+    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints" />
   </root>
 </debugInfo>
 

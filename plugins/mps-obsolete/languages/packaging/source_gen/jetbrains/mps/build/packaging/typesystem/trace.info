@@ -170,6 +170,10 @@
     <scopeInfo nodeId="1209459010977" fileName="DuplicateModule_NonTypesystemRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" />
     <scopeInfo nodeId="1209459001998" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" />
     <scopeInfo nodeId="1209458967636" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7">
+      <varInfo nodeId="1209459001996" varName="e2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209458877821" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1209458967633" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5">
       <varInfo nodeId="1209458967634" varName="e" />
     </scopeInfo>

@@ -58,8 +58,8 @@
       <varInfo nodeId="1233750346381" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="44" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_Constraints" />
     <unitInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="48" startPosition="31" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_Constraints$1" />
+    <unitInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_Constraints" />
   </root>
   <root nodeId="1233929479423" modelId="r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)">
     <nodeInfo nodeId="1233929479423" fileName="OperationDeclaration_Constraints.java" startLine="25" startPosition="81" endLine="26" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_617hs5_a0a1a0a0a1" />
@@ -141,9 +141,9 @@
       <varInfo nodeId="1233929479423" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1233929479423" fileName="OperationDeclaration_Constraints.java" startLine="56" startPosition="0" endLine="89" endPosition="0" />
-    <unitInfo nodeId="1233929479423" fileName="OperationDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_Constraints" />
     <unitInfo nodeId="1233929479423" fileName="OperationDeclaration_Constraints.java" startLine="39" startPosition="15" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_Constraints$1" />
     <unitInfo nodeId="1233929479423" fileName="OperationDeclaration_Constraints.java" startLine="60" startPosition="40" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_Constraints$2" />
+    <unitInfo nodeId="1233929479423" fileName="OperationDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_Constraints" />
   </root>
   <root nodeId="1233929742891" modelId="r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)">
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="14" startPosition="87" endLine="15" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
@@ -219,8 +219,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1237206480747" fileName="UtilityMethodDeclaration_Constraints.java" startLine="31" startPosition="59" endLine="53" endPosition="6" />
     <scopeInfo nodeId="1237206480747" fileName="UtilityMethodDeclaration_Constraints.java" startLine="29" startPosition="0" endLine="55" endPosition="0" />
-    <unitInfo nodeId="1237206480747" fileName="UtilityMethodDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.UtilityMethodDeclaration_Constraints" />
     <unitInfo nodeId="1237206480747" fileName="UtilityMethodDeclaration_Constraints.java" startLine="32" startPosition="15" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.textGen.constraints.UtilityMethodDeclaration_Constraints$1" />
+    <unitInfo nodeId="1237206480747" fileName="UtilityMethodDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.UtilityMethodDeclaration_Constraints" />
   </root>
   <root nodeId="7166719696753421208" modelId="r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)">
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="16" startPosition="40" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -278,8 +278,8 @@
       <varInfo nodeId="7166719696753421208" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="19" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints" />
     <unitInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="23" startPosition="35" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints$1" />
+    <unitInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints" />
   </root>
 </debugInfo>
 

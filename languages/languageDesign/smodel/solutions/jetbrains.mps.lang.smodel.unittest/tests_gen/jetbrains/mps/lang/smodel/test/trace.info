@@ -22,8 +22,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
     <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody" />
+    <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
   </root>
 </debugInfo>
 

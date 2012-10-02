@@ -240,8 +240,8 @@
       <varInfo nodeId="4844813484172611403" varName="editorContext" />
       <varInfo nodeId="4844813484172611403" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4844813484172611392" fileName="PropertyRefExpression_Editor.java" startLine="26" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.checkedName.editor.PropertyRefExpression_Editor" />
     <unitInfo nodeId="4844813484172611402" fileName="PropertyRefExpression_Editor.java" startLine="122" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.checkedName.editor.PropertyRefExpression_Editor$_Inline_hd00ff_a4a" />
+    <unitInfo nodeId="4844813484172611392" fileName="PropertyRefExpression_Editor.java" startLine="26" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.checkedName.editor.PropertyRefExpression_Editor" />
   </root>
   <root nodeId="4844813484172611408" modelId="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)">
     <nodeInfo nodeId="4844813484172611408" fileName="PropertyRefType_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

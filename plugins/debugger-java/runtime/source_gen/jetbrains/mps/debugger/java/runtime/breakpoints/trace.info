@@ -570,8 +570,8 @@
       <varInfo nodeId="2891782949125149007" varName="classType" />
       <varInfo nodeId="2891782949125149005" varName="debugProcess" />
     </scopeInfo>
-    <unitInfo nodeId="2891782949125148940" fileName="ExceptionBreakpoint.java" startLine="18" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint" />
     <unitInfo nodeId="2891782949125148943" fileName="ExceptionBreakpoint.java" startLine="102" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint$ExceptionBreakpointInfo" />
+    <unitInfo nodeId="2891782949125148940" fileName="ExceptionBreakpoint.java" startLine="18" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint" />
   </root>
   <root nodeId="2891782949125149284" modelId="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)">
     <nodeInfo nodeId="2891782949125149287" fileName="JavaBreakpointInfo.java" startLine="8" startPosition="56" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspendPolicy" />
@@ -699,6 +699,9 @@
       <varInfo nodeId="2891782949125168618" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125168769" fileName="LineBreakpoint.java" startLine="43" startPosition="28" endLine="47" endPosition="9" />
+    <scopeInfo nodeId="2891782949125168770" fileName="LineBreakpoint.java" startLine="43" startPosition="28" endLine="47" endPosition="9">
+      <varInfo nodeId="2891782949125168772" varName="location" />
+    </scopeInfo>
     <scopeInfo nodeId="2891782949125168743" fileName="LineBreakpoint.java" startLine="48" startPosition="14" endLine="52" endPosition="29">
       <varInfo nodeId="2891782949125168751" varName="message" />
     </scopeInfo>
@@ -932,14 +935,14 @@
       <varInfo nodeId="2891782949125172608" varName="breakpoint" />
       <varInfo nodeId="8949162067054039702" varName="session" />
     </scopeInfo>
-    <unitInfo nodeId="6951057689129812782" fileName="BreakpointsIconCache.java" startLine="27" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache" />
+    <unitInfo nodeId="7578254065929102452" fileName="BreakpointsIconCache.java" startLine="50" startPosition="69" endLine="54" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$3" />
+    <unitInfo nodeId="5487571035398132943" fileName="BreakpointsIconCache.java" startLine="82" startPosition="56" endLine="86" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$7" />
+    <unitInfo nodeId="8197435796639290579" fileName="BreakpointsIconCache.java" startLine="140" startPosition="48" endLine="144" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$6" />
     <unitInfo nodeId="2891782949125172062" fileName="BreakpointsIconCache.java" startLine="31" startPosition="63" endLine="36" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$1" />
     <unitInfo nodeId="2891782949125172075" fileName="BreakpointsIconCache.java" startLine="37" startPosition="105" endLine="49" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$2" />
-    <unitInfo nodeId="7578254065929102452" fileName="BreakpointsIconCache.java" startLine="50" startPosition="69" endLine="54" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$3" />
-    <unitInfo nodeId="7118890566389185332" fileName="BreakpointsIconCache.java" startLine="55" startPosition="93" endLine="79" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$4" />
     <unitInfo nodeId="6951057689129830143" fileName="BreakpointsIconCache.java" startLine="123" startPosition="50" endLine="138" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$5" />
-    <unitInfo nodeId="8197435796639290579" fileName="BreakpointsIconCache.java" startLine="140" startPosition="48" endLine="144" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$6" />
-    <unitInfo nodeId="5487571035398132943" fileName="BreakpointsIconCache.java" startLine="82" startPosition="56" endLine="86" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$7" />
+    <unitInfo nodeId="7118890566389185332" fileName="BreakpointsIconCache.java" startLine="55" startPosition="93" endLine="79" endPosition="3" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache$4" />
+    <unitInfo nodeId="6951057689129812782" fileName="BreakpointsIconCache.java" startLine="27" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache" />
   </root>
 </debugInfo>
 

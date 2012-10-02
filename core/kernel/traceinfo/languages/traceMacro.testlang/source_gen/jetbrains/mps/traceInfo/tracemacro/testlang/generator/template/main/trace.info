@@ -295,10 +295,10 @@
       <varInfo nodeId="7980748436587788164" varName="context" />
       <varInfo nodeId="7980748436587788164" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="31" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
     <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="242" startPosition="32" endLine="254" endPosition="9" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$1" />
-    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="101" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="204" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule1" />
+    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="101" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule0" />
+    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="31" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
   </root>
 </debugInfo>
 

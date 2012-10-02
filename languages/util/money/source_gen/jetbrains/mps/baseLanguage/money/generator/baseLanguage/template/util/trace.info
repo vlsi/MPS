@@ -124,11 +124,11 @@
     <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="55" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
-    <unitInfo nodeId="1187345071733" fileName="Util.java" startLine="13" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util" />
     <unitInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a0" />
     <unitInfo nodeId="1197379725540" fileName="Util.java" startLine="52" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a0_0" />
     <unitInfo nodeId="1197379725542" fileName="Util.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a1" />
     <unitInfo nodeId="1197379725544" fileName="Util.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a1_0" />
+    <unitInfo nodeId="1187345071733" fileName="Util.java" startLine="13" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util" />
   </root>
 </debugInfo>
 

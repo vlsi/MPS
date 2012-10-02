@@ -54,8 +54,8 @@
       <varInfo nodeId="1213104856824" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="17" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints" />
     <unitInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="21" startPosition="38" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints$1" />
+    <unitInfo nodeId="1213104856824" fileName="IResolveInfo_Constraints.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints" />
   </root>
 </debugInfo>
 

@@ -25,6 +25,7 @@
     <scopeInfo nodeId="8974276187400348270" fileName="CommandClosureLiteral_DataFlow.java" startLine="18" startPosition="103" endLine="19" endPosition="103" />
     <scopeInfo nodeId="8974276187400348281" fileName="CommandClosureLiteral_DataFlow.java" startLine="21" startPosition="161" endLine="22" endPosition="44" />
     <scopeInfo nodeId="8974276187400348266" fileName="CommandClosureLiteral_DataFlow.java" startLine="13" startPosition="69" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="8974276187400348279" fileName="CommandClosureLiteral_DataFlow.java" startLine="20" startPosition="12" endLine="23" endPosition="7" />
     <scopeInfo nodeId="8974276187400348280" fileName="CommandClosureLiteral_DataFlow.java" startLine="20" startPosition="12" endLine="23" endPosition="7">
       <varInfo nodeId="8974276187400348284" varName="var" />
     </scopeInfo>

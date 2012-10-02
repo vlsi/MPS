@@ -169,7 +169,7 @@ public class ProjectTestHelper {
   }
 
   private class PrivToken extends ProjectTestHelper.Token {
-    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "trace.info", "dependencies", ".dependencies", ".generated", ".debug");
+    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", ".dependencies", ".generated", ".debug");
     private final Project project;
     private final IModule module;
     private String tmpPath;

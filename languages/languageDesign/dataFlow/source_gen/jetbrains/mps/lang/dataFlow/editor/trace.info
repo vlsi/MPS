@@ -270,8 +270,8 @@
       <varInfo nodeId="1206442854883" varName="editorContext" />
       <varInfo nodeId="1206442854883" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="22" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor" />
     <unitInfo nodeId="1206442833852" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="137" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor$_Inline_9xj3dm_a4a" />
+    <unitInfo nodeId="1206442125570" fileName="DataFlowBuilderDeclaration_Editor.java" startLine="22" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor" />
   </root>
   <root nodeId="1206443680940" modelId="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)">
     <nodeInfo nodeId="8486807419020193016" fileName="EmitNopStatement_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1408,8 +1408,8 @@
       <varInfo nodeId="1207062722716" varName="editorContext" />
       <varInfo nodeId="1207062722716" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor" />
     <unitInfo nodeId="1207062721855" fileName="LabelPosition_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor$_Inline_xi88on_a1a" />
+    <unitInfo nodeId="1207062713395" fileName="LabelPosition_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor" />
   </root>
   <root nodeId="1207318139353" modelId="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)">
     <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="95" endLine="15" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1440,8 +1440,8 @@
       <varInfo nodeId="1207318139353" varName="editorContext" />
       <varInfo nodeId="1207318139353" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable" />
     <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_DELETE" />
+    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable" />
   </root>
   <root nodeId="1230468316202" modelId="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)">
     <nodeInfo nodeId="1230468339097" fileName="EmitWriteStatement_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1989,8 +1989,8 @@
       <varInfo nodeId="8486807419020643011" varName="editorContext" />
       <varInfo nodeId="8486807419020643011" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition" />
     <unitInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="18" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition$AddPosition_RIGHT_TRANSFORM" />
+    <unitInfo nodeId="8486807419020643011" fileName="AddPosition.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition" />
   </root>
 </debugInfo>
 

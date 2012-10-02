@@ -31,8 +31,8 @@
       <varInfo nodeId="1122581627194121462" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1122581627194121462" fileName="XmlText_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1122581627194121462" fileName="XmlText_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlText_Constraints" />
     <unitInfo nodeId="1122581627194121462" fileName="XmlText_Constraints.java" startLine="22" startPosition="32" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlText_Constraints$1" />
+    <unitInfo nodeId="1122581627194121462" fileName="XmlText_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlText_Constraints" />
   </root>
   <root nodeId="1622293396948983511" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="1622293396948983511" fileName="XmlContent_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -75,8 +75,8 @@
       <varInfo nodeId="1622293396948985398" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1622293396948985398" fileName="XmlCDATA_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1622293396948985398" fileName="XmlCDATA_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCDATA_Constraints" />
     <unitInfo nodeId="1622293396948985398" fileName="XmlCDATA_Constraints.java" startLine="22" startPosition="34" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlCDATA_Constraints$1" />
+    <unitInfo nodeId="1622293396948985398" fileName="XmlCDATA_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCDATA_Constraints" />
   </root>
   <root nodeId="1622293396949036131" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="1622293396949036131" fileName="XmlCommentLine_Constraints.java" startLine="15" startPosition="39" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -108,8 +108,8 @@
       <varInfo nodeId="1622293396949036131" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1622293396949036131" fileName="XmlCommentLine_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1622293396949036131" fileName="XmlCommentLine_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCommentLine_Constraints" />
     <unitInfo nodeId="1622293396949036131" fileName="XmlCommentLine_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlCommentLine_Constraints$1" />
+    <unitInfo nodeId="1622293396949036131" fileName="XmlCommentLine_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCommentLine_Constraints" />
   </root>
   <root nodeId="1622293396949069715" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="1622293396949069715" fileName="XmlEntityRef_Constraints.java" startLine="15" startPosition="37" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -141,8 +141,8 @@
       <varInfo nodeId="1622293396949069715" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1622293396949069715" fileName="XmlEntityRef_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1622293396949069715" fileName="XmlEntityRef_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints" />
     <unitInfo nodeId="1622293396949069715" fileName="XmlEntityRef_Constraints.java" startLine="22" startPosition="37" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints$1" />
+    <unitInfo nodeId="1622293396949069715" fileName="XmlEntityRef_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlEntityRef_Constraints" />
   </root>
   <root nodeId="2133624044437898956" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="2133624044437898956" fileName="XmlDoctypeDeclaration_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -214,9 +214,9 @@
       <varInfo nodeId="2133624044437898956" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="2133624044437898956" fileName="XmlDoctypeDeclaration_Constraints.java" startLine="43" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="2133624044437898956" fileName="XmlDoctypeDeclaration_Constraints.java" startLine="21" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints" />
     <unitInfo nodeId="3374336260036089972" fileName="XmlDoctypeDeclaration_Constraints.java" startLine="63" startPosition="89" endLine="67" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints$1" />
     <unitInfo nodeId="2133624044437898956" fileName="XmlDoctypeDeclaration_Constraints.java" startLine="47" startPosition="38" endLine="58" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints$2" />
+    <unitInfo nodeId="2133624044437898956" fileName="XmlDoctypeDeclaration_Constraints.java" startLine="21" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlDoctypeDeclaration_Constraints" />
   </root>
   <root nodeId="2133624044438029135" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="2133624044438029135" fileName="XmlExternalId_Constraints.java" startLine="15" startPosition="38" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -266,9 +266,9 @@
       <varInfo nodeId="2133624044438029135" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="2133624044438029135" fileName="XmlExternalId_Constraints.java" startLine="18" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="2133624044438029135" fileName="XmlExternalId_Constraints.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints" />
     <unitInfo nodeId="2133624044438029135" fileName="XmlExternalId_Constraints.java" startLine="22" startPosition="35" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints$1" />
     <unitInfo nodeId="2133624044438029135" fileName="XmlExternalId_Constraints.java" startLine="34" startPosition="35" endLine="45" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints$2" />
+    <unitInfo nodeId="2133624044438029135" fileName="XmlExternalId_Constraints.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlExternalId_Constraints" />
   </root>
   <root nodeId="3080189811177199799" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="3080189811177199799" fileName="XmlCharRef_Constraints.java" startLine="15" startPosition="35" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -300,8 +300,8 @@
       <varInfo nodeId="3080189811177199799" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="3080189811177199799" fileName="XmlCharRef_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="3080189811177199799" fileName="XmlCharRef_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCharRef_Constraints" />
     <unitInfo nodeId="3080189811177199799" fileName="XmlCharRef_Constraints.java" startLine="22" startPosition="35" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlCharRef_Constraints$1" />
+    <unitInfo nodeId="3080189811177199799" fileName="XmlCharRef_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCharRef_Constraints" />
   </root>
   <root nodeId="3080189811177216002" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="3080189811177216002" fileName="XmlCharRefValue_Constraints.java" startLine="15" startPosition="40" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -333,8 +333,8 @@
       <varInfo nodeId="3080189811177216002" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="3080189811177216002" fileName="XmlCharRefValue_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="3080189811177216002" fileName="XmlCharRefValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCharRefValue_Constraints" />
     <unitInfo nodeId="3080189811177216002" fileName="XmlCharRefValue_Constraints.java" startLine="22" startPosition="35" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlCharRefValue_Constraints$1" />
+    <unitInfo nodeId="3080189811177216002" fileName="XmlCharRefValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCharRefValue_Constraints" />
   </root>
   <root nodeId="3080189811177243096" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="3080189811177243096" fileName="XmlValuePart_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -724,8 +724,8 @@
       <varInfo nodeId="6666499814681415546" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6666499814681415546" fileName="XmlProcessingInstruction_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6666499814681415546" fileName="XmlProcessingInstruction_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlProcessingInstruction_Constraints" />
     <unitInfo nodeId="6666499814681415546" fileName="XmlProcessingInstruction_Constraints.java" startLine="22" startPosition="33" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlProcessingInstruction_Constraints$1" />
+    <unitInfo nodeId="6666499814681415546" fileName="XmlProcessingInstruction_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlProcessingInstruction_Constraints" />
   </root>
   <root nodeId="6666499814681447914" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="6666499814681447914" fileName="XmlElement_Constraints.java" startLine="15" startPosition="35" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -757,8 +757,8 @@
       <varInfo nodeId="6666499814681447914" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6666499814681447914" fileName="XmlElement_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6666499814681447914" fileName="XmlElement_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlElement_Constraints" />
     <unitInfo nodeId="6666499814681447914" fileName="XmlElement_Constraints.java" startLine="22" startPosition="34" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlElement_Constraints$1" />
+    <unitInfo nodeId="6666499814681447914" fileName="XmlElement_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlElement_Constraints" />
   </root>
   <root nodeId="6666499814681547968" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="6666499814681547968" fileName="XmlEntityRefValue_Constraints.java" startLine="15" startPosition="42" endLine="16" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -790,8 +790,8 @@
       <varInfo nodeId="6666499814681547968" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6666499814681547968" fileName="XmlEntityRefValue_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6666499814681547968" fileName="XmlEntityRefValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlEntityRefValue_Constraints" />
     <unitInfo nodeId="6666499814681547968" fileName="XmlEntityRefValue_Constraints.java" startLine="22" startPosition="37" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlEntityRefValue_Constraints$1" />
+    <unitInfo nodeId="6666499814681547968" fileName="XmlEntityRefValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlEntityRefValue_Constraints" />
   </root>
   <root nodeId="6666499814681587454" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="6666499814681587454" fileName="XmlTextValue_Constraints.java" startLine="15" startPosition="37" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -823,8 +823,8 @@
       <varInfo nodeId="6666499814681587454" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6666499814681587454" fileName="XmlTextValue_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6666499814681587454" fileName="XmlTextValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlTextValue_Constraints" />
     <unitInfo nodeId="6666499814681587454" fileName="XmlTextValue_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlTextValue_Constraints$1" />
+    <unitInfo nodeId="6666499814681587454" fileName="XmlTextValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlTextValue_Constraints" />
   </root>
   <root nodeId="6666499814681620721" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="6666499814681620721" fileName="XmlAttribute_Constraints.java" startLine="15" startPosition="37" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -856,8 +856,8 @@
       <varInfo nodeId="6666499814681620721" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6666499814681620721" fileName="XmlAttribute_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6666499814681620721" fileName="XmlAttribute_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlAttribute_Constraints" />
     <unitInfo nodeId="6666499814681620721" fileName="XmlAttribute_Constraints.java" startLine="22" startPosition="35" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlAttribute_Constraints$1" />
+    <unitInfo nodeId="6666499814681620721" fileName="XmlAttribute_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlAttribute_Constraints" />
   </root>
   <root nodeId="7604553062773750443" modelId="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)">
     <nodeInfo nodeId="7604553062773750443" fileName="XmlWhitespace_Constraints.java" startLine="15" startPosition="38" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -889,8 +889,8 @@
       <varInfo nodeId="7604553062773750443" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="7604553062773750443" fileName="XmlWhitespace_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="7604553062773750443" fileName="XmlWhitespace_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints" />
     <unitInfo nodeId="7604553062773750443" fileName="XmlWhitespace_Constraints.java" startLine="22" startPosition="32" endLine="33" endPosition="5" unitName="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints$1" />
+    <unitInfo nodeId="7604553062773750443" fileName="XmlWhitespace_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints" />
   </root>
 </debugInfo>
 

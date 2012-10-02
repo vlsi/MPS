@@ -90,8 +90,8 @@
       <varInfo nodeId="5181507218630412169" varName="_params" />
       <varInfo nodeId="5181507218630412169" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action" />
     <unitInfo nodeId="5181507218630412179" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="74" startPosition="47" endLine="79" endPosition="7" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action$1" />
+    <unitInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action" />
   </root>
   <root nodeId="5181507218630412221" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="61" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -186,8 +186,8 @@
       <varInfo nodeId="5181507218630412221" varName="_params" />
       <varInfo nodeId="5181507218630412221" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowInferredNodeType_Action" />
     <unitInfo nodeId="5181507218630412234" fileName="ShowInferredNodeType_Action.java" startLine="71" startPosition="47" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowInferredNodeType_Action$1" />
+    <unitInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowInferredNodeType_Action" />
   </root>
   <root nodeId="5181507218630412277" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="23" startPosition="57" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -282,8 +282,8 @@
       <varInfo nodeId="5181507218630412277" varName="_params" />
       <varInfo nodeId="5181507218630412277" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowExpectedType_Action" />
     <unitInfo nodeId="5181507218630412290" fileName="ShowExpectedType_Action.java" startLine="71" startPosition="47" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowExpectedType_Action$1" />
+    <unitInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowExpectedType_Action" />
   </root>
   <root nodeId="5181507218630412336" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412336" fileName="InternalTypeSystemActions_ActionGroup.java" startLine="8" startPosition="81" endLine="9" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -336,8 +336,8 @@
     <scopeInfo nodeId="1171306154582" fileName="Children.java" startLine="43" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1171306220390" varName="statement" />
     </scopeInfo>
-    <unitInfo nodeId="1145580307798" fileName="Children.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="smodelLanguage.samples.Children" />
     <unitInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="186" endLine="52" endPosition="5" unitName="smodelLanguage.samples.Children$1" />
+    <unitInfo nodeId="1145580307798" fileName="Children.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="smodelLanguage.samples.Children" />
   </root>
   <root nodeId="1145583629132" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
     <nodeInfo nodeId="1145583711846" fileName="Siblings.java" startLine="10" startPosition="44" endLine="11" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -657,8 +657,8 @@
     <scopeInfo nodeId="1169585406422" fileName="ListOfNodes.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1169585427175" varName="sl" />
     </scopeInfo>
-    <unitInfo nodeId="1169584463554" fileName="ListOfNodes.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="smodelLanguage.samples.ListOfNodes" />
     <unitInfo nodeId="1227876796836" fileName="ListOfNodes.java" startLine="20" startPosition="111" endLine="24" endPosition="5" unitName="smodelLanguage.samples.ListOfNodes$1" />
+    <unitInfo nodeId="1169584463554" fileName="ListOfNodes.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="smodelLanguage.samples.ListOfNodes" />
   </root>
   <root nodeId="1171313827134" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
     <nodeInfo nodeId="1212009674217" fileName="Model.java" startLine="17" startPosition="45" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -735,9 +735,9 @@
       <varInfo nodeId="1171315708426" varName="model" />
       <varInfo nodeId="1225936311254" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1171313827134" fileName="Model.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="smodelLanguage.samples.Model" />
     <unitInfo nodeId="1227876795415" fileName="Model.java" startLine="37" startPosition="148" endLine="41" endPosition="5" unitName="smodelLanguage.samples.Model$1" />
     <unitInfo nodeId="1227876795715" fileName="Model.java" startLine="51" startPosition="148" endLine="55" endPosition="5" unitName="smodelLanguage.samples.Model$2" />
+    <unitInfo nodeId="1171313827134" fileName="Model.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="smodelLanguage.samples.Model" />
   </root>
   <root nodeId="1173133339986" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
     <nodeInfo nodeId="1173133388684" fileName="ConceptRef.java" startLine="16" startPosition="41" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -992,6 +992,9 @@
       <varInfo nodeId="1241018645360" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1241018421133" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5">
+      <varInfo nodeId="1241018438640" varName="member" />
+    </scopeInfo>
     <scopeInfo nodeId="1241018421130" fileName="StructureLanguageEnums.java" startLine="9" startPosition="37" endLine="18" endPosition="0" />
     <unitInfo nodeId="1241018402608" fileName="StructureLanguageEnums.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="smodelLanguage.samples.StructureLanguageEnums" />
   </root>

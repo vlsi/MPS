@@ -37,9 +37,9 @@
       <varInfo nodeId="3064182000795632365" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="3064182000795632365" fileName="DefaultGenerationParameterId_Constraints.java" startLine="27" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="3064182000795632365" fileName="DefaultGenerationParameterId_Constraints.java" startLine="21" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints" />
-    <unitInfo nodeId="3064182000795632365" fileName="DefaultGenerationParameterId_Constraints.java" startLine="31" startPosition="36" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints$1" />
     <unitInfo nodeId="3064182000795632365" fileName="DefaultGenerationParameterId_Constraints.java" startLine="40" startPosition="19" endLine="53" endPosition="9" unitName="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints$2" />
+    <unitInfo nodeId="3064182000795632365" fileName="DefaultGenerationParameterId_Constraints.java" startLine="31" startPosition="36" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints$1" />
+    <unitInfo nodeId="3064182000795632365" fileName="DefaultGenerationParameterId_Constraints.java" startLine="21" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints" />
   </root>
 </debugInfo>
 

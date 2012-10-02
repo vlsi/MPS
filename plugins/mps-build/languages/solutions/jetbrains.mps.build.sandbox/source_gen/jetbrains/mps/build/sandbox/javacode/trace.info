@@ -35,9 +35,9 @@
       <varInfo nodeId="7778259556894515616" varName="contextNode" />
       <varInfo nodeId="7778259556894515618" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7778259556894381376" fileName="TestScope.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.sandbox.javacode.TestScope" />
     <unitInfo nodeId="7778259556894515682" fileName="TestScope.java" startLine="28" startPosition="110" endLine="32" endPosition="5" unitName="jetbrains.mps.build.sandbox.javacode.TestScope$1" />
     <unitInfo nodeId="7778259556894515738" fileName="TestScope.java" startLine="42" startPosition="15" endLine="46" endPosition="5" unitName="jetbrains.mps.build.sandbox.javacode.TestScope$2" />
+    <unitInfo nodeId="7778259556894381376" fileName="TestScope.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.sandbox.javacode.TestScope" />
   </root>
 </debugInfo>
 

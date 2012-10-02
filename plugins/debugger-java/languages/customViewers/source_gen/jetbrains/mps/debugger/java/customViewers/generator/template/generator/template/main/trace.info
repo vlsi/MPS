@@ -98,6 +98,9 @@
       <varInfo nodeId="5245087627731452509" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="5245087627731452473" fileName="QueriesGenerated.java" startLine="199" startPosition="343" endLine="209" endPosition="9" />
+    <scopeInfo nodeId="8275758777999525545" fileName="QueriesGenerated.java" startLine="199" startPosition="343" endLine="209" endPosition="9">
+      <varInfo nodeId="8275758777999525546" varName="method" />
+    </scopeInfo>
     <scopeInfo nodeId="5245087627731452512" fileName="QueriesGenerated.java" startLine="238" startPosition="31" endLine="248" endPosition="20">
       <varInfo nodeId="5245087627731452512" varName="_parameterValues_129834374" />
       <varInfo nodeId="5245087627731452512" varName="quotedNode_1" />
@@ -105,6 +108,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5245087627731451909" fileName="QueriesGenerated.java" startLine="198" startPosition="155" endLine="210" endPosition="7" />
     <scopeInfo nodeId="5245087627731452512" fileName="QueriesGenerated.java" startLine="237" startPosition="0" endLine="250" endPosition="0" />
+    <scopeInfo nodeId="264293128390891136" fileName="QueriesGenerated.java" startLine="197" startPosition="144" endLine="211" endPosition="5" />
     <scopeInfo nodeId="5245087627731451906" fileName="QueriesGenerated.java" startLine="197" startPosition="144" endLine="211" endPosition="5">
       <varInfo nodeId="5245087627731451907" varName="classConcept" />
     </scopeInfo>
@@ -154,6 +158,9 @@
       <varInfo nodeId="4599835250971319530" varName="valueProxyType" />
     </scopeInfo>
     <scopeInfo nodeId="4599835250971319478" fileName="QueriesGenerated.java" startLine="214" startPosition="145" endLine="220" endPosition="5" />
+    <scopeInfo nodeId="4599835250971319483" fileName="QueriesGenerated.java" startLine="214" startPosition="145" endLine="220" endPosition="5">
+      <varInfo nodeId="4599835250971319484" varName="viewer" />
+    </scopeInfo>
   </root>
   <root nodeId="7570572250661235214" modelId="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)">
     <nodeInfo nodeId="722903304966670754" fileName="QueriesGenerated.java" startLine="36" startPosition="149" endLine="37" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

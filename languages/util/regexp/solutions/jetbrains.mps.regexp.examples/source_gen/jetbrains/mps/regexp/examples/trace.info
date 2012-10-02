@@ -76,6 +76,9 @@
     <scopeInfo nodeId="1178535102798" fileName="BaseLanguageIntegration.java" startLine="23" startPosition="33" endLine="25" endPosition="62" />
     <scopeInfo nodeId="1178535219994" fileName="BaseLanguageIntegration.java" startLine="50" startPosition="45" endLine="52" endPosition="13" />
     <scopeInfo nodeId="1178535280599" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="1178535286955" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5">
+      <varInfo nodeId="1178535286957" varName="st" />
+    </scopeInfo>
     <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="1178535234174" varName="closureContext" />
       <varInfo nodeId="1178535234174" varName="enclosingClass" />
@@ -113,8 +116,8 @@
     <scopeInfo nodeId="1178535091152" fileName="BaseLanguageIntegration.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1178535120003" varName="emailToAnalyse" />
     </scopeInfo>
-    <unitInfo nodeId="1178535069057" fileName="BaseLanguageIntegration.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.regexp.examples.BaseLanguageIntegration" />
     <unitInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0d" />
+    <unitInfo nodeId="1178535069057" fileName="BaseLanguageIntegration.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.regexp.examples.BaseLanguageIntegration" />
   </root>
 </debugInfo>
 

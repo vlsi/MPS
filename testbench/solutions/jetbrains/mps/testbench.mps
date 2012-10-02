@@ -90,9 +90,6 @@
             <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1202495231125171824">
               <property name="value" nameId="tpee.1070475926801" value="generated" />
             </node>
-            <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1202495231125171826">
-              <property name="value" nameId="tpee.1070475926801" value="trace.info" />
-            </node>
             <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1202495231125195142">
               <property name="value" nameId="tpee.1070475926801" value="dependencies" />
             </node>

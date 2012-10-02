@@ -274,8 +274,8 @@
       <varInfo nodeId="4844813484172611585" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611585" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="4844813484172611581" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule" />
     <unitInfo nodeId="4844813484172611585" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule$QuotationClass_r5x3lr_a0a0a0" />
+    <unitInfo nodeId="4844813484172611581" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule" />
   </root>
   <root nodeId="4844813484172611593" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="4844813484172611595" fileName="typeof_PropertyRefExpression_PropertyRefType_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -395,8 +395,8 @@
       <varInfo nodeId="4844813484172611607" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611607" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="4844813484172611604" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" />
     <unitInfo nodeId="4844813484172611607" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule$QuotationClass_d1kmw7_a0a0a" />
+    <unitInfo nodeId="4844813484172611604" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" />
   </root>
 </debugInfo>
 

@@ -150,9 +150,9 @@
       <varInfo nodeId="6812098398776640299" varName="_params" />
       <varInfo nodeId="6812098398776640299" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="34" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action" />
     <unitInfo nodeId="6812098398776640310" fileName="ChangeMethodSignature_Action.java" startLine="102" startPosition="48" endLine="111" endPosition="7" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action$1" />
     <unitInfo nodeId="8139782154295720684" fileName="ChangeMethodSignature_Action.java" startLine="126" startPosition="46" endLine="137" endPosition="7" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action$2" />
+    <unitInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="34" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action" />
   </root>
   <root nodeId="6812098398776640439" modelId="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
     <nodeInfo nodeId="6812098398776640577" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="68" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
@@ -273,11 +273,11 @@
       <varInfo nodeId="6812098398776640445" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="6812098398776640440" fileName="ChangeMethodSignatureDialog.java" startLine="63" startPosition="0" endLine="89" endPosition="0" />
-    <unitInfo nodeId="6812098398776640439" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
-    <unitInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="55" endLine="84" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$1" />
     <unitInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="55" startPosition="45" endLine="59" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$2" />
-    <unitInfo nodeId="6812098398776640726" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="42" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
     <unitInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="112" startPosition="49" endLine="116" endPosition="9" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
+    <unitInfo nodeId="6812098398776640726" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="42" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
+    <unitInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="55" endLine="84" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$1" />
+    <unitInfo nodeId="6812098398776640439" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
   </root>
   <root nodeId="6812098398776640803" modelId="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
@@ -294,13 +294,13 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="4" endLine="3" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="5" endLine="3" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="5" endLine="3" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="11" endLine="3" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="11" endLine="3" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="11" endLine="3" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="16" endLine="3" endPosition="85" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="16" endLine="3" endPosition="85" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="85" endLine="3" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="86" endLine="3" endPosition="164" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="86" endLine="3" endPosition="94" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="86" endLine="3" endPosition="164" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="94" endLine="3" endPosition="163" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="94" endLine="3" endPosition="163" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="3" startPosition="163" endLine="3" endPosition="164" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -309,13 +309,13 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="6" endLine="4" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="7" endLine="4" endPosition="24" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="7" endLine="4" endPosition="24" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="24" endLine="4" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="24" endLine="4" endPosition="42" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="24" endLine="4" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="42" endLine="4" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="42" endLine="4" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="49" endLine="4" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="50" endLine="4" endPosition="68" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="50" endLine="4" endPosition="59" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="50" endLine="4" endPosition="68" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="59" endLine="4" endPosition="67" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="59" endLine="4" endPosition="67" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="4" startPosition="67" endLine="4" endPosition="68" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -329,13 +329,13 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="4" endLine="6" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="5" endLine="6" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="5" endLine="6" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="11" endLine="6" endPosition="83" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="11" endLine="6" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="11" endLine="6" endPosition="83" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="16" endLine="6" endPosition="82" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="16" endLine="6" endPosition="82" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="82" endLine="6" endPosition="83" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="83" endLine="6" endPosition="158" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="83" endLine="6" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="83" endLine="6" endPosition="158" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="91" endLine="6" endPosition="157" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="91" endLine="6" endPosition="157" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="6" startPosition="157" endLine="6" endPosition="158" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -344,8 +344,8 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="4" endLine="7" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="5" endLine="7" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="5" endLine="7" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="10" endLine="7" endPosition="89" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="10" endLine="7" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="10" endLine="7" endPosition="89" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="15" endLine="7" endPosition="88" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="15" endLine="7" endPosition="88" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="7" startPosition="88" endLine="7" endPosition="89" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -354,8 +354,8 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="6" endLine="8" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="7" endLine="8" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="7" endLine="8" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="16" endLine="8" endPosition="92" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="16" endLine="8" endPosition="22" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="16" endLine="8" endPosition="92" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="22" endLine="8" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="22" endLine="8" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="8" startPosition="91" endLine="8" endPosition="92" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -364,13 +364,13 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="6" endLine="9" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="7" endLine="9" endPosition="19" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="7" endLine="9" endPosition="19" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="19" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="19" endLine="9" endPosition="30" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="19" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="30" endLine="9" endPosition="92" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="30" endLine="9" endPosition="92" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="92" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="93" endLine="9" endPosition="107" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="93" endLine="9" endPosition="102" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="93" endLine="9" endPosition="107" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="102" endLine="9" endPosition="106" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="102" endLine="9" endPosition="106" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="9" startPosition="106" endLine="9" endPosition="107" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -384,8 +384,8 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="4" endLine="11" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="5" endLine="11" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="5" endLine="11" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="10" endLine="11" endPosition="84" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="10" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="10" endLine="11" endPosition="84" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="15" endLine="11" endPosition="83" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="15" endLine="11" endPosition="83" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="11" startPosition="83" endLine="11" endPosition="84" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -394,8 +394,8 @@
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="6" endLine="12" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="7" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="7" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="16" endLine="12" endPosition="89" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="16" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="16" endLine="12" endPosition="89" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="22" endLine="12" endPosition="88" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="22" endLine="12" endPosition="88" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="12" startPosition="88" endLine="12" endPosition="89" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -681,8 +681,8 @@
       <varInfo nodeId="6930463558351181264" varName="_params" />
       <varInfo nodeId="6930463558351181264" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="38" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action" />
     <unitInfo nodeId="6930463558351181409" fileName="NewModelFromSource_Action.java" startLine="127" startPosition="47" endLine="132" endPosition="7" unitName="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action$1" />
+    <unitInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="38" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action" />
   </root>
 </debugInfo>
 

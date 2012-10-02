@@ -126,6 +126,7 @@
     <scopeInfo nodeId="3805314409601860929" fileName="ClusteredGraphLayout.java" startLine="39" startPosition="61" endLine="45" endPosition="23">
       <varInfo nodeId="3805314409601860937" varName="graphLayout" />
     </scopeInfo>
+    <scopeInfo nodeId="3805314409601904146" fileName="ClusteredGraphLayout.java" startLine="55" startPosition="69" endLine="61" endPosition="7" />
     <scopeInfo nodeId="3805314409601904148" fileName="ClusteredGraphLayout.java" startLine="55" startPosition="69" endLine="61" endPosition="7">
       <varInfo nodeId="3805314409601904149" varName="p" />
     </scopeInfo>
@@ -300,6 +301,9 @@
       <varInfo nodeId="1714301205550512247" varName="size" />
     </scopeInfo>
     <scopeInfo nodeId="1714301205550512197" fileName="HyperGraphLayouter.java" startLine="149" startPosition="28" endLine="154" endPosition="5" />
+    <scopeInfo nodeId="1714301205550512198" fileName="HyperGraphLayouter.java" startLine="149" startPosition="28" endLine="154" endPosition="5">
+      <varInfo nodeId="1714301205550512191" varName="edge" />
+    </scopeInfo>
     <scopeInfo nodeId="1714301205550511228" fileName="HyperGraphLayouter.java" startLine="32" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="1714301205550511299" varName="clusterLayouter" />
     </scopeInfo>
@@ -760,8 +764,8 @@
     <scopeInfo nodeId="3444434563276236764" fileName="BasicLayouter.java" startLine="37" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="3444434563276236763" varName="patchInfo" />
     </scopeInfo>
-    <unitInfo nodeId="8729833695221619973" fileName="BasicLayouter.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.graphLayout.graphLayout.BasicLayouter" />
     <unitInfo nodeId="3444434563276236834" fileName="BasicLayouter.java" startLine="52" startPosition="30" endLine="57" endPosition="7" unitName="jetbrains.mps.graphLayout.graphLayout.BasicLayouter$1" />
+    <unitInfo nodeId="8729833695221619973" fileName="BasicLayouter.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.graphLayout.graphLayout.BasicLayouter" />
   </root>
   <root nodeId="903391227141129818" modelId="r:839ad18f-aa0d-4b1a-8b4c-ca87cf3bcac6(jetbrains.mps.graphLayout.graphLayout)">
     <nodeInfo nodeId="903391227141129824" fileName="GraphLayout.java" startLine="21" startPosition="50" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGraph" />
@@ -968,6 +972,9 @@
       <varInfo nodeId="5639900666367310747" varName="rect" />
     </scopeInfo>
     <scopeInfo nodeId="5639900666367310844" fileName="GraphLayout.java" startLine="143" startPosition="96" endLine="149" endPosition="7" />
+    <scopeInfo nodeId="5639900666367310851" fileName="GraphLayout.java" startLine="143" startPosition="96" endLine="149" endPosition="7">
+      <varInfo nodeId="5639900666367310852" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="3805314409601860768" fileName="GraphLayout.java" startLine="168" startPosition="77" endLine="174" endPosition="5">
       <varInfo nodeId="3805314409601860769" varName="node" />
     </scopeInfo>

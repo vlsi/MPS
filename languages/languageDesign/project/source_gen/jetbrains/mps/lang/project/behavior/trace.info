@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="DevKit_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.DevKit_BehaviorDescriptor" />
-  <unitInfo fileName="Generator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Generator_BehaviorDescriptor" />
   <unitInfo fileName="Language_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Language_BehaviorDescriptor" />
-  <unitInfo fileName="MappingConfigExternalRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_BehaviorDescriptor" />
-  <unitInfo fileName="MappingConfigNormalRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_BehaviorDescriptor" />
   <unitInfo fileName="MappingConfigRefAllGlobal_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefAllGlobal_BehaviorDescriptor" />
   <unitInfo fileName="MappingConfigRefAllLocal_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefAllLocal_BehaviorDescriptor" />
-  <unitInfo fileName="MappingConfigRefBase_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_BehaviorDescriptor" />
-  <unitInfo fileName="MappingConfigRefSet_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_BehaviorDescriptor" />
+  <unitInfo fileName="Solution_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" />
   <unitInfo fileName="MappingPriorityRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingPriorityRule_BehaviorDescriptor" />
   <unitInfo fileName="ModelReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModelReference_BehaviorDescriptor" />
   <unitInfo fileName="ModelRootManager_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModelRootManager_BehaviorDescriptor" />
   <unitInfo fileName="ModelRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModelRoot_BehaviorDescriptor" />
   <unitInfo fileName="ModuleDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModuleDependency_BehaviorDescriptor" />
-  <unitInfo fileName="ModuleReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" />
-  <unitInfo fileName="Module_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
-  <unitInfo fileName="Solution_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" />
   <unitInfo fileName="SourcePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.SourcePath_BehaviorDescriptor" />
   <unitInfo fileName="StubEntry_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.StubEntry_BehaviorDescriptor" />
   <unitInfo fileName="StubSolution_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.StubSolution_BehaviorDescriptor" />
+  <unitInfo fileName="Generator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Generator_BehaviorDescriptor" />
+  <unitInfo fileName="MappingConfigExternalRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_BehaviorDescriptor" />
+  <unitInfo fileName="MappingConfigNormalRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_BehaviorDescriptor" />
+  <unitInfo fileName="MappingConfigRefSet_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_BehaviorDescriptor" />
+  <unitInfo fileName="MappingConfigRefBase_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_BehaviorDescriptor" />
+  <unitInfo fileName="ModuleReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" />
+  <unitInfo fileName="Module_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1250389701475344621" modelId="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)">
     <nodeInfo nodeId="1250389701475344621" fileName="ModuleReference_Behavior.java" startLine="12" startPosition="39" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1250389701475344624" />
     <nodeInfo nodeId="1250389701475344628" fileName="ModuleReference_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -617,10 +617,10 @@
       <varInfo nodeId="8688590116724765742" varName="error" />
       <varInfo nodeId="8688590116724765740" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="8688590116724765630" fileName="UnitTestOutputReader.java" startLine="13" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader" />
     <unitInfo nodeId="8688590116724765704" fileName="UnitTestOutputReader.java" startLine="27" startPosition="24" endLine="31" endPosition="5" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader$1" />
     <unitInfo nodeId="8688590116724765718" fileName="UnitTestOutputReader.java" startLine="32" startPosition="24" endLine="36" endPosition="5" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader$2" />
     <unitInfo nodeId="8688590116724765628" fileName="UnitTestOutputReader.java" startLine="96" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader$BaseOutputReader" />
+    <unitInfo nodeId="8688590116724765630" fileName="UnitTestOutputReader.java" startLine="13" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader" />
   </root>
   <root nodeId="8688590116724765985" modelId="r:b8feab60-1700-41b4-b4af-29cbd0faef88(jetbrains.mps.build.ant.generation.unittest)">
     <nodeInfo nodeId="8688590116724765988" fileName="UnitTestAdapter.java" startLine="6" startPosition="58" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitTestAdapter#()V" />

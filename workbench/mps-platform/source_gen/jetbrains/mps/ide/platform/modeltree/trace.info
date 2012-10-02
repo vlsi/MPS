@@ -105,6 +105,7 @@
     <scopeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="4288082098349207773" varName="nodes" />
     </scopeInfo>
+    <scopeInfo nodeId="4288082098349207814" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7" />
     <scopeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7">
       <varInfo nodeId="4288082098349207842" varName="sub" />
     </scopeInfo>
@@ -130,8 +131,8 @@
       <varInfo nodeId="4288082098349207802" varName="sNodeTreeNode" />
       <varInfo nodeId="4288082098349207804" varName="virtualPackage" />
     </scopeInfo>
-    <unitInfo nodeId="4288082098349207686" fileName="ModelTreeBuilder.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" />
     <unitInfo nodeId="4288082098349207782" fileName="ModelTreeBuilder.java" startLine="69" startPosition="49" endLine="73" endPosition="5" unitName="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder$1" />
+    <unitInfo nodeId="4288082098349207686" fileName="ModelTreeBuilder.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" />
   </root>
   <root nodeId="4288082098349207990" modelId="r:e180cc3d-e9f2-4c0c-91b4-6730d80d9b23(jetbrains.mps.ide.platform.modeltree)">
     <nodeInfo nodeId="4288082098349208021" fileName="ModelTreeCellRenderer.java" startLine="15" startPosition="36" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

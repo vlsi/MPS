@@ -6,6 +6,7 @@
     <nodeInfo nodeId="2341412953773657688" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtension#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" />
     <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0">

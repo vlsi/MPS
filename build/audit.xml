@@ -47,7 +47,7 @@
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
       <!--<jvmarg value="-Xdebug"/>-->
       <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
-      <test name="Audit"/>
+      <test name="AuditConstraints"/>
       <formatter type="brief" usefile="false"/>
       <classpath>
         <fileset dir="${dest}/MPS ${version}/lib">

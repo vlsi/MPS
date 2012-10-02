@@ -163,8 +163,8 @@
     <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1225271514374" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind" />
     <unitInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
+    <unitInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind" />
   </root>
   <root nodeId="4269842503726207818" modelId="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)">
     <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

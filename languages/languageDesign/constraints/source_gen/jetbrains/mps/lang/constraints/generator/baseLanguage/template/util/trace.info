@@ -34,9 +34,9 @@
     <scopeInfo nodeId="1184606770434" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1184606770461" varName="clazz" />
     </scopeInfo>
-    <unitInfo nodeId="1184606474174" fileName="QueriesUtil.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
     <unitInfo nodeId="1227876798395" fileName="QueriesUtil.java" startLine="16" startPosition="113" endLine="20" endPosition="5" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$1" />
     <unitInfo nodeId="1227876804166" fileName="QueriesUtil.java" startLine="25" startPosition="115" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$2" />
+    <unitInfo nodeId="1184606474174" fileName="QueriesUtil.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
   </root>
 </debugInfo>
 

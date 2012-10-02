@@ -39,8 +39,8 @@
     <scopeInfo nodeId="1880762541167901394" fileName="SwingDemo.java" startLine="25" startPosition="22" endLine="34" endPosition="5" />
     <scopeInfo nodeId="1880762541167901342" fileName="SwingDemo.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1880762541167901391" fileName="SwingDemo.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1880762541167901329" fileName="SwingDemo.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo" />
     <unitInfo nodeId="1880762541167901399" fileName="SwingDemo.java" startLine="27" startPosition="37" endLine="31" endPosition="7" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo$1" />
+    <unitInfo nodeId="1880762541167901329" fileName="SwingDemo.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.sandbox.swing.SwingDemo" />
   </root>
 </debugInfo>
 

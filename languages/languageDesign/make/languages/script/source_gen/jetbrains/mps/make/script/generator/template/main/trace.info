@@ -224,10 +224,10 @@
     </scopeInfo>
     <unitInfo nodeId="5537134633111653674" fileName="QueriesGenerated.java" startLine="191" startPosition="175" endLine="195" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$1" />
     <unitInfo nodeId="5537134633111653722" fileName="QueriesGenerated.java" startLine="197" startPosition="94" endLine="201" endPosition="7" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$2" />
+    <unitInfo nodeId="4629164904928210870" fileName="QueriesGenerated.java" startLine="346" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a" />
     <unitInfo nodeId="5537134633111653758" fileName="QueriesGenerated.java" startLine="363" startPosition="0" endLine="380" endPosition="0" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0nb" />
     <unitInfo nodeId="5537134633111653660" fileName="QueriesGenerated.java" startLine="381" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0b0nb" />
     <unitInfo nodeId="5537134633111843936" fileName="QueriesGenerated.java" startLine="399" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0c0nb" />
-    <unitInfo nodeId="4629164904928210870" fileName="QueriesGenerated.java" startLine="346" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a" />
   </root>
   <root nodeId="5537134633111714222" modelId="r:4f7450b0-1e63-4ed1-8f09-41fbfeb8e8b9(jetbrains.mps.make.script.generator.template.main@generator)">
     <nodeInfo nodeId="5537134633111724473" fileName="QueriesGenerated.java" startLine="342" startPosition="155" endLine="343" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

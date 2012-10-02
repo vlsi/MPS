@@ -855,9 +855,9 @@
       <varInfo nodeId="1225239646572" varName="editorContext" />
       <varInfo nodeId="1225239646572" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1225239646567" fileName="Element_Editor.java" startLine="31" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.sampleXML.editor.Element_Editor" />
     <unitInfo nodeId="1225239646575" fileName="Element_Editor.java" startLine="198" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.sampleXML.editor.Element_Editor$attributeListHandler_76r4mg_c0a" />
     <unitInfo nodeId="1225239646583" fileName="Element_Editor.java" startLine="249" startPosition="0" endLine="299" endPosition="0" unitName="jetbrains.mps.sampleXML.editor.Element_Editor$contentListHandler_76r4mg_b1a" />
+    <unitInfo nodeId="1225239646567" fileName="Element_Editor.java" startLine="31" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.sampleXML.editor.Element_Editor" />
   </root>
   <root nodeId="1225239646612" modelId="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)">
     <nodeInfo nodeId="1225239646612" fileName="Text_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

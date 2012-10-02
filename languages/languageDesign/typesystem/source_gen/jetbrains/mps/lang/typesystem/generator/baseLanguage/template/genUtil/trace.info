@@ -114,6 +114,9 @@
     <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="110" startPosition="32" endLine="115" endPosition="7" />
     <scopeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="127" startPosition="32" endLine="132" endPosition="7" />
     <scopeInfo nodeId="1224161550300" fileName="TypesystemGenUtil.java" startLine="40" startPosition="42" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="1224161565535" fileName="TypesystemGenUtil.java" startLine="40" startPosition="42" endLine="46" endPosition="7">
+      <varInfo nodeId="1224161565539" varName="annotationInstance" />
+    </scopeInfo>
     <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="74" startPosition="32" endLine="80" endPosition="7" />
     <scopeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="92" startPosition="32" endLine="98" endPosition="7" />
     <scopeInfo nodeId="1220457598873" fileName="TypesystemGenUtil.java" startLine="24" startPosition="55" endLine="31" endPosition="192">
@@ -161,11 +164,11 @@
     <scopeInfo nodeId="1224160905100" fileName="TypesystemGenUtil.java" startLine="33" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1224160951919" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="20" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil" />
-    <unitInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="67" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a0a0a1a0a3a1" />
-    <unitInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="85" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a0a0a1a0a3a1_0" />
     <unitInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="103" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a1a0a0a1a2" />
     <unitInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="120" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a1a0a0a3a2" />
+    <unitInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="67" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a0a0a1a0a3a1" />
+    <unitInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="85" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a0a0a1a0a3a1_0" />
+    <unitInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="20" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil" />
   </root>
 </debugInfo>
 

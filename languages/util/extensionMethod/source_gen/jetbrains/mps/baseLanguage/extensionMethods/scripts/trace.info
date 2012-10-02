@@ -67,8 +67,8 @@
     <scopeInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="18" startPosition="92" endLine="68" endPosition="3">
       <varInfo nodeId="7517860079983491720" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.scripts.ConvertExtensionMethodCallToLocal_MigrationScript" />
     <unitInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="21" startPosition="28" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.extensionMethods.scripts.ConvertExtensionMethodCallToLocal_MigrationScript$1" />
+    <unitInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.scripts.ConvertExtensionMethodCallToLocal_MigrationScript" />
   </root>
 </debugInfo>
 

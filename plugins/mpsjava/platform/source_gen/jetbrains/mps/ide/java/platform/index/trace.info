@@ -162,6 +162,7 @@
     <scopeInfo nodeId="4183391441819864223" fileName="ClassifierSuccessorsFinder.java" startLine="148" startPosition="9" endLine="151" endPosition="9">
       <varInfo nodeId="4183391441819864224" varName="implementedInterface" />
     </scopeInfo>
+    <scopeInfo nodeId="4183391441819864250" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="77" endLine="163" endPosition="9" />
     <scopeInfo nodeId="4183391441819864251" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="77" endLine="163" endPosition="9">
       <varInfo nodeId="4183391441819864252" varName="extendedInterface" />
     </scopeInfo>
@@ -174,6 +175,7 @@
     <scopeInfo nodeId="4183391441819864470" fileName="ClassifierSuccessorsFinder.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="4183391441819864479" fileName="ClassifierSuccessorsFinder.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="4183391441819864096" fileName="ClassifierSuccessorsFinder.java" startLine="107" startPosition="153" endLine="111" endPosition="24" />
+    <scopeInfo nodeId="4183391441819864162" fileName="ClassifierSuccessorsFinder.java" startLine="128" startPosition="31" endLine="132" endPosition="9" />
     <scopeInfo nodeId="4183391441819864163" fileName="ClassifierSuccessorsFinder.java" startLine="128" startPosition="31" endLine="132" endPosition="9">
       <varInfo nodeId="4183391441819864164" varName="successor" />
     </scopeInfo>
@@ -260,10 +262,10 @@
       <varInfo nodeId="4183391441819863867" varName="classifier" />
       <varInfo nodeId="4183391441819863869" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="4183391441819863852" fileName="ClassifierSuccessorsFinder.java" startLine="40" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder" />
-    <unitInfo nodeId="4183391441819864048" fileName="ClassifierSuccessorsFinder.java" startLine="97" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ModifiedsuccessorFinder" />
-    <unitInfo nodeId="4183391441819864396" fileName="ClassifierSuccessorsFinder.java" startLine="208" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$SearchScope" />
     <unitInfo nodeId="4183391441819864305" fileName="ClassifierSuccessorsFinder.java" startLine="180" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ValueProcessor" />
+    <unitInfo nodeId="4183391441819864396" fileName="ClassifierSuccessorsFinder.java" startLine="208" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$SearchScope" />
+    <unitInfo nodeId="4183391441819864048" fileName="ClassifierSuccessorsFinder.java" startLine="97" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ModifiedsuccessorFinder" />
+    <unitInfo nodeId="4183391441819863852" fileName="ClassifierSuccessorsFinder.java" startLine="40" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder" />
   </root>
   <root nodeId="4183391441819864496" modelId="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)">
     <nodeInfo nodeId="4183391441819864788" fileName="ClassifierSuccessorsIndexer.java" startLine="28" startPosition="110" endLine="29" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
@@ -412,10 +414,10 @@
     <scopeInfo nodeId="4183391441819864533" fileName="ClassifierSuccessorsIndexer.java" startLine="81" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="4183391441819864539" varName="inputData" />
     </scopeInfo>
-    <unitInfo nodeId="4183391441819864496" fileName="ClassifierSuccessorsIndexer.java" startLine="28" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
+    <unitInfo nodeId="4183391441819864502" fileName="ClassifierSuccessorsIndexer.java" startLine="69" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$InputFilter" />
     <unitInfo nodeId="4183391441819864559" fileName="ClassifierSuccessorsIndexer.java" startLine="85" startPosition="45" endLine="139" endPosition="7" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$1" />
     <unitInfo nodeId="4183391441819864522" fileName="ClassifierSuccessorsIndexer.java" startLine="78" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$Indexer" />
-    <unitInfo nodeId="4183391441819864502" fileName="ClassifierSuccessorsIndexer.java" startLine="69" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$InputFilter" />
+    <unitInfo nodeId="4183391441819864496" fileName="ClassifierSuccessorsIndexer.java" startLine="28" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
   </root>
   <root nodeId="4183391441819864880" modelId="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)">
     <nodeInfo nodeId="4183391441819864882" fileName="GlobalSNodeId.java" startLine="13" startPosition="28" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />

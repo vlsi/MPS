@@ -369,12 +369,14 @@
     <scopeInfo nodeId="6543581031674022793" fileName="DequeSequence.java" startLine="162" startPosition="37" endLine="165" endPosition="7" />
     <scopeInfo nodeId="6543581031674022827" fileName="DequeSequence.java" startLine="174" startPosition="37" endLine="177" endPosition="7" />
     <scopeInfo nodeId="6543581031674022885" fileName="DequeSequence.java" startLine="184" startPosition="22" endLine="187" endPosition="9" />
+    <scopeInfo nodeId="6543581031674022859" fileName="DequeSequence.java" startLine="192" startPosition="12" endLine="195" endPosition="7" />
     <scopeInfo nodeId="6543581031674022860" fileName="DequeSequence.java" startLine="192" startPosition="12" endLine="195" endPosition="7">
       <varInfo nodeId="6543581031674022862" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674022915" fileName="DequeSequence.java" startLine="201" startPosition="43" endLine="204" endPosition="7" />
     <scopeInfo nodeId="6543581031674022993" fileName="DequeSequence.java" startLine="222" startPosition="25" endLine="225" endPosition="9" />
     <scopeInfo nodeId="6543581031674023103" fileName="DequeSequence.java" startLine="250" startPosition="22" endLine="253" endPosition="9" />
+    <scopeInfo nodeId="6543581031674023077" fileName="DequeSequence.java" startLine="258" startPosition="12" endLine="261" endPosition="7" />
     <scopeInfo nodeId="6543581031674023078" fileName="DequeSequence.java" startLine="258" startPosition="12" endLine="261" endPosition="7">
       <varInfo nodeId="6543581031674023080" varName="u" />
     </scopeInfo>
@@ -430,7 +432,14 @@
     <scopeInfo nodeId="6543581031674023414" fileName="DequeSequence.java" startLine="142" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="6543581031674023425" fileName="DequeSequence.java" startLine="147" startPosition="0" endLine="152" endPosition="0" />
     <scopeInfo nodeId="6543581031674022880" fileName="DequeSequence.java" startLine="183" startPosition="38" endLine="188" endPosition="7" />
+    <scopeInfo nodeId="6543581031674022881" fileName="DequeSequence.java" startLine="183" startPosition="38" endLine="188" endPosition="7">
+      <varInfo nodeId="6543581031674022883" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674022988" fileName="DequeSequence.java" startLine="221" startPosition="38" endLine="226" endPosition="7" />
+    <scopeInfo nodeId="6543581031674022989" fileName="DequeSequence.java" startLine="221" startPosition="38" endLine="226" endPosition="7">
+      <varInfo nodeId="6543581031674022991" varName="u" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674023098" fileName="DequeSequence.java" startLine="249" startPosition="38" endLine="254" endPosition="7" />
     <scopeInfo nodeId="6543581031674023099" fileName="DequeSequence.java" startLine="249" startPosition="38" endLine="254" endPosition="7">
       <varInfo nodeId="6543581031674023101" varName="u" />
     </scopeInfo>
@@ -1092,8 +1101,8 @@
     <nodeInfo nodeId="6543581031674024985" fileName="IEnumerator.java" startLine="7" startPosition="28" endLine="8" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="current#()null" />
     <scopeInfo nodeId="6543581031674024981" fileName="IEnumerator.java" startLine="6" startPosition="33" endLine="7" endPosition="28" />
     <scopeInfo nodeId="6543581031674024985" fileName="IEnumerator.java" startLine="7" startPosition="28" endLine="8" endPosition="21" />
-    <unitInfo nodeId="6543581031674024971" fileName="IEnumerator.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.IEnumerator" />
     <unitInfo nodeId="6543581031674024974" fileName="IEnumerator.java" startLine="9" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.IEnumerator$Iterator" />
+    <unitInfo nodeId="6543581031674024971" fileName="IEnumerator.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.IEnumerator" />
   </root>
   <root nodeId="6543581031674025209" modelId="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)">
     <nodeInfo nodeId="6543581031674025219" fileName="ISortedMapSequence.java" startLine="7" startPosition="87" endLine="8" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="headMap#(null)Ljetbrains/mps/internal/collections/runtime/ISortedMapSequence;" />
@@ -1394,7 +1403,11 @@
     <scopeInfo nodeId="6543581031674025496" fileName="CollectionSequence.java" startLine="23" startPosition="38" endLine="26" endPosition="7" />
     <scopeInfo nodeId="6543581031674025538" fileName="CollectionSequence.java" startLine="42" startPosition="37" endLine="45" endPosition="7" />
     <scopeInfo nodeId="6543581031674025553" fileName="CollectionSequence.java" startLine="49" startPosition="12" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="6543581031674025554" fileName="CollectionSequence.java" startLine="49" startPosition="12" endLine="52" endPosition="7">
+      <varInfo nodeId="6543581031674025558" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674025591" fileName="CollectionSequence.java" startLine="58" startPosition="37" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="6543581031674025606" fileName="CollectionSequence.java" startLine="65" startPosition="12" endLine="68" endPosition="7" />
     <scopeInfo nodeId="6543581031674025607" fileName="CollectionSequence.java" startLine="65" startPosition="12" endLine="68" endPosition="7">
       <varInfo nodeId="6543581031674025611" varName="t" />
     </scopeInfo>
@@ -1404,6 +1417,9 @@
     <scopeInfo nodeId="6256642990713377403" fileName="CollectionSequence.java" startLine="201" startPosition="28" endLine="204" endPosition="7" />
     <scopeInfo nodeId="6034304739317701225" fileName="CollectionSequence.java" startLine="230" startPosition="22" endLine="233" endPosition="9" />
     <scopeInfo nodeId="6034304739317701199" fileName="CollectionSequence.java" startLine="238" startPosition="12" endLine="241" endPosition="7" />
+    <scopeInfo nodeId="6034304739317701200" fileName="CollectionSequence.java" startLine="238" startPosition="12" endLine="241" endPosition="7">
+      <varInfo nodeId="6034304739317701202" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6034304739317701428" fileName="CollectionSequence.java" startLine="255" startPosition="34" endLine="258" endPosition="7" />
     <scopeInfo nodeId="6034304739317701507" fileName="CollectionSequence.java" startLine="281" startPosition="25" endLine="284" endPosition="9" />
     <scopeInfo nodeId="6543581031674025516" fileName="CollectionSequence.java" startLine="34" startPosition="31" endLine="38" endPosition="16" />
@@ -1442,9 +1458,11 @@
     <scopeInfo nodeId="6543581031674025721" fileName="CollectionSequence.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="6543581031674025819" fileName="CollectionSequence.java" startLine="162" startPosition="0" endLine="167" endPosition="0" />
     <scopeInfo nodeId="6543581031674025907" fileName="CollectionSequence.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
+    <scopeInfo nodeId="6034304739317701220" fileName="CollectionSequence.java" startLine="229" startPosition="29" endLine="234" endPosition="7" />
     <scopeInfo nodeId="6034304739317701221" fileName="CollectionSequence.java" startLine="229" startPosition="29" endLine="234" endPosition="7">
       <varInfo nodeId="6034304739317701223" varName="u" />
     </scopeInfo>
+    <scopeInfo nodeId="6034304739317701502" fileName="CollectionSequence.java" startLine="280" startPosition="29" endLine="285" endPosition="7" />
     <scopeInfo nodeId="6034304739317701503" fileName="CollectionSequence.java" startLine="280" startPosition="29" endLine="285" endPosition="7">
       <varInfo nodeId="6034304739317701505" varName="u" />
     </scopeInfo>
@@ -1519,13 +1537,13 @@
       <varInfo nodeId="6034304739317701422" varName="array" />
       <varInfo nodeId="6034304739317701419" varName="coll" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674025475" fileName="CollectionSequence.java" startLine="16" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <unitInfo nodeId="4279878350705222513" fileName="CollectionSequence.java" startLine="147" startPosition="15" endLine="151" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$5" />
+    <unitInfo nodeId="4279878350705222572" fileName="CollectionSequence.java" startLine="156" startPosition="15" endLine="160" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$6" />
     <unitInfo nodeId="6256642990713378098" fileName="CollectionSequence.java" startLine="209" startPosition="15" endLine="213" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$1" />
     <unitInfo nodeId="6034304739317701336" fileName="CollectionSequence.java" startLine="247" startPosition="15" endLine="251" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$2" />
     <unitInfo nodeId="6034304739317701583" fileName="CollectionSequence.java" startLine="272" startPosition="19" endLine="276" endPosition="9" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$3" />
     <unitInfo nodeId="6034304739317701636" fileName="CollectionSequence.java" startLine="293" startPosition="15" endLine="297" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$4" />
-    <unitInfo nodeId="4279878350705222513" fileName="CollectionSequence.java" startLine="147" startPosition="15" endLine="151" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$5" />
-    <unitInfo nodeId="4279878350705222572" fileName="CollectionSequence.java" startLine="156" startPosition="15" endLine="160" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$6" />
+    <unitInfo nodeId="6543581031674025475" fileName="CollectionSequence.java" startLine="16" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
   </root>
   <root nodeId="6543581031674025921" modelId="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)">
     <nodeInfo nodeId="6543581031674025960" fileName="SortedMapSequence.java" startLine="11" startPosition="131" endLine="12" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="serialVersionUID" />
@@ -1646,8 +1664,8 @@
     <scopeInfo nodeId="6543581031674026126" fileName="SortedMapSequence.java" startLine="74" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="6543581031674026133" varName="map" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674025921" fileName="SortedMapSequence.java" startLine="11" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.SortedMapSequence" />
     <unitInfo nodeId="6543581031674025935" fileName="SortedMapSequence.java" startLine="87" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.SortedMapSequence$SortedMapSequenceInitializer" />
+    <unitInfo nodeId="6543581031674025921" fileName="SortedMapSequence.java" startLine="11" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.SortedMapSequence" />
   </root>
   <root nodeId="6543581031674026272" modelId="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)">
     <nodeInfo nodeId="6543581031674026279" fileName="ICollectionSequence.java" startLine="9" startPosition="77" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addElement#(null)null" />
@@ -1824,6 +1842,7 @@
     <scopeInfo nodeId="6543581031674027907" fileName="SortedSetSequence.java" startLine="116" startPosition="25" endLine="119" endPosition="9" />
     <scopeInfo nodeId="6543581031674027944" fileName="SortedSetSequence.java" startLine="131" startPosition="37" endLine="134" endPosition="7" />
     <scopeInfo nodeId="6543581031674028002" fileName="SortedSetSequence.java" startLine="141" startPosition="22" endLine="144" endPosition="9" />
+    <scopeInfo nodeId="6543581031674027976" fileName="SortedSetSequence.java" startLine="149" startPosition="12" endLine="152" endPosition="7" />
     <scopeInfo nodeId="6543581031674027977" fileName="SortedSetSequence.java" startLine="149" startPosition="12" endLine="152" endPosition="7">
       <varInfo nodeId="6543581031674027979" varName="u" />
     </scopeInfo>
@@ -1832,6 +1851,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6543581031674028111" fileName="SortedSetSequence.java" startLine="174" startPosition="22" endLine="177" endPosition="9" />
     <scopeInfo nodeId="6543581031674028085" fileName="SortedSetSequence.java" startLine="182" startPosition="12" endLine="185" endPosition="7" />
+    <scopeInfo nodeId="6543581031674028086" fileName="SortedSetSequence.java" startLine="182" startPosition="12" endLine="185" endPosition="7">
+      <varInfo nodeId="6543581031674028088" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674028155" fileName="SortedSetSequence.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="6543581031674028159" varName="toElement" />
     </scopeInfo>
@@ -1856,10 +1878,17 @@
     <scopeInfo nodeId="2526372162255443180" fileName="SortedSetSequence.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="6543581031674028248" fileName="SortedSetSequence.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="6543581031674027902" fileName="SortedSetSequence.java" startLine="115" startPosition="38" endLine="120" endPosition="7" />
+    <scopeInfo nodeId="6543581031674027903" fileName="SortedSetSequence.java" startLine="115" startPosition="38" endLine="120" endPosition="7">
+      <varInfo nodeId="6543581031674027905" varName="u" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674027997" fileName="SortedSetSequence.java" startLine="140" startPosition="38" endLine="145" endPosition="7" />
     <scopeInfo nodeId="6543581031674027998" fileName="SortedSetSequence.java" startLine="140" startPosition="38" endLine="145" endPosition="7">
       <varInfo nodeId="6543581031674028000" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674028106" fileName="SortedSetSequence.java" startLine="173" startPosition="38" endLine="178" endPosition="7" />
+    <scopeInfo nodeId="6543581031674028107" fileName="SortedSetSequence.java" startLine="173" startPosition="38" endLine="178" endPosition="7">
+      <varInfo nodeId="6543581031674028109" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674027763" fileName="SortedSetSequence.java" startLine="73" startPosition="65" endLine="79" endPosition="70" />
     <scopeInfo nodeId="6543581031674027755" fileName="SortedSetSequence.java" startLine="72" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="6543581031674027760" varName="array" />
@@ -2051,6 +2080,7 @@
     <scopeInfo nodeId="6543581031674029542" fileName="IterableUtils.java" startLine="143" startPosition="140" endLine="148" endPosition="13">
       <varInfo nodeId="6543581031674029544" varName="s" />
     </scopeInfo>
+    <scopeInfo nodeId="6543581031674029090" fileName="IterableUtils.java" startLine="14" startPosition="133" endLine="21" endPosition="5" />
     <scopeInfo nodeId="6543581031674029091" fileName="IterableUtils.java" startLine="14" startPosition="133" endLine="21" endPosition="5">
       <varInfo nodeId="6543581031674029095" varName="it" />
     </scopeInfo>
@@ -2442,6 +2472,7 @@
     <scopeInfo nodeId="6543581031674030325" fileName="LinkedListSequence.java" startLine="195" startPosition="37" endLine="198" endPosition="7" />
     <scopeInfo nodeId="6543581031674030370" fileName="LinkedListSequence.java" startLine="210" startPosition="37" endLine="213" endPosition="7" />
     <scopeInfo nodeId="6543581031674030430" fileName="LinkedListSequence.java" startLine="220" startPosition="22" endLine="223" endPosition="9" />
+    <scopeInfo nodeId="6543581031674030404" fileName="LinkedListSequence.java" startLine="228" startPosition="12" endLine="231" endPosition="7" />
     <scopeInfo nodeId="6543581031674030405" fileName="LinkedListSequence.java" startLine="228" startPosition="12" endLine="231" endPosition="7">
       <varInfo nodeId="6543581031674030407" varName="u" />
     </scopeInfo>
@@ -2449,6 +2480,9 @@
     <scopeInfo nodeId="6543581031674030539" fileName="LinkedListSequence.java" startLine="258" startPosition="25" endLine="261" endPosition="9" />
     <scopeInfo nodeId="6543581031674030651" fileName="LinkedListSequence.java" startLine="286" startPosition="22" endLine="289" endPosition="9" />
     <scopeInfo nodeId="6543581031674030625" fileName="LinkedListSequence.java" startLine="294" startPosition="12" endLine="297" endPosition="7" />
+    <scopeInfo nodeId="6543581031674030626" fileName="LinkedListSequence.java" startLine="294" startPosition="12" endLine="297" endPosition="7">
+      <varInfo nodeId="6543581031674030628" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674030678" fileName="LinkedListSequence.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="6543581031674030681" varName="t" />
     </scopeInfo>
@@ -2509,8 +2543,17 @@
     </scopeInfo>
     <scopeInfo nodeId="6543581031674031063" fileName="LinkedListSequence.java" startLine="188" startPosition="0" endLine="193" endPosition="0" />
     <scopeInfo nodeId="6543581031674030425" fileName="LinkedListSequence.java" startLine="219" startPosition="38" endLine="224" endPosition="7" />
+    <scopeInfo nodeId="6543581031674030426" fileName="LinkedListSequence.java" startLine="219" startPosition="38" endLine="224" endPosition="7">
+      <varInfo nodeId="6543581031674030428" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674030534" fileName="LinkedListSequence.java" startLine="257" startPosition="38" endLine="262" endPosition="7" />
+    <scopeInfo nodeId="6543581031674030535" fileName="LinkedListSequence.java" startLine="257" startPosition="38" endLine="262" endPosition="7">
+      <varInfo nodeId="6543581031674030537" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674030646" fileName="LinkedListSequence.java" startLine="285" startPosition="38" endLine="290" endPosition="7" />
+    <scopeInfo nodeId="6543581031674030647" fileName="LinkedListSequence.java" startLine="285" startPosition="38" endLine="290" endPosition="7">
+      <varInfo nodeId="6543581031674030649" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674030893" fileName="LinkedListSequence.java" startLine="114" startPosition="33" endLine="120" endPosition="35" />
     <scopeInfo nodeId="6543581031674030941" fileName="LinkedListSequence.java" startLine="137" startPosition="26" endLine="143" endPosition="28" />
     <scopeInfo nodeId="6543581031674030959" fileName="LinkedListSequence.java" startLine="146" startPosition="25" endLine="152" endPosition="27" />
@@ -2821,10 +2864,12 @@
     <scopeInfo nodeId="6543581031674031254" fileName="ListSequence.java" startLine="279" startPosition="25" endLine="282" endPosition="9" />
     <scopeInfo nodeId="6543581031674031292" fileName="ListSequence.java" startLine="294" startPosition="37" endLine="297" endPosition="7" />
     <scopeInfo nodeId="6543581031674031352" fileName="ListSequence.java" startLine="304" startPosition="22" endLine="307" endPosition="9" />
+    <scopeInfo nodeId="6543581031674031326" fileName="ListSequence.java" startLine="312" startPosition="12" endLine="315" endPosition="7" />
     <scopeInfo nodeId="6543581031674031327" fileName="ListSequence.java" startLine="312" startPosition="12" endLine="315" endPosition="7">
       <varInfo nodeId="6543581031674031329" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674031453" fileName="ListSequence.java" startLine="334" startPosition="22" endLine="337" endPosition="9" />
+    <scopeInfo nodeId="6543581031674031427" fileName="ListSequence.java" startLine="342" startPosition="12" endLine="345" endPosition="7" />
     <scopeInfo nodeId="6543581031674031428" fileName="ListSequence.java" startLine="342" startPosition="12" endLine="345" endPosition="7">
       <varInfo nodeId="6543581031674031430" varName="u" />
     </scopeInfo>
@@ -2893,13 +2938,18 @@
     <scopeInfo nodeId="6543581031674031969" fileName="ListSequence.java" startLine="198" startPosition="0" endLine="203" endPosition="0" />
     <scopeInfo nodeId="6543581031674032019" fileName="ListSequence.java" startLine="213" startPosition="0" endLine="218" endPosition="0" />
     <scopeInfo nodeId="6543581031674032058" fileName="ListSequence.java" startLine="222" startPosition="0" endLine="227" endPosition="0" />
+    <scopeInfo nodeId="6543581031674031249" fileName="ListSequence.java" startLine="278" startPosition="38" endLine="283" endPosition="7" />
     <scopeInfo nodeId="6543581031674031250" fileName="ListSequence.java" startLine="278" startPosition="38" endLine="283" endPosition="7">
       <varInfo nodeId="6543581031674031252" varName="u" />
     </scopeInfo>
+    <scopeInfo nodeId="6543581031674031347" fileName="ListSequence.java" startLine="303" startPosition="38" endLine="308" endPosition="7" />
     <scopeInfo nodeId="6543581031674031348" fileName="ListSequence.java" startLine="303" startPosition="38" endLine="308" endPosition="7">
       <varInfo nodeId="6543581031674031350" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674031448" fileName="ListSequence.java" startLine="333" startPosition="38" endLine="338" endPosition="7" />
+    <scopeInfo nodeId="6543581031674031449" fileName="ListSequence.java" startLine="333" startPosition="38" endLine="338" endPosition="7">
+      <varInfo nodeId="6543581031674031451" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674031690" fileName="ListSequence.java" startLine="104" startPosition="37" endLine="110" endPosition="23" />
     <scopeInfo nodeId="6543581031674031717" fileName="ListSequence.java" startLine="113" startPosition="32" endLine="119" endPosition="30" />
     <scopeInfo nodeId="6543581031674031762" fileName="ListSequence.java" startLine="132" startPosition="32" endLine="138" endPosition="20" />
@@ -3118,9 +3168,13 @@
     <scopeInfo nodeId="6543581031674032354" fileName="QueueSequence.java" startLine="118" startPosition="37" endLine="121" endPosition="7" />
     <scopeInfo nodeId="6543581031674032412" fileName="QueueSequence.java" startLine="128" startPosition="22" endLine="131" endPosition="9" />
     <scopeInfo nodeId="6543581031674032386" fileName="QueueSequence.java" startLine="136" startPosition="12" endLine="139" endPosition="7" />
+    <scopeInfo nodeId="6543581031674032387" fileName="QueueSequence.java" startLine="136" startPosition="12" endLine="139" endPosition="7">
+      <varInfo nodeId="6543581031674032389" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674032442" fileName="QueueSequence.java" startLine="145" startPosition="43" endLine="148" endPosition="7" />
     <scopeInfo nodeId="6543581031674032520" fileName="QueueSequence.java" startLine="166" startPosition="25" endLine="169" endPosition="9" />
     <scopeInfo nodeId="6543581031674032630" fileName="QueueSequence.java" startLine="194" startPosition="22" endLine="197" endPosition="9" />
+    <scopeInfo nodeId="6543581031674032604" fileName="QueueSequence.java" startLine="202" startPosition="12" endLine="205" endPosition="7" />
     <scopeInfo nodeId="6543581031674032605" fileName="QueueSequence.java" startLine="202" startPosition="12" endLine="205" endPosition="7">
       <varInfo nodeId="6543581031674032607" varName="u" />
     </scopeInfo>
@@ -3155,10 +3209,17 @@
     <scopeInfo nodeId="6543581031674032800" fileName="QueueSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="6543581031674032830" fileName="QueueSequence.java" startLine="91" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="6543581031674032407" fileName="QueueSequence.java" startLine="127" startPosition="38" endLine="132" endPosition="7" />
+    <scopeInfo nodeId="6543581031674032408" fileName="QueueSequence.java" startLine="127" startPosition="38" endLine="132" endPosition="7">
+      <varInfo nodeId="6543581031674032410" varName="u" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674032515" fileName="QueueSequence.java" startLine="165" startPosition="38" endLine="170" endPosition="7" />
     <scopeInfo nodeId="6543581031674032516" fileName="QueueSequence.java" startLine="165" startPosition="38" endLine="170" endPosition="7">
       <varInfo nodeId="6543581031674032518" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674032625" fileName="QueueSequence.java" startLine="193" startPosition="38" endLine="198" endPosition="7" />
+    <scopeInfo nodeId="6543581031674032626" fileName="QueueSequence.java" startLine="193" startPosition="38" endLine="198" endPosition="7">
+      <varInfo nodeId="6543581031674032628" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674032712" fileName="QueueSequence.java" startLine="48" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="6543581031674032727" fileName="QueueSequence.java" startLine="55" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="6543581031674032317" fileName="QueueSequence.java" startLine="105" startPosition="65" endLine="114" endPosition="39" />
@@ -3416,11 +3477,15 @@
     <scopeInfo nodeId="6543581031674033028" fileName="SetSequence.java" startLine="220" startPosition="25" endLine="223" endPosition="9" />
     <scopeInfo nodeId="6543581031674033065" fileName="SetSequence.java" startLine="235" startPosition="37" endLine="238" endPosition="7" />
     <scopeInfo nodeId="6543581031674033123" fileName="SetSequence.java" startLine="245" startPosition="22" endLine="248" endPosition="9" />
+    <scopeInfo nodeId="6543581031674033097" fileName="SetSequence.java" startLine="253" startPosition="12" endLine="256" endPosition="7" />
     <scopeInfo nodeId="6543581031674033098" fileName="SetSequence.java" startLine="253" startPosition="12" endLine="256" endPosition="7">
       <varInfo nodeId="6543581031674033100" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674033223" fileName="SetSequence.java" startLine="275" startPosition="22" endLine="278" endPosition="9" />
     <scopeInfo nodeId="6543581031674033197" fileName="SetSequence.java" startLine="283" startPosition="12" endLine="286" endPosition="7" />
+    <scopeInfo nodeId="6543581031674033198" fileName="SetSequence.java" startLine="283" startPosition="12" endLine="286" endPosition="7">
+      <varInfo nodeId="6543581031674033200" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674033260" fileName="SetSequence.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="6543581031674033263" varName="c" />
     </scopeInfo>
@@ -3470,11 +3535,18 @@
     <scopeInfo nodeId="6543581031674033594" fileName="SetSequence.java" startLine="143" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="2526372162255443091" fileName="SetSequence.java" startLine="158" startPosition="0" endLine="163" endPosition="0" />
     <scopeInfo nodeId="2526372162255443108" fileName="SetSequence.java" startLine="163" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="6543581031674033023" fileName="SetSequence.java" startLine="219" startPosition="38" endLine="224" endPosition="7" />
     <scopeInfo nodeId="6543581031674033024" fileName="SetSequence.java" startLine="219" startPosition="38" endLine="224" endPosition="7">
       <varInfo nodeId="6543581031674033026" varName="u" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674033118" fileName="SetSequence.java" startLine="244" startPosition="38" endLine="249" endPosition="7" />
+    <scopeInfo nodeId="6543581031674033119" fileName="SetSequence.java" startLine="244" startPosition="38" endLine="249" endPosition="7">
+      <varInfo nodeId="6543581031674033121" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674033218" fileName="SetSequence.java" startLine="274" startPosition="38" endLine="279" endPosition="7" />
+    <scopeInfo nodeId="6543581031674033219" fileName="SetSequence.java" startLine="274" startPosition="38" endLine="279" endPosition="7">
+      <varInfo nodeId="6543581031674033221" varName="u" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674033528" fileName="SetSequence.java" startLine="121" startPosition="34" endLine="127" endPosition="17" />
     <scopeInfo nodeId="6543581031674033609" fileName="SetSequence.java" startLine="148" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="6543581031674033613" varName="runtimeClass" />
@@ -3697,9 +3769,9 @@
     <scopeInfo nodeId="6543581031674034031" fileName="ArrayUtils.java" startLine="97" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="6543581031674034035" varName="array" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674033682" fileName="ArrayUtils.java" startLine="9" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
     <unitInfo nodeId="6543581031674034042" fileName="ArrayUtils.java" startLine="104" startPosition="15" endLine="108" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils$1" />
     <unitInfo nodeId="6543581031674033684" fileName="ArrayUtils.java" startLine="111" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils$ArrayIterator" />
+    <unitInfo nodeId="6543581031674033682" fileName="ArrayUtils.java" startLine="9" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
   </root>
   <root nodeId="6543581031674034565" modelId="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)">
     <nodeInfo nodeId="6543581031674034572" fileName="ISequenceIterableAdapter.java" startLine="7" startPosition="94" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ISequenceIterableAdapter#()V" />
@@ -4210,11 +4282,11 @@
     <scopeInfo nodeId="6543581031674034854" fileName="MapSequence.java" startLine="388" startPosition="0" endLine="403" endPosition="0">
       <varInfo nodeId="6543581031674034858" varName="arr" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674034640" fileName="MapSequence.java" startLine="13" startPosition="0" endLine="419" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <unitInfo nodeId="6543581031674034712" fileName="MapSequence.java" startLine="220" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$EntryMapping" />
     <unitInfo nodeId="6543581031674034655" fileName="MapSequence.java" startLine="183" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MapSequenceInitializer" />
     <unitInfo nodeId="6543581031674034686" fileName="MapSequence.java" startLine="200" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MappingIterator" />
+    <unitInfo nodeId="6543581031674034712" fileName="MapSequence.java" startLine="220" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$EntryMapping" />
     <unitInfo nodeId="6543581031674034765" fileName="MapSequence.java" startLine="276" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MappingsSetSequence" />
+    <unitInfo nodeId="6543581031674034640" fileName="MapSequence.java" startLine="13" startPosition="0" endLine="419" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </root>
   <root nodeId="6543581031674036013" modelId="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)">
     <nodeInfo nodeId="6543581031674036022" fileName="IQueueSequence.java" startLine="9" startPosition="77" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLastElement#(null)null" />

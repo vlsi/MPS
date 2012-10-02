@@ -154,6 +154,9 @@
       <varInfo nodeId="1327612371813251841" varName="edge" />
     </scopeInfo>
     <scopeInfo nodeId="1327612371813251870" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="79" startPosition="51" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="1327612371813251872" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="79" startPosition="51" endLine="82" endPosition="7">
+      <varInfo nodeId="1327612371813251873" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1327612371813217701" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="116" startPosition="37" endLine="119" endPosition="5">
       <varInfo nodeId="1327612371813217602" varName="dart" />
     </scopeInfo>
@@ -176,8 +179,14 @@
       <varInfo nodeId="1327612371813251868" varName="edge" />
     </scopeInfo>
     <scopeInfo nodeId="1327612371813218015" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="38" startPosition="65" endLine="44" endPosition="9" />
+    <scopeInfo nodeId="1327612371813218127" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="38" startPosition="65" endLine="44" endPosition="9">
+      <varInfo nodeId="1327612371813218128" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1327612371813217676" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="108" startPosition="52" endLine="114" endPosition="7" />
     <scopeInfo nodeId="1327612371813217938" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="37" startPosition="56" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="1327612371813218012" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="37" startPosition="56" endLine="45" endPosition="7">
+      <varInfo nodeId="1327612371813218013" varName="edge" />
+    </scopeInfo>
     <scopeInfo nodeId="1327612371813217637" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="96" startPosition="59" endLine="104" endPosition="22">
       <varInfo nodeId="1327612371813217597" varName="next" />
     </scopeInfo>
@@ -255,8 +264,8 @@
       <varInfo nodeId="1327612371813265196" varName="path" />
       <varInfo nodeId="1327612371813262633" varName="start" />
     </scopeInfo>
-    <unitInfo nodeId="1327612371813210823" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="23" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.BiconnectedInitialEmbeddingFinder" />
     <unitInfo nodeId="1327612371813262352" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="74" startPosition="110" endLine="78" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.BiconnectedInitialEmbeddingFinder$1" />
+    <unitInfo nodeId="1327612371813210823" fileName="BiconnectedInitialEmbeddingFinder.java" startLine="23" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.BiconnectedInitialEmbeddingFinder" />
   </root>
   <root nodeId="1327612371813257427" modelId="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)">
     <nodeInfo nodeId="3720762119843733874" fileName="ShortestPathEmbeddingFinder.java" startLine="20" startPosition="70" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHOW_LOG" />
@@ -406,9 +415,9 @@
       <varInfo nodeId="4136567681074274518" varName="forbidOuterEdgeCrossing" />
       <varInfo nodeId="7133435336869263735" varName="removedEdge" />
     </scopeInfo>
-    <unitInfo nodeId="1327612371813257427" fileName="ShortestPathEmbeddingFinder.java" startLine="20" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.ShortestPathEmbeddingFinder" />
-    <unitInfo nodeId="4136567681074274573" fileName="ShortestPathEmbeddingFinder.java" startLine="75" startPosition="81" endLine="79" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.ShortestPathEmbeddingFinder$1" />
     <unitInfo nodeId="4422427343208761573" fileName="ShortestPathEmbeddingFinder.java" startLine="44" startPosition="73" endLine="48" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.ShortestPathEmbeddingFinder$2" />
+    <unitInfo nodeId="4136567681074274573" fileName="ShortestPathEmbeddingFinder.java" startLine="75" startPosition="81" endLine="79" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.ShortestPathEmbeddingFinder$1" />
+    <unitInfo nodeId="1327612371813257427" fileName="ShortestPathEmbeddingFinder.java" startLine="20" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.ShortestPathEmbeddingFinder" />
   </root>
   <root nodeId="1532165762814136058" modelId="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)">
     <nodeInfo nodeId="1532165762814137361" fileName="ClusterEmbeddingConstructor.java" startLine="34" startPosition="42" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="debugMode" />
@@ -974,6 +983,9 @@
       <varInfo nodeId="1532165762814136628" varName="subcluster" />
     </scopeInfo>
     <scopeInfo nodeId="1532165762814136669" fileName="ClusterEmbeddingConstructor.java" startLine="221" startPosition="61" endLine="228" endPosition="7" />
+    <scopeInfo nodeId="1532165762814136670" fileName="ClusterEmbeddingConstructor.java" startLine="221" startPosition="61" endLine="228" endPosition="7">
+      <varInfo nodeId="1532165762814136671" varName="edge" />
+    </scopeInfo>
     <scopeInfo nodeId="1532165762814137174" fileName="ClusterEmbeddingConstructor.java" startLine="316" startPosition="103" endLine="323" endPosition="7">
       <varInfo nodeId="1532165762814137175" varName="edge" />
     </scopeInfo>
@@ -1211,7 +1223,6 @@
       <varInfo nodeId="1532165762814136758" varName="synchronizer" />
     </scopeInfo>
     <scopeInfo nodeId="1532165762814136588" fileName="ClusterEmbeddingConstructor.java" startLine="204" startPosition="0" endLine="328" endPosition="0" />
-    <unitInfo nodeId="1532165762814136058" fileName="ClusterEmbeddingConstructor.java" startLine="34" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor" />
     <unitInfo nodeId="5668095147007552418" fileName="ClusterEmbeddingConstructor.java" startLine="162" startPosition="83" endLine="166" endPosition="9" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor$1" />
     <unitInfo nodeId="5668095147007566425" fileName="ClusterEmbeddingConstructor.java" startLine="168" startPosition="89" endLine="172" endPosition="9" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor$2" />
     <unitInfo nodeId="1532165762814136573" fileName="ClusterEmbeddingConstructor.java" startLine="190" startPosition="87" endLine="194" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor$3" />
@@ -1219,6 +1230,7 @@
     <unitInfo nodeId="1532165762814136919" fileName="ClusterEmbeddingConstructor.java" startLine="276" startPosition="76" endLine="280" endPosition="9" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor$5" />
     <unitInfo nodeId="1532165762814137207" fileName="ClusterEmbeddingConstructor.java" startLine="476" startPosition="61" endLine="480" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor$6" />
     <unitInfo nodeId="7172696272957567451" fileName="ClusterEmbeddingConstructor.java" startLine="514" startPosition="0" endLine="541" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor$ListParser" />
+    <unitInfo nodeId="1532165762814136058" fileName="ClusterEmbeddingConstructor.java" startLine="34" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingConstructor" />
   </root>
   <root nodeId="2899723422951321567" modelId="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)">
     <nodeInfo nodeId="2899723422951321569" fileName="IEmbeddingFinder.java" startLine="8" startPosition="35" endLine="9" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/graphLayout/graph/Graph;)Ljetbrains/mps/graphLayout/planarGraph/EmbeddedGraph;" />
@@ -1408,6 +1420,7 @@
     <scopeInfo nodeId="4179389957059019233" fileName="TreeEmbeddingFinder.java" startLine="37" startPosition="54" endLine="40" endPosition="5">
       <varInfo nodeId="4179389957059019234" varName="edge" />
     </scopeInfo>
+    <scopeInfo nodeId="1123934034178614798" fileName="TreeEmbeddingFinder.java" startLine="58" startPosition="87" endLine="61" endPosition="9" />
     <scopeInfo nodeId="1123934034178614799" fileName="TreeEmbeddingFinder.java" startLine="58" startPosition="87" endLine="61" endPosition="9">
       <varInfo nodeId="1123934034178614747" varName="face" />
     </scopeInfo>
@@ -1548,8 +1561,8 @@
       <varInfo nodeId="4179389957059016457" varName="face" />
       <varInfo nodeId="4624841703139840669" varName="newEdge" />
     </scopeInfo>
-    <unitInfo nodeId="2899723422951324685" fileName="TreeEmbeddingFinder.java" startLine="27" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.TreeEmbeddingFinder" />
     <unitInfo nodeId="2899723422951324732" fileName="TreeEmbeddingFinder.java" startLine="202" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.TreeEmbeddingFinder$MyDfs" />
+    <unitInfo nodeId="2899723422951324685" fileName="TreeEmbeddingFinder.java" startLine="27" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.TreeEmbeddingFinder" />
   </root>
   <root nodeId="344116171239987094" modelId="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)">
     <nodeInfo nodeId="5709109565604328119" fileName="PQTree.java" startLine="11" startPosition="21" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHOW_LOG" />
@@ -1896,9 +1909,11 @@
     <scopeInfo nodeId="344116171239987583" fileName="PQNode.java" startLine="120" startPosition="0" endLine="122" endPosition="0" />
     <scopeInfo nodeId="344116171239987376" fileName="PQNode.java" startLine="165" startPosition="0" endLine="167" endPosition="5" />
     <scopeInfo nodeId="344116171239987454" fileName="PQNode.java" startLine="19" startPosition="19" endLine="22" endPosition="20" />
+    <scopeInfo nodeId="5442489283395808638" fileName="PQNode.java" startLine="38" startPosition="31" endLine="41" endPosition="5" />
     <scopeInfo nodeId="5442489283395836106" fileName="PQNode.java" startLine="38" startPosition="31" endLine="41" endPosition="5">
       <varInfo nodeId="5442489283395836107" varName="child" />
     </scopeInfo>
+    <scopeInfo nodeId="5442489283395818420" fileName="PQNode.java" startLine="48" startPosition="31" endLine="51" endPosition="5" />
     <scopeInfo nodeId="5442489283395836122" fileName="PQNode.java" startLine="48" startPosition="31" endLine="51" endPosition="5">
       <varInfo nodeId="5442489283395836123" varName="child" />
     </scopeInfo>
@@ -1961,8 +1976,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5442489283395815278" fileName="PQNode.java" startLine="135" startPosition="32" endLine="158" endPosition="5" />
     <scopeInfo nodeId="5442489283395815275" fileName="PQNode.java" startLine="134" startPosition="0" endLine="160" endPosition="0" />
-    <unitInfo nodeId="344116171239987370" fileName="PQNode.java" startLine="11" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.PQNode" />
     <unitInfo nodeId="344116171239987371" fileName="PQNode.java" startLine="161" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.PQNode$State" />
+    <unitInfo nodeId="344116171239987370" fileName="PQNode.java" startLine="11" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.PQNode" />
   </root>
   <root nodeId="344116171239987587" modelId="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)">
     <nodeInfo nodeId="603019764244035786" fileName="QNode.java" startLine="11" startPosition="35" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEdgesOrder" />
@@ -2606,6 +2621,7 @@
       <varInfo nodeId="4644851485137262258" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="3495542515822992541" fileName="PQPlanarizationFinder.java" startLine="144" startPosition="27" endLine="150" endPosition="79" />
+    <scopeInfo nodeId="4644851485137262199" fileName="PQPlanarizationFinder.java" startLine="86" startPosition="67" endLine="93" endPosition="9" />
     <scopeInfo nodeId="4644851485137262214" fileName="PQPlanarizationFinder.java" startLine="86" startPosition="67" endLine="93" endPosition="9">
       <varInfo nodeId="4644851485137262215" varName="edge" />
     </scopeInfo>
@@ -3410,6 +3426,9 @@
       <varInfo nodeId="5442489283395815257" varName="childHValue" />
     </scopeInfo>
     <scopeInfo nodeId="5656502300472250882" fileName="PNode.java" startLine="61" startPosition="34" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="5709109565604237649" fileName="PNode.java" startLine="61" startPosition="34" endLine="68" endPosition="7">
+      <varInfo nodeId="5709109565604237650" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="5709109565604237747" fileName="PNode.java" startLine="93" startPosition="58" endLine="100" endPosition="7">
       <varInfo nodeId="5709109565604237748" varName="child" />
     </scopeInfo>
@@ -3442,12 +3461,14 @@
     <scopeInfo nodeId="603019764244030374" fileName="PNode.java" startLine="178" startPosition="29" endLine="187" endPosition="5">
       <varInfo nodeId="603019764244030375" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="5442489283395818881" fileName="PNode.java" startLine="310" startPosition="25" endLine="319" endPosition="9" />
     <scopeInfo nodeId="5442489283395818883" fileName="PNode.java" startLine="310" startPosition="25" endLine="319" endPosition="9">
       <varInfo nodeId="5442489283395818884" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="87514548893823425" fileName="PNode.java" startLine="322" startPosition="36" endLine="331" endPosition="0">
       <varInfo nodeId="87514548893823435" varName="child" />
     </scopeInfo>
+    <scopeInfo nodeId="5442489283395818351" fileName="PNode.java" startLine="381" startPosition="12" endLine="390" endPosition="7" />
     <scopeInfo nodeId="5442489283395831837" fileName="PNode.java" startLine="381" startPosition="12" endLine="390" endPosition="7">
       <varInfo nodeId="5442489283395831838" varName="child" />
     </scopeInfo>
@@ -3525,13 +3546,7 @@
       <varInfo nodeId="5639575219014570967" varName="children" />
       <varInfo nodeId="5656502300472232038" varName="nextGraphNode" />
     </scopeInfo>
-    <unitInfo nodeId="6001806680467668506" fileName="PNode.java" startLine="13" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.PNode" />
     <unitInfo nodeId="5639575219014570675" fileName="PNode.java" startLine="37" startPosition="62" endLine="41" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.PNode$1" />
-    <unitInfo nodeId="8327149575965773143" fileName="PNode.java" startLine="133" startPosition="73" endLine="137" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$10" />
-    <unitInfo nodeId="5709109565604237825" fileName="PNode.java" startLine="139" startPosition="68" endLine="143" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$11" />
-    <unitInfo nodeId="8327149575965773168" fileName="PNode.java" startLine="146" startPosition="73" endLine="150" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$12" />
-    <unitInfo nodeId="5709109565604237850" fileName="PNode.java" startLine="154" startPosition="89" endLine="158" endPosition="9" unitName="jetbrains.mps.graphLayout.planarization.PNode$13" />
-    <unitInfo nodeId="5442489283395818571" fileName="PNode.java" startLine="254" startPosition="82" endLine="258" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.PNode$14" />
     <unitInfo nodeId="5639575219014570690" fileName="PNode.java" startLine="42" startPosition="63" endLine="46" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.PNode$2" />
     <unitInfo nodeId="5639575219014570709" fileName="PNode.java" startLine="47" startPosition="77" endLine="51" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.PNode$3" />
     <unitInfo nodeId="5709109565604237708" fileName="PNode.java" startLine="62" startPosition="68" endLine="66" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$4" />
@@ -3540,6 +3555,12 @@
     <unitInfo nodeId="5639575219014570857" fileName="PNode.java" startLine="104" startPosition="93" endLine="108" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$7" />
     <unitInfo nodeId="5639575219014570915" fileName="PNode.java" startLine="115" startPosition="80" endLine="119" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$8" />
     <unitInfo nodeId="5709109565604237804" fileName="PNode.java" startLine="125" startPosition="89" endLine="129" endPosition="9" unitName="jetbrains.mps.graphLayout.planarization.PNode$9" />
+    <unitInfo nodeId="8327149575965773143" fileName="PNode.java" startLine="133" startPosition="73" endLine="137" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$10" />
+    <unitInfo nodeId="5709109565604237825" fileName="PNode.java" startLine="139" startPosition="68" endLine="143" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$11" />
+    <unitInfo nodeId="8327149575965773168" fileName="PNode.java" startLine="146" startPosition="73" endLine="150" endPosition="7" unitName="jetbrains.mps.graphLayout.planarization.PNode$12" />
+    <unitInfo nodeId="5709109565604237850" fileName="PNode.java" startLine="154" startPosition="89" endLine="158" endPosition="9" unitName="jetbrains.mps.graphLayout.planarization.PNode$13" />
+    <unitInfo nodeId="5442489283395818571" fileName="PNode.java" startLine="254" startPosition="82" endLine="258" endPosition="5" unitName="jetbrains.mps.graphLayout.planarization.PNode$14" />
+    <unitInfo nodeId="6001806680467668506" fileName="PNode.java" startLine="13" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.graphLayout.planarization.PNode" />
   </root>
   <root nodeId="603019764244010093" modelId="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)">
     <nodeInfo nodeId="603019764244010099" fileName="EdgesOrder.java" startLine="21" startPosition="25" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInEdgesMap" />
@@ -3690,6 +3711,7 @@
     <scopeInfo nodeId="5709109565604240242" fileName="EdgesOrder.java" startLine="51" startPosition="48" endLine="56" endPosition="5">
       <varInfo nodeId="5709109565604240243" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="603019764244021975" fileName="EdgesOrder.java" startLine="64" startPosition="39" endLine="69" endPosition="5" />
     <scopeInfo nodeId="603019764244022000" fileName="EdgesOrder.java" startLine="64" startPosition="39" endLine="69" endPosition="5">
       <varInfo nodeId="603019764244022001" varName="node" />
     </scopeInfo>
@@ -3905,11 +3927,17 @@
       <varInfo nodeId="8383102279435093588" varName="curMax" />
     </scopeInfo>
     <scopeInfo nodeId="2615992436839771512" fileName="SubsequenceFinder.java" startLine="57" startPosition="23" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="8383102279435105930" fileName="SubsequenceFinder.java" startLine="57" startPosition="23" endLine="63" endPosition="7">
+      <varInfo nodeId="8383102279435105933" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="8383102279435098568" fileName="SubsequenceFinder.java" startLine="80" startPosition="14" endLine="86" endPosition="9" />
     <scopeInfo nodeId="8383102279435117286" fileName="SubsequenceFinder.java" startLine="29" startPosition="121" endLine="36" endPosition="9">
       <varInfo nodeId="8383102279435117287" varName="pair" />
     </scopeInfo>
     <scopeInfo nodeId="8383102279435093316" fileName="SubsequenceFinder.java" startLine="48" startPosition="43" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="8383102279435093337" fileName="SubsequenceFinder.java" startLine="48" startPosition="43" endLine="55" endPosition="7">
+      <varInfo nodeId="8383102279435093338" varName="pn" />
+    </scopeInfo>
     <scopeInfo nodeId="8383102279435093506" fileName="SubsequenceFinder.java" startLine="66" startPosition="18" endLine="73" endPosition="5">
       <varInfo nodeId="8383102279435093509" varName="pn" />
     </scopeInfo>

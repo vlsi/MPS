@@ -1090,7 +1090,6 @@
       <varInfo nodeId="1136721133135" varName="node" />
       <varInfo nodeId="1136721133135" varName="selectedNodes" />
     </scopeInfo>
-    <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap" />
     <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="43" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action0" />
     <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="86" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action1" />
     <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="129" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action2" />
@@ -1099,6 +1098,7 @@
     <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="264" startPosition="0" endLine="313" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action5" />
     <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="314" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action6" />
     <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="370" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action7" />
+    <unitInfo nodeId="1136721133135" fileName="_PatternExpression_KeyMap.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap" />
   </root>
   <root nodeId="1136727254735" modelId="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
     <nodeInfo nodeId="1136727254735" fileName="ListPattern_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1584,9 +1584,9 @@
       <varInfo nodeId="2879868312062971234" varName="elementNode" />
       <varInfo nodeId="2879868312062971234" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="2879868312062971227" fileName="OrPattern_Editor.java" startLine="23" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor" />
-    <unitInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="102" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor$clauseListHandler_oeflkv_b0" />
     <unitInfo nodeId="4264731254635484621" fileName="OrPattern_Editor.java" startLine="148" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor$variableListHandler_oeflkv_b0" />
+    <unitInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="102" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor$clauseListHandler_oeflkv_b0" />
+    <unitInfo nodeId="2879868312062971227" fileName="OrPattern_Editor.java" startLine="23" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor" />
   </root>
   <root nodeId="3133930811460119175" modelId="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
     <nodeInfo nodeId="3133930811460119175" fileName="PatternVariableReference_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1703,8 +1703,8 @@
       <varInfo nodeId="3133930811460119180" varName="editorContext" />
       <varInfo nodeId="3133930811460119180" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3133930811460119175" fileName="PatternVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor" />
     <unitInfo nodeId="3133930811460119181" fileName="PatternVariableReference_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor$_Inline_bm8m1i_a0a" />
+    <unitInfo nodeId="3133930811460119175" fileName="PatternVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor" />
   </root>
   <root nodeId="4264731254635442559" modelId="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
     <nodeInfo nodeId="4264731254635442559" fileName="OrPatternVariableReference_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1846,8 +1846,8 @@
       <varInfo nodeId="4264731254635442571" varName="editorContext" />
       <varInfo nodeId="4264731254635442571" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4264731254635442559" fileName="OrPatternVariableReference_Editor.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor" />
     <unitInfo nodeId="4264731254635442572" fileName="OrPatternVariableReference_Editor.java" startLine="71" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor$_Inline_souhyd_a1a" />
+    <unitInfo nodeId="4264731254635442559" fileName="OrPatternVariableReference_Editor.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor" />
   </root>
   <root nodeId="4413230749907733338" modelId="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
     <nodeInfo nodeId="8990057180225997302" fileName="ActionAsPattern_Editor.java" startLine="116" startPosition="58" endLine="116" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2709,9 +2709,9 @@
       <varInfo nodeId="9117569544655312597" varName="editorContext" />
       <varInfo nodeId="9117569544655312597" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="9117569544655312584" fileName="GeneratorInternal_ChildDescriptor_Editor.java" startLine="20" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ChildDescriptor_Editor" />
     <unitInfo nodeId="9117569544655312592" fileName="GeneratorInternal_ChildDescriptor_Editor.java" startLine="139" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ChildDescriptor_Editor$_Inline_s0kiw8_a3a" />
     <unitInfo nodeId="9117569544655312596" fileName="GeneratorInternal_ChildDescriptor_Editor.java" startLine="171" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ChildDescriptor_Editor$_Inline_s0kiw8_a5a" />
+    <unitInfo nodeId="9117569544655312584" fileName="GeneratorInternal_ChildDescriptor_Editor.java" startLine="20" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ChildDescriptor_Editor" />
   </root>
   <root nodeId="9117569544655312605" modelId="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
     <nodeInfo nodeId="9117569544655312612" fileName="GeneratorInternal_PropertyDescriptor_Editor.java" startLine="103" startPosition="58" endLine="103" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3015,8 +3015,8 @@
       <varInfo nodeId="9117569544655312614" varName="editorContext" />
       <varInfo nodeId="9117569544655312614" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="9117569544655312605" fileName="GeneratorInternal_PropertyDescriptor_Editor.java" startLine="20" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_PropertyDescriptor_Editor" />
     <unitInfo nodeId="9117569544655312613" fileName="GeneratorInternal_PropertyDescriptor_Editor.java" startLine="151" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_PropertyDescriptor_Editor$_Inline_6n82d8_a3a" />
+    <unitInfo nodeId="9117569544655312605" fileName="GeneratorInternal_PropertyDescriptor_Editor.java" startLine="20" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_PropertyDescriptor_Editor" />
   </root>
   <root nodeId="9117569544655312626" modelId="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
     <nodeInfo nodeId="9117569544655312633" fileName="GeneratorInternal_ReferenceDescriptor_Editor.java" startLine="136" startPosition="58" endLine="136" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3419,8 +3419,8 @@
       <varInfo nodeId="9117569544655312628" varName="editorContext" />
       <varInfo nodeId="9117569544655312628" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="9117569544655312626" fileName="GeneratorInternal_ReferenceDescriptor_Editor.java" startLine="20" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ReferenceDescriptor_Editor" />
     <unitInfo nodeId="9117569544655312634" fileName="GeneratorInternal_ReferenceDescriptor_Editor.java" startLine="202" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ReferenceDescriptor_Editor$_Inline_vh2hfk_a3a" />
+    <unitInfo nodeId="9117569544655312626" fileName="GeneratorInternal_ReferenceDescriptor_Editor.java" startLine="20" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ReferenceDescriptor_Editor" />
   </root>
 </debugInfo>
 

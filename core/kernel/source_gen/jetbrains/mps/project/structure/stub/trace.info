@@ -261,6 +261,9 @@
       <varInfo nodeId="2721285250110587019" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4243809718336239954" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5" />
+    <scopeInfo nodeId="4243809718336271611" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5">
+      <varInfo nodeId="4243809718336271612" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="269654322145298937" fileName="ProjectStructureBuilder.java" startLine="118" startPosition="46" endLine="122" endPosition="18">
       <varInfo nodeId="269654322145298945" varName="result" />
     </scopeInfo>

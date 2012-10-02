@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest$1" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest" />
   <root nodeId="1675754527181903316" modelId="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)">
     <nodeInfo nodeId="1675754527181903316" fileName="CopyPluginXml_Facet.java" startLine="36" startPosition="54" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="1675754527181903316" fileName="CopyPluginXml_Facet.java" startLine="37" startPosition="82" endLine="38" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -241,6 +241,9 @@
       <varInfo nodeId="1670948443106462385" varName="tres" />
     </scopeInfo>
     <scopeInfo nodeId="1670948443106462371" fileName="CopyPluginXml_Facet.java" startLine="82" startPosition="19" endLine="126" endPosition="15" />
+    <scopeInfo nodeId="1670948443106462379" fileName="CopyPluginXml_Facet.java" startLine="82" startPosition="19" endLine="126" endPosition="15">
+      <varInfo nodeId="1670948443106462381" varName="resource" />
+    </scopeInfo>
     <scopeInfo nodeId="1670948443106462371" fileName="CopyPluginXml_Facet.java" startLine="79" startPosition="122" endLine="129" endPosition="11">
       <varInfo nodeId="1670948443106462371" varName="_output_ehksfb_a0a" />
     </scopeInfo>
@@ -251,14 +254,14 @@
     </scopeInfo>
     <scopeInfo nodeId="1670948443106462369" fileName="CopyPluginXml_Facet.java" startLine="77" startPosition="29" endLine="131" endPosition="8" />
     <scopeInfo nodeId="1670948443106462369" fileName="CopyPluginXml_Facet.java" startLine="76" startPosition="0" endLine="133" endPosition="0" />
-    <unitInfo nodeId="1675754527181903316" fileName="CopyPluginXml_Facet.java" startLine="36" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet" />
-    <unitInfo nodeId="1670948443106462371" fileName="CopyPluginXml_Facet.java" startLine="78" startPosition="17" endLine="131" endPosition="7" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$1" />
+    <unitInfo nodeId="1675754527182057070" fileName="CopyPluginXml_Facet.java" startLine="108" startPosition="68" endLine="115" endPosition="29" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$3" />
     <unitInfo nodeId="1670948443106485492" fileName="CopyPluginXml_Facet.java" startLine="94" startPosition="69" endLine="104" endPosition="23" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$2" />
     <unitInfo nodeId="1675754527182057062" fileName="CopyPluginXml_Facet.java" startLine="106" startPosition="61" endLine="117" endPosition="25" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$2" />
-    <unitInfo nodeId="1675754527182057070" fileName="CopyPluginXml_Facet.java" startLine="108" startPosition="68" endLine="115" endPosition="29" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$3" />
-    <unitInfo nodeId="1675754527181903316" fileName="CopyPluginXml_Facet.java" startLine="221" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$TargetProperties" />
-    <unitInfo nodeId="1670948443106462369" fileName="CopyPluginXml_Facet.java" startLine="68" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml" />
     <unitInfo nodeId="834312300517864417" fileName="CopyPluginXml_Facet.java" startLine="197" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml$Parameters" />
+    <unitInfo nodeId="1675754527181903316" fileName="CopyPluginXml_Facet.java" startLine="221" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$TargetProperties" />
+    <unitInfo nodeId="1670948443106462371" fileName="CopyPluginXml_Facet.java" startLine="78" startPosition="17" endLine="131" endPosition="7" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$1" />
+    <unitInfo nodeId="1670948443106462369" fileName="CopyPluginXml_Facet.java" startLine="68" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml" />
+    <unitInfo nodeId="1675754527181903316" fileName="CopyPluginXml_Facet.java" startLine="36" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet" />
   </root>
 </debugInfo>
 

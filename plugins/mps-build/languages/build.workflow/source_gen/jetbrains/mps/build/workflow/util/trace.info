@@ -100,6 +100,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8169228734285724764" fileName="XmlSignature.java" startLine="46" startPosition="82" endLine="52" endPosition="9" />
     <scopeInfo nodeId="8169228734285724816" fileName="XmlSignature.java" startLine="60" startPosition="80" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="8169228734285724762" fileName="XmlSignature.java" startLine="45" startPosition="102" endLine="53" endPosition="7" />
     <scopeInfo nodeId="8169228734285724763" fileName="XmlSignature.java" startLine="45" startPosition="102" endLine="53" endPosition="7">
       <varInfo nodeId="8169228734285724786" varName="attr" />
     </scopeInfo>

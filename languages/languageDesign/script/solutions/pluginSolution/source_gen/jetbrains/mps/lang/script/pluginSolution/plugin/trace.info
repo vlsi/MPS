@@ -132,8 +132,8 @@
     <scopeInfo nodeId="5487985028841902350" fileName="ScriptsMenuBuilder.java" startLine="19" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="5487985028841902402" varName="applyToSelection" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841902338" fileName="ScriptsMenuBuilder.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" />
     <unitInfo nodeId="5487985028841902377" fileName="ScriptsMenuBuilder.java" startLine="23" startPosition="54" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder$1" />
+    <unitInfo nodeId="5487985028841902338" fileName="ScriptsMenuBuilder.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" />
   </root>
   <root nodeId="5487985028841902494" modelId="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841902494" fileName="ScriptsGlobally_ActionGroup.java" startLine="22" startPosition="71" endLine="23" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

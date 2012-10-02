@@ -63,8 +63,8 @@
     <scopeInfo nodeId="5202024118203907627" fileName="Test.java" startLine="10" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5202024118203907628" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="5202024118203907621" fileName="Test.java" startLine="7" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.sandbox.Test" />
     <unitInfo nodeId="6487201325881254537" fileName="Test.java" startLine="12" startPosition="31" endLine="48" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.sandbox.Test$1" />
+    <unitInfo nodeId="5202024118203907621" fileName="Test.java" startLine="7" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.sandbox.Test" />
   </root>
 </debugInfo>
 

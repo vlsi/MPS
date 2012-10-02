@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="15" startPosition="0" endLine="100" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="33" startPosition="0" endLine="99" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="15" startPosition="0" endLine="100" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor" />
   <root nodeId="1790427706118391928" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="1790427706118395556" fileName="typeof_ConvertTo_InferenceRule.java" startLine="16" startPosition="123" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1790427706118391928" fileName="typeof_ConvertTo_InferenceRule.java" startLine="20" startPosition="46" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -113,8 +113,8 @@
       <varInfo nodeId="3694786099210006967" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="3694786099210006967" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="3694786099210003295" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.Money_extends_java_lang_Object_SubtypingRule" />
     <unitInfo nodeId="3694786099210006967" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.Money_extends_java_lang_Object_SubtypingRule$QuotationClass_ni8w3q_a0a0a" />
+    <unitInfo nodeId="3694786099210003295" fileName="Money_extends_java_lang_Object_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.Money_extends_java_lang_Object_SubtypingRule" />
   </root>
   <root nodeId="5447719361346490733" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="5447719361346490740" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -199,8 +199,8 @@
       <varInfo nodeId="5447719361346496417" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="5447719361346496417" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="5447719361346490733" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.typeof_MoneyLiteral_InferenceRule" />
     <unitInfo nodeId="5447719361346496417" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.typeof_MoneyLiteral_InferenceRule$QuotationClass_1il3t_a0a0a0" />
+    <unitInfo nodeId="5447719361346490733" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.Money.typesystem.typeof_MoneyLiteral_InferenceRule" />
   </root>
   <root nodeId="5447719361346552309" modelId="r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)">
     <nodeInfo nodeId="5447719361346552330" fileName="TypesystemDescriptor.java" startLine="44" startPosition="99" endLine="45" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

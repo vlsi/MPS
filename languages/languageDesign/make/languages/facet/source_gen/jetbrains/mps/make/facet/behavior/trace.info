@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="IFacet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" />
+  <unitInfo fileName="IPropertyExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
   <unitInfo fileName="ExtendsFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" />
-  <unitInfo fileName="FacetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="NamedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.NamedFacetReference_BehaviorDescriptor" />
+  <unitInfo fileName="RelatedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="FacetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="FacetReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReference_BehaviorDescriptor" />
   <unitInfo fileName="ForeignParametersComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" />
   <unitInfo fileName="ForeignParametersExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" />
-  <unitInfo fileName="IFacet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" />
-  <unitInfo fileName="IPropertyExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
   <unitInfo fileName="LocalParametersComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" />
   <unitInfo fileName="LocalParametersExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersExpression_BehaviorDescriptor" />
-  <unitInfo fileName="NamedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.NamedFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="ParametersDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ParametersDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="RelatedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="ResourceClassifierType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceClassifierType_BehaviorDescriptor" />
   <unitInfo fileName="ResourceSpecificPropertiesExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" />
   <unitInfo fileName="ResourceTypeDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceTypeDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="TargetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TargetDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDependency_BehaviorDescriptor" />
   <unitInfo fileName="TargetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_BehaviorDescriptor" />
+  <unitInfo fileName="FacetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="TargetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1919086248986828152" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
     <nodeInfo nodeId="1919086248986828152" fileName="IFacet_Behavior.java" startLine="7" startPosition="30" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1919086248986828154" fileName="IFacet_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -140,10 +140,10 @@
     <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="46" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="7854369758457864777" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
     <unitInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="37" startPosition="134" endLine="41" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$1" />
     <unitInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="54" startPosition="134" endLine="58" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$2" />
     <unitInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="59" startPosition="134" endLine="63" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$3" />
+    <unitInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
   </root>
   <root nodeId="7854369758457971843" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
     <nodeInfo nodeId="7854369758457974823" fileName="TargetDeclaration_Behavior.java" startLine="15" startPosition="81" endLine="16" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

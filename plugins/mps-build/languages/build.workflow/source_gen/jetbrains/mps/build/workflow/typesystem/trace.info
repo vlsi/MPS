@@ -51,6 +51,9 @@
       <varInfo nodeId="1117643560963218862" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1117643560963218982" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="32" startPosition="60" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="1117643560963218983" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="32" startPosition="60" endLine="41" endPosition="7">
+      <varInfo nodeId="1117643560963218984" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="1117643560963218973" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="31" startPosition="41" endLine="42" endPosition="5">
       <varInfo nodeId="1117643560963218974" varName="n" />
     </scopeInfo>

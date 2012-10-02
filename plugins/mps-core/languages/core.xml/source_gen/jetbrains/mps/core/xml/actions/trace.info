@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="35" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="61" startPosition="53" endLine="73" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="358" startPosition="215" endLine="368" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$10" />
   <unitInfo fileName="QueriesGenerated.java" startLine="370" startPosition="53" endLine="376" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$11" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="386" startPosition="215" endLine="394" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$12" />
   <unitInfo fileName="QueriesGenerated.java" startLine="396" startPosition="53" endLine="402" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$13" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="477" startPosition="53" endLine="483" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$17" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="503" startPosition="53" endLine="509" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$19" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="386" startPosition="215" endLine="394" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$12" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="467" startPosition="209" endLine="475" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$16" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="493" startPosition="211" endLine="501" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$18" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="358" startPosition="215" endLine="368" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$10" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="61" startPosition="53" endLine="73" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$1" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="80" startPosition="53" endLine="92" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="412" startPosition="51" endLine="430" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$14" />
   <unitInfo fileName="QueriesGenerated.java" startLine="439" startPosition="51" endLine="458" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$15" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="467" startPosition="209" endLine="475" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$16" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="477" startPosition="53" endLine="483" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$17" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="493" startPosition="211" endLine="501" endPosition="7" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$18" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="503" startPosition="53" endLine="509" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$19" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="80" startPosition="53" endLine="92" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="99" startPosition="53" endLine="122" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$3" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="134" startPosition="53" endLine="171" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$4" />
   <unitInfo fileName="QueriesGenerated.java" startLine="183" startPosition="53" endLine="204" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$5" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="99" startPosition="53" endLine="122" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$3" />
   <unitInfo fileName="QueriesGenerated.java" startLine="211" startPosition="53" endLine="234" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$6" />
   <unitInfo fileName="QueriesGenerated.java" startLine="246" startPosition="53" endLine="269" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$7" />
   <unitInfo fileName="QueriesGenerated.java" startLine="291" startPosition="53" endLine="315" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$8" />
   <unitInfo fileName="QueriesGenerated.java" startLine="322" startPosition="53" endLine="348" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$9" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="134" startPosition="53" endLine="171" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="35" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated" />
   <root nodeId="1622293396948974642" modelId="r:a097594c-50a7-4de7-9168-6b82c2b41d5c(jetbrains.mps.core.xml.actions)">
     <nodeInfo nodeId="1622293396949015926" fileName="QueriesGenerated.java" startLine="35" startPosition="31" endLine="36" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5" />
     <nodeInfo nodeId="1622293396949013944" fileName="QueriesGenerated.java" startLine="36" startPosition="103" endLine="37" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5" />

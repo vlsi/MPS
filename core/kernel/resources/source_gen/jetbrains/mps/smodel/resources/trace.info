@@ -272,8 +272,8 @@
       <varInfo nodeId="2418544542776708203" varName="props" />
     </scopeInfo>
     <scopeInfo nodeId="5555789605584709665" fileName="FlatFilePropertiesIO.java" startLine="25" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="5555789605584709649" fileName="FlatFilePropertiesIO.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.smodel.resources.FlatFilePropertiesIO" />
     <unitInfo nodeId="2418544542776708157" fileName="FlatFilePropertiesIO.java" startLine="36" startPosition="45" endLine="53" endPosition="5" unitName="jetbrains.mps.smodel.resources.FlatFilePropertiesIO$1" />
+    <unitInfo nodeId="5555789605584709649" fileName="FlatFilePropertiesIO.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.smodel.resources.FlatFilePropertiesIO" />
   </root>
   <root nodeId="5822172888873692299" modelId="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)">
     <nodeInfo nodeId="5822172888873692302" fileName="IFResource.java" startLine="10" startPosition="47" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="packageName#()Ljava/lang/String;" />
@@ -545,12 +545,12 @@
     <scopeInfo nodeId="3608835296802538210" fileName="ModelsToResources.java" startLine="40" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="3608835296802538211" varName="smds" />
     </scopeInfo>
-    <unitInfo nodeId="7219626660275504879" fileName="ModelsToResources.java" startLine="19" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <unitInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="30" startPosition="48" endLine="34" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$1" />
-    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="149" endLine="142" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$2" />
     <unitInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="18" endLine="146" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$3" />
-    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="45" startPosition="19" endLine="140" endPosition="9" unitName="jetbrains.mps.smodel.resources.ModelsToResources$3" />
     <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="47" startPosition="23" endLine="138" endPosition="13" unitName="jetbrains.mps.smodel.resources.ModelsToResources$4" />
+    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="45" startPosition="19" endLine="140" endPosition="9" unitName="jetbrains.mps.smodel.resources.ModelsToResources$3" />
+    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="149" endLine="142" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$2" />
+    <unitInfo nodeId="7219626660275504879" fileName="ModelsToResources.java" startLine="19" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.smodel.resources.ModelsToResources" />
   </root>
   <root nodeId="7544464876070881646" modelId="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)">
     <nodeInfo nodeId="7544464876070881649" fileName="ICResouce.java" startLine="8" startPosition="46" endLine="9" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classes#()Ljetbrains/mps/compiler/IClassesData;" />

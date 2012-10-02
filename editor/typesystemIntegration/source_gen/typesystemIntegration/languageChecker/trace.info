@@ -72,6 +72,7 @@
     <scopeInfo nodeId="5799208176149772594" fileName="AutoResolver.java" startLine="74" startPosition="44" endLine="79" endPosition="5">
       <varInfo nodeId="5799208176149772595" varName="modelReference" />
     </scopeInfo>
+    <scopeInfo nodeId="5031859272495377585" fileName="AutoResolver.java" startLine="87" startPosition="70" endLine="92" endPosition="9" />
     <scopeInfo nodeId="5031859272495377586" fileName="AutoResolver.java" startLine="87" startPosition="70" endLine="92" endPosition="9">
       <varInfo nodeId="5031859272495377590" varName="ref" />
     </scopeInfo>
@@ -110,9 +111,9 @@
       <varInfo nodeId="5031859272495377258" varName="rootNode" />
       <varInfo nodeId="5031859272495377263" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="5031859272495377247" fileName="AutoResolver.java" startLine="29" startPosition="0" endLine="104" endPosition="0" unitName="typesystemIntegration.languageChecker.AutoResolver" />
-    <unitInfo nodeId="5236817883989791702" fileName="AutoResolver.java" startLine="53" startPosition="49" endLine="63" endPosition="9" unitName="typesystemIntegration.languageChecker.AutoResolver$1" />
     <unitInfo nodeId="5245431967226361765" fileName="AutoResolver.java" startLine="55" startPosition="65" endLine="61" endPosition="13" unitName="typesystemIntegration.languageChecker.AutoResolver$2" />
+    <unitInfo nodeId="5236817883989791702" fileName="AutoResolver.java" startLine="53" startPosition="49" endLine="63" endPosition="9" unitName="typesystemIntegration.languageChecker.AutoResolver$1" />
+    <unitInfo nodeId="5031859272495377247" fileName="AutoResolver.java" startLine="29" startPosition="0" endLine="104" endPosition="0" unitName="typesystemIntegration.languageChecker.AutoResolver" />
   </root>
   <root nodeId="7390982340086719450" modelId="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)">
     <nodeInfo nodeId="7390982340086719450" fileName="LanguageEditorChecker.java" startLine="44" startPosition="62" endLine="45" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -366,10 +367,10 @@
       <varInfo nodeId="7390982340086719758" varName="node" />
       <varInfo nodeId="7390982340086719763" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="7390982340086719450" fileName="LanguageEditorChecker.java" startLine="44" startPosition="0" endLine="228" endPosition="0" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker" />
+    <unitInfo nodeId="7390982340086720106" fileName="LanguageEditorChecker.java" startLine="69" startPosition="47" endLine="73" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$3" />
     <unitInfo nodeId="7390982340086719483" fileName="LanguageEditorChecker.java" startLine="51" startPosition="72" endLine="59" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$1" />
     <unitInfo nodeId="7390982340086720081" fileName="LanguageEditorChecker.java" startLine="60" startPosition="61" endLine="68" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$2" />
-    <unitInfo nodeId="7390982340086720106" fileName="LanguageEditorChecker.java" startLine="69" startPosition="47" endLine="73" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$3" />
+    <unitInfo nodeId="7390982340086719450" fileName="LanguageEditorChecker.java" startLine="44" startPosition="0" endLine="228" endPosition="0" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker" />
   </root>
 </debugInfo>
 

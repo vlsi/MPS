@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.traceable.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.FacetManifest" />
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.traceable.plugin.FacetManifest$1" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.FacetManifest" />
   <root nodeId="258639336594455174" modelId="r:5f0c27e5-e1ec-4f3f-b291-f998455a0103(jetbrains.mps.lang.traceable.plugin)">
     <nodeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="33" startPosition="54" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="34" startPosition="82" endLine="35" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -250,16 +250,16 @@
     </scopeInfo>
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="74" startPosition="29" endLine="126" endPosition="8" />
     <scopeInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="73" startPosition="0" endLine="128" endPosition="0" />
-    <unitInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="33" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet" />
-    <unitInfo nodeId="258639336594466425" fileName="CopyTraceInfo_Facet.java" startLine="75" startPosition="17" endLine="126" endPosition="7" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$1" />
-    <unitInfo nodeId="1611229975416546810" fileName="CopyTraceInfo_Facet.java" startLine="91" startPosition="65" endLine="104" endPosition="17" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$2" />
-    <unitInfo nodeId="255996322456760784" fileName="CopyTraceInfo_Facet.java" startLine="108" startPosition="63" endLine="121" endPosition="15" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$2" />
     <unitInfo nodeId="255996322456760790" fileName="CopyTraceInfo_Facet.java" startLine="110" startPosition="63" endLine="114" endPosition="19" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$3" />
     <unitInfo nodeId="255996322456760802" fileName="CopyTraceInfo_Facet.java" startLine="115" startPosition="61" endLine="119" endPosition="19" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$3" />
     <unitInfo nodeId="1670948443106485492" fileName="CopyTraceInfo_Facet.java" startLine="93" startPosition="41" endLine="102" endPosition="21" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$3" />
-    <unitInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="209" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$TargetProperties" />
-    <unitInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="65" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$Target_copyTraceInfo" />
+    <unitInfo nodeId="1611229975416546810" fileName="CopyTraceInfo_Facet.java" startLine="91" startPosition="65" endLine="104" endPosition="17" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$2" />
+    <unitInfo nodeId="255996322456760784" fileName="CopyTraceInfo_Facet.java" startLine="108" startPosition="63" endLine="121" endPosition="15" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$2" />
     <unitInfo nodeId="1481920856075917143" fileName="CopyTraceInfo_Facet.java" startLine="185" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$Target_copyTraceInfo$Parameters" />
+    <unitInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="209" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$TargetProperties" />
+    <unitInfo nodeId="258639336594466425" fileName="CopyTraceInfo_Facet.java" startLine="75" startPosition="17" endLine="126" endPosition="7" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$1" />
+    <unitInfo nodeId="258639336594466423" fileName="CopyTraceInfo_Facet.java" startLine="65" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet$Target_copyTraceInfo" />
+    <unitInfo nodeId="258639336594455174" fileName="CopyTraceInfo_Facet.java" startLine="33" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.lang.traceable.plugin.CopyTraceInfo_Facet" />
   </root>
 </debugInfo>
 

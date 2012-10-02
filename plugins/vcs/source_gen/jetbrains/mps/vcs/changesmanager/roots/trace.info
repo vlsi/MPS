@@ -95,9 +95,9 @@
     <scopeInfo nodeId="5332932484372871053" fileName="NodeTabColorProvider.java" startLine="25" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5332932484372871056" varName="nodePointers" />
     </scopeInfo>
-    <unitInfo nodeId="5332932484372864216" fileName="NodeTabColorProvider.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider" />
-    <unitInfo nodeId="5332932484372874181" fileName="NodeTabColorProvider.java" startLine="28" startPosition="85" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider$1" />
     <unitInfo nodeId="5332932484372874203" fileName="NodeTabColorProvider.java" startLine="37" startPosition="48" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider$2" />
+    <unitInfo nodeId="5332932484372874181" fileName="NodeTabColorProvider.java" startLine="28" startPosition="85" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider$1" />
+    <unitInfo nodeId="5332932484372864216" fileName="NodeTabColorProvider.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider" />
   </root>
 </debugInfo>
 

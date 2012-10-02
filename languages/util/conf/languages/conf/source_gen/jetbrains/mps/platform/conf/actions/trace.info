@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="36" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="43" startPosition="36" endLine="47" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="210" startPosition="57" endLine="224" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$10" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="78" startPosition="36" endLine="82" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="202" startPosition="36" endLine="206" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$9" />
   <unitInfo fileName="QueriesGenerated.java" startLine="238" startPosition="36" endLine="242" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$11" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="416" startPosition="36" endLine="420" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$19" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="336" startPosition="36" endLine="344" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$15" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="376" startPosition="36" endLine="384" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$17" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="114" startPosition="36" endLine="126" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$5" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="158" startPosition="36" endLine="170" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$7" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="51" startPosition="57" endLine="64" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$2" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="86" startPosition="57" endLine="100" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="130" startPosition="57" endLine="144" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$6" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="174" startPosition="57" endLine="188" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$8" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="210" startPosition="57" endLine="224" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$10" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="348" startPosition="57" endLine="362" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$16" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="388" startPosition="57" endLine="402" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$18" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="424" startPosition="57" endLine="438" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$20" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="302" startPosition="57" endLine="317" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$14" />
   <unitInfo fileName="QueriesGenerated.java" startLine="246" startPosition="57" endLine="265" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$12" />
   <unitInfo fileName="QueriesGenerated.java" startLine="279" startPosition="36" endLine="298" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$13" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="302" startPosition="57" endLine="317" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$14" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="336" startPosition="36" endLine="344" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$15" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="348" startPosition="57" endLine="362" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$16" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="376" startPosition="36" endLine="384" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$17" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="388" startPosition="57" endLine="402" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$18" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="416" startPosition="36" endLine="420" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$19" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="51" startPosition="57" endLine="64" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="424" startPosition="57" endLine="438" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$20" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="78" startPosition="36" endLine="82" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$3" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="86" startPosition="57" endLine="100" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$4" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="114" startPosition="36" endLine="126" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$5" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="130" startPosition="57" endLine="144" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$6" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="158" startPosition="36" endLine="170" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$7" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="174" startPosition="57" endLine="188" endPosition="13" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$8" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="202" startPosition="36" endLine="206" endPosition="9" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated$9" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="36" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.platform.conf.actions.QueriesGenerated" />
   <root nodeId="3886786302241722680" modelId="r:00078c13-d738-45df-9364-ae3da251ae79(jetbrains.mps.platform.conf.actions)">
     <nodeInfo nodeId="3886786302241741647" fileName="QueriesGenerated.java" startLine="339" startPosition="47" endLine="340" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3886786302241735479" fileName="QueriesGenerated.java" startLine="349" startPosition="98" endLine="350" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -198,6 +198,9 @@
       <varInfo nodeId="7161354651095876226" varName="ie" />
     </scopeInfo>
     <scopeInfo nodeId="7161354651095904112" fileName="QueriesGenerated.java" startLine="283" startPosition="194" endLine="294" endPosition="15" />
+    <scopeInfo nodeId="7161354651095904204" fileName="QueriesGenerated.java" startLine="283" startPosition="194" endLine="294" endPosition="15">
+      <varInfo nodeId="7161354651095904206" varName="cc" />
+    </scopeInfo>
     <scopeInfo nodeId="7161354651095904111" fileName="QueriesGenerated.java" startLine="282" startPosition="115" endLine="295" endPosition="13">
       <varInfo nodeId="7161354651095904113" varName="iep" />
     </scopeInfo>

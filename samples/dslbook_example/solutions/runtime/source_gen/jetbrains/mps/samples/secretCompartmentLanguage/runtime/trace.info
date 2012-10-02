@@ -200,6 +200,7 @@
     <scopeInfo nodeId="6877931680625740458" fileName="State.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="6877931680625740461" varName="name" />
     </scopeInfo>
+    <scopeInfo nodeId="6877931680625740497" fileName="State.java" startLine="35" startPosition="62" endLine="38" endPosition="5" />
     <scopeInfo nodeId="6877931680625740498" fileName="State.java" startLine="35" startPosition="62" endLine="38" endPosition="5">
       <varInfo nodeId="6877931680625740500" varName="c" />
     </scopeInfo>
@@ -362,6 +363,7 @@
     <scopeInfo nodeId="6877931680625740898" fileName="StateMachine.java" startLine="30" startPosition="24" endLine="33" endPosition="7">
       <varInfo nodeId="6877931680625740902" varName="next" />
     </scopeInfo>
+    <scopeInfo nodeId="6877931680625740918" fileName="StateMachine.java" startLine="38" startPosition="47" endLine="41" endPosition="5" />
     <scopeInfo nodeId="6877931680625740919" fileName="StateMachine.java" startLine="38" startPosition="47" endLine="41" endPosition="5">
       <varInfo nodeId="6877931680625740921" varName="e" />
     </scopeInfo>
@@ -383,6 +385,9 @@
     <scopeInfo nodeId="6877931680625740855" fileName="StateMachine.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="6877931680625740892" fileName="StateMachine.java" startLine="29" startPosition="12" endLine="34" endPosition="13" />
     <scopeInfo nodeId="6877931680625740932" fileName="StateMachine.java" startLine="44" startPosition="39" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="6877931680625740933" fileName="StateMachine.java" startLine="44" startPosition="39" endLine="49" endPosition="5">
+      <varInfo nodeId="6877931680625740935" varName="s" />
+    </scopeInfo>
     <scopeInfo nodeId="6877931680625740988" fileName="StateMachine.java" startLine="63" startPosition="42" endLine="68" endPosition="5">
       <varInfo nodeId="6877931680625740990" varName="s" />
     </scopeInfo>

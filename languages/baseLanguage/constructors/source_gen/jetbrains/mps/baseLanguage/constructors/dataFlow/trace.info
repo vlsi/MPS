@@ -9,6 +9,7 @@
     <scopeInfo nodeId="3782220528620780954" fileName="CustomConstructorUsage_DataFlow.java" startLine="12" startPosition="44" endLine="12" endPosition="44" />
     <scopeInfo nodeId="3782220528620807178" fileName="CustomConstructorUsage_DataFlow.java" startLine="16" startPosition="86" endLine="17" endPosition="46" />
     <scopeInfo nodeId="3782220528620780954" fileName="CustomConstructorUsage_DataFlow.java" startLine="11" startPosition="70" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="3782220528620780956" fileName="CustomConstructorUsage_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
     <scopeInfo nodeId="3782220528620807177" fileName="CustomConstructorUsage_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="3782220528620807181" varName="el" />
     </scopeInfo>
