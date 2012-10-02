@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor;
+package jetbrains.mps.smodel.runtime;
 
 /**
- * evgeny, 11/17/11
+ * User: shatalin
+ * Date: 10/2/12
  */
-public interface EditorCell {
-
-  int getX();
-  int getY();
-
-  int getWidth();
-  int getHeight();
-
-  EditorContext getContext();
+public interface EditorAspectDescriptor {
+  EditorDescriptor getDescriptor(String fqName);
 }

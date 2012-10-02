@@ -22,11 +22,16 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.EditorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.EditorAspectDescriptorInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
-import jetbrains.mps.smodel.structure.*;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.DescriptorProvider;
+import jetbrains.mps.smodel.structure.ExtensionDescriptor;
+import jetbrains.mps.smodel.structure.FacetDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -44,6 +49,7 @@ public abstract class LanguageRuntime {
   private BehaviorAspectDescriptor behaviorDescriptor;
   private ConstraintsAspectDescriptor constraintsDescriptor;
   private ExtensionDescriptor myExtensionDescriptor;
+  protected EditorAspectDescriptor myEditorDescriptor;
 
   public abstract String getNamespace();
 
@@ -127,6 +133,17 @@ public abstract class LanguageRuntime {
     }
 
     return constraintsDescriptor;
+  }
+
+  public final EditorAspectDescriptor getEditorAspectDescriptor() {
+    if (myEditorDescriptor == null) {
+      myEditorDescriptor = createEditorAspectDescriptor();
+    }
+    return myEditorDescriptor;
+  }
+
+  protected EditorAspectDescriptor createEditorAspectDescriptor() {
+    return new EditorAspectDescriptorInterpreted();
   }
 
 }

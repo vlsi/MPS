@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor;
+package jetbrains.mps.openapi.editor.node;
+
+import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 
 /**
- * evgeny, 11/17/11
+ * User: shatalin
+ * Date: 10/2/12
  */
-public interface EditorCell {
+public interface NodeEditor {
+  EditorCell createEditorCell(EditorContext editorContext, SNode node);
 
-  int getX();
-  int getY();
-
-  int getWidth();
-  int getHeight();
-
-  EditorContext getContext();
+  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
 }
