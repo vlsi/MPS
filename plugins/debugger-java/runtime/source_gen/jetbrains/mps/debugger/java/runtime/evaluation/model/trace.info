@@ -660,7 +660,7 @@
     <nodeInfo nodeId="7239101982553578670" fileName="LowLevelEvaluationModel.java" startLine="193" startPosition="93" endLine="194" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7239101982553579440" fileName="LowLevelEvaluationModel.java" startLine="195" startPosition="68" endLine="196" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2557971212596571538" fileName="LowLevelEvaluationModel.java" startLine="197" startPosition="95" endLine="198" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5414812441082034363" fileName="LowLevelEvaluationModel.java" startLine="199" startPosition="67" endLine="200" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5414812441082034363" fileName="LowLevelEvaluationModel.java" startLine="199" startPosition="67" endLine="200" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7239101982553579513" fileName="LowLevelEvaluationModel.java" startLine="201" startPosition="11" endLine="202" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7239101982553561432" fileName="LowLevelEvaluationModel.java" startLine="209" startPosition="88" endLine="210" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7239101982553561488" fileName="LowLevelEvaluationModel.java" startLine="213" startPosition="49" endLine="214" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -867,7 +867,7 @@
     <scopeInfo nodeId="7239101982553577308" fileName="LowLevelEvaluationModel.java" startLine="178" startPosition="39" endLine="179" endPosition="80" />
     <scopeInfo nodeId="7239101982553577330" fileName="LowLevelEvaluationModel.java" startLine="182" startPosition="35" endLine="183" endPosition="51" />
     <scopeInfo nodeId="6086406241699243823" fileName="LowLevelEvaluationModel.java" startLine="187" startPosition="109" endLine="188" endPosition="31" />
-    <scopeInfo nodeId="2557971212596571508" fileName="LowLevelEvaluationModel.java" startLine="199" startPosition="67" endLine="200" endPosition="84" />
+    <scopeInfo nodeId="2557971212596571508" fileName="LowLevelEvaluationModel.java" startLine="199" startPosition="67" endLine="200" endPosition="118" />
     <scopeInfo nodeId="7239101982553561487" fileName="LowLevelEvaluationModel.java" startLine="213" startPosition="49" endLine="214" endPosition="174" />
     <scopeInfo nodeId="7906267809293298346" fileName="LowLevelEvaluationModel.java" startLine="219" startPosition="51" endLine="220" endPosition="255" />
     <scopeInfo nodeId="7757449281563190191" fileName="LowLevelEvaluationModel.java" startLine="242" startPosition="106" endLine="243" endPosition="23" />

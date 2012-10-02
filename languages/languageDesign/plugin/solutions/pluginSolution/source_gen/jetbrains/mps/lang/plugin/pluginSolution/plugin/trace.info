@@ -20,7 +20,7 @@
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3708497006802272066" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="180" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3708497006802272066" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="248" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841901752" fileName="SortKeymapMembers_Action.java" startLine="85" startPosition="11" endLine="86" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1161420610164770151" fileName="SortKeymapMembers_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -55,7 +55,7 @@
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="63" startPosition="116" endLine="64" endPosition="22" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="3708497006802271958" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="180" endLine="84" endPosition="19" />
+    <scopeInfo nodeId="3708497006802271958" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="248" endLine="84" endPosition="19" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="91" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
       <varInfo nodeId="5487985028841901743" varName="enabled" />

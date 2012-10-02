@@ -67,14 +67,6 @@ public class QueriesGenerated {
     return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1221570038142(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), operationContext);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1221570038189(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
-  }
-
   public static Object propertyMacro_GetPropertyValue_4484885613884807181(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), operationContext);
   }
@@ -89,6 +81,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1031873601093426077(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TestInfo_Behavior.reOpenProject_1031873601093419509(SNodeOperations.getModel(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1221570038142(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), operationContext);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1221570038189(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {

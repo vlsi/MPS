@@ -28,8 +28,8 @@
     <nodeInfo nodeId="6812098398776640305" fileName="ChangeMethodSignature_Action.java" startLine="100" startPosition="69" endLine="101" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6812098398776640312" fileName="ChangeMethodSignature_Action.java" startLine="103" startPosition="27" endLine="104" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6812098398776640316" fileName="ChangeMethodSignature_Action.java" startLine="104" startPosition="51" endLine="105" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640326" fileName="ChangeMethodSignature_Action.java" startLine="106" startPosition="41" endLine="107" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640348" fileName="ChangeMethodSignature_Action.java" startLine="107" startPosition="298" endLine="108" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640326" fileName="ChangeMethodSignature_Action.java" startLine="106" startPosition="41" endLine="107" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640348" fileName="ChangeMethodSignature_Action.java" startLine="107" startPosition="305" endLine="108" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6812098398776640355" fileName="ChangeMethodSignature_Action.java" startLine="111" startPosition="9" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6812098398776640356" fileName="ChangeMethodSignature_Action.java" startLine="112" startPosition="0" endLine="113" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6812098398776640361" fileName="ChangeMethodSignature_Action.java" startLine="114" startPosition="155" endLine="115" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -39,8 +39,8 @@
     <nodeInfo nodeId="6812098398776640400" fileName="ChangeMethodSignature_Action.java" startLine="120" startPosition="249" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6812098398776640404" fileName="ChangeMethodSignature_Action.java" startLine="121" startPosition="20" endLine="122" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6812098398776640413" fileName="ChangeMethodSignature_Action.java" startLine="123" startPosition="60" endLine="124" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="130937874511030922" fileName="ChangeMethodSignature_Action.java" startLine="128" startPosition="176" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1161420610164734928" fileName="ChangeMethodSignature_Action.java" startLine="131" startPosition="104" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="130937874511030922" fileName="ChangeMethodSignature_Action.java" startLine="128" startPosition="244" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1161420610164734928" fileName="ChangeMethodSignature_Action.java" startLine="131" startPosition="172" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161420610164734925" fileName="ChangeMethodSignature_Action.java" startLine="133" startPosition="11" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6812098398776640417" fileName="ChangeMethodSignature_Action.java" startLine="134" startPosition="0" endLine="135" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1161420610164734912" fileName="ChangeMethodSignature_Action.java" startLine="137" startPosition="9" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -92,8 +92,8 @@
     <scopeInfo nodeId="6812098398776640360" fileName="ChangeMethodSignature_Action.java" startLine="114" startPosition="155" endLine="115" endPosition="44" />
     <scopeInfo nodeId="6812098398776640379" fileName="ChangeMethodSignature_Action.java" startLine="116" startPosition="14" endLine="117" endPosition="80" />
     <scopeInfo nodeId="6812098398776640412" fileName="ChangeMethodSignature_Action.java" startLine="123" startPosition="60" endLine="124" endPosition="15" />
-    <scopeInfo nodeId="8139782154295720745" fileName="ChangeMethodSignature_Action.java" startLine="128" startPosition="176" endLine="129" endPosition="19" />
-    <scopeInfo nodeId="1161420610164734927" fileName="ChangeMethodSignature_Action.java" startLine="131" startPosition="104" endLine="132" endPosition="19" />
+    <scopeInfo nodeId="8139782154295720745" fileName="ChangeMethodSignature_Action.java" startLine="128" startPosition="244" endLine="129" endPosition="19" />
+    <scopeInfo nodeId="1161420610164734927" fileName="ChangeMethodSignature_Action.java" startLine="131" startPosition="172" endLine="132" endPosition="19" />
     <scopeInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="140" startPosition="33" endLine="141" endPosition="95" />
     <scopeInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="55" startPosition="7" endLine="57" endPosition="63">
       <varInfo nodeId="6812098398776640299" varName="enabled" />

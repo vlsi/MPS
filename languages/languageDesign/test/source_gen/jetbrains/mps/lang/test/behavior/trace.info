@@ -121,7 +121,7 @@
     <nodeInfo nodeId="1217435323025" fileName="NodeOperation_Behavior.java" startLine="18" startPosition="70" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3310779261129403127" fileName="NodeOperation_Behavior.java" startLine="25" startPosition="88" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1217511354089" fileName="NodeOperation_Behavior.java" startLine="29" startPosition="73" endLine="30" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217511392668" fileName="NodeOperation_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217511392668" fileName="NodeOperation_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215601170868" fileName="NodeOperation_Behavior.java" startLine="37" startPosition="67" endLine="38" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1215601170868" fileName="NodeOperation_Behavior.java" startLine="38" startPosition="113" endLine="39" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215601170868" fileName="NodeOperation_Behavior.java" startLine="42" startPosition="77" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -147,7 +147,7 @@
     <scopeInfo nodeId="1217435265702" fileName="NodeOperation_Behavior.java" startLine="18" startPosition="70" endLine="19" endPosition="23" />
     <scopeInfo nodeId="3310779261129403121" fileName="NodeOperation_Behavior.java" startLine="25" startPosition="88" endLine="26" endPosition="16" />
     <scopeInfo nodeId="1217511339212" fileName="NodeOperation_Behavior.java" startLine="29" startPosition="73" endLine="30" endPosition="114" />
-    <scopeInfo nodeId="1217511379744" fileName="NodeOperation_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="100" />
+    <scopeInfo nodeId="1217511379744" fileName="NodeOperation_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="116" />
     <scopeInfo nodeId="1215601170868" fileName="NodeOperation_Behavior.java" startLine="47" startPosition="103" endLine="48" endPosition="258" />
     <scopeInfo nodeId="1215601170868" fileName="NodeOperation_Behavior.java" startLine="51" startPosition="113" endLine="52" endPosition="246" />
     <scopeInfo nodeId="1215601170868" fileName="NodeOperation_Behavior.java" startLine="56" startPosition="100" endLine="57" endPosition="255" />

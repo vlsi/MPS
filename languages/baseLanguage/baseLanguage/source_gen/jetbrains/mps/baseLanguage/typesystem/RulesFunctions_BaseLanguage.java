@@ -301,7 +301,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a5a2a7 = SLinkOperations.getTarget(formalParam, "type", true);
             if (matchingNode_5ahx9e_a5a2a7 != null) {
-              matches_5ahx9e_a5a2a7 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+              matches_5ahx9e_a5a2a7 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a7.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
             }
           }
           if (matches_5ahx9e_a5a2a7) {
@@ -472,7 +472,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a0a5a51 = SNodeOperations.getParent(prevStatementList);
             if (matchingNode_5ahx9e_a0a5a51 != null) {
-              matches_5ahx9e_a0a5a51 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a0a5a51.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+              matches_5ahx9e_a0a5a51 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a0a5a51.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
           }
           if (matches_5ahx9e_a0a5a51) {
@@ -543,7 +543,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a1a6a81 = anc;
             if (matchingNode_5ahx9e_a1a6a81 != null) {
-              matches_5ahx9e_a1a6a81 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a6a81.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+              matches_5ahx9e_a1a6a81 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a6a81.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.TryStatement");
             }
           }
           if (matches_5ahx9e_a1a6a81) {
@@ -561,7 +561,7 @@ __switch__:
             {
               SNode matchingNode_5ahx9e_b1a6a81 = anc;
               if (matchingNode_5ahx9e_b1a6a81 != null) {
-                matches_5ahx9e_b1a6a81 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a6a81.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+                matches_5ahx9e_b1a6a81 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a6a81.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
               }
             }
             if (matches_5ahx9e_b1a6a81) {
@@ -781,7 +781,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
@@ -801,7 +801,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
@@ -825,7 +825,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -838,7 +838,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
