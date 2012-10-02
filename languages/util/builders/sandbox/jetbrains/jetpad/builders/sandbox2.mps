@@ -25,7 +25,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="4737519895010426724">
                   <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="4737519895010426725" />
                   <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="4737519895010426726">
-                    <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="78ys.2679357232283934851" resolveInfo="setXYZ" />
+                    <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="78ys.5613258673505573559" resolveInfo="setChild" />
                     <node role="value" roleId="pmg0.2679357232283750106" type="pmg0.ResultExpression" typeId="pmg0.7288041816792292064" id="4737519895010426728" />
                   </node>
                 </node>
