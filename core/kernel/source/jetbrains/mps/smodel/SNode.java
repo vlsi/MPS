@@ -369,7 +369,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public String getPresentation() {
-    return getPresentation(false);
+    if (SNodeOperations.isUnknown(this)) {
+      String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+      if (persistentName == null) {
+        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
+      }
+      return "?" + persistentName + "?";
+    }
+
+    return "" + SNodeUtil.getPresentation(this);
   }
 
   public String toString() {
@@ -808,6 +816,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
+  public boolean isInstanceOfConcept(SNode concept) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+  }
+
+  public boolean isInstanceOfConcept(String conceptFqName) {
+    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
+  }
+
+  //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Not supposed to be used. write your own
+   * @Deprecated in 3.0
+   */
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
@@ -818,11 +841,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     try {
-/*
- Warning:
- BaseConcept_Behavior class will be loaded using platform classloader here.
- As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
- */
       if (detailed) {
         return "" + SNodeUtil.getDetailedPresentation(this);
       } else {
@@ -833,16 +851,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return "[can't calculate presentation : " + t.getMessage() + "]";
     }
   }
-
-  public boolean isInstanceOfConcept(SNode concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
-  }
-
-  public boolean isInstanceOfConcept(String conceptFqName) {
-    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
-  }
-
-  //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
 
   @Deprecated
   /**
