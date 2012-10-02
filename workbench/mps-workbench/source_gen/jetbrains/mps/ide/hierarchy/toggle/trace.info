@@ -70,6 +70,9 @@
       <varInfo nodeId="5797068448049415657" varName="action" />
     </scopeInfo>
     <scopeInfo nodeId="5797068448049415675" fileName="ToggleActionGroup.java" startLine="19" startPosition="59" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="5797068448049415676" fileName="ToggleActionGroup.java" startLine="19" startPosition="59" endLine="24" endPosition="5">
+      <varInfo nodeId="5797068448049415678" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="5797068448049415670" fileName="ToggleActionGroup.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5797068448049415673" varName="action" />
     </scopeInfo>

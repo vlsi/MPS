@@ -385,9 +385,12 @@
     <scopeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="33" startPosition="57" endLine="36" endPosition="5">
       <varInfo nodeId="1194608818465" varName="root" />
     </scopeInfo>
+    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="52" startPosition="42" endLine="55" endPosition="15" />
     <scopeInfo nodeId="1194538774947" fileName="DependenciesCollector.java" startLine="52" startPosition="42" endLine="55" endPosition="15" />
     <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="64" startPosition="44" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="1194538897616" fileName="DependenciesCollector.java" startLine="64" startPosition="44" endLine="67" endPosition="17" />
     <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" />
+    <scopeInfo nodeId="1194964521499" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" />
     <scopeInfo nodeId="1194966986143" fileName="DependenciesCollector.java" startLine="91" startPosition="182" endLine="94" endPosition="25" />
     <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="9" endLine="161" endPosition="62">
       <varInfo nodeId="1238589082283" varName="quotedNode1_12" />
@@ -470,7 +473,11 @@
     <scopeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="26" startPosition="65" endLine="31" endPosition="5">
       <varInfo nodeId="1194536084809" varName="applicableNodeReference" />
     </scopeInfo>
+    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" />
     <scopeInfo nodeId="1194966957321" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" />
+    <scopeInfo nodeId="1194966986142" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23">
+      <varInfo nodeId="1194966986185" varName="variableReference" />
+    </scopeInfo>
     <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="157" startPosition="54" endLine="162" endPosition="9" />
     <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="162" startPosition="9" endLine="167" endPosition="9" />
     <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="171" startPosition="59" endLine="176" endPosition="11" />
@@ -682,12 +689,12 @@
       <varInfo nodeId="1194535127693" varName="inferenceRule" />
       <varInfo nodeId="1194612324558" varName="leaves" />
     </scopeInfo>
-    <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
     <unitInfo nodeId="1194969746832" fileName="DependenciesCollector.java" startLine="114" startPosition="131" endLine="118" endPosition="31" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$1" />
-    <unitInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="287" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0" />
-    <unitInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="212" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a" />
     <unitInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a1a1a2a5a0" />
+    <unitInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="212" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a" />
+    <unitInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="287" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0" />
     <unitInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="362" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a" />
+    <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
   </root>
   <root nodeId="1196177069451" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
     <unitInfo nodeId="1196177069451" fileName="InferenceMethod.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />

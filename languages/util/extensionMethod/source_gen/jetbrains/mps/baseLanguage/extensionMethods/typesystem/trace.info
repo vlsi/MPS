@@ -355,10 +355,10 @@
       <varInfo nodeId="7685333756920239741" varName="status" />
       <varInfo nodeId="7685333756920239741" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="7685333756920239741" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.typeof_LocalExtendedMethodCall_InferenceRule" />
     <unitInfo nodeId="3386826992796746288" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="76" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.typeof_LocalExtendedMethodCall_InferenceRule$QuotationClass_8kfrad_a0a0a5a0" />
     <unitInfo nodeId="3386826992796746365" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="107" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.typeof_LocalExtendedMethodCall_InferenceRule$QuotationClass_8kfrad_a0a8a5a0" />
     <unitInfo nodeId="3386826992796746370" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="138" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.typeof_LocalExtendedMethodCall_InferenceRule$QuotationClass_8kfrad_a0a8a5a0_0" />
+    <unitInfo nodeId="7685333756920239741" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.typeof_LocalExtendedMethodCall_InferenceRule" />
   </root>
 </debugInfo>
 

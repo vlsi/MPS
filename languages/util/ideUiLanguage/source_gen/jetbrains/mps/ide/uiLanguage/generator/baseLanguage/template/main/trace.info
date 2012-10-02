@@ -82,6 +82,7 @@
     <nodeInfo nodeId="1203595575423" fileName="QueriesGenerated.java" startLine="190" startPosition="139" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1203596004393" fileName="QueriesGenerated.java" startLine="192" startPosition="74" endLine="193" endPosition="39" />
     <scopeInfo nodeId="1203595575424" fileName="QueriesGenerated.java" startLine="191" startPosition="122" endLine="194" endPosition="7" />
+    <scopeInfo nodeId="1203594547727" fileName="QueriesGenerated.java" startLine="190" startPosition="139" endLine="195" endPosition="5" />
     <scopeInfo nodeId="1203595575423" fileName="QueriesGenerated.java" startLine="190" startPosition="139" endLine="195" endPosition="5">
       <varInfo nodeId="1203595575427" varName="cc" />
     </scopeInfo>

@@ -73,6 +73,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4063774604867752483" fileName="JavaStubs.java" startLine="49" startPosition="57" endLine="64" endPosition="96" />
     <scopeInfo nodeId="4063774604867752449" fileName="JavaStubs.java" startLine="48" startPosition="158" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="4063774604867752476" fileName="JavaStubs.java" startLine="48" startPosition="158" endLine="65" endPosition="5">
+      <varInfo nodeId="4063774604867752481" varName="subpackage" />
+    </scopeInfo>
     <scopeInfo nodeId="4063774604867752447" fileName="JavaStubs.java" startLine="47" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4063774604867752463" varName="cp" />
       <varInfo nodeId="4063774604867752470" varName="languageId" />

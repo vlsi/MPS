@@ -236,6 +236,9 @@
       <varInfo nodeId="9141317064020491714" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1244738286066001530" fileName="ModuleFileProcessor.java" startLine="118" startPosition="76" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="9141317064020406673" fileName="ModuleFileProcessor.java" startLine="118" startPosition="76" endLine="130" endPosition="7">
+      <varInfo nodeId="9141317064020406732" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="2913420570107898234" fileName="ModuleFileProcessor.java" startLine="188" startPosition="57" endLine="200" endPosition="0" />
     <scopeInfo nodeId="8474613039627890148" fileName="ModuleFileProcessor.java" startLine="147" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="8474613039627890151" varName="file" />
@@ -267,13 +270,13 @@
     <scopeInfo nodeId="9045182831066365201" fileName="ModuleFileProcessor.java" startLine="91" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="9045182831066365204" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="8474613039627890132" fileName="ModuleFileProcessor.java" startLine="37" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor" />
     <unitInfo nodeId="5704302315572928914" fileName="ModuleFileProcessor.java" startLine="98" startPosition="55" endLine="102" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$1" />
     <unitInfo nodeId="5704302315572928803" fileName="ModuleFileProcessor.java" startLine="106" startPosition="44" endLine="110" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$2" />
     <unitInfo nodeId="5704302315572928833" fileName="ModuleFileProcessor.java" startLine="110" startPosition="22" endLine="114" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$3" />
     <unitInfo nodeId="2913420570107878377" fileName="ModuleFileProcessor.java" startLine="154" startPosition="114" endLine="158" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$4" />
     <unitInfo nodeId="404594887366250678" fileName="ModuleFileProcessor.java" startLine="162" startPosition="53" endLine="169" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$5" />
     <unitInfo nodeId="2913420570107898234" fileName="ModuleFileProcessor.java" startLine="188" startPosition="45" endLine="200" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$6" />
+    <unitInfo nodeId="8474613039627890132" fileName="ModuleFileProcessor.java" startLine="37" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor" />
   </root>
   <root nodeId="8474613039627890646" modelId="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)">
     <nodeInfo nodeId="404594887366252624" fileName="ModelFileProcessor.java" startLine="29" startPosition="61" endLine="30" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvalidatedSources" />
@@ -402,7 +405,13 @@
     <scopeInfo nodeId="6784047278245206063" fileName="ModelFileProcessor.java" startLine="99" startPosition="89" endLine="108" endPosition="9" />
     <scopeInfo nodeId="6784047278245204273" fileName="ModelFileProcessor.java" startLine="120" startPosition="76" endLine="129" endPosition="9" />
     <scopeInfo nodeId="6784047278245206057" fileName="ModelFileProcessor.java" startLine="98" startPosition="57" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="6784047278245206058" fileName="ModelFileProcessor.java" startLine="98" startPosition="57" endLine="109" endPosition="7">
+      <varInfo nodeId="6784047278245206059" varName="smr" />
+    </scopeInfo>
     <scopeInfo nodeId="6784047278245204255" fileName="ModelFileProcessor.java" startLine="119" startPosition="111" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="6784047278245204270" fileName="ModelFileProcessor.java" startLine="119" startPosition="111" endLine="130" endPosition="7">
+      <varInfo nodeId="6784047278245204271" varName="p" />
+    </scopeInfo>
     <scopeInfo nodeId="8526829049878372477" fileName="ModelFileProcessor.java" startLine="43" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="404594887366252461" varName="indicator" />
     </scopeInfo>
@@ -437,9 +446,9 @@
       <varInfo nodeId="6784047278245094946" varName="file" />
       <varInfo nodeId="530588068880206069" varName="onlyFirst" />
     </scopeInfo>
-    <unitInfo nodeId="8474613039627890646" fileName="ModelFileProcessor.java" startLine="29" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor" />
     <unitInfo nodeId="484376366895944221" fileName="ModelFileProcessor.java" startLine="78" startPosition="108" endLine="82" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor$1" />
     <unitInfo nodeId="484376366895944261" fileName="ModelFileProcessor.java" startLine="82" startPosition="18" endLine="86" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor$2" />
+    <unitInfo nodeId="8474613039627890646" fileName="ModelFileProcessor.java" startLine="29" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor" />
   </root>
   <root nodeId="8474613039627890805" modelId="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)">
     <nodeInfo nodeId="8474613039627890853" fileName="ModelCacheReloader.java" startLine="25" startPosition="65" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
@@ -519,9 +528,9 @@
     <scopeInfo nodeId="8474613039627890925" fileName="ModelCacheReloader.java" startLine="50" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="8474613039627890956" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8474613039627890805" fileName="ModelCacheReloader.java" startLine="25" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelCacheReloader" />
     <unitInfo nodeId="8474613039627890941" fileName="ModelCacheReloader.java" startLine="53" startPosition="68" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModelCacheReloader$1" />
     <unitInfo nodeId="8474613039627890806" fileName="ModelCacheReloader.java" startLine="67" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelCacheReloader$CacheFileListener" />
+    <unitInfo nodeId="8474613039627890805" fileName="ModelCacheReloader.java" startLine="25" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelCacheReloader" />
   </root>
   <root nodeId="8474613039627890958" modelId="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)">
     <nodeInfo nodeId="8474613039627891298" fileName="FSChangesWatcher.java" startLine="45" startPosition="63" endLine="46" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -802,6 +811,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9045182831066367205" fileName="FSChangesWatcher.java" startLine="259" startPosition="66" endLine="283" endPosition="13" />
     <scopeInfo nodeId="8474613039627891620" fileName="FSChangesWatcher.java" startLine="155" startPosition="44" endLine="180" endPosition="0" />
+    <scopeInfo nodeId="5978443222856231451" fileName="FSChangesWatcher.java" startLine="258" startPosition="27" endLine="284" endPosition="11" />
     <scopeInfo nodeId="9045182831066367202" fileName="FSChangesWatcher.java" startLine="258" startPosition="27" endLine="284" endPosition="11">
       <varInfo nodeId="9045182831066367203" varName="p" />
     </scopeInfo>
@@ -820,17 +830,17 @@
     </scopeInfo>
     <scopeInfo nodeId="8474613039627891594" fileName="FSChangesWatcher.java" startLine="146" startPosition="30" endLine="181" endPosition="5" />
     <scopeInfo nodeId="8474613039627891591" fileName="FSChangesWatcher.java" startLine="145" startPosition="0" endLine="183" endPosition="0" />
-    <unitInfo nodeId="8474613039627890958" fileName="FSChangesWatcher.java" startLine="45" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
-    <unitInfo nodeId="1041878539048419608" fileName="FSChangesWatcher.java" startLine="229" startPosition="48" endLine="233" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
-    <unitInfo nodeId="8474613039627891348" fileName="FSChangesWatcher.java" startLine="58" startPosition="78" endLine="66" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
-    <unitInfo nodeId="1041878539048419641" fileName="FSChangesWatcher.java" startLine="241" startPosition="48" endLine="245" endPosition="9" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$2" />
-    <unitInfo nodeId="8474613039627891378" fileName="FSChangesWatcher.java" startLine="69" startPosition="57" endLine="77" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$2" />
-    <unitInfo nodeId="1041878539048419694" fileName="FSChangesWatcher.java" startLine="245" startPosition="24" endLine="250" endPosition="9" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
-    <unitInfo nodeId="8474613039627891618" fileName="FSChangesWatcher.java" startLine="155" startPosition="24" endLine="180" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
     <unitInfo nodeId="8474613039627891672" fileName="FSChangesWatcher.java" startLine="174" startPosition="48" endLine="178" endPosition="11" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$4" />
+    <unitInfo nodeId="1041878539048419608" fileName="FSChangesWatcher.java" startLine="229" startPosition="48" endLine="233" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
+    <unitInfo nodeId="1041878539048419641" fileName="FSChangesWatcher.java" startLine="241" startPosition="48" endLine="245" endPosition="9" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$2" />
+    <unitInfo nodeId="8474613039627891288" fileName="FSChangesWatcher.java" startLine="290" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$IReloadListener" />
+    <unitInfo nodeId="1041878539048419694" fileName="FSChangesWatcher.java" startLine="245" startPosition="24" endLine="250" endPosition="9" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
+    <unitInfo nodeId="8474613039627891348" fileName="FSChangesWatcher.java" startLine="58" startPosition="78" endLine="66" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
+    <unitInfo nodeId="8474613039627891378" fileName="FSChangesWatcher.java" startLine="69" startPosition="57" endLine="77" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$2" />
+    <unitInfo nodeId="8474613039627891618" fileName="FSChangesWatcher.java" startLine="155" startPosition="24" endLine="180" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
     <unitInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="257" startPosition="47" endLine="286" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$4" />
     <unitInfo nodeId="8474613039627890961" fileName="FSChangesWatcher.java" startLine="217" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener" />
-    <unitInfo nodeId="8474613039627891288" fileName="FSChangesWatcher.java" startLine="290" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$IReloadListener" />
+    <unitInfo nodeId="8474613039627890958" fileName="FSChangesWatcher.java" startLine="45" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
   </root>
   <root nodeId="8526829049878328429" modelId="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)">
     <nodeInfo nodeId="8526829049878328429" fileName="ReloadSession.java" startLine="15" startPosition="28" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -885,9 +895,11 @@
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372295" fileName="ReloadSession.java" startLine="32" startPosition="46" endLine="35" endPosition="7" />
     <scopeInfo nodeId="8474613039627889749" fileName="ReloadSession.java" startLine="59" startPosition="15" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="8474613039627889814" fileName="ReloadSession.java" startLine="67" startPosition="36" endLine="70" endPosition="5" />
     <scopeInfo nodeId="8474613039627889815" fileName="ReloadSession.java" startLine="67" startPosition="36" endLine="70" endPosition="5">
       <varInfo nodeId="8474613039627889817" varName="l" />
     </scopeInfo>
+    <scopeInfo nodeId="8474613039627889827" fileName="ReloadSession.java" startLine="73" startPosition="37" endLine="76" endPosition="5" />
     <scopeInfo nodeId="8474613039627889828" fileName="ReloadSession.java" startLine="73" startPosition="37" endLine="76" endPosition="5">
       <varInfo nodeId="8474613039627889830" varName="l" />
     </scopeInfo>
@@ -907,8 +919,8 @@
     <scopeInfo nodeId="8474613039627889678" fileName="ReloadSession.java" startLine="39" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8474613039627889809" varName="indicator" />
     </scopeInfo>
-    <unitInfo nodeId="8526829049878328429" fileName="ReloadSession.java" startLine="15" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadSession" />
     <unitInfo nodeId="8526829049878373507" fileName="ReloadSession.java" startLine="46" startPosition="48" endLine="58" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ReloadSession$1" />
+    <unitInfo nodeId="8526829049878328429" fileName="ReloadSession.java" startLine="15" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadSession" />
   </root>
 </debugInfo>
 

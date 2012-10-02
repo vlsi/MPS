@@ -160,12 +160,12 @@
     <scopeInfo nodeId="7850891982542386444" fileName="SettingsEditorPanel.java" startLine="46" startPosition="0" endLine="62" endPosition="3">
       <varInfo nodeId="7850891982542408162" varName="configuration" />
     </scopeInfo>
-    <unitInfo nodeId="7850891982542386442" fileName="SettingsEditorPanel.java" startLine="19" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel" />
-    <unitInfo nodeId="7850891982542471816" fileName="SettingsEditorPanel.java" startLine="50" startPosition="21" endLine="54" endPosition="5" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$1" />
     <unitInfo nodeId="7850891982542472853" fileName="SettingsEditorPanel.java" startLine="26" startPosition="48" endLine="30" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$2" />
     <unitInfo nodeId="7850891982542472896" fileName="SettingsEditorPanel.java" startLine="31" startPosition="51" endLine="35" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$3" />
     <unitInfo nodeId="7850891982542472915" fileName="SettingsEditorPanel.java" startLine="36" startPosition="51" endLine="40" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$4" />
     <unitInfo nodeId="7850891982542472934" fileName="SettingsEditorPanel.java" startLine="41" startPosition="52" endLine="45" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$5" />
+    <unitInfo nodeId="7850891982542471816" fileName="SettingsEditorPanel.java" startLine="50" startPosition="21" endLine="54" endPosition="5" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$1" />
+    <unitInfo nodeId="7850891982542386442" fileName="SettingsEditorPanel.java" startLine="19" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel" />
   </root>
   <root nodeId="8413546332587496379" modelId="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)">
     <nodeInfo nodeId="8413546332587496603" fileName="ActionWrapper.java" startLine="19" startPosition="115" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -194,8 +194,8 @@
       <varInfo nodeId="8413546332587496424" varName="action" />
       <varInfo nodeId="8413546332587496482" varName="callback" />
     </scopeInfo>
-    <unitInfo nodeId="8413546332587496379" fileName="ActionWrapper.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.api.settings.ActionWrapper" />
     <unitInfo nodeId="2372421611506016569" fileName="ActionWrapper.java" startLine="23" startPosition="43" endLine="27" endPosition="5" unitName="jetbrains.mps.execution.api.settings.ActionWrapper$1" />
+    <unitInfo nodeId="8413546332587496379" fileName="ActionWrapper.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.api.settings.ActionWrapper" />
   </root>
   <root nodeId="8669494666333581720" modelId="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)">
     <nodeInfo nodeId="8669494666333596351" fileName="SettingsEditorDialog.java" startLine="15" startPosition="51" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySettingsPanel" />
@@ -240,9 +240,9 @@
     <scopeInfo nodeId="8669494666333596361" fileName="SettingsEditorDialog.java" startLine="26" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="8669494666333596512" varName="editor" />
     </scopeInfo>
-    <unitInfo nodeId="8669494666333581720" fileName="SettingsEditorDialog.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.execution.api.settings.SettingsEditorDialog" />
     <unitInfo nodeId="8669494666333596383" fileName="SettingsEditorDialog.java" startLine="29" startPosition="77" endLine="33" endPosition="5" unitName="jetbrains.mps.execution.api.settings.SettingsEditorDialog$1" />
     <unitInfo nodeId="8669494666333596484" fileName="SettingsEditorDialog.java" startLine="36" startPosition="81" endLine="40" endPosition="5" unitName="jetbrains.mps.execution.api.settings.SettingsEditorDialog$2" />
+    <unitInfo nodeId="8669494666333581720" fileName="SettingsEditorDialog.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.execution.api.settings.SettingsEditorDialog" />
   </root>
 </debugInfo>
 

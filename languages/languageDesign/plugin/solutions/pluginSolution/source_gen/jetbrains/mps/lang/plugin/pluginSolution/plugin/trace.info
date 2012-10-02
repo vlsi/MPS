@@ -101,8 +101,8 @@
       <varInfo nodeId="5487985028841901743" varName="_params" />
       <varInfo nodeId="5487985028841901743" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" />
     <unitInfo nodeId="1161420610164770324" fileName="SortKeymapMembers_Action.java" startLine="81" startPosition="46" endLine="88" endPosition="7" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action$1" />
+    <unitInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" />
   </root>
   <root nodeId="5487985028841901766" modelId="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

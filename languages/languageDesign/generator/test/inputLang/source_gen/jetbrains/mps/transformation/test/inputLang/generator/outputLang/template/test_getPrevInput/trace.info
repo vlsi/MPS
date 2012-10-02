@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="20" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="20" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
   <root nodeId="1202255161944" modelId="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)">
     <nodeInfo nodeId="1202255161956" fileName="QueriesGenerated.java" startLine="21" startPosition="146" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202255161944" fileName="Mappingmain.java" startLine="24" startPosition="66" endLine="25" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="rootMappingRule_417xrn_a0a0a" />
@@ -150,9 +150,9 @@
       <varInfo nodeId="1202255161944" varName="context" />
       <varInfo nodeId="1202255161944" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1202255161944" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain" />
     <unitInfo nodeId="1202255161944" fileName="Mappingmain.java" startLine="86" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain$RootMappingRule0" />
     <unitInfo nodeId="1202255161944" fileName="Mappingmain.java" startLine="120" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain$RootMappingRule1" />
+    <unitInfo nodeId="1202255161944" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain" />
   </root>
   <root nodeId="1202255620269" modelId="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)">
     <nodeInfo nodeId="1202255620269" fileName="TemplateOutputRoot__1.java" startLine="22" startPosition="67" endLine="23" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_ewlaka_a0a0" />
@@ -473,9 +473,9 @@
       <varInfo nodeId="1202255620269" varName="context" />
       <varInfo nodeId="1202255620269" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1202255620269" fileName="TemplateOutputRoot__1.java" startLine="22" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1" />
     <unitInfo nodeId="1202255620269" fileName="TemplateOutputRoot__1.java" startLine="164" startPosition="54" endLine="168" endPosition="27" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1$1" />
     <unitInfo nodeId="1202255620269" fileName="TemplateOutputRoot__1.java" startLine="202" startPosition="42" endLine="206" endPosition="15" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1$2" />
+    <unitInfo nodeId="1202255620269" fileName="TemplateOutputRoot__1.java" startLine="22" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1" />
   </root>
   <root nodeId="1202338159177" modelId="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)">
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="23" startPosition="67" endLine="24" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_ewlaka_a0a0_0" />
@@ -805,12 +805,12 @@
       <varInfo nodeId="1202338159177" varName="context" />
       <varInfo nodeId="1202338159177" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="23" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2" />
-    <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="106" startPosition="71" endLine="118" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$1" />
     <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="118" startPosition="39" endLine="122" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$2" />
+    <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="172" startPosition="39" endLine="176" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$5" />
+    <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="106" startPosition="71" endLine="118" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$1" />
     <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="135" startPosition="71" endLine="147" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$3" />
     <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="160" startPosition="72" endLine="172" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$4" />
-    <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="172" startPosition="39" endLine="176" endPosition="33" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$5" />
+    <unitInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="23" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2" />
   </root>
 </debugInfo>
 

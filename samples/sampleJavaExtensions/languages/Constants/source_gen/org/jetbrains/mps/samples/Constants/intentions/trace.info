@@ -98,9 +98,9 @@
       <varInfo nodeId="3986994675334573802" varName="editorContext" />
       <varInfo nodeId="3986994675334573802" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" />
     <unitInfo nodeId="3986994675334573864" fileName="SafeRemoveConstant_Intention.java" startLine="41" startPosition="298" endLine="45" endPosition="5" unitName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$1" />
     <unitInfo nodeId="3986994675334573883" fileName="SafeRemoveConstant_Intention.java" startLine="46" startPosition="54" endLine="50" endPosition="5" unitName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$2" />
+    <unitInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" />
   </root>
   <root nodeId="3986994675334574125" modelId="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)">
     <nodeInfo nodeId="3986994675334574125" fileName="IntroduceConstant_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -66,6 +66,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757885" fileName="AbstractShowInFileView.java" startLine="48" startPosition="44" endLine="52" endPosition="9" />
     <scopeInfo nodeId="7705742079275757917" fileName="AbstractShowInFileView.java" startLine="60" startPosition="85" endLine="64" endPosition="17" />
+    <scopeInfo nodeId="7705742079275757880" fileName="AbstractShowInFileView.java" startLine="47" startPosition="31" endLine="53" endPosition="7" />
     <scopeInfo nodeId="7705742079275757881" fileName="AbstractShowInFileView.java" startLine="47" startPosition="31" endLine="53" endPosition="7">
       <varInfo nodeId="7705742079275757883" varName="baseDir" />
     </scopeInfo>
@@ -162,9 +163,9 @@
     <scopeInfo nodeId="7705742079275757976" fileName="ShowInLogicalView.java" startLine="23" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7705742079275757979" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="7705742079275757969" fileName="ShowInLogicalView.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView" />
-    <unitInfo nodeId="7705742079275758027" fileName="ShowInLogicalView.java" startLine="43" startPosition="64" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
     <unitInfo nodeId="7705742079275758052" fileName="ShowInLogicalView.java" startLine="33" startPosition="72" endLine="37" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$2" />
+    <unitInfo nodeId="7705742079275758027" fileName="ShowInLogicalView.java" startLine="43" startPosition="64" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
+    <unitInfo nodeId="7705742079275757969" fileName="ShowInLogicalView.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView" />
   </root>
 </debugInfo>
 

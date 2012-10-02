@@ -269,6 +269,7 @@
     <scopeInfo nodeId="6531435794299651311" fileName="AccountingEvent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="6531435794299651320" fileName="AccountingEvent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6531435794299651326" fileName="AccountingEvent.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="6531435794299651393" fileName="AccountingEvent.java" startLine="113" startPosition="41" endLine="117" endPosition="5" />
     <scopeInfo nodeId="6531435794299651394" fileName="AccountingEvent.java" startLine="113" startPosition="41" endLine="117" endPosition="5">
       <varInfo nodeId="6531435794299651396" varName="o" />
     </scopeInfo>
@@ -711,6 +712,9 @@
       <varInfo nodeId="6531435794299655348" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299655400" fileName="EventList.java" startLine="38" startPosition="25" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="6531435794299655401" fileName="EventList.java" startLine="38" startPosition="25" endLine="45" endPosition="5">
+      <varInfo nodeId="6531435794299655403" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="6531435794299655342" fileName="EventList.java" startLine="18" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="6531435794299655397" fileName="EventList.java" startLine="37" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="6531435794299655311" fileName="EventList.java" startLine="8" startPosition="0" endLine="48" endPosition="0" unitName="postingrules.EventList" />

@@ -92,8 +92,8 @@
     <scopeInfo nodeId="1196777967634" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1196777967634" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="1177463041902" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" />
     <unitInfo nodeId="1196777967634" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule$QuotationClass_4okgzg_a0a1a0" />
+    <unitInfo nodeId="1177463041902" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" />
   </root>
 </debugInfo>
 

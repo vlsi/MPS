@@ -72,8 +72,8 @@
     <scopeInfo nodeId="12077399789561939" fileName="TestClass.java" startLine="40" startPosition="32" endLine="48" endPosition="5">
       <varInfo nodeId="12077399789561943" varName="newValue" />
     </scopeInfo>
-    <unitInfo nodeId="12077399789561873" fileName="TestClass.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.propertiesTest.TestClass" />
     <unitInfo nodeId="12077399789561937" fileName="TestClass.java" startLine="40" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.propertiesTest.TestClass$PropertyChanger" />
+    <unitInfo nodeId="12077399789561873" fileName="TestClass.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.propertiesTest.TestClass" />
   </root>
 </debugInfo>
 

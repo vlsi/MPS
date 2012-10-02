@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Ypath_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.structure.Ypath_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
   <root nodeId="1168457888645" modelId="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -133,8 +133,8 @@
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="57" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1168457888645" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="9" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis" />
     <unitInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis_PropertySupport" />
+    <unitInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="9" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis" />
   </root>
   <root nodeId="1196419521949" modelId="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -271,8 +271,8 @@
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="59" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="1196419521949" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum" />
     <unitInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum_PropertySupport" />
+    <unitInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum" />
   </root>
 </debugInfo>
 

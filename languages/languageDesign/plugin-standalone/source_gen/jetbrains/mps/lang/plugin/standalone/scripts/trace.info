@@ -137,9 +137,9 @@
       <varInfo nodeId="1457992527037889663" varName="parameter_14" />
       <varInfo nodeId="1457992527037889663" varName="parameter_15" />
     </scopeInfo>
-    <unitInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript" />
     <unitInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="24" startPosition="28" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript$1" />
     <unitInfo nodeId="1457992527037889663" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="58" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript$QuotationClass_vfglur_a1a3a4a0a0a1a0" />
+    <unitInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript" />
   </root>
 </debugInfo>
 

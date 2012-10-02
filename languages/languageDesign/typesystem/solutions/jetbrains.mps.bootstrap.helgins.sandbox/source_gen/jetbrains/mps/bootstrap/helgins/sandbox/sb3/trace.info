@@ -37,8 +37,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4293892367838076752" fileName="D.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
     <scopeInfo nodeId="4293892367838076787" fileName="D.java" startLine="16" startPosition="0" endLine="19" endPosition="5" />
-    <unitInfo nodeId="4293892367838076750" fileName="D.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.D" />
     <unitInfo nodeId="4293892367838076785" fileName="D.java" startLine="14" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.D$DD" />
+    <unitInfo nodeId="4293892367838076750" fileName="D.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.D" />
   </root>
   <root nodeId="761955517644210340" modelId="r:00000000-0000-4000-0000-011c895905cc(jetbrains.mps.bootstrap.helgins.sandbox.sb3)">
     <nodeInfo nodeId="4256432518130457437" fileName="Example.java" startLine="10" startPosition="24" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -75,8 +75,8 @@
       <varInfo nodeId="7656658799535004853" varName="runResolveAction" />
     </scopeInfo>
     <scopeInfo nodeId="7656658799535004848" fileName="F.java" startLine="8" startPosition="16" endLine="21" endPosition="3" />
-    <unitInfo nodeId="7656658799535004846" fileName="F.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F" />
     <unitInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="58" endLine="17" endPosition="5" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F$1" />
+    <unitInfo nodeId="7656658799535004846" fileName="F.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F" />
   </root>
   <root nodeId="8270377549769674720" modelId="r:00000000-0000-4000-0000-011c895905cc(jetbrains.mps.bootstrap.helgins.sandbox.sb3)">
     <nodeInfo nodeId="8270377549769674742" fileName="ErrorClosure.java" startLine="14" startPosition="103" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -114,9 +114,9 @@
       <varInfo nodeId="7656658799534978452" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="8270377549769674745" fileName="ErrorClosure.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="8270377549769674720" fileName="ErrorClosure.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.ErrorClosure" />
     <unitInfo nodeId="8270377549769674766" fileName="ErrorClosure.java" startLine="23" startPosition="10" endLine="27" endPosition="5" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.ErrorClosure$1" />
     <unitInfo nodeId="7656658799534999748" fileName="ErrorClosure.java" startLine="29" startPosition="84" endLine="33" endPosition="5" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.ErrorClosure$2" />
+    <unitInfo nodeId="8270377549769674720" fileName="ErrorClosure.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.ErrorClosure" />
   </root>
 </debugInfo>
 

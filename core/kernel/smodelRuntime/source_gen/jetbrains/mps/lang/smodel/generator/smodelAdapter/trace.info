@@ -76,10 +76,10 @@
       <varInfo nodeId="1101499704720825575" varName="enumm" />
       <varInfo nodeId="1101499704720825577" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1101499704720825413" fileName="SEnumOperations.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     <unitInfo nodeId="1101499704720825439" fileName="SEnumOperations.java" startLine="18" startPosition="147" endLine="22" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$1" />
     <unitInfo nodeId="1101499704720825523" fileName="SEnumOperations.java" startLine="43" startPosition="110" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$2" />
     <unitInfo nodeId="1101499704720825563" fileName="SEnumOperations.java" startLine="54" startPosition="107" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$3" />
+    <unitInfo nodeId="1101499704720825413" fileName="SEnumOperations.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
   </root>
   <root nodeId="6407023681582958584" modelId="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
     <nodeInfo nodeId="5342347949602254353" fileName="AttributeOperations.java" startLine="22" startPosition="57" endLine="23" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -452,13 +452,13 @@
       <varInfo nodeId="6407023681582990191" varName="node" />
       <varInfo nodeId="6407023681582990193" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="6407023681582958584" fileName="AttributeOperations.java" startLine="18" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <unitInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="41" startPosition="102" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$1" />
     <unitInfo nodeId="4507439356949661427" fileName="AttributeOperations.java" startLine="183" startPosition="180" endLine="187" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$3" />
     <unitInfo nodeId="1113897827127266134" fileName="AttributeOperations.java" startLine="187" startPosition="17" endLine="191" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$4" />
     <unitInfo nodeId="4507439356949661459" fileName="AttributeOperations.java" startLine="215" startPosition="176" endLine="219" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$5" />
     <unitInfo nodeId="1113897827127263987" fileName="AttributeOperations.java" startLine="219" startPosition="17" endLine="223" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$6" />
     <unitInfo nodeId="6407023681583065637" fileName="AttributeOperations.java" startLine="226" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$AttributeList" />
+    <unitInfo nodeId="6407023681582958584" fileName="AttributeOperations.java" startLine="18" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
   </root>
   <root nodeId="6407023681583030432" modelId="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
     <nodeInfo nodeId="6407023681583030498" fileName="IAttributeDescriptor.java" startLine="9" startPosition="39" endLine="10" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -617,16 +617,16 @@
     <scopeInfo nodeId="1287809918884496991" fileName="IAttributeDescriptor.java" startLine="123" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="1287809918884496996" varName="attribute" />
     </scopeInfo>
-    <unitInfo nodeId="6407023681583030432" fileName="IAttributeDescriptor.java" startLine="9" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <unitInfo nodeId="6407023681583030570" fileName="IAttributeDescriptor.java" startLine="27" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$AllAttributes" />
+    <unitInfo nodeId="6407023681583030581" fileName="IAttributeDescriptor.java" startLine="33" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$NodeAttribute" />
+    <unitInfo nodeId="1287809918884494005" fileName="IAttributeDescriptor.java" startLine="88" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$NodeAttributeString" />
     <unitInfo nodeId="6407023681583030434" fileName="IAttributeDescriptor.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$AttributeDescriptor" />
     <unitInfo nodeId="1287809918884493945" fileName="IAttributeDescriptor.java" startLine="73" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$AttributeDescriptorString" />
     <unitInfo nodeId="6407023681583030598" fileName="IAttributeDescriptor.java" startLine="39" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$LinkAttribute" />
-    <unitInfo nodeId="1287809918884494414" fileName="IAttributeDescriptor.java" startLine="98" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$LinkAttributeString" />
-    <unitInfo nodeId="6407023681583030581" fileName="IAttributeDescriptor.java" startLine="33" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$NodeAttribute" />
-    <unitInfo nodeId="1287809918884494005" fileName="IAttributeDescriptor.java" startLine="88" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$NodeAttributeString" />
     <unitInfo nodeId="6407023681583030749" fileName="IAttributeDescriptor.java" startLine="56" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$PropertyAttribute" />
+    <unitInfo nodeId="1287809918884494414" fileName="IAttributeDescriptor.java" startLine="98" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$LinkAttributeString" />
     <unitInfo nodeId="1287809918884496966" fileName="IAttributeDescriptor.java" startLine="116" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor$PropertyAttributeString" />
+    <unitInfo nodeId="6407023681583030432" fileName="IAttributeDescriptor.java" startLine="9" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
   </root>
   <root nodeId="6599163591527171838" modelId="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
     <nodeInfo nodeId="6599163591527171983" fileName="AbstractSNodeList.java" startLine="10" startPosition="71" endLine="11" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceContainer" />
@@ -866,9 +866,9 @@
       <varInfo nodeId="6947069774017063" varName="c" />
       <varInfo nodeId="6947069774017061" varName="index" />
     </scopeInfo>
-    <unitInfo nodeId="6599163591527171838" fileName="AbstractSNodeList.java" startLine="10" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList" />
-    <unitInfo nodeId="6599163591527171841" fileName="AbstractSNodeList.java" startLine="137" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList$AggregatedSNodesList" />
     <unitInfo nodeId="6599163591527171928" fileName="AbstractSNodeList.java" startLine="164" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList$LinkedSNodesList" />
+    <unitInfo nodeId="6599163591527171841" fileName="AbstractSNodeList.java" startLine="137" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList$AggregatedSNodesList" />
+    <unitInfo nodeId="6599163591527171838" fileName="AbstractSNodeList.java" startLine="10" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList" />
   </root>
   <root nodeId="6599163591527270715" modelId="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
     <nodeInfo nodeId="6599163591527270724" fileName="NodeCastException.java" startLine="7" startPosition="44" endLine="8" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1309,9 +1309,9 @@
       <varInfo nodeId="6599163591527280402" varName="conceptFqName" />
       <varInfo nodeId="6599163591527280400" varName="model" />
     </scopeInfo>
-    <unitInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="30" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <unitInfo nodeId="6599163591527280472" fileName="SModelOperations.java" startLine="51" startPosition="32" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations$1" />
     <unitInfo nodeId="8920265417895136665" fileName="SModelOperations.java" startLine="182" startPosition="94" endLine="186" endPosition="9" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations$2" />
+    <unitInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="30" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
   </root>
   <root nodeId="6599163591527282020" modelId="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
     <nodeInfo nodeId="6599163591527282039" fileName="SConceptPropertyOperations.java" startLine="15" startPosition="23" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1429,6 +1429,7 @@
       <varInfo nodeId="4585946217985542341" varName="name" />
       <varInfo nodeId="4585946217985542259" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="6599163591527282229" fileName="SConceptPropertyOperations.java" startLine="68" startPosition="45" endLine="78" endPosition="9" />
     <scopeInfo nodeId="6599163591527282238" fileName="SConceptPropertyOperations.java" startLine="68" startPosition="45" endLine="78" endPosition="9">
       <varInfo nodeId="6599163591527282241" varName="cpd" />
     </scopeInfo>
@@ -1593,6 +1594,7 @@
     <scopeInfo nodeId="6599163591527286562" fileName="SLinkOperations.java" startLine="85" startPosition="23" endLine="88" endPosition="22">
       <varInfo nodeId="6599163591527286925" varName="newChild" />
     </scopeInfo>
+    <scopeInfo nodeId="6599163591527286636" fileName="SLinkOperations.java" startLine="104" startPosition="78" endLine="107" endPosition="5" />
     <scopeInfo nodeId="6599163591527286637" fileName="SLinkOperations.java" startLine="104" startPosition="78" endLine="107" endPosition="5">
       <varInfo nodeId="6599163591527286639" varName="node" />
     </scopeInfo>
@@ -2407,6 +2409,9 @@
       <varInfo nodeId="6599163591527295463" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6599163591527293956" fileName="SNodeOperations.java" startLine="272" startPosition="140" endLine="280" endPosition="5" />
+    <scopeInfo nodeId="6599163591527293957" fileName="SNodeOperations.java" startLine="272" startPosition="140" endLine="280" endPosition="5">
+      <varInfo nodeId="6599163591527293961" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="6599163591527294001" fileName="SNodeOperations.java" startLine="283" startPosition="77" endLine="291" endPosition="5">
       <varInfo nodeId="6599163591527294003" varName="conceptFqName" />
     </scopeInfo>
@@ -2559,6 +2564,9 @@
       <varInfo nodeId="6599163591527294377" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="6599163591527294777" fileName="SNodeOperations.java" startLine="503" startPosition="73" endLine="523" endPosition="5" />
+    <scopeInfo nodeId="6599163591527294778" fileName="SNodeOperations.java" startLine="503" startPosition="73" endLine="523" endPosition="5">
+      <varInfo nodeId="6599163591527294782" varName="attribute" />
+    </scopeInfo>
     <scopeInfo nodeId="6599163591527294690" fileName="SNodeOperations.java" startLine="481" startPosition="0" endLine="502" endPosition="0">
       <varInfo nodeId="6599163591527294695" varName="conceptFqName" />
       <varInfo nodeId="6599163591527294693" varName="oldChild" />
@@ -2634,11 +2642,11 @@
       <varInfo nodeId="6599163591527293438" varName="root" />
       <varInfo nodeId="6599163591527293440" varName="sameMetaLevel" />
     </scopeInfo>
-    <unitInfo nodeId="6599163591527286941" fileName="SNodeOperations.java" startLine="28" startPosition="0" endLine="714" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <unitInfo nodeId="6599163591527293792" fileName="SNodeOperations.java" startLine="227" startPosition="10" endLine="231" endPosition="7" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations$1" />
     <unitInfo nodeId="6599163591527293810" fileName="SNodeOperations.java" startLine="233" startPosition="65" endLine="237" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations$2" />
     <unitInfo nodeId="6599163591527293909" fileName="SNodeOperations.java" startLine="258" startPosition="10" endLine="262" endPosition="7" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations$3" />
     <unitInfo nodeId="6599163591527293927" fileName="SNodeOperations.java" startLine="264" startPosition="65" endLine="268" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations$4" />
+    <unitInfo nodeId="6599163591527286941" fileName="SNodeOperations.java" startLine="28" startPosition="0" endLine="714" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
   </root>
   <root nodeId="6599163591527298519" modelId="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)">
     <nodeInfo nodeId="6599163591527298540" fileName="SPropertyOperations.java" startLine="14" startPosition="23" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

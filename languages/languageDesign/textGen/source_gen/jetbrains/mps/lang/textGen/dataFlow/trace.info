@@ -117,6 +117,9 @@
     <scopeInfo nodeId="1237483281636" fileName="AppendOperation_DataFlow.java" startLine="16" startPosition="85" endLine="17" endPosition="48" />
     <scopeInfo nodeId="1237483235720" fileName="AppendOperation_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1237483235722" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="1237483281632" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+      <varInfo nodeId="1237483281634" varName="part" />
+    </scopeInfo>
     <scopeInfo nodeId="1237483235720" fileName="AppendOperation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1237483235720" varName="_context" />
       <varInfo nodeId="1237483235720" varName="operationContext" />

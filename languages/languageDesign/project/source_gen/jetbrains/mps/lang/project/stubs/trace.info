@@ -55,8 +55,8 @@
       <varInfo nodeId="8382013213871443225" varName="module" />
       <varInfo nodeId="8382013213871443223" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="26" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs" />
     <unitInfo nodeId="8382013213871428252" fileName="ProjectStubs.java" startLine="40" startPosition="57" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs$1" />
+    <unitInfo nodeId="8382013213871428218" fileName="ProjectStubs.java" startLine="26" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.project.stubs.ProjectStubs" />
   </root>
 </debugInfo>
 

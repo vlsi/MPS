@@ -457,9 +457,9 @@
       <varInfo nodeId="1111795658388" varName="editorContext" />
       <varInfo nodeId="1111795658388" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1111795517363" fileName="Plan_Editor.java" startLine="28" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Plan_Editor" />
-    <unitInfo nodeId="1111795670563" fileName="Plan_Editor.java" startLine="230" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Plan_Editor$eventListHandler_ibbzj5_b4a" />
     <unitInfo nodeId="1111795657807" fileName="Plan_Editor.java" startLine="178" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Plan_Editor$valueListHandler_ibbzj5_b2a" />
+    <unitInfo nodeId="1111795670563" fileName="Plan_Editor.java" startLine="230" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Plan_Editor$eventListHandler_ibbzj5_b4a" />
+    <unitInfo nodeId="1111795517363" fileName="Plan_Editor.java" startLine="28" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Plan_Editor" />
   </root>
   <root nodeId="1111795695299" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1111795870492" fileName="Event_Editor.java" startLine="118" startPosition="58" endLine="118" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -835,9 +835,9 @@
       <varInfo nodeId="1111795870493" varName="editorContext" />
       <varInfo nodeId="1111795870493" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1111795695299" fileName="Event_Editor.java" startLine="30" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Event_Editor" />
     <unitInfo nodeId="1111795778677" fileName="Event_Editor.java" startLine="148" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Event_Editor$_Inline_ymj9mh_a1a0" />
     <unitInfo nodeId="1111795870495" fileName="Event_Editor.java" startLine="186" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Event_Editor$postingRuleListHandler_ymj9mh_b1a" />
+    <unitInfo nodeId="1111795695299" fileName="Event_Editor.java" startLine="30" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Event_Editor" />
   </root>
   <root nodeId="1111795890591" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1111795890591" fileName="Value_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1138,8 +1138,8 @@
       <varInfo nodeId="1111796106785" varName="editorContext" />
       <varInfo nodeId="1111796106785" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1111795890591" fileName="Value_Editor.java" startLine="28" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Value_Editor" />
     <unitInfo nodeId="1111796106787" fileName="Value_Editor.java" startLine="141" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Value_Editor$quantityListHandler_wn8465_b1a" />
+    <unitInfo nodeId="1111795890591" fileName="Value_Editor.java" startLine="28" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.Value_Editor" />
   </root>
   <root nodeId="1112030886070" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1112030934056" fileName="QuantityTemporalProperty_Editor.java" startLine="48" startPosition="58" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1845,8 +1845,8 @@
       <varInfo nodeId="1112317028030" varName="editorContext" />
       <varInfo nodeId="1112317028030" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1112031806931" fileName="EventType_Editor.java" startLine="29" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.EventType_Editor" />
     <unitInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="97" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.EventType_Editor$variableListHandler_koyvu4_c0" />
+    <unitInfo nodeId="1112031806931" fileName="EventType_Editor.java" startLine="29" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.EventType_Editor" />
   </root>
   <root nodeId="1112032688787" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1112032688787" fileName="EventVariable_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2313,8 +2313,8 @@
       <varInfo nodeId="1112033531859" varName="editorContext" />
       <varInfo nodeId="1112033531859" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1112033366490" fileName="PostingRule_Editor.java" startLine="23" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_Editor" />
     <unitInfo nodeId="1112033494575" fileName="PostingRule_Editor.java" startLine="117" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_Editor$_Inline_ncr7br_a1b0" />
+    <unitInfo nodeId="1112033366490" fileName="PostingRule_Editor.java" startLine="23" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.PostingRule_Editor" />
   </root>
   <root nodeId="1112033923900" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1112033923900" fileName="AccountType_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2481,8 +2481,8 @@
       <varInfo nodeId="1112205680401" varName="editorContext" />
       <varInfo nodeId="1112205680401" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1112036563422" fileName="EventVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_Editor" />
     <unitInfo nodeId="1112205469227" fileName="EventVariableReference_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_Editor$_Inline_w32ae3_a0a" />
+    <unitInfo nodeId="1112036563422" fileName="EventVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.EventVariableReference_Editor" />
   </root>
   <root nodeId="1112038631402" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1112205781747" fileName="ValueReference_Editor.java" startLine="39" startPosition="58" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2599,8 +2599,8 @@
       <varInfo nodeId="1112205781748" varName="editorContext" />
       <varInfo nodeId="1112205781748" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1112038631402" fileName="ValueReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_Editor" />
     <unitInfo nodeId="1112205752980" fileName="ValueReference_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_Editor$_Inline_s9dcmx_a0a" />
+    <unitInfo nodeId="1112038631402" fileName="ValueReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_Editor" />
   </root>
   <root nodeId="1112311198127" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1112311198127" fileName="AgreementDeclarations_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3020,9 +3020,9 @@
       <varInfo nodeId="1112315699833" varName="elementNode" />
       <varInfo nodeId="1112315699833" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="1112311198127" fileName="AgreementDeclarations_Editor.java" startLine="26" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.AgreementDeclarations_Editor" />
-    <unitInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="146" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.AgreementDeclarations_Editor$accountTypeListHandler_5606pw_b2a" />
     <unitInfo nodeId="1112315840637" fileName="AgreementDeclarations_Editor.java" startLine="208" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.AgreementDeclarations_Editor$eventTypeListHandler_5606pw_b4a" />
+    <unitInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="146" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.AgreementDeclarations_Editor$accountTypeListHandler_5606pw_b2a" />
+    <unitInfo nodeId="1112311198127" fileName="AgreementDeclarations_Editor.java" startLine="26" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.editor.AgreementDeclarations_Editor" />
   </root>
   <root nodeId="1116445861416" modelId="r:00000000-0000-4000-0000-011c89590409(jetbrains.mps.samples.agreementLanguage.editor)">
     <nodeInfo nodeId="1116445861416" fileName="Date_Past_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

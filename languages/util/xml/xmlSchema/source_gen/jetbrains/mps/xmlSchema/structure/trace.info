@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.xmlSchema.structure.StructureAspectDescriptor" />
   <unitInfo fileName="XmlSchema_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.xmlSchema.structure.XmlSchema_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.xmlSchema.structure.StructureAspectDescriptor" />
   <root nodeId="1168467929746" modelId="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)">
     <nodeInfo nodeId="1168467929746" fileName="useAttributeEnum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168467929746" fileName="useAttributeEnum.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -109,8 +109,8 @@
     <scopeInfo nodeId="1168467929746" fileName="useAttributeEnum.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1168467929746" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1168467929746" fileName="useAttributeEnum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.xmlSchema.structure.useAttributeEnum" />
     <unitInfo nodeId="1168467929746" fileName="useAttributeEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.xmlSchema.structure.useAttributeEnum_PropertySupport" />
+    <unitInfo nodeId="1168467929746" fileName="useAttributeEnum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.xmlSchema.structure.useAttributeEnum" />
   </root>
 </debugInfo>
 

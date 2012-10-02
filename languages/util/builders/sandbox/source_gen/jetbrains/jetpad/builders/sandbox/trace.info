@@ -86,9 +86,9 @@
     <scopeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="20" startPosition="46" endLine="43" endPosition="0" />
     <scopeInfo nodeId="3816167865390667315" fileName="Abc.java" startLine="19" startPosition="21" endLine="43" endPosition="15" />
     <scopeInfo nodeId="3816167865390667312" fileName="Abc.java" startLine="18" startPosition="0" endLine="45" endPosition="0" />
-    <unitInfo nodeId="7057666463730252450" fileName="Abc.java" startLine="7" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.jetpad.builders.sandbox.Abc" />
     <unitInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="9" startPosition="8" endLine="16" endPosition="5" unitName="jetbrains.jetpad.builders.sandbox.Abc$1" />
     <unitInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="20" startPosition="8" endLine="43" endPosition="5" unitName="jetbrains.jetpad.builders.sandbox.Abc$2" />
+    <unitInfo nodeId="7057666463730252450" fileName="Abc.java" startLine="7" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.jetpad.builders.sandbox.Abc" />
   </root>
   <root nodeId="8009360033695026859" modelId="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)">
     <nodeInfo nodeId="8009360033695026865" fileName="As.java" startLine="7" startPosition="15" endLine="8" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

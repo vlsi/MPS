@@ -236,6 +236,9 @@
     <scopeInfo nodeId="2235828751986251630" fileName="MethodDeclarationsFixer.java" startLine="308" startPosition="72" endLine="310" endPosition="131" />
     <scopeInfo nodeId="2235828751986250688" fileName="MethodDeclarationsFixer.java" startLine="54" startPosition="59" endLine="57" endPosition="7" />
     <scopeInfo nodeId="2235828751986250940" fileName="MethodDeclarationsFixer.java" startLine="82" startPosition="28" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="2235828751986250941" fileName="MethodDeclarationsFixer.java" startLine="82" startPosition="28" endLine="85" endPosition="7">
+      <varInfo nodeId="2235828751986250947" varName="methodCall" />
+    </scopeInfo>
     <scopeInfo nodeId="2235828751986250931" fileName="MethodDeclarationsFixer.java" startLine="124" startPosition="7" endLine="127" endPosition="7">
       <varInfo nodeId="2235828751986250933" varName="expressionWithChangedType" />
     </scopeInfo>
@@ -315,6 +318,7 @@
     <scopeInfo nodeId="2235828751986250913" fileName="MethodDeclarationsFixer.java" startLine="118" startPosition="8" endLine="124" endPosition="7">
       <varInfo nodeId="2235828751986250915" varName="event" />
     </scopeInfo>
+    <scopeInfo nodeId="2235828751986250995" fileName="MethodDeclarationsFixer.java" startLine="143" startPosition="29" endLine="149" endPosition="13" />
     <scopeInfo nodeId="2235828751986250996" fileName="MethodDeclarationsFixer.java" startLine="143" startPosition="29" endLine="149" endPosition="13">
       <varInfo nodeId="2235828751986251000" varName="methodCall" />
     </scopeInfo>
@@ -412,14 +416,14 @@
       <varInfo nodeId="2235828751986250725" varName="rootNode" />
       <varInfo nodeId="2235828751986250730" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="2235828751986250607" fileName="MethodDeclarationsFixer.java" startLine="43" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
-    <unitInfo nodeId="2235828751986250682" fileName="MethodDeclarationsFixer.java" startLine="53" startPosition="68" endLine="59" endPosition="3" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$1" />
-    <unitInfo nodeId="2235828751986250808" fileName="MethodDeclarationsFixer.java" startLine="92" startPosition="39" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$2" />
-    <unitInfo nodeId="2235828751986250956" fileName="MethodDeclarationsFixer.java" startLine="129" startPosition="40" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$3" />
     <unitInfo nodeId="683976173696108881" fileName="MethodDeclarationsFixer.java" startLine="250" startPosition="61" endLine="254" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$4" />
-    <unitInfo nodeId="2235828751986250994" fileName="MethodDeclarationsFixer.java" startLine="142" startPosition="61" endLine="151" endPosition="9" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$4" />
     <unitInfo nodeId="683976173696108939" fileName="MethodDeclarationsFixer.java" startLine="254" startPosition="18" endLine="258" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$5" />
     <unitInfo nodeId="683976173696109022" fileName="MethodDeclarationsFixer.java" startLine="258" startPosition="17" endLine="262" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$6" />
+    <unitInfo nodeId="2235828751986250682" fileName="MethodDeclarationsFixer.java" startLine="53" startPosition="68" endLine="59" endPosition="3" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$1" />
+    <unitInfo nodeId="2235828751986250994" fileName="MethodDeclarationsFixer.java" startLine="142" startPosition="61" endLine="151" endPosition="9" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$4" />
+    <unitInfo nodeId="2235828751986250956" fileName="MethodDeclarationsFixer.java" startLine="129" startPosition="40" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$3" />
+    <unitInfo nodeId="2235828751986250808" fileName="MethodDeclarationsFixer.java" startLine="92" startPosition="39" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer$2" />
+    <unitInfo nodeId="2235828751986250607" fileName="MethodDeclarationsFixer.java" startLine="43" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
   </root>
   <root nodeId="5916754392152656752" modelId="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)">
     <nodeInfo nodeId="5916754392152656773" fileName="ToDoHighlighter.java" startLine="23" startPosition="139" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -527,8 +531,8 @@
       <varInfo nodeId="8432634623182578760" varName="owner" />
       <varInfo nodeId="8432634623182578762" varName="tooltip" />
     </scopeInfo>
-    <unitInfo nodeId="8432634623182578751" fileName="AbstractOverrideEditorMessage.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" />
     <unitInfo nodeId="8432634623182578785" fileName="AbstractOverrideEditorMessage.java" startLine="21" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage$1" />
+    <unitInfo nodeId="8432634623182578751" fileName="AbstractOverrideEditorMessage.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" />
   </root>
   <root nodeId="8432634623182578830" modelId="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)">
     <nodeInfo nodeId="8432634623182578832" fileName="OverrideMethodsChecker.java" startLine="38" startPosition="66" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_MESSAGE_NUMBER" />
@@ -745,6 +749,9 @@
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579135" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="81" endLine="116" endPosition="9" />
     <scopeInfo nodeId="8432634623182579175" fileName="OverrideMethodsChecker.java" startLine="125" startPosition="108" endLine="129" endPosition="11" />
+    <scopeInfo nodeId="8432634623182579176" fileName="OverrideMethodsChecker.java" startLine="125" startPosition="108" endLine="129" endPosition="11">
+      <varInfo nodeId="8432634623182579177" varName="enumConstant" />
+    </scopeInfo>
     <scopeInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="136" startPosition="134" endLine="140" endPosition="0">
       <varInfo nodeId="8432634623182579229" varName="it" />
     </scopeInfo>
@@ -846,6 +853,7 @@
     <scopeInfo nodeId="8432634623182578972" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="76" endLine="102" endPosition="5">
       <varInfo nodeId="8432634623182578973" varName="overridingMethod" />
     </scopeInfo>
+    <scopeInfo nodeId="8432634623182579397" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="79" endLine="203" endPosition="7" />
     <scopeInfo nodeId="8432634623182579398" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="79" endLine="203" endPosition="7">
       <varInfo nodeId="8432634623182579399" varName="derivedClassifierMethod" />
     </scopeInfo>
@@ -885,12 +893,12 @@
       <varInfo nodeId="8432634623182579100" varName="container" />
       <varInfo nodeId="8432634623182579102" varName="messages" />
     </scopeInfo>
-    <unitInfo nodeId="8432634623182578830" fileName="OverrideMethodsChecker.java" startLine="38" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" />
     <unitInfo nodeId="8432634623182578876" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="181" endLine="53" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$1" />
     <unitInfo nodeId="8432634623182579005" fileName="OverrideMethodsChecker.java" startLine="79" startPosition="140" endLine="83" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$2" />
     <unitInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="136" startPosition="111" endLine="140" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
-    <unitInfo nodeId="8432634623182579422" fileName="OverrideMethodsChecker.java" startLine="185" startPosition="82" endLine="189" endPosition="9" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$4" />
     <unitInfo nodeId="8432634623182579483" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="144" endLine="180" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$5" />
+    <unitInfo nodeId="8432634623182579422" fileName="OverrideMethodsChecker.java" startLine="185" startPosition="82" endLine="189" endPosition="9" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$4" />
+    <unitInfo nodeId="8432634623182578830" fileName="OverrideMethodsChecker.java" startLine="38" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" />
   </root>
   <root nodeId="8432634623182579833" modelId="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)">
     <nodeInfo nodeId="8432634623182579834" fileName="OverridenMethodEditorMessage.java" startLine="13" startPosition="81" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
@@ -992,8 +1000,8 @@
       <varInfo nodeId="8432634623182580008" varName="owner" />
       <varInfo nodeId="8432634623182580010" varName="tooltip" />
     </scopeInfo>
-    <unitInfo nodeId="8432634623182579978" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" />
     <unitInfo nodeId="8432634623182580031" fileName="SubclassedClassifierEditorMessage.java" startLine="29" startPosition="61" endLine="33" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage$1" />
+    <unitInfo nodeId="8432634623182579978" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" />
   </root>
   <root nodeId="8432634623182690059" modelId="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)">
     <nodeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="10" startPosition="82" endLine="11" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -1020,8 +1028,8 @@
       <varInfo nodeId="8432634623182690059" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
     <unitInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="13" startPosition="40" endLine="20" endPosition="3" unitName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements$1" />
+    <unitInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
   </root>
   <root nodeId="8432634623182781100" modelId="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)">
     <nodeInfo nodeId="8432634623182782110" fileName="JavaHighlighters.java" startLine="16" startPosition="59" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

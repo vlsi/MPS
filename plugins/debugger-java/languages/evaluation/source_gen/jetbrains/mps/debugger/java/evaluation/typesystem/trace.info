@@ -211,8 +211,8 @@
       <varInfo nodeId="7915630211773498575" varName="status" />
       <varInfo nodeId="7915630211773498575" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="7915630211773498575" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule" />
     <unitInfo nodeId="7915630211773500854" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="24" startPosition="46" endLine="39" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule$1" />
+    <unitInfo nodeId="7915630211773498575" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule" />
   </root>
   <root nodeId="8054553590745290955" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
     <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

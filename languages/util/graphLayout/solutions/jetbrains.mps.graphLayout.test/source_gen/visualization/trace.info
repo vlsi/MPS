@@ -68,8 +68,8 @@
     <scopeInfo nodeId="1532165762814296202" fileName="ClusterGraphLayoutPanel.java" startLine="20" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1532165762814296205" varName="scanner" />
     </scopeInfo>
-    <unitInfo nodeId="1532165762814268473" fileName="ClusterGraphLayoutPanel.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="visualization.ClusterGraphLayoutPanel" />
     <unitInfo nodeId="1532165762814312865" fileName="ClusterGraphLayoutPanel.java" startLine="60" startPosition="35" endLine="64" endPosition="5" unitName="visualization.ClusterGraphLayoutPanel$1" />
+    <unitInfo nodeId="1532165762814268473" fileName="ClusterGraphLayoutPanel.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="visualization.ClusterGraphLayoutPanel" />
   </root>
   <root nodeId="1567683135099906914" modelId="r:964bbf7c-f239-4721-836a-ba42f2f69703(visualization)">
     <nodeInfo nodeId="7727845083901369800" fileName="GraphIO.java" startLine="25" startPosition="53" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -198,6 +198,7 @@
     <scopeInfo nodeId="4519409331094617357" fileName="GraphIO.java" startLine="89" startPosition="21" endLine="92" endPosition="5">
       <varInfo nodeId="4519409331094617358" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="4519409331094617414" fileName="GraphIO.java" startLine="94" startPosition="63" endLine="97" endPosition="7" />
     <scopeInfo nodeId="4519409331094617429" fileName="GraphIO.java" startLine="94" startPosition="63" endLine="97" endPosition="7">
       <varInfo nodeId="4519409331094617430" varName="edge" />
     </scopeInfo>
@@ -488,6 +489,7 @@
     <scopeInfo nodeId="1567683135099907608" fileName="TestPanel.java" startLine="144" startPosition="40" endLine="147" endPosition="5">
       <varInfo nodeId="1567683135099907609" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1567683135099907641" fileName="TestPanel.java" startLine="150" startPosition="52" endLine="153" endPosition="7" />
     <scopeInfo nodeId="1567683135099907642" fileName="TestPanel.java" startLine="150" startPosition="52" endLine="153" endPosition="7">
       <varInfo nodeId="1567683135099907643" varName="edge" />
     </scopeInfo>
@@ -576,11 +578,11 @@
       <varInfo nodeId="1567683135099907377" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="1567683135099907342" fileName="TestPanel.java" startLine="83" startPosition="0" endLine="123" endPosition="0" />
-    <unitInfo nodeId="1567683135099907102" fileName="TestPanel.java" startLine="48" startPosition="0" endLine="251" endPosition="0" unitName="visualization.TestPanel" />
-    <unitInfo nodeId="1567683135099907444" fileName="TestPanel.java" startLine="101" startPosition="33" endLine="120" endPosition="5" unitName="visualization.TestPanel$1" />
-    <unitInfo nodeId="1567683135099907538" fileName="TestPanel.java" startLine="127" startPosition="33" endLine="132" endPosition="5" unitName="visualization.TestPanel$2" />
     <unitInfo nodeId="1567683135099907948" fileName="TestPanel.java" startLine="207" startPosition="35" endLine="211" endPosition="5" unitName="visualization.TestPanel$3" />
+    <unitInfo nodeId="1567683135099907538" fileName="TestPanel.java" startLine="127" startPosition="33" endLine="132" endPosition="5" unitName="visualization.TestPanel$2" />
+    <unitInfo nodeId="1567683135099907444" fileName="TestPanel.java" startLine="101" startPosition="33" endLine="120" endPosition="5" unitName="visualization.TestPanel$1" />
     <unitInfo nodeId="1567683135099907103" fileName="TestPanel.java" startLine="214" startPosition="0" endLine="250" endPosition="0" unitName="visualization.TestPanel$MyGraphLabel" />
+    <unitInfo nodeId="1567683135099907102" fileName="TestPanel.java" startLine="48" startPosition="0" endLine="251" endPosition="0" unitName="visualization.TestPanel" />
   </root>
   <root nodeId="1714301205550469086" modelId="r:964bbf7c-f239-4721-836a-ba42f2f69703(visualization)">
     <nodeInfo nodeId="1714301205550473110" fileName="HyperGraphLayoutPanel.java" startLine="19" startPosition="46" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -611,6 +613,9 @@
     <scopeInfo nodeId="1714301205550514923" fileName="HyperGraphLayoutPanel.java" startLine="34" startPosition="31" endLine="36" endPosition="77" />
     <scopeInfo nodeId="1714301205550473273" fileName="HyperGraphLayoutPanel.java" startLine="40" startPosition="71" endLine="42" endPosition="30" />
     <scopeInfo nodeId="1714301205550473266" fileName="HyperGraphLayoutPanel.java" startLine="39" startPosition="55" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1714301205550473270" fileName="HyperGraphLayoutPanel.java" startLine="39" startPosition="55" endLine="43" endPosition="5">
+      <varInfo nodeId="1714301205550473271" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="1714301205550469102" fileName="HyperGraphLayoutPanel.java" startLine="47" startPosition="47" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1714301205550473099" fileName="HyperGraphLayoutPanel.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1714301205550473102" varName="scanner" />
@@ -631,8 +636,8 @@
     <scopeInfo nodeId="1714301205550473193" fileName="HyperGraphLayoutPanel.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1714301205550473196" varName="graph" />
     </scopeInfo>
-    <unitInfo nodeId="1714301205550469086" fileName="HyperGraphLayoutPanel.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="visualization.HyperGraphLayoutPanel" />
     <unitInfo nodeId="1714301205550469100" fileName="HyperGraphLayoutPanel.java" startLine="47" startPosition="35" endLine="51" endPosition="5" unitName="visualization.HyperGraphLayoutPanel$1" />
+    <unitInfo nodeId="1714301205550469086" fileName="HyperGraphLayoutPanel.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="visualization.HyperGraphLayoutPanel" />
   </root>
   <root nodeId="3444434563276304219" modelId="r:964bbf7c-f239-4721-836a-ba42f2f69703(visualization)">
     <nodeInfo nodeId="3444434563276304253" fileName="ClusterLayoutPainter.java" startLine="20" startPosition="52" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -935,6 +940,7 @@
     <scopeInfo nodeId="8729833695221589365" fileName="RectLayoutTestPanel.java" startLine="173" startPosition="24" endLine="178" endPosition="7">
       <varInfo nodeId="8729833695221589366" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="8729833695221589390" fileName="RectLayoutTestPanel.java" startLine="179" startPosition="41" endLine="184" endPosition="9" />
     <scopeInfo nodeId="8729833695221589391" fileName="RectLayoutTestPanel.java" startLine="179" startPosition="41" endLine="184" endPosition="9">
       <varInfo nodeId="8729833695221589392" varName="edge" />
     </scopeInfo>
@@ -1012,16 +1018,16 @@
       <varInfo nodeId="8729833695221589197" varName="scanner" />
     </scopeInfo>
     <scopeInfo nodeId="8729833695221589184" fileName="RectLayoutTestPanel.java" startLine="140" startPosition="0" endLine="199" endPosition="0" />
-    <unitInfo nodeId="8729833695221588600" fileName="RectLayoutTestPanel.java" startLine="40" startPosition="0" endLine="312" endPosition="0" unitName="visualization.RectLayoutTestPanel" />
-    <unitInfo nodeId="8729833695221588667" fileName="RectLayoutTestPanel.java" startLine="254" startPosition="35" endLine="258" endPosition="7" unitName="visualization.RectLayoutTestPanel$1" />
-    <unitInfo nodeId="8729833695221588992" fileName="RectLayoutTestPanel.java" startLine="97" startPosition="33" endLine="109" endPosition="5" unitName="visualization.RectLayoutTestPanel$1" />
-    <unitInfo nodeId="8729833695221588707" fileName="RectLayoutTestPanel.java" startLine="263" startPosition="35" endLine="267" endPosition="7" unitName="visualization.RectLayoutTestPanel$2" />
-    <unitInfo nodeId="8729833695221589066" fileName="RectLayoutTestPanel.java" startLine="116" startPosition="33" endLine="121" endPosition="5" unitName="visualization.RectLayoutTestPanel$2" />
     <unitInfo nodeId="8729833695221589306" fileName="RectLayoutTestPanel.java" startLine="160" startPosition="74" endLine="164" endPosition="9" unitName="visualization.RectLayoutTestPanel$3" />
-    <unitInfo nodeId="8729833695221588747" fileName="RectLayoutTestPanel.java" startLine="272" startPosition="35" endLine="276" endPosition="7" unitName="visualization.RectLayoutTestPanel$3" />
     <unitInfo nodeId="8729833695221589701" fileName="RectLayoutTestPanel.java" startLine="236" startPosition="35" endLine="240" endPosition="5" unitName="visualization.RectLayoutTestPanel$4" />
+    <unitInfo nodeId="8729833695221588667" fileName="RectLayoutTestPanel.java" startLine="254" startPosition="35" endLine="258" endPosition="7" unitName="visualization.RectLayoutTestPanel$1" />
+    <unitInfo nodeId="8729833695221588707" fileName="RectLayoutTestPanel.java" startLine="263" startPosition="35" endLine="267" endPosition="7" unitName="visualization.RectLayoutTestPanel$2" />
+    <unitInfo nodeId="8729833695221588747" fileName="RectLayoutTestPanel.java" startLine="272" startPosition="35" endLine="276" endPosition="7" unitName="visualization.RectLayoutTestPanel$3" />
+    <unitInfo nodeId="8729833695221589066" fileName="RectLayoutTestPanel.java" startLine="116" startPosition="33" endLine="121" endPosition="5" unitName="visualization.RectLayoutTestPanel$2" />
+    <unitInfo nodeId="8729833695221588992" fileName="RectLayoutTestPanel.java" startLine="97" startPosition="33" endLine="109" endPosition="5" unitName="visualization.RectLayoutTestPanel$1" />
     <unitInfo nodeId="8729833695221588805" fileName="RectLayoutTestPanel.java" startLine="297" startPosition="0" endLine="311" endPosition="0" unitName="visualization.RectLayoutTestPanel$MyGraphLabel" />
     <unitInfo nodeId="8729833695221588601" fileName="RectLayoutTestPanel.java" startLine="243" startPosition="0" endLine="296" endPosition="0" unitName="visualization.RectLayoutTestPanel$MyLayoutChoice" />
+    <unitInfo nodeId="8729833695221588600" fileName="RectLayoutTestPanel.java" startLine="40" startPosition="0" endLine="312" endPosition="0" unitName="visualization.RectLayoutTestPanel" />
   </root>
   <root nodeId="903391227141130074" modelId="r:964bbf7c-f239-4721-836a-ba42f2f69703(visualization)">
     <nodeInfo nodeId="2913448412765308012" fileName="LayoutPainter.java" startLine="18" startPosition="54" endLine="19" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1377,6 +1383,7 @@
     <scopeInfo nodeId="903391227141155926" fileName="OrthogonalLayoutTestPanel.java" startLine="155" startPosition="20" endLine="160" endPosition="7">
       <varInfo nodeId="903391227141155927" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="8680836410351750005" fileName="OrthogonalLayoutTestPanel.java" startLine="161" startPosition="41" endLine="166" endPosition="9" />
     <scopeInfo nodeId="8680836410351750014" fileName="OrthogonalLayoutTestPanel.java" startLine="161" startPosition="41" endLine="166" endPosition="9">
       <varInfo nodeId="8680836410351750015" varName="edge" />
     </scopeInfo>
@@ -1470,16 +1477,16 @@
       <varInfo nodeId="6160477238666740871" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="6160477238666740866" fileName="OrthogonalLayoutTestPanel.java" startLine="263" startPosition="0" endLine="303" endPosition="5" />
-    <unitInfo nodeId="903391227141135207" fileName="OrthogonalLayoutTestPanel.java" startLine="41" startPosition="0" endLine="329" endPosition="0" unitName="visualization.OrthogonalLayoutTestPanel" />
-    <unitInfo nodeId="6160477238666744015" fileName="OrthogonalLayoutTestPanel.java" startLine="271" startPosition="35" endLine="275" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$1" />
-    <unitInfo nodeId="903391227141135536" fileName="OrthogonalLayoutTestPanel.java" startLine="98" startPosition="33" endLine="112" endPosition="5" unitName="visualization.OrthogonalLayoutTestPanel$1" />
-    <unitInfo nodeId="6160477238666744055" fileName="OrthogonalLayoutTestPanel.java" startLine="280" startPosition="35" endLine="284" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$2" />
-    <unitInfo nodeId="903391227141135623" fileName="OrthogonalLayoutTestPanel.java" startLine="123" startPosition="33" endLine="128" endPosition="5" unitName="visualization.OrthogonalLayoutTestPanel$2" />
     <unitInfo nodeId="1532165762814296056" fileName="OrthogonalLayoutTestPanel.java" startLine="205" startPosition="72" endLine="209" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$3" />
-    <unitInfo nodeId="6160477238666744074" fileName="OrthogonalLayoutTestPanel.java" startLine="289" startPosition="35" endLine="293" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$3" />
     <unitInfo nodeId="903391227141136053" fileName="OrthogonalLayoutTestPanel.java" startLine="253" startPosition="35" endLine="257" endPosition="5" unitName="visualization.OrthogonalLayoutTestPanel$4" />
+    <unitInfo nodeId="6160477238666744015" fileName="OrthogonalLayoutTestPanel.java" startLine="271" startPosition="35" endLine="275" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$1" />
+    <unitInfo nodeId="6160477238666744055" fileName="OrthogonalLayoutTestPanel.java" startLine="280" startPosition="35" endLine="284" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$2" />
+    <unitInfo nodeId="6160477238666744074" fileName="OrthogonalLayoutTestPanel.java" startLine="289" startPosition="35" endLine="293" endPosition="7" unitName="visualization.OrthogonalLayoutTestPanel$3" />
+    <unitInfo nodeId="903391227141135623" fileName="OrthogonalLayoutTestPanel.java" startLine="123" startPosition="33" endLine="128" endPosition="5" unitName="visualization.OrthogonalLayoutTestPanel$2" />
+    <unitInfo nodeId="903391227141135536" fileName="OrthogonalLayoutTestPanel.java" startLine="98" startPosition="33" endLine="112" endPosition="5" unitName="visualization.OrthogonalLayoutTestPanel$1" />
     <unitInfo nodeId="903391227141135208" fileName="OrthogonalLayoutTestPanel.java" startLine="314" startPosition="0" endLine="328" endPosition="0" unitName="visualization.OrthogonalLayoutTestPanel$MyGraphLabel" />
     <unitInfo nodeId="6160477238666740861" fileName="OrthogonalLayoutTestPanel.java" startLine="260" startPosition="0" endLine="313" endPosition="0" unitName="visualization.OrthogonalLayoutTestPanel$MyLayoutChoice" />
+    <unitInfo nodeId="903391227141135207" fileName="OrthogonalLayoutTestPanel.java" startLine="41" startPosition="0" endLine="329" endPosition="0" unitName="visualization.OrthogonalLayoutTestPanel" />
   </root>
 </debugInfo>
 

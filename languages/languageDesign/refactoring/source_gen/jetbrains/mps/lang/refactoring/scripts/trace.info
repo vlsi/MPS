@@ -36,8 +36,8 @@
     <scopeInfo nodeId="3239565862706583464" fileName="RemoveKeystrokes_MigrationScript.java" startLine="10" startPosition="75" endLine="38" endPosition="3">
       <varInfo nodeId="3239565862706583464" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="3239565862706583464" fileName="RemoveKeystrokes_MigrationScript.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.refactoring.scripts.RemoveKeystrokes_MigrationScript" />
     <unitInfo nodeId="3239565862706583464" fileName="RemoveKeystrokes_MigrationScript.java" startLine="13" startPosition="28" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.refactoring.scripts.RemoveKeystrokes_MigrationScript$1" />
+    <unitInfo nodeId="3239565862706583464" fileName="RemoveKeystrokes_MigrationScript.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.refactoring.scripts.RemoveKeystrokes_MigrationScript" />
   </root>
 </debugInfo>
 

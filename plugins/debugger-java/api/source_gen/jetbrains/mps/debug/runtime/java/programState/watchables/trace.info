@@ -256,8 +256,8 @@
       <varInfo nodeId="3432969378036016000" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3432969378036015923" fileName="JavaStaticContext.java" startLine="69" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="3432969378036015904" fileName="JavaStaticContext.java" startLine="18" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext" />
     <unitInfo nodeId="3432969378036015908" fileName="JavaStaticContext.java" startLine="51" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext$StaticContextValue" />
+    <unitInfo nodeId="3432969378036015904" fileName="JavaStaticContext.java" startLine="18" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext" />
   </root>
   <root nodeId="3432969378036016095" modelId="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debug.runtime.java.programState.watchables)">
     <nodeInfo nodeId="3432969378036016099" fileName="JavaStaticField.java" startLine="15" startPosition="74" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />

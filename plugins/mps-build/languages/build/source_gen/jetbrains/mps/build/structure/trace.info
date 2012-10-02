@@ -109,8 +109,8 @@
     <scopeInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1979010778009209124" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_TarCompression" />
     <unitInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_TarCompression_PropertySupport" />
+    <unitInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_TarCompression" />
   </root>
   <root nodeId="4198392933254416814" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
     <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -227,8 +227,8 @@
     <scopeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="4198392933254416814" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle" />
     <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle_PropertySupport" />
+    <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle" />
   </root>
   <root nodeId="5248329904288265463" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
     <nodeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -337,8 +337,8 @@
     <scopeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="5248329904288265463" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.structure.BuildSource_JavaContentFolderKind" />
     <unitInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildSource_JavaContentFolderKind_PropertySupport" />
+    <unitInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.structure.BuildSource_JavaContentFolderKind" />
   </root>
   <root nodeId="7801138212747054659" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
     <nodeInfo nodeId="7801138212747054659" fileName="BuildLayout_UnixFilemode_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

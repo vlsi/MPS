@@ -166,8 +166,8 @@
       <varInfo nodeId="5487985028841906061" varName="_params" />
       <varInfo nodeId="5487985028841906061" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action" />
     <unitInfo nodeId="5487985028841906149" fileName="RunTestInMPS_Action.java" startLine="116" startPosition="37" endLine="124" endPosition="7" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action$1" />
+    <unitInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action" />
   </root>
   <root nodeId="5487985028841906241" modelId="r:f259e14f-253f-462e-a3ef-037f01ed5523(jetbrains.mps.lang.test.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841906241" fileName="EditorInternalAddition_ActionGroup.java" startLine="8" startPosition="78" endLine="9" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

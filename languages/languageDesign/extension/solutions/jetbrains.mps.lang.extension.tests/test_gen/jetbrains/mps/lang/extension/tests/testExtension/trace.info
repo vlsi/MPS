@@ -63,9 +63,9 @@
       <varInfo nodeId="7036359038356271882" varName="to" />
     </scopeInfo>
     <scopeInfo nodeId="7036359038356271445" fileName="Extension_Test.java" startLine="22" startPosition="0" endLine="41" endPosition="0" />
-    <unitInfo nodeId="7036359038356271438" fileName="Extension_Test.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test" />
     <unitInfo nodeId="4451661519483734326" fileName="Extension_Test.java" startLine="53" startPosition="208" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test$1" />
     <unitInfo nodeId="2622946712629219446" fileName="Extension_Test.java" startLine="63" startPosition="71" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test$2" />
+    <unitInfo nodeId="7036359038356271438" fileName="Extension_Test.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test" />
   </root>
 </debugInfo>
 

@@ -310,8 +310,8 @@
       <varInfo nodeId="6409088484822265806" varName="editorContext" />
       <varInfo nodeId="6409088484822265806" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6409088484822265797" fileName="DecisionTable_Editor.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTable_Editor" />
     <unitInfo nodeId="6409088484822280597" fileName="DecisionTable_Editor.java" startLine="52" startPosition="36" endLine="56" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTable_Editor$1" />
+    <unitInfo nodeId="6409088484822265797" fileName="DecisionTable_Editor.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTable_Editor" />
   </root>
   <root nodeId="6409088484822290060" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="6409088484822290060" fileName="DecisionTableType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -41,6 +41,9 @@
     <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="6237653430913268258" varName="entity" />
+    </scopeInfo>
     <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
     <scopeInfo nodeId="6237653430913463681" fileName="SortKeymapMembers.java" startLine="33" startPosition="162" endLine="37" endPosition="0">
@@ -59,10 +62,10 @@
     <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="28" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="6237653430913268254" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers" />
     <unitInfo nodeId="6237653430913463681" fileName="SortKeymapMembers.java" startLine="33" startPosition="133" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers$1" />
     <unitInfo nodeId="6237653430913464560" fileName="SortKeymapMembers.java" startLine="37" startPosition="26" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers$2" />
     <unitInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers_Target" />
+    <unitInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers" />
   </root>
 </debugInfo>
 

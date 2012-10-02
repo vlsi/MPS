@@ -503,8 +503,8 @@
       <varInfo nodeId="689680155165915380" varName="elementNode" />
       <varInfo nodeId="689680155165915380" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor" />
     <unitInfo nodeId="689680155165915380" fileName="NanoStatementList_Editor.java" startLine="56" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor$bodyListHandler_9k6qx_b0" />
+    <unitInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor" />
   </root>
   <root nodeId="689680155165915383" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
     <nodeInfo nodeId="689680155165915383" fileName="NanoExpression_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -660,8 +660,8 @@
       <varInfo nodeId="689680155165915390" varName="editorContext" />
       <varInfo nodeId="689680155165915390" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor" />
     <unitInfo nodeId="689680155165915389" fileName="VarDeclReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor$_Inline_kyygu1_a0a" />
+    <unitInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor" />
   </root>
 </debugInfo>
 

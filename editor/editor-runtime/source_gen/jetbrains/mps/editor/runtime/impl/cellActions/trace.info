@@ -37,8 +37,8 @@
       <varInfo nodeId="2298389068003720055" varName="semanticNode" />
     </scopeInfo>
     <scopeInfo nodeId="2298389068003720002" fileName="CellAction_DeleteEasily.java" startLine="22" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="2298389068003719485" fileName="CellAction_DeleteEasily.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily" />
     <unitInfo nodeId="2298389068003720020" fileName="CellAction_DeleteEasily.java" startLine="25" startPosition="98" endLine="29" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily$1" />
+    <unitInfo nodeId="2298389068003719485" fileName="CellAction_DeleteEasily.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily" />
   </root>
   <root nodeId="2298389068003806582" modelId="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)">
     <nodeInfo nodeId="2298389068003806585" fileName="CellAction_DeletePropertyOrNode.java" startLine="9" startPosition="71" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySemanticNode" />

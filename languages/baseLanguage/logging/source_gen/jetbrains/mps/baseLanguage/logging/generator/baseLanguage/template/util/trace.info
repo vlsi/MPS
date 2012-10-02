@@ -120,9 +120,9 @@
       <varInfo nodeId="1210176706194" varName="parameter_7" />
       <varInfo nodeId="1210176706194" varName="parameter_8" />
     </scopeInfo>
-    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil" />
     <unitInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="80" endLine="51" endPosition="7" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil$1" />
     <unitInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil$QuotationClass_gd2srw_a0a0a1a1a0" />
+    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil" />
   </root>
 </debugInfo>
 

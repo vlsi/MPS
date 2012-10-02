@@ -150,6 +150,9 @@
       <varInfo nodeId="3990508698139429114" varName="requestString" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139429133" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5">
+      <varInfo nodeId="3990508698139429138" varName="breakpoint" />
+    </scopeInfo>
     <scopeInfo nodeId="3990508698139429069" fileName="GDBRequestManager.java" startLine="33" startPosition="107" endLine="39" endPosition="73">
       <varInfo nodeId="3990508698139429077" varName="gdbRequestor" />
       <varInfo nodeId="3990508698139429071" varName="token" />
@@ -167,8 +170,8 @@
       <varInfo nodeId="3990508698139429066" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429064" varName="resultAnswer" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
     <unitInfo nodeId="3990508698139429050" fileName="GDBRequestManager.java" startLine="26" startPosition="41" endLine="30" endPosition="5" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager$1" />
+    <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
   </root>
 </debugInfo>
 

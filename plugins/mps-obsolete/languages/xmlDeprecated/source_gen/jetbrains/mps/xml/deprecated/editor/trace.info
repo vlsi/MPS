@@ -842,9 +842,9 @@
       <varInfo nodeId="1107867522562" varName="editorContext" />
       <varInfo nodeId="1107867522562" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1107867277995" fileName="Element_Editor.java" startLine="34" startPosition="0" endLine="389" endPosition="0" unitName="jetbrains.mps.xml.deprecated.editor.Element_Editor" />
     <unitInfo nodeId="1107867877446" fileName="Element_Editor.java" startLine="287" startPosition="0" endLine="337" endPosition="0" unitName="jetbrains.mps.xml.deprecated.editor.Element_Editor$attributeListHandler_76r4mg_c0a" />
     <unitInfo nodeId="1107867522565" fileName="Element_Editor.java" startLine="338" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.xml.deprecated.editor.Element_Editor$contentListHandler_76r4mg_b1a" />
+    <unitInfo nodeId="1107867277995" fileName="Element_Editor.java" startLine="34" startPosition="0" endLine="389" endPosition="0" unitName="jetbrains.mps.xml.deprecated.editor.Element_Editor" />
   </root>
   <root nodeId="1119976717346" modelId="r:00000000-0000-4000-0000-011c895905a1(jetbrains.mps.xml.deprecated.editor)">
     <nodeInfo nodeId="1234365361538" fileName="Document_Editor.java" startLine="85" startPosition="58" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

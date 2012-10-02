@@ -332,8 +332,8 @@
       <varInfo nodeId="3607579524910560678" varName="elementNode" />
       <varInfo nodeId="3607579524910560678" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor" />
     <unitInfo nodeId="3607579524910560678" fileName="CurrencyDefTable_Editor.java" startLine="48" startPosition="0" endLine="83" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor$unitsListHandler_6q11gp_b0" />
+    <unitInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor" />
   </root>
   <root nodeId="5447719361346490751" modelId="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)">
     <nodeInfo nodeId="5447719361346490751" fileName="MoneyType_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -506,8 +506,8 @@
       <varInfo nodeId="3607579524910560682" varName="editorContext" />
       <varInfo nodeId="3607579524910560682" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5447719361346490757" fileName="MoneyLiteral_Editor.java" startLine="18" startPosition="0" endLine="103" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_Editor" />
     <unitInfo nodeId="3607579524910560683" fileName="MoneyLiteral_Editor.java" startLine="70" startPosition="0" endLine="102" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_Editor$_Inline_84i1v2_a1a" />
+    <unitInfo nodeId="5447719361346490757" fileName="MoneyLiteral_Editor.java" startLine="18" startPosition="0" endLine="103" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_Editor" />
   </root>
   <root nodeId="5447719361346519867" modelId="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)">
     <nodeInfo nodeId="5447719361346519867" fileName="GetAmount_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

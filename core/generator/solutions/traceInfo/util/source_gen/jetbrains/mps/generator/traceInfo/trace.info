@@ -141,10 +141,10 @@
       <varInfo nodeId="5111910545577580332" varName="node" />
       <varInfo nodeId="5111910545577580335" varName="positionMatcher" />
     </scopeInfo>
-    <unitInfo nodeId="5111910545577563820" fileName="TraceDown.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceDown" />
     <unitInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="33" startPosition="77" endLine="37" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$1" />
     <unitInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="60" startPosition="82" endLine="64" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceDown$2" />
     <unitInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="78" startPosition="70" endLine="82" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$3" />
+    <unitInfo nodeId="5111910545577563820" fileName="TraceDown.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceDown" />
   </root>
   <root nodeId="7521671656020564904" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
     <nodeInfo nodeId="7521671656020564913" fileName="TraceInfoCache.java" startLine="31" startPosition="67" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TRACE_FILE_NAME" />
@@ -319,6 +319,7 @@
       <varInfo nodeId="7521671656020565121" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7521671656020565115" fileName="TraceInfoCache.java" startLine="133" startPosition="31" endLine="136" endPosition="9" />
+    <scopeInfo nodeId="7922457109334009527" fileName="TraceInfoCache.java" startLine="133" startPosition="31" endLine="136" endPosition="9" />
     <scopeInfo nodeId="7521671656020564923" fileName="TraceInfoCache.java" startLine="213" startPosition="46" endLine="216" endPosition="5" />
     <scopeInfo nodeId="7922457109334008381" fileName="TraceInfoCache.java" startLine="46" startPosition="34" endLine="50" endPosition="22" />
     <scopeInfo nodeId="7521671656020564960" fileName="TraceInfoCache.java" startLine="53" startPosition="75" endLine="57" endPosition="0" />
@@ -412,9 +413,9 @@
       <varInfo nodeId="7521671656020565074" varName="sm" />
       <varInfo nodeId="7521671656020565071" varName="url" />
     </scopeInfo>
-    <unitInfo nodeId="7521671656020564904" fileName="TraceInfoCache.java" startLine="31" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <unitInfo nodeId="7521671656020564959" fileName="TraceInfoCache.java" startLine="53" startPosition="56" endLine="57" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache$1" />
     <unitInfo nodeId="2835818332993426829" fileName="TraceInfoCache.java" startLine="233" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache$TraceInfoResourceProvider" />
+    <unitInfo nodeId="7521671656020564959" fileName="TraceInfoCache.java" startLine="53" startPosition="56" endLine="57" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache$1" />
+    <unitInfo nodeId="7521671656020564904" fileName="TraceInfoCache.java" startLine="31" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
   </root>
   <root nodeId="7521671656020565367" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
     <nodeInfo nodeId="7921341742263216042" fileName="TraceInfoUtil.java" startLine="35" startPosition="104" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -801,16 +802,9 @@
       <varInfo nodeId="24227610116394292" varName="lineNumber" />
       <varInfo nodeId="24227610116394279" varName="unitName" />
     </scopeInfo>
-    <unitInfo nodeId="7521671656020565367" fileName="TraceInfoUtil.java" startLine="30" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <unitInfo nodeId="24227610116313521" fileName="TraceInfoUtil.java" startLine="46" startPosition="42" endLine="54" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$1" />
-    <unitInfo nodeId="7327404875649003473" fileName="TraceInfoUtil.java" startLine="246" startPosition="17" endLine="250" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$10" />
-    <unitInfo nodeId="7327404875649003543" fileName="TraceInfoUtil.java" startLine="254" startPosition="41" endLine="276" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$11" />
-    <unitInfo nodeId="7327404875649003552" fileName="TraceInfoUtil.java" startLine="256" startPosition="85" endLine="260" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$12" />
     <unitInfo nodeId="7921341742263216150" fileName="TraceInfoUtil.java" startLine="62" startPosition="54" endLine="66" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$2" />
-    <unitInfo nodeId="24227610116395021" fileName="TraceInfoUtil.java" startLine="94" startPosition="41" endLine="155" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$3" />
     <unitInfo nodeId="2897370900776712459" fileName="TraceInfoUtil.java" startLine="101" startPosition="92" endLine="105" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$4" />
     <unitInfo nodeId="2897370900776712557" fileName="TraceInfoUtil.java" startLine="130" startPosition="103" endLine="134" endPosition="11" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$4" />
-    <unitInfo nodeId="24227610116313494" fileName="TraceInfoUtil.java" startLine="160" startPosition="42" endLine="183" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$4" />
     <unitInfo nodeId="7921341742263185918" fileName="TraceInfoUtil.java" startLine="162" startPosition="89" endLine="166" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$5" />
     <unitInfo nodeId="2897370900776712714" fileName="TraceInfoUtil.java" startLine="170" startPosition="88" endLine="174" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$5" />
     <unitInfo nodeId="7327404875649074174" fileName="TraceInfoUtil.java" startLine="188" startPosition="68" endLine="192" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$5" />
@@ -818,6 +812,13 @@
     <unitInfo nodeId="7327404875649074225" fileName="TraceInfoUtil.java" startLine="206" startPosition="68" endLine="210" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$7" />
     <unitInfo nodeId="7327404875649003451" fileName="TraceInfoUtil.java" startLine="238" startPosition="88" endLine="242" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$8" />
     <unitInfo nodeId="7327404875649003460" fileName="TraceInfoUtil.java" startLine="242" startPosition="18" endLine="246" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$9" />
+    <unitInfo nodeId="7327404875649003473" fileName="TraceInfoUtil.java" startLine="246" startPosition="17" endLine="250" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$10" />
+    <unitInfo nodeId="7327404875649003552" fileName="TraceInfoUtil.java" startLine="256" startPosition="85" endLine="260" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$12" />
+    <unitInfo nodeId="24227610116313521" fileName="TraceInfoUtil.java" startLine="46" startPosition="42" endLine="54" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$1" />
+    <unitInfo nodeId="7327404875649003543" fileName="TraceInfoUtil.java" startLine="254" startPosition="41" endLine="276" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$11" />
+    <unitInfo nodeId="24227610116313494" fileName="TraceInfoUtil.java" startLine="160" startPosition="42" endLine="183" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$4" />
+    <unitInfo nodeId="24227610116395021" fileName="TraceInfoUtil.java" startLine="94" startPosition="41" endLine="155" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$3" />
+    <unitInfo nodeId="7521671656020565367" fileName="TraceInfoUtil.java" startLine="30" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
   </root>
 </debugInfo>
 

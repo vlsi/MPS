@@ -401,8 +401,8 @@
       <varInfo nodeId="1235748173357" varName="parameter_6" />
       <varInfo nodeId="1235748173357" varName="parameter_7" />
     </scopeInfo>
-    <unitInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention" />
     <unitInfo nodeId="1235748173357" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="62" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention$QuotationClass_fknil1_a1a1a7" />
+    <unitInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention" />
   </root>
   <root nodeId="890797661671409032" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="890797661671409032" fileName="ToggleMultiLine_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -6,6 +6,7 @@
     <nodeInfo nodeId="6896005762093550590" fileName="PropertiesComment_TextGen.java" startLine="13" startPosition="91" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6896005762093550590" fileName="PropertiesComment_TextGen.java" startLine="11" startPosition="42" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6896005762093550587" fileName="PropertiesComment_TextGen.java" startLine="10" startPosition="61" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="6896005762093550587" fileName="PropertiesComment_TextGen.java" startLine="11" startPosition="42" endLine="14" endPosition="25" />
     <scopeInfo nodeId="6896005762093550590" fileName="PropertiesComment_TextGen.java" startLine="11" startPosition="42" endLine="14" endPosition="25" />
     <scopeInfo nodeId="6896005762093550587" fileName="PropertiesComment_TextGen.java" startLine="10" startPosition="61" endLine="16" endPosition="0">
       <varInfo nodeId="6896005762093550587" varName="node" />
@@ -58,6 +59,7 @@
     <nodeInfo nodeId="6896005762093552920" fileName="PropertiesLine_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6896005762093552920" fileName="PropertiesLine_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6896005762093552917" fileName="PropertiesLine_TextGen.java" startLine="8" startPosition="58" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="6896005762093552917" fileName="PropertiesLine_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" />
     <scopeInfo nodeId="6896005762093552920" fileName="PropertiesLine_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" />
     <scopeInfo nodeId="6896005762093552917" fileName="PropertiesLine_TextGen.java" startLine="8" startPosition="58" endLine="12" endPosition="0">
       <varInfo nodeId="6896005762093552917" varName="node" />
@@ -71,6 +73,7 @@
     <nodeInfo nodeId="6896005762093552928" fileName="PropertiesDeclaration_TextGen.java" startLine="14" startPosition="90" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6896005762093552928" fileName="PropertiesDeclaration_TextGen.java" startLine="11" startPosition="42" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6896005762093552925" fileName="PropertiesDeclaration_TextGen.java" startLine="10" startPosition="65" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="6896005762093552925" fileName="PropertiesDeclaration_TextGen.java" startLine="11" startPosition="42" endLine="15" endPosition="25" />
     <scopeInfo nodeId="6896005762093552928" fileName="PropertiesDeclaration_TextGen.java" startLine="11" startPosition="42" endLine="15" endPosition="25" />
     <scopeInfo nodeId="6896005762093552925" fileName="PropertiesDeclaration_TextGen.java" startLine="10" startPosition="65" endLine="17" endPosition="0">
       <varInfo nodeId="6896005762093552925" varName="node" />

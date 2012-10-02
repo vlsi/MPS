@@ -55,9 +55,9 @@
       <varInfo nodeId="5487985028841944308" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841944308" fileName="Variant_CustomApplicationPlugin.java" startLine="34" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="5487985028841944287" fileName="Variant_CustomApplicationPlugin.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.gwt.pluginSolution.plugin.Variant_CustomApplicationPlugin" />
     <unitInfo nodeId="5487985028841944292" fileName="Variant_CustomApplicationPlugin.java" startLine="24" startPosition="26" endLine="28" endPosition="5" unitName="jetbrains.mps.ui.gwt.pluginSolution.plugin.Variant_CustomApplicationPlugin$1" />
     <unitInfo nodeId="5487985028841944308" fileName="Variant_CustomApplicationPlugin.java" startLine="31" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ui.gwt.pluginSolution.plugin.Variant_CustomApplicationPlugin$QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a" />
+    <unitInfo nodeId="5487985028841944287" fileName="Variant_CustomApplicationPlugin.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.gwt.pluginSolution.plugin.Variant_CustomApplicationPlugin" />
   </root>
   <root nodeId="7162597690967883844" modelId="r:5c48d15b-8e31-45b6-af73-b6432909d8d3(jetbrains.mps.ui.gwt.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967883844" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />

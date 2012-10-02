@@ -21,6 +21,7 @@
       <varInfo nodeId="1196164343656" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="1196158679107" fileName="GTextUtil.java" startLine="16" startPosition="83" endLine="20" endPosition="15" />
+    <scopeInfo nodeId="1196158527658" fileName="GTextUtil.java" startLine="15" startPosition="45" endLine="21" endPosition="5" />
     <scopeInfo nodeId="1196158679103" fileName="GTextUtil.java" startLine="15" startPosition="45" endLine="21" endPosition="5">
       <varInfo nodeId="1196158679104" varName="r" />
     </scopeInfo>

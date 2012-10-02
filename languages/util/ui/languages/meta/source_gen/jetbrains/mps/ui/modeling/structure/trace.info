@@ -113,8 +113,8 @@
     <scopeInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1275214627099785401" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment" />
     <unitInfo nodeId="1275214627099785401" fileName="VAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment_PropertySupport" />
+    <unitInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment" />
   </root>
   <root nodeId="1275214627099785407" modelId="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)">
     <nodeInfo nodeId="1275214627099785407" fileName="HAlignment_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -227,8 +227,8 @@
     <scopeInfo nodeId="1275214627099785407" fileName="HAlignment.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1275214627099785407" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1275214627099785407" fileName="HAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment" />
     <unitInfo nodeId="1275214627099785407" fileName="HAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment_PropertySupport" />
+    <unitInfo nodeId="1275214627099785407" fileName="HAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment" />
   </root>
   <root nodeId="2663453265347399636" modelId="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)">
     <nodeInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -333,8 +333,8 @@
     <scopeInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2663453265347399636" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="2663453265347399636" fileName="Unit.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit" />
     <unitInfo nodeId="2663453265347399636" fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit_PropertySupport" />
+    <unitInfo nodeId="2663453265347399636" fileName="Unit.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit" />
   </root>
 </debugInfo>
 

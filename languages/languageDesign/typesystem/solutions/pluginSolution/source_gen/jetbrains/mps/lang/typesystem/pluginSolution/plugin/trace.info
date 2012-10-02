@@ -129,9 +129,9 @@
       <varInfo nodeId="5487985028841908720" varName="_params" />
       <varInfo nodeId="5487985028841908720" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="27" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action" />
-    <unitInfo nodeId="5487985028841908738" fileName="ShowNodeType_Action.java" startLine="80" startPosition="47" endLine="85" endPosition="7" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action$1" />
     <unitInfo nodeId="5487985028841908776" fileName="ShowNodeType_Action.java" startLine="92" startPosition="47" endLine="96" endPosition="7" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action$2" />
+    <unitInfo nodeId="5487985028841908738" fileName="ShowNodeType_Action.java" startLine="80" startPosition="47" endLine="85" endPosition="7" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action$1" />
+    <unitInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="27" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action" />
   </root>
   <root nodeId="5487985028841909059" modelId="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

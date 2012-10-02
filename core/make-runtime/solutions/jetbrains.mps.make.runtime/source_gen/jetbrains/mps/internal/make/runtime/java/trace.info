@@ -275,12 +275,12 @@
     <scopeInfo nodeId="798733910009264651" fileName="FileProcessor.java" startLine="174" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="798733910009264656" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="4328738523548225887" fileName="FileProcessor.java" startLine="25" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
-    <unitInfo nodeId="4145682539058277870" fileName="FileProcessor.java" startLine="147" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$BinaryFileContent" />
-    <unitInfo nodeId="4328738523548225888" fileName="FileProcessor.java" startLine="72" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileAndContent" />
     <unitInfo nodeId="4328738523548225909" fileName="FileProcessor.java" startLine="91" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileContent" />
-    <unitInfo nodeId="4328738523548225916" fileName="FileProcessor.java" startLine="95" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$StringFileContent" />
     <unitInfo nodeId="4328738523548225932" fileName="FileProcessor.java" startLine="203" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$XMLFileContent" />
+    <unitInfo nodeId="4328738523548225888" fileName="FileProcessor.java" startLine="72" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileAndContent" />
+    <unitInfo nodeId="4328738523548225916" fileName="FileProcessor.java" startLine="95" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$StringFileContent" />
+    <unitInfo nodeId="4145682539058277870" fileName="FileProcessor.java" startLine="147" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$BinaryFileContent" />
+    <unitInfo nodeId="4328738523548225887" fileName="FileProcessor.java" startLine="25" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
   </root>
   <root nodeId="4328738523548226177" modelId="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
     <nodeInfo nodeId="4328738523548226179" fileName="JavaStreamHandler.java" startLine="17" startPosition="57" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />

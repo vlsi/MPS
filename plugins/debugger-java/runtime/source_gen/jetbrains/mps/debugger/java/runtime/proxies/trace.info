@@ -207,8 +207,8 @@
       <varInfo nodeId="6957207478384132603" varName="watchables" />
     </scopeInfo>
     <scopeInfo nodeId="6957207478384132597" fileName="JavaObjectValue.java" startLine="33" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="6957207478384132580" fileName="JavaObjectValue.java" startLine="29" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.proxies.JavaObjectValue" />
     <unitInfo nodeId="6957207478384132634" fileName="JavaObjectValue.java" startLine="40" startPosition="38" endLine="45" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.proxies.JavaObjectValue$1" />
+    <unitInfo nodeId="6957207478384132580" fileName="JavaObjectValue.java" startLine="29" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.proxies.JavaObjectValue" />
   </root>
   <root nodeId="6957207478384132896" modelId="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.proxies)">
     <nodeInfo nodeId="6957207478384132909" fileName="JavaStringValue.java" startLine="10" startPosition="92" endLine="11" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

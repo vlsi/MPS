@@ -30,8 +30,8 @@
       <varInfo nodeId="7327404875649027020" varName="utilityCopy" />
     </scopeInfo>
     <scopeInfo nodeId="7327404875649026944" fileName="CopyWithTrace_Test.java" startLine="38" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
     <unitInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="32" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody" />
+    <unitInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
   </root>
 </debugInfo>
 

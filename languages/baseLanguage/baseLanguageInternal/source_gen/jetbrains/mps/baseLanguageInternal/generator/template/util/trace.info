@@ -144,10 +144,10 @@
       <varInfo nodeId="5822086619725756008" varName="node" />
       <varInfo nodeId="5822086619725756010" varName="topmost" />
     </scopeInfo>
-    <unitInfo nodeId="8835849473318892499" fileName="ContextUtil.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil" />
     <unitInfo nodeId="8835849473318892611" fileName="ContextUtil.java" startLine="24" startPosition="144" endLine="28" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil$1" />
     <unitInfo nodeId="8835849473318893071" fileName="ContextUtil.java" startLine="45" startPosition="144" endLine="49" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil$2" />
     <unitInfo nodeId="5822086619725755965" fileName="ContextUtil.java" startLine="69" startPosition="144" endLine="73" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil$3" />
+    <unitInfo nodeId="8835849473318892499" fileName="ContextUtil.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil" />
   </root>
 </debugInfo>
 

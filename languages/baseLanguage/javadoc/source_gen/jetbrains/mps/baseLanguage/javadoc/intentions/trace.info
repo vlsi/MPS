@@ -100,8 +100,8 @@
       <varInfo nodeId="2068944020170372970" varName="editorContext" />
       <varInfo nodeId="2068944020170372970" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
     <unitInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="79" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$QuotationClass_nmk0m3_a2a1a5a7" />
+    <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
   </root>
   <root nodeId="2217234381367409810" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
     <nodeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -295,9 +295,9 @@
       <varInfo nodeId="3196018662491292781" varName="editorContext" />
       <varInfo nodeId="3196018662491292781" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="21" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
     <unitInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="86" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$QuotationClass_en9z97_a2a1a4a5" />
     <unitInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="104" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$QuotationClass_en9z97_a2a1a7a5" />
+    <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="21" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
   </root>
   <root nodeId="4021391592916341753" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -683,6 +683,9 @@
       <varInfo nodeId="8465538089690783660" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4298862722976216179" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="4298862722976216187" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7">
+      <varInfo nodeId="4298862722976216188" varName="childCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8465538089690783664" fileName="AddAuthorBlockDocTag_Intention.java" startLine="51" startPosition="76" endLine="69" endPosition="7">
       <varInfo nodeId="4298862722976216169" varName="authorEditorCell" />
       <varInfo nodeId="8970989240998824264" varName="authorTag" />

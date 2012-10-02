@@ -108,8 +108,8 @@
       <varInfo nodeId="1222881765852" varName="_context" />
       <varInfo nodeId="1222881765852" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1222881765852" fileName="ForEachMatchStatement_DataFlow.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.dataFlow.ForEachMatchStatement_DataFlow" />
     <unitInfo nodeId="1222882685419" fileName="ForEachMatchStatement_DataFlow.java" startLine="21" startPosition="51" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.dataFlow.ForEachMatchStatement_DataFlow$1" />
+    <unitInfo nodeId="1222881765852" fileName="ForEachMatchStatement_DataFlow.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.dataFlow.ForEachMatchStatement_DataFlow" />
   </root>
   <root nodeId="1223044979251" modelId="r:f8e2b09f-b9d8-4076-a472-4264b3fb6a47(jetbrains.mps.baseLanguage.regexp.dataFlow)">
     <nodeInfo nodeId="1223044982771" fileName="MatchRegexpOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -173,6 +173,9 @@
     <scopeInfo nodeId="1223047840937" fileName="Regexps_DataFlow.java" startLine="16" startPosition="89" endLine="17" endPosition="50" />
     <scopeInfo nodeId="1223046603457" fileName="Regexps_DataFlow.java" startLine="11" startPosition="55" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1223046603459" fileName="Regexps_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="1223047840936" fileName="Regexps_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+      <varInfo nodeId="1223047840940" varName="regexp" />
+    </scopeInfo>
     <scopeInfo nodeId="1223046603457" fileName="Regexps_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1223046603457" varName="_context" />
       <varInfo nodeId="1223046603457" varName="operationContext" />
@@ -226,6 +229,7 @@
     <scopeInfo nodeId="1223047413847" fileName="SymbolClassRegexp_DataFlow.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
     <scopeInfo nodeId="1223047897808" fileName="SymbolClassRegexp_DataFlow.java" startLine="16" startPosition="85" endLine="17" endPosition="48" />
     <scopeInfo nodeId="1223047413847" fileName="SymbolClassRegexp_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1223047413849" fileName="SymbolClassRegexp_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
     <scopeInfo nodeId="1223047897807" fileName="SymbolClassRegexp_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1223047897811" varName="part" />
     </scopeInfo>

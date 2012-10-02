@@ -295,11 +295,11 @@
       <varInfo nodeId="1206459766745" varName="context" />
       <varInfo nodeId="1206459766745" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="26" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain" />
+    <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="241" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$RootMappingRule0" />
     <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="97" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="145" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule1" />
     <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="193" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule2" />
-    <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="241" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$RootMappingRule0" />
+    <unitInfo nodeId="1206459766745" fileName="Mappingmain.java" startLine="26" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain" />
   </root>
   <root nodeId="1206460153890" modelId="r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)">
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="18" startPosition="64" endLine="19" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_q702qm_a0a0" />

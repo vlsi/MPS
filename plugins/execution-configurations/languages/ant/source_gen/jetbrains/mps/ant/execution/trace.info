@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ant.execution._Adapters" />
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ant.execution._Adapters$_return_P0_E0_to_Runnable_adapter" />
+  <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ant.execution._Adapters" />
   <root nodeId="352677614185351100" modelId="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)">
     <nodeInfo nodeId="352677614185351108" fileName="AntSettings_Configuration_Editor.java" startLine="17" startPosition="99" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUseAlternativeAnt" />
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="17" startPosition="110" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -106,8 +106,10 @@
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="101" startPosition="0" endLine="103" endPosition="5" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="49" startPosition="106" endLine="52" endPosition="56" />
     <scopeInfo nodeId="352677614185351202" fileName="AntSettings_Configuration_Editor.java" startLine="49" startPosition="106" endLine="52" endPosition="56" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="55" startPosition="78" endLine="58" endPosition="56" />
+    <scopeInfo nodeId="352677614185351179" fileName="AntSettings_Configuration_Editor.java" startLine="55" startPosition="78" endLine="58" endPosition="56" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="70" startPosition="9" endLine="73" endPosition="19" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="74" startPosition="0" endLine="77" endPosition="7">
       <varInfo nodeId="352677614185351100" varName="ex" />
@@ -157,10 +159,10 @@
     </scopeInfo>
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="66" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="17" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration" />
+    <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="23" startPosition="14" endLine="27" endPosition="5" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor$1" />
     <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="97" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration$MyState" />
     <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor" />
-    <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="23" startPosition="14" endLine="27" endPosition="5" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor$1" />
+    <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="17" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration" />
   </root>
   <root nodeId="352677614185351227" modelId="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)">
     <nodeInfo nodeId="352677614185351522" fileName="ChildChoosePanel.java" startLine="28" startPosition="20" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComboBoxModel" />
@@ -296,12 +298,12 @@
     </scopeInfo>
     <scopeInfo nodeId="352677614185351375" fileName="ChildChoosePanel.java" startLine="81" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="352677614185351460" fileName="ChildChoosePanel.java" startLine="115" startPosition="0" endLine="130" endPosition="0" />
-    <unitInfo nodeId="352677614185351227" fileName="ChildChoosePanel.java" startLine="24" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ant.execution.ChildChoosePanel" />
-    <unitInfo nodeId="352677614185351275" fileName="ChildChoosePanel.java" startLine="53" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$1" />
-    <unitInfo nodeId="352677614185351468" fileName="ChildChoosePanel.java" startLine="119" startPosition="47" endLine="127" endPosition="7" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$1" />
     <unitInfo nodeId="352677614185351322" fileName="ChildChoosePanel.java" startLine="66" startPosition="45" endLine="70" endPosition="5" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$2" />
     <unitInfo nodeId="352677614185351391" fileName="ChildChoosePanel.java" startLine="88" startPosition="45" endLine="92" endPosition="5" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$3" />
+    <unitInfo nodeId="352677614185351275" fileName="ChildChoosePanel.java" startLine="53" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$1" />
+    <unitInfo nodeId="352677614185351468" fileName="ChildChoosePanel.java" startLine="119" startPosition="47" endLine="127" endPosition="7" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$1" />
     <unitInfo nodeId="352677614185351408" fileName="ChildChoosePanel.java" startLine="96" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$MyComboBoxModel" />
+    <unitInfo nodeId="352677614185351227" fileName="ChildChoosePanel.java" startLine="24" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ant.execution.ChildChoosePanel" />
   </root>
   <root nodeId="352677614185351672" modelId="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)">
     <nodeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="32" startPosition="26" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTarget_NodeINamedConcept" />
@@ -459,11 +461,11 @@
     <scopeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="91" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="352677614185351859" varName="antHome" />
     </scopeInfo>
-    <unitInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="32" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ant.execution.Ant_Command" />
     <unitInfo nodeId="352677614185351889" fileName="Ant_Command.java" startLine="114" startPosition="99" endLine="118" endPosition="5" unitName="jetbrains.mps.ant.execution.Ant_Command$1" />
     <unitInfo nodeId="352677614185351896" fileName="Ant_Command.java" startLine="118" startPosition="19" endLine="122" endPosition="5" unitName="jetbrains.mps.ant.execution.Ant_Command$2" />
-    <unitInfo nodeId="352677614185351917" fileName="Ant_Command.java" startLine="127" startPosition="45" endLine="132" endPosition="5" unitName="jetbrains.mps.ant.execution.Ant_Command$3" />
     <unitInfo nodeId="352677614185351964" fileName="Ant_Command.java" startLine="138" startPosition="93" endLine="142" endPosition="5" unitName="jetbrains.mps.ant.execution.Ant_Command$4" />
+    <unitInfo nodeId="352677614185351917" fileName="Ant_Command.java" startLine="127" startPosition="45" endLine="132" endPosition="5" unitName="jetbrains.mps.ant.execution.Ant_Command$3" />
+    <unitInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="32" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ant.execution.Ant_Command" />
   </root>
 </debugInfo>
 

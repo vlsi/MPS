@@ -86,8 +86,8 @@
       <varInfo nodeId="1203610802057" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="1203610802057" fileName="typeof_DialogExpression_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="1203610788982" fileName="typeof_DialogExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.typesystem.typeof_DialogExpression_InferenceRule" />
     <unitInfo nodeId="1203610802057" fileName="typeof_DialogExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.typesystem.typeof_DialogExpression_InferenceRule$QuotationClass_39jehe_a0a0a0" />
+    <unitInfo nodeId="1203610788982" fileName="typeof_DialogExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.typesystem.typeof_DialogExpression_InferenceRule" />
   </root>
 </debugInfo>
 

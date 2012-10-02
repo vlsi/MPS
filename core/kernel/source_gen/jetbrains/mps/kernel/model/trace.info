@@ -177,6 +177,9 @@
     <scopeInfo nodeId="1238267693643" fileName="SModelUtil.java" startLine="65" startPosition="88" endLine="68" endPosition="9" />
     <scopeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="70" startPosition="5" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1238254781320" fileName="SModelUtil.java" startLine="151" startPosition="182" endLine="154" endPosition="9" />
+    <scopeInfo nodeId="1238254781321" fileName="SModelUtil.java" startLine="151" startPosition="182" endLine="154" endPosition="9">
+      <varInfo nodeId="1238254781322" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1237996560824" fileName="SModelUtil.java" startLine="168" startPosition="108" endLine="171" endPosition="9" />
     <scopeInfo nodeId="1237996726522" fileName="SModelUtil.java" startLine="175" startPosition="108" endLine="178" endPosition="9" />
     <scopeInfo nodeId="4958544726713908234" fileName="SModelUtil.java" startLine="50" startPosition="69" endLine="54" endPosition="5">
@@ -317,8 +320,8 @@
       <varInfo nodeId="1237995590798" varName="conceptFQName" />
       <varInfo nodeId="1237995590800" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1237995590703" fileName="SModelUtil.java" startLine="37" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.kernel.model.SModelUtil" />
     <unitInfo nodeId="2116786884968876798" fileName="SModelUtil.java" startLine="85" startPosition="69" endLine="99" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$1" />
+    <unitInfo nodeId="1237995590703" fileName="SModelUtil.java" startLine="37" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.kernel.model.SModelUtil" />
   </root>
   <root nodeId="4193578441192064991" modelId="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)">
     <nodeInfo nodeId="7512946059813365946" fileName="MissingDependenciesFixer.java" startLine="21" startPosition="39" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -426,8 +429,8 @@
     <scopeInfo nodeId="4193578441192065014" fileName="MissingDependenciesFixer.java" startLine="34" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="4193578441192065017" varName="reload" />
     </scopeInfo>
-    <unitInfo nodeId="4193578441192064991" fileName="MissingDependenciesFixer.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
     <unitInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="36" startPosition="55" endLine="100" endPosition="5" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer$1" />
+    <unitInfo nodeId="4193578441192064991" fileName="MissingDependenciesFixer.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
   </root>
   <root nodeId="507022825981353176" modelId="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)">
     <nodeInfo nodeId="581120860896098627" fileName="TemporaryModelOwner.java" startLine="27" startPosition="57" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -510,6 +513,9 @@
       <varInfo nodeId="8296861627646404130" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404100" fileName="TemporaryModelOwner.java" startLine="75" startPosition="58" endLine="89" endPosition="7" />
+    <scopeInfo nodeId="8296861627646404101" fileName="TemporaryModelOwner.java" startLine="75" startPosition="58" endLine="89" endPosition="7">
+      <varInfo nodeId="8296861627646404107" varName="ie" />
+    </scopeInfo>
     <scopeInfo nodeId="8296861627646404096" fileName="TemporaryModelOwner.java" startLine="74" startPosition="58" endLine="90" endPosition="5">
       <varInfo nodeId="8296861627646404098" varName="md" />
     </scopeInfo>
@@ -518,9 +524,9 @@
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404084" fileName="TemporaryModelOwner.java" startLine="72" startPosition="0" endLine="93" endPosition="0" />
     <unitInfo nodeId="581120860896098632" fileName="TemporaryModelOwner.java" startLine="28" startPosition="39" endLine="27" endPosition="0" />
-    <unitInfo nodeId="507022825981353176" fileName="TemporaryModelOwner.java" startLine="27" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
-    <unitInfo nodeId="507022825981353182" fileName="TemporaryModelOwner.java" startLine="40" startPosition="46" endLine="44" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$1" />
     <unitInfo nodeId="507022825981353202" fileName="TemporaryModelOwner.java" startLine="32" startPosition="46" endLine="36" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$2" />
+    <unitInfo nodeId="507022825981353182" fileName="TemporaryModelOwner.java" startLine="40" startPosition="46" endLine="44" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$1" />
+    <unitInfo nodeId="507022825981353176" fileName="TemporaryModelOwner.java" startLine="27" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
   </root>
 </debugInfo>
 

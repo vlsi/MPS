@@ -157,9 +157,9 @@
     <scopeInfo nodeId="1196274932495" fileName="QueriesUtil.java" startLine="51" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="1196275018539" varName="nodeInsideClosure" />
     </scopeInfo>
-    <unitInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" />
     <unitInfo nodeId="1219331742419" fileName="QueriesUtil.java" startLine="113" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil$QuotationClass_w9106s_a0a0a0d" />
     <unitInfo nodeId="1196777970339" fileName="QueriesUtil.java" startLine="83" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil$QuotationClass_w9106s_a0a0a7a2" />
+    <unitInfo nodeId="1170730182541" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" />
   </root>
   <root nodeId="1238940012773" modelId="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)">
     <nodeInfo nodeId="1238941443937" fileName="ClosuresUtil.java" startLine="23" startPosition="27" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLOSURE_CONTEXT_DATA" />
@@ -441,9 +441,9 @@
       <varInfo nodeId="1238943730126" varName="localVars" />
       <varInfo nodeId="1238943722342" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1238940012773" fileName="ClosuresUtil.java" startLine="23" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
     <unitInfo nodeId="7706854513804994794" fileName="ClosuresUtil.java" startLine="40" startPosition="76" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$1" />
     <unitInfo nodeId="1238944138203" fileName="ClosuresUtil.java" startLine="174" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$ClosureContextData" />
+    <unitInfo nodeId="1238940012773" fileName="ClosuresUtil.java" startLine="23" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
   </root>
   <root nodeId="8428317315592447569" modelId="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)">
     <nodeInfo nodeId="8428317315592447571" fileName="ClosuresMappingId.java" startLine="6" startPosition="36" endLine="7" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLOSURE__ADAPTER_CLASS" />
@@ -608,8 +608,8 @@
       <varInfo nodeId="8428317315592447874" varName="generator" />
       <varInfo nodeId="8428317315592447872" varName="nodeInsideClosure" />
     </scopeInfo>
-    <unitInfo nodeId="8428317315592447591" fileName="_QueriesUtil.java" startLine="19" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil" />
     <unitInfo nodeId="7706854513804995250" fileName="_QueriesUtil.java" startLine="95" startPosition="121" endLine="102" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil$1" />
+    <unitInfo nodeId="8428317315592447591" fileName="_QueriesUtil.java" startLine="19" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil" />
   </root>
 </debugInfo>
 

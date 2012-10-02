@@ -63,8 +63,8 @@
       <varInfo nodeId="1236696569510" varName="typeCheckingContext" />
       <varInfo nodeId="1236696569510" varName="varVariableDeclaration" />
     </scopeInfo>
-    <unitInfo nodeId="1236696569510" fileName="typeof_VarVariableDeclaration_InferenceRule.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.typesystem.typeof_VarVariableDeclaration_InferenceRule" />
     <unitInfo nodeId="8425555512443936496" fileName="typeof_VarVariableDeclaration_InferenceRule.java" startLine="29" startPosition="69" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.varVariable.typesystem.typeof_VarVariableDeclaration_InferenceRule$1" />
+    <unitInfo nodeId="1236696569510" fileName="typeof_VarVariableDeclaration_InferenceRule.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.typesystem.typeof_VarVariableDeclaration_InferenceRule" />
   </root>
   <root nodeId="8067700594454594112" modelId="r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)">
     <nodeInfo nodeId="8067700594454596069" fileName="check_VarVariableDeclaration_NonTypesystemRule.java" startLine="21" startPosition="83" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

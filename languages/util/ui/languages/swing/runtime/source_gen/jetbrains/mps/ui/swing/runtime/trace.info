@@ -52,6 +52,9 @@
     <scopeInfo nodeId="5220699420101838239" fileName="JXSingleTaskPaneContainer.java" startLine="52" startPosition="42" endLine="56" endPosition="73">
       <varInfo nodeId="5220699420101875040" varName="initcollapsed" />
     </scopeInfo>
+    <scopeInfo nodeId="3784331761033088601" fileName="JXSingleTaskPaneContainer.java" startLine="67" startPosition="53" endLine="71" endPosition="5">
+      <varInfo nodeId="3784331761033088604" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5220699420101875107" fileName="JXSingleTaskPaneContainer.java" startLine="67" startPosition="53" endLine="71" endPosition="5" />
     <scopeInfo nodeId="2204726755035753589" fileName="JXSingleTaskPaneContainer.java" startLine="36" startPosition="38" endLine="42" endPosition="7" />
     <scopeInfo nodeId="5220699420101874661" fileName="JXSingleTaskPaneContainer.java" startLine="23" startPosition="40" endLine="30" endPosition="13" />
@@ -74,10 +77,10 @@
     <scopeInfo nodeId="5220699420101874636" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="82" endLine="34" endPosition="0">
       <varInfo nodeId="5220699420101874639" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="2204726755035753584" fileName="JXSingleTaskPaneContainer.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer" />
-    <unitInfo nodeId="5220699420101874625" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="56" endLine="34" endPosition="3" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$1" />
     <unitInfo nodeId="5220699420101892502" fileName="JXSingleTaskPaneContainer.java" startLine="26" startPosition="41" endLine="30" endPosition="11" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$2" />
     <unitInfo nodeId="9201869079511430353" fileName="JXSingleTaskPaneContainer.java" startLine="38" startPosition="23" endLine="42" endPosition="5" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$2" />
+    <unitInfo nodeId="5220699420101874625" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="56" endLine="34" endPosition="3" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$1" />
+    <unitInfo nodeId="2204726755035753584" fileName="JXSingleTaskPaneContainer.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer" />
   </root>
   <root nodeId="5220699420101883037" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
     <nodeInfo nodeId="3784331761033100070" fileName="JXSingleTaskPane.java" startLine="8" startPosition="29" endLine="9" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Structure_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.Structure_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
   <root nodeId="1084197782722" modelId="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
     <nodeInfo nodeId="1084197782722" fileName="Cardinality_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1084197782722" fileName="Cardinality_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -113,8 +113,8 @@
     <scopeInfo nodeId="1084197782722" fileName="Cardinality.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1084197782722" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1084197782722" fileName="Cardinality.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.Cardinality" />
     <unitInfo nodeId="1084197782722" fileName="Cardinality_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.Cardinality_PropertySupport" />
+    <unitInfo nodeId="1084197782722" fileName="Cardinality.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.Cardinality" />
   </root>
   <root nodeId="1084199179703" modelId="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
     <nodeInfo nodeId="1084199179703" fileName="LinkMetaclass_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -219,8 +219,8 @@
     <scopeInfo nodeId="1084199179703" fileName="LinkMetaclass_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1084199179703" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1084199179703" fileName="LinkMetaclass.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.LinkMetaclass" />
     <unitInfo nodeId="1084199179703" fileName="LinkMetaclass_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.LinkMetaclass_PropertySupport" />
+    <unitInfo nodeId="1084199179703" fileName="LinkMetaclass.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.LinkMetaclass" />
   </root>
   <root nodeId="1149608316235" modelId="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
     <nodeInfo nodeId="1149608316235" fileName="AnnotationLinkStereotype_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -329,8 +329,8 @@
     <scopeInfo nodeId="1149608316235" fileName="AnnotationLinkStereotype.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1149608316235" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1149608316235" fileName="AnnotationLinkStereotype.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype" />
     <unitInfo nodeId="1149608316235" fileName="AnnotationLinkStereotype_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype_PropertySupport" />
+    <unitInfo nodeId="1149608316235" fileName="AnnotationLinkStereotype.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype" />
   </root>
   <root nodeId="1197590884613" modelId="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
     <nodeInfo nodeId="1197590884613" fileName="EnumerationMemberIdentifierPolicy_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -439,8 +439,8 @@
     <scopeInfo nodeId="1197590884613" fileName="EnumerationMemberIdentifierPolicy.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1197590884613" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1197590884613" fileName="EnumerationMemberIdentifierPolicy.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy" />
     <unitInfo nodeId="1197590884613" fileName="EnumerationMemberIdentifierPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy_PropertySupport" />
+    <unitInfo nodeId="1197590884613" fileName="EnumerationMemberIdentifierPolicy.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy" />
   </root>
   <root nodeId="1204742406467" modelId="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
     <nodeInfo nodeId="1204742406467" fileName="AnnotationLinkCardinality_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -545,8 +545,8 @@
     <scopeInfo nodeId="1204742406467" fileName="AnnotationLinkCardinality_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1204742406467" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1204742406467" fileName="AnnotationLinkCardinality.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkCardinality" />
     <unitInfo nodeId="1204742406467" fileName="AnnotationLinkCardinality_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkCardinality_PropertySupport" />
+    <unitInfo nodeId="1204742406467" fileName="AnnotationLinkCardinality.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkCardinality" />
   </root>
 </debugInfo>
 

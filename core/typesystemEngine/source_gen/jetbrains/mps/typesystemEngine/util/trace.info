@@ -195,8 +195,14 @@
     <scopeInfo nodeId="4545016991847814930" fileName="LatticeUtil.java" startLine="90" startPosition="98" endLine="102" endPosition="7">
       <varInfo nodeId="4545016991847814932" varName="meetWrapper1" />
     </scopeInfo>
+    <scopeInfo nodeId="1883223317720979874" fileName="LatticeUtil.java" startLine="23" startPosition="103" endLine="36" endPosition="9">
+      <varInfo nodeId="1883223317720979879" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="1883223317721339524" fileName="LatticeUtil.java" startLine="23" startPosition="103" endLine="36" endPosition="9" />
     <scopeInfo nodeId="1883223317721340764" fileName="LatticeUtil.java" startLine="41" startPosition="103" endLine="54" endPosition="9" />
+    <scopeInfo nodeId="1883223317721340765" fileName="LatticeUtil.java" startLine="41" startPosition="103" endLine="54" endPosition="9">
+      <varInfo nodeId="1883223317721340769" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="6007597446559172594" fileName="LatticeUtil.java" startLine="117" startPosition="51" endLine="131" endPosition="29">
       <varInfo nodeId="6007597446559177567" varName="iterator" />
       <varInfo nodeId="6007597446559177574" varName="node1" />

@@ -112,6 +112,9 @@
     <scopeInfo nodeId="4093906047203395631" fileName="SuspiciousModelIndex.java" startLine="184" startPosition="64" endLine="185" endPosition="30" />
     <scopeInfo nodeId="4213817562888239151" fileName="SuspiciousModelIndex.java" startLine="103" startPosition="30" endLine="105" endPosition="40" />
     <scopeInfo nodeId="4093906047203395666" fileName="SuspiciousModelIndex.java" startLine="43" startPosition="111" endLine="46" endPosition="37" />
+    <scopeInfo nodeId="4093906047203395833" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15">
+      <varInfo nodeId="4093906047203395835" varName="conflictable" />
+    </scopeInfo>
     <scopeInfo nodeId="4213817562888225834" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15" />
     <scopeInfo nodeId="4093906047203396087" fileName="SuspiciousModelIndex.java" startLine="165" startPosition="78" endLine="168" endPosition="9" />
     <scopeInfo nodeId="4093906047203395599" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="61" endLine="177" endPosition="5">
@@ -148,6 +151,7 @@
       <varInfo nodeId="4093906047203395664" varName="vfManager" />
       <varInfo nodeId="4093906047203395662" varName="watcher" />
     </scopeInfo>
+    <scopeInfo nodeId="4093906047203396080" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7" />
     <scopeInfo nodeId="4093906047203396081" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7">
       <varInfo nodeId="4093906047203396085" varName="project" />
     </scopeInfo>
@@ -203,12 +207,12 @@
     <scopeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="85" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="4093906047203395784" varName="models" />
     </scopeInfo>
-    <unitInfo nodeId="4093906047203395592" fileName="SuspiciousModelIndex.java" startLine="37" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex" />
+    <unitInfo nodeId="4213817562888225833" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="61" endLine="137" endPosition="11" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
     <unitInfo nodeId="4093906047203395741" fileName="SuspiciousModelIndex.java" startLine="68" startPosition="42" endLine="76" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$1" />
+    <unitInfo nodeId="4093906047203395595" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$MyTaskQueue" />
     <unitInfo nodeId="4213817562888239088" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="47" endLine="113" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$2" />
     <unitInfo nodeId="4213817562888239050" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="56" endLine="142" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3" />
-    <unitInfo nodeId="4213817562888225833" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="61" endLine="137" endPosition="11" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
-    <unitInfo nodeId="4093906047203395595" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$MyTaskQueue" />
+    <unitInfo nodeId="4093906047203395592" fileName="SuspiciousModelIndex.java" startLine="37" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex" />
   </root>
   <root nodeId="4093906047203396099" modelId="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)">
     <nodeInfo nodeId="4093906047203396134" fileName="Conflictable.java" startLine="21" startPosition="46" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -346,9 +350,9 @@
     <scopeInfo nodeId="4707157387247635668" fileName="BaseTaskQueue.java" startLine="22" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4707157387247635671" varName="task" />
     </scopeInfo>
-    <unitInfo nodeId="4707157387247635635" fileName="BaseTaskQueue.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
     <unitInfo nodeId="4707157387247635662" fileName="BaseTaskQueue.java" startLine="16" startPosition="18" endLine="20" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue$1" />
     <unitInfo nodeId="1043229829680244599" fileName="BaseTaskQueue.java" startLine="30" startPosition="68" endLine="34" endPosition="7" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue$2" />
+    <unitInfo nodeId="4707157387247635635" fileName="BaseTaskQueue.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
   </root>
   <root nodeId="4707157387247635742" modelId="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)">
     <nodeInfo nodeId="4707157387247635787" fileName="TaskQueue.java" startLine="12" startPosition="61" endLine="13" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
@@ -437,9 +441,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247635856" fileName="TaskQueue.java" startLine="33" startPosition="43" endLine="46" endPosition="16" />
     <scopeInfo nodeId="4707157387247635853" fileName="TaskQueue.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="4707157387247635742" fileName="TaskQueue.java" startLine="12" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue" />
     <unitInfo nodeId="4707157387247635769" fileName="TaskQueue.java" startLine="74" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue$BanReloadListener" />
     <unitInfo nodeId="4707157387247635747" fileName="TaskQueue.java" startLine="49" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue$BanVFMListener" />
+    <unitInfo nodeId="4707157387247635742" fileName="TaskQueue.java" startLine="12" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue" />
   </root>
 </debugInfo>
 

@@ -23,8 +23,8 @@
     <scopeInfo nodeId="1180551682623" fileName="TestClosureWithExtRefOnSNode.java" startLine="11" startPosition="43" endLine="26" endPosition="0">
       <varInfo nodeId="1180551723222" varName="var" />
     </scopeInfo>
-    <unitInfo nodeId="1180551652324" fileName="TestClosureWithExtRefOnSNode.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model4.TestClosureWithExtRefOnSNode" />
     <unitInfo nodeId="7973341469126686868" fileName="TestClosureWithExtRefOnSNode.java" startLine="18" startPosition="59" endLine="24" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model4.TestClosureWithExtRefOnSNode$1" />
+    <unitInfo nodeId="1180551652324" fileName="TestClosureWithExtRefOnSNode.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model4.TestClosureWithExtRefOnSNode" />
   </root>
 </debugInfo>
 

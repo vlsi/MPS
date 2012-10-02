@@ -68,8 +68,8 @@
       <varInfo nodeId="1219153306994" varName="externalReferences" />
       <varInfo nodeId="1219153292099" varName="references" />
     </scopeInfo>
-    <unitInfo nodeId="1227876784743" fileName="QueriesGenerated.java" startLine="152" startPosition="85" endLine="157" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$1" />
     <unitInfo nodeId="1227876775006" fileName="QueriesGenerated.java" startLine="158" startPosition="81" endLine="162" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$2" />
+    <unitInfo nodeId="1227876784743" fileName="QueriesGenerated.java" startLine="152" startPosition="85" endLine="157" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$1" />
   </root>
   <root nodeId="1197041438064" modelId="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)">
     <nodeInfo nodeId="1197041701083" fileName="QueriesGenerated.java" startLine="53" startPosition="148" endLine="54" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -153,9 +153,9 @@
       <varInfo nodeId="1230231512321" varName="projects" />
     </scopeInfo>
     <unitInfo nodeId="1227876796231" fileName="QueriesGenerated.java" startLine="175" startPosition="109" endLine="179" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$3" />
-    <unitInfo nodeId="1230231512331" fileName="QueriesGenerated.java" startLine="191" startPosition="196" endLine="197" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$4" />
     <unitInfo nodeId="1230232412309" fileName="QueriesGenerated.java" startLine="198" startPosition="52" endLine="202" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$5" />
     <unitInfo nodeId="1227876798114" fileName="QueriesGenerated.java" startLine="206" startPosition="109" endLine="210" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$6" />
+    <unitInfo nodeId="1230231512331" fileName="QueriesGenerated.java" startLine="191" startPosition="196" endLine="197" endPosition="5" unitName="jetbrains.mps.buildlanguage.generator.xml.template.main.QueriesGenerated$4" />
   </root>
   <root nodeId="1197725356482" modelId="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)">
     <nodeInfo nodeId="1197725513738" fileName="QueriesGenerated.java" startLine="81" startPosition="148" endLine="82" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

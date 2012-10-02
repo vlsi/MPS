@@ -128,8 +128,8 @@
       <varInfo nodeId="5284995370970458434" varName="currsubtitle" />
     </scopeInfo>
     <scopeInfo nodeId="5284995370970458436" fileName="JobProgressMonitorAdapter.java" startLine="61" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="9" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" />
     <unitInfo nodeId="6946682729051139412" fileName="JobProgressMonitorAdapter.java" startLine="97" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter$SubProgressMonitor" />
+    <unitInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="9" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" />
   </root>
   <root nodeId="5589305777382258419" modelId="r:13ec431d-483d-451c-a648-ffefde4fef51(jetbrains.mps.internal.make.runtime.backports)">
     <nodeInfo nodeId="3449801126986532461" fileName="ProgressMonitorProgressStrategy.java" startLine="14" startPosition="79" endLine="15" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />

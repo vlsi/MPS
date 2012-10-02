@@ -384,6 +384,9 @@
       <varInfo nodeId="194249616896421993" varName="numNodes" />
     </scopeInfo>
     <scopeInfo nodeId="194249616896422047" fileName="MultiTest.java" startLine="31" startPosition="44" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="194249616896422066" fileName="MultiTest.java" startLine="31" startPosition="44" endLine="38" endPosition="5">
+      <varInfo nodeId="194249616896422067" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="194249616896421924" fileName="MultiTest.java" startLine="20" startPosition="38" endLine="28" endPosition="15" />
     <scopeInfo nodeId="194249616896422044" fileName="MultiTest.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="194249616896421921" fileName="MultiTest.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
@@ -430,6 +433,7 @@
       <varInfo nodeId="5736847780448772831" varName="darts" />
       <varInfo nodeId="5736847780448772895" varName="totalAngle" />
     </scopeInfo>
+    <scopeInfo nodeId="5736847780448772646" fileName="OrthogonalRepresentationChecker.java" startLine="17" startPosition="88" endLine="32" endPosition="5" />
     <scopeInfo nodeId="5736847780448772664" fileName="OrthogonalRepresentationChecker.java" startLine="17" startPosition="88" endLine="32" endPosition="5">
       <varInfo nodeId="5736847780448772665" varName="node" />
     </scopeInfo>
@@ -438,8 +442,8 @@
       <varInfo nodeId="5736847780448772647" varName="graph" />
       <varInfo nodeId="5736847780448772736" varName="minAngle" />
     </scopeInfo>
-    <unitInfo nodeId="228830736476055337" fileName="OrthogonalRepresentationChecker.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="orthogonalLayoutTest.OrthogonalRepresentationChecker" />
     <unitInfo nodeId="5736847780448772847" fileName="OrthogonalRepresentationChecker.java" startLine="19" startPosition="93" endLine="23" endPosition="7" unitName="orthogonalLayoutTest.OrthogonalRepresentationChecker$1" />
+    <unitInfo nodeId="228830736476055337" fileName="OrthogonalRepresentationChecker.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="orthogonalLayoutTest.OrthogonalRepresentationChecker" />
   </root>
   <root nodeId="2344624500434352550" modelId="r:0d165b79-85c3-4fee-8efc-b69a37e1c2ee(orthogonalLayoutTest)">
     <nodeInfo nodeId="2344624500434352608" fileName="OrthogonalFlowLabelProcessing_Test.java" startLine="20" startPosition="45" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1408,6 +1412,9 @@
     <nodeInfo nodeId="903391227141028698" fileName="ConstraintsChecker.java" startLine="14" startPosition="33" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check#(Ljetbrains/mps/graphLayout/graph/Graph;Ljava/util/Map;Ljava/util/Map;)V" />
     <scopeInfo nodeId="903391227141028725" fileName="ConstraintsChecker.java" startLine="16" startPosition="63" endLine="18" endPosition="125" />
     <scopeInfo nodeId="903391227141028701" fileName="ConstraintsChecker.java" startLine="15" startPosition="108" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="903391227141028722" fileName="ConstraintsChecker.java" startLine="15" startPosition="108" endLine="19" endPosition="5">
+      <varInfo nodeId="903391227141028723" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="903391227141028698" fileName="ConstraintsChecker.java" startLine="14" startPosition="33" endLine="21" endPosition="0">
       <varInfo nodeId="903391227141028727" varName="graph" />
       <varInfo nodeId="903391227141028702" varName="representation" />

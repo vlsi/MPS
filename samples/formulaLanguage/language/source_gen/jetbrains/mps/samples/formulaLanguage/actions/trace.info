@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="31" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="127" startPosition="53" endLine="133" endPosition="9" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="115" startPosition="223" endLine="125" endPosition="7" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated$3" />
   <unitInfo fileName="QueriesGenerated.java" startLine="48" startPosition="53" endLine="73" endPosition="9" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="80" startPosition="53" endLine="105" endPosition="9" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="115" startPosition="223" endLine="125" endPosition="7" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated$3" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="127" startPosition="53" endLine="133" endPosition="9" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="31" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.actions.QueriesGenerated" />
   <root nodeId="1113331449032" modelId="r:00000000-0000-4000-0000-011c8959043a(jetbrains.mps.samples.formulaLanguage.actions)">
     <nodeInfo nodeId="1177586563376" fileName="QueriesGenerated.java" startLine="31" startPosition="31" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b" />
     <nodeInfo nodeId="1177586659761" fileName="QueriesGenerated.java" startLine="32" startPosition="96" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0c0a0a0a0c0a0c0b" />

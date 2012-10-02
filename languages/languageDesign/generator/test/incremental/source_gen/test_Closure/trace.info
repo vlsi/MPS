@@ -27,8 +27,8 @@
       <varInfo nodeId="8250748122682269376" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="8250748122682163159" fileName="User.java" startLine="17" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="8250748122682152731" fileName="User.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="test_Closure.User" />
     <unitInfo nodeId="8250748122682269346" fileName="User.java" startLine="21" startPosition="49" endLine="25" endPosition="5" unitName="test_Closure.User$1" />
+    <unitInfo nodeId="8250748122682152731" fileName="User.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="test_Closure.User" />
   </root>
   <root nodeId="8250748122682163163" modelId="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)">
     <nodeInfo nodeId="8250748122682163172" fileName="Library.java" startLine="11" startPosition="22" endLine="12" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="user" />
@@ -48,6 +48,7 @@
       <varInfo nodeId="8250748122682168330" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="8250748122682270049" fileName="Library.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8250748122682168218" fileName="Library.java" startLine="17" startPosition="24" endLine="21" endPosition="5" />
     <scopeInfo nodeId="8250748122682168219" fileName="Library.java" startLine="17" startPosition="24" endLine="21" endPosition="5">
       <varInfo nodeId="8250748122682168220" varName="a" />
     </scopeInfo>

@@ -109,8 +109,8 @@
     <scopeInfo nodeId="1195169251499" fileName="Option.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1195169251499" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1195169251499" fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
     <unitInfo nodeId="1195169251499" fileName="Option_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option_PropertySupport" />
+    <unitInfo nodeId="1195169251499" fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
   </root>
   <root nodeId="1202242680337" modelId="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)">
     <nodeInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -239,8 +239,8 @@
     <scopeInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="55" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1202242680337" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
     <unitInfo nodeId="1202242680337" fileName="UseInTest_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
+    <unitInfo nodeId="1202242680337" fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
   </root>
 </debugInfo>
 

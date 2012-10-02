@@ -919,9 +919,9 @@
       <varInfo nodeId="5384012304952504715" varName="editorContext" />
       <varInfo nodeId="5384012304952504715" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
     <unitInfo nodeId="5384012304952506653" fileName="TurnToForEachStatement_Intention.java" startLine="47" startPosition="201" endLine="51" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$1" />
     <unitInfo nodeId="5384012304952506742" fileName="TurnToForEachStatement_Intention.java" startLine="51" startPosition="20" endLine="57" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$2" />
+    <unitInfo nodeId="5384012304952504715" fileName="TurnToForEachStatement_Intention.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
   </root>
   <root nodeId="5384012304952529816" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1006,9 +1006,9 @@
       <varInfo nodeId="5384012304952529816" varName="editorContext" />
       <varInfo nodeId="5384012304952529816" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
     <unitInfo nodeId="5384012304952529870" fileName="TurnToParallelForEachStatement_Intention.java" startLine="60" startPosition="215" endLine="64" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$1" />
     <unitInfo nodeId="5384012304952529883" fileName="TurnToParallelForEachStatement_Intention.java" startLine="64" startPosition="20" endLine="70" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$2" />
+    <unitInfo nodeId="5384012304952529816" fileName="TurnToParallelForEachStatement_Intention.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
   </root>
   <root nodeId="5384012304952537573" modelId="r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)">
     <nodeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1011,10 +1011,10 @@
       <varInfo nodeId="1224675173366" varName="editorContext" />
       <varInfo nodeId="1224675173366" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="35" startPosition="0" endLine="497" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor" />
     <unitInfo nodeId="5279008335641977613" fileName="BTestCase_Editor.java" startLine="394" startPosition="0" endLine="444" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor$fieldListHandler_lq4ak4_c1g0" />
-    <unitInfo nodeId="1224675173879" fileName="BTestCase_Editor.java" startLine="445" startPosition="0" endLine="496" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor$methodListHandler_lq4ak4_j1g0" />
     <unitInfo nodeId="1224675173872" fileName="BTestCase_Editor.java" startLine="342" startPosition="0" endLine="393" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor$staticFieldListHandler_lq4ak4_b1g0" />
+    <unitInfo nodeId="1224675173879" fileName="BTestCase_Editor.java" startLine="445" startPosition="0" endLine="496" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor$methodListHandler_lq4ak4_j1g0" />
+    <unitInfo nodeId="1171931851749" fileName="BTestCase_Editor.java" startLine="35" startPosition="0" endLine="497" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor" />
   </root>
   <root nodeId="1171931858963" modelId="r:00000000-0000-4000-0000-011c895902d4(jetbrains.mps.baseLanguage.unitTest.editor)">
     <nodeInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1146,8 +1146,8 @@
       <varInfo nodeId="1171931858965" varName="editorContext" />
       <varInfo nodeId="1171931858965" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor" />
     <unitInfo nodeId="1171931858964" fileName="TestMethodList_Editor.java" startLine="47" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor$testMethodListHandler_bc5hcd_a0" />
+    <unitInfo nodeId="1171931858963" fileName="TestMethodList_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor" />
   </root>
   <root nodeId="1171978123200" modelId="r:00000000-0000-4000-0000-011c895902d4(jetbrains.mps.baseLanguage.unitTest.editor)">
     <nodeInfo nodeId="1171978341091" fileName="AssertEquals_Editor.java" startLine="85" startPosition="58" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

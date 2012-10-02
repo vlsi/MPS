@@ -325,6 +325,7 @@
     <scopeInfo nodeId="1179332454845" fileName="QueriesGenerated.java" startLine="1001" startPosition="52" endLine="1004" endPosition="5">
       <varInfo nodeId="1179332454847" varName="nodeKind" />
     </scopeInfo>
+    <scopeInfo nodeId="1179398279588" fileName="QueriesGenerated.java" startLine="1010" startPosition="94" endLine="1013" endPosition="7" />
     <scopeInfo nodeId="1179398402229" fileName="QueriesGenerated.java" startLine="1010" startPosition="94" endLine="1013" endPosition="7">
       <varInfo nodeId="1179398402231" varName="property" />
     </scopeInfo>

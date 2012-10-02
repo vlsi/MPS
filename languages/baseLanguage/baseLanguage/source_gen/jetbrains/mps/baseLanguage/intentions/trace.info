@@ -579,8 +579,8 @@
       <varInfo nodeId="1199558928255" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1199558928255" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="74" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="1199557092807" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="21" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceEqualityWithEquals_Intention" />
     <unitInfo nodeId="1199558928255" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="71" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceEqualityWithEquals_Intention$QuotationClass_6thnk0_a0a0c0f0h" />
+    <unitInfo nodeId="1199557092807" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="21" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceEqualityWithEquals_Intention" />
   </root>
   <root nodeId="1199559711021" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1199559711021" fileName="ReplaceEqualsWithEquality_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -940,8 +940,8 @@
       <varInfo nodeId="1227649619486" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1227649619486" fileName="ReplaceAssertWithIf_Intention.java" startLine="78" startPosition="0" endLine="97" endPosition="0" />
-    <unitInfo nodeId="1199622460250" fileName="ReplaceAssertWithIf_Intention.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceAssertWithIf_Intention" />
     <unitInfo nodeId="1227649619486" fileName="ReplaceAssertWithIf_Intention.java" startLine="75" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceAssertWithIf_Intention$QuotationClass_iey3o5_a0a2a7" />
+    <unitInfo nodeId="1199622460250" fileName="ReplaceAssertWithIf_Intention.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceAssertWithIf_Intention" />
   </root>
   <root nodeId="1199623693658" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1288,10 +1288,10 @@
       <varInfo nodeId="1199627182107" varName="editorContext" />
       <varInfo nodeId="1199627182107" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1199627182107" fileName="ReplaceForEachLoopWithIndexedLoop_Intention.java" startLine="23" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForEachLoopWithIndexedLoop_Intention" />
     <unitInfo nodeId="1227876801589" fileName="ReplaceForEachLoopWithIndexedLoop_Intention.java" startLine="129" startPosition="144" endLine="133" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForEachLoopWithIndexedLoop_Intention$1" />
     <unitInfo nodeId="1227876790828" fileName="ReplaceForEachLoopWithIndexedLoop_Intention.java" startLine="133" startPosition="20" endLine="141" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForEachLoopWithIndexedLoop_Intention$2" />
     <unitInfo nodeId="1201094610820" fileName="ReplaceForEachLoopWithIndexedLoop_Intention.java" startLine="152" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForEachLoopWithIndexedLoop_Intention$QuotationClass_nfmyw1_a2a31a7" />
+    <unitInfo nodeId="1199627182107" fileName="ReplaceForEachLoopWithIndexedLoop_Intention.java" startLine="23" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForEachLoopWithIndexedLoop_Intention" />
   </root>
   <root nodeId="1199627245932" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1199627245932" fileName="ExpandBoolean_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1409,11 +1409,11 @@
       <varInfo nodeId="1199627245932" varName="editorContext" />
       <varInfo nodeId="1199627245932" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1199627245932" fileName="ExpandBoolean_Intention.java" startLine="18" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention" />
     <unitInfo nodeId="1227876801516" fileName="ExpandBoolean_Intention.java" startLine="73" startPosition="190" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention$1" />
-    <unitInfo nodeId="1227876790936" fileName="ExpandBoolean_Intention.java" startLine="78" startPosition="45" endLine="83" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention$2" />
     <unitInfo nodeId="1227876801103" fileName="ExpandBoolean_Intention.java" startLine="84" startPosition="191" endLine="88" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention$3" />
+    <unitInfo nodeId="1227876790936" fileName="ExpandBoolean_Intention.java" startLine="78" startPosition="45" endLine="83" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention$2" />
     <unitInfo nodeId="1227876791229" fileName="ExpandBoolean_Intention.java" startLine="89" startPosition="45" endLine="94" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention$4" />
+    <unitInfo nodeId="1199627245932" fileName="ExpandBoolean_Intention.java" startLine="18" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention" />
   </root>
   <root nodeId="1199627248517" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1199627248517" fileName="AddRuntimeExceptionToMethodSignature_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1529,9 +1529,9 @@
       <varInfo nodeId="1199627248517" varName="editorContext" />
       <varInfo nodeId="1199627248517" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1199627248517" fileName="AddRuntimeExceptionToMethodSignature_Intention.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRuntimeExceptionToMethodSignature_Intention" />
     <unitInfo nodeId="1227876798951" fileName="AddRuntimeExceptionToMethodSignature_Intention.java" startLine="75" startPosition="100" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.AddRuntimeExceptionToMethodSignature_Intention$1" />
     <unitInfo nodeId="1199633278641" fileName="AddRuntimeExceptionToMethodSignature_Intention.java" startLine="94" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRuntimeExceptionToMethodSignature_Intention$QuotationClass_11l094_a0a1a0j0g" />
+    <unitInfo nodeId="1199627248517" fileName="AddRuntimeExceptionToMethodSignature_Intention.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRuntimeExceptionToMethodSignature_Intention" />
   </root>
   <root nodeId="1199892779474" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1199892779474" fileName="ReplaceBlockWithItsContent_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1986,8 +1986,8 @@
       <varInfo nodeId="1203701450442" varName="editorContext" />
       <varInfo nodeId="1203701450442" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1203701450442" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRemoveStaticMethodModifier_Intention" />
     <unitInfo nodeId="1227876798047" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="57" startPosition="134" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.AddRemoveStaticMethodModifier_Intention$1" />
+    <unitInfo nodeId="1203701450442" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRemoveStaticMethodModifier_Intention" />
   </root>
   <root nodeId="1203703270380" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1203703270380" fileName="AddFinalModifierToAny_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2063,8 +2063,8 @@
       <varInfo nodeId="1203703270380" varName="editorContext" />
       <varInfo nodeId="1203703270380" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1203703270380" fileName="AddFinalModifierToAny_Intention.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
     <unitInfo nodeId="5798085835559792549" fileName="AddFinalModifierToAny_Intention.java" startLine="50" startPosition="111" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention$1" />
+    <unitInfo nodeId="1203703270380" fileName="AddFinalModifierToAny_Intention.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
   </root>
   <root nodeId="1206063267399" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1206063267399" fileName="AddElsifClause_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3167,8 +3167,8 @@
       <varInfo nodeId="4745461552198991278" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4745461552198991278" fileName="AddMainMethod_Intention.java" startLine="65" startPosition="0" endLine="115" endPosition="0" />
-    <unitInfo nodeId="1236007216018" fileName="AddMainMethod_Intention.java" startLine="17" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention" />
     <unitInfo nodeId="4745461552198991278" fileName="AddMainMethod_Intention.java" startLine="62" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention$QuotationClass_gghypg_a0a0a7" />
+    <unitInfo nodeId="1236007216018" fileName="AddMainMethod_Intention.java" startLine="17" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention" />
   </root>
   <root nodeId="1236187435379" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3247,8 +3247,8 @@
       <varInfo nodeId="1236187435379" varName="editorContext" />
       <varInfo nodeId="1236187435379" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention" />
     <unitInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="95" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention$1" />
+    <unitInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention" />
   </root>
   <root nodeId="1238764345596" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1238764345596" fileName="IterateOverIterable_Intention.java" startLine="21" startPosition="87" endLine="22" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6" />
@@ -3480,9 +3480,9 @@
     <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="139" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1238772364166" varName="nodeToMatch" />
     </scopeInfo>
-    <unitInfo nodeId="1238764345596" fileName="IterateOverIterable_Intention.java" startLine="21" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention" />
-    <unitInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="134" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention$Pattern_w1n2qe_a0a0a0a7" />
     <unitInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="80" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention$Pattern_w1n2qe_a1a0a0a0g" />
+    <unitInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="134" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention$Pattern_w1n2qe_a0a0a0a7" />
+    <unitInfo nodeId="1238764345596" fileName="IterateOverIterable_Intention.java" startLine="21" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention" />
   </root>
   <root nodeId="1240248297859" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1240248297859" fileName="MakeMethodFinal_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3558,8 +3558,8 @@
       <varInfo nodeId="1240248297859" varName="editorContext" />
       <varInfo nodeId="1240248297859" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1240248297859" fileName="MakeMethodFinal_Intention.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention" />
     <unitInfo nodeId="4975090607137411427" fileName="MakeMethodFinal_Intention.java" startLine="59" startPosition="95" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention$1" />
+    <unitInfo nodeId="1240248297859" fileName="MakeMethodFinal_Intention.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention" />
   </root>
   <root nodeId="1240251547040" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1240251547040" fileName="MakeFieldVolatile_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3814,8 +3814,8 @@
       <varInfo nodeId="8826502219009039914" varName="parameter_11" />
       <varInfo nodeId="8826502219009039914" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="2040594400225005124" fileName="ConvertIfConditionToTernaryOperator_Intention.java" startLine="18" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention" />
     <unitInfo nodeId="8826502219009039914" fileName="ConvertIfConditionToTernaryOperator_Intention.java" startLine="62" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention$QuotationClass_5h38jn_a0a0a7" />
+    <unitInfo nodeId="2040594400225005124" fileName="ConvertIfConditionToTernaryOperator_Intention.java" startLine="18" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention" />
   </root>
   <root nodeId="2040594400225274133" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="8826502219009005234" fileName="IntentionUtils.java" startLine="15" startPosition="5" endLine="16" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3871,15 +3871,19 @@
     <scopeInfo nodeId="8826502219009005236" fileName="IntentionUtils.java" startLine="21" startPosition="49" endLine="22" endPosition="168" />
     <scopeInfo nodeId="8826502219009005244" fileName="IntentionUtils.java" startLine="34" startPosition="51" endLine="35" endPosition="171" />
     <scopeInfo nodeId="8826502219009005244" fileName="IntentionUtils.java" startLine="38" startPosition="36" endLine="39" endPosition="103" />
+    <scopeInfo nodeId="8826502219009005246" fileName="IntentionUtils.java" startLine="38" startPosition="36" endLine="39" endPosition="103" />
     <scopeInfo nodeId="8826502219009021394" fileName="IntentionUtils.java" startLine="54" startPosition="49" endLine="55" endPosition="170" />
+    <scopeInfo nodeId="8826502219009021394" fileName="IntentionUtils.java" startLine="58" startPosition="34" endLine="59" endPosition="87" />
     <scopeInfo nodeId="8826502219009021396" fileName="IntentionUtils.java" startLine="58" startPosition="34" endLine="59" endPosition="87" />
     <scopeInfo nodeId="8826502219009021439" fileName="IntentionUtils.java" startLine="73" startPosition="49" endLine="74" endPosition="174" />
     <scopeInfo nodeId="8826502219009021439" fileName="IntentionUtils.java" startLine="77" startPosition="34" endLine="78" endPosition="87" />
+    <scopeInfo nodeId="8826502219009021441" fileName="IntentionUtils.java" startLine="77" startPosition="34" endLine="78" endPosition="87" />
     <scopeInfo nodeId="2040594400225274135" fileName="IntentionUtils.java" startLine="10" startPosition="29" endLine="12" endPosition="3" />
     <scopeInfo nodeId="8826502219009005236" fileName="IntentionUtils.java" startLine="19" startPosition="9" endLine="23" endPosition="11">
       <varInfo nodeId="8826502219009005236" varName="matchingNode_k79hya_a0a0" />
     </scopeInfo>
     <scopeInfo nodeId="8826502219009005236" fileName="IntentionUtils.java" startLine="25" startPosition="34" endLine="29" endPosition="12" />
+    <scopeInfo nodeId="8826502219009005238" fileName="IntentionUtils.java" startLine="25" startPosition="34" endLine="29" endPosition="12" />
     <scopeInfo nodeId="8826502219009005244" fileName="IntentionUtils.java" startLine="32" startPosition="11" endLine="36" endPosition="13">
       <varInfo nodeId="8826502219009005244" varName="matchingNode_k79hya_b0a0" />
     </scopeInfo>
@@ -4080,8 +4084,8 @@
       <varInfo nodeId="8826502219009039961" varName="parameter_12" />
       <varInfo nodeId="8826502219009039961" varName="parameter_13" />
     </scopeInfo>
-    <unitInfo nodeId="2040594400225361890" fileName="ConvertIfReturnConditionToTernaryOperator_Intention.java" startLine="18" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertIfReturnConditionToTernaryOperator_Intention" />
     <unitInfo nodeId="8826502219009039961" fileName="ConvertIfReturnConditionToTernaryOperator_Intention.java" startLine="62" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertIfReturnConditionToTernaryOperator_Intention$QuotationClass_48c23v_a0a0a7" />
+    <unitInfo nodeId="2040594400225361890" fileName="ConvertIfReturnConditionToTernaryOperator_Intention.java" startLine="18" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertIfReturnConditionToTernaryOperator_Intention" />
   </root>
   <root nodeId="2357139912674293033" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="2357139912674293033" fileName="MakeClassAbstractFromMethod_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5229,8 +5233,8 @@
       <varInfo nodeId="418779379561923718" varName="parameter_10" />
       <varInfo nodeId="418779379561923718" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="418779379561917490" fileName="SurroundWithTypeCast_Intention.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention" />
     <unitInfo nodeId="418779379561923718" fileName="SurroundWithTypeCast_Intention.java" startLine="68" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention$QuotationClass_598b5x_a0a1a7" />
+    <unitInfo nodeId="418779379561917490" fileName="SurroundWithTypeCast_Intention.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention" />
   </root>
   <root nodeId="418779379562176548" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="418779379562176548" fileName="SurroundWithNegation_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5883,11 +5887,11 @@
       <varInfo nodeId="5742179528877869161" varName="parameter_10" />
       <varInfo nodeId="5742179528877869161" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="5742179528877834612" fileName="CreateMethodDeclaration_Intention.java" startLine="22" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention" />
     <unitInfo nodeId="2735143657509118168" fileName="CreateMethodDeclaration_Intention.java" startLine="87" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a0a0a0f0h" />
-    <unitInfo nodeId="5742179528877869161" fileName="CreateMethodDeclaration_Intention.java" startLine="104" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a0a6a7" />
-    <unitInfo nodeId="6670547060642290023" fileName="CreateMethodDeclaration_Intention.java" startLine="165" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a1a9a7" />
     <unitInfo nodeId="7134942011720343825" fileName="CreateMethodDeclaration_Intention.java" startLine="148" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a2a0a7a7" />
+    <unitInfo nodeId="6670547060642290023" fileName="CreateMethodDeclaration_Intention.java" startLine="165" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a1a9a7" />
+    <unitInfo nodeId="5742179528877869161" fileName="CreateMethodDeclaration_Intention.java" startLine="104" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a0a6a7" />
+    <unitInfo nodeId="5742179528877834612" fileName="CreateMethodDeclaration_Intention.java" startLine="22" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention" />
   </root>
   <root nodeId="6227066020986359514" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="6227066020986359514" fileName="AddNewLine_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6101,8 +6105,8 @@
       <varInfo nodeId="7093209195843978568" varName="editorContext" />
       <varInfo nodeId="7093209195843978568" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7093209195843978568" fileName="UnwrapTryCatch_Intention.java" startLine="16" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention" />
     <unitInfo nodeId="7093209195844143751" fileName="UnwrapTryCatch_Intention.java" startLine="67" startPosition="94" endLine="72" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention$1" />
+    <unitInfo nodeId="7093209195843978568" fileName="UnwrapTryCatch_Intention.java" startLine="16" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention" />
   </root>
   <root nodeId="7288587046701126243" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="7288587046701126243" fileName="ConvertToReturnStatement_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6603,8 +6607,8 @@
       <varInfo nodeId="917166302015890876" varName="editorContext" />
       <varInfo nodeId="917166302015890876" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="917166302015890876" fileName="UnwrapIfThenBlock_Intention.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" />
     <unitInfo nodeId="917166302016112143" fileName="UnwrapIfThenBlock_Intention.java" startLine="62" startPosition="137" endLine="67" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention$1" />
+    <unitInfo nodeId="917166302015890876" fileName="UnwrapIfThenBlock_Intention.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" />
   </root>
   <root nodeId="985108658453262823" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="985108658453262823" fileName="SurroundWithParenthesis_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -339,6 +339,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496074" fileName="BasicDiffRowTableUI.java" startLine="18" startPosition="60" endLine="21" endPosition="3" />
     <scopeInfo nodeId="1560298786499496126" fileName="BasicDiffRowTableUI.java" startLine="28" startPosition="39" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="1560298786499496127" fileName="BasicDiffRowTableUI.java" startLine="28" startPosition="39" endLine="31" endPosition="7">
+      <varInfo nodeId="1560298786499496131" varName="j" />
+    </scopeInfo>
     <scopeInfo nodeId="1560298786499496191" fileName="BasicDiffRowTableUI.java" startLine="38" startPosition="24" endLine="41" endPosition="5">
       <varInfo nodeId="1560298786499496195" varName="k" />
     </scopeInfo>

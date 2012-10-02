@@ -87,8 +87,8 @@
     <scopeInfo nodeId="5980832251990194296" fileName="GenUtil.java" startLine="54" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="5980832251990194301" varName="s" />
     </scopeInfo>
-    <unitInfo nodeId="8285036680620268543" fileName="GenUtil.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
     <unitInfo nodeId="8285036680620283505" fileName="GenUtil.java" startLine="23" startPosition="92" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$1" />
+    <unitInfo nodeId="8285036680620268543" fileName="GenUtil.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
   </root>
 </debugInfo>
 

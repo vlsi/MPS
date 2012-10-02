@@ -183,8 +183,8 @@
       <varInfo nodeId="6585869519574772769" varName="editorContext" />
       <varInfo nodeId="6585869519574772769" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6585869519574772764" fileName="VarRef_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor" />
     <unitInfo nodeId="6585869519574772767" fileName="VarRef_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor$_Inline_kzlle8_a0a" />
+    <unitInfo nodeId="6585869519574772764" fileName="VarRef_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor" />
   </root>
   <root nodeId="6585869519574772771" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
     <nodeInfo nodeId="6585869519574772781" fileName="CAssignmentExpression_Editor.java" startLine="42" startPosition="58" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -939,8 +939,8 @@
       <varInfo nodeId="7211731935130582997" varName="editorContext" />
       <varInfo nodeId="7211731935130582997" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7211731935130582992" fileName="VarDeclStatement_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
     <unitInfo nodeId="7211731935130582999" fileName="VarDeclStatement_Editor.java" startLine="72" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor$varDeclListHandler_fcfntz_b0" />
+    <unitInfo nodeId="7211731935130582992" fileName="VarDeclStatement_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
   </root>
   <root nodeId="7211731935130600482" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
     <nodeInfo nodeId="7211731935130600482" fileName="CBody_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1044,8 +1044,8 @@
       <varInfo nodeId="7211731935130600484" varName="elementNode" />
       <varInfo nodeId="7211731935130600484" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="7211731935130600482" fileName="CBody_Editor.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor" />
     <unitInfo nodeId="7211731935130600484" fileName="CBody_Editor.java" startLine="45" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor$statementListHandler_g01rur_a0" />
+    <unitInfo nodeId="7211731935130600482" fileName="CBody_Editor.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor" />
   </root>
   <root nodeId="7211731935130600830" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
     <nodeInfo nodeId="7211731935130600839" fileName="CWhile_Editor.java" startLine="80" startPosition="58" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

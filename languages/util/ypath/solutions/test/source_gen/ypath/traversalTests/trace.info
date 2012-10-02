@@ -478,28 +478,28 @@
     </scopeInfo>
     <scopeInfo nodeId="1196720900148" fileName="DOMF.java" startLine="44" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1196720900148" fileName="DOMF.java" startLine="114" startPosition="0" endLine="181" endPosition="0" />
-    <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="16" startPosition="0" endLine="308" endPosition="0" unitName="ypath.traversalTests.DOMF" />
-    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="38" endLine="243" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
-    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="38" endLine="108" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
-    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="196" startPosition="21" endLine="241" endPosition="11" unitName="ypath.traversalTests.DOMF$2" />
-    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="49" startPosition="21" endLine="106" endPosition="11" unitName="ypath.traversalTests.DOMF$2" />
-    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="52" endLine="178" endPosition="7" unitName="ypath.traversalTests.DOMF$2" />
-    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="198" startPosition="25" endLine="239" endPosition="15" unitName="ypath.traversalTests.DOMF$3" />
-    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="51" startPosition="25" endLine="104" endPosition="15" unitName="ypath.traversalTests.DOMF$3" />
-    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="119" startPosition="21" endLine="176" endPosition="11" unitName="ypath.traversalTests.DOMF$3" />
-    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="121" startPosition="25" endLine="174" endPosition="15" unitName="ypath.traversalTests.DOMF$4" />
     <unitInfo nodeId="1196720900310" fileName="DOMF.java" startLine="35" startPosition="0" endLine="37" endPosition="0" unitName="ypath.traversalTests.DOMF$Children" />
-    <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="280" startPosition="0" endLine="307" endPosition="0" unitName="ypath.traversalTests.DOMF$Desc_Feature_child" />
-    <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="255" startPosition="0" endLine="279" endPosition="0" unitName="ypath.traversalTests.DOMF$Desc_Feature_elements" />
-    <unitInfo nodeId="1196720900238" fileName="DOMF.java" startLine="183" startPosition="0" endLine="254" endPosition="0" unitName="ypath.traversalTests.DOMF$Feature_child" />
-    <unitInfo nodeId="1196720900148" fileName="DOMF.java" startLine="38" startPosition="0" endLine="182" endPosition="0" unitName="ypath.traversalTests.DOMF$Feature_elements" />
     <unitInfo nodeId="1196720900313" fileName="DOMF.java" startLine="29" startPosition="0" endLine="34" endPosition="0" unitName="ypath.traversalTests.DOMF$Parent" />
-    <unitInfo nodeId="1196720900145" fileName="DOMF_Design.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="ypath.traversalTests.DOMF_Design" />
-    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="38" endLine="62" endPosition="7" unitName="ypath.traversalTests.DOMF_Design$1" />
-    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="24" startPosition="21" endLine="60" endPosition="11" unitName="ypath.traversalTests.DOMF_Design$2" />
-    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="26" startPosition="25" endLine="58" endPosition="15" unitName="ypath.traversalTests.DOMF_Design$3" />
-    <unitInfo nodeId="1196720900145" fileName="DOMF_Design.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="ypath.traversalTests.DOMF_Design$Design_Feature_child" />
     <unitInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="73" startPosition="0" endLine="90" endPosition="0" unitName="ypath.traversalTests.DOMF_Design$Design_Feature_child$QuotationClass_1hzurw_a0a0b0" />
+    <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="255" startPosition="0" endLine="279" endPosition="0" unitName="ypath.traversalTests.DOMF$Desc_Feature_elements" />
+    <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="280" startPosition="0" endLine="307" endPosition="0" unitName="ypath.traversalTests.DOMF$Desc_Feature_child" />
+    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="26" startPosition="25" endLine="58" endPosition="15" unitName="ypath.traversalTests.DOMF_Design$3" />
+    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="24" startPosition="21" endLine="60" endPosition="11" unitName="ypath.traversalTests.DOMF_Design$2" />
+    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="38" endLine="62" endPosition="7" unitName="ypath.traversalTests.DOMF_Design$1" />
+    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="198" startPosition="25" endLine="239" endPosition="15" unitName="ypath.traversalTests.DOMF$3" />
+    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="196" startPosition="21" endLine="241" endPosition="11" unitName="ypath.traversalTests.DOMF$2" />
+    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="38" endLine="243" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
+    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="51" startPosition="25" endLine="104" endPosition="15" unitName="ypath.traversalTests.DOMF$3" />
+    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="121" startPosition="25" endLine="174" endPosition="15" unitName="ypath.traversalTests.DOMF$4" />
+    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="49" startPosition="21" endLine="106" endPosition="11" unitName="ypath.traversalTests.DOMF$2" />
+    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="119" startPosition="21" endLine="176" endPosition="11" unitName="ypath.traversalTests.DOMF$3" />
+    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="38" endLine="108" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
+    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="52" endLine="178" endPosition="7" unitName="ypath.traversalTests.DOMF$2" />
+    <unitInfo nodeId="1196720900145" fileName="DOMF_Design.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="ypath.traversalTests.DOMF_Design$Design_Feature_child" />
+    <unitInfo nodeId="1196720900238" fileName="DOMF.java" startLine="183" startPosition="0" endLine="254" endPosition="0" unitName="ypath.traversalTests.DOMF$Feature_child" />
+    <unitInfo nodeId="1196720900145" fileName="DOMF_Design.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="ypath.traversalTests.DOMF_Design" />
+    <unitInfo nodeId="1196720900148" fileName="DOMF.java" startLine="38" startPosition="0" endLine="182" endPosition="0" unitName="ypath.traversalTests.DOMF$Feature_elements" />
+    <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="16" startPosition="0" endLine="308" endPosition="0" unitName="ypath.traversalTests.DOMF" />
   </root>
 </debugInfo>
 

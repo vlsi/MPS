@@ -187,7 +187,9 @@
       <varInfo nodeId="3531370237489972467" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="3531370237489972463" fileName="MergeBackupUtil.java" startLine="70" startPosition="29" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="3531370237489972464" fileName="MergeBackupUtil.java" startLine="70" startPosition="29" endLine="73" endPosition="7" />
     <scopeInfo nodeId="429607733396400309" fileName="MergeBackupUtil.java" startLine="98" startPosition="47" endLine="101" endPosition="9" />
+    <scopeInfo nodeId="429607733396400310" fileName="MergeBackupUtil.java" startLine="98" startPosition="47" endLine="101" endPosition="9" />
     <scopeInfo nodeId="429607733396400408" fileName="MergeBackupUtil.java" startLine="118" startPosition="54" endLine="121" endPosition="5">
       <varInfo nodeId="429607733396400420" varName="i" />
     </scopeInfo>
@@ -271,11 +273,11 @@
       <varInfo nodeId="429607733396400249" varName="versions" />
       <varInfo nodeId="429607733396400247" varName="zipfile" />
     </scopeInfo>
-    <unitInfo nodeId="6933307669479990701" fileName="MergeBackupUtil.java" startLine="32" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <unitInfo nodeId="3531370237489972510" fileName="MergeBackupUtil.java" startLine="58" startPosition="46" endLine="62" endPosition="7" unitName="jetbrains.mps.vcs.platform.util.MergeBackupUtil$1" />
     <unitInfo nodeId="429607733396400291" fileName="MergeBackupUtil.java" startLine="93" startPosition="42" endLine="97" endPosition="7" unitName="jetbrains.mps.vcs.platform.util.MergeBackupUtil$2" />
     <unitInfo nodeId="429607733396471818" fileName="MergeBackupUtil.java" startLine="131" startPosition="83" endLine="135" endPosition="5" unitName="jetbrains.mps.vcs.platform.util.MergeBackupUtil$3" />
     <unitInfo nodeId="429607733396471840" fileName="MergeBackupUtil.java" startLine="136" startPosition="69" endLine="140" endPosition="5" unitName="jetbrains.mps.vcs.platform.util.MergeBackupUtil$4" />
+    <unitInfo nodeId="6933307669479990701" fileName="MergeBackupUtil.java" startLine="32" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
   </root>
 </debugInfo>
 

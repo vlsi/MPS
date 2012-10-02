@@ -260,12 +260,12 @@
       <varInfo nodeId="3613324658897711553" varName="vfile" />
     </scopeInfo>
     <scopeInfo nodeId="3613324658897711648" fileName="MPSVcsManager.java" startLine="89" startPosition="0" endLine="109" endPosition="0" />
-    <unitInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="48" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager" />
     <unitInfo nodeId="3613324658897711513" fileName="MPSVcsManager.java" startLine="56" startPosition="67" endLine="60" endPosition="3" unitName="jetbrains.mps.vcs.MPSVcsManager$1" />
     <unitInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="98" startPosition="34" endLine="102" endPosition="5" unitName="jetbrains.mps.vcs.MPSVcsManager$2" />
-    <unitInfo nodeId="3613324658897711439" fileName="MPSVcsManager.java" startLine="206" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$MyChangelistBuilder" />
     <unitInfo nodeId="8222824327012887836" fileName="MPSVcsManager.java" startLine="238" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$MyFileStatusListener" />
+    <unitInfo nodeId="3613324658897711439" fileName="MPSVcsManager.java" startLine="206" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$MyChangelistBuilder" />
     <unitInfo nodeId="3613324658897711377" fileName="MPSVcsManager.java" startLine="161" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$StubChangeListManagerGate" />
+    <unitInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="48" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager" />
   </root>
   <root nodeId="3613324658897713212" modelId="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)">
     <nodeInfo nodeId="3613324658897713233" fileName="MPSVcsProjectConfiguration.java" startLine="18" startPosition="146" endLine="19" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
@@ -328,9 +328,9 @@
     <scopeInfo nodeId="3613324658897713272" fileName="MPSVcsProjectConfiguration.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3613324658897713275" varName="ignoreGeneratedFiles" />
     </scopeInfo>
-    <unitInfo nodeId="3613324658897713212" fileName="MPSVcsProjectConfiguration.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration" />
     <unitInfo nodeId="3613324658897713315" fileName="MPSVcsProjectConfiguration.java" startLine="42" startPosition="57" endLine="48" endPosition="7" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration$1" />
     <unitInfo nodeId="3613324658897713217" fileName="MPSVcsProjectConfiguration.java" startLine="56" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration$MyState" />
+    <unitInfo nodeId="3613324658897713212" fileName="MPSVcsProjectConfiguration.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration" />
   </root>
   <root nodeId="8298649587588696257" modelId="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)">
     <nodeInfo nodeId="8298649587588715695" fileName="MergeDriverPackerImpl.java" startLine="22" startPosition="34" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -401,10 +401,10 @@
       <varInfo nodeId="9167626757954704203" varName="languagesPath" />
     </scopeInfo>
     <scopeInfo nodeId="8298649587588715676" fileName="MergeDriverPackerImpl.java" startLine="25" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="8298649587588696257" fileName="MergeDriverPackerImpl.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.vcs.MergeDriverPackerImpl" />
     <unitInfo nodeId="7284133972121415826" fileName="MergeDriverPackerImpl.java" startLine="28" startPosition="115" endLine="32" endPosition="5" unitName="jetbrains.mps.vcs.MergeDriverPackerImpl$1" />
     <unitInfo nodeId="7211226859971706625" fileName="MergeDriverPackerImpl.java" startLine="37" startPosition="97" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.MergeDriverPackerImpl$2" />
     <unitInfo nodeId="7211226859971706850" fileName="MergeDriverPackerImpl.java" startLine="45" startPosition="100" endLine="49" endPosition="5" unitName="jetbrains.mps.vcs.MergeDriverPackerImpl$3" />
+    <unitInfo nodeId="8298649587588696257" fileName="MergeDriverPackerImpl.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.vcs.MergeDriverPackerImpl" />
   </root>
   <root nodeId="8950331023925632205" modelId="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)">
     <nodeInfo nodeId="8950331023925632209" fileName="VcsGeneratedFilesPanel.java" startLine="13" startPosition="86" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIgnoreGeneratedFilesCheckBox" />

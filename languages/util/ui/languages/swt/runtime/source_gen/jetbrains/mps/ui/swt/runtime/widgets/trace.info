@@ -153,6 +153,7 @@
     <scopeInfo nodeId="9201869079511517291" fileName="ExpandController.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="9201869079511517296" varName="ei" />
     </scopeInfo>
+    <scopeInfo nodeId="9201869079511518058" fileName="ExpandController.java" startLine="85" startPosition="29" endLine="89" endPosition="5" />
     <scopeInfo nodeId="9201869079511518060" fileName="ExpandController.java" startLine="85" startPosition="29" endLine="89" endPosition="5">
       <varInfo nodeId="9201869079511518061" varName="it" />
     </scopeInfo>
@@ -197,11 +198,11 @@
     <scopeInfo nodeId="9201869079511503269" fileName="ExpandController.java" startLine="19" startPosition="0" endLine="79" endPosition="3">
       <varInfo nodeId="9201869079511508347" varName="eb" />
     </scopeInfo>
-    <unitInfo nodeId="9201869079511503267" fileName="ExpandController.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController" />
-    <unitInfo nodeId="9201869079511508358" fileName="ExpandController.java" startLine="21" startPosition="29" endLine="52" endPosition="5" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$1" />
+    <unitInfo nodeId="9201869079511555551" fileName="ExpandController.java" startLine="71" startPosition="45" endLine="75" endPosition="11" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$3" />
     <unitInfo nodeId="9201869079511518163" fileName="ExpandController.java" startLine="44" startPosition="45" endLine="49" endPosition="11" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$2" />
     <unitInfo nodeId="9201869079511555456" fileName="ExpandController.java" startLine="53" startPosition="30" endLine="78" endPosition="5" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$2" />
-    <unitInfo nodeId="9201869079511555551" fileName="ExpandController.java" startLine="71" startPosition="45" endLine="75" endPosition="11" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$3" />
+    <unitInfo nodeId="9201869079511508358" fileName="ExpandController.java" startLine="21" startPosition="29" endLine="52" endPosition="5" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController$1" />
+    <unitInfo nodeId="9201869079511503267" fileName="ExpandController.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.ExpandController" />
   </root>
 </debugInfo>
 

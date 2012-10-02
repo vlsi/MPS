@@ -305,11 +305,11 @@
       <varInfo nodeId="2891782949125172289" varName="project" />
       <varInfo nodeId="2891782949125172285" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="2891782949125171999" fileName="JavaBreakpointsProvider.java" startLine="40" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider" />
-    <unitInfo nodeId="2891782949125204746" fileName="JavaBreakpointsProvider.java" startLine="200" startPosition="37" endLine="208" endPosition="9" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$1" />
     <unitInfo nodeId="2891782949125204789" fileName="JavaBreakpointsProvider.java" startLine="215" startPosition="47" endLine="220" endPosition="7" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$2" />
-    <unitInfo nodeId="2891782949125172004" fileName="JavaBreakpointsProvider.java" startLine="186" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$MyIBreakpointPropertiesUi" />
+    <unitInfo nodeId="2891782949125204746" fileName="JavaBreakpointsProvider.java" startLine="200" startPosition="37" endLine="208" endPosition="9" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$1" />
     <unitInfo nodeId="2891782949125172008" fileName="JavaBreakpointsProvider.java" startLine="244" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$SuspendPolicy" />
+    <unitInfo nodeId="2891782949125172004" fileName="JavaBreakpointsProvider.java" startLine="186" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider$MyIBreakpointPropertiesUi" />
+    <unitInfo nodeId="2891782949125171999" fileName="JavaBreakpointsProvider.java" startLine="40" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.debugger.java.JavaBreakpointsProvider" />
   </root>
 </debugInfo>
 

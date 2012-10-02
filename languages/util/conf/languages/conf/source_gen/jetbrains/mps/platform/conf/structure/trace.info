@@ -109,8 +109,8 @@
     <scopeInfo nodeId="1740160309778171009" fileName="Level.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1740160309778171009" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1740160309778171009" fileName="Level.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Level" />
     <unitInfo nodeId="1740160309778171009" fileName="Level_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Level_PropertySupport" />
+    <unitInfo nodeId="1740160309778171009" fileName="Level.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Level" />
   </root>
   <root nodeId="6536266708345477902" modelId="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)">
     <nodeInfo nodeId="6536266708345477902" fileName="PluginDetail_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -223,8 +223,8 @@
     <scopeInfo nodeId="6536266708345477902" fileName="PluginDetail.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6536266708345477902" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="6536266708345477902" fileName="PluginDetail.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDetail" />
     <unitInfo nodeId="6536266708345477902" fileName="PluginDetail_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDetail_PropertySupport" />
+    <unitInfo nodeId="6536266708345477902" fileName="PluginDetail.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDetail" />
   </root>
   <root nodeId="8605160448689289377" modelId="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)">
     <nodeInfo nodeId="8605160448689289377" fileName="GroupPosition_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -337,8 +337,8 @@
     <scopeInfo nodeId="8605160448689289377" fileName="GroupPosition.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8605160448689289377" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="8605160448689289377" fileName="GroupPosition.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.GroupPosition" />
     <unitInfo nodeId="8605160448689289377" fileName="GroupPosition_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.GroupPosition_PropertySupport" />
+    <unitInfo nodeId="8605160448689289377" fileName="GroupPosition.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.GroupPosition" />
   </root>
 </debugInfo>
 

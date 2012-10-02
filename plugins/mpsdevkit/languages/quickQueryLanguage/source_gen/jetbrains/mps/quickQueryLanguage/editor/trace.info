@@ -294,8 +294,8 @@
       <varInfo nodeId="1218795571418" varName="editorContext" />
       <varInfo nodeId="1218795571418" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="23" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor" />
     <unitInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="145" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor$_Inline_1kyme_a1b0" />
+    <unitInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="23" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor" />
   </root>
   <root nodeId="1219745771774" modelId="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)">
     <nodeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="163" startPosition="58" endLine="163" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -714,8 +714,8 @@
       <varInfo nodeId="1219745786567" varName="editorContext" />
       <varInfo nodeId="1219745786567" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1219745771774" fileName="ReplaceModelQuery_Editor.java" startLine="23" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ReplaceModelQuery_Editor" />
     <unitInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="209" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ReplaceModelQuery_Editor$_Inline_kwr3w_a1b0" />
+    <unitInfo nodeId="1219745771774" fileName="ReplaceModelQuery_Editor.java" startLine="23" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ReplaceModelQuery_Editor" />
   </root>
 </debugInfo>
 

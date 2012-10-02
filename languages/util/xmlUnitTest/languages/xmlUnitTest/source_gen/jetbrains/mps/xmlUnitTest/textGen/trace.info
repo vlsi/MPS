@@ -23,6 +23,7 @@
     <nodeInfo nodeId="5211164146776942548" fileName="XMLLiteral_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5211164146776738338" fileName="XMLLiteral_TextGen.java" startLine="8" startPosition="54" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="5211164146776738338" fileName="XMLLiteral_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="55" />
+    <scopeInfo nodeId="5211164146776942548" fileName="XMLLiteral_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="55" />
     <scopeInfo nodeId="5211164146776738338" fileName="XMLLiteral_TextGen.java" startLine="8" startPosition="54" endLine="12" endPosition="0">
       <varInfo nodeId="5211164146776738338" varName="node" />
     </scopeInfo>
@@ -146,6 +147,7 @@
     <nodeInfo nodeId="5266766379151917310" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5266766379151917310" fileName="Document_TextGen.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtension#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="5266766379151917310" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
+    <scopeInfo nodeId="5266766379151917313" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="5266766379151917310" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" />
     <scopeInfo nodeId="5266766379151917310" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0">
       <varInfo nodeId="5266766379151917310" varName="node" />

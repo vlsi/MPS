@@ -133,8 +133,8 @@
       <varInfo nodeId="1987251859606934928" varName="editorContext" />
       <varInfo nodeId="1987251859606934928" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1987251859606934921" fileName="DecisionTable_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.editor.DecisionTable_Editor" />
     <unitInfo nodeId="1987251859606934930" fileName="DecisionTable_Editor.java" startLine="78" startPosition="36" endLine="82" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.editor.DecisionTable_Editor$1" />
+    <unitInfo nodeId="1987251859606934921" fileName="DecisionTable_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.editor.DecisionTable_Editor" />
   </root>
 </debugInfo>
 

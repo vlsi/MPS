@@ -451,31 +451,31 @@
       <varInfo nodeId="10342590403826380" varName="go" />
       <varInfo nodeId="10342590403826378" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="10342590403826361" fileName="ReducedGenerationWorker.java" startLine="56" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" />
-    <unitInfo nodeId="2401267815445831988" fileName="ReducedGenerationWorker.java" startLine="241" startPosition="86" endLine="245" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
-    <unitInfo nodeId="2206718243407881501" fileName="ReducedGenerationWorker.java" startLine="370" startPosition="70" endLine="374" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
-    <unitInfo nodeId="10342590403826503" fileName="ReducedGenerationWorker.java" startLine="79" startPosition="25" endLine="85" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
     <unitInfo nodeId="8100389612131714941" fileName="ReducedGenerationWorker.java" startLine="88" startPosition="115" endLine="92" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$2" />
-    <unitInfo nodeId="2401267815445832086" fileName="ReducedGenerationWorker.java" startLine="246" startPosition="91" endLine="250" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$2" />
-    <unitInfo nodeId="2206718243407881532" fileName="ReducedGenerationWorker.java" startLine="374" startPosition="18" endLine="378" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$2" />
     <unitInfo nodeId="1137265334940854255" fileName="ReducedGenerationWorker.java" startLine="96" startPosition="80" endLine="100" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$3" />
-    <unitInfo nodeId="2401267815445832139" fileName="ReducedGenerationWorker.java" startLine="252" startPosition="90" endLine="256" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$3" />
     <unitInfo nodeId="7161975888203377159" fileName="ReducedGenerationWorker.java" startLine="135" startPosition="45" endLine="139" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$4" />
-    <unitInfo nodeId="2401267815445832200" fileName="ReducedGenerationWorker.java" startLine="257" startPosition="95" endLine="261" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$4" />
     <unitInfo nodeId="7161975888203377227" fileName="ReducedGenerationWorker.java" startLine="140" startPosition="110" endLine="144" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$5" />
-    <unitInfo nodeId="3822547445468853574" fileName="ReducedGenerationWorker.java" startLine="263" startPosition="91" endLine="267" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$5" />
     <unitInfo nodeId="7161975888203377237" fileName="ReducedGenerationWorker.java" startLine="144" startPosition="37" endLine="148" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$6" />
-    <unitInfo nodeId="3822547445468853583" fileName="ReducedGenerationWorker.java" startLine="267" startPosition="20" endLine="271" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$6" />
-    <unitInfo nodeId="3822547445468853594" fileName="ReducedGenerationWorker.java" startLine="271" startPosition="20" endLine="275" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$7" />
-    <unitInfo nodeId="1137265334940854271" fileName="ReducedGenerationWorker.java" startLine="158" startPosition="15" endLine="198" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$7" />
     <unitInfo nodeId="1137265334940854413" fileName="ReducedGenerationWorker.java" startLine="192" startPosition="26" endLine="196" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$8" />
     <unitInfo nodeId="8100389612131714904" fileName="ReducedGenerationWorker.java" startLine="213" startPosition="76" endLine="217" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$8" />
+    <unitInfo nodeId="2401267815445831988" fileName="ReducedGenerationWorker.java" startLine="241" startPosition="86" endLine="245" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
+    <unitInfo nodeId="2401267815445832086" fileName="ReducedGenerationWorker.java" startLine="246" startPosition="91" endLine="250" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$2" />
+    <unitInfo nodeId="2401267815445832139" fileName="ReducedGenerationWorker.java" startLine="252" startPosition="90" endLine="256" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$3" />
+    <unitInfo nodeId="2401267815445832200" fileName="ReducedGenerationWorker.java" startLine="257" startPosition="95" endLine="261" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$4" />
+    <unitInfo nodeId="3822547445468853574" fileName="ReducedGenerationWorker.java" startLine="263" startPosition="91" endLine="267" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$5" />
+    <unitInfo nodeId="3822547445468853583" fileName="ReducedGenerationWorker.java" startLine="267" startPosition="20" endLine="271" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$6" />
+    <unitInfo nodeId="3822547445468853594" fileName="ReducedGenerationWorker.java" startLine="271" startPosition="20" endLine="275" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$7" />
     <unitInfo nodeId="3822547445468853604" fileName="ReducedGenerationWorker.java" startLine="275" startPosition="19" endLine="279" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$8" />
     <unitInfo nodeId="3822547445468853618" fileName="ReducedGenerationWorker.java" startLine="279" startPosition="20" endLine="283" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$9" />
+    <unitInfo nodeId="2206718243407881501" fileName="ReducedGenerationWorker.java" startLine="370" startPosition="70" endLine="374" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
+    <unitInfo nodeId="2206718243407881532" fileName="ReducedGenerationWorker.java" startLine="374" startPosition="18" endLine="378" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$2" />
+    <unitInfo nodeId="10342590403826503" fileName="ReducedGenerationWorker.java" startLine="79" startPosition="25" endLine="85" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
     <unitInfo nodeId="2206718243407881386" fileName="ReducedGenerationWorker.java" startLine="218" startPosition="75" endLine="225" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$9" />
-    <unitInfo nodeId="2961598796784392378" fileName="ReducedGenerationWorker.java" startLine="233" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$ModuleOutputPaths" />
     <unitInfo nodeId="2206718243407881394" fileName="ReducedGenerationWorker.java" startLine="366" startPosition="0" endLine="389" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$MyForeignRootPaths" />
+    <unitInfo nodeId="1137265334940854271" fileName="ReducedGenerationWorker.java" startLine="158" startPosition="15" endLine="198" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$7" />
     <unitInfo nodeId="2206718243407929168" fileName="ReducedGenerationWorker.java" startLine="317" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$MyOutputRedirects" />
+    <unitInfo nodeId="2961598796784392378" fileName="ReducedGenerationWorker.java" startLine="233" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$ModuleOutputPaths" />
+    <unitInfo nodeId="10342590403826361" fileName="ReducedGenerationWorker.java" startLine="56" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" />
   </root>
   <root nodeId="7795897115019498548" modelId="r:e26c23c0-c117-4389-8d76-62e09a48aaa5(jetbrains.mps.build.ant.generation.workers)">
     <nodeInfo nodeId="7795897115019498680" fileName="GeneratorWorker.java" startLine="53" startPosition="48" endLine="54" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
@@ -766,6 +766,7 @@
     <scopeInfo nodeId="7874190907999511017" fileName="GeneratorWorker.java" startLine="226" startPosition="44" endLine="230" endPosition="11">
       <varInfo nodeId="7874190907999511028" varName="mod" />
     </scopeInfo>
+    <scopeInfo nodeId="8486843261567504160" fileName="GeneratorWorker.java" startLine="226" startPosition="44" endLine="230" endPosition="11" />
     <scopeInfo nodeId="7874190907999511041" fileName="GeneratorWorker.java" startLine="240" startPosition="144" endLine="244" endPosition="0">
       <varInfo nodeId="7874190907999511041" varName="smd" />
     </scopeInfo>
@@ -871,19 +872,19 @@
       <varInfo nodeId="7982390764421924840" varName="mpsProjects" />
     </scopeInfo>
     <scopeInfo nodeId="7982390764421924823" fileName="GeneratorWorker.java" startLine="133" startPosition="0" endLine="187" endPosition="0" />
-    <unitInfo nodeId="7795897115019498548" fileName="GeneratorWorker.java" startLine="53" startPosition="0" endLine="367" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
-    <unitInfo nodeId="2590687671594979289" fileName="GeneratorWorker.java" startLine="162" startPosition="46" endLine="170" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
-    <unitInfo nodeId="7655616008808081047" fileName="GeneratorWorker.java" startLine="348" startPosition="17" endLine="363" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
-    <unitInfo nodeId="5480159589349790843" fileName="GeneratorWorker.java" startLine="189" startPosition="45" endLine="194" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$2" />
     <unitInfo nodeId="5480159589349790863" fileName="GeneratorWorker.java" startLine="195" startPosition="46" endLine="199" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$3" />
     <unitInfo nodeId="3767231643656621729" fileName="GeneratorWorker.java" startLine="203" startPosition="90" endLine="207" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$4" />
     <unitInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="207" startPosition="21" endLine="211" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$5" />
     <unitInfo nodeId="3767231643656621779" fileName="GeneratorWorker.java" startLine="215" startPosition="104" endLine="219" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$6" />
-    <unitInfo nodeId="7874190907999511015" fileName="GeneratorWorker.java" startLine="224" startPosition="45" endLine="239" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$7" />
     <unitInfo nodeId="7874190907999511041" fileName="GeneratorWorker.java" startLine="240" startPosition="110" endLine="244" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$8" />
     <unitInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="244" startPosition="37" endLine="248" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$9" />
-    <unitInfo nodeId="7655616008808080917" fileName="GeneratorWorker.java" startLine="301" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$Graph" />
+    <unitInfo nodeId="5480159589349790843" fileName="GeneratorWorker.java" startLine="189" startPosition="45" endLine="194" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$2" />
+    <unitInfo nodeId="2590687671594979289" fileName="GeneratorWorker.java" startLine="162" startPosition="46" endLine="170" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
+    <unitInfo nodeId="7874190907999511015" fileName="GeneratorWorker.java" startLine="224" startPosition="45" endLine="239" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$7" />
+    <unitInfo nodeId="7655616008808081047" fileName="GeneratorWorker.java" startLine="348" startPosition="17" endLine="363" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
     <unitInfo nodeId="7795897115019498611" fileName="GeneratorWorker.java" startLine="256" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$MyMessageHandler" />
+    <unitInfo nodeId="7655616008808080917" fileName="GeneratorWorker.java" startLine="301" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$Graph" />
+    <unitInfo nodeId="7795897115019498548" fileName="GeneratorWorker.java" startLine="53" startPosition="0" endLine="367" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
   </root>
   <root nodeId="7795897115019499553" modelId="r:e26c23c0-c117-4389-8d76-62e09a48aaa5(jetbrains.mps.build.ant.generation.workers)">
     <nodeInfo nodeId="7874190907999511748" fileName="TestGenerationWorker.java" startLine="76" startPosition="53" endLine="77" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
@@ -1345,6 +1346,7 @@
     <scopeInfo nodeId="7874190907999511845" fileName="TestGenerationWorker.java" startLine="492" startPosition="25" endLine="495" endPosition="16" />
     <scopeInfo nodeId="7874190907999511880" fileName="TestGenerationWorker.java" startLine="499" startPosition="0" endLine="502" endPosition="0" />
     <scopeInfo nodeId="2342584008145152269" fileName="TestGenerationWorker.java" startLine="563" startPosition="17" endLine="566" endPosition="29" />
+    <scopeInfo nodeId="2342584008145152342" fileName="TestGenerationWorker.java" startLine="572" startPosition="46" endLine="575" endPosition="11" />
     <scopeInfo nodeId="2342584008145152343" fileName="TestGenerationWorker.java" startLine="572" startPosition="46" endLine="575" endPosition="11">
       <varInfo nodeId="2342584008145152349" varName="f" />
     </scopeInfo>
@@ -1456,6 +1458,9 @@
       <varInfo nodeId="4128185861943386004" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="7260781342054499966" fileName="TestGenerationWorker.java" startLine="346" startPosition="92" endLine="353" endPosition="13" />
+    <scopeInfo nodeId="7260781342054500024" fileName="TestGenerationWorker.java" startLine="346" startPosition="92" endLine="353" endPosition="13">
+      <varInfo nodeId="7260781342054500026" varName="tconf" />
+    </scopeInfo>
     <scopeInfo nodeId="7795897115019501197" fileName="TestGenerationWorker.java" startLine="465" startPosition="0" endLine="472" endPosition="0" />
     <scopeInfo nodeId="6359254648150120591" fileName="TestGenerationWorker.java" startLine="583" startPosition="0" endLine="590" endPosition="0">
       <varInfo nodeId="6359254648150120603" varName="name" />
@@ -1617,26 +1622,26 @@
       <varInfo nodeId="7874190907999511607" varName="go" />
       <varInfo nodeId="7874190907999511605" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="7795897115019499553" fileName="TestGenerationWorker.java" startLine="76" startPosition="0" endLine="657" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
-    <unitInfo nodeId="3705898146943256290" fileName="TestGenerationWorker.java" startLine="138" startPosition="75" endLine="145" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$1" />
-    <unitInfo nodeId="3705898146943256323" fileName="TestGenerationWorker.java" startLine="146" startPosition="76" endLine="153" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$2" />
-    <unitInfo nodeId="9143630131837001683" fileName="TestGenerationWorker.java" startLine="156" startPosition="32" endLine="232" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$3" />
     <unitInfo nodeId="5294074698114022013" fileName="TestGenerationWorker.java" startLine="204" startPosition="26" endLine="208" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
     <unitInfo nodeId="1272816699443816038" fileName="TestGenerationWorker.java" startLine="217" startPosition="25" endLine="221" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
-    <unitInfo nodeId="8638838189258389311" fileName="TestGenerationWorker.java" startLine="236" startPosition="27" endLine="247" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
-    <unitInfo nodeId="3705898146943221347" fileName="TestGenerationWorker.java" startLine="156" startPosition="86" endLine="199" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
-    <unitInfo nodeId="2375995557741757491" fileName="TestGenerationWorker.java" startLine="276" startPosition="47" endLine="281" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
-    <unitInfo nodeId="3705898146943221369" fileName="TestGenerationWorker.java" startLine="156" startPosition="107" endLine="177" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
     <unitInfo nodeId="2950912911227600627" fileName="TestGenerationWorker.java" startLine="282" startPosition="48" endLine="286" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$6" />
-    <unitInfo nodeId="3037398679707966653" fileName="TestGenerationWorker.java" startLine="340" startPosition="45" endLine="378" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$7" />
     <unitInfo nodeId="3705898146943200101" fileName="TestGenerationWorker.java" startLine="358" startPosition="118" endLine="362" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$8" />
     <unitInfo nodeId="5393911253307931303" fileName="TestGenerationWorker.java" startLine="363" startPosition="114" endLine="367" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$8" />
     <unitInfo nodeId="5393911253307931312" fileName="TestGenerationWorker.java" startLine="367" startPosition="25" endLine="371" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$8" />
     <unitInfo nodeId="5393911253307931326" fileName="TestGenerationWorker.java" startLine="371" startPosition="25" endLine="375" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$8" />
     <unitInfo nodeId="3037398679707992881" fileName="TestGenerationWorker.java" startLine="379" startPosition="88" endLine="383" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$8" />
+    <unitInfo nodeId="2375995557741757491" fileName="TestGenerationWorker.java" startLine="276" startPosition="47" endLine="281" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
+    <unitInfo nodeId="3705898146943256290" fileName="TestGenerationWorker.java" startLine="138" startPosition="75" endLine="145" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$1" />
+    <unitInfo nodeId="3705898146943256323" fileName="TestGenerationWorker.java" startLine="146" startPosition="76" endLine="153" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$2" />
+    <unitInfo nodeId="8638838189258389311" fileName="TestGenerationWorker.java" startLine="236" startPosition="27" endLine="247" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
+    <unitInfo nodeId="3705898146943221369" fileName="TestGenerationWorker.java" startLine="156" startPosition="107" endLine="177" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$5" />
     <unitInfo nodeId="7874190907999511758" fileName="TestGenerationWorker.java" startLine="478" startPosition="0" endLine="503" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyMessageHandler" />
-    <unitInfo nodeId="6359254648150120585" fileName="TestGenerationWorker.java" startLine="541" startPosition="0" endLine="656" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyReporter" />
     <unitInfo nodeId="7795897115019499629" fileName="TestGenerationWorker.java" startLine="504" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyUnitTestAdapter" />
+    <unitInfo nodeId="3037398679707966653" fileName="TestGenerationWorker.java" startLine="340" startPosition="45" endLine="378" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$7" />
+    <unitInfo nodeId="3705898146943221347" fileName="TestGenerationWorker.java" startLine="156" startPosition="86" endLine="199" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
+    <unitInfo nodeId="9143630131837001683" fileName="TestGenerationWorker.java" startLine="156" startPosition="32" endLine="232" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$3" />
+    <unitInfo nodeId="6359254648150120585" fileName="TestGenerationWorker.java" startLine="541" startPosition="0" endLine="656" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyReporter" />
+    <unitInfo nodeId="7795897115019499553" fileName="TestGenerationWorker.java" startLine="76" startPosition="0" endLine="657" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
   </root>
   <root nodeId="7874190907999476498" modelId="r:e26c23c0-c117-4389-8d76-62e09a48aaa5(jetbrains.mps.build.ant.generation.workers)">
     <nodeInfo nodeId="4427136928946606713" fileName="BuildMakeService.java" startLine="41" startPosition="83" endLine="42" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -2014,16 +2019,16 @@
     <scopeInfo nodeId="7874190907999477590" fileName="BuildMakeService.java" startLine="187" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="7874190907999477659" varName="fdk" />
     </scopeInfo>
-    <unitInfo nodeId="7874190907999476498" fileName="BuildMakeService.java" startLine="41" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
-    <unitInfo nodeId="2821774308986817169" fileName="BuildMakeService.java" startLine="224" startPosition="42" endLine="228" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
-    <unitInfo nodeId="2821774308986878488" fileName="BuildMakeService.java" startLine="119" startPosition="15" endLine="134" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
     <unitInfo nodeId="2821774308986878648" fileName="BuildMakeService.java" startLine="127" startPosition="22" endLine="131" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
+    <unitInfo nodeId="2821774308986817169" fileName="BuildMakeService.java" startLine="224" startPosition="42" endLine="228" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
     <unitInfo nodeId="2821774308986878314" fileName="BuildMakeService.java" startLine="238" startPosition="41" endLine="242" endPosition="11" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$2" />
-    <unitInfo nodeId="2821774308986816129" fileName="BuildMakeService.java" startLine="211" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController" />
+    <unitInfo nodeId="2821774308986878488" fileName="BuildMakeService.java" startLine="119" startPosition="15" endLine="134" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$1" />
     <unitInfo nodeId="2821774308986817203" fileName="BuildMakeService.java" startLine="293" startPosition="0" endLine="312" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController$DelegatingConfigMonitor" />
     <unitInfo nodeId="2821774308986846410" fileName="BuildMakeService.java" startLine="313" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController$DelegatingJobMonitor" />
-    <unitInfo nodeId="7874190907999477589" fileName="BuildMakeService.java" startLine="181" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$MessageFeedbackStrategy" />
     <unitInfo nodeId="5520723819347757702" fileName="BuildMakeService.java" startLine="153" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$TaskRunner" />
+    <unitInfo nodeId="7874190907999477589" fileName="BuildMakeService.java" startLine="181" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$MessageFeedbackStrategy" />
+    <unitInfo nodeId="2821774308986816129" fileName="BuildMakeService.java" startLine="211" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService$DelegatingScriptController" />
+    <unitInfo nodeId="7874190907999476498" fileName="BuildMakeService.java" startLine="41" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
   </root>
 </debugInfo>
 

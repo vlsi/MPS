@@ -130,10 +130,10 @@
     <scopeInfo nodeId="1153939332251" fileName="Main_sequence_as_javaList.java" startLine="11" startPosition="45" endLine="70" endPosition="0">
       <varInfo nodeId="1153939342427" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1153939305375" fileName="Main_sequence_as_javaList.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList" />
-    <unitInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="13" startPosition="58" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$1" />
-    <unitInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="15" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$2" />
     <unitInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="17" startPosition="23" endLine="58" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$3" />
+    <unitInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="15" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$2" />
+    <unitInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="13" startPosition="58" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$1" />
+    <unitInfo nodeId="1153939305375" fileName="Main_sequence_as_javaList.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList" />
   </root>
 </debugInfo>
 

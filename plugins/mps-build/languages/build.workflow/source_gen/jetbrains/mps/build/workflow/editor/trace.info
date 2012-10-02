@@ -180,8 +180,8 @@
       <varInfo nodeId="144710003695466874" varName="editorContext" />
       <varInfo nodeId="144710003695466874" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="144710003695346442" fileName="BwfJavaLibrary_Editor.java" startLine="26" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_Editor" />
     <unitInfo nodeId="144710003695466876" fileName="BwfJavaLibrary_Editor.java" startLine="91" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_Editor$classpathListHandler_757giq_c0" />
+    <unitInfo nodeId="144710003695346442" fileName="BwfJavaLibrary_Editor.java" startLine="26" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_Editor" />
   </root>
   <root nodeId="144710003695507918" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="144710003695507925" fileName="BwfJavaLibraryReference_Editor.java" startLine="45" startPosition="58" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -309,8 +309,8 @@
       <varInfo nodeId="144710003695507928" varName="editorContext" />
       <varInfo nodeId="144710003695507928" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="144710003695507918" fileName="BwfJavaLibraryReference_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_Editor" />
     <unitInfo nodeId="144710003695507926" fileName="BwfJavaLibraryReference_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_Editor$_Inline_54tsec_a1a" />
+    <unitInfo nodeId="144710003695507918" fileName="BwfJavaLibraryReference_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_Editor" />
   </root>
   <root nodeId="2059109515400477504" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2059109515400477520" fileName="BwfAntTaskDeclaration_Editor.java" startLine="65" startPosition="58" endLine="65" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -547,8 +547,8 @@
       <varInfo nodeId="2059109515400477523" varName="editorContext" />
       <varInfo nodeId="2059109515400477523" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2059109515400477504" fileName="BwfAntTaskDeclaration_Editor.java" startLine="18" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor" />
     <unitInfo nodeId="2059109515400477521" fileName="BwfAntTaskDeclaration_Editor.java" startLine="113" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor$_Inline_fxg4hy_a5a" />
+    <unitInfo nodeId="2059109515400477504" fileName="BwfAntTaskDeclaration_Editor.java" startLine="18" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor" />
   </root>
   <root nodeId="244868996532667536" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="244868996532667536" fileName="BwfCustomMacro_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -677,8 +677,8 @@
       <varInfo nodeId="244868996532667546" varName="editorContext" />
       <varInfo nodeId="244868996532667546" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="244868996532667536" fileName="BwfCustomMacro_Editor.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfCustomMacro_Editor" />
     <unitInfo nodeId="244868996532667546" fileName="BwfCustomMacro_Editor.java" startLine="60" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfCustomMacro_Editor$elementsListHandler_3al981_b0" />
+    <unitInfo nodeId="244868996532667536" fileName="BwfCustomMacro_Editor.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfCustomMacro_Editor" />
   </root>
   <root nodeId="2769948622284546682" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284546682" fileName="BwfProject_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1216,9 +1216,9 @@
       <varInfo nodeId="7385586609667765578" varName="editorContext" />
       <varInfo nodeId="7385586609667765578" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284546682" fileName="BwfProject_Editor.java" startLine="27" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfProject_Editor" />
     <unitInfo nodeId="7306485738221455037" fileName="BwfProject_Editor.java" startLine="256" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfProject_Editor$importsListHandler_4tk4ky_f0" />
     <unitInfo nodeId="2769948622284574310" fileName="BwfProject_Editor.java" startLine="292" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfProject_Editor$partsListHandler_4tk4ky_o0" />
+    <unitInfo nodeId="2769948622284546682" fileName="BwfProject_Editor.java" startLine="27" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfProject_Editor" />
   </root>
   <root nodeId="2769948622284567284" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284567284" fileName="BwfProjectPart_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1264,9 +1264,9 @@
       <varInfo nodeId="7389400916848073740" varName="editorContext" />
       <varInfo nodeId="7389400916848073740" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284567284" fileName="BwfProjectPart_Editor.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor" />
-    <unitInfo nodeId="7389400916848073740" fileName="BwfProjectPart_Editor.java" startLine="22" startPosition="40" endLine="33" endPosition="5" unitName="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor$1" />
     <unitInfo nodeId="7389400916848073746" fileName="BwfProjectPart_Editor.java" startLine="24" startPosition="19" endLine="31" endPosition="9" unitName="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor$2" />
+    <unitInfo nodeId="7389400916848073740" fileName="BwfProjectPart_Editor.java" startLine="22" startPosition="40" endLine="33" endPosition="5" unitName="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor$1" />
+    <unitInfo nodeId="2769948622284567284" fileName="BwfProjectPart_Editor.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor" />
   </root>
   <root nodeId="2769948622284574286" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284574286" fileName="BwfTask_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1598,9 +1598,9 @@
       <varInfo nodeId="2769948622284574327" varName="editorContext" />
       <varInfo nodeId="2769948622284574327" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284574286" fileName="BwfTask_Editor.java" startLine="31" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTask_Editor" />
-    <unitInfo nodeId="2769948622284574332" fileName="BwfTask_Editor.java" startLine="138" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTask_Editor$dependenciesListHandler_plbod7_b2a" />
     <unitInfo nodeId="2769948622284605872" fileName="BwfTask_Editor.java" startLine="184" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTask_Editor$subTasksListHandler_plbod7_d0" />
+    <unitInfo nodeId="2769948622284574332" fileName="BwfTask_Editor.java" startLine="138" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTask_Editor$dependenciesListHandler_plbod7_b2a" />
+    <unitInfo nodeId="2769948622284574286" fileName="BwfTask_Editor.java" startLine="31" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTask_Editor" />
   </root>
   <root nodeId="2769948622284574292" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284574292" fileName="BwfSubTask_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2063,10 +2063,10 @@
       <varInfo nodeId="2769948622284605944" varName="editorContext" />
       <varInfo nodeId="2769948622284605944" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284574292" fileName="BwfSubTask_Editor.java" startLine="30" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor" />
+    <unitInfo nodeId="2769948622284606055" fileName="BwfSubTask_Editor.java" startLine="260" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor$statementsListHandler_6puhak_e0" />
     <unitInfo nodeId="2769948622284605954" fileName="BwfSubTask_Editor.java" startLine="168" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor$afterListHandler_6puhak_b2a" />
     <unitInfo nodeId="3961775458390324824" fileName="BwfSubTask_Editor.java" startLine="214" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor$beforeListHandler_6puhak_b3a" />
-    <unitInfo nodeId="2769948622284606055" fileName="BwfSubTask_Editor.java" startLine="260" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor$statementsListHandler_6puhak_e0" />
+    <unitInfo nodeId="2769948622284574292" fileName="BwfSubTask_Editor.java" startLine="30" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor" />
   </root>
   <root nodeId="2769948622284574296" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284574298" fileName="BwfTaskDependency_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2176,8 +2176,8 @@
       <varInfo nodeId="2769948622284574301" varName="editorContext" />
       <varInfo nodeId="2769948622284574301" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284574296" fileName="BwfTaskDependency_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor" />
     <unitInfo nodeId="2769948622284574299" fileName="BwfTaskDependency_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor$_Inline_3mrn5h_a0a" />
+    <unitInfo nodeId="2769948622284574296" fileName="BwfTaskDependency_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor" />
   </root>
   <root nodeId="2769948622284574315" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284574315" fileName="workflowStyles_StyleSheet.java" startLine="12" startPosition="57" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2301,8 +2301,8 @@
       <varInfo nodeId="2769948622284605887" varName="editorContext" />
       <varInfo nodeId="2769948622284605887" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284605882" fileName="BwfSubTaskDependency_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_Editor" />
     <unitInfo nodeId="2769948622284605885" fileName="BwfSubTaskDependency_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_Editor$_Inline_gd7r1i_a0a" />
+    <unitInfo nodeId="2769948622284605882" fileName="BwfSubTaskDependency_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_Editor" />
   </root>
   <root nodeId="2769948622284605981" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="2769948622284605981" fileName="BwfStatement_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2791,10 +2791,10 @@
       <varInfo nodeId="3961775458390352318" varName="editorContext" />
       <varInfo nodeId="3961775458390352318" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3961775458390352311" fileName="BwfTaskPart_Editor.java" startLine="33" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor" />
     <unitInfo nodeId="3961775458390352319" fileName="BwfTaskPart_Editor.java" startLine="140" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor$_Inline_rjgbfl_a1a" />
-    <unitInfo nodeId="3961775458390352326" fileName="BwfTaskPart_Editor.java" startLine="173" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor$additionalDependenciesListHandler_rjgbfl_b2a" />
     <unitInfo nodeId="3961775458390352341" fileName="BwfTaskPart_Editor.java" startLine="219" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor$subTasksListHandler_rjgbfl_d0" />
+    <unitInfo nodeId="3961775458390352326" fileName="BwfTaskPart_Editor.java" startLine="173" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor$additionalDependenciesListHandler_rjgbfl_b2a" />
+    <unitInfo nodeId="3961775458390352311" fileName="BwfTaskPart_Editor.java" startLine="33" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor" />
   </root>
   <root nodeId="4755209551904389321" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="4755209551904389321" fileName="BwfJavaModule_Editor.java" startLine="34" startPosition="79" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3582,10 +3582,10 @@
       <varInfo nodeId="927724900262398952" varName="editorContext" />
       <varInfo nodeId="927724900262398952" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4755209551904389321" fileName="BwfJavaModule_Editor.java" startLine="33" startPosition="0" endLine="467" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor" />
     <unitInfo nodeId="2059109515400350050" fileName="BwfJavaModule_Editor.java" startLine="386" startPosition="0" endLine="394" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor$BwfJavaModule_compiler_cellMenu_a0h0" />
-    <unitInfo nodeId="4755209551904389356" fileName="BwfJavaModule_Editor.java" startLine="431" startPosition="0" endLine="466" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor$dependenciesListHandler_y27sly_f4a" />
     <unitInfo nodeId="6520682027041170535" fileName="BwfJavaModule_Editor.java" startLine="395" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor$taskDepsListHandler_y27sly_d0" />
+    <unitInfo nodeId="4755209551904389356" fileName="BwfJavaModule_Editor.java" startLine="431" startPosition="0" endLine="466" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor$dependenciesListHandler_y27sly_f4a" />
+    <unitInfo nodeId="4755209551904389321" fileName="BwfJavaModule_Editor.java" startLine="33" startPosition="0" endLine="467" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor" />
   </root>
   <root nodeId="4755209551904397949" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="4755209551904397951" fileName="BwfJavaModuleReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3695,8 +3695,8 @@
       <varInfo nodeId="4755209551904397954" varName="editorContext" />
       <varInfo nodeId="4755209551904397954" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4755209551904397949" fileName="BwfJavaModuleReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_Editor" />
     <unitInfo nodeId="4755209551904397952" fileName="BwfJavaModuleReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_Editor$_Inline_u0dcrk_a0a" />
+    <unitInfo nodeId="4755209551904397949" fileName="BwfJavaModuleReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_Editor" />
   </root>
   <root nodeId="5248329904288177749" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="5248329904288177749" fileName="rt_SubTask_AfterOrBefore.java" startLine="14" startPosition="95" endLine="15" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3731,8 +3731,8 @@
       <varInfo nodeId="5248329904288177749" varName="editorContext" />
       <varInfo nodeId="5248329904288177749" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5248329904288177749" fileName="rt_SubTask_AfterOrBefore.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore" />
     <unitInfo nodeId="5248329904288177749" fileName="rt_SubTask_AfterOrBefore.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore$rt_SubTask_AfterOrBefore_RIGHT_TRANSFORM" />
+    <unitInfo nodeId="5248329904288177749" fileName="rt_SubTask_AfterOrBefore.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore" />
   </root>
   <root nodeId="6520682027040940626" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="6520682027040940626" fileName="BwfMacroListImport_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4149,8 +4149,8 @@
       <varInfo nodeId="6647099934207069210" varName="editorContext" />
       <varInfo nodeId="6647099934207069210" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6647099934207069203" fileName="BwfPathDeclaration_Editor.java" startLine="26" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_Editor" />
     <unitInfo nodeId="6647099934207071050" fileName="BwfPathDeclaration_Editor.java" startLine="91" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_Editor$contentListHandler_onntkk_c0" />
+    <unitInfo nodeId="6647099934207069203" fileName="BwfPathDeclaration_Editor.java" startLine="26" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_Editor" />
   </root>
   <root nodeId="6647099934207069217" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="6647099934207069219" fileName="BwfPathReference_Editor.java" startLine="80" startPosition="58" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4339,8 +4339,8 @@
       <varInfo nodeId="6647099934207069222" varName="editorContext" />
       <varInfo nodeId="6647099934207069222" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6647099934207069217" fileName="BwfPathReference_Editor.java" startLine="22" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfPathReference_Editor" />
     <unitInfo nodeId="6647099934207069220" fileName="BwfPathReference_Editor.java" startLine="92" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfPathReference_Editor$_Inline_75jjqz_a2a" />
+    <unitInfo nodeId="6647099934207069217" fileName="BwfPathReference_Editor.java" startLine="22" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfPathReference_Editor" />
   </root>
   <root nodeId="6896005762093571404" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="6896005762093571404" fileName="BwfMacro_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5179,9 +5179,9 @@
       <varInfo nodeId="7306485738221391515" varName="editorContext" />
       <varInfo nodeId="7306485738221391515" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7306485738221391510" fileName="BwfTaskLibrary_Editor.java" startLine="26" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor" />
     <unitInfo nodeId="7306485738221455046" fileName="BwfTaskLibrary_Editor.java" startLine="149" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor$importsListHandler_qi7xwz_e0" />
     <unitInfo nodeId="7306485738221391531" fileName="BwfTaskLibrary_Editor.java" startLine="185" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor$partsListHandler_qi7xwz_h0" />
+    <unitInfo nodeId="7306485738221391510" fileName="BwfTaskLibrary_Editor.java" startLine="26" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor" />
   </root>
   <root nodeId="7306485738221471033" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="7306485738221471037" fileName="BwfTaskLibraryDependency_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5291,8 +5291,8 @@
       <varInfo nodeId="7306485738221471040" varName="editorContext" />
       <varInfo nodeId="7306485738221471040" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7306485738221471033" fileName="BwfTaskLibraryDependency_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_Editor" />
     <unitInfo nodeId="7306485738221471038" fileName="BwfTaskLibraryDependency_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_Editor$_Inline_6s9nla_a0a" />
+    <unitInfo nodeId="7306485738221471033" fileName="BwfTaskLibraryDependency_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_Editor" />
   </root>
   <root nodeId="7926701909975416093" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="7926701909975416093" fileName="BwfFileSet_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5411,8 +5411,8 @@
       <varInfo nodeId="7926701909975416099" varName="elementNode" />
       <varInfo nodeId="7926701909975416099" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="7926701909975416093" fileName="BwfFileSet_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfFileSet_Editor" />
     <unitInfo nodeId="7926701909975416099" fileName="BwfFileSet_Editor.java" startLine="40" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfFileSet_Editor$elementsListHandler_wd783v_a0" />
+    <unitInfo nodeId="7926701909975416093" fileName="BwfFileSet_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfFileSet_Editor" />
   </root>
   <root nodeId="8292198017262926601" modelId="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)">
     <nodeInfo nodeId="8292198017262926601" fileName="BwfDependency_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
