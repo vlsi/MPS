@@ -69,7 +69,7 @@ public class TestTemporalPaths_Test extends BaseTransformationTest4 {
 
     public void test_jarInFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535266"), "jetbrains.mps.build.structure.BuildLayout_Jar"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")).getSModel())));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535289"), "jetbrains.mps.build.structure.BuildLayout_Jar"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")).getSModel())));
     }
 
     public void test_folderInJar() throws Exception {
