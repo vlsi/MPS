@@ -148,9 +148,9 @@
     <nodeInfo nodeId="1227876789369" fileName="DOMF.java" startLine="81" startPosition="25" endLine="82" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227876789369" fileName="DOMF.java" startLine="82" startPosition="40" endLine="83" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="82" startPosition="165" endLine="83" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="83" startPosition="45" endLine="84" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="83" startPosition="45" endLine="84" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227876818679" fileName="DOMF.java" startLine="84" startPosition="30" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="84" startPosition="233" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="84" startPosition="247" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227876818679" fileName="DOMF.java" startLine="85" startPosition="40" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720900272" fileName="DOMF_Design.java" startLine="86" startPosition="9" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876818679" fileName="DOMF.java" startLine="86" startPosition="42" endLine="87" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
