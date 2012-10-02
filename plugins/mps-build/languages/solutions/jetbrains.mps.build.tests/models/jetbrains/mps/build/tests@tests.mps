@@ -39,6 +39,9 @@
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="5368511706901688070">
       <property name="testCaseName" nameId="tpe3.1171931851045" value="TestRelativePathHelper" />
     </node>
+    <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="2815613330938347407">
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+    </node>
   </roots>
   <root id="4045247515868358877">
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4045247515868358884">
@@ -2451,5 +2454,6 @@
       </node>
     </node>
   </root>
+  <root id="2815613330938347407" />
 </model>
 
