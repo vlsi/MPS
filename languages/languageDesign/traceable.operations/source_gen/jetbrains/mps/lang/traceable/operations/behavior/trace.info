@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="NList_CopyWithTraceOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.NList_CopyWithTraceOperation_BehaviorDescriptor" />
   <unitInfo fileName="Node_CopyWithTraceOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
 </debugInfo>
 
