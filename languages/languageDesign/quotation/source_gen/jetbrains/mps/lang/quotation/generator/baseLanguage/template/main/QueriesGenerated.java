@@ -73,6 +73,10 @@ public class QueriesGenerated {
     return AttributeOperations.getPropertyName(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_3691177885151654308(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getProperty("role");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1196351886850(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("role");
   }
