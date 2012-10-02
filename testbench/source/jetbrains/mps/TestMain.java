@@ -467,11 +467,13 @@ public class TestMain {
 
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(com.intellij.openapi.application.PathManager.getPreinstalledPluginsPath());
-    for (File pluginFolder : pluginDir.listFiles()) {
-      if (pluginPath.length() > 0) {
-        pluginPath.append(File.pathSeparator);
+    if(pluginDir.listFiles() != null) {
+      for (File pluginFolder : pluginDir.listFiles()) {
+        if (pluginPath.length() > 0) {
+          pluginPath.append(File.pathSeparator);
+        }
+        pluginPath.append(pluginFolder.getPath());
       }
-      pluginPath.append(pluginFolder.getPath());
     }
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform

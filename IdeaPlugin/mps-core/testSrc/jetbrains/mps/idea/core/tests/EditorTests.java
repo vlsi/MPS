@@ -192,6 +192,12 @@ public class EditorTests extends DataMPSFixtureTestCase {
         }
 
         @Override
+        public void initTest(final TransformationTest btt, @NotNull String projectName, String model, boolean uiTest, boolean reOpenProject) throws Exception {
+          // TODO use flags
+          initTest(btt, projectName, model);
+        }
+
+        @Override
         public void runTest(TransformationTest btt, String className, String methodName, boolean runInCommand) throws Throwable {
             try {
                 Class<?> cls = Class.forName(className);
