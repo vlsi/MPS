@@ -82,7 +82,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     int e = 0;
     myAllBuilders[e++] = myConditionalsBuilder;
     for (SNode root : roots) {
-      myAllBuilders[e] = new RootDependenciesBuilder(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
+      myAllBuilders[e] = new RootDependenciesBuilder(root, this, generationHashes != null ? generationHashes.get(root.getSNodeId().toString()) : null);
       myRootBuilders.put(root, myAllBuilders[e++]);
       currentToOriginalMap.put(root, root);
     }
@@ -92,10 +92,10 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     myUnchangedSet = new HashMap<String, SNode>(unchangedRoots.size() + 1);
     myRequiredSet = new HashMap<String, SNode>(requiredRoots.size() + 1);
     for (SNode root : unchangedRoots) {
-      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getId()), false);
+      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getSNodeId().toString()), false);
     }
     for (SNode root : requiredRoots) {
-      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getId()), true);
+      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getSNodeId().toString()), true);
     }
     if (conditionalsUnchanged || conditionalsRequired) {
       propagateDependencies(getRootBuilder(null), saved.getDependenciesFor(ModelDigestHelper.HEADER), conditionalsRequired);
@@ -106,7 +106,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     assert deps.getHash().equals(builder.getHash());
     builder.loadDependencies(deps);
     SNode root = builder.getOriginalRoot();
-    (isRequired ? myRequiredSet : myUnchangedSet).put(root != null ? root.getId() : TransientModelWithMetainfo.CONDITIONALS_ID, root);
+    (isRequired ? myRequiredSet : myUnchangedSet).put(root != null ? root.getSNodeId().toString() : TransientModelWithMetainfo.CONDITIONALS_ID, root);
   }
 
   private static SNode[] getRoots(SModel model) {
@@ -210,7 +210,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
-    if (inputNode == null || !inputNode.isRegistered()) {
+    if (inputNode == null || !jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       return myConditionalsBuilder;
     }
     inputNode = inputNode.getTopmostAncestor();

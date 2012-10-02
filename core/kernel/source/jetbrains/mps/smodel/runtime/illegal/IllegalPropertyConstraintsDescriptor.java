@@ -46,7 +46,7 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
 
   @Override
   public void setValue(SNode node, String value, IScope scope) {
-//    throw new UnsupportedOperationException("Unsupported set value for " + container.getConceptFqName() + "." + getName() + " property");
+//    throw new UnsupportedOperationException("Unsupported set value for " + container.getConcept().getId() + "." + getName() + " property");
     node.setProperty(name, value, false);
   }
 

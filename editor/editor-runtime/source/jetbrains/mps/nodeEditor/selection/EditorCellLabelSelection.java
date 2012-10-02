@@ -199,7 +199,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
       if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          return target.getSNode().isAncestorOf(selectedCell.getSNode());
+          return jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
         }
       })) return false;
 

@@ -16,14 +16,13 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class CellAction_SideTransform extends EditorCellAction {
   private CellSide mySide;
@@ -105,19 +104,19 @@ public class CellAction_SideTransform extends EditorCellAction {
     if (anchorTag != null) {
       node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
     } else {
-      node.removeUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG);
+      node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, null);
     }
 
     context.flushEvents();
 
     EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(node);
-    assert nodeCell != null : "can't find cell for node " + node.getId() +  " " + node.getModel();
+    assert nodeCell != null : "can't find cell for node " + node.getSNodeId().toString() + " " + node.getModel();
     assert node.equals(nodeCell.getSNode()) : "node cell has incorrect node: " + nodeCell.getSNode();
     EditorCell rtHint = nodeCell.getSTHintCell();
     if (rtHint == null) {
       String anchorCellID = anchorCell.getCellId();
       EditorCell anchor_Cell = context.getNodeEditorComponent().findCellWithId(node, anchorCellID);
-      assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getId() +  " " + node.getModel() + " ( anchorCellId = " + anchorCellID + ", anchor_Cell = " + anchor_Cell + ", original anchor cell: " + anchorCell + ")" ;
+      assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getSNodeId().toString() + " " + node.getModel() + " ( anchorCellId = " + anchorCellID + ", anchor_Cell = " + anchor_Cell + ", original anchor cell: " + anchorCell + ")";
     }
     context.getNodeEditorComponent().changeSelection(rtHint);
   }

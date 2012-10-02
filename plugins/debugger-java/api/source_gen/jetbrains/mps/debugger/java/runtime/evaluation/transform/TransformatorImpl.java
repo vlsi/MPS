@@ -122,15 +122,9 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
 
     // clean rtypes and ltypes 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
-      if (node.getUserObject(LTYPE) != null) {
-        node.removeUserObject(LTYPE);
-      }
-      if (node.getUserObject(RTYPE) != null) {
-        node.removeUserObject(RTYPE);
-      }
-      if (node.getUserObject(CTYPE) != null) {
-        node.removeUserObject(CTYPE);
-      }
+      node.putUserObject(LTYPE, null);
+      node.putUserObject(RTYPE, null);
+      node.putUserObject(CTYPE, null);
     }
 
     // remove low-level vars 

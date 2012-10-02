@@ -28,6 +28,7 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="runtime" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
   </component>
 </module>
 

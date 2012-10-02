@@ -9,6 +9,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
@@ -39,7 +40,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     }
     SNodePointer nodePointer = null;
     if (node != null) {
-      if (node.isDisposed()) {
+      if (SNodeOperations.isDisposed(node)) {
         return null;
       }
       nodePointer = new SNodePointer(node);

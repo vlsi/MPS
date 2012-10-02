@@ -1101,11 +1101,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7246115176735005356(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_tmp_" + _context.getNode().getId();
+    return "_tmp_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_7246115176735007801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_tmp_" + _context.getNode().getId();
+    return "_tmp_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_8424084437048109268(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2854,7 +2854,7 @@ public class QueriesGenerated {
             SNode de = SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression");
             SNode lvd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
             SLinkOperations.setTarget(lvd, "type", FunctionTypeUtil.unmeet(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true))), true);
-            SPropertyOperations.set(lvd, "name", "_tmp_" + de.getId());
+            SPropertyOperations.set(lvd, "name", "_tmp_" + de.getSNodeId().toString());
             Flags.NEEDS_INITIALIZER.flag(_context, lvd);
             SNode lvds = SNodeOperations.insertPrevSiblingChild(stmt, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null));
             SLinkOperations.setTarget(lvds, "localVariableDeclaration", lvd, true);

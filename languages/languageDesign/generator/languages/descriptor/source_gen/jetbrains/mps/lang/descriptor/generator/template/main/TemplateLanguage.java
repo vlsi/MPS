@@ -298,9 +298,9 @@ public class TemplateLanguage implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a8a1a1);
           environment.nodeCopied(context, tnode14, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571708646");
           tnode14.setProperty("isAbstract", "false");
-          tnode14.setProperty("isDeprecated", "false");
-          tnode14.setProperty("isFinal", "false");
           tnode14.setProperty("name", "getNamespace");
+          tnode14.setProperty("isFinal", "false");
+          tnode14.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode15 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringType", false);
@@ -393,9 +393,9 @@ public class TemplateLanguage implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a9a1a1);
           environment.nodeCopied(context, tnode20, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5828571963818867328");
           tnode20.setProperty("isAbstract", "false");
-          tnode20.setProperty("isDeprecated", "false");
-          tnode20.setProperty("isFinal", "false");
           tnode20.setProperty("name", "getTypesystem");
+          tnode20.setProperty("isFinal", "false");
+          tnode20.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode21 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
@@ -543,9 +543,9 @@ public class TemplateLanguage implements TemplateDeclaration {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a01a1a1);
           environment.nodeCopied(context, tnode31, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2838795720286867752");
           tnode31.setProperty("isAbstract", "false");
-          tnode31.setProperty("isDeprecated", "false");
-          tnode31.setProperty("isFinal", "false");
           tnode31.setProperty("name", "getFindUsages");
+          tnode31.setProperty("isFinal", "false");
+          tnode31.setProperty("isDeprecated", "false");
 
           {
             final SNode tnode32 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);

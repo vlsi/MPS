@@ -534,7 +534,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
         fieldlinkMap.addTargetLocation(ptr, ref);
 
-        result.addReference(ref);
+        result.setReference(ref.getRole(), ref);
         fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(child[3]), ref);
         return;
       }

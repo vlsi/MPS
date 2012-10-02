@@ -152,7 +152,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
       {
         SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a;
         nodeToMatch_ObjectArraySupertypes_mvbroc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getConcept().getId()))) {
           return false;
         }
         {
@@ -165,12 +165,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
             {
               SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0;
               nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_ObjectArraySupertypes_mvbroc_a0a0;
-              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConceptFqName()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConcept().getId()))) {
                 return false;
               }
               {
                 SNodePointer pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0c;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferent("classifier")))) {
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferenceTarget("classifier")))) {
                   return false;
                 }
               }

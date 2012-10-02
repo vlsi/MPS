@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.*;
 
@@ -70,7 +71,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
           Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
 
           for (String conceptFQName : myFinders.keySet()) {
-            if (node.isInstanceOfConcept(conceptFQName)) {
+            if (node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFQName))) {
               for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
                 try {
                   if (finder.isVisible(node)) {

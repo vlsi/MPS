@@ -51,7 +51,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -183,8 +182,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
             return ModelAccess.instance().runReadAction(new Computable<Integer>() {
               @Override
               public Integer compute() {
-                String concept1 = node1.getConceptFqName();
-                String concept2 = node2.getConceptFqName();
+                String concept1 = node1.getConcept().getId();
+                String concept2 = node2.getConcept().getId();
                 return concept1.compareTo(concept2);
               }
             });

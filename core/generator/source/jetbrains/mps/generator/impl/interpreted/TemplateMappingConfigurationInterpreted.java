@@ -51,8 +51,8 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
     myMappingConfiguration = mappingConfiguration;
     int patternRulesCount = 0;
 
-    for (SNode child : mappingConfiguration.getChildrenIterable()) {
-      String conceptName = child.getConceptFqName();
+    for (SNode child : mappingConfiguration.getChildren()) {
+      String conceptName = child.getConcept().getId();
       if (conceptName.equals(RuleUtil.concept_Reduction_MappingRule)) {
         myReductionRules.add(new TemplateReductionRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_Root_MappingRule)) {

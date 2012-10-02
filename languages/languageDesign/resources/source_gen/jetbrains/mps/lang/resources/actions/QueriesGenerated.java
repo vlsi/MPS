@@ -68,7 +68,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("declaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("declaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

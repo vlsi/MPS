@@ -63,7 +63,7 @@ public class ScopePositionInfo extends PositionInfo {
       SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     } else {
       if (log.isWarnEnabled()) {
-        log.warn("variable name is null for node " + node.getId());
+        log.warn("variable name is null for node " + node.getSNodeId().toString());
       }
     }
   }

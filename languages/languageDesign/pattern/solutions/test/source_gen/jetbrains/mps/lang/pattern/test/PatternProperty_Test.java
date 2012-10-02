@@ -107,7 +107,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
         {
           SNode nodeToMatch_Property_ru5khm_a0;
           nodeToMatch_Property_ru5khm_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_Property_ru5khm_a0.getConceptFqName()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_Property_ru5khm_a0.getConcept().getId()))) {
             return false;
           }
           {
@@ -120,11 +120,11 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_Property_ru5khm_a0a;
                 nodeToMatch_Property_ru5khm_a0a = childVar_Property_ru5khm_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_Property_ru5khm_a0a.getConceptFqName()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_Property_ru5khm_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_field = nodeToMatch_Property_ru5khm_a0a.getReferent("variableDeclaration");
-                patternVar_className = nodeToMatch_Property_ru5khm_a0a.getReferent("classifier");
+                patternVar_className = nodeToMatch_Property_ru5khm_a0a.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_Property_ru5khm_a0a.getReferenceTarget("variableDeclaration");
               }
             }
           }
@@ -138,10 +138,10 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_Property_ru5khm_a0a_0;
                 nodeToMatch_Property_ru5khm_a0a_0 = childVar_Property_ru5khm_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_Property_ru5khm_a0a_0.getConceptFqName()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_Property_ru5khm_a0a_0.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_Property_ru5khm_a0a_0.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_Property_ru5khm_a0a_0.getReferenceTarget("baseMethodDeclaration");
                 {
                   String childRole_Property_ru5khm__1 = "actualArgument";
                   if (!(PatternUtil.hasNChildren(nodeToMatch_Property_ru5khm_a0a_0, childRole_Property_ru5khm__1, 1))) {
@@ -152,7 +152,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
                     {
                       SNode nodeToMatch_Property_ru5khm_a0a0;
                       nodeToMatch_Property_ru5khm_a0a0 = childVar_Property_ru5khm_a0a0;
-                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_Property_ru5khm_a0a0.getConceptFqName()))) {
+                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_Property_ru5khm_a0a0.getConcept().getId()))) {
                         return false;
                       }
                       patternVar_printed = nodeToMatch_Property_ru5khm_a0a0.getProperty("value");

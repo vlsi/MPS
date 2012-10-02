@@ -64,11 +64,11 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
   private static SNodePointer templateNode_g7vjva_a0a0a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642966");
   private static SNodePointer templateNode_g7vjva_a0a0a1a3a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642967");
   private static SNodePointer referenceMacro_g7vjva_c0b0a0a0a0a0c0b0d0b0d0d0c0c0b0h0b0e0b0e0b0c0b0f0b0b = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642968");
-  private static SNodePointer templateNode_g7vjva_a0a0a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642981");
-  private static SNodePointer templateNode_g7vjva_a0a0a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642982");
-  private static SNodePointer propertyMacro_g7vjva_c0b0b0a2a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642983");
-  private static SNodePointer templateNode_g7vjva_a0a0a1a5a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642992");
-  private static SNodePointer referenceMacro_g7vjva_c0b0a0a0a0a0c0b0f0b0e0b0d0d0c0c0b0h0b0e0b0e0b0c0b0f0b0b = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642993");
+  private static SNodePointer templateNode_g7vjva_a0a0a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5577480965331709457");
+  private static SNodePointer templateNode_g7vjva_a0a0a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5577480965331709458");
+  private static SNodePointer propertyMacro_g7vjva_c0b0b0a2a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5577480965331709459");
+  private static SNodePointer templateNode_g7vjva_a0a0a1a5a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5577480965331709468");
+  private static SNodePointer referenceMacro_g7vjva_c0b0a0a0a0a0c0b0f0b0e0b0d0d0c0c0b0h0b0e0b0e0b0c0b0f0b0b = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5577480965331709469");
   private static SNodePointer templateNode_g7vjva_a0a0a1a8a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924643190");
   private static SNodePointer templateNode_g7vjva_a0a0a1a3a1a8a1a4a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924643191");
   private static SNodePointer loopMacroRef_g7vjva_a0a0a1a5a1a4a1a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924643194");
@@ -309,7 +309,7 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                                     try {
                                       environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a4a1a2a1a3a1a4a1a4a1a4a1a2a1a5a1a1);
                                       environment.nodeCopied(context18, tnode20, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924642846");
-                                      tnode20.addReference(SReference.create("classifier", tnode20, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Set")));
+                                      tnode20.setReference("classifier", SReference.create("classifier", tnode20, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Set")));
 
                                       {
                                         final SNode tnode21 = new SNode(environment.getOutputModel(), "jetbrains.mps.lang.smodel.structure.SNodeType", false);
@@ -346,7 +346,7 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                                         try {
                                           environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a3a1a5a1a2a1a3a1a4a1a4a1a4a1a2a1a5a1a1);
                                           environment.nodeCopied(context18, tnode23, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924642849");
-                                          tnode23.addReference(SReference.create("baseMethodDeclaration", tnode23, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~HashSet.<init>()")));
+                                          tnode23.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode23, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~HashSet.<init>()")));
 
                                           {
                                             final SNode tnode24 = new SNode(environment.getOutputModel(), "jetbrains.mps.lang.smodel.structure.SNodeType", false);
@@ -623,15 +623,15 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                                       final SNode tnode42 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false);
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1);
-                                        environment.nodeCopied(context38, tnode42, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924642981");
-                                        tnode42.addReference(SReference.create("baseMethodDeclaration", tnode42, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferent(java.lang.String,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SReference")));
+                                        environment.nodeCopied(context38, tnode42, "tpl/r:00000000-0000-4000-0000-011c8959034c/5577480965331709457");
+                                        tnode42.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode42, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                         {
                                           final SNode tnode43 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1);
-                                            environment.nodeCopied(context38, tnode43, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924642982");
-                                            tnode43.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_937236280924642984(environment.getOperationContext(), new PropertyMacroContext(context38.getInput(), "role", propertyMacro_g7vjva_c0b0b0a2a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1, context38, environment.getGenerator()))));
+                                            environment.nodeCopied(context38, tnode43, "tpl/r:00000000-0000-4000-0000-011c8959034c/5577480965331709458");
+                                            tnode43.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5577480965331709460(environment.getOperationContext(), new PropertyMacroContext(context38.getInput(), "role", propertyMacro_g7vjva_c0b0b0a2a1a4a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1, context38, environment.getGenerator()))));
 
                                           } finally {
                                             environment.getTracer().pushOutputNode(tnode43);
@@ -646,10 +646,10 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                                           final SNode tnode44 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a5a1a4a1a3a3a2a2a1a7a1a4a1a4a1a2a1a5a1a1);
-                                            environment.nodeCopied(context38, tnode44, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924642992");
+                                            environment.nodeCopied(context38, tnode44, "tpl/r:00000000-0000-4000-0000-011c8959034c/5577480965331709468");
                                             environment.resolve(new ReferenceResolver() {
                                               public Object resolve(SNode outputNode, TemplateContext context) {
-                                                return QueriesGenerated.referenceMacro_GetReferent_937236280924642994(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode44, referenceMacro_g7vjva_c0b0a0a0a0a0c0b0f0b0e0b0d0d0c0c0b0h0b0e0b0e0b0c0b0f0b0b, "variableDeclaration", context, environment.getGenerator()));
+                                                return QueriesGenerated.referenceMacro_GetReferent_5577480965331709470(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode44, referenceMacro_g7vjva_c0b0a0a0a0a0c0b0f0b0e0b0d0d0c0c0b0h0b0e0b0e0b0c0b0f0b0b, "variableDeclaration", context, environment.getGenerator()));
                                               }
 
                                               public String getDefaultResolveInfo() {
@@ -657,7 +657,7 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                                               }
 
                                               public SNodePointer getTemplateNode() {
-                                                return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "937236280924642993");
+                                                return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5577480965331709469");
                                               }
                                             }, tnode44, "variableDeclaration", context38);
 
@@ -775,7 +775,7 @@ public class TemplateQuotation__to__methodCall implements TemplateDeclarationWea
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g7vjva_a0a0a1a4a3a2a2a1a5a1a4a1a2a1a5a1a1);
                                 environment.nodeCopied(context48, tnode50, "tpl/r:00000000-0000-4000-0000-011c8959034c/937236280924643193");
-                                tnode50.addReference(SReference.create("classifier", tnode50, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+                                tnode50.setReference("classifier", SReference.create("classifier", tnode50, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(tnode50);

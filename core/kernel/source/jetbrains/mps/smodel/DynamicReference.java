@@ -61,7 +61,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
   private boolean isTargetClassifier(SNode node, String role) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.findLinkDeclaration(node.getConceptFqName(), role), "target", false), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.findLinkDeclaration(node.getConcept().getId(), role), "target", false), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   protected SNode getTargetNode_internal(boolean silently) {

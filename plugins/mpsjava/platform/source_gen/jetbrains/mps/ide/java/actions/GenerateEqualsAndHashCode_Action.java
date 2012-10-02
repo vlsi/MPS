@@ -400,7 +400,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
               {
                 quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_66 = quotedNode_23;
-                quotedNode1_66.setReferent("classifier", (SNode) parameter_75);
+                quotedNode1_66.setReferenceTarget("classifier", (SNode) parameter_75);
                 quotedNode_16.addChild("type", quotedNode1_66);
               }
               {
@@ -409,7 +409,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
                 {
                   quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_68 = quotedNode_31;
-                  quotedNode1_68.setReferent("classifier", (SNode) parameter_76);
+                  quotedNode1_68.setReferenceTarget("classifier", (SNode) parameter_76);
                   quotedNode_24.addChild("type", quotedNode1_68);
                 }
                 {
@@ -445,10 +445,10 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         }
         result = quotedNode1_37;
       }
-      quotedNode_19.setReferent("variableDeclaration", quotedNode_5);
-      quotedNode_27.setReferent("variableDeclaration", quotedNode_5);
-      quotedNode_32.setReferent("variableDeclaration", quotedNode_5);
-      quotedNode_35.setReferent("variableDeclaration", quotedNode_5);
+      quotedNode_19.setReferenceTarget("variableDeclaration", quotedNode_5);
+      quotedNode_27.setReferenceTarget("variableDeclaration", quotedNode_5);
+      quotedNode_32.setReferenceTarget("variableDeclaration", quotedNode_5);
+      quotedNode_35.setReferenceTarget("variableDeclaration", quotedNode_5);
       return result;
     }
   }

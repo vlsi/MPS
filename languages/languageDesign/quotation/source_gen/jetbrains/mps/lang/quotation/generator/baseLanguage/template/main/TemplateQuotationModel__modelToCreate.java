@@ -42,7 +42,7 @@ public class TemplateQuotationModel__modelToCreate implements TemplateDeclaratio
         try {
           environment.getTracer().pushTemplateNode(templateNode_ske5p0_a0a0a1a3a1a1);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886635");
-          tnode2.addReference(SReference.create("classifier", tnode2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+          tnode2.setReference("classifier", SReference.create("classifier", tnode2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
 
         } finally {
           environment.getTracer().pushOutputNode(tnode2);

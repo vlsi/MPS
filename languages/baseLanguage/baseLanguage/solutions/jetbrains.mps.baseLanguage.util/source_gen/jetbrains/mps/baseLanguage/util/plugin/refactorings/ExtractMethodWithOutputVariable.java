@@ -83,7 +83,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setReferent("variableDeclaration", (SNode) parameter_7);
+          quotedNode1_5.setReferenceTarget("variableDeclaration", (SNode) parameter_7);
           quotedNode_1.addChild("lValue", quotedNode1_5);
         }
         {

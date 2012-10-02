@@ -103,9 +103,9 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     }
     for (SNode node : sm.getSModel().nodes()) {
       debug("Checking node " + node);
-      if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
-        errorMessages.append(node.getConceptFqName());
+        errorMessages.append(node.getConcept().getId());
         errorMessages.append("\n");
       }
     }
@@ -116,7 +116,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
         }
         if (ref.getTargetNode() == null) {
           errorMessages.append("Broken reference in node ");
-          errorMessages.append(node.getId());
+          errorMessages.append(node.getSNodeId().toString());
           errorMessages.append("(");
           errorMessages.append(node);
           errorMessages.append(")\n");

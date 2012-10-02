@@ -48,7 +48,7 @@ public class CycleHelper {
         SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
         XmlSignature s = new XmlSignature().add(cp);
         String id = (s.hasErrors() ?
-          "dep." + cp.getId() :
+          "dep." + cp.getSNodeId().toString() :
           s.getResult()
         );
         return !(seenDependencies.add(id));
@@ -133,7 +133,7 @@ public class CycleHelper {
             SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
             XmlSignature s = new XmlSignature().add(cp);
             String id = (s.hasErrors() ?
-              "dep." + cp.getId() :
+              "dep." + cp.getSNodeId().toString() :
               s.getResult()
             );
             if (seenDependencies.add(id)) {
@@ -151,7 +151,7 @@ public class CycleHelper {
         for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(module, "sources", true), "elements", true))) {
           XmlSignature s = new XmlSignature().add(n);
           String id = (s.hasErrors() ?
-            "path." + n.getId() :
+            "path." + n.getSNodeId().toString() :
             s.getResult()
           );
           if (seenSources.add(id)) {

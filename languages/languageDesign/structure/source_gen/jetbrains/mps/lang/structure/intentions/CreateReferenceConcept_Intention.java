@@ -104,7 +104,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
           quotedNode1_4.setProperty("metaClass", "reference");
           quotedNode1_4.setProperty("sourceCardinality", "1");
           quotedNode1_4.setProperty("role", (String) parameter_5);
-          quotedNode1_4.setReferent("target", (SNode) parameter_6);
+          quotedNode1_4.setReferenceTarget("target", (SNode) parameter_6);
           quotedNode_1.addChild("linkDeclaration", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -127,11 +127,11 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setReferent("conceptDeclaration", (SNode) parameter_9);
+        quotedNode1_5.setReferenceTarget("conceptDeclaration", (SNode) parameter_9);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setReferent("relationDeclaration", (SNode) parameter_10);
+          quotedNode1_6.setReferenceTarget("relationDeclaration", (SNode) parameter_10);
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;

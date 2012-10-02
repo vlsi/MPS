@@ -126,7 +126,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
         {
           SNode nodeToMatch_ListPattern_9twfax_a0;
           nodeToMatch_ListPattern_9twfax_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_ListPattern_9twfax_a0.getConceptFqName()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_ListPattern_9twfax_a0.getConcept().getId()))) {
             return false;
           }
           {
@@ -139,11 +139,11 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a;
                 nodeToMatch_ListPattern_9twfax_a0a = childVar_ListPattern_9twfax_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_ListPattern_9twfax_a0a.getConceptFqName()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_ListPattern_9twfax_a0a.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_field = nodeToMatch_ListPattern_9twfax_a0a.getReferent("variableDeclaration");
-                patternVar_className = nodeToMatch_ListPattern_9twfax_a0a.getReferent("classifier");
+                patternVar_className = nodeToMatch_ListPattern_9twfax_a0a.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_ListPattern_9twfax_a0a.getReferenceTarget("variableDeclaration");
               }
             }
           }
@@ -157,10 +157,10 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a_0;
                 nodeToMatch_ListPattern_9twfax_a0a_0 = childVar_ListPattern_9twfax_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_ListPattern_9twfax_a0a_0.getConceptFqName()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_ListPattern_9twfax_a0a_0.getConcept().getId()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_ListPattern_9twfax_a0a_0.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_ListPattern_9twfax_a0a_0.getReferenceTarget("baseMethodDeclaration");
                 {
                   String childRole_ListPattern_9twfax__1 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());

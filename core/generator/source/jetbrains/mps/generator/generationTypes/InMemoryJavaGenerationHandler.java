@@ -145,7 +145,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   private static boolean isJavaSource(SNode outputNode) {
-    String concept = outputNode.getConceptFqName();
+    String concept = outputNode.getConcept().getId();
     return concept.equals(BootstrapLanguages.concept_baseLanguage_ClassConcept) || concept.equals(BootstrapLanguages.concept_baseLanguage_Interface) ||
       concept.equals(BootstrapLanguages.concept_baseLanguage_EnumClass) || concept.equals(BootstrapLanguages.concept_baseLanguage_Annotation);
   }

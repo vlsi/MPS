@@ -359,21 +359,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     });
   }
 
-  //----selection queries----
-
-  public List<SNode> getNormalizedSelectedSNodes() {
-    List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedSNodes());
-    HashSet<SNode> unselectedNodes = new HashSet<SNode>();
-
-    for (SNode node : selectedNodes) {
-      if (node == null) continue;
-      if (unselectedNodes.contains(node)) continue;
-      unselectedNodes.addAll(node.getDescendants());
-    }
-    selectedNodes.removeAll(unselectedNodes);
-    return selectedNodes;
-  }
-
   //----tree node selection queries---
 
   public MPSTreeNode findNextTreeNode(SNode node) {

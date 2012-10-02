@@ -122,7 +122,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -140,7 +140,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -158,8 +158,8 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;

@@ -272,7 +272,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          feature.setName(newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), "name", newFeatureName);
         }
       }
     }
@@ -285,7 +285,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          feature.setName(newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
         }
       }
     }
@@ -353,7 +353,7 @@ public class RefactoringContext {
     }
 
     for (SNode node : model.nodes()) {
-      String conceptFQName = node.getConceptFqName();
+      String conceptFQName = node.getConcept().getId();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {
         for (StructureModificationData.ConceptFeature conceptFeature : exactConceptFeatures) {
@@ -402,7 +402,7 @@ public class RefactoringContext {
             if (delete) {
               linkAttribute.delete();
             } else {
-              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
+              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole());
               linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
             }
           }
@@ -413,8 +413,8 @@ public class RefactoringContext {
           if (!(delete)) {
             newRole = newConceptFeature.getFeatureName();
           }
-          for (SNode child : new ArrayList<SNode>(node.getChildren())) {
-            String childRole = child.getRole_();
+          for (SNode child : new ArrayList<SNode>(jetbrains.mps.util.SNodeOperations.getChildren(node))) {
+            String childRole = child.getRole();
             if (childRole != null && childRole.equals(oldRole)) {
               if (delete) {
                 child.delete();
@@ -437,7 +437,7 @@ public class RefactoringContext {
             if (delete) {
               propertyAttribute.delete();
             } else {
-              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
+              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole());
               propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
             }
           }
@@ -476,7 +476,7 @@ public class RefactoringContext {
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }
-      String conceptFQName = oldNode.getParent().getConceptFqName();
+      String conceptFQName = oldNode.getParent().getConcept().getId();
       switch (data.type) {
         case CHILD:
           modifier.addChildRoleChange(conceptFQName, data.oldValue, data.newValue);

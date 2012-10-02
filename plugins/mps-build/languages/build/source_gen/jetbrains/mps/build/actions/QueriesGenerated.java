@@ -332,8 +332,8 @@ public class QueriesGenerated {
                 );
                 if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildStringContainer")) {
                   if (BuildStringContainer_Behavior.call_isValidPart_9184644532456897464(SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
-                    _context.getParentNode().getRole_() :
-                    _context.getCurrentTargetNode().getRole_()
+                    _context.getParentNode().getRole() :
+                    _context.getCurrentTargetNode().getRole()
                   ))) {
                     return pattern;
                   }

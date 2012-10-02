@@ -64,7 +64,7 @@ public class MethodCallChecker extends SpecificChecker {
               fixer.testAndFixMethodCall(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), reResolvedTargets);
               for (SNode methodCall : reResolvedTargets.keySet()) {
                 SNode referent = reResolvedTargets.get(methodCall);
-                if (referent != null && !(referent.shouldHaveBeenDisposed())) {
+                if (referent != null && !(jetbrains.mps.util.SNodeOperations.isDisposed(referent))) {
                   SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
                 }
               }

@@ -144,7 +144,7 @@ public class MathTypeUtil {
         {
           SNode matchingNode_i9t80i_a0a8 = t;
           if (matchingNode_i9t80i_a0a8 != null) {
-            matches_i9t80i_a0a8 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_a0a8.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            matches_i9t80i_a0a8 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_a0a8.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
           }
         }
         if (matches_i9t80i_a0a8) {
@@ -154,7 +154,7 @@ public class MathTypeUtil {
           {
             SNode matchingNode_i9t80i_b0a8 = t;
             if (matchingNode_i9t80i_b0a8 != null) {
-              matches_i9t80i_b0a8 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_b0a8.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+              matches_i9t80i_b0a8 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_b0a8.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
             }
           }
           if (matches_i9t80i_b0a8) {
@@ -267,7 +267,7 @@ public class MathTypeUtil {
         {
           SNode matchingNode_i9t80i_a2a11 = vT;
           if (matchingNode_i9t80i_a2a11 != null) {
-            matches_i9t80i_a2a11 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_a2a11.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            matches_i9t80i_a2a11 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_a2a11.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
           }
         }
         if (matches_i9t80i_a2a11) {
@@ -283,7 +283,7 @@ public class MathTypeUtil {
           {
             SNode matchingNode_i9t80i_b2a11 = vT;
             if (matchingNode_i9t80i_b2a11 != null) {
-              matches_i9t80i_b2a11 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_b2a11.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+              matches_i9t80i_b2a11 = SModelUtil_new.isAssignableConcept(matchingNode_i9t80i_b2a11.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
             }
           }
           if (matches_i9t80i_b2a11) {

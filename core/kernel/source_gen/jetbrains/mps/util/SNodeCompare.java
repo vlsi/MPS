@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SReference;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.DynamicReference;
@@ -22,8 +21,8 @@ public class SNodeCompare {
   }
 
   private static boolean nodePropertiesEquals(SNode a, SNode b) {
-    Map<String, String> aMap = (Map<String, String>) a.getProperties();
-    Map<String, String> bMap = (Map<String, String>) b.getProperties();
+    Map<String, String> aMap = (Map<String, String>) SNodeOperations.getProperties(a);
+    Map<String, String> bMap = (Map<String, String>) SNodeOperations.getProperties(b);
     for (String p : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
       if (neq_acety0_a0a0c0a(MapSequence.fromMap(aMap).get(p), MapSequence.fromMap(bMap).get(p))) {
         return false;
@@ -35,12 +34,12 @@ public class SNodeCompare {
   private static boolean nodeReferencesEquals(SNode a, SNode b) {
     final Map<String, SReference> aMap = MapSequence.fromMap(new HashMap<String, SReference>());
     final Map<String, SReference> bMap = MapSequence.fromMap(new HashMap<String, SReference>());
-    Sequence.fromIterable(SNodeOperations.getReferences((SNode) a)).visitAll(new IVisitor<SReference>() {
+    Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) a)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
         MapSequence.fromMap(aMap).put(SLinkOperations.getRole(ref), ref);
       }
     });
-    Sequence.fromIterable(SNodeOperations.getReferences((SNode) b)).visitAll(new IVisitor<SReference>() {
+    Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) b)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
         MapSequence.fromMap(bMap).put(SLinkOperations.getRole(ref), ref);
       }
@@ -96,7 +95,7 @@ public class SNodeCompare {
   }
 
   public static boolean nodeEquals(SNode a, SNode b) {
-    return eq_acety0_a0a0a0a0d_0(a.getConceptFqName(), b.getConceptFqName()) && eq_acety0_a0a0a0a0d(a.getSNodeId(), b.getSNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
+    return eq_acety0_a0a0a0a0d_0(a.getConcept().getId(), b.getConcept().getId()) && eq_acety0_a0a0a0a0d(a.getSNodeId(), b.getSNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
   }
 
   private static boolean neq_acety0_a0a0c0a(Object a, Object b) {

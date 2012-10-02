@@ -175,7 +175,7 @@ public class TextGenManager {
   }
 
   private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
-    String nodeConcept = node.getConceptFqName();
+    String nodeConcept = node.getConcept().getId();
 
     Class<SNodeTextGen> textgenClass;
 
@@ -205,7 +205,7 @@ public class TextGenManager {
   private Class textGenForNode(SNode node) {
     SNode concept = node.getConceptDeclarationNode();
     if (concept == null) {
-      LOG.error("Can't find concept node for concept: " + node.getConceptFqName());
+      LOG.error("Can't find concept node for concept: " + node.getConcept().getId());
       return null;
     }
     return loadTextGenClass(concept);

@@ -32,7 +32,7 @@ public class ScopeUtil {
     return new SimpleRoleScope(node, link) {
       public String getName(SNode child) {
         if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-          return child.toString();
+          return child.getPresentation();
         }
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

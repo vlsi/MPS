@@ -70,7 +70,7 @@ public class TraceInfoGenerationUtil {
     TraceablePositionInfo info = getUserObject(buffer, POSITION_INFO, node);
     info.setEndLine(buffer.getLineNumber());
     info.setEndPosition(buffer.getPosition());
-    info.setConceptFqName(node.getConceptFqName());
+    info.setConceptFqName(node.getConcept().getId());
     info.setPropertyString(propertyString);
   }
 

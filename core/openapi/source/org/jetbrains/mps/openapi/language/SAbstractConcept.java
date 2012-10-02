@@ -16,23 +16,30 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * evgeny, 7/27/12
+ * A descriptor of a concept
+ * This interface is not supposed to be implemented by someone not from MPS team
+ * Moreover, it's prohibited to have 2 or more implementations of it at a time
+ * This interface is only introduced to have an ability to switch between two implementations w/o affecting users
  */
 public interface SAbstractConcept {
+  /**
+   * This is a string used to identify a concept.
+   * Now we use fqName for that purpose, but further it's planned to use id instead,
+   * so that the id does not change when we change concept's name.
+   */
+  String getId();
 
-  String getName();
+  String getName();  //todo? rename to getPresentation or use getId
 
-  String getQualifiedName();
+  SLanguage getLanguage();
 
-  SLink getLink(String role);
+  SLink findLink(String role);
 
   Iterable<SLink> getLinks();
 
-  SProperty getProperty(String name);
+  SProperty findProperty(String name);
 
   Iterable<SProperty> getProperties();
 
   boolean isSubConceptOf(SConcept concept);
-
-  SLanguage getLanguage();
 }

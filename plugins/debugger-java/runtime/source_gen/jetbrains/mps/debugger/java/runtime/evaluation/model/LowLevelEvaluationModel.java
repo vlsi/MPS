@@ -197,7 +197,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         if (scopeModel != null && neq_qkk2f2_a0a1a1a0a7(scopeModel.getSModel(), targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
-            resolveInfo = SLinkOperations.getTargetNode(reference).getResolveInfo();
+            resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
           }
           node.setReference(new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
         }

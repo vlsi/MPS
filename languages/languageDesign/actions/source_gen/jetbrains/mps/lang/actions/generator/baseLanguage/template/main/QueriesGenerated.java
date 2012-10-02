@@ -105,7 +105,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1181736567569(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "removeActionsByCondition_" + _context.getNode().getId();
+    return "removeActionsByCondition_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1177441873740(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1235155929479(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "getGenerateCodeAction_" + _context.getNode().getId();
+    return "getGenerateCodeAction_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1235754438298(final IOperationContext operationContext, final PropertyMacroContext _context) {

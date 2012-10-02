@@ -19,7 +19,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -134,9 +133,9 @@ public class ModelWriter3 implements IModelWriter {
       theElementName = ModelPersistence.NODE;
     }
     Element element = new Element(theElementName);
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole_());
-    element.setAttribute(ModelPersistence.TYPE, node.getConceptFqName());
-    element.setAttribute(ModelPersistence.ID, node.getId());
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole());
+    element.setAttribute(ModelPersistence.TYPE, node.getConcept().getId());
+    element.setAttribute(ModelPersistence.ID, node.getSNodeId().toString());
 
     // properties ...
     Map<String, String> properties = node.getProperties();

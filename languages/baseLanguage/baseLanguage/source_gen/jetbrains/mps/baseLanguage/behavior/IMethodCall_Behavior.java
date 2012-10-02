@@ -175,13 +175,13 @@ public class IMethodCall_Behavior {
       {
         SNode nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1;
         nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getConcept().getId()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getReferent("classifier") != referent) {
+          if (nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

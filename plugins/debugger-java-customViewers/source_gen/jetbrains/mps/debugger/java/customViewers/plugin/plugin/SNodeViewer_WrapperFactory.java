@@ -59,14 +59,14 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
-      result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
+      result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
       result.add(new SNodeWatchables.MyWatchable_model(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
       result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
 
       IArrayValueProxy properties = ((IArrayValueProxy) value.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
-        for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;", getThreadReference())).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
+        for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.util.SNodeOperations", "getProperties", "(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;", getThreadReference(), value)).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
           result.add(new SNodeWatchables.MyWatchable_property(ValueUtil.getInstance().fromJDI(property.getJDIValue(), getThreadReference()), "property"));
         }
       }

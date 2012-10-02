@@ -40,7 +40,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
       setIcon(IconManager.getIconFor(concept));
       setNodeIdentifier(concept.getName());
     } else {
-      setNodeIdentifier(myNode.getConceptFqName());
+      setNodeIdentifier(myNode.getConcept().getId());
     }
   }
 
@@ -70,7 +70,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SNode concept = getSNode();
-        if (concept == null || concept.isDisposed() || !(concept.isRegistered()) || concept.getModel().getModelDescriptor() != null) {
+        if (concept == null || jetbrains.mps.util.SNodeOperations.isDisposed(concept) || !(jetbrains.mps.util.SNodeOperations.isRegistered(concept)) || concept.getModel().getModelDescriptor() != null) {
           return;
         }
         // TODO: use node pointers here

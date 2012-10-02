@@ -148,8 +148,8 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
             try {
               environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a5a1a1);
               environment.nodeCopied(context, tnode11, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083856");
-              tnode11.setProperty("fieldName", "stringSwitchCases");
               tnode11.setProperty("makeUnique", "true");
+              tnode11.setProperty("fieldName", "stringSwitchCases");
 
               {
                 final SNode tnode12 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false);

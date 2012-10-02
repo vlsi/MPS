@@ -86,14 +86,14 @@ public class CopyThisDown_Action extends BaseAction {
         SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
-          String role = nodeToCopy.getRole_();
+          String role = nodeToCopy.getRole();
           SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(parent), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
           if (link == null) {
             return;
           }
           if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, link, "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
-            parent.insertChild(nodeToCopy, role, copy);
+            parent.insertChild(role, copy, nodeToCopy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectWRTFocusPolicy(copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
             return;
@@ -103,14 +103,14 @@ public class CopyThisDown_Action extends BaseAction {
       } else {
         SNode firstNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
-        String role = firstNode.getRole_();
+        String role = firstNode.getRole();
         SNode parent = SNodeOperations.getParent(firstNode);
         SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(parent), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
         if (link == null) {
           return;
         }
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
-          parent.insertChild(lastNode, role, SNodeOperations.copyNode(node));
+          parent.insertChild(role, SNodeOperations.copyNode(node), lastNode);
         }
         ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectRange(firstNode, lastNode);
       }

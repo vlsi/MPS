@@ -101,7 +101,7 @@ public class DebugInfo {
     }
     return SetSequence.fromSet(root.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
       public boolean accept(TraceablePositionInfo it) {
-        return eq_exfyrk_a0a0a0a0a0d0h(it.getNodeId(), node.getId());
+        return eq_exfyrk_a0a0a0a0a0d0h(it.getNodeId(), node.getSNodeId().toString());
       }
     });
   }
@@ -253,7 +253,7 @@ public class DebugInfo {
     if (node == null) {
       return UNSPECIFIED;
     }
-    return MultiTuple.<String,String>from(node.getId(), SNodeOperations.getModel(node).getSModelReference().toString());
+    return MultiTuple.<String,String>from(node.getSNodeId().toString(), SNodeOperations.getModel(node).getSModelReference().toString());
   }
 
   @Nullable

@@ -36,7 +36,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
 
       public boolean isApplicableInstanceNode(SNode node) {
         SNode operation = SLinkOperations.getTarget(node, "operation", true);
-        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConceptFqName());
+        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConcept().getId());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -76,7 +76,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_2;
-          quotedNode1_10.setReferent("tool", (SNode) parameter_14);
+          quotedNode1_10.setReferenceTarget("tool", (SNode) parameter_14);
           quotedNode_1.addChild("operation", quotedNode1_10);
         }
         {

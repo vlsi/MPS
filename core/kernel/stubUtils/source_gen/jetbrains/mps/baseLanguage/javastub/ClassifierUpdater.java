@@ -613,7 +613,7 @@ public class ClassifierUpdater {
   }
 
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
-    if (sourceNode.getReferent(role) != null) {
+    if (sourceNode.getReferenceTarget(role) != null) {
       return;
     }
 
@@ -622,11 +622,11 @@ public class ClassifierUpdater {
     resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
-    sourceNode.addReference(ref);
+    sourceNode.setReference(ref.getRole(), ref);
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
-    if (sourceNode.getReferent(role) != null) {
+    if (sourceNode.getReferenceTarget(role) != null) {
       return;
     }
 
@@ -634,11 +634,11 @@ public class ClassifierUpdater {
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     String resolve = method;
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
-    sourceNode.addReference(ref);
+    sourceNode.setReference(ref.getRole(), ref);
   }
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
-    if (sourceNode.getReferent(role) != null) {
+    if (sourceNode.getReferenceTarget(role) != null) {
       return;
     }
 
@@ -649,7 +649,7 @@ public class ClassifierUpdater {
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
 
-    sourceNode.addReference(ref);
+    sourceNode.setReference(ref.getRole(), ref);
   }
 
   public boolean isSkipPrivate() {
@@ -727,7 +727,7 @@ public class ClassifierUpdater {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", (SModel) parameter_3, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;

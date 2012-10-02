@@ -86,7 +86,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.setReferent("concept", (SNode) parameter_9);
+            quotedNode1_8.setReferenceTarget("concept", (SNode) parameter_9);
             quotedNode_3.addChild("elementType", quotedNode1_8);
           }
           quotedNode_1.addChild("argument", quotedNode1_7);

@@ -126,7 +126,7 @@ public class MoveConcepts_Action extends BaseAction {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
-            if (!(((SNode) node).isRegistered()) || ((SNode) node).isDisposed()) {
+            if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) node))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) node))) {
               return;
             }
           }

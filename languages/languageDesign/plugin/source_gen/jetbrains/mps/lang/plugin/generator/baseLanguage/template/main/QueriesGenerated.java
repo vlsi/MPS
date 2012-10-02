@@ -1939,8 +1939,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setProperty("isFinal", "true");
         quotedNode1_5.setProperty("name", "_params");
+        quotedNode1_5.setProperty("isFinal", "true");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;

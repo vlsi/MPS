@@ -60,7 +60,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225985087451(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getId();
+    return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1216996538619(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -104,11 +104,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1226937589842(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1225535751452(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getId();
+    return SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1221567884881(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -116,11 +116,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221567898665(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "var" + _context.getNode().getId();
+    return "var" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1221567898678(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(_context.getNode()).getId();
+    return SNodeOperations.getParent(_context.getNode()).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1221567898739(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -132,7 +132,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225976113121(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1225976126786(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -144,12 +144,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5364632142688376317(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getId();
+    return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5364632142688376328(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SLinkOperations.getTarget(_context.getNode(), "result", true) != null) {
-      return SLinkOperations.getTarget(_context.getNode(), "result", true).getId();
+      return SLinkOperations.getTarget(_context.getNode(), "result", true).getSNodeId().toString();
     } else {
       return "";
     }

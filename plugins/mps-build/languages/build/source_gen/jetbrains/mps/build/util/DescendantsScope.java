@@ -31,7 +31,7 @@ public abstract class DescendantsScope extends Scope {
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     Iterable<SNode> seq = ListSequence.fromList(SNodeOperations.getChildren(node, link)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return it.getDescendantsIterable(new IsInstanceCondition(concept), true);
+        return jetbrains.mps.util.SNodeOperations.getDescendants(it, new IsInstanceCondition(concept), true);
       }
     });
     if (prefix == null || prefix.isEmpty()) {
@@ -85,7 +85,7 @@ public abstract class DescendantsScope extends Scope {
     return new DescendantsScope(node, link, concept) {
       public String getName(SNode child) {
         if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-          return child.toString();
+          return child.getPresentation();
         }
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

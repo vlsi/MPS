@@ -892,7 +892,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -942,7 +942,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1094,7 +1094,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1112,7 +1112,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1162,7 +1162,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1322,7 +1322,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1358,7 +1358,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1422,7 +1422,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1472,7 +1472,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1632,7 +1632,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1689,7 +1689,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1739,7 +1739,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1757,7 +1757,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -1793,7 +1793,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_16 = quotedNode_2;
-          quotedNode1_16.setReferent("classifier", (SNode) parameter_26);
+          quotedNode1_16.setReferenceTarget("classifier", (SNode) parameter_26);
           {
             quotedNode_6 = (SNode) parameter_24;
             SNode quotedNode1_17;
@@ -1952,7 +1952,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2009,7 +2009,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2059,7 +2059,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2077,7 +2077,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2113,7 +2113,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_16 = quotedNode_2;
-          quotedNode1_16.setReferent("classifier", (SNode) parameter_26);
+          quotedNode1_16.setReferenceTarget("classifier", (SNode) parameter_26);
           {
             quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_17 = quotedNode_6;
@@ -2286,7 +2286,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2336,7 +2336,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2354,7 +2354,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2390,7 +2390,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_16 = quotedNode_2;
-          quotedNode1_16.setReferent("classifier", (SNode) parameter_25);
+          quotedNode1_16.setReferenceTarget("classifier", (SNode) parameter_25);
           {
             quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_17 = quotedNode_6;
@@ -2542,7 +2542,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2578,7 +2578,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2642,7 +2642,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2692,7 +2692,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2710,7 +2710,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2728,7 +2728,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -2805,7 +2805,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_50 = quotedNode_10;
-            quotedNode1_50.setReferent("classifier", (SNode) parameter_86);
+            quotedNode1_50.setReferenceTarget("classifier", (SNode) parameter_86);
             {
               List<SNode> nodes = (List<SNode>) parameter_85;
               for (SNode child : nodes) {
@@ -2962,7 +2962,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             {
               quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_71 = quotedNode_27;
-              quotedNode1_71.setReferent("classifier", (SNode) parameter_94);
+              quotedNode1_71.setReferenceTarget("classifier", (SNode) parameter_94);
               {
                 List<SNode> nodes = (List<SNode>) parameter_93;
                 for (SNode child : nodes) {
@@ -3023,7 +3023,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_81 = quotedNode_6;
-          quotedNode1_81.setReferent("classifier", (SNode) parameter_96);
+          quotedNode1_81.setReferenceTarget("classifier", (SNode) parameter_96);
           {
             List<SNode> nodes = (List<SNode>) parameter_95;
             for (SNode child : nodes) {
@@ -3035,7 +3035,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_82 = quotedNode_7;
-          quotedNode1_82.setReferent("classifier", (SNode) parameter_99);
+          quotedNode1_82.setReferenceTarget("classifier", (SNode) parameter_99);
           {
             quotedNode_21 = (SNode) parameter_97;
             SNode quotedNode1_83;
@@ -3072,9 +3072,9 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         }
         result = quotedNode1_47;
       }
-      quotedNode_38.setReferent("variableDeclaration", quotedNode_16);
-      quotedNode_44.setReferent("fieldDeclaration", quotedNode_2);
-      quotedNode_46.setReferent("fieldDeclaration", quotedNode_2);
+      quotedNode_38.setReferenceTarget("variableDeclaration", quotedNode_16);
+      quotedNode_44.setReferenceTarget("fieldDeclaration", quotedNode_2);
+      quotedNode_46.setReferenceTarget("fieldDeclaration", quotedNode_2);
       return result;
     }
   }
@@ -3151,7 +3151,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3208,7 +3208,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3258,7 +3258,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3276,7 +3276,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3294,7 +3294,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3371,7 +3371,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_50 = quotedNode_10;
-            quotedNode1_50.setReferent("classifier", (SNode) parameter_86);
+            quotedNode1_50.setReferenceTarget("classifier", (SNode) parameter_86);
             {
               List<SNode> nodes = (List<SNode>) parameter_85;
               for (SNode child : nodes) {
@@ -3528,7 +3528,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             {
               quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_71 = quotedNode_27;
-              quotedNode1_71.setReferent("classifier", (SNode) parameter_94);
+              quotedNode1_71.setReferenceTarget("classifier", (SNode) parameter_94);
               {
                 List<SNode> nodes = (List<SNode>) parameter_93;
                 for (SNode child : nodes) {
@@ -3589,7 +3589,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_81 = quotedNode_6;
-          quotedNode1_81.setReferent("classifier", (SNode) parameter_96);
+          quotedNode1_81.setReferenceTarget("classifier", (SNode) parameter_96);
           {
             List<SNode> nodes = (List<SNode>) parameter_95;
             for (SNode child : nodes) {
@@ -3601,7 +3601,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_82 = quotedNode_7;
-          quotedNode1_82.setReferent("classifier", (SNode) parameter_98);
+          quotedNode1_82.setReferenceTarget("classifier", (SNode) parameter_98);
           {
             quotedNode_21 = (SNode) parameter_97;
             SNode quotedNode1_83;
@@ -3631,9 +3631,9 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         }
         result = quotedNode1_47;
       }
-      quotedNode_38.setReferent("variableDeclaration", quotedNode_16);
-      quotedNode_44.setReferent("fieldDeclaration", quotedNode_2);
-      quotedNode_46.setReferent("fieldDeclaration", quotedNode_2);
+      quotedNode_38.setReferenceTarget("variableDeclaration", quotedNode_16);
+      quotedNode_44.setReferenceTarget("fieldDeclaration", quotedNode_2);
+      quotedNode_46.setReferenceTarget("fieldDeclaration", quotedNode_2);
       return result;
     }
   }
@@ -3710,7 +3710,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3767,7 +3767,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3817,7 +3817,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3835,7 +3835,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3853,7 +3853,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -3930,7 +3930,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_50 = quotedNode_10;
-            quotedNode1_50.setReferent("classifier", (SNode) parameter_86);
+            quotedNode1_50.setReferenceTarget("classifier", (SNode) parameter_86);
             {
               List<SNode> nodes = (List<SNode>) parameter_85;
               for (SNode child : nodes) {
@@ -4087,7 +4087,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             {
               quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_71 = quotedNode_27;
-              quotedNode1_71.setReferent("classifier", (SNode) parameter_94);
+              quotedNode1_71.setReferenceTarget("classifier", (SNode) parameter_94);
               {
                 List<SNode> nodes = (List<SNode>) parameter_93;
                 for (SNode child : nodes) {
@@ -4148,7 +4148,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_81 = quotedNode_6;
-          quotedNode1_81.setReferent("classifier", (SNode) parameter_96);
+          quotedNode1_81.setReferenceTarget("classifier", (SNode) parameter_96);
           {
             List<SNode> nodes = (List<SNode>) parameter_95;
             for (SNode child : nodes) {
@@ -4160,7 +4160,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_82 = quotedNode_7;
-          quotedNode1_82.setReferent("classifier", (SNode) parameter_98);
+          quotedNode1_82.setReferenceTarget("classifier", (SNode) parameter_98);
           {
             quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_83 = quotedNode_21;
@@ -4190,9 +4190,9 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         }
         result = quotedNode1_47;
       }
-      quotedNode_38.setReferent("variableDeclaration", quotedNode_16);
-      quotedNode_44.setReferent("fieldDeclaration", quotedNode_2);
-      quotedNode_46.setReferent("fieldDeclaration", quotedNode_2);
+      quotedNode_38.setReferenceTarget("variableDeclaration", quotedNode_16);
+      quotedNode_44.setReferenceTarget("fieldDeclaration", quotedNode_2);
+      quotedNode_46.setReferenceTarget("fieldDeclaration", quotedNode_2);
       return result;
     }
   }
@@ -4283,7 +4283,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -4333,7 +4333,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -4351,7 +4351,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -4369,7 +4369,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -4446,7 +4446,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_50 = quotedNode_10;
-            quotedNode1_50.setReferent("classifier", (SNode) parameter_86);
+            quotedNode1_50.setReferenceTarget("classifier", (SNode) parameter_86);
             {
               List<SNode> nodes = (List<SNode>) parameter_85;
               for (SNode child : nodes) {
@@ -4603,7 +4603,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             {
               quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_71 = quotedNode_27;
-              quotedNode1_71.setReferent("classifier", (SNode) parameter_94);
+              quotedNode1_71.setReferenceTarget("classifier", (SNode) parameter_94);
               {
                 List<SNode> nodes = (List<SNode>) parameter_93;
                 for (SNode child : nodes) {
@@ -4664,7 +4664,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_81 = quotedNode_6;
-          quotedNode1_81.setReferent("classifier", (SNode) parameter_96);
+          quotedNode1_81.setReferenceTarget("classifier", (SNode) parameter_96);
           {
             List<SNode> nodes = (List<SNode>) parameter_95;
             for (SNode child : nodes) {
@@ -4676,7 +4676,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_82 = quotedNode_7;
-          quotedNode1_82.setReferent("classifier", (SNode) parameter_97);
+          quotedNode1_82.setReferenceTarget("classifier", (SNode) parameter_97);
           {
             quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_83 = quotedNode_21;
@@ -4699,9 +4699,9 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
         }
         result = quotedNode1_47;
       }
-      quotedNode_38.setReferent("variableDeclaration", quotedNode_16);
-      quotedNode_44.setReferent("fieldDeclaration", quotedNode_2);
-      quotedNode_46.setReferent("fieldDeclaration", quotedNode_2);
+      quotedNode_38.setReferenceTarget("variableDeclaration", quotedNode_16);
+      quotedNode_44.setReferenceTarget("fieldDeclaration", quotedNode_2);
+      quotedNode_46.setReferenceTarget("fieldDeclaration", quotedNode_2);
       return result;
     }
   }

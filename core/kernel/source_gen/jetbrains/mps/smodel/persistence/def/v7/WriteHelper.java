@@ -105,14 +105,14 @@ public class WriteHelper {
   public String genType(@NotNull SNode node) {
     if (RoleIdsComponent.isEnabled()) {
       // return fqName prefixed with "." if we can't find model or name of concept 
-      String fqName = node.getConceptFqName();
+      String fqName = node.getConcept().getId();
       String index = MapSequence.fromMap(myModelIndex).get(RoleIdsComponent.getConceptPointer(node).getModelReference());
       if (index == null) {
         return MODEL_SEPARATOR_CHAR + fqName;
       }
-      return index + MODEL_SEPARATOR_CHAR + node.getConceptShortName();
+      return index + MODEL_SEPARATOR_CHAR + node.getConcept().getName();
     }
-    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConceptFqName());
+    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConcept().getId());
   }
 
   public String genTypeId(@NotNull SNode node) {
@@ -127,7 +127,7 @@ public class WriteHelper {
   }
 
   public String genRole(@NotNull SNode node) {
-    return node.getRole_();
+    return node.getRole();
   }
 
   public String genRole(@NotNull SReference ref) {
@@ -193,7 +193,7 @@ public class WriteHelper {
         null
       );
       if ((target != null)) {
-        String resolveInfo = target.getResolveInfo();
+        String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(target);
         if (resolveInfo != null) {
           return resolveInfo;
         }

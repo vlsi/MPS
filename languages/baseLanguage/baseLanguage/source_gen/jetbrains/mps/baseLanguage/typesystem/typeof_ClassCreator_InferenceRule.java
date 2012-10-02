@@ -75,7 +75,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -127,7 +127,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
@@ -147,7 +147,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {

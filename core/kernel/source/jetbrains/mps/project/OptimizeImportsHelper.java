@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -141,7 +142,7 @@ public class OptimizeImportsHelper {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
     for (SNode node : modelDescriptor.getSModel().nodes()) {
-      result.myUsedLanguages.add(node.getLanguage());
+      result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();
         if (!modelDescriptor.getSModelReference().equals(mr)) {

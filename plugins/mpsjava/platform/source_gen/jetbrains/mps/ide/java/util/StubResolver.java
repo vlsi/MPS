@@ -154,7 +154,7 @@ public class StubResolver {
           public IListSequence<SNode> compute() {
             return Sequence.fromIterable(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode n) {
-                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(n.getResolveInfo());
+                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
               }
             }).toListSequence();
           }
@@ -165,7 +165,7 @@ public class StubResolver {
           }
         }
         if (ListSequence.fromList(resolved).count() > 0) {
-          node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
+          node.setReferenceTarget(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++cnt;
           found = true;
