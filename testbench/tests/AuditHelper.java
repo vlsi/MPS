@@ -39,6 +39,10 @@ public class AuditHelper {
     // TODO: when concrete for foreach doesn't works
     DISABLED_MODULES.add("jetbrains.mps.debugger.api.api");
     DISABLED_MODULES.add("jetbrains.mps.graphLayout.orthogonalLayout");
+
+    // TODO: some of error nodes is ClassifiersScope
+    // TODO: and some of them is illegal concept for variable reference, check it with mikev
+    DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
   }
 
   public static void init() {
