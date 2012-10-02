@@ -26,6 +26,7 @@ public class RenameDialog extends StringChooserDialog {
         update();
       }
     });
+    update();
   }
 
   public String getName() {
