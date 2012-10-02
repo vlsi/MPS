@@ -119,6 +119,19 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
+    if (myFileName == null) {
+      if (p.myFileName != null) {
+        return 1;
+      }
+    } else {
+      if (p.myFileName == null) {
+        return -1;
+      }
+      int compareTo = myFileName.compareTo(p.myFileName);
+      if (compareTo != 0) {
+        return compareTo;
+      }
+    }
     if (getLineDistance() == p.getLineDistance()) {
       if (myStartLine == p.myStartLine) {
         if (myStartPosition == p.myStartPosition) {

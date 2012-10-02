@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class ScopePositionInfo extends PositionInfo {
@@ -89,17 +90,15 @@ public class ScopePositionInfo extends PositionInfo {
       return result;
     }
     if ((int) SortedMapSequence.fromMap(myNamesToVars).count() == (int) SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).count()) {
-      SortedMap<String, VarInfo> vars = myNamesToVars;
-      SortedMap<String, VarInfo> theirvars = ((ScopePositionInfo) p).myNamesToVars;
-      while (SortedMapSequence.fromMap(vars).isNotEmpty()) {
-        IMapping<String, VarInfo> first = SortedMapSequence.fromMap(vars).first();
-        IMapping<String, VarInfo> theirfirst = SortedMapSequence.fromMap(theirvars).first();
+      Iterator<IMapping<String, VarInfo>> vars = SortedMapSequence.fromMap(myNamesToVars).iterator();
+      Iterator<IMapping<String, VarInfo>> theirvars = SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).iterator();
+      while (vars.hasNext()) {
+        IMapping<String, VarInfo> first = vars.next();
+        IMapping<String, VarInfo> theirfirst = theirvars.next();
         int compare = compare(first, theirfirst);
         if (compare != 0) {
           return compare;
         }
-        vars = SortedMapSequence.fromMap(vars).tailMap(first.key());
-        theirvars = SortedMapSequence.fromMap(theirvars).tailMap(theirfirst.key());
       }
       return 0;
     }
