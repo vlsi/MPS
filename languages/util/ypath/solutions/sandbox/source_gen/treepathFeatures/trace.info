@@ -291,7 +291,7 @@
     <nodeInfo nodeId="1184148621872" fileName="FeaturesDemo.java" startLine="16" startPosition="9" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184148621878" fileName="FeaturesDemo.java" startLine="17" startPosition="66" endLine="18" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184246467860" fileName="FeaturesDemo.java" startLine="20" startPosition="42" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184149365359" fileName="FeaturesDemo.java" startLine="19" startPosition="334" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
+    <nodeInfo nodeId="7120113277826389000" fileName="FeaturesDemo.java" startLine="19" startPosition="334" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
     <nodeInfo nodeId="1184148704587" fileName="FeaturesDemo.java" startLine="18" startPosition="89" endLine="23" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184148621870" fileName="FeaturesDemo.java" startLine="15" startPosition="105" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1184148507065" fileName="FeaturesDemo.java" startLine="13" startPosition="27" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
@@ -300,8 +300,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1184148621949" fileName="FeaturesDemo.java" startLine="24" startPosition="33" endLine="24" endPosition="33" />
     <scopeInfo nodeId="1184149365361" fileName="FeaturesDemo.java" startLine="20" startPosition="42" endLine="21" endPosition="49" />
-    <scopeInfo nodeId="1184149365359" fileName="FeaturesDemo.java" startLine="19" startPosition="334" endLine="23" endPosition="0">
-      <varInfo nodeId="1184149365359" varName="node" />
+    <scopeInfo nodeId="7120113277826389000" fileName="FeaturesDemo.java" startLine="19" startPosition="334" endLine="23" endPosition="0">
+      <varInfo nodeId="7120113277826389000" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1184148621871" fileName="FeaturesDemo.java" startLine="16" startPosition="9" endLine="23" endPosition="9">
       <varInfo nodeId="1184148621879" varName="doc" />
@@ -313,7 +313,7 @@
     <scopeInfo nodeId="1184148507065" fileName="FeaturesDemo.java" startLine="13" startPosition="27" endLine="27" endPosition="0">
       <varInfo nodeId="1184148566292" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1184149365359" fileName="FeaturesDemo.java" startLine="19" startPosition="317" endLine="23" endPosition="7" unitName="treepathFeatures.FeaturesDemo$1" />
+    <unitInfo nodeId="7120113277826389000" fileName="FeaturesDemo.java" startLine="19" startPosition="317" endLine="23" endPosition="7" unitName="treepathFeatures.FeaturesDemo$1" />
     <unitInfo nodeId="1184148497590" fileName="FeaturesDemo.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="treepathFeatures.FeaturesDemo" />
   </root>
   <root nodeId="1184685688047" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
