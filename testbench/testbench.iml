@@ -29,7 +29,6 @@
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="library" name="XStream" level="project" />
     <orderEntry type="library" name="Commons-net" level="project" />
     <orderEntry type="library" name="XmlRpc" level="project" />
     <orderEntry type="library" name="Commons-collections" level="project" />
