@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ez2165ajvmpv2pxrfr5c690o5zorf9">
+<dependencies version="2" modelHash="3gq008ukvokagw22bf4j4urus7s73vd">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="go6segw8331kdd55iid2eyf6mpbgsd" />
@@ -455,7 +455,7 @@
   <source id="1228341669568" name="Node_DetachOperation" hash="9bz7ivn2fhe59uncoy7eo9tyh3i37zi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1240170042401" name="SEnumMemberType" hash="8j1rjxdo4m9zztjoavhk7rvvtxu3r9b">
+  <source id="1240170042401" name="SEnumMemberType" hash="d01cr8orv23pn1ofmyk9flycwhk4tg5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1240171359678" name="EnumMember_ValueOperation" hash="-1napmdk85i29ze66t4wzifnqlwc8d9e">
