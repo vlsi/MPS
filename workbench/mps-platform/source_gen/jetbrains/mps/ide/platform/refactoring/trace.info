@@ -129,81 +129,82 @@
     <nodeInfo nodeId="1685972956014330196" fileName="StringChooserDialog.java" startLine="24" startPosition="109" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1685972956014330199" fileName="StringChooserDialog.java" startLine="25" startPosition="25" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1685972956014330202" fileName="StringChooserDialog.java" startLine="26" startPosition="20" endLine="27" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330204" fileName="StringChooserDialog.java" startLine="27" startPosition="11" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330209" fileName="StringChooserDialog.java" startLine="28" startPosition="38" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330214" fileName="StringChooserDialog.java" startLine="29" startPosition="37" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330221" fileName="StringChooserDialog.java" startLine="30" startPosition="55" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330226" fileName="StringChooserDialog.java" startLine="31" startPosition="31" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330229" fileName="StringChooserDialog.java" startLine="32" startPosition="31" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330026" fileName="StringChooserDialog.java" startLine="37" startPosition="44" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9032941800334145759" fileName="StringChooserDialog.java" startLine="41" startPosition="52" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1685972956014330031" fileName="StringChooserDialog.java" startLine="46" startPosition="43" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330040" fileName="StringChooserDialog.java" startLine="47" startPosition="51" endLine="48" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330046" fileName="StringChooserDialog.java" startLine="48" startPosition="79" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330047" fileName="StringChooserDialog.java" startLine="49" startPosition="0" endLine="50" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1685972956014330052" fileName="StringChooserDialog.java" startLine="50" startPosition="52" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330058" fileName="StringChooserDialog.java" startLine="51" startPosition="16" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330064" fileName="StringChooserDialog.java" startLine="52" startPosition="16" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330070" fileName="StringChooserDialog.java" startLine="53" startPosition="18" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330076" fileName="StringChooserDialog.java" startLine="54" startPosition="51" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330087" fileName="StringChooserDialog.java" startLine="55" startPosition="38" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330093" fileName="StringChooserDialog.java" startLine="56" startPosition="28" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330094" fileName="StringChooserDialog.java" startLine="57" startPosition="0" endLine="58" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330099" fileName="StringChooserDialog.java" startLine="58" startPosition="33" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330100" fileName="StringChooserDialog.java" startLine="59" startPosition="0" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330106" fileName="StringChooserDialog.java" startLine="60" startPosition="43" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330112" fileName="StringChooserDialog.java" startLine="61" startPosition="16" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330118" fileName="StringChooserDialog.java" startLine="62" startPosition="16" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330124" fileName="StringChooserDialog.java" startLine="63" startPosition="18" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330130" fileName="StringChooserDialog.java" startLine="64" startPosition="18" endLine="65" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330141" fileName="StringChooserDialog.java" startLine="65" startPosition="38" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330142" fileName="StringChooserDialog.java" startLine="66" startPosition="0" endLine="67" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330148" fileName="StringChooserDialog.java" startLine="67" startPosition="51" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330154" fileName="StringChooserDialog.java" startLine="68" startPosition="32" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330155" fileName="StringChooserDialog.java" startLine="69" startPosition="0" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1685972956014330157" fileName="StringChooserDialog.java" startLine="70" startPosition="19" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1685972956014330163" fileName="StringChooserDialog.java" startLine="74" startPosition="35" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1685972956014330170" fileName="StringChooserDialog.java" startLine="78" startPosition="40" endLine="79" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5918389564640884787" fileName="StringChooserDialog.java" startLine="79" startPosition="48" endLine="80" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014329987" fileName="StringChooserDialog.java" startLine="83" startPosition="104" endLine="84" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1685972956014329996" fileName="StringChooserDialog.java" startLine="84" startPosition="98" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1685972956014330000" fileName="StringChooserDialog.java" startLine="85" startPosition="18" endLine="86" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9032941800334145714" fileName="StringChooserDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1685972956014330160" fileName="StringChooserDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1685972956014330021" fileName="StringChooserDialog.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1685972956014330166" fileName="StringChooserDialog.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <nodeInfo nodeId="1685972956014329976" fileName="StringChooserDialog.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getString#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1685972956014330183" fileName="StringChooserDialog.java" startLine="23" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1685972956014330028" fileName="StringChooserDialog.java" startLine="44" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="1685972956014330025" fileName="StringChooserDialog.java" startLine="37" startPosition="44" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="9032941800334145717" fileName="StringChooserDialog.java" startLine="41" startPosition="52" endLine="42" endPosition="23" />
-    <scopeInfo nodeId="1685972956014330162" fileName="StringChooserDialog.java" startLine="74" startPosition="35" endLine="75" endPosition="26" />
-    <scopeInfo nodeId="1685972956014330169" fileName="StringChooserDialog.java" startLine="78" startPosition="40" endLine="80" endPosition="32" />
-    <scopeInfo nodeId="1685972956014329986" fileName="StringChooserDialog.java" startLine="83" startPosition="104" endLine="86" endPosition="33">
+    <nodeInfo nodeId="1685972956014330204" fileName="StringChooserDialog.java" startLine="28" startPosition="31" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330209" fileName="StringChooserDialog.java" startLine="29" startPosition="40" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330214" fileName="StringChooserDialog.java" startLine="30" startPosition="39" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330221" fileName="StringChooserDialog.java" startLine="32" startPosition="5" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330226" fileName="StringChooserDialog.java" startLine="33" startPosition="31" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330026" fileName="StringChooserDialog.java" startLine="38" startPosition="44" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9032941800334145759" fileName="StringChooserDialog.java" startLine="42" startPosition="52" endLine="43" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014330031" fileName="StringChooserDialog.java" startLine="47" startPosition="43" endLine="48" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330040" fileName="StringChooserDialog.java" startLine="48" startPosition="51" endLine="49" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330046" fileName="StringChooserDialog.java" startLine="49" startPosition="79" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330047" fileName="StringChooserDialog.java" startLine="50" startPosition="0" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014330052" fileName="StringChooserDialog.java" startLine="51" startPosition="52" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330058" fileName="StringChooserDialog.java" startLine="52" startPosition="16" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330064" fileName="StringChooserDialog.java" startLine="53" startPosition="16" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330070" fileName="StringChooserDialog.java" startLine="54" startPosition="18" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330076" fileName="StringChooserDialog.java" startLine="55" startPosition="51" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330087" fileName="StringChooserDialog.java" startLine="56" startPosition="38" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330093" fileName="StringChooserDialog.java" startLine="57" startPosition="28" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330094" fileName="StringChooserDialog.java" startLine="58" startPosition="0" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330099" fileName="StringChooserDialog.java" startLine="59" startPosition="33" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330100" fileName="StringChooserDialog.java" startLine="60" startPosition="0" endLine="61" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330106" fileName="StringChooserDialog.java" startLine="61" startPosition="43" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330112" fileName="StringChooserDialog.java" startLine="62" startPosition="16" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330118" fileName="StringChooserDialog.java" startLine="63" startPosition="16" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330124" fileName="StringChooserDialog.java" startLine="64" startPosition="18" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330130" fileName="StringChooserDialog.java" startLine="65" startPosition="18" endLine="66" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330141" fileName="StringChooserDialog.java" startLine="66" startPosition="38" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330142" fileName="StringChooserDialog.java" startLine="67" startPosition="0" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330148" fileName="StringChooserDialog.java" startLine="68" startPosition="51" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330154" fileName="StringChooserDialog.java" startLine="69" startPosition="32" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330155" fileName="StringChooserDialog.java" startLine="70" startPosition="0" endLine="71" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014330157" fileName="StringChooserDialog.java" startLine="71" startPosition="19" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330163" fileName="StringChooserDialog.java" startLine="75" startPosition="35" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014330170" fileName="StringChooserDialog.java" startLine="79" startPosition="40" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640884787" fileName="StringChooserDialog.java" startLine="80" startPosition="48" endLine="81" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014329987" fileName="StringChooserDialog.java" startLine="84" startPosition="104" endLine="85" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014329996" fileName="StringChooserDialog.java" startLine="85" startPosition="98" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330000" fileName="StringChooserDialog.java" startLine="86" startPosition="18" endLine="87" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9032941800334145714" fileName="StringChooserDialog.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1685972956014330160" fileName="StringChooserDialog.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8326030452010200248" fileName="StringChooserDialog.java" startLine="27" startPosition="11" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1685972956014330021" fileName="StringChooserDialog.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1685972956014330166" fileName="StringChooserDialog.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="1685972956014329976" fileName="StringChooserDialog.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getString#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1685972956014330183" fileName="StringChooserDialog.java" startLine="23" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1685972956014330028" fileName="StringChooserDialog.java" startLine="45" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="1685972956014330025" fileName="StringChooserDialog.java" startLine="38" startPosition="44" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="9032941800334145717" fileName="StringChooserDialog.java" startLine="42" startPosition="52" endLine="43" endPosition="23" />
+    <scopeInfo nodeId="1685972956014330162" fileName="StringChooserDialog.java" startLine="75" startPosition="35" endLine="76" endPosition="26" />
+    <scopeInfo nodeId="1685972956014330169" fileName="StringChooserDialog.java" startLine="79" startPosition="40" endLine="81" endPosition="32" />
+    <scopeInfo nodeId="8326030452010200249" fileName="StringChooserDialog.java" startLine="28" startPosition="31" endLine="31" endPosition="57" />
+    <scopeInfo nodeId="1685972956014329986" fileName="StringChooserDialog.java" startLine="84" startPosition="104" endLine="87" endPosition="33">
       <varInfo nodeId="1685972956014329988" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="9032941800334145714" fileName="StringChooserDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1685972956014330160" fileName="StringChooserDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1685972956014330021" fileName="StringChooserDialog.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1685972956014330166" fileName="StringChooserDialog.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1685972956014329976" fileName="StringChooserDialog.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="9032941800334145714" fileName="StringChooserDialog.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330160" fileName="StringChooserDialog.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330021" fileName="StringChooserDialog.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330166" fileName="StringChooserDialog.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1685972956014329976" fileName="StringChooserDialog.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1685972956014329983" varName="initialValue" />
       <varInfo nodeId="1685972956014329981" varName="labelText" />
       <varInfo nodeId="1685972956014329977" varName="project" />
       <varInfo nodeId="1685972956014329979" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="1685972956014330195" fileName="StringChooserDialog.java" startLine="24" startPosition="109" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1685972956014330183" fileName="StringChooserDialog.java" startLine="23" startPosition="0" endLine="34" endPosition="3">
+    <scopeInfo nodeId="1685972956014330195" fileName="StringChooserDialog.java" startLine="24" startPosition="109" endLine="34" endPosition="31" />
+    <scopeInfo nodeId="1685972956014330183" fileName="StringChooserDialog.java" startLine="23" startPosition="0" endLine="35" endPosition="3">
       <varInfo nodeId="1685972956014330191" varName="initialValue" />
       <varInfo nodeId="1685972956014330189" varName="labelText" />
       <varInfo nodeId="1685972956014330184" varName="project" />
       <varInfo nodeId="1685972956014330187" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="1685972956014330030" fileName="StringChooserDialog.java" startLine="46" startPosition="43" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1685972956014330030" fileName="StringChooserDialog.java" startLine="47" startPosition="43" endLine="72" endPosition="0">
       <varInfo nodeId="1685972956014330048" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1685972956014330028" fileName="StringChooserDialog.java" startLine="44" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="1685972956014329975" fileName="StringChooserDialog.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
+    <scopeInfo nodeId="1685972956014330028" fileName="StringChooserDialog.java" startLine="45" startPosition="0" endLine="74" endPosition="0" />
+    <unitInfo nodeId="1685972956014329975" fileName="StringChooserDialog.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
   </root>
   <root nodeId="1685972956014334002" modelId="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)">
     <nodeInfo nodeId="1685972956014334010" fileName="RenameDialog.java" startLine="9" startPosition="55" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
