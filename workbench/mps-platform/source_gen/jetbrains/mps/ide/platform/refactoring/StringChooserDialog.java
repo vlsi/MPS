@@ -25,12 +25,13 @@ public class StringChooserDialog extends RefactoringDialog {
     super(project, true);
     setTitle(title);
     init();
-    myTextField.setText(initialValue);
-    myTextField.setSelectionStart(0);
-    myTextField.setSelectionEnd(initialValue.length());
+    if (initialValue != null) {
+      myTextField.setText(initialValue);
+      myTextField.setSelectionStart(0);
+      myTextField.setSelectionEnd(initialValue.length());
+    }
     myLabel.setText(labelText);
     setHorizontalStretch(2.0f);
-
   }
 
   @Nullable
