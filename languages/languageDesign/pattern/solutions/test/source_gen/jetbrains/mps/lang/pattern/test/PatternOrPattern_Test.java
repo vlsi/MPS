@@ -95,7 +95,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_12 = quotedNode_6;
-              quotedNode1_12.addReference(SReference.create("classifier", quotedNode1_12, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
+              quotedNode1_12.setReference("classifier", SReference.create("classifier", quotedNode1_12, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
               quotedNode_3.addChild("leftExpression", quotedNode1_12);
             }
             quotedNode_1.addChild("condition", quotedNode1_10);
@@ -337,7 +337,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
+          quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
           result = quotedNode1_2;
         }
         return result;

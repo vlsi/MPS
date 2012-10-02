@@ -523,7 +523,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654192646")));
+        quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654192646")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -566,7 +566,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildExternalLayoutDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("layout", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("7181125477683264500")));
+        quotedNode1_3.setReference("layout", SReference.create("layout", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("7181125477683264500")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -623,7 +623,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("5148601452480491524")));
+        quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("5148601452480491524")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -728,7 +728,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688312941958")));
+        quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688312941958")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -753,7 +753,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011003")));
+        quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011003")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -1119,7 +1119,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         {
           quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_16 = quotedNode_5;
-          quotedNode1_16.addReference(SReference.create("target", quotedNode1_16, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4973949960459588488")));
+          quotedNode1_16.setReference("target", SReference.create("target", quotedNode1_16, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4973949960459588488")));
           quotedNode_1.addChild("dependencies", quotedNode1_16);
         }
         {
@@ -1199,13 +1199,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_49 = quotedNode_2;
-          quotedNode1_49.addReference(SReference.create("target", quotedNode1_49, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033161")));
+          quotedNode1_49.setReference("target", SReference.create("target", quotedNode1_49, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033161")));
           quotedNode_1.addChild("children", quotedNode1_49);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_50 = quotedNode_3;
-          quotedNode1_50.addReference(SReference.create("target", quotedNode1_50, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1348803421063031332")));
+          quotedNode1_50.setReference("target", SReference.create("target", quotedNode1_50, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1348803421063031332")));
           quotedNode_1.addChild("children", quotedNode1_50);
         }
         {
@@ -1225,7 +1225,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           {
             quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_54 = quotedNode_9;
-            quotedNode1_54.addReference(SReference.create("target", quotedNode1_54, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("3684398890534586740")));
+            quotedNode1_54.setReference("target", SReference.create("target", quotedNode1_54, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("3684398890534586740")));
             {
               quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_55 = quotedNode_27;
@@ -1301,7 +1301,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           {
             quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_66 = quotedNode_12;
-            quotedNode1_66.addReference(SReference.create("target", quotedNode1_66, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033167")));
+            quotedNode1_66.setReference("target", SReference.create("target", quotedNode1_66, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033167")));
             {
               quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_67 = quotedNode_32;
@@ -1346,25 +1346,25 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           {
             quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_74 = quotedNode_14;
-            quotedNode1_74.addReference(SReference.create("target", quotedNode1_74, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033217")));
+            quotedNode1_74.setReference("target", SReference.create("target", quotedNode1_74, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033217")));
             quotedNode_6.addChild("children", quotedNode1_74);
           }
           {
             quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_75 = quotedNode_15;
-            quotedNode1_75.addReference(SReference.create("target", quotedNode1_75, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033209")));
+            quotedNode1_75.setReference("target", SReference.create("target", quotedNode1_75, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033209")));
             quotedNode_6.addChild("children", quotedNode1_75);
           }
           {
             quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_76 = quotedNode_16;
-            quotedNode1_76.addReference(SReference.create("target", quotedNode1_76, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033226")));
+            quotedNode1_76.setReference("target", SReference.create("target", quotedNode1_76, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033226")));
             quotedNode_6.addChild("children", quotedNode1_76);
           }
           {
             quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_77 = quotedNode_17;
-            quotedNode1_77.addReference(SReference.create("target", quotedNode1_77, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("614687982853436655")));
+            quotedNode1_77.setReference("target", SReference.create("target", quotedNode1_77, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("614687982853436655")));
             quotedNode_6.addChild("children", quotedNode1_77);
           }
           {
@@ -1382,7 +1382,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           {
             quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_80 = quotedNode_20;
-            quotedNode1_80.addReference(SReference.create("target", quotedNode1_80, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011106")));
+            quotedNode1_80.setReference("target", SReference.create("target", quotedNode1_80, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011106")));
             quotedNode_6.addChild("children", quotedNode1_80);
           }
           {
@@ -1623,7 +1623,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("macro", quotedNode1_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654465616")));
+        quotedNode1_2.setReference("macro", SReference.create("macro", quotedNode1_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654465616")));
         result = quotedNode1_2;
       }
       return result;

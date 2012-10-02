@@ -118,7 +118,7 @@ public class FetchDependenciesProcessor {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
+        quotedNode1_2.setReference("target", SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
         result = quotedNode1_2;
       }
       return result;

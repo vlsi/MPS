@@ -64,7 +64,7 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a4a1a3a1a1);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142363739");
-              tnode4.addReference(SReference.create("baseMethodDeclaration", tnode4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.isCanceled():boolean")));
+              tnode4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.isCanceled():boolean")));
 
             } finally {
               environment.getTracer().pushOutputNode(tnode4);
