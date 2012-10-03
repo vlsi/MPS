@@ -24,10 +24,11 @@
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206454554507">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206455216234">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1076505808687" resolveInfo="WhileStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206459403819">
@@ -43,7 +44,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206460339989">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068498886294" resolveInfo="AssignmentExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206460471601">
@@ -56,12 +57,15 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206463694662">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1144231330558" resolveInfo="ForStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206463758605">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1144226303539" resolveInfo="ForeachStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206463818823">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1177666668936" resolveInfo="DoWhileStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206463895940">
@@ -77,7 +81,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1082113931046" resolveInfo="ContinueStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206536652080">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1206060495898" resolveInfo="ElsifClause" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206536952487">
@@ -99,11 +103,11 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1079359253375" resolveInfo="ParenthesizedExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206543200622">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206543641005">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1204053956946" resolveInfo="IMethodCall" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206544616802">
@@ -122,27 +126,30 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1081256982272" resolveInfo="InstanceOfExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206987106933">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206987156907">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1206987602762">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207060493473">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207075974495">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1081516740877" resolveInfo="NotExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207140821807">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1164903280175" resolveInfo="CatchClause" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207556563737">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207556861986">
@@ -154,7 +161,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1154542696413" resolveInfo="ArrayCreatorWithInitializer" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207558448518">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1206629501431" resolveInfo="InstanceInitializer" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207558671026">
@@ -164,29 +171,30 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1163670641947" resolveInfo="SwitchCase" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1210936137812">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1145552977093" resolveInfo="GenericNewExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1210954246889">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1168622733562" resolveInfo="RemarkStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1214499184018">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1182160077978" resolveInfo="AnonymousClassCreator" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1215696302779">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1215693861676" resolveInfo="BaseAssignmentExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1217516459747">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068499141036" resolveInfo="BaseMethodCall" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1220010442774">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1221737454577">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1221737317277" resolveInfo="StaticInitializer" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1221825780289">
@@ -194,13 +202,15 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1222757967616">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1222758017511">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1223989582690">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1152728232947" resolveInfo="Closure" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1225271597111">
@@ -208,13 +218,15 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1225271484915" resolveInfo="SubstringExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1226075737918">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1225894555487" resolveInfo="BitwiseNotExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1226935762687">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="comments" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1177326519037" resolveInfo="CommentedStatementsBlock" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1239714962884">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="6023428257643051553">
@@ -3096,7 +3108,7 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7597254041024463760" />
+    <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7597254041024463760" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7597254041024463761">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7597254041024463762" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7597254041024463763" />
@@ -3895,7 +3907,7 @@
       <property name="name" nameId="tpck.1169194664001" value="NULL" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6868777471677432370" resolveInfo="NullableState" />
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6868777471677432369" />
+    <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6868777471677432369" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6868777471677432370">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6868777471677432371" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6868777471677432372" />
@@ -5151,7 +5163,7 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1265678854311165374" />
+    <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1265678854311165374" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1265678854311165375">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1265678854311165376" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1265678854311165377" />

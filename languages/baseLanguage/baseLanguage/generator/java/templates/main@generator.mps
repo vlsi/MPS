@@ -26,25 +26,26 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1201381967720">
       <property name="name" nameId="tpck.1169194664001" value="mc_baseLanguage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1201570124301">
       <property name="name" nameId="tpck.1169194664001" value="weave_Property" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1202577940061">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ValueParameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1202003934320" resolveInfo="ValueParameter" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1206152999436">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssignmentExpression_propertySet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1068498886294" resolveInfo="AssignmentExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1206154637872">
       <property name="name" nameId="tpck.1169194664001" value="reduce_DotExpression_propertyGet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1224072707336">
@@ -53,11 +54,12 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5862977038373365416">
       <property name="name" nameId="tpck.1169194664001" value="reduceGetProperty" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5862977038373397976">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssignmentExpression_localPropertySet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1068498886294" resolveInfo="AssignmentExpression" />
     </node>
   </roots>
@@ -946,7 +948,7 @@
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201570141859" />
+      <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201570141859" />
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4723230619342922335">
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4723230619342922336" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4723230619342922337" />
@@ -1279,7 +1281,7 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5862977038373365439">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="F" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5862977038373365440" />
+      <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5862977038373365440" />
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5862977038373365441">
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5862977038373365442" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5862977038373365443" />
@@ -1350,7 +1352,7 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5862977038373397977">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="F" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5862977038373397978" />
+      <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5862977038373397978" />
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5862977038373397979">
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5862977038373397980" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5862977038373397981" />
