@@ -39,7 +39,7 @@
   <roots>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1193744597902">
       <property name="name" nameId="tpck.1169194664001" value="AddCastStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647385815">
@@ -87,16 +87,17 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199621296757">
       <property name="name" nameId="tpck.1169194664001" value="ExtractWhileConditionToInternalIfStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1076505808687" resolveInfo="WhileStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199622460250">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceAssertWithIf" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1160998861373" resolveInfo="AssertStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199623693658">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceForLoopWithWhileLoop" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1144231330558" resolveInfo="ForStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199625900037">
@@ -106,7 +107,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199627182107">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceForEachLoopWithIndexedLoop" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="loops" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1144226303539" resolveInfo="ForeachStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199627245932">
@@ -115,10 +116,12 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199627248517">
       <property name="name" nameId="tpck.1169194664001" value="AddRuntimeExceptionToMethodSignature" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1164991038168" resolveInfo="ThrowStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199892779474">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceBlockWithItsContent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1082485599095" resolveInfo="BlockStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1201102619707">
@@ -161,7 +164,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206066794083">
       <property name="name" nameId="tpck.1169194664001" value="ElsifSwapWithMain" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1206060495898" resolveInfo="ElsifClause" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206631638103">
@@ -11367,7 +11370,7 @@
         </node>
       </node>
     </node>
-    <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6670547060642540859" />
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6670547060642540859" />
   </root>
   <root id="3366354716707474220">
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="3366354716707474221">
@@ -14662,7 +14665,7 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2040594400225361974" />
       </node>
     </node>
-    <node role="visibility" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2040594400225274134" />
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2040594400225274134" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2040594400225274135">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2040594400225274136" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2040594400225274139" />
