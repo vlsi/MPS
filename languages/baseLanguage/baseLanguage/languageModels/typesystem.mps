@@ -269,11 +269,11 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1177075567061">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ClosureParameterReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1177075633500">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ConceptFunctionParameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.conceptFunction" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1177076505323">
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
@@ -316,7 +316,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178585407565">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ConceptFunction" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.conceptFunction" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1188221225149">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ArrayLiteral" />
