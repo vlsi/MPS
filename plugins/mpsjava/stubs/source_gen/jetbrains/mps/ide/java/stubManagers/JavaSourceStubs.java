@@ -19,8 +19,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.ide.java.newparser.JavaSourceStubModelDescriptor;
-import jetbrains.mps.ide.java.newparser.JavaSourceStubModelDS;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 
 public class JavaSourceStubs extends AbstractModelRootManager {
