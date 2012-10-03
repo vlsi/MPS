@@ -7,8 +7,10 @@ import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
 import jetbrains.mps.make.facet.IFacetManifest;
 import org.junit.Test;
+import org.junit.Ignore;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IProgress;
+import jetbrains.mps.progress.ProgressMonitor;
 import org.jmock.Expectations;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.IScriptController;
@@ -18,7 +20,6 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.unittest.Mockups;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -28,7 +29,7 @@ import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import org.junit.Before;
@@ -41,9 +42,11 @@ public class Generator_Test extends MockTestCase {
   private IFacetManifest manifest;
 
   @Test
+  @Ignore("IProgress is not used anymore, rewrite using ProgressMonitor")
   public void test_buildScript() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     final IProgress pstub = context.mock(IProgress.class);
+    final ProgressMonitor pmstub = context.mock(ProgressMonitor.class);
     context.checking(new Expectations() {
       {
         exactly(1).of(pstub).beginWork(with(equal(internalWorkName("script"))), with(equal(1020)), with(any(Integer.class)));
@@ -71,13 +74,14 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
-    IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
+    IResult res = scr.execute(mons, null, pmstub);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
   @Test
+  @Ignore("IProgress is not used anymore, rewrite using ProgressMonitor")
   public void test_queryOk() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     final IScriptController mons = Mockups.monitors(context, "mons");
@@ -209,6 +213,7 @@ public class Generator_Test extends MockTestCase {
   }
 
   @Test
+  @Ignore("IProgress is not used anymore, rewrite using ProgressMonitor")
   public void test_progress() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     final IProgress pstub = context.mock(IProgress.class);
@@ -259,6 +264,7 @@ public class Generator_Test extends MockTestCase {
   }
 
   @Test
+  @Ignore("IProgress is not used anymore, rewrite using ProgressMonitor")
   public void test_logProgress() throws Exception {
     final LoggingProgressStrategy.Log logger = context.mock(LoggingProgressStrategy.Log.class);
     context.checking(new Expectations() {

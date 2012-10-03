@@ -348,7 +348,7 @@ public class Execute_Test extends MockTestCase {
           }
         });
         exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
-        exactly(1).of(mons).useMonitor(with(aNonNull(ProgressMonitor.class)));
+        atLeast(1).of(mons).useMonitor(with(aNonNull(ProgressMonitor.class)));
         exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
           public boolean matches(Object o) {
             if (o instanceof IFeedback.ERROR) {
