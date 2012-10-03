@@ -17,20 +17,21 @@ import java.awt.Insets;
 
 public class StringChooserDialog extends RefactoringDialog {
   protected JPanel myPanel;
-  private JLabel myLabel = new JLabel();
-  private JTextField myTextField = new JTextField();
+  protected JLabel myLabel = new JLabel();
+  protected JTextField myTextField = new JTextField();
   protected String myResultString;
 
   public StringChooserDialog(@NotNull Project project, String title, String labelText, String initialValue) {
     super(project, true);
     setTitle(title);
     init();
-    myTextField.setText(initialValue);
-    myTextField.setSelectionStart(0);
-    myTextField.setSelectionEnd(initialValue.length());
+    if (initialValue != null) {
+      myTextField.setText(initialValue);
+      myTextField.setSelectionStart(0);
+      myTextField.setSelectionEnd(initialValue.length());
+    }
     myLabel.setText(labelText);
     setHorizontalStretch(2.0f);
-
   }
 
   @Nullable

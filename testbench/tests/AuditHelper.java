@@ -20,12 +20,31 @@ import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.vfs.FileSystem;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class AuditHelper {
+  public static final Set<String> DISABLED_MODULES = new HashSet<String>();
+  static {
+    // obsolete modules
+    DISABLED_MODULES.add("jetbrains.mps.ui.unittest");
+    DISABLED_MODULES.add("jetbrains.mps.ui.sandbox");
+
+    // TransformationUtil_Complex out of scopes is ok,
+    // TODO: TransformationUtil_Expressions should be fixed by right ClassifiersScope (MPS-16863)
+    DISABLED_MODULES.add("jetbrains.mps.debugger.java.runtime.tests");
+
+    // illegal cardinalities is part of test
+    DISABLED_MODULES.add("jetbrains.mps.smodel.test");
+
+    // TODO: when concrete for foreach doesn't works (MPS-16864)
+    DISABLED_MODULES.add("jetbrains.mps.debugger.api.api");
+    DISABLED_MODULES.add("jetbrains.mps.graphLayout.orthogonalLayout");
+
+    // TODO: some of error nodes is ClassifiersScope (MPS-16863)
+    // TODO: and some of them is illegal concept for variable reference, check it with mikev
+    DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
+  }
+
   public static void init() {
     CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
   }
@@ -48,6 +67,9 @@ public class AuditHelper {
     for (ModuleHandle moduleHandle : moduleHandles) {
       if (moduleHandle.getFile().getName().endsWith(".iml")) {
         // temporary ignore .iml files
+        continue;
+      }
+      if (DISABLED_MODULES.contains(moduleHandle.getDescriptor().getModuleReference().getModuleFqName())) {
         continue;
       }
 

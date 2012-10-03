@@ -37,11 +37,11 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> optional() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("GenerateSpecial")});
+    return null;
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate"), new IFacet.Name("GenerateSpecial")});
   }
 
   public Iterable<IFacet.Name> extended() {

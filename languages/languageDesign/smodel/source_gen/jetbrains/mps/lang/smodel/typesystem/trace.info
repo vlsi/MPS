@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="475" startPosition="49" endLine="490" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="494" startPosition="49" endLine="509" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$2" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="16" startPosition="0" endLine="514" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="479" startPosition="49" endLine="494" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="498" startPosition="49" endLine="513" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$2" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="16" startPosition="0" endLine="518" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor" />
   <root nodeId="1178287490257" modelId="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
     <nodeInfo nodeId="7376433222636453273" fileName="RulesUtil.java" startLine="40" startPosition="136" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1186695082038" fileName="RulesUtil.java" startLine="41" startPosition="40" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -9983,30 +9983,30 @@
     <unitInfo nodeId="1228341901781" fileName="typeof_Node_DetachOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_DetachOperation_InferenceRule" />
   </root>
   <root nodeId="1228490012587" modelId="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
-    <nodeInfo nodeId="1228490047841" fileName="TypesystemDescriptor.java" startLine="477" startPosition="30" endLine="478" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371378882" fileName="TypesystemDescriptor.java" startLine="480" startPosition="110" endLine="481" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371378889" fileName="TypesystemDescriptor.java" startLine="482" startPosition="11" endLine="483" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1232371378896" fileName="TypesystemDescriptor.java" startLine="483" startPosition="154" endLine="484" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228490164836" fileName="TypesystemDescriptor.java" startLine="487" startPosition="101" endLine="488" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371129758" fileName="TypesystemDescriptor.java" startLine="496" startPosition="30" endLine="497" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371344778" fileName="TypesystemDescriptor.java" startLine="499" startPosition="113" endLine="500" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371129760" fileName="TypesystemDescriptor.java" startLine="501" startPosition="11" endLine="502" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1232371129767" fileName="TypesystemDescriptor.java" startLine="502" startPosition="167" endLine="503" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371170099" fileName="TypesystemDescriptor.java" startLine="506" startPosition="101" endLine="507" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228490043313" fileName="TypesystemDescriptor.java" startLine="476" startPosition="108" endLine="479" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1232371378880" fileName="TypesystemDescriptor.java" startLine="479" startPosition="11" endLine="482" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1232371129755" fileName="TypesystemDescriptor.java" startLine="495" startPosition="108" endLine="498" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1232371323950" fileName="TypesystemDescriptor.java" startLine="498" startPosition="11" endLine="501" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1228490043315" fileName="TypesystemDescriptor.java" startLine="477" startPosition="30" endLine="478" endPosition="25" />
-    <scopeInfo nodeId="1232371378881" fileName="TypesystemDescriptor.java" startLine="480" startPosition="110" endLine="481" endPosition="25" />
-    <scopeInfo nodeId="1228490020138" fileName="TypesystemDescriptor.java" startLine="487" startPosition="101" endLine="488" endPosition="135" />
-    <scopeInfo nodeId="1232371129757" fileName="TypesystemDescriptor.java" startLine="496" startPosition="30" endLine="497" endPosition="25" />
-    <scopeInfo nodeId="1232371323951" fileName="TypesystemDescriptor.java" startLine="499" startPosition="113" endLine="500" endPosition="25" />
-    <scopeInfo nodeId="1232371120694" fileName="TypesystemDescriptor.java" startLine="506" startPosition="101" endLine="507" endPosition="135" />
-    <scopeInfo nodeId="1228490020136" fileName="TypesystemDescriptor.java" startLine="476" startPosition="108" endLine="484" endPosition="37">
+    <nodeInfo nodeId="1228490047841" fileName="TypesystemDescriptor.java" startLine="481" startPosition="30" endLine="482" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371378882" fileName="TypesystemDescriptor.java" startLine="484" startPosition="110" endLine="485" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371378889" fileName="TypesystemDescriptor.java" startLine="486" startPosition="11" endLine="487" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1232371378896" fileName="TypesystemDescriptor.java" startLine="487" startPosition="154" endLine="488" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228490164836" fileName="TypesystemDescriptor.java" startLine="491" startPosition="101" endLine="492" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371129758" fileName="TypesystemDescriptor.java" startLine="500" startPosition="30" endLine="501" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371344778" fileName="TypesystemDescriptor.java" startLine="503" startPosition="113" endLine="504" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371129760" fileName="TypesystemDescriptor.java" startLine="505" startPosition="11" endLine="506" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1232371129767" fileName="TypesystemDescriptor.java" startLine="506" startPosition="167" endLine="507" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371170099" fileName="TypesystemDescriptor.java" startLine="510" startPosition="101" endLine="511" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228490043313" fileName="TypesystemDescriptor.java" startLine="480" startPosition="108" endLine="483" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1232371378880" fileName="TypesystemDescriptor.java" startLine="483" startPosition="11" endLine="486" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1232371129755" fileName="TypesystemDescriptor.java" startLine="499" startPosition="108" endLine="502" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1232371323950" fileName="TypesystemDescriptor.java" startLine="502" startPosition="11" endLine="505" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1228490043315" fileName="TypesystemDescriptor.java" startLine="481" startPosition="30" endLine="482" endPosition="25" />
+    <scopeInfo nodeId="1232371378881" fileName="TypesystemDescriptor.java" startLine="484" startPosition="110" endLine="485" endPosition="25" />
+    <scopeInfo nodeId="1228490020138" fileName="TypesystemDescriptor.java" startLine="491" startPosition="101" endLine="492" endPosition="135" />
+    <scopeInfo nodeId="1232371129757" fileName="TypesystemDescriptor.java" startLine="500" startPosition="30" endLine="501" endPosition="25" />
+    <scopeInfo nodeId="1232371323951" fileName="TypesystemDescriptor.java" startLine="503" startPosition="113" endLine="504" endPosition="25" />
+    <scopeInfo nodeId="1232371120694" fileName="TypesystemDescriptor.java" startLine="510" startPosition="101" endLine="511" endPosition="135" />
+    <scopeInfo nodeId="1228490020136" fileName="TypesystemDescriptor.java" startLine="480" startPosition="108" endLine="488" endPosition="37">
       <varInfo nodeId="1232371378890" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1232371120692" fileName="TypesystemDescriptor.java" startLine="495" startPosition="108" endLine="503" endPosition="37">
+    <scopeInfo nodeId="1232371120692" fileName="TypesystemDescriptor.java" startLine="499" startPosition="108" endLine="507" endPosition="37">
       <varInfo nodeId="1232371129761" varName="concept" />
     </scopeInfo>
   </root>
@@ -13016,6 +13016,142 @@
     <unitInfo nodeId="559557797393151943" fileName="typeof_ModelReferenceExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_ModelReferenceExpression_InferenceRule$QuotationClass_siar27_a0a0a0" />
     <unitInfo nodeId="559557797393151931" fileName="typeof_ModelReferenceExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_ModelReferenceExpression_InferenceRule" />
   </root>
+  <root nodeId="5613258673506009045" modelId="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="131" endLine="20" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0c" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="21" startPosition="0" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern" />
+    <nodeInfo nodeId="5613258673506009072" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="27" startPosition="114" endLine="28" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="37" startPosition="124" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="38" startPosition="39" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="39" startPosition="42" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="44" startPosition="27" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="52" startPosition="76" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="53" startPosition="26" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="54" startPosition="67" endLine="55" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="56" startPosition="7" endLine="57" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="163" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="58" startPosition="43" endLine="59" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="60" startPosition="7" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="64" startPosition="31" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="65" startPosition="26" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="66" startPosition="67" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="68" startPosition="7" endLine="69" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="69" startPosition="163" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="70" startPosition="43" endLine="71" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="72" startPosition="7" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="82" startPosition="7" endLine="83" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="83" startPosition="76" endLine="84" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="85" startPosition="154" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="88" startPosition="9" endLine="89" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="90" startPosition="148" endLine="91" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="94" startPosition="7" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="98" startPosition="40" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="105" startPosition="51" endLine="106" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="23" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule#()V" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="48" startPosition="51" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2cenap_a0a0a#()V" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="77" startPosition="108" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_2cenap_a0a0a0a2#()V" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="84" startPosition="84" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="89" startPosition="78" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="35" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="84" startPosition="84" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="51" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="63" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="81" startPosition="45" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="80" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="24" startPosition="65" endLine="24" endPosition="65" />
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="49" startPosition="42" endLine="49" endPosition="42" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="102" startPosition="71" endLine="102" endPosition="71" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="109" startPosition="42" endLine="109" endPosition="42" />
+    <scopeInfo nodeId="5613258673506009046" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="27" startPosition="114" endLine="28" endPosition="130" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="44" startPosition="27" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="85" startPosition="154" endLine="86" endPosition="23" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="90" startPosition="148" endLine="91" endPosition="25" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="98" startPosition="40" endLine="99" endPosition="19" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="105" startPosition="51" endLine="106" endPosition="18" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="48" startPosition="51" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="77" startPosition="108" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="56" startPosition="7" endLine="59" endPosition="31">
+      <varInfo nodeId="5613258673506009064" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="68" startPosition="7" endLine="71" endPosition="31">
+      <varInfo nodeId="5613258673506009064" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="5613258673506009049" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="5613258673506009049" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="5613258673506009045" varName="node" />
+      <varInfo nodeId="5613258673506009045" varName="status" />
+      <varInfo nodeId="5613258673506009045" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="36" startPosition="5" endLine="40" endPosition="48">
+      <varInfo nodeId="5613258673506009045" varName="b" />
+      <varInfo nodeId="5613258673506009045" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="88" startPosition="9" endLine="92" endPosition="11">
+      <varInfo nodeId="5613258673506009049" varName="pointer" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="5613258673506009049" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="35" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" />
+    <scopeInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5613258673506009045" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="52" startPosition="76" endLine="61" endPosition="20">
+      <varInfo nodeId="5613258673506009064" varName="_parameterValues_129834374" />
+      <varInfo nodeId="5613258673506009064" varName="quotedNode_1" />
+      <varInfo nodeId="5613258673506009064" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="64" startPosition="31" endLine="73" endPosition="20">
+      <varInfo nodeId="5613258673506009064" varName="_parameterValues_129834374" />
+      <varInfo nodeId="5613258673506009064" varName="quotedNode_1" />
+      <varInfo nodeId="5613258673506009064" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="84" startPosition="84" endLine="93" endPosition="9" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="82" startPosition="7" endLine="93" endPosition="9">
+      <varInfo nodeId="5613258673506009049" varName="nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="51" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="5613258673506009064" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="63" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="81" startPosition="45" endLine="95" endPosition="18" />
+    <scopeInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="80" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="5613258673506009049" varName="nodeToMatch" />
+    </scopeInfo>
+    <unitInfo nodeId="5613258673506009064" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="48" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SEnumMemberType_SubtypingRule$QuotationClass_2cenap_a0a0a" />
+    <unitInfo nodeId="5613258673506009049" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SEnumMemberType_SubtypingRule$Pattern_2cenap_a0a0a0a2" />
+    <unitInfo nodeId="5613258673506009045" fileName="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SEnumMemberType_SubtypingRule" />
+  </root>
   <root nodeId="5692182839349412544" modelId="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
     <nodeInfo nodeId="5692182839349415237" fileName="typeof_Reference_GetRoleOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5692182839349415237" fileName="typeof_Reference_GetRoleOperation_InferenceRule.java" startLine="22" startPosition="51" endLine="23" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -13878,83 +14014,138 @@
     <unitInfo nodeId="8405512791876070018" fileName="typeof_SLinkImplicitSelect_InferenceRule.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SLinkImplicitSelect_InferenceRule" />
   </root>
   <root nodeId="8468166043514848111" modelId="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
-    <nodeInfo nodeId="8468166043514848217" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="29" startPosition="117" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="42" startPosition="76" endLine="43" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="43" startPosition="26" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="44" startPosition="67" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="46" startPosition="7" endLine="47" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="47" startPosition="157" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="48" startPosition="43" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="50" startPosition="7" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="54" startPosition="31" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966528" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="26" startPosition="121" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966536" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="27" startPosition="69" endLine="28" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673505966567" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="29" startPosition="67" endLine="30" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8468166043514848217" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="31" startPosition="5" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="35" startPosition="46" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="40" startPosition="5" endLine="41" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="41" startPosition="117" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="46" startPosition="27" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="54" startPosition="76" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="55" startPosition="26" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="56" startPosition="67" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="58" startPosition="7" endLine="59" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="59" startPosition="157" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="60" startPosition="43" endLine="61" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="62" startPosition="7" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="15" startPosition="121" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_SEnumMemberType_SubtypingRule#()V" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="38" startPosition="51" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qj2lih_a0a0a#()V" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="45" startPosition="32" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="45" startPosition="32" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="32" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="32" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="16" startPosition="55" endLine="16" endPosition="55" />
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="39" startPosition="42" endLine="39" endPosition="42" />
-    <scopeInfo nodeId="8468166043514848112" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="120" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="65" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="15" startPosition="121" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="28" startPosition="5" endLine="30" endPosition="45">
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="60" startPosition="43" endLine="61" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="61" startPosition="227" endLine="62" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="63" startPosition="7" endLine="64" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="67" startPosition="31" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="68" startPosition="26" endLine="69" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="69" startPosition="67" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="71" startPosition="7" endLine="72" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="72" startPosition="157" endLine="73" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="73" startPosition="43" endLine="74" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="74" startPosition="227" endLine="75" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="76" startPosition="7" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="85" startPosition="76" endLine="86" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="86" startPosition="26" endLine="87" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="87" startPosition="67" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="89" startPosition="7" endLine="90" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="90" startPosition="163" endLine="91" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="91" startPosition="43" endLine="92" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="93" startPosition="7" endLine="94" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="97" startPosition="31" endLine="98" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="98" startPosition="26" endLine="99" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="99" startPosition="67" endLine="100" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="101" startPosition="7" endLine="102" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="102" startPosition="163" endLine="103" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="103" startPosition="43" endLine="104" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="105" startPosition="7" endLine="106" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="22" startPosition="121" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_SEnumMemberType_SubtypingRule#()V" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="50" startPosition="53" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qj2lih_a0a0b0a#()V" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="81" startPosition="55" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qj2lih_a0a0a0c0a#()V" />
+    <nodeInfo nodeId="5613258673505966604" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="28" startPosition="155" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="88" startPosition="32" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="88" startPosition="32" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="100" startPosition="32" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="100" startPosition="32" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="32" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="32" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="70" startPosition="32" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="70" startPosition="32" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperTypes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="84" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="96" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="53" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="66" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="23" startPosition="55" endLine="23" endPosition="55" />
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="51" startPosition="44" endLine="51" endPosition="44" />
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="82" startPosition="46" endLine="82" endPosition="46" />
+    <scopeInfo nodeId="5613258673505966605" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="29" startPosition="67" endLine="30" endPosition="159" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="35" startPosition="46" endLine="36" endPosition="65" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="46" startPosition="27" endLine="47" endPosition="17" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="22" startPosition="121" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="40" startPosition="5" endLine="42" endPosition="45">
       <varInfo nodeId="8468166043514848111" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="38" startPosition="51" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="46" startPosition="7" endLine="49" endPosition="31">
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="50" startPosition="53" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="81" startPosition="55" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="89" startPosition="7" endLine="92" endPosition="31">
+      <varInfo nodeId="5613258673505966600" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="101" startPosition="7" endLine="104" endPosition="31">
+      <varInfo nodeId="5613258673505966600" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="58" startPosition="7" endLine="62" endPosition="31">
       <varInfo nodeId="8468166043514848219" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="58" startPosition="7" endLine="61" endPosition="31">
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="71" startPosition="7" endLine="75" endPosition="31">
       <varInfo nodeId="8468166043514848219" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="88" startPosition="32" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="100" startPosition="32" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="8468166043514848112" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="26" startPosition="121" endLine="32" endPosition="16">
+      <varInfo nodeId="5613258673505966529" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="32" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="70" startPosition="32" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="8468166043514848111" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="25" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="8468166043514848111" varName="status" />
       <varInfo nodeId="8468166043514848111" varName="type" />
       <varInfo nodeId="8468166043514848111" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="45" startPosition="32" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="57" startPosition="32" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="8468166043514848111" varName="argument" />
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="85" startPosition="76" endLine="94" endPosition="20">
+      <varInfo nodeId="5613258673505966600" varName="_parameterValues_129834374" />
+      <varInfo nodeId="5613258673505966600" varName="quotedNode_1" />
+      <varInfo nodeId="5613258673505966600" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="42" startPosition="76" endLine="51" endPosition="20">
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="97" startPosition="31" endLine="106" endPosition="20">
+      <varInfo nodeId="5613258673505966600" varName="_parameterValues_129834374" />
+      <varInfo nodeId="5613258673505966600" varName="quotedNode_1" />
+      <varInfo nodeId="5613258673505966600" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="54" startPosition="76" endLine="64" endPosition="20">
       <varInfo nodeId="8468166043514848219" varName="_parameterValues_129834374" />
       <varInfo nodeId="8468166043514848219" varName="quotedNode_1" />
       <varInfo nodeId="8468166043514848219" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="54" startPosition="31" endLine="63" endPosition="20">
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="67" startPosition="31" endLine="77" endPosition="20">
       <varInfo nodeId="8468166043514848219" varName="_parameterValues_129834374" />
       <varInfo nodeId="8468166043514848219" varName="quotedNode_1" />
       <varInfo nodeId="8468166043514848219" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="84" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="5613258673505966600" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="96" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="53" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8468166043514848219" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="53" startPosition="0" endLine="65" endPosition="0" />
-    <unitInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="38" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule$QuotationClass_qj2lih_a0a0a" />
-    <unitInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule" />
+    <scopeInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="66" startPosition="0" endLine="79" endPosition="0" />
+    <unitInfo nodeId="5613258673505966600" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="81" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule$QuotationClass_qj2lih_a0a0a0c0a" />
+    <unitInfo nodeId="8468166043514848219" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="50" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule$QuotationClass_qj2lih_a0a0b0a" />
+    <unitInfo nodeId="8468166043514848111" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="22" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule" />
   </root>
   <root nodeId="8469340927680549794" modelId="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
     <nodeInfo nodeId="8469340927680549905" fileName="typeof_Reference_GetTargetOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

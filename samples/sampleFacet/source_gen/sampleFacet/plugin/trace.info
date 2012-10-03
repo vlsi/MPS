@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="sampleFacet.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="sampleFacet.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="sampleFacet.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="sampleFacet.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="sampleFacet.plugin.FacetManifest" />
   <root nodeId="5590401931537536727" modelId="r:2e067ce5-0c73-40e5-8ee8-70f504f9cb98(sampleFacet.plugin)">
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="35" startPosition="47" endLine="36" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />

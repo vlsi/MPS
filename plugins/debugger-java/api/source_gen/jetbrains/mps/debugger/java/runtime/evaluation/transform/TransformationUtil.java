@@ -444,14 +444,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515617")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515617")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -510,14 +510,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515667")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515667")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -577,14 +577,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_2;
-          quotedNode1_10.addReference(SReference.create("classConcept", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_10.addReference(SReference.create("classConcept", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_10);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_11 = quotedNode_3;
-          quotedNode1_11.addReference(SReference.create("baseMethodDeclaration", quotedNode1_11, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515567")));
+          quotedNode1_11.addReference(SReference.create("baseMethodDeclaration", quotedNode1_11, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515567")));
           {
             quotedNode_4 = (SNode) parameter_17;
             SNode quotedNode1_12;
@@ -1296,14 +1296,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515356")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515356")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -1423,14 +1423,14 @@ public class TransformationUtil {
             {
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_15 = quotedNode_5;
-              quotedNode1_15.addReference(SReference.create("classConcept", quotedNode1_15, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-              quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+              quotedNode1_15.addReference(SReference.create("classConcept", quotedNode1_15, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+              quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
               quotedNode_3.addChild("operand", quotedNode1_15);
             }
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_16 = quotedNode_6;
-              quotedNode1_16.addReference(SReference.create("baseMethodDeclaration", quotedNode1_16, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515517")));
+              quotedNode1_16.addReference(SReference.create("baseMethodDeclaration", quotedNode1_16, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515517")));
               {
                 quotedNode_7 = (SNode) parameter_23;
                 SNode quotedNode1_17;
@@ -1607,14 +1607,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_11 = quotedNode_2;
-          quotedNode1_11.addReference(SReference.create("classConcept", quotedNode1_11, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_11.addReference(SReference.create("baseMethodDeclaration", quotedNode1_11, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_11.addReference(SReference.create("classConcept", quotedNode1_11, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_11.addReference(SReference.create("baseMethodDeclaration", quotedNode1_11, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_11);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_3;
-          quotedNode1_12.addReference(SReference.create("baseMethodDeclaration", quotedNode1_12, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515467")));
+          quotedNode1_12.addReference(SReference.create("baseMethodDeclaration", quotedNode1_12, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515467")));
           {
             quotedNode_4 = (SNode) parameter_19;
             SNode quotedNode1_13;
@@ -1895,14 +1895,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("7157912897227220645")));
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("7157912897227220271")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("7157912897227220645")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("7157912897227220271")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("3102837338444217531")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("3102837338444217531")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -1952,7 +1952,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -1988,14 +1988,14 @@ public class TransformationUtil {
             {
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_14 = quotedNode_5;
-              quotedNode1_14.addReference(SReference.create("classConcept", quotedNode1_14, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-              quotedNode1_14.addReference(SReference.create("baseMethodDeclaration", quotedNode1_14, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+              quotedNode1_14.addReference(SReference.create("classConcept", quotedNode1_14, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+              quotedNode1_14.addReference(SReference.create("baseMethodDeclaration", quotedNode1_14, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
               quotedNode_3.addChild("operand", quotedNode1_14);
             }
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_15 = quotedNode_6;
-              quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515717")));
+              quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515717")));
               {
                 quotedNode_7 = (SNode) parameter_21;
                 SNode quotedNode1_16;
@@ -2033,7 +2033,7 @@ public class TransformationUtil {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_20 = quotedNode_4;
-            quotedNode1_20.addReference(SReference.create("classifier", quotedNode1_20, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+            quotedNode1_20.addReference(SReference.create("classifier", quotedNode1_20, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
             quotedNode_2.addChild("type", quotedNode1_20);
           }
           quotedNode_1.addChild("expression", quotedNode1_12);
@@ -2055,7 +2055,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2223,7 +2223,7 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.addReference(SReference.create("classifier", quotedNode1_5, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+          quotedNode1_5.addReference(SReference.create("classifier", quotedNode1_5, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
           quotedNode_1.addChild("returnType", quotedNode1_5);
         }
         {
@@ -2278,7 +2278,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
         result = quotedNode1_2;
       }
       return result;
@@ -2314,7 +2314,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
         result = quotedNode1_2;
       }
       return result;
@@ -2349,7 +2349,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563868")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563868")));
         result = quotedNode1_2;
       }
       return result;
@@ -2367,7 +2367,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2385,7 +2385,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070562884")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070562884")));
         result = quotedNode1_2;
       }
       return result;
@@ -2403,7 +2403,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2660,14 +2660,14 @@ public class TransformationUtil {
             {
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_14 = quotedNode_5;
-              quotedNode1_14.addReference(SReference.create("baseMethodDeclaration", quotedNode1_14, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("7157912897227220645")));
-              quotedNode1_14.addReference(SReference.create("classConcept", quotedNode1_14, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("7157912897227220271")));
+              quotedNode1_14.addReference(SReference.create("baseMethodDeclaration", quotedNode1_14, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("7157912897227220645")));
+              quotedNode1_14.addReference(SReference.create("classConcept", quotedNode1_14, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("7157912897227220271")));
               quotedNode_3.addChild("operand", quotedNode1_14);
             }
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_15 = quotedNode_6;
-              quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("3102837338444217531")));
+              quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("3102837338444217531")));
               {
                 quotedNode_7 = (SNode) parameter_21;
                 SNode quotedNode1_16;
@@ -2743,14 +2743,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515767")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515767")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -2809,14 +2809,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515817")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515817")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -2866,7 +2866,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2884,7 +2884,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2902,7 +2902,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2920,7 +2920,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
         result = quotedNode1_2;
       }
       return result;
@@ -2938,7 +2938,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
         result = quotedNode1_2;
       }
       return result;
@@ -2956,7 +2956,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
         result = quotedNode1_2;
       }
       return result;
@@ -2974,7 +2974,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
         result = quotedNode1_2;
       }
       return result;
@@ -2992,7 +2992,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
         result = quotedNode1_2;
       }
       return result;
@@ -3019,14 +3019,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
-          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_9.addReference(SReference.create("classConcept", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_9);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515380")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515380")));
           {
             quotedNode_4 = (SNode) parameter_15;
             SNode quotedNode1_11;
@@ -3082,14 +3082,14 @@ public class TransformationUtil {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.addReference(SReference.create("classConcept", quotedNode1_6, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("4727801710070561555")));
-          quotedNode1_6.addReference(SReference.create("baseMethodDeclaration", quotedNode1_6, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451449889")));
+          quotedNode1_6.addReference(SReference.create("classConcept", quotedNode1_6, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("4727801710070561555")));
+          quotedNode1_6.addReference(SReference.create("baseMethodDeclaration", quotedNode1_6, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451449889")));
           quotedNode_1.addChild("operand", quotedNode1_6);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_3;
-          quotedNode1_7.addReference(SReference.create("baseMethodDeclaration", quotedNode1_7, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)"), SNodeId.fromString("7494124042451515417")));
+          quotedNode1_7.addReference(SReference.create("baseMethodDeclaration", quotedNode1_7, SModelReference.fromString("r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)"), SNodeId.fromString("7494124042451515417")));
           {
             quotedNode_4 = (SNode) parameter_9;
             SNode quotedNode1_8;
@@ -3122,7 +3122,7 @@ public class TransformationUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
         result = quotedNode1_2;
       }
       return result;

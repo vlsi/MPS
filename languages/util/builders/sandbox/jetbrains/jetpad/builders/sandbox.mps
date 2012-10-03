@@ -179,8 +179,8 @@
     </node>
     <node role="builder" roleId="pmg0.7288041816792374845" type="pmg0.SimpleBuilderDeclaration" typeId="pmg0.7288041816792374840" id="3816167865390667292">
       <property name="name" nameId="tpck.1169194664001" value="base" />
-      <property name="isAbstract" nameId="pmg0.3816167865390639747" value="true" />
       <property name="leaf" nameId="pmg0.7288041816793407210" value="false" />
+      <property name="isAbstract" nameId="pmg0.3816167865390639747" value="true" />
       <node role="type" roleId="pmg0.3816167865390455307" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3816167865390946804">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3816167865390946785" resolveInfo="Node" />
       </node>
@@ -294,6 +294,18 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5389689214217242845">
         <property name="name" nameId="tpck.1169194664001" value="name" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5389689214217242846" />
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5613258673505573559">
+      <property name="name" nameId="tpck.1169194664001" value="setChild" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5613258673505573560" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5613258673505573561" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613258673505573562" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5613258673505573563">
+        <property name="name" nameId="tpck.1169194664001" value="node" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5613258673505573564">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3816167865390946785" resolveInfo="Node" />
+        </node>
       </node>
     </node>
   </root>

@@ -5,15 +5,18 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class ActionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClassifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor {
+public class ActionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClassifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ActionDeclaration_BehaviorDescriptor() {
   }
 
@@ -49,12 +52,20 @@ public class ActionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDe
     return ActionDeclaration_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
   }
 
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
+  }
+
   public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
     return ICheckedNamePolicy_Behavior.virtual_getDescendantsToCheck_4844813484172611413(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return ActionDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {

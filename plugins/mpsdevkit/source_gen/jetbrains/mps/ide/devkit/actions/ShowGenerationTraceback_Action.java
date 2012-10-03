@@ -41,7 +41,7 @@ public class ShowGenerationTraceback_Action extends BaseAction {
     try {
       {
         if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
-          ShowGenerationTraceback_Action.this.disable(event.getPresentation());
+          disable(event.getPresentation());
         }
         GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
         event.getPresentation().setVisible(tracer.hasTracingData());

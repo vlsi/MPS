@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StubsCreatorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.StubsCreatorType_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractModelCreator_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_BehaviorDescriptor" />
+  <unitInfo fileName="BaseCreatorType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BaseCreatorType_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CanCreateFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.CanCreateFunction_BehaviorDescriptor" />
   <unitInfo fileName="CreateBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.CreateBlock_BehaviorDescriptor" />
   <unitInfo fileName="CreateFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.CreateFunction_BehaviorDescriptor" />
@@ -9,8 +11,10 @@
   <unitInfo fileName="IModule_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.IModule_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="InitModuleBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.InitModuleBlock_BehaviorDescriptor" />
   <unitInfo fileName="LanguageRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LanguageRef_BehaviorDescriptor" />
+  <unitInfo fileName="LibraryStubDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="ModelCreationSettings_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelCreationSettings_BehaviorDescriptor" />
   <unitInfo fileName="ModelDescriptorsBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelDescriptorsBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ModelManagerDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ModelRoot_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelRoot_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="Model_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.Model_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="RootNodeDescriptorsBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.RootNodeDescriptorsBlock_BehaviorDescriptor" />
@@ -19,13 +23,9 @@
   <unitInfo fileName="Stereotype_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.Stereotype_BehaviorDescriptor" />
   <unitInfo fileName="StubLocation_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.StubLocation_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="StubSource_ConcteptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.StubSource_ConcteptFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="UpdateModelBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.UpdateModelBlock_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractModelCreator_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_BehaviorDescriptor" />
   <unitInfo fileName="StubsCreatorDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.StubsCreatorDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BaseCreatorType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BaseCreatorType_BehaviorDescriptor" />
-  <unitInfo fileName="ModelManagerDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="LibraryStubDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="StubsCreatorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.StubsCreatorType_BehaviorDescriptor" />
+  <unitInfo fileName="UpdateModelBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.UpdateModelBlock_BehaviorDescriptor" />
   <root nodeId="2974122604715183932" modelId="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)">
     <nodeInfo nodeId="4063774604867782399" fileName="LibraryStubDescriptor_Behavior.java" startLine="20" startPosition="89" endLine="21" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2974122604715185991" fileName="LibraryStubDescriptor_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

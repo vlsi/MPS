@@ -26,7 +26,7 @@
             <property name="name" nameId="tpck.1169194664001" value="INPUT" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196637341" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1197994591169">
-              <property name="value" nameId="tpee.1070475926801" value="&lt;doc&gt; &lt;a&gt;&lt;b&gt;&lt;foobar/&gt;&lt;findme baz=&quot;fooblin&quot;/&gt;&lt;/b&gt;&lt;c&gt;&lt;/c&gt;&lt;/a&gt; &lt;/doc&gt;" />
+              <property name="value" nameId="tpee.1070475926801" value="&lt;doc&gt; &lt;a&gt;&lt;b&gt;&lt;foobar/&gt;&lt;findme baz=\&quot;fooblin\&quot;/&gt;&lt;/b&gt;&lt;c&gt;&lt;/c&gt;&lt;/a&gt; &lt;/doc&gt;" />
             </node>
           </node>
         </node>
@@ -79,7 +79,7 @@
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="1175090694726">
-              <node role="iterable" roleId="tpee.1144226360166" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175164319381">
+              <node role="iterable" roleId="tpee.1144226360166" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="7120113277826406959">
                 <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1175090703444">
                   <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1175090703445">
                     <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="tpk9.1175083364493" resolveInfo="DOM" />
@@ -91,8 +91,10 @@
                     <property name="axis" nameId="tpki.1168527174196" value="DESCENDANTS" />
                   </node>
                 </node>
-                <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchKindOperation" typeId="tpki.1172242735136" id="1175164319382">
-                  <link role="nodeKind" roleId="tpki.1172242802393" targetNodeId="tpk9.1175164209843" resolveInfo="ELEMENT" />
+                <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchKindOperation" typeId="tpki.1172242735136" id="7120113277826406962">
+                  <node role="nodeKindOccurrence" roleId="tpki.1175165403535" type="tpki.TreeNodeKindOccurrence" typeId="tpki.1175165417012" id="7120113277826406963">
+                    <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="tpk9.1175164209843" resolveInfo="ELEMENT" />
+                  </node>
                 </node>
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1175090694728">

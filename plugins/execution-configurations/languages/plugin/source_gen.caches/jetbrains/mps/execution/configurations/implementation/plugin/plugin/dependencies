@@ -414,7 +414,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ListCommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.PropertyCommandPart" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -477,8 +477,8 @@
     <classNode dependClassName="javax.swing.JFormattedTextField" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.settings.DebugConnectionSettings" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.awt.event.KeyAdapter" />
@@ -504,7 +504,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Remote_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Remote_Configuration_Factory" />

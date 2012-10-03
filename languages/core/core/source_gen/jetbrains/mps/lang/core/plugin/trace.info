@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="26" startPosition="55" endLine="30" endPosition="5" unitName="jetbrains.mps.lang.core.plugin.FacetManifest$1" />
   <unitInfo fileName="ExtensionDescriptor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.ExtensionDescriptor" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor$1" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor" />
+  <unitInfo fileName="FacetManifest.java" startLine="26" startPosition="55" endLine="30" endPosition="5" unitName="jetbrains.mps.lang.core.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FacetManifest" />
   <root nodeId="5521353027965879577" modelId="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)">
     <nodeInfo nodeId="5521353027965879665" fileName="MakeGenerationHandler.java" startLine="20" startPosition="66" endLine="21" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="resourceHandler" />

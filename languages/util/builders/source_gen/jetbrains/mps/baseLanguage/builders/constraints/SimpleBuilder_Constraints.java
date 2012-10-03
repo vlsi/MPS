@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -47,7 +47,13 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732(_context.getEnclosingNode());
+            SNode contextBuilder = null;
+            if (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getContextNode()), "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+              contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732((SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") ?
+                SNodeOperations.getParent(_context.getContextNode()) :
+                _context.getContextNode()
+              ));
+            }
             if (SNodeOperations.isInstanceOf(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {
               return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), _context.getModel(), operationContext.getScope());
             } else if (contextBuilder == null && (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"))) {

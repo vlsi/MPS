@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ICheckedNamePolicy_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
   <unitInfo fileName="PropertyRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.PropertyRefExpression_BehaviorDescriptor" />
   <unitInfo fileName="PropertyRefType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.PropertyRefType_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.BehaviorAspectDescriptor" />
   <root nodeId="4844813484172611410" modelId="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)">
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="15" startPosition="42" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4844813484172611413" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="16" startPosition="72" endLine="17" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4844813484172611439" />

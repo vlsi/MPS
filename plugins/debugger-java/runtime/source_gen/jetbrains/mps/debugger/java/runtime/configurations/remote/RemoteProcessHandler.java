@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debugger.java.runtime.DebugSession;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;

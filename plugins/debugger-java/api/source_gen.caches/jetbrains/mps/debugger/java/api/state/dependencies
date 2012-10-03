@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.api.state.JavaUiState" file="JavaUiState.java">
+    <classNode dependClassName="com.sun.jdi.ObjectReference" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaThread" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.AbstractUiState" />
+  </dependency>
+</dependenciesRoot>
+
