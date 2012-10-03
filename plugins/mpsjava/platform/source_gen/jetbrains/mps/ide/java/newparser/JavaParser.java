@@ -15,27 +15,25 @@ import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 
 public class JavaParser {
   public JavaParser() {
   }
 
-  public List<SNode> parse(String code, String pkg, SNode parent, FeatureKind depth, boolean recovery) {
+  public List<SNode> parse(String code, String pkg, FeatureKind what, boolean recovery) {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
     char[] source = code.toCharArray();
 
     Map<String, String> settings = new HashMap<String, String>();
-    settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_5);
+    settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
 
-    List<SNode> res = new ArrayList<SNode>();
+    List<SNode> result = new ArrayList<SNode>();
 
-    if (FeatureKind.CLASS.equals(depth) || FeatureKind.CLASS_STUB.equals(depth)) {
-      boolean ignoreMethodBodies = FeatureKind.CLASS_STUB.equals(depth);
+    if (FeatureKind.CLASS.equals(what) || FeatureKind.CLASS_STUB.equals(what)) {
+      boolean ignoreMethodBodies = FeatureKind.CLASS_STUB.equals(what);
 
       CodeSnippetParsingUtil util = new CodeSnippetParsingUtil(ignoreMethodBodies);
       CompilationUnitDeclaration compRes = util.parseCompilationUnit(source, settings, true);
@@ -48,19 +46,18 @@ public class JavaParser {
 
       TypeNameResolver typeResolver = new TypeNameResolver(pkg);
       typeResolver.addImports(extractImports(compRes));
-      ASTConverter converter = new ASTConverter(pkg, compRes, typeResolver);
-
+      ASTConverter converter = new ASTConverter(pkg, compRes, ignoreMethodBodies, typeResolver);
 
       if (compRes.types != null) {
         // there may be no types and still no compilation errors 
         // e.g. package-info.java only includes 'package pkg'; 
         for (ASTNode root : roots) {
-          ListSequence.fromList(res).addElement(converter.convertRoot(root));
+          ListSequence.fromList(result).addElement(converter.convertRoot(root));
           // <node> 
         }
       }
 
-    } else if (FeatureKind.STATEMENTS.equals(depth)) {
+    } else if (FeatureKind.STATEMENTS.equals(what)) {
 
       CodeSnippetParsingUtil util = new CodeSnippetParsingUtil();
       AbstractMethodDeclaration absMethod = util.parseStatements(source, settings, true, recovery);
@@ -71,22 +68,15 @@ public class JavaParser {
 
       TypeNameResolver typeResolver = new TypeNameResolver(pkg);
       // TODO construct typeResolver from parent node context 
-      ASTConverter converter = new ASTConverter(pkg, parent, null, typeResolver);
-      // statement list is needed to make a proper position, so that scopes work 
-      SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-      List<SNode> nodes = converter.convertStatements(new ASTConverter.Position(stmtList, "statement"), stmts);
-      for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(stmtList))) {
-        stmtList.removeChild(n);
-      }
-      ListSequence.fromList(res).addSequence(ListSequence.fromList(nodes));
+      ASTConverter converter = new ASTConverter(pkg, null, false, typeResolver);
+      List<SNode> nodes = converter.convertStatements(stmts);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(nodes));
 
     } else {
-      throw new IllegalArgumentException("Parsing depth other than top-level is not supported yet ");
+      throw new IllegalArgumentException("Parsing other than class and statements is not supported yet ");
     }
 
-
-
-    return res;
+    return result;
   }
 
   public List<TypeNameResolver.Import> extractImports(CompilationUnitDeclaration compResult) {

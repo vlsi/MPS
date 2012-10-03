@@ -83,16 +83,19 @@ public class JavaPaster {
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     IModule module = model.getModelDescriptor().getModule();
     JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, (File) null, false, model, ProjectHelper.toIdeaProject(project));
-
+    // new parser 
     JavaParser parser = new JavaParser();
 
     try {
-      // <node> 
 
-      List<SNode> nodes = null;
-      List<SNode> nodes2 = parser.parse(javaCode, SModelOperations.getModelName(model), anchor, featureKind, true);
-
-      nodes = nodes2;
+      List<SNode> nodes;
+      if (FeatureKind.STATEMENTS.equals(featureKind) || FeatureKind.CLASS.equals(featureKind)) {
+        // new parser 
+        nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true);
+      } else {
+        // old parser for now 
+        nodes = javaCompiler.compileIsolated(javaCode, featureKind);
+      }
 
       if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);

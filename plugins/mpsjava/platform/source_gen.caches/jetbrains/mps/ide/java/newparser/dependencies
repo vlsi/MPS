@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.java.newparser.ASTConverter" file="ASTConverter.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Math" />
@@ -14,7 +12,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.lang.reflect.Constructor" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -34,15 +31,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
-    <classNode dependClassName="jetbrains.mps.scope.CompositeScope" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
@@ -165,8 +155,6 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.TypeNameResolver" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ASTNode" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration" />
@@ -175,61 +163,6 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Statement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.impl.CompilerOptions" />
     <classNode dependClassName="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.JavaSourceStubModelDS" file="JavaSourceStubModelDS.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupport" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
-    <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.NodeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
-    <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportProvider" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.JavaSourceStubModelDescriptor" file="JavaSourceStubModelDescriptor.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaSourceStubModelDS" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.NodeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.ModelDataSource" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.NodesNavigationContributor" />
-    <classNode extendsClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.ParseDepth" file="ParseDepth.java" />
   <dependency className="jetbrains.mps.ide.java.newparser.TypeNameResolver" file="TypeNameResolver.java">
