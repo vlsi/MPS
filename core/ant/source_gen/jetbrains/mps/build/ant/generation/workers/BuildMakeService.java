@@ -45,9 +45,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
-    if (script == null) {
-      script = defaultMakeScript();
-    }
     return doMake(session, resources, script, controller, monitor);
   }
 
