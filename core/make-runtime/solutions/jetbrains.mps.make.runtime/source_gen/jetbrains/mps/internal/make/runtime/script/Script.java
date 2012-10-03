@@ -218,9 +218,7 @@ __switch__:
       }
       monitor.advance(1);
 
-      ctl.useMonitor(monitor.subTask(17));
-      this.executeTargets(ctl, toExecute, scriptInput, pool, results);
-      ctl.useMonitor(null);
+      this.executeTargets(ctl, toExecute, scriptInput, pool, results, monitor.subTask(17));
       if (!(results.isSucessful())) {
         return results;
       }
@@ -232,7 +230,8 @@ __switch__:
     }
   }
 
-  private void executeTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results) {
+  private void executeTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results, ProgressMonitor monitor) {
+    ctl.useMonitor(monitor);
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
         String scriptName = "__script__";
@@ -291,7 +290,7 @@ with_targets:
               }
             }
 
-            String workName = "__" + trim_kfmnat_a0a0a9a1a4a0a0a0a0a01(trg.getName().toString()) + "__";
+            String workName = "__" + trim_kfmnat_a0a0a9a1a4a0a0a0a1a01(trg.getName().toString()) + "__";
             monit.currentProgress().beginWork(workName, 1000, (trg.requiresInput() || trg.producesOutput() ?
               1000 :
               10
@@ -340,6 +339,7 @@ with_targets:
         monit.currentProgress().finishWork(scriptName);
       }
     });
+    ctl.useMonitor(null);
   }
 
   private void configureTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Script.ParametersPool pool, final CompositeResult results) {
@@ -366,7 +366,7 @@ with_targets:
     });
   }
 
-  public static String trim_kfmnat_a0a0a9a1a4a0a0a0a0a01(String str) {
+  public static String trim_kfmnat_a0a0a9a1a4a0a0a0a1a01(String str) {
     return (str == null ?
       null :
       str.trim()

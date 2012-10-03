@@ -5,9 +5,13 @@ package jetbrains.mps.make.service;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.dependencies.ModulesClusterizer;
@@ -24,11 +28,23 @@ public abstract class AbstractMakeService implements IMakeService {
   public AbstractMakeService() {
   }
 
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
+    // compatibility: calls method without monitor 
+    return make(session, resources, script, controller);
+  }
+
   protected abstract class AbstractInputProcessor {
     protected AbstractInputProcessor() {
     }
 
-    protected final Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller) {
+    @Deprecated
+    protected final Future<IResult> processRawInput(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
+      // use the one with progress monitor 
+      // TODO remove (deprecated in 3.0) 
+      return processRawInput(inputRes, defaultScript, controller, new EmptyProgressMonitor());
+    }
+
+    protected final Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
       final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
       final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -78,13 +94,23 @@ public abstract class AbstractMakeService implements IMakeService {
         })
       ));
 
-      return processClusteredInput(clInput.value, scripts, controller);
+      return processClusteredInput(clInput.value, scripts, controller, monitor);
     }
 
     protected IScript toScript(ScriptBuilder scriptBuilder) {
       return scriptBuilder.toScript();
     }
 
-    protected abstract Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller);
+    @Deprecated
+    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
+      // TODO remove (deprecated in 3.0) 
+      // override the one with progress monitor 
+      return null;
+    }
+
+    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
+      // compatibility 
+      return this.processClusteredInput(clustRes, scripts, controller);
+    }
   }
 }

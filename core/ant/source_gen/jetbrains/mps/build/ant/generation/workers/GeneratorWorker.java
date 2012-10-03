@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
@@ -27,7 +29,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -117,7 +118,7 @@ public class GeneratorWorker extends MpsWorker {
 
     Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
-    Future<IResult> res = new BuildMakeService(ctx, myMessageHandler).make(resources);
+    Future<IResult> res = new BuildMakeService().make(new MakeSession(ctx, myMessageHandler, true), resources, null, null, new EmptyProgressMonitor());
 
     try {
       if (!(res.get().isSucessful())) {

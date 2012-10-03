@@ -12,6 +12,9 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
@@ -23,15 +26,12 @@ import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.make.facet.ITarget;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.service.CoreMakeTask;
 
 public class TestMakeService extends AbstractMakeService implements IMakeService {
@@ -43,16 +43,20 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     this.messageHandler = messageHandler;
   }
 
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
+    return doMake(resources, script, controller, monitor);
+  }
+
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return null;
+    return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return null;
+    return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return null;
+    return make(session, resources, null, null, new EmptyProgressMonitor());
   }
 
   public boolean isSessionActive() {
@@ -74,19 +78,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     throw new UnsupportedOperationException();
   }
 
-  public Future<IResult> make(Iterable<? extends IResource> resources) {
-    return doMake(resources, null, null);
-  }
-
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
-    return doMake(resources, script, null);
-  }
-
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return doMake(resources, script, controller);
-  }
-
-  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
+  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
     String scrName = "Build";
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -95,7 +87,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       return new FutureValue(new IResult.FAILURE(null));
     }
 
-    return new TestMakeService.TaskRunner(scrName, messageHandler).runTask(inputRes, defaultScript, controller);
+    return new TestMakeService.TaskRunner(scrName, messageHandler).runTask(inputRes, defaultScript, controller, monitor);
   }
 
   private void showError(String msg) {
@@ -176,7 +168,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
   public void initComponent() {
   }
 
-  public class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
+  private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
     private String taskName;
     private IMessageHandler mh;
 
@@ -185,16 +177,16 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       this.mh = mh;
     }
 
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
-      return processRawInput(inputRes, defaultScript, controller);
+    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
+      return processRawInput(inputRes, defaultScript, controller, monitor);
     }
 
     @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
+    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
       IScriptController ctl = TestMakeService.this.completeController(controller);
 
       CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, mh);
-      task.run(new EmptyProgressMonitor());
+      task.run(monitor);
       return new FutureValue(task.getResult());
     }
   }

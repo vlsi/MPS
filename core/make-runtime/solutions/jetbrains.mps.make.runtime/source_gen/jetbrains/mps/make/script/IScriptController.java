@@ -13,10 +13,11 @@ public interface IScriptController {
   @Deprecated
   public void setup(IPropertiesPool ppool);
   public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input);
+  @Deprecated
   public void useMonitor(ProgressMonitor monitor);
   public static class Stub implements IScriptController {
-    private IConfigMonitor cmon;
-    private IJobMonitor jmon;
+    private final IConfigMonitor cmon;
+    private final IJobMonitor jmon;
 
     public Stub(IConfigMonitor cmon, IJobMonitor jmon) {
       this.cmon = cmon;
