@@ -687,6 +687,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     insertChild(role, newChild, anchor);
   }
 
+  public String getResolveInfo() {
+    String resolveInfo = SNodeUtil.getResolveInfo(this);
+    if (resolveInfo != null) {
+      return resolveInfo;
+    }
+    // tmp hack
+    return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+  }
+
   //----root, deleted, etc.---
 
   public boolean isRoot() {
@@ -806,34 +815,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
+  public boolean isInstanceOfConcept(SNode concept) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+  }
+
   public boolean isInstanceOfConcept(String conceptFqName) {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
-
-  @Deprecated
-  /**
-   * Do not use. Work with SConcept instead
-   * @Deprecated in 3.0
-   */
-  public boolean isInstanceOfConcept(SNode concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Get resolve info from a reference instead
-   * @Deprecated in 3.0
-   */
-  public String getResolveInfo() {
-    String resolveInfo = SNodeUtil.getResolveInfo(this);
-    if (resolveInfo != null) {
-      return resolveInfo;
-    }
-    // tmp hack
-    return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
-  }
 
   @Deprecated
   /**
