@@ -22,6 +22,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.ArrayList;
+import java.awt.Color;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
@@ -50,7 +51,6 @@ import java.util.Collection;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.awt.Graphics;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -143,34 +143,41 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (TraceSettings.isTraceForSelectedNode() && mySelectedNode != null) {
       getSliceVars(myOperation);
     }
-    MPSTreeNode result = create(myOperation, false, true);
+    MPSTreeNode result = create(myOperation, true);
     if (result == null) {
       result = new TextTreeNode("Empty type system trace");
     }
-    setRootVisible(true);
+    // <node> 
     return result;
   }
 
-  public TypeSystemTraceTreeNode create(AbstractOperation operation, boolean showParent, boolean withChildren) {
-    boolean showNode = showNode(operation);
+  public TypeSystemTraceTreeNode create(AbstractOperation operation, boolean withChildren) {
+    if (!(filterNodeType(operation))) {
+      return null;
+    }
+    final boolean showNode = showNodeRecursively(operation);
     List<TypeSystemTraceTreeNode> children = new ArrayList<TypeSystemTraceTreeNode>();
     if (withChildren) {
       for (AbstractOperation consequence : operation.getConsequences()) {
-        TypeSystemTraceTreeNode node = create(consequence, showNode || showParent, false);
+        TypeSystemTraceTreeNode node = create(consequence, false);
         if (node != null) {
           children.add(node);
         }
       }
-    }
-    if (!(filterNodeType(operation))) {
-      return null;
-    }
-    if (!(showParent)) {
-      if (!(showNode) && children.isEmpty()) {
+    } else if (!(showNode)) {
+      if (!(operation.getConsequences().iterator().hasNext())) {
         return null;
       }
     }
-    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent);
+    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent) {
+      @Override
+      public void doUpdatePresentation() {
+        super.doUpdatePresentation();
+        if (!(showNode)) {
+          setColor(Color.LIGHT_GRAY);
+        }
+      }
+    };
     for (TypeSystemTraceTreeNode node : children) {
       result.add(node);
     }
@@ -211,6 +218,18 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       }
     }
     return false;
+  }
+
+  private boolean showNodeRecursively(AbstractOperation diff) {
+    if (diff == null) {
+      return false;
+    }
+    for (AbstractOperation csq : diff.getConsequences()) {
+      if (showNodeRecursively(csq)) {
+        return true;
+      }
+    }
+    return showNode(diff);
   }
 
   private boolean filterNodeType(AbstractOperation operation) {
@@ -284,7 +303,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a21(currentNode);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a31(currentNode);
     if (operation == null) {
       return null;
     }
@@ -372,14 +391,14 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showDetails(MPSTreeNode treeNode) {
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a71(treeNode);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a81(treeNode);
     myDetailsTree.setOperation(operation);
   }
 
   private void showDetails(Collection<? extends MPSTreeNode> treeNodes) {
     List<AbstractOperation> operations = new ArrayList<AbstractOperation>();
     for (MPSTreeNode treeNode : treeNodes) {
-      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a81(treeNode);
+      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a91(treeNode);
       operations.add(operation);
     }
     myDetailsTree.setOperations(operations);
@@ -392,21 +411,21 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static Object check_kyyn1p_a0a1a21(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a1a31(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
     return null;
   }
 
-  private static Object check_kyyn1p_a0a0a71(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a0a81(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
     return null;
   }
 
-  private static Object check_kyyn1p_a0a0a1a81(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a0a1a91(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
@@ -530,10 +549,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       }
       List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();
       for (AbstractOperation operation : operations) {
-        boolean showNode = showNode(operation);
+        final boolean showNode = showNode(operation);
         List<MPSTreeNode> children = new ArrayList<MPSTreeNode>();
         for (AbstractOperation consequence : operation.getConsequences()) {
-          Collection<MPSTreeNode> nodes = create(Collections.singletonList(consequence), showNode || showParent);
+          Collection<MPSTreeNode> nodes = create(Collections.singletonList(consequence), true);
           if (nodes != null) {
             children.addAll(nodes);
           }
@@ -541,13 +560,16 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         if (!(filterNodeType(operation))) {
           continue;
         }
-        if (!(showParent)) {
-          if (!(showNode) && children.isEmpty()) {
-            continue;
-          }
-        }
         if (showParent) {
-          TypeSystemTraceTreeNode treeNode = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent);
+          TypeSystemTraceTreeNode treeNode = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent) {
+            @Override
+            public void doUpdatePresentation() {
+              super.doUpdatePresentation();
+              if (!(showNode)) {
+                setColor(Color.LIGHT_GRAY);
+              }
+            }
+          };
           for (MPSTreeNode node : children) {
             treeNode.add(node);
           }

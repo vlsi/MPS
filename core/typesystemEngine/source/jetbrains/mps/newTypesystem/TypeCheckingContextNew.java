@@ -322,10 +322,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  protected SNode getTypeOf_generationMode(SNode node) {
+  protected SNode getTypeOf_generationMode(final SNode node) {
     myIsSingleTypeComputation = true;
     long start = System.nanoTime();
-    SNode result = myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+      }
+    });
     TypeSystemReporter.getInstance().reportTypeOf(node,(System.nanoTime() - start));
     return result;
   }

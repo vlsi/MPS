@@ -74,7 +74,7 @@ public abstract class ChangeGroupLayout {
     }
     myChangeGroups = ListSequence.fromList(new ArrayList<ChangeGroup>());
     for (Set<ModelChange> s : Sequence.fromIterable(ds.getSets())) {
-      Bounds lb = Sequence.fromIterable(s).select(new ISelector<ModelChange, Bounds>() {
+      Bounds lb = SetSequence.fromSet(s).select(new ISelector<ModelChange, Bounds>() {
         public Bounds select(ModelChange ch) {
           return MapSequence.fromMap(left).get(ch);
         }
@@ -83,7 +83,7 @@ public abstract class ChangeGroupLayout {
           return a.merge(b);
         }
       });
-      Bounds rb = Sequence.fromIterable(s).select(new ISelector<ModelChange, Bounds>() {
+      Bounds rb = SetSequence.fromSet(s).select(new ISelector<ModelChange, Bounds>() {
         public Bounds select(ModelChange ch) {
           return MapSequence.fromMap(right).get(ch);
         }
@@ -92,7 +92,7 @@ public abstract class ChangeGroupLayout {
           return a.merge(b);
         }
       });
-      List<ModelChange> sortedChanges = Sequence.fromIterable(s).sort(new ISelector<ModelChange, Integer>() {
+      List<ModelChange> sortedChanges = SetSequence.fromSet(s).sort(new ISelector<ModelChange, Integer>() {
         public Integer select(ModelChange ch) {
           return (int) MapSequence.fromMap(right).get(ch).start();
         }
