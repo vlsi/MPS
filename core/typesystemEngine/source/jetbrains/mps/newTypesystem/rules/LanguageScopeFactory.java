@@ -90,18 +90,25 @@ public class LanguageScopeFactory {
     BitSet nsBitSet = new BitSet(myBits.intValue());
     for (ModuleReference langRef: langs) {
       Language lng = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
-      String namespace = lng.getModuleDescriptor().getNamespace();
-      if (myNamespaceIndices.containsKey(namespace)) {
-        nsBitSet.set(myNamespaceIndices.get(namespace));
-      }
-      else {
-        myNamespaceIndices.putIfAbsent(namespace, myBits.getAndIncrement());
-        nsBitSet.set(myNamespaceIndices.get(namespace));
+      updateNamespaceBit(nsBitSet, lng.getModuleDescriptor().getNamespace());
+      for (ModuleReference mref : lng.getDependenciesManager().getAllExtendedLanguages()) {
+        Language ext = ModuleRepositoryFacade.getInstance().getModule(mref, Language.class);
+        updateNamespaceBit(nsBitSet, ext.getModuleDescriptor().getNamespace());
       }
     }
     LanguageScope langScope = new LanguageScope(this, nsBitSet);
     cached.setScope(langScope);
     return langScope;
+  }
+
+  private void updateNamespaceBit(BitSet nsBitSet, String namespace) {
+    if (myNamespaceIndices.containsKey(namespace)) {
+      nsBitSet.set(myNamespaceIndices.get(namespace));
+    }
+    else {
+      myNamespaceIndices.putIfAbsent(namespace, myBits.getAndIncrement());
+      nsBitSet.set(myNamespaceIndices.get(namespace));
+    }
   }
 
   private LanguagesHolder getHolder(Iterable<ModuleReference> langs) {

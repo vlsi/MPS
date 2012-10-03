@@ -27,13 +27,13 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200309609796">
       <property name="name" nameId="tpck.1169194664001" value="OverridingMethods" />
       <property name="description" nameId="tp3b.1197385993272" value="Overriding Methods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310248824">
       <property name="name" nameId="tpck.1169194664001" value="ImplementingClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Implementing Classes" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310287391">
@@ -44,14 +44,14 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310473077">
       <property name="name" nameId="tpck.1169194664001" value="DerivedClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Derived Classes" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200317943493">
       <property name="name" nameId="tpck.1169194664001" value="AllMethodUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="All Method Usages" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="Usages of this method, overriding methods and implementing methods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200405628545">
@@ -78,12 +78,13 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1201091722183">
       <property name="name" nameId="tpck.1169194664001" value="ParameterUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Parameter Usages" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204121124763">
       <property name="name" nameId="tpck.1169194664001" value="ConstructorUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Constructor Usages" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204122859723">

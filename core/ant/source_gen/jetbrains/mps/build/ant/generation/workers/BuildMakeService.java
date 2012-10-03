@@ -23,7 +23,6 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.facet.ITarget;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.make.script.ScriptBuilder;
@@ -31,6 +30,7 @@ import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.service.CoreMakeTask;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
@@ -98,16 +98,11 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     return new BuildMakeService.DelegatingScriptController(ctl, new BuildMakeService.MessageFeedbackStrategy(msess.getMessageHandler())) {
       public void setup(IPropertiesPool pool) {
         super.setup(pool);
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         if (vars != null) {
           vars._0(msess.getContext().getProject());
           vars._1(msess.getContext());
           vars._2(true);
-          vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
-            public ProgressMonitor invoke() {
-              return getProgressMonitor();
-            }
-          });
         }
       }
     };

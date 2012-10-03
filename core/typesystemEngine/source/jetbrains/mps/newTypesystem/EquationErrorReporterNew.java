@@ -56,11 +56,11 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
   public String reportError() {
     SNode lRepresentative = myLeft;
     if (lRepresentative != null && TypesUtil.isVariable(lRepresentative)) {
-      lRepresentative = myState.getEquations().getRepresentative(myLeft);
+      lRepresentative = myState.getEquations().getRepresentativeNoShortenPaths(myLeft);
     }
     SNode rRepresentative = myRight;
     if (rRepresentative != null && TypesUtil.isVariable(rRepresentative)) {
-      rRepresentative = myState.getEquations().getRepresentative(myRight);
+      rRepresentative = myState.getEquations().getRepresentativeNoShortenPaths(myRight);
     }
     return myBefore + PresentationManager.toString(lRepresentative) +
       myBetween + PresentationManager.toString(rRepresentative) + myAfter;

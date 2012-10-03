@@ -4,15 +4,23 @@ package jetbrains.mps.make.script;
 
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IJob {
-  public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa);
+  public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor);
   public static class Stub implements IJob {
     public Stub() {
     }
 
+    @Deprecated
     public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
       throw new UnsupportedOperationException();
+    }
+
+    public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor) {
+      // compatibility 
+      return execute(input, mon, pa);
     }
   }
 

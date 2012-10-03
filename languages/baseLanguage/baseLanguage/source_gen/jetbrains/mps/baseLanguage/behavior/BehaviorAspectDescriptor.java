@@ -16,20 +16,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
       case 22:
         return new AssignmentExpression_BehaviorDescriptor();
-      case 66:
-        return new FieldDeclaration_BehaviorDescriptor();
       case 38:
         return new ClassConcept_BehaviorDescriptor();
       case 119:
         return new ParameterDeclaration_BehaviorDescriptor();
-      case 182:
-        return new VariableDeclaration_BehaviorDescriptor();
       case 148:
         return new StatementList_BehaviorDescriptor();
-      case 30:
-        return new BooleanConstant_BehaviorDescriptor();
-      case 45:
-        return new ConstructorDeclaration_BehaviorDescriptor();
       case 63:
         return new EqualsExpression_BehaviorDescriptor();
       case 65:
@@ -106,10 +98,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new StaticMethodDeclaration_BehaviorDescriptor();
       case 83:
         return new InstanceOfExpression_BehaviorDescriptor();
-      case 75:
-        return new GreaterThanExpression_BehaviorDescriptor();
-      case 90:
-        return new LessThanExpression_BehaviorDescriptor();
       case 112:
         return new NotExpression_BehaviorDescriptor();
       case 32:
@@ -136,8 +124,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new TypeVariableDeclaration_BehaviorDescriptor();
       case 172:
         return new TypeVariableReference_BehaviorDescriptor();
-      case 69:
-        return new FloatingPointConstant_BehaviorDescriptor();
       case 40:
         return new ClassifierClassExpression_BehaviorDescriptor();
       case 72:
@@ -154,18 +140,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ProtectedVisibility_BehaviorDescriptor();
       case 42:
         return new ClosureParameterReference_BehaviorDescriptor();
-      case 76:
-        return new GreaterThanOrEqualsExpression_BehaviorDescriptor();
-      case 136:
-        return new RemExpression_BehaviorDescriptor();
-      case 91:
-        return new LessThanOrEqualsExpression_BehaviorDescriptor();
       case 170:
         return new TryStatement_BehaviorDescriptor();
       case 16:
         return new ArrayCreatorWithInitializer_BehaviorDescriptor();
-      case 115:
-        return new Number_BehaviorDescriptor();
       case 21:
         return new AssertStatement_BehaviorDescriptor();
       case 166:
@@ -194,8 +172,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new LowerBoundType_BehaviorDescriptor();
       case 177:
         return new UpperBoundType_BehaviorDescriptor();
-      case 95:
-        return new LocalStaticFieldReference_BehaviorDescriptor();
       case 96:
         return new LocalStaticMethodCall_BehaviorDescriptor();
       case 12:
@@ -208,8 +184,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new VarType_BehaviorDescriptor();
       case 165:
         return new ThisConstructorInvocation_BehaviorDescriptor();
-      case 77:
-        return new HexIntegerLiteral_BehaviorDescriptor();
       case 11:
         return new AnonymousClassCreator_BehaviorDescriptor();
       case 15:
@@ -232,8 +206,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DotExpression_BehaviorDescriptor();
       case 67:
         return new FieldReferenceOperation_BehaviorDescriptor();
-      case 36:
-        return new CharConstant_BehaviorDescriptor();
       case 131:
         return new Property_BehaviorDescriptor();
       case 49:
@@ -304,10 +276,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new SubstringExpression_BehaviorDescriptor();
       case 168:
         return new TrimOperation_BehaviorDescriptor();
-      case 141:
-        return new ShiftLeftExpression_BehaviorDescriptor();
-      case 142:
-        return new ShiftRightExpression_BehaviorDescriptor();
       case 26:
         return new BitwiseNotExpression_BehaviorDescriptor();
       case 43:
@@ -320,26 +288,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new AbstractUnaryNumberOperation_BehaviorDescriptor();
       case 23:
         return new BLBottomType_BehaviorDescriptor();
-      case 100:
-        return new LongLiteral_BehaviorDescriptor();
-      case 70:
-        return new FloatingPointFloatConstant_BehaviorDescriptor();
-      case 173:
-        return new UnaryMinus_BehaviorDescriptor();
-      case 122:
-        return new PlaceholderMethodDeclaration_BehaviorDescriptor();
       case 24:
         return new BaseVariableDeclaration_BehaviorDescriptor();
       case 102:
         return new LoopLabel_BehaviorDescriptor();
       case 103:
         return new LoopLabelReference_BehaviorDescriptor();
-      case 145:
-        return new SingleLineComment_BehaviorDescriptor();
-      case 164:
-        return new TextCommentPart_BehaviorDescriptor();
-      case 147:
-        return new StatementCommentPart_BehaviorDescriptor();
       case 107:
         return new MulAssignmentExpression_BehaviorDescriptor();
       case 52:
@@ -366,8 +320,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new PrimitiveClassExpression_BehaviorDescriptor();
       case 93:
         return new LocalInstanceMethodCall_BehaviorDescriptor();
-      case 92:
-        return new LocalInstanceFieldReference_BehaviorDescriptor();
       case 14:
         return new ArrayCloneOperation_BehaviorDescriptor();
       case 175:
@@ -380,14 +332,62 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new EscapeOperation_BehaviorDescriptor();
       case 174:
         return new UndefinedType_BehaviorDescriptor();
-      case 143:
-        return new ShiftRightUnsignedExpression_BehaviorDescriptor();
       case 176:
         return new UnsignedRightShiftAssignmentExpression_BehaviorDescriptor();
       case 94:
         return new LocalPropertyReference_BehaviorDescriptor();
       case 13:
         return new ArrayClassExpression_BehaviorDescriptor();
+      case 66:
+        return new FieldDeclaration_BehaviorDescriptor();
+      case 45:
+        return new ConstructorDeclaration_BehaviorDescriptor();
+      case 95:
+        return new LocalStaticFieldReference_BehaviorDescriptor();
+      case 122:
+        return new PlaceholderMethodDeclaration_BehaviorDescriptor();
+      case 164:
+        return new TextCommentPart_BehaviorDescriptor();
+      case 147:
+        return new StatementCommentPart_BehaviorDescriptor();
+      case 145:
+        return new SingleLineComment_BehaviorDescriptor();
+      case 92:
+        return new LocalInstanceFieldReference_BehaviorDescriptor();
+      case 141:
+        return new ShiftLeftExpression_BehaviorDescriptor();
+      case 142:
+        return new ShiftRightExpression_BehaviorDescriptor();
+      case 143:
+        return new ShiftRightUnsignedExpression_BehaviorDescriptor();
+      case 136:
+        return new RemExpression_BehaviorDescriptor();
+      case 90:
+        return new LessThanExpression_BehaviorDescriptor();
+      case 91:
+        return new LessThanOrEqualsExpression_BehaviorDescriptor();
+      case 76:
+        return new GreaterThanOrEqualsExpression_BehaviorDescriptor();
+      case 75:
+        return new GreaterThanExpression_BehaviorDescriptor();
+      case 173:
+        return new UnaryMinus_BehaviorDescriptor();
+      case 77:
+        return new HexIntegerLiteral_BehaviorDescriptor();
+      case 100:
+        return new LongLiteral_BehaviorDescriptor();
+      case 70:
+        return new FloatingPointFloatConstant_BehaviorDescriptor();
+      case 69:
+        return new FloatingPointConstant_BehaviorDescriptor();
+      case 30:
+        return new BooleanConstant_BehaviorDescriptor();
+      case 36:
+        return new CharConstant_BehaviorDescriptor();
+      case 115:
+        return new Number_BehaviorDescriptor();
+      case 182:
+        return new VariableDeclaration_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
