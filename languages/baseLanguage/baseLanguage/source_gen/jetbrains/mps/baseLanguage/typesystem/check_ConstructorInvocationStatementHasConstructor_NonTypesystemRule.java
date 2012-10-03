@@ -21,7 +21,7 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
 
   public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(constructorInvocation, "baseMethodDeclaration", false) == null)) {
-      SNode referent = constructorInvocation.getReferent("constructorDeclaration");
+      SNode referent = constructorInvocation.getReferenceTarget("constructorDeclaration");
       if (SNodeOperations.isInstanceOf(referent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -48,7 +48,7 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

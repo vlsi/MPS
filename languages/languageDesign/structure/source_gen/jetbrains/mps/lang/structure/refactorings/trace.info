@@ -538,7 +538,7 @@
     <nodeInfo nodeId="3068114543317980696" fileName="MoveLinkUp.java" startLine="71" startPosition="69" endLine="72" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="600920621286180440" fileName="MoveLinkUp.java" startLine="72" startPosition="54" endLine="73" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3068114543317979931" fileName="MoveLinkUp.java" startLine="74" startPosition="79" endLine="75" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317979940" fileName="MoveLinkUp.java" startLine="76" startPosition="12" endLine="77" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317979940" fileName="MoveLinkUp.java" startLine="76" startPosition="12" endLine="77" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3068114543317980284" fileName="MoveLinkUp.java" startLine="81" startPosition="88" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3068114543317980389" fileName="MoveLinkUp.java" startLine="82" startPosition="73" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3068114543317980391" fileName="MoveLinkUp.java" startLine="83" startPosition="0" endLine="84" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -592,7 +592,7 @@
     <scopeInfo nodeId="5101259057297978720" fileName="MoveLinkUp.java" startLine="60" startPosition="71" endLine="61" endPosition="61" />
     <scopeInfo nodeId="2893383476258745392" fileName="MoveLinkUp.java" startLine="64" startPosition="25" endLine="65" endPosition="180" />
     <scopeInfo nodeId="3068114543317979930" fileName="MoveLinkUp.java" startLine="74" startPosition="79" endLine="75" endPosition="117" />
-    <scopeInfo nodeId="3068114543317979939" fileName="MoveLinkUp.java" startLine="76" startPosition="12" endLine="77" endPosition="123" />
+    <scopeInfo nodeId="3068114543317979939" fileName="MoveLinkUp.java" startLine="76" startPosition="12" endLine="77" endPosition="122" />
     <scopeInfo nodeId="3068114543317980320" fileName="MoveLinkUp.java" startLine="88" startPosition="84" endLine="89" endPosition="94" />
     <scopeInfo nodeId="3068114543317980356" fileName="MoveLinkUp.java" startLine="95" startPosition="84" endLine="96" endPosition="94" />
     <scopeInfo nodeId="3068114543317979974" fileName="MoveLinkUp.java" startLine="103" startPosition="86" endLine="104" endPosition="206" />
@@ -672,9 +672,9 @@
     <nodeInfo nodeId="3068114543317980668" fileName="MovePropertyUp.java" startLine="45" startPosition="69" endLine="46" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3068114543317980456" fileName="MovePropertyUp.java" startLine="47" startPosition="6" endLine="48" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3068114543317980466" fileName="MovePropertyUp.java" startLine="49" startPosition="36" endLine="50" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317980477" fileName="MovePropertyUp.java" startLine="51" startPosition="14" endLine="52" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317980489" fileName="MovePropertyUp.java" startLine="54" startPosition="6" endLine="55" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317980501" fileName="MovePropertyUp.java" startLine="55" startPosition="121" endLine="56" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317980477" fileName="MovePropertyUp.java" startLine="51" startPosition="14" endLine="52" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317980489" fileName="MovePropertyUp.java" startLine="54" startPosition="6" endLine="55" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317980501" fileName="MovePropertyUp.java" startLine="55" startPosition="120" endLine="56" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3068114543317980562" fileName="MovePropertyUp.java" startLine="59" startPosition="88" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3068114543317980569" fileName="MovePropertyUp.java" startLine="60" startPosition="73" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3068114543317980570" fileName="MovePropertyUp.java" startLine="61" startPosition="0" endLine="62" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -719,7 +719,7 @@
     <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="37" startPosition="47" endLine="38" endPosition="27" />
     <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="41" startPosition="52" endLine="42" endPosition="39" />
     <scopeInfo nodeId="3068114543317980465" fileName="MovePropertyUp.java" startLine="49" startPosition="36" endLine="50" endPosition="74" />
-    <scopeInfo nodeId="3068114543317980476" fileName="MovePropertyUp.java" startLine="51" startPosition="14" endLine="52" endPosition="125" />
+    <scopeInfo nodeId="3068114543317980476" fileName="MovePropertyUp.java" startLine="51" startPosition="14" endLine="52" endPosition="124" />
     <scopeInfo nodeId="3068114543317980606" fileName="MovePropertyUp.java" startLine="66" startPosition="84" endLine="67" endPosition="94" />
     <scopeInfo nodeId="3068114543317980644" fileName="MovePropertyUp.java" startLine="73" startPosition="84" endLine="74" endPosition="94" />
     <scopeInfo nodeId="3068114543317980553" fileName="MovePropertyUp.java" startLine="81" startPosition="86" endLine="82" endPosition="206" />

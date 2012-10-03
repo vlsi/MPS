@@ -277,7 +277,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -290,7 +290,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -346,7 +346,7 @@ __switch__:
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_4;
-            quotedNode1_7.setReferent("concept", (SNode) parameter_9);
+            quotedNode1_7.setReferenceTarget("concept", (SNode) parameter_9);
             quotedNode_2.addChild("elementType", quotedNode1_7);
           }
           quotedNode_1.addChild("argument", quotedNode1_6);
@@ -354,7 +354,7 @@ __switch__:
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
-          quotedNode1_8.setReferent("concept", (SNode) parameter_10);
+          quotedNode1_8.setReferenceTarget("concept", (SNode) parameter_10);
           quotedNode_1.addChild("argument", quotedNode1_8);
         }
         result = quotedNode1_5;
@@ -378,7 +378,7 @@ __switch__:
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_4;
-            quotedNode1_7.setReferent("concept", (SNode) parameter_9);
+            quotedNode1_7.setReferenceTarget("concept", (SNode) parameter_9);
             quotedNode_2.addChild("elementType", quotedNode1_7);
           }
           quotedNode_1.addChild("argument", quotedNode1_6);
@@ -386,7 +386,7 @@ __switch__:
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
-          quotedNode1_8.setReferent("concept", (SNode) parameter_10);
+          quotedNode1_8.setReferenceTarget("concept", (SNode) parameter_10);
           quotedNode_1.addChild("argument", quotedNode1_8);
         }
         result = quotedNode1_5;
@@ -406,7 +406,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -419,7 +419,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -454,7 +454,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

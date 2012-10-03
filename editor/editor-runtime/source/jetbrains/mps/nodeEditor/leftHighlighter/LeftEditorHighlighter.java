@@ -36,7 +36,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -338,7 +337,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
     SNode editedNode = myEditorComponent.getEditedNode();
     // additional check - during editor dispose process some Folding area painters can be removed calling relayout()..
-    if (myEditorComponent.isDisposed() || (editedNode != null && editedNode.isDisposed())) {
+    if (myEditorComponent.isDisposed() || (editedNode != null && jetbrains.mps.util.SNodeOperations.isDisposed(editedNode))) {
       return;
     }
     if (myRightToLeft) {

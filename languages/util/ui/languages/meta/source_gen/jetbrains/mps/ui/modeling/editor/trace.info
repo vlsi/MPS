@@ -5623,7 +5623,7 @@
     <nodeInfo nodeId="4587250023234230410" fileName="IPartiallyDefinedStub_Component.java" startLine="217" startPosition="33" endLine="218" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4587250023234230410" fileName="IPartiallyDefinedStub_Component.java" startLine="221" startPosition="69" endLine="222" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4587250023234230410" fileName="IPartiallyDefinedStub_Component.java" startLine="225" startPosition="81" endLine="226" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4587250023234427878" fileName="IPartiallyDefinedStub_Component.java" startLine="231" startPosition="33" endLine="232" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234427878" fileName="IPartiallyDefinedStub_Component.java" startLine="231" startPosition="33" endLine="232" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4587250023234427874" fileName="IPartiallyDefinedStub_Component.java" startLine="238" startPosition="46" endLine="239" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4587250023234427874" fileName="IPartiallyDefinedStub_Component.java" startLine="241" startPosition="15" endLine="242" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4587250023234427874" fileName="IPartiallyDefinedStub_Component.java" startLine="242" startPosition="74" endLine="243" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5709,7 +5709,7 @@
     <scopeInfo nodeId="4587250023234230410" fileName="IPartiallyDefinedStub_Component.java" startLine="217" startPosition="33" endLine="218" endPosition="14" />
     <scopeInfo nodeId="4587250023234230410" fileName="IPartiallyDefinedStub_Component.java" startLine="221" startPosition="69" endLine="222" endPosition="67" />
     <scopeInfo nodeId="4587250023234230410" fileName="IPartiallyDefinedStub_Component.java" startLine="225" startPosition="81" endLine="226" endPosition="79" />
-    <scopeInfo nodeId="4587250023234427877" fileName="IPartiallyDefinedStub_Component.java" startLine="231" startPosition="33" endLine="232" endPosition="121" />
+    <scopeInfo nodeId="4587250023234427877" fileName="IPartiallyDefinedStub_Component.java" startLine="231" startPosition="33" endLine="232" endPosition="137" />
     <scopeInfo nodeId="4587250023234427874" fileName="IPartiallyDefinedStub_Component.java" startLine="238" startPosition="46" endLine="239" endPosition="53" />
     <scopeInfo nodeId="4587250023234427874" fileName="IPartiallyDefinedStub_Component.java" startLine="242" startPosition="74" endLine="243" endPosition="64" />
     <scopeInfo nodeId="4587250023234230388" fileName="IPartiallyDefinedStub_Component.java" startLine="24" startPosition="75" endLine="27" endPosition="3">

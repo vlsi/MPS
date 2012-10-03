@@ -51,20 +51,20 @@ public class ConvertClassConceptToExtract_Intention extends BaseIntention implem
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", null);
-    for (SNode child : newNode.getChildren()) {
+    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(newNode)) {
       newNode.removeChild(child);
     }
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     mapping.put(node, newNode);
-    List<SNode> children = node.getChildren();
+    List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(node);
     CopyUtil.copy(children, mapping);
     for (SNode child : children) {
-      newNode.addChild(child.getRole_(), mapping.get(child));
+      newNode.addChild(child.getRole(), mapping.get(child));
     }
     for (SReference reference : node.getReferences()) {
-      newNode.setReferent(reference.getRole(), reference.getTargetNode());
+      newNode.setReferenceTarget(reference.getRole(), reference.getTargetNode());
     }
-    for (String propertyName : node.getPropertyNames()) {
+    for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
       newNode.setProperty(propertyName, node.getProperty(propertyName));
     }
     SNodeOperations.replaceWithAnother(node, newNode);

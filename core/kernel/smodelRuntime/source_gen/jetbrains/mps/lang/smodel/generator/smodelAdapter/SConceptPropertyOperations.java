@@ -81,7 +81,7 @@ public class SConceptPropertyOperations {
   }
 
   public static SNode findProperty(SNode node, String name) {
-    boolean cpt = eq_yzaoi3_a0a0a0g(node.getConceptFqName(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || eq_yzaoi3_a0a0a0g_0(node.getConceptFqName(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+    boolean cpt = eq_yzaoi3_a0a0a0g(node.getConcept().getId(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || eq_yzaoi3_a0a0a0g_0(node.getConcept().getId(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
     SNode conceptNode = (cpt ?
       ((SNode) node) :
       SNodeOperations.getConceptDeclaration(node)

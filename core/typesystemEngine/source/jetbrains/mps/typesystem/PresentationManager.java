@@ -16,16 +16,35 @@
 package jetbrains.mps.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeOperations;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.NameUtil;
 
 public class PresentationManager {
+  private static Logger LOG = Logger.getLogger(PresentationManager.class);
+
   // param is SNode or IWrapper
   public static String toString(SNode type) {
     if (type == null) return null;
     if (HUtil.isRuntimeTypeVariable(type)) {
       return (type).getName();
     }
-    return type.getPresentation(true);
-  }
 
+    if (SNodeOperations.isUnknown(type)) {
+      String persistentName = type.getName();
+      if (persistentName == null) {
+        return "?" + NameUtil.shortNameFromLongName(type.getConcept().getId()) + "?";
+      }
+      return "?" + persistentName + "?";
+    }
+
+    try {
+      return SNodeUtil.getDetailedPresentation(type);
+    } catch (RuntimeException t) {
+      LOG.error(t);
+      return "[can't calculate presentation : " + t.getMessage() + "]";
+    }
+  }
 }

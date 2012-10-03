@@ -175,7 +175,7 @@ public class ModelConstraintsUtil {
       myOperationContext = context;
       SNode scopeReference = referenceNode.getLinkDeclaration(role);
       if (scopeReference == null) {
-        throw new IllegalArgumentException("can't find link for role '" + role + "' in '" + referenceNode.getConceptFqName() + "'");
+        throw new IllegalArgumentException("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
       }
       myReferentConstraintContext = createReferentConstraintContext(false, referenceNode.getParent(), referenceNode, role, 0, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getRoleLink());
       myRefConcept = referenceNode.getConceptDeclarationNode();

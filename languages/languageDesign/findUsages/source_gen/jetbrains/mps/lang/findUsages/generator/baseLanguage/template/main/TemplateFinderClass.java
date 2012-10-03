@@ -230,7 +230,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a5a1a4a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1200410464729");
-              tnode4.addReference(SReference.create("classifier", tnode4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger")));
+              tnode4.setReference("classifier", SReference.create("classifier", tnode4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger")));
 
             } finally {
               environment.getTracer().pushOutputNode(tnode4);
@@ -246,8 +246,8 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a6a1a4a1a2);
               environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c8959035c/1200410479733");
-              tnode5.addReference(SReference.create("classConcept", tnode5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger")));
-              tnode5.addReference(SReference.create("baseMethodDeclaration", tnode5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger.getLogger(java.lang.String):jetbrains.mps.logging.Logger")));
+              tnode5.setReference("classConcept", SReference.create("classConcept", tnode5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger")));
+              tnode5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger.getLogger(java.lang.String):jetbrains.mps.logging.Logger")));
 
               {
                 final SNode tnode6 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
@@ -337,7 +337,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a5a1a1a1a5a1a2);
                       environment.nodeCopied(context, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396947631");
-                      tnode12.addReference(SReference.create("classifier", tnode12, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+                      tnode12.setReference("classifier", SReference.create("classifier", tnode12, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(tnode12);
@@ -868,7 +868,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a6a1a01a1a2);
                   environment.nodeCopied(context, tnode52, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533661668");
-                  tnode52.addReference(SReference.create("classifier", tnode52, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+                  tnode52.setReference("classifier", SReference.create("classifier", tnode52, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode52);
@@ -931,7 +931,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a8a1a01a1a2);
                   environment.nodeCopied(context, tnode56, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876019");
-                  tnode56.addReference(SReference.create("classifier", tnode56, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor")));
+                  tnode56.setReference("classifier", SReference.create("classifier", tnode56, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode56);
@@ -1005,7 +1005,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a3a1a01a1a01a1a2);
                           environment.nodeCopied(context, tnode62, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530055");
-                          tnode62.addReference(SReference.create("baseMethodDeclaration", tnode62, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.start(java.lang.String,int):void")));
+                          tnode62.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode62, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.start(java.lang.String,int):void")));
 
                           {
                             final SNode tnode63 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false);
@@ -1111,7 +1111,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a3a1a3a1a4a1a01a1a01a1a2);
                                   environment.nodeCopied(context, tnode70, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530064");
-                                  tnode70.addReference(SReference.create("baseMethodDeclaration", tnode70, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.done():void")));
+                                  tnode70.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode70, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.done():void")));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(tnode70);
@@ -1259,7 +1259,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a6a1a1a1a11a1a2);
                       environment.nodeCopied(context, tnode79, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462878650");
-                      tnode79.addReference(SReference.create("classifier", tnode79, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+                      tnode79.setReference("classifier", SReference.create("classifier", tnode79, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(tnode79);
@@ -1475,7 +1475,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a41a1a2);
           environment.nodeCopied(context, tnode96, "tpl/r:00000000-0000-4000-0000-011c8959035c/3050731179906749556");
-          tnode96.addReference(SReference.create("classifier", tnode96, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)"), SNodeId.fromString("~GeneratedFinder")));
+          tnode96.setReference("classifier", SReference.create("classifier", tnode96, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)"), SNodeId.fromString("~GeneratedFinder")));
 
         } finally {
           environment.getTracer().pushOutputNode(tnode96);

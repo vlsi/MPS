@@ -11,7 +11,7 @@ public class StaticConceptMethodDeclaration_Behavior {
   }
 
   public static String call_getGeneratedName_1225196403920(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getId();
+    return SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getSNodeId().toString();
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {

@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.EmptyIterator;
 
+import java.util.Collections;
 import java.util.Iterator;
 
 class NodesIterator implements Iterator<SNode> {
@@ -53,6 +55,8 @@ class NodesIterator implements Iterator<SNode> {
 
   private Iterator<SNode> getIterForNextRoot(Iterator<SNode> roots) {
     if (!roots.hasNext()) return new EmptyIterator<SNode>();
-    return roots.next().getDescendantsIterable(null, true).iterator();
+    SNode next = roots.next();
+    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(next), next.getDescendants());
+    return thisAndDesc.iterator();
   }
 }

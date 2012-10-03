@@ -9,6 +9,7 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -42,8 +42,8 @@ public class TaskLibrariesHelper {
     closure(libsSet);
     List<SNode> libs = new ArrayList<SNode>(libsSet);
     for (SNode lib : libs) {
-      for (SNode n : lib.getDescendantsIterable(null, true)) {
-        for (SReference ref : n.getReferencesIterable()) {
+      for (SNode n : SNodeOperations.getDescendants(lib, null, true)) {
+        for (SReference ref : SNodeOperations.getReferences(n)) {
           SNode targetNode = ref.getTargetNodeSilently();
           if (targetNode == null) {
             genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, "name") + "': unresolved reference");
@@ -61,14 +61,14 @@ public class TaskLibrariesHelper {
     Map<SNode, SNode> map = new HashMap<SNode, SNode>();
     parts = (List<SNode>) CopyUtil.copy((List<SNode>) parts, map);
     ListSequence.fromList(SLinkOperations.getTargets(project, "imports", true)).clear();
-    for (SNode n : project.getDescendantsIterable(null, true)) {
+    for (SNode n : SNodeOperations.getDescendants(project, null, true)) {
       for (SReference ref : n.getReferences()) {
         SNode targetNode = ref.getTargetNodeSilently();
         if (map.containsKey(targetNode)) {
-          n.setReferent(ref.getRole(), map.get(targetNode));
+          n.setReferenceTarget(ref.getRole(), map.get(targetNode));
         } else {
           SNode containingRoot = targetNode.getTopmostAncestor();
-          if (SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {
+          if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {
             genContext.showErrorMessage(n, "task library is not imported");
           }
         }
@@ -82,15 +82,15 @@ public class TaskLibrariesHelper {
     // cleanup => remove empty taskss 
     Set<SNode> emptyTasks = new HashSet<SNode>(ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask"), "dependencies", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask"), "subTasks", true)).isEmpty();
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask") && ListSequence.fromList(SLinkOperations.getTargets(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask"), "dependencies", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask"), "subTasks", true)).isEmpty();
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask");
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask");
       }
     }).toListSequence());
     if (!(emptyTasks.isEmpty())) {
-      for (SNode n : project.getDescendantsIterable(null, true)) {
+      for (SNode n : SNodeOperations.getDescendants(project, null, true)) {
         for (SReference ref : n.getReferences()) {
           SNode targetNode = ref.getTargetNodeSilently();
           emptyTasks.remove(targetNode);

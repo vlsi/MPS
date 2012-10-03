@@ -142,12 +142,12 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
       {
         SNode nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a;
         nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_nagdzg_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.SNodeOperations;
 
 public class ModelPlusImportedScope extends Scope {
   private final SModel myModel;
@@ -126,7 +127,7 @@ public class ModelPlusImportedScope extends Scope {
   }
 
   public String getReferenceText(SNode contextNode, SNode node) {
-    String resolveInfo = node.getResolveInfo();
+    String resolveInfo = SNodeOperations.getResolveInfo(node);
     if ((resolveInfo != null && resolveInfo.length() > 0)) {
       return resolveInfo;
     }

@@ -40,7 +40,7 @@ public class CellReference {
     final Wrappers._T<String> result = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = "(node " + CellReference.this.myNode.getId() + ", id " + SPropertyOperations.getString(CellReference.this.myAnnotation, "cellId") + ")";
+        result.value = "(node " + CellReference.this.myNode.getSNodeId().toString() + ", id " + SPropertyOperations.getString(CellReference.this.myAnnotation, "cellId") + ")";
       }
     });
     return result.value;

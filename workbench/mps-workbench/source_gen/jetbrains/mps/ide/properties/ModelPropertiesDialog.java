@@ -23,6 +23,7 @@ import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
@@ -116,7 +117,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         SModel model = myModel.getSModel();
         for (SNode node : model.nodes()) {
           references += node.getReferences().size();
-          properties += node.getPropertyNames().size();
+          properties += SNodeOperations.getProperties(node).keySet().size();
         }
         messageText.append("Roots : ").append(model.rootsCount()).append("<br>");
         messageText.append("Nodes : ").append(model.registeredNodesCount()).append("<br>");

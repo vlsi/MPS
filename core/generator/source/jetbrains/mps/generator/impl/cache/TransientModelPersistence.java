@@ -19,9 +19,11 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,8 +50,12 @@ public class TransientModelPersistence {
     }
 
     SModel m = new TransientSModel(myModelReference);
-    List<SNode> roots = new NodesReader(myModelReference).readNodes(m, is);
-    return roots;
+    List<Pair<String, SNode>> roots = new NodesReader(myModelReference).readNodes(m, is);
+    List<SNode> res = new ArrayList<SNode>(roots.size());
+    for (Pair<String, SNode> r : roots) {
+      res.add(r.o2);
+    }
+    return res;
   }
 
 }

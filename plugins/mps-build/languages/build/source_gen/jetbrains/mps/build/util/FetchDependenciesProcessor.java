@@ -88,11 +88,11 @@ public class FetchDependenciesProcessor {
 
     private boolean check(SNode node) {
       if (SNodeOperations.getModel(node).isTransient()) {
-        genContext.showErrorMessage(dep, "returned dependency in transient model: " + node.getDebugText());
+        genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
       }
       if (!(artifacts.contains(node))) {
-        genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + node.getDebugText());
+        genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
       }
       return true;
@@ -100,7 +100,7 @@ public class FetchDependenciesProcessor {
 
     private boolean checkArtifactId(Object artifactId) {
       if (artifactId instanceof SNode && ((SNode) artifactId).getModel().isTransient()) {
-        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + ((SNode) artifactId).getDebugText());
+        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + jetbrains.mps.util.SNodeOperations.getDebugText(((SNode) artifactId)));
         return false;
       }
       return true;
@@ -118,7 +118,7 @@ public class FetchDependenciesProcessor {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
+        quotedNode1_2.setReference("target", SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
         result = quotedNode1_2;
       }
       return result;

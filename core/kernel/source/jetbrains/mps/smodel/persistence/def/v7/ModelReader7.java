@@ -160,8 +160,8 @@ public class ModelReader7 implements IModelReader {
 //      } else {
         StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ptr.getNodeId(), resolveInfo);
         myLinkMap.addTargetLocation(ptr, ref);
-        node.addReference(ref);
-        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
+      node.setReference(ref.getRole(), ref);
+      myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
 //      }
     }
 

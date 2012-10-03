@@ -18,11 +18,9 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +62,7 @@ public class QuickFixAdapter extends BaseIntention  {
     int caretX = -1;
     int caretY = -1;
     boolean restoreCaretPosition = false;
-    if (selectedCell != null && selectedCell.getSNode().getAncestors(true).contains(node)) {
+    if (selectedCell != null && jetbrains.mps.util.SNodeOperations.isAncestor(node, selectedCell.getSNode())) {
       caretX = selectedCell.getCaretX();
       caretY = selectedCell.getBaseline();
       restoreCaretPosition= true;

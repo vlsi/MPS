@@ -26,6 +26,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.*;
 
@@ -64,7 +65,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext applyContext = myArguments.length == 0 ? context : context.subContext(getArgumentsAsMap());
 
-    if (myTemplateNode.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration)) {
+    if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
       List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(myTemplateNode);
       if (!GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, myTemplateNode, context.getInput(), null, environment.getGenerator())) {
         environment.getGenerator().showErrorMessage(context.getInput(), myTemplateNode, "error processing template declaration");

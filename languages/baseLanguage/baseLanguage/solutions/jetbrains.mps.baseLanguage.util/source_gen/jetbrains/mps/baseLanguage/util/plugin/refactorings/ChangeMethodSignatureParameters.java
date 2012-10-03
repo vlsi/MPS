@@ -19,7 +19,7 @@ public class ChangeMethodSignatureParameters {
     this.myMethod = SNodeOperations.copyNode(declaration);
     this.myOldMethod = SNodeOperations.copyNode(declaration);
     for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(this.myMethod, "parameter", true))) {
-      ListSequence.fromList(this.myParametersIds).addElement(param.getId());
+      ListSequence.fromList(this.myParametersIds).addElement(param.getSNodeId().toString());
     }
   }
 

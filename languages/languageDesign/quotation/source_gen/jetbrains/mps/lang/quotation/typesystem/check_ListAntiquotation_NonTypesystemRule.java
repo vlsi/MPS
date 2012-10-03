@@ -27,7 +27,7 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
         {
           SNode matchingNode_5jb8fe_a1a = SNodeOperations.getParent(annotatedNode);
           if (matchingNode_5jb8fe_a1a != null) {
-            matches_5jb8fe_a1a = SModelUtil_new.isAssignableConcept(matchingNode_5jb8fe_a1a.getConceptFqName(), "jetbrains.mps.lang.quotation.structure.Quotation");
+            matches_5jb8fe_a1a = SModelUtil_new.isAssignableConcept(matchingNode_5jb8fe_a1a.getConcept().getId(), "jetbrains.mps.lang.quotation.structure.Quotation");
           }
         }
         if (matches_5jb8fe_a1a) {
@@ -48,7 +48,7 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

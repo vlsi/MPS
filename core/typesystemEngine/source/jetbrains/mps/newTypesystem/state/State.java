@@ -37,6 +37,7 @@ import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -483,7 +484,8 @@ public class State {
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
       myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-    typeVar.setName(myVariableIdentifier.getNewVarName());
+    //todo this code should be moved into MPS
+    typeVar.setProperty(SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
   }
 
@@ -495,17 +497,6 @@ public class State {
     Set<Block> result = new THashSet<Block>();
     for (Block block : getBlocks()) {
       if (block.getBlockKind() == kind) {
-        result.add(block);
-      }
-    }
-    return result;
-  }
-
-  public Set<Block> getCheckingInequalities() {
-    Set<Block> result = new THashSet<Block>();
-    Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
-    for (Block block : blocks) {
-      if (((RelationBlock) block).isCheckOnly() && !((RelationBlock) block).getRelationKind().isComparable()) {
         result.add(block);
       }
     }

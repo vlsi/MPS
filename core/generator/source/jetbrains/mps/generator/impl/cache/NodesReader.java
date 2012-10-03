@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -33,16 +34,16 @@ public class NodesReader {
     myModelReference = modelReference;
   }
 
-  public List<SNode> readNodes(SModel model, ModelInputStream is) throws IOException {
+  public List<Pair<String, SNode>> readNodes(SModel model, ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<SNode> nodes = new ArrayList<SNode>(size);
+    List<Pair<String, SNode>> nodes = new ArrayList<Pair<String, SNode>>(size);
     for (int i = 0; i < size; i++) {
       nodes.add(readNode(model, is));
     }
     return nodes;
   }
 
-  protected SNode readNode(SModel model, ModelInputStream is) throws IOException {
+  protected Pair<String, SNode> readNode(SModel model, ModelInputStream is) throws IOException {
     String conceptFqName = is.readString();
     SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();
@@ -51,7 +52,6 @@ public class NodesReader {
     }
 
     SNode node = new SNode(model, conceptFqName, true);
-    node.setRoleInParent(nodeRole);
     node.setId(nodeId);
 
     readProperties(is, node);
@@ -65,15 +65,13 @@ public class NodesReader {
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
-    return node;
+    return new Pair<String, SNode>(nodeRole, node);
   }
 
   protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
-    List<SNode> children = readNodes(model, is);
-    for (SNode child : children) {
-      String role = child.getRole_();
-      assert role != null;
-      node.addChild(role, child);
+    List<Pair<String, SNode>> children = readNodes(model, is);
+    for (Pair<String, SNode> child : children) {
+      node.addChild(child.o1, child.o2);
     }
   }
 
@@ -85,29 +83,28 @@ public class NodesReader {
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       String role = is.readString();
       SModelReference modelRef = is.readModelReference();
-      if(modelRef != null && LOCAL.equals(modelRef)) {
+      if (modelRef != null && LOCAL.equals(modelRef)) {
         modelRef = myModelReference;
       }
       String resolveInfo = is.readString();
       if (kind == 1) {
-        node.addReference(
-          new StaticReference(
-            role,
-            node,
-            modelRef,
-            targetNodeId,
-            resolveInfo));
+        SReference reference = new StaticReference(
+          role,
+          node,
+          modelRef,
+          targetNodeId,
+          resolveInfo);
+        node.setReference(reference.getRole(), reference);
       } else if (kind == 2 || kind == 3) {
         DynamicReference reference = new DynamicReference(
           role,
           node,
           modelRef,
           resolveInfo);
-        if(origin != null) {
+        if (origin != null) {
           reference.setOrigin(origin);
         }
-        node.addReference(
-          reference);
+        node.setReference(reference.getRole(), reference);
       } else {
         throw new IOException("unknown reference type");
       }

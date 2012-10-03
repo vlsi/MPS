@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -186,9 +187,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         return null;
       }
 
-      List<SNode> roots = new NodesReader(modelReference).readNodes(model, is);
-      for (SNode r : roots) {
-        model.addRoot(r);
+      List<Pair<String,SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
+      for (Pair<String,SNode> r : roots) {
+        model.addRoot(r.o2);
       }
 
       // ensure imports are back
@@ -215,7 +216,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     NodesReader reader = new NodesReader(node.getModel().getSModelReference());
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
-    return reader.readNode(node.getModel(), new ModelInputStream(is));
+    return reader.readNode(node.getModel(), new ModelInputStream(is)).o2;
   }
 
   // method created for testing
@@ -241,9 +242,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     if (version != 43) {
       return null;
     }
-    List<SNode> resultRoots = new NodesReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
-    for (SNode root : resultRoots) {
-      resultModel.addRoot(root);
+    List<Pair<String,SNode>> resultRoots = new NodesReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
+    for (Pair<String,SNode> root : resultRoots) {
+      resultModel.addRoot(root.o2);
     }
 
     SModelOperations.validateLanguagesAndImports(resultModel, false, false);

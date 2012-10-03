@@ -58,7 +58,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModel smodel = getCurrentModelInternal();
     if (smodel == null) return;
 
-    getSModel().clearAdaptersAndUserObjects();
     getSModel().refreshRefactoringHistory();
   }
 

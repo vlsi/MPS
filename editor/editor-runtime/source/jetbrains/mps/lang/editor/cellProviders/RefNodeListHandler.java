@@ -21,7 +21,10 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,7 +42,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
-        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConceptFqName();
+        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getId();
         SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
         if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
@@ -96,7 +99,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     if (anchorNode == null && insertBefore) {
       getOwner().addChild(getElementRole(), myInsertedNode);
     } else {
-      getOwner().insertChild(anchorNode, getElementRole(), myInsertedNode, insertBefore);
+      jetbrains.mps.util.SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
     }
   }
 
@@ -106,7 +109,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
       resultList.addAll(myOwnerNode.getChildren(getElementRole()));
     } else {
       List<SNode> children = myOwnerNode.getChildren(getElementRole());
-      Collections.reverse(children);   
+      Collections.reverse(children);
       resultList.addAll(children);
     }
 

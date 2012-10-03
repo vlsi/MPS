@@ -30,9 +30,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import java.util.List;
 
 public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
@@ -100,11 +102,11 @@ public class NodeExplorerComponent {
     protected void doInit() {
       this.removeAllChildren();
 
-      add(new TextTreeNode("Concept = " + getSNode().getConceptFqName()));
+      add(new TextTreeNode("Concept = " + getSNode().getConcept().getId()));
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
-        add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
+        add(new MySNodeTreeNode(childNode, childNode.getRole(), getOperationContext()));
       }
       add(new MyPropertiesNode(getSNode(), getOperationContext()));
       add(new MyReferentsNode(getSNode(), getOperationContext()));
@@ -122,7 +124,7 @@ public class NodeExplorerComponent {
     }
 
     protected void doInit() {
-      for (SReference reference : myNode.getNode().getReferences()) {
+      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(myNode.getNode())) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
           add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));
@@ -147,14 +149,14 @@ public class NodeExplorerComponent {
 
     protected void doInit() {
       SNode node = myNode.getNode();
-      for (String propertyName : node.getProperties().keySet()) {
-        String value = node.getProperty(propertyName);
-        add(new TextTreeNode(propertyName + " : " + value) {
-          {
-            setIcon(Icons.DEFAULT_ICON);
-          }
-        });
-      }
+      node.visitProperties(new PropertyVisitor() {
+        public boolean visitProperty(String name, String value) {
+          TextTreeNode node = new TextTreeNode(name + " : " + value);
+          node.setIcon(Icons.DEFAULT_ICON);
+          add(node);
+          return true;
+        }
+      });
       myIsInitialized = true;
     }
 

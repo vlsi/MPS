@@ -9,13 +9,13 @@
   </root>
   <root nodeId="4549711462050000012" modelId="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)">
     <nodeInfo nodeId="6977293943153394140" fileName="QueriesGenerated.java" startLine="28" startPosition="152" endLine="29" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2319519288049919037" fileName="QueriesGenerated.java" startLine="29" startPosition="158" endLine="30" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2319519288049919037" fileName="QueriesGenerated.java" startLine="29" startPosition="158" endLine="30" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5930937718816243413" fileName="QueriesGenerated.java" startLine="33" startPosition="152" endLine="34" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5930937718816243449" fileName="QueriesGenerated.java" startLine="34" startPosition="158" endLine="35" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2319519288049917876" fileName="QueriesGenerated.java" startLine="28" startPosition="152" endLine="30" endPosition="191">
+    <nodeInfo nodeId="5930937718816243449" fileName="QueriesGenerated.java" startLine="34" startPosition="158" endLine="35" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2319519288049917876" fileName="QueriesGenerated.java" startLine="28" startPosition="152" endLine="30" endPosition="225">
       <varInfo nodeId="6977293943153394141" varName="checkedDot" />
     </scopeInfo>
-    <scopeInfo nodeId="3905905920761714587" fileName="QueriesGenerated.java" startLine="33" startPosition="152" endLine="35" endPosition="191">
+    <scopeInfo nodeId="3905905920761714587" fileName="QueriesGenerated.java" startLine="33" startPosition="152" endLine="35" endPosition="225">
       <varInfo nodeId="5930937718816243414" varName="checkedDot" />
     </scopeInfo>
   </root>

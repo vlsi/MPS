@@ -74,7 +74,7 @@ public class BeanBuilder_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setReferent("baseMethodDeclaration", (SNode) parameter_7);
+          quotedNode1_5.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_7);
           {
             List<SNode> nodes = (List<SNode>) parameter_6;
             for (SNode child : nodes) {
@@ -100,7 +100,7 @@ public class BeanBuilder_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

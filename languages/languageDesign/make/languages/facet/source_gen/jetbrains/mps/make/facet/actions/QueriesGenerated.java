@@ -396,7 +396,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("component", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("component", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -414,7 +414,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("target", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("target", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -432,7 +432,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("component", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("component", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -499,7 +499,7 @@ __switch__:
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.NamedFacetReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("facet", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("facet", (SNode) parameter_5);
           quotedNode_1.addChild("reference", quotedNode1_4);
         }
         result = quotedNode1_3;

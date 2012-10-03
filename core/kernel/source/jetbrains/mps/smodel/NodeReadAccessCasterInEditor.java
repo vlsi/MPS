@@ -204,7 +204,7 @@ public class NodeReadAccessCasterInEditor {
     }
 
     private boolean skipNotification(SNode node) {
-      return myListenersStack.isEmpty() || !node.isRegistered() || !node.getModelInternal().canFireEvent();
+      return myListenersStack.isEmpty() || !jetbrains.mps.util.SNodeOperations.isRegistered(node) || !node.getModelInternal().canFireEvent();
     }
   }
 }

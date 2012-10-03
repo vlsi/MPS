@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.apiadapter;
 
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SDataType;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -11,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class SPropertyNodeAdapter implements SProperty {
   private SNode myPNode;
 
-  public SPropertyNodeAdapter(SNode myPNode) {
+  public SPropertyNodeAdapter(@NotNull SNode myPNode) {
     this.myPNode = myPNode;
   }
 

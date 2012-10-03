@@ -9,13 +9,13 @@ import java.util.List;
 
 public class SemanticDowncast {
   public void invoke_getID_method_1(SNode ifStatement) {
-    String id_verbose = ((SNode) ifStatement).getId();
-    String id_briefly = ifStatement.getId();
+    String id_verbose = ((SNode) ifStatement).getSNodeId().toString();
+    String id_briefly = ifStatement.getSNodeId().toString();
   }
 
   public void invoke_getID_method_2(SNode ifStatement) {
-    String id_verbose = ((SNode) ((SNode) SLinkOperations.getTarget(ifStatement, "condition", true))).getId();
-    String id_better = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
+    String id_verbose = ((SNode) ((SNode) SLinkOperations.getTarget(ifStatement, "condition", true))).getSNodeId().toString();
+    String id_better = SLinkOperations.getTarget(ifStatement, "condition", true).getSNodeId().toString();
   }
 
   public void countChildren(SNode methodCall) {

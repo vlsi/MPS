@@ -327,7 +327,7 @@ public class GenerationTracer implements IGenerationTracer {
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
-      outputNode = outputModel.getNodeById(inputNode.getId());
+      outputNode = outputModel.getNodeById(inputNode.getSNodeId().toString());
       if (outputNode != null) break;
       inputNode = inputNode.getParent();
     }
@@ -390,7 +390,7 @@ public class GenerationTracer implements IGenerationTracer {
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
-      inputNode = inputModel.getNodeById(outputNode.getId());
+      inputNode = inputModel.getNodeById(outputNode.getSNodeId().toString());
       if (inputNode != null) break;
       outputNode = outputNode.getParent();
     }

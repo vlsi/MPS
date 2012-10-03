@@ -56,7 +56,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         myParentNode = sourceNode;
         SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
-        myCurrentChild = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        List<SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       }
     });
   }
@@ -101,10 +102,10 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
     if (myCurrentChild != null) {
       SNode child = mapping.get(myCurrentChild);
-      parent.insertChild(child, role, hole, true);
+      parent.insertChild(role, hole, parent.getPrevChild(child));
       parent.removeChild(child);
     } else {
-      parent.setChild(role, hole);
+      parent.addChild(role, hole);
     }
     InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
     inequationsForHole.replaceRefs(mapping);

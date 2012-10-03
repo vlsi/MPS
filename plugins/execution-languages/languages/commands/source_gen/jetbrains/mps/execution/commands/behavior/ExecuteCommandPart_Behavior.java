@@ -67,7 +67,7 @@ public class ExecuteCommandPart_Behavior {
   }
 
   public static String call_getSuffix_3754131050835940463(SNode thisNode) {
-    return "_" + IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(thisNode.getId());
+    return "_" + IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(thisNode.getSNodeId().toString());
   }
 
   public static List<SNode> call_getThrowableTypes_558680274511380755(SNode thisNode) {
@@ -123,7 +123,7 @@ public class ExecuteCommandPart_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution(MPS.Platform/com.intellij.execution@java_stub)"), SNodeId.fromString("~ExecutionException")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution(MPS.Platform/com.intellij.execution@java_stub)"), SNodeId.fromString("~ExecutionException")));
         result = quotedNode1_2;
       }
       return result;
@@ -151,7 +151,7 @@ public class ExecuteCommandPart_Behavior {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.process(MPS.Platform/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+          quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.process(MPS.Platform/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         result = quotedNode1_4;

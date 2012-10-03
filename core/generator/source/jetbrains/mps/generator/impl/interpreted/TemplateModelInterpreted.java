@@ -45,7 +45,7 @@ public class TemplateModelInterpreted implements TemplateModel {
 
   private void init() {
     for(SNode root : myModel.roots()) {
-      String conceptName = root.getConceptFqName();
+      String conceptName = root.getConcept().getId();
       if(conceptName.equals(RuleUtil.concept_TemplateSwitch)) {
         mySwitches.add(new TemplateSwitchMappingInterpreted(root));
       } else if(conceptName.equals(RuleUtil.concept_MappingConfiguration)) {
@@ -68,7 +68,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   public TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments) {
     assert template.getModelReference().equals(getSModelReference());
     SNode templateNode = myModel.getNodeById(template.getNodeId());
-    if(templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConceptFqName())) {
+    if(templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept().getId())) {
       return null;
     }
 

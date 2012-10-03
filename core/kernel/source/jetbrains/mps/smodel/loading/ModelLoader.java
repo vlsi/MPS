@@ -35,8 +35,8 @@ public class ModelLoader {
     for (SNode root : myModel.roots()) {
       SNode fullRoot = myFullModel.getNodeById(root.getSNodeId());
       if (fullRoot == null) continue; //this can happen after model update if the
-      for (SNode child : new ArrayList<SNode>(fullRoot.getChildren(true))) {
-        String role = child.getRole_();
+      for (SNode child : new ArrayList<SNode>(fullRoot.getChildren())) {
+        String role = child.getRole();
         fullRoot.removeChild(child);
         root.addChild(role, child);
       }

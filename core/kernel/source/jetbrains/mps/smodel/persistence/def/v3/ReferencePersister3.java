@@ -136,7 +136,7 @@ public class ReferencePersister3 implements IReferencePersister {
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
-    if (reference != null) this.getSourceNode().addReference(reference);
+    if (reference != null) this.getSourceNode().setReference(reference.getRole(), reference);
   }
 
   //-- save reference

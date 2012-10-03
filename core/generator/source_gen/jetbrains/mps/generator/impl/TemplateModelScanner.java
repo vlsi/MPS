@@ -56,7 +56,7 @@ public class TemplateModelScanner {
       return;
     }
     SetSequence.fromSet(myTargetLanguages).addElement(node.getLanguageNamespace());
-    for (SNode n : node.getChildrenIterable()) {
+    for (SNode n : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.IfMacro")) {
         if (SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true) != null) {
           scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true));
@@ -78,7 +78,7 @@ public class TemplateModelScanner {
       scanTemplateNode(node);
       return;
     }
-    for (SNode n : node.getChildrenIterable()) {
+    for (SNode n : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       scanTemplateContextNode(n);
     }
   }
@@ -95,7 +95,7 @@ public class TemplateModelScanner {
       scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "conditionFunction", true));
     } else {
       if ("jetbrains.mps.lang.generator".equals(node.getLanguageNamespace())) {
-        for (SNode child : node.getChildrenIterable()) {
+        for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
           scanControlNode(child);
         }
       } else {
@@ -108,7 +108,7 @@ public class TemplateModelScanner {
     if ((node == null)) {
       return;
     }
-    for (SNode n : node.getDescendantsIterable(null, true)) {
+    for (SNode n : jetbrains.mps.util.SNodeOperations.getDescendants(node, null, true)) {
       SetSequence.fromSet(myQueryLanguages).addElement(n.getLanguageNamespace());
     }
   }

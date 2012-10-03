@@ -59,7 +59,7 @@ public class TestUtils {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.getNode().getId();
+        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.getNode().getSNodeId().toString();
       }
     });
     return value.value;
