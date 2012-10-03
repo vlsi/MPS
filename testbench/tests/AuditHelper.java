@@ -30,17 +30,17 @@ public class AuditHelper {
     DISABLED_MODULES.add("jetbrains.mps.ui.sandbox");
 
     // TransformationUtil_Complex out of scopes is ok,
-    // TODO: TransformationUtil_Expressions should be fixed by right ClassifiersScope
+    // TODO: TransformationUtil_Expressions should be fixed by right ClassifiersScope (MPS-16863)
     DISABLED_MODULES.add("jetbrains.mps.debugger.java.runtime.tests");
 
     // illegal cardinalities is part of test
     DISABLED_MODULES.add("jetbrains.mps.smodel.test");
 
-    // TODO: when concrete for foreach doesn't works
+    // TODO: when concrete for foreach doesn't works (MPS-16864)
     DISABLED_MODULES.add("jetbrains.mps.debugger.api.api");
     DISABLED_MODULES.add("jetbrains.mps.graphLayout.orthogonalLayout");
 
-    // TODO: some of error nodes is ClassifiersScope
+    // TODO: some of error nodes is ClassifiersScope (MPS-16863)
     // TODO: and some of them is illegal concept for variable reference, check it with mikev
     DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
   }
