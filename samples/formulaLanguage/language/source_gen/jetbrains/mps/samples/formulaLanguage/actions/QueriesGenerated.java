@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class QueriesGenerated {
   private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b = Pattern.compile("(?:-?)\\d+", 0);
