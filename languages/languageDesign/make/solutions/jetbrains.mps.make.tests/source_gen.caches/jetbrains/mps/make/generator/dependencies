@@ -71,7 +71,6 @@
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
     <classNode dependClassName="org.junit.After" />
     <classNode dependClassName="org.junit.Before" />
-    <classNode dependClassName="org.junit.Ignore" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
