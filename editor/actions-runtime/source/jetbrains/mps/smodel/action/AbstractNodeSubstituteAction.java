@@ -18,9 +18,9 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -148,7 +148,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
           if (newNode[0] == null) {
             context.flushEvents();
 
-            EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+            EditorCell selectedCell = (EditorCell) context.getSelectedCell();
             if (selectedCell != null) {
               selectedCell.getContainingBigCell().synchronizeViewWithModel();
             }

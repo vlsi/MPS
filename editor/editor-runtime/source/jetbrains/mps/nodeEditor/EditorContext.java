@@ -361,6 +361,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myNodeEditorComponent.executeCommand(c);
   }
 
+  @Override
+  public boolean isInsideCommand() {
+// TODO: move executeCommand logic into EditorContext & reimplement isForcedFocusChangeEnabled() method using isInsideCommand()
+    return myNodeEditorComponent.isForcedFocusChangeEnabled();
+  }
+
   void startTracing(String name) {
     assert myPerformanceTracer == null;
     myPerformanceTracer = new PerformanceTracer(name);
