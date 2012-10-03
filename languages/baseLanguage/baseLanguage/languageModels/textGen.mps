@@ -29,29 +29,35 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="lang" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234803609335">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1080120340718" resolveInfo="AndExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234886608901">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188206331916" resolveInfo="Annotation" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234886915639">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188207840427" resolveInfo="AnnotationInstance" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234887379769">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188214482800" resolveInfo="AnnotationInstanceExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234887419578">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188214545140" resolveInfo="AnnotationInstanceValue" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234887488963">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234887555845">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1170345865475" resolveInfo="AnonymousClass" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234888787417">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1182160077978" resolveInfo="AnonymousClassCreator" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234888829413">
@@ -67,7 +73,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1154542696413" resolveInfo="ArrayCreatorWithInitializer" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234889016866">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1208890769693" resolveInfo="ArrayLengthOperation" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234889037948">
@@ -75,56 +81,64 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188220165133" resolveInfo="ArrayLiteral" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890240213">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534760951" resolveInfo="ArrayType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890261494">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1160998861373" resolveInfo="AssertStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890392776">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1224500764161" resolveInfo="BitwiseAndExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890432474">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1225894555487" resolveInfo="BitwiseNotExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890471522">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1224500790866" resolveInfo="BitwiseOrExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890501829">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1224500799915" resolveInfo="BitwiseXorExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890557996">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1082485599095" resolveInfo="BlockStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890802087">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123137" resolveInfo="BooleanConstant" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890826228">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534644030" resolveInfo="BooleanType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890841265">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081855346303" resolveInfo="BreakStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890924622">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534604311" resolveInfo="ByteType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890940910">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534934090" resolveInfo="CastExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234890997638">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1164903280175" resolveInfo="CatchClause" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234891066969">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1200397529627" resolveInfo="CharConstant" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234891149163">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534555686" resolveInfo="CharType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234891178357">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="1234891338660">
@@ -133,11 +147,11 @@
       <link role="baseTextGen" roleId="2omo.1234781160172" targetNodeId="1234796104060" resolveInfo="BaseLanguageTextGen" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234892337624">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1212685548494" resolveInfo="ClassCreator" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234892420461">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1116615150612" resolveInfo="ClassifierClassExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234892447096">
@@ -145,125 +159,142 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234892549516">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="comments" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1177326519037" resolveInfo="CommentedStatementsBlock" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234892777974">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.conceptFunction" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234892820096">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1145552977093" resolveInfo="GenericNewExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235067626785">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081506762703" resolveInfo="GreaterThanExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235067670076">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1153417849900" resolveInfo="GreaterThanOrEqualsExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235067710648">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1179360813171" resolveInfo="HexIntegerLiteral" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235067749472">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068025775">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1206629501431" resolveInfo="InstanceInitializer" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068084774">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068110028">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068603610">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081256982272" resolveInfo="InstanceOfExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068647697">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580320020" resolveInfo="IntegerConstant" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068672666">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534370425" resolveInfo="IntegerType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235068684876">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130112612">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081506773034" resolveInfo="LessThanExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130149678">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1153422305557" resolveInfo="LessThanOrEqualsExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130181120">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130213032">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130247219">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130339063">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242867" resolveInfo="LongType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130354959">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1171903862077" resolveInfo="LowerBoundType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130431827">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242869" resolveInfo="MinusExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130467132">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1092119917967" resolveInfo="MulExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130500647">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1073239437375" resolveInfo="NotEqualsExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130548876">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081516740877" resolveInfo="NotExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130597164">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534058343" resolveInfo="NullLiteral" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130615183">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1080223426719" resolveInfo="OrExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130646085">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130676607">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130699507">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1079359253375" resolveInfo="ParenthesizedExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130778882">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242875" resolveInfo="PlusExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130814902">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1214918975462" resolveInfo="PostfixDecrementExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130845453">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1214918800624" resolveInfo="PostfixIncrementExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130883519">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1168622733562" resolveInfo="RemarkStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130950225">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1153422105332" resolveInfo="RemExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130986968">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131071246">
@@ -273,7 +304,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1225892319711" resolveInfo="ShiftRightExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131150614">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070533982221" resolveInfo="ShortType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131169199">
@@ -283,126 +314,139 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131598665">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131688885">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131758155">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131802112">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081236700938" resolveInfo="StaticMethodDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235132901797">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133002982">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1225271177708" resolveInfo="StringType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133040740">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070475587102" resolveInfo="SuperConstructorInvocation" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133147898">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1073063089578" resolveInfo="SuperMethodCall" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133163324">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1163670490218" resolveInfo="SwitchStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133645843">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1170075670744" resolveInfo="SynchronizedStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133778848">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1163668896201" resolveInfo="TernaryOperatorExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133911716">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1178893518978" resolveInfo="ThisConstructorInvocation" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235134015467">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070475354124" resolveInfo="ThisExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235134113124">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1164991038168" resolveInfo="ThrowStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235134154741">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1164879751025" resolveInfo="TryCatchStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235134292973">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1153952380246" resolveInfo="TryStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235148827560">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1109279763828" resolveInfo="TypeVariableDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149154430">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1109283449304" resolveInfo="TypeVariableReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149177249">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1171903916106" resolveInfo="UpperBoundType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149213342">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1219920932475" resolveInfo="VariableArityType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149266702">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149361338">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1177714083117" resolveInfo="VarType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149549592">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="visibility" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.visibility" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1146644584814" resolveInfo="Visibility" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149638269">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581517677" resolveInfo="VoidType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149653150">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1076505808687" resolveInfo="WhileStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149803040">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1171903607971" resolveInfo="WildCardType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235567804739">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1083260308424" resolveInfo="EnumConstantReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235567952587">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1197029447546" resolveInfo="FieldReferenceOperation" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235570534877">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="enumOperations" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1224575136086" resolveInfo="EnumValueOfExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235570593532">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="enumOperations" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1224573963862" resolveInfo="EnumValuesExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235587029406">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235588368122">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123155" resolveInfo="ExpressionStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235590065729">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235739414982">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235739850731">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1082113931046" resolveInfo="ContinueStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740038236">
@@ -410,47 +454,54 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1184952934362" resolveInfo="DimensionExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740077306">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1095950406618" resolveInfo="DivExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740133835">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534513062" resolveInfo="DoubleType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740153717">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1177666668936" resolveInfo="DoWhileStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740434208">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1206060495898" resolveInfo="ElsifClause" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740524220">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1083245097125" resolveInfo="EnumClass" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235740896598">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1083245299891" resolveInfo="EnumConstantDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235741062707">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123152" resolveInfo="EqualsExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235741237980">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235741309022">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1111509017652" resolveInfo="FloatingPointConstant" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235741389634">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534436861" resolveInfo="FloatType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235741412435">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1144226303539" resolveInfo="ForeachStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235741566211">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1144231330558" resolveInfo="ForStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235743565312">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="1236013739107">
@@ -458,14 +509,15 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="lang" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1237807733680">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1232461062092" resolveInfo="CommentedStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1239710466732">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1239709577448" resolveInfo="PrefixDecrementExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1239710558961">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1239709250944" resolveInfo="PrefixIncrementExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="4269842503727610175">
@@ -481,6 +533,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.5279705229678483897" resolveInfo="FloatingPointFloatConstant" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="6227066020986630956">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
     </node>
     <node type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="3408882292339889057">
@@ -497,17 +550,19 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.6329021646629175143" resolveInfo="StatementCommentPart" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="7024111702304495342">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1215693861676" resolveInfo="BaseAssignmentExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1830039279190474291">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1830039279190439966" resolveInfo="AdditionalForLoopVariable" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="2580416627845806804">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.2580416627845338977" resolveInfo="ImplicitAnnotationInstanceValue" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="4564374268190746435">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.4564374268190696673" resolveInfo="PrimitiveClassExpression" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5245668348356342300">
@@ -516,10 +571,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="utils" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1703408759744446147">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="7785501532031731666">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="5205855332950472840">
@@ -530,7 +586,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.320030840061144153" resolveInfo="ShiftRightUnsignedExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1251851371723517310">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1251851371723515367" resolveInfo="ArrayClassExpression" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136230684045923685">
