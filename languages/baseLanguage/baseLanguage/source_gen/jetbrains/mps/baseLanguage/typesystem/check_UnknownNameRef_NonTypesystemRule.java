@@ -33,10 +33,22 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
     if ((result == null)) {
       return;
     } else if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      // TODO change to something real as default, e.g. static field access expression without the field 
-      SNode claz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassExpression", null);
-      SLinkOperations.setTarget(claz, "classifier", SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
-      result = claz;
+      // change to something real as default, e.g. static field access expression without the field 
+      SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+      SLinkOperations.setTarget(fieldRef, "classifier", SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
+      result = fieldRef;
+
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Making up a static field reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4965738712233789301", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
+          intentionProvider.putArgument("unknownNode", unkName);
+          intentionProvider.putArgument("theRightNode", result);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
+
     } else if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.Expression")) {
       // success 
       {
