@@ -74,16 +74,18 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   }
 
   public SNode substitute(@Nullable EditorContext context, String pattern) {
-    return mySubstituteAction.substitute(context, pattern);
+    return substitute((jetbrains.mps.nodeEditor.EditorContext) context, pattern);
   }
 
   /**
    * @deprecated Since MPS 3.0 was replaced by:
    * <code>substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern)</code>
+   *
+   * Was left for compatibility with generated code. Later should be removed.
    */
   @Deprecated
   public SNode substitute(@Nullable jetbrains.mps.nodeEditor.EditorContext context, String pattern) {
-    return substitute((EditorContext) context, pattern);
+    return mySubstituteAction.substitute(context, pattern);
   }
 
   public int getSortPriority(String pattern) {
