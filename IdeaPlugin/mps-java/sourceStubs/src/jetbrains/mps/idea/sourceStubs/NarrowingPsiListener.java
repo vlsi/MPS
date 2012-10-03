@@ -35,7 +35,7 @@ import java.util.WeakHashMap;
  */
 public class NarrowingPsiListener extends PsiTreeChangeAdapter {
 
-  private static long DELAY = 3000; // Milliseconds
+  private static long DELAY = 300; // Milliseconds
 
   @NotNull private SimpleDocumentListener myDelegate;
   private PsiDocumentManager myPsiDocumentManager;

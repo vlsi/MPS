@@ -42,6 +42,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.JavaStubPsiListener;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -391,6 +392,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
 //      System.out.println("DOC DEBUG: changed -> " + doc.getText());
       System.out.println("PARSING FILE " +  new Date().toString());
+      System.out.flush();
     }
   }
 
@@ -398,6 +400,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
   //////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
 
+  // DEBUG
 
   class PsiTreeChangeTester extends PsiTreeChangeAdapter {
 
@@ -433,52 +436,4 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
   }
 
 
-
-
-
-  // Throw away
-
-
-  private VirtualFile myLastTouchedFile;
-  private boolean wasLastFileListenable;
-
-  class PsiTreeChangeWatcher extends PsiTreeChangeAdapter {
-    @Override
-    public void childrenChanged(PsiTreeChangeEvent event) {
-
-//      System.out.println("DEBUG: event catched");
-
-      PsiElement elem = event.getElement();
-      PsiFile psiFile = event.getFile();
-      VirtualFile vfile = psiFile==null ? null : psiFile.getVirtualFile();
-
-//      System.out.println(vfile.toString());
-
-      if (vfile!=myLastTouchedFile && !vfile.equals(myLastTouchedFile)) {
-        myLastTouchedFile = vfile;
-        wasLastFileListenable = myListenedFiles.contains(vfile);
-      }
-      // return quickly
-      if (!wasLastFileListenable) { System.out.println("Not listenable"); return; }
-
-      // now see if the change doesn't have anything to do with stubs
-
-      if (elem==null) {
-//        System.out.println("*** Null elem");
-      } else {
-//        System.out.println("PSI DEBUG: " + elem.getClass().getName());
-        if (! (elem instanceof PsiClass || elem instanceof  PsiMember || elem instanceof PsiVariable)) return;
-      }
-
-
-      final Document doc = myPsiDocumentManager.getDocument(psiFile);
-      final BaseStubModelDescriptor modelDesc = files2Models.get(vfile);
-      if (modelDesc==null) return;
-
-      // modelDs.reparse(doc.getCharsSequence());
-      modelDesc.reparseOneFile( doc.getCharsSequence().toString() );
-
-//      System.out.println("VFS DEBUG: " + (elem==null ? "NONE" : elem.toString()) + " " + (doc==null ? "NONE" : doc.getCharsSequence()));
-    }
-  }
 }

@@ -132,6 +132,8 @@ public class SolutionIdea extends Solution {
       }
 
       /*
+      // project hasn't been opened yet, this will not work
+
       Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
       if (sourceStubSol!=null) {
         Dependency dep = new Dependency();
@@ -185,6 +187,7 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+    // FIXME make proper dependencies
     Dependency dep = new Dependency();
     dep.setModuleRef(moduleRef);
     dep.setReexport(false); // overriding parameter
