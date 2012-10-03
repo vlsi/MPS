@@ -55,8 +55,6 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
           Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
           // <node> 
 
-          System.out.println("DEBUG: module id = " + (SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor().getId().toString()));
-
           ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor().getId().toString(), SNodeOperations.getModel(node).getLongName() + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
 
 
@@ -88,8 +86,6 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
         for (Solution s : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
           if (!(SolutionKind.NONE.equals(s.getModuleDescriptor().getKind()))) {
             // a plugin solution 
-
-            s.getModuleDescriptor().getUUID();
 
             for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(s)) {
               if (smd.getLongName().endsWith(".stubManagers")) {
