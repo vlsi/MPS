@@ -123,7 +123,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176895858705">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_StringLiteral" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176896028282">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ThrowStatement" />
@@ -367,18 +367,18 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1201467883353">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PropertyReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1201468290153">
       <property name="name" nameId="tpck.1169194664001" value="typeof_Property" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1201700941924">
       <property name="name" nameId="tpck.1169194664001" value="check_ThisExpression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1202594219548">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ValueParameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom.set" />
     </node>
     <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1203024187900">
       <property name="name" nameId="tpck.1169194664001" value="any_type_subtypeof_wildcard_type" />
@@ -514,7 +514,7 @@
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1225276837979">
       <property name="name" nameId="tpck.1169194664001" value="string_extends_java_lang_String" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="false" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225276837985">
       <property name="name" nameId="tpck.1169194664001" value="typeof_NPEEqualsExpression" />
@@ -528,19 +528,19 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225276872491">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BaseStringOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225276872503">
       <property name="name" nameId="tpck.1169194664001" value="typeof_StringBooleanOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225276872513">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SubstringExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225276872555">
       <property name="name" nameId="tpck.1169194664001" value="typeof_TrimOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225895339531">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BitwiseNotExpression" />
@@ -920,7 +920,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1461424660015406123">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EscapeOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2030079436469744702">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AnnotationInstance" />
@@ -996,7 +996,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5862977038373016151">
       <property name="name" nameId="tpck.1169194664001" value="typeof_LocalPropertyReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="2298236629740276246">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />

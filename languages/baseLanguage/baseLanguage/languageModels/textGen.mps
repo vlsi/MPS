@@ -329,11 +329,11 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1081236700938" resolveInfo="StaticMethodDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235132901797">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133002982">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1225271177708" resolveInfo="StringType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235133040740">

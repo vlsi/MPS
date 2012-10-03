@@ -138,7 +138,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1070475926800">
       <property name="name" nameId="tpck.1169194664001" value="StringLiteral" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1070533707846">
@@ -609,52 +609,52 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201370618622">
       <property name="name" nameId="tpck.1169194664001" value="Property" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201372346056">
       <property name="name" nameId="tpck.1169194664001" value="PropertyImplementation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201372606839">
       <property name="name" nameId="tpck.1169194664001" value="DefaultPropertyImplementation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201385106094">
       <property name="name" nameId="tpck.1169194664001" value="PropertyReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201398722958">
       <property name="name" nameId="tpck.1169194664001" value="CustomPropertyImplementation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201402044357">
       <property name="name" nameId="tpck.1169194664001" value="GetAccessor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201476912089">
       <property name="name" nameId="tpck.1169194664001" value="SetAccessor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom.set" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1202003934320">
       <property name="name" nameId="tpck.1169194664001" value="ValueParameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom.set" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1202065242027">
       <property name="name" nameId="tpck.1169194664001" value="DefaultGetAccessor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1202077725299">
       <property name="name" nameId="tpck.1169194664001" value="DefaultSetAccessor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1202948039474">
@@ -800,7 +800,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271177708">
       <property name="name" nameId="tpck.1169194664001" value="StringType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271221393">
@@ -815,38 +815,38 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271315873">
       <property name="name" nameId="tpck.1169194664001" value="BaseStringOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271369338">
       <property name="name" nameId="tpck.1169194664001" value="IsEmptyOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225271443097" resolveInfo="StringBooleanOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271408483">
       <property name="name" nameId="tpck.1169194664001" value="IsNotEmptyOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225271443097" resolveInfo="StringBooleanOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271443097">
       <property name="name" nameId="tpck.1169194664001" value="StringBooleanOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225271315873" resolveInfo="BaseStringOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271484915">
       <property name="name" nameId="tpck.1169194664001" value="SubstringExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1225271514374">
       <property name="name" nameId="tpck.1169194664001" value="TrimKind" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225271546410">
       <property name="name" nameId="tpck.1169194664001" value="TrimOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225271315873" resolveInfo="BaseStringOperation" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1225280593310">
@@ -1049,7 +1049,7 @@
       <property name="name" nameId="tpck.1169194664001" value="IWillBeClassifier" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1461424660015405635">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <property name="name" nameId="tpck.1169194664001" value="EscapeOperation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225271315873" resolveInfo="BaseStringOperation" />
     </node>
@@ -1077,7 +1077,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ISkipsReturn" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5862977038373003187">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <property name="name" nameId="tpck.1169194664001" value="LocalPropertyReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>

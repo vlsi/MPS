@@ -227,7 +227,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1152728232947" resolveInfo="Closure" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1225271597111">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1225271484915" resolveInfo="SubstringExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1226075737918">

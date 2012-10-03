@@ -92,7 +92,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070534370425" resolveInfo="IntegerType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877271259">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201372606839" resolveInfo="DefaultPropertyImplementation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877272873">
@@ -100,7 +100,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1109283449304" resolveInfo="TypeVariableReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877278336">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1202077725299" resolveInfo="DefaultSetAccessor" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877287006">
@@ -150,7 +150,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068499141036" resolveInfo="BaseMethodCall" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877343271">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201398722958" resolveInfo="CustomPropertyImplementation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877346343">
@@ -205,7 +205,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1208890769693" resolveInfo="ArrayLengthOperation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877383133">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877400601">
@@ -249,7 +249,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1168622733562" resolveInfo="RemarkStatement" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877430657">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201372346056" resolveInfo="PropertyImplementation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877433049">
@@ -267,7 +267,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877440703">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201385106094" resolveInfo="PropertyReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877443337">
@@ -349,7 +349,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070534436861" resolveInfo="FloatType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877530968">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877531969">
@@ -391,7 +391,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1224848483129" resolveInfo="IBLDeprecatable" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1225271178070">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1225271177708" resolveInfo="StringType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1225280605263">
@@ -577,7 +577,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ParenthesisUtil" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5862977038373290892">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1023687332192481690">
@@ -596,7 +596,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1457547649399766338">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1225271315873" resolveInfo="BaseStringOperation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="7405920559687209279">

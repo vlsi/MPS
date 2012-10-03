@@ -126,7 +126,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1079622224907">
       <property name="name" nameId="tpck.1169194664001" value="StringLiteral_Editor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1080902646656">
@@ -570,39 +570,39 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1200397529627" resolveInfo="CharConstant" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1201371426447">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1201372747873">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1201372606839" resolveInfo="DefaultPropertyImplementation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1201385314864">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1201385106094" resolveInfo="PropertyReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1201399229469">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1201398722958" resolveInfo="CustomPropertyImplementation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202003995106">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom.set" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1202003934320" resolveInfo="ValueParameter" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202065265871">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1202065242027" resolveInfo="DefaultGetAccessor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202077758004">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.default" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.default" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1202077725299" resolveInfo="DefaultSetAccessor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202592948527">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom.set" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1201476912089" resolveInfo="SetAccessor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202592971676">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1201402044357" resolveInfo="GetAccessor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202948896126">
@@ -700,15 +700,15 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1224575136086" resolveInfo="EnumValueOfExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1225271443193">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1225271443097" resolveInfo="StringBooleanOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1225271485078">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1225271484915" resolveInfo="SubstringExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1225271546555">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1225271546410" resolveInfo="TrimOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1225894572070">
@@ -942,7 +942,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1153952380246" resolveInfo="TryStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1461424660015405640">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1461424660015405635" resolveInfo="EscapeOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4836112446988635824">
@@ -971,7 +971,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1171903862077" resolveInfo="LowerBoundType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5862977038373005083">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1251851371723517378">

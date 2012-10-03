@@ -69,7 +69,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847518">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847533">
@@ -126,7 +126,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104859430">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1201385106094" resolveInfo="PropertyReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104860474">
@@ -134,7 +134,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1197029447546" resolveInfo="FieldReferenceOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213107435885">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1201372346056" resolveInfo="PropertyImplementation" />
       <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="tpee.1201372606839" resolveInfo="DefaultPropertyImplementation" />
     </node>
@@ -147,7 +147,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1225271316036">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1225271315873" resolveInfo="BaseStringOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1225995033549">
@@ -220,7 +220,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.4972933694980447171" resolveInfo="BaseVariableDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5862977038373005231">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
     </node>
   </roots>

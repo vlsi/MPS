@@ -45,7 +45,7 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647385815">
       <property name="name" nameId="tpck.1169194664001" value="SplitStringIntoConcatenation" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647309293">
@@ -135,7 +135,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1202861044458">
       <property name="name" nameId="tpck.1169194664001" value="CreateSetAccessor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1201402044357" resolveInfo="GetAccessor" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1203413213560">
