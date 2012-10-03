@@ -1040,11 +1040,11 @@
     <nodeInfo nodeId="4167596265061428524" fileName="ChangeGroupLayout.java" startLine="181" startPosition="73" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4167596265061428527" fileName="ChangeGroupLayout.java" startLine="188" startPosition="86" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="867367425399296142" fileName="ChangeGroupLayout.java" startLine="195" startPosition="127" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748337504" fileName="ChangeGroupLayout.java" startLine="77" startPosition="88" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+    <nodeInfo nodeId="4652592318748337504" fileName="ChangeGroupLayout.java" startLine="77" startPosition="86" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="4652592318748337513" fileName="ChangeGroupLayout.java" startLine="81" startPosition="59" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-    <nodeInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="88" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+    <nodeInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="86" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="4652592318748337540" fileName="ChangeGroupLayout.java" startLine="90" startPosition="59" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-    <nodeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="109" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="107" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="4248833377599976638" fileName="ChangeGroupLayout.java" startLine="99" startPosition="59" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="4652592318748337573" fileName="ChangeGroupLayout.java" startLine="106" startPosition="103" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="4652592318748337585" fileName="ChangeGroupLayout.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addInvalidateListener#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupInvalidateListener;)V" />
@@ -1113,21 +1113,21 @@
     <scopeInfo nodeId="4652592318748337310" fileName="ChangeGroupLayout.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8859108093044314481" fileName="ChangeGroupLayout.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="4652592318748337415" fileName="ChangeGroupLayout.java" startLine="69" startPosition="58" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="4652592318748337504" fileName="ChangeGroupLayout.java" startLine="77" startPosition="88" endLine="81" endPosition="0">
+    <scopeInfo nodeId="4652592318748337504" fileName="ChangeGroupLayout.java" startLine="77" startPosition="86" endLine="81" endPosition="0">
       <varInfo nodeId="4652592318748337504" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748337513" fileName="ChangeGroupLayout.java" startLine="81" startPosition="59" endLine="85" endPosition="0">
       <varInfo nodeId="4652592318748337513" varName="a" />
       <varInfo nodeId="4652592318748337513" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="88" endLine="90" endPosition="0">
+    <scopeInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="86" endLine="90" endPosition="0">
       <varInfo nodeId="4652592318748337531" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748337540" fileName="ChangeGroupLayout.java" startLine="90" startPosition="59" endLine="94" endPosition="0">
       <varInfo nodeId="4652592318748337540" varName="a" />
       <varInfo nodeId="4652592318748337540" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="109" endLine="99" endPosition="0">
+    <scopeInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="107" endLine="99" endPosition="0">
       <varInfo nodeId="4248833377599976626" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="4248833377599976638" fileName="ChangeGroupLayout.java" startLine="99" startPosition="59" endLine="103" endPosition="0">
@@ -1224,11 +1224,11 @@
       <varInfo nodeId="4652592318748337333" varName="right" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748337319" fileName="ChangeGroupLayout.java" startLine="51" startPosition="0" endLine="112" endPosition="0" />
-    <unitInfo nodeId="4652592318748337504" fileName="ChangeGroupLayout.java" startLine="77" startPosition="54" endLine="81" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$4" />
+    <unitInfo nodeId="4652592318748337504" fileName="ChangeGroupLayout.java" startLine="77" startPosition="52" endLine="81" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$4" />
     <unitInfo nodeId="4652592318748337513" fileName="ChangeGroupLayout.java" startLine="81" startPosition="24" endLine="85" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$5" />
-    <unitInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="54" endLine="90" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$6" />
+    <unitInfo nodeId="4652592318748337531" fileName="ChangeGroupLayout.java" startLine="86" startPosition="52" endLine="90" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$6" />
     <unitInfo nodeId="4652592318748337540" fileName="ChangeGroupLayout.java" startLine="90" startPosition="24" endLine="94" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$7" />
-    <unitInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="74" endLine="99" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$8" />
+    <unitInfo nodeId="4248833377599976626" fileName="ChangeGroupLayout.java" startLine="95" startPosition="72" endLine="99" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$8" />
     <unitInfo nodeId="4248833377599976638" fileName="ChangeGroupLayout.java" startLine="99" startPosition="24" endLine="103" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$9" />
     <unitInfo nodeId="4652592318748337573" fileName="ChangeGroupLayout.java" startLine="106" startPosition="68" endLine="110" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$10" />
     <unitInfo nodeId="4652592318748337635" fileName="ChangeGroupLayout.java" startLine="132" startPosition="62" endLine="136" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout$11" />
