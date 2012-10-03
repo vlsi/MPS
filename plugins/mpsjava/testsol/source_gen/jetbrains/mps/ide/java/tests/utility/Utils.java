@@ -32,7 +32,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.ide.java.newparser.JavaSourceStubModelDS;
+import jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS;
 import java.util.ArrayList;
 import jetbrains.mps.ide.java.stubManagers.JavaSourceStubs;
 import java.util.Collection;
@@ -62,7 +62,7 @@ public class Utils {
     SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b")).getModuleReference());
 
     SModel mdl = new SModel(modRef);
-    List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), null, FeatureKind.CLASS_STUB, true);
+    List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true);
     Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
     SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
