@@ -30,7 +30,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1153179560115" resolveInfo="ClosureParameterReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104836770">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104840445">
@@ -38,11 +38,11 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104840453">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1170345865475" resolveInfo="AnonymousClass" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104840484">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1188206331916" resolveInfo="Annotation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104841381">
@@ -54,18 +54,18 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1109283449304" resolveInfo="TypeVariableReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104846249">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104846934">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1070475354124" resolveInfo="ThisExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847239">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1070475587102" resolveInfo="SuperConstructorInvocation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847359">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847518">
@@ -73,15 +73,15 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847533">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104847625">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104855712">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1073063089578" resolveInfo="SuperMethodCall" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104855742">
@@ -89,21 +89,22 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104855787">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1178893518978" resolveInfo="ThisConstructorInvocation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104855885">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104856125">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1178285077437" resolveInfo="ClassifierMember" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104856605">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104856628">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1083260308424" resolveInfo="EnumConstantReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104856698">
@@ -111,7 +112,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104856735">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104858479">
@@ -119,10 +120,11 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1188214545140" resolveInfo="AnnotationInstanceValue" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104858632">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104859410">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104859430">
@@ -130,7 +132,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1201385106094" resolveInfo="PropertyReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104860474">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1197029447546" resolveInfo="FieldReferenceOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213107435885">
@@ -143,7 +145,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1208890769693" resolveInfo="ArrayLengthOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1214583696654">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1225271316036">
@@ -151,10 +153,11 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1225271315873" resolveInfo="BaseStringOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1225995033549">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4898614932449980391">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2043122710974596217">
@@ -165,7 +168,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1116615150612" resolveInfo="ClassifierClassExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="267392325913486102">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="363746191845183794">
@@ -173,11 +176,11 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.363746191845183785" resolveInfo="LoopLabelReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="9048361382548188116">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1224575136086" resolveInfo="EnumValueOfExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="9048361382548212239">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1224573963862" resolveInfo="EnumValuesExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5363084893386564700">
@@ -197,10 +200,11 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1830039279190439966" resolveInfo="AdditionalForLoopVariable" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3066917033203129867">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7785501532031731655">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5205855332950450152">
@@ -208,7 +212,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.5205855332950442198" resolveInfo="ArrayCloneOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7474456048895327068">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2030079436469605452">

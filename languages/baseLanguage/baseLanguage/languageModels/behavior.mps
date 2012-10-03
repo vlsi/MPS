@@ -56,7 +56,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068581242867" resolveInfo="LongType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877220084">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1170345865475" resolveInfo="AnonymousClass" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877221089">
@@ -66,7 +66,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070475354124" resolveInfo="ThisExpression" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877231045">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877233871">
@@ -77,10 +77,11 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070534058343" resolveInfo="NullLiteral" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877243781">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877267257">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1083245097125" resolveInfo="EnumClass" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877269056">
@@ -108,14 +109,15 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1171903607971" resolveInfo="WildCardType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877303489">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877305150">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1178285077437" resolveInfo="ClassifierMember" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877306256">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877308091">
@@ -169,7 +171,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877351133">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877352267">
@@ -177,7 +179,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070534760951" resolveInfo="ArrayType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877355772">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877360520">
@@ -185,11 +187,11 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1206060495898" resolveInfo="ElsifClause" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877366364">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1178893518978" resolveInfo="ThisConstructorInvocation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877367054">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1188206331916" resolveInfo="Annotation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877374431">
@@ -209,11 +211,11 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877400601">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1083260308424" resolveInfo="EnumConstantReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877410069">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877410687">
@@ -253,17 +255,18 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201372346056" resolveInfo="PropertyImplementation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877433049">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1204053956946" resolveInfo="IMethodCall" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877435147">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877435744">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1201183863028" resolveInfo="TypeDerivable" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877436332">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877440703">
@@ -283,7 +286,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1116615150612" resolveInfo="ClassifierClassExpression" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877476691">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070475587102" resolveInfo="SuperConstructorInvocation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877482533">
@@ -291,11 +294,11 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1212685548494" resolveInfo="ClassCreator" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877484358">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877492560">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1083245299891" resolveInfo="EnumConstantDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877494733">
@@ -311,7 +314,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877509933">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877517475">
@@ -325,7 +328,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877520962">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1197029447546" resolveInfo="FieldReferenceOperation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877522907">
@@ -337,11 +340,11 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1164118113764" resolveInfo="PrimitiveType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877524603">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877525333">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877529126">
@@ -353,15 +356,15 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877531969">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1194952169813" resolveInfo="IMemberContainer" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877536667">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1081236700938" resolveInfo="StaticMethodDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877539511">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1073063089578" resolveInfo="SuperMethodCall" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1215696234405">
@@ -373,6 +376,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1220005182656">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1219920932475" resolveInfo="VariableArityType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1221567298370">
@@ -401,10 +405,11 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1199653749349" resolveInfo="IStatementListContainer" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1233076309785">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1188208481402" resolveInfo="HasAnnotation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1233077629853">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1233920947404">
@@ -484,7 +489,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8884554759541377993">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1206629501431" resolveInfo="InstanceInitializer" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5412515780383113069">
@@ -537,14 +542,15 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.3262277503800813725" resolveInfo="ILocalReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8559617843245351005">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8559617843245426455">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5039675756633082348">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1221737317277" resolveInfo="StaticInitializer" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4609636120081351394">

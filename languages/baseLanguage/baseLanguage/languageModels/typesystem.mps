@@ -178,11 +178,11 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176904326893">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_EnumConstantDeclaration" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176905111758">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_EnumConstantReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176907563784">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_InstanceOfExpression" />
@@ -336,7 +336,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1194623838236">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AnonymousClass" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1194624206045">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AnonymousClassCreator" />
@@ -356,7 +356,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1197029977451">
       <property name="name" nameId="tpck.1169194664001" value="typeof_FieldReferenceOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1197313434315">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptFunctionParameter" />
@@ -391,7 +391,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1204056354664">
       <property name="name" nameId="tpck.1169194664001" value="typeof_InstanceMethodCallOperation" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1204200594298">
       <property name="name" nameId="tpck.1169194664001" value="any_type_supertypeof_nulltype" />
@@ -410,7 +410,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207556276911">
       <property name="name" nameId="tpck.1169194664001" value="check_InstanceInitializer" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1208355936702">
       <property name="name" nameId="tpck.1169194664001" value="ObjectArraySupertypes" />
@@ -428,7 +428,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1210175778925">
       <property name="name" nameId="tpck.1169194664001" value="checkThrowsOfMethodIsCaught" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1210182292392">
       <property name="name" nameId="tpck.1169194664001" value="checkThrowedByThrowIsCaught" />
@@ -457,11 +457,11 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1217023658415">
       <property name="name" nameId="tpck.1169194664001" value="typeof_IOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1219921316999">
       <property name="name" nameId="tpck.1169194664001" value="check_VariableArityType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1219948071216">
       <property name="name" nameId="tpck.1169194664001" value="check_parametersCount" />
@@ -487,22 +487,22 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1221637809819">
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="typeof_ClassConcept" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1221737503734">
       <property name="name" nameId="tpck.1169194664001" value="check_StaticInitializer" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1223640197349">
       <property name="name" nameId="tpck.1169194664001" value="DataFlowUtil" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1224574932971">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EnumValuesExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1224575656586">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EnumValueOfExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.enum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1225197179133">
       <property name="name" nameId="tpck.1169194664001" value="check_StringTypeClassifierType" />
@@ -554,11 +554,11 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1228406942093">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractMethodsInClass" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1228992488875">
       <property name="name" nameId="tpck.1169194664001" value="check_LocalStaticMethodCall" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1230476723779">
       <property name="name" nameId="tpck.1169194664001" value="Class_Void_weak_supertypeof_void" />
@@ -577,7 +577,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1239631684045">
       <property name="name" nameId="tpck.1169194664001" value="check_FieldIsNeverUsedOrAssigned" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1239715048280">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AbstractUnaryNumberOperation" />
@@ -619,6 +619,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2782601603365239753">
       <property name="name" nameId="tpck.1169194664001" value="check_HasSuperConstructorCall" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4646069078285986155">
       <property name="name" nameId="tpck.1169194664001" value="voidArraysAreIllegal" />
@@ -662,7 +663,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1906502351318602269">
       <property name="name" nameId="tpck.1169194664001" value="check_DuplicateMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3293010995237496520">
       <property name="name" nameId="tpck.1169194664001" value="check_ClassDoesNotExtendFinalClass" />
@@ -696,7 +697,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765598940459">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765599287313">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticInitializer" />
@@ -704,7 +705,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765599292945">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticFields" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="498633765599637389">
       <property name="name" nameId="tpck.1169194664001" value="MakeInnerClassStatic" />
@@ -731,7 +732,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8620077627875074983">
       <property name="name" nameId="tpck.1169194664001" value="check_UnusedPrivateMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1260930188116714148">
       <property name="name" nameId="tpck.1169194664001" value="PrimitiveTypesInInstanceOfNotAllowed" />
@@ -746,7 +747,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8218132442157467380">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ThisConstructorInvocation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8218132442157478804">
       <property name="name" nameId="tpck.1169194664001" value="check_ConstructorInvocationStatementIsFirstStatement" />
@@ -757,7 +758,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6624237184120284147">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationMethodDeclarationReturnType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6624237184121136115">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationInstanceHasAllValues" />
@@ -801,11 +802,12 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2089334432680122742">
       <property name="name" nameId="tpck.1169194664001" value="check_DuplicateEnumConstants" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4940013265625385407">
       <property name="name" nameId="tpck.1169194664001" value="typeof_LocalInstanceMethodCall" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5205855332950452916">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ArrayCloneOperation" />
@@ -826,7 +828,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5569019188765049975">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SuperMethodCall" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="4691618959158120626">
       <property name="name" nameId="tpck.1169194664001" value="subtypesOfLowerBoundType" />
@@ -874,7 +876,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2233570453276392912">
       <property name="name" nameId="tpck.1169194664001" value="typeof_LocalInstanceFieldReference" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3306910260423123726">
       <property name="name" nameId="tpck.1169194664001" value="check_switchArgument" />

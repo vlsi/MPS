@@ -32,23 +32,24 @@
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="2869783065404758436">
       <property name="name" nameId="tpck.1169194664001" value="MakeFieldFinal" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Make Field Final" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="5142438244426791432">
       <property name="name" nameId="tpck.1169194664001" value="MoveStaticField" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Static Field" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="418677511065471952">
       <property name="name" nameId="tpck.1169194664001" value="MoveStaticMethod" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Static Method" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="4946830740863976385">
       <property name="name" nameId="tpck.1169194664001" value="ConvertAnonymousClass" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Convert Anonymous to Inner Class" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="9118878263582100185">
