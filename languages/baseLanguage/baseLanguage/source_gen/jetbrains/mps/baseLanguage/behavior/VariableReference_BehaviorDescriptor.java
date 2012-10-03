@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public abstract class VariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements TypeAnnotable_BehaviorDescriptor, IVariableReference_BehaviorDescriptor {
+public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements TypeAnnotable_BehaviorDescriptor, IVariableReference_BehaviorDescriptor {
   public VariableReference_BehaviorDescriptor() {
   }
 
