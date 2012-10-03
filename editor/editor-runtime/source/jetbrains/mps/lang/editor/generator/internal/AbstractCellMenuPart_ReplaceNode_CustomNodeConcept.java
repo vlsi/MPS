@@ -16,12 +16,12 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.*;
 
@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPart, IChildNodeSetter {
 
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     SNode parent = node.getParent();
     if (parent == null) {
@@ -62,9 +62,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
           SNode result = super.substitute(context, pattern);
           
           if (selectedCellId != null) {
-            EditorCell toSelect = context.getNodeEditorComponent().findCellWithId(result, selectedCellId);
+            EditorCell toSelect = ((jetbrains.mps.nodeEditor.EditorContext) context).getNodeEditorComponent().findCellWithId(result, selectedCellId);
             if (toSelect != null) {
-              context.select(result, selectedCellId);
+              ((jetbrains.mps.nodeEditor.EditorContext) context).select(result, selectedCellId);
               if (context.getSelectedCell() instanceof EditorCell_Label) {
                 ((EditorCell_Label) context.getSelectedCell()).end();
               }

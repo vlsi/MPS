@@ -27,4 +27,6 @@ public interface EditorCell {
   int getHeight();
 
   EditorContext getContext();
+
+  String getCellId();
 }

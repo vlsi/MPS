@@ -427,7 +427,7 @@ public class EditorManager {
         List wrapperList = new LinkedList();
         for (final Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
-            public SNode substitute(@Nullable EditorContext context, String pattern) {
+            public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   SNodeEditorUtil.removeRightTransformHint(node);
