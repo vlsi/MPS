@@ -103,7 +103,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1075379419312">
       <property name="name" nameId="tpck.1169194664001" value="IfStatement_Editor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1075380566828">
@@ -139,7 +139,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1081264157973">
       <property name="name" nameId="tpck.1169194664001" value="WhileStatement_Editor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1076505808687" resolveInfo="WhileStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1081790432906">
@@ -284,11 +284,11 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1070534934090" resolveInfo="CastExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1144226417952">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1144226303539" resolveInfo="ForeachStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1144231351548">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1144231330558" resolveInfo="ForStatement" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1144367099981">
@@ -311,7 +311,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1153179560115" resolveInfo="ClosureParameterReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1153952460625">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1153952380246" resolveInfo="TryStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1154543001514">
@@ -334,18 +334,18 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1163668896201" resolveInfo="TernaryOperatorExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1163670694952">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1163670641947" resolveInfo="SwitchCase" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1163670786880">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1163670490218" resolveInfo="SwitchStatement" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1163704265146">
       <property name="name" nameId="tpck.1169194664001" value="QueriesUtil" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1164880014998">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1164879751025" resolveInfo="TryCatchStatement" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1164883858924">
@@ -358,11 +358,11 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1164903401135">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1164903280175" resolveInfo="CatchClause" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1164991126499">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1164991038168" resolveInfo="ThrowStatement" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1166027091157">
@@ -445,7 +445,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1177666725159">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1177666668936" resolveInfo="DoWhileStatement" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1178547675197">
@@ -555,7 +555,7 @@
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1199465658351">
       <property name="name" nameId="tpck.1169194664001" value="AbstractLoopStatement_Label_Actions" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1199466353637">
@@ -610,7 +610,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206060906745">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1206060495898" resolveInfo="ElsifClause" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1206565009193">
@@ -688,7 +688,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1224071154655" resolveInfo="AsExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1224071180797">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1224071180699" resolveInfo="UsingStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1224574042506">
@@ -800,11 +800,11 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="363746191845175148">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.363746191845175146" resolveInfo="LoopLabel" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="363746191845183787">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.363746191845183785" resolveInfo="LoopLabelReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6329021646629104959">
@@ -839,7 +839,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1204053956946" resolveInfo="IMethodCall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1830039279190442603">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1830039279190439966" resolveInfo="AdditionalForLoopVariable" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="772870278648919542">

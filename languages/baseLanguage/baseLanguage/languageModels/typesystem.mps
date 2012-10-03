@@ -57,7 +57,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1175520467269">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_Switch" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1175522835145">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_TernaryOperator" />
@@ -107,7 +107,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176561466494">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ForeachStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176718067025">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BaseVariableDeclaration" />
@@ -119,7 +119,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176895771658">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_WhileStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176895858705">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_StringLiteral" />
@@ -127,11 +127,11 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176896028282">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ThrowStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176896711973">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_CatchClause" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176896957096">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_GenericNewExpression" />
@@ -153,7 +153,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176898805542">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_IfStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1176898900727">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ClassifierClassExpression" />
@@ -312,7 +312,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1177667343208">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_DoWhileStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178585407565">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ConceptFunction" />
@@ -402,7 +402,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1206069292242">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ElsifClause" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1206984232961">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptFunction" />
@@ -742,7 +742,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1830039279190444602">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AdditionalForLoopVariable" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8218132442157467380">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ThisConstructorInvocation" />
@@ -773,7 +773,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5915179142332645884">
       <property name="name" nameId="tpck.1169194664001" value="checkTypesInForStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4276006055364077538">
       <property name="name" nameId="tpck.1169194664001" value="check_BaseMethodDeclaration" />
@@ -838,7 +838,7 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3073231036166000665">
       <property name="name" nameId="tpck.1169194664001" value="check_UsingStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="419889540470201426">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationForVoidMethod" />
@@ -916,7 +916,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9035995549588750859">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SwitchCase" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1461424660015406123">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EscapeOperation" />

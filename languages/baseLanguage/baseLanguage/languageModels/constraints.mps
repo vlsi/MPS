@@ -169,7 +169,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="363746191845183794">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.363746191845183785" resolveInfo="LoopLabelReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="9048361382548188116">
@@ -193,7 +193,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.2580416627845338977" resolveInfo="ImplicitAnnotationInstanceValue" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="6791390962478915903">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1830039279190439966" resolveInfo="AdditionalForLoopVariable" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3066917033203129867">

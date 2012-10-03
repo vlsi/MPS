@@ -26,7 +26,7 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1201381967720">
       <property name="name" nameId="tpck.1169194664001" value="mc_baseLanguage" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1201570124301">
       <property name="name" nameId="tpck.1169194664001" value="weave_Property" />
