@@ -187,7 +187,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1145552977093" resolveInfo="GenericNewExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1210954246889">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="comments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1168622733562" resolveInfo="RemarkStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1214499184018">

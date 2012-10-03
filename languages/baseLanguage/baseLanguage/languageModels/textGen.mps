@@ -41,7 +41,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188207840427" resolveInfo="AnnotationInstance" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234887379769">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1188214482800" resolveInfo="AnnotationInstanceExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234887419578">
@@ -286,7 +286,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1214918800624" resolveInfo="PostfixIncrementExpression" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130883519">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="comments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1168622733562" resolveInfo="RemarkStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235130950225">
@@ -393,7 +393,7 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149361338">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1177714083117" resolveInfo="VarType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235149549592">
@@ -505,7 +505,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="lang" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1237807733680">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="comments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1232461062092" resolveInfo="CommentedStatement" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1239710466732">

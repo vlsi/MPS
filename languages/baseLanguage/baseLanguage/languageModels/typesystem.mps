@@ -324,7 +324,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1188221527784">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AnnotationInstanceExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1188221806902">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AnnotationInstanceValue" />
@@ -594,7 +594,7 @@
     </node>
     <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1241450769537">
       <property name="name" nameId="tpck.1169194664001" value="any_type_supertypeof_bottom" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1241543390448">
       <property name="name" nameId="tpck.1169194664001" value="check_EnumConstantHasConstructorDeclaration" />
