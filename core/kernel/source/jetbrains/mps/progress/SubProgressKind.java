@@ -20,6 +20,7 @@ package jetbrains.mps.progress;
  */
 public enum SubProgressKind {
   DEFAULT,
+  REPLACING,
   AS_COMMENT,
   IGNORED
 }
