@@ -19493,8 +19493,7 @@
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2163048091639855046">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2163048091639855047">
-                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2163048091639855016" resolveInfo="A" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2649714743338264004">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2163048091639855062" resolveInfo="s" />
                                 </node>
                               </node>
