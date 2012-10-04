@@ -561,7 +561,7 @@
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256418407">
                   <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel3.sub" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
-                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel1s" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="jetsbrains.mps.ide.java.testMaterial.testModel3.sub" />
                 </node>
               </node>
             </node>

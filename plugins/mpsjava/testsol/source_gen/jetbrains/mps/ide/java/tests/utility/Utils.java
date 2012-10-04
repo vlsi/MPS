@@ -313,4 +313,29 @@ public class Utils {
       buildNodeMap(SLinkOperations.getTargets(leftMthd, "typeVariableDeclaration", true), SLinkOperations.getTargets(MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, "name")), "typeVariableDeclaration", true), nodeMap);
     }
   }
+
+  public static void buildMethodBodyNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
+
+    List<SNode> leftVars = new ArrayList<SNode>();
+    ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(left, "parameter", true)));
+    ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(left, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass"})));
+
+    List<SNode> rightVars = new ArrayList<SNode>();
+    ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(right, "parameter", true)));
+    ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(right, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass"})));
+
+    buildJustNodeMap(leftVars, rightVars, nodeMap);
+  }
+
+  public static void buildJustNodeMap(List<SNode> left, List<SNode> right, Map<SNode, SNode> nodeMap) {
+    Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
+    for (SNode rightNode : ListSequence.fromList(right)) {
+      MapSequence.fromMap(rightIndex).put(SPropertyOperations.getString(rightNode, "name"), rightNode);
+    }
+
+    for (SNode leftNode : ListSequence.fromList(left)) {
+      // <node> 
+      MapSequence.fromMap(nodeMap).put(leftNode, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftNode, "name")));
+    }
+  }
 }
