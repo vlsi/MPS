@@ -26,25 +26,26 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1201381967720">
       <property name="name" nameId="tpck.1169194664001" value="mc_baseLanguage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1201570124301">
       <property name="name" nameId="tpck.1169194664001" value="weave_Property" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1202577940061">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ValueParameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="property.implementation.custom.set" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property.implementation.custom.set" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1202003934320" resolveInfo="ValueParameter" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1206152999436">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssignmentExpression_propertySet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1068498886294" resolveInfo="AssignmentExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1206154637872">
       <property name="name" nameId="tpck.1169194664001" value="reduce_DotExpression_propertyGet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1224072707336">
@@ -53,11 +54,12 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5862977038373365416">
       <property name="name" nameId="tpck.1169194664001" value="reduceGetProperty" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.property" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5862977038373397976">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssignmentExpression_localPropertySet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1068498886294" resolveInfo="AssignmentExpression" />
     </node>
   </roots>

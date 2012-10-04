@@ -435,7 +435,7 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       }
-      CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+      CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
 
       if (!myDiscardTransients) { // tracing
@@ -495,7 +495,7 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       }
-      CloneUtil.cloneModel(currentModel, currentOutputModel_clone, false);
+      CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, postMappingScripts);

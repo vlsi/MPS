@@ -24,6 +24,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.Future;
@@ -33,71 +34,61 @@ import java.util.concurrent.Future;
  */
 public class NoMakeService implements IMakeService, ApplicationComponent {
 
-    @Override
-    public boolean openNewSession(MakeSession session) {
-        return false;
-    }
+  @Override
+  public boolean openNewSession(MakeSession session) {
+    return false;
+  }
 
-    @Override
-    public void closeSession(MakeSession session) {
-    }
+  @Override
+  public void closeSession(MakeSession session) {
+  }
 
-    @Override
-    public boolean isSessionActive() {
-        return false;
-    }
+  @Override
+  public boolean isSessionActive() {
+    return false;
+  }
 
-    @Override
-    public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-        return null;
-    }
+  @Override
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
+    return null;
+  }
 
-    @Override
-    public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-        return null;
-    }
+  @Override
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
+    return null;
+  }
 
-    @Override
-    public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-        return null;
-    }
+  @Override
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
+    return null;
+  }
 
-    @Override
-    public void addListener(IMakeNotificationListener listener) {
-    }
+  @Override
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
 
-    @Override
-    public void removeListener(IMakeNotificationListener listener) {
-    }
+  @Override
+  public void addListener(IMakeNotificationListener listener) {
+  }
 
-    @Override
-    public Future<IResult> make(Iterable<? extends IResource> resources) {
-        return null;
-    }
+  @Override
+  public void removeListener(IMakeNotificationListener listener) {
+  }
 
-    @Override
-    public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
-        return null;
-    }
+  @Override
+  public void initComponent() {
+    IMakeService.INSTANCE.set(this);
+  }
 
-    @Override
-    public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-        return null;
-    }
+  @Override
+  public void disposeComponent() {
+    IMakeService.INSTANCE.set(null);
+  }
 
-    @Override
-    public void initComponent() {
-        IMakeService.INSTANCE.set(this);
-    }
-
-    @Override
-    public void disposeComponent() {
-        IMakeService.INSTANCE.set(null);
-    }
-
-    @NotNull
-    @Override
-    public String getComponentName() {
-        return "dummy make service";
-    }
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "dummy make service";
+  }
 }

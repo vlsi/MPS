@@ -115,7 +115,6 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
     };
 
-    final ProgressMonitor emptyMonitor = new EmptyProgressMonitor();
     return new IScriptController.Stub() {
       public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
@@ -139,15 +138,10 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
 
       public void setup(IPropertiesPool pool) {
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         vars._0(TestMakeService.this.context.getProject());
         vars._1(TestMakeService.this.context);
         vars._2(true);
-        vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
-          public ProgressMonitor invoke() {
-            return emptyMonitor;
-          }
-        });
 
         if (ctl != null) {
           ctl.setup(pool);
