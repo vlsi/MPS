@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-e6o0tnnirlu5juunvpdsvvxwf9gax6n">
+<dependencies version="2" modelHash="-avnxmlthchduatda9zonvq2jv9efiqu">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -28,7 +28,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="ec3gznkwxykcw7q10wncyfqe3at1s9u" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-4k44ybwq2g6zc18mjjsav3xockrqde1" />
   <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="-4l9ecfc6vmjqywdztr7kpf8rd86a2b3" />
-  <dep model="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" hash="-vz8t093cj1542mi1alohb2q7pjz432" />
+  <dep model="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" hash="8d1s83ft8lkh3z8b62tdbasb70234m" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-7a2x0ckvyi3q05eh2sxnpwh84qw700g" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-asi84pp0bhs32ubevt2l4dhgh4ez9z9" />
@@ -2158,7 +2158,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SimpleFindForExtractFromManyStatements_Test.java" />
   </source>
-  <source id="8155843501976326915" name="ExtractMethodWithOutputVaryableFromStatement" hash="b7qj2f71oi8q0840txi52hja5g2frgk" dependsOnNodes="true">
+  <source id="8155843501976326915" name="ExtractMethodWithOutputVaryableFromStatement" hash="-2c22omxktzi7b31bcivwnlkhpm9ll1l" dependsOnNodes="true">
     <dep root="418758558327350364" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -2183,7 +2183,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractMethodWithOutputVaryableFromStatement_Test.java" />
   </source>
-  <source id="8155843501977546256" name="ReplaceOutputVaryable" hash="9vymrwxfk4y9yie1s6liok5trtc374h" dependsOnNodes="true">
+  <source id="8155843501977546256" name="ReplaceOutputVaryable" hash="-2eu4v5i1ifwfx8mgs2c2lzmdg83y99g" dependsOnNodes="true">
     <dep root="418758558327350364" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -2405,7 +2405,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntroduceConstantFromAnonimousClass_Test.java" />
   </source>
-  <source id="6195342755328023609" name="ExtractAddingNewDeclaration" hash="-8ua1noh08lkvswwukd8q7en4gky2cli" dependsOnNodes="true">
+  <source id="6195342755328023609" name="ExtractAddingNewDeclaration" hash="3958fu0epd3i5q3t18gjqxb9v0lejna" dependsOnNodes="true">
     <dep root="418758558327350364" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -2430,7 +2430,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractAddingNewDeclaration_Test.java" />
   </source>
-  <source id="6195342755328044201" name="FindForMethodWithOutputVariable" hash="b12lfv2ydh96fb6rn8cimquxqxvp55x" dependsOnNodes="true">
+  <source id="6195342755328044201" name="FindForMethodWithOutputVariable" hash="-2qihpi6s1hx1doetqt98rvw34in2zdq" dependsOnNodes="true">
     <dep root="418758558327350364" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
