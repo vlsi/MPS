@@ -5304,7 +5304,7 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1866379231788528084">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xgk.5815802410604953831" resolveInfo="HidingByNameScope" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1866379231788528085">
-                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1866379231788528086">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1866379231788528091" resolveInfo="kind" />
@@ -5374,7 +5374,7 @@
         <property name="name" nameId="tpck.1169194664001" value="variables" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="4143990013474875891">
           <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4143990013474875892">
-            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
           </node>
         </node>
       </node>
@@ -5419,7 +5419,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4143990013475289665">
         <property name="name" nameId="tpck.1169194664001" value="variable" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4143990013475289674">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4143990013475289668">
