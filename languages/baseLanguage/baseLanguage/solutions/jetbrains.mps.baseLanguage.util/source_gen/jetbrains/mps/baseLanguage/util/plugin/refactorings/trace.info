@@ -4574,216 +4574,216 @@
     <unitInfo nodeId="8492459591399168919" fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
   </root>
   <root nodeId="8492459591399169241" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
-    <nodeInfo nodeId="8492459591399169248" fileName="IntroduceConstantRefactoring.java" startLine="19" startPosition="32" endLine="20" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169272" fileName="IntroduceConstantRefactoring.java" startLine="20" startPosition="232" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169282" fileName="IntroduceConstantRefactoring.java" startLine="21" startPosition="114" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420165" fileName="IntroduceConstantRefactoring.java" startLine="22" startPosition="113" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8459194913967420170" fileName="IntroduceConstantRefactoring.java" startLine="23" startPosition="14" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967351500" fileName="IntroduceConstantRefactoring.java" startLine="26" startPosition="72" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169299" fileName="IntroduceConstantRefactoring.java" startLine="29" startPosition="5" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8459194913967327430" fileName="IntroduceConstantRefactoring.java" startLine="33" startPosition="45" endLine="34" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967395693" fileName="IntroduceConstantRefactoring.java" startLine="35" startPosition="129" endLine="36" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967351447" fileName="IntroduceConstantRefactoring.java" startLine="37" startPosition="5" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8459194913967420196" fileName="IntroduceConstantRefactoring.java" startLine="42" startPosition="131" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420209" fileName="IntroduceConstantRefactoring.java" startLine="44" startPosition="12" endLine="45" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6140205464397988611" fileName="IntroduceConstantRefactoring.java" startLine="49" startPosition="50" endLine="50" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="57" startPosition="112" endLine="58" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="58" startPosition="26" endLine="59" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="59" startPosition="67" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="60" startPosition="32" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="61" startPosition="32" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169248" fileName="IntroduceConstantRefactoring.java" startLine="21" startPosition="32" endLine="22" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169272" fileName="IntroduceConstantRefactoring.java" startLine="22" startPosition="232" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169282" fileName="IntroduceConstantRefactoring.java" startLine="23" startPosition="114" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420165" fileName="IntroduceConstantRefactoring.java" startLine="24" startPosition="113" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8459194913967420170" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="14" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967351500" fileName="IntroduceConstantRefactoring.java" startLine="28" startPosition="72" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169299" fileName="IntroduceConstantRefactoring.java" startLine="31" startPosition="5" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8459194913967327430" fileName="IntroduceConstantRefactoring.java" startLine="35" startPosition="45" endLine="36" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967395693" fileName="IntroduceConstantRefactoring.java" startLine="37" startPosition="129" endLine="38" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967351447" fileName="IntroduceConstantRefactoring.java" startLine="39" startPosition="5" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8459194913967420196" fileName="IntroduceConstantRefactoring.java" startLine="44" startPosition="176" endLine="45" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420209" fileName="IntroduceConstantRefactoring.java" startLine="46" startPosition="12" endLine="47" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6140205464397988611" fileName="IntroduceConstantRefactoring.java" startLine="51" startPosition="50" endLine="52" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="59" startPosition="112" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="60" startPosition="26" endLine="61" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="61" startPosition="67" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="62" startPosition="32" endLine="63" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="64" startPosition="7" endLine="65" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="65" startPosition="171" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="66" startPosition="43" endLine="67" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="67" startPosition="53" endLine="68" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="69" startPosition="9" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="70" startPosition="45" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="72" startPosition="66" endLine="73" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="74" startPosition="18" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="75" startPosition="57" endLine="76" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="78" startPosition="38" endLine="79" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="82" startPosition="9" endLine="83" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="83" startPosition="46" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="85" startPosition="66" endLine="86" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="87" startPosition="18" endLine="88" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="88" startPosition="57" endLine="89" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="91" startPosition="38" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="95" startPosition="9" endLine="96" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="96" startPosition="46" endLine="97" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="98" startPosition="66" endLine="99" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="100" startPosition="18" endLine="101" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="101" startPosition="57" endLine="102" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="104" startPosition="38" endLine="105" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="107" startPosition="9" endLine="108" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="109" startPosition="7" endLine="110" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="118" startPosition="49" endLine="119" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="119" startPosition="26" endLine="120" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="120" startPosition="67" endLine="121" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="122" startPosition="7" endLine="123" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="123" startPosition="174" endLine="124" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="124" startPosition="43" endLine="125" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="125" startPosition="78" endLine="126" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="127" startPosition="7" endLine="128" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="136" startPosition="49" endLine="137" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="137" startPosition="26" endLine="138" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="138" startPosition="67" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="140" startPosition="7" endLine="141" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="141" startPosition="174" endLine="142" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="142" startPosition="43" endLine="143" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="143" startPosition="78" endLine="144" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="145" startPosition="7" endLine="146" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="154" startPosition="69" endLine="155" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="155" startPosition="26" endLine="156" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="156" startPosition="67" endLine="157" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="158" startPosition="7" endLine="159" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="159" startPosition="169" endLine="160" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="160" startPosition="43" endLine="161" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="161" startPosition="69" endLine="162" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="162" startPosition="78" endLine="163" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="164" startPosition="7" endLine="165" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169242" fileName="IntroduceConstantRefactoring.java" startLine="15" startPosition="80" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceConstantRefactoring#()V" />
-    <nodeInfo nodeId="8459194913967420207" fileName="IntroduceConstantRefactoring.java" startLine="44" startPosition="10" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="53" startPosition="52" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0#()V" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="114" startPosition="55" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0d0a#()V" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="132" startPosition="55" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0a0c#()V" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="150" startPosition="56" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0a0a2#()V" />
-    <nodeInfo nodeId="8459194913967351492" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8459194913967395675" fileName="IntroduceConstantRefactoring.java" startLine="34" startPosition="123" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="74" startPosition="16" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="77" startPosition="11" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="87" startPosition="16" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="90" startPosition="11" endLine="93" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="100" startPosition="16" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="103" startPosition="11" endLine="106" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6140205464397988602" fileName="IntroduceConstantRefactoring.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8459194913967378074" fileName="IntroduceConstantRefactoring.java" startLine="24" startPosition="49" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8459194913967420176" fileName="IntroduceConstantRefactoring.java" startLine="41" startPosition="58" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="71" startPosition="30" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="84" startPosition="30" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="97" startPosition="30" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="121" startPosition="32" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="121" startPosition="32" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="139" startPosition="32" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="139" startPosition="32" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="157" startPosition="32" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="157" startPosition="32" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8459194913967327422" fileName="IntroduceConstantRefactoring.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4001355776228087202" fileName="IntroduceConstantRefactoring.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="68" startPosition="65" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="68" startPosition="65" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="81" startPosition="9" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="81" startPosition="9" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="94" startPosition="9" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="94" startPosition="9" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="117" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="135" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399169246" fileName="IntroduceConstantRefactoring.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="153" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="63" startPosition="32" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="63" startPosition="32" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="56" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="8492459591399169243" fileName="IntroduceConstantRefactoring.java" startLine="16" startPosition="41" endLine="16" endPosition="41" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="54" startPosition="43" endLine="54" endPosition="43" />
-    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="115" startPosition="46" endLine="115" endPosition="46" />
-    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="133" startPosition="46" endLine="133" endPosition="46" />
-    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="151" startPosition="47" endLine="151" endPosition="47" />
-    <scopeInfo nodeId="8459194913967351495" fileName="IntroduceConstantRefactoring.java" startLine="26" startPosition="72" endLine="27" endPosition="47" />
-    <scopeInfo nodeId="8459194913967395677" fileName="IntroduceConstantRefactoring.java" startLine="35" startPosition="129" endLine="36" endPosition="124" />
-    <scopeInfo nodeId="8459194913967420177" fileName="IntroduceConstantRefactoring.java" startLine="42" startPosition="131" endLine="43" endPosition="139" />
-    <scopeInfo nodeId="8459194913967420208" fileName="IntroduceConstantRefactoring.java" startLine="44" startPosition="12" endLine="45" endPosition="158" />
-    <scopeInfo nodeId="6140205464397988605" fileName="IntroduceConstantRefactoring.java" startLine="49" startPosition="50" endLine="50" endPosition="209" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="72" startPosition="66" endLine="73" endPosition="64" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="78" startPosition="38" endLine="79" endPosition="86" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="85" startPosition="66" endLine="86" endPosition="64" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="91" startPosition="38" endLine="92" endPosition="80" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="98" startPosition="66" endLine="99" endPosition="64" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="104" startPosition="38" endLine="105" endPosition="87" />
-    <scopeInfo nodeId="8492459591399169242" fileName="IntroduceConstantRefactoring.java" startLine="15" startPosition="80" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="53" startPosition="52" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="74" startPosition="18" endLine="76" endPosition="41" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="87" startPosition="18" endLine="89" endPosition="41" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="100" startPosition="18" endLine="102" endPosition="41" />
-    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="114" startPosition="55" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="132" startPosition="55" endLine="134" endPosition="5" />
-    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="150" startPosition="56" endLine="152" endPosition="5" />
-    <scopeInfo nodeId="8459194913967351492" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7">
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="63" startPosition="32" endLine="64" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="64" startPosition="32" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="66" startPosition="7" endLine="67" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="67" startPosition="171" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="68" startPosition="43" endLine="69" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="69" startPosition="53" endLine="70" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="71" startPosition="9" endLine="72" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="72" startPosition="45" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="74" startPosition="66" endLine="75" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="76" startPosition="18" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="77" startPosition="57" endLine="78" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="80" startPosition="38" endLine="81" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="84" startPosition="9" endLine="85" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="85" startPosition="46" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="87" startPosition="66" endLine="88" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="89" startPosition="18" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="90" startPosition="57" endLine="91" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="93" startPosition="38" endLine="94" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="97" startPosition="9" endLine="98" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="98" startPosition="46" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="100" startPosition="66" endLine="101" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="102" startPosition="18" endLine="103" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="103" startPosition="57" endLine="104" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="106" startPosition="38" endLine="107" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="109" startPosition="9" endLine="110" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="111" startPosition="7" endLine="112" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="120" startPosition="49" endLine="121" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="121" startPosition="26" endLine="122" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="122" startPosition="67" endLine="123" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="124" startPosition="7" endLine="125" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="125" startPosition="174" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="126" startPosition="43" endLine="127" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="127" startPosition="78" endLine="128" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="129" startPosition="7" endLine="130" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="138" startPosition="49" endLine="139" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="139" startPosition="26" endLine="140" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="140" startPosition="67" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="142" startPosition="7" endLine="143" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="143" startPosition="174" endLine="144" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="144" startPosition="43" endLine="145" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="145" startPosition="78" endLine="146" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="147" startPosition="7" endLine="148" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="156" startPosition="69" endLine="157" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="157" startPosition="26" endLine="158" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="158" startPosition="67" endLine="159" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="160" startPosition="7" endLine="161" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="161" startPosition="169" endLine="162" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="162" startPosition="43" endLine="163" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="163" startPosition="69" endLine="164" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="164" startPosition="78" endLine="165" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="166" startPosition="7" endLine="167" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169242" fileName="IntroduceConstantRefactoring.java" startLine="17" startPosition="80" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceConstantRefactoring#()V" />
+    <nodeInfo nodeId="8459194913967420207" fileName="IntroduceConstantRefactoring.java" startLine="46" startPosition="10" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="55" startPosition="52" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0#()V" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="116" startPosition="55" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0d0a#()V" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="134" startPosition="55" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0a0c#()V" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="152" startPosition="56" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_2jj2z2_a0a0a0a0a2#()V" />
+    <nodeInfo nodeId="8459194913967351492" fileName="IntroduceConstantRefactoring.java" startLine="27" startPosition="32" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8459194913967395675" fileName="IntroduceConstantRefactoring.java" startLine="36" startPosition="123" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="76" startPosition="16" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="79" startPosition="11" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="89" startPosition="16" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="92" startPosition="11" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="102" startPosition="16" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="105" startPosition="11" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6140205464397988602" fileName="IntroduceConstantRefactoring.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8459194913967378074" fileName="IntroduceConstantRefactoring.java" startLine="26" startPosition="49" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8459194913967420176" fileName="IntroduceConstantRefactoring.java" startLine="43" startPosition="58" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="73" startPosition="30" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="86" startPosition="30" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="99" startPosition="30" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="123" startPosition="32" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="123" startPosition="32" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="141" startPosition="32" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="141" startPosition="32" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="159" startPosition="32" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="159" startPosition="32" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8459194913967327422" fileName="IntroduceConstantRefactoring.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4001355776228087202" fileName="IntroduceConstantRefactoring.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="70" startPosition="65" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="70" startPosition="65" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="83" startPosition="9" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="83" startPosition="9" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="96" startPosition="9" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="96" startPosition="9" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="119" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="137" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399169246" fileName="IntroduceConstantRefactoring.java" startLine="20" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="155" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="65" startPosition="32" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="65" startPosition="32" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="58" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8492459591399169243" fileName="IntroduceConstantRefactoring.java" startLine="18" startPosition="41" endLine="18" endPosition="41" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="56" startPosition="43" endLine="56" endPosition="43" />
+    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="117" startPosition="46" endLine="117" endPosition="46" />
+    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="135" startPosition="46" endLine="135" endPosition="46" />
+    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="153" startPosition="47" endLine="153" endPosition="47" />
+    <scopeInfo nodeId="8459194913967351495" fileName="IntroduceConstantRefactoring.java" startLine="28" startPosition="72" endLine="29" endPosition="47" />
+    <scopeInfo nodeId="8459194913967395677" fileName="IntroduceConstantRefactoring.java" startLine="37" startPosition="129" endLine="38" endPosition="124" />
+    <scopeInfo nodeId="8459194913967420177" fileName="IntroduceConstantRefactoring.java" startLine="44" startPosition="176" endLine="45" endPosition="139" />
+    <scopeInfo nodeId="8459194913967420208" fileName="IntroduceConstantRefactoring.java" startLine="46" startPosition="12" endLine="47" endPosition="158" />
+    <scopeInfo nodeId="6140205464397988605" fileName="IntroduceConstantRefactoring.java" startLine="51" startPosition="50" endLine="52" endPosition="209" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="74" startPosition="66" endLine="75" endPosition="64" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="80" startPosition="38" endLine="81" endPosition="86" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="87" startPosition="66" endLine="88" endPosition="64" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="93" startPosition="38" endLine="94" endPosition="80" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="100" startPosition="66" endLine="101" endPosition="64" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="106" startPosition="38" endLine="107" endPosition="87" />
+    <scopeInfo nodeId="8492459591399169242" fileName="IntroduceConstantRefactoring.java" startLine="17" startPosition="80" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="55" startPosition="52" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="76" startPosition="18" endLine="78" endPosition="41" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="89" startPosition="18" endLine="91" endPosition="41" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="102" startPosition="18" endLine="104" endPosition="41" />
+    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="116" startPosition="55" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="134" startPosition="55" endLine="136" endPosition="5" />
+    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="152" startPosition="56" endLine="154" endPosition="5" />
+    <scopeInfo nodeId="8459194913967351492" fileName="IntroduceConstantRefactoring.java" startLine="27" startPosition="32" endLine="30" endPosition="7">
       <varInfo nodeId="8459194913967351492" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967378076" fileName="IntroduceConstantRefactoring.java" startLine="25" startPosition="32" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="6140205464397988602" fileName="IntroduceConstantRefactoring.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="8459194913967378076" fileName="IntroduceConstantRefactoring.java" startLine="27" startPosition="32" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="6140205464397988602" fileName="IntroduceConstantRefactoring.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6140205464397988609" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="122" startPosition="7" endLine="126" endPosition="31">
+    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="124" startPosition="7" endLine="128" endPosition="31">
       <varInfo nodeId="8492459591399169295" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="140" startPosition="7" endLine="144" endPosition="31">
+    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="142" startPosition="7" endLine="146" endPosition="31">
       <varInfo nodeId="8459194913967420200" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967327427" fileName="IntroduceConstantRefactoring.java" startLine="33" startPosition="45" endLine="38" endPosition="21">
+    <scopeInfo nodeId="8459194913967327427" fileName="IntroduceConstantRefactoring.java" startLine="35" startPosition="45" endLine="40" endPosition="21">
       <varInfo nodeId="8459194913967327431" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="4001355776228087209" fileName="IntroduceConstantRefactoring.java" startLine="41" startPosition="58" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="158" startPosition="7" endLine="163" endPosition="31">
+    <scopeInfo nodeId="4001355776228087209" fileName="IntroduceConstantRefactoring.java" startLine="43" startPosition="58" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="160" startPosition="7" endLine="165" endPosition="31">
       <varInfo nodeId="8459194913967420217" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="121" startPosition="32" endLine="127" endPosition="7" />
-    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="139" startPosition="32" endLine="145" endPosition="7" />
-    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="157" startPosition="32" endLine="164" endPosition="7" />
-    <scopeInfo nodeId="8459194913967327422" fileName="IntroduceConstantRefactoring.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="123" startPosition="32" endLine="129" endPosition="7" />
+    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="141" startPosition="32" endLine="147" endPosition="7" />
+    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="159" startPosition="32" endLine="166" endPosition="7" />
+    <scopeInfo nodeId="8459194913967327422" fileName="IntroduceConstantRefactoring.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="8459194913967327425" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001355776228087202" fileName="IntroduceConstantRefactoring.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="4001355776228087202" fileName="IntroduceConstantRefactoring.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="4001355776228087207" varName="declaration" />
       <varInfo nodeId="4001355776228087205" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="118" startPosition="49" endLine="128" endPosition="20">
+    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="120" startPosition="49" endLine="130" endPosition="20">
       <varInfo nodeId="8492459591399169295" varName="_parameterValues_129834374" />
       <varInfo nodeId="8492459591399169295" varName="quotedNode_1" />
       <varInfo nodeId="8492459591399169295" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="136" startPosition="49" endLine="146" endPosition="20">
+    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="138" startPosition="49" endLine="148" endPosition="20">
       <varInfo nodeId="8459194913967420200" varName="_parameterValues_129834374" />
       <varInfo nodeId="8459194913967420200" varName="quotedNode_1" />
       <varInfo nodeId="8459194913967420200" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169247" fileName="IntroduceConstantRefactoring.java" startLine="19" startPosition="32" endLine="30" endPosition="26">
+    <scopeInfo nodeId="8492459591399169247" fileName="IntroduceConstantRefactoring.java" startLine="21" startPosition="32" endLine="32" endPosition="26">
       <varInfo nodeId="8492459591399169273" varName="container" />
       <varInfo nodeId="8492459591399169249" varName="newDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="69" startPosition="9" endLine="80" endPosition="11">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="71" startPosition="9" endLine="82" endPosition="11">
       <varInfo nodeId="8492459591399169250" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="82" startPosition="9" endLine="93" endPosition="11">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="84" startPosition="9" endLine="95" endPosition="11">
       <varInfo nodeId="8492459591399169250" varName="quotedNode1_7" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="95" startPosition="9" endLine="106" endPosition="11">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="97" startPosition="9" endLine="108" endPosition="11">
       <varInfo nodeId="8492459591399169250" varName="quotedNode1_8" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="154" startPosition="69" endLine="165" endPosition="20">
+    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="156" startPosition="69" endLine="167" endPosition="20">
       <varInfo nodeId="8459194913967420217" varName="_parameterValues_129834374" />
       <varInfo nodeId="8459194913967420217" varName="quotedNode_1" />
       <varInfo nodeId="8459194913967420217" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="68" startPosition="65" endLine="81" endPosition="9" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="81" startPosition="9" endLine="94" endPosition="9" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="94" startPosition="9" endLine="107" endPosition="9" />
-    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="117" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="70" startPosition="65" endLine="83" endPosition="9" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="83" startPosition="9" endLine="96" endPosition="9" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="96" startPosition="9" endLine="109" endPosition="9" />
+    <scopeInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="119" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="8492459591399169295" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="135" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="137" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="8459194913967420200" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169246" fileName="IntroduceConstantRefactoring.java" startLine="18" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="153" startPosition="0" endLine="167" endPosition="0">
+    <scopeInfo nodeId="8492459591399169246" fileName="IntroduceConstantRefactoring.java" startLine="20" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="155" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="8459194913967420217" varName="parameter_3" />
       <varInfo nodeId="8459194913967420217" varName="parameter_4" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="64" startPosition="7" endLine="108" endPosition="31">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="66" startPosition="7" endLine="110" endPosition="31">
       <varInfo nodeId="8492459591399169250" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="63" startPosition="32" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="57" startPosition="112" endLine="110" endPosition="20">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="65" startPosition="32" endLine="111" endPosition="7" />
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="59" startPosition="112" endLine="112" endPosition="20">
       <varInfo nodeId="8492459591399169250" varName="_parameterValues_129834374" />
       <varInfo nodeId="8492459591399169250" varName="quotedNode_1" />
       <varInfo nodeId="8492459591399169250" varName="quotedNode_2" />
@@ -4791,17 +4791,17 @@
       <varInfo nodeId="8492459591399169250" varName="quotedNode_4" />
       <varInfo nodeId="8492459591399169250" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="56" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="58" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="8492459591399169250" varName="parameter_10" />
       <varInfo nodeId="8492459591399169250" varName="parameter_11" />
       <varInfo nodeId="8492459591399169250" varName="parameter_12" />
       <varInfo nodeId="8492459591399169250" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="114" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0d0a" />
-    <unitInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="132" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0a0c" />
-    <unitInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="150" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0a0a2" />
-    <unitInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="53" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0" />
-    <unitInfo nodeId="8492459591399169241" fileName="IntroduceConstantRefactoring.java" startLine="15" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring" />
+    <unitInfo nodeId="8492459591399169295" fileName="IntroduceConstantRefactoring.java" startLine="116" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0d0a" />
+    <unitInfo nodeId="8459194913967420200" fileName="IntroduceConstantRefactoring.java" startLine="134" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0a0c" />
+    <unitInfo nodeId="8459194913967420217" fileName="IntroduceConstantRefactoring.java" startLine="152" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0a0a2" />
+    <unitInfo nodeId="8492459591399169250" fileName="IntroduceConstantRefactoring.java" startLine="55" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring$QuotationClass_2jj2z2_a0a0a0" />
+    <unitInfo nodeId="8492459591399169241" fileName="IntroduceConstantRefactoring.java" startLine="17" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring" />
   </root>
   <root nodeId="8492459591399169431" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399169432" fileName="MethodParameterModel.java" startLine="9" startPosition="35" endLine="10" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
