@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.IGResource;
 import jetbrains.mps.make.script.IJob;
@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import java.io.IOException;
@@ -66,7 +67,7 @@ public class Test_Facet extends IFacet.Stub {
     return new Test_Facet.TargetProperties();
   }
 
-  public static class Target_collectTest implements ITargetEx {
+  public static class Target_collectTest implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -77,7 +78,7 @@ public class Test_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rwbd_a0a = null;
           switch (0) {
             case 0:
@@ -153,6 +154,10 @@ public class Test_Facet extends IFacet.Stub {
       T t = createParameters(cls);
       return t;
     }
+
+    public int workEstimate() {
+      return 1000;
+    }
   }
 
   public static class Target_runTests implements ITargetEx {
@@ -166,7 +171,7 @@ public class Test_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rwbd_a0b = null;
           switch (0) {
             case 0:

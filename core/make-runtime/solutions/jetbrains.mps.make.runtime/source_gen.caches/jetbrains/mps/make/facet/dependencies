@@ -37,5 +37,8 @@
   <dependency className="jetbrains.mps.make.facet.ITargetEx" file="ITargetEx.java">
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
+  <dependency className="jetbrains.mps.make.facet.ITargetEx2" file="ITargetEx2.java">
+    <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
+  </dependency>
 </dependenciesRoot>
 
