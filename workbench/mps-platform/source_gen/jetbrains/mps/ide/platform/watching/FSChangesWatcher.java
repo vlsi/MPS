@@ -53,7 +53,7 @@ public class FSChangesWatcher implements ApplicationComponent {
   private final Object myLock = new Object();
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners = new HashSet<FSChangesWatcher.IReloadListener>();
   private int myBans = 0;
-  private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null, null, null, true);
+  private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null);
   private Object myUpdateId = new Object();
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
     public void beforeRefreshStart(boolean async) {
