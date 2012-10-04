@@ -14,10 +14,15 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import jetbrains.mps.workbench.action.BaseGroup;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.NameUtil;
+import java.util.Map;
 import java.util.TreeSet;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.SortedSetSequence;
+import java.util.HashMap;
 
 public class ScriptsActionGroupHelper {
   private static final Set<String> ourSelectedScripts = new HashSet<String>();
@@ -66,17 +71,16 @@ public class ScriptsActionGroupHelper {
   }
 
   public static void populateByCategoryGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
-    Map<String, List<SNode>> byCategory = new HashMap<String, List<SNode>>();
-    for (SNode migrationScript : migrationScripts) {
-      String cat = NameUtil.pluralize(NameUtil.capitalize(SPropertyOperations.getString_def(migrationScript, "type", "enhancement")));
-      if (cat == null) {
-        cat = "<uncategorized>";
+    _FunctionTypes._return_P1_E0<? extends String, ? super SNode> getCategoryClosure = new _FunctionTypes._return_P1_E0<String, SNode>() {
+      public String invoke(SNode script) {
+        String cat = NameUtil.pluralize(NameUtil.capitalize(SPropertyOperations.getString_def(script, "type", "enhancement")));
+        if (cat == null) {
+          cat = "<uncategorized>";
+        }
+        return cat;
       }
-      if (!(byCategory.containsKey(cat))) {
-        byCategory.put(cat, new ArrayList<SNode>());
-      }
-      ListSequence.fromList(byCategory.get(cat)).addElement(migrationScript);
-    }
+    };
+    Map<String, List<SNode>> byCategory = groupBy(migrationScripts, getCategoryClosure);
     Set<String> sorted = new TreeSet<String>(new Comparator<String>() {
       public int compare(String o1, String o2) {
         if ("<uncategorized>".equals(o1)) {
@@ -88,15 +92,76 @@ public class ScriptsActionGroupHelper {
         return o1.compareTo(o2);
       }
     });
-    sorted.addAll(byCategory.keySet());
+    sorted.addAll(MapSequence.fromMap(byCategory).keySet());
     for (String cat : sorted) {
-      BaseGroup categoryGroup = new BaseGroup(cat, "");
-      for (SNode script : byCategory.get(cat)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "toBuild")), applyToSelection));
+      BaseGroup categoryGroup = createGroup(cat, ownerGroup);
+      _FunctionTypes._return_P1_E0<? extends String, ? super SNode> getBuildClosure = new _FunctionTypes._return_P1_E0<String, SNode>() {
+        public String invoke(SNode script) {
+          return (SPropertyOperations.getString(script, "toBuild") == null ?
+            "" :
+            SPropertyOperations.getString(script, "toBuild")
+          );
+        }
+      };
+      Map<String, List<SNode>> byBuild = groupBy(MapSequence.fromMap(byCategory).get(cat), getBuildClosure);
+      if (SetSequence.fromSet(MapSequence.fromMap(byBuild).keySet()).count() > 1) {
+        {
+          Iterator<String> buildName_it = SortedSetSequence.fromSet(new TreeSet<String>(MapSequence.fromMap(byBuild).keySet())).iterator();
+          String buildName_var;
+          while (buildName_it.hasNext()) {
+            buildName_var = buildName_it.next();
+            BaseGroup subGroup = createGroup(buildName_var, categoryGroup);
+            addActions(subGroup, MapSequence.fromMap(byBuild).get(buildName_var), applyToSelection);
+          }
+        }
+      } else {
+        addActions(categoryGroup, MapSequence.fromMap(byCategory).get(cat), applyToSelection);
       }
-      categoryGroup.setPopup(true);
-      ownerGroup.add(categoryGroup);
     }
+  }
+
+  private static BaseGroup createGroup(String name, BaseGroup parentGroup) {
+    BaseGroup group = new BaseGroup(name);
+    group.setPopup(true);
+    parentGroup.add(group);
+    return group;
+  }
+
+  private static void addActions(BaseGroup group, List<SNode> scripts, boolean applyToSelection) {
+    Collections.sort(scripts, new Comparator<SNode>() {
+      public int compare(SNode node1, SNode node2) {
+        String name1 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node1, "title"), null).toLowerCase();
+        String name2 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node2, "title"), null).toLowerCase();
+        return name1.compareTo(name2);
+      }
+    });
+    {
+      Iterator<SNode> script_it = ListSequence.fromList(scripts).iterator();
+      SNode script_var;
+      while (script_it.hasNext()) {
+        script_var = script_it.next();
+        group.add(new RunMigrationScriptAction(script_var, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script_var, "title"), null), applyToSelection));
+      }
+    }
+  }
+
+  private static Map<String, List<SNode>> groupBy(List<SNode> scripts, _FunctionTypes._return_P1_E0<? extends String, ? super SNode> groupKeyProducer) {
+    Map<String, List<SNode>> result = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+    {
+      Iterator<SNode> script_it = ListSequence.fromList(scripts).iterator();
+      SNode script_var;
+      while (script_it.hasNext()) {
+        script_var = script_it.next();
+        String groupKey = groupKeyProducer.invoke(script_var);
+        List<SNode> group = MapSequence.fromMap(result).get(groupKey);
+        if (group == null) {
+          group = new ArrayList<SNode>();
+          MapSequence.fromMap(result).put(groupKey, group);
+        }
+        ListSequence.fromList(group).addElement(script_var);
+      }
+    }
+    return result;
   }
 
   public static void populateByBuildGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
