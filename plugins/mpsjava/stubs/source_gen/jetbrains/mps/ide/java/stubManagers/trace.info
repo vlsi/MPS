@@ -167,9 +167,9 @@
     <scopeInfo nodeId="6869702494692960298" fileName="JavaSourceStubModelDescriptor.java" startLine="29" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="6869702494692960299" varName="contents" />
     </scopeInfo>
-    <unitInfo nodeId="6869702494692960285" fileName="JavaSourceStubModelDescriptor.java" startLine="21" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDescriptor" />
-    <unitInfo nodeId="6869702494692960322" fileName="JavaSourceStubModelDescriptor.java" startLine="36" startPosition="46" endLine="71" endPosition="5" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDescriptor$1" />
     <unitInfo nodeId="6869702494692960416" fileName="JavaSourceStubModelDescriptor.java" startLine="54" startPosition="61" endLine="65" endPosition="11" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDescriptor$2" />
+    <unitInfo nodeId="6869702494692960322" fileName="JavaSourceStubModelDescriptor.java" startLine="36" startPosition="46" endLine="71" endPosition="5" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDescriptor$1" />
+    <unitInfo nodeId="6869702494692960285" fileName="JavaSourceStubModelDescriptor.java" startLine="21" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDescriptor" />
   </root>
   <root nodeId="6869702494692960520" modelId="r:cb0e6d2d-ec81-42b2-9b52-0e516db74d49(jetbrains.mps.ide.java.stubManagers)">
     <nodeInfo nodeId="6869702494692960521" fileName="JavaSourceStubModelDS.java" startLine="34" startPosition="99" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoot" />
@@ -290,8 +290,8 @@
       <varInfo nodeId="6869702494692960604" varName="module" />
       <varInfo nodeId="6869702494692960608" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="6869702494692960520" fileName="JavaSourceStubModelDS.java" startLine="34" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS" />
     <unitInfo nodeId="6869702494692960558" fileName="JavaSourceStubModelDS.java" startLine="46" startPosition="77" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS$1" />
+    <unitInfo nodeId="6869702494692960520" fileName="JavaSourceStubModelDS.java" startLine="34" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS" />
   </root>
 </debugInfo>
 
