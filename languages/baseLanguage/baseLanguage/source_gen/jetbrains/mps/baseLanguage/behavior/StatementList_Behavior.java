@@ -139,14 +139,14 @@ public class StatementList_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       return Scopes.forVariables(kind, StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child), ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return null;
   }
 
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       return Scopes.forVariables(kind, StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index), ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return null;

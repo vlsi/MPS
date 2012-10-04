@@ -7,7 +7,7 @@
   <unitInfo fileName="ThreadPool_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
   <unitInfo fileName="ThreadSafe_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />
   <root nodeId="4120418308311043819" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
-    <nodeInfo nodeId="2832018561209150769" fileName="ParallelFor_Behavior.java" startLine="25" startPosition="111" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2832018561209150769" fileName="ParallelFor_Behavior.java" startLine="25" startPosition="105" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2832018561209150778" fileName="ParallelFor_Behavior.java" startLine="27" startPosition="68" endLine="28" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7497677991177984042" fileName="ParallelFor_Behavior.java" startLine="29" startPosition="7" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4120418308311047376" fileName="ParallelFor_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -58,7 +58,7 @@
     <scopeInfo nodeId="4120418308311043819" fileName="ParallelFor_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="4120418308311043819" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2832018561209150738" fileName="ParallelFor_Behavior.java" startLine="25" startPosition="111" endLine="30" endPosition="94">
+    <scopeInfo nodeId="2832018561209150738" fileName="ParallelFor_Behavior.java" startLine="25" startPosition="105" endLine="30" endPosition="94">
       <varInfo nodeId="2832018561209150770" varName="variables" />
     </scopeInfo>
     <scopeInfo nodeId="4120418308311043819" fileName="ParallelFor_Behavior.java" startLine="38" startPosition="0" endLine="43" endPosition="0">

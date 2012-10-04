@@ -14,12 +14,11 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.scopes.MigrationScopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.scope.EmptyScope;
 
 public class LocalStaticFieldReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_jxwoyo_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137260");
+  private static SNodePointer breakingNode_jxwoyo_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "304895491241626247");
 
   public LocalStaticFieldReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
@@ -45,13 +44,7 @@ public class LocalStaticFieldReference_Constraints extends BaseConstraintsDescri
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
-            }
+            return MigrationScopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getContextNode(), _context.getContextRole(), _context.getPosition());
           }
         };
       }

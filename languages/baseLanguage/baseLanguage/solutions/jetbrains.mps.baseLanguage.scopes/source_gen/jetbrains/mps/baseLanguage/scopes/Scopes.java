@@ -18,7 +18,7 @@ public class Scopes {
       return variablesScope;
     }
     // hiding for variables only name based. so I can use SimpleScope and HidingByNameScope 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IVariableDeclaration"), kind, variablesScope, parentScope);
+    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"), kind, variablesScope, parentScope);
   }
 
   public static Scope forVariables(SNode kind, Iterable<SNode> variables, Scope parentScope) {

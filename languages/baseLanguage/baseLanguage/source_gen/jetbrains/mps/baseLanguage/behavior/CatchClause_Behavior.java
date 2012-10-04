@@ -27,7 +27,7 @@ public class CatchClause_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("catchBody", thisNode, child)) {
         return Scopes.forVariables(kind, SLinkOperations.getTarget(thisNode, "throwable", true), ScopeUtils.lazyParentScope(thisNode, kind));
       } else {
