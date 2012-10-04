@@ -33,6 +33,8 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
 
 
     // FIXME change write actions, commands 
+    // we need read access to get model roots, etc. but then we need write to update it 
+    // therefore we take write at once 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
 
@@ -42,15 +44,13 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
         // replace existing nodes with matching names 
         List<SNode> roots = SModelOperations.getRoots(myModel, null);
         for (SNode node : ListSequence.fromList(nodes)) {
-          // <node> 
-          // TODO use myModel/.getNodeById 
-          // <node> 
 
           SNodeId nodeId = node.getSNodeId();
           final SNode root = myModel.getNodeById(nodeId);
 
           final SNode theNode = node;
 
+          // FIXME MUST NOT be command 
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               if ((root == null)) {
