@@ -35,6 +35,7 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.progress.ProgressMonitorBase;
+import jetbrains.mps.progress.SubProgressKind;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
@@ -247,18 +248,19 @@ public class TestGenerationWorker extends MpsWorker {
         }
       };
       bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new ProgressMonitorBase() {
+        private String prevTitle;
+
         protected void update(double p0) {
         }
 
         protected void startInternal(String text) {
-          reportIfStartsWith("Generating ", text, startTestFormat);
         }
 
         protected void doneInternal(String text) {
-          reportIfStartsWith("Generating ", text, finishTestFormat);
         }
 
-        protected void setTitleInternal(String p0) {
+        protected void setTitleInternal(String text) {
+          prevTitle = text;
         }
 
         protected void setStepInternal(String p0) {
@@ -269,6 +271,33 @@ public class TestGenerationWorker extends MpsWorker {
         }
 
         public void cancel() {
+        }
+
+        private ProgressMonitorBase.SubProgressMonitor customSubProgress(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+          if (prevTitle != null && prevTitle.startsWith("Generating :: ")) {
+            return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
+              @Override
+              protected void startInternal(String text) {
+                reportIfStartsWith("Generating ", "Generating " + text, startTestFormat);
+              }
+
+              @Override
+              protected void doneInternal(String text) {
+                reportIfStartsWith("Generating ", "Generating " + text, finishTestFormat);
+              }
+            };
+          }
+          return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
+            @Override
+            protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+              return customSubProgress(this, work, kind);
+            }
+          };
+        }
+
+        @Override
+        protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+          return customSubProgress(this, work, kind);
         }
       }).get();
     } catch (InterruptedException ignore) {
