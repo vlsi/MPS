@@ -16,9 +16,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class LanguageID {
+  private static final ModuleReference JAVA_SOURCES_STUB_SOLUTION = ModuleReference.fromString("77cb6858-037c-4d16-bec3-aa1eda698a48(jetbrains.mps.ide.java.sourceStubs)");
+
   public static final String JAVA = "java";
-  // TODO move JavaStub -> core?
   public static final ModelRootManager JAVA_MANAGER = new ModelRootManager(BootstrapLanguages.BASE_LANGUAGE.getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs");
+  public static final ModelRootManager JAVA_SOURCE_MANAGER = new ModelRootManager(JAVA_SOURCES_STUB_SOLUTION.getModuleId().toString(), "jetbrains.mps.ide.java.stubManagers.JavaSourceStubs");
 }
