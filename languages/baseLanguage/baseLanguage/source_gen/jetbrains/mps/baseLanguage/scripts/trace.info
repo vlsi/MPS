@@ -50,92 +50,99 @@
     <unitInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript" />
   </root>
   <root nodeId="1408799705057550234" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
-    <nodeInfo nodeId="1408799705057583986" fileName="UnifyVariableMigrationUtils.java" startLine="19" startPosition="97" endLine="20" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550260" fileName="UnifyVariableMigrationUtils.java" startLine="21" startPosition="5" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1408799705057550261" fileName="UnifyVariableMigrationUtils.java" startLine="22" startPosition="0" endLine="23" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1408799705057550278" fileName="UnifyVariableMigrationUtils.java" startLine="24" startPosition="63" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550285" fileName="UnifyVariableMigrationUtils.java" startLine="26" startPosition="5" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1408799705057550286" fileName="UnifyVariableMigrationUtils.java" startLine="27" startPosition="0" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057584009" fileName="UnifyVariableMigrationUtils.java" startLine="31" startPosition="46" endLine="32" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1408799705057584015" fileName="UnifyVariableMigrationUtils.java" startLine="32" startPosition="116" endLine="33" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1408799705057584023" fileName="UnifyVariableMigrationUtils.java" startLine="33" startPosition="131" endLine="34" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="38" startPosition="36" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="45" startPosition="36" endLine="46" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="47" startPosition="5" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="52" startPosition="36" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="59" startPosition="36" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="61" startPosition="5" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="66" startPosition="36" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="68" startPosition="5" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="73" startPosition="36" endLine="74" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="75" startPosition="5" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1408799705057550236" fileName="UnifyVariableMigrationUtils.java" startLine="14" startPosition="42" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnifyVariableMigrationUtils#()V" />
-    <nodeInfo nodeId="1408799705057550292" fileName="UnifyVariableMigrationUtils.java" startLine="18" startPosition="83" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057550276" fileName="UnifyVariableMigrationUtils.java" startLine="23" startPosition="140" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="37" startPosition="71" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="44" startPosition="72" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="51" startPosition="76" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="58" startPosition="86" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="65" startPosition="91" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="72" startPosition="83" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1408799705057584003" fileName="UnifyVariableMigrationUtils.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doMigration#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0a0a#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0a0a0a#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0c0a#(Ljetbrains/mps/smodel/SModelFqName;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a2a0#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelFqName;" />
-    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0c0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="71" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0a2a0#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="1408799705057550240" fileName="UnifyVariableMigrationUtils.java" startLine="17" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="1408799705057550239" fileName="UnifyVariableMigrationUtils.java" startLine="15" startPosition="40" endLine="15" endPosition="40" />
-    <scopeInfo nodeId="1408799705057550293" fileName="UnifyVariableMigrationUtils.java" startLine="19" startPosition="97" endLine="20" endPosition="19" />
-    <scopeInfo nodeId="1408799705057550277" fileName="UnifyVariableMigrationUtils.java" startLine="24" startPosition="63" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="38" startPosition="36" endLine="39" endPosition="50" />
-    <scopeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="45" startPosition="36" endLine="46" endPosition="88" />
-    <scopeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="52" startPosition="36" endLine="53" endPosition="45" />
-    <scopeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="59" startPosition="36" endLine="60" endPosition="49" />
-    <scopeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="66" startPosition="36" endLine="67" endPosition="52" />
-    <scopeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="73" startPosition="36" endLine="74" endPosition="52" />
-    <scopeInfo nodeId="1408799705057550236" fileName="UnifyVariableMigrationUtils.java" startLine="14" startPosition="42" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1408799705057584006" fileName="UnifyVariableMigrationUtils.java" startLine="31" startPosition="46" endLine="34" endPosition="53">
+    <nodeInfo nodeId="1408799705057583986" fileName="UnifyVariableMigrationUtils.java" startLine="20" startPosition="97" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550260" fileName="UnifyVariableMigrationUtils.java" startLine="22" startPosition="5" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1408799705057550261" fileName="UnifyVariableMigrationUtils.java" startLine="23" startPosition="0" endLine="24" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1408799705057550278" fileName="UnifyVariableMigrationUtils.java" startLine="25" startPosition="63" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550285" fileName="UnifyVariableMigrationUtils.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1408799705057550286" fileName="UnifyVariableMigrationUtils.java" startLine="28" startPosition="0" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057584009" fileName="UnifyVariableMigrationUtils.java" startLine="32" startPosition="46" endLine="33" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1408799705057584015" fileName="UnifyVariableMigrationUtils.java" startLine="33" startPosition="116" endLine="34" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7556868001855545450" fileName="UnifyVariableMigrationUtils.java" startLine="34" startPosition="131" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="394877598929208323" fileName="UnifyVariableMigrationUtils.java" startLine="36" startPosition="87" endLine="37" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1408799705057584023" fileName="UnifyVariableMigrationUtils.java" startLine="38" startPosition="5" endLine="39" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="43" startPosition="36" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="50" startPosition="36" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="52" startPosition="5" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="57" startPosition="36" endLine="58" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="59" startPosition="5" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="64" startPosition="36" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="71" startPosition="36" endLine="72" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="73" startPosition="5" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="78" startPosition="36" endLine="79" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="80" startPosition="5" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1408799705057550236" fileName="UnifyVariableMigrationUtils.java" startLine="15" startPosition="42" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnifyVariableMigrationUtils#()V" />
+    <nodeInfo nodeId="1408799705057550292" fileName="UnifyVariableMigrationUtils.java" startLine="19" startPosition="83" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057550276" fileName="UnifyVariableMigrationUtils.java" startLine="24" startPosition="140" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="394877598929208276" fileName="UnifyVariableMigrationUtils.java" startLine="35" startPosition="30" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="42" startPosition="71" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="49" startPosition="72" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="56" startPosition="76" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="63" startPosition="86" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="70" startPosition="91" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="77" startPosition="83" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0a0a#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0a0a0a#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0c0a#(Ljetbrains/mps/smodel/SModelFqName;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a2a0#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelFqName;" />
+    <nodeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="69" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0c0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5xr61d_a0a0a2a0#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="1408799705057584003" fileName="UnifyVariableMigrationUtils.java" startLine="31" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doMigration#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1408799705057550240" fileName="UnifyVariableMigrationUtils.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="1408799705057550239" fileName="UnifyVariableMigrationUtils.java" startLine="16" startPosition="40" endLine="16" endPosition="40" />
+    <scopeInfo nodeId="1408799705057550293" fileName="UnifyVariableMigrationUtils.java" startLine="20" startPosition="97" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="1408799705057550277" fileName="UnifyVariableMigrationUtils.java" startLine="25" startPosition="63" endLine="26" endPosition="19" />
+    <scopeInfo nodeId="394877598929208277" fileName="UnifyVariableMigrationUtils.java" startLine="36" startPosition="87" endLine="37" endPosition="218" />
+    <scopeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="43" startPosition="36" endLine="44" endPosition="50" />
+    <scopeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="50" startPosition="36" endLine="51" endPosition="88" />
+    <scopeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="57" startPosition="36" endLine="58" endPosition="45" />
+    <scopeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="64" startPosition="36" endLine="65" endPosition="49" />
+    <scopeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="71" startPosition="36" endLine="72" endPosition="52" />
+    <scopeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="78" startPosition="36" endLine="79" endPosition="52" />
+    <scopeInfo nodeId="1408799705057550236" fileName="UnifyVariableMigrationUtils.java" startLine="15" startPosition="42" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="394877598929208276" fileName="UnifyVariableMigrationUtils.java" startLine="35" startPosition="30" endLine="38" endPosition="5">
+      <varInfo nodeId="394877598929208279" varName="attribute" />
+    </scopeInfo>
+    <scopeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="42" startPosition="71" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="49" startPosition="72" endLine="53" endPosition="16" />
+    <scopeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="56" startPosition="76" endLine="60" endPosition="16" />
+    <scopeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="63" startPosition="86" endLine="67" endPosition="16" />
+    <scopeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="70" startPosition="91" endLine="74" endPosition="16" />
+    <scopeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="77" startPosition="83" endLine="81" endPosition="16" />
+    <scopeInfo nodeId="1408799705057584006" fileName="UnifyVariableMigrationUtils.java" startLine="32" startPosition="46" endLine="39" endPosition="53">
       <varInfo nodeId="1408799705057584010" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="37" startPosition="71" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="44" startPosition="72" endLine="48" endPosition="16" />
-    <scopeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="51" startPosition="76" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="58" startPosition="86" endLine="62" endPosition="16" />
-    <scopeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="65" startPosition="91" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="72" startPosition="83" endLine="76" endPosition="16" />
-    <scopeInfo nodeId="1408799705057584003" fileName="UnifyVariableMigrationUtils.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1408799705057584007" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="1408799705057712612" fileName="UnifyVariableMigrationUtils.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1408799705057712612" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1408799705057712608" fileName="UnifyVariableMigrationUtils.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1408799705057712608" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="1408799705057550264" fileName="UnifyVariableMigrationUtils.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1408799705057550264" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1408799705057550265" fileName="UnifyVariableMigrationUtils.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1408799705057550265" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1408799705057550266" fileName="UnifyVariableMigrationUtils.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1408799705057550266" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="71" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="1408799705057550267" fileName="UnifyVariableMigrationUtils.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1408799705057550267" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057550243" fileName="UnifyVariableMigrationUtils.java" startLine="18" startPosition="83" endLine="28" endPosition="16">
+    <scopeInfo nodeId="1408799705057550243" fileName="UnifyVariableMigrationUtils.java" startLine="19" startPosition="83" endLine="29" endPosition="16">
       <varInfo nodeId="1408799705057550262" varName="modelName" />
     </scopeInfo>
-    <scopeInfo nodeId="1408799705057550240" fileName="UnifyVariableMigrationUtils.java" startLine="17" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1408799705057584003" fileName="UnifyVariableMigrationUtils.java" startLine="31" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1408799705057584007" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1408799705057550240" fileName="UnifyVariableMigrationUtils.java" startLine="18" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1408799705057550244" varName="declarationConceptFqName" />
       <varInfo nodeId="1408799705057550288" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1408799705057550234" fileName="UnifyVariableMigrationUtils.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.UnifyVariableMigrationUtils" />
+    <unitInfo nodeId="1408799705057550234" fileName="UnifyVariableMigrationUtils.java" startLine="15" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.UnifyVariableMigrationUtils" />
   </root>
   <root nodeId="1704189004094297789" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
     <nodeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="14" startPosition="89" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

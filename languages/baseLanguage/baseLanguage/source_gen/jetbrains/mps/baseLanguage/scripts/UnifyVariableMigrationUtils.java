@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -31,6 +32,10 @@ public class UnifyVariableMigrationUtils {
   public static void doMigration(SNode node) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(result, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
+    // copy smodel attributes 
+    for (SNode attribute : SLinkOperations.getTargets(node, "smodelAttribute", true)) {
+      ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "smodelAttribute"))).addElement(SNodeOperations.copyNode(attribute));
+    }
     SNodeOperations.replaceWithAnother(node, result);
   }
 
