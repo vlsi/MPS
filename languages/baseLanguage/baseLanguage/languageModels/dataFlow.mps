@@ -214,14 +214,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.conceptFunction" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
-    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1222757967616">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
-    </node>
-    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1222758017511">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
-    </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1223989582690">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1152728232947" resolveInfo="Closure" />
@@ -319,6 +311,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nullable" />
       <property name="name" nameId="tpck.1169194664001" value="RuleWhileNotNull" />
       <link role="analyzer" roleId="bj1v.4130591939054429248" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
+    </node>
+    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="7074068829090025540">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
   </roots>
   <root id="1206454554507">
@@ -2733,44 +2729,6 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1222445046284" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1222445046285">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1137022507850" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="1222757967616">
-    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1222757997986">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222758001081">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1225099965056">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225099965057">
-            <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitReadStatement" typeId="tp41.1206443823146" id="1225456405974">
-              <node role="variable" roleId="tp41.1206444629799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225456405975">
-                <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1225456405976" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1225456405977">
-                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070568296581" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225456328033">
-            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1225456327767" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1225456331786">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1225456272518" resolveInfo="isVariableDefinedInThisMethod" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="1222758017511">
-    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1222758017512">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222758017513">
-        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitReadStatement" typeId="tp41.1206443823146" id="1222758021530">
-          <node role="variable" roleId="tp41.1206444629799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222758028267">
-            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1222758027750" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1222758035614">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070567982819" />
             </node>
           </node>
         </node>
@@ -5733,6 +5691,20 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7718715537694335455" />
+    </node>
+  </root>
+  <root id="7074068829090025540">
+    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="7074068829090025541">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7074068829090025542">
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitReadStatement" typeId="tp41.1206443823146" id="7074068829090025543">
+          <node role="variable" roleId="tp41.1206444629799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7074068829090025544">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="7074068829090025545" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7074068829090025548">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>
