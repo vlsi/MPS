@@ -3600,7 +3600,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4155486055398183756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SReference reference : jetbrains.mps.util.SNodeOperations.getReferences(_context.getNode())) {
+    for (SReference reference : _context.getNode().getReferences()) {
       if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), reference.getRole())) != null) {
         continue;
       }

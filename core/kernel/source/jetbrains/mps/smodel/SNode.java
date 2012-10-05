@@ -1045,15 +1045,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public String getRoleOf(SNode node) {
-    return getRoleOf(((org.jetbrains.mps.openapi.model.SNode) node));
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
   public SNode findParent(Condition<SNode> condition) {
     return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(this, condition));
   }

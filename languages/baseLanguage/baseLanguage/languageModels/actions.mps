@@ -33,7 +33,6 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="1138168268784">
       <property name="name" nameId="tpck.1169194664001" value="binaryOperations" />
@@ -330,23 +329,23 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.expression" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="5373778178059764412">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="sideTransforms" />
       <property name="name" nameId="tpck.1169194664001" value="ExpressionStatementLT" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="sideTransforms" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="7405906576723769513">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.statements" />
       <property name="name" nameId="tpck.1169194664001" value="ifStatement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.statements" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="5141531433272503948">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
       <property name="name" nameId="tpck.1169194664001" value="LocalInstanceMethodCall_Transform" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="6682205036352986039">
       <property name="name" nameId="tpck.1169194664001" value="LocalInstanceFieldReference_Transform" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="6608344657265957072">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="name" nameId="tpck.1169194664001" value="WildCardTransforms" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
   </roots>
   <root id="1138168268784">
@@ -393,8 +392,8 @@
       </node>
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1215608453575">
-      <property name="description" nameId="tpdg.1158952484319" value="transform expression into left operand of binary operation" />
       <property name="side" nameId="tpdg.1215605257730" value="left" />
+      <property name="description" nameId="tpdg.1158952484319" value="transform expression into left operand of binary operation" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.ConceptRightTransformPart" typeId="tpdg.1182819125053" id="1215608453576">
         <link role="concept" roleId="tpdg.1182819234902" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
@@ -4270,8 +4269,8 @@
       </node>
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1216039263418">
-      <property name="description" nameId="tpdg.1158952484319" value="transform expression into Lvalue of assignment" />
       <property name="side" nameId="tpdg.1215605257730" value="left" />
+      <property name="description" nameId="tpdg.1158952484319" value="transform expression into Lvalue of assignment" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.ConceptRightTransformPart" typeId="tpdg.1182819125053" id="1216039263419">
         <link role="concept" roleId="tpdg.1182819234902" targetNodeId="tpee.1215693861676" resolveInfo="BaseAssignmentExpression" />
@@ -4794,8 +4793,8 @@
   </root>
   <root id="1177506302287">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1212701533821">
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <property name="description" nameId="tpdg.1158952484319" value="new Smth() --&gt; new Smth&lt;T&gt;()" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1212685548494" resolveInfo="ClassCreator" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="1212701643023">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1212701643024">
@@ -13356,8 +13355,8 @@
       </node>
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="4972241301747233313">
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <property name="side" nameId="tpdg.1215605257730" value="left" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1204053956946" resolveInfo="IMethodCall" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="4972241301747233806">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
@@ -14079,8 +14078,8 @@
                               <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4246727699194878046">
                                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="4246727699194878047">
-                                  <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
                                   <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
+                                  <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
                                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4246727699194878050">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="4246727699194878049" />
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4246727699194878054">
@@ -15802,7 +15801,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3442345692339772815">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772816">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3442345692339772817">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3442345692339772818">

@@ -17,6 +17,7 @@
   <import index="cdj6" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.refactoring(MPS.Core/jetbrains.mps.refactoring@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="i8bi" modelUID="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" version="-1" />
+  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -25,8 +26,6 @@
   <import index="mlj4" modelUID="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" version="4" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="821q" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.language(MPS.Core/org.jetbrains.mps.openapi.language@java_stub)" version="-1" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
-  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5817662974489412297">
       <property name="name" nameId="tpck.1169194664001" value="StructureModification" />
@@ -511,8 +510,8 @@
       </node>
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.Interface" typeId="tpee.1107796713796" id="2742566862758589856">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Entry" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2742566862758589858">
         <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="apply" />
@@ -540,8 +539,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2742566862758589857" />
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5817662974489416586">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MoveNode" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5817662974489421406">
         <property name="name" nameId="tpck.1169194664001" value="apply" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5817662974489421410" />
@@ -673,11 +672,11 @@
       </node>
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2742566862758589896">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RenameNode" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.EnumClass" typeId="tpee.1083245097125" id="3796120688729065935">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="RenameType" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3796120688729065943">
           <property name="name" nameId="tpck.1169194664001" value="CONCEPT" />
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3796120688729065937" resolveInfo="StructureModification.RenameNode.RenameType" />
@@ -924,8 +923,8 @@
       </node>
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4136069314959823738">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RenameModel" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1445347747076238409">
         <property name="name" nameId="tpck.1169194664001" value="apply" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1445347747076238413" />
@@ -1048,8 +1047,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5817662974489412302" />
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.EnumClass" typeId="tpee.1083245097125" id="6035828529853895986">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="Relation" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1216099837721316537">
         <property name="name" nameId="tpck.1169194664001" value="swap" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1216099837721316541">
@@ -2314,7 +2313,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398928">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398929">
@@ -2694,7 +2693,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398719">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398720">
@@ -3350,7 +3349,7 @@
                                       </node>
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398992">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398993">
@@ -4760,8 +4759,8 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="2742566862758590080">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="MODIFICATION_HISTORY" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2742566862758590085" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2742566862758590084" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2742566862758590087">
@@ -4868,8 +4867,8 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3796120688729144674">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="RENAME_TYPE" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3796120688729144678" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3796120688729144677" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3796120688729144680">
@@ -4877,8 +4876,8 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3796120688729144681">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="OLD_VALUE" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3796120688729144685" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3796120688729144684" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3796120688729144687">
@@ -4909,9 +4908,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758593748">
-      <property name="name" nameId="tpck.1169194664001" value="history" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="history" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="history" />
+      <property name="name" nameId="tpck.1169194664001" value="history" />
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9051163691968350262">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9051163691968345406" resolveInfo="StructureModificationLog" />
       </node>
@@ -4948,9 +4947,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596708">
-      <property name="name" nameId="tpck.1169194664001" value="element" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="StructureModification" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="false" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="StructureModification" />
+      <property name="name" nameId="tpck.1169194664001" value="element" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="2742566862758596752">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="2742566862758596753" resolveInfo="dependencies" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="2742566862758596852">
@@ -5056,9 +5055,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596753">
-      <property name="name" nameId="tpck.1169194664001" value="dependencies" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="dependencies" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="dependencies" />
+      <property name="name" nameId="tpck.1169194664001" value="dependencies" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="2742566862758596774">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="2742566862758596728" resolveInfo="model" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="2742566862758596776">
@@ -5145,20 +5144,20 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596728">
-      <property name="name" nameId="tpck.1169194664001" value="model" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
+      <property name="name" nameId="tpck.1169194664001" value="model" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596732">
-        <property name="name" nameId="tpck.1169194664001" value="index" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="index" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596733">
-        <property name="name" nameId="tpck.1169194664001" value="modelUID" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="modelUID" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596734">
-        <property name="name" nameId="tpck.1169194664001" value="version" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="version" />
       </node>
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ArrayType" typeId="tpee.1070534760951" id="2742566862758596730">
         <node role="componentType" roleId="tpee.1070534760952" type="tpee.StringType" typeId="tpee.1225271177708" id="2742566862758596729" />
@@ -5185,16 +5184,16 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596862">
-      <property name="name" nameId="tpck.1169194664001" value="MoveNode" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="move" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="move" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveNode" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596864">
-        <property name="name" nameId="tpck.1169194664001" value="id" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="id" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596865">
-        <property name="name" nameId="tpck.1169194664001" value="to" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="to" />
       </node>
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2742566862758596863">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5817662974489416586" resolveInfo="StructureModification.MoveNode" />
@@ -5234,16 +5233,16 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596887">
-      <property name="name" nameId="tpck.1169194664001" value="RenameNode" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="rename" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="rename" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameNode" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596889">
-        <property name="name" nameId="tpck.1169194664001" value="id" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="id" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="3796120688729144775">
-        <property name="name" nameId="tpck.1169194664001" value="type" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="type" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="3796120688729144776">
         <property name="name" nameId="tpck.1169194664001" value="from" />
@@ -5264,8 +5263,8 @@
         </node>
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="3796120688729144777">
-        <property name="name" nameId="tpck.1169194664001" value="to" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="to" />
       </node>
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2742566862758596888">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2742566862758589896" resolveInfo="StructureModification.RenameNode" />
@@ -5304,9 +5303,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596934">
-      <property name="name" nameId="tpck.1169194664001" value="RenameModel" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="RenameModel" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="RenameModel" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameModel" />
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2742566862758596935">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4136069314959823738" resolveInfo="StructureModification.RenameModel" />
       </node>
@@ -5336,12 +5335,12 @@
         </node>
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596942">
-        <property name="name" nameId="tpck.1169194664001" value="oldModel" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="oldModel" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596943">
-        <property name="name" nameId="tpck.1169194664001" value="newModel" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="newModel" />
       </node>
     </node>
   </root>

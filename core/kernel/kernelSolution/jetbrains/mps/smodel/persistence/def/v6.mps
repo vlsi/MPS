@@ -18,7 +18,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="mlj4.XMLSAXParser" typeId="mlj4.4635390255047863050" id="7319439566871678351">
       <property name="name" nameId="tpck.1169194664001" value="ModelReader6" />
@@ -55,11 +54,11 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678361">
-      <property name="name" nameId="tpck.1169194664001" value="model" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
+      <property name="name" nameId="tpck.1169194664001" value="model" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678362">
-        <property name="name" nameId="tpck.1169194664001" value="modelUID" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="modelUID" />
       </node>
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="7319439566871678364">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="7319439566871678522" resolveInfo="persistence" />
@@ -357,12 +356,12 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678522">
-      <property name="name" nameId="tpck.1169194664001" value="persistence" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="persistence" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="persistence" />
+      <property name="name" nameId="tpck.1169194664001" value="persistence" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678523">
-        <property name="name" nameId="tpck.1169194664001" value="version" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="version" />
       </node>
       <node role="creator" roleId="mlj4.2268737274628969583" type="mlj4.XMLSAXNodeCreator" typeId="mlj4.2268737274628897541" id="7319439566871678524">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7319439566871678525">
@@ -382,11 +381,11 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678551">
-      <property name="name" nameId="tpck.1169194664001" value="tag_with_namespace" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="tag_with_namespace" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678552">
-        <property name="name" nameId="tpck.1169194664001" value="namespace" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="namespace" />
       </node>
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.StringType" typeId="tpee.1225271177708" id="7319439566871678553" />
       <node role="creator" roleId="mlj4.2268737274628969583" type="mlj4.XMLSAXNodeCreator" typeId="mlj4.2268737274628897541" id="7319439566871678554">
@@ -400,20 +399,20 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678558">
-      <property name="name" nameId="tpck.1169194664001" value="import" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="import" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="import" />
+      <property name="name" nameId="tpck.1169194664001" value="import" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678559">
-        <property name="name" nameId="tpck.1169194664001" value="index" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="index" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678560">
-        <property name="name" nameId="tpck.1169194664001" value="version" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="version" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678561">
-        <property name="name" nameId="tpck.1169194664001" value="modelUID" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="modelUID" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871683191">
         <property name="name" nameId="tpck.1169194664001" value="implicit" />
@@ -459,8 +458,8 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="4813471910141063836">
-      <property name="name" nameId="tpck.1169194664001" value="root_stubs" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="root_stubs" />
+      <property name="name" nameId="tpck.1169194664001" value="root_stubs" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="4813471910141063859">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="7319439566871678583" resolveInfo="node" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="4813471910141063860">
@@ -503,9 +502,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678583">
-      <property name="name" nameId="tpck.1169194664001" value="node" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="node" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="false" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="node" />
+      <property name="name" nameId="tpck.1169194664001" value="node" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="7319439566871678584">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="7319439566871678711" resolveInfo="property" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="7319439566871678585">
@@ -632,7 +631,7 @@
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772520">
                     <node role="operand" roleId="tpee.1197027771414" type="mlj4.XMLSAXHandler_resultObject" typeId="mlj4.4635390255048098081" id="3442345692339772521" />
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3442345692339772522">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772523">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3442345692339772524">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2791660890086899467" resolveInfo="ref" />
@@ -681,8 +680,8 @@
         </node>
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678647">
-        <property name="name" nameId="tpck.1169194664001" value="type" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="type" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678648">
         <property name="name" nameId="tpck.1169194664001" value="role" />
@@ -790,12 +789,12 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678711">
-      <property name="name" nameId="tpck.1169194664001" value="property" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="property" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="property" />
+      <property name="name" nameId="tpck.1169194664001" value="property" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678712">
-        <property name="name" nameId="tpck.1169194664001" value="name" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="name" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678713">
         <property name="name" nameId="tpck.1169194664001" value="value" />
@@ -835,9 +834,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="7319439566871678732">
-      <property name="name" nameId="tpck.1169194664001" value="link" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="link" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="link" />
+      <property name="name" nameId="tpck.1169194664001" value="link" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="7319439566871678733">
         <property name="name" nameId="tpck.1169194664001" value="role" />
         <node role="handler" roleId="mlj4.4635390255048070858" type="mlj4.XMLSAXAttributeHandler" typeId="mlj4.4635390255048069776" id="7319439566871678734">
@@ -919,8 +918,8 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="651246788329803442">
-      <property name="name" nameId="tpck.1169194664001" value="model" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
+      <property name="name" nameId="tpck.1169194664001" value="model" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="7606567306781655160">
         <property name="tagName" nameId="mlj4.8640335038346803777" value="persistence" />
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="7606567306781655159" resolveInfo="null" />
@@ -995,9 +994,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="651246788329803622">
-      <property name="name" nameId="tpck.1169194664001" value="node" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="node" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="false" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="node" />
+      <property name="name" nameId="tpck.1169194664001" value="node" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="651246788329803623">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="651246788329803757" resolveInfo="property" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="651246788329803624">
@@ -1071,8 +1070,8 @@
         </node>
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="651246788329803706">
-        <property name="name" nameId="tpck.1169194664001" value="type" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="type" />
       </node>
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="651246788329803718">
         <property name="name" nameId="tpck.1169194664001" value="id" />
@@ -1102,12 +1101,12 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="651246788329803757">
-      <property name="name" nameId="tpck.1169194664001" value="property" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="property" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="property" />
+      <property name="name" nameId="tpck.1169194664001" value="property" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="651246788329803758">
-        <property name="name" nameId="tpck.1169194664001" value="name" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="name" />
       </node>
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.StringType" typeId="tpee.1225271177708" id="651246788329803769" />
       <node role="creator" roleId="mlj4.2268737274628969583" type="mlj4.XMLSAXNodeCreator" typeId="mlj4.2268737274628897541" id="651246788329803770">
@@ -1125,12 +1124,12 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="651246788329803778">
-      <property name="name" nameId="tpck.1169194664001" value="link" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="link" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="link" />
+      <property name="name" nameId="tpck.1169194664001" value="link" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="651246788329803779">
-        <property name="name" nameId="tpck.1169194664001" value="role" />
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="role" />
       </node>
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.StringType" typeId="tpee.1225271177708" id="651246788329803807" />
       <node role="creator" roleId="mlj4.2268737274628969583" type="mlj4.XMLSAXNodeCreator" typeId="mlj4.2268737274628897541" id="651246788329803808">
@@ -1148,9 +1147,9 @@
       </node>
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="1967473504308939651">
-      <property name="name" nameId="tpck.1169194664001" value="root_stubs" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="root_stubs" />
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="root_stubs" />
+      <property name="name" nameId="tpck.1169194664001" value="root_stubs" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="1967473504308939653">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="651246788329803622" resolveInfo="node" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="1967473504308989641">

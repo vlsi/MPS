@@ -60,6 +60,7 @@
   <import index="gznm" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.loading(MPS.Core/jetbrains.mps.smodel.loading@java_stub)" version="-1" />
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="gqu6" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.dependency(MPS.Core/jetbrains.mps.project.dependency@java_stub)" version="-1" />
+  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -71,13 +72,12 @@
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="kqrb" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.dependency.modules(MPS.Core/jetbrains.mps.project.dependency.modules@java_stub)" version="-1" implicit="yes" />
-  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2899596005953728721">
       <property name="name" nameId="tpck.1169194664001" value="Migrations25" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="caption" nameId="tp4k.1204991940915" value="Migrations 2.5" />
       <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2268008756145947405">
       <property name="name" nameId="tpck.1169194664001" value="AddStubsToModelRoots" />
@@ -104,19 +104,19 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454586633">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ConvertActionParameterCondition" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Convert Action Parameter Condition" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Convert Action Parameter Condition" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568093">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ResolveBrokenRefs" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Resolve Broken Stub References" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Resolve Broken Stub References" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7450649563959262367">
-      <property name="name" nameId="tpck.1169194664001" value="OptimizeImportsInProject" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Optimize Model Imports" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="OptimizeImportsInProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Optimize Model Imports" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6735645123418936327">
       <property name="name" nameId="tpck.1169194664001" value="ExecuteModelCheckerFixes" />
@@ -125,49 +125,49 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568020">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_SplitMPSClasspath" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Split MPS.Classpath" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Split MPS.Classpath" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="9164503229271455483">
-      <property name="name" nameId="tpck.1169194664001" value="FixMissingImportsInProject" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Fix Missing Imports" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="FixMissingImportsInProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Fix Missing Imports" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4250481571544053952">
       <property name="name" nameId="tpck.1169194664001" value="OptionalMigrations" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="caption" nameId="tp4k.1204991940915" value="Optional" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454599624">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_APIMigration" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS API Migration" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS API Migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1828409047608281136">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_DebuggerMoved" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Fix References To Debugger Classes" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Fix References To Debugger Classes" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1828409047608306672">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_FixReferencesToMpsLaunch" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Fix References To MPSLaunch Annotations" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Fix References To MPSLaunch Annotations" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1828409047608306728">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_ExecutionAPIMigration" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Execution API Migration" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Execution API Migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1828409047608306784">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_RemoveKeystrokes" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Remove Keystrokes" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply Remove Keystrokes" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2794305603016265047">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_JavaAPIMigration" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS Java API Migration" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS Java API Migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="647205717978882603">
       <property name="name" nameId="tpck.1169194664001" value="ExecuteJavaModelCheckerFixes" />
@@ -182,19 +182,19 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Convert Language Runtimes" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="9065176582222574567">
+      <property name="description" nameId="tp4k.1213273179528" value="Update model version according to .history, save the latest imported model versions" />
       <property name="name" nameId="tpck.1169194664001" value="UpdateRefactoringVersions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Update model versions" />
-      <property name="description" nameId="tp4k.1213273179528" value="Update model version according to .history, save the latest imported model versions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5504981337052461925">
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="OptimizeProjectImports" />
       <property name="caption" nameId="tp4k.1205250923097" value="Optimize Module Imports" />
-      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8534969608023778839">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_APIMigrationStandalone" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS API Migration Standalone" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Apply MPS API Migration Standalone" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5948516512857665272">
       <property name="name" nameId="tpck.1169194664001" value="UpgradePersistence" />
@@ -213,9 +213,9 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Import models with used classifiers" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6104662726362995667">
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="FixModelLanguages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Fix Model Languages After Migration" />
-      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="5781360998692029524">
       <property name="name" nameId="tpck.1169194664001" value="IDEATools" />
@@ -2267,10 +2267,10 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1161420610164992199" />
                     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1161420610164992200">
+                      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                       <property name="name" nameId="tpck.1169194664001" value="run" />
                       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1161420610164992201" />
                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1161420610164992202" />
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1161420610164992203">
@@ -2542,8 +2542,8 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8004978336433033240">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="SOLUTION_NAME" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8004978336433033241" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8004978336433033242" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8004978336433033243">
@@ -4701,8 +4701,8 @@
                     </node>
                   </node>
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="647205717978882707">
-                    <property name="name" nameId="tpck.1169194664001" value="getMySpecificCheckers" />
                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+                    <property name="name" nameId="tpck.1169194664001" value="getMySpecificCheckers" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="647205717978882708" />
                     <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="647205717978882709">
                       <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="647205717978882710">
