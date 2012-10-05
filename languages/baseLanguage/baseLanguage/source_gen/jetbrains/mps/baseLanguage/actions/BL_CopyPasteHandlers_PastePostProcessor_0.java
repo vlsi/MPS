@@ -5,14 +5,11 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.datatransfer.PastePostProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.scopes.Members;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProcessor {
   public SNode getApplicableConcept() {
@@ -20,27 +17,12 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
   }
 
   public void postProcesNode(SNode pastedNode) {
-    SNode containingClassifier = SNodeOperations.getAncestor(pastedNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if ((containingClassifier == null)) {
-      return;
-    }
-    final SReference staticFieldRef = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
-    Iterable<SNode> visibleStaticFields = Members.visibleStaticFields(containingClassifier, pastedNode);
-    SNode staticFieldDecl = Sequence.fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_nqjmzy_a0a0a0a0a0a0e0b(SPropertyOperations.getString(it, "name"), SLinkOperations.getResolveInfo(staticFieldRef));
+    // todo: not working for IVariableReference. Unify and fix it. 
+    if (Scope.parent(pastedNode) != null) {
+      if (Scope.getScope(Scope.parent(pastedNode), pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(IVariableReference_Behavior.call_getVariable_1023687332192481693(pastedNode))) {
+        SNode variableReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.VariableReference");
+        SLinkOperations.setTarget(variableReference, "variableDeclaration", SNodeOperations.cast(IVariableReference_Behavior.call_getVariable_1023687332192481693(pastedNode), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), false);
       }
-    }).first();
-    if (staticFieldDecl != null) {
-      SNode localStatisFieldReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
-      SLinkOperations.setTarget(localStatisFieldReference, "variableDeclaration", staticFieldDecl, false);
     }
-  }
-
-  private static boolean eq_nqjmzy_a0a0a0a0a0a0e0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }

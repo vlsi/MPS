@@ -51,6 +51,10 @@ public class VariableDeclaration_BehaviorDescriptor extends BaseVariableDeclarat
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
 
+  public SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
+    return VariableDeclaration_Behavior.virtual_getQualifiedReference_4598334504606213641(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
