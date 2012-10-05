@@ -16,7 +16,7 @@ public class MakeParameterFinal_Intention extends BaseIntention implements Inten
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.ParameterReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public boolean isParameterized() {
@@ -43,12 +43,16 @@ public class MakeParameterFinal_Intention extends BaseIntention implements Inten
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode methodNode = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      return false;
+    }
+    SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    SNode methodNode = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     SNode classNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
     if ((classNode == null)) {
       return false;
     }
-    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "variableDeclaration", false), "isFinal")) {
+    if (SPropertyOperations.getBoolean(declaration, "isFinal")) {
       return false;
     }
     return ListSequence.fromList(SNodeOperations.getAncestors(classNode, null, false)).contains(methodNode);

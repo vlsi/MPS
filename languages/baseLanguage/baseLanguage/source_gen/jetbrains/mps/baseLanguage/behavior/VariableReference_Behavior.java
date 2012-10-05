@@ -75,6 +75,19 @@ public class VariableReference_Behavior {
     return Expression_Behavior.callSuperNew_eval_1213877519769(thisNode, "jetbrains.mps.baseLanguage.structure.Expression", module);
   }
 
+  public static boolean call_isParameterOfThisMethod_1240394425603(SNode thisNode) {
+    // todo: method from Parameter reference. Remove. 
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      throw new IllegalArgumentException();
+    }
+    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false)) {
+      if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Closureoid", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closureoid", false, false)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   private static IModule check_gidzrl_a0e0a0e(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

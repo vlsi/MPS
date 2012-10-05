@@ -14942,47 +14942,52 @@
     <unitInfo nodeId="1239715048280" fileName="typeof_AbstractUnaryNumberOperation_InferenceRule.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_AbstractUnaryNumberOperation_InferenceRule" />
   </root>
   <root nodeId="1240394564106" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
-    <nodeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="26" startPosition="62" endLine="27" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="34" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="39" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="39" startPosition="117" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="18" startPosition="146" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NonFinalParametersInAnonymousClass_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="24" startPosition="106" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1240395578465" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="23" startPosition="221" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1240395578457" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="22" startPosition="131" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="19" startPosition="65" endLine="19" endPosition="65" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="34" endPosition="69" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="18" startPosition="146" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="27" endPosition="248">
+    <nodeInfo nodeId="7074068829090132490" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="24" startPosition="176" endLine="25" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="28" startPosition="11" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="29" startPosition="64" endLine="30" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="37" startPosition="46" endLine="38" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="42" startPosition="5" endLine="43" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="43" startPosition="117" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="19" startPosition="146" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NonFinalParametersInAnonymousClass_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="27" startPosition="106" endLine="31" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1240395578465" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="26" startPosition="95" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1240395578457" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="25" startPosition="184" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7074068829090132425" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="23" startPosition="130" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="20" startPosition="65" endLine="20" endPosition="65" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="37" startPosition="46" endLine="38" endPosition="68" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="19" startPosition="146" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="1240395578471" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="28" startPosition="11" endLine="30" endPosition="249">
       <varInfo nodeId="1240395578471" varName="_reporter_2309309498" />
       <varInfo nodeId="1240395578471" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="42" startPosition="5" endLine="44" endPosition="45">
       <varInfo nodeId="1240394564106" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1240395578470" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="24" startPosition="106" endLine="28" endPosition="9" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1240395578464" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="23" startPosition="221" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="1240395578470" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="27" startPosition="106" endLine="31" endPosition="11" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1240395578464" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="26" startPosition="95" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1240394564106" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1240394564107" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="22" startPosition="131" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1240394564106" varName="parameterReference" />
+    <scopeInfo nodeId="7074068829090132426" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="24" startPosition="176" endLine="33" endPosition="7">
+      <varInfo nodeId="7074068829090132491" varName="declaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240394564107" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="23" startPosition="130" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1240394564106" varName="status" />
       <varInfo nodeId="1240394564106" varName="typeCheckingContext" />
+      <varInfo nodeId="1240394564106" varName="variableReference" />
     </scopeInfo>
-    <unitInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.NonFinalParametersInAnonymousClass_NonTypesystemRule" />
+    <unitInfo nodeId="1240394564106" fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.NonFinalParametersInAnonymousClass_NonTypesystemRule" />
   </root>
   <root nodeId="1241100983853" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
     <nodeInfo nodeId="1241101021484" fileName="MakeVariableFinal_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
