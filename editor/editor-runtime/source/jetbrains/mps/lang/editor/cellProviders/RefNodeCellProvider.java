@@ -16,25 +16,33 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 public class RefNodeCellProvider extends AbstractReferentCellProvider {
-
 
   public RefNodeCellProvider(SNode node, EditorContext context) {
     super(node, context);
   }
 
+  /**
+   * @deprecated in MPS 3.0 Is here only for the compatibility with generated editor code.
+   */
+  @Deprecated
+  public RefNodeCellProvider(SNode node, jetbrains.mps.nodeEditor.EditorContext context) {
+    this(node, (EditorContext) context);
+  }
+  
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
     if (myIsAggregation) {
-      editorCell = context.createNodeCell(referencedNode);
+      editorCell = (EditorCell) context.createNodeCell(referencedNode);
     } else {
-      editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
+      editorCell = (EditorCell) context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
     }
     if (myIsCardinality1) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
