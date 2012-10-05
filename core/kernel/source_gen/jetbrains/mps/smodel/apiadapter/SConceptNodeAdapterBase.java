@@ -17,10 +17,9 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 
 public class SConceptNodeAdapterBase implements SAbstractConcept {
@@ -76,16 +75,11 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
   }
 
   public boolean isSubConceptOf(SConcept concept) {
-    SNode c;
-    if (concept instanceof SConceptNodeAdapter) {
-      c = ((SConceptNodeAdapter) concept).getConcept();
-    } else if (concept instanceof SInterfaceConceptNodeAdapter) {
-      c = ((SInterfaceConceptNodeAdapter) concept).getConcept();
-    } else {
+    if (!(concept instanceof SConceptNodeAdapterBase)) {
       throw new IllegalArgumentException("not supported");
     }
 
-    return SConceptOperations.isSubConceptOf(((SNode) getConcept()), NameUtil.nodeFQName(c));
+    return SModelUtil.isAssignableConcept(myConceptName, ((SConceptNodeAdapterBase) concept).myConceptName);
   }
 
   public SLanguage getLanguage() {
