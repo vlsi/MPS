@@ -17,11 +17,12 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleId;
 
 import java.util.UUID;
 
 @ImmutableObject
-public abstract class ModuleId {
+public abstract class ModuleId implements SModuleId {
   private static final char NAME_ID_PREFIX = '~';
 
   public static ModuleId regular() {

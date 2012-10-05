@@ -121,7 +121,7 @@ public class LibrariesLoader implements CoreComponent {
       Iterable<SNode> iterable = new ConditionalIterable<SNode>(descriptor.getSModel().roots(), cond);
 
       for (SNode node : iterable) {
-        Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getPersistentProperty(SNodeUtil.property_INamedConcept_name) + "_StubDescriptor");
+        Class descrClass = l.getClass(l.getModuleName() + "." + LanguageAspect.STUBS.getName() + "." + node.getPersistentProperty(SNodeUtil.property_INamedConcept_name) + "_StubDescriptor");
         if (descrClass == null) continue;
 
         try {

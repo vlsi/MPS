@@ -22,7 +22,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
   };
 
   /*package*/ LanguagePropertiesDialog(final Language language, IOperationContext operationContext) {
-    super(language.getModuleFqName() + " Properties", operationContext);
+    super(language.getModuleName() + " Properties", operationContext);
     myLanguage = language;
     collectLanguageProperties();
   }

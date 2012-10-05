@@ -79,6 +79,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SLanguage" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.apiadapter.SLinkNodeAdapter" file="SLinkNodeAdapter.java">

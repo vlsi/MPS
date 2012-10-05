@@ -15,5 +15,32 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-public interface ModuleFacet {
+/**
+ * evgeny, 10/5/12
+ */
+public class SRepositoryListenerAdapter implements SRepositoryListener {
+
+  @Override
+  public void moduleAdded(SModule module) {
+  }
+
+  @Override
+  public void beforeModuleRemoved(SModule module) {
+  }
+
+  @Override
+  public void moduleRemoved(SModule module) {
+  }
+
+  @Override
+  public void moduleInitialized(SModule module) {
+  }
+
+  @Override
+  public void moduleChanged(SModule module) {
+  }
+
+  @Override
+  public void repositoryChanged() {
+  }
 }

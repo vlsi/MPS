@@ -105,7 +105,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
     Set<IModule> existing = new HashSet<IModule>(myModuleToNamespace.keySet());
     for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
-      String namespace = mod.getModuleFqName();
+      String namespace = mod.getModuleName();
 
       // duplicate module, ignore
       if (myExtensionDescriptors.containsKey(namespace)) continue;
@@ -155,7 +155,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private ExtensionDescriptor findPluginSolutionExtensionDescriptor(Solution solution) {
     // TODO: more flexible way of loading extensions from plugin solution
-    String namespace = solution.getModuleFqName();
+    String namespace = solution.getModuleName();
     String className = namespace + ".plugin.ExtensionDescriptor";
     Object compiled = getObjectByClassName(className, solution, true);
     if (compiled instanceof ExtensionDescriptor) {
@@ -165,7 +165,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   }
 
   private ExtensionDescriptor findLanguageExtensionDescriptor(Language lang) {
-    String namespace = lang.getModuleFqName();
+    String namespace = lang.getModuleName();
     String className = namespace + ".plugin.ExtensionDescriptor";
     Object compiled = getObjectByClassName(className, lang, true);
     if (compiled instanceof ExtensionDescriptor) {
@@ -199,7 +199,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
     @Override
     public void moduleAdded(IModule module) {
-      String namespace = module.getModuleFqName();
+      String namespace = module.getModuleName();
       // avoid duplicates in registry
       if (myExtensionDescriptors.containsKey(namespace)) return;
 

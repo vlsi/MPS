@@ -23,15 +23,15 @@ import org.jetbrains.mps.openapi.module.SRepository;
 @Immutable
 public final class SModuleReference extends SEntityReference<SModule> {
   private SModuleId myId;
-  private String myPresentation;
+  private String myName;
 
   public SModuleReference(SModule module) {
     myId = module.getModuleId();
-    myPresentation = module.getPresentation();
+    myName = module.getModuleName();
   }
 
-  public String getPresentation() {
-    return myPresentation;
+  public String getName() {
+    return myName;
   }
 
   public SModule resolve(SRepository repo) {

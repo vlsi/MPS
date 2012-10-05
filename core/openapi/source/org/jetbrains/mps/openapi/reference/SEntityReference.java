@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public abstract class SEntityReference<T> {
   protected static String DELIM = "#";
 
-  public abstract String getPresentation();
+  public abstract String getName();
 
   public abstract T resolve(SRepository repo);
 }

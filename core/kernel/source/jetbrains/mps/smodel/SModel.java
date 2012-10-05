@@ -104,14 +104,13 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Override
-  public String getPresentation() {
+  public String getModelName() {
     return getLongName();
   }
 
   @Override
   public SModule getModule() {
-    // TODO API (implement)
-    return null;
+    return getModelDescriptor().getModule();
   }
 
   @Override

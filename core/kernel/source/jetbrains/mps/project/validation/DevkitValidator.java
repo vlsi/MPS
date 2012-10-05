@@ -20,15 +20,24 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class DevkitValidator extends BaseModuleValidator<DevKit> {
+public class DevkitValidator implements ModuleValidator {
+  private DevKit myModule;
+
   public DevkitValidator(DevKit module) {
-    super(module);
+    myModule = module;
   }
 
   public List<String> getErrors() {
-    List<String> errors = new ArrayList<String>(super.getErrors());
+    List<String> errors = new ArrayList<String>();
+    Throwable loadException = myModule.getModuleDescriptor().getLoadException();
+    if (loadException != null) {
+      errors.add("Couldn't load module: " + loadException.getMessage());
+      return errors;
+    }
+
     for (ModuleReference extDevkit : myModule.getModuleDescriptor().getExtendedDevkits()) {
       if (MPSModuleRepository.getInstance().getModule(extDevkit) == null) {
         errors.add("Can't find extended devkit: " + extDevkit.getModuleFqName());
@@ -45,5 +54,14 @@ public class DevkitValidator extends BaseModuleValidator<DevKit> {
       }
     }
     return errors;
+  }
+
+  @Override
+  public List<String> getWarnings() {
+    return Collections.emptyList();
+  }
+
+  public final boolean isValid() {
+    return getErrors().isEmpty();
   }
 }

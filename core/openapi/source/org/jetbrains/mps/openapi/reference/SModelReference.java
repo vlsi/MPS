@@ -25,20 +25,20 @@ public final class SModelReference extends SEntityReference<SModel> {
   private SModuleReference myModule;
 
   private SModelId myId;
-  private String myPresentation;
+  private String myName;
 
   public SModelReference(SModel model) {
     myModule = new SModuleReference(model.getModule());
     myId = model.getModelId();
-    myPresentation = model.getPresentation();
+    myName = model.getModelName();
   }
 
   public SModuleReference getModule() {
     return myModule;
   }
 
-  public String getPresentation() {
-    return myModule.getPresentation() + SEntityReference.DELIM + myPresentation;
+  public String getName() {
+    return myModule.getName() + SEntityReference.DELIM + myName;
   }
 
   public SModel resolve(SRepository repo) {

@@ -15,10 +15,14 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import java.util.Collection;
+/**
+ * evgeny, 10/5/12
+ */
+public interface SDependency {
 
-public interface ModuleWithFacets {
-  <T extends ModuleFacet> T getFacet(Class<T> facetClass);
+  SDependencyKind getKind();
 
-  Collection<Class<? extends ModuleFacet>> getFacetClasses();
+  boolean isReexport();
+
+  SModule getTarget();
 }

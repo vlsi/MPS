@@ -22,10 +22,6 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
     myProperties.loadFrom(myDevKit.getModuleDescriptor());
   }
 
-  protected String getErrorString() {
-    return checkStubModels(myProperties.getStubModels());
-  }
-
   protected boolean doSaveChanges() {
     if (!(checkValidity())) {
       return false;

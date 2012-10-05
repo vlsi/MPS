@@ -25,19 +25,19 @@ public final class SNodeReference extends SEntityReference<SNode> {
   private SModelReference myModel;
 
   private SNodeId myId;
-  private String myPresentation;
+  private String myName;
 
   public SNodeReference(SNode node) {
     myModel = new SModelReference(node.getModel());
     myId = node.getSNodeId();
-    myPresentation = node.getPresentation();
+    myName = node.getPresentation();
   }
   public SModelReference getModel() {
     return myModel;
   }
 
-  public String getPresentation() {
-    return myModel.getPresentation() + SEntityReference.DELIM + myPresentation;
+  public String getName() {
+    return myModel.getName() + SEntityReference.DELIM + myName;
   }
 
   public SNode resolve(SRepository repo) {

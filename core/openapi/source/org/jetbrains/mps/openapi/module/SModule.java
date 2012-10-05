@@ -18,20 +18,18 @@ package org.jetbrains.mps.openapi.module;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.reference.SModuleReference;
-
-import java.util.Collection;
 
 public interface SModule {
+
   SModuleId getModuleId();
 
-  String getPresentation();
+  String getModuleName();
 
   SRepository getRepository();
 
-  Collection<SModuleReference> getUsedModules();
+  Iterable<SDependency> getSDependencies();
 
-  Collection<SLanguage> getUsedLanguages();
+  Iterable<SLanguage> getUsedLanguages();
 
   SModel resolveInDependencies(SModelId ref);
 

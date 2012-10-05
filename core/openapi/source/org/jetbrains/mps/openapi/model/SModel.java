@@ -18,9 +18,10 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface SModel {
+
   SModelId getModelId();
 
-  String getPresentation();
+  String getModelName();
 
   SModule getModule();
 

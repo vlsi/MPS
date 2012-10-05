@@ -17,10 +17,14 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -96,7 +100,7 @@ public class LanguageRegistry implements CoreComponent {
     myLanguages.clear();
     Set<Language> existing = new HashSet<Language>(myLanguageToNamespace.keySet());
     for (Language l : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      String namespace = l.getModuleFqName();
+      String namespace = l.getModuleName();
       if (!myLanguages.containsKey(namespace)) {
         existing.remove(l);
         myLanguageToNamespace.put(l, namespace);
@@ -142,11 +146,10 @@ public class LanguageRegistry implements CoreComponent {
   private static LanguageRuntime createRuntime(Language l, boolean tryToLoad) {
     // TODO FIXME hack to avoid errors in LOG
     LanguageRuntime languageRuntime = null;
-    try{
-      languageRuntime = getObjectByClassNameForLanguage(l.getModuleFqName() + ".Language", LanguageRuntime.class, l, tryToLoad);
-    }
-    catch (RuntimeException unexpected) {
-      LOG.error("Exception loading language: "+unexpected);
+    try {
+      languageRuntime = getObjectByClassNameForLanguage(l.getModuleName() + ".Language", LanguageRuntime.class, l, tryToLoad);
+    } catch (RuntimeException unexpected) {
+      LOG.error("Exception loading language: " + unexpected);
     }
     if (languageRuntime == null) {
       languageRuntime = new LanguageRuntimeInterpreted(l);
@@ -181,15 +184,15 @@ public class LanguageRegistry implements CoreComponent {
   }
 
   public LanguageRuntime getLanguage(Language language) {
-    return getLanguage(language.getModuleFqName());
+    return getLanguage(language.getModuleName());
   }
 
-  private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
-    public void moduleAdded(IModule module) {
+  private class MyModuleRepositoryAdapter extends SRepositoryListenerAdapter {
+    public void moduleAdded(SModule module) {
       if (!(module instanceof Language)) return;
 
       Language l = (Language) module;
-      String namespace = l.getModuleFqName();
+      String namespace = l.getModuleName();
       // avoid duplicates in registry
       if (myLanguages.containsKey(namespace)) return;
 
@@ -202,17 +205,7 @@ public class LanguageRegistry implements CoreComponent {
     }
 
     @Override
-    public void moduleInitialized(IModule module) {
-
-    }
-
-    @Override
-    public void moduleChanged(IModule module) {
-
-    }
-
-    @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       if (!(module instanceof Language)) return;
 
       Language l = (Language) module;

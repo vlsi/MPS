@@ -3148,11 +3148,11 @@
     <nodeInfo nodeId="2662234144540708566" fileName="LanguagePaths_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708576" fileName="LanguagePaths_Action.java" startLine="73" startPosition="104" endLine="74" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708586" fileName="LanguagePaths_Action.java" startLine="74" startPosition="106" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2662234144540708587" fileName="LanguagePaths_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2662234144540708587" fileName="LanguagePaths_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708597" fileName="LanguagePaths_Action.java" startLine="77" startPosition="55" endLine="78" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708607" fileName="LanguagePaths_Action.java" startLine="80" startPosition="56" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708615" fileName="LanguagePaths_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2662234144540708616" fileName="LanguagePaths_Action.java" startLine="83" startPosition="0" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2662234144540708616" fileName="LanguagePaths_Action.java" startLine="83" startPosition="0" endLine="84" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708626" fileName="LanguagePaths_Action.java" startLine="85" startPosition="56" endLine="86" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708636" fileName="LanguagePaths_Action.java" startLine="88" startPosition="55" endLine="89" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708644" fileName="LanguagePaths_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -3170,9 +3170,9 @@
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="57" startPosition="95" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="43" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="51" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2662234144540708604" fileName="LanguagePaths_Action.java" startLine="79" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="44" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="52" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2662234144540708633" fileName="LanguagePaths_Action.java" startLine="87" startPosition="9" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2662234144540708645" fileName="LanguagePaths_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="105" startPosition="27" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3197,13 +3197,13 @@
     <scopeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="106" startPosition="33" endLine="107" endPosition="87" />
     <scopeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="35" startPosition="33" endLine="38" endPosition="41" />
     <scopeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="43" endLine="79" endPosition="9">
+    <scopeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="51" endLine="79" endPosition="9">
       <varInfo nodeId="2662234144540708594" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="2662234144540708604" fileName="LanguagePaths_Action.java" startLine="79" startPosition="9" endLine="82" endPosition="9">
       <varInfo nodeId="2662234144540708605" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="44" endLine="87" endPosition="9">
+    <scopeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="52" endLine="87" endPosition="9">
       <varInfo nodeId="2662234144540708623" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="2662234144540708633" fileName="LanguagePaths_Action.java" startLine="87" startPosition="9" endLine="90" endPosition="9">

@@ -142,7 +142,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public void validateExtends() {
     List<ModuleReference> remove = new ArrayList<ModuleReference>();
     for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      if (getModuleFqName().equals(ref.getModuleFqName())) {
+      if (getModuleName().equals(ref.getModuleFqName())) {
         remove.add(ref);
       }
     }
@@ -445,7 +445,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   @Override
   public Class getClass(String fqName) {
-    if (!fqName.startsWith(getModuleFqName() + ".stubs.")) return super.getClass(fqName);
+    if (!fqName.startsWith(getModuleName() + ".stubs.")) return super.getClass(fqName);
     try {
       return myStubsLoader.loadClass(fqName);
     } catch (ClassNotFoundException e) {
@@ -505,7 +505,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
               continue;
             }
 
-            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
+            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleName()));
           } catch (IOException e) {
             LOG.debug(e.getMessage());
           }
@@ -524,7 +524,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
     if (myLanguageDescriptor != null) {
       IFile bundleParent = getBundleHome().getParent();
-      String jarName = getModuleFqName() + ".jar";
+      String jarName = getModuleName() + ".jar";
       IFile bundleHomeFile = bundleParent.getDescendant(jarName);
 
       if (!bundleHomeFile.exists()) return;

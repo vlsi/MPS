@@ -124,7 +124,7 @@ public class ClassPathTest extends BaseMPSTest {
             if (pathItem instanceof JarFileClassPathItem) continue;
 
             for (String className : getAllClasses(pathItem)) {
-              String namespace = m.getModuleFqName();
+              String namespace = m.getModuleName();
               if (!loadedClasses.containsKey(className)) {
                 loadedClasses.put(className, new HashSet<LoadEnvironment>(1));
               }
