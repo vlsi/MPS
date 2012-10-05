@@ -108,10 +108,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1171903607971" resolveInfo="WildCardType" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877303489">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877305150">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1178285077437" resolveInfo="ClassifierMember" />
@@ -4010,11 +4006,6 @@
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877287012">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877287013" />
-    </node>
-  </root>
-  <root id="1213877303489">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877303490">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877303491" />
     </node>
   </root>
   <root id="1213877305150">
