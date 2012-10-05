@@ -406,10 +406,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generics" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1171903916106" resolveInfo="UpperBoundType" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1172008996157">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
-    </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1172013289681">
       <property name="name" nameId="tpck.1169194664001" value="StaticFieldReference_Actions" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
@@ -9695,18 +9691,6 @@
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4229197673032641984" resolveInfo="UpperBoundToWildcard" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1237647074918" />
-    </node>
-  </root>
-  <root id="1172008996157">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1172009002550">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1172008963202" />
-      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1172009002551">
-        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1172009005787">
-          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1198160792349" resolveInfo="StaticField" />
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-        </node>
-      </node>
     </node>
   </root>
   <root id="1172013289681">
