@@ -42,14 +42,6 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
-  /**
-   * @deprecated in MPS 3.0 Is here only for the compatibility with generated editor code.
-   */
-  @Deprecated
-  public ConceptPropertyCellProvider(SNode node, jetbrains.mps.nodeEditor.EditorContext context) {
-    this(node, (EditorContext) context);
-  }
-
   public EditorCell createEditorCell(EditorContext editorContext) {
     String text = getSNode().getConceptProperty(myConceptPropertyName);
     EditorCell_Label editorCell;

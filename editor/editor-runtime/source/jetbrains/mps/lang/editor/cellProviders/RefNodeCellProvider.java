@@ -29,14 +29,6 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
     super(node, context);
   }
 
-  /**
-   * @deprecated in MPS 3.0 Is here only for the compatibility with generated editor code.
-   */
-  @Deprecated
-  public RefNodeCellProvider(SNode node, jetbrains.mps.nodeEditor.EditorContext context) {
-    this(node, (EditorContext) context);
-  }
-  
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
     if (myIsAggregation) {
