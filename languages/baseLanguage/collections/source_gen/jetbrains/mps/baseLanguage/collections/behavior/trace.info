@@ -2425,7 +2425,7 @@
     <nodeInfo nodeId="6257218603554017674" fileName="ForEachStatement_Behavior.java" startLine="19" startPosition="57" endLine="20" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2499957847193012102" fileName="ForEachStatement_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6257218603554017649" fileName="ForEachStatement_Behavior.java" startLine="13" startPosition="40" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6257218603554017669" fileName="ForEachStatement_Behavior.java" startLine="18" startPosition="105" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6257218603554017669" fileName="ForEachStatement_Behavior.java" startLine="18" startPosition="113" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6257218603554026969" fileName="ForEachStatement_Behavior.java" startLine="17" startPosition="101" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6257218603554017649" fileName="ForEachStatement_Behavior.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="6257218603554017651" fileName="ForEachStatement_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
@@ -2433,7 +2433,7 @@
     <scopeInfo nodeId="6257218603554017649" fileName="ForEachStatement_Behavior.java" startLine="13" startPosition="40" endLine="16" endPosition="0">
       <varInfo nodeId="6257218603554017649" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6257218603554026970" fileName="ForEachStatement_Behavior.java" startLine="18" startPosition="105" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="6257218603554026970" fileName="ForEachStatement_Behavior.java" startLine="18" startPosition="113" endLine="21" endPosition="7" />
     <scopeInfo nodeId="6257218603554017654" fileName="ForEachStatement_Behavior.java" startLine="17" startPosition="101" endLine="23" endPosition="161" />
     <scopeInfo nodeId="6257218603554017649" fileName="ForEachStatement_Behavior.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6257218603554017657" varName="child" />
