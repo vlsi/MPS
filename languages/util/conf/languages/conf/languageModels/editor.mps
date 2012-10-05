@@ -9,6 +9,7 @@
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -16,7 +17,6 @@
   <import index="6edb" modelUID="r:8f4e8d01-a81e-409b-a7a6-092ad440588f(jetbrains.mps.platform.conf.behavior)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5314521579133271088">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="xml" />
@@ -27,8 +27,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.5066720069350533027" resolveInfo="XInclude" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1740160309778213296">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml" />
       <property name="name" nameId="tpck.1169194664001" value="ConfigurationXmlNode_Header" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1740160309778213304">
@@ -52,8 +52,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.5314521579133239121" resolveInfo="Extension" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="6121364846593763646">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
       <property name="name" nameId="tpck.1169194664001" value="Extension_name" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.5314521579133239121" resolveInfo="Extension" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6121364846593763658">
@@ -93,8 +93,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.7225089784577918894" resolveInfo="RootRoot" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="6880840382462248685">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="configuration" />
       <property name="name" nameId="tpck.1169194664001" value="BaseConcept_brokenRefs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="configuration" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6536266708345477918">
@@ -130,8 +130,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.8605160448688984307" resolveInfo="Action" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7208030699524554163">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
       <property name="name" nameId="tpck.1169194664001" value="AbstractAction_properties" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.4383174161801969971" resolveInfo="AbstractAction" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7208030699524554243">
@@ -159,8 +159,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="3963070320413821546">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml" />
       <property name="name" nameId="tpck.1169194664001" value="ConfigurationXmlRootNode_children" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
     </node>
   </roots>
@@ -210,8 +210,8 @@
         <property name="text" nameId="tpc2.1073389577007" value="/" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4559888222469859040">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;undefined&gt;" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;undefined&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.4559888222469859036" resolveInfo="includeRoot" />
       </node>
     </node>

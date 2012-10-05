@@ -26,7 +26,6 @@
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="821q" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.language(MPS.Core/org.jetbrains.mps.openapi.language@java_stub)" version="-1" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1209603916390">
       <property name="name" nameId="tpck.1169194664001" value="main" />
@@ -352,8 +351,8 @@
       <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="2681305894288486366">
         <node role="patternNode" roleId="tp3t.1136720037778" type="tq1l.CustomStatement" typeId="tq1l.2681305894288486346" id="2681305894288580973">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PropertyPatternVariableDeclaration" typeId="tp3t.1136720037781" id="2681305894288686805">
-            <property name="varName" nameId="tp3t.1136720037782" value="jobName" />
             <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+            <property name="varName" nameId="tp3t.1136720037782" value="jobName" />
           </node>
           <node role="inner" roleId="tq1l.2681305894288486349" type="tpee.Expression" typeId="tpee.1068431790191" id="2681305894288695005">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="2681305894288695006">
@@ -401,8 +400,8 @@
             <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="2163819695913701571">
-            <property name="varName" nameId="tp3t.1137418571428" value="aaa" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="myStatement" />
+            <property name="varName" nameId="tp3t.1137418571428" value="aaa" />
           </node>
         </node>
       </node>
@@ -449,8 +448,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="tq1l.CustomStatementRef" typeId="tq1l.2163819695913378074" id="5857536350883030952">
           <property name="ii" nameId="tq1l.2163819695913379842" value="0" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="5857536350883030954">
-            <property name="varName" nameId="tp3t.1137418571428" value="ref" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="myStatement" />
+            <property name="varName" nameId="tp3t.1137418571428" value="ref" />
           </node>
         </node>
       </node>
@@ -466,8 +465,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="tq1l.CustomStatementRef" typeId="tq1l.2163819695913378074" id="933643154465860962">
           <property name="ii" nameId="tq1l.2163819695913379842" value="12" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="933643154465860963">
-            <property name="varName" nameId="tp3t.1137418571428" value="ref" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="myStatement" />
+            <property name="varName" nameId="tp3t.1137418571428" value="ref" />
           </node>
         </node>
       </node>
@@ -495,8 +494,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="tq1l.CustomStatementRef" typeId="tq1l.2163819695913378074" id="8371596541809088653">
           <property name="ii" nameId="tq1l.2163819695913379842" value="13" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="8371596541809088654">
-            <property name="varName" nameId="tp3t.1137418571428" value="ref" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="myStatement" />
+            <property name="varName" nameId="tp3t.1137418571428" value="ref" />
           </node>
         </node>
       </node>
@@ -1068,8 +1067,8 @@
   </root>
   <root id="3392060900980718989">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3392060900980724035">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="aa" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3392060900980724041">
         <property name="name" nameId="tpck.1169194664001" value="fact" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3392060900980724042" />
@@ -1215,8 +1214,8 @@
   </root>
   <root id="3571912445009934880">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3571912445009934882">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ss" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3571912445009934888">
         <property name="name" nameId="tpck.1169194664001" value="statementX" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3571912445009934889" />
@@ -1236,7 +1235,7 @@
                             <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2144206851851948605" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948606">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948607">
@@ -1266,7 +1265,7 @@
                         <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2144206851851948830" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948831">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetSNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolveInfo="getSNodeId" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948832">
@@ -1302,7 +1301,7 @@
                               <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2144206851851948740" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948741">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetSNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolveInfo="getSNodeId" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948742">

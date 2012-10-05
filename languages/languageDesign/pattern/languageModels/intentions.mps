@@ -20,27 +20,26 @@
   <import index="tp3j" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3514655265371682052">
-      <property name="name" nameId="tpck.1169194664001" value="CreatePatternVariable" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CreatePatternVariable" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3514655265371724198">
-      <property name="name" nameId="tpck.1169194664001" value="CreatePropertyPatternVariable" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CreatePropertyPatternVariable" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3514655265371785881">
-      <property name="name" nameId="tpck.1169194664001" value="CreateListPattern" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CreateListPattern" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3514655265371789444">
-      <property name="name" nameId="tpck.1169194664001" value="CreateWildcardPattern" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CreateWildcardPattern" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3514655265371789469">
@@ -48,8 +47,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4413230749907735528">
-      <property name="name" nameId="tpck.1169194664001" value="CreateActionAsPattern" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CreateActionAsPattern" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="8263735385373627208">
@@ -512,7 +511,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6189792670245252943">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetSNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolveInfo="getSNodeId" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6189792670245252944">

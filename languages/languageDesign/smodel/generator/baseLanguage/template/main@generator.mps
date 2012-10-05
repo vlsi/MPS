@@ -46,7 +46,6 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
-  <import index="hmg3" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1139186732963">
       <property name="name" nameId="tpck.1169194664001" value="mc_main" />
@@ -345,27 +344,27 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6407023681583040708">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <property name="name" nameId="tpck.1169194664001" value="reduce_AbstractConceptDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6407023681583040746">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <property name="name" nameId="tpck.1169194664001" value="switch_ILinkQualifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6407023681583040763">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <property name="name" nameId="tpck.1169194664001" value="reduce_LinkDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6407023681583040924">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <property name="name" nameId="tpck.1169194664001" value="reduce_PropertyDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6407023681583040956">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
       <property name="name" nameId="tpck.1169194664001" value="switch_IPropertyQualifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4040588429969066518">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ModuleReferenceExpression" />
@@ -879,10 +878,10 @@
                   <link role="classifier" roleId="tpee.1170346070688" targetNodeId="msyo.~Computable" resolveInfo="Computable" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="448792706993460092" />
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="448792706993460093">
+                    <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                     <property name="name" nameId="tpck.1169194664001" value="compute" />
                     <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                    <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="448792706993460094" />
                     <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="448792706993460095">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
@@ -1011,7 +1010,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948805">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetSNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolveInfo="getSNodeId" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851948806">
@@ -1083,7 +1082,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851949000">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetSNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolveInfo="getSNodeId" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851949001">
@@ -6745,8 +6744,8 @@
   </root>
   <root id="1179411798670">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179411963747">
-      <property name="methodName" nameId="tp68.1173992444083" value="methodName" />
       <property name="fqClassName" nameId="tp68.1173992483054" value="ConceptName_Behavior" />
+      <property name="methodName" nameId="tp68.1173992444083" value="methodName" />
       <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1179412264958">
         <property name="value" nameId="tpee.1070475926801" value="this" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179412302370">
@@ -7486,8 +7485,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1205432503129">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="1205432506958">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="couldn't generate role string expression" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>
@@ -8464,8 +8463,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1229469837507">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="1229469839273">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="couldn't generate operaton" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -8705,8 +8704,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1229469897207">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="1229469897208">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="couldn't generate operaton" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -8959,8 +8958,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1206654249424">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="1206654251457">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="couldn't generate concept name string expression" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>
@@ -10005,8 +10004,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="5079980551111235360">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="5079980551111235361">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="Unsupported ILinkAccessQualifier found. Reference to LinkDeclaration cannot be generated." />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>

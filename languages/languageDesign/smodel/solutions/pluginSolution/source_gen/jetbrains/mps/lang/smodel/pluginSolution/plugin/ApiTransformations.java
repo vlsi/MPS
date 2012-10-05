@@ -458,11 +458,12 @@ public class ApiTransformations {
 
     // ----------------- 
 
+    // todo 
     String cat37 = "getRoleOf()->getRoleOf()";
-    SNode md37 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0tk0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md37 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0uk0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer37 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a082a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first()));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a182a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first()));
       }
     });
 
@@ -471,10 +472,10 @@ public class ApiTransformations {
     // ----------------- 
 
     String cat38 = "n.getReferenceRoles()->SNodeOperations.getReferenceRoles()";
-    SNode md38 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0bl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md38 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0cl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer38 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a882a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a982a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
       }
     });
 
@@ -483,11 +484,11 @@ public class ApiTransformations {
     // ----------------- 
 
     String cat39 = "insertChild(a,r,c)->insertChild()";
-    SNode md39 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0jl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md39 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0kl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer39 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
         List<SNode> arg = SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true);
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0b0a0a0a0a692a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(arg).getElement(1), ListSequence.fromList(arg).getElement(2), ListSequence.fromList(arg).getElement(0)));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0b0a0a0a0a792a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(arg).getElement(1), ListSequence.fromList(arg).getElement(2), ListSequence.fromList(arg).getElement(0)));
       }
     });
 
@@ -496,11 +497,11 @@ public class ApiTransformations {
     // ----------------- 
 
     String cat40 = "insertChild(a,r,c,b)->SNodeOperations.insertChild()";
-    SNode md40 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0rl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md40 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0sl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer40 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
         List<SNode> arg = SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true);
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0b0a0a0a0a403a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(arg).getElement(1), ListSequence.fromList(arg).getElement(2), ListSequence.fromList(arg).getElement(0), ListSequence.fromList(arg).getElement(3)));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0b0a0a0a0a503a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(arg).getElement(1), ListSequence.fromList(arg).getElement(2), ListSequence.fromList(arg).getElement(0), ListSequence.fromList(arg).getElement(3)));
       }
     });
 
@@ -509,7 +510,7 @@ public class ApiTransformations {
     // ----------------- 
 
     String cat41 = "removeReferent()->setReferenceTarget(null)";
-    SNode md41 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0zl0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md41 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0am0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> transVerifier41 = new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
       public Boolean invoke(SNode n) {
         return SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(n), "jetbrains.mps.baseLanguage.structure.DotExpression") && (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null);
@@ -517,7 +518,7 @@ public class ApiTransformations {
     };
     _FunctionTypes._void_P1_E0<? super SNode> transformer41 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a313a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first()));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a413a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first()));
       }
     });
 
@@ -526,10 +527,10 @@ public class ApiTransformations {
     // ----------------- 
 
     String cat42 = "isDeleted()->getModel()==null";
-    SNode md42 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0im0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md42 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0jm0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer42 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a123a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a223a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
       }
     });
 
@@ -538,10 +539,10 @@ public class ApiTransformations {
     // ----------------- 
 
     String cat43 = "n.getResolveInfo()->SNodeOperations.getResolveInfo()";
-    SNode md43 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0qm0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    SNode md43 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0rm0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer43 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a923a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
+        return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiTransformations.QuotationClass_f4dkew_a0a0a0a0a0a0a033a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
       }
     });
 
@@ -4049,8 +4050,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0tk0a {
-    public QuotationClass_f4dkew_a0a0a0tk0a() {
+  public static class QuotationClass_f4dkew_a0a0a0uk0a {
+    public QuotationClass_f4dkew_a0a0a0uk0a() {
     }
 
     public SNode createNode() {
@@ -4081,7 +4082,7 @@ public class ApiTransformations {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_3;
-          quotedNode1_12.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_12, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getRoleOf(jetbrains.mps.smodel.SNode):java.lang.String")));
+          quotedNode1_12.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_12, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getRoleOf(org.jetbrains.mps.openapi.model.SNode):java.lang.String")));
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_13 = quotedNode_5;
@@ -4111,8 +4112,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a082a0 {
-    public QuotationClass_f4dkew_a0a0a0a0a0a0a082a0() {
+  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a182a0 {
+    public QuotationClass_f4dkew_a0a0a0a0a0a0a182a0() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {
@@ -4167,8 +4168,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0bl0a {
-    public QuotationClass_f4dkew_a0a0a0bl0a() {
+  public static class QuotationClass_f4dkew_a0a0a0cl0a {
+    public QuotationClass_f4dkew_a0a0a0cl0a() {
     }
 
     public SNode createNode() {
@@ -4204,8 +4205,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a882a0 {
-    public QuotationClass_f4dkew_a0a0a0a0a0a0a882a0() {
+  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a982a0 {
+    public QuotationClass_f4dkew_a0a0a0a0a0a0a982a0() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -4237,8 +4238,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0jl0a {
-    public QuotationClass_f4dkew_a0a0a0jl0a() {
+  public static class QuotationClass_f4dkew_a0a0a0kl0a {
+    public QuotationClass_f4dkew_a0a0a0kl0a() {
     }
 
     public SNode createNode() {
@@ -4331,8 +4332,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0b0a0a0a0a692a0 {
-    public QuotationClass_f4dkew_a0a0b0a0a0a0a692a0() {
+  public static class QuotationClass_f4dkew_a0a0b0a0a0a0a792a0 {
+    public QuotationClass_f4dkew_a0a0b0a0a0a0a792a0() {
     }
 
     public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20) {
@@ -4415,8 +4416,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0rl0a {
-    public QuotationClass_f4dkew_a0a0a0rl0a() {
+  public static class QuotationClass_f4dkew_a0a0a0sl0a {
+    public QuotationClass_f4dkew_a0a0a0sl0a() {
     }
 
     public SNode createNode() {
@@ -4516,8 +4517,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0b0a0a0a0a403a0 {
-    public QuotationClass_f4dkew_a0a0b0a0a0a0a403a0() {
+  public static class QuotationClass_f4dkew_a0a0b0a0a0a0a503a0 {
+    public QuotationClass_f4dkew_a0a0b0a0a0a0a503a0() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16, Object parameter_17) {
@@ -4605,8 +4606,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0zl0a {
-    public QuotationClass_f4dkew_a0a0a0zl0a() {
+  public static class QuotationClass_f4dkew_a0a0a0am0a {
+    public QuotationClass_f4dkew_a0a0a0am0a() {
     }
 
     public SNode createNode() {
@@ -4642,8 +4643,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a313a0 {
-    public QuotationClass_f4dkew_a0a0a0a0a0a0a313a0() {
+  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a413a0 {
+    public QuotationClass_f4dkew_a0a0a0a0a0a0a413a0() {
     }
 
     public SNode createNode(Object parameter_15, Object parameter_16) {
@@ -4704,8 +4705,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0im0a {
-    public QuotationClass_f4dkew_a0a0a0im0a() {
+  public static class QuotationClass_f4dkew_a0a0a0jm0a {
+    public QuotationClass_f4dkew_a0a0a0jm0a() {
     }
 
     public SNode createNode() {
@@ -4741,8 +4742,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a123a0 {
-    public QuotationClass_f4dkew_a0a0a0a0a0a0a123a0() {
+  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a223a0 {
+    public QuotationClass_f4dkew_a0a0a0a0a0a0a223a0() {
     }
 
     public SNode createNode(Object parameter_15) {
@@ -4795,8 +4796,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0qm0a {
-    public QuotationClass_f4dkew_a0a0a0qm0a() {
+  public static class QuotationClass_f4dkew_a0a0a0rm0a {
+    public QuotationClass_f4dkew_a0a0a0rm0a() {
     }
 
     public SNode createNode() {
@@ -4832,8 +4833,8 @@ public class ApiTransformations {
     }
   }
 
-  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a923a0 {
-    public QuotationClass_f4dkew_a0a0a0a0a0a0a923a0() {
+  public static class QuotationClass_f4dkew_a0a0a0a0a0a0a033a0 {
+    public QuotationClass_f4dkew_a0a0a0a0a0a0a033a0() {
     }
 
     public SNode createNode(Object parameter_5) {
