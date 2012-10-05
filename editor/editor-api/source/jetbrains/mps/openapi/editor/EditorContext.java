@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 
@@ -35,12 +36,16 @@ public interface EditorContext {
    * If multiple EditorCells are representing same SNode in this editor then most applicable
    * will be selected based on FocusPolicies specified on EditorCells.
    *
-   * @param node   one of EditorCells representing this SNode should be selected
-   * @param force  change selection even if getSelectedNode() == node
+   * @param node  one of EditorCells representing this SNode should be selected
+   * @param force change selection even if getSelectedNode() == node
    */
   void selectWRTFocusPolicy(SNode node, boolean force);
 
+  EditorCell getSelectedCell();
+
   EditorInspector getInspector();
+
+  EditorComponent getEditorComponent();
 
   void executeCommand(Runnable r);
 
@@ -50,5 +55,9 @@ public interface EditorContext {
 
   void flushEvents();
 
-  EditorCell getSelectedCell();
+  IScope getScope();
+
+  EditorCell createNodeCell(SNode node);
+
+  EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
 }
