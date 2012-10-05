@@ -79,9 +79,12 @@ public class HidingByNameScope extends Scope {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) || !(node.isInstanceOfConcept(kindConceptFqName))) {
       return false;
     }
-    return (SetSequence.fromSet(names).contains(node.getName()) ?
-      scope.contains(node) :
-      parentScope.contains(node)
-    );
+    if (scope.contains(node)) {
+      return true;
+    }
+    if (SetSequence.fromSet(names).contains(node.getName())) {
+      return false;
+    }
+    return parentScope.contains(node);
   }
 }
