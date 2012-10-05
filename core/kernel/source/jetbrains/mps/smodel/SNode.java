@@ -322,12 +322,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     fireNodeReadAccess();
     SReference result = null;
     int count = 0; // paranoid check
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getRole().equals(role)) {
-          result = reference;
-          count++;
-        }
+    for (SReference reference : myReferences) {
+      if (reference.getRole().equals(role)) {
+        result = reference;
+        count++;
       }
     }
 
@@ -348,7 +346,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
     if (reference != null) {
       assert reference.getSourceNode() == this;
-      insertReferenceAt(myReferences == null ? 0 : myReferences.length, (SReference) reference);
+      addReferenceInternal((SReference) reference);
     }
   }
 
@@ -451,10 +449,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       assert role != null;
       return role;
     }
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getTargetNode() == child) return reference.getRole();
-      }
+    for (SReference reference : myReferences) {
+      if (reference.getTargetNode() == child) return reference.getRole();
     }
 
     return "<no role>";
@@ -1689,7 +1685,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SReference resultReference = null;
     if (newReferent != null) {
       resultReference = SReference.create(role, this, newReferent);
-      insertReferenceAt(myReferences == null ? 0 : myReferences.length, resultReference);
+      addReferenceInternal(resultReference);
     }
     return resultReference;
   }
@@ -1752,13 +1748,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return -1;
   }
 
-  private void insertReferenceAt(final int index, final SReference reference) {
+  private void addReferenceInternal(final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
 
-    SReference[] newArray = new SReference[myReferences.length + 1];
-    System.arraycopy(myReferences, 0, newArray, 0, index);
-    newArray[index] = reference;
-    System.arraycopy(myReferences, index, newArray, index + 1, myReferences.length - index);
+    int oldLen = myReferences.length;
+    SReference[] newArray = new SReference[oldLen + 1];
+    System.arraycopy(myReferences, 0, newArray, 0, oldLen);
+    newArray[oldLen] = reference;
     myReferences = newArray;
 
     SModel model = getModel();
