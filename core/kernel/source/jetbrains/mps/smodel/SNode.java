@@ -121,11 +121,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public final boolean hasProperty(String propertyName) {
-    ModelAccess.assertLegalRead(this);
-
-    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, true);
-    String property_internal = getProperty_internal(propertyName);
-    return !SModelUtil_new.isEmptyPropertyValue(property_internal);
+    return !SModelUtil_new.isEmptyPropertyValue(getProperty(propertyName));
   }
 
   public final String getProperty(String propertyName) {
