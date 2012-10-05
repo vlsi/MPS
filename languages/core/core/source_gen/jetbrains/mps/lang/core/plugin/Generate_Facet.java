@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -93,7 +93,7 @@ public class Generate_Facet extends IFacet.Stub {
     return new Generate_Facet.TargetProperties();
   }
 
-  public static class Target_checkParameters implements ITargetEx {
+  public static class Target_checkParameters implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -104,7 +104,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0a = null;
           switch (0) {
             case 0:
@@ -183,6 +183,10 @@ public class Generate_Facet extends IFacet.Stub {
       return t;
     }
 
+    public int workEstimate() {
+      return 10;
+    }
+
     public static class Variables extends MultiTuple._3<Project, IOperationContext, Boolean> {
       public Variables() {
         super();
@@ -223,7 +227,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_configure implements ITargetEx {
+  public static class Target_configure implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -234,7 +238,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0b = null;
           switch (0) {
             case 0:
@@ -348,6 +352,10 @@ public class Generate_Facet extends IFacet.Stub {
       return t;
     }
 
+    public int workEstimate() {
+      return 10;
+    }
+
     public static class Variables extends MultiTuple._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> {
       public Variables() {
         super();
@@ -396,7 +404,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_preloadModels implements ITargetEx {
+  public static class Target_preloadModels implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -407,7 +415,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0c = null;
           switch (0) {
             case 0:
@@ -494,9 +502,13 @@ public class Generate_Facet extends IFacet.Stub {
       T t = createParameters(cls);
       return t;
     }
+
+    public int workEstimate() {
+      return 400;
+    }
   }
 
-  public static class Target_generate implements ITargetEx {
+  public static class Target_generate implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -507,7 +519,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
@@ -640,6 +652,10 @@ public class Generate_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+
+    public int workEstimate() {
+      return 5000;
     }
   }
 

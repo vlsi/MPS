@@ -56,7 +56,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="sampleFacet.plugin.Sample_Facet.Target_readParams.Parameters" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>

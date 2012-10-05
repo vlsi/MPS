@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,7 +41,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   }
 
   public void replaceNode(SNode node, SNode declaration) {
-    if (this.myContainer == SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
+    if (Scope.getScope(Scope.parent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(declaration)) {
       SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0a0c().createNode(declaration));
     } else {
       SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0a0a2().createNode(this.myContainer, declaration));
