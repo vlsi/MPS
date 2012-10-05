@@ -12,6 +12,7 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -19,23 +20,22 @@
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" implicit="yes" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4975090607137555731">
-      <property name="name" nameId="tpck.1169194664001" value="CheckRootNodesNamingInternalPolicy" />
       <property name="title" nameId="tp33.1177457669450" value="Check Root Concepts' Internal Naming Policy" />
+      <property name="name" nameId="tpck.1169194664001" value="CheckRootNodesNamingInternalPolicy" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5800912818421828062">
       <property name="name" nameId="tpck.1169194664001" value="RefUtil" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="6066872190921237633">
-      <property name="name" nameId="tpck.1169194664001" value="DeleteUndeclaredLinksAndProperties" />
       <property name="title" nameId="tp33.1177457669450" value="Delete Undeclared Links and Properties" />
+      <property name="name" nameId="tpck.1169194664001" value="DeleteUndeclaredLinksAndProperties" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4376713410984067201">
-      <property name="type" nameId="tp33.5299416737274925395" value="enhancement" />
-      <property name="name" nameId="tpck.1169194664001" value="RemoveBackslashesFromIconPath" />
       <property name="title" nameId="tp33.1177457669450" value="Remove backslashes from macros in iconPath" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveBackslashesFromIconPath" />
+      <property name="type" nameId="tp33.5299416737274925395" value="enhancement" />
     </node>
   </roots>
   <root id="4975090607137555731">
@@ -860,8 +860,8 @@
   </root>
   <root id="4376713410984067201">
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="4376713410984067202">
-      <property name="showAsIntention" nameId="tp33.1225457189692" value="true" />
       <property name="description" nameId="tp33.1177457972041" value="Remove backslashes from macros in iconPath" />
+      <property name="showAsIntention" nameId="tp33.1225457189692" value="true" />
       <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
       <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="4376713410984067203">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4376713410984067204">
