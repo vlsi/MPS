@@ -12,7 +12,7 @@ import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
+public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, ITypeApplicable_BehaviorDescriptor {
   public BaseMethodDeclaration_BehaviorDescriptor() {
   }
 
@@ -70,6 +70,10 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
 
   public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
+  }
+
+  public List<SNode> virtual_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs) {
+    return BaseMethodDeclaration_Behavior.virtual_getTypeApplicationParameters_8277080359323839095(thisNode, actualArgs);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {

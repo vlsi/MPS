@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Map;
 
 public class UpperBoundType_Behavior {
   public static void init(SNode thisNode) {
@@ -32,5 +33,19 @@ public class UpperBoundType_Behavior {
 
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return false;
+  }
+
+  public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+      return IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+    }
+    return IGenericType_Behavior.callSuperNew_expandGenerics_4107091686347199582(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions);
+  }
+
+  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+    }
   }
 }

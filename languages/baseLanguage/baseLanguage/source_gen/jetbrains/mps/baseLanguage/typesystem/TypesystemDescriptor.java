@@ -909,14 +909,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
-      ComparisonRule_Runtime comparisonRule = new compareClassifierTypes_ComparisonRule();
-      this.myComparisonRules.add(comparisonRule);
-    }
-    {
-      ComparisonRule_Runtime comparisonRule = new interfaces_are_comparable_ComparisonRule();
-      this.myComparisonRules.add(comparisonRule);
-    }
-    {
       ComparisonRule_Runtime comparisonRule = new typevar_comparable_with_classifier_type_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
@@ -982,7 +974,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a632a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a432a0().createNode();
         }
       };
       this.myVariableConverters.add(converter);
@@ -1015,14 +1007,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0kj0a().createNode();
+          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0ij0a().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a442a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a242a0().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1438,8 +1430,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0b0a0a0a632a0 {
-    public QuotationClass_3ist9o_a0a0b0a0a0a632a0() {
+  public static class QuotationClass_3ist9o_a0a0b0a0a0a432a0 {
+    public QuotationClass_3ist9o_a0a0b0a0a0a432a0() {
     }
 
     public SNode createNode() {
@@ -1456,8 +1448,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a442a0 {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a442a0() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a242a0 {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a242a0() {
     }
 
     public SNode createNode() {
@@ -1473,8 +1465,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0kj0a {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a0kj0a() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0ij0a {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a0ij0a() {
     }
 
     public SNode createNode() {

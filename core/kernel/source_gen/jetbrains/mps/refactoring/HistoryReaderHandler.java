@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.persistence.def.v7.ReadHelper;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -161,7 +161,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       StructureModificationLog result = (StructureModificationLog) resultObject;
       if ("StructureModification".equals(tagName)) {
         StructureModification child = (StructureModification) value;
-        ListSequence.fromList(result.getHistory()).addElement(child);
+        CollectionSequence.fromCollection(result.getHistory()).addElement(child);
         return;
       }
       super.handleChild(resultObject, tagName, value);
@@ -207,17 +207,17 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       }
       if ("move".equals(tagName)) {
         StructureModification.MoveNode child = (StructureModification.MoveNode) value;
-        ListSequence.fromList(result.getData()).addElement(child);
+        CollectionSequence.fromCollection(result.getData()).addElement(child);
         return;
       }
       if ("rename".equals(tagName)) {
         StructureModification.RenameNode child = (StructureModification.RenameNode) value;
-        ListSequence.fromList(result.getData()).addElement(child);
+        CollectionSequence.fromCollection(result.getData()).addElement(child);
         return;
       }
       if ("RenameModel".equals(tagName)) {
         StructureModification.RenameModel child = (StructureModification.RenameModel) value;
-        ListSequence.fromList(result.getData()).addElement(child);
+        CollectionSequence.fromCollection(result.getData()).addElement(child);
         return;
       }
       super.handleChild(resultObject, tagName, value);

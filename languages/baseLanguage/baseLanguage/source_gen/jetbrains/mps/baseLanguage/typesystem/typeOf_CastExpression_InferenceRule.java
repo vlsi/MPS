@@ -9,6 +9,17 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -17,15 +28,37 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
 
   public void applyRule(final SNode castExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(castExpression, "type", true) != null)) {
+      SNode castType = SLinkOperations.getTarget(castExpression, "type", true);
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485155", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode) SLinkOperations.getTarget(castExpression, "type", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode) castType, _info_12389875345);
       }
+
+      Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      if (SNodeOperations.isInstanceOf(castType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+        // every unbound type var gets a var 
+        List<SNode> pl = SetSequence.fromSet(MapSequence.fromMap(subs).mappingsSet()).where(new IWhereFilter<IMapping<SNode, SNode>>() {
+          public boolean accept(IMapping<SNode, SNode> m) {
+            return SLinkOperations.getTarget(SNodeOperations.as(m.value(), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == m.key();
+          }
+        }).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
+          public SNode select(IMapping<SNode, SNode> m) {
+            return m.key();
+          }
+        }).toListSequence();
+        for (SNode p : ListSequence.fromList(pl)) {
+          final SNode T_typevar_778192503039804307 = typeCheckingContext.createNewRuntimeTypesVariable();
+          MapSequence.fromMap(subs).put(p, typeCheckingContext.getRepresentative(T_typevar_778192503039804307));
+        }
+        castType = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+      }
+
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928127", 0, null);
-        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928128", true), (SNode) SLinkOperations.getTarget(castExpression, "type", true), false, _info_12389875345);
+        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928128", true), (SNode) castType, false, _info_12389875345);
       }
     }
   }

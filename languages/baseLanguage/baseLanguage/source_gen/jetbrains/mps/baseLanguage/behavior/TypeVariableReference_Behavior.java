@@ -4,11 +4,17 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,8 +28,11 @@ public class TypeVariableReference_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode decl = SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false);
-    if (decl != null) {
+    if (ListSequence.fromList(SNodeOperations.getAncestors(thisNode, null, false)).contains(decl)) {
       return SPropertyOperations.getString(decl, "name");
+    }
+    if (decl != null) {
+      return "@" + BaseConcept_Behavior.call_getPresentation_1213877396640(decl);
     }
     return "?typevar_ref?";
   }
@@ -47,6 +56,31 @@ public class TypeVariableReference_Behavior {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
     }
 
+  }
+
+  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
+      return;
+    }
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+      MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), thisNode);
+    } else {
+      IGenericType_Behavior.callSuperNew_collectGenericSubstitutions_4107091686347010321(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions);
+    }
+  }
+
+  public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
+      SNode exp = SNodeOperations.copyNode(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false)));
+      if (MatchingUtil.matchNodes(thisNode, exp)) {
+        return thisNode;
+      }
+      if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        return IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+      }
+      return exp;
+    }
+    return thisNode;
   }
 
   public static class QuotationClass_6i211a_a0b0c {
