@@ -537,10 +537,6 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3262277503800831938">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.3262277503800813725" resolveInfo="ILocalReference" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8559617843245351005">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8559617843245426455">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
@@ -33063,11 +33059,6 @@
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3262277503800831939">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3262277503800831940" />
-    </node>
-  </root>
-  <root id="8559617843245351005">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="8559617843245351006">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8559617843245351007" />
     </node>
   </root>
   <root id="8559617843245426455">

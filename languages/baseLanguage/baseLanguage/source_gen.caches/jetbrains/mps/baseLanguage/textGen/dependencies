@@ -747,12 +747,6 @@
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.LocalInstanceFieldReference_TextGen" file="LocalInstanceFieldReference_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.LocalInstanceMethodCall_TextGen" file="LocalInstanceMethodCall_TextGen.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -777,12 +771,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.LocalVariableDeclaration_TextGen" file="LocalVariableDeclaration_TextGen.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.LocalVariableReference_TextGen" file="LocalVariableReference_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
@@ -837,12 +825,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.ParameterDeclaration_TextGen" file="ParameterDeclaration_TextGen.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.ParameterReference_TextGen" file="ParameterReference_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>

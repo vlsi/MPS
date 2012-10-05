@@ -13995,14 +13995,6 @@
     <unitInfo nodeId="4859441577819369316" fileName="ConstructorInvocationStatement_Behavior.java" startLine="54" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior$QuotationClass_teq92u_a0d0b" />
     <unitInfo nodeId="8008512149545173647" fileName="ConstructorInvocationStatement_Behavior.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior" />
   </root>
-  <root nodeId="8559617843245351005" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
-    <nodeInfo nodeId="8559617843245351005" fileName="LocalInstanceFieldReference_Behavior.java" startLine="7" startPosition="51" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="8559617843245351007" fileName="LocalInstanceFieldReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="8559617843245351005" fileName="LocalInstanceFieldReference_Behavior.java" startLine="7" startPosition="51" endLine="10" endPosition="0">
-      <varInfo nodeId="8559617843245351005" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8559617843245351005" fileName="LocalInstanceFieldReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalInstanceFieldReference_Behavior" />
-  </root>
   <root nodeId="8559617843245426455" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="6088474966771529461" fileName="LocalInstanceMethodCall_Behavior.java" startLine="23" startPosition="37" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6088474966771529615" fileName="LocalInstanceMethodCall_Behavior.java" startLine="27" startPosition="39" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
