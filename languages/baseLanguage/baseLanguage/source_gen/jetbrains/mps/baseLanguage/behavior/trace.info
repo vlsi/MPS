@@ -251,7 +251,7 @@
   <unitInfo fileName="ValueParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ValueParameter_BehaviorDescriptor" />
   <unitInfo fileName="VarType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VarType_BehaviorDescriptor" />
   <unitInfo fileName="VariableArityType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableArityType_BehaviorDescriptor" />
-  <unitInfo fileName="VariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="VariableDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="VariableReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor" />
   <unitInfo fileName="Visibility_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Visibility_BehaviorDescriptor" />
   <unitInfo fileName="VoidType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VoidType_BehaviorDescriptor" />
