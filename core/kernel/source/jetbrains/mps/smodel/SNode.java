@@ -121,7 +121,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public final boolean hasProperty(String propertyName) {
-    return !SModelUtil_new.isEmptyPropertyValue(getProperty(propertyName));
+    ModelAccess.assertLegalRead(this);
+
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, true);
+    String property_internal = getProperty_internal(propertyName);
+    return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
   public final String getProperty(String propertyName) {
@@ -806,6 +810,19 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void putProperties(SNode fromNode) {
+    if (fromNode == null) return;
+    if (fromNode.myProperties == null) return;
+    int len = fromNode.myProperties.length;
+    myProperties = new String[len];
+    System.arraycopy(fromNode.myProperties, 0, myProperties, 0, len);
+  }
+
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
 
   @Deprecated
@@ -865,12 +882,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public SNode getChild(String role) {
     List<SNode> children = getChildren(role);
     int size = children.size();
-    if (size >1){
+    if (size > 1) {
       String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
-    if (size ==0) return null;
+    if (size == 0) return null;
     return children.get(0);
   }
 
@@ -899,7 +916,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public List<SNode> getChildren(boolean includeAttributes) {
     if (includeAttributes) return getChildren();
     ArrayList<SNode> res = new ArrayList<SNode>();
-    for (SNode child:getChildren()){
+    for (SNode child : getChildren()) {
       if (AttributeOperations.isAttribute(child)) continue;
       res.add(child);
     }
@@ -1010,22 +1027,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Set<String> getReferenceRoles() {
     return jetbrains.mps.util.SNodeOperations.getReferenceRoles(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void putProperties(SNode fromNode) {
-    if (fromNode == null) return;
-
-    fromNode.visitProperties(new PropertyVisitor() {
-      public boolean visitProperty(String name, String value) {
-        setProperty(name, value);
-        return true;
-      }
-    });
   }
 
   @Deprecated

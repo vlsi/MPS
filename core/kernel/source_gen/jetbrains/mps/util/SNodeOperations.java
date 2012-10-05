@@ -216,12 +216,8 @@ public class SNodeOperations {
   }
 
   public static void copyProperties(SNode from, final SNode to) {
-    from.visitProperties(new SNode.PropertyVisitor() {
-      public boolean visitProperty(String p0, String p1) {
-        to.setProperty(p0, p1);
-        return true;
-      }
-    });
+    ((jetbrains.mps.smodel.SNode) to).putProperties(((jetbrains.mps.smodel.SNode) from));
+    // <node> 
   }
 
   public static Language getLanguage(SNode node) {
