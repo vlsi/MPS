@@ -60,6 +60,11 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myNodeEditorComponent;
   }
 
+  @Override
+  public jetbrains.mps.openapi.editor.EditorComponent getEditorComponent() {
+    return myNodeEditorComponent;
+  }
+
   public boolean isEditable() {
     SNode node = myNodeEditorComponent.getRootCell().getSNode();
     return node != null && node.getModel() != null && !node.getModel().isNotEditable();
