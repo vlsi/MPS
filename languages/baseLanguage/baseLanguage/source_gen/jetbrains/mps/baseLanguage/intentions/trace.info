@@ -2523,45 +2523,48 @@
     <unitInfo nodeId="1217838039231" fileName="ConvertElseToElseIf_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertElseToElseIf_Intention" />
   </root>
   <root nodeId="1221573777472" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
-    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573840705" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221573831557" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="45" startPosition="136" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221573831559" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="47" startPosition="5" endLine="48" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1221573831566" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="48" startPosition="138" endLine="49" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221573853848" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3004630219741382453" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="53" startPosition="138" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7346552127093237688" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1221722787481" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="57" startPosition="5" endLine="58" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1221722790113" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="58" startPosition="129" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7074068829090384180" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="45" startPosition="170" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221573831557" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="48" startPosition="136" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221573831559" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="50" startPosition="5" endLine="51" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221573831566" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="51" startPosition="138" endLine="52" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221573853848" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="55" startPosition="76" endLine="56" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3004630219741382453" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="56" startPosition="138" endLine="57" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7346552127093237688" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="58" startPosition="35" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221722787481" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="60" startPosition="5" endLine="61" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221722790113" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="61" startPosition="129" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="65" startPosition="37" endLine="66" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="13" startPosition="106" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertAssignmentToVariableDeclaration_Intention#()V" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="37" startPosition="84" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221573831548" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="44" startPosition="90" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7346552127093237677" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="54" startPosition="63" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7074068829090384117" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="44" startPosition="90" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1221573831548" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7346552127093237677" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="57" startPosition="63" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
     <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="43" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="51" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="54" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="43" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="14" startPosition="61" endLine="14" endPosition="61" />
-    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="73" />
+    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="68" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" />
     <scopeInfo nodeId="1221573839235" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="45" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1221573831556" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="45" startPosition="136" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="7346552127093237678" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="27" />
-    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="51" />
+    <scopeInfo nodeId="7074068829090384118" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="45" startPosition="170" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="1221573831556" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="48" startPosition="136" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="7346552127093237678" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="58" startPosition="35" endLine="59" endPosition="27" />
+    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="65" startPosition="37" endLine="66" endPosition="51" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="13" startPosition="106" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
@@ -2572,28 +2575,28 @@
       <varInfo nodeId="1221573777472" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1221573831125" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="44" startPosition="90" endLine="49" endPosition="174">
-      <varInfo nodeId="1221573831560" varName="assignment" />
-    </scopeInfo>
+    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1221573777472" varName="editorContext" />
       <varInfo nodeId="1221573777472" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221573777476" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="52" startPosition="76" endLine="59" endPosition="47">
+    <scopeInfo nodeId="1221573777476" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="55" startPosition="76" endLine="62" endPosition="47">
       <varInfo nodeId="1221573853849" varName="assignment" />
       <varInfo nodeId="1221722787482" varName="result" />
       <varInfo nodeId="3004630219741382454" varName="suggestedName" />
     </scopeInfo>
-    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1221573831125" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="44" startPosition="90" endLine="52" endPosition="174">
+      <varInfo nodeId="1221573831560" varName="assignment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="54" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1221573777472" varName="editorContext" />
       <varInfo nodeId="1221573777472" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="51" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="43" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1221573777472" varName="editorContext" />
       <varInfo nodeId="1221573777472" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertAssignmentToVariableDeclaration_Intention" />
+    <unitInfo nodeId="1221573777472" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="13" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertAssignmentToVariableDeclaration_Intention" />
   </root>
   <root nodeId="1223648378225" modelId="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
     <nodeInfo nodeId="1223648378225" fileName="DeprecatedJavaDoc_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

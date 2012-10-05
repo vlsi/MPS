@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
+import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,7 +26,7 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
       return;
     }
     if (!(SPropertyOperations.getBoolean(SLinkOperations.getTarget(localVariableReference, "variableDeclaration", false), "isFinal"))) {
-      if (!(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
+      if (!(VariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
         if ((SNodeOperations.getAncestor(localVariableReference, "jetbrains.mps.baseLanguage.structure.IFinalWrapper", false, false) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

@@ -76,12 +76,29 @@ public class VariableReference_Behavior {
   }
 
   public static boolean call_isParameterOfThisMethod_1240394425603(SNode thisNode) {
-    // todo: method from Parameter reference. Remove. 
+    // todo: method from ParameterReference. Remove. 
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       throw new IllegalArgumentException();
     }
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false)) {
       if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Closureoid", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closureoid", false, false)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static boolean call_isVariableDefinedInThisMethod_1225456272518(SNode thisNode) {
+    // todo: method from LocalVariableReference. Remove 
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      throw new IllegalArgumentException();
+    }
+    SNode anchor = thisNode;
+    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, false) != null)) {
+      anchor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
+    }
+    if (SNodeOperations.getAncestor(anchor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false)) {
+      if (SNodeOperations.getAncestor(anchor, "jetbrains.mps.baseLanguage.structure.Closureoid", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closureoid", false, false)) {
         return true;
       }
     }
