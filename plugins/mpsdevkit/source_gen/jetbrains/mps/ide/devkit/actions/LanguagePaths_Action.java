@@ -73,7 +73,7 @@ public class LanguagePaths_Action extends BaseAction {
         List<ModelRoot> cp = ModelRootUtil.filterJava(lang.getModuleDescriptor().getStubModelEntries());
         List<ModelRoot> rcp = ModelRootUtil.filterJava(lang.getModuleDescriptor().getRuntimeStubModels());
 
-        List<String> cpu = new ArrayList();
+        List<String> cpu = new ArrayList<String>();
         for (ModelRoot i : ListSequence.fromList(cp)) {
           cpu.add(i.getPath());
         }
@@ -81,7 +81,7 @@ public class LanguagePaths_Action extends BaseAction {
           cpu.remove(i.getPath());
         }
 
-        List<String> rcpu = new ArrayList();
+        List<String> rcpu = new ArrayList<String>();
         for (ModelRoot i : ListSequence.fromList(rcp)) {
           rcpu.add(i.getPath());
         }
