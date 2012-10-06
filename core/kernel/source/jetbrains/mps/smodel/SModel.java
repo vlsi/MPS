@@ -29,13 +29,12 @@ import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel implements org.jetbrains.mps.openapi.model.SModel {
+public class SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -88,11 +87,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return getSModelReference().getSModelId();
   }
 
-  @Override
-  public org.jetbrains.mps.openapi.model.SModelId getModelId() {
-    return getSModelId();
-  }
-
   @NotNull
   public String getStereotype() {
     return myReference.getStereotype();
@@ -101,28 +95,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   @NotNull
   public String getLongName() {
     return myReference.getLongName();
-  }
-
-  @Override
-  public String getModelName() {
-    return getLongName();
-  }
-
-  @Override
-  public SModule getModule() {
-    return getModelDescriptor().getModule();
-  }
-
-  @Override
-  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
-    // TODO API (implement)
-    return null;
   }
 
   public boolean isTransient() {
@@ -458,14 +430,30 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Nullable
+  public org.jetbrains.mps.openapi.model.SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    checkNotDisposed();
+    if (myDisposed) return null;
+
+    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
+    if (node != null) return node;
+    enforceFullLoad();
+    return myIdToNodeMap.get(nodeId);
+  }
+
+  /**
+   * use getNode(SNodeId)
+   */
+  @Deprecated
+  @Nullable
   public SNode getNodeById(@NotNull SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
-    SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
+    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
+    if (node instanceof SNode) return (SNode) node;
     enforceFullLoad();
-    return myIdToNodeMap.get(nodeId);
+    node = myIdToNodeMap.get(nodeId);
+    return node instanceof SNode ? (SNode) node : null;
   }
 
   //---------node registration--------
@@ -476,7 +464,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
     enforceFullLoad();
     SNodeId id = node.getSNodeId();
-    SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
+    org.jetbrains.mps.openapi.model.SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
     if (id == null || existingNode != null && existingNode != node) {
       id = generateUniqueId();
       while (myIdToNodeMap.containsKey(id)) {
@@ -851,7 +839,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     enforceFullLoad();
 
     boolean changed = false;
-    for (SNode node : myIdToNodeMap.values()) {
+    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
+      // TODO SNode cast
+      if (!(n instanceof SNode)) continue;
+      SNode node = (SNode) n;
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
@@ -914,7 +905,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
-    for (SNode node : myIdToNodeMap.values()) {
+    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
+      // TODO SNode cast
+      if (!(n instanceof SNode)) continue;
+      SNode node = (SNode) n;
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
           reference.setTargetSModelReference(newModelReference);

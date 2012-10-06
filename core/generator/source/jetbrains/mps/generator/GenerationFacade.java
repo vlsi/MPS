@@ -32,6 +32,9 @@ import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -123,11 +126,11 @@ public class GenerationFacade {
     return result;
   }
 
-  public static boolean canGenerate(SModelDescriptor sm) {
+  public static boolean canGenerate(org.jetbrains.mps.openapi.model.SModel sm) {
     if (sm instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) sm).isDoNotGenerate()) {
       return false;
     }
-    return sm.isGeneratable();
+    return sm instanceof SModelDescriptor && ((SModelDescriptor)sm).isGeneratable();
   }
 
   public static boolean generateModels(final Project p,

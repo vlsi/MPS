@@ -22,6 +22,9 @@ import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -40,6 +43,26 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     if (checkDup) {
       checkModelDuplication();
     }
+  }
+
+  @Override
+  public SModelId getModelId() {
+    return myModelReference.getSModelId();
+  }
+
+  @Override
+  public String getModelName() {
+    return myModelReference.getModelName();
+  }
+
+  @Override
+  public Iterable<? extends SNode> getRootNodes() {
+    return getSModel().roots();
+  }
+
+  @Override
+  public SNode getNode(SNodeId id) {
+    return getSModel().getNode(id);
   }
 
   public void dispose() {
@@ -79,6 +102,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myRegistered = registered;
   }
 
+  public SModelReference getModelReference() {
+    return myModelReference;
+  }
+
+  /**
+   * use getModelReference()
+   */
+  @Deprecated
   public SModelReference getSModelReference() {
     return myModelReference;
   }

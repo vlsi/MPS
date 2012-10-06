@@ -16,7 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;

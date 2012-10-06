@@ -18,7 +18,6 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
 
@@ -34,7 +33,8 @@ public interface SNode {
 
   String getName();
 
-  SModel getModel();
+// TODO conflict with SNode.getModel()
+//  SModel getModel();
 
   // tree operation
 

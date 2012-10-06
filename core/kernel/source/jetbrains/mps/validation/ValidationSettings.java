@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.validation;
 
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import org.jetbrains.annotations.Nullable;
 
 /**

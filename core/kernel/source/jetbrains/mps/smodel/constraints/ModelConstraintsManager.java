@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;

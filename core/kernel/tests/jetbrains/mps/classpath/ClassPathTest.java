@@ -24,10 +24,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -101,13 +98,13 @@ public class ClassPathTest extends BaseMPSTest {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<IModule> modulesToCheck = new ArrayList<IModule>();
+        List<AbstractModule> modulesToCheck = new ArrayList<AbstractModule>();
         modulesToCheck.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
         modulesToCheck.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Solution.class));
         modulesToCheck.removeAll(project.getProjectModules(Solution.class));
 
         //collect class2module info
-        for (IModule m : modulesToCheck) {
+        for (AbstractModule m : modulesToCheck) {
           List<ModelRoot> stubs = ModelRootUtil.filterJava(new ArrayList<ModelRoot>(m.getModuleDescriptor().getStubModelEntries()));
 
           for (ModelRoot entry : stubs) {

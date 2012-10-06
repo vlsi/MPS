@@ -13,28 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.reference;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-@Immutable
-public final class SModuleReference extends SEntityReference<SModule> {
-  private SModuleId myId;
-  private String myName;
+/**
+ * evgeny, 10/6/12
+ */
+public interface SModelReference {
 
-  public SModuleReference(SModule module) {
-    myId = module.getModuleId();
-    myName = module.getModuleName();
-  }
+  /*
+   * Includes stereotype.
+   */
+  String getModelName();
 
-  public String getName() {
-    return myName;
-  }
-
-  public SModule resolve(SRepository repo) {
-    return repo.getModule(myId);
-  }
+  SModel resolve(SRepository repo);
 }

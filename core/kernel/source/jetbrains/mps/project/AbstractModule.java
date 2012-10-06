@@ -496,6 +496,11 @@ public abstract class AbstractModule implements IModule {
     return SModelRepository.getInstance().getModelDescriptors(this);
   }
 
+  @Override
+  public Collection<SModel> getModels() {
+    return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
+  }
+
   public List<SModelDescriptor> getHiddenModelDescriptors() {
     return Collections.emptyList();
   }

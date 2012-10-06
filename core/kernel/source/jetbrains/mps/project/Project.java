@@ -19,6 +19,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.*;
@@ -76,7 +77,7 @@ public abstract class Project implements MPSModuleOwner {
     myProjectFile = file;
   }
 
-  public boolean isProjectModule(@NotNull IModule module) {
+  public boolean isProjectModule(@NotNull SModule module) {
     return myModules.contains(module.getModuleReference());
   }
 

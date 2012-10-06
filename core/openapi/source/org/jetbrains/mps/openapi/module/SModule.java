@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -25,6 +26,11 @@ public interface SModule {
 
   String getModuleName();
 
+  @NotNull
+  SModuleReference getModuleReference();
+
+  boolean isPackaged();
+
   SRepository getRepository();
 
   Iterable<SDependency> getSDependencies();
@@ -34,4 +40,6 @@ public interface SModule {
   SModel resolveInDependencies(SModelId ref);
 
   SModel getModel(SModelId id);
+
+  Iterable<SModel> getModels();
 }

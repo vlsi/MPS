@@ -16,15 +16,9 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.annotation.UseCarefully;
 
 public class SModelRoot {
   private ModelRoot myModelRoot;

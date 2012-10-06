@@ -37,7 +37,7 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.reference.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.*;
 
@@ -485,7 +485,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public SNodeReference getReference() {
-    return new SNodeReference(this);
+    return new SNodePointer(this);
   }
 
   @Override

@@ -22,17 +22,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
-import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 
 import java.util.*;
 
@@ -99,7 +96,7 @@ public class TypesUtil {
       getVariablesInside(child, result, state);
     }
     for (SNode referent : getNodeReferents(node)) {
-      if (state!= null) {
+      if (state != null) {
         referent = state.getRepresentative(referent);
       }
       if (referent != null && isVariable(referent)) {
@@ -123,7 +120,7 @@ public class TypesUtil {
     return match(left, right, null);
   }
 
-  public static boolean match(SNode left, SNode right, /*out*/ Collection<Pair<SNode,SNode>> matchingPairs) {
+  public static boolean match(SNode left, SNode right, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
     if (left == right) return true;
     if (left == null || right == null) return false;
 

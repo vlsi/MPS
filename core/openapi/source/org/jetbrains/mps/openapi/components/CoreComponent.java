@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.reference;
+package org.jetbrains.mps.openapi.components;
 
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.module.SRepository;
+/**
+ * evgeny, 10/14/11
+ */
+public interface CoreComponent {
 
-@Immutable
-public abstract class SEntityReference<T> {
-  protected static String DELIM = "#";
+  void init();
 
-  public abstract String getName();
-
-  public abstract T resolve(SRepository repo);
+  void dispose();
 }

@@ -195,8 +195,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return null;
   }
 
-  @Override
-  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
+//  @Override
+  public SModel getTargetModel() {
     // TODO API (implement)
     return null;
   }
