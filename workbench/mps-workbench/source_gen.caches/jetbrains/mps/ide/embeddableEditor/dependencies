@@ -60,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.embeddableEditor.EmbeddableEditorPanel" file="EmbeddableEditorPanel.java">
     <classNode dependClassName="java.awt.BorderLayout" />

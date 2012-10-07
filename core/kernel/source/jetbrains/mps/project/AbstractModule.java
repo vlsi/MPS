@@ -127,7 +127,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Override
-  public Iterable<SDependency> getSDependencies() {
+  public Iterable<SDependency> getDeclaredDependencies() {
     // TODO API (implement)
     return null;
   }

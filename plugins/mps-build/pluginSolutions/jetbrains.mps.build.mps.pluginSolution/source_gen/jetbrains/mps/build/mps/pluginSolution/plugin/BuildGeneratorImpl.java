@@ -813,9 +813,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Branding", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_38 = quotedNode_1;
-        quotedNode1_38.setProperty("major", "1");
         quotedNode1_38.setProperty("minor", "0");
         quotedNode1_38.setProperty("name", "MPS");
+        quotedNode1_38.setProperty("major", "1");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_39 = quotedNode_2;
@@ -1246,8 +1246,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             {
               quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_58 = quotedNode_29;
-              quotedNode1_58.setProperty("pattern", "\\.MPS(\\w+)");
               quotedNode1_58.setProperty("flags", "g");
+              quotedNode1_58.setProperty("pattern", "\\.MPS(\\w+)");
               {
                 quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_59 = quotedNode_41;

@@ -2831,7 +2831,7 @@ public class ApiTransformations {
                 {
                   quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_30 = quotedNode_10;
-                  quotedNode1_30.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_30, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getModel():jetbrains.mps.smodel.SModel")));
+                  quotedNode1_30.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_30, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getContainingModel():org.jetbrains.mps.openapi.model.SModel")));
                   quotedNode_7.addChild("operation", quotedNode1_30);
                 }
                 quotedNode_5.addChild("operand", quotedNode1_22);
@@ -2839,7 +2839,7 @@ public class ApiTransformations {
               {
                 quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_31 = quotedNode_8;
-                quotedNode1_31.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_31, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
+                quotedNode1_31.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_31, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
                 quotedNode_5.addChild("operation", quotedNode1_31);
               }
               quotedNode_4.addChild("expression", quotedNode1_21);
@@ -2988,7 +2988,7 @@ public class ApiTransformations {
                 {
                   quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_30 = quotedNode_10;
-                  quotedNode1_30.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_30, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getModel():jetbrains.mps.smodel.SModel")));
+                  quotedNode1_30.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_30, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getContainingModel():org.jetbrains.mps.openapi.model.SModel")));
                   quotedNode_7.addChild("operation", quotedNode1_30);
                 }
                 quotedNode_5.addChild("operand", quotedNode1_22);
@@ -2996,7 +2996,7 @@ public class ApiTransformations {
               {
                 quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_31 = quotedNode_8;
-                quotedNode1_31.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_31, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
+                quotedNode1_31.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_31, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
                 quotedNode_5.addChild("operation", quotedNode1_31);
               }
               quotedNode_4.addChild("expression", quotedNode1_21);
@@ -3136,7 +3136,7 @@ public class ApiTransformations {
             {
               quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_25 = quotedNode_7;
-              quotedNode1_25.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_25, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getModel():jetbrains.mps.smodel.SModel")));
+              quotedNode1_25.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_25, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getContainingModel():org.jetbrains.mps.openapi.model.SModel")));
               quotedNode_4.addChild("operation", quotedNode1_25);
             }
             quotedNode_2.addChild("operand", quotedNode1_17);
@@ -3144,7 +3144,7 @@ public class ApiTransformations {
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_26 = quotedNode_5;
-            quotedNode1_26.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_26, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
+            quotedNode1_26.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_26, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
             quotedNode_2.addChild("operation", quotedNode1_26);
           }
           quotedNode_1.addChild("expression", quotedNode1_16);
@@ -3458,7 +3458,7 @@ public class ApiTransformations {
             {
               quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_25 = quotedNode_7;
-              quotedNode1_25.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_25, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getModel():jetbrains.mps.smodel.SModel")));
+              quotedNode1_25.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_25, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getContainingModel():org.jetbrains.mps.openapi.model.SModel")));
               quotedNode_4.addChild("operation", quotedNode1_25);
             }
             quotedNode_2.addChild("operand", quotedNode1_17);
@@ -3466,7 +3466,7 @@ public class ApiTransformations {
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_26 = quotedNode_5;
-            quotedNode1_26.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_26, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
+            quotedNode1_26.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_26, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel.getModule():org.jetbrains.mps.openapi.module.SModule")));
             quotedNode_2.addChild("operation", quotedNode1_26);
           }
           quotedNode_1.addChild("expression", quotedNode1_16);
@@ -4785,7 +4785,7 @@ public class ApiTransformations {
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_14 = quotedNode_5;
-            quotedNode1_14.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_14, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
+            quotedNode1_14.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_14, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getContainingModel():org.jetbrains.mps.openapi.model.SModel")));
             quotedNode_3.addChild("operation", quotedNode1_14);
           }
           quotedNode_1.addChild("leftExpression", quotedNode1_12);

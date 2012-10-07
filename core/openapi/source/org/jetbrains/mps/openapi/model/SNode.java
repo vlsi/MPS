@@ -33,8 +33,7 @@ public interface SNode {
 
   String getName();
 
-// TODO conflict with SNode.getModel()
-//  SModel getModel();
+  SModel getContainingModel();
 
   // tree operation
 

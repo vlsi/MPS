@@ -120,6 +120,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
+  @Override
+  public org.jetbrains.mps.openapi.model.SModel getContainingModel() {
+    return myModel != null ? getModel().getModelDescriptor() : null;
+  }
+
   public final boolean hasProperty(String propertyName) {
     ModelAccess.assertLegalRead(this);
 
