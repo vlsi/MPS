@@ -17,7 +17,7 @@ package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
@@ -29,16 +29,16 @@ public class GenerationCheckHelper {
     return INSTANCE;
   }
 
-  public boolean checkModelsBeforeGenerationIfNeeded(Project p, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {
+  public boolean checkModelsBeforeGenerationIfNeeded(Project p, IOperationContext operationContext, List<SModel> modelDescriptors, Runnable regenerationRunnable) {
     for (ModelValidator modelValidator : ModelValidator.EP_NAME.getExtensions()) {
-      if(!modelValidator.check(p, operationContext, modelDescriptors, regenerationRunnable)) {
+      if (!modelValidator.check(p, operationContext, modelDescriptors, regenerationRunnable)) {
         return false;
       }
     }
     return true;
   }
 
-  public void checkModelsAndRun(Project p, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable runnable) {
+  public void checkModelsAndRun(Project p, IOperationContext operationContext, List<SModel> modelDescriptors, Runnable runnable) {
     if (checkModelsBeforeGenerationIfNeeded(p, operationContext, modelDescriptors, runnable)) {
       runnable.run();
     }

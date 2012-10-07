@@ -8,11 +8,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -47,10 +48,10 @@ public class RunUtil {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
 
-    final Wrappers._T<List<SModelDescriptor>> descriptors = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
+    final Wrappers._T<List<SModel>> descriptors = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        descriptors.value = ListSequence.fromList(nodes).select(new ISelector<SNode, SModelDescriptor>() {
+        descriptors.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(nodes).select(new ISelector<SNode, SModelDescriptor>() {
           public SModelDescriptor select(SNode it) {
             return SNodeOperations.getModel(it).getModelDescriptor();
           }
@@ -58,7 +59,7 @@ public class RunUtil {
           public boolean accept(SModelDescriptor it) {
             return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
           }
-        }).toListSequence();
+        }));
       }
     });
     return makeModels(project, descriptors.value);
@@ -68,7 +69,7 @@ public class RunUtil {
     if (ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
-    return makeModels(project, ListSequence.fromList(nodes).where(new IWhereFilter<SNodePointer>() {
+    return makeModels(project, ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(nodes).where(new IWhereFilter<SNodePointer>() {
       public boolean accept(SNodePointer it) {
         return it != null;
       }
@@ -80,11 +81,11 @@ public class RunUtil {
       public boolean accept(SModelDescriptor it) {
         return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
       }
-    }).toListSequence());
+    })));
   }
 
-  private static boolean makeModels(Project project, List<SModelDescriptor> models) {
-    if (ListSequence.fromList(models).isEmpty()) {
+  private static boolean makeModels(Project project, Iterable<SModel> models) {
+    if (Sequence.fromIterable(models).isEmpty()) {
       return true;
     }
 

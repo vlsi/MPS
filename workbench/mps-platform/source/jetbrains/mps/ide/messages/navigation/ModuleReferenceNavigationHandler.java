@@ -18,19 +18,19 @@ package jetbrains.mps.ide.messages.navigation;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModule;
 
 class ModuleReferenceNavigationHandler implements INavigationHandler<ModuleReference> {
   public boolean canNavigate(ModuleReference object) {
-    IModule module = MPSModuleRepository.getInstance().getModule(object);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
     return module != null;
   }
 
   public void navigate(ModuleReference object, Project project, boolean focus, boolean select) {
-    IModule module = MPSModuleRepository.getInstance().getModule(object);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
     if (module == null) return;
 
     ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(project));

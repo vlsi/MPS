@@ -23,14 +23,14 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.GenStatusNodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreeNode;
 
@@ -39,7 +39,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
     do {
       node = node.getParent();
-      if (node ==null) return null;
+      if (node == null) return null;
     } while (!(node instanceof ProjectModuleTreeNode));
     return (ProjectModuleTreeNode) node;
   }
@@ -99,9 +99,9 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(moduleStatus.getMessage()));
   }
 
-  private boolean generationRequired(IModule module, IOperationContext context) {
-    if (module == null) return false;
-    for (SModelDescriptor md : module.getOwnModelDescriptors()) {
+  private boolean generationRequired(SModule module, IOperationContext context) {
+    if (!(module instanceof AbstractModule)) return false;
+    for (SModelDescriptor md : ((AbstractModule) module).getOwnModelDescriptors()) {
       boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, context);
       if (required) return true;
     }
@@ -109,7 +109,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   }
 
   private GenerationStatus generationRequired(ProjectModuleTreeNode node) {
-    IModule module = node.getModule();
+    SModule module = node.getModule();
     ProjectOperationContext context = new ProjectOperationContext(node.getOperationContext().getProject());
     if (generationRequired(module, context)) return GenerationStatus.REQUIRED;
     if (module instanceof Language) {

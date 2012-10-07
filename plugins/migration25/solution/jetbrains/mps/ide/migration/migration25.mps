@@ -1948,7 +1948,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="457580200161289902" resolveInfo="project" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="457580200161289895">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dsetFolderFor(jetbrains%dmps%dproject%dIModule,java%dlang%dString)%cvoid" resolveInfo="setFolderFor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dsetFolderFor(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString)%cvoid" resolveInfo="setFolderFor" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="457580200161289897">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1855937925843917410" resolveInfo="s" />
                   </node>
@@ -1957,7 +1957,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="457580200161289902" resolveInfo="project" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="457580200161289922">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dgetFolderFor(jetbrains%dmps%dproject%dIModule)%cjava%dlang%dString" resolveInfo="getFolderFor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dgetFolderFor(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjava%dlang%dString" resolveInfo="getFolderFor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="457580200161289924">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8004978336433012728" resolveInfo="l" />
                       </node>
@@ -5881,7 +5881,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3010618154278919703" resolveInfo="project" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3010618154278919720">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dsetFolderFor(jetbrains%dmps%dproject%dIModule,java%dlang%dString)%cvoid" resolveInfo="setFolderFor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dsetFolderFor(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString)%cvoid" resolveInfo="setFolderFor" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3010618154278919721">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3010618154278919583" resolveInfo="runtime" />
                   </node>
@@ -5890,7 +5890,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3010618154278919703" resolveInfo="project" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3010618154278919724">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dgetFolderFor(jetbrains%dmps%dproject%dIModule)%cjava%dlang%dString" resolveInfo="getFolderFor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tz4y.~StandaloneMPSProject%dgetFolderFor(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjava%dlang%dString" resolveInfo="getFolderFor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3010618154278919725">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3010618154278919571" resolveInfo="language" />
                       </node>

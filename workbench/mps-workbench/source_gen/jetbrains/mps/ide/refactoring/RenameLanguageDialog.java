@@ -117,7 +117,7 @@ public class RenameLanguageDialog extends BaseDialog {
         ModuleContext context = new ModuleContext(myLanguage, ProjectHelper.toMPSProject(myProject));
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, params.getModelDescriptors()).resources(false));
+          //IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, params.getModelDescriptors()).resources(false));
         }
         //         GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
       }

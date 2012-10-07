@@ -130,6 +130,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.TResource" file="TResource.java">
     <classNode dependClassName="java.lang.Iterable" />

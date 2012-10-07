@@ -89,6 +89,7 @@
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode extendsClassName="jetbrains.mps.testbench.Token" />
   </dependency>

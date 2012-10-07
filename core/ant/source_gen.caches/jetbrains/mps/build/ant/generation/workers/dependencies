@@ -102,6 +102,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.stubs.LibrariesLoader" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
@@ -141,7 +143,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
@@ -164,6 +165,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.impl.JarEntryFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" file="TestGenerationWorker.java">
@@ -207,6 +209,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.XmlTestReporter" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -249,6 +252,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />

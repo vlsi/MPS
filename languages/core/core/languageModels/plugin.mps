@@ -60,8 +60,8 @@
       <property name="extensionName" nameId="v54s.5911785528834333590" value="GeneratorCache" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6905339732004281416">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="facets" />
       <property name="name" nameId="tpck.1169194664001" value="RetainedUtil" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="facets" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5521353027965879577">
       <property name="name" nameId="tpck.1169194664001" value="MakeGenerationHandler" />
@@ -72,9 +72,9 @@
   </roots>
   <root id="6648795410103966565">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103966566">
+      <property name="weight" nameId="vvvw.184542595914096177" value="400" />
       <property name="name" nameId="tpck.1169194664001" value="textGen" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="TRANSFORM" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="400" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="6648795410103966567">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103966568">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6648795410103966569">
@@ -257,8 +257,8 @@
                             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6521979006050904642">
                               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6521979006050904643">
                                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6521979006050904644">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~GenerationFacade%dcanGenerate(jetbrains%dmps%dsmodel%dSModelDescriptor)%cboolean" resolveInfo="canGenerate" />
                                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y5px.~GenerationFacade" resolveInfo="GenerationFacade" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~GenerationFacade%dcanGenerate(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolveInfo="canGenerate" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6521979006050904645">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6521979006050904646" resolveInfo="smd" />
                                   </node>
@@ -316,8 +316,8 @@
                             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6521979006050904661">
                               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6521979006050904662">
                                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6521979006050904663">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~GenerationFacade%dcanGenerate(jetbrains%dmps%dsmodel%dSModelDescriptor)%cboolean" resolveInfo="canGenerate" />
                                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="y5px.~GenerationFacade" resolveInfo="GenerationFacade" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~GenerationFacade%dcanGenerate(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolveInfo="canGenerate" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6521979006050904664">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6521979006050904665" resolveInfo="smd" />
                                   </node>
@@ -913,8 +913,8 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103966906">
-      <property name="name" nameId="tpck.1169194664001" value="textGenToMemory" />
       <property name="weight" nameId="vvvw.184542595914096177" value="400" />
+      <property name="name" nameId="tpck.1169194664001" value="textGenToMemory" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="6648795410103966907">
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="6648795410103939855" resolveInfo="generate" />
@@ -1320,9 +1320,9 @@
       <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8096124782826059775" resolveInfo="Make" />
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103939540">
+      <property name="weight" nameId="vvvw.184542595914096177" value="10" />
       <property name="name" nameId="tpck.1169194664001" value="checkParameters" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="PASSTHRU" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="10" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="6648795410103939541">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103939542">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6648795410103939543">
@@ -1422,9 +1422,9 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103939606">
+      <property name="weight" nameId="vvvw.184542595914096177" value="10" />
       <property name="name" nameId="tpck.1169194664001" value="configure" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="PASSTHRU" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="10" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="6648795410103939607">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103939617">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6648795410103939618">
@@ -1903,9 +1903,9 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103939779">
+      <property name="weight" nameId="vvvw.184542595914096177" value="400" />
       <property name="name" nameId="tpck.1169194664001" value="preloadModels" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="TRANSFORM" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="400" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="6648795410103939780">
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="6648795410103939606" resolveInfo="configure" />
@@ -2079,8 +2079,8 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103939855">
-      <property name="name" nameId="tpck.1169194664001" value="generate" />
       <property name="weight" nameId="vvvw.184542595914096177" value="5000" />
+      <property name="name" nameId="tpck.1169194664001" value="generate" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="6648795410103939856">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103939857">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6648795410103939858">
@@ -2647,9 +2647,9 @@
   </root>
   <root id="8096124782826059775">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8096124782826059776">
+      <property name="weight" nameId="vvvw.184542595914096177" value="200" />
       <property name="name" nameId="tpck.1169194664001" value="reconcile" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="TRANSFORM" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="200" />
       <node role="parameters" roleId="vvvw.7320828025189219295" type="vvvw.ParametersDeclaration" typeId="vvvw.7320828025189345662" id="5256897414278146010">
         <property name="name" nameId="tpck.1169194664001" value="Parameters" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5256897414278146011" />
@@ -2825,8 +2825,8 @@
                                       <link role="classifier" roleId="tpee.1170346070688" targetNodeId="rk9m.7471912399447707915" resolveInfo="FilesDelta.Visitor" />
                                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1859144586334115963" />
                                       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1859144586334115980">
-                                        <property name="name" nameId="tpck.1169194664001" value="acceptWritten" />
                                         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+                                        <property name="name" nameId="tpck.1169194664001" value="acceptWritten" />
                                         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1859144586334115981" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1859144586334115982" />
                                         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1859144586334115983">
@@ -2954,8 +2954,8 @@
                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rk9m.7471912399447707917" resolveInfo="FilesDelta.Visitor" />
                                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3001442428230585494" />
                                       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3001442428230585495">
-                                        <property name="name" nameId="tpck.1169194664001" value="acceptWritten" />
                                         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+                                        <property name="name" nameId="tpck.1169194664001" value="acceptWritten" />
                                         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3001442428230585496" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3001442428230585497" />
                                         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3001442428230585498">
@@ -3037,9 +3037,9 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8096124782826059849">
+      <property name="weight" nameId="vvvw.184542595914096177" value="1" />
       <property name="name" nameId="tpck.1169194664001" value="make" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="CONSUME" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="1" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="8096124782826059850">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="8096124782826059851">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8096124782826059852" />
@@ -3126,8 +3126,8 @@
   </root>
   <root id="6905339732004281416">
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6905339732004281417">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RetainedFilesDelta" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6905339732004281418">
         <property name="name" nameId="tpck.1169194664001" value="deltas" />
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6905339732004281419">
@@ -3441,8 +3441,8 @@
       </node>
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6905339732004281554">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RetainedCachesDelta" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6905339732004281555">
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6905339732004281556" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6905339732004281557" />
@@ -3477,8 +3477,8 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6905339732004281417" resolveInfo="RetainedUtil.RetainedFilesDelta" />
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6905339732004281569">
-        <property name="name" nameId="tpck.1169194664001" value="getRootOutputDir" />
         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="getRootOutputDir" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="6905339732004281570" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6905339732004281571">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
@@ -4774,10 +4774,10 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5521353027965879792" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5521353027965879793">
+      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="isIncrementalEnabled" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5521353027965879794" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5521353027965879795" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5521353027965879796">

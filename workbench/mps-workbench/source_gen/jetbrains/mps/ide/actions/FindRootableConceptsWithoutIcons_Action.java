@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -78,17 +77,17 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
           final Wrappers._T<SearchResults<SNode>> concepts = new Wrappers._T<SearchResults<SNode>>();
           final Wrappers._T<List<SearchResult<SNode>>> results = new Wrappers._T<List<SearchResult<SNode>>>();
 
-          ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SearchResult<SNode>>>() {
-            public List<SearchResult<SNode>> invoke() {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
               concepts.value = FindUtils.getSearchResults(new EmptyProgressMonitor(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-              return results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
+              results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
                 public boolean accept(SearchResult<SNode> it) {
                   SNode node = (SNode) it.getObject();
-                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a0a3a0a0a0a0a0a3(SPropertyOperations.getString(node, "iconPath"));
+                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a3(SPropertyOperations.getString(node, "iconPath"));
                 }
               }).toListSequence();
             }
-          }));
+          });
 
           if (p0.isCanceled()) {
             return;
@@ -112,7 +111,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     }
   }
 
-  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a0a3a0a0a0a0a0a3(String str) {
+  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a3(String str) {
     return str == null || str.length() == 0;
   }
 }

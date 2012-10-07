@@ -35,13 +35,14 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
 import java.util.LinkedList;
 
 public abstract class ProjectTreeFindHelper {
-  public ProjectModuleTreeNode findMostSuitableModuleTreeNode(final @NotNull IModule module) {
+  public ProjectModuleTreeNode findMostSuitableModuleTreeNode(final @NotNull SModule module) {
     ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
 
@@ -53,13 +54,13 @@ public abstract class ProjectTreeFindHelper {
     return findModuleTreeNodeAnywhere(module);
   }
 
-  protected ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull IModule module) {
+  protected ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull SModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
       new ModuleInProjectCondition(),
       new NodeForModuleCondition(module));
   }
 
-  protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(@NotNull IModule module) {
+  protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(@NotNull SModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
       new ModuleEverywhereCondition(),
       new NodeForModuleCondition(module));
@@ -68,7 +69,7 @@ public abstract class ProjectTreeFindHelper {
   public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModelDescriptor model) {
     MPSProject project = getProject().getComponent(MPSProject.class);
 
-    IModule module = getModuleForModel(project, model);
+    SModule module = getModuleForModel(project, model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
 
     ProjectModuleTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
@@ -257,9 +258,9 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class NodeForModuleCondition implements Condition<MPSTreeNode> {
-    private final IModule myModule;
+    private final SModule myModule;
 
-    public NodeForModuleCondition(IModule module) {
+    public NodeForModuleCondition(SModule module) {
       myModule = module;
     }
 
@@ -296,10 +297,10 @@ public abstract class ProjectTreeFindHelper {
 
   //-----------find module by model------------
 
-  public static IModule getModuleForModel(MPSProject project, SModelDescriptor model) {
+  private static SModule getModuleForModel(MPSProject project, SModelDescriptor model) {
     //language's and solution's own models (+generator models in language)
-    IModule owner = model.getModule();
-    IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
+    SModule owner = model.getModule();
+    SModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
     if (project.isProjectModule(mainModule)) return owner;
 
     //accessories models in languages

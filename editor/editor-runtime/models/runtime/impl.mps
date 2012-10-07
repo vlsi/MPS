@@ -713,7 +713,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469629" resolveInfo="myRepository" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1182113674817469697">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%daddModuleRepositoryListener(jetbrains%dmps%dsmodel%dModuleRepositoryListener)%cvoid" resolveInfo="addModuleRepositoryListener" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%daddModuleRepositoryListener(org%djetbrains%dmps%dopenapi%dmodule%dSRepositoryListener)%cvoid" resolveInfo="addModuleRepositoryListener" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1182113674817469698">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469624" resolveInfo="myListener" />
               </node>
@@ -751,7 +751,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469629" resolveInfo="myRepository" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1182113674817469714">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dremoveModuleRepositoryListener(jetbrains%dmps%dsmodel%dModuleRepositoryListener)%cvoid" resolveInfo="removeModuleRepositoryListener" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dremoveModuleRepositoryListener(org%djetbrains%dmps%dopenapi%dmodule%dSRepositoryListener)%cvoid" resolveInfo="removeModuleRepositoryListener" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1182113674817469715">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469624" resolveInfo="myListener" />
               </node>
@@ -1955,8 +1955,8 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6001307866941575545">
-      <property name="name" nameId="tpck.1169194664001" value="loadEditor" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="loadEditor" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6001307866941575550">
         <property name="name" nameId="tpck.1169194664001" value="context" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6001307866941575552">
@@ -3120,8 +3120,8 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6001307866941557302">
-      <property name="name" nameId="tpck.1169194664001" value="clearCaches" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="clearCaches" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6001307866941557303" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6001307866941557304" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6001307866941557305">

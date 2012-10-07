@@ -134,6 +134,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" file="RefactoringOptionsDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

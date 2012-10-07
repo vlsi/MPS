@@ -20,7 +20,6 @@ import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
@@ -41,7 +40,7 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
     return calculateText();
   }
 
-  public IModule getModule() {
+  public Generator getModule() {
     return getGenerator();
   }
 

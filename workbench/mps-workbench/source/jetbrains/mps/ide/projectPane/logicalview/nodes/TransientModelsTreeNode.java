@@ -20,7 +20,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -50,7 +49,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     return "transient";
   }
 
-  public IModule getModule() {
+  public TransientModelsModule getModule() {
     return myTransientModule;
   }
 

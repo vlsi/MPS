@@ -159,20 +159,20 @@ public class EmbeddableEditor {
 
         MakeSession session = new MakeSession(myContext, null, true);
         if (IMakeService.INSTANCE.get().openNewSession(session)) {
-          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, ctl);
-          try {
-            IResult result = future.get();
-            if (result.isSucessful()) {
-              final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                  processClassesData(out.classes());
-                }
-              });
-            }
-          } catch (InterruptedException ignore) {
-          } catch (ExecutionException ignore) {
-          }
+//          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, ctl);
+//          try {
+////            IResult result = future.get();
+////            if (result.isSucessful()) {
+////              final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
+////              SwingUtilities.invokeLater(new Runnable() {
+////                public void run() {
+////                  processClassesData(out.classes());
+////                }
+////              });
+////            }
+//          } catch (InterruptedException ignore) {
+//          } catch (ExecutionException ignore) {
+//          }
         }
       }
     });

@@ -11,15 +11,16 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JOptionPane;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.icons.IdeIcons;
-import java.util.ArrayList;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
@@ -64,7 +65,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     return newViewer;
   }
 
-  private ModelCheckerViewer performCheckingTaskForModels(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
+  private ModelCheckerViewer performCheckingTaskForModels(final List<SModel> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
     return ModelCheckerTool_Tool.this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
         newViewer.prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon);
@@ -72,7 +73,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     }, operationContext, showTab);
   }
 
-  private ModelCheckerViewer performCheckingTaskForModules(final List<IModule> modules, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
+  private ModelCheckerViewer performCheckingTaskForModules(final List<SModule> modules, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
     return ModelCheckerTool_Tool.this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
         newViewer.prepareAndCheckModules(modules, taskTargetTitle, taskIcon);
@@ -80,15 +81,15 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     }, operationContext, showTab);
   }
 
-  public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModels(ModelCheckerUtils.getModelDescriptors(modelDescriptor), modelDescriptor.getLongName(), IconManager.getIconFor(modelDescriptor), operationContext, showTab);
+  public ModelCheckerViewer checkModel(SModel model, IOperationContext operationContext, boolean showTab) {
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModels(ListSequence.fromListAndArray(new ArrayList<SModel>(), model), model.getModelName(), IconManager.getIconFor(model), operationContext, showTab);
   }
 
-  public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
+  public ModelCheckerViewer checkModels(List<SModel> modelDescriptors, IOperationContext operationContext, boolean showTab) {
     return ModelCheckerTool_Tool.this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), IdeIcons.MODEL_ICON, operationContext, showTab);
   }
 
-  public ModelCheckerViewer checkModels(final List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab, final ModelCheckerIssueFinder finder) {
+  public ModelCheckerViewer checkModels(final List<SModel> modelDescriptors, IOperationContext operationContext, boolean showTab, final ModelCheckerIssueFinder finder) {
     return ModelCheckerTool_Tool.this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
         newViewer.prepareAndCheckModels(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + " models", IdeIcons.MODEL_ICON, finder);
@@ -96,20 +97,20 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     }, operationContext, showTab);
   }
 
-  public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
+  public ModelCheckerViewer checkModule(SModule module, IOperationContext operationContext, boolean showTab) {
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<SModule>(), module), module.getModuleName(), IconManager.getIconFor(module), operationContext, showTab);
   }
 
-  public ModelCheckerViewer checkModules(List<IModule> modules, IOperationContext operationContext, boolean showTab) {
+  public ModelCheckerViewer checkModules(List<SModule> modules, IOperationContext operationContext, boolean showTab) {
     return ModelCheckerTool_Tool.this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {
     MPSProject mpsProject = project.getComponent(MPSProject.class);
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(mpsProject.getModules(), mpsProject.getName(), IdeIcons.PROJECT_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) mpsProject.getModules()), mpsProject.getName(), IdeIcons.PROJECT_ICON, operationContext, showTab);
   }
 
-  public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {
+  public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModel> modelDescriptors, Runnable regenerationRunnable) {
     boolean checkModels = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
     if (!(checkModels)) {
       return true;
@@ -139,13 +140,13 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     return true;
   }
 
-  public void checkModelsAndRun(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable runnable) {
+  public void checkModelsAndRun(IOperationContext operationContext, List<SModel> modelDescriptors, Runnable runnable) {
     if (ModelCheckerTool_Tool.this.checkModelsBeforeGenerationIfNeeded(operationContext, modelDescriptors, runnable)) {
       runnable.run();
     }
   }
 
-  public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors) {
+  public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModel> modelDescriptors) {
     ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
 

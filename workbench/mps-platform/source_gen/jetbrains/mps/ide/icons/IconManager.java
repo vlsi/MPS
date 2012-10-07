@@ -36,12 +36,13 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.ImageIcon;
 import java.io.InputStream;
@@ -218,8 +219,9 @@ public class IconManager {
     return IdeIcons.MODEL_ICON;
   }
 
-  public static Icon getIconFor(SModelDescriptor modelDescriptor) {
-    if (modelDescriptor != null) {
+  public static Icon getIconFor(org.jetbrains.mps.openapi.model.SModel model) {
+    if (model instanceof SModelDescriptor) {
+      SModelDescriptor modelDescriptor = (SModelDescriptor) model;
       LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
       if (aspect != null) {
         return getIconForAspect(aspect);
@@ -237,7 +239,7 @@ public class IconManager {
     return IdeIcons.MODEL_ICON;
   }
 
-  public static Icon getIconFor(IModule module) {
+  public static Icon getIconFor(SModule module) {
     if (module instanceof Generator) {
       return IdeIcons.GENERATOR_ICON;
     }

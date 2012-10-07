@@ -19,18 +19,17 @@ import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.misc.hash.HashSet;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 public class ProjectModulesPoolTreeNode extends TextTreeNode {
   private MPSProject myProject;
@@ -104,7 +103,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
         return NameUtil.namespaceFromLongName(generator.getSourceLanguage().getModuleFqName());
       }
 
-      return NameUtil.namespaceFromLongName(node.getModule().getModuleFqName());
+      return NameUtil.namespaceFromLongName(node.getModule().getModuleName());
     }
   }
 }
