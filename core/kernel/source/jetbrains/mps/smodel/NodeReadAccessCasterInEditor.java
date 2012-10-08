@@ -197,14 +197,10 @@ public class NodeReadAccessCasterInEditor {
     }
 
     public void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
-      if (myEventsBlocked || skipNotification(sourceNode)) {
+      if (myEventsBlocked ||myListenersStack.isEmpty() || !jetbrains.mps.util.SNodeOperations.isRegistered(sourceNode) || !sourceNode.getModelInternal().canFireEvent()) {
         return;
       }
       myListenersStack.peek().addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
-    }
-
-    private boolean skipNotification(SNode node) {
-      return myListenersStack.isEmpty() || !jetbrains.mps.util.SNodeOperations.isRegistered(node) || !node.getModel().canFireEvent();
     }
   }
 }

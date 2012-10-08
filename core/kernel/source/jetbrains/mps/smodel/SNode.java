@@ -89,8 +89,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel;
   }
 
+  public SModel getModelInternal() {
+    return myModel;
+  }
+
   public SNodeId getSNodeId() {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
     if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
@@ -123,7 +127,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public final boolean hasProperty(String propertyName) {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     firePropertyReadAccessInEditor(propertyName, true);
     String property_internal = getProperty_internal(propertyName);
@@ -131,7 +135,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public final String getProperty(String propertyName) {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     firePropertyReadAccessInEditor(propertyName, false);
 
@@ -176,7 +180,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @NotNull
   public List<SNode> getChildren(String role) {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
     }
@@ -317,7 +321,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public SReference getReference(String role) {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
     }
@@ -382,7 +386,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public String toString() {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
 
     String s = null;
@@ -442,7 +446,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
@@ -494,7 +498,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public Object getUserObject(Object key) {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
     if (myUserObjects == null) return null;
@@ -555,7 +559,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public List<SNode> getChildren() {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
@@ -564,7 +568,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public List<SReference> getReferences() {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
@@ -579,13 +583,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myRoleInParent;
   }
 
-  public String getPersistentProperty(String propertyName) {
-    if (myProperties == null) return null;
-    if (ourMemberAccessModifier != null) {
-      propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+  public String   getPersistentProperty(String propertyName) {
+      if (myProperties == null) return null;
+      if (ourMemberAccessModifier != null) {
+        propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+      }
+      return getProperty_simple(propertyName);
     }
-    return getProperty_simple(propertyName);
-  }
 
   public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
     propertyName = InternUtil.intern(propertyName);
@@ -682,7 +686,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public SNode getContainingRoot() {
-    ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
+    ModelAccess.assertLegalRead(this);
 
     SNode current = this;
 
@@ -1483,16 +1487,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public StackTraceElement[] getModelDisposedTrace() {
     return getModel() == null ? null : getModel().getDisposedStacktrace();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, is not supposed to be used in MPS
-   * @Deprecated in 3.0
-   */
-
-  public SModel getModelInternal() {
-    return myModel;
   }
 
   @Deprecated
