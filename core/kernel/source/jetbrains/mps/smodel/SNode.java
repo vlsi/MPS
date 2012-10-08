@@ -125,7 +125,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public final boolean hasProperty(String propertyName) {
     ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
 
-    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, true);
+    firePropertyReadAccessInEditor(propertyName, true);
     String property_internal = getProperty_internal(propertyName);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
@@ -133,7 +133,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public final String getProperty(String propertyName) {
     ModelAccess.assertLegalRead(this, myModel != null ? myModel.getModelDescriptor() : null);
 
-    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, false);
+    firePropertyReadAccessInEditor(propertyName, false);
 
     try {
       String propertyValue;
@@ -2019,6 +2019,26 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private void fireNodeReadAccess() {
     if (!myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
+  }
+
+  private void fireNodeChildReadAccess(String role, SNode child){
+    if (!myModel.canFireReadEvent()) return;
+    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
+  }
+
+  private void fireNodePropertyReadAccess(String propertyName, String propertyValue){
+    if (!myModel.canFireReadEvent()) return;
+    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+  }
+
+  private void fireNodeReferentReadAccess(String referentRole, SNode referent){
+    if (!myModel.canFireReadEvent()) return;
+    NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
+  }
+
+  private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck){
+    if (!myModel.canFireEvent()) return;
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
   private String getProperty_internal(String propertyName) {

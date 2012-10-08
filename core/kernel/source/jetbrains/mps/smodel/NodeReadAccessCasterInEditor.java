@@ -170,14 +170,14 @@ public class NodeReadAccessCasterInEditor {
     }
 
     public void fireNodeReadAccessed(SNode node) {
-      if (myEventsBlocked || skipNotification(node)) {
+      if (myEventsBlocked || myListenersStack.isEmpty()) {
         return;
       }
       myListenersStack.peek().nodeUnclassifiedReadAccess(node);
     }
 
     public void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
-      if (myEventsBlocked || myPropertyReadEventsSuppressed || skipNotification(node)) {
+      if (myEventsBlocked || myPropertyReadEventsSuppressed || myListenersStack.isEmpty()) {
         return;
       }
 
