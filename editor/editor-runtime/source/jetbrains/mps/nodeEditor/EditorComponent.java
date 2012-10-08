@@ -1221,8 +1221,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNode != null) {
       sb.append(", myNode is disposed");
       StackTraceElement[] result;
-      if (myNode.getModelInternal() != null) {
-        result = myNode.getModelInternal().getDisposedStacktrace();
+      SModel model = myNode.getModel();
+      if (model != null) {
+        result = model.getDisposedStacktrace();
       } else {
         result = null;
       }

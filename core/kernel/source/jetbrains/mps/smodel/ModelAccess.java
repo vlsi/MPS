@@ -146,25 +146,24 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     }
   }
 
-  static void assertLegalRead(SNode node) {
+  static void assertLegalRead(SNode node, SModelDescriptor descriptor) {
     if (jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
-      SModel model = node.getModelInternal();
-      String modelName = model == null ? "<null>" : model.getLongName();
+      String modelName = descriptor == null ? "<null>" : descriptor.getLongName();
       if (ourErroredModels.add(modelName)) {
         System.err.println("CRITICAL: INVALID OPERATION DETECTED");
         System.err.println("model: " + modelName);
         new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
       }
     }
-    ModelAccess.instance().doAssertLegalRead(node);
+    ModelAccess.instance().doAssertLegalRead(descriptor);
   }
 
-  protected static boolean isInRegisteredModel(SNode node) {
-    return node.getModelInternal().isRegistered();
+  protected static boolean isInRegisteredModel(SModelDescriptor descriptor) {
+    return descriptor != null && descriptor.isRegistered();
   }
 
-  protected void doAssertLegalRead(SNode node) {
-    if (isInRegisteredModel(node) && !canRead()) {
+  protected void doAssertLegalRead(SModelDescriptor descriptor) {
+    if (isInRegisteredModel(descriptor) && !canRead()) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
