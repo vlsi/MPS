@@ -60,8 +60,8 @@ public class ReplaceWithFieldReference_Intention extends BaseIntention implement
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)"), SNodeId.fromString("1225980323340")));
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)"), SNodeId.fromString("1225980323340")));
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

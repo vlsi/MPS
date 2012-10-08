@@ -29,7 +29,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1220369573364358067(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return _context.getSessionObject("jetbrains.mps.gwt.client.generator.runtime-weaving.done" + _context.getNode().getId()) == null;
+    return _context.getSessionObject("jetbrains.mps.gwt.client.generator.runtime-weaving.done" + _context.getNode().getSNodeId().toString()) == null;
   }
 
   public static Object propertyMacro_GetPropertyValue_3852159904898263055(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -130,7 +130,7 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1220369573364066232(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    _context.putSessionObject("jetbrains.mps.gwt.client.generator.runtime-weaving.done" + _context.getNode().getId(), Boolean.TRUE);
+    _context.putSessionObject("jetbrains.mps.gwt.client.generator.runtime-weaving.done" + _context.getNode().getSNodeId().toString(), Boolean.TRUE);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 }

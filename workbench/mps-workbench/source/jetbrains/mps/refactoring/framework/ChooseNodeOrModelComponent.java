@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -178,7 +179,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a node");
       }
       SNode sNode = ((SNodeTreeNode) node).getSNode();
-      if (myConceptFQName != null && !sNode.isInstanceOfConcept(myConceptFQName)) {
+      if (myConceptFQName != null && !sNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(myConceptFQName))) {
         throw new InvalidInputValueException(myCaption + ": selected node should be an istance of " + myConceptFQName);
       }
       return sNode;

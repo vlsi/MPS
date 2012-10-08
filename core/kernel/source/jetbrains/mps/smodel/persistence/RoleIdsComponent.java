@@ -41,27 +41,27 @@ public class RoleIdsComponent {
 
   public static void conceptRead(SNode node, SNodePointer conceptPointer) {
     if (ourHandler != null) {
-      ourHandler.conceptRead(node.getConceptFqName(), conceptPointer);
+      ourHandler.conceptRead(node.getConcept().getId(), conceptPointer);
     }
   }
 
   public static void nodeRoleRead(SNode node, SNodePointer linkPointer) {
     if (ourHandler != null) {
       if (node.getParent() != null) {
-        ourHandler.nodeRoleRead(node.getParent().getConceptFqName(), node.getRole_(), linkPointer);
+        ourHandler.nodeRoleRead(node.getParent().getConcept().getId(), node.getRole(), linkPointer);
       }
     }
   }
 
   public static void referenceRoleRead(SReference reference, SNodePointer linkPointer) {
     if (ourHandler != null) {
-      ourHandler.referenceRoleRead(reference.getSourceNode().getConceptFqName(), reference.getRole(), linkPointer);
+      ourHandler.referenceRoleRead(reference.getSourceNode().getConcept().getId(), reference.getRole(), linkPointer);
     }
   }
 
   public static void propertyNameRead(SNode containingNode, String propertyName, SNodePointer propertyPointer) {
     if (ourHandler != null) {
-      ourHandler.propertyNameRead(containingNode.getConceptFqName(), propertyName, propertyPointer);
+      ourHandler.propertyNameRead(containingNode.getConcept().getId(), propertyName, propertyPointer);
     }
   }
 
@@ -73,7 +73,7 @@ public class RoleIdsComponent {
 
   public static SNodePointer getConceptPointer(SNode node) {
     if (ourHandler != null) {
-      return ourHandler.getConceptPointer(node.getConceptFqName());
+      return ourHandler.getConceptPointer(node.getConcept().getId());
     } else {
       return null;
     }
@@ -81,11 +81,11 @@ public class RoleIdsComponent {
 
   public static SNodePointer getNodeRolePointer(SNode node) {
     if (ourHandler != null) {
-      String linkRole = node.getRole_();
+      String linkRole = node.getRole();
       if (linkRole == null) {
         return null;
       } else {
-        String conceptFqName = node.getParent().getConceptFqName();
+        String conceptFqName = node.getParent().getConcept().getId();
         return ourHandler.getNodeRolePointer(conceptFqName, linkRole);
       }
     } else {
@@ -95,7 +95,7 @@ public class RoleIdsComponent {
 
   public static SNodePointer getReferenceRolePointer(SReference reference) {
     if (ourHandler != null) {
-      String conceptFqName = reference.getSourceNode().getConceptFqName();
+      String conceptFqName = reference.getSourceNode().getConcept().getId();
       return ourHandler.getReferenceRolePointer(conceptFqName, reference.getRole());
     } else {
       return null;
@@ -104,7 +104,7 @@ public class RoleIdsComponent {
 
   public static SNodePointer getPropertyNamePointer(SNode containingNode, String propertyName) {
     if (ourHandler != null) {
-      String conceptFqName = containingNode.getConceptFqName();
+      String conceptFqName = containingNode.getConcept().getId();
       return ourHandler.getPropertyNamePointer(conceptFqName, propertyName);
     } else {
       return null;

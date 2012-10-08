@@ -77,7 +77,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)"), SNodeId.fromString("4642948870877889221")));
+          quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)"), SNodeId.fromString("4642948870877889221")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         {
@@ -86,7 +86,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.setReferent("concept", (SNode) parameter_9);
+            quotedNode1_8.setReferenceTarget("concept", (SNode) parameter_9);
             quotedNode_3.addChild("elementType", quotedNode1_8);
           }
           quotedNode_1.addChild("argument", quotedNode1_7);

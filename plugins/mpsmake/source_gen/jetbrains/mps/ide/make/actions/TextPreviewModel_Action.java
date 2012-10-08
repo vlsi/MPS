@@ -9,13 +9,14 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.make.TextPreviewUtil;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -39,7 +40,7 @@ public class TextPreviewModel_Action extends BaseAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
+    SModel md = TextPreviewModel_Action.this.modelToGenerate(_params);
     return md != null && TextPreviewModel_Action.this.isUserEditableModel(md, _params);
   }
 
@@ -83,7 +84,7 @@ public class TextPreviewModel_Action extends BaseAction {
     }
   }
 
-  private SModelDescriptor modelToGenerate(final Map<String, Object> _params) {
+  private SModel modelToGenerate(final Map<String, Object> _params) {
     SModelDescriptor md = null;
     if (((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")) != null) {
       md = ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel"));
@@ -93,8 +94,9 @@ public class TextPreviewModel_Action extends BaseAction {
     return md;
   }
 
-  private boolean isUserEditableModel(SModelDescriptor md, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isUserModel(md))) {
+  private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
+    // TODO SModelDescriptor cast 
+    if (!(SModelStereotype.isUserModel((SModelDescriptor) md))) {
       return false;
     }
     return md instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) md).isReadOnly());

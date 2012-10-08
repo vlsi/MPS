@@ -57,7 +57,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
 
   @Override
   public String getNamespace() {
-    return myLanguage.getModuleFqName();
+    return myLanguage.getModuleName();
   }
 
   @Override

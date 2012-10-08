@@ -113,12 +113,12 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
       {
         SNode nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a;
         nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_u9nlj8_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

@@ -48,7 +48,7 @@ public class typeof_NewProcessBuilderExperssion_InferenceRule extends AbstractIn
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -97,7 +97,7 @@ public class typeof_NewProcessBuilderExperssion_InferenceRule extends AbstractIn
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
         result = quotedNode1_2;
       }
       return result;
@@ -110,7 +110,7 @@ public class typeof_NewProcessBuilderExperssion_InferenceRule extends AbstractIn
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
         result = quotedNode1_2;
       }
       return result;
@@ -139,7 +139,7 @@ public class typeof_NewProcessBuilderExperssion_InferenceRule extends AbstractIn
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_3;
-          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
+          quotedNode1_7.setReference("classifier", SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
           quotedNode_1.addChild("argument", quotedNode1_7);
         }
         {
@@ -170,7 +170,7 @@ public class typeof_NewProcessBuilderExperssion_InferenceRule extends AbstractIn
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_3;
-          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
+          quotedNode1_7.setReference("classifier", SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~File")));
           quotedNode_1.addChild("argument", quotedNode1_7);
         }
         {

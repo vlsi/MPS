@@ -363,6 +363,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.migration25.Migration25Actions" file="Migration25Actions.xml" />

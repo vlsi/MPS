@@ -29,7 +29,7 @@ public class DecisionTableIsIDecisionTable_SubtypingRule extends SubtypingRule_R
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -49,7 +49,7 @@ public class DecisionTableIsIDecisionTable_SubtypingRule extends SubtypingRule_R
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)"), SNodeId.fromString("6409088484822290043")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)"), SNodeId.fromString("6409088484822290043")));
         result = quotedNode1_2;
       }
       return result;
@@ -62,7 +62,7 @@ public class DecisionTableIsIDecisionTable_SubtypingRule extends SubtypingRule_R
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)"), SNodeId.fromString("6409088484822290043")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)"), SNodeId.fromString("6409088484822290043")));
         result = quotedNode1_2;
       }
       return result;

@@ -53,7 +53,7 @@ public class SetReferenceChange extends NodeChange {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
     if (myTargetNodeId == null && myResolveInfo == null) {
-      node.setReferent(myRole, null);
+      node.setReferenceTarget(myRole, null);
     } else {
       SModelReference targetModelReference = (myTargetModelReference == null ?
         model.getSModelReference() :
@@ -65,8 +65,8 @@ public class SetReferenceChange extends NodeChange {
       } else {
         reference = new StaticReference(myRole, node, targetModelReference, myTargetNodeId, myResolveInfo);
       }
-      node.removeReferent(myRole);
-      node.addReference(reference);
+      node.setReferenceTarget(myRole, null);
+      node.setReference(reference.getRole(), reference);
     }
   }
 

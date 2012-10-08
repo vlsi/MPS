@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.nodeidmap;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 
 import java.util.ArrayList;

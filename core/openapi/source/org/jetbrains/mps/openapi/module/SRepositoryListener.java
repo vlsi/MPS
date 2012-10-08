@@ -13,11 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence.source;
+package org.jetbrains.mps.openapi.module;
 
 /**
- * Source for models having file system as their source.
- * We have support for keeping models of this kind in sync with FS (reloading)
+ * evgeny, 10/5/12
  */
-public interface FileBasedModelSource extends ModelSource {
+public interface SRepositoryListener {
+
+  void moduleAdded(SModule module);
+
+  void beforeModuleRemoved(SModule module);
+
+  void moduleRemoved(SModule module);
+
+  void moduleInitialized(SModule module);
+
+  void moduleChanged(SModule module);
+
+  void repositoryChanged();
 }

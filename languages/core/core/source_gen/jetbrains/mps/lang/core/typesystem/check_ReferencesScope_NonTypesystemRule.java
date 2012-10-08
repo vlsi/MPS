@@ -56,7 +56,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
             {
               SNode _foreign_34989546 = sss.getReferenceValidatorNode();
               if (_foreign_34989546 != null) {
-                _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+                _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getSNodeId().toString());
               }
             }
           }
@@ -71,7 +71,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

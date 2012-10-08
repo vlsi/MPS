@@ -19,8 +19,6 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
-import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
@@ -70,7 +68,7 @@ public class Equations {
   }
 
   public SNode getRepresentative(final SNode node) {
-    return getRepresentative(node,true);
+    return getRepresentative(node, true);
   }
 
   public SNode getRepresentativeNoShortenPaths(final SNode node) {
@@ -114,11 +112,11 @@ public class Equations {
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
- /*   if (lRepresentative == null || rRepresentative == null) {
-      myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
-      return false;
-    } */
-    if (lRepresentative !=null && lRepresentative.equals(rRepresentative)) {
+    /*   if (lRepresentative == null || rRepresentative == null) {
+     myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
+     return false;
+   } */
+    if (lRepresentative != null && lRepresentative.equals(rRepresentative)) {
       return true;
     }
     if (TypesUtil.isVariable(lRepresentative)) {
@@ -148,7 +146,7 @@ public class Equations {
   private boolean processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
     for (SNode innerVar : TypesUtil.getVariables(type, myState)) {
-      if (getRepresentative(innerVar, false).equals(var)){
+      if (getRepresentative(innerVar, false).equals(var)) {
         reportRecursiveType(source, info);
         return false;
       }
@@ -184,7 +182,7 @@ public class Equations {
     for (SNode child : node.getChildren()) {
       SNode newChild = expandNode(child, variablesMet, finalExpansion, copy);
       if (finalExpansion && TypesUtil.isVariable(newChild)) {
-        newChild = convertReferentVariable(node, child.getRole_(), child);
+        newChild = convertReferentVariable(node, child.getRole(), child);
       }
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
@@ -209,8 +207,8 @@ public class Equations {
         }
         if (newNode != oldNode) {
           String role = reference.getRole();
-          node.removeReference(reference);
-          node.setReferent(role, newNode);
+          node.setReference(role, null);
+          node.setReferenceTarget(role, newNode);
         }
       }
     }
@@ -224,7 +222,7 @@ public class Equations {
 
   void reportRecursiveType(SNode node, EquationInfo info) {  //todo
     SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed",
-                info == null? null:info.getRuleModel(), info == null? null:info.getRuleId());
+      info == null ? null : info.getRuleModel(), info == null ? null : info.getRuleId());
     myState.getTypeCheckingContext().reportMessage(node, errorReporter);
   }
 

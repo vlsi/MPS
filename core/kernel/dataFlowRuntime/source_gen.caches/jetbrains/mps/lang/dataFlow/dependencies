@@ -44,7 +44,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.DataflowBuilderException" file="DataflowBuilderException.java">
     <classNode dependClassName="java.lang.String" />

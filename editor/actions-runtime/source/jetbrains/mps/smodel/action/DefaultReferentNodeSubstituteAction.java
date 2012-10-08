@@ -91,7 +91,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
         throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());
       }
-      getSourceNode().setReferent(SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
+      getSourceNode().setReferenceTarget(SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
     }
     return null;
   }
@@ -120,7 +120,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     if (parent == null) {
       return null;
     }
-    sourceNode.setReferent(role, (SNode) getParameterObject());
+    sourceNode.setReferenceTarget(role, (SNode) getParameterObject());
     SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
     auxModel.addRoot(nodeToEquateCopy);
     SNode type = TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);

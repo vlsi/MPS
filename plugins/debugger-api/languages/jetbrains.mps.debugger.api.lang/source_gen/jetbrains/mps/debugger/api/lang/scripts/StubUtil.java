@@ -66,7 +66,7 @@ public class StubUtil {
         SModelReference oldModelReference = reference.getTargetSModelReference();
         SNodeOperations.getModel(targetNode).deleteModelImport(oldModelReference);
 
-        targetNode.setReferent(role, candidate);
+        targetNode.setReferenceTarget(role, candidate);
         StubRefUtil.addRequiredImports(SNodeOperations.getModel(targetNode), candidate);
         return;
       }
@@ -88,7 +88,7 @@ public class StubUtil {
       SModelReference oldModelReference = reference.getTargetSModelReference();
       SNodeOperations.getModel(node).deleteModelImport(oldModelReference);
 
-      node.setReferent(role, candidate);
+      node.setReferenceTarget(role, candidate);
       StubRefUtil.addRequiredImports(SNodeOperations.getModel(node), candidate);
     } else {
       findAndReplace(node, role, new _FunctionTypes._return_P1_E0<String, SNode>() {

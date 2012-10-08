@@ -205,7 +205,7 @@ public enum LanguageAspect {
   }
 
   private DefaultSModelDescriptor get_internal(Language l, boolean doCreate) {
-    SModelFqName fqName = new SModelFqName(l.getModuleFqName() + "." + myName, null);
+    SModelFqName fqName = new SModelFqName(l.getModuleName() + "." + myName, null);
 
     EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
     if (md != null && SModelRepository.getInstance().getOwners(md).contains(l)) return ((DefaultSModelDescriptor) md);
@@ -251,7 +251,7 @@ public enum LanguageAspect {
   public abstract ModuleReference getMainLanguage();
 
   private SModelFqName getModuleUID(Language l) {
-    return new SModelFqName(l.getModuleFqName() + "." + getName(), "");
+    return new SModelFqName(l.getModuleName() + "." + getName(), "");
   }
 
   public static Collection<EditableSModelDescriptor> getAspectModels(Language l) {

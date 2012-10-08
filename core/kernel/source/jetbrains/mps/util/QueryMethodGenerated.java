@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;

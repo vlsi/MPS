@@ -136,14 +136,14 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSubtypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSupertypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -167,13 +167,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       {
         SNode nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0;
         nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getConcept().getId()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a0;
-          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getReferent("classifier") != referent) {
+          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
@@ -207,13 +207,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       {
         SNode nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a;
         nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
-          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getReferent("classifier") != referent) {
+          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
@@ -247,13 +247,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       {
         SNode nodeToMatch_null_a0a0a;
         nodeToMatch_null_a0a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_null_a0a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_null_a0a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a_0;
-          if (nodeToMatch_null_a0a0a.getReferent("classifier") != referent) {
+          if (nodeToMatch_null_a0a0a.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

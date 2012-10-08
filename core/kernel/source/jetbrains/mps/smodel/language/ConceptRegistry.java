@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -168,7 +168,7 @@ public class ConceptRegistry implements CoreComponent {
       // todo: more clearly logic
       return BehaviorAspectInterpreted.getInstance().getDescriptor(null);
     } else {
-      return getBehaviorDescriptor(node.getConceptFqName());
+      return getBehaviorDescriptor(node.getConcept().getId());
     }
   }
 

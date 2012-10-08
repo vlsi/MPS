@@ -42,7 +42,7 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     init();
   }
 
-  public IModule getModule() {
+  public AbstractModule getModule() {
     return mySolution;
   }
 

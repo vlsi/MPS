@@ -21,6 +21,7 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -151,7 +152,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     boolean sym = true;
     while (parent != null) {
-      int index = parent.getIndexOfChild(node);
+      int index = parent.getChildren(node.getRole()).indexOf(node);
       if (index == 0) {
         sb.append(sym ? 'a' : '0');
       }
@@ -175,7 +176,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.isInstanceOfConcept(SNodeUtil.concept_INamedConcept)) {
+        if (node_.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept))) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
@@ -216,7 +217,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.isInstanceOfConcept(SNodeUtil.concept_INamedConcept)) {
+        if (node_.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept))) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();

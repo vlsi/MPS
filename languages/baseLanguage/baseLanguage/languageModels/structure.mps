@@ -6,7 +6,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294">
       <property name="name" nameId="tpck.1169194664001" value="AssignmentExpression" />
@@ -1633,6 +1632,9 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3262277503800835465">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3262277503800813724" resolveInfo="ILocalDeclaration" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2649714743337815504">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
   </root>
   <root id="1068581242864">
@@ -4486,17 +4488,17 @@
     </node>
   </root>
   <root id="1068498886296">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1068581517664">
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="variableDeclaration" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
-    </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5955926967281872355">
       <property name="value" nameId="tpce.1105725733873" value="reference to variable" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8897506886667740458">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1146528679895" resolveInfo="lvalue" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1068581517664">
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <property name="role" nameId="tpce.1071599776563" value="variableDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1233921336931">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />

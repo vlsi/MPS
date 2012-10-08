@@ -17,14 +17,14 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Comparator;
 
 public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
-  private IModule getModule(MPSTreeNode treeNode) {
+  private SModule getModule(MPSTreeNode treeNode) {
     if (treeNode instanceof ProjectModuleTreeNode) {
       return ((ProjectModuleTreeNode) treeNode).getModule();
     }
@@ -45,8 +45,8 @@ public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
   }
 
   public int compare(MPSTreeNode o1, MPSTreeNode o2) {
-    IModule module1 = getModule(o1);
-    IModule module2 = getModule(o2);
+    SModule module1 = getModule(o1);
+    SModule module2 = getModule(o2);
     if (module1 != null && module2 != null) {
       if (module1.getClass().equals(module2.getClass())) {
         return getValueToCompare(o1).compareTo(getValueToCompare(o2));

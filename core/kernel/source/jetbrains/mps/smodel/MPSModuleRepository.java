@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -28,6 +28,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -41,7 +43,7 @@ public class MPSModuleRepository implements CoreComponent {
       invalidateCaches();
     }
   };
-  private List<ModuleRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<ModuleRepositoryListener>();
+  private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
   private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
@@ -217,16 +219,16 @@ public class MPSModuleRepository implements CoreComponent {
 
   //------------------listeners--------------------
 
-  public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
+  public void addModuleRepositoryListener(SRepositoryListener listener) {
     myModuleListeners.add(listener);
   }
 
-  public void removeModuleRepositoryListener(ModuleRepositoryListener listener) {
+  public void removeModuleRepositoryListener(SRepositoryListener listener) {
     myModuleListeners.remove(listener);
   }
 
   private void fireRepositoryChanged() {
-    for (ModuleRepositoryListener listener : myModuleListeners) {
+    for (SRepositoryListener listener : myModuleListeners) {
       try {
         listener.repositoryChanged();
       } catch (Throwable t) {
@@ -235,9 +237,9 @@ public class MPSModuleRepository implements CoreComponent {
     }
   }
 
-  private void fireModuleAdded(IModule module) {
+  private void fireModuleAdded(SModule module) {
     ModelAccess.assertLegalWrite();
-    for (ModuleRepositoryListener listener : myModuleListeners) {
+    for (SRepositoryListener listener : myModuleListeners) {
       try {
         listener.moduleAdded(module);
       } catch (Throwable t) {
@@ -246,9 +248,9 @@ public class MPSModuleRepository implements CoreComponent {
     }
   }
 
-  private void fireBeforeModuleRemoved(IModule module) {
+  private void fireBeforeModuleRemoved(SModule module) {
     ModelAccess.assertLegalWrite();
-    for (ModuleRepositoryListener listener : myModuleListeners) {
+    for (SRepositoryListener listener : myModuleListeners) {
       try {
         listener.beforeModuleRemoved(module);
       } catch (Throwable t) {
@@ -257,9 +259,9 @@ public class MPSModuleRepository implements CoreComponent {
     }
   }
 
-  private void fireModuleRemoved(IModule module) {
+  private void fireModuleRemoved(SModule module) {
     ModelAccess.assertLegalWrite();
-    for (ModuleRepositoryListener listener : myModuleListeners) {
+    for (SRepositoryListener listener : myModuleListeners) {
       try {
         listener.moduleRemoved(module);
       } catch (Throwable t) {
@@ -269,11 +271,11 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   //todo public?
-  public void fireModuleChanged(IModule m) {
+  public void fireModuleChanged(SModule m) {
     ModelAccess.assertLegalWrite();
     if (!myModules.contains(m)) return;
 
-    for (ModuleRepositoryListener l : myModuleListeners) {
+    for (SRepositoryListener l : myModuleListeners) {
       try {
         l.moduleChanged(m);
       } catch (Throwable t) {
@@ -283,18 +285,16 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   //todo public?
-  public void fireModuleInitialized(IModule module) {
+  public void fireModuleInitialized(SModule module) {
     assertCanRead();
 
-    for (ModuleRepositoryListener listener : myModuleListeners) {
+    for (SRepositoryListener listener : myModuleListeners) {
       listener.moduleInitialized(module);
     }
   }
 
-  //-----------------some strange stuff
-
   public void saveAll() {
-    for (IModule module:getAllModules()){
+    for (IModule module : getAllModules()) {
       if (!module.isChanged()) continue;
       module.save();
     }

@@ -1789,17 +1789,22 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1172648115917">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1172648118743">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1172648130928">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216933995326">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1172648136201">
-                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1172648139323">
-                    <node role="expression" roleId="tpee.1070534934092" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1172648145552" />
-                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1172648141307">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2144206851851949039">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2144206851851949040">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2144206851851949041">
+                    <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2144206851851949042">
+                      <node role="expression" roleId="tpee.1070534934092" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2144206851851949043" />
+                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2144206851851949044">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+                      </node>
                     </node>
                   </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851949045">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
+                  </node>
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216933995327">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2144206851851949046">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
                 </node>
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1172648123377">
@@ -3463,8 +3468,8 @@
         </node>
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179739554543">
-        <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
         <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
+        <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
         <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739559824">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739566508">
@@ -3587,8 +3592,8 @@
             </node>
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179739767000">
-            <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
+            <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739767001">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739767002">
@@ -3626,8 +3631,8 @@
             </node>
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179398619951">
-            <property name="methodName" nameId="tp68.1173992444083" value="getMatcher" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.Property" />
+            <property name="methodName" nameId="tp68.1173992444083" value="getMatcher" />
             <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1179398698392">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179398698393">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1179398698394">
@@ -3806,8 +3811,8 @@
             </node>
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179739700825">
-            <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
+            <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739700826">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739700827">
@@ -3845,8 +3850,8 @@
             </node>
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179398930380">
-            <property name="methodName" nameId="tp68.1173992444083" value="getMatcher" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.Property" />
+            <property name="methodName" nameId="tp68.1173992444083" value="getMatcher" />
             <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1179398930381">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179398930382">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1179398930383">
@@ -4800,8 +4805,8 @@
             </node>
           </node>
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1179395516148">
-            <property name="isFinal" nameId="tpee.1176718929932" value="true" />
             <property name="name" nameId="tpck.1169194664001" value="matchValue" />
+            <property name="isFinal" nameId="tpee.1176718929932" value="true" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193268012" />
           </node>
         </node>
@@ -4904,8 +4909,8 @@
   </root>
   <root id="1179741104409">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1179741172861">
-      <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
       <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
+      <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1179741172864">
         <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1179741172865">
@@ -5073,8 +5078,8 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1180087418199">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216934000374">
               <node role="operand" roleId="tpee.1197027771414" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1180087820029">
-                <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
                 <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
+                <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1180087820030">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
                   <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1180087820031">

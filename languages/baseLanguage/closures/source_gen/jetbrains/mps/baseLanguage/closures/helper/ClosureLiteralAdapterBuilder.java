@@ -101,7 +101,7 @@ public class ClosureLiteralAdapterBuilder {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("annotation", quotedNode1_2, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("8649343297855554552")));
+        quotedNode1_2.setReference("annotation", SReference.create("annotation", quotedNode1_2, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("8649343297855554552")));
         result = quotedNode1_2;
       }
       return result;

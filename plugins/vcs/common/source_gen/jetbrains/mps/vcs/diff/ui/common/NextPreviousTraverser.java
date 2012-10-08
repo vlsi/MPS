@@ -28,6 +28,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -226,7 +227,7 @@ public class NextPreviousTraverser {
       if (log.isWarnEnabled()) {
         log.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
           public String compute() {
-            return check_mf966z_a0a0a2a0a0b0l(myLastEditor.getEditedNode());
+            return check_mf966z_a0a0a2a0a0b0l(check_mf966z_a0a0a0c0a0a1a11(myLastEditor.getEditedNode()));
           }
         })));
       }
@@ -240,9 +241,16 @@ public class NextPreviousTraverser {
     return null;
   }
 
-  private static String check_mf966z_a0a0a2a0a0b0l(SNode checkedDotOperand) {
+  private static String check_mf966z_a0a0a2a0a0b0l(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getConceptFqName();
+      return checkedDotOperand.getId();
+    }
+    return null;
+  }
+
+  private static SConcept check_mf966z_a0a0a0c0a0a1a11(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getConcept();
     }
     return null;
   }

@@ -51,6 +51,7 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -546,7 +547,7 @@ public class TestMain {
     public static void invokeTests(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> outputModels, junit.framework.TestResult testResult, ClassLoader baseClassLoader) {
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode node) {
-          return node.isInstanceOfConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
+          return node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept));
         }
       };
       for (final SModel model : outputModels) {

@@ -96,7 +96,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void readNode(SNode node) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -111,7 +111,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -126,7 +126,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -141,7 +141,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void propertyExistenceAccess(SNode node, String propertyName) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -156,7 +156,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -171,7 +171,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void propertyCleanReadAccess(SNode node, String propertyName) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -186,7 +186,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
@@ -203,7 +203,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void nodeUnclassifiedReadAccess(SNode node) {
-    if (node.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       if (node.getModel() == myBuilder.currentInputModel) {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {

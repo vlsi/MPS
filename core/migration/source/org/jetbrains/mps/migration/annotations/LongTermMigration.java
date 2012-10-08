@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence.source;
+package org.jetbrains.mps.migration.annotations;
 
-/**
- * Ctrl-N support
- */
-public interface NavigationSupport {
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(value = RetentionPolicy.CLASS)
+public @interface LongTermMigration {
+  String migration();
 }

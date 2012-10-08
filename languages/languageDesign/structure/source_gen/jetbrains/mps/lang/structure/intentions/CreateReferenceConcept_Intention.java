@@ -97,14 +97,14 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("name", (String) parameter_7);
-        quotedNode1_3.addReference(SReference.create("extends", quotedNode1_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
+        quotedNode1_3.setReference("extends", SReference.create("extends", quotedNode1_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("metaClass", "reference");
           quotedNode1_4.setProperty("sourceCardinality", "1");
           quotedNode1_4.setProperty("role", (String) parameter_5);
-          quotedNode1_4.setReferent("target", (SNode) parameter_6);
+          quotedNode1_4.setReferenceTarget("target", (SNode) parameter_6);
           quotedNode_1.addChild("linkDeclaration", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -127,11 +127,11 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setReferent("conceptDeclaration", (SNode) parameter_9);
+        quotedNode1_5.setReferenceTarget("conceptDeclaration", (SNode) parameter_9);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setReferent("relationDeclaration", (SNode) parameter_10);
+          quotedNode1_6.setReferenceTarget("relationDeclaration", (SNode) parameter_10);
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
@@ -139,7 +139,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
               quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("readOnly", "true");
-              quotedNode1_8.addReference(SReference.create("relationDeclaration", quotedNode1_8, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1169194664001")));
+              quotedNode1_8.setReference("relationDeclaration", SReference.create("relationDeclaration", quotedNode1_8, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1169194664001")));
               quotedNode_3.addChild("cellModel", quotedNode1_8);
             }
             quotedNode_2.addChild("editorComponent", quotedNode1_7);

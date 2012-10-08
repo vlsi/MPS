@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
 import java.util.List;
@@ -61,7 +62,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
     Pair<List<String>, List<String>> problems = ModelAccess.instance().runReadAction(new Computable<Pair<List<String>, List<String>>>() {
       public Pair<List<String>, List<String>> compute() {
-        IModule module = node.getModule();
+        SModule module = node.getModule();
         if (module == null) return null;
         ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
         return new Pair(validator.getErrors(), validator.getWarnings());

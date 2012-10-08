@@ -45,7 +45,7 @@ public class CoercionManager {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if (!CoerceUtil.canBeCoerced(subtype, pattern.getConceptFQName())) return null;
-    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
+    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConcept().getId())) {
       List<SNode> children = subtype.getChildren("argument");
       for (SNode child : children) {
         SNode result = coerceSubTypingNew(child, pattern, isWeak, state);
@@ -54,7 +54,7 @@ public class CoercionManager {
       return null;
     }
     final TypeCheckingContextNew typeCheckingContext = state == null ? null : state.getTypeCheckingContext();
-    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
+    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConcept().getId())) {
       List<SNode> children = subtype.getChildren("argument");
 
       SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, typeCheckingContext);

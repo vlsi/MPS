@@ -19,13 +19,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.loading.UpdateableModel;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
  */
-public interface SModelDescriptor {
+public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel {
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */

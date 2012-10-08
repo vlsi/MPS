@@ -425,7 +425,7 @@ public class MergeSession {
     }
 
     private void invalidateChildrenChanges(SModelChildEvent event, int offset) {
-      int index = event.getParent().getIndexOfChild(event.getChild()) + offset;
+      int index = ListSequence.fromList(SNodeOperations.getChildren(((SNode) event.getParent()))).indexOf(event.getChild()) + offset;
       int beginOffset = (offset == 1 ?
         0 :
         -1

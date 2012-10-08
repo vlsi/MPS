@@ -28,7 +28,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         {
           SNode matchingNode_lcu2lp_a1a = SLinkOperations.getTarget(variableDeclaration, "type", true);
           if (matchingNode_lcu2lp_a1a != null) {
-            matches_lcu2lp_a1a = SModelUtil_new.isAssignableConcept(matchingNode_lcu2lp_a1a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+            matches_lcu2lp_a1a = SModelUtil_new.isAssignableConcept(matchingNode_lcu2lp_a1a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
           }
         }
         if (matches_lcu2lp_a1a) {
@@ -52,7 +52,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

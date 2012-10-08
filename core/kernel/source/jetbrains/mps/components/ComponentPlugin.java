@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.components;
 
+import org.jetbrains.mps.openapi.components.CoreComponent;
+
 import java.util.LinkedList;
 
 /**

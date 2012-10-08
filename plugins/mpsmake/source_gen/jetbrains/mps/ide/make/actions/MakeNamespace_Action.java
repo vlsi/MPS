@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -111,13 +111,13 @@ public class MakeNamespace_Action extends BaseAction {
     return res.toString();
   }
 
-  private List<IModule> selectedModules(final Map<String, Object> _params) {
-    List<IModule> models = new ArrayList<IModule>();
+  private List<SModule> selectedModules(final Map<String, Object> _params) {
+    List<SModule> modules = new ArrayList<SModule>();
     for (TreeNode ppNode : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes")))) {
-      for (IModule module : ListSequence.fromList(((NamespaceTextNode) ppNode).getModulesUnder())) {
-        models.add(module);
+      for (SModule module : ListSequence.fromList(((NamespaceTextNode) ppNode).getModulesUnder())) {
+        modules.add(module);
       }
     }
-    return models;
+    return modules;
   }
 }

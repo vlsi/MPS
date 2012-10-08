@@ -90,7 +90,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public abstract boolean isExternal();
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
-    if (sourceNode.isRegistered() && targetNode.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(sourceNode) && jetbrains.mps.util.SNodeOperations.isRegistered(targetNode)) {
       // 'mature' reference
       return new StaticReference(role, sourceNode, targetNode.getModel().getSModelReference(), targetNode.getSNodeId(), targetNode.getName());
     }
@@ -195,8 +195,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return null;
   }
 
-  @Override
-  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
+//  @Override
+  public SModel getTargetModel() {
     // TODO API (implement)
     return null;
   }

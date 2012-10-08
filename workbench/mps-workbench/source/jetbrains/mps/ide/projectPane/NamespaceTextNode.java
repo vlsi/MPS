@@ -25,11 +25,12 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNod
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +118,10 @@ public class NamespaceTextNode extends TextTreeNode {
       } else if (child instanceof NamespaceTextNode) {
         models.addAll(((NamespaceTextNode) child).getModelsUnder());
       } else if (child instanceof ProjectModuleTreeNode) {
-        models.addAll(((ProjectModuleTreeNode) child).getModule().getOwnModelDescriptors());
+        SModule module = ((ProjectModuleTreeNode) child).getModule();
+        if (module instanceof AbstractModule) {
+          models.addAll(((AbstractModule) module).getOwnModelDescriptors());
+        }
       }
     }
 
@@ -128,8 +132,8 @@ public class NamespaceTextNode extends TextTreeNode {
     return getModelsUnder().size() > 0;
   }
 
-  public List<IModule> getModulesUnder() {
-    List<IModule> modules = new ArrayList<IModule>();
+  public List<SModule> getModulesUnder() {
+    List<SModule> modules = new ArrayList<SModule>();
     for (MPSTreeNode child : this) {
       if (child instanceof ProjectModuleTreeNode) {
         modules.add(((ProjectModuleTreeNode) child).getModule());

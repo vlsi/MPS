@@ -326,7 +326,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 154:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalToMethodKind", null, true, new String[]{}, new String[]{}, new String[]{});
       case 155:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
       case 156:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IWrapper"}, new String[]{}, new String[]{});
       case 157:

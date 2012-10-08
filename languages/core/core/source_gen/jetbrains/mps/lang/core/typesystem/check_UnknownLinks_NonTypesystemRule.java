@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -62,12 +61,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
 
-    for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
-      // Skipping left/right_transform_hint properties - these are internal editor properties, 
-      // can be attached to edited node while editing 
-      if (SNodeEditorUtil.LEFT_TRANSFORM_HINT.equals(propname) || SNodeEditorUtil.RIGHT_TRANSFORM_HINT.equals(propname)) {
-        continue;
-      }
+    for (String propname : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
       if (node.getPropertyDeclaration(propname) == null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -88,7 +82,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

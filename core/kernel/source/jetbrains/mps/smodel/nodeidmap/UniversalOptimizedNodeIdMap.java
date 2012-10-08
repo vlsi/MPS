@@ -17,16 +17,14 @@ package jetbrains.mps.smodel.nodeidmap;
 
 import gnu.trove.THashMap;
 import gnu.trove.TLongObjectHashMap;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.iterable.MergeIterator;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();

@@ -13,7 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence.source;
+package org.jetbrains.mps.openapi.module;
 
-public interface ModelSource {
+/**
+ * evgeny, 10/5/12
+ */
+public interface SModuleReference {
+
+  String getModuleName();
+
+  SModule resolve(SRepository repo);
 }

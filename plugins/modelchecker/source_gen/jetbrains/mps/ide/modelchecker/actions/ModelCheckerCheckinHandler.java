@@ -15,9 +15,11 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
@@ -66,12 +68,12 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       return CheckinHandler.ReturnResult.COMMIT;
     }
 
-    return myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), getModelDescriptorsByFiles(myPanel.getFiles()));
+    return myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), getModelsByFiles(myPanel.getFiles()));
   }
 
-  private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
+  private static List<SModel> getModelsByFiles(Iterable<File> files) {
     final SModelFileTracker ft = SModelFileTracker.getInstance();
-    return Sequence.fromIterable(files).select(new ISelector<File, BaseSModelDescriptorWithSource>() {
+    return ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(files).select(new ISelector<File, BaseSModelDescriptorWithSource>() {
       public BaseSModelDescriptorWithSource select(File file) {
         return ft.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
@@ -79,11 +81,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       public boolean accept(BaseSModelDescriptorWithSource modelDescriptor) {
         return modelDescriptor != null;
       }
-    }).select(new ISelector<BaseSModelDescriptorWithSource, SModelDescriptor>() {
-      public SModelDescriptor select(BaseSModelDescriptorWithSource it) {
-        return (SModelDescriptor) it;
-      }
-    }).toListSequence();
+    }));
   }
 
   public static class ModelCheckerCheckinHandlerFactory extends CheckinHandlerFactory {

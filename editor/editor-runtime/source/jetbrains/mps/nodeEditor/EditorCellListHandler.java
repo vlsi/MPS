@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.SNodeOperations;
 
 import java.util.List;
 
@@ -81,7 +82,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   }
 
   protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
-    getOwner().insertChild(anchorNode, getElementRole(), myInsertedNode, insertBefore);
+    SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
   }
 
   protected List<SNode> getNodesForList() {

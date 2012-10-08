@@ -25,6 +25,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" file="QueriesUtil.java">
     <classNode dependClassName="java.lang.String" />
@@ -64,6 +66,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
 </dependenciesRoot>
 

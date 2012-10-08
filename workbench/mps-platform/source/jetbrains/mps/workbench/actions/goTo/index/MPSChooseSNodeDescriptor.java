@@ -110,7 +110,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       for (SNode root : myIndex.getRootsToIterate(sm.getSModel())) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         BaseSNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), root.getSNodeId());
+          nodeName, root.getConcept().getId(), root.getModel().getSModelReference(), root.getSNodeId());
         keys.add(nodeDescriptor);
       }
     }

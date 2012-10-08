@@ -113,7 +113,7 @@ public class ModelReader6 implements IModelReader {
       String target = link.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
       String resolveInfo = link.getAttributeValue(ModelPersistence.RESOLVE_INFO);
       SReference reference = myHelper.readLink(node, role, target, resolveInfo);
-      if (reference != null) node.addReference(reference);
+      if (reference != null) node.setReference(reference.getRole(), reference);
     }
 
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {

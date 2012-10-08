@@ -27,7 +27,7 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
         {
           SNode matchingNode_vxuw1n_a1a = parent;
           if (matchingNode_vxuw1n_a1a != null) {
-            matches_vxuw1n_a1a = SModelUtil_new.isAssignableConcept(matchingNode_vxuw1n_a1a.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            matches_vxuw1n_a1a = SModelUtil_new.isAssignableConcept(matchingNode_vxuw1n_a1a.getConcept().getId(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
           }
         }
         if (matches_vxuw1n_a1a) {
@@ -50,7 +50,7 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

@@ -21,7 +21,7 @@ public class MethodParameterModel {
   public MethodParameterModel(SNode param, int i) {
     this.myDeclaration = param;
     this.myOrder = i;
-    this.setTypeName(SLinkOperations.getTarget(param, "type", true).toString());
+    this.setTypeName(SLinkOperations.getTarget(param, "type", true).getPresentation());
     this.setName(SPropertyOperations.getString(param, "name"));
   }
 

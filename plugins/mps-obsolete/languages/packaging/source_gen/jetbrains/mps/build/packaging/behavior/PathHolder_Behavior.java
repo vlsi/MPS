@@ -108,7 +108,7 @@ public class PathHolder_Behavior {
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("fullPath", (String) parameter_3);
         quotedNode1_2.setProperty("moduleRelativePath", (String) parameter_5);
-        quotedNode1_2.setReferent("module", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("module", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;

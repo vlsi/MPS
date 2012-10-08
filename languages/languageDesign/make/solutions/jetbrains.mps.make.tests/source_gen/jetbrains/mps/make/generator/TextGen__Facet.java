@@ -65,7 +65,7 @@ public class TextGen__Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rqwvem_a0a = null;
           switch (0) {
             case 0:

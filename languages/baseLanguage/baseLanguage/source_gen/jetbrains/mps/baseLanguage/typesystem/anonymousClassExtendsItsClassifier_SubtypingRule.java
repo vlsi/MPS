@@ -30,7 +30,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
         {
           SNode matchingNode_q6q799_a1a = SLinkOperations.getTarget(classifierType, "classifier", false);
           if (matchingNode_q6q799_a1a != null) {
-            matches_q6q799_a1a = SModelUtil_new.isAssignableConcept(matchingNode_q6q799_a1a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+            matches_q6q799_a1a = SModelUtil_new.isAssignableConcept(matchingNode_q6q799_a1a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
           }
         }
         if (matches_q6q799_a1a) {
@@ -47,7 +47,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -68,7 +68,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
@@ -88,7 +88,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {

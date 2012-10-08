@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,7 +72,7 @@ import java.util.List;
     Iterable<SNode> nodes = searchScope.getAvailableElements(null);
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode node : nodes) {
-      if (node == null || !node.isInstanceOfConcept(referentConceptFqName)) continue;
+      if (node == null || !node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(referentConceptFqName))) continue;
       actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, presentation));
     }
     return actions;

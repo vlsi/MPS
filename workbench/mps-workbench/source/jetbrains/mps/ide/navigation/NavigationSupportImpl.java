@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * evgeny, 11/5/11
@@ -63,8 +64,9 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   }
 
   @Override
-  public void selectInTree(@NotNull IOperationContext context, @NotNull IModule module, boolean focus) {
+  public void selectInTree(@NotNull IOperationContext context, @NotNull SModule module, boolean focus) {
     ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(context.getProject()));
-    projectPane.selectModule(module, focus);
+    // TODO IModule cast
+    projectPane.selectModule((IModule)module, focus);
   }
 }

@@ -38,7 +38,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
           List<SNode> descendants = new ArrayList<SNode>(myHierarchyTree.getAbstractChildren(node, myVisited));
           Collections.sort(descendants, new Comparator<SNode>() {
             public int compare(SNode o1, SNode o2) {
-              return ("" + o1.toString()).compareTo(o2.toString());
+              return ("" + o1.getPresentation()).compareTo(o2.getPresentation());
             }
           });
           Set<SNode> visited = new HashSet<SNode>(myVisited);

@@ -13,16 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.reference;
+package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.module.SRepository;
+/**
+ * evgeny, 10/5/12
+ */
+public class SRepositoryListenerAdapter implements SRepositoryListener {
 
-@Immutable
-public abstract class SEntityReference<T> {
-  protected static String DELIM = "#";
+  @Override
+  public void moduleAdded(SModule module) {
+  }
 
-  public abstract String getPresentation();
+  @Override
+  public void beforeModuleRemoved(SModule module) {
+  }
 
-  public abstract T resolve(SRepository repo);
+  @Override
+  public void moduleRemoved(SModule module) {
+  }
+
+  @Override
+  public void moduleInitialized(SModule module) {
+  }
+
+  @Override
+  public void moduleChanged(SModule module) {
+  }
+
+  @Override
+  public void repositoryChanged() {
+  }
 }

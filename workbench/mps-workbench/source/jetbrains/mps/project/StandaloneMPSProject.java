@@ -41,6 +41,8 @@ import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -65,7 +67,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private Element myProjectElement;
   protected ProjectDescriptor myProjectDescriptor;
 
-  private final Map<ModuleReference, Path> myModuleToPath = new HashMap<ModuleReference, Path>();
+  private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
   public StandaloneMPSProject(Project project) {
     super(project);
@@ -229,7 +231,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Nullable
-  public String getFolderFor(IModule module) {
+  public String getFolderFor(SModule module) {
     Path path = getPathForModule(module);
     if (path != null) {
       return path.getMPSFolder();
@@ -238,7 +240,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     }
   }
 
-  public void setFolderFor(IModule module, String newFolder) {
+  public void setFolderFor(SModule module, String newFolder) {
     Path path = getPathForModule(module);
     if (path != null) {
       path.setMPSFolder(newFolder);
@@ -269,8 +271,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     }
   }
 
-  private Path getPathForModule(IModule module) {
-    ModuleReference reference = module.getModuleReference();
+  private Path getPathForModule(SModule module) {
+    SModuleReference reference = module.getModuleReference();
     if (myModuleToPath.containsKey(reference)) {
       return myModuleToPath.get(reference);
     } else {
@@ -280,8 +282,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     }
   }
 
-  private Path getPathForModule_Internal(IModule module) {
-    IFile file = module.getDescriptorFile();
+  private Path getPathForModule_Internal(SModule module) {
+    if (!(module instanceof AbstractModule)) return null;
+    IFile file = ((AbstractModule) module).getDescriptorFile();
     assert file != null;
     String path = file.getPath();
     for (Path sp : getAllModulePaths()) {

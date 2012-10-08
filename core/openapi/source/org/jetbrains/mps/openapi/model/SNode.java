@@ -18,15 +18,12 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
 
   //common properties
 
-  SNodeId getNodeId();
+  SNodeId getSNodeId();
 
   SNodeReference getReference();
 
@@ -36,7 +33,7 @@ public interface SNode {
 
   String getName();
 
-  SModel getModel();
+  SModel getContainingModel();
 
   // tree operation
 
@@ -77,15 +74,15 @@ public interface SNode {
 
   SNode getNextChild(SNode child);
 
-  @Nullable String getRole();
-
   String getRoleOf(SNode child);
+
+  public Iterable<? extends SNode> getChildren();  //?needed
 
   void visitChildren(ChildVisitor v);
 
   // refs
 
-  void setReferenceTarget(String role, SNode target);
+  void setReferenceTarget(String role, @Nullable SNode target);
 
   SNode getReferenceTarget(String role);
 
@@ -93,9 +90,9 @@ public interface SNode {
 
   SReference getReference(String role);
 
-  void setReference(SReference reference);
+  void setReference(String role, SReference reference);
 
-  void removeReference(SReference ref);
+  public Iterable<? extends SReference> getReferences();  //?needed
 
   void visitReferences(ReferenceVisitor v);
 

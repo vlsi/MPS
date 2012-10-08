@@ -21,13 +21,14 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
-  public static ProjectModuleTreeNode createFor(Project project, IModule module) {
+  public static ProjectModuleTreeNode createFor(Project project, SModule module) {
     return createFor(project, module, false);
   }
 
-  public static ProjectModuleTreeNode createFor(Project project, IModule module, boolean shortNameOnly) {
+  public static ProjectModuleTreeNode createFor(Project project, SModule module, boolean shortNameOnly) {
     if (module instanceof Language) {
       return new ProjectLanguageTreeNode((Language) module, project, shortNameOnly);
     } else if (module instanceof Solution || module instanceof ProjectStructureModule) {
@@ -47,7 +48,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected ProjectModuleTreeNode(IOperationContext operationContext) {
     super(operationContext);
-    setUserObject(operationContext.getModule().getModuleFqName());
+    setUserObject(operationContext.getModule().getModuleName());
   }
 
   protected void doUpdatePresentation() {
@@ -56,7 +57,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected abstract String getModulePresentation();
 
-  public abstract IModule getModule();
+  public abstract SModule getModule();
 
   protected final boolean canBeOpened() {
     return false;

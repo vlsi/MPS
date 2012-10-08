@@ -147,12 +147,7 @@ public class PostponedReference extends SReference {
    * removes reference in case of error.
    */
   public void validateAndReplace() {
-    SReference replacement = getReplacementReference();
-    if (replacement != null) {
-      getSourceNode().replaceReference(this, replacement);
-    } else {
-      getSourceNode().removeReference(this);
-    }
+    getSourceNode().setReference(getRole(), getReplacementReference());
   }
 
   private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {

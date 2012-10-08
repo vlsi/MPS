@@ -48,7 +48,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
     SNode selectedNode = selectedCell.getSNode();
-    if (selectedNode == null || selectedNode.isDisposed()) {
+    if (selectedNode == null || jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
       return false;
     }
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
@@ -97,7 +97,7 @@ public class CellAction_PasteNode extends EditorCellAction {
               addImportsRunnable.run();
             }
             SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
-            if (selectedNode.isDisposed()) {
+            if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
               StringBuilder errorText = new StringBuilder("Selected node is disposed: " + selectedNode.toString());
               SModelReference modelReference = selectedNodePointer.getModelReference();
               if (modelReference != null) {
@@ -107,7 +107,7 @@ public class CellAction_PasteNode extends EditorCellAction {
                   errorText.append(", sModel.isDisposed(): " + sModel.isDisposed());
                   SNode node = sModel.getNodeById(selectedNodePointer.getNodeId());
                   if (node != null) {
-                    errorText.append(", node != null, node.isDisposed(): " + node.isDisposed());
+                    errorText.append(", node != null, node.isDisposed(): " + jetbrains.mps.util.SNodeOperations.isDisposed(node));
                   } else {
                     errorText.append(", node == null");
                   }
@@ -167,7 +167,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode anchor = selectedCell.getSNode();
     if (anchor.getParent() == null) return false;
 
-    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole_());
+    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole());
     if (nodeAndRole == null) return false;
 
     EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);

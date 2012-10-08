@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 class ModelChange {
   static void assertLegalNodeChange(SNode node) {
-    if (node.getModelInternal().canFireEvent() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (node.getModelInternal().canFireEvent() && jetbrains.mps.util.SNodeOperations.isRegistered(node) && !UndoHelper.getInstance().isInsideUndoableCommand()) {
 
       throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
     }
@@ -42,6 +42,6 @@ class ModelChange {
   }
 
   static boolean needFireEvents(SModel model, SNode node) {
-    return node.isRegistered() && model.canFireEvent();
+    return jetbrains.mps.util.SNodeOperations.isRegistered(node) && model.canFireEvent();
   }
 }

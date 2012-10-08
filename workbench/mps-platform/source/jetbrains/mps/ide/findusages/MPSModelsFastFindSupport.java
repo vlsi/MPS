@@ -36,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
@@ -56,7 +55,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
   public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
     return findModels(models, nodes, new Mapper<SNode, String>() {
       public String value(SNode key) {
-        return key.getId();
+        return key.getSNodeId().toString();
       }
     });
   }

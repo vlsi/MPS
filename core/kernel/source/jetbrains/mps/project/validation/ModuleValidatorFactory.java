@@ -17,14 +17,14 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModuleValidatorFactory {
-  public static ModuleValidator createValidator(IModule m) {
+  public static ModuleValidator createValidator(SModule m) {
     if (m instanceof TransientModelsModule) {
       return new EmptyValidator();
     } else if (m instanceof Language) {

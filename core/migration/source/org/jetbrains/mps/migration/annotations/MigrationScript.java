@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.migration.annotations;
 
-import java.util.Collection;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public interface ModuleWithFacets {
-  <T extends ModuleFacet> T getFacet(Class<T> facetClass);
-
-  Collection<Class<? extends ModuleFacet>> getFacetClasses();
+@Retention(value = RetentionPolicy.CLASS)
+public @interface MigrationScript {
+  String script();
 }

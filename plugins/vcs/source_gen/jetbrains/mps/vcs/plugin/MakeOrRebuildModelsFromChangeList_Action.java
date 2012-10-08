@@ -9,12 +9,14 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
@@ -41,7 +43,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<SModelDescriptor> models = VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles")));
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
     if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
       return false;
     }
@@ -84,7 +86,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModelDescriptor> models = VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles")));
+      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null), MakeOrRebuildModelsFromChangeList_Action.this.rebuild).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

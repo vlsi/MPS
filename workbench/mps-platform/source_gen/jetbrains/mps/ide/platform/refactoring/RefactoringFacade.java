@@ -282,7 +282,7 @@ public class RefactoringFacade {
       return;
     }
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
-    final List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
+    final List<org.jetbrains.mps.openapi.model.SModel> descriptors = new ArrayList<org.jetbrains.mps.openapi.model.SModel>();
     SModelRepository.getInstance().saveAll();
     //  save all before launching make 
     context.setUpMembersAccessModifier(modifier);

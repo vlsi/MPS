@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure;
 
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
@@ -159,7 +159,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   }
 
   private static SModelFqName getModelFqName(Language module) {
-    return new SModelFqName(module.getModuleFqName(), SModelStereotype.DESCRIPTOR);
+    return new SModelFqName(module.getModuleName(), SModelStereotype.DESCRIPTOR);
   }
 
   private static SModelReference getSModelReference(Language module) {

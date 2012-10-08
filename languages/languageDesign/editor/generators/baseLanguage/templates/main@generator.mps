@@ -154,8 +154,8 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1164844794756">
       <property name="name" nameId="tpck.1169194664001" value="stuff_CellMenuPart" />
-      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1165277100275">
       <property name="name" nameId="tpck.1169194664001" value="weave_CellMenuPart_AbstractGroup_nodePresentation" />
@@ -259,8 +259,8 @@
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1186404688558">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
-      <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet" />
+      <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="false" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1186404727331">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheetClass" />
@@ -1420,8 +1420,10 @@
                   </node>
                 </node>
                 <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1208995318034">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1184320584898">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1096648776273" resolveInfo="node" />
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="1051527889011102700">
+                    <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1184320584898">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1096648776273" resolveInfo="node" />
+                    </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1208995318035">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dhasProperty(java%dlang%dString)%cboolean" resolveInfo="hasProperty" />
@@ -1863,6 +1865,7 @@
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1097144032284">
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1097144049289">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="1097144053836">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~AbstractCellProvider%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="AbstractCellProvider" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1184177808778">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1097144040520" resolveInfo="node" />
           </node>
@@ -7529,6 +7532,7 @@
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1166063029143">
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1166063029145">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="1166063029146">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gmbu.~AbstractCellMenuComponent%d&lt;init&gt;(jetbrains%dmps%dnodeEditor%dcellMenu%dSubstituteInfoPart[])" resolveInfo="AbstractCellMenuComponent" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1166062990311">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="1166062990312">
               <node role="componentType" roleId="tpee.1154542793668" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1166062990313">
@@ -8016,7 +8020,9 @@
         </node>
         <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1184139503868">
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184139503870">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="1184139503871" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="1184139503871">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~InlineCellProvider%d&lt;init&gt;()" resolveInfo="InlineCellProvider" />
+            </node>
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184139503872" />
         </node>
@@ -13596,8 +13602,8 @@
   </root>
   <root id="1198490666793">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198490711938">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
+      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198490721273">
         <property name="vertical" nameId="tpc2.1073389446425" value="true" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1198490722587" />

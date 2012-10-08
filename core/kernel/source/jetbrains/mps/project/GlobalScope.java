@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 

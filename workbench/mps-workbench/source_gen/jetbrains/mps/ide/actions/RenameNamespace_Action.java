@@ -16,7 +16,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
@@ -89,7 +89,7 @@ public class RenameNamespace_Action extends BaseAction {
       if (newFolder.equals("")) {
         newFolder = null;
       }
-      for (IModule module : ListSequence.fromList(node.getModulesUnder())) {
+      for (SModule module : ListSequence.fromList(node.getModulesUnder())) {
         ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder);
       }
       RenameNamespace_Action.this.getProjectPane(_params).rebuild();

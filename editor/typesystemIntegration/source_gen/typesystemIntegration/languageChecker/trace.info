@@ -35,7 +35,7 @@
     <nodeInfo nodeId="2566638213415745685" fileName="AutoResolver.java" startLine="45" startPosition="73" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5031859272495377607" fileName="AutoResolver.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLaterThan#(Ljetbrains/mps/nodeEditor/checking/BaseEditorChecker;)Z" />
     <nodeInfo nodeId="5799208176149772594" fileName="AutoResolver.java" startLine="74" startPosition="44" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5031859272495377586" fileName="AutoResolver.java" startLine="87" startPosition="70" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5031859272495377586" fileName="AutoResolver.java" startLine="87" startPosition="98" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5245431967226361767" fileName="AutoResolver.java" startLine="55" startPosition="77" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5245431967226361737" fileName="AutoResolver.java" startLine="54" startPosition="29" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5031859272495377577" fileName="AutoResolver.java" startLine="86" startPosition="84" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -72,8 +72,8 @@
     <scopeInfo nodeId="5799208176149772594" fileName="AutoResolver.java" startLine="74" startPosition="44" endLine="79" endPosition="5">
       <varInfo nodeId="5799208176149772595" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5031859272495377585" fileName="AutoResolver.java" startLine="87" startPosition="70" endLine="92" endPosition="9" />
-    <scopeInfo nodeId="5031859272495377586" fileName="AutoResolver.java" startLine="87" startPosition="70" endLine="92" endPosition="9">
+    <scopeInfo nodeId="5031859272495377585" fileName="AutoResolver.java" startLine="87" startPosition="98" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="5031859272495377586" fileName="AutoResolver.java" startLine="87" startPosition="98" endLine="92" endPosition="9">
       <varInfo nodeId="5031859272495377590" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5245431967226361767" fileName="AutoResolver.java" startLine="55" startPosition="77" endLine="61" endPosition="0" />

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence.source;
+package org.jetbrains.mps.openapi.model;
 
 /**
- * Find usages with indexing support
+ * evgeny, 10/5/12
  */
-public interface FindUsagesSupport {
+public interface SNodeReference {
 }

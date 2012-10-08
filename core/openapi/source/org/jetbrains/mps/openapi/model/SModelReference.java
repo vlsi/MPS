@@ -13,7 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence;
+package org.jetbrains.mps.openapi.model;
 
-public interface ModelWithSource {
+import org.jetbrains.mps.openapi.module.SRepository;
+
+/**
+ * evgeny, 10/6/12
+ */
+public interface SModelReference {
+
+  /*
+   * Includes stereotype.
+   */
+  String getModelName();
+
+  SModel resolve(SRepository repo);
 }

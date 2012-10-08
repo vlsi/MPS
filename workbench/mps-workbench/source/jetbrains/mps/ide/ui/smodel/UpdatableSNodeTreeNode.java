@@ -79,7 +79,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     mySNodeModelListener = new SimpleModelListener(this) {
       public boolean isValid() {
         if (!super.isValid()) return false;
-        return !getSNode().isDisposed();
+        return !jetbrains.mps.util.SNodeOperations.isDisposed(getSNode());
       }
     };
     if (getModelDescriptor() instanceof EditableSModelDescriptor) {
