@@ -649,7 +649,7 @@ __switch__:
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "name"));
       }
     }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature"), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext) _context).getGenerator());
   }
@@ -660,21 +660,21 @@ __switch__:
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "name"));
       }
     }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature"), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096843523(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "parameter", true)).first();
-    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(cpr, "variableDeclaration", cp, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature"), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1225096837837(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "parameter", true)).first();
-    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(cpr, "variableDeclaration", cp, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature"), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext) _context).getGenerator());
   }
@@ -688,7 +688,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1225096838366(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode cp = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "parameter", true)).first();
-    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(cpr, "variableDeclaration", cp, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature"), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext) _context).getGenerator());
   }

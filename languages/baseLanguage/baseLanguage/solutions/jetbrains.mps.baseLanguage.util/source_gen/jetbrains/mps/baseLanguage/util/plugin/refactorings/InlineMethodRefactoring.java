@@ -11,6 +11,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import java.util.HashMap;
@@ -147,7 +148,11 @@ public class InlineMethodRefactoring {
   }
 
   private void replaceParameters(SNode returnExpression, Map<SNode, SNode> parameters) {
-    for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(returnExpression, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
+    for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(returnExpression, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      }
+    })) {
       if (MapSequence.fromMap(parameters).containsKey(SLinkOperations.getTarget(ref, "variableDeclaration", false))) {
         SNode e = SNodeOperations.copyNode(MapSequence.fromMap(parameters).get(SLinkOperations.getTarget(ref, "variableDeclaration", false)));
         SNodeOperations.replaceWithAnother(ref, e);
@@ -179,7 +184,11 @@ public class InlineMethodRefactoring {
 
   private Set<SNode> findUsedParameters() {
     Set<SNode> usedParameters = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode paramReference : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true), "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
+    for (SNode paramReference : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      }
+    })) {
       SetSequence.fromSet(usedParameters).addElement(SLinkOperations.getTarget(paramReference, "variableDeclaration", false));
     }
     return usedParameters;

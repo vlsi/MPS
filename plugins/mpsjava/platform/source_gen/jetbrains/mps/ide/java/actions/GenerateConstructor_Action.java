@@ -152,7 +152,7 @@ public class GenerateConstructor_Action extends BaseAction {
             SNode parameter = SNodeFactoryOperations.addNewChild(constructor, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             SPropertyOperations.set(parameter, "name", SPropertyOperations.getString(superParam, "name"));
             SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(superParam, "type", true)), true);
-            SNode paramReference = SNodeFactoryOperations.addNewChild(invocation, "actualArgument", "jetbrains.mps.baseLanguage.structure.ParameterReference");
+            SNode paramReference = SNodeFactoryOperations.addNewChild(invocation, "actualArgument", "jetbrains.mps.baseLanguage.structure.VariableReference");
             SLinkOperations.setTarget(paramReference, "variableDeclaration", parameter, false);
           }
         }

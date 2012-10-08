@@ -10,6 +10,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class DecisionTable_Behavior {
   public static void init(SNode thisNode) {
@@ -35,7 +36,11 @@ public class DecisionTable_Behavior {
 
   public static Set<SNode> call_referencedParams_3863300516938159619(SNode thisNode) {
     Set<SNode> params = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(params).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
+    SetSequence.fromSet(params).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "variableDeclaration", false);
       }

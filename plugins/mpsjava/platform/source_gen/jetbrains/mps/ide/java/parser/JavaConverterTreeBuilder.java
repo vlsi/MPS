@@ -978,7 +978,7 @@ public class JavaConverterTreeBuilder {
       result = reference;
     } else
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+      SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(parameterReference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), false);
       SNodeOperations.getReference(parameterReference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", "parameterDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
       result = parameterReference;

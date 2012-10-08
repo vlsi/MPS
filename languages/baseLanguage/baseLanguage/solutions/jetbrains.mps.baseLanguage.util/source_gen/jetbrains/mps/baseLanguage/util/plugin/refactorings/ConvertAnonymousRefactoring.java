@@ -228,7 +228,11 @@ public class ConvertAnonymousRefactoring {
   }
 
   private Iterable<SNode> getExternalReferences(final SNode node) {
-    Iterable<SNode> result = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      }
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(it, "variableDeclaration", false), null, false)).contains(node));
       }

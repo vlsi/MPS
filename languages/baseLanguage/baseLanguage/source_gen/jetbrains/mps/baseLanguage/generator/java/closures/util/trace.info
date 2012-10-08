@@ -205,7 +205,7 @@
     <nodeInfo nodeId="1238943796964" fileName="ClosuresUtil.java" startLine="152" startPosition="129" endLine="153" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7376433222636453135" fileName="ClosuresUtil.java" startLine="154" startPosition="82" endLine="155" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1238943843476" fileName="ClosuresUtil.java" startLine="156" startPosition="96" endLine="157" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1238943942114" fileName="ClosuresUtil.java" startLine="159" startPosition="209" endLine="160" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238943942114" fileName="ClosuresUtil.java" startLine="159" startPosition="447" endLine="160" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238943963345" fileName="ClosuresUtil.java" startLine="161" startPosition="64" endLine="162" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238944003805" fileName="ClosuresUtil.java" startLine="162" startPosition="79" endLine="163" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238944056793" fileName="ClosuresUtil.java" startLine="166" startPosition="76" endLine="167" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -349,7 +349,7 @@
       <varInfo nodeId="1238941081261" varName="contextOwner" />
       <varInfo nodeId="1238941081265" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="1238943869098" fileName="ClosuresUtil.java" startLine="159" startPosition="209" endLine="164" endPosition="9">
+    <scopeInfo nodeId="1238943869098" fileName="ClosuresUtil.java" startLine="159" startPosition="447" endLine="164" endPosition="9">
       <varInfo nodeId="1238943942115" varName="variable" />
     </scopeInfo>
     <scopeInfo nodeId="1238944338256" fileName="ClosuresUtil.java" startLine="228" startPosition="38" endLine="233" endPosition="7" />

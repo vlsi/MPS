@@ -58,7 +58,7 @@ public class replace_whereBlock_with_closure_Intention extends BaseIntention imp
     SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "body", true)), true);
     for (SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(cl, "body", true), "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", false, new String[]{}))) {
       if (SLinkOperations.getTarget(SNodeOperations.cast(dsc, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), "closureParameter", false) == cp) {
-        SNode pr = SNodeFactoryOperations.replaceWithNewChild(dsc, "jetbrains.mps.baseLanguage.structure.ParameterReference");
+        SNode pr = SNodeFactoryOperations.replaceWithNewChild(dsc, "jetbrains.mps.baseLanguage.structure.VariableReference");
         SLinkOperations.setTarget(pr, "variableDeclaration", scpd, false);
       }
     }
