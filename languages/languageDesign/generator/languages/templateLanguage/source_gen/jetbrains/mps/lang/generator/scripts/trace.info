@@ -23,8 +23,8 @@
     <nodeInfo nodeId="301857324384080306" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="78" startPosition="9" endLine="79" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="301857324384112905" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="82" startPosition="52" endLine="83" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="86" startPosition="42" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2533362239921712877" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="92" startPosition="67" endLine="93" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="301857324384080291" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="96" startPosition="67" endLine="97" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2533362239921712881" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="92" startPosition="67" endLine="93" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="301857324384080297" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="96" startPosition="67" endLine="97" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2533362239921712848" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="32" startPosition="59" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2533362239921712886" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="35" startPosition="9" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2533362239921712972" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="39" startPosition="180" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -41,8 +41,8 @@
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="2533362239921712877" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_m98j7p_a0a0a3a0a0a1a0#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="301857324384080291" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_m98j7p_a0a0a3a0a0a2a0#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2533362239921712881" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_m98j7p_a0a0a3a0a0a1a0#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="301857324384080297" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_m98j7p_a0a0a3a0a0a2a0#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="71" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="31" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="58" startPosition="7" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -64,8 +64,8 @@
     <scopeInfo nodeId="301857324384080311" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="76" startPosition="223" endLine="77" endPosition="23" />
     <scopeInfo nodeId="301857324384065060" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="82" startPosition="52" endLine="83" endPosition="110" />
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="86" startPosition="42" endLine="87" endPosition="20" />
-    <scopeInfo nodeId="2533362239921712877" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="92" startPosition="67" endLine="93" endPosition="44" />
-    <scopeInfo nodeId="301857324384080291" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="96" startPosition="67" endLine="97" endPosition="44" />
+    <scopeInfo nodeId="2533362239921712881" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="92" startPosition="67" endLine="93" endPosition="44" />
+    <scopeInfo nodeId="301857324384080297" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="96" startPosition="67" endLine="97" endPosition="44" />
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
@@ -80,11 +80,11 @@
       <varInfo nodeId="2533362239921665181" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="2533362239921712877" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="2533362239921712877" varName="str" />
+    <scopeInfo nodeId="2533362239921712881" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="2533362239921712881" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="301857324384080291" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
-      <varInfo nodeId="301857324384080291" varName="str" />
+    <scopeInfo nodeId="301857324384080297" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="301857324384080297" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="301857324384067604" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="72" startPosition="59" endLine="79" endPosition="20" />
     <scopeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="71" startPosition="0" endLine="81" endPosition="0">

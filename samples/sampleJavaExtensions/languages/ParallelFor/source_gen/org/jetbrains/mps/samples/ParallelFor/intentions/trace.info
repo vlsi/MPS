@@ -94,7 +94,7 @@
     <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
     <scopeInfo nodeId="2975785153735222157" fileName="UnmarkAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="203" />
-    <scopeInfo nodeId="2975785153735295161" fileName="UnmarkAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="113" />
+    <scopeInfo nodeId="2975785153735295162" fileName="UnmarkAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="113" />
     <scopeInfo nodeId="2975785153735222153" fileName="UnmarkAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="194" />
     <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
     <scopeInfo nodeId="2975785153735222149" fileName="UnmarkAsThreadSafe_Intention.java" startLine="14" startPosition="86" endLine="16" endPosition="3" />
@@ -220,7 +220,7 @@
     <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
     <scopeInfo nodeId="2975785153735236003" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="211" />
-    <scopeInfo nodeId="2975785153735295134" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="113" />
+    <scopeInfo nodeId="2975785153735295135" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="113" />
     <scopeInfo nodeId="2975785153735235999" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="202" />
     <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
     <scopeInfo nodeId="2975785153735235995" fileName="UnmarkAsNonThreadSafe_Intention.java" startLine="14" startPosition="89" endLine="16" endPosition="3" />
@@ -345,7 +345,7 @@
     <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
     <scopeInfo nodeId="2975785153735291453" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="203" />
-    <scopeInfo nodeId="2975785153735295107" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="113" />
+    <scopeInfo nodeId="2975785153735295108" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="113" />
     <scopeInfo nodeId="2975785153735291449" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="194" />
     <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
     <scopeInfo nodeId="2975785153735291445" fileName="UnmarkVariableAsThreadSafe_Intention.java" startLine="14" startPosition="94" endLine="16" endPosition="3" />
@@ -413,7 +413,7 @@
     <scopeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" />
     <scopeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="43" startPosition="132" endLine="44" endPosition="19" />
     <scopeInfo nodeId="3540747636396475625" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="203" />
-    <scopeInfo nodeId="3540747636396475567" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
+    <scopeInfo nodeId="3540747636396475568" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
     <scopeInfo nodeId="3540747636396475565" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="294" />
     <scopeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="62" />
     <scopeInfo nodeId="3540747636396475561" fileName="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="105" endLine="17" endPosition="3" />
@@ -481,7 +481,7 @@
     <scopeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
     <scopeInfo nodeId="3540747636396569329" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="203" />
-    <scopeInfo nodeId="3540747636396569337" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="56" />
+    <scopeInfo nodeId="3540747636396569338" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="56" />
     <scopeInfo nodeId="3540747636396569319" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="194" />
     <scopeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
     <scopeInfo nodeId="3540747636396569313" fileName="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" startLine="14" startPosition="107" endLine="16" endPosition="3" />
@@ -549,7 +549,7 @@
     <scopeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
     <scopeInfo nodeId="3540747636396569365" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="203" />
-    <scopeInfo nodeId="3540747636396569380" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="56" />
+    <scopeInfo nodeId="3540747636396569381" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="56" />
     <scopeInfo nodeId="3540747636396569355" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="194" />
     <scopeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
     <scopeInfo nodeId="3540747636396569349" fileName="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="14" startPosition="109" endLine="16" endPosition="3" />
@@ -617,7 +617,7 @@
     <scopeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" />
     <scopeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="43" startPosition="132" endLine="44" endPosition="19" />
     <scopeInfo nodeId="3540747636396581117" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="203" />
-    <scopeInfo nodeId="3540747636396581132" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
+    <scopeInfo nodeId="3540747636396581133" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
     <scopeInfo nodeId="3540747636396581105" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="294" />
     <scopeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="62" />
     <scopeInfo nodeId="3540747636396581099" fileName="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="107" endLine="17" endPosition="3" />
@@ -685,7 +685,7 @@
     <scopeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="41" startPosition="58" endLine="42" endPosition="19" />
     <scopeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="44" startPosition="132" endLine="45" endPosition="19" />
     <scopeInfo nodeId="5384012304952490066" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="355" />
-    <scopeInfo nodeId="5384012304952497681" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="54" startPosition="111" endLine="55" endPosition="56" />
+    <scopeInfo nodeId="5384012304952497682" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="54" startPosition="111" endLine="55" endPosition="56" />
     <scopeInfo nodeId="5384012304952490062" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="58" startPosition="76" endLine="59" endPosition="294" />
     <scopeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="62" />
     <scopeInfo nodeId="5384012304952490058" fileName="MarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="16" startPosition="102" endLine="18" endPosition="3" />
@@ -753,7 +753,7 @@
     <scopeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" />
     <scopeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="43" startPosition="132" endLine="44" endPosition="19" />
     <scopeInfo nodeId="5384012304952498885" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="203" />
-    <scopeInfo nodeId="5384012304952498905" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
+    <scopeInfo nodeId="5384012304952498906" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
     <scopeInfo nodeId="5384012304952498870" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="294" />
     <scopeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="62" />
     <scopeInfo nodeId="5384012304952498864" fileName="MarkStaticMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="100" endLine="17" endPosition="3" />
@@ -821,7 +821,7 @@
     <scopeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="19" />
     <scopeInfo nodeId="5384012304952503195" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="203" />
-    <scopeInfo nodeId="5384012304952503203" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="56" />
+    <scopeInfo nodeId="5384012304952503204" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="52" startPosition="111" endLine="53" endPosition="56" />
     <scopeInfo nodeId="5384012304952503183" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="194" />
     <scopeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="62" />
     <scopeInfo nodeId="5384012304952503177" fileName="UnmarkStaticMethodCallAsThreadSafe_Intention.java" startLine="14" startPosition="102" endLine="16" endPosition="3" />
@@ -1045,7 +1045,7 @@
     <scopeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" />
     <scopeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="43" startPosition="132" endLine="44" endPosition="19" />
     <scopeInfo nodeId="5384012304952537591" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="355" />
-    <scopeInfo nodeId="5384012304952537606" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
+    <scopeInfo nodeId="5384012304952537607" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="56" />
     <scopeInfo nodeId="5384012304952537579" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="194" />
     <scopeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="62" />
     <scopeInfo nodeId="5384012304952537573" fileName="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" startLine="15" startPosition="104" endLine="17" endPosition="3" />
