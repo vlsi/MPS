@@ -1659,6 +1659,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     //remove all references
+    while (myReferences.length>0){
+      removeReferenceAt(myReferences[0]);
+    }
     myReferences = SReference.EMPTY_ARRAY;
 
     //remove from parent
