@@ -116,7 +116,7 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
 
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"), false);
-        SNode result = node;
+        SNode result = SNodeOperations.getParent(node);
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
           // TODO: uncomment this for legal code after this conversion 
           // <node> 
