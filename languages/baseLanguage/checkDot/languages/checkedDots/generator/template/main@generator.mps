@@ -50,8 +50,8 @@
   <root id="4549711462050000012">
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="7907427828436736392">
       <property name="name" nameId="tpck.1169194664001" value="param" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
+      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4549711462050000014">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
