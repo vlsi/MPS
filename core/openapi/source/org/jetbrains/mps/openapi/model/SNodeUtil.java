@@ -50,7 +50,6 @@ public class SNodeUtil {
 //    return replacer;
 //  }
 //
-
   public static String getDebugText(@NotNull SNode node) {
     String roleText = "";
     if (node.getContainingModel() != null) {
@@ -59,34 +58,14 @@ public class SNodeUtil {
     }
     String nameText;
     try {
-      final StringBuilder builder = new StringBuilder();
+
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
         // !!! use *safe* getRole !!!
-        node.visitProperties(new PropertyVisitor() {
-          @Override
-          public boolean visitProperty(String name, String value) {
-            if (name.equals("role")){
-              builder.append(value);
-              return true;
-            }
-            return false;
-          }
-        });
-        String role = builder.toString();
+        String role = getPropertySimple(node, "role");
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
         // !!! use *safe* getName !!!
-        node.visitProperties(new PropertyVisitor() {
-          @Override
-          public boolean visitProperty(String name, String value) {
-            if (name.equals("role")){
-              builder.append(value);
-              return true;
-            }
-            return false;
-          }
-        });
-        String name = builder.toString();
+        String name = getPropertySimple(node, "name");
         nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
       // !!! use *safe* getId !!!
@@ -99,8 +78,34 @@ public class SNodeUtil {
     return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + node.getContainingModel().getModelName();
   }
 
-  public static boolean isAttribute(SNode node){
+  private static String getPropertySimple(final SNode node, final String property) {
+    final StringWrapper wrapper = new StringWrapper();
+    node.visitProperties(new PropertyVisitor() {
+      @Override
+      public boolean visitProperty(String name, String value) {
+        if (name.equals(property)) {
+          wrapper.setValue(value);
+          return true;
+        }
+        return false;
+      }
+    });
+    return wrapper.getValue();
+  }
+
+  public static boolean isAttribute(SNode node) {
     //AttributeOperations.isAttribute(node)
-    return  false;
+    return false;
+  }
+
+  private static class StringWrapper {
+    private String value;
+    public void setValue(String value){
+      this.value = value;
+    }
+
+    public String getValue(){
+      return value;
+    }
   }
 }
