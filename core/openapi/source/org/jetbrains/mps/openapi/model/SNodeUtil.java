@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 /**
  * This class implement complex operations on a node structure.
@@ -50,6 +51,53 @@ public class SNodeUtil {
 //  }
 //
 
+  public static String getDebugText(@NotNull SNode node) {
+    String roleText = "";
+    if (node.getContainingModel() != null) {
+      SNode parent = node.getParent();
+      roleText = parent == null ? "[root]" : "[" + parent.getRoleOf(node) + "]";
+    }
+    String nameText;
+    try {
+      final StringBuilder builder = new StringBuilder();
+      if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
+        // !!! use *safe* getRole !!!
+        node.visitProperties(new PropertyVisitor() {
+          @Override
+          public boolean visitProperty(String name, String value) {
+            if (name.equals("role")){
+              builder.append(value);
+              return true;
+            }
+            return false;
+          }
+        });
+        String role = builder.toString();
+        nameText = (role == null) ? "<no role>" : '"' + role + '"';
+      } else {
+        // !!! use *safe* getName !!!
+        node.visitProperties(new PropertyVisitor() {
+          @Override
+          public boolean visitProperty(String name, String value) {
+            if (name.equals("role")){
+              builder.append(value);
+              return true;
+            }
+            return false;
+          }
+        });
+        String name = builder.toString();
+        nameText = (name == null) ? "<no name>" : '"' + name + '"';
+      }
+      // !!! use *safe* getId !!!
+      nameText = nameText + "[" + node.getSNodeId() + "]";
+
+    } catch (Exception e) {
+      //e.printStackTrace();
+      nameText = "<??name??>";
+    }
+    return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + node.getContainingModel().getModelName();
+  }
 
   public static boolean isAttribute(SNode node){
     //AttributeOperations.isAttribute(node)
