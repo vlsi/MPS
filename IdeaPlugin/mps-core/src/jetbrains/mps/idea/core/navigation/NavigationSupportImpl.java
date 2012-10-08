@@ -21,11 +21,11 @@ import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * evgeny, 11/21/11
@@ -61,7 +61,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   }
 
   @Override
-  public void selectInTree(@NotNull IOperationContext context, @NotNull IModule module, boolean focus) {
+  public void selectInTree(@NotNull IOperationContext context, @NotNull SModule module, boolean focus) {
       // TODO
   }
 }
