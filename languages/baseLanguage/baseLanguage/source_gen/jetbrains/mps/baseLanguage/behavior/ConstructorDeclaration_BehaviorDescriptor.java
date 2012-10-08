@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public ConstructorDeclaration_BehaviorDescriptor() {
@@ -24,12 +24,12 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
     return ConstructorDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
-  }
-
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return ConstructorDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    ConstructorDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifierType);
   }
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
