@@ -116,7 +116,11 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
 
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"), false);
-        SNode result = new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a1a4a0a0a3a0().createNode(SNodeOperations.getParent(node));
+        SNode result = node;
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          // TODO: uncomment this for legal code after this conversion 
+          // <node> 
+        }
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
       }
 
@@ -143,6 +147,31 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
 
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Migrate all SNodeListTypes with ParameterReference";
+      }
+
+      public String getAdditionalInfo() {
+        return "Migrate all SNodeListTypes with ParameterReference";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.SNodeListType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "elementConcept", false) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068581242874");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "elementConcept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
       }
 
       public boolean isShowAsIntention() {
@@ -417,8 +446,8 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_2t56b7_a0a1a4a0a0a3a0 {
-    public QuotationClass_2t56b7_a0a1a4a0a0a3a0() {
+  public static class QuotationClass_2t56b7_a0a0a1a2a4a0a0a3a0 {
+    public QuotationClass_2t56b7_a0a0a1a2a4a0a0a3a0() {
     }
 
     public SNode createNode(Object parameter_9) {
