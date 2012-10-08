@@ -26,7 +26,7 @@ import java.util.List;
 
 public class MigrateParameterReference_MigrationScript extends BaseMigrationScript {
   public MigrateParameterReference_MigrationScript(IOperationContext operationContext) {
-    super("Migrate parameter reference instances");
+    super("Migrate parameter reference smodel usages");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Migrate getDescendants(ParameterReference) usages";
