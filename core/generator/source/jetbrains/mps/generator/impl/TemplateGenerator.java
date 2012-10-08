@@ -424,7 +424,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 // output node should be accessible via 'findCopiedNode'
                 getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
                 // preserve user objects
-                jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
+                if (TracingUtil.getInput(reducedNode) == null) {
+                  jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
+                }
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
                   TracingUtil.putInputNode(reducedNode, inputNode);

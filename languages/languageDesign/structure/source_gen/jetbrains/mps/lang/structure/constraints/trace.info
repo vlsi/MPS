@@ -615,9 +615,9 @@
     <nodeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4049502122675881779" fileName="ConceptLinkDeclaration_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4049502122675881781" fileName="ConceptLinkDeclaration_Constraints.java" startLine="37" startPosition="71" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4049502122675881785" fileName="ConceptLinkDeclaration_Constraints.java" startLine="37" startPosition="71" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="14" startPosition="83" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptLinkDeclaration_Constraints#()V" />
-    <nodeInfo nodeId="4049502122675881781" fileName="ConceptLinkDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_a6i58n_a0a0b0b0a1a0b0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4049502122675881785" fileName="ConceptLinkDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_a6i58n_a0a0b0b0a1a0b0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="22" startPosition="80" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
     <nodeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -625,13 +625,13 @@
     <scopeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="15" startPosition="47" endLine="16" endPosition="75" />
     <scopeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
     <scopeInfo nodeId="4049502122675881778" fileName="ConceptLinkDeclaration_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="97" />
-    <scopeInfo nodeId="4049502122675881781" fileName="ConceptLinkDeclaration_Constraints.java" startLine="37" startPosition="71" endLine="38" endPosition="43" />
+    <scopeInfo nodeId="4049502122675881785" fileName="ConceptLinkDeclaration_Constraints.java" startLine="37" startPosition="71" endLine="38" endPosition="43" />
     <scopeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="97">
       <varInfo nodeId="4049502122675881775" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="14" startPosition="83" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="4049502122675881781" fileName="ConceptLinkDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="4049502122675881781" varName="str" />
+    <scopeInfo nodeId="4049502122675881785" fileName="ConceptLinkDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4049502122675881785" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="22" startPosition="80" endLine="27" endPosition="0" />
     <scopeInfo nodeId="4049502122675881775" fileName="ConceptLinkDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">

@@ -951,14 +951,14 @@
     <nodeInfo nodeId="2368278226919208920" fileName="CardinalitiesChecker.java" startLine="35" startPosition="13" endLine="36" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086720704" fileName="CardinalitiesChecker.java" startLine="39" startPosition="65" endLine="40" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086720742" fileName="CardinalitiesChecker.java" startLine="44" startPosition="89" endLine="45" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086720620" fileName="CardinalitiesChecker.java" startLine="51" startPosition="60" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086720624" fileName="CardinalitiesChecker.java" startLine="51" startPosition="60" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7390982340086720575" fileName="CardinalitiesChecker.java" startLine="16" startPosition="70" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CardinalitiesChecker#()V" />
     <nodeInfo nodeId="7390982340086720617" fileName="CardinalitiesChecker.java" startLine="23" startPosition="107" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720638" fileName="CardinalitiesChecker.java" startLine="32" startPosition="64" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720698" fileName="CardinalitiesChecker.java" startLine="38" startPosition="16" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720740" fileName="CardinalitiesChecker.java" startLine="43" startPosition="177" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720696" fileName="CardinalitiesChecker.java" startLine="38" startPosition="14" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7390982340086720620" fileName="CardinalitiesChecker.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_gmr83o_a0a0c0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7390982340086720624" fileName="CardinalitiesChecker.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_gmr83o_a0a0c0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7390982340086720634" fileName="CardinalitiesChecker.java" startLine="30" startPosition="90" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720632" fileName="CardinalitiesChecker.java" startLine="29" startPosition="170" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720630" fileName="CardinalitiesChecker.java" startLine="28" startPosition="69" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -969,12 +969,12 @@
     <scopeInfo nodeId="7390982340086720639" fileName="CardinalitiesChecker.java" startLine="33" startPosition="166" endLine="34" endPosition="23" />
     <scopeInfo nodeId="7390982340086720699" fileName="CardinalitiesChecker.java" startLine="39" startPosition="65" endLine="40" endPosition="224" />
     <scopeInfo nodeId="7390982340086720741" fileName="CardinalitiesChecker.java" startLine="44" startPosition="89" endLine="45" endPosition="294" />
-    <scopeInfo nodeId="7390982340086720620" fileName="CardinalitiesChecker.java" startLine="51" startPosition="60" endLine="52" endPosition="44" />
+    <scopeInfo nodeId="7390982340086720624" fileName="CardinalitiesChecker.java" startLine="51" startPosition="60" endLine="52" endPosition="44" />
     <scopeInfo nodeId="7390982340086720575" fileName="CardinalitiesChecker.java" startLine="16" startPosition="70" endLine="18" endPosition="3" />
     <scopeInfo nodeId="7390982340086720697" fileName="CardinalitiesChecker.java" startLine="38" startPosition="16" endLine="41" endPosition="11" />
     <scopeInfo nodeId="7390982340086720739" fileName="CardinalitiesChecker.java" startLine="43" startPosition="177" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="7390982340086720620" fileName="CardinalitiesChecker.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="7390982340086720620" varName="str" />
+    <scopeInfo nodeId="7390982340086720624" fileName="CardinalitiesChecker.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="7390982340086720624" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720635" fileName="CardinalitiesChecker.java" startLine="31" startPosition="89" endLine="36" endPosition="225" />
     <scopeInfo nodeId="7390982340086720633" fileName="CardinalitiesChecker.java" startLine="30" startPosition="90" endLine="37" endPosition="11" />

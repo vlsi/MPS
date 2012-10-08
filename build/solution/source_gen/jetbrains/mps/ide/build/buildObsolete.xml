@@ -600,7 +600,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.xml.deprecated">
+  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java.modules.cycle.1" />
     <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

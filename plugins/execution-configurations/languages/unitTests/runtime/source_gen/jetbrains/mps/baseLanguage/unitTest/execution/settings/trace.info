@@ -1982,7 +1982,7 @@
     <nodeInfo nodeId="6062668769034856116" fileName="JUnitRunTypes2.java" startLine="120" startPosition="28" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034856123" fileName="JUnitRunTypes2.java" startLine="123" startPosition="80" endLine="124" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034856129" fileName="JUnitRunTypes2.java" startLine="125" startPosition="7" endLine="126" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034856043" fileName="JUnitRunTypes2.java" startLine="138" startPosition="59" endLine="139" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034856047" fileName="JUnitRunTypes2.java" startLine="138" startPosition="59" endLine="139" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855753" fileName="JUnitRunTypes2.java" startLine="130" startPosition="0" endLine="132" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnitRunTypes2#()V" />
     <nodeInfo nodeId="6062668769034855736" fileName="JUnitRunTypes2.java" startLine="133" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6062668769034855745" fileName="JUnitRunTypes2.java" startLine="135" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/String;" />
@@ -2003,7 +2003,7 @@
     <nodeInfo nodeId="6062668769034856121" fileName="JUnitRunTypes2.java" startLine="122" startPosition="7" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769034855758" fileName="JUnitRunTypes2.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6062668769034855841" fileName="JUnitRunTypes2.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6062668769034856043" fileName="JUnitRunTypes2.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_torbaz_a0a0b3#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6062668769034856047" fileName="JUnitRunTypes2.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_torbaz_a0a0b3#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6062668769034855797" fileName="JUnitRunTypes2.java" startLine="26" startPosition="51" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6062668769034855880" fileName="JUnitRunTypes2.java" startLine="48" startPosition="49" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6062668769034856086" fileName="JUnitRunTypes2.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/Iterable;" />
@@ -2034,7 +2034,7 @@
     <scopeInfo nodeId="6062668769034856093" fileName="JUnitRunTypes2.java" startLine="113" startPosition="28" endLine="114" endPosition="80" />
     <scopeInfo nodeId="6062668769034856115" fileName="JUnitRunTypes2.java" startLine="120" startPosition="28" endLine="121" endPosition="20" />
     <scopeInfo nodeId="6062668769034856122" fileName="JUnitRunTypes2.java" startLine="123" startPosition="80" endLine="124" endPosition="49" />
-    <scopeInfo nodeId="6062668769034856043" fileName="JUnitRunTypes2.java" startLine="138" startPosition="59" endLine="139" endPosition="44" />
+    <scopeInfo nodeId="6062668769034856047" fileName="JUnitRunTypes2.java" startLine="138" startPosition="59" endLine="139" endPosition="44" />
     <scopeInfo nodeId="6062668769034855753" fileName="JUnitRunTypes2.java" startLine="130" startPosition="0" endLine="132" endPosition="3" />
     <scopeInfo nodeId="6062668769034855736" fileName="JUnitRunTypes2.java" startLine="133" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="6062668769034855739" varName="configuration" />
@@ -2059,8 +2059,8 @@
       <varInfo nodeId="6062668769034855887" varName="pointer" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034856091" fileName="JUnitRunTypes2.java" startLine="112" startPosition="107" endLine="116" endPosition="48" />
-    <scopeInfo nodeId="6062668769034856043" fileName="JUnitRunTypes2.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
-      <varInfo nodeId="6062668769034856043" varName="str" />
+    <scopeInfo nodeId="6062668769034856047" fileName="JUnitRunTypes2.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="6062668769034856047" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034855929" fileName="JUnitRunTypes2.java" startLine="62" startPosition="107" endLine="67" endPosition="44">
       <varInfo nodeId="6062668769034855931" varName="model" />

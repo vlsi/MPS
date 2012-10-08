@@ -924,7 +924,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.pluginSolution" depends="java.compile.jetbrains.mps.lang.dataFlow.pluginSolution">
+  <target name="java.compile.jetbrains.mps.baseLanguage.pluginSolution" depends="java.compile.jetbrains.mps.lang.dataFlow.pluginSolution, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.pluginSolution" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
