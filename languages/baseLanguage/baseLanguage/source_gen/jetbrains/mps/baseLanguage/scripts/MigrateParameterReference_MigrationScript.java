@@ -116,12 +116,7 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
 
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"), false);
-        SNode result = SNodeOperations.getParent(node);
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-          // TODO: uncomment this for legal code after this conversion 
-          // <node> 
-        }
-        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
+        // <node> 
       }
 
       public boolean isShowAsIntention() {
@@ -521,8 +516,8 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_2t56b7_a0a0a1a2a4a0a0a3a0 {
-    public QuotationClass_2t56b7_a0a0a1a2a4a0a0a3a0() {
+  public static class QuotationClass_2t56b7_a0a2a0a1a4a0a0a3a0 {
+    public QuotationClass_2t56b7_a0a2a0a1a4a0a0a3a0() {
     }
 
     public SNode createNode(Object parameter_9) {
