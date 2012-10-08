@@ -419,7 +419,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 // output node should be accessible via 'findCopiedNode'
                 getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
                 // preserve user objects
-                reducedNode.putUserObjects(inputNode);
+                if (TracingUtil.getInput(reducedNode) == null) {
+                  reducedNode.putUserObjects(inputNode);
+                }
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
                   TracingUtil.putInputNode(reducedNode, inputNode);
