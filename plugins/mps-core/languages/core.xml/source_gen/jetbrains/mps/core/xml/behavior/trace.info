@@ -831,11 +831,11 @@
     <unitInfo nodeId="3080189811177366840" fileName="XmlTextValue_Behavior.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlTextValue_Behavior" />
   </root>
   <root nodeId="543355706921831335" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
-    <nodeInfo nodeId="543355706921863332" fileName="XmlFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="543355706921863332" fileName="XmlFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="543355706921831335" fileName="XmlFile_Behavior.java" startLine="8" startPosition="31" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="543355706921831335" fileName="XmlFile_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_5067982036267369911#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="543355706921831337" fileName="XmlFile_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="543355706921831340" fileName="XmlFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="101" />
+    <scopeInfo nodeId="543355706921831340" fileName="XmlFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="119" />
     <scopeInfo nodeId="543355706921831335" fileName="XmlFile_Behavior.java" startLine="8" startPosition="31" endLine="11" endPosition="0">
       <varInfo nodeId="543355706921831335" varName="thisNode" />
     </scopeInfo>
