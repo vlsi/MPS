@@ -707,6 +707,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getContainingRoot() == null;
   }
 
+  public boolean isRegistered() {
+    return myRegisteredInModelFlag;
+  }
+
+  public boolean isDisposed() {
+    return myModel != null && myModel.isDisposed();
+  }
+
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -771,9 +779,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  //----------------------------------------------------------
-  //NO USAGES IN JAVA CODE - LEFT FOR COMPATIBILITY (till 3.0)
-  //----------------------------------------------------------
+  //--------------
+
+  public boolean isInstanceOfConcept(String conceptFqName) {
+    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
+  }
 
   public SNode findConceptProperty(String propertyName) {
     SNode conceptDeclaration;
@@ -783,18 +793,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-  }
-
-  public boolean isRegistered() {
-    return myRegisteredInModelFlag;
-  }
-
-  public boolean isDisposed() {
-    return myModel != null && myModel.isDisposed();
-  }
-
-  public boolean isInstanceOfConcept(String conceptFqName) {
-    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
   public SModel getModel() {
