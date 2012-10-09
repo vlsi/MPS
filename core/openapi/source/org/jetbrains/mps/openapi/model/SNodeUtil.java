@@ -48,7 +48,6 @@ public class SNodeUtil {
 //    }
 //    return replacer;
 //  }
-//
   public static String getDebugText(@NotNull SNode node) {
     String roleText = "";
     if (node.getContainingModel() != null) {
@@ -56,6 +55,7 @@ public class SNodeUtil {
       roleText = parent == null ? "[root]" : "[" + parent.getRoleOf(node) + "]";
     }
     String nameText;
+    String modelName;
     try {
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
         String role = node.getProperty("role");
@@ -66,10 +66,14 @@ public class SNodeUtil {
       }
       nameText = nameText + "[" + node.getSNodeId() + "]";
 
+      SModel model = node.getContainingModel();
+      modelName = model != null ? model.getModelName() : "<no model>";
+
     } catch (Exception e) {
       nameText = "<??name??>";
+      modelName = "<??model??>";
     }
-    return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + node.getContainingModel().getModelName();
+    return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
   }
 
 
