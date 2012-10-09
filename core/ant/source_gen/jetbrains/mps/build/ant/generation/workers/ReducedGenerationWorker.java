@@ -29,7 +29,7 @@ import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.resources.IResource;
@@ -133,7 +133,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable((Iterable<SModelDescriptor>) go.getModels()));
+        models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
       }
     });
     return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModel>() {

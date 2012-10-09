@@ -111,8 +111,7 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public SModuleId getModuleId() {
-    // TODO API (implement)
-    return null;
+    return getModuleReference().getModuleId();
   }
 
   @Override

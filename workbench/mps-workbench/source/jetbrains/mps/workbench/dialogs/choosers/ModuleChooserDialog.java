@@ -32,36 +32,38 @@ import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.JComponent;
 import java.awt.Dialog;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 class ModuleChooserDialog extends BaseDialog {
-  private List<ModuleReference> myModules = new ArrayList<ModuleReference>();
-  private List<ModuleReference> myNonProjectModules = new ArrayList<ModuleReference>();
+  private List<SModuleReference> myModules = new ArrayList<SModuleReference>();
+  private List<SModuleReference> myNonProjectModules = new ArrayList<SModuleReference>();
   private ChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
   private boolean myIsMultipleSelection = false;
 
-  ModuleChooserDialog(Frame owner, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
+  ModuleChooserDialog(Frame owner, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose " + entityString);
     myIsMultipleSelection = multiSelection;
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
-  ModuleChooserDialog(Dialog owner, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
+  ModuleChooserDialog(Dialog owner, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose " + entityString);
     myIsMultipleSelection = multiSelection;
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
-  private void doInit(final List<ModuleReference> options, List<ModuleReference> nonProjectLanguages, final String entityString) {
+  private void doInit(final Collection<? extends SModuleReference> options, Collection<? extends SModuleReference> nonProjectLanguages, final String entityString) {
     setModal(true);
     myModules.addAll(options);
     if (nonProjectLanguages != null) {
@@ -72,22 +74,25 @@ class ModuleChooserDialog extends BaseDialog {
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseModuleModel goToModuleModel = new BaseModuleModel(project, entityString) {
-      public NavigationItem doGetNavigationItem(final ModuleReference module) {
+      @Override
+      public NavigationItem doGetNavigationItem(final SModuleReference module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
           }
         };
       }
 
-      public ModuleReference[] find(boolean checkboxState) {
+      @Override
+      public SModuleReference[] find(boolean checkboxState) {
         if (checkboxState) {
-          return myNonProjectModules.toArray(new ModuleReference[myNonProjectModules.size()]);
+          return myNonProjectModules.toArray(new SModuleReference[myNonProjectModules.size()]);
         } else {
-          return myModules.toArray(new ModuleReference[myModules.size()]);
+          return myModules.toArray(new SModuleReference[myModules.size()]);
         }
       }
 
-      public ModuleReference[] find(IScope scope) {
+      @Override
+      public SModuleReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
@@ -127,7 +132,7 @@ class ModuleChooserDialog extends BaseDialog {
     for (Object item : choosen) {
       if (item instanceof BaseModuleItem) {
         BaseModuleItem moduleItem = (BaseModuleItem) item;
-        result.add(moduleItem.getModuleReference());
+        result.add((ModuleReference)moduleItem.getModuleReference());
       }
     }
     return result;

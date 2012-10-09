@@ -289,7 +289,7 @@
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelRepository" resolveInfo="SModelRepository" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1190334391238664608">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1190334391238664609">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1190334391238664556" resolveInfo="modelRef" />
                       </node>
@@ -4909,8 +4909,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758593748">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="history" />
       <property name="name" nameId="tpck.1169194664001" value="history" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="history" />
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9051163691968350262">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9051163691968345406" resolveInfo="StructureModificationLog" />
       </node>
@@ -4948,8 +4948,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596708">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="false" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="StructureModification" />
       <property name="name" nameId="tpck.1169194664001" value="element" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="StructureModification" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="2742566862758596752">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="2742566862758596753" resolveInfo="dependencies" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="2742566862758596852">
@@ -5056,8 +5056,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596753">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="dependencies" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="dependencies" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="2742566862758596774">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="2742566862758596728" resolveInfo="model" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="2742566862758596776">
@@ -5145,8 +5145,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596728">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
       <property name="name" nameId="tpck.1169194664001" value="model" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596732">
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="index" />
@@ -5185,8 +5185,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596862">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="move" />
       <property name="name" nameId="tpck.1169194664001" value="MoveNode" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="move" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596864">
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="id" />
@@ -5234,8 +5234,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596887">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="rename" />
       <property name="name" nameId="tpck.1169194664001" value="RenameNode" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="rename" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596889">
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="id" />
@@ -5304,8 +5304,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596934">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="tagName" nameId="mlj4.4635390255047870170" value="RenameModel" />
       <property name="name" nameId="tpck.1169194664001" value="RenameModel" />
+      <property name="tagName" nameId="mlj4.4635390255047870170" value="RenameModel" />
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2742566862758596935">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4136069314959823738" resolveInfo="StructureModification.RenameModel" />
       </node>
@@ -5648,7 +5648,7 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dSModelRepository" resolveInfo="getInstance" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9051163691968353697">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3294668569473094862">
                         <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3294668569473094861">
                           <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3294668569473094847" resolveInfo="dependency" />
@@ -5787,7 +5787,7 @@
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dSModelRepository" resolveInfo="getInstance" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9051163691968353878">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9051163691968353879">
                             <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="489412339685421486">
                               <link role="variable" roleId="tp2q.1153944258490" targetNodeId="489412339685421480" resolveInfo="importElement" />
@@ -6097,7 +6097,7 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dSModelRepository" resolveInfo="getInstance" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6798259919457177107">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6798259919457177108">
                         <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="6798259919457177109">
                           <link role="variable" roleId="tp2q.1153944258490" targetNodeId="6798259919457177096" resolveInfo="importElement" />

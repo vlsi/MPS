@@ -32,7 +32,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -148,8 +147,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void addModule(ModuleReference ref) {
-    IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  public void addModule(SModuleReference ref) {
+    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.addModule(ref);
       IFile descriptorFile = module.getDescriptorFile();
@@ -159,8 +158,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void removeModule(ModuleReference ref) {
-    IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  public void removeModule(SModuleReference ref) {
+    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.removeModule(ref);
       IFile descriptorFile = module.getDescriptorFile();
@@ -175,7 +174,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     myErrors = null;
 
     // load solutions
-    Set<ModuleReference> existingModules = getModuleReferences();
+    Set<SModuleReference> existingModules = getModuleReferences();
     for (Path modulePath : myProjectDescriptor.getModules()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
@@ -195,7 +194,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
-    for (ModuleReference ref : existingModules) {
+    for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
   }

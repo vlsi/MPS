@@ -60,6 +60,11 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return myModelFqName;
   }
 
+  @Override
+  public org.jetbrains.mps.openapi.model.SModelId getModelId() {
+    return myModelId;
+  }
+
   public String getModelName() {
     return myModelFqName.hasStereotype()
       ? myModelFqName.getLongName() + "@" + myModelFqName.getStereotype()

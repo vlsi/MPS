@@ -30,6 +30,8 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -99,31 +101,35 @@ public abstract class ChooserType<T> {
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModuleModel(project, "module") {
-        public NavigationItem doGetNavigationItem(final ModuleReference module) {
+        @Override
+        public NavigationItem doGetNavigationItem(final SModuleReference module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean requestFocus) {
-              context.setParameter(paramName, MPSModuleRepository.getInstance().getModule(module));
+              context.setParameter(paramName, ModuleRepositoryFacade.getInstance().getModule(module));
             }
           };
         }
 
-        public ModuleReference[] find(boolean checkboxState) {
-          Set<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-          List<ModuleReference> filteredModules = new ArrayList<ModuleReference>();
-          for (IModule module : filter(settings, modules)){
+        @Override
+        public SModuleReference[] find(boolean checkboxState) {
+          List<SModuleReference> filteredModules = new ArrayList<SModuleReference>();
+          for (SModule module : filter(settings, MPSModuleRepository.getInstance().getAllModules())){
             filteredModules.add(module.getModuleReference());
           }
-          return filteredModules.toArray(new ModuleReference[filteredModules.size()]);
+          return filteredModules.toArray(new SModuleReference[filteredModules.size()]);
         }
 
-        public ModuleReference[] find(IScope scope) {
+        @Override
+        public SModuleReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 
+        @Override
         public boolean loadInitialCheckBoxState() {
           return false;
         }
 
+        @Override
         public String getPromptText() {
           return settings.getTitle();
         }

@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
  * DO NOT implement this interface directly. Always use BaseScope class
@@ -25,7 +26,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 public interface IScope {
   SModelDescriptor getModelDescriptor(SModelReference modelReference);
 
-  Language getLanguage(ModuleReference moduleReference);
+  Language getLanguage(SModuleReference moduleReference);
 
   DevKit getDevKit(ModuleReference ref);
 

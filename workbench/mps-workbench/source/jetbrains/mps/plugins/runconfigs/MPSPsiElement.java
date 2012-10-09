@@ -9,6 +9,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +38,10 @@ public class MPSPsiElement<T> extends FakePsiElement {
 
   public MPSPsiElement(SModel model) {
     LOG.assertCanRead();
-    myItem = model.getSModelReference();
+    myItem = model.getModelReference();
   }
 
-  public MPSPsiElement(IModule module) {
+  public MPSPsiElement(SModule module) {
     LOG.assertCanRead();
     myItem = module.getModuleReference();
   }
@@ -67,8 +71,8 @@ public class MPSPsiElement<T> extends FakePsiElement {
         return null;
       }
       return descriptor.getSModel();
-    } else if (myItem instanceof ModuleReference) {
-      return MPSModuleRepository.getInstance().getModule(((ModuleReference) myItem));
+    } else if (myItem instanceof SModuleReference) {
+      return ModuleRepositoryFacade.getInstance().getModule((SModuleReference) myItem);
     } else if (myItem instanceof MPSProject) {
       return myItem;
     }
@@ -114,7 +118,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
     if (o instanceof SModel) {
       return new MPSPsiElement((SModel) o);
     }
-    if (o instanceof IModule) {
+    if (o instanceof SModule) {
       return new MPSPsiElement((IModule) o);
     }
     if (o instanceof MPSProject) {

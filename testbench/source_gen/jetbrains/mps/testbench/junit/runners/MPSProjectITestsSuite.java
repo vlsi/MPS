@@ -11,13 +11,15 @@ import org.junit.runners.model.RunnerBuilder;
 import java.util.Collections;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.project.Project;
 import java.lang.annotation.Retention;
@@ -41,34 +43,33 @@ public class MPSProjectITestsSuite extends Suite {
 
   private List<Class<?>> getUnitTestClasses(org.junit.runners.model.TestClass klass) throws InitializationError {
     List<Class<?>> result = ListSequence.fromList(new ArrayList<Class<?>>());
-    for (Tuples._2<String, IModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptors(klass))) {
-      Class testClass = testClassDescriptor._1().getClass(testClassDescriptor._0());
+    for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptors(klass))) {
+      Class testClass = ((IModule) testClassDescriptor._1()).getClass(testClassDescriptor._0());
       if (testClass != null) {
         ListSequence.fromList(result).addElement(testClass);
       } else {
-        throw new InitializationError("Unable to load class for ITestCase by fq name: " + testClassDescriptor._0() + " from module: " + testClassDescriptor._1().getModuleFqName());
+        throw new InitializationError("Unable to load class for ITestCase by fq name: " + testClassDescriptor._0() + " from module: " + testClassDescriptor._1().getModuleName());
       }
     }
     return result;
   }
 
-  private List<Tuples._2<String, IModule>> getTestClassDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
-    final List<SModelDescriptor> modelDescriptors = getModelDescriptors(klass);
+  private List<Tuples._2<String, SModule>> getTestClassDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
+    final Iterable<SModel> modelDescriptors = getModelDescriptors(klass);
     String testClassName = getTestClassName(klass);
     if (testClassName != null) {
-      if (ListSequence.fromList(modelDescriptors).isEmpty()) {
+      if (Sequence.fromIterable(modelDescriptors).isEmpty()) {
         throw new InitializationError("Unable to locate class: " + testClassName + " - no model descriptors found (model or module was not specified)");
       }
-      return Collections.singletonList(MultiTuple.<String,IModule>from(testClassName, ListSequence.fromList(modelDescriptors).first().getModule()));
+      return Collections.singletonList(MultiTuple.<String,SModule>from(testClassName, Sequence.fromIterable(modelDescriptors).first().getModule()));
     }
 
-    final List<Tuples._2<String, IModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, IModule>>());
+    final List<Tuples._2<String, SModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, SModule>>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
-          SModel sModel = modelDescriptor.getSModel();
-          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(sModel, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,IModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, testCase, "virtual_getClassName_1216136193905", new Class[]{SNode.class})), modelDescriptor.getModule()));
+        for (SModel model : Sequence.fromIterable(modelDescriptors)) {
+          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, testCase, "virtual_getClassName_1216136193905", new Class[]{SNode.class})), model.getModule()));
           }
         }
       }
@@ -76,14 +77,14 @@ public class MPSProjectITestsSuite extends Suite {
     return testClassDescriptors;
   }
 
-  private List<SModelDescriptor> getModelDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
+  private Iterable<SModel> getModelDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
     Project mpsProject = MPSOpenProjectRunner.getCurrentMPSProject();
 
     String moduleUUID = getModuleUUID(klass);
     if (moduleUUID != null) {
-      for (IModule module : ListSequence.fromList(mpsProject.getModules())) {
-        if (moduleUUID.equals(module.getModuleDescriptor().getUUID())) {
-          return module.getOwnModelDescriptors();
+      for (SModule module : Sequence.fromIterable(mpsProject.getModules())) {
+        if (moduleUUID.equals(module.getModuleId().toString())) {
+          return module.getModels();
         }
       }
       throw new InitializationError("Module with specified UUID: " + moduleUUID + " was not found in MPS project: " + mpsProject.getProjectFile().getAbsolutePath());
@@ -91,8 +92,8 @@ public class MPSProjectITestsSuite extends Suite {
 
     String modelLongName = getModelLongName(klass);
     if (modelLongName != null) {
-      for (SModelDescriptor modelDescriptor : ListSequence.fromList(mpsProject.getProjectModels())) {
-        if (modelLongName.equals(modelDescriptor.getLongName())) {
+      for (SModel modelDescriptor : Sequence.fromIterable(mpsProject.getProjectModels())) {
+        if (modelLongName.equals(modelDescriptor.getModelName())) {
           return Collections.singletonList(modelDescriptor);
         }
       }

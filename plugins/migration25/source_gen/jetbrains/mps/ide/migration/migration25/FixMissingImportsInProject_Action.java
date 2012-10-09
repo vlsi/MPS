@@ -12,25 +12,28 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Queue;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -72,9 +75,9 @@ public class FixMissingImportsInProject_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       // Using ModulereReferences here instead of modules because module can be re-created during  MissingDependenciesFixer execution. 
-      Queue<ModuleReference> modules = QueueSequence.fromQueueWithValues(new LinkedList<ModuleReference>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModuleReferences());
+      Queue<SModuleReference> modules = QueueSequence.fromQueueWithValues(new LinkedList<SModuleReference>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModuleReferences());
       while (QueueSequence.fromQueue(modules).isNotEmpty()) {
-        IModule module = ModuleRepositoryFacade.getInstance().getModule(QueueSequence.fromQueue(modules).removeFirstElement());
+        SModule module = ModuleRepositoryFacade.getInstance().getModule(QueueSequence.fromQueue(modules).removeFirstElement());
         if (module.isPackaged()) {
           continue;
         }
@@ -89,8 +92,8 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
         // Using SModelReferences because SModelDescriptors can be re-created during MissingDependenciesFixer execution. 
         List<SModelReference> modelReferences = ListSequence.fromList(new LinkedList<SModelReference>());
-        for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-          ListSequence.fromList(modelReferences).addElement(modelDescriptor.getSModelReference());
+        for (SModel model : Sequence.fromIterable(module.getModels())) {
+          ListSequence.fromList(modelReferences).addElement(model.getModelReference());
         }
 
         for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
@@ -107,7 +110,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
           new MissingDependenciesFixer(modelDescriptor).fix(false);
         }
-        module.invalidateCaches();
+        ((IModule) module).invalidateCaches();
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
