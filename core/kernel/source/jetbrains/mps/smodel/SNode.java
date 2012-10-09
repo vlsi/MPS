@@ -636,32 +636,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public String getDebugText() {
-    String roleText = "";
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
-      String s = getRole();
-      roleText = s == null ? "[root]" : "[" + s + "]";
-    }
-    String nameText;
-    try {
-      if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(getConceptFqName())) {
-        // !!! use *safe* getRole !!!
-        String role = myProperties == null ? null : getProperty_simple("role");
-        nameText = (role == null) ? "<no role>" : '"' + role + '"';
-      } else {
-        // !!! use *safe* getName !!!
-        String name = myProperties == null ? null : getProperty_simple("name");
-        nameText = (name == null) ? "<no name>" : '"' + name + '"';
-      }
-      // !!! use *safe* getId !!!
-      nameText = nameText + "[" + myId + "]";
-
-    } catch (Exception e) {
-      //e.printStackTrace();
-      nameText = "<??name??>";
-    }
-    return roleText + " " + NameUtil.shortNameFromLongName(NameUtil.shortNameFromLongName(getConceptFqName())) + " " + nameText + " in " + myModel.getSModelFqName();
-  }
 
   public String getConceptProperty(String propertyName) {
     SNode conceptProperty = findConceptProperty(propertyName);
@@ -1319,6 +1293,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Set<String> getReferenceRoles() {
     return jetbrains.mps.util.SNodeOperations.getReferenceRoles(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+
+  public String getDebugText() {
+    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this);
   }
 
   @Deprecated

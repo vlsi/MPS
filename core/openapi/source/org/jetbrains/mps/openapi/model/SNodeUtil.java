@@ -16,7 +16,6 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 /**
  * This class implement complex operations on a node structure.
@@ -58,54 +57,24 @@ public class SNodeUtil {
     }
     String nameText;
     try {
-
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
-        // !!! use *safe* getRole !!!
-        String role = getPropertySimple(node, "role");
+        String role = node.getProperty("role");
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
-        // !!! use *safe* getName !!!
-        String name = getPropertySimple(node, "name");
+        String name = node.getProperty("name");
         nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
-      // !!! use *safe* getId !!!
       nameText = nameText + "[" + node.getSNodeId() + "]";
 
     } catch (Exception e) {
-      //e.printStackTrace();
       nameText = "<??name??>";
     }
     return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + node.getContainingModel().getModelName();
   }
 
-  private static String getPropertySimple(final SNode node, final String property) {
-    final StringWrapper wrapper = new StringWrapper();
-    node.visitProperties(new PropertyVisitor() {
-      @Override
-      public boolean visitProperty(String name, String value) {
-        if (name.equals(property)) {
-          wrapper.setValue(value);
-          return true;
-        }
-        return false;
-      }
-    });
-    return wrapper.getValue();
-  }
 
   public static boolean isAttribute(SNode node) {
     //AttributeOperations.isAttribute(node)
     return false;
-  }
-
-  private static class StringWrapper {
-    private String value;
-    public void setValue(String value){
-      this.value = value;
-    }
-
-    public String getValue(){
-      return value;
-    }
   }
 }
