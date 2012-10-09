@@ -150,6 +150,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public void visitProperties(PropertyVisitor v) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+
     if (myProperties == null) return;
     for (int i = 0; i < myProperties.length; i += 2) {
       v.visitProperty(myProperties[i], myProperties[i + 1]);
@@ -345,6 +348,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public void visitReferences(ReferenceVisitor v) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+
     if (myReferences == null) return;
     for (SReference ref : myReferences) {
       v.visitReference(ref.getRole(), ref);
