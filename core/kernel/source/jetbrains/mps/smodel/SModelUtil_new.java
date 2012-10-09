@@ -172,7 +172,7 @@ public class SModelUtil_new implements CoreComponent {
     SNode conceptDeclaration = sourceNode.getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + conceptDeclaration.getDebugText(), sourceNode);
+      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(conceptDeclaration), sourceNode);
       return false;
     }
     return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);

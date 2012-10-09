@@ -442,7 +442,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // it's ok, just continue
       if (ex.isLoggingNeeded() && reductionRule != null) {
         SNode ruleNode = reductionRule.getRuleNode().getNode();
-        String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? ruleNode.getDebugText() : "unknown");
+        String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(ruleNode) : "unknown");
         if (ex.isInfo()) {
           myLogger.info(ruleNode, messageText);
         } else if (ex.isWarning()) {
@@ -535,7 +535,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (inputReference instanceof StaticReference) {
           if (targetModelReference == null) {
-            myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)",
+            myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (target model is null)",
               GeneratorUtil.describeIfExists(inputNode, "input node"),
               GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
             continue;
@@ -557,7 +557,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
           outputNode.setReference(outputReference.getRole(), outputReference);
         } else {
-          myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
+          myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
             new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
         }
         continue;
@@ -565,7 +565,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       SNode inputTargetNode = inputReference.getTargetNodeSilently();
       if (inputTargetNode == null) {
-        myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
+        myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
           GeneratorUtil.describeIfExists(inputNode, "input node"),
           GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
         continue;
@@ -584,7 +584,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
         outputNode.setReferenceTarget(inputReference.getRole(), inputTargetNode);
       } else {
-        myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",
+        myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (unregistered target node)",
           GeneratorUtil.describeIfExists(inputNode, "input node"),
           GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
       }

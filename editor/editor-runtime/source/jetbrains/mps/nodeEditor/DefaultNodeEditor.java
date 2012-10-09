@@ -28,7 +28,7 @@ public class DefaultNodeEditor implements INodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return new DefaultInspectorCell(editorContext, node, node.getDebugText(), true);
+    return new DefaultInspectorCell(editorContext, node, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), true);
   }
 
   public static class DefaultInspectorCell extends EditorCell_Constant {

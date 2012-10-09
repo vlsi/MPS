@@ -89,7 +89,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     if (myCurrentReferent != parameterNode) {
       SNode linkDeclaration = myLinkDeclaration;
       if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
-        throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());
+        throw new RuntimeException("Couldn't set referent node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parameterNode));
       }
       getSourceNode().setReferenceTarget(SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
     }

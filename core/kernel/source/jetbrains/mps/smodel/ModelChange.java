@@ -19,19 +19,19 @@ class ModelChange {
   static void assertLegalNodeChange(SModel model, SNode node) {
     if (model.canFireEvent() && jetbrains.mps.util.SNodeOperations.isRegistered(node) && !UndoHelper.getInstance().isInsideUndoableCommand()) {
 
-      throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
+      throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalNodeRegistration(SModel model, SNode node) {
     if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
-      throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + node.getDebugText());
+      throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalNodeUnRegistration(SModel model, SNode node) {
     if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
-      throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + node.getDebugText());
+      throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
     }
   }
 

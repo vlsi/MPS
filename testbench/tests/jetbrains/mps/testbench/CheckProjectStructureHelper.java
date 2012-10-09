@@ -295,14 +295,14 @@ public class CheckProjectStructureHelper {
     for (final SNode node : model.nodes()) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
-        result.add("unknown concept of node: " + node.getDebugText());
+        result.add("unknown concept of node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         continue;
       }
 
       node.visitProperties(new PropertyVisitor() {
         public boolean visitProperty(String name, String value) {
           if (concept.findProperty(name) == null) {
-            result.add("unknown property: `" + name + "' in node " + node.getDebugText());
+            result.add("unknown property: `" + name + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           }
           return true;
         }
@@ -312,7 +312,7 @@ public class CheckProjectStructureHelper {
         public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
           SLink link = concept.findLink(ref.getRole());
           if (link == null || !link.isReference()) {
-            result.add("unknown link role: `" + ref.getRole() + "' in node " + node.getDebugText());
+            result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           }
           return true;
         }
@@ -322,7 +322,7 @@ public class CheckProjectStructureHelper {
         public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
           SLink link = concept.findLink(role);
           if (link == null || link.isReference()) {
-            result.add("unknown child role: `" + role + "' in node " + node.getDebugText());
+            result.add("unknown child role: `" + role + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           }
           return true;
         }

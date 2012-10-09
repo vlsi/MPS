@@ -265,7 +265,7 @@ class TypeSystemComponent extends CheckingComponent {
           }
           type = getType(initialNode);
           if (type == null && node != initialNode && myTypeChecker.isGenerationMode()) {
-            LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
+            LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
           }
           return type;
         }

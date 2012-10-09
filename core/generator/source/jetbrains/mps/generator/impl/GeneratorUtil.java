@@ -121,7 +121,7 @@ public class GeneratorUtil {
     StringBuilder indent = new StringBuilder();
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
-      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + pair.o1.getDebugText() : "");
+      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(pair.o1) : "");
       if (error) {
         logger.error(pair.o1, logMessage);
       } else {
@@ -142,11 +142,11 @@ public class GeneratorUtil {
   }
 
   public static ProblemDescription describe(SNode node, String nodeRole) {
-    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : node.getDebugText()));
+    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node)));
   }
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
-    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + node.getDebugText()) : null;
+    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node)) : null;
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {

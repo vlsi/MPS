@@ -65,7 +65,7 @@ public class CloneUtil {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
-          LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
+          LOG.warning("broken reference '" + reference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode), inputNode);
         } else {
           StaticReference outputReference = new StaticReference(
             reference.getRole(),
@@ -84,7 +84,7 @@ public class CloneUtil {
         outputReference.setOrigin(((DynamicReference) reference).getOrigin());
         outputNode.setReference(outputReference.getRole(), outputReference);
       } else {
-        LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
+        LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode), inputNode);
         LOG.error(" -- was reference class : " + reference.getClass().getName());
       }
     }

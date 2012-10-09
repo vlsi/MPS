@@ -247,7 +247,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getNode().getDebugText());
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node.getNode()));
     myCurrentTraceNode = null; // reset branch
   }
 
@@ -269,7 +269,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getNode().getDebugText());
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node.getNode()));
     myCurrentTraceNode = null; // reset branch
   }
 

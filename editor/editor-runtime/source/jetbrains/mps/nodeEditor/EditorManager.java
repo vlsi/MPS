@@ -346,8 +346,8 @@ public class EditorManager {
           return nodeCell;
         }
       } catch (Throwable e) {
-        LOG.error("Failed to create cell for node " + node.getDebugText(), e);
-        nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
+        LOG.error("Failed to create cell for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), e);
+        nodeCell = new EditorCell_Error(context, node, "!exception!:" + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         if (nodeCell != null && !isAttributedCell(nodeCell)) {

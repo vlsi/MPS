@@ -268,7 +268,7 @@ public class ModelReader4 implements IModelReader {
       String role = VersionUtil.getRole(rawRole);
       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
       if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+        LOG.errorWithTrace("Error reading child node in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
       } else {
         node.addChild(role, childNode);
         VersionUtil.fetchChildNodeRoleVersion(rawRole, childNode, versionsInfo);

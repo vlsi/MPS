@@ -270,7 +270,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
         oldReferent = toDelete.get(0).getTargetNodeSilently();
       }
       if (toDelete.size() > 1) {
-        LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
+        LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
       }
       boolean handlerFound = false;
 
@@ -336,7 +336,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + getDebugText());
+      LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     fireNodeReferentReadAccess(role, null);
@@ -412,12 +412,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
     SNode parentOfChild = ((SNode) child).getParent();
     if (parentOfChild != null) {
-      throw new RuntimeException(((SNode) child).getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
-        "Couldn't add it to: " + this.getDebugText());
+      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(((SNode) child)) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parentOfChild) + "\n" +
+        "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     if (((SNode) child).isRoot()) {
-      throw new RuntimeException(((SNode) child).getDebugText() + " is root node. Can't add it as a child");
+      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(((SNode) child)) + " is root node. Can't add it as a child");
     }
 
     if (getTopmostAncestor() == child) {
@@ -704,7 +704,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (!jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
       myId = id;
     } else {
-      LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
+      LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
     }
   }
 
@@ -750,7 +750,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + getDebugText());
+    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
 
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {

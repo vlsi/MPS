@@ -600,14 +600,14 @@ public class SModel {
       } else {
         SNode concept = node.getConceptDeclarationNode();
         if (concept == null) {
-          LOG.error("concept not found for node " + node.getDebugText());
+          LOG.error("concept not found for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         } else {
           result.add(concept.getModel().getSModelReference());
         }
         for (String propname : node.getProperties().keySet()) {
           SNode decl = node.getPropertyDeclaration(propname);
           if (decl == null) {
-            LOG.error("undeclared property: '" + propname + "' in node " + node.getDebugText());
+            LOG.error("undeclared property: '" + propname + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -615,13 +615,13 @@ public class SModel {
         for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
           if (targetModelRef == null) {
-            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());
+            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(targetModelRef);
           }
           SNode decl = node.getLinkDeclaration(ref.getRole());
           if (decl == null) {
-            LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + node.getDebugText());
+            LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -629,7 +629,7 @@ public class SModel {
         for (SNode child : node.getChildren()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
-            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + node.getDebugText());
+            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }

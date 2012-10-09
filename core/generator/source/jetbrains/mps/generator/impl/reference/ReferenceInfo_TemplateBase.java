@@ -41,8 +41,8 @@ public abstract class ReferenceInfo_TemplateBase extends ReferenceInfo {
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {
         generator.getLogger().error(getTemplateNode(), "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
-          "source root: " + (inputSourceRoot == null ? "<conditional root>" : inputSourceRoot.getDebugText()) +
-          ", target root: " + (inputTargetRoot == null ? "<conditional root>" : inputTargetRoot.getDebugText()),
+          "source root: " + (inputSourceRoot == null ? "<conditional root>" : org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputSourceRoot)) +
+          ", target root: " + (inputTargetRoot == null ? "<conditional root>" : org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputTargetRoot)),
           GeneratorUtil.describeIfExists(getOutputSourceNode(), "source"),
           GeneratorUtil.describeIfExists(outputTarget, "target"));
       }

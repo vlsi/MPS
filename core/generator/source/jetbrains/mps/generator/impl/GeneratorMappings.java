@@ -171,9 +171,9 @@ public class GeneratorMappings {
       List<SNode> list = (List<SNode>) o;
       ProblemDescription[] descr = new ProblemDescription[list.size()];
       for (int i = 0; i < list.size(); i++) {
-        descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + list.get(i).getDebugText());
+        descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(list.get(i)));
       }
-      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + inputNode.getDebugText(), descr);
+      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode), descr);
       return list.get(0);
     }
 

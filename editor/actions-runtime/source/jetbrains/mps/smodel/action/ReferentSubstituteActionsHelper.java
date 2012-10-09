@@ -44,7 +44,7 @@ import java.util.List;
     SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
     if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + referenceNodeConcept.getDebugText());
+      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(referenceNodeConcept));
       return new LinkedList<INodeSubstituteAction>();
     }
 
