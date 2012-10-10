@@ -831,13 +831,10 @@
                               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="o8zo.3734116213129862372" resolveInfo="Scope" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3671170675134081228">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymbg.~ModelConstraintsUtil%dgetScope(jetbrains%dmps%dsmodel%dSReference,jetbrains%dmps%dsmodel%dIOperationContext)%cjetbrains%dmps%dscope%dScope" resolveInfo="getScope" />
                               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ymbg.~ModelConstraintsUtil" resolveInfo="ModelConstraintsUtil" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymbg.~ModelConstraintsUtil%dgetScope(jetbrains%dmps%dsmodel%dSReference)%cjetbrains%dmps%dscope%dScope" resolveInfo="getScope" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3671170675134081229">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3671170675134081157" resolveInfo="reference" />
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3671170675134081230">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3671170675134081159" resolveInfo="operationContext" />
                               </node>
                             </node>
                           </node>

@@ -4734,17 +4734,9 @@
                 <property name="name" nameId="tpck.1169194664001" value="refScope" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1365327453232754826">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ymbg.~ModelConstraintsUtil" resolveInfo="ModelConstraintsUtil" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymbg.~ModelConstraintsUtil%dgetScope(jetbrains%dmps%dsmodel%dSReference,jetbrains%dmps%dsmodel%dIOperationContext)%cjetbrains%dmps%dscope%dScope" resolveInfo="getScope" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymbg.~ModelConstraintsUtil%dgetScope(jetbrains%dmps%dsmodel%dSReference)%cjetbrains%dmps%dscope%dScope" resolveInfo="getScope" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1365327453232754827">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086718336" resolveInfo="ref" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4052289613717548055">
-                    <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4052289613717548058">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModuleOperationContext%d&lt;init&gt;(jetbrains%dmps%dproject%dIModule)" resolveInfo="ModuleOperationContext" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4052289613717548308">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4052289613717548298" resolveInfo="module" />
-                      </node>
-                    </node>
                   </node>
                 </node>
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1365327453232754829">

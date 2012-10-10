@@ -146,7 +146,7 @@ public class StubResolver {
         if (modelRef == null || resolveInfo == null) {
           continue;
         }
-        final Scope refScope = ModelConstraintsUtil.getScope(ref, context);
+        final Scope refScope = ModelConstraintsUtil.getScope(ref);
         if (refScope instanceof ErrorScope) {
           continue;
         }

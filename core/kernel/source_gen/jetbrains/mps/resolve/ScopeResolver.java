@@ -32,7 +32,7 @@ public class ScopeResolver implements IResolver {
     return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        Scope refScope = ModelConstraintsUtil.getScope(reference, operationContext);
+        Scope refScope = ModelConstraintsUtil.getScope(reference);
         if (refScope instanceof ErrorScope) {
           LOG.error("Couldn't create referent search scope : " + ((ErrorScope) refScope).getMessage());
           return false;

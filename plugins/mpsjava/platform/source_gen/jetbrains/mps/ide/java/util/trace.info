@@ -300,7 +300,7 @@
     <nodeInfo nodeId="2742102018362199380" fileName="StubResolver.java" startLine="143" startPosition="41" endLine="144" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742102018362199387" fileName="StubResolver.java" startLine="144" startPosition="105" endLine="145" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742102018362199401" fileName="StubResolver.java" startLine="146" startPosition="54" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6770603745029714855" fileName="StubResolver.java" startLine="148" startPosition="9" endLine="149" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6770603745029714855" fileName="StubResolver.java" startLine="148" startPosition="9" endLine="149" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742102018362199415" fileName="StubResolver.java" startLine="150" startPosition="45" endLine="151" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2742102018362199429" fileName="StubResolver.java" startLine="156" startPosition="46" endLine="157" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="163" startPosition="37" endLine="164" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -321,7 +321,7 @@
     <nodeInfo nodeId="9164503229271487738" fileName="StubResolver.java" startLine="125" startPosition="86" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8883975518329349205" fileName="StubResolver.java" startLine="129" startPosition="93" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2742102018362199392" fileName="StubResolver.java" startLine="145" startPosition="71" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2742102018362199410" fileName="StubResolver.java" startLine="149" startPosition="75" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2742102018362199410" fileName="StubResolver.java" startLine="149" startPosition="66" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9073603541474867746" fileName="StubResolver.java" startLine="178" startPosition="93" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
