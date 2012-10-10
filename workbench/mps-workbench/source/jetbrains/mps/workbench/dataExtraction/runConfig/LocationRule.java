@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
@@ -45,7 +46,7 @@ public class LocationRule implements GetDataRule {
     if (model != null) return new MPSLocation(project, model.getModelReference());
     SModule module = (SModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
     if (module != null) return new MPSLocation(project, module);
-    Project mpsProject = (Project) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
+    Project mpsProject = ((MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName())).getProject();
     if (mpsProject != null) return new MPSLocation(project, mpsProject);
     return null;
   }
