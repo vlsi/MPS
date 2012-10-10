@@ -9,15 +9,18 @@ import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Map;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.traceInfo.PositionInfo;
@@ -29,7 +32,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -49,11 +51,11 @@ public class TraceInfoUtil {
   public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        UnitPositionInfo unitInfo = TraceInfoUtil.getUnitInfoForPosition(info, position, file);
+        Tuples._2<UnitPositionInfo, DebugInfoRoot> unitInfo = TraceInfoUtil.getRootInfoAndUnitInfoForPosition(info, position, file);
         if (unitInfo == null) {
           return null;
         }
-        return DebugInfo.findNode(unitInfo);
+        return unitInfo._1().findNode(unitInfo._0());
       }
     });
   }
@@ -70,6 +72,22 @@ public class TraceInfoUtil {
     }, false).first();
   }
 
+  private static Tuples._2<UnitPositionInfo, DebugInfoRoot> getRootInfoAndUnitInfoForPosition(DebugInfo info, final int position, final String file) {
+    Map<DebugInfoRoot, List<UnitPositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
+      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
+        return root.getUnitPositions();
+      }
+    });
+    for (IMapping<DebugInfoRoot, List<UnitPositionInfo>> mapping : MapSequence.fromMap(resultList)) {
+      return MultiTuple.<UnitPositionInfo,DebugInfoRoot>from(ListSequence.fromList(mapping.value()).sort(new ISelector<UnitPositionInfo, Integer>() {
+        public Integer select(UnitPositionInfo it) {
+          return it.getStartLine();
+        }
+      }, false).first(), mapping.key());
+    }
+    return null;
+  }
+
   /**
    * Use TraceDown.unitNames(node)
    */
@@ -77,12 +95,12 @@ public class TraceInfoUtil {
   @ToRemove(version = 3.0)
   @Nullable
   public static String getUnitName(SNode node) {
-    return check_4iwlxm_a0a3(TraceDown.unitNames((SNode) node));
+    return check_4iwlxm_a0a4(TraceDown.unitNames((SNode) node));
   }
 
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return check_4iwlxm_a0a4(getAllTraceableNodes(className, file, position));
+    return check_4iwlxm_a0a5(getAllTraceableNodes(className, file, position));
   }
 
   /**
@@ -295,14 +313,14 @@ public class TraceInfoUtil {
     return null;
   }
 
-  private static String check_4iwlxm_a0a3(Iterable<String> checkedDotOperand) {
+  private static String check_4iwlxm_a0a4(Iterable<String> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return Sequence.fromIterable(checkedDotOperand).first();
     }
     return null;
   }
 
-  private static SNode check_4iwlxm_a0a4(List<SNode> checkedDotOperand) {
+  private static SNode check_4iwlxm_a0a5(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();
     }

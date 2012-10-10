@@ -27,6 +27,7 @@
     <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-platform" scope="TEST" />
     <orderEntry type="module" module-name="mps-workbench" scope="TEST" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 
