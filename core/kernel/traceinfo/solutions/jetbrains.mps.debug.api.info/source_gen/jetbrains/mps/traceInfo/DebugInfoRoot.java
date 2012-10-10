@@ -7,6 +7,11 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeId;
 import org.jdom.Element;
 import java.util.Comparator;
 import org.jdom.DataConversionException;
@@ -70,6 +75,11 @@ public class DebugInfoRoot {
 
   public Set<String> getFileNames() {
     return myFileNames;
+  }
+
+  public SNode findNode(@NotNull PositionInfo info) {
+    SModelReference modelRef = SModelReference.fromString(myModelId);
+    return new SNodePointer(modelRef, SNodeId.fromString(info.getNodeId())).getNode();
   }
 
   /*package*/ void toXml(Element container) {

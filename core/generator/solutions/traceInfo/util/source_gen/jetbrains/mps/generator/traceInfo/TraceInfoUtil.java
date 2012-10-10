@@ -25,7 +25,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
+import java.util.Map;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -253,19 +256,21 @@ public class TraceInfoUtil {
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, final String file, final int lineNumber, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
     return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<List<SNode>, DebugInfo, SModelDescriptor>() {
       public List<SNode> invoke(DebugInfo debugInfo, SModelDescriptor descriptor) {
-        List<T> infoForPosition = debugInfo.getInfoForPosition(file, lineNumber, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+        Map<DebugInfoRoot, List<T>> infoForPosition = debugInfo.getRootToInfoForPosition(file, lineNumber, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
           public Set<T> invoke(DebugInfoRoot root) {
             return positionsGetter.invoke(root);
           }
         });
         List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
-        if (ListSequence.fromList(infoForPosition).isEmpty()) {
+        if (MapSequence.fromMap(infoForPosition).isEmpty()) {
           return null;
         }
-        for (T info : infoForPosition) {
-          SNode node = DebugInfo.findNode(info);
-          if (node != null) {
-            nodes.add(node);
+        for (IMapping<DebugInfoRoot, List<T>> rootToInfo : MapSequence.fromMap(infoForPosition)) {
+          for (T info : ListSequence.fromList(rootToInfo.value())) {
+            SNode node = rootToInfo.key().findNode(info);
+            if (node != null) {
+              nodes.add(node);
+            }
           }
         }
         if (ListSequence.fromList(nodes).isEmpty()) {

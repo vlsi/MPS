@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.LinkedHashMap;
 import org.jdom.Element;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.DataConversionException;
@@ -180,6 +181,35 @@ public class DebugInfo {
   }
 
   @NotNull
+  public <T extends PositionInfo> Map<DebugInfoRoot, List<T>> getRootToInfoForPosition(final String file, int line, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
+    Map<DebugInfoRoot, List<T>> result = MapSequence.fromMap(new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false));
+    for (DebugInfoRoot root : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
+      public boolean accept(DebugInfoRoot it) {
+        return SetSequence.fromSet(it.getFileNames()).contains(file);
+      }
+    })) {
+      List<T> list = MapSequence.fromMap(result).get(root);
+      for (T element : SetSequence.fromSet(getAllPositionsForRoot.invoke(root))) {
+        if (element.isPositionInside(file, line)) {
+          if (list == null) {
+            list = ListSequence.fromList(new ArrayList<T>());
+            MapSequence.fromMap(result).put(root, list);
+          }
+          ListSequence.fromList(list).addElement(element);
+        }
+      }
+      if (list != null) {
+        MapSequence.fromMap(result).put(root, ListSequence.fromList(list).sort(new ISelector<T, Integer>() {
+          public Integer select(T it) {
+            return it.getStartLine();
+          }
+        }, false).toListSequence());
+      }
+    }
+    return result;
+  }
+
+  @NotNull
   public List<TraceablePositionInfo> getTraceableInfoForPosition(String file, int line) {
     return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
       public Set<TraceablePositionInfo> invoke(DebugInfoRoot root) {
@@ -216,7 +246,7 @@ public class DebugInfo {
       }, true);
       for (Tuples._2<String, String> id : sorted) {
         DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
-        if (isEmpty_exfyrk_a0b0b0b0q(id._0())) {
+        if (isEmpty_exfyrk_a0b0b0b0r(id._0())) {
           dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
@@ -321,7 +351,7 @@ public class DebugInfo {
     );
   }
 
-  public static boolean isEmpty_exfyrk_a0b0b0b0q(String str) {
+  public static boolean isEmpty_exfyrk_a0b0b0b0r(String str) {
     return str == null || str.length() == 0;
   }
 
