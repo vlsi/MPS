@@ -44,50 +44,12 @@ import org.jetbrains.annotations.Nullable;
  * Igor Alshannikov
  * May 30, 2006
  */
+@Deprecated
+@ToRemove(version = 3.0)
+// remove after 3.0
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  /*
-   *  returns Scope for existing reference
-   */
-  @NotNull
-  public static Scope getScope(@NotNull SReference reference) {
-    ModelAccess.assertLegalRead();
-    return new ReferenceDescriptor(reference).getScope();
-  }
-
-  /*
-   *  getScope(node, role, index)            gets scope for reference being created at the location
-   *                                               role (cannot be null) should be "reference" link
-   */
-  @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index) {
-    ModelAccess.assertLegalRead();
-
-    try {
-      return new ReferenceDescriptor(enclosingNode, role, index).getScope();
-    } catch (IllegalArgumentException ex) {
-      return new ErrorScope(ex.getMessage());
-    }
-  }
-
-  /*
-   *  getScope(node, role, index, smartConcept)    gets scope for smartReference being created in "aggregation" role
-   */
-  @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
-    ModelAccess.assertLegalRead();
-
-    try {
-      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept).getScope();
-    } catch (IllegalArgumentException ex) {
-      return new ErrorScope(ex.getMessage());
-    }
-  }
-
-  /*
-  *  returns Scope & Presentation for existing reference
-  */
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
     ModelAccess.assertLegalRead();
@@ -266,7 +228,6 @@ public class ModelConstraintsUtil {
     }
   }
 
-
   /*
    * DEPRECATED API, to be removed in MPS 3.0 ***
    */
@@ -420,7 +381,7 @@ public class ModelConstraintsUtil {
   @Deprecated
   @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
-    return getScope(reference);
+    return ModelConstraints.getScope(reference);
   }
 
   /**
@@ -440,7 +401,7 @@ public class ModelConstraintsUtil {
   @Deprecated
   @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
-    return getScope(enclosingNode, role, index);
+    return ModelConstraints.getScope(enclosingNode, role, index);
   }
 
   /**
@@ -463,8 +424,6 @@ public class ModelConstraintsUtil {
    * Use getSmartReferenceDescriptor(enclosingNode, role, index, smartConcept) instead
    */
   @Nullable
-  @Deprecated
-  @ToRemove(version = 3.0)
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
@@ -482,12 +441,6 @@ public class ModelConstraintsUtil {
   @Deprecated
   @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
-    ModelAccess.assertLegalRead();
-
-    try {
-      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept).getScope();
-    } catch (IllegalArgumentException ex) {
-      return new ErrorScope(ex.getMessage());
-    }
+    return ModelConstraints.getScope(enclosingNode, role, index, smartConcept);
   }
 }
