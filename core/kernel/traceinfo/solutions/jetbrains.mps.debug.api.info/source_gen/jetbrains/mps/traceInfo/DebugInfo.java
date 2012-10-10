@@ -315,14 +315,6 @@ public class DebugInfo {
     return new SNodePointer(SModelReference.fromString(tuple._1()), SNodeId.fromString(tuple._0()));
   }
 
-  public static SNode findNode(PositionInfo info) {
-    if (isEmpty_exfyrk_a0a0f(info.getNodeId())) {
-      return null;
-    }
-    SModelReference modelRef = SModelReference.fromString(info.getModelId());
-    return new SNodePointer(modelRef, SNodeId.fromString(info.getNodeId())).getNode();
-  }
-
   private static boolean eq_exfyrk_a0a0b0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -360,10 +352,6 @@ public class DebugInfo {
   }
 
   public static boolean isEmpty_exfyrk_a0a0a4_0(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_exfyrk_a0a0f(String str) {
     return str == null || str.length() == 0;
   }
 }
