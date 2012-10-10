@@ -13,21 +13,22 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.annotation.ToRemove;
+import java.util.Map;
+import jetbrains.mps.traceInfo.DebugInfoRoot;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
-import java.util.Set;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
-import java.util.Map;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class TraceInfoUtil {
@@ -96,64 +97,70 @@ public class TraceInfoUtil {
   public static SNode getJavaNode(@NonNls String unitName, final String fileName, final int lineNumber) {
     return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor modelDescriptor) {
-        List<TraceablePositionInfo> resultList = info.getTraceableInfoForPosition(fileName, lineNumber);
-        if (resultList == null || ListSequence.fromList(resultList).isEmpty()) {
+        Map<DebugInfoRoot, List<TraceablePositionInfo>> resultList = info.getRootToInfoForPosition(fileName, lineNumber, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
+          public Set<TraceablePositionInfo> invoke(DebugInfoRoot root) {
+            return root.getPositions();
+          }
+        });
+        if (resultList == null || MapSequence.fromMap(resultList).isEmpty()) {
           return null;
         }
-
-        Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
-          public TraceablePositionInfo select(TraceablePositionInfo it) {
-            return it;
-          }
-        }, true);
-        final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
-        PositionInfo result = firstPositionInfo;
-        // here we do some magic to fix the following bug: 
-        // each node in base language owns a '\n' symbol in a previous line 
-        // in the following code we will never get 'for' node quering line 1: 
-        // 1.  for (...) { 
-        // 2.    some statement 
-        // 3.  } 
-        // since 'some statement' takes lines 1-2 instead of just line 2 
-        if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
-          result = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1);
-        }
-        // here we have another example of how not to write code 
-        // this is a hack fixing MPS-8644 
-        // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
-        // so in the code like this: 
-        // 1. { 
-        // 2. statement 
-        // 3. } 
-        // block statement occupy the same place as "statement" because this code generates into: 
-        // 1. statement 
-        // the solution is simple: 
-        // among all node with same position we select the deepest 
-        if (Sequence.fromIterable(sorted).count() > 1) {
-          Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
-            public boolean accept(TraceablePositionInfo it) {
-              return firstPositionInfo.isOccupyTheSameSpace(it);
+        // todo impossible to read 
+        for (DebugInfoRoot root : SetSequence.fromSet(MapSequence.fromMap(resultList).keySet())) {
+          Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(MapSequence.fromMap(resultList).get(root)).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
+            public TraceablePositionInfo select(TraceablePositionInfo it) {
+              return it;
             }
-          });
-          if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
-            SNode currentNode = DebugInfo.findNode(firstPositionInfo);
-            boolean finished = false;
-            while (!(finished)) {
-              finished = true;
-              for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
-                SNode otherNode = DebugInfo.findNode(otherPos);
-                if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
-                  currentNode = otherNode;
-                  finished = false;
-                  break;
+          }, true);
+          final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+          PositionInfo result = firstPositionInfo;
+          // here we do some magic to fix the following bug: 
+          // each node in base language owns a '\n' symbol in a previous line 
+          // in the following code we will never get 'for' node quering line 1: 
+          // 1.  for (...) { 
+          // 2.    some statement 
+          // 3.  } 
+          // since 'some statement' takes lines 1-2 instead of just line 2 
+          if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
+            result = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1);
+          }
+          // here we have another example of how not to write code 
+          // this is a hack fixing MPS-8644 
+          // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
+          // so in the code like this: 
+          // 1. { 
+          // 2. statement 
+          // 3. } 
+          // block statement occupy the same place as "statement" because this code generates into: 
+          // 1. statement 
+          // the solution is simple: 
+          // among all node with same position we select the deepest 
+          if (Sequence.fromIterable(sorted).count() > 1) {
+            Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
+              public boolean accept(TraceablePositionInfo it) {
+                return firstPositionInfo.isOccupyTheSameSpace(it);
+              }
+            });
+            if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
+              SNode currentNode = root.findNode(firstPositionInfo);
+              boolean finished = false;
+              while (!(finished)) {
+                finished = true;
+                for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
+                  SNode otherNode = root.findNode(otherPos);
+                  if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
+                    currentNode = otherNode;
+                    finished = false;
+                    break;
+                  }
                 }
               }
+              return currentNode;
             }
-            return currentNode;
           }
+          return root.findNode(result);
         }
-        return DebugInfo.findNode(result);
-
+        return null;
       }
     });
   }
