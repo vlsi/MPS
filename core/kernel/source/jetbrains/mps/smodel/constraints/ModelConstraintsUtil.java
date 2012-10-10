@@ -57,15 +57,15 @@ public class ModelConstraintsUtil {
   }
 
   /*
-   *  getScope(node, role, index, null)            gets scope for reference being created at the location
+   *  getScope(node, role, index)            gets scope for reference being created at the location
    *                                               role (cannot be null) should be "reference" link
    */
   @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
+  public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index) {
     ModelAccess.assertLegalRead();
 
     try {
-      return new ReferenceDescriptor(enclosingNode, role, index, context).getScope();
+      return new ReferenceDescriptor(enclosingNode, role, index).getScope();
     } catch (IllegalArgumentException ex) {
       return new ErrorScope(ex.getMessage());
     }
@@ -75,11 +75,11 @@ public class ModelConstraintsUtil {
    *  getScope(node, role, index, smartConcept)    gets scope for smartReference being created in "aggregation" role
    */
   @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
+  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
     ModelAccess.assertLegalRead();
 
     try {
-      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept, context).getScope();
+      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept).getScope();
     } catch (IllegalArgumentException ex) {
       return new ErrorScope(ex.getMessage());
     }
@@ -95,22 +95,22 @@ public class ModelConstraintsUtil {
   }
 
   @Nullable
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode enclosingNode, @NotNull String role, int index) {
     ModelAccess.assertLegalRead();
 
     try {
-      return new ReferenceDescriptor(enclosingNode, role, index, context);
+      return new ReferenceDescriptor(enclosingNode, role, index);
     } catch (IllegalArgumentException ex) {
       return null;
     }
   }
 
   @Nullable
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept, IOperationContext context) {
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept) {
     ModelAccess.assertLegalRead();
 
     try {
-      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept, context);
+      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept);
     } catch (IllegalArgumentException ex) {
       return null;
     }
@@ -172,7 +172,7 @@ public class ModelConstraintsUtil {
       myScopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(myRefConcept, myRefRole);
     }
 
-    private ReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index, IOperationContext context) {
+    private ReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index) {
       myReference = null;
       SNode scopeReference = referenceNode.getLinkDeclaration(role);
       if (scopeReference == null) {
@@ -184,7 +184,7 @@ public class ModelConstraintsUtil {
       myScopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(myRefConcept, myRefRole);
     }
 
-    private ReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
+    private ReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
       myReference = null;
       myRefConcept = smartConcept;
       final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
@@ -409,6 +409,10 @@ public class ModelConstraintsUtil {
     return new OK(searchScope, presentation, isDefault, searchScopeFactory);
   }
 
+  /*
+   * DEPRECATED API, to be removed after MPS 3.0 ***
+   */
+
   /**
    * Use getScope(reference) instead
    */
@@ -416,7 +420,6 @@ public class ModelConstraintsUtil {
   @Deprecated
   @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
-    // use
     return getScope(reference);
   }
 
@@ -428,5 +431,63 @@ public class ModelConstraintsUtil {
   @ToRemove(version = 3.0)
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference, IOperationContext context) {
     return getReferenceDescriptor(reference);
+  }
+
+  /**
+   * Use getScope(enclosingNode, role, index) instead
+   */
+  @NotNull
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
+    return getScope(enclosingNode, role, index);
+  }
+
+  /**
+   * Use getReferenceDescriptor(enclosingNode, role, index) instead
+   */
+  @Nullable
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
+    ModelAccess.assertLegalRead();
+
+    try {
+      return new ReferenceDescriptor(enclosingNode, role, index);
+    } catch (IllegalArgumentException ex) {
+      return null;
+    }
+  }
+
+  /**
+   * Use getSmartReferenceDescriptor(enclosingNode, role, index, smartConcept) instead
+   */
+  @Nullable
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept, IOperationContext context) {
+    ModelAccess.assertLegalRead();
+
+    try {
+      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept);
+    } catch (IllegalArgumentException ex) {
+      return null;
+    }
+  }
+
+  /**
+   * Use getScope(enclosingNode, role, index, smartConcept) instead
+   */
+  @NotNull
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
+    ModelAccess.assertLegalRead();
+
+    try {
+      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept).getScope();
+    } catch (IllegalArgumentException ex) {
+      return new ErrorScope(ex.getMessage());
+    }
   }
 }
