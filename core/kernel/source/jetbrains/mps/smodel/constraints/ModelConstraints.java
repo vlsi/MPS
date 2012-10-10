@@ -127,6 +127,7 @@ public class ModelConstraints {
     ModelAccess.assertLegalRead();
 
     try {
+      // todo: NPE where are you?
       return new ReferenceDescriptor(enclosingNode, role, index).getScope();
     } catch (IllegalArgumentException ex) {
       return new ErrorScope(ex.getMessage());
@@ -149,7 +150,6 @@ public class ModelConstraints {
 
   /*
   *  returns Scope & Presentation for existing reference
-  *  ReferenceDescriptor should be based on ReferenceScopeProvider
   */
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {

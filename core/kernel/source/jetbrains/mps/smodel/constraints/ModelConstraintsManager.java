@@ -17,9 +17,12 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 
 @Deprecated
+@ToRemove(version = 3.0)
+// remove after 3.0
 public class ModelConstraintsManager {
   private static ModelConstraintsManager INSTANCE = new ModelConstraintsManager();
 
@@ -53,7 +56,7 @@ public class ModelConstraintsManager {
   }
 
   public static boolean canBeParent(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable SNode childNode, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    return ModelConstraints.canBeParent(descriptor, parentNode, childConcept, link, childNode,checkingNodeContext);
+    return ModelConstraints.canBeParent(descriptor, parentNode, childConcept, link, childNode, checkingNodeContext);
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {

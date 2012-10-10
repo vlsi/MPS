@@ -57,7 +57,7 @@ public class ReferenceDescriptor {
     myRefConcept = node.getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(myRefConcept, myRefRole);
     myReferentConstraintContext = createReferentConstraintContext(true, node.getParent(), node, myRefRole, 0, SModelUtil.getLinkDeclarationTarget(linkDeclaration), node.getRoleLink());
-    myScopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(myRefConcept, myRefRole);
+    myScopeProvider = getScopeProvider(myRefConcept, myRefRole);
   }
 
   /* package */ ReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index) {
@@ -69,7 +69,7 @@ public class ReferenceDescriptor {
     myReferentConstraintContext = createReferentConstraintContext(false, referenceNode.getParent(), referenceNode, role, 0, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getRoleLink());
     myRefConcept = referenceNode.getConceptDeclarationNode();
     myRefRole = SModelUtil.getGenuineLinkRole(scopeReference);
-    myScopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(myRefConcept, myRefRole);
+    myScopeProvider = getScopeProvider(myRefConcept, myRefRole);
   }
 
   /* package */ ReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
@@ -85,7 +85,7 @@ public class ReferenceDescriptor {
       throw new IllegalArgumentException("for reference role smartConcept should be null");
     }
     myReferentConstraintContext = createReferentConstraintContext(false, enclosingNode, null, role, index, SModelUtil.getLinkDeclarationTarget(smartReference), linkDeclaration);
-    myScopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(smartConcept, myRefRole);
+    myScopeProvider = getScopeProvider(smartConcept, myRefRole);
   }
 
   public Scope getScope() {

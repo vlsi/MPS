@@ -16,7 +16,11 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.annotation.ToRemove;
 
+@Deprecated
+@ToRemove(version = 3.0)
+// remove after 3.0
 public interface IReferencePresentation {
   String getText(SNode node, boolean visible, boolean smartRef, boolean inEditor);
 }
