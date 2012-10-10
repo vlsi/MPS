@@ -24,6 +24,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -80,7 +81,7 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    Scope scope = ModelConstraintsUtil.getScope(this);
+    Scope scope = ModelConstraints.getScope(this);
     if (scope instanceof ErrorScope) {
       if (!silently) {
         reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
