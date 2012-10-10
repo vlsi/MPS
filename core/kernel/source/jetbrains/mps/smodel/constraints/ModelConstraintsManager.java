@@ -32,7 +32,7 @@ public class ModelConstraintsManager {
 
   @Nullable
   public static ReferenceScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
-    return ModelConstraints.getNodeReferentSearchScopeProvider(nodeConcept, referentRole);
+    return ReferenceDescriptor.getScopeProvider(nodeConcept, referentRole);
   }
 
   public static String getDefaultConcreteConceptFqName(String fqName) {

@@ -20,8 +20,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -37,6 +39,7 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
 
 public class ReferenceDescriptor {
   private static final Logger LOG = Logger.getLogger(ModelConstraints.class);
+  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
 
   private final SNode myRefConcept;
   /* genuine role */
@@ -109,8 +112,20 @@ public class ReferenceDescriptor {
     });
   }
 
-  public IReferencePresentation getReferencePresentation() {
-    return myScopeProvider != null && myScopeProvider.hasPresentation() ? new DefaultReferencePresentation(getOperationContext(getModule(myReference)), myReferentConstraintContext, myScopeProvider) : null;
+  public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation) {
+    // todo: remove default presentation
+    if (myScopeProvider == null || !myScopeProvider.hasPresentation()) {
+      return defaultPresentation;
+    }
+
+    return myScopeProvider.getPresentation(getOperationContext(getModule(myReference)),
+      new PresentationReferentConstraintContext(myReferentConstraintContext.getModel(), myReferentConstraintContext.getEnclosingNode(),
+        myReferentConstraintContext.getReferenceNode(), myReferentConstraintContext.getLinkTarget(), targetNode, myReferentConstraintContext.getContainingLink(), visible, smartRef, inEditor));
+  }
+
+  @Nullable
+  public ReferenceScopeProvider getScopeProvider() {
+    return myScopeProvider;
   }
 
   private static ReferentConstraintContext createReferentConstraintContext(boolean exists, SNode enclosingNode, final SNode referenceNode, String role, int index, SNode linkTarget, SNode containingLinkDeclaration) {
@@ -127,24 +142,17 @@ public class ReferenceDescriptor {
     return new ReferentConstraintContext(model, exists, referenceNode != null ? referenceNode : enclosingNode, role, index, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
   }
 
-  private static class DefaultReferencePresentation implements IReferencePresentation {
-    private IOperationContext myOperationContext;
-    private ReferentConstraintContext myContext;
-    private ReferenceScopeProvider myProvider;
-
-    private DefaultReferencePresentation(IOperationContext operationContext, ReferentConstraintContext context, ReferenceScopeProvider provider) {
-      myOperationContext = operationContext;
-      myContext = context;
-      myProvider = provider;
+  @Nullable
+  /* package */ static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
+    // todo: should be private
+    ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
+    if (result != null) return result;
+    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+    if (linkDeclaration == null) {
+      LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
+      return EMPTY_REFERENCE_SCOPE_PROVIDER;
     }
-
-    public String getText(SNode node, boolean visible, boolean smartRef, boolean inEditor) {
-      if (myProvider != null) {
-        return myProvider.getPresentation(myOperationContext,
-          new PresentationReferentConstraintContext(myContext.getModel(), myContext.getEnclosingNode(),
-            myContext.getReferenceNode(), myContext.getLinkTarget(), node, myContext.getContainingLink(), visible, smartRef, inEditor));
-      }
-      return node.getPresentation();
-    }
+    SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
   }
 }

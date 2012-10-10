@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.*;
@@ -24,11 +23,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,9 +32,6 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleSc
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 public class ModelConstraints {
-  private static final Logger LOG = Logger.getLogger(ModelConstraints.class);
-  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
-
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
   // canBeASomething section
@@ -112,19 +104,6 @@ public class ModelConstraints {
   }
 
   // other things
-  @Nullable
-  public static ReferenceScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
-    ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
-    if (result != null) return result;
-    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
-    if (linkDeclaration == null) {
-      LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
-      return EMPTY_REFERENCE_SCOPE_PROVIDER;
-    }
-    SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
-  }
-
   public static String getDefaultConcreteConceptFqName(String fqName) {
     return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
   }
