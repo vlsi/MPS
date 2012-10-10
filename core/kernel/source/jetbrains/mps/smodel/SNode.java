@@ -267,7 +267,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
       boolean handlerFound = false;
 
-      if (myModel.canFireEvent()) {
+      if (myModel != null && myModel.canFireEvent()) {
         // invoke custom referent set event handler
         Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
         Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
@@ -576,13 +576,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myRoleInParent;
   }
 
-  public String   getPersistentProperty(String propertyName) {
-      if (myProperties == null) return null;
-      if (ourMemberAccessModifier != null) {
-        propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
-      }
-      return getProperty_simple(propertyName);
+  public String getPersistentProperty(String propertyName) {
+    if (myProperties == null) return null;
+    if (ourMemberAccessModifier != null) {
+      propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
     }
+    return getProperty_simple(propertyName);
+  }
 
   public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
     propertyName = InternUtil.intern(propertyName);
@@ -591,7 +591,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (usePropertySetter) {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
-      if (!threadSet.contains(pair) && myModel.canFireEvent()) {
+      if (!threadSet.contains(pair) && myModel != null && myModel.canFireEvent()) {
         PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getProperty(propertyName);
         threadSet.add(pair);
         try {
@@ -671,7 +671,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   replace with isDetached
    */
   public boolean isDeleted() {
-    return (myReferences.length == 0) && getParent() == null && !getModel().isRoot(this);
+    return (myReferences.length == 0) && getParent() == null && myModel==null;
   }
 
   /*
@@ -786,8 +786,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel;
   }
 
-
-
   @Deprecated
   /**
    * Inline content in java code, use migration in MPS
@@ -849,7 +847,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     //remove all references
-    while (myReferences.length>0){
+    while (myReferences.length > 0) {
       removeReferenceAt(myReferences[0]);
     }
     myReferences = SReference.EMPTY_ARRAY;
@@ -901,36 +899,37 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private void enforceModelLoad() {
     if (!isRoot()) return;
+    if (myModel == null) return;
     myModel.enforceFullLoad();
   }
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (!myModel.canFireEvent()) return;
+    if (myModel == null || !myModel.canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
   private void fireNodeReadAccess() {
-    if (!myModel.canFireEvent()) return;
+    if (myModel == null || !myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
-  private void fireNodeChildReadAccess(String role, SNode child){
-    if (!myModel.canFireReadEvent()) return;
+  private void fireNodeChildReadAccess(String role, SNode child) {
+    if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
   }
 
-  private void fireNodePropertyReadAccess(String propertyName, String propertyValue){
-    if (!myModel.canFireReadEvent()) return;
+  private void fireNodePropertyReadAccess(String propertyName, String propertyValue) {
+    if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
   }
 
-  private void fireNodeReferentReadAccess(String referentRole, SNode referent){
-    if (!myModel.canFireReadEvent()) return;
+  private void fireNodeReferentReadAccess(String referentRole, SNode referent) {
+    if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
   }
 
-  private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck){
-    if (!myModel.canFireEvent()) return;
+  private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
+    if (myModel == null || !myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
@@ -1338,13 +1337,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Deprecated
-    /**
-     * Inline content in java code, use migration in MPS
-     * @Deprecated in 3.0
-     */
-    public void replaceChild(SNode oldChild, SNode newChild) {
-      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
-    }
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void replaceChild(SNode oldChild, SNode newChild) {
+    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
+  }
 
   @Deprecated
   /**
