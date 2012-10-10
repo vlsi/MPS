@@ -64,6 +64,10 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setIncrementalUseCache(boolean incrementalUseCache);
 
+  boolean isDebugIncrementalDependencies();
+
+  void setDebugIncrementalDependencies(boolean value);
+
   boolean isFailOnMissingTextGen();
 
   void setFailOnMissingTextGen(boolean fail);

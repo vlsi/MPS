@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.generator;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -24,9 +25,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultFormatter;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.text.ParseException;
 
 class GenerationSettingsPreferencesPage {
@@ -39,6 +38,7 @@ class GenerationSettingsPreferencesPage {
   private JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
   private JCheckBox myIncremental = new JCheckBox("Incremental generation");
   private JCheckBox myIncrementalCache = new JCheckBox("Cache intermediate models");
+  private JCheckBox myDebugIncrementalDependencies = new JCheckBox("Debug generation dependencies");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
   private JRadioButton myTraceSteps = new JRadioButton("Generation steps only");
@@ -116,10 +116,16 @@ class GenerationSettingsPreferencesPage {
     optionsPanel.add(myIncremental, c);
     c.insets.left = 16;
     optionsPanel.add(myIncrementalCache, c);
+    if (InternalFlag.isInternalMode()) {
+      optionsPanel.add(myDebugIncrementalDependencies, c);
+    }
     final ChangeListener listener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         myIncremental.setEnabled(myStrictMode.isSelected());
         myIncrementalCache.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
+        if (InternalFlag.isInternalMode()) {
+          myDebugIncrementalDependencies.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
+        }
       }
     };
     myStrictMode.addChangeListener(listener);
@@ -251,6 +257,9 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setNumberOfModelsToKeep(getNumberOfModelsToKeep());
     myGenerationSettings.setIncremental(myIncremental.isSelected());
     myGenerationSettings.setIncrementalUseCache(myIncrementalCache.isSelected());
+    if (InternalFlag.isInternalMode()) {
+      myGenerationSettings.setDebugIncrementalDependencies(myDebugIncrementalDependencies.isSelected());
+    }
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
   }
@@ -282,6 +291,7 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.isStrictMode() == myStrictMode.isSelected() &&
       myGenerationSettings.isIncremental() == myIncremental.isSelected() &&
       myGenerationSettings.isIncrementalUseCache() == myIncrementalCache.isSelected() &&
+      (!InternalFlag.isInternalMode() || myGenerationSettings.isDebugIncrementalDependencies() == myDebugIncrementalDependencies.isSelected()) &&
       myGenerationSettings.isFailOnMissingTextGen() == myFailOnMissingTextgen.isSelected() &&
       myGenerationSettings.isGenerateDebugInfo() == myGenerateDebugInfo.isSelected());
   }
@@ -293,6 +303,10 @@ class GenerationSettingsPreferencesPage {
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
     myIncremental.setSelected(myGenerationSettings.isIncremental());
     myIncrementalCache.setSelected(myGenerationSettings.isIncrementalUseCache());
+    if (InternalFlag.isInternalMode()) {
+      myDebugIncrementalDependencies.setSelected(myGenerationSettings.isDebugIncrementalDependencies());
+      myDebugIncrementalDependencies.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
+    }
 
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());

@@ -89,8 +89,9 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
       return;
     }
     final SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if(modelDescriptor != null) {
+    if (modelDescriptor != null) {
       dependsOnModels.add(modelDescriptor);
+      myBuilder.reportModelAccess(modelDescriptor, myOriginalRoot);
     }
   }
 
