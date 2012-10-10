@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.cache;
 
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,20 +58,25 @@ public abstract class AbstractCache extends SModelAdapter {
     myDataSets.remove(dataSet.getId());
   }
 
-  protected DataSet getDataSet(String dataSetId, DataSetCreator creator) {
+  protected DataSet getDataSet(final String dataSetId, final DataSetCreator creator) {
     DataSet result = myDataSets.get(dataSetId);
     if (result != null || creator == null) {
       return result;
     }
-    result = creator.create(this);
-    assert result.getId().equals(dataSetId);
-    result.init();
-    DataSet existing = myDataSets.putIfAbsent(dataSetId, result);
-    if (existing != null) {
-      // ignored, drop dataSet
-      return existing;
-    }
-    return result;
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<DataSet>() {
+      @Override
+      public DataSet compute() {
+        DataSet result = creator.create(AbstractCache.this);
+        assert result.getId().equals(dataSetId);
+        result.init();
+        DataSet existing = myDataSets.putIfAbsent(dataSetId, result);
+        if (existing != null) {
+          // ignored, drop dataSet
+          return existing;
+        }
+        return result;
+      }
+    });
   }
 
   public List<DataSet> getDataSets() {
