@@ -640,10 +640,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //----root, deleted, etc.---
 
+  /*
+  replace with getContainingRoot==this and fix tests
+   */
   public boolean isRoot() {
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
   }
 
+  /*
+  replace with getTopmostAncestor
+   */
   public SNode getContainingRoot() {
     ModelAccess.assertLegalRead(this);
 
@@ -663,18 +669,34 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+  /*
+  replace with isDetached
+   */
   public boolean isDeleted() {
     return (myReferences.length == 0) && getParent() == null && !getModel().isRoot(this);
   }
 
+  /*
+  make model of detached nodes null
+  replace with getModel==null
+   */
   public boolean isDetached() {
     return getContainingRoot() == null;
   }
 
+  /*
+    refactor typesystem
+    !isDetached
+   */
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
   }
 
+  /*
+  calling this means we've held a node between read actions and now it is deleted
+  this won't happen if we store only node pointers
+  in this case, isDisposed() can be replaced with false
+   */
   public boolean isDisposed() {
     return myModel != null && myModel.isDisposed();
   }
