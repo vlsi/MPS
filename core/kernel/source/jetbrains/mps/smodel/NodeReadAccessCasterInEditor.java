@@ -170,14 +170,14 @@ public class NodeReadAccessCasterInEditor {
     }
 
     public void fireNodeReadAccessed(SNode node) {
-      if (myEventsBlocked || myListenersStack.isEmpty()) {
+      if (myEventsBlocked || skipNotification(node)) {
         return;
       }
       myListenersStack.peek().nodeUnclassifiedReadAccess(node);
     }
 
     public void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
-      if (myEventsBlocked || myPropertyReadEventsSuppressed || myListenersStack.isEmpty()) {
+      if (myEventsBlocked || myPropertyReadEventsSuppressed || skipNotification(node)) {
         return;
       }
 
@@ -197,10 +197,14 @@ public class NodeReadAccessCasterInEditor {
     }
 
     public void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
-      if (myEventsBlocked ||myListenersStack.isEmpty() || !jetbrains.mps.util.SNodeOperations.isRegistered(sourceNode) || !sourceNode.getModelInternal().canFireEvent()) {
+      if (myEventsBlocked || skipNotification(sourceNode) || !sourceNode.getModelInternal().canFireEvent()) {
         return;
       }
       myListenersStack.peek().addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
+    }
+
+    private boolean skipNotification(SNode node) {
+      return myListenersStack.isEmpty() || !jetbrains.mps.util.SNodeOperations.isRegistered(node);
     }
   }
 }
