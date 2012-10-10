@@ -18,7 +18,6 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.template.TracingUtil;
@@ -259,24 +258,23 @@ public class TextGenerator {
 
       }
 
+      if (unchangedDependencies.isEmpty() || !myGenerateDebugInfo) {
+        return;
+      }
       DebugInfo statusDebugInfo = status.getDebugInfo();
-      if (!unchangedDependencies.isEmpty()) {
-        if (statusDebugInfo == null) {
-          // touch
-          myStreamHandler.touch(TraceInfoCache.getInstance().getCacheFileName(), false);
-        } else {
-          for (GenerationRootDependencies rdep : unchangedDependencies) {
-            // re-register debug
-            if (debugInfoCache == null) {
-              debugInfoCache = TraceInfoCache.getInstance().get(originalInputModel);
-            }
-            if (debugInfoCache != null) {
-              SNode node = rdep.getRootId() == null ? null : new SNodePointer(originalInputModel.getSModelReference().toString(), rdep.getRootId()).getNode();
-              DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(node);
-              if (infoRoot != null) {
-                statusDebugInfo.replaceRoot(infoRoot);
-              }
-            }
+      if (statusDebugInfo == null) {
+        status.setDebugInfo(statusDebugInfo = new DebugInfo());
+      }
+      for (GenerationRootDependencies rdep : unchangedDependencies) {
+        // re-register debug
+        if (debugInfoCache == null) {
+          debugInfoCache = TraceInfoCache.getInstance().get(originalInputModel);
+        }
+        if (debugInfoCache != null) {
+          SNode node = rdep.getRootId() == null ? null : new SNodePointer(originalInputModel.getSModelReference().toString(), rdep.getRootId()).getNode();
+          DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(node);
+          if (infoRoot != null) {
+            statusDebugInfo.replaceRoot(infoRoot);
           }
         }
       }
