@@ -82,8 +82,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     this(model, conceptFqName, true);
   }
 
-
-
   public SModel getModelInternal() {
     return myModel;
   }
@@ -814,6 +812,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.unRegisterFromModel();
     }
+
+    myModel = null;
   }
 
   void registerInModel(SModel model) {
