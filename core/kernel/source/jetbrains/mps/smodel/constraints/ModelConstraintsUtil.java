@@ -24,15 +24,11 @@ import jetbrains.mps.scope.DefaultScope;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.search.EmptySearchScope;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -233,53 +229,6 @@ public class ModelConstraintsUtil {
    */
 
   @Deprecated
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
-    String linkRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
-    SNode linkTarget = SModelUtil.getLinkDeclarationTarget(referenceLinkDeclaration);
-    return getSearchScope(createReferentConstraintContext(false, enclosingNode, referenceNode, linkRole, 0, linkTarget, containingLinkDeclaration), referenceNodeConcept, linkRole, context);
-  }
-
-  /**
-   * @param linkRole - use *genuine* link role here!!!
-   */
-  @Deprecated
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, String linkRole, SNode containingLinkDeclaration, IOperationContext context) {
-    return getSearchScope(createReferentConstraintContext(false, enclosingNode, referenceNode, linkRole, 0, null, containingLinkDeclaration), referenceNodeConcept, linkRole, context);
-  }
-
-  @Deprecated
-  private static SearchScopeStatus getSearchScope(final ReferentConstraintContext referentConstraintContext, final SNode referenceNodeConcept, final String linkRole, final IOperationContext context) {
-    ModelAccess.assertLegalRead();
-    final ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
-
-    return TypeContextManager.getInstance().runResolveAction(new Computable<SearchScopeStatus>() {
-      @Override
-      public SearchScopeStatus compute() {
-        try {
-
-          DefaultReferencePresentation referencePresentation = null;
-          if (scopeProvider != null) {
-            referencePresentation = scopeProvider.hasPresentation() ? new DefaultReferencePresentation(context, referentConstraintContext, scopeProvider) : null;
-            ISearchScope searchScope = scopeProvider.createSearchScope(context, referentConstraintContext);
-            if (!(searchScope instanceof UndefinedSearchScope)) {
-              return newOK(searchScope,
-                referencePresentation,
-                false,
-                scopeProvider.getSearchScopeValidatorNode());
-            }
-          }
-          // global search scope
-          ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(referentConstraintContext.getModel(), false, context.getScope());
-          return newOK(searchScope, referencePresentation, true, null);
-        } catch (Exception t) {
-          LOG.error(t, referentConstraintContext.getReferenceNode() != null ? referentConstraintContext.getReferenceNode() : referentConstraintContext.getEnclosingNode());
-          return new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
-        }
-      }
-    });
-  }
-
-  @Deprecated
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, SNode containingLinkDeclaration, IOperationContext context) {
     String linkRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     SNode linkTarget = SModelUtil.getLinkDeclarationTarget(referenceLinkDeclaration);
@@ -298,118 +247,22 @@ public class ModelConstraintsUtil {
     return new DefaultReferencePresentation(context, referentConstraintContext, scopeProvider);
   }
 
-  @Deprecated
-  public static ISearchScope createDefaultScope(SModel model, IOperationContext context) {
-    return SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
-  }
-
-  @Deprecated
-  public static SearchScopeStatus createSearchScope(final INodeReferentSearchScopeProvider scopeProvider,
-                                                    SModel model,
-                                                    SNode enclosingNode,
-                                                    SNode referenceNode,
-                                                    SNode linkTarget,
-                                                    SNode containingLinkDeclaration,
-                                                    final IOperationContext context) {
-    if (scopeProvider == null) return new OK(createDefaultScope(model, context), null, true, null);
-    final ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);
-    try {
-      ISearchScope searchScope = TypeContextManager.getInstance().runResolveAction(new Computable<ISearchScope>() {
-        @Override
-        public ISearchScope compute() {
-          return scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
-        }
-      });
-      if (searchScope instanceof UndefinedSearchScope) {
-        return new OK(createDefaultScope(model, context), null, true, null);
-      } else {
-        return new OK(searchScope, null, false, scopeProvider.getSearchScopeValidatorNodePointer());
-      }
-    } catch (Throwable t) {
-      return new SearchScopeStatus.ERROR(t.getMessage());
-    }
-  }
-
-  @Deprecated
-  public static INodeReferentSearchScopeProvider getSearchScopeProvider(SNode referenceNodeConcept, String linkRole) {
-    // todo: rewrite it
-    final ReferenceScopeProvider provider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
-
-    if (provider == null) {
-      return null;
-    }
-
-    return new INodeReferentSearchScopeProvider() {
-      @Override
-      public ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context) {
-        return provider.createSearchScope(operationContext, _context);
-      }
-
-      @Override
-      public boolean hasPresentation() {
-        return provider.hasPresentation();
-      }
-
-      @Override
-      public String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context) {
-        return provider.getPresentation(operationContext, _context);
-      }
-
-      @Override
-      public SNodePointer getSearchScopeValidatorNodePointer() {
-        return provider.getSearchScopeValidatorNode();
-      }
-    };
-  }
-
-  @Deprecated
-  private static OK newOK(ISearchScope searchScope, IReferencePresentation presentation, boolean isDefault, SNodePointer searchScopeFactory) {
-    if (searchScope == null) {
-      searchScope = new EmptySearchScope();
-    }
-    return new OK(searchScope, presentation, isDefault, searchScopeFactory);
-  }
-
-  /*
-   * DEPRECATED API, to be removed after MPS 3.0 ***
-   */
-
-  /**
-   * Use getScope(reference) instead
-   */
   @NotNull
-  @Deprecated
-  @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
     return ModelConstraints.getScope(reference);
   }
 
-  /**
-   * Use getReferenceDescriptor(reference) instead
-   */
   @NotNull
-  @Deprecated
-  @ToRemove(version = 3.0)
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference, IOperationContext context) {
     return getReferenceDescriptor(reference);
   }
 
-  /**
-   * Use getScope(enclosingNode, role, index) instead
-   */
   @NotNull
-  @Deprecated
-  @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
     return ModelConstraints.getScope(enclosingNode, role, index);
   }
 
-  /**
-   * Use getReferenceDescriptor(enclosingNode, role, index) instead
-   */
   @Nullable
-  @Deprecated
-  @ToRemove(version = 3.0)
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
@@ -420,9 +273,6 @@ public class ModelConstraintsUtil {
     }
   }
 
-  /**
-   * Use getSmartReferenceDescriptor(enclosingNode, role, index, smartConcept) instead
-   */
   @Nullable
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept, IOperationContext context) {
     ModelAccess.assertLegalRead();
@@ -434,12 +284,7 @@ public class ModelConstraintsUtil {
     }
   }
 
-  /**
-   * Use getScope(enclosingNode, role, index, smartConcept) instead
-   */
   @NotNull
-  @Deprecated
-  @ToRemove(version = 3.0)
   public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
     return ModelConstraints.getScope(enclosingNode, role, index, smartConcept);
   }
