@@ -616,7 +616,7 @@ public class SNodeOperations {
     if (referenceNode == null) {
       return null;
     }
-    Scope scope = ModelConstraintsUtil.getScope(referenceNode, referenceRole, 0, context);
+    Scope scope = ModelConstraintsUtil.getScope(referenceNode, referenceRole, 0);
     if (scope instanceof ErrorScope) {
       return null;
     }

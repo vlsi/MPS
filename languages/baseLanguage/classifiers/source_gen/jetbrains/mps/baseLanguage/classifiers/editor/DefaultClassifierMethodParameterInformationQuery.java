@@ -27,7 +27,7 @@ public class DefaultClassifierMethodParameterInformationQuery extends Parameters
       SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation") :
       node
     );
-    Scope scope = ModelConstraintsUtil.getScope(methodCall, "method", 0, editorContext.getOperationContext());
+    Scope scope = ModelConstraintsUtil.getScope(methodCall, "method", 0);
     String name = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "member", false), "name");
     Iterable<SNode> availableElements = scope.getAvailableElements((name != null ?
       name :
