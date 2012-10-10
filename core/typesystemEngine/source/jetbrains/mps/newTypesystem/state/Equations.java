@@ -192,7 +192,7 @@ public class Equations {
       SNode parent = child.getParent();
       assert parent != null;
       SNode childReplacement = CopyUtil.copy(childrenReplacement.get(child));
-      parent.replaceChild(child, childReplacement);
+      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(child, childReplacement);
     }
   }
 

@@ -52,7 +52,7 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
     if (oldChild == null) {
       parentNode.addChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
     } else {
-      parentNode.replaceChild(oldChild, newChild);
+      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
       oldChild.delete();
     }
 

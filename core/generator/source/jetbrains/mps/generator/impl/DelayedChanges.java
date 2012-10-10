@@ -147,7 +147,7 @@ public class DelayedChanges {
                 GeneratorUtil.describe(myContext.getInput(), "input"),
                 GeneratorUtil.describe(getMapSrcMacro(), "template"));
             }
-            parent.replaceChild(myChildToReplace, child);
+            org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(myChildToReplace, child);
           }
           myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
 

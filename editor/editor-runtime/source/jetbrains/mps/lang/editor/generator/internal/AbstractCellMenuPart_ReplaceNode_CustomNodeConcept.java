@@ -84,7 +84,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
    * implements IChildNodeSetter
    */
   public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope) {
-    parentNode.replaceChild(oldNode, newNode);
+    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
   }
 }

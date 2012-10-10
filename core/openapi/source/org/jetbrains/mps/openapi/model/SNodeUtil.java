@@ -26,28 +26,37 @@ public class SNodeUtil {
   /**
    * Replaces node with another, preserving attributes
    */
-//  public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
-//    SNode nodeParent = node.getParent();
-//    if (nodeParent == null) {
-//      if (node.isRoot()) {
-//        SModel model = node.getModel();
-//        node.delete();
-//        model.addRoot(replacer);
-//      } else {
-//        return replacer;
-//      }
-//    }
-//    if (replacer != null) {
-//      SNode anotherNodeParent = replacer.getParent();
-//      if (anotherNodeParent != null) {
-//        anotherNodeParent.removeChild(replacer);
-//      }
-//      nodeParent.replaceChild(node, replacer);
-//    } else {
-//      nodeParent.removeChild(node);
-//    }
-//    return replacer;
-//  }
+  public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
+    SNode nodeParent = node.getParent();
+    if (nodeParent == null) {
+      SModel model = node.getContainingModel();
+      node.delete();
+      ((jetbrains.mps.smodel.SModel) model).addRoot((jetbrains.mps.smodel.SNode) replacer);
+      return replacer;
+    }
+
+    // old and new child can have the same node Id
+    // thus it is important to remove old child first
+
+
+    if (replacer != null) {
+      SNode replacerParent = replacer.getParent();
+      if (replacerParent != null) {
+        replacerParent.removeChild(replacer);
+      }
+
+      SNode anchor = nodeParent.getPrevChild(node);
+      String role = nodeParent.getRoleOf(node);
+      assert role != null;
+      nodeParent.removeChild(node);
+      nodeParent.insertChild(role, replacer, anchor);
+    } else {
+      nodeParent.removeChild(node);
+    }
+
+    return replacer;
+  }
+
   public static String getDebugText(@NotNull SNode node) {
     String roleText = "";
     if (node.getContainingModel() != null) {

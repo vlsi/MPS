@@ -49,7 +49,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart {
                 if (oldChild == null) {
                   parentNode.addChild(role, newChild);
                 } else {
-                  parentNode.replaceChild(oldChild, newChild);
+                  org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
                 }
                 return newChild;
               }

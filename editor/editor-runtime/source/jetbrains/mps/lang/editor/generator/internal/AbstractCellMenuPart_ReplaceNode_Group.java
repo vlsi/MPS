@@ -64,7 +64,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
         public SNode doSubstitute(String pattern) {
           SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context.getScope(), context);
           if (newNode != node) {
-            parent.replaceChild(node, newNode);
+            org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
             node.delete();
           }
 

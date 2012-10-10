@@ -25,7 +25,7 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
     if (oldChild != null) {
-      parentNode.replaceChild(oldChild, newChild);
+      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
       oldChild.delete();
     }
     return newChild;

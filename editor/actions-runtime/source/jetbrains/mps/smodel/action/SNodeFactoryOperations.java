@@ -104,7 +104,7 @@ public class SNodeFactoryOperations {
       model.addRoot(newChild);
       model.removeRoot(oldChild);
     } else {
-      oldChildParent.replaceChild(oldChild, newChild);
+      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
     }
     copyAllAttributes(oldChild, newChild);
     return newChild;

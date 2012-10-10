@@ -638,16 +638,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return o != null ? o.toString() : null;
   }
 
-  public void replaceChild(SNode oldChild, SNode newChild) {
-    SNode anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
-    String role = oldChild.getRole();
-    assert role != null;
-    // old and new child can have the same node Id
-    // thus it is important to remove old child first
-    removeChild(oldChild);
-    insertChild(role, newChild, anchor);
-  }
-
   //----root, deleted, etc.---
 
   public boolean isRoot() {
@@ -1321,6 +1311,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public String getDebugText() {
     return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this);
   }
+
+  @Deprecated
+    /**
+     * Inline content in java code, use migration in MPS
+     * @Deprecated in 3.0
+     */
+    public void replaceChild(SNode oldChild, SNode newChild) {
+      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
+    }
 
   @Deprecated
   /**

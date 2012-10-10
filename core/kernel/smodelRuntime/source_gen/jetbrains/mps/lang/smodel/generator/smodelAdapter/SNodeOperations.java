@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -490,12 +491,7 @@ public class SNodeOperations {
     if (newChild == null) {
       return null;
     }
-    if (oldChildParent == null) {
-      model.addRoot(newChild);
-      model.removeRoot(oldChild);
-    } else {
-      oldChildParent.replaceChild(oldChild, newChild);
-    }
+    SNodeUtil.replaceWithAnother(oldChild, newChild);
     SNodeOperations.copyAllAttributes(oldChild, newChild);
     return newChild;
   }
@@ -525,26 +521,7 @@ public class SNodeOperations {
 
   public static SNode replaceWithAnother(SNode node, SNode anotherNode) {
     assert node != null : "can't replace node. node is NULL";
-    SNode nodeParent = node.getParent();
-    if (nodeParent == null) {
-      if (node.isRoot()) {
-        SModel model = node.getModel();
-        node.delete();
-        model.addRoot(anotherNode);
-      } else {
-        return anotherNode;
-      }
-    }
-    if (anotherNode != null) {
-      SNode anotherNodeParent = anotherNode.getParent();
-      if (anotherNodeParent != null) {
-        anotherNodeParent.removeChild(anotherNode);
-      }
-      nodeParent.replaceChild(node, anotherNode);
-    } else {
-      nodeParent.removeChild(node);
-    }
-    return anotherNode;
+    return ((SNode) SNodeUtil.replaceWithAnother(node, anotherNode));
   }
 
   public static void deleteNode(SNode node) {
