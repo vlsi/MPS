@@ -187,23 +187,25 @@ public class TraceInfoUtil {
   public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        List<ScopePositionInfo> resultList = info.getInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
+        Map<DebugInfoRoot, List<ScopePositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
           public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
             return root.getScopePositions();
           }
         });
-        if (ListSequence.fromList(resultList).isEmpty()) {
+        if (MapSequence.fromMap(resultList).isEmpty()) {
           return null;
         }
-        Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
-          public ScopePositionInfo select(ScopePositionInfo it) {
-            return it;
-          }
-        }, true);
-        for (ScopePositionInfo scopeInfo : sorted) {
-          SNode var = scopeInfo.getVarNode(varName);
-          if (var != null) {
-            return var;
+        for (DebugInfoRoot root : SetSequence.fromSet(MapSequence.fromMap(resultList).keySet())) {
+          Iterable<ScopePositionInfo> sorted = ListSequence.fromList(MapSequence.fromMap(resultList).get(root)).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
+            public ScopePositionInfo select(ScopePositionInfo it) {
+              return it;
+            }
+          }, true);
+          for (ScopePositionInfo scopeInfo : sorted) {
+            String varInfo = scopeInfo.getVarId(varName);
+            if ((varInfo != null && varInfo.length() > 0)) {
+              return root.findNode(varInfo);
+            }
           }
         }
         return null;
