@@ -24,6 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
+import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
@@ -74,10 +75,19 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     SNodePointer ruleNodeId = new SNodePointer(ruleNode);
     environment.getTracer().pushRule(ruleNodeId);
     try {
+      if (environment.getGenerator().isIncremental()) {
+        // turn off tracing
+        NodeReadEventsCaster.setNodesReadListener(null);
+      }
+
       return apply(context, environment.getEnvironment(context.getInput(), this));
     } catch (AbandonRuleInputException e) {
       return Collections.emptyList();
     } finally {
+      if (environment.getGenerator().isIncremental()) {
+        // restore tracing
+        NodeReadEventsCaster.removeNodesReadListener();
+      }
       environment.getTracer().closeRule(ruleNodeId);
     }
   }
