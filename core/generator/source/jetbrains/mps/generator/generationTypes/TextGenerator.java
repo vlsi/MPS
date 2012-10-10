@@ -189,15 +189,13 @@ public class TextGenerator {
           DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
           if (cachedDebugInfo != null) {
 
-            List<SNode> unchangedRoots = new ArrayList<SNode>();
+            List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
             String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
 
             for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
               String rootId = dependency.getRootId();
               if (rootId == null) continue;
-              SNode node = new SNodePointer(inputModelUid, rootId).getNode();
-              if (node == null) continue;
-              unchangedRoots.add(node);
+              unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
             }
 
             DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
