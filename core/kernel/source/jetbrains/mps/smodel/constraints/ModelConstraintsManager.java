@@ -15,24 +15,12 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
 @Deprecated
 public class ModelConstraintsManager {
-  private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
-
-  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
-
   private static ModelConstraintsManager INSTANCE = new ModelConstraintsManager();
 
   public static ModelConstraintsManager getInstance() {
