@@ -17,6 +17,9 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalOperationContext;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.DefaultScope;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
@@ -33,6 +36,7 @@ import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,9 +51,9 @@ public class ModelConstraintsUtil {
    *  returns Scope for existing reference
    */
   @NotNull
-  public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
+  public static Scope getScope(@NotNull SReference reference) {
     ModelAccess.assertLegalRead();
-    return new ReferenceDescriptor(reference, context).getScope();
+    return new ReferenceDescriptor(reference).getScope();
   }
 
   /*
@@ -85,9 +89,9 @@ public class ModelConstraintsUtil {
   *  returns Scope & Presentation for existing reference
   */
   @NotNull
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference, IOperationContext context) {
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
     ModelAccess.assertLegalRead();
-    return new ReferenceDescriptor(reference, context);
+    return new ReferenceDescriptor(reference);
   }
 
   @Nullable
@@ -153,15 +157,13 @@ public class ModelConstraintsUtil {
     /* genuine role */
     private final String myRefRole;
     private final ReferentConstraintContext myReferentConstraintContext;
-    private final IOperationContext myOperationContext;
     @Nullable
     private final SReference myReference;
     @Nullable
     private final ReferenceScopeProvider myScopeProvider;
 
-    private ReferenceDescriptor(@NotNull SReference reference, IOperationContext context) {
+    private ReferenceDescriptor(@NotNull SReference reference) {
       myReference = reference;
-      myOperationContext = context;
       SNode node = reference.getSourceNode();
       myRefRole = reference.getRole();
       myRefConcept = node.getConceptDeclarationNode();
@@ -172,7 +174,6 @@ public class ModelConstraintsUtil {
 
     private ReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index, IOperationContext context) {
       myReference = null;
-      myOperationContext = context;
       SNode scopeReference = referenceNode.getLinkDeclaration(role);
       if (scopeReference == null) {
         throw new IllegalArgumentException("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
@@ -185,7 +186,6 @@ public class ModelConstraintsUtil {
 
     private ReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
       myReference = null;
-      myOperationContext = context;
       myRefConcept = smartConcept;
       final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
       if (smartReference == null) {
@@ -206,7 +206,7 @@ public class ModelConstraintsUtil {
         public Scope compute() {
           try {
             if (myScopeProvider != null) {
-              Scope searchScope = myScopeProvider.createScope(myOperationContext, myReferentConstraintContext);
+              Scope searchScope = myScopeProvider.createScope(getOperationContext(), myReferentConstraintContext);
               if (searchScope != null) {
                 if (myReference != null && searchScope instanceof Adapter) {
                   return new RefAdapter(((Adapter) searchScope).getSearchScope(), myReference);
@@ -215,7 +215,7 @@ public class ModelConstraintsUtil {
               }
             }
             // global search scope
-            return new DefaultScope(myReferentConstraintContext.getModel(), myOperationContext.getScope(), NameUtil.nodeFQName(myReferentConstraintContext.getLinkTarget()));
+            return new DefaultScope(myReferentConstraintContext.getModel(), getModuleScope(), NameUtil.nodeFQName(myReferentConstraintContext.getLinkTarget()));
           } catch (Exception t) {
             LOG.error(t, myReferentConstraintContext.getReferenceNode() != null ? myReferentConstraintContext.getReferenceNode() : myReferentConstraintContext.getEnclosingNode());
             return new ErrorScope("can't create search scope for role `" + myRefRole + "' in '" + myRefConcept.getName() + "'");
@@ -225,7 +225,44 @@ public class ModelConstraintsUtil {
     }
 
     public IReferencePresentation getReferencePresentation() {
-      return myScopeProvider != null && myScopeProvider.hasPresentation() ? new DefaultReferencePresentation(myOperationContext, myReferentConstraintContext, myScopeProvider) : null;
+      return myScopeProvider != null && myScopeProvider.hasPresentation() ? new DefaultReferencePresentation(getOperationContext(), myReferentConstraintContext, myScopeProvider) : null;
+    }
+
+    @NotNull
+    private IOperationContext getOperationContext() {
+      // remove usages of this method as much as can!
+      IModule module = getModule();
+      if (module != null) {
+        return new ConstraintsOperationContext(module);
+      } else {
+        return new GlobalOperationContext();
+      }
+    }
+
+    @NotNull
+    private IScope getModuleScope() {
+      IModule module = getModule();
+      return module != null ? module.getScope() : GlobalScope.getInstance();
+    }
+
+    @Nullable
+    private IModule getModule() {
+      if (myReference == null) {
+        return null;
+      }
+      SNode sourceNode = myReference.getSourceNode();
+      if (sourceNode == null) {
+        return null;
+      }
+      SModel model = sourceNode.getModel();
+      if (model == null) {
+        return null;
+      }
+      SModelDescriptor modelDescriptor = model.getModelDescriptor();
+      if (modelDescriptor == null) {
+        return null;
+      }
+      return modelDescriptor.getModule();
     }
   }
 
@@ -331,6 +368,7 @@ public class ModelConstraintsUtil {
       return new SearchScopeStatus.ERROR(t.getMessage());
     }
   }
+
   @Deprecated
   public static INodeReferentSearchScopeProvider getSearchScopeProvider(SNode referenceNodeConcept, String linkRole) {
     // todo: rewrite it
@@ -369,5 +407,26 @@ public class ModelConstraintsUtil {
       searchScope = new EmptySearchScope();
     }
     return new OK(searchScope, presentation, isDefault, searchScopeFactory);
+  }
+
+  /**
+   * Use getScope(reference) instead
+   */
+  @NotNull
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
+    // use
+    return getScope(reference);
+  }
+
+  /**
+   * Use getReferenceDescriptor(reference) instead
+   */
+  @NotNull
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference, IOperationContext context) {
+    return getReferenceDescriptor(reference);
   }
 }

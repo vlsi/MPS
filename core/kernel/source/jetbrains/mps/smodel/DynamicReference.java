@@ -80,7 +80,7 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    Scope scope = ModelConstraintsUtil.getScope(this, new ReferenceResolvingContext(getModule()));
+    Scope scope = ModelConstraintsUtil.getScope(this);
     if (scope instanceof ErrorScope) {
       if (!silently) {
         reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
@@ -139,32 +139,6 @@ public class DynamicReference extends SReferenceBase {
 
   public void setOrigin(DynamicReferenceOrigin origin) {
     myOrigin = origin;
-  }
-
-  public class ReferenceResolvingContext extends StandaloneMPSContext {
-
-    private IModule module;
-
-    public ReferenceResolvingContext(IModule module) {
-      assert module != null;
-      this.module = module;
-    }
-
-    @Override
-    public Project getProject() {
-      return null;
-    }
-
-    @Override
-    public IModule getModule() {
-      return module;
-    }
-
-    @NotNull
-    @Override
-    public IScope getScope() {
-      return module != null ? module.getScope() : GlobalScope.getInstance() /* FIXME */;
-    }
   }
 
   public static class DynamicReferenceOrigin {
