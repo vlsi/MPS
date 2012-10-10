@@ -107,6 +107,7 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      ExecutionSettings_StyleSheet.getPersistentConfigurationRef(editorCell).apply(editorCell);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -140,10 +141,7 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.STRIKE_OUT, true);
-      }
+      ExecutionSettings_StyleSheet.getPersistentConfigurationRefDeprecated(editorCell).apply(editorCell);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
