@@ -62,6 +62,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
+  private SModel myOldModel;// DO NOT USE!!!
   private SNodeId myId;
 
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
@@ -735,6 +736,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getParent().getLinkDeclaration(getRole());
   }
 
+  public SModel getOldModel(){
+    LOG.error("DO NOT USE!!!", new Throwable());
+    return myOldModel;
+  }
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
@@ -811,6 +816,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       child.unRegisterFromModel();
     }
 
+    myOldModel = myModel;
     myModel = null;
   }
 
