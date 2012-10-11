@@ -2491,12 +2491,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public boolean doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodePointer nodePointer) {
-    if ((cell == null) && node != null) {
-      return true;
-    }
+    if (cell == null && node != null) return true;
+
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
     Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(nodePointer)));
+
+    if (sNodes != null && sNodes.contains(node)) return true;
+    return nodeProxies != null && nodeProxies.contains(nodePointer);
   }
 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
