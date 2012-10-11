@@ -77,7 +77,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
 
       try {
 
-        List<SNode> nodes = parser.parse(code, model.getLongName(), FeatureKind.CLASS_STUB, true);
+        List<SNode> nodes = parser.parse(code, model.getLongName(), FeatureKind.CLASS_STUB, true).getNodes();
         for (SNode n : ListSequence.fromList(nodes)) {
           model.addRoot(n);
         }
@@ -96,7 +96,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
 
   public List<SNode> parseFile(String contents, SModel model) {
     JavaParser parser = new JavaParser();
-    return parser.parse(contents, SModelOperations.getModelName(model), FeatureKind.CLASS_STUB, true);
+    return parser.parse(contents, SModelOperations.getModelName(model), FeatureKind.CLASS_STUB, true).getNodes();
   }
 
   public Collection<NodeDescriptor> getNodeDescriptors() {

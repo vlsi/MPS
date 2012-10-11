@@ -134,6 +134,7 @@
   <unitInfo fileName="IVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="IVisible_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor" />
   <unitInfo fileName="IWillBeClassifier_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor" />
+  <unitInfo fileName="IYetUnresolved_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_BehaviorDescriptor" />
   <unitInfo fileName="IfStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IfStatement_BehaviorDescriptor" />
   <unitInfo fileName="ImplicitAnnotationInstanceValue_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_BehaviorDescriptor" />
   <unitInfo fileName="ImplicitAnnotationMethodKind_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationMethodKind_BehaviorDescriptor" />
@@ -244,10 +245,10 @@
   <unitInfo fileName="Type_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
   <unitInfo fileName="UnaryMinus_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnaryMinus_BehaviorDescriptor" />
   <unitInfo fileName="UndefinedType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UndefinedType_BehaviorDescriptor" />
-  <unitInfo fileName="UnknownConsCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_BehaviorDescriptor" />
-  <unitInfo fileName="UnknownDotCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownDotCall_BehaviorDescriptor" />
-  <unitInfo fileName="UnknownLocalCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownLocalCall_BehaviorDescriptor" />
-  <unitInfo fileName="UnknownNameRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_BehaviorDescriptor" />
+  <unitInfo fileName="UnknownConsCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_BehaviorDescriptor" />
+  <unitInfo fileName="UnknownDotCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownDotCall_BehaviorDescriptor" />
+  <unitInfo fileName="UnknownLocalCall_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownLocalCall_BehaviorDescriptor" />
+  <unitInfo fileName="UnknownNameRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_BehaviorDescriptor" />
   <unitInfo fileName="UnknownNew_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNew_BehaviorDescriptor" />
   <unitInfo fileName="UnresolvedNameReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnresolvedNameReference_BehaviorDescriptor" />
   <unitInfo fileName="UnsignedRightShiftAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnsignedRightShiftAssignmentExpression_BehaviorDescriptor" />
@@ -13555,6 +13556,152 @@
     </scopeInfo>
     <unitInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalPropertyReference_Behavior" />
   </root>
+  <root nodeId="6072020170585962860" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
+    <nodeInfo nodeId="4872723285943445437" fileName="UnknownDotCall_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319856162" fileName="UnknownDotCall_Behavior.java" startLine="19" startPosition="24" endLine="20" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319856158" fileName="UnknownDotCall_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943374074" fileName="UnknownDotCall_Behavior.java" startLine="22" startPosition="28" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319856259" fileName="UnknownDotCall_Behavior.java" startLine="23" startPosition="18" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943444570" fileName="UnknownDotCall_Behavior.java" startLine="25" startPosition="106" endLine="26" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4872723285943444789" fileName="UnknownDotCall_Behavior.java" startLine="26" startPosition="102" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943444868" fileName="UnknownDotCall_Behavior.java" startLine="28" startPosition="105" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6072020170586013326" fileName="UnknownDotCall_Behavior.java" startLine="29" startPosition="37" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4872723285943444853" fileName="UnknownDotCall_Behavior.java" startLine="30" startPosition="18" endLine="31" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4872723285943444782" fileName="UnknownDotCall_Behavior.java" startLine="32" startPosition="7" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5222882000525142675" fileName="UnknownDotCall_Behavior.java" startLine="33" startPosition="0" endLine="34" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5222882000525142716" fileName="UnknownDotCall_Behavior.java" startLine="34" startPosition="115" endLine="35" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5222882000525143209" fileName="UnknownDotCall_Behavior.java" startLine="35" startPosition="144" endLine="36" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5222882000525143097" fileName="UnknownDotCall_Behavior.java" startLine="36" startPosition="135" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4872723285943444678" fileName="UnknownDotCall_Behavior.java" startLine="37" startPosition="30" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943445021" fileName="UnknownDotCall_Behavior.java" startLine="39" startPosition="109" endLine="40" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4872723285943445501" fileName="UnknownDotCall_Behavior.java" startLine="41" startPosition="7" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943445503" fileName="UnknownDotCall_Behavior.java" startLine="42" startPosition="0" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6072020170586013336" fileName="UnknownDotCall_Behavior.java" startLine="43" startPosition="20" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319856316" fileName="UnknownDotCall_Behavior.java" startLine="44" startPosition="20" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856322" fileName="UnknownDotCall_Behavior.java" startLine="46" startPosition="106" endLine="47" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319856324" fileName="UnknownDotCall_Behavior.java" startLine="47" startPosition="89" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047320058360" fileName="UnknownDotCall_Behavior.java" startLine="48" startPosition="0" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047320058354" fileName="UnknownDotCall_Behavior.java" startLine="49" startPosition="69" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856325" fileName="UnknownDotCall_Behavior.java" startLine="50" startPosition="0" endLine="51" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319856331" fileName="UnknownDotCall_Behavior.java" startLine="51" startPosition="115" endLine="52" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319856339" fileName="UnknownDotCall_Behavior.java" startLine="52" startPosition="140" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856340" fileName="UnknownDotCall_Behavior.java" startLine="53" startPosition="0" endLine="54" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319856346" fileName="UnknownDotCall_Behavior.java" startLine="54" startPosition="126" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319856352" fileName="UnknownDotCall_Behavior.java" startLine="55" startPosition="66" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856353" fileName="UnknownDotCall_Behavior.java" startLine="56" startPosition="0" endLine="57" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319856364" fileName="UnknownDotCall_Behavior.java" startLine="57" startPosition="137" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319856370" fileName="UnknownDotCall_Behavior.java" startLine="58" startPosition="30" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856377" fileName="UnknownDotCall_Behavior.java" startLine="60" startPosition="109" endLine="61" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319856386" fileName="UnknownDotCall_Behavior.java" startLine="62" startPosition="7" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856387" fileName="UnknownDotCall_Behavior.java" startLine="63" startPosition="0" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6072020170586013332" fileName="UnknownDotCall_Behavior.java" startLine="64" startPosition="23" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319856391" fileName="UnknownDotCall_Behavior.java" startLine="65" startPosition="20" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319856463" fileName="UnknownDotCall_Behavior.java" startLine="67" startPosition="12" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319856475" fileName="UnknownDotCall_Behavior.java" startLine="68" startPosition="30" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6072020170585962860" fileName="UnknownDotCall_Behavior.java" startLine="14" startPosition="38" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4872723285943444978" fileName="UnknownDotCall_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4018023047319856371" fileName="UnknownDotCall_Behavior.java" startLine="59" startPosition="0" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4018023047319856458" fileName="UnknownDotCall_Behavior.java" startLine="67" startPosition="10" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4872723285943444794" fileName="UnknownDotCall_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4872723285943374029" fileName="UnknownDotCall_Behavior.java" startLine="21" startPosition="0" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6072020170585962860" fileName="UnknownDotCall_Behavior.java" startLine="17" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="6072020170585962862" fileName="UnknownDotCall_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="4872723285943444981" fileName="UnknownDotCall_Behavior.java" startLine="39" startPosition="109" endLine="40" endPosition="130" />
+    <scopeInfo nodeId="4018023047319856376" fileName="UnknownDotCall_Behavior.java" startLine="60" startPosition="109" endLine="61" endPosition="130" />
+    <scopeInfo nodeId="4872723285943374030" fileName="UnknownDotCall_Behavior.java" startLine="22" startPosition="28" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4018023047319856459" fileName="UnknownDotCall_Behavior.java" startLine="67" startPosition="12" endLine="69" endPosition="18" />
+    <scopeInfo nodeId="6072020170585962860" fileName="UnknownDotCall_Behavior.java" startLine="14" startPosition="38" endLine="17" endPosition="0">
+      <varInfo nodeId="6072020170585962860" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4872723285943444795" fileName="UnknownDotCall_Behavior.java" startLine="28" startPosition="105" endLine="31" endPosition="20" />
+    <scopeInfo nodeId="4872723285943444978" fileName="UnknownDotCall_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="7">
+      <varInfo nodeId="4872723285943444979" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="4018023047319856371" fileName="UnknownDotCall_Behavior.java" startLine="59" startPosition="0" endLine="62" endPosition="7">
+      <varInfo nodeId="4018023047319856372" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="4872723285943374092" fileName="UnknownDotCall_Behavior.java" startLine="25" startPosition="106" endLine="45" endPosition="0">
+      <varInfo nodeId="5222882000525142676" varName="call" />
+      <varInfo nodeId="5222882000525143210" varName="sref" />
+      <varInfo nodeId="4872723285943444571" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="4018023047319856321" fileName="UnknownDotCall_Behavior.java" startLine="46" startPosition="106" endLine="66" endPosition="0">
+      <varInfo nodeId="4018023047319856341" varName="call" />
+      <varInfo nodeId="4018023047319856326" varName="dotExpr" />
+      <varInfo nodeId="4018023047319856354" varName="sref" />
+    </scopeInfo>
+    <scopeInfo nodeId="6072020170585962866" fileName="UnknownDotCall_Behavior.java" startLine="18" startPosition="81" endLine="70" endPosition="5">
+      <varInfo nodeId="4018023047319856163" varName="operand" />
+      <varInfo nodeId="4872723285943445438" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6072020170585962860" fileName="UnknownDotCall_Behavior.java" startLine="17" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="6072020170585962860" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6072020170585962860" fileName="UnknownDotCall_Behavior.java" startLine="14" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownDotCall_Behavior" />
+  </root>
+  <root nodeId="6072020170586282010" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
+    <nodeInfo nodeId="6021327890422132822" fileName="UnknownLocalCall_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6021327890422132843" fileName="UnknownLocalCall_Behavior.java" startLine="19" startPosition="24" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6021327890422132860" fileName="UnknownLocalCall_Behavior.java" startLine="20" startPosition="22" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2554663055367869510" fileName="UnknownLocalCall_Behavior.java" startLine="21" startPosition="0" endLine="22" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367869617" fileName="UnknownLocalCall_Behavior.java" startLine="22" startPosition="200" endLine="23" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367870767" fileName="UnknownLocalCall_Behavior.java" startLine="23" startPosition="200" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2554663055367870604" fileName="UnknownLocalCall_Behavior.java" startLine="24" startPosition="0" endLine="25" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367870783" fileName="UnknownLocalCall_Behavior.java" startLine="26" startPosition="60" endLine="27" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367870957" fileName="UnknownLocalCall_Behavior.java" startLine="27" startPosition="160" endLine="28" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367871068" fileName="UnknownLocalCall_Behavior.java" startLine="28" startPosition="116" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5222882000525082537" fileName="UnknownLocalCall_Behavior.java" startLine="29" startPosition="77" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5222882000525134993" fileName="UnknownLocalCall_Behavior.java" startLine="30" startPosition="19" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2554663055367871919" fileName="UnknownLocalCall_Behavior.java" startLine="31" startPosition="21" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2554663055367871195" fileName="UnknownLocalCall_Behavior.java" startLine="33" startPosition="12" endLine="34" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367871150" fileName="UnknownLocalCall_Behavior.java" startLine="34" startPosition="125" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367871491" fileName="UnknownLocalCall_Behavior.java" startLine="36" startPosition="60" endLine="37" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2554663055367871676" fileName="UnknownLocalCall_Behavior.java" startLine="38" startPosition="7" endLine="39" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2554663055367871735" fileName="UnknownLocalCall_Behavior.java" startLine="39" startPosition="123" endLine="40" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5222882000525082562" fileName="UnknownLocalCall_Behavior.java" startLine="40" startPosition="77" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5222882000525134948" fileName="UnknownLocalCall_Behavior.java" startLine="41" startPosition="19" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6021327890422132910" fileName="UnknownLocalCall_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6021327890422133144" fileName="UnknownLocalCall_Behavior.java" startLine="45" startPosition="27" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6021327890422133036" fileName="UnknownLocalCall_Behavior.java" startLine="47" startPosition="109" endLine="48" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6072020170586282061" fileName="UnknownLocalCall_Behavior.java" startLine="50" startPosition="5" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6072020170586282010" fileName="UnknownLocalCall_Behavior.java" startLine="14" startPosition="40" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2554663055367871327" fileName="UnknownLocalCall_Behavior.java" startLine="35" startPosition="24" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6021327890422132993" fileName="UnknownLocalCall_Behavior.java" startLine="46" startPosition="17" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6021327890422132918" fileName="UnknownLocalCall_Behavior.java" startLine="44" startPosition="0" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2554663055367870940" fileName="UnknownLocalCall_Behavior.java" startLine="33" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2554663055367870547" fileName="UnknownLocalCall_Behavior.java" startLine="25" startPosition="127" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6072020170586282010" fileName="UnknownLocalCall_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="6072020170586282012" fileName="UnknownLocalCall_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2554663055367871328" fileName="UnknownLocalCall_Behavior.java" startLine="36" startPosition="60" endLine="37" endPosition="156" />
+    <scopeInfo nodeId="6021327890422132996" fileName="UnknownLocalCall_Behavior.java" startLine="47" startPosition="109" endLine="48" endPosition="130" />
+    <scopeInfo nodeId="6072020170586282010" fileName="UnknownLocalCall_Behavior.java" startLine="14" startPosition="40" endLine="17" endPosition="0">
+      <varInfo nodeId="6072020170586282010" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6021327890422132993" fileName="UnknownLocalCall_Behavior.java" startLine="46" startPosition="17" endLine="49" endPosition="7">
+      <varInfo nodeId="6021327890422132994" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="6021327890422132919" fileName="UnknownLocalCall_Behavior.java" startLine="45" startPosition="27" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="2554663055367870548" fileName="UnknownLocalCall_Behavior.java" startLine="26" startPosition="60" endLine="32" endPosition="0">
+      <varInfo nodeId="2554663055367870784" varName="decl" />
+      <varInfo nodeId="2554663055367870958" varName="scall" />
+    </scopeInfo>
+    <scopeInfo nodeId="2554663055367870941" fileName="UnknownLocalCall_Behavior.java" startLine="33" startPosition="12" endLine="42" endPosition="21">
+      <varInfo nodeId="2554663055367871151" varName="decl" />
+      <varInfo nodeId="2554663055367871677" varName="icall" />
+      <varInfo nodeId="2554663055367871196" varName="instMethods" />
+    </scopeInfo>
+    <scopeInfo nodeId="6072020170586282016" fileName="UnknownLocalCall_Behavior.java" startLine="18" startPosition="81" endLine="51" endPosition="18">
+      <varInfo nodeId="6021327890422132844" varName="call" />
+      <varInfo nodeId="2554663055367869618" varName="instMethodsScope" />
+      <varInfo nodeId="6021327890422132823" varName="result" />
+      <varInfo nodeId="2554663055367870605" varName="staticMethods" />
+      <varInfo nodeId="2554663055367869511" varName="staticMethodsScope" />
+    </scopeInfo>
+    <scopeInfo nodeId="6072020170586282010" fileName="UnknownLocalCall_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6072020170586282010" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6072020170586282010" fileName="UnknownLocalCall_Behavior.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownLocalCall_Behavior" />
+  </root>
   <root nodeId="6307653274956830892" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="6307653274956830908" fileName="ParenthesizedExpression_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="9" startPosition="47" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -14024,187 +14171,250 @@
     <unitInfo nodeId="4859441577819369316" fileName="ConstructorInvocationStatement_Behavior.java" startLine="54" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior$QuotationClass_teq92u_a0d0b" />
     <unitInfo nodeId="8008512149545173647" fileName="ConstructorInvocationStatement_Behavior.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior" />
   </root>
+  <root nodeId="8136348407761606761" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="11" startPosition="38" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8136348407761606764" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="22" startPosition="114" endLine="23" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="27" startPosition="111" endLine="28" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8136348407761606763" fileName="IYetUnresolved_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="22" startPosition="114" endLine="23" endPosition="279" />
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="27" startPosition="111" endLine="28" endPosition="276" />
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="17" startPosition="78" endLine="19" endPosition="231">
+      <varInfo nodeId="8136348407761606761" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8136348407761606761" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="8136348407761606761" varName="callerConceptFqName" />
+      <varInfo nodeId="8136348407761606761" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="8136348407761606761" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="8136348407761606761" varName="callerConceptFqName" />
+      <varInfo nodeId="8136348407761606761" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8136348407761606761" fileName="IYetUnresolved_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
+  </root>
   <root nodeId="8473865358220196910" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
-    <nodeInfo nodeId="4018023047319628346" fileName="UnknownNameRef_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047319628349" fileName="UnknownNameRef_Behavior.java" startLine="23" startPosition="77" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047319628380" fileName="UnknownNameRef_Behavior.java" startLine="24" startPosition="59" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047319628354" fileName="UnknownNameRef_Behavior.java" startLine="25" startPosition="41" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4968167082049787335" fileName="UnknownNameRef_Behavior.java" startLine="26" startPosition="0" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4968167082049787594" fileName="UnknownNameRef_Behavior.java" startLine="27" startPosition="25" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4018023047319628284" fileName="UnknownNameRef_Behavior.java" startLine="28" startPosition="19" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4018023047319628286" fileName="UnknownNameRef_Behavior.java" startLine="29" startPosition="0" endLine="30" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4968167082049787325" fileName="UnknownNameRef_Behavior.java" startLine="30" startPosition="102" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4018023047319628361" fileName="UnknownNameRef_Behavior.java" startLine="32" startPosition="29" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4968167082049787541" fileName="UnknownNameRef_Behavior.java" startLine="33" startPosition="25" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4968167082049787628" fileName="UnknownNameRef_Behavior.java" startLine="34" startPosition="25" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134922151" fileName="UnknownNameRef_Behavior.java" startLine="35" startPosition="17" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2984049969134922156" fileName="UnknownNameRef_Behavior.java" startLine="36" startPosition="0" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134922048" fileName="UnknownNameRef_Behavior.java" startLine="37" startPosition="51" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4968167082049788000" fileName="UnknownNameRef_Behavior.java" startLine="39" startPosition="12" endLine="40" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2621000434129592200" fileName="UnknownNameRef_Behavior.java" startLine="40" startPosition="28" endLine="41" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4018023047319628366" fileName="UnknownNameRef_Behavior.java" startLine="42" startPosition="32" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2621000434129592195" fileName="UnknownNameRef_Behavior.java" startLine="44" startPosition="7" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4018023047319628367" fileName="UnknownNameRef_Behavior.java" startLine="45" startPosition="0" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2621000434129592438" fileName="UnknownNameRef_Behavior.java" startLine="46" startPosition="35" endLine="47" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4872723285943357001" fileName="UnknownNameRef_Behavior.java" startLine="47" startPosition="38" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4872723285943357120" fileName="UnknownNameRef_Behavior.java" startLine="49" startPosition="111" endLine="50" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047319628387" fileName="UnknownNameRef_Behavior.java" startLine="50" startPosition="57" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047319628383" fileName="UnknownNameRef_Behavior.java" startLine="51" startPosition="16" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4018023047319628389" fileName="UnknownNameRef_Behavior.java" startLine="52" startPosition="19" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4872723285943357283" fileName="UnknownNameRef_Behavior.java" startLine="54" startPosition="14" endLine="55" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4872723285943357291" fileName="UnknownNameRef_Behavior.java" startLine="55" startPosition="74" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8363597096831290531" fileName="UnknownNameRef_Behavior.java" startLine="56" startPosition="0" endLine="57" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1283493522671373256" fileName="UnknownNameRef_Behavior.java" startLine="57" startPosition="129" endLine="58" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8363597096831290694" fileName="UnknownNameRef_Behavior.java" startLine="58" startPosition="74" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7656196334607799102" fileName="UnknownNameRef_Behavior.java" startLine="59" startPosition="0" endLine="60" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7656196334607865339" fileName="UnknownNameRef_Behavior.java" startLine="60" startPosition="232" endLine="61" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7656196334607865410" fileName="UnknownNameRef_Behavior.java" startLine="61" startPosition="44" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4968167082049787363" fileName="UnknownNameRef_Behavior.java" startLine="62" startPosition="0" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2621000434129592423" fileName="UnknownNameRef_Behavior.java" startLine="63" startPosition="31" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7656196334607865434" fileName="UnknownNameRef_Behavior.java" startLine="64" startPosition="65" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134922258" fileName="UnknownNameRef_Behavior.java" startLine="65" startPosition="28" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4018023047319628359" fileName="UnknownNameRef_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2621000434129363981" fileName="UnknownNameRef_Behavior.java" startLine="70" startPosition="28" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4968167082049787318" fileName="UnknownNameRef_Behavior.java" startLine="72" startPosition="5" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2621000434129363983" fileName="UnknownNameRef_Behavior.java" startLine="73" startPosition="0" endLine="74" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4968167082049787866" fileName="UnknownNameRef_Behavior.java" startLine="75" startPosition="105" endLine="76" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4968167082049787923" fileName="UnknownNameRef_Behavior.java" startLine="76" startPosition="233" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1046274632059269683" fileName="UnknownNameRef_Behavior.java" startLine="77" startPosition="24" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4018023047319628395" fileName="UnknownNameRef_Behavior.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4018023047319628402" fileName="UnknownNameRef_Behavior.java" startLine="80" startPosition="0" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4018023047319628148" fileName="UnknownNameRef_Behavior.java" startLine="84" startPosition="86" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2984049969134831304" fileName="UnknownNameRef_Behavior.java" startLine="85" startPosition="0" endLine="86" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2984049969134921880" fileName="UnknownNameRef_Behavior.java" startLine="87" startPosition="24" endLine="88" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134921965" fileName="UnknownNameRef_Behavior.java" startLine="88" startPosition="50" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4018023047319628156" fileName="UnknownNameRef_Behavior.java" startLine="90" startPosition="5" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4018023047319628158" fileName="UnknownNameRef_Behavior.java" startLine="91" startPosition="0" endLine="92" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4018023047319628149" fileName="UnknownNameRef_Behavior.java" startLine="92" startPosition="141" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7515793648304159158" fileName="UnknownNameRef_Behavior.java" startLine="94" startPosition="79" endLine="95" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134831495" fileName="UnknownNameRef_Behavior.java" startLine="95" startPosition="51" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2984049969134921979" fileName="UnknownNameRef_Behavior.java" startLine="96" startPosition="25" endLine="97" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2984049969134922052" fileName="UnknownNameRef_Behavior.java" startLine="97" startPosition="118" endLine="98" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2984049969134922065" fileName="UnknownNameRef_Behavior.java" startLine="98" startPosition="88" endLine="99" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4968167082049787535" fileName="UnknownNameRef_Behavior.java" startLine="99" startPosition="32" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4018023047319628272" fileName="UnknownNameRef_Behavior.java" startLine="100" startPosition="0" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4018023047319628278" fileName="UnknownNameRef_Behavior.java" startLine="102" startPosition="12" endLine="103" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6869702494693169209" fileName="UnknownNameRef_Behavior.java" startLine="107" startPosition="97" endLine="108" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6869702494693170368" fileName="UnknownNameRef_Behavior.java" startLine="108" startPosition="43" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6869702494693169103" fileName="UnknownNameRef_Behavior.java" startLine="109" startPosition="0" endLine="110" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6869702494693170356" fileName="UnknownNameRef_Behavior.java" startLine="110" startPosition="117" endLine="111" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6869702494693170380" fileName="UnknownNameRef_Behavior.java" startLine="111" startPosition="21" endLine="112" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6869702494693170371" fileName="UnknownNameRef_Behavior.java" startLine="112" startPosition="14" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6869702494693170248" fileName="UnknownNameRef_Behavior.java" startLine="114" startPosition="98" endLine="115" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6869702494693170317" fileName="UnknownNameRef_Behavior.java" startLine="115" startPosition="61" endLine="116" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6869702494693170421" fileName="UnknownNameRef_Behavior.java" startLine="116" startPosition="21" endLine="117" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6869702494693170594" fileName="UnknownNameRef_Behavior.java" startLine="117" startPosition="91" endLine="118" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6869702494693170390" fileName="UnknownNameRef_Behavior.java" startLine="118" startPosition="32" endLine="119" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6869702494693170668" fileName="UnknownNameRef_Behavior.java" startLine="120" startPosition="5" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6869702494693171035" fileName="UnknownNameRef_Behavior.java" startLine="121" startPosition="0" endLine="122" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6869702494693171042" fileName="UnknownNameRef_Behavior.java" startLine="122" startPosition="92" endLine="123" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6869702494693171029" fileName="UnknownNameRef_Behavior.java" startLine="123" startPosition="58" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6869702494693170803" fileName="UnknownNameRef_Behavior.java" startLine="124" startPosition="0" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6869702494693170807" fileName="UnknownNameRef_Behavior.java" startLine="126" startPosition="56" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2621000434129363916" fileName="UnknownNameRef_Behavior.java" startLine="127" startPosition="58" endLine="128" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6869702494693170887" fileName="UnknownNameRef_Behavior.java" startLine="129" startPosition="26" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2621000434129592155" fileName="UnknownNameRef_Behavior.java" startLine="130" startPosition="0" endLine="131" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6869702494693324040" fileName="UnknownNameRef_Behavior.java" startLine="133" startPosition="5" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6869702494693170889" fileName="UnknownNameRef_Behavior.java" startLine="134" startPosition="0" endLine="135" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2984049969134831723" fileName="UnknownNameRef_Behavior.java" startLine="138" startPosition="98" endLine="139" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2984049969134897953" fileName="UnknownNameRef_Behavior.java" startLine="139" startPosition="113" endLine="140" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134898280" fileName="UnknownNameRef_Behavior.java" startLine="140" startPosition="64" endLine="141" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2984049969134898110" fileName="UnknownNameRef_Behavior.java" startLine="141" startPosition="124" endLine="142" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134898364" fileName="UnknownNameRef_Behavior.java" startLine="142" startPosition="68" endLine="143" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2984049969134898350" fileName="UnknownNameRef_Behavior.java" startLine="143" startPosition="90" endLine="144" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2984049969134897944" fileName="UnknownNameRef_Behavior.java" startLine="144" startPosition="32" endLine="145" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4018023047319628275" fileName="UnknownNameRef_Behavior.java" startLine="102" startPosition="10" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4018023047319628406" fileName="UnknownNameRef_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319628640" fileName="UnknownNameRef_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628497" fileName="UnknownNameRef_Behavior.java" startLine="25" startPosition="27" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628645" fileName="UnknownNameRef_Behavior.java" startLine="27" startPosition="105" endLine="28" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628530" fileName="UnknownNameRef_Behavior.java" startLine="28" startPosition="100" endLine="29" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319628536" fileName="UnknownNameRef_Behavior.java" startLine="29" startPosition="123" endLine="30" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319628566" fileName="UnknownNameRef_Behavior.java" startLine="30" startPosition="144" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965738712233789299" fileName="UnknownNameRef_Behavior.java" startLine="31" startPosition="24" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6072020170586016090" fileName="UnknownNameRef_Behavior.java" startLine="32" startPosition="0" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6072020170586016093" fileName="UnknownNameRef_Behavior.java" startLine="33" startPosition="16" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4965738712233789300" fileName="UnknownNameRef_Behavior.java" startLine="34" startPosition="20" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628624" fileName="UnknownNameRef_Behavior.java" startLine="36" startPosition="105" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6072020170586016098" fileName="UnknownNameRef_Behavior.java" startLine="37" startPosition="17" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628633" fileName="UnknownNameRef_Behavior.java" startLine="39" startPosition="12" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628638" fileName="UnknownNameRef_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628636" fileName="UnknownNameRef_Behavior.java" startLine="41" startPosition="54" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628346" fileName="UnknownNameRef_Behavior.java" startLine="46" startPosition="78" endLine="47" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628349" fileName="UnknownNameRef_Behavior.java" startLine="47" startPosition="77" endLine="48" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628380" fileName="UnknownNameRef_Behavior.java" startLine="48" startPosition="59" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628354" fileName="UnknownNameRef_Behavior.java" startLine="49" startPosition="41" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4968167082049787335" fileName="UnknownNameRef_Behavior.java" startLine="50" startPosition="0" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4968167082049787594" fileName="UnknownNameRef_Behavior.java" startLine="51" startPosition="25" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319628284" fileName="UnknownNameRef_Behavior.java" startLine="52" startPosition="19" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628286" fileName="UnknownNameRef_Behavior.java" startLine="53" startPosition="0" endLine="54" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4968167082049787325" fileName="UnknownNameRef_Behavior.java" startLine="54" startPosition="102" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628361" fileName="UnknownNameRef_Behavior.java" startLine="56" startPosition="29" endLine="57" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4968167082049787541" fileName="UnknownNameRef_Behavior.java" startLine="57" startPosition="25" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4968167082049787628" fileName="UnknownNameRef_Behavior.java" startLine="58" startPosition="25" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134922151" fileName="UnknownNameRef_Behavior.java" startLine="59" startPosition="17" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2984049969134922156" fileName="UnknownNameRef_Behavior.java" startLine="60" startPosition="0" endLine="61" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134922048" fileName="UnknownNameRef_Behavior.java" startLine="61" startPosition="51" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4968167082049788000" fileName="UnknownNameRef_Behavior.java" startLine="63" startPosition="12" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2621000434129592200" fileName="UnknownNameRef_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319628366" fileName="UnknownNameRef_Behavior.java" startLine="66" startPosition="32" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2621000434129592195" fileName="UnknownNameRef_Behavior.java" startLine="68" startPosition="7" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628367" fileName="UnknownNameRef_Behavior.java" startLine="69" startPosition="0" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2621000434129592438" fileName="UnknownNameRef_Behavior.java" startLine="70" startPosition="35" endLine="71" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4872723285943357001" fileName="UnknownNameRef_Behavior.java" startLine="71" startPosition="38" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943357120" fileName="UnknownNameRef_Behavior.java" startLine="73" startPosition="111" endLine="74" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628387" fileName="UnknownNameRef_Behavior.java" startLine="74" startPosition="57" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047319628383" fileName="UnknownNameRef_Behavior.java" startLine="75" startPosition="16" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628389" fileName="UnknownNameRef_Behavior.java" startLine="76" startPosition="19" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4872723285943357283" fileName="UnknownNameRef_Behavior.java" startLine="78" startPosition="14" endLine="79" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4872723285943357291" fileName="UnknownNameRef_Behavior.java" startLine="79" startPosition="74" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8363597096831290531" fileName="UnknownNameRef_Behavior.java" startLine="80" startPosition="0" endLine="81" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1283493522671373256" fileName="UnknownNameRef_Behavior.java" startLine="81" startPosition="129" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8363597096831290694" fileName="UnknownNameRef_Behavior.java" startLine="82" startPosition="74" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7656196334607799102" fileName="UnknownNameRef_Behavior.java" startLine="83" startPosition="0" endLine="84" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7656196334607865339" fileName="UnknownNameRef_Behavior.java" startLine="84" startPosition="232" endLine="85" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7656196334607865410" fileName="UnknownNameRef_Behavior.java" startLine="85" startPosition="44" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4968167082049787363" fileName="UnknownNameRef_Behavior.java" startLine="86" startPosition="0" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2621000434129592423" fileName="UnknownNameRef_Behavior.java" startLine="87" startPosition="31" endLine="88" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7656196334607865434" fileName="UnknownNameRef_Behavior.java" startLine="88" startPosition="65" endLine="89" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134922258" fileName="UnknownNameRef_Behavior.java" startLine="89" startPosition="28" endLine="90" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319628359" fileName="UnknownNameRef_Behavior.java" startLine="92" startPosition="5" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2621000434129363981" fileName="UnknownNameRef_Behavior.java" startLine="94" startPosition="28" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4968167082049787318" fileName="UnknownNameRef_Behavior.java" startLine="96" startPosition="5" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2621000434129363983" fileName="UnknownNameRef_Behavior.java" startLine="97" startPosition="0" endLine="98" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4968167082049787866" fileName="UnknownNameRef_Behavior.java" startLine="99" startPosition="105" endLine="100" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4968167082049787923" fileName="UnknownNameRef_Behavior.java" startLine="100" startPosition="233" endLine="101" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1046274632059269683" fileName="UnknownNameRef_Behavior.java" startLine="101" startPosition="24" endLine="102" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4018023047319628395" fileName="UnknownNameRef_Behavior.java" startLine="103" startPosition="5" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628402" fileName="UnknownNameRef_Behavior.java" startLine="104" startPosition="0" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628148" fileName="UnknownNameRef_Behavior.java" startLine="108" startPosition="86" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2984049969134831304" fileName="UnknownNameRef_Behavior.java" startLine="109" startPosition="0" endLine="110" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2984049969134921880" fileName="UnknownNameRef_Behavior.java" startLine="111" startPosition="24" endLine="112" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134921965" fileName="UnknownNameRef_Behavior.java" startLine="112" startPosition="50" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628156" fileName="UnknownNameRef_Behavior.java" startLine="114" startPosition="5" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628158" fileName="UnknownNameRef_Behavior.java" startLine="115" startPosition="0" endLine="116" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4018023047319628149" fileName="UnknownNameRef_Behavior.java" startLine="116" startPosition="141" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7515793648304159158" fileName="UnknownNameRef_Behavior.java" startLine="118" startPosition="79" endLine="119" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134831495" fileName="UnknownNameRef_Behavior.java" startLine="119" startPosition="51" endLine="120" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2984049969134921979" fileName="UnknownNameRef_Behavior.java" startLine="120" startPosition="25" endLine="121" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2984049969134922052" fileName="UnknownNameRef_Behavior.java" startLine="121" startPosition="118" endLine="122" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2984049969134922065" fileName="UnknownNameRef_Behavior.java" startLine="122" startPosition="88" endLine="123" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4968167082049787535" fileName="UnknownNameRef_Behavior.java" startLine="123" startPosition="32" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4018023047319628272" fileName="UnknownNameRef_Behavior.java" startLine="124" startPosition="0" endLine="125" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628278" fileName="UnknownNameRef_Behavior.java" startLine="126" startPosition="12" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6869702494693169209" fileName="UnknownNameRef_Behavior.java" startLine="131" startPosition="97" endLine="132" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6869702494693170368" fileName="UnknownNameRef_Behavior.java" startLine="132" startPosition="43" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6869702494693169103" fileName="UnknownNameRef_Behavior.java" startLine="133" startPosition="0" endLine="134" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6869702494693170356" fileName="UnknownNameRef_Behavior.java" startLine="134" startPosition="117" endLine="135" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6869702494693170380" fileName="UnknownNameRef_Behavior.java" startLine="135" startPosition="21" endLine="136" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6869702494693170371" fileName="UnknownNameRef_Behavior.java" startLine="136" startPosition="14" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6869702494693170248" fileName="UnknownNameRef_Behavior.java" startLine="138" startPosition="98" endLine="139" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6869702494693170317" fileName="UnknownNameRef_Behavior.java" startLine="139" startPosition="61" endLine="140" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6869702494693170421" fileName="UnknownNameRef_Behavior.java" startLine="140" startPosition="21" endLine="141" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6869702494693170594" fileName="UnknownNameRef_Behavior.java" startLine="141" startPosition="91" endLine="142" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6869702494693170390" fileName="UnknownNameRef_Behavior.java" startLine="142" startPosition="32" endLine="143" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6869702494693170668" fileName="UnknownNameRef_Behavior.java" startLine="144" startPosition="5" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6869702494693171035" fileName="UnknownNameRef_Behavior.java" startLine="145" startPosition="0" endLine="146" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6869702494693171042" fileName="UnknownNameRef_Behavior.java" startLine="146" startPosition="92" endLine="147" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6869702494693171029" fileName="UnknownNameRef_Behavior.java" startLine="147" startPosition="58" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6869702494693170803" fileName="UnknownNameRef_Behavior.java" startLine="148" startPosition="0" endLine="149" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6869702494693170807" fileName="UnknownNameRef_Behavior.java" startLine="150" startPosition="56" endLine="151" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2621000434129363916" fileName="UnknownNameRef_Behavior.java" startLine="151" startPosition="58" endLine="152" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6869702494693170887" fileName="UnknownNameRef_Behavior.java" startLine="153" startPosition="26" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2621000434129592155" fileName="UnknownNameRef_Behavior.java" startLine="154" startPosition="0" endLine="155" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6869702494693324040" fileName="UnknownNameRef_Behavior.java" startLine="157" startPosition="5" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6869702494693170889" fileName="UnknownNameRef_Behavior.java" startLine="158" startPosition="0" endLine="159" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2984049969134831723" fileName="UnknownNameRef_Behavior.java" startLine="162" startPosition="98" endLine="163" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2984049969134897953" fileName="UnknownNameRef_Behavior.java" startLine="163" startPosition="113" endLine="164" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134898280" fileName="UnknownNameRef_Behavior.java" startLine="164" startPosition="64" endLine="165" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2984049969134898110" fileName="UnknownNameRef_Behavior.java" startLine="165" startPosition="124" endLine="166" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134898364" fileName="UnknownNameRef_Behavior.java" startLine="166" startPosition="68" endLine="167" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2984049969134898350" fileName="UnknownNameRef_Behavior.java" startLine="167" startPosition="90" endLine="168" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2984049969134897944" fileName="UnknownNameRef_Behavior.java" startLine="168" startPosition="32" endLine="169" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4018023047319628275" fileName="UnknownNameRef_Behavior.java" startLine="126" startPosition="10" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="18" startPosition="38" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4018023047319628364" fileName="UnknownNameRef_Behavior.java" startLine="41" startPosition="118" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2621000434129363949" fileName="UnknownNameRef_Behavior.java" startLine="69" startPosition="0" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2984049969134921839" fileName="UnknownNameRef_Behavior.java" startLine="86" startPosition="183" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1283493522671373151" fileName="UnknownNameRef_Behavior.java" startLine="128" startPosition="89" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4968167082049787792" fileName="UnknownNameRef_Behavior.java" startLine="74" startPosition="94" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6869702494693169202" fileName="UnknownNameRef_Behavior.java" startLine="113" startPosition="0" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6869702494693170684" fileName="UnknownNameRef_Behavior.java" startLine="125" startPosition="53" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="137" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="makeFieldDotExpression_8473865358220213520#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4018023047319628141" fileName="UnknownNameRef_Behavior.java" startLine="93" startPosition="0" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4872723285943357266" fileName="UnknownNameRef_Behavior.java" startLine="54" startPosition="12" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4872723285943357006" fileName="UnknownNameRef_Behavior.java" startLine="48" startPosition="0" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="83" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_tryFirstTokenAsVarRef_4018023047319628132#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2984049969134831521" fileName="UnknownNameRef_Behavior.java" startLine="39" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="106" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_tryFindClass_2621000434129553484#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="2984049969134831350" fileName="UnknownNameRef_Behavior.java" startLine="31" startPosition="0" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="21" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_resolveTokens_4018023047319628331#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4018023047319628364" fileName="UnknownNameRef_Behavior.java" startLine="65" startPosition="118" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2621000434129363949" fileName="UnknownNameRef_Behavior.java" startLine="93" startPosition="0" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4018023047319628631" fileName="UnknownNameRef_Behavior.java" startLine="39" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2984049969134921839" fileName="UnknownNameRef_Behavior.java" startLine="110" startPosition="183" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1283493522671373151" fileName="UnknownNameRef_Behavior.java" startLine="152" startPosition="89" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4968167082049787792" fileName="UnknownNameRef_Behavior.java" startLine="98" startPosition="94" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6869702494693169202" fileName="UnknownNameRef_Behavior.java" startLine="137" startPosition="0" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6869702494693170684" fileName="UnknownNameRef_Behavior.java" startLine="149" startPosition="53" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="161" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="makeFieldDotExpression_8473865358220213520#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4018023047319628141" fileName="UnknownNameRef_Behavior.java" startLine="117" startPosition="0" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4872723285943357266" fileName="UnknownNameRef_Behavior.java" startLine="78" startPosition="12" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4018023047319628438" fileName="UnknownNameRef_Behavior.java" startLine="24" startPosition="0" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4872723285943357006" fileName="UnknownNameRef_Behavior.java" startLine="72" startPosition="0" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="107" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_tryFirstTokenAsVarRef_4018023047319628132#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="21" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2984049969134831521" fileName="UnknownNameRef_Behavior.java" startLine="63" startPosition="10" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="130" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_tryFindClass_2621000434129553484#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="2984049969134831350" fileName="UnknownNameRef_Behavior.java" startLine="55" startPosition="0" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="45" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_resolveTokens_4018023047319628331#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="8473865358220196912" fileName="UnknownNameRef_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="4018023047319628365" fileName="UnknownNameRef_Behavior.java" startLine="42" startPosition="32" endLine="43" endPosition="20" />
-    <scopeInfo nodeId="2621000434129363950" fileName="UnknownNameRef_Behavior.java" startLine="70" startPosition="28" endLine="71" endPosition="18" />
-    <scopeInfo nodeId="4018023047319628276" fileName="UnknownNameRef_Behavior.java" startLine="102" startPosition="12" endLine="103" endPosition="18" />
-    <scopeInfo nodeId="2984049969134921840" fileName="UnknownNameRef_Behavior.java" startLine="87" startPosition="24" endLine="89" endPosition="18" />
-    <scopeInfo nodeId="1283493522671373152" fileName="UnknownNameRef_Behavior.java" startLine="129" startPosition="26" endLine="131" endPosition="58" />
+    <scopeInfo nodeId="4018023047319628439" fileName="UnknownNameRef_Behavior.java" startLine="25" startPosition="27" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="4018023047319628365" fileName="UnknownNameRef_Behavior.java" startLine="66" startPosition="32" endLine="67" endPosition="20" />
+    <scopeInfo nodeId="2621000434129363950" fileName="UnknownNameRef_Behavior.java" startLine="94" startPosition="28" endLine="95" endPosition="18" />
+    <scopeInfo nodeId="4018023047319628276" fileName="UnknownNameRef_Behavior.java" startLine="126" startPosition="12" endLine="127" endPosition="18" />
+    <scopeInfo nodeId="4018023047319628594" fileName="UnknownNameRef_Behavior.java" startLine="36" startPosition="105" endLine="38" endPosition="20" />
+    <scopeInfo nodeId="2984049969134921840" fileName="UnknownNameRef_Behavior.java" startLine="111" startPosition="24" endLine="113" endPosition="18" />
+    <scopeInfo nodeId="1283493522671373152" fileName="UnknownNameRef_Behavior.java" startLine="153" startPosition="26" endLine="155" endPosition="58" />
     <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="18" startPosition="38" endLine="21" endPosition="0">
       <varInfo nodeId="8473865358220196910" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4968167082049787794" fileName="UnknownNameRef_Behavior.java" startLine="75" startPosition="105" endLine="78" endPosition="15">
+    <scopeInfo nodeId="4018023047319628632" fileName="UnknownNameRef_Behavior.java" startLine="39" startPosition="12" endLine="42" endPosition="18" />
+    <scopeInfo nodeId="4968167082049787794" fileName="UnknownNameRef_Behavior.java" startLine="99" startPosition="105" endLine="102" endPosition="15">
       <varInfo nodeId="4968167082049787867" varName="dotExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="4872723285943357007" fileName="UnknownNameRef_Behavior.java" startLine="49" startPosition="111" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6869702494693169205" fileName="UnknownNameRef_Behavior.java" startLine="114" startPosition="98" endLine="119" endPosition="10" />
-    <scopeInfo nodeId="2984049969134831351" fileName="UnknownNameRef_Behavior.java" startLine="32" startPosition="29" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6869702494693170685" fileName="UnknownNameRef_Behavior.java" startLine="126" startPosition="56" endLine="132" endPosition="7">
+    <scopeInfo nodeId="4872723285943357007" fileName="UnknownNameRef_Behavior.java" startLine="73" startPosition="111" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="6869702494693169205" fileName="UnknownNameRef_Behavior.java" startLine="138" startPosition="98" endLine="143" endPosition="10" />
+    <scopeInfo nodeId="2984049969134831351" fileName="UnknownNameRef_Behavior.java" startLine="56" startPosition="29" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="6869702494693170685" fileName="UnknownNameRef_Behavior.java" startLine="150" startPosition="56" endLine="156" endPosition="7">
       <varInfo nodeId="6869702494693170808" varName="className" />
       <varInfo nodeId="2621000434129363917" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="4018023047319628143" fileName="UnknownNameRef_Behavior.java" startLine="94" startPosition="79" endLine="101" endPosition="20">
+    <scopeInfo nodeId="4018023047319628143" fileName="UnknownNameRef_Behavior.java" startLine="118" startPosition="79" endLine="125" endPosition="20">
       <varInfo nodeId="2984049969134922053" varName="sref" />
       <varInfo nodeId="2984049969134921980" varName="varRef" />
     </scopeInfo>
-    <scopeInfo nodeId="6869702494693169202" fileName="UnknownNameRef_Behavior.java" startLine="113" startPosition="0" endLine="120" endPosition="5">
+    <scopeInfo nodeId="6869702494693169202" fileName="UnknownNameRef_Behavior.java" startLine="137" startPosition="0" endLine="144" endPosition="5">
       <varInfo nodeId="6869702494693169203" varName="tok" />
     </scopeInfo>
-    <scopeInfo nodeId="8473865358220213523" fileName="UnknownNameRef_Behavior.java" startLine="138" startPosition="98" endLine="145" endPosition="19">
+    <scopeInfo nodeId="8473865358220213523" fileName="UnknownNameRef_Behavior.java" startLine="162" startPosition="98" endLine="169" endPosition="19">
       <varInfo nodeId="2984049969134831724" varName="dotExpr" />
       <varInfo nodeId="2984049969134898281" varName="fieldRef" />
       <varInfo nodeId="2984049969134898365" varName="sref" />
     </scopeInfo>
-    <scopeInfo nodeId="6869702494693170684" fileName="UnknownNameRef_Behavior.java" startLine="125" startPosition="53" endLine="133" endPosition="5">
+    <scopeInfo nodeId="4018023047319628500" fileName="UnknownNameRef_Behavior.java" startLine="27" startPosition="105" endLine="35" endPosition="0">
+      <varInfo nodeId="4018023047319628531" varName="fieldRef" />
+    </scopeInfo>
+    <scopeInfo nodeId="6869702494693170684" fileName="UnknownNameRef_Behavior.java" startLine="149" startPosition="53" endLine="157" endPosition="5">
       <varInfo nodeId="6869702494693170687" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="137" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="161" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="8473865358220213695" varName="fieldName" />
       <varInfo nodeId="8473865358220213692" varName="holder" />
     </scopeInfo>
-    <scopeInfo nodeId="4872723285943357267" fileName="UnknownNameRef_Behavior.java" startLine="54" startPosition="14" endLine="66" endPosition="67">
+    <scopeInfo nodeId="4872723285943357267" fileName="UnknownNameRef_Behavior.java" startLine="78" startPosition="14" endLine="90" endPosition="67">
       <varInfo nodeId="7656196334607799103" varName="fieldRef" />
       <varInfo nodeId="7656196334607798655" varName="statFieldRef" />
     </scopeInfo>
-    <scopeInfo nodeId="4018023047319628135" fileName="UnknownNameRef_Behavior.java" startLine="84" startPosition="86" endLine="104" endPosition="5">
+    <scopeInfo nodeId="4018023047319628135" fileName="UnknownNameRef_Behavior.java" startLine="108" startPosition="86" endLine="128" endPosition="5">
       <varInfo nodeId="4018023047319628159" varName="name" />
       <varInfo nodeId="2984049969134831305" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="83" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="6072020170586016075" fileName="UnknownNameRef_Behavior.java" startLine="22" startPosition="81" endLine="43" endPosition="5">
+      <varInfo nodeId="4018023047319628407" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="107" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="8473865358220196910" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2984049969134831522" fileName="UnknownNameRef_Behavior.java" startLine="39" startPosition="12" endLine="67" endPosition="7">
+    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="21" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="8473865358220196910" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2984049969134831522" fileName="UnknownNameRef_Behavior.java" startLine="63" startPosition="12" endLine="91" endPosition="7">
       <varInfo nodeId="2621000434129592201" varName="classAndPos" />
       <varInfo nodeId="4018023047319628368" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="2621000434129553487" fileName="UnknownNameRef_Behavior.java" startLine="107" startPosition="97" endLine="135" endPosition="16">
+    <scopeInfo nodeId="2621000434129553487" fileName="UnknownNameRef_Behavior.java" startLine="131" startPosition="97" endLine="159" endPosition="16">
       <varInfo nodeId="6869702494693169104" varName="dotPositions" />
       <varInfo nodeId="6869702494693170381" varName="k" />
       <varInfo nodeId="6869702494693170357" varName="lastDot" />
       <varInfo nodeId="6869702494693169210" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="106" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="130" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="8473865358220196910" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4018023047319628334" fileName="UnknownNameRef_Behavior.java" startLine="22" startPosition="78" endLine="81" endPosition="19">
+    <scopeInfo nodeId="4018023047319628334" fileName="UnknownNameRef_Behavior.java" startLine="46" startPosition="78" endLine="105" endPosition="19">
       <varInfo nodeId="4018023047319628287" varName="mbVarRef" />
       <varInfo nodeId="4968167082049787336" varName="operand" />
       <varInfo nodeId="4968167082049787595" varName="tokPos" />
     </scopeInfo>
-    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="21" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="45" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="8473865358220196910" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="18" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_Behavior" />
+    <unitInfo nodeId="8473865358220196910" fileName="UnknownNameRef_Behavior.java" startLine="18" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_Behavior" />
   </root>
   <root nodeId="8559617843245351005" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="8559617843245351005" fileName="LocalInstanceFieldReference_Behavior.java" startLine="7" startPosition="51" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -14627,44 +14837,72 @@
     <unitInfo nodeId="8967654016644581378" fileName="GenericDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GenericDeclaration_Behavior" />
   </root>
   <root nodeId="9100188248702352810" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
-    <nodeInfo nodeId="3564968026865770994" fileName="UnknownConsCall_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3564968026865770997" fileName="UnknownConsCall_Behavior.java" startLine="17" startPosition="17" endLine="18" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3564968026865771005" fileName="UnknownConsCall_Behavior.java" startLine="19" startPosition="49" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3564968026865771019" fileName="UnknownConsCall_Behavior.java" startLine="21" startPosition="65" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3564968026865771027" fileName="UnknownConsCall_Behavior.java" startLine="23" startPosition="12" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3564968026865771044" fileName="UnknownConsCall_Behavior.java" startLine="26" startPosition="41" endLine="27" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3564968026865771054" fileName="UnknownConsCall_Behavior.java" startLine="29" startPosition="9" endLine="30" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3564968026865771060" fileName="UnknownConsCall_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="12" startPosition="39" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3564968026865771042" fileName="UnknownConsCall_Behavior.java" startLine="25" startPosition="93" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3564968026865771035" fileName="UnknownConsCall_Behavior.java" startLine="24" startPosition="63" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3564968026865771025" fileName="UnknownConsCall_Behavior.java" startLine="23" startPosition="10" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3564968026865771003" fileName="UnknownConsCall_Behavior.java" startLine="18" startPosition="78" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findConstructor_9100188248702369190#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="9100188248702352812" fileName="UnknownConsCall_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3564968026865771004" fileName="UnknownConsCall_Behavior.java" startLine="19" startPosition="49" endLine="20" endPosition="20" />
-    <scopeInfo nodeId="3564968026865771018" fileName="UnknownConsCall_Behavior.java" startLine="21" startPosition="65" endLine="22" endPosition="52" />
-    <scopeInfo nodeId="3564968026865771043" fileName="UnknownConsCall_Behavior.java" startLine="26" startPosition="41" endLine="27" endPosition="116" />
-    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="12" startPosition="39" endLine="15" endPosition="0">
+    <nodeInfo nodeId="6541262448935719449" fileName="UnknownConsCall_Behavior.java" startLine="19" startPosition="81" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9100188248702370234" fileName="UnknownConsCall_Behavior.java" startLine="21" startPosition="35" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8136348407761460002" fileName="UnknownConsCall_Behavior.java" startLine="28" startPosition="107" endLine="29" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9100188248702370242" fileName="UnknownConsCall_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9100188248702370312" fileName="UnknownConsCall_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9100188248702370347" fileName="UnknownConsCall_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9100188248702370352" fileName="UnknownConsCall_Behavior.java" startLine="35" startPosition="0" endLine="36" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9100188248702370074" fileName="UnknownConsCall_Behavior.java" startLine="36" startPosition="15" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8136348407761606784" fileName="UnknownConsCall_Behavior.java" startLine="37" startPosition="81" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3564968026865770994" fileName="UnknownConsCall_Behavior.java" startLine="41" startPosition="89" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3564968026865770997" fileName="UnknownConsCall_Behavior.java" startLine="42" startPosition="17" endLine="43" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3564968026865771005" fileName="UnknownConsCall_Behavior.java" startLine="44" startPosition="49" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3564968026865771019" fileName="UnknownConsCall_Behavior.java" startLine="46" startPosition="65" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3564968026865771027" fileName="UnknownConsCall_Behavior.java" startLine="48" startPosition="12" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3564968026865771044" fileName="UnknownConsCall_Behavior.java" startLine="51" startPosition="41" endLine="52" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3564968026865771054" fileName="UnknownConsCall_Behavior.java" startLine="54" startPosition="9" endLine="55" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3564968026865771060" fileName="UnknownConsCall_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="15" startPosition="39" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="9100188248702370190" fileName="UnknownConsCall_Behavior.java" startLine="20" startPosition="132" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8136348407761459971" fileName="UnknownConsCall_Behavior.java" startLine="27" startPosition="6" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9100188248702370265" fileName="UnknownConsCall_Behavior.java" startLine="31" startPosition="161" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9100188248702369758" fileName="UnknownConsCall_Behavior.java" startLine="23" startPosition="5" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3564968026865771042" fileName="UnknownConsCall_Behavior.java" startLine="50" startPosition="93" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3564968026865771035" fileName="UnknownConsCall_Behavior.java" startLine="49" startPosition="63" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3564968026865771025" fileName="UnknownConsCall_Behavior.java" startLine="48" startPosition="10" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3564968026865771003" fileName="UnknownConsCall_Behavior.java" startLine="43" startPosition="78" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="40" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findConstructor_9100188248702369190#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="18" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="9100188248702352812" fileName="UnknownConsCall_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="9100188248702370191" fileName="UnknownConsCall_Behavior.java" startLine="21" startPosition="35" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="8136348407761459974" fileName="UnknownConsCall_Behavior.java" startLine="28" startPosition="107" endLine="29" endPosition="130" />
+    <scopeInfo nodeId="9100188248702370266" fileName="UnknownConsCall_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="18" />
+    <scopeInfo nodeId="3564968026865771004" fileName="UnknownConsCall_Behavior.java" startLine="44" startPosition="49" endLine="45" endPosition="20" />
+    <scopeInfo nodeId="3564968026865771018" fileName="UnknownConsCall_Behavior.java" startLine="46" startPosition="65" endLine="47" endPosition="52" />
+    <scopeInfo nodeId="3564968026865771043" fileName="UnknownConsCall_Behavior.java" startLine="51" startPosition="41" endLine="52" endPosition="116" />
+    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="15" startPosition="39" endLine="18" endPosition="0">
       <varInfo nodeId="9100188248702352810" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3564968026865771042" fileName="UnknownConsCall_Behavior.java" startLine="25" startPosition="93" endLine="29" endPosition="0">
+    <scopeInfo nodeId="8136348407761459971" fileName="UnknownConsCall_Behavior.java" startLine="27" startPosition="6" endLine="30" endPosition="5">
+      <varInfo nodeId="8136348407761459972" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="3564968026865771042" fileName="UnknownConsCall_Behavior.java" startLine="50" startPosition="93" endLine="54" endPosition="0">
       <varInfo nodeId="3564968026865771042" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3564968026865771026" fileName="UnknownConsCall_Behavior.java" startLine="23" startPosition="12" endLine="30" endPosition="53">
+    <scopeInfo nodeId="3564968026865771026" fileName="UnknownConsCall_Behavior.java" startLine="48" startPosition="12" endLine="55" endPosition="53">
       <varInfo nodeId="3564968026865771028" varName="argCount" />
       <varInfo nodeId="3564968026865771036" varName="subset" />
     </scopeInfo>
-    <scopeInfo nodeId="9100188248702369193" fileName="UnknownConsCall_Behavior.java" startLine="16" startPosition="89" endLine="32" endPosition="18">
+    <scopeInfo nodeId="9100188248702369193" fileName="UnknownConsCall_Behavior.java" startLine="41" startPosition="89" endLine="57" endPosition="18">
       <varInfo nodeId="3564968026865770998" varName="conss" />
       <varInfo nodeId="3564968026865770995" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8136348407761606777" fileName="UnknownConsCall_Behavior.java" startLine="19" startPosition="81" endLine="38" endPosition="18">
+      <varInfo nodeId="6541262448935719450" varName="enclosingClass" />
+      <varInfo nodeId="9100188248702370243" varName="foundCons" />
+      <varInfo nodeId="5646944109420320312" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="40" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3564968026865770991" varName="args" />
       <varInfo nodeId="6541262448935718988" varName="claz" />
     </scopeInfo>
-    <unitInfo nodeId="3564968026865771042" fileName="UnknownConsCall_Behavior.java" startLine="25" startPosition="70" endLine="29" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior$1" />
-    <unitInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior" />
+    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="18" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="9100188248702352810" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3564968026865771042" fileName="UnknownConsCall_Behavior.java" startLine="50" startPosition="70" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior$1" />
+    <unitInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior" />
   </root>
   <root nodeId="9103527268106341892" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="9103527268106341898" fileName="ResolveUtil.java" startLine="29" startPosition="96" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

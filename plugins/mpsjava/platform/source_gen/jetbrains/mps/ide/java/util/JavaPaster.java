@@ -89,9 +89,9 @@ public class JavaPaster {
     try {
 
       List<SNode> nodes;
-      if (FeatureKind.STATEMENTS.equals(featureKind) || FeatureKind.CLASS.equals(featureKind)) {
+      if (FeatureKind.STATEMENTS.equals(featureKind) || FeatureKind.CLASS.equals(featureKind) || FeatureKind.CLASS_CONTENT.equals(featureKind)) {
         // new parser 
-        nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true);
+        nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
       } else {
         // old parser for now 
         nodes = javaCompiler.compileIsolated(javaCode, featureKind);
@@ -121,6 +121,8 @@ public class JavaPaster {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"));
             } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Annotation", "annotationMethod"));
             } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"));
             }

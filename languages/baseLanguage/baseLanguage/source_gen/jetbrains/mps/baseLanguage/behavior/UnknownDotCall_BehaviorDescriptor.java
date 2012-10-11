@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.Map;
 
-public class UnknownDotCall_BehaviorDescriptor extends UnknownNameRef_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor {
+public class UnknownDotCall_BehaviorDescriptor extends UnknownNameRef_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IYetUnresolved_BehaviorDescriptor {
   public UnknownDotCall_BehaviorDescriptor() {
   }
 
@@ -16,6 +16,10 @@ public class UnknownDotCall_BehaviorDescriptor extends UnknownNameRef_BehaviorDe
 
   public List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
+  }
+
+  public SNode virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
+    return UnknownDotCall_Behavior.virtual_evaluateSubst_8136348407761606764(thisNode);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {

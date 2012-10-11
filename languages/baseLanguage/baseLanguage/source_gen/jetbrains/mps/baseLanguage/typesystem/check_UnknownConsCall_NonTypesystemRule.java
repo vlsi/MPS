@@ -7,12 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,22 +19,7 @@ public class check_UnknownConsCall_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode enclosingClass = SNodeOperations.getAncestor(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    if ((enclosingClass == null)) {
-      return;
-    }
-    SNode result = (SPropertyOperations.getBoolean(call, "isSuper") ?
-      SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null) :
-      SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null)
-    );
-    ListSequence.fromList(SLinkOperations.getTargets(result, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)));
-    SNode foundCons = UnknownConsCall_Behavior.findConstructor_9100188248702369190(enclosingClass, SLinkOperations.getTargets(call, "actualArgument", true));
-    if ((foundCons == null)) {
-      return;
-    }
-
-    // success 
-    SLinkOperations.setTarget(result, "baseMethodDeclaration", foundCons, false);
+    SNode result = IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(call);
     {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9100188248702475686", null, errorTarget);
