@@ -91,7 +91,7 @@ public class ModelConstraints {
 
     // todo: use concept descriptor here?
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
+    if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) || !SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
       if (checkingNodeContext != null) {
         checkingNodeContext.setBreakingNode(new SNodePointer(concept));
       }
