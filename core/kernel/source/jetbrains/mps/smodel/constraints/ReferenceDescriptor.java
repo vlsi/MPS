@@ -40,6 +40,9 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleSc
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 public abstract class ReferenceDescriptor {
+  private static final Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
+  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
+
   // can be ErrorScope
   @NotNull
   abstract public Scope getScope();
@@ -54,69 +57,54 @@ public abstract class ReferenceDescriptor {
   abstract public ReferenceScopeProvider getScopeProvider();
 
   static class OkReferenceDescriptor extends ReferenceDescriptor {
-    private static final Logger LOG = Logger.getLogger(ModelConstraints.class);
-    private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
-
-    // not syntatic
+    // main parameters for ScopeProvider calculating
     private final SNode sourceNodeConcept;
-
-    private final SNode enclosingNode;
-    private final SNode referenceNode;
-    private final SNode linkTarget;
-    private final SNode containingLinkDeclaration;
-
-    // in contextNode, specialized
-    private final String contextRole;
-    // in referenceNode, genuine
     private final String genuineRole;
 
-    private final int index;
+    // parameters from scope concept method
+    // model: from contextNode
+    private final boolean exists;
+    // contextNode: from enclosingNode and referenceNode
+    private final String contextRole;
+    private final int position;
+    // scope: from module of model
+    private final SNode referenceNode;
+    private final SNode linkTarget;
+    private final SNode enclosingNode;
+    private final SNode containingLink;
 
+    // other parameters
     @Nullable
-    private final SReference reference;
+    private final SReference reference; // for old reference resolver
 
+    // calculated scope provider
     @Nullable
     private final ReferenceScopeProvider scopeProvider;
 
-    /* package */ OkReferenceDescriptor(@Nullable SReference reference, SNode sourceNodeConcept,
-                                        SNode enclosingNode, SNode referenceNode,
-                                        String contextRole, String genuineRole,
-                                        int index,
-                                        SNode linkTarget, SNode containingLinkDeclaration // todo
+    OkReferenceDescriptor(
+      SNode sourceNodeConcept, String genuineRole,
+      boolean exists, String contextRole, int position, SNode referenceNode, SNode linkTarget, SNode enclosingNode, SNode containingLink,
+      @Nullable SReference reference
     ) {
-      this.reference = reference;
       this.sourceNodeConcept = sourceNodeConcept;
       this.genuineRole = genuineRole;
+
+      this.exists = exists;
       this.contextRole = contextRole;
-      this.enclosingNode = enclosingNode;
+      this.position = position;
       this.referenceNode = referenceNode;
       this.linkTarget = linkTarget;
-      this.containingLinkDeclaration = containingLinkDeclaration;
-      this.index = index;
+      this.enclosingNode = enclosingNode;
+      this.containingLink = containingLink;
+
+      this.reference = reference;
 
       scopeProvider = getScopeProvider(sourceNodeConcept, genuineRole);
     }
 
-    private SNode getContextNode() {
-      return referenceNode != null ? referenceNode : enclosingNode;
-    }
-
-    private SModel getModel() {
-      SNode contextNode = getContextNode();
-      return contextNode != null ? contextNode.getModel() : null;
-    }
-
-    private IModule getModule() {
-      return ModelConstraintsUtils.getModule(getModel());
-    }
-
-    private boolean isExists() {
-      return reference != null;
-    }
-
     @NotNull
     public Scope getScope() {
-      final ReferentConstraintContext context = new ReferentConstraintContext(getModel(), reference != null, getContextNode(), contextRole, index, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);;
+      final ReferentConstraintContext context = new ReferentConstraintContext(getModel(), reference != null, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
 
       return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
         @Override
@@ -150,7 +138,7 @@ public abstract class ReferenceDescriptor {
 
       return scopeProvider.getPresentation(
         getOperationContext(getModule()),
-        new PresentationReferentConstraintContext(getModel(), enclosingNode, referenceNode, linkTarget, targetNode, containingLinkDeclaration, visible, smartRef, inEditor)
+        new PresentationReferentConstraintContext(getModel(), enclosingNode, referenceNode, linkTarget, targetNode, containingLink, visible, smartRef, inEditor)
       );
     }
 
@@ -160,7 +148,7 @@ public abstract class ReferenceDescriptor {
     }
 
     @Nullable
-    /* package */ static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
+    static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
       // todo: should be private
       ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
       if (result != null) return result;
@@ -172,9 +160,22 @@ public abstract class ReferenceDescriptor {
       SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
       return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
     }
+
+    private SNode getContextNode() {
+      return referenceNode != null ? referenceNode : enclosingNode;
+    }
+
+    private SModel getModel() {
+      SNode contextNode = getContextNode();
+      return contextNode != null ? contextNode.getModel() : null;
+    }
+
+    private IModule getModule() {
+      return ModelConstraintsUtils.getModule(getModel());
+    }
   }
 
-  /* package */ static class ErrorReferenceDescriptor extends ReferenceDescriptor {
+  static class ErrorReferenceDescriptor extends ReferenceDescriptor {
     private final String message;
 
     public ErrorReferenceDescriptor(String message) {

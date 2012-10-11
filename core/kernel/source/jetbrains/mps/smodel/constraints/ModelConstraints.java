@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,16 +37,15 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
  * Api for model constraints
  * All methods require read action
  * If you don't need breaking node set checkingNodeContext parameter to null
- *
+ * <p/>
  * If you need Scope use 1) getScope(SReference) or 2) getReferenceDescriptor(...).getScope()
  * If you need reference presentation use getReferenceDescriptor(...).getText(...)
- *
+ * <p/>
  * Possible parameters for getReferenceDescriptor method:
- *  getReferenceDescriptor(reference) gets ref descriptor for existing reference
- *  getReferenceDescriptor(node, role) gets ref descriptor for reference being created at the location, role (cannot be null) should be "reference" link
- *  getReferenceDescriptor(node, role, index, smartConcept) gets ref descriptor for smartReference being created in "aggregation" role
- *
-*/
+ * getReferenceDescriptor(reference) gets ref descriptor for existing reference
+ * getReferenceDescriptor(node, role) gets ref descriptor for reference being created at the location, role (cannot be null) should be "reference" link
+ * getReferenceDescriptor(node, role, index, smartConcept) gets ref descriptor for smartReference being created in "aggregation" role
+ */
 public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
@@ -131,18 +129,18 @@ public class ModelConstraints {
     }
     SNode concept = referenceNode.getConceptDeclarationNode();
 
-    return new OkReferenceDescriptor(reference, concept, // reference, sourceNodeConcept
-      referenceNode.getParent(), referenceNode, // enclosingNode, referenceNode
-      role, SModelUtil.getGenuineLinkRole(scopeReference), // contextRole, genuineRole
-      0, // index
-      SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getRoleLink()); // linkTarget, containingLinkDeclaration
+    return new OkReferenceDescriptor(
+      concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole
+      reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(), referenceNode.getRoleLink(), // parameters
+      reference // reference
+    );
   }
 
   @NotNull
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
     ModelAccess.assertLegalRead();
 
-    final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+    SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
     if (smartReference == null) {
       return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
     }
@@ -151,11 +149,11 @@ public class ModelConstraints {
       return new ErrorReferenceDescriptor("for reference role smartConcept should be null");
     }
 
-    return new OkReferenceDescriptor(null, smartConcept, // reference, sourceNodeConcept
-      enclosingNode, null, // enclosingNode, referenceNode
-      role, SModelUtil.getGenuineLinkRole(smartReference), // contextRole, genuineRole
-      index, // index
-      SModelUtil.getLinkDeclarationTarget(smartReference), linkDeclaration); // linkTarget, containingLinkDeclaration
+    return new OkReferenceDescriptor(
+      smartConcept, SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
+      false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
+      null // reference
+    );
   }
 
   // other things
