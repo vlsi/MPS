@@ -18,22 +18,22 @@ package jetbrains.mps.workbench.choose.modules;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseModuleItem implements NavigationItem {
-  private ModuleReference myModuleReference;
+  private SModuleReference myModuleReference;
 
-  public BaseModuleItem(ModuleReference moduleReference) {
+  public BaseModuleItem(SModuleReference moduleReference) {
     myModuleReference = moduleReference;
   }
 
-  public ModuleReference getModuleReference() {
+  public SModuleReference getModuleReference() {
     return myModuleReference;
   }
 
   public String getName() {
-    return myModuleReference.getModuleFqName();
+    return myModuleReference.getModuleName();
   }
 
   @Nullable

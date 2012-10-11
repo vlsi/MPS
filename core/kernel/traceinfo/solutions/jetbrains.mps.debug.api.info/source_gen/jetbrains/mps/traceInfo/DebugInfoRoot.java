@@ -7,6 +7,13 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import java.util.HashSet;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeId;
 import org.jdom.Element;
 import java.util.Comparator;
 import org.jdom.DataConversionException;
@@ -33,19 +40,16 @@ public class DebugInfoRoot {
   /*package*/ void addPosition(TraceablePositionInfo position) {
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myPositions).addElement(position);
-    position.setCachedModelId(myModelId);
   }
 
   /*package*/ void addScopePosition(ScopePositionInfo position) {
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myScopePositions).addElement(position);
-    position.setCachedModelId(myModelId);
   }
 
   /*package*/ void addUnitPosition(UnitPositionInfo unitPosition) {
     SetSequence.fromSet(myFileNames).addElement(unitPosition.getFileName());
     SetSequence.fromSet(myUnitPositions).addElement(unitPosition);
-    unitPosition.setCachedModelId(myModelId);
   }
 
   /*package*/ String getRootId() {
@@ -70,6 +74,20 @@ public class DebugInfoRoot {
 
   public Set<String> getFileNames() {
     return myFileNames;
+  }
+
+  @Nullable
+  public SNode findNode(@NotNull PositionInfo info) {
+    String nodeId = info.getNodeId();
+    if ((nodeId == null || nodeId.length() == 0)) {
+      return null;
+    }
+    return findNode(nodeId);
+  }
+
+  public SNode findNode(@NonNls String nodeId) {
+    SModelReference modelRef = SModelReference.fromString(myModelId);
+    return new SNodePointer(modelRef, SNodeId.fromString(nodeId)).getNode();
   }
 
   /*package*/ void toXml(Element container) {

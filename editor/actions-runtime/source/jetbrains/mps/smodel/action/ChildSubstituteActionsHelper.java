@@ -254,7 +254,7 @@ public class ChildSubstituteActionsHelper {
 //      return null;
 //    }
 
-    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getSmartReferenceDescriptor(parentNode, linkDeclaration == null ? null : SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept, context);
+    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getSmartReferenceDescriptor(parentNode, linkDeclaration == null ? null : SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept);
     if (refDescriptor == null) return null;
 
     Scope searchScope = refDescriptor.getScope();

@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -119,6 +120,12 @@ public class ConstructorDeclaration_Behavior {
       return null;
     } else {
       return ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first();
+    }
+  }
+
+  public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+    if (SNodeOperations.getParent(thisNode) == IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierType)) {
+      context.addMember(thisNode, null);
     }
   }
 

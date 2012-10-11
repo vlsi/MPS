@@ -53,6 +53,10 @@ public class SLanguageLanguageAdapter implements SLanguage {
     return c;
   }
 
+  public Iterable<SModule> getLanguageRuntimes() {
+    return null;
+  }
+
   public SModule getModule() {
     return myLanguage;
   }

@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.*;
 
@@ -507,7 +508,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     SNode link = node.getParent().getLinkDeclaration(node.getRole());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
+    String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
     if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }

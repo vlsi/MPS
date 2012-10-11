@@ -24,6 +24,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -80,7 +81,7 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    Scope scope = ModelConstraintsUtil.getScope(this, new ReferenceResolvingContext(getModule()));
+    Scope scope = ModelConstraints.getScope(this);
     if (scope instanceof ErrorScope) {
       if (!silently) {
         reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
@@ -139,32 +140,6 @@ public class DynamicReference extends SReferenceBase {
 
   public void setOrigin(DynamicReferenceOrigin origin) {
     myOrigin = origin;
-  }
-
-  public class ReferenceResolvingContext extends StandaloneMPSContext {
-
-    private IModule module;
-
-    public ReferenceResolvingContext(IModule module) {
-      assert module != null;
-      this.module = module;
-    }
-
-    @Override
-    public Project getProject() {
-      return null;
-    }
-
-    @Override
-    public IModule getModule() {
-      return module;
-    }
-
-    @NotNull
-    @Override
-    public IScope getScope() {
-      return module != null ? module.getScope() : GlobalScope.getInstance() /* FIXME */;
-    }
   }
 
   public static class DynamicReferenceOrigin {

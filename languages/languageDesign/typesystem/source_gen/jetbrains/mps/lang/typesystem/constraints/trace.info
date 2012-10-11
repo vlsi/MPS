@@ -1182,10 +1182,10 @@
     <nodeInfo nodeId="7857223919215949539" fileName="InequationReference_Constraints.java" startLine="38" startPosition="125" endLine="39" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7857223919215949562" fileName="InequationReference_Constraints.java" startLine="40" startPosition="20" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="46" startPosition="7" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7857223919215949532" fileName="InequationReference_Constraints.java" startLine="50" startPosition="75" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7857223919215949536" fileName="InequationReference_Constraints.java" startLine="50" startPosition="75" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7857223919215949560" fileName="InequationReference_Constraints.java" startLine="40" startPosition="18" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="80" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequationReference_Constraints#()V" />
-    <nodeInfo nodeId="7857223919215949532" fileName="InequationReference_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_q84ruw_a0a0b0a0a0a0a1a0b0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7857223919215949536" fileName="InequationReference_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_q84ruw_a0a0b0a0a0a0a1a0b0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="40" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPresentation#()Z" />
     <nodeInfo nodeId="7857223919215949531" fileName="InequationReference_Constraints.java" startLine="37" startPosition="128" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
@@ -1197,10 +1197,10 @@
     <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="24" />
     <scopeInfo nodeId="7857223919215949537" fileName="InequationReference_Constraints.java" startLine="38" startPosition="125" endLine="39" endPosition="172" />
     <scopeInfo nodeId="7857223919215949561" fileName="InequationReference_Constraints.java" startLine="40" startPosition="20" endLine="41" endPosition="96" />
-    <scopeInfo nodeId="7857223919215949532" fileName="InequationReference_Constraints.java" startLine="50" startPosition="75" endLine="51" endPosition="43" />
+    <scopeInfo nodeId="7857223919215949536" fileName="InequationReference_Constraints.java" startLine="50" startPosition="75" endLine="51" endPosition="43" />
     <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="80" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="7857223919215949532" fileName="InequationReference_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="7857223919215949532" varName="str" />
+    <scopeInfo nodeId="7857223919215949536" fileName="InequationReference_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="7857223919215949536" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="40" endLine="35" endPosition="0" />
     <scopeInfo nodeId="7857223919215948962" fileName="InequationReference_Constraints.java" startLine="37" startPosition="128" endLine="42" endPosition="13" />

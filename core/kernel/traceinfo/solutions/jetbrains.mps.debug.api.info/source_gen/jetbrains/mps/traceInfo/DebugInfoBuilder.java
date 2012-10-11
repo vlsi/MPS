@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.template.TracingUtil;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DebugInfoBuilder {
@@ -99,8 +100,8 @@ public class DebugInfoBuilder {
     return null;
   }
 
-  public static void completeDebugInfoFromCache(@NotNull DebugInfo cachedDebugInfo, @NotNull DebugInfo generatedDebugInfo, Iterable<SNode> unchangedRoots) {
-    for (SNode root : Sequence.fromIterable(unchangedRoots)) {
+  public static void completeDebugInfoFromCache(@NotNull DebugInfo cachedDebugInfo, @NotNull DebugInfo generatedDebugInfo, Iterable<SNodePointer> unchangedRoots) {
+    for (SNodePointer root : Sequence.fromIterable(unchangedRoots)) {
       DebugInfoRoot cachedRootInfo = cachedDebugInfo.getRootInfo(root);
       if (cachedRootInfo != null) {
         generatedDebugInfo.putRootInfo(cachedRootInfo);

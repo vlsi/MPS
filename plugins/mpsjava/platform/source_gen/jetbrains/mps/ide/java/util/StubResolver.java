@@ -36,7 +36,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -146,7 +146,7 @@ public class StubResolver {
         if (modelRef == null || resolveInfo == null) {
           continue;
         }
-        final Scope refScope = ModelConstraintsUtil.getScope(ref, context);
+        final Scope refScope = ModelConstraints.getScope(ref);
         if (refScope instanceof ErrorScope) {
           continue;
         }

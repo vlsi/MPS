@@ -8,8 +8,8 @@ import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.generator.GenerationSettingsProvider;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -35,18 +35,17 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.messages.IMessageHandler;
 import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -107,11 +106,11 @@ public class GeneratorWorker extends MpsWorker {
       s.append("\n    ");
       s.append(p);
     }
-    for (IModule m : go.getModules()) {
+    for (SModule m : go.getModules()) {
       s.append("\n    ");
       s.append(m);
     }
-    for (SModelDescriptor m : go.getModels()) {
+    for (SModel m : go.getModels()) {
       s.append("\n    ");
       s.append(m);
     }
@@ -151,7 +150,7 @@ public class GeneratorWorker extends MpsWorker {
 
       info("Loaded project " + p);
 
-      executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
+      executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<SModule>(), new HashSet<SModel>()));
 
       p.projectClosed();
       disposeProject(p);
@@ -159,8 +158,8 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     // the rest -- using dummy project 
-    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
-    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+    LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
+    LinkedHashSet<SModel> models = new LinkedHashSet<SModel>();
     collectFromModuleFiles(modules);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -202,14 +201,14 @@ public class GeneratorWorker extends MpsWorker {
     });
   }
 
-  private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
-    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
-      public boolean accept(IModule it) {
+  private Iterable<SModule> withGenerators(Iterable<SModule> modules) {
+    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
         return it instanceof Language;
       }
-    }).translate(new ITranslator2<IModule, IModule>() {
-      public Iterable<IModule> translate(IModule it) {
-        return (List<IModule>) (List) ((Language) it).getGenerators();
+    }).translate(new ITranslator2<SModule, SModule>() {
+      public Iterable<SModule> translate(SModule it) {
+        return (List<SModule>) (List) ((Language) it).getGenerators();
       }
     }));
   }
@@ -231,7 +230,7 @@ public class GeneratorWorker extends MpsWorker {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Project p : go.getProjects()) {
-          for (SModule mod : withGenerators(p.getModules())) {
+          for (SModule mod : withGenerators((Iterable<SModule>) p.getModules())) {
             models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable((getModelsToGenerate(mod))));
 
           }
@@ -240,7 +239,7 @@ public class GeneratorWorker extends MpsWorker {
           models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(getModelsToGenerate(mod)));
         }
         if (go.getModels() != null) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable((Iterable<SModelDescriptor>) go.getModels()));
+          models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
         }
       }
     });

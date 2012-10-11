@@ -16,11 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -28,7 +26,9 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.*;
@@ -47,7 +47,7 @@ public class MPSModuleRepository implements CoreComponent {
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
   private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
-  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
+  private Map<SModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, IModule>();
   private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
   public static MPSModuleRepository getInstance() {
@@ -71,7 +71,7 @@ public class MPSModuleRepository implements CoreComponent {
   public <T extends IModule> T registerModule(T module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    ModuleId moduleId = module.getModuleReference().getModuleId();
+    SModuleId moduleId = module.getModuleReference().getModuleId();
     String moduleFqName = module.getModuleFqName();
 
     assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
@@ -188,7 +188,7 @@ public class MPSModuleRepository implements CoreComponent {
     return myFqNameToModulesMap.get(fqName);
   }
 
-  public IModule getModuleById(ModuleId moduleId) {
+  public IModule getModuleById(SModuleId moduleId) {
     //todo assertCanRead();
 
     if (moduleId == null) return null;

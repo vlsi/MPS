@@ -16,37 +16,41 @@
 package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public abstract class BaseModuleModel extends BaseMPSChooseModel<ModuleReference> {
-  public boolean willOpenEditor() {
-    return false;
-  }
+public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReference> {
 
   public BaseModuleModel(Project project, String entityName) {
     super(project, entityName);
   }
 
+  @Override
+  public boolean willOpenEditor() {
+    return false;
+  }
+
+  @Override
   public String doGetFullName(Object element) {
-    ModuleReference module = ((BaseModuleItem) element).getModuleReference();
+    SModuleReference module = ((BaseModuleItem) element).getModuleReference();
     return getModuleLongName(module);
   }
 
-  public String doGetObjectName(ModuleReference module) {
+  @Override
+  public String doGetObjectName(SModuleReference module) {
     return NameUtil.shortNameFromLongName(getModuleLongName(module));
   }
 
-  private String getModuleLongName(ModuleReference ref) {
-    IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  private String getModuleLongName(SModuleReference ref) {
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module instanceof Generator) {
       Generator gen = (Generator) module;
       return gen.getAlias();
     }
-    return ref.getModuleFqName();
+    return ref.getModuleName();
   }
 }

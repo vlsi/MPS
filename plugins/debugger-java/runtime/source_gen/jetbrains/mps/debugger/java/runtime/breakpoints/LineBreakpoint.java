@@ -72,7 +72,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     if (className == null) {
       //  todo when this case does actually happen? 
       String fileName = myLocation.getFileName();
-      if (fileName.endsWith(".java")) {
+      if (fileName != null && fileName.endsWith(".java")) {
         fileName = fileName.substring(0, fileName.length() - ".java".length());
       }
       className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;

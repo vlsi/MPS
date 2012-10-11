@@ -44,9 +44,6 @@ import java.util.*;
 public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
-  @Deprecated
-  public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
-
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
@@ -87,13 +84,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     this(model, conceptFqName, true);
   }
 
-  public SModel getModel() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    return myModel;
-  }
-
   public SNodeId getSNodeId() {
     ModelAccess.assertLegalRead(this);
 
@@ -120,9 +110,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
-  @Override
   public org.jetbrains.mps.openapi.model.SModel getContainingModel() {
-    return myModel != null ? getModel().getModelDescriptor() : null;
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+
+    return myModel != null ? myModel.getModelDescriptor() : null;
   }
 
   public final boolean hasProperty(String propertyName) {
@@ -157,8 +149,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     setProperty(propertyName, propertyValue, true);
   }
 
-  @Override
   public void visitProperties(PropertyVisitor v) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+
     if (myProperties == null) return;
     for (int i = 0; i < myProperties.length; i += 2) {
       v.visitProperty(myProperties[i], myProperties[i + 1]);
@@ -236,7 +230,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     if (target == null) {
       if (ourMemberAccessModifier != null) {
@@ -309,7 +302,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  @Override
   public SNode getReferenceTarget(String role) {
     SReference reference = getReference(role);
     SNode result = reference == null ? null : reference.getTargetNode();
@@ -355,8 +347,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  @Override
   public void visitReferences(ReferenceVisitor v) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+
     if (myReferences == null) return;
     for (SReference ref : myReferences) {
       v.visitReference(ref.getRole(), ref);
@@ -401,7 +395,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return s;
   }
 
-  @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
     enforceModelLoad();
 
@@ -443,7 +436,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  @Override
   public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
     ModelAccess.assertLegalRead(this);
 
@@ -461,14 +453,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return "<no role>";
   }
 
-  @Override
   public void visitChildren(ChildVisitor v) {
     for (SNode child : getChildren()) {
       if (!v.visitChild(getRoleOf(child), child)) return;
     }
   }
 
-  @Override
   public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
     String childRole = ((SNode) child).getRole();
     assert childRole != null : "role must be not null";
@@ -478,7 +468,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return children.get(index - 1);
   }
 
-  @Override
   public SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
     String childRole = ((SNode) child).getRole();
     assert childRole != null : "role must be not null";
@@ -488,12 +477,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return children.get(index + 1);
   }
 
-  @Override
   public SNodeReference getReference() {
     return new SNodePointer(this);
   }
 
-  @Override
   public SConcept getConcept() {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
@@ -555,7 +542,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myUserObjects = newarr;
   }
 
-  @Override
   public void visitUserObjects(UserObjectVisitor v) {
     if (myUserObjects == null) return;
     for (int i = 0; i < myUserObjects.length; i += 2) {
@@ -811,6 +797,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
+  public SModel getModel() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    return myModel;
+  }
+
   @Deprecated
   /**
    * Inline content in java code, use migration in MPS
@@ -825,6 +818,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+  @Deprecated
+  public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
 
   @Deprecated
   /**

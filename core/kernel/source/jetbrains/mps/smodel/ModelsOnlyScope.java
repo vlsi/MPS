@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +42,7 @@ public class ModelsOnlyScope extends BaseScope {
     return myModelDescriptors;
   }
 
-  public Language getLanguage(ModuleReference moduleReference) {
+  public Language getLanguage(SModuleReference moduleReference) {
     return null;
   }
 

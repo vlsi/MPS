@@ -10,6 +10,6 @@ public class XmlFile_Behavior {
   }
 
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return thisNode.getModel().getLongName() + "." + SPropertyOperations.getString(thisNode, "name");
+    return thisNode.getModel().getLongName() + "." + SPropertyOperations.getString(thisNode, "name").replace(".", "$");
   }
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -126,7 +127,7 @@ public class SModelUtil_new implements CoreComponent {
     assert model != null;
     boolean isNotProjectModel = !ProjectModels.isProjectModel(model.getSModelReference());
     if (isNotProjectModel) {
-      String fqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(conceptFqName, scope);
+      String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
       if (fqName != null) {
         conceptFqName = fqName;
       }

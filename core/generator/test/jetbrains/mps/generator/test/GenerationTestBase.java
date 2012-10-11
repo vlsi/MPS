@@ -30,6 +30,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
@@ -41,6 +42,8 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
@@ -271,14 +274,14 @@ public class GenerationTestBase {
   }
 
   protected static SModelDescriptor findModel(Project project, String fqName) {
-    for (IModule m : project.getModules()) {
-      for (SModelDescriptor descr : m.getOwnModelDescriptors()) {
+    for (SModule m : project.getModules()) {
+      for (org.jetbrains.mps.openapi.model.SModel descr : m.getModels()) {
         if (!(descr instanceof EditableSModelDescriptor)) {
           continue;
         }
-        String longName = descr.getSModelReference().getLongName();
+        String longName = descr.getModelReference().getModelName();
         if (longName.equals(fqName)) {
-          return descr;
+          return (SModelDescriptor) descr;
         }
       }
     }

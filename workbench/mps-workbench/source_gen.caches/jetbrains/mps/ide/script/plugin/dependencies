@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseScope" />
   </dependency>
   <dependency className="jetbrains.mps.ide.script.plugin.RunMigrationScriptAction" file="RunMigrationScriptAction.java">

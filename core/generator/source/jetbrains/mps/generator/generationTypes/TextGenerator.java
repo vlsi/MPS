@@ -31,7 +31,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
-import jetbrains.mps.traceInfo.*;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.traceInfo.DebugInfoBuilder;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -157,12 +158,14 @@ public class TextGenerator {
     GenerationDependencies dependencies = status.getDependencies();
     if (dependencies != null) {
       // process unchanged files
-      for (GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
+      List<GenerationRootDependencies> unchangedDependencies = dependencies.getUnchangedDependencies();
+      SModelDescriptor originalInputModel = status.getOriginalInputModel();
+      for (GenerationRootDependencies rdep : unchangedDependencies) {
         for (String filename : rdep.getFiles()) {
           if (myStreamHandler.touch(filename, false)) {
             // re-register baselanguage dependencies
             if (modelDep == null) {
-              modelDep = BLDependenciesCache.getInstance().get(status.getOriginalInputModel());
+              modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
             }
             if (modelDep != null) {
               RootDependencies root = modelDep.getDependency(filename);
@@ -175,23 +178,29 @@ public class TextGenerator {
 
       }
 
-      // complete debug info with info for roots that did not changed and therefore were not generated
-      // we get debug info for them from cache
-      DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
       DebugInfo generatedDebugInfo = status.getDebugInfo();
-      if (cachedDebugInfo != null && generatedDebugInfo != null) {
+      if (!unchangedDependencies.isEmpty()) {
+        if (generatedDebugInfo == null) {
+          // touch
+          myStreamHandler.touch(TraceInfoCache.getInstance().getCacheFileName(), false);
+        } else {
+          // complete debug info with info for roots that did not changed and therefore were not generated
+          // we get debug info for them from cache
+          DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
+          if (cachedDebugInfo != null) {
 
-        List<SNode> unchangedRoots = new ArrayList<SNode>();
-        String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
-        for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
-          String rootId = dependency.getRootId();
-          if (rootId == null) continue;
-          SNode node = new SNodePointer(inputModelUid, rootId).getNode();
-          if (node == null) continue;
-          unchangedRoots.add(node);
+            List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
+            String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
+
+            for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
+              String rootId = dependency.getRootId();
+              if (rootId == null) continue;
+              unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
+            }
+
+            DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
+          }
         }
-
-        DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
       }
     }
   }

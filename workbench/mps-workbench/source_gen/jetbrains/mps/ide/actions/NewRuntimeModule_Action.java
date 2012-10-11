@@ -22,9 +22,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -100,7 +101,7 @@ public class NewRuntimeModule_Action extends BaseAction {
         }
       });
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
-        public ModuleReference[] find(IScope p0) {
+        public SModuleReference[] find(IScope p0) {
           return ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
@@ -108,14 +109,14 @@ public class NewRuntimeModule_Action extends BaseAction {
           }).toGenericArray(ModuleReference.class);
         }
 
-        public NavigationItem doGetNavigationItem(final ModuleReference module) {
+        public NavigationItem doGetNavigationItem(final SModuleReference module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean p0) {
               if (module == null) {
                 return;
               }
               final Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
-              language.getModuleDescriptor().getRuntimeModules().add(module);
+              language.getModuleDescriptor().getRuntimeModules().add((ModuleReference) module);
               final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
               ModelAccess.instance().runWriteInEDT(new Runnable() {
                 public void run() {

@@ -39,6 +39,7 @@ import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -185,7 +186,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     }
 
     @Override
-    public Language getLanguage(ModuleReference moduleReference) {
+    public Language getLanguage(SModuleReference moduleReference) {
       return inner.getLanguage(moduleReference);
     }
 

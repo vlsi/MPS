@@ -16,42 +16,25 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.SwingUtilities;
-import java.awt.Component;
-import java.awt.Dialog;
-import java.awt.Frame;
-import java.awt.Window;
+import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 
 public class CommonChoosers {
   private static List<SModelReference> showDialogModelChooser_internal(final Component parent, final List<SModelReference> models,
-                                                                       @Nullable List<SModelReference> nonProjectModels,
-                                                                       boolean multiSelection) {
+                                     @Nullable List<SModelReference> nonProjectModels,
+                                     boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
     if (window instanceof Frame) {
@@ -63,9 +46,9 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  private static List<ModuleReference> showDialogModuleChooser_internal(final Component parent, String entityString, final List<ModuleReference> modules,
-                                                                        @Nullable List<ModuleReference> nonProjectModules,
-                                                                        boolean multiSelection) {
+  private static List<ModuleReference> showDialogModuleChooser_internal(final Component parent, String entityString, final List<? extends SModuleReference> modules,
+                                      @Nullable List<? extends SModuleReference> nonProjectModules,
+                                      boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModuleChooserDialog dialog;
     if (window instanceof Frame) {
@@ -103,7 +86,7 @@ public class CommonChoosers {
     return result.get(0);
   }
 
-  public static ModuleReference showDialogModuleChooser(Component parent, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
+  public static ModuleReference showDialogModuleChooser(Component parent, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
     List<ModuleReference> result = showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
@@ -123,124 +106,5 @@ public class CommonChoosers {
     }
     dialog.showDialog();
     return dialog.getResult();
-  }
-
-  public static void showSimpleNodeChooser(final List<SNode> nodes, final ChooserCallback<SNode> callback, final boolean willOpenEditor) {
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-
-    BaseNodeModel goToNodeModel = new BaseNodeModel(project) {
-      public NavigationItem doGetNavigationItem(final SNode node) {
-        return new BaseNodeItem(node) {
-          public void navigate(boolean requestFocus) {
-            callback.execute(getNode());
-          }
-        };
-      }
-
-      public SNode[] find(IScope scope) {
-        return nodes.toArray(new SNode[nodes.size()]);
-      }
-
-      @Override
-      public boolean willOpenEditor() {
-        return willOpenEditor;
-      }
-    };
-
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, null);
-
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      public void onClose() {
-      }
-
-      public void elementChosen(final Object element) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            ((NavigationItem) element).navigate(true);
-          }
-        });
-      }
-    }, ModalityState.current(), true);
-  }
-
-  public static void showSimpleModelChooser(final List<SModelReference> models, final ChooserCallback<SModelReference> callback) {
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-
-    BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new BaseModelItem(modelReference) {
-          public void navigate(boolean requestFocus) {
-            callback.execute(getModelReference());
-          }
-        };
-      }
-
-      public SModelReference[] find(IScope scope) {
-        return models.toArray(new SModelReference[models.size()]);
-      }
-    };
-
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, null);
-
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      public void onClose() {
-      }
-
-      public void elementChosen(final Object element) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            ((NavigationItem) element).navigate(true);
-          }
-        });
-      }
-    }, ModalityState.current(), true);
-  }
-
-  public static void showSimpleModuleChooser(final List<ModuleReference> modules, final String entityString, final ChooserCallback<ModuleReference> callback) {
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-
-    BaseMPSChooseModel<ModuleReference> goToModuleModel = new BaseMPSChooseModel<ModuleReference>(project, entityString) {
-      public String doGetFullName(Object element) {
-        return ((BaseModuleItem) element).getModuleReference().getModuleFqName();
-      }
-
-      public String doGetObjectName(ModuleReference module) {
-        return module.getModuleFqName();
-      }
-
-      public NavigationItem doGetNavigationItem(final ModuleReference module) {
-        return new BaseModuleItem(module) {
-          public void navigate(boolean requestFocus) {
-            callback.execute(module);
-          }
-        };
-      }
-
-      public ModuleReference[] find(IScope scope) {
-        return (ModuleReference[]) modules.toArray();
-      }
-
-      @Override
-      public boolean willOpenEditor() {
-        return false;
-      }
-    };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, null);
-
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      public void onClose() {
-      }
-
-      public void elementChosen(Object element) {
-        ((NavigationItem) element).navigate(true);
-      }
-    }, ModalityState.current(), true);
-  }
-
-  public static interface ChooserCallback<T> {
-    public void execute(T object);
   }
 }

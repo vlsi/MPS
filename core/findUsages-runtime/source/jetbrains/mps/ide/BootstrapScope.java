@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -59,14 +60,14 @@ public class BootstrapScope extends BaseScope {
     return Collections.unmodifiableList(getModules(null));
   }
 
-  public Language getLanguage(ModuleReference moduleReference) {
+  public Language getLanguage(SModuleReference moduleReference) {
     for (Language l : getModules(Language.class)) {
       if (moduleReference.getModuleId() != null) {
         if (l.getModuleReference().getModuleId().equals(moduleReference.getModuleId())) {
           return l;
         }
       } else {
-        if (l.getModuleFqName().equals(moduleReference.getModuleFqName())) {
+        if (l.getModuleFqName().equals(moduleReference.getModuleName())) {
           return l;
         }
       }

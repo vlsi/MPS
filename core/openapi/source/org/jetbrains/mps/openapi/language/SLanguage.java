@@ -23,5 +23,7 @@ public interface SLanguage {
 
   Iterable<SAbstractConcept> getConcepts();
 
+  Iterable<SModule> getLanguageRuntimes();
+
   SModule getModule();
 }

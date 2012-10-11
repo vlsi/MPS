@@ -10,13 +10,15 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -59,11 +61,11 @@ public class AddMissingImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
+      for (SModule module : Sequence.fromIterable(((Project) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getModulesWithGenerators())) {
         if (module.isPackaged()) {
           continue;
         }
-        for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+        for (SModel model : Sequence.fromIterable(module.getModels())) {
           if (!(SModelStereotype.isUserModel(model))) {
             continue;
           }
@@ -72,7 +74,7 @@ public class AddMissingImportsInProject_Action extends BaseAction {
           }
 
           new MissingDependenciesFixer(model).fix(false);
-          module.invalidateCaches();
+          ((IModule) module).invalidateCaches();
         }
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

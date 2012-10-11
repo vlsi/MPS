@@ -49,7 +49,7 @@ import java.util.List;
     }
 
     // search scope
-    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getReferenceDescriptor(referenceNode, SModelUtil.getLinkDeclarationRole(linkDeclaration), 0, context);
+    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getReferenceDescriptor(referenceNode, SModelUtil.getLinkDeclarationRole(linkDeclaration), 0);
     Scope searchScope = refDescriptor.getScope();
     if (searchScope instanceof ErrorScope) {
       LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());

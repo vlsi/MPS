@@ -20,6 +20,8 @@ package org.jetbrains.mps.openapi.module;
  */
 public interface SModuleReference {
 
+  SModuleId getModuleId();
+
   String getModuleName();
 
   SModule resolve(SRepository repo);

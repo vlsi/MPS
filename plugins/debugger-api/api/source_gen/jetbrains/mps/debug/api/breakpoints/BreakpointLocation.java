@@ -60,6 +60,7 @@ public class BreakpointLocation {
     return positionForNode.value;
   }
 
+  @Nullable
   public String getTargetUnitName() {
     return TraceInfoUtil.getUnitName(getFileName(), getLineIndexInFile(), myNodePointer.getModel());
   }
@@ -76,6 +77,7 @@ public class BreakpointLocation {
     return position.getStartLine() + 1;
   }
 
+  @Nullable
   public String getFileName() {
     PositionInfo positionInfo = getTargetCodePosition();
     if (positionInfo == null) {

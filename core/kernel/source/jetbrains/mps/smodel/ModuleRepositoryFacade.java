@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -56,11 +57,11 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return INSTANCE;
   }
 
-  public IModule getModule(@NotNull ModuleReference ref) {
-    return ref.getModuleId() != null ? REPO.getModuleById(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleFqName());
+  public IModule getModule(@NotNull SModuleReference ref) {
+    return ref.getModuleId() != null ? REPO.getModuleById(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
   }
 
-  public <T extends IModule> T getModule(ModuleReference ref, Class<T> cls) {
+  public <T extends IModule> T getModule(SModuleReference ref, Class<T> cls) {
     IModule m = getModule(ref);
     if (!cls.isInstance(m)) return null;
     return (T) m;

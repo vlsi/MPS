@@ -414,6 +414,7 @@
       <modulePath path="${project}/testbench/modules/testAntTask/solutions/testAntTask/testAntTask.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/jetbrains.mps.makeTest.msd" folder="core.make" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.testModels/jetbrains.mps.testModels.msd" folder="testbench" />
+      <modulePath path="${project}/testbench/modules/testRead/testRead.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testRefactoring/languages/testRefactoring/testRefactoring.mpl" folder="test" />
       <modulePath path="${project}/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" folder="test" />
       <modulePath path="${project}/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="testbench" />

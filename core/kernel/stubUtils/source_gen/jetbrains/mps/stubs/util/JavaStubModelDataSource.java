@@ -72,7 +72,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
     if (item == null) {
       return new HashSet<NodeDescriptor>();
     }
-    HashSet res = new HashSet();
+    HashSet<NodeDescriptor> res = new HashSet<NodeDescriptor>();
     iterateClassPath(model.getModule().getModuleReference(), item, res, model.getLongName());
     return res;
   }

@@ -156,14 +156,14 @@
     <nodeInfo nodeId="2219920121494329738" fileName="CycleHelper.java" startLine="48" startPosition="150" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2219920121494329774" fileName="CycleHelper.java" startLine="53" startPosition="10" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7385586609667605170" fileName="CycleHelper.java" startLine="59" startPosition="31" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667638407" fileName="CycleHelper.java" startLine="60" startPosition="49" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667636718" fileName="CycleHelper.java" startLine="63" startPosition="39" endLine="64" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7385586609667636750" fileName="CycleHelper.java" startLine="67" startPosition="37" endLine="68" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2219920121494342435" fileName="CycleHelper.java" startLine="71" startPosition="52" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667638417" fileName="CycleHelper.java" startLine="74" startPosition="30" endLine="75" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667636770" fileName="CycleHelper.java" startLine="75" startPosition="61" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667704297" fileName="CycleHelper.java" startLine="77" startPosition="86" endLine="78" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667704359" fileName="CycleHelper.java" startLine="79" startPosition="151" endLine="80" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667636718" fileName="CycleHelper.java" startLine="62" startPosition="39" endLine="63" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7385586609667636750" fileName="CycleHelper.java" startLine="66" startPosition="37" endLine="67" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2219920121494342435" fileName="CycleHelper.java" startLine="70" startPosition="52" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667638417" fileName="CycleHelper.java" startLine="73" startPosition="30" endLine="74" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7385586609667636770" fileName="CycleHelper.java" startLine="74" startPosition="61" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667704297" fileName="CycleHelper.java" startLine="76" startPosition="86" endLine="77" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667704359" fileName="CycleHelper.java" startLine="78" startPosition="151" endLine="79" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667638407" fileName="CycleHelper.java" startLine="81" startPosition="5" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7385586609667638424" fileName="CycleHelper.java" startLine="83" startPosition="52" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7385586609667638442" fileName="CycleHelper.java" startLine="85" startPosition="5" endLine="86" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7385586609667638486" fileName="CycleHelper.java" startLine="86" startPosition="90" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -187,246 +187,273 @@
     <nodeInfo nodeId="6647099934207035810" fileName="CycleHelper.java" startLine="113" startPosition="59" endLine="114" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7926701909975675929" fileName="CycleHelper.java" startLine="114" startPosition="48" endLine="115" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="144710003695764513" fileName="CycleHelper.java" startLine="115" startPosition="58" endLine="116" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667762310" fileName="CycleHelper.java" startLine="116" startPosition="60" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1659807394255068912" fileName="CycleHelper.java" startLine="117" startPosition="0" endLine="118" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667640485" fileName="CycleHelper.java" startLine="119" startPosition="42" endLine="120" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1659807394255068973" fileName="CycleHelper.java" startLine="120" startPosition="37" endLine="121" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667640515" fileName="CycleHelper.java" startLine="123" startPosition="43" endLine="124" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975676109" fileName="CycleHelper.java" startLine="128" startPosition="115" endLine="129" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144710003695764520" fileName="CycleHelper.java" startLine="130" startPosition="123" endLine="131" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975810631" fileName="CycleHelper.java" startLine="132" startPosition="116" endLine="133" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975676011" fileName="CycleHelper.java" startLine="133" startPosition="154" endLine="134" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975676097" fileName="CycleHelper.java" startLine="139" startPosition="43" endLine="140" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647099934206976415" fileName="CycleHelper.java" startLine="142" startPosition="18" endLine="143" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647099934207035819" fileName="CycleHelper.java" startLine="145" startPosition="9" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7385586609667640568" fileName="CycleHelper.java" startLine="146" startPosition="0" endLine="147" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667640591" fileName="CycleHelper.java" startLine="147" startPosition="130" endLine="148" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667640540" fileName="CycleHelper.java" startLine="148" startPosition="65" endLine="149" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975523896" fileName="CycleHelper.java" startLine="149" startPosition="105" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975524790" fileName="CycleHelper.java" startLine="151" startPosition="145" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975524969" fileName="CycleHelper.java" startLine="157" startPosition="36" endLine="158" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1659807394255069094" fileName="CycleHelper.java" startLine="161" startPosition="7" endLine="162" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975525019" fileName="CycleHelper.java" startLine="162" startPosition="67" endLine="163" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975654266" fileName="CycleHelper.java" startLine="165" startPosition="39" endLine="166" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975676205" fileName="CycleHelper.java" startLine="169" startPosition="30" endLine="170" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975811073" fileName="CycleHelper.java" startLine="170" startPosition="122" endLine="171" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975811127" fileName="CycleHelper.java" startLine="171" startPosition="77" endLine="172" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144710003695764609" fileName="CycleHelper.java" startLine="174" startPosition="38" endLine="175" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144710003695764615" fileName="CycleHelper.java" startLine="175" startPosition="131" endLine="176" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144710003695764621" fileName="CycleHelper.java" startLine="176" startPosition="61" endLine="177" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647099934207035915" fileName="CycleHelper.java" startLine="179" startPosition="36" endLine="180" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975676329" fileName="CycleHelper.java" startLine="180" startPosition="130" endLine="181" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647099934207035945" fileName="CycleHelper.java" startLine="181" startPosition="61" endLine="182" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667638466" fileName="CycleHelper.java" startLine="184" startPosition="5" endLine="185" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1692280246134755838" fileName="CycleHelper.java" startLine="187" startPosition="46" endLine="188" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7385586609667640424" fileName="CycleHelper.java" startLine="191" startPosition="39" endLine="192" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667704231" fileName="CycleHelper.java" startLine="192" startPosition="86" endLine="193" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667704289" fileName="CycleHelper.java" startLine="197" startPosition="60" endLine="198" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4755209551904421666" fileName="CycleHelper.java" startLine="201" startPosition="42" endLine="202" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
-    <nodeInfo nodeId="7385586609667636793" fileName="CycleHelper.java" startLine="202" startPosition="31" endLine="203" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="4755209551904421677" fileName="CycleHelper.java" startLine="205" startPosition="33" endLine="206" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667636844" fileName="CycleHelper.java" startLine="211" startPosition="104" endLine="212" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667636860" fileName="CycleHelper.java" startLine="213" startPosition="16" endLine="214" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647099934206976290" fileName="CycleHelper.java" startLine="216" startPosition="45" endLine="217" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7385586609667638337" fileName="CycleHelper.java" startLine="219" startPosition="15" endLine="220" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667638373" fileName="CycleHelper.java" startLine="221" startPosition="29" endLine="222" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667638389" fileName="CycleHelper.java" startLine="223" startPosition="20" endLine="224" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667636812" fileName="CycleHelper.java" startLine="228" startPosition="7" endLine="229" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7385586609667638463" fileName="CycleHelper.java" startLine="232" startPosition="30" endLine="233" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6647099934206976230" fileName="CycleHelper.java" startLine="142" startPosition="16" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7385586609667638387" fileName="CycleHelper.java" startLine="223" startPosition="18" endLine="225" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6921753234511782055" fileName="CycleHelper.java" startLine="116" startPosition="60" endLine="117" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7385586609667762310" fileName="CycleHelper.java" startLine="117" startPosition="61" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1659807394255068912" fileName="CycleHelper.java" startLine="118" startPosition="0" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7385586609667640485" fileName="CycleHelper.java" startLine="120" startPosition="42" endLine="121" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1659807394255068973" fileName="CycleHelper.java" startLine="121" startPosition="37" endLine="122" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667640515" fileName="CycleHelper.java" startLine="124" startPosition="43" endLine="125" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7926701909975676109" fileName="CycleHelper.java" startLine="129" startPosition="115" endLine="130" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="144710003695764520" fileName="CycleHelper.java" startLine="131" startPosition="123" endLine="132" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975810631" fileName="CycleHelper.java" startLine="133" startPosition="116" endLine="134" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975676011" fileName="CycleHelper.java" startLine="134" startPosition="154" endLine="135" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975676097" fileName="CycleHelper.java" startLine="140" startPosition="43" endLine="141" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647099934206976415" fileName="CycleHelper.java" startLine="143" startPosition="18" endLine="144" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6921753234511786101" fileName="CycleHelper.java" startLine="145" startPosition="11" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6921753234511821322" fileName="CycleHelper.java" startLine="147" startPosition="9" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6921753234511818186" fileName="CycleHelper.java" startLine="150" startPosition="41" endLine="151" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6921753234511820442" fileName="CycleHelper.java" startLine="154" startPosition="31" endLine="155" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647099934207035819" fileName="CycleHelper.java" startLine="157" startPosition="9" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7385586609667640568" fileName="CycleHelper.java" startLine="158" startPosition="0" endLine="159" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7385586609667640591" fileName="CycleHelper.java" startLine="159" startPosition="130" endLine="160" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667640540" fileName="CycleHelper.java" startLine="160" startPosition="65" endLine="161" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975523896" fileName="CycleHelper.java" startLine="161" startPosition="105" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7926701909975524790" fileName="CycleHelper.java" startLine="163" startPosition="145" endLine="164" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975524969" fileName="CycleHelper.java" startLine="169" startPosition="36" endLine="170" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1659807394255069094" fileName="CycleHelper.java" startLine="173" startPosition="7" endLine="174" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975525019" fileName="CycleHelper.java" startLine="174" startPosition="67" endLine="175" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975654266" fileName="CycleHelper.java" startLine="177" startPosition="39" endLine="178" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7926701909975676205" fileName="CycleHelper.java" startLine="181" startPosition="30" endLine="182" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975811073" fileName="CycleHelper.java" startLine="182" startPosition="122" endLine="183" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975811127" fileName="CycleHelper.java" startLine="183" startPosition="77" endLine="184" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="144710003695764609" fileName="CycleHelper.java" startLine="186" startPosition="38" endLine="187" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="144710003695764615" fileName="CycleHelper.java" startLine="187" startPosition="131" endLine="188" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="144710003695764621" fileName="CycleHelper.java" startLine="188" startPosition="61" endLine="189" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647099934207035915" fileName="CycleHelper.java" startLine="191" startPosition="36" endLine="192" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975676329" fileName="CycleHelper.java" startLine="192" startPosition="130" endLine="193" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647099934207035945" fileName="CycleHelper.java" startLine="193" startPosition="61" endLine="194" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6921753234511820525" fileName="CycleHelper.java" startLine="196" startPosition="41" endLine="197" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6921753234511820568" fileName="CycleHelper.java" startLine="197" startPosition="131" endLine="198" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6921753234511820623" fileName="CycleHelper.java" startLine="198" startPosition="69" endLine="199" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667638466" fileName="CycleHelper.java" startLine="201" startPosition="5" endLine="202" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1692280246134755838" fileName="CycleHelper.java" startLine="204" startPosition="46" endLine="205" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7385586609667640424" fileName="CycleHelper.java" startLine="208" startPosition="39" endLine="209" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667704231" fileName="CycleHelper.java" startLine="209" startPosition="86" endLine="210" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667704296" fileName="CycleHelper.java" startLine="214" startPosition="60" endLine="215" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904421666" fileName="CycleHelper.java" startLine="218" startPosition="42" endLine="219" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
+    <nodeInfo nodeId="7385586609667636793" fileName="CycleHelper.java" startLine="219" startPosition="31" endLine="220" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
+    <nodeInfo nodeId="4755209551904421677" fileName="CycleHelper.java" startLine="222" startPosition="33" endLine="223" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667636844" fileName="CycleHelper.java" startLine="228" startPosition="104" endLine="229" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667636860" fileName="CycleHelper.java" startLine="230" startPosition="16" endLine="231" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647099934206976290" fileName="CycleHelper.java" startLine="233" startPosition="45" endLine="234" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7385586609667638337" fileName="CycleHelper.java" startLine="236" startPosition="15" endLine="237" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7385586609667638373" fileName="CycleHelper.java" startLine="238" startPosition="29" endLine="239" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667638389" fileName="CycleHelper.java" startLine="240" startPosition="20" endLine="241" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667636812" fileName="CycleHelper.java" startLine="245" startPosition="7" endLine="246" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7385586609667638463" fileName="CycleHelper.java" startLine="249" startPosition="30" endLine="250" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6647099934206976230" fileName="CycleHelper.java" startLine="143" startPosition="16" endLine="145" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7385586609667638387" fileName="CycleHelper.java" startLine="240" startPosition="18" endLine="242" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2219920121494329682" fileName="CycleHelper.java" startLine="44" startPosition="40" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2219920121494342430" fileName="CycleHelper.java" startLine="70" startPosition="8" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7385586609667648749" fileName="CycleHelper.java" startLine="82" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2219920121494342430" fileName="CycleHelper.java" startLine="69" startPosition="8" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7385586609667648749" fileName="CycleHelper.java" startLine="82" startPosition="50" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7385586609667638501" fileName="CycleHelper.java" startLine="89" startPosition="51" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7385586609667764503" fileName="CycleHelper.java" startLine="93" startPosition="59" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7926701909975676081" fileName="CycleHelper.java" startLine="138" startPosition="14" endLine="141" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7926701909975524953" fileName="CycleHelper.java" startLine="156" startPosition="12" endLine="159" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4755209551904421670" fileName="CycleHelper.java" startLine="204" startPosition="0" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7926701909975676081" fileName="CycleHelper.java" startLine="139" startPosition="14" endLine="142" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6921753234511820457" fileName="CycleHelper.java" startLine="153" startPosition="13" endLine="156" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7926701909975524953" fileName="CycleHelper.java" startLine="168" startPosition="12" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4755209551904421670" fileName="CycleHelper.java" startLine="221" startPosition="0" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4755209551904411797" fileName="CycleHelper.java" startLine="35" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CycleHelper#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
     <nodeInfo nodeId="2219920121494329746" fileName="CycleHelper.java" startLine="49" startPosition="52" endLine="53" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7385586609667636714" fileName="CycleHelper.java" startLine="62" startPosition="154" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7385586609667636746" fileName="CycleHelper.java" startLine="66" startPosition="45" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7385586609667636714" fileName="CycleHelper.java" startLine="61" startPosition="154" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7385586609667636746" fileName="CycleHelper.java" startLine="65" startPosition="45" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7385586609667704132" fileName="CycleHelper.java" startLine="98" startPosition="68" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/build/workflow/generator/util/CycleHelper/Module;Ljetbrains/mps/build/workflow/generator/util/CycleHelper/Module;)I" />
-    <nodeInfo nodeId="7385586609667640511" fileName="CycleHelper.java" startLine="122" startPosition="127" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7926701909975676030" fileName="CycleHelper.java" startLine="134" startPosition="56" endLine="138" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975524827" fileName="CycleHelper.java" startLine="152" startPosition="53" endLine="156" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975654262" fileName="CycleHelper.java" startLine="164" startPosition="227" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1692280246134755830" fileName="CycleHelper.java" startLine="186" startPosition="60" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="1692280246134755775" fileName="CycleHelper.java" startLine="190" startPosition="7" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7385586609667704289" fileName="CycleHelper.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yc0kju_a0c0e0b#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6647099934206976286" fileName="CycleHelper.java" startLine="215" startPosition="140" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7385586609667638459" fileName="CycleHelper.java" startLine="231" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7385586609667704273" fileName="CycleHelper.java" startLine="76" startPosition="26" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7385586609667640511" fileName="CycleHelper.java" startLine="123" startPosition="127" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7926701909975676030" fileName="CycleHelper.java" startLine="135" startPosition="56" endLine="139" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6921753234511818182" fileName="CycleHelper.java" startLine="149" startPosition="140" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7926701909975524827" fileName="CycleHelper.java" startLine="164" startPosition="53" endLine="168" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7926701909975654262" fileName="CycleHelper.java" startLine="176" startPosition="227" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1692280246134755830" fileName="CycleHelper.java" startLine="203" startPosition="60" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="1692280246134755775" fileName="CycleHelper.java" startLine="207" startPosition="7" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7385586609667704296" fileName="CycleHelper.java" startLine="213" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yc0kju_a0c0d0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6647099934206976286" fileName="CycleHelper.java" startLine="232" startPosition="140" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7385586609667638459" fileName="CycleHelper.java" startLine="248" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7385586609667704273" fileName="CycleHelper.java" startLine="75" startPosition="26" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7385586609667704127" fileName="CycleHelper.java" startLine="97" startPosition="0" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667640468" fileName="CycleHelper.java" startLine="121" startPosition="90" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975524985" fileName="CycleHelper.java" startLine="163" startPosition="106" endLine="168" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975811051" fileName="CycleHelper.java" startLine="168" startPosition="10" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="144710003695764607" fileName="CycleHelper.java" startLine="173" startPosition="7" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6647099934207035902" fileName="CycleHelper.java" startLine="178" startPosition="7" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1692280246134755819" fileName="CycleHelper.java" startLine="185" startPosition="25" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667638348" fileName="CycleHelper.java" startLine="220" startPosition="180" endLine="225" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7385586609667605180" fileName="CycleHelper.java" startLine="61" startPosition="50" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667636757" fileName="CycleHelper.java" startLine="73" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7926701909975524778" fileName="CycleHelper.java" startLine="150" startPosition="0" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7385586609667636873" fileName="CycleHelper.java" startLine="214" startPosition="54" endLine="226" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7385586609667640468" fileName="CycleHelper.java" startLine="122" startPosition="90" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975524985" fileName="CycleHelper.java" startLine="175" startPosition="106" endLine="180" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7926701909975811051" fileName="CycleHelper.java" startLine="180" startPosition="10" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="144710003695764607" fileName="CycleHelper.java" startLine="185" startPosition="7" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6647099934207035902" fileName="CycleHelper.java" startLine="190" startPosition="7" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6921753234511820518" fileName="CycleHelper.java" startLine="195" startPosition="7" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1692280246134755819" fileName="CycleHelper.java" startLine="202" startPosition="25" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667638348" fileName="CycleHelper.java" startLine="237" startPosition="180" endLine="242" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7385586609667605180" fileName="CycleHelper.java" startLine="60" startPosition="49" endLine="69" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7385586609667636757" fileName="CycleHelper.java" startLine="72" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6921753234511820438" fileName="CycleHelper.java" startLine="148" startPosition="0" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7926701909975524778" fileName="CycleHelper.java" startLine="162" startPosition="0" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7385586609667636873" fileName="CycleHelper.java" startLine="231" startPosition="54" endLine="243" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2219920121494329672" fileName="CycleHelper.java" startLine="43" startPosition="118" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2219920121494329615" fileName="CycleHelper.java" startLine="42" startPosition="63" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7385586609667636858" fileName="CycleHelper.java" startLine="213" startPosition="14" endLine="227" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6647099934206976203" fileName="CycleHelper.java" startLine="127" startPosition="84" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7385586609667636821" fileName="CycleHelper.java" startLine="210" startPosition="28" endLine="227" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7385586609667636858" fileName="CycleHelper.java" startLine="230" startPosition="14" endLine="244" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6647099934206976203" fileName="CycleHelper.java" startLine="128" startPosition="84" endLine="145" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7385586609667636821" fileName="CycleHelper.java" startLine="227" startPosition="28" endLine="244" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2219920121494329546" fileName="CycleHelper.java" startLine="40" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optimizeDependencies#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7385586609667762242" fileName="CycleHelper.java" startLine="126" startPosition="11" endLine="145" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7385586609667636800" fileName="CycleHelper.java" startLine="209" startPosition="46" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7385586609667523574" fileName="CycleHelper.java" startLine="208" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNexts#()Ljava/util/Set;" />
-    <nodeInfo nodeId="7385586609667640459" fileName="CycleHelper.java" startLine="118" startPosition="23" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7385586609667638491" fileName="CycleHelper.java" startLine="88" startPosition="54" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4755209551904411819" fileName="CycleHelper.java" startLine="58" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCycles#()V" />
+    <nodeInfo nodeId="7385586609667636800" fileName="CycleHelper.java" startLine="226" startPosition="46" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7385586609667762242" fileName="CycleHelper.java" startLine="127" startPosition="11" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7385586609667523574" fileName="CycleHelper.java" startLine="225" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNexts#()Ljava/util/Set;" />
+    <nodeInfo nodeId="7385586609667640459" fileName="CycleHelper.java" startLine="119" startPosition="23" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7385586609667638491" fileName="CycleHelper.java" startLine="88" startPosition="54" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4755209551904411819" fileName="CycleHelper.java" startLine="58" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCycles#()V" />
     <scopeInfo nodeId="2219920121494329684" fileName="CycleHelper.java" startLine="45" startPosition="110" endLine="46" endPosition="23" />
-    <scopeInfo nodeId="7385586609667636715" fileName="CycleHelper.java" startLine="63" startPosition="39" endLine="64" endPosition="104" />
-    <scopeInfo nodeId="7385586609667636747" fileName="CycleHelper.java" startLine="67" startPosition="37" endLine="68" endPosition="96" />
-    <scopeInfo nodeId="2219920121494342433" fileName="CycleHelper.java" startLine="71" startPosition="52" endLine="72" endPosition="30" />
-    <scopeInfo nodeId="7385586609667704274" fileName="CycleHelper.java" startLine="77" startPosition="86" endLine="78" endPosition="61" />
-    <scopeInfo nodeId="7385586609667704314" fileName="CycleHelper.java" startLine="79" startPosition="151" endLine="80" endPosition="80" />
+    <scopeInfo nodeId="7385586609667636715" fileName="CycleHelper.java" startLine="62" startPosition="39" endLine="63" endPosition="104" />
+    <scopeInfo nodeId="7385586609667636747" fileName="CycleHelper.java" startLine="66" startPosition="37" endLine="67" endPosition="96" />
+    <scopeInfo nodeId="2219920121494342433" fileName="CycleHelper.java" startLine="70" startPosition="52" endLine="71" endPosition="30" />
+    <scopeInfo nodeId="7385586609667704274" fileName="CycleHelper.java" startLine="76" startPosition="86" endLine="77" endPosition="61" />
+    <scopeInfo nodeId="7385586609667704314" fileName="CycleHelper.java" startLine="78" startPosition="151" endLine="79" endPosition="80" />
     <scopeInfo nodeId="7385586609667648750" fileName="CycleHelper.java" startLine="83" startPosition="52" endLine="84" endPosition="24" />
     <scopeInfo nodeId="7385586609667638502" fileName="CycleHelper.java" startLine="90" startPosition="29" endLine="91" endPosition="17" />
     <scopeInfo nodeId="7385586609667764504" fileName="CycleHelper.java" startLine="94" startPosition="42" endLine="95" endPosition="40" />
     <scopeInfo nodeId="7385586609667704133" fileName="CycleHelper.java" startLine="99" startPosition="74" endLine="100" endPosition="139" />
-    <scopeInfo nodeId="7385586609667640512" fileName="CycleHelper.java" startLine="123" startPosition="43" endLine="124" endPosition="277" />
-    <scopeInfo nodeId="6647099934206976204" fileName="CycleHelper.java" startLine="128" startPosition="115" endLine="129" endPosition="164" />
-    <scopeInfo nodeId="144710003695764507" fileName="CycleHelper.java" startLine="130" startPosition="123" endLine="131" endPosition="167" />
-    <scopeInfo nodeId="7926701909975676082" fileName="CycleHelper.java" startLine="139" startPosition="43" endLine="140" endPosition="27" />
-    <scopeInfo nodeId="6647099934206976231" fileName="CycleHelper.java" startLine="142" startPosition="18" endLine="143" endPosition="75" />
-    <scopeInfo nodeId="7926701909975524954" fileName="CycleHelper.java" startLine="157" startPosition="36" endLine="158" endPosition="27" />
-    <scopeInfo nodeId="7926701909975654263" fileName="CycleHelper.java" startLine="165" startPosition="39" endLine="166" endPosition="35" />
-    <scopeInfo nodeId="1692280246134755831" fileName="CycleHelper.java" startLine="187" startPosition="46" endLine="188" endPosition="113" />
-    <scopeInfo nodeId="7385586609667704289" fileName="CycleHelper.java" startLine="197" startPosition="60" endLine="198" endPosition="44" />
-    <scopeInfo nodeId="4755209551904421674" fileName="CycleHelper.java" startLine="205" startPosition="33" endLine="206" endPosition="27" />
-    <scopeInfo nodeId="7385586609667636823" fileName="CycleHelper.java" startLine="211" startPosition="104" endLine="212" endPosition="43" />
-    <scopeInfo nodeId="6647099934206976287" fileName="CycleHelper.java" startLine="216" startPosition="45" endLine="217" endPosition="119" />
-    <scopeInfo nodeId="7385586609667638349" fileName="CycleHelper.java" startLine="221" startPosition="29" endLine="222" endPosition="97" />
-    <scopeInfo nodeId="7385586609667638388" fileName="CycleHelper.java" startLine="223" startPosition="20" endLine="224" endPosition="30" />
-    <scopeInfo nodeId="7385586609667638462" fileName="CycleHelper.java" startLine="232" startPosition="30" endLine="233" endPosition="20" />
+    <scopeInfo nodeId="7385586609667640512" fileName="CycleHelper.java" startLine="124" startPosition="43" endLine="125" endPosition="277" />
+    <scopeInfo nodeId="6647099934206976204" fileName="CycleHelper.java" startLine="129" startPosition="115" endLine="130" endPosition="164" />
+    <scopeInfo nodeId="144710003695764507" fileName="CycleHelper.java" startLine="131" startPosition="123" endLine="132" endPosition="167" />
+    <scopeInfo nodeId="7926701909975676082" fileName="CycleHelper.java" startLine="140" startPosition="43" endLine="141" endPosition="27" />
+    <scopeInfo nodeId="6647099934206976231" fileName="CycleHelper.java" startLine="143" startPosition="18" endLine="144" endPosition="75" />
+    <scopeInfo nodeId="6921753234511818183" fileName="CycleHelper.java" startLine="150" startPosition="41" endLine="151" endPosition="66" />
+    <scopeInfo nodeId="6921753234511820458" fileName="CycleHelper.java" startLine="154" startPosition="31" endLine="155" endPosition="37" />
+    <scopeInfo nodeId="7926701909975524954" fileName="CycleHelper.java" startLine="169" startPosition="36" endLine="170" endPosition="27" />
+    <scopeInfo nodeId="7926701909975654263" fileName="CycleHelper.java" startLine="177" startPosition="39" endLine="178" endPosition="35" />
+    <scopeInfo nodeId="1692280246134755831" fileName="CycleHelper.java" startLine="204" startPosition="46" endLine="205" endPosition="113" />
+    <scopeInfo nodeId="7385586609667704296" fileName="CycleHelper.java" startLine="214" startPosition="60" endLine="215" endPosition="44" />
+    <scopeInfo nodeId="4755209551904421674" fileName="CycleHelper.java" startLine="222" startPosition="33" endLine="223" endPosition="27" />
+    <scopeInfo nodeId="7385586609667636823" fileName="CycleHelper.java" startLine="228" startPosition="104" endLine="229" endPosition="43" />
+    <scopeInfo nodeId="6647099934206976287" fileName="CycleHelper.java" startLine="233" startPosition="45" endLine="234" endPosition="119" />
+    <scopeInfo nodeId="7385586609667638349" fileName="CycleHelper.java" startLine="238" startPosition="29" endLine="239" endPosition="97" />
+    <scopeInfo nodeId="7385586609667638388" fileName="CycleHelper.java" startLine="240" startPosition="20" endLine="241" endPosition="30" />
+    <scopeInfo nodeId="7385586609667638462" fileName="CycleHelper.java" startLine="249" startPosition="30" endLine="250" endPosition="20" />
     <scopeInfo nodeId="4755209551904411801" fileName="CycleHelper.java" startLine="36" startPosition="70" endLine="38" endPosition="33" />
-    <scopeInfo nodeId="1692280246134755776" fileName="CycleHelper.java" startLine="191" startPosition="39" endLine="193" endPosition="167" />
-    <scopeInfo nodeId="2219920121494342430" fileName="CycleHelper.java" startLine="70" startPosition="8" endLine="73" endPosition="5">
+    <scopeInfo nodeId="1692280246134755776" fileName="CycleHelper.java" startLine="208" startPosition="39" endLine="210" endPosition="167" />
+    <scopeInfo nodeId="2219920121494342430" fileName="CycleHelper.java" startLine="69" startPosition="8" endLine="72" endPosition="5">
       <varInfo nodeId="2219920121494342431" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667648749" fileName="CycleHelper.java" startLine="82" startPosition="5" endLine="85" endPosition="5">
+    <scopeInfo nodeId="7385586609667648749" fileName="CycleHelper.java" startLine="82" startPosition="50" endLine="85" endPosition="5">
       <varInfo nodeId="7385586609667648752" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="7385586609667764503" fileName="CycleHelper.java" startLine="93" startPosition="59" endLine="96" endPosition="7">
       <varInfo nodeId="7385586609667764506" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975811052" fileName="CycleHelper.java" startLine="169" startPosition="30" endLine="172" endPosition="103">
+    <scopeInfo nodeId="6921753234511820441" fileName="CycleHelper.java" startLine="153" startPosition="13" endLine="156" endPosition="11" />
+    <scopeInfo nodeId="7926701909975811052" fileName="CycleHelper.java" startLine="181" startPosition="30" endLine="184" endPosition="103">
       <varInfo nodeId="7926701909975676206" varName="cp" />
     </scopeInfo>
-    <scopeInfo nodeId="144710003695764608" fileName="CycleHelper.java" startLine="174" startPosition="38" endLine="177" endPosition="105">
+    <scopeInfo nodeId="144710003695764608" fileName="CycleHelper.java" startLine="186" startPosition="38" endLine="189" endPosition="105">
       <varInfo nodeId="144710003695764610" varName="mref" />
     </scopeInfo>
-    <scopeInfo nodeId="6647099934207035903" fileName="CycleHelper.java" startLine="179" startPosition="36" endLine="182" endPosition="105">
+    <scopeInfo nodeId="6647099934207035903" fileName="CycleHelper.java" startLine="191" startPosition="36" endLine="194" endPosition="105">
       <varInfo nodeId="6647099934207035916" varName="mref" />
     </scopeInfo>
-    <scopeInfo nodeId="4755209551904421670" fileName="CycleHelper.java" startLine="204" startPosition="0" endLine="207" endPosition="5">
+    <scopeInfo nodeId="6921753234511820519" fileName="CycleHelper.java" startLine="196" startPosition="41" endLine="199" endPosition="107">
+      <varInfo nodeId="6921753234511820526" varName="dependency" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904421670" fileName="CycleHelper.java" startLine="221" startPosition="0" endLine="224" endPosition="5">
       <varInfo nodeId="4755209551904421675" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4755209551904411797" fileName="CycleHelper.java" startLine="35" startPosition="0" endLine="39" endPosition="3">
       <varInfo nodeId="7385586609667636888" varName="genContext" />
       <varInfo nodeId="4755209551904411802" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636714" fileName="CycleHelper.java" startLine="62" startPosition="154" endLine="66" endPosition="0">
+    <scopeInfo nodeId="7385586609667636714" fileName="CycleHelper.java" startLine="61" startPosition="154" endLine="65" endPosition="0">
       <varInfo nodeId="7385586609667636714" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636746" fileName="CycleHelper.java" startLine="66" startPosition="45" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7385586609667636746" fileName="CycleHelper.java" startLine="65" startPosition="45" endLine="69" endPosition="0">
       <varInfo nodeId="7385586609667636746" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="7385586609667704132" fileName="CycleHelper.java" startLine="98" startPosition="68" endLine="102" endPosition="0">
       <varInfo nodeId="7385586609667704132" varName="m1" />
       <varInfo nodeId="7385586609667704132" varName="m2" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667640511" fileName="CycleHelper.java" startLine="122" startPosition="127" endLine="126" endPosition="0">
+    <scopeInfo nodeId="7385586609667640511" fileName="CycleHelper.java" startLine="123" startPosition="127" endLine="127" endPosition="0">
       <varInfo nodeId="7385586609667640511" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975654262" fileName="CycleHelper.java" startLine="164" startPosition="227" endLine="168" endPosition="0">
+    <scopeInfo nodeId="6921753234511818182" fileName="CycleHelper.java" startLine="149" startPosition="140" endLine="153" endPosition="0">
+      <varInfo nodeId="6921753234511818182" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7926701909975654262" fileName="CycleHelper.java" startLine="176" startPosition="227" endLine="180" endPosition="0">
       <varInfo nodeId="7926701909975654262" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1692280246134755830" fileName="CycleHelper.java" startLine="186" startPosition="60" endLine="190" endPosition="0">
+    <scopeInfo nodeId="1692280246134755830" fileName="CycleHelper.java" startLine="203" startPosition="60" endLine="207" endPosition="0">
       <varInfo nodeId="1692280246134755830" varName="n1" />
       <varInfo nodeId="1692280246134755830" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="1692280246134755775" fileName="CycleHelper.java" startLine="190" startPosition="7" endLine="194" endPosition="5">
+    <scopeInfo nodeId="1692280246134755775" fileName="CycleHelper.java" startLine="207" startPosition="7" endLine="211" endPosition="5">
       <varInfo nodeId="1692280246134755777" varName="cycleX" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667704289" fileName="CycleHelper.java" startLine="196" startPosition="0" endLine="200" endPosition="0">
-      <varInfo nodeId="7385586609667704289" varName="str" />
+    <scopeInfo nodeId="7385586609667704296" fileName="CycleHelper.java" startLine="213" startPosition="0" endLine="217" endPosition="0">
+      <varInfo nodeId="7385586609667704296" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="6647099934206976286" fileName="CycleHelper.java" startLine="215" startPosition="140" endLine="219" endPosition="0">
+    <scopeInfo nodeId="6647099934206976286" fileName="CycleHelper.java" startLine="232" startPosition="140" endLine="236" endPosition="0">
       <varInfo nodeId="6647099934206976286" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667638459" fileName="CycleHelper.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="7926701909975811051" fileName="CycleHelper.java" startLine="168" startPosition="10" endLine="173" endPosition="7">
+    <scopeInfo nodeId="7385586609667638459" fileName="CycleHelper.java" startLine="248" startPosition="0" endLine="252" endPosition="0" />
+    <scopeInfo nodeId="7926701909975811051" fileName="CycleHelper.java" startLine="180" startPosition="10" endLine="185" endPosition="7">
       <varInfo nodeId="7926701909975811054" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="144710003695764607" fileName="CycleHelper.java" startLine="173" startPosition="7" endLine="178" endPosition="7">
+    <scopeInfo nodeId="144710003695764607" fileName="CycleHelper.java" startLine="185" startPosition="7" endLine="190" endPosition="7">
       <varInfo nodeId="144710003695764628" varName="jl" />
     </scopeInfo>
-    <scopeInfo nodeId="6647099934207035902" fileName="CycleHelper.java" startLine="178" startPosition="7" endLine="183" endPosition="7">
+    <scopeInfo nodeId="6647099934207035902" fileName="CycleHelper.java" startLine="190" startPosition="7" endLine="195" endPosition="7">
       <varInfo nodeId="6647099934207035905" varName="jm" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636874" fileName="CycleHelper.java" startLine="219" startPosition="15" endLine="225" endPosition="13">
+    <scopeInfo nodeId="6921753234511820518" fileName="CycleHelper.java" startLine="195" startPosition="7" endLine="200" endPosition="7">
+      <varInfo nodeId="6921753234511820521" varName="task" />
+    </scopeInfo>
+    <scopeInfo nodeId="7385586609667636874" fileName="CycleHelper.java" startLine="236" startPosition="15" endLine="242" endPosition="13">
       <varInfo nodeId="7385586609667638338" varName="tm" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636758" fileName="CycleHelper.java" startLine="74" startPosition="30" endLine="81" endPosition="7">
+    <scopeInfo nodeId="7385586609667636758" fileName="CycleHelper.java" startLine="73" startPosition="30" endLine="80" endPosition="7">
       <varInfo nodeId="7385586609667638418" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975524781" fileName="CycleHelper.java" startLine="151" startPosition="145" endLine="159" endPosition="11">
+    <scopeInfo nodeId="7926701909975524781" fileName="CycleHelper.java" startLine="163" startPosition="145" endLine="171" endPosition="11">
       <varInfo nodeId="7926701909975524828" varName="id" />
       <varInfo nodeId="7926701909975524791" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636757" fileName="CycleHelper.java" startLine="73" startPosition="5" endLine="82" endPosition="5">
+    <scopeInfo nodeId="7385586609667636757" fileName="CycleHelper.java" startLine="72" startPosition="5" endLine="81" endPosition="5">
       <varInfo nodeId="7385586609667636760" varName="jm" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975675963" fileName="CycleHelper.java" startLine="132" startPosition="116" endLine="141" endPosition="13">
+    <scopeInfo nodeId="7926701909975675963" fileName="CycleHelper.java" startLine="133" startPosition="116" endLine="142" endPosition="13">
       <varInfo nodeId="7926701909975810632" varName="cp" />
       <varInfo nodeId="7926701909975676031" varName="id" />
       <varInfo nodeId="7926701909975676012" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="6921753234511820438" fileName="CycleHelper.java" startLine="148" startPosition="0" endLine="157" endPosition="9">
+      <varInfo nodeId="6921753234511820439" varName="task" />
     </scopeInfo>
     <scopeInfo nodeId="2219920121494329673" fileName="CycleHelper.java" startLine="44" startPosition="40" endLine="54" endPosition="43">
       <varInfo nodeId="2219920121494329732" varName="cp" />
       <varInfo nodeId="2219920121494329747" varName="id" />
       <varInfo nodeId="2219920121494329739" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="7926701909975524778" fileName="CycleHelper.java" startLine="150" startPosition="0" endLine="160" endPosition="9">
+    <scopeInfo nodeId="7926701909975524778" fileName="CycleHelper.java" startLine="162" startPosition="0" endLine="172" endPosition="9">
       <varInfo nodeId="7926701909975524779" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636873" fileName="CycleHelper.java" startLine="214" startPosition="54" endLine="226" endPosition="11">
+    <scopeInfo nodeId="7385586609667636873" fileName="CycleHelper.java" startLine="231" startPosition="54" endLine="243" endPosition="11">
       <varInfo nodeId="7385586609667636876" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="2219920121494329672" fileName="CycleHelper.java" startLine="43" startPosition="118" endLine="56" endPosition="0">
       <varInfo nodeId="2219920121494329672" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667636859" fileName="CycleHelper.java" startLine="213" startPosition="16" endLine="226" endPosition="11" />
+    <scopeInfo nodeId="7385586609667636859" fileName="CycleHelper.java" startLine="230" startPosition="16" endLine="243" endPosition="11" />
     <scopeInfo nodeId="2219920121494329549" fileName="CycleHelper.java" startLine="41" startPosition="45" endLine="56" endPosition="7">
       <varInfo nodeId="2219920121494329609" varName="seenDependencies" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667762243" fileName="CycleHelper.java" startLine="127" startPosition="84" endLine="144" endPosition="11" />
-    <scopeInfo nodeId="7385586609667636801" fileName="CycleHelper.java" startLine="210" startPosition="28" endLine="227" endPosition="9" />
+    <scopeInfo nodeId="7385586609667636801" fileName="CycleHelper.java" startLine="227" startPosition="28" endLine="244" endPosition="9" />
     <scopeInfo nodeId="2219920121494329546" fileName="CycleHelper.java" startLine="40" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="2219920121494329676" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667762242" fileName="CycleHelper.java" startLine="126" startPosition="11" endLine="145" endPosition="9">
+    <scopeInfo nodeId="7385586609667762243" fileName="CycleHelper.java" startLine="128" startPosition="84" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="7385586609667762242" fileName="CycleHelper.java" startLine="127" startPosition="11" endLine="147" endPosition="9">
       <varInfo nodeId="7385586609667762246" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667523579" fileName="CycleHelper.java" startLine="209" startPosition="46" endLine="229" endPosition="21" />
-    <scopeInfo nodeId="7385586609667523574" fileName="CycleHelper.java" startLine="208" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="7385586609667640460" fileName="CycleHelper.java" startLine="119" startPosition="42" endLine="160" endPosition="9">
+    <scopeInfo nodeId="7385586609667523579" fileName="CycleHelper.java" startLine="226" startPosition="46" endLine="246" endPosition="21" />
+    <scopeInfo nodeId="7385586609667523574" fileName="CycleHelper.java" startLine="225" startPosition="0" endLine="248" endPosition="0" />
+    <scopeInfo nodeId="7385586609667640460" fileName="CycleHelper.java" startLine="120" startPosition="42" endLine="172" endPosition="9">
       <varInfo nodeId="7385586609667640486" varName="module" />
       <varInfo nodeId="7385586609667640569" varName="mref" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667640459" fileName="CycleHelper.java" startLine="118" startPosition="23" endLine="161" endPosition="7">
+    <scopeInfo nodeId="7385586609667640459" fileName="CycleHelper.java" startLine="119" startPosition="23" endLine="173" endPosition="7">
       <varInfo nodeId="7385586609667640462" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667638492" fileName="CycleHelper.java" startLine="89" startPosition="51" endLine="183" endPosition="7">
+    <scopeInfo nodeId="7385586609667638492" fileName="CycleHelper.java" startLine="89" startPosition="51" endLine="200" endPosition="7">
       <varInfo nodeId="7385586609667764482" varName="cycleModules" />
       <varInfo nodeId="7385586609667640400" varName="cycleX" />
       <varInfo nodeId="6647099934207035811" varName="deps" />
@@ -438,28 +465,30 @@
       <varInfo nodeId="7926701909975675930" varName="seenModules" />
       <varInfo nodeId="7385586609667640614" varName="seenSources" />
       <varInfo nodeId="7926701909975523886" varName="sources" />
+      <varInfo nodeId="6921753234511782056" varName="taskDependency" />
     </scopeInfo>
-    <scopeInfo nodeId="7385586609667638491" fileName="CycleHelper.java" startLine="88" startPosition="54" endLine="184" endPosition="5">
+    <scopeInfo nodeId="7385586609667638491" fileName="CycleHelper.java" startLine="88" startPosition="54" endLine="201" endPosition="5">
       <varInfo nodeId="7385586609667638494" varName="cycle" />
     </scopeInfo>
-    <scopeInfo nodeId="4755209551904411822" fileName="CycleHelper.java" startLine="59" startPosition="31" endLine="194" endPosition="5">
+    <scopeInfo nodeId="4755209551904411822" fileName="CycleHelper.java" startLine="59" startPosition="31" endLine="211" endPosition="5">
       <varInfo nodeId="7385586609667638467" varName="cycleCounter" />
       <varInfo nodeId="7385586609667638443" varName="cycles" />
       <varInfo nodeId="1692280246134755697" varName="cyclesToName" />
       <varInfo nodeId="7385586609667638408" varName="graph" />
       <varInfo nodeId="7385586609667605171" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="4755209551904411819" fileName="CycleHelper.java" startLine="58" startPosition="0" endLine="196" endPosition="0" />
-    <unitInfo nodeId="7385586609667636714" fileName="CycleHelper.java" startLine="62" startPosition="131" endLine="66" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$2" />
-    <unitInfo nodeId="7385586609667636746" fileName="CycleHelper.java" startLine="66" startPosition="18" endLine="70" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$3" />
+    <scopeInfo nodeId="4755209551904411819" fileName="CycleHelper.java" startLine="58" startPosition="0" endLine="213" endPosition="0" />
+    <unitInfo nodeId="7385586609667636714" fileName="CycleHelper.java" startLine="61" startPosition="131" endLine="65" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$2" />
+    <unitInfo nodeId="7385586609667636746" fileName="CycleHelper.java" startLine="65" startPosition="18" endLine="69" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$3" />
     <unitInfo nodeId="7385586609667704132" fileName="CycleHelper.java" startLine="98" startPosition="34" endLine="102" endPosition="7" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$4" />
-    <unitInfo nodeId="7385586609667640511" fileName="CycleHelper.java" startLine="122" startPosition="104" endLine="126" endPosition="9" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$5" />
-    <unitInfo nodeId="7926701909975654262" fileName="CycleHelper.java" startLine="164" startPosition="200" endLine="168" endPosition="7" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$6" />
-    <unitInfo nodeId="1692280246134755830" fileName="CycleHelper.java" startLine="186" startPosition="39" endLine="190" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$7" />
-    <unitInfo nodeId="6647099934206976286" fileName="CycleHelper.java" startLine="215" startPosition="117" endLine="219" endPosition="11" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$1" />
+    <unitInfo nodeId="7385586609667640511" fileName="CycleHelper.java" startLine="123" startPosition="104" endLine="127" endPosition="9" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$5" />
+    <unitInfo nodeId="6921753234511818182" fileName="CycleHelper.java" startLine="149" startPosition="113" endLine="153" endPosition="9" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$6" />
+    <unitInfo nodeId="7926701909975654262" fileName="CycleHelper.java" startLine="176" startPosition="200" endLine="180" endPosition="7" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$7" />
+    <unitInfo nodeId="1692280246134755830" fileName="CycleHelper.java" startLine="203" startPosition="39" endLine="207" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$8" />
+    <unitInfo nodeId="6647099934206976286" fileName="CycleHelper.java" startLine="232" startPosition="117" endLine="236" endPosition="11" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$1" />
     <unitInfo nodeId="2219920121494329672" fileName="CycleHelper.java" startLine="43" startPosition="95" endLine="56" endPosition="5" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$1" />
-    <unitInfo nodeId="4755209551904421660" fileName="CycleHelper.java" startLine="201" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$Module" />
-    <unitInfo nodeId="4755209551904406840" fileName="CycleHelper.java" startLine="31" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
+    <unitInfo nodeId="4755209551904421660" fileName="CycleHelper.java" startLine="218" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper$Module" />
+    <unitInfo nodeId="4755209551904406840" fileName="CycleHelper.java" startLine="31" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
   </root>
 </debugInfo>
 

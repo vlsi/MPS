@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public interface SModelReference {
 
+  SModelId getModelId();
+
   /*
    * Includes stereotype.
    */

@@ -1871,7 +1871,7 @@
     <nodeInfo nodeId="4652592318748339721" fileName="DiffModelTree.java" startLine="178" startPosition="5" endLine="179" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="376188760551961427" fileName="DiffModelTree.java" startLine="183" startPosition="53" endLine="184" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="376188760551961393" fileName="DiffModelTree.java" startLine="185" startPosition="5" endLine="186" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748339476" fileName="DiffModelTree.java" startLine="189" startPosition="63" endLine="190" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339480" fileName="DiffModelTree.java" startLine="189" startPosition="63" endLine="190" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748339099" fileName="DiffModelTree.java" startLine="194" startPosition="28" endLine="195" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748339107" fileName="DiffModelTree.java" startLine="195" startPosition="23" endLine="196" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748339115" fileName="DiffModelTree.java" startLine="196" startPosition="72" endLine="197" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1952,7 +1952,7 @@
     <nodeInfo nodeId="4652592318748339591" fileName="DiffModelTree.java" startLine="143" startPosition="104" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)Z" />
     <nodeInfo nodeId="4652592318748339621" fileName="DiffModelTree.java" startLine="155" startPosition="5" endLine="159" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748339659" fileName="DiffModelTree.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNameForRoot#(Ljetbrains/mps/smodel/SNodeId;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4652592318748339476" fileName="DiffModelTree.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_5x0uld_a0b0c0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4652592318748339480" fileName="DiffModelTree.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_5x0uld_a0b0c0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="4652592318748339207" fileName="DiffModelTree.java" startLine="227" startPosition="45" endLine="231" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748339234" fileName="DiffModelTree.java" startLine="234" startPosition="41" endLine="238" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="270223414759431362" fileName="DiffModelTree.java" startLine="283" startPosition="59" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -2022,7 +2022,7 @@
     <scopeInfo nodeId="4652592318748339662" fileName="DiffModelTree.java" startLine="167" startPosition="57" endLine="168" endPosition="47" />
     <scopeInfo nodeId="4652592318748339702" fileName="DiffModelTree.java" startLine="175" startPosition="62" endLine="176" endPosition="62" />
     <scopeInfo nodeId="376188760551961415" fileName="DiffModelTree.java" startLine="183" startPosition="53" endLine="184" endPosition="13" />
-    <scopeInfo nodeId="4652592318748339476" fileName="DiffModelTree.java" startLine="189" startPosition="63" endLine="190" endPosition="43" />
+    <scopeInfo nodeId="4652592318748339480" fileName="DiffModelTree.java" startLine="189" startPosition="63" endLine="190" endPosition="43" />
     <scopeInfo nodeId="4652592318748339125" fileName="DiffModelTree.java" startLine="202" startPosition="49" endLine="203" endPosition="27" />
     <scopeInfo nodeId="4652592318748339197" fileName="DiffModelTree.java" startLine="225" startPosition="39" endLine="226" endPosition="42" />
     <scopeInfo nodeId="4652592318748339223" fileName="DiffModelTree.java" startLine="229" startPosition="20" endLine="230" endPosition="53" />
@@ -2092,8 +2092,8 @@
       <varInfo nodeId="4652592318748339695" varName="selectedNodes" />
     </scopeInfo>
     <scopeInfo nodeId="376188760551961386" fileName="DiffModelTree.java" startLine="182" startPosition="36" endLine="186" endPosition="242" />
-    <scopeInfo nodeId="4652592318748339476" fileName="DiffModelTree.java" startLine="188" startPosition="0" endLine="192" endPosition="0">
-      <varInfo nodeId="4652592318748339476" varName="str" />
+    <scopeInfo nodeId="4652592318748339480" fileName="DiffModelTree.java" startLine="188" startPosition="0" endLine="192" endPosition="0">
+      <varInfo nodeId="4652592318748339480" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748339206" fileName="DiffModelTree.java" startLine="227" startPosition="45" endLine="231" endPosition="13" />
     <scopeInfo nodeId="4652592318748339233" fileName="DiffModelTree.java" startLine="234" startPosition="41" endLine="238" endPosition="14" />
