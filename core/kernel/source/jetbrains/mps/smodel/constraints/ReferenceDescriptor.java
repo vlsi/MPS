@@ -46,7 +46,11 @@ public abstract class ReferenceDescriptor {
   @NotNull
   abstract public Scope getScope();
 
-  abstract public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation);
+  /**
+   * @return null if there is no presentation for reference
+   */
+  @Nullable
+  abstract public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor);
 
   @Nullable
   abstract public ReferenceScopeProvider getScopeProvider();
@@ -166,10 +170,11 @@ public abstract class ReferenceDescriptor {
       });
     }
 
-    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation) {
+    @Nullable
+    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
       // todo: remove default presentation, use node.getPresentation() instead?
       if (scopeProvider == null || !scopeProvider.hasPresentation()) {
-        return defaultPresentation;
+        return null;
       }
 
       return scopeProvider.getPresentation(
@@ -212,8 +217,9 @@ public abstract class ReferenceDescriptor {
     }
 
     @Override
-    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation) {
-      return defaultPresentation;
+    @Nullable
+    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
+      return null;
     }
 
     @Override

@@ -11365,16 +11365,13 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3873386204295367256">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3873386204295367234">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymbg.~ModelConstraints%dgetReferenceDescriptor(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dconstraints%dReferenceDescriptor" resolveInfo="getReferenceDescriptor" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ymbg.~ModelConstraints" resolveInfo="ModelConstraints" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ymbg.~ModelConstraints%dgetReferenceDescriptor(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dsmodel%dconstraints%dReferenceDescriptor" resolveInfo="getReferenceDescriptor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3873386204295367235">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6599163591527295189" resolveInfo="referenceNode" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3873386204295367236">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6599163591527295191" resolveInfo="referenceRole" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3873386204295367237">
-                  <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3873386204295367262">
