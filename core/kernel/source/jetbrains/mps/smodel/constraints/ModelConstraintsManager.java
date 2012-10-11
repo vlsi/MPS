@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +36,7 @@ public class ModelConstraintsManager {
 
   @Nullable
   public static ReferenceScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
-    return ReferenceDescriptor.getScopeProvider(nodeConcept, referentRole);
+    return OkReferenceDescriptor.getScopeProvider(nodeConcept, referentRole);
   }
 
   public static String getDefaultConcreteConceptFqName(String fqName) {

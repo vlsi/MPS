@@ -20,9 +20,13 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -109,73 +113,67 @@ public class ModelConstraints {
   }
 
   // scopes part
-  /*
-  *  returns Scope for existing reference
-  */
   @NotNull
   public static Scope getScope(@NotNull SReference reference) {
-    ModelAccess.assertLegalRead();
-    return new ReferenceDescriptor(reference).getScope();
+    return getReferenceDescriptor(reference).getScope();
   }
 
-  /*
-   *  getScope(node, role, index)            gets scope for reference being created at the location
-   *                                               role (cannot be null) should be "reference" link
-   */
-  @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index) {
-    ModelAccess.assertLegalRead();
-
-    try {
-      // todo: NPE where are you?
-      return new ReferenceDescriptor(enclosingNode, role, index).getScope();
-    } catch (IllegalArgumentException ex) {
-      return new ErrorScope(ex.getMessage());
-    }
-  }
-
-  /*
-   *  getScope(node, role, index, smartConcept)    gets scope for smartReference being created in "aggregation" role
-   */
-  @NotNull
-  public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
-    ModelAccess.assertLegalRead();
-
-    try {
-      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept).getScope();
-    } catch (IllegalArgumentException ex) {
-      return new ErrorScope(ex.getMessage());
-    }
-  }
-
-  /*
-  *  returns Scope & Presentation for existing reference
-  */
+  // usage: getReferenceDescriptor(ref details).getScope() if you need Scope and .getPresentation for ref presentation
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
     ModelAccess.assertLegalRead();
-    return new ReferenceDescriptor(reference);
+    SNode node = reference.getSourceNode();
+    SNode concept = node.getConceptDeclarationNode();
+
+    return new OkReferenceDescriptor(reference, concept, // reference, sourceNodeConcept
+      node.getParent(), node, // enclosingNode, referenceNode
+      reference.getRole(), reference.getRole(), // contextRole, genuineRole
+      0, // index
+      SModelUtil.getLinkDeclarationTarget(SModelSearchUtil.findLinkDeclaration(concept, node.getRole())), node.getRoleLink()); // linkTarget, containingLinkDeclaration
   }
 
-  @Nullable
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode enclosingNode, @NotNull String role, int index) {
+  /*
+  *  getScope(node, role, index)            gets scope for reference being created at the location
+  *                                               role (cannot be null) should be "reference" link
+  */
+  @NotNull
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index) {
+    // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
     ModelAccess.assertLegalRead();
 
-    try {
-      return new ReferenceDescriptor(enclosingNode, role, index);
-    } catch (IllegalArgumentException ex) {
-      return null;
+    SNode scopeReference = referenceNode.getLinkDeclaration(role);
+    if (scopeReference == null) {
+      return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
     }
+    SNode concept = referenceNode.getConceptDeclarationNode();
+
+    return new OkReferenceDescriptor(null, concept, // reference, sourceNodeConcept
+      referenceNode.getParent(), referenceNode, // enclosingNode, referenceNode
+      role, SModelUtil.getGenuineLinkRole(scopeReference), // contextRole, genuineRole
+      0, // index
+      SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getRoleLink()); // linkTarget, containingLinkDeclaration
   }
 
-  @Nullable
+  /*
+  *  getScope(node, role, index, smartConcept)    gets scope for smartReference being created in "aggregation" role
+  */
+  @NotNull
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept) {
     ModelAccess.assertLegalRead();
 
-    try {
-      return new ReferenceDescriptor(enclosingNode, role, index, smartConcept);
-    } catch (IllegalArgumentException ex) {
-      return null;
+    final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+    if (smartReference == null) {
+      return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
     }
+    SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
+    if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
+      return new ErrorReferenceDescriptor("for reference role smartConcept should be null");
+    }
+
+    return new OkReferenceDescriptor(null, smartConcept, // reference, sourceNodeConcept
+      enclosingNode, null, // enclosingNode, referenceNode
+      role, SModelUtil.getGenuineLinkRole(smartReference), // contextRole, genuineRole
+      index, // index
+      SModelUtil.getLinkDeclarationTarget(smartReference), linkDeclaration); // linkTarget, containingLinkDeclaration
   }
 }

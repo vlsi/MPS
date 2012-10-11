@@ -609,14 +609,14 @@ public class SNodeOperations {
   }
 
   /**
-   * use ModelConstraintsUtil.getScope()
+   * use ModelConstraints.getScope() and ModelConstraints.getReferenceDescriptor()
    */
   @Deprecated
   public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
     if (referenceNode == null) {
       return null;
     }
-    Scope scope = ModelConstraints.getScope(referenceNode, referenceRole, 0);
+    Scope scope = ModelConstraints.getReferenceDescriptor(referenceNode, referenceRole, 0).getScope();
     if (scope instanceof ErrorScope) {
       return null;
     }

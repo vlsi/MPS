@@ -249,7 +249,7 @@ public class ModelConstraintsUtil {
 
   @NotNull
   public static Scope getScope(@NotNull SReference reference, IOperationContext context) {
-    return ModelConstraints.getScope(reference);
+    return ModelConstraints.getReferenceDescriptor(reference).getScope();
   }
 
   @NotNull
@@ -259,7 +259,7 @@ public class ModelConstraintsUtil {
 
   @NotNull
   public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
-    return ModelConstraints.getScope(enclosingNode, role, index);
+    return ModelConstraints.getReferenceDescriptor(enclosingNode, role, index).getScope();
   }
 
   @Nullable
@@ -286,6 +286,6 @@ public class ModelConstraintsUtil {
 
   @NotNull
   public static Scope getScope(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept, IOperationContext context) {
-    return ModelConstraints.getScope(enclosingNode, role, index, smartConcept);
+    return ModelConstraints.getSmartReferenceDescriptor(enclosingNode, role, index, smartConcept).getScope();
   }
 }

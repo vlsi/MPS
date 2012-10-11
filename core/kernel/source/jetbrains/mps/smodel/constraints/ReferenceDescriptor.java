@@ -20,7 +20,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -38,163 +41,184 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModule;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleScope;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
-public class ReferenceDescriptor {
-  private static final Logger LOG = Logger.getLogger(ModelConstraints.class);
-  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
+public abstract class ReferenceDescriptor {
+  // can be ErrorScope
+  @NotNull
+  abstract public Scope getScope();
 
-  // not syntatic
-  private final SNode sourceNodeConcept;
-  private final String refRole;
-  private final SNode enclosingNode;
-  private final SNode referenceNode;
-  private final SNode linkTarget;
-  private final SNode containingLinkDeclaration;
-  private final String role;
-  private final int index;
+  abstract public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation);
+
   @Nullable
-  private final SReference reference;
+  abstract public ReferenceScopeProvider getScopeProvider();
 
-  // syntatic
-  @Nullable
-  private final SNode contextNode;
-  @Nullable
-  private final SModel model;
-  @Nullable
-  private final IModule module;
-  @Nullable
-  private final ReferenceScopeProvider scopeProvider;
-  private final boolean exists;
+  static class OkReferenceDescriptor extends ReferenceDescriptor {
+    private static final Logger LOG = Logger.getLogger(ModelConstraints.class);
+    private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
 
-  /* package */ ReferenceDescriptor(@NotNull SReference reference) {
-    SNode node = reference.getSourceNode();
+    // not syntatic
+    private final SNode sourceNodeConcept;
 
-    // not synthetic
-    this.reference = reference;
-    sourceNodeConcept = node.getConceptDeclarationNode();
-    refRole = reference.getRole();
-    role = refRole;
-    enclosingNode = node.getParent();
-    referenceNode = node;
-    linkTarget = SModelUtil.getLinkDeclarationTarget(SModelSearchUtil.findLinkDeclaration(sourceNodeConcept, refRole));
-    containingLinkDeclaration = node.getRoleLink();
-    index = 0;
+    private final SNode enclosingNode;
+    private final SNode referenceNode;
+    private final SNode linkTarget;
+    private final SNode containingLinkDeclaration;
 
-    // my stuff
-    scopeProvider = getScopeProvider(sourceNodeConcept, refRole);
-    contextNode = referenceNode != null ? referenceNode : enclosingNode;
-    model = contextNode != null ? contextNode.getModel() : null;
-    module = getModule(model);
-    exists = reference != null;
-  }
+    // in contextNode, specialized
+    private final String contextRole;
+    // in referenceNode, genuine
+    private final String genuineRole;
 
-  /* package */ ReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index) {
-    SNode scopeReference = referenceNode.getLinkDeclaration(role);
-    if (scopeReference == null) {
-      throw new IllegalArgumentException("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
+    private final int index;
+
+    @Nullable
+    private final SReference reference;
+
+    // syntatic
+    @Nullable
+    private final SNode contextNode;
+    @Nullable
+    private final SModel model;
+    @Nullable
+    private final IModule module;
+    @Nullable
+    private final ReferenceScopeProvider scopeProvider;
+    private final boolean exists;
+
+
+    /* package */ OkReferenceDescriptor(@Nullable SReference reference, SNode sourceNodeConcept,
+                                        SNode enclosingNode, SNode referenceNode,
+                                        String contextRole, String genuineRole,
+                                        int index,
+                                        SNode linkTarget, SNode containingLinkDeclaration // todo
+    ) {
+      this.reference = reference;
+      this.sourceNodeConcept = sourceNodeConcept;
+      this.genuineRole = genuineRole;
+      this.contextRole = contextRole;
+      this.enclosingNode = enclosingNode;
+      this.referenceNode = referenceNode;
+      this.linkTarget = linkTarget;
+      this.containingLinkDeclaration = containingLinkDeclaration;
+      this.index = index;
+
+      // calc
+      scopeProvider = getScopeProvider(sourceNodeConcept, genuineRole);
+      contextNode = referenceNode != null ? referenceNode : enclosingNode;
+      model = contextNode != null ? contextNode.getModel() : null;
+      module = getModule(model);
+      exists = reference != null;
     }
 
-    // not synthetic
-    reference = null;
-    sourceNodeConcept = referenceNode.getConceptDeclarationNode();
-    refRole =  SModelUtil.getGenuineLinkRole(scopeReference);
-    this.role = role;
-    enclosingNode = referenceNode.getParent();
-    this.referenceNode = referenceNode;
-    linkTarget = SModelUtil.getLinkDeclarationTarget(scopeReference);
-    containingLinkDeclaration = referenceNode.getRoleLink();
-    this.index = 0;
-
-    // my stuff
-    scopeProvider = getScopeProvider(sourceNodeConcept, refRole);
-    contextNode = referenceNode != null ? referenceNode : enclosingNode;
-    model = contextNode != null ? contextNode.getModel() : null;
-    module = getModule(model);
-    exists = reference != null;
-  }
-
-  /* package */ ReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
-    final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    if (smartReference == null) {
-      throw new IllegalArgumentException("smartConcept has no characteristic reference: " + smartConcept.getName());
-    }
-    SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
-    if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      throw new IllegalArgumentException("for reference role smartConcept should be null");
-    }
-
-    // not synthetic
-    reference = null;
-    sourceNodeConcept = smartConcept;
-    refRole = SModelUtil.getGenuineLinkRole(smartReference);
-    this.role = role;
-    this.enclosingNode = enclosingNode;
-    referenceNode = null;
-    linkTarget = SModelUtil.getLinkDeclarationTarget(smartReference);
-    containingLinkDeclaration = linkDeclaration;
-    this.index = index;
-
-    // my stuff
-    scopeProvider = getScopeProvider(sourceNodeConcept, refRole);
-    contextNode = referenceNode != null ? referenceNode : enclosingNode;
-    model = contextNode != null ? contextNode.getModel() : null;
-    module = getModule(model);
-    exists = reference != null;
-  }
-
-  public Scope getScope() {
-    final ReferentConstraintContext context = new ReferentConstraintContext(model, exists, contextNode, role, index, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);;
-
-    return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
-      @Override
-      public Scope compute() {
-        try {
-          if (scopeProvider != null) {
-            Scope searchScope = scopeProvider.createScope(getOperationContext(module), context);
-            if (searchScope != null) {
-              if (reference != null && searchScope instanceof Adapter) {
-                return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
-              }
-              return searchScope;
-            }
-          }
-          // global search scope
-          return new jetbrains.mps.scope.DefaultScope(model, getModuleScope(module), NameUtil.nodeFQName(linkTarget));
-        } catch (Exception t) {
-          LOG.error(t, contextNode);
-          return new ErrorScope("can't create search scope for role `" + refRole + "' in '" + sourceNodeConcept.getName() + "'");
-        }
+    /* package */ OkReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
+      final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+      if (smartReference == null) {
+        throw new IllegalArgumentException("smartConcept has no characteristic reference: " + smartConcept.getName());
       }
-    });
+      SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
+      if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
+        throw new IllegalArgumentException("for reference role smartConcept should be null");
+      }
+
+      // not synthetic
+      reference = null;
+      sourceNodeConcept = smartConcept;
+      genuineRole = SModelUtil.getGenuineLinkRole(smartReference);
+      contextRole = role;
+      this.enclosingNode = enclosingNode;
+      referenceNode = null;
+      linkTarget = SModelUtil.getLinkDeclarationTarget(smartReference);
+      containingLinkDeclaration = linkDeclaration;
+      this.index = index;
+
+      // my stuff
+      scopeProvider = getScopeProvider(sourceNodeConcept, genuineRole);
+      contextNode = referenceNode != null ? referenceNode : enclosingNode;
+      model = contextNode != null ? contextNode.getModel() : null;
+      module = getModule(model);
+      exists = reference != null;
+
+    }
+
+    @NotNull
+    public Scope getScope() {
+      final ReferentConstraintContext context = new ReferentConstraintContext(model, exists, contextNode, contextRole, index, enclosingNode, referenceNode, linkTarget, containingLinkDeclaration);;
+
+      return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
+        @Override
+        public Scope compute() {
+          try {
+            if (scopeProvider != null) {
+              Scope searchScope = scopeProvider.createScope(getOperationContext(module), context);
+              if (searchScope != null) {
+                if (reference != null && searchScope instanceof Adapter) {
+                  return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
+                }
+                return searchScope;
+              }
+            }
+            // global search scope
+            return new jetbrains.mps.scope.DefaultScope(model, getModuleScope(module), NameUtil.nodeFQName(linkTarget));
+          } catch (Exception t) {
+            LOG.error(t, contextNode);
+            return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
+          }
+        }
+      });
+    }
+
+    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation) {
+      // todo: remove default presentation, use node.getPresentation() instead?
+      if (scopeProvider == null || !scopeProvider.hasPresentation()) {
+        return defaultPresentation;
+      }
+
+      return scopeProvider.getPresentation(
+        getOperationContext(module),
+        new PresentationReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, targetNode, containingLinkDeclaration, visible, smartRef, inEditor)
+      );
+    }
+
+    @Nullable
+    public ReferenceScopeProvider getScopeProvider() {
+      return scopeProvider;
+    }
+
+    @Nullable
+    /* package */ static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
+      // todo: should be private
+      ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
+      if (result != null) return result;
+      SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+      if (linkDeclaration == null) {
+        LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
+        return EMPTY_REFERENCE_SCOPE_PROVIDER;
+      }
+      SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+      return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
+    }
   }
 
-  public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation) {
-    // todo: remove default presentation, use node.getPresentation() instead?
-    if (scopeProvider == null || !scopeProvider.hasPresentation()) {
+  static class ErrorReferenceDescriptor extends ReferenceDescriptor {
+    private final String message;
+
+    public ErrorReferenceDescriptor(String message) {
+      this.message = message;
+    }
+
+    @NotNull
+    @Override
+    public Scope getScope() {
+      return new ErrorScope(message);
+    }
+
+    @Override
+    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor, String defaultPresentation) {
       return defaultPresentation;
     }
 
-    return scopeProvider.getPresentation(
-      getOperationContext(module),
-      new PresentationReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget, targetNode, containingLinkDeclaration, visible, smartRef, inEditor)
-    );
-  }
-
-  @Nullable
-  public ReferenceScopeProvider getScopeProvider() {
-    return scopeProvider;
-  }
-
-  @Nullable
-  /* package */ static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
-    // todo: should be private
-    ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
-    if (result != null) return result;
-    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
-    if (linkDeclaration == null) {
-      LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
-      return EMPTY_REFERENCE_SCOPE_PROVIDER;
+    @Override
+    public ReferenceScopeProvider getScopeProvider() {
+      return null;
     }
-    SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
   }
 }
