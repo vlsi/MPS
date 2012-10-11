@@ -862,7 +862,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SNode parent = getParent();
     if (parent != null) {
       parent.removeChild(this);
-    } else if (getModel().isRoot(this)) {
+    } else if (isRoot()) {
       getModel().removeRoot(this);
     }
 
