@@ -61,7 +61,9 @@ abstract class SReferenceBase extends SReference {
   }
 
   public boolean isExternal() {
-    return !(getSourceNode().getModel().getSModelReference().equals(getTargetSModelReference()));
+    SModel m = getSourceNode().getModel();
+    SModelReference ref = m==null?getSourceNode().getOldModel().getSModelReference():m.getSModelReference();
+    return !(ref.equals(getTargetSModelReference()));
   }
 
   public SModelReference getTargetSModelReference() {
