@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -736,8 +737,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getParent().getLinkDeclaration(getRole());
   }
 
+  private static Set<String> ourReported = new THashSet<String>();
   public SModel getOldModel(){
-    LOG.error("DO NOT USE!!!", new Throwable());
+    Throwable t = new Throwable();
+    String s = t.toString();
+    if (!ourReported.contains(s)) {
+      ourReported.add(s);
+      LOG.error("DO NOT USE!!!", t);
+    }
     return myOldModel;
   }
   //----------------------------------------------------------
