@@ -1797,7 +1797,7 @@ __switch__:
               if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
                 varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false), "name");
               } else if ((SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
-                varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.ParameterReference"), "variableDeclaration", false), "name");
+                varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "name");
               }
               return "((" + typeName + ")" + varName + ")";
             }

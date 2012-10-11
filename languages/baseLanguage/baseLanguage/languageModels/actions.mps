@@ -10805,7 +10805,7 @@
                             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6270036985820463113">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6270036985820463108">
                                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6270036985820463106">
-                                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
+                                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6270036985820541770">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6270036985820561143" resolveInfo="var" />
                                   </node>
