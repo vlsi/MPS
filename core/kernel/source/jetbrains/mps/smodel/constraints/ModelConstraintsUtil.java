@@ -259,7 +259,7 @@ public class ModelConstraintsUtil {
 
   @NotNull
   public static Scope getScope(@NotNull SNode enclosingNode, @NotNull String role, int index, IOperationContext context) {
-    return ModelConstraints.getReferenceDescriptor(enclosingNode, role, index).getScope();
+    return ModelConstraints.getReferenceDescriptor(enclosingNode, role).getScope();
   }
 
   @Nullable

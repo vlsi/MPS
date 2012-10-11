@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,11 +34,27 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModule;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleScope;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
+/**
+ * Api for model constraints
+ * All methods require read action
+ * If you don't need breaking node set checkingNodeContext parameter to null
+ *
+ * If you need Scope use 1) getScope(SReference) or 2) getReferenceDescriptor(...).getScope()
+ * If you need reference presentation use getReferenceDescriptor(...).getText(...)
+ *
+ * Possible parameters for getReferenceDescriptor method:
+ *  getReferenceDescriptor(reference) gets ref descriptor for existing reference
+ *  getReferenceDescriptor(node, role) gets ref descriptor for reference being created at the location, role (cannot be null) should be "reference" link
+ *  getReferenceDescriptor(node, role, index, smartConcept) gets ref descriptor for smartReference being created in "aggregation" role
+ *
+*/
 public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
-  // canBeASomething section
-  public static boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
+  // canBe* section
+  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
+    ModelAccess.assertLegalRead();
+
     SNode currentNode = node;
 
     ConceptRegistry registry = ConceptRegistry.getInstance();
@@ -58,58 +73,35 @@ public class ModelConstraints {
     return true;
   }
 
-  public static boolean canBeAncestor(SNode node, SNode childConcept) {
-    return canBeAncestor(node, null, childConcept, null);
-  }
+  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+    ModelAccess.assertLegalRead();
 
-  public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link) {
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConcept().getId());
-    return canBeParent(descriptor, parentNode, childConcept, link, null, null);
-  }
-
-  public static boolean canBeParent(ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
-  public static boolean canBeChild(String fqName, SNode parentNode, SNode link) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
-    return canBeChild(descriptor, fqName, parentNode, link, null, null);
-  }
+  public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+    ModelAccess.assertLegalRead();
 
-  public static boolean canBeChild(ConstraintsDescriptor descriptor, String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     IModule module = getModule(parentNode);
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
     return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName, getModuleScope(module)), getOperationContext(module), checkingNodeContext);
   }
 
-  private static boolean canBeRootByIsRootProperty(final String fqName, @Nullable final CheckingNodeContext checkingNodeContext) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
-        boolean result = SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept);
+  public static boolean canBeRoot(String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    ModelAccess.assertLegalRead();
 
-        if (!result && checkingNodeContext != null) {
-          checkingNodeContext.setBreakingNode(new SNodePointer(concept));
-        }
-
-        return result;
+    // todo: use concept descriptor here?
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
+      if (checkingNodeContext != null) {
+        checkingNodeContext.setBreakingNode(new SNodePointer(concept));
       }
-    });
-  }
+      return false;
+    }
 
-  public static boolean canBeRoot(String conceptFqName, SModel model) {
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName);
-    return canBeRoot(descriptor, conceptFqName, model, null);
-  }
-
-  public static boolean canBeRoot(ConstraintsDescriptor descriptor, String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeRootByIsRootProperty(conceptFqName, checkingNodeContext) &&
-      descriptor.canBeRoot(model, getOperationContext(getModule(model)), checkingNodeContext);
-  }
-
-  // other things
-  public static String getDefaultConcreteConceptFqName(String fqName) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
+    return descriptor.canBeRoot(model, getOperationContext(getModule(model)), checkingNodeContext);
   }
 
   // scopes part
@@ -118,7 +110,6 @@ public class ModelConstraints {
     return getReferenceDescriptor(reference).getScope();
   }
 
-  // usage: getReferenceDescriptor(ref details).getScope() if you need Scope and .getPresentation for ref presentation
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
     ModelAccess.assertLegalRead();
@@ -132,12 +123,8 @@ public class ModelConstraints {
       SModelUtil.getLinkDeclarationTarget(SModelSearchUtil.findLinkDeclaration(concept, node.getRole())), node.getRoleLink()); // linkTarget, containingLinkDeclaration
   }
 
-  /*
-  *  getScope(node, role, index)            gets scope for reference being created at the location
-  *                                               role (cannot be null) should be "reference" link
-  */
   @NotNull
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role, int index) {
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role) {
     // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
     ModelAccess.assertLegalRead();
 
@@ -154,11 +141,8 @@ public class ModelConstraints {
       SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getRoleLink()); // linkTarget, containingLinkDeclaration
   }
 
-  /*
-  *  getScope(node, role, index, smartConcept)    gets scope for smartReference being created in "aggregation" role
-  */
   @NotNull
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @Nullable SNode smartConcept) {
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
     ModelAccess.assertLegalRead();
 
     final SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
@@ -175,5 +159,10 @@ public class ModelConstraints {
       role, SModelUtil.getGenuineLinkRole(smartReference), // contextRole, genuineRole
       index, // index
       SModelUtil.getLinkDeclarationTarget(smartReference), linkDeclaration); // linkTarget, containingLinkDeclaration
+  }
+
+  // other things
+  public static String getDefaultConcreteConceptFqName(String fqName) {
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
   }
 }
