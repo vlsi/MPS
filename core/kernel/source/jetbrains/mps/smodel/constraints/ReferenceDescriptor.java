@@ -104,7 +104,7 @@ public abstract class ReferenceDescriptor {
 
     @NotNull
     public Scope getScope() {
-      final ReferentConstraintContext context = new ReferentConstraintContext(getModel(), reference != null, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
+      final ReferentConstraintContext context = new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
 
       return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
         @Override
