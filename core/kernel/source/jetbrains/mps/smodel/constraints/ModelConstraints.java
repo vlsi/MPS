@@ -113,28 +113,25 @@ public class ModelConstraints {
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
     ModelAccess.assertLegalRead();
-    SNode node = reference.getSourceNode();
-    SNode concept = node.getConceptDeclarationNode();
-
-    return new OkReferenceDescriptor(reference, concept, // reference, sourceNodeConcept
-      node.getParent(), node, // enclosingNode, referenceNode
-      reference.getRole(), reference.getRole(), // contextRole, genuineRole
-      0, // index
-      SModelUtil.getLinkDeclarationTarget(SModelSearchUtil.findLinkDeclaration(concept, node.getRole())), node.getRoleLink()); // linkTarget, containingLinkDeclaration
+    return getReferenceDescriptorForReferenceNode(reference, reference.getSourceNode(), reference.getRole());
   }
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role) {
     // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
     ModelAccess.assertLegalRead();
+    return getReferenceDescriptorForReferenceNode(null, referenceNode, role);
+  }
 
+  @NotNull
+  private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
     SNode scopeReference = referenceNode.getLinkDeclaration(role);
     if (scopeReference == null) {
       return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
     }
     SNode concept = referenceNode.getConceptDeclarationNode();
 
-    return new OkReferenceDescriptor(null, concept, // reference, sourceNodeConcept
+    return new OkReferenceDescriptor(reference, concept, // reference, sourceNodeConcept
       referenceNode.getParent(), referenceNode, // enclosingNode, referenceNode
       role, SModelUtil.getGenuineLinkRole(scopeReference), // contextRole, genuineRole
       0, // index
