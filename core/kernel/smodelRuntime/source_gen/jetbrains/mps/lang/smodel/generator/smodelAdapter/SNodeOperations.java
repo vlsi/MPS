@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -609,14 +609,14 @@ public class SNodeOperations {
   }
 
   /**
-   * use ModelConstraintsUtil.getScope()
+   * use ModelConstraints.getScope() and ModelConstraints.getReferenceDescriptor()
    */
   @Deprecated
   public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
     if (referenceNode == null) {
       return null;
     }
-    Scope scope = ModelConstraintsUtil.getScope(referenceNode, referenceRole, 0);
+    Scope scope = ModelConstraints.getReferenceDescriptor(referenceNode, referenceRole).getScope();
     if (scope instanceof ErrorScope) {
       return null;
     }
