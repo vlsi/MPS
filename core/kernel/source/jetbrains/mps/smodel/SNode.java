@@ -657,7 +657,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     while (true) {
       current.fireNodeReadAccess();
       if (current.treeParent() == null) {
-        if (getModel().isRoot(current)) {
+        if (myModel!=null && myModel.isRoot(current)) {
           return current;
         } else {
           return null;
