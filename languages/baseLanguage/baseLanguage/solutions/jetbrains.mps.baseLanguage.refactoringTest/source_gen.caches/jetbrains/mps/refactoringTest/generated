@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1lzaern50xb8864se2s5v5e37fyutx6">
+<dependencies version="2" modelHash="bsp259otp9oosmmewqywe3cmacxn50m">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -28,7 +28,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="ec3gznkwxykcw7q10wncyfqe3at1s9u" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-23zvmz734snq4rxe7whm91bg3fxoa5c" />
   <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="-4l9ecfc6vmjqywdztr7kpf8rd86a2b3" />
-  <dep model="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" hash="-54skoaq0hz6ct51ztm9jk0qb94w08mw" />
+  <dep model="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" hash="-egmqsx2hx3fkr099jdqbg5ie1q6yjmh" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-7a2x0ckvyi3q05eh2sxnpwh84qw700g" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
@@ -156,7 +156,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="1230052406553" name="ChangeMethodParametersForStatement" hash="-bigybm7phh91jfv32a6agbt94l0b6wm" dependsOnNodes="true">
+  <source id="1230052406553" name="ChangeMethodParametersForStatement" hash="-dej6pjiouq65bwgsozmefv1up2lb52c" dependsOnNodes="true">
     <dep root="1230052406741" />
     <dep root="1230052406787" />
     <dep root="1230052406933" />
@@ -431,7 +431,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConceptFunctioParameterTest_Test.java" />
   </source>
-  <source id="1230052406787" name="ConceptMethod" hash="-bolc9yecm14v5fk0fr2r1tnm218tso8" dependsOnNodes="true">
+  <source id="1230052406787" name="ConceptMethod" hash="9tanyr8v70vop1uqn1umjlpirrdzvzi" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406933" />
@@ -706,7 +706,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractFromAnonymous_Test.java" />
   </source>
-  <source id="1230052407024" name="ExtractFromStatements" hash="-2m06yt2r7o7jchfryids55qwlgafyp5" dependsOnNodes="true">
+  <source id="1230052407024" name="ExtractFromStatements" hash="-4zmqvu65upahsdupp3nd9kptlrk4ase" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -978,7 +978,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractMethodFromConstructor_Test.java" />
   </source>
-  <source id="1230052444309" name="FindInputVariables" hash="84qn7govn98dwwpsl0v4lq848by79k5" dependsOnNodes="true">
+  <source id="1230052444309" name="FindInputVariables" hash="1me5mcitiva5jhytx00b76vqj1mmx98" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1116,7 +1116,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindInputVariables_Test.java" />
   </source>
-  <source id="1230052480263" name="BreakStatement" hash="8ehykufi590qh46nhu3kll2jquo65k8" dependsOnNodes="true">
+  <source id="1230052480263" name="BreakStatement" hash="bcg2t7r5tt9q1663rxdmmgg10l7q2i" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1250,7 +1250,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BreakStatement_Test.java" />
   </source>
-  <source id="1230052480332" name="ExtractBreak" hash="c00mv1bjakz8wur6q4f45f5z1zyjeft" dependsOnNodes="true">
+  <source id="1230052480332" name="ExtractBreak" hash="-eaeee1y53jax1hty52onphj38edcwvp" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1386,7 +1386,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractBreak_Test.java" />
   </source>
-  <source id="1230052480438" name="ExtractContinue" hash="-b4t8tf4ub641g5oe5os1di6wcpy89r0" dependsOnNodes="true">
+  <source id="1230052480438" name="ExtractContinue" hash="-39wri8soakyx07cdnxr79t72kcapj0r" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1522,7 +1522,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractContinue_Test.java" />
   </source>
-  <source id="1230052509258" name="ExtractDefaultClassifierMethodDeclaration" hash="-3ypsyw6ralvu8tz3o4tlm7hn9fd5jzk" dependsOnNodes="true">
+  <source id="1230052509258" name="ExtractDefaultClassifierMethodDeclaration" hash="2ags6dyu3fottvsrd8pcmu3z1v81s9v" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1659,7 +1659,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractDefaultClassifierMethodDeclaration_Test.java" />
   </source>
-  <source id="1230052551970" name="ExtractFromExpression" hash="8dif0xtyru6qamp3aewq1rqvrzysz3p" dependsOnNodes="true">
+  <source id="1230052551970" name="ExtractFromExpression" hash="dvojh27g3je47rqx3h4005ghz9ccf51" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1795,7 +1795,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractFromExpression_Test.java" />
   </source>
-  <source id="1230052552060" name="ExtractFromExpressionWithoutReturn" hash="-absjeijy1bnpstwsrpa42z2blvdce2m" dependsOnNodes="true">
+  <source id="1230052552060" name="ExtractFromExpressionWithoutReturn" hash="6f5a5y58ex2p7jyjgt3v90v0ze2irdn" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -1931,7 +1931,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractFromExpressionWithoutReturn_Test.java" />
   </source>
-  <source id="1230052641811" name="ExtractDifferentReturns" hash="-73adcjbn2fhfvpzqtaraf2k27j26oxh" dependsOnNodes="true">
+  <source id="1230052641811" name="ExtractDifferentReturns" hash="840mnu48yov55gv48rntlqaeru026za" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -2067,7 +2067,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractDifferentReturns_Test.java" />
   </source>
-  <source id="1230052641913" name="ExtractFromStatementWithReturnValue" hash="-5dhfzmvsv1hr2jxfa7tit64qmkoqtvx" dependsOnNodes="true">
+  <source id="1230052641913" name="ExtractFromStatementWithReturnValue" hash="9t6wh9d56fdhb1f0m0pefpycqwlb30m" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -2339,7 +2339,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractFromStatementsEndsWithReturn_Test.java" />
   </source>
-  <source id="1230052642100" name="MethodsWithoutReturnStatement" hash="a4rafaf3p3valo7v3h2c3tcnju8hkeg" dependsOnNodes="true">
+  <source id="1230052642100" name="MethodsWithoutReturnStatement" hash="2qx6fx4g1onmkfed8bnuydm284k0nqe" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -2475,7 +2475,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MethodsWithoutReturnStatement_Test.java" />
   </source>
-  <source id="1230052642174" name="OneReturnStatement" hash="-d1uurlvd3funnxiugeb713otk171o72" dependsOnNodes="true">
+  <source id="1230052642174" name="OneReturnStatement" hash="ekooxbt08nop4egvxrp5hjz4y4x24a3" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -2609,7 +2609,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OneReturnStatement_Test.java" />
   </source>
-  <source id="1230052642255" name="OneReturnTransformation" hash="8rc3a314vfzt2teuy08srx5hc2rtr7w" dependsOnNodes="true">
+  <source id="1230052642255" name="OneReturnTransformation" hash="9d7ut14hhvk8ffgnrhfx9aw2e686ekm" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -2745,7 +2745,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OneReturnTransformation_Test.java" />
   </source>
-  <source id="1230052642344" name="ReturnStatement" hash="6a6iv6usz5i13nneqsyffwroemhy9rx" dependsOnNodes="true">
+  <source id="1230052642344" name="ReturnStatement" hash="-2tcsk8kuhzx5lhjpvujibu19jo40pfs" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -3018,7 +3018,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractFromIntention_Test.java" />
   </source>
-  <source id="1230052684553" name="staticContainerBehaviorTest" hash="-4ugkmj6q7grx7jkrd19jo1zqyshhufr" dependsOnNodes="true">
+  <source id="1230052684553" name="staticContainerBehaviorTest" hash="4xhxgjbdewqqx8egta3qqjzrl1k7ws6" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -3992,7 +3992,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AddParameter_Test.java" />
   </source>
-  <source id="1230052943817" name="ChangeParameterName" hash="-bc6rofsffugs599pldm1revfsnf279u" dependsOnNodes="true">
+  <source id="1230052943817" name="ChangeParameterName" hash="319qaidxbg5gpzu3d8mg2sv2ij6nr3a" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -4829,7 +4829,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DeclarationVariablesInMethod_Test.java" />
   </source>
-  <source id="1230052989081" name="InlineFromAnotherClass" hash="-a2avfjdve81zx0j0kw7g3wg8pophrub" dependsOnNodes="true">
+  <source id="1230052989081" name="InlineFromAnotherClass" hash="amrzrulp6te1zlaonkdsjrlijiruaf9" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -5633,7 +5633,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineFromBehavior_Test.java" />
   </source>
-  <source id="1230053040767" name="InlineFromBehaviorWithMethods" hash="-17lfi98o1yj0ayo34iycr7q4ajcgfzq" dependsOnNodes="true">
+  <source id="1230053040767" name="InlineFromBehaviorWithMethods" hash="4xkzvionp3ih2yj1t8crf1le84g3w79" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -5905,7 +5905,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineInBehaviorWithThis_Test.java" />
   </source>
-  <source id="1230053073153" name="InlineMethodThatChangesParameters" hash="-ebsmr1h4qft7o4cw46lctnveqoo09u" dependsOnNodes="true">
+  <source id="1230053073153" name="InlineMethodThatChangesParameters" hash="7zfshq0sejpl3bkzotvfqgrqboauq92" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -6040,7 +6040,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineMethodThatChangesParameters_Test.java" />
   </source>
-  <source id="1230053073246" name="InlineModelWithConstants" hash="-78zond76qc71urekqgu6e4eg6ct9xj" dependsOnNodes="true">
+  <source id="1230053073246" name="InlineModelWithConstants" hash="aupihwxa5clsol2zj0fqwwxc32uuhbf" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -6175,7 +6175,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineModelWithConstants_Test.java" />
   </source>
-  <source id="1230053073336" name="OneReturnWithNotVariableParameters" hash="-6d829tg9kuqak7rmt3jwk4fqbxn1wja" dependsOnNodes="true">
+  <source id="1230053073336" name="OneReturnWithNotVariableParameters" hash="-vsvpyur6nkt21l61rzce20hy1b25wj" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -6310,7 +6310,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OneReturnWithNotVariableParameters_Test.java" />
   </source>
-  <source id="1230053073435" name="OneReturnWithParameteres" hash="-5pv3q0by01y2zbewbur02xiap7ab0lx" dependsOnNodes="true">
+  <source id="1230053073435" name="OneReturnWithParameteres" hash="a2kfnvu37gjxg8p8nnifgky7h95t0ys" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -6843,7 +6843,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CheckInlineCanBePerformed_Test.java" />
   </source>
-  <source id="1230053187488" name="CheckInlineWithThrow" hash="-25pwuiwn87qqj27j9je3iywuq2on8p6" dependsOnNodes="true">
+  <source id="1230053187488" name="CheckInlineWithThrow" hash="-3m6egwfcde97mnvn4kb5s8shrf7loai" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -6974,7 +6974,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CheckInlineWithThrow_Test.java" />
   </source>
-  <source id="1230053187531" name="InlineManyReturns" hash="-evx9b2hnbybv3h0zthd5vw7l4lq3cc8" dependsOnNodes="true">
+  <source id="1230053187531" name="InlineManyReturns" hash="-au8on57ls09hz73lh41c63wplvazaci" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -7109,7 +7109,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineManyReturns_Test.java" />
   </source>
-  <source id="1230053187647" name="InlineMethodWithReturnAtTheEnd" hash="-7wx8n4airsw5ausy8w1vcvrlkpx60jd" dependsOnNodes="true">
+  <source id="1230053187647" name="InlineMethodWithReturnAtTheEnd" hash="e6lvazc76oe67n88aj04136kzcxkjtj" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -7244,7 +7244,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineMethodWithReturnAtTheEnd_Test.java" />
   </source>
-  <source id="1230053187752" name="InlineMethodWithVoidType" hash="-clbmvlhduou34vkb5203u44bfq4rrqx" dependsOnNodes="true">
+  <source id="1230053187752" name="InlineMethodWithVoidType" hash="6prgyym2pksc674messfp0nsqs2kb8l" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -7784,7 +7784,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineStaticFromAnotherClass_Test.java" />
   </source>
-  <source id="1230053223883" name="StaticMethod" hash="-d1uvvsaqwtyvx05bnpfttndke162hzk" dependsOnNodes="true">
+  <source id="1230053223883" name="StaticMethod" hash="16ppbe1n5baxtbvsyfqk0q9rtpurh1m" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -8324,7 +8324,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineLocalVariableReferense_Test.java" />
   </source>
-  <source id="1230053266526" name="InlineReferenceWithAssignment" hash="-33lsca3pcruv4irtuobfeif16t3nxye" dependsOnNodes="true">
+  <source id="1230053266526" name="InlineReferenceWithAssignment" hash="bnxp0jcgjc4htr5p65qz315fbzn947i" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -9952,7 +9952,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MoveMethodWithParameters_Test.java" />
   </source>
-  <source id="6791439617122300870" name="ConvertAnonymousInterfaceTest" hash="-60t4bvhptqy1y8e8zk67tc7on8pbt6" dependsOnNodes="true">
+  <source id="6791439617122300870" name="ConvertAnonymousInterfaceTest" hash="-7fj524yld9uovfhzl3ybee362ag7hvf" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -10087,7 +10087,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousInterfaceTest_Test.java" />
   </source>
-  <source id="6791439617122628436" name="ConvertAnonymousAbstractClassTest" hash="-enjbbo0u2tes4pnzwaoqutmir72b7zm" dependsOnNodes="true">
+  <source id="6791439617122628436" name="ConvertAnonymousAbstractClassTest" hash="-dz5qlsyw9k3dkxk0dv0umpb1vbrnb11" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -10222,7 +10222,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousAbstractClassTest_Test.java" />
   </source>
-  <source id="2230400082817266597" name="ConvertAnonymousWithTypeVariablesTest" hash="-bif3xipkz28kny6a1l6exlic9b0mbh2" dependsOnNodes="true">
+  <source id="2230400082817266597" name="ConvertAnonymousWithTypeVariablesTest" hash="aa8wmrb2pptbulaa3ayx4z73380sulb" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -10492,7 +10492,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousToStaticTest_Test.java" />
   </source>
-  <source id="3145818413496050321" name="ConvertAnonymousWithLocalVariablesTest" hash="-aobseoo0d0z2hybtejkzbuzgn4iijty" dependsOnNodes="true">
+  <source id="3145818413496050321" name="ConvertAnonymousWithLocalVariablesTest" hash="-be43rppfdlsa33q6ygmetgzm17r3b2p" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -10627,7 +10627,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousWithLocalVariablesTest_Test.java" />
   </source>
-  <source id="3145818413497245718" name="ConvertAnonymousAbstractClassWithConstructorTest" hash="4i2o4kydwyu1pyp9af46t18p9hutihr" dependsOnNodes="true">
+  <source id="3145818413497245718" name="ConvertAnonymousAbstractClassWithConstructorTest" hash="-4j9i43szooccrgg81etzpas3le9j0ph" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -10762,7 +10762,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousAbstractClassWithConstructorTest_Test.java" />
   </source>
-  <source id="4412735672778824686" name="InlineMethodWithUnusedParameters" hash="2eq68jxu2somhuvutz4zslukpww3cy" dependsOnNodes="true">
+  <source id="4412735672778824686" name="InlineMethodWithUnusedParameters" hash="5tdidq3n5cldg356dlz6xg8nv8ys79m" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -10897,7 +10897,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineMethodWithUnusedParameters_Test.java" />
   </source>
-  <source id="4412735672780105517" name="InlineMethodWithConceptFunctionParameters" hash="-75z0typgz4lg4abpvqqjpcp0oxz6ozo" dependsOnNodes="true">
+  <source id="4412735672780105517" name="InlineMethodWithConceptFunctionParameters" hash="1m0jm8fagb0s79rexk84ybydu6vq0s9" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -11033,7 +11033,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineMethodWithConceptFunctionParameters_Test.java" />
   </source>
-  <source id="8556882668095192252" name="SimpleFindForExtractFromExpression" hash="cs79mfut72wa6zno0arcp7wok4q8q3l" dependsOnNodes="true">
+  <source id="8556882668095192252" name="SimpleFindForExtractFromExpression" hash="-8r4m9emxbf7klasipdbxkms0m8zp6kv" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -11173,7 +11173,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SimpleFindForExtractFromExpression_Test.java" />
   </source>
-  <source id="8556882668095222061" name="SimpleFindForExtractFromStatement" hash="-1d6tiw83j98g5d6vjaizzlue7tshvxt" dependsOnNodes="true">
+  <source id="8556882668095222061" name="SimpleFindForExtractFromStatement" hash="-9okdoc7z26uv11nanr94d3zz6m4rwqg" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -11313,7 +11313,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SimpleFindForExtractFromStatement_Test.java" />
   </source>
-  <source id="1998477585418803771" name="SimpleFindForExtractWithReturn" hash="-ac4kjqu8lth3ws2bs384wnn7fy816oa" dependsOnNodes="true">
+  <source id="1998477585418803771" name="SimpleFindForExtractWithReturn" hash="-emrwu505tcdvxeysst8s3bc9qa93zcw" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -11869,7 +11869,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceOutputVaryable_Test.java" />
   </source>
-  <source id="8155843501978460076" name="ExtractMethodWithOutputVaryableFromExpression" hash="cl7agezf7z5kclsbf6zti2t71iob1ts" dependsOnNodes="true">
+  <source id="8155843501978460076" name="ExtractMethodWithOutputVaryableFromExpression" hash="dgxb3e21th13nx2rlcasmy0fhyf9ww2" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -12410,7 +12410,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleFindForIntroduceLocalVariable_Test.java" />
   </source>
-  <source id="7568753874916244224" name="FindAndMoveFromIfForIntroduceLocalVar" hash="9lwwhmsl0vg776u2sk8kka1zkdoa9rd" dependsOnNodes="true">
+  <source id="7568753874916244224" name="FindAndMoveFromIfForIntroduceLocalVar" hash="-75c3s5m98klbkygyv6g227etwto0k4p" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -12680,7 +12680,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntroduceVariableFromAnonimousClass_Test.java" />
   </source>
-  <source id="3109730807963748196" name="ConvertAnonymousWithLocalVariables" hash="92vlspd5gdjemcfq4dfuasubm9ds391" dependsOnNodes="true">
+  <source id="3109730807963748196" name="ConvertAnonymousWithLocalVariables" hash="-2urr2d12sp3d1fn234tf8vc4mvdx0jy" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -12815,7 +12815,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousWithLocalVariables_Test.java" />
   </source>
-  <source id="2163048091639854868" name="IntroduceConstantFromAnonimousClass" hash="-5uy6hvehe5j18x071izd0rdnsjpkrlb" dependsOnNodes="true">
+  <source id="2163048091639854868" name="IntroduceConstantFromAnonimousClass" hash="evfqzu6ka92h1w3n2dxbw3nq4jij29s" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -13226,7 +13226,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindForMethodWithOutputVariable_Test.java" />
   </source>
-  <source id="1300615610528534002" name="FindForMethodWithIVariableLikeNodes" hash="5l1kqsx03u4753p74m1t4ne0uivgbt8" dependsOnNodes="true">
+  <source id="1300615610528534002" name="FindForMethodWithIVariableLikeNodes" hash="8fsakusa9wey6s52c09w79825bouji2" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -13366,7 +13366,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindForMethodWithIVariableLikeNodes_Test.java" />
   </source>
-  <source id="8823815475437525602" name="ExtractMethodWithThrows" hash="4g7dsmmmreks05p6wt3t17o9xwnoopp" dependsOnNodes="true">
+  <source id="8823815475437525602" name="ExtractMethodWithThrows" hash="amg3ccjn3g9rrsoimchjn12o7a9l30l" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -13502,7 +13502,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractMethodWithThrows_Test.java" />
   </source>
-  <source id="7093131866560585661" name="InlineInsideClosure" hash="348jnm1ax4pptw0hpyq4xt2x3m9ztk3" dependsOnNodes="true">
+  <source id="7093131866560585661" name="InlineInsideClosure" hash="-bz7y4f6s39zmo3uj62t4yxda6wjqxqs" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -13637,7 +13637,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineInsideClosure_Test.java" />
   </source>
-  <source id="7093131866560585771" name="InlineInClosureWithOutsideAssingment" hash="-6v4krl7vtubm7ubwyk5l53j72d8c9gx" dependsOnNodes="true">
+  <source id="7093131866560585771" name="InlineInClosureWithOutsideAssingment" hash="-3q9zg6auvwk6g282n4a9ogtzxzrvz6m" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -14042,7 +14042,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineAssingmentInClosure_Test.java" />
   </source>
-  <source id="995475547969867885" name="ConvertAnonymousWithParameterReference" hash="-4p09s2r19add5auqvtf3ola6zuw8v9" dependsOnNodes="true">
+  <source id="995475547969867885" name="ConvertAnonymousWithParameterReference" hash="-ch4vl05ffv723x3k9qkegktkd2oz9v9" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -14177,7 +14177,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousWithParameterReference_Test.java" />
   </source>
-  <source id="6974242407276765599" name="IntroduceVariableFromWildcards" hash="555lh2y5mjtch7cjm9vwwkp1zu79d99" dependsOnNodes="true">
+  <source id="6974242407276765599" name="IntroduceVariableFromWildcards" hash="3y3l93bqk6975cuyhx9sve8rhecgg47" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -14312,7 +14312,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntroduceVariableFromWildcards_Test.java" />
   </source>
-  <source id="5161277940733600913" name="ExtractMethodFromClosure" hash="9lod0fqt57w6avv3ju4msrwt1l71j3y" dependsOnNodes="true">
+  <source id="5161277940733600913" name="ExtractMethodFromClosure" hash="-1xywh7s694ahoyv2rwhrqmtd7op3ttr" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -14448,7 +14448,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractMethodFromClosure_Test.java" />
   </source>
-  <source id="3014415391767789119" name="SimpleMoveStaticMethod" hash="-d397eabf1avh6o79b5qir4ocoyrq25d" dependsOnNodes="true">
+  <source id="3014415391767789119" name="SimpleMoveStaticMethod" hash="-d707y4zwie8ngr591lj8zi5b1phm3l5" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -14984,7 +14984,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtractMethodWithUnusedAssignments_Test.java" />
   </source>
-  <source id="9160497614871931685" name="ConvertAnonymousWithTypeParameters" hash="-6opkq7abhzxevtxsmiyc64qskp15mpc" dependsOnNodes="true">
+  <source id="9160497614871931685" name="ConvertAnonymousWithTypeParameters" hash="e7icen80shwv46aehddnrqmmnvljwhd" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />
@@ -15119,7 +15119,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConvertAnonymousWithTypeParameters_Test.java" />
   </source>
-  <source id="5907083257159818727" name="ConvertAnonymousGenGenericFields" hash="6aygz4xen29yrawcddvo7s9a43h7wl6" dependsOnNodes="true">
+  <source id="5907083257159818727" name="ConvertAnonymousGenGenericFields" hash="3jelfndovugcj2bjdw59ohc1u9mzrc4" dependsOnNodes="true">
     <dep root="1230052406553" />
     <dep root="1230052406741" />
     <dep root="1230052406787" />

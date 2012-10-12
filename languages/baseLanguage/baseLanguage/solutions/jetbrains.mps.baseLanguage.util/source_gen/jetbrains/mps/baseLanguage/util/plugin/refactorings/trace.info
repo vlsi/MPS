@@ -1180,7 +1180,7 @@
     <nodeInfo nodeId="8184320397305029834" fileName="ConvertAnonymousRefactoring.java" startLine="133" startPosition="5" endLine="134" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8184320397305035940" fileName="ConvertAnonymousRefactoring.java" startLine="134" startPosition="126" endLine="135" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8184320397305045315" fileName="ConvertAnonymousRefactoring.java" startLine="135" startPosition="54" endLine="136" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8184320397305058734" fileName="ConvertAnonymousRefactoring.java" startLine="142" startPosition="39" endLine="143" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6584037136593274580" fileName="ConvertAnonymousRefactoring.java" startLine="142" startPosition="39" endLine="143" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8184320397305048050" fileName="ConvertAnonymousRefactoring.java" startLine="145" startPosition="26" endLine="146" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8184320397305048060" fileName="ConvertAnonymousRefactoring.java" startLine="146" startPosition="122" endLine="147" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8184320397305048070" fileName="ConvertAnonymousRefactoring.java" startLine="147" startPosition="159" endLine="148" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1246,14 +1246,14 @@
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="320" startPosition="38" endLine="321" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="323" startPosition="9" endLine="324" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="325" startPosition="7" endLine="326" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="334" startPosition="49" endLine="335" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="335" startPosition="26" endLine="336" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="336" startPosition="67" endLine="337" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="338" startPosition="7" endLine="339" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="339" startPosition="167" endLine="340" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="340" startPosition="43" endLine="341" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="341" startPosition="85" endLine="342" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="343" startPosition="7" endLine="344" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="334" startPosition="49" endLine="335" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="335" startPosition="26" endLine="336" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="336" startPosition="67" endLine="337" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="338" startPosition="7" endLine="339" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="339" startPosition="166" endLine="340" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="340" startPosition="43" endLine="341" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="341" startPosition="85" endLine="342" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="343" startPosition="7" endLine="344" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="352" startPosition="49" endLine="353" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="353" startPosition="26" endLine="354" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="354" startPosition="67" endLine="355" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1276,8 +1276,8 @@
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="386" startPosition="168" endLine="387" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="388" startPosition="9" endLine="389" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="389" startPosition="171" endLine="390" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="391" startPosition="11" endLine="392" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="392" startPosition="171" endLine="393" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="391" startPosition="11" endLine="392" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="392" startPosition="170" endLine="393" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="393" startPosition="47" endLine="394" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="394" startPosition="90" endLine="395" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="397" startPosition="11" endLine="398" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1335,8 +1335,8 @@
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="502" startPosition="49" endLine="503" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="503" startPosition="26" endLine="504" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="504" startPosition="67" endLine="505" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="506" startPosition="7" endLine="507" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="507" startPosition="167" endLine="508" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="506" startPosition="7" endLine="507" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="507" startPosition="166" endLine="508" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="508" startPosition="43" endLine="509" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="509" startPosition="85" endLine="510" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="511" startPosition="7" endLine="512" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1359,7 +1359,7 @@
     <nodeInfo nodeId="8184320397304988880" fileName="ConvertAnonymousRefactoring.java" startLine="205" startPosition="10" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="259" startPosition="55" endLine="261" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a1a0a0b0c#()V" />
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="291" startPosition="57" endLine="293" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a1a0a0b0b0d#()V" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="330" startPosition="63" endLine="332" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i#()V" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="330" startPosition="63" endLine="332" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i#()V" />
     <nodeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="348" startPosition="54" endLine="350" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a0a1a0a8#()V" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="372" startPosition="55" endLine="374" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a0a0a0b0i#()V" />
     <nodeInfo nodeId="8184320397305021394" fileName="ConvertAnonymousRefactoring.java" startLine="422" startPosition="55" endLine="424" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qy1soj_a0a0a0b0m#()V" />
@@ -1410,8 +1410,8 @@
     <nodeInfo nodeId="8184320397304986379" fileName="ConvertAnonymousRefactoring.java" startLine="70" startPosition="103" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="274" startPosition="30" endLine="280" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="313" startPosition="30" endLine="319" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="337" startPosition="32" endLine="343" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="337" startPosition="32" endLine="343" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="337" startPosition="32" endLine="343" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="337" startPosition="32" endLine="343" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="359" startPosition="43" endLine="365" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="359" startPosition="43" endLine="365" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="390" startPosition="45" endLine="396" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1462,7 +1462,7 @@
     <nodeInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="271" startPosition="64" endLine="284" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="310" startPosition="9" endLine="323" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="310" startPosition="9" endLine="323" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="333" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="333" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8184320397304996253" fileName="ConvertAnonymousRefactoring.java" startLine="456" startPosition="0" endLine="469" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="501" startPosition="0" endLine="514" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4799841500509028392" fileName="ConvertAnonymousRefactoring.java" startLine="519" startPosition="0" endLine="532" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
@@ -1493,7 +1493,7 @@
     <nodeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="375" startPosition="0" endLine="420" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="260" startPosition="46" endLine="260" endPosition="46" />
     <scopeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="292" startPosition="48" endLine="292" endPosition="48" />
-    <scopeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="331" startPosition="54" endLine="331" endPosition="54" />
+    <scopeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="331" startPosition="54" endLine="331" endPosition="54" />
     <scopeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="349" startPosition="45" endLine="349" endPosition="45" />
     <scopeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="373" startPosition="46" endLine="373" endPosition="46" />
     <scopeInfo nodeId="8184320397305021394" fileName="ConvertAnonymousRefactoring.java" startLine="423" startPosition="46" endLine="423" endPosition="46" />
@@ -1540,7 +1540,7 @@
     <scopeInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="277" startPosition="18" endLine="279" endPosition="41" />
     <scopeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="291" startPosition="57" endLine="293" endPosition="5" />
     <scopeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="316" startPosition="18" endLine="318" endPosition="41" />
-    <scopeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="330" startPosition="63" endLine="332" endPosition="5" />
+    <scopeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="330" startPosition="63" endLine="332" endPosition="5" />
     <scopeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="348" startPosition="54" endLine="350" endPosition="5" />
     <scopeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="372" startPosition="55" endLine="374" endPosition="5" />
     <scopeInfo nodeId="8184320397305021394" fileName="ConvertAnonymousRefactoring.java" startLine="422" startPosition="55" endLine="424" endPosition="5" />
@@ -1622,8 +1622,8 @@
     </scopeInfo>
     <scopeInfo nodeId="9160497614871931915" fileName="ConvertAnonymousRefactoring.java" startLine="247" startPosition="0" endLine="251" endPosition="0" />
     <scopeInfo nodeId="9160497614871931953" fileName="ConvertAnonymousRefactoring.java" startLine="252" startPosition="70" endLine="256" endPosition="17" />
-    <scopeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="338" startPosition="7" endLine="342" endPosition="31">
-      <varInfo nodeId="8184320397305058735" varName="quotedNode1_2" />
+    <scopeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="338" startPosition="7" endLine="342" endPosition="31">
+      <varInfo nodeId="6584037136593274581" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="360" startPosition="9" endLine="364" endPosition="11">
       <varInfo nodeId="637963823610780083" varName="nodes" />
@@ -1675,7 +1675,7 @@
       <varInfo nodeId="8184320397304986380" varName="varReference" />
     </scopeInfo>
     <scopeInfo nodeId="8184320397304989513" fileName="ConvertAnonymousRefactoring.java" startLine="166" startPosition="9" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="337" startPosition="32" endLine="343" endPosition="7" />
+    <scopeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="337" startPosition="32" endLine="343" endPosition="7" />
     <scopeInfo nodeId="637963823610780083" fileName="ConvertAnonymousRefactoring.java" startLine="359" startPosition="43" endLine="365" endPosition="9" />
     <scopeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="390" startPosition="45" endLine="396" endPosition="11" />
     <scopeInfo nodeId="637963823610839068" fileName="ConvertAnonymousRefactoring.java" startLine="399" startPosition="48" endLine="405" endPosition="13" />
@@ -1726,10 +1726,10 @@
     <scopeInfo nodeId="8184320397304988171" fileName="ConvertAnonymousRefactoring.java" startLine="199" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="8184320397304988632" varName="innerClass" />
     </scopeInfo>
-    <scopeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="334" startPosition="49" endLine="344" endPosition="20">
-      <varInfo nodeId="8184320397305058735" varName="_parameterValues_129834374" />
-      <varInfo nodeId="8184320397305058735" varName="quotedNode_1" />
-      <varInfo nodeId="8184320397305058735" varName="result" />
+    <scopeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="334" startPosition="49" endLine="344" endPosition="20">
+      <varInfo nodeId="6584037136593274581" varName="_parameterValues_129834374" />
+      <varInfo nodeId="6584037136593274581" varName="quotedNode_1" />
+      <varInfo nodeId="6584037136593274581" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8184320397304996253" fileName="ConvertAnonymousRefactoring.java" startLine="457" startPosition="49" endLine="467" endPosition="20">
       <varInfo nodeId="8184320397304996253" varName="_parameterValues_129834374" />
@@ -1783,8 +1783,8 @@
     </scopeInfo>
     <scopeInfo nodeId="637963823610830817" fileName="ConvertAnonymousRefactoring.java" startLine="271" startPosition="64" endLine="284" endPosition="9" />
     <scopeInfo nodeId="1256875460760505990" fileName="ConvertAnonymousRefactoring.java" startLine="310" startPosition="9" endLine="323" endPosition="9" />
-    <scopeInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="333" startPosition="0" endLine="346" endPosition="0">
-      <varInfo nodeId="8184320397305058735" varName="parameter_3" />
+    <scopeInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="333" startPosition="0" endLine="346" endPosition="0">
+      <varInfo nodeId="6584037136593274581" varName="parameter_3" />
     </scopeInfo>
     <scopeInfo nodeId="8184320397304996253" fileName="ConvertAnonymousRefactoring.java" startLine="456" startPosition="0" endLine="469" endPosition="0">
       <varInfo nodeId="8184320397304996253" varName="parameter_3" />
@@ -1925,7 +1925,7 @@
     <unitInfo nodeId="9186913092454758666" fileName="ConvertAnonymousRefactoring.java" startLine="235" startPosition="17" endLine="239" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$10" />
     <unitInfo nodeId="995475547969847078" fileName="ConvertAnonymousRefactoring.java" startLine="240" startPosition="206" endLine="244" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$11" />
     <unitInfo nodeId="637963823611065901" fileName="ConvertAnonymousRefactoring.java" startLine="212" startPosition="194" endLine="219" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$7" />
-    <unitInfo nodeId="8184320397305058735" fileName="ConvertAnonymousRefactoring.java" startLine="330" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i" />
+    <unitInfo nodeId="6584037136593274581" fileName="ConvertAnonymousRefactoring.java" startLine="330" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i" />
     <unitInfo nodeId="8184320397304996253" fileName="ConvertAnonymousRefactoring.java" startLine="453" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a0a0a41" />
     <unitInfo nodeId="4799841500509028386" fileName="ConvertAnonymousRefactoring.java" startLine="498" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a0a0a0a0a0a0a1a51" />
     <unitInfo nodeId="4799841500509028392" fileName="ConvertAnonymousRefactoring.java" startLine="516" startPosition="0" endLine="533" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring$QuotationClass_qy1soj_a0a0a0a0a0a0a1a51_0" />
@@ -2290,7 +2290,7 @@
     <nodeInfo nodeId="8492459591399163912" fileName="ExtractMethodRefactoring.java" startLine="155" startPosition="64" endLine="156" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399163929" fileName="ExtractMethodRefactoring.java" startLine="158" startPosition="5" endLine="159" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1300615610528723671" fileName="ExtractMethodRefactoring.java" startLine="162" startPosition="95" endLine="163" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437189846" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="86" endLine="165" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="420882727001940181" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="86" endLine="165" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1769066237347367105" fileName="ExtractMethodRefactoring.java" startLine="169" startPosition="125" endLine="170" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1300615610528497339" fileName="ExtractMethodRefactoring.java" startLine="173" startPosition="58" endLine="174" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1300615610528516247" fileName="ExtractMethodRefactoring.java" startLine="175" startPosition="88" endLine="176" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2363,14 +2363,14 @@
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="351" startPosition="43" endLine="352" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="352" startPosition="85" endLine="353" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="354" startPosition="7" endLine="355" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="363" startPosition="49" endLine="364" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="364" startPosition="26" endLine="365" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="365" startPosition="67" endLine="366" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="367" startPosition="7" endLine="368" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="368" startPosition="167" endLine="369" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="369" startPosition="43" endLine="370" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="370" startPosition="85" endLine="371" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="372" startPosition="7" endLine="373" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="363" startPosition="49" endLine="364" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="364" startPosition="26" endLine="365" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="365" startPosition="67" endLine="366" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="367" startPosition="7" endLine="368" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="368" startPosition="166" endLine="369" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="369" startPosition="43" endLine="370" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="370" startPosition="85" endLine="371" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="372" startPosition="7" endLine="373" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8823815475437247084" fileName="ExtractMethodRefactoring.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodBody#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5159544814167901888" fileName="ExtractMethodRefactoring.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceMatch#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8492459591399163842" fileName="ExtractMethodRefactoring.java" startLine="140" startPosition="10" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2381,7 +2381,7 @@
     <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="277" startPosition="54" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_jq3ovj_a0a0a2a6#()V" />
     <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="309" startPosition="55" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_jq3ovj_a0a0b0c0g#()V" />
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="341" startPosition="57" endLine="343" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_jq3ovj_a0a0a0c0c0g#()V" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="359" startPosition="55" endLine="361" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_jq3ovj_a0a0a0b0k#()V" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="359" startPosition="55" endLine="361" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_jq3ovj_a0a0a0b0k#()V" />
     <nodeInfo nodeId="3762128617127246809" fileName="ExtractMethodRefactoring.java" startLine="60" startPosition="57" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3762128617127246822" fileName="ExtractMethodRefactoring.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3633468495172338696" fileName="ExtractMethodRefactoring.java" startLine="75" startPosition="109" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2423,8 +2423,8 @@
     <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="324" startPosition="30" endLine="330" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="348" startPosition="32" endLine="354" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="348" startPosition="32" endLine="354" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="366" startPosition="32" endLine="372" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="366" startPosition="32" endLine="372" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="366" startPosition="32" endLine="372" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="366" startPosition="32" endLine="372" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6195342755327829884" fileName="ExtractMethodRefactoring.java" startLine="113" startPosition="5" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1300615610528705309" fileName="ExtractMethodRefactoring.java" startLine="161" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceInputVariablesByParameters#(Ljava/util/List;Ljava/util/Map;)V" />
     <nodeInfo nodeId="6195342755328034329" fileName="ExtractMethodRefactoring.java" startLine="230" startPosition="82" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -2448,7 +2448,7 @@
     <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="321" startPosition="43" endLine="334" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="321" startPosition="43" endLine="334" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="344" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="362" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="362" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1769066237347336301" fileName="ExtractMethodRefactoring.java" startLine="170" startPosition="81" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399163689" fileName="ExtractMethodRefactoring.java" startLine="37" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactor#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399163694" fileName="ExtractMethodRefactoring.java" startLine="69" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -2465,7 +2465,7 @@
     <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="278" startPosition="45" endLine="278" endPosition="45" />
     <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="310" startPosition="46" endLine="310" endPosition="46" />
     <scopeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="342" startPosition="48" endLine="342" endPosition="48" />
-    <scopeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="360" startPosition="46" endLine="360" endPosition="46" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="360" startPosition="46" endLine="360" endPosition="46" />
     <scopeInfo nodeId="3762128617127246816" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="53" endLine="62" endPosition="26" />
     <scopeInfo nodeId="3762128617127246827" fileName="ExtractMethodRefactoring.java" startLine="64" startPosition="88" endLine="65" endPosition="74" />
     <scopeInfo nodeId="8492459591399163706" fileName="ExtractMethodRefactoring.java" startLine="72" startPosition="41" endLine="73" endPosition="58" />
@@ -2520,7 +2520,7 @@
     <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="309" startPosition="55" endLine="311" endPosition="5" />
     <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="327" startPosition="18" endLine="329" endPosition="41" />
     <scopeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="341" startPosition="57" endLine="343" endPosition="5" />
-    <scopeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="359" startPosition="55" endLine="361" endPosition="5" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="359" startPosition="55" endLine="361" endPosition="5" />
     <scopeInfo nodeId="3762128617127246809" fileName="ExtractMethodRefactoring.java" startLine="60" startPosition="57" endLine="63" endPosition="5">
       <varInfo nodeId="3762128617127246810" varName="node" />
     </scopeInfo>
@@ -2571,8 +2571,8 @@
     <scopeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="349" startPosition="7" endLine="353" endPosition="31">
       <varInfo nodeId="6195342755327829932" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="367" startPosition="7" endLine="371" endPosition="31">
-      <varInfo nodeId="8823815475437189854" varName="quotedNode1_2" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="367" startPosition="7" endLine="371" endPosition="31">
+      <varInfo nodeId="420882727001940217" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399163721" fileName="ExtractMethodRefactoring.java" startLine="74" startPosition="12" endLine="79" endPosition="45">
       <varInfo nodeId="8492459591399163723" varName="processor" />
@@ -2595,7 +2595,7 @@
     <scopeInfo nodeId="8492459591399164122" fileName="ExtractMethodRefactoring.java" startLine="204" startPosition="85" endLine="210" endPosition="5" />
     <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="266" startPosition="32" endLine="272" endPosition="7" />
     <scopeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="348" startPosition="32" endLine="354" endPosition="7" />
-    <scopeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="366" startPosition="32" endLine="372" endPosition="7" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="366" startPosition="32" endLine="372" endPosition="7" />
     <scopeInfo nodeId="6195342755327829884" fileName="ExtractMethodRefactoring.java" startLine="113" startPosition="5" endLine="120" endPosition="5">
       <varInfo nodeId="6195342755327829885" varName="declaration" />
     </scopeInfo>
@@ -2648,10 +2648,10 @@
       <varInfo nodeId="6195342755327829932" varName="quotedNode_1" />
       <varInfo nodeId="6195342755327829932" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="363" startPosition="49" endLine="373" endPosition="20">
-      <varInfo nodeId="8823815475437189854" varName="_parameterValues_129834374" />
-      <varInfo nodeId="8823815475437189854" varName="quotedNode_1" />
-      <varInfo nodeId="8823815475437189854" varName="result" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="363" startPosition="49" endLine="373" endPosition="20">
+      <varInfo nodeId="420882727001940217" varName="_parameterValues_129834374" />
+      <varInfo nodeId="420882727001940217" varName="quotedNode_1" />
+      <varInfo nodeId="420882727001940217" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3762128617127221657" fileName="ExtractMethodRefactoring.java" startLine="58" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="3762128617127246853" varName="inputMapping" />
@@ -2702,8 +2702,8 @@
     <scopeInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="344" startPosition="0" endLine="357" endPosition="0">
       <varInfo nodeId="6195342755327829932" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="362" startPosition="0" endLine="375" endPosition="0">
-      <varInfo nodeId="8823815475437189854" varName="parameter_3" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="362" startPosition="0" endLine="375" endPosition="0">
+      <varInfo nodeId="420882727001940217" varName="parameter_3" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399163701" fileName="ExtractMethodRefactoring.java" startLine="70" startPosition="85" endLine="84" endPosition="20">
       <varInfo nodeId="8492459591399163703" varName="myMethod" />
@@ -2769,7 +2769,7 @@
     <unitInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="92" startPosition="139" endLine="96" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$1" />
     <unitInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="259" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0a0a0a0a0c0f" />
     <unitInfo nodeId="6195342755327829932" fileName="ExtractMethodRefactoring.java" startLine="341" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0a0c0c0g" />
-    <unitInfo nodeId="8823815475437189854" fileName="ExtractMethodRefactoring.java" startLine="359" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0a0b0k" />
+    <unitInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="359" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0a0b0k" />
     <unitInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="277" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0a2a6" />
     <unitInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="309" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$QuotationClass_jq3ovj_a0a0b0c0g" />
     <unitInfo nodeId="8492459591399163659" fileName="ExtractMethodRefactoring.java" startLine="27" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
