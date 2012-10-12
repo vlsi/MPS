@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;

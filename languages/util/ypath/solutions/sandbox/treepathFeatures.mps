@@ -15,7 +15,7 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="9yi" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.xml.parsers(JDK/javax.xml.parsers@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="t6w" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
+  <import index="i8bi" modelUID="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -423,8 +423,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184685792726">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184687034428">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1184687035067">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SLinkOperations" resolveInfo="SLinkOperations" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SLinkOperations%dgetTargets(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,boolean)%cjava%dutil%dList" resolveInfo="getTargets" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.6599163591527286349" resolveInfo="SLinkOperations" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.6599163591527286513" resolveInfo="getTargets" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.NodeFunctionParam" typeId="tpki.1183978789889" id="1184687035068" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.ParamFunctionParam" typeId="tpki.1184501940146" id="1184687035069" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1184687035070">
@@ -439,8 +439,8 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184687047941">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628997172">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1184687048449">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SLinkOperations" resolveInfo="SLinkOperations" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SLinkOperations%dgetTargets(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,boolean)%cjava%dutil%dList" resolveInfo="getTargets" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.6599163591527286349" resolveInfo="SLinkOperations" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.6599163591527286513" resolveInfo="getTargets" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.NodeFunctionParam" typeId="tpki.1183978789889" id="1184687048450" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.ParamFunctionParam" typeId="tpki.1184501940146" id="1184687048451" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1184687048452">
@@ -637,8 +637,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184688224777">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184688446655">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1184688446656">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SLinkOperations" resolveInfo="SLinkOperations" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SLinkOperations%dgetTargets(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,boolean)%cjava%dutil%dList" resolveInfo="getTargets" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.6599163591527286349" resolveInfo="SLinkOperations" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.6599163591527286513" resolveInfo="getTargets" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.NodeFunctionParam" typeId="tpki.1183978789889" id="1184688446657" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.ParamFunctionParam" typeId="tpki.1184501940146" id="1184688446658" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1184688446659">
@@ -653,8 +653,8 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184688456181">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628988744">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1184688456182">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SLinkOperations" resolveInfo="SLinkOperations" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SLinkOperations%dgetTargets(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,boolean)%cjava%dutil%dList" resolveInfo="getTargets" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.6599163591527286349" resolveInfo="SLinkOperations" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.6599163591527286513" resolveInfo="getTargets" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.NodeFunctionParam" typeId="tpki.1183978789889" id="1184688456183" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpki.ParamFunctionParam" typeId="tpki.1184501940146" id="1184688456184" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1184688456185">

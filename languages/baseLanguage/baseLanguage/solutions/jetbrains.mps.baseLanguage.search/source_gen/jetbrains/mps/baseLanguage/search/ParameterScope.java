@@ -39,7 +39,7 @@ public class ParameterScope extends AbstractSearchScope {
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = new ArrayList<SNode>();
     for (SNode node : this.params) {
       if (condition.met(node)) {
         result.add(node);

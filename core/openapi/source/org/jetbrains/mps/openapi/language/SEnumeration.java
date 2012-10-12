@@ -22,5 +22,7 @@ public interface SEnumeration extends SDataType {
 
   SEnumerationLiteral getLiteral(String value);
 
+  SEnumerationLiteral getDefault();
+
   Iterable<SEnumerationLiteral> getLiterals();
 }

@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.Stack;
 
 public class NodeReadEventsCaster {
   private static ThreadLocal<ListenersContainer> ourListenersContainer = new ThreadLocal<ListenersContainer>();
+
+  private static INodesReadListener NULL_LISTENER = new NullNodesReadListener();
 
   public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child) {
     ListenersContainer listenersContainer = ourListenersContainer.get();
@@ -55,8 +59,8 @@ public class NodeReadEventsCaster {
     }
   }
 
-  public static void setNodesReadListener(INodesReadListener listener) {
-    getListenersContainer().addListener(listener);
+  public static void setNodesReadListener(@Nullable INodesReadListener listener) {
+    getListenersContainer().addListener(listener != null ? listener : NULL_LISTENER);
   }
 
   public static void removeNodesReadListener() {
@@ -139,6 +143,41 @@ public class NodeReadEventsCaster {
 
     public boolean canBeDisposed() {
       return !myEventsBlocked && myListenersStack.isEmpty();
+    }
+  }
+
+  private static class NullNodesReadListener implements INodesReadListener {
+
+    @Override
+    public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
+    }
+
+    @Override
+    public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
+    }
+
+    @Override
+    public void propertyExistenceAccess(SNode node, String propertyName) {
+    }
+
+    @Override
+    public void propertyDirtyReadAccess(SNode node, String propertyName) {
+    }
+
+    @Override
+    public void propertyCleanReadAccess(SNode node, String propertyName) {
+    }
+
+    @Override
+    public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
+    }
+
+    @Override
+    public void nodeUnclassifiedReadAccess(SNode node) {
+    }
+
+    @Override
+    public void modelNodesReadAccess(SModel model) {
     }
   }
 }

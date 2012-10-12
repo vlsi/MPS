@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
-  <property name="plugin.version" value="1.0.SNAPSHOT" />
+  <property name="plugin.version" value="1.1.SNAPSHOT" />
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>

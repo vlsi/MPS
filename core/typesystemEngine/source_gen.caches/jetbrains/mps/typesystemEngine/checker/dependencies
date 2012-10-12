@@ -17,7 +17,7 @@
   <dependency className="jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent" file="TypesystemCheckerComponent.java">
     <classNode dependClassName="jetbrains.mps.checkers.CheckersComponent" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.components.CoreComponent" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
 </dependenciesRoot>
 

@@ -21,8 +21,8 @@ package org.jetbrains.mps.openapi.language;
 public interface SPrimitiveDataType extends SDataType {
 
   public static final int STRING = 0;
-  public static final int BOOL = 0;
-  public static final int INT = 0;
+  public static final int BOOL = 1;
+  public static final int INT = 2;
 
   int getType();
 }

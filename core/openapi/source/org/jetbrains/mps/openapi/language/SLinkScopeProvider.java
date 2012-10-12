@@ -16,5 +16,5 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SLinkScopeProvider {
-  SScope getScope(SScopePlace place);
+  SScope getScope();
 }
