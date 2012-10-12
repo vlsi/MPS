@@ -54,6 +54,7 @@ public class SModelUtil {
     }
   }
 
+  @Deprecated
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
