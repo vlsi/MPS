@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;

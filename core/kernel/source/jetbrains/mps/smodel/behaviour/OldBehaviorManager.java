@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;

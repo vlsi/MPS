@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;

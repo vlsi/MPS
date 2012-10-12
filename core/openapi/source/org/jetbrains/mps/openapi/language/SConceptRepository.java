@@ -15,33 +15,18 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
-
 /**
  * This interface provides a per-concept access to SLanguageRepository
  */
-public abstract class SConceptRepository implements CoreComponent {
+public abstract class SConceptRepository {
 
   protected SConceptRepository() {
   }
 
-  private static SConceptRepository INSTANCE;
+  protected static SConceptRepository INSTANCE;
 
   public static SConceptRepository getInstance() {
     return INSTANCE;
-  }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-    INSTANCE = this;
-  }
-
-  @Override
-  public void dispose() {
-    INSTANCE = null;
   }
 
   public abstract SConcept getConcept(String id);

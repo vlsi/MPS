@@ -13,45 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.findUsages.fastfind;
+package jetbrains.mps.smodel.language;
 
-import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
-import java.util.Map;
-
-public class FastFindSupportRegistry implements CoreComponent {
-  private static FastFindSupportRegistry INSTANCE;
-
-  public static FastFindSupportRegistry getInstance() {
-    return INSTANCE;
+/**
+* evgeny, 10/12/12
+*/
+public class ConceptRepository extends SConceptRepository implements CoreComponent {
+  public SConcept getConcept(String id) {
+    return new SConceptNodeAdapter(id);
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
     }
-
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
-  }
-
-  //------------CoreComponent stuff end----------------
-
-  private Map<String, FastFindSupport> myFindSupports = new THashMap<String, FastFindSupport>();
-
-  public void addFastFindSupport(String id, FastFindSupport ffs){
-    myFindSupports.put(id,ffs);
-  }
-
-  public void removeFastFindSupport(String id){
-    myFindSupports.remove(id);
-  }
-
-  public FastFindSupport getFastFindSupport(String id){
-    return myFindSupports.get(id);
   }
 }

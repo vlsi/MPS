@@ -16,7 +16,7 @@
 package jetbrains.mps.reloading;
 
 import gnu.trove.THashMap;
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.ClassLoadingModule;

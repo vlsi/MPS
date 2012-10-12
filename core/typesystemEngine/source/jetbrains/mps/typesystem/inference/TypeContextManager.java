@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
