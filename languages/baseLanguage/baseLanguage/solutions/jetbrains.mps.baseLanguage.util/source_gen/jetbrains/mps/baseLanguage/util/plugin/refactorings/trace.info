@@ -4352,43 +4352,51 @@
     <nodeInfo nodeId="8492459591399168769" fileName="MethodOptimizer.java" startLine="50" startPosition="19" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6334444805435347937" fileName="MethodOptimizer.java" startLine="52" startPosition="5" endLine="53" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8492459591399168770" fileName="MethodOptimizer.java" startLine="53" startPosition="52" endLine="54" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168781" fileName="MethodOptimizer.java" startLine="55" startPosition="120" endLine="56" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168788" fileName="MethodOptimizer.java" startLine="57" startPosition="170" endLine="58" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168797" fileName="MethodOptimizer.java" startLine="59" startPosition="161" endLine="60" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168806" fileName="MethodOptimizer.java" startLine="61" startPosition="162" endLine="62" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399168814" fileName="MethodOptimizer.java" startLine="62" startPosition="125" endLine="63" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6334444805435368653" fileName="MethodOptimizer.java" startLine="63" startPosition="60" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6334444805435347960" fileName="MethodOptimizer.java" startLine="65" startPosition="188" endLine="66" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6334444805435347979" fileName="MethodOptimizer.java" startLine="66" startPosition="325" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6334444805435347963" fileName="MethodOptimizer.java" startLine="68" startPosition="13" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8492459591399168856" fileName="MethodOptimizer.java" startLine="76" startPosition="110" endLine="77" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168862" fileName="MethodOptimizer.java" startLine="77" startPosition="81" endLine="78" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168873" fileName="MethodOptimizer.java" startLine="79" startPosition="19" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399168874" fileName="MethodOptimizer.java" startLine="81" startPosition="5" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168885" fileName="MethodOptimizer.java" startLine="83" startPosition="135" endLine="84" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399168892" fileName="MethodOptimizer.java" startLine="85" startPosition="172" endLine="86" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399168902" fileName="MethodOptimizer.java" startLine="86" startPosition="197" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3861276916194538349" fileName="MethodOptimizer.java" startLine="55" startPosition="123" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3861276916194538370" fileName="MethodOptimizer.java" startLine="57" startPosition="5" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8492459591399168781" fileName="MethodOptimizer.java" startLine="58" startPosition="0" endLine="59" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3861276916194538354" fileName="MethodOptimizer.java" startLine="60" startPosition="171" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3861276916194538371" fileName="MethodOptimizer.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8492459591399168788" fileName="MethodOptimizer.java" startLine="63" startPosition="0" endLine="64" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3861276916194538359" fileName="MethodOptimizer.java" startLine="65" startPosition="160" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3861276916194538372" fileName="MethodOptimizer.java" startLine="67" startPosition="5" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8492459591399168797" fileName="MethodOptimizer.java" startLine="68" startPosition="0" endLine="69" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3861276916194538317" fileName="MethodOptimizer.java" startLine="69" startPosition="162" endLine="70" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3861276916194538367" fileName="MethodOptimizer.java" startLine="71" startPosition="86" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3861276916194538368" fileName="MethodOptimizer.java" startLine="73" startPosition="5" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8492459591399168806" fileName="MethodOptimizer.java" startLine="74" startPosition="0" endLine="75" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399168814" fileName="MethodOptimizer.java" startLine="75" startPosition="117" endLine="76" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3861276916194538377" fileName="MethodOptimizer.java" startLine="77" startPosition="113" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3861276916194538378" fileName="MethodOptimizer.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6334444805435347960" fileName="MethodOptimizer.java" startLine="80" startPosition="0" endLine="81" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399168856" fileName="MethodOptimizer.java" startLine="84" startPosition="110" endLine="85" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399168862" fileName="MethodOptimizer.java" startLine="85" startPosition="81" endLine="86" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399168873" fileName="MethodOptimizer.java" startLine="87" startPosition="19" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399168874" fileName="MethodOptimizer.java" startLine="89" startPosition="5" endLine="90" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399168885" fileName="MethodOptimizer.java" startLine="91" startPosition="135" endLine="92" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399168892" fileName="MethodOptimizer.java" startLine="93" startPosition="172" endLine="94" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399168902" fileName="MethodOptimizer.java" startLine="94" startPosition="197" endLine="95" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1279276159889585455" fileName="MethodOptimizer.java" startLine="12" startPosition="30" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodOptimizer#()V" />
     <nodeInfo nodeId="8492459591399168710" fileName="MethodOptimizer.java" startLine="19" startPosition="117" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399168726" fileName="MethodOptimizer.java" startLine="22" startPosition="7" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6195342755327886613" fileName="MethodOptimizer.java" startLine="31" startPosition="152" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399168764" fileName="MethodOptimizer.java" startLine="49" startPosition="57" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399168868" fileName="MethodOptimizer.java" startLine="78" startPosition="57" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168779" fileName="MethodOptimizer.java" startLine="54" startPosition="87" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168786" fileName="MethodOptimizer.java" startLine="59" startPosition="134" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168795" fileName="MethodOptimizer.java" startLine="64" startPosition="173" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168804" fileName="MethodOptimizer.java" startLine="70" startPosition="92" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6334444805435347977" fileName="MethodOptimizer.java" startLine="76" startPosition="52" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168868" fileName="MethodOptimizer.java" startLine="86" startPosition="57" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6195342755327886672" fileName="MethodOptimizer.java" startLine="38" startPosition="75" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6334444805435347977" fileName="MethodOptimizer.java" startLine="64" startPosition="0" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399168890" fileName="MethodOptimizer.java" startLine="84" startPosition="152" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168890" fileName="MethodOptimizer.java" startLine="92" startPosition="152" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6195342755327886607" fileName="MethodOptimizer.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="removeUnusedDeclarations#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6195342755327886628" fileName="MethodOptimizer.java" startLine="37" startPosition="95" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399168883" fileName="MethodOptimizer.java" startLine="82" startPosition="88" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399168883" fileName="MethodOptimizer.java" startLine="90" startPosition="88" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399168703" fileName="MethodOptimizer.java" startLine="17" startPosition="108" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6334444805435347941" fileName="MethodOptimizer.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="removeUnusedDeclaration#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399168804" fileName="MethodOptimizer.java" startLine="60" startPosition="168" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399168795" fileName="MethodOptimizer.java" startLine="58" startPosition="177" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399168691" fileName="MethodOptimizer.java" startLine="15" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="optimize#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399168786" fileName="MethodOptimizer.java" startLine="56" startPosition="136" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399168847" fileName="MethodOptimizer.java" startLine="75" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="optimizeVariableFollowedByReturn#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399168779" fileName="MethodOptimizer.java" startLine="54" startPosition="87" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399168748" fileName="MethodOptimizer.java" startLine="46" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="optimizeAssignmentFollowedByReturn#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8492459591399168847" fileName="MethodOptimizer.java" startLine="83" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="optimizeVariableFollowedByReturn#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8492459591399168748" fileName="MethodOptimizer.java" startLine="46" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="optimizeAssignmentFollowedByReturn#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1279276159889585457" fileName="MethodOptimizer.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
     <scopeInfo nodeId="8492459591399168711" fileName="MethodOptimizer.java" startLine="20" startPosition="163" endLine="21" endPosition="205" />
     <scopeInfo nodeId="8492459591399168727" fileName="MethodOptimizer.java" startLine="23" startPosition="163" endLine="24" endPosition="203" />
@@ -4396,10 +4404,14 @@
     <scopeInfo nodeId="6195342755327886673" fileName="MethodOptimizer.java" startLine="39" startPosition="39" endLine="40" endPosition="90" />
     <scopeInfo nodeId="6195342755327886630" fileName="MethodOptimizer.java" startLine="42" startPosition="165" endLine="43" endPosition="73" />
     <scopeInfo nodeId="8492459591399168768" fileName="MethodOptimizer.java" startLine="50" startPosition="19" endLine="51" endPosition="13" />
-    <scopeInfo nodeId="8492459591399168872" fileName="MethodOptimizer.java" startLine="79" startPosition="19" endLine="80" endPosition="13" />
+    <scopeInfo nodeId="3861276916194538346" fileName="MethodOptimizer.java" startLine="55" startPosition="123" endLine="56" endPosition="13" />
+    <scopeInfo nodeId="3861276916194538351" fileName="MethodOptimizer.java" startLine="60" startPosition="171" endLine="61" endPosition="13" />
+    <scopeInfo nodeId="3861276916194538356" fileName="MethodOptimizer.java" startLine="65" startPosition="160" endLine="66" endPosition="13" />
+    <scopeInfo nodeId="3861276916194538364" fileName="MethodOptimizer.java" startLine="71" startPosition="86" endLine="72" endPosition="13" />
+    <scopeInfo nodeId="3861276916194538374" fileName="MethodOptimizer.java" startLine="77" startPosition="113" endLine="78" endPosition="13" />
+    <scopeInfo nodeId="8492459591399168872" fileName="MethodOptimizer.java" startLine="87" startPosition="19" endLine="88" endPosition="13" />
     <scopeInfo nodeId="1279276159889585455" fileName="MethodOptimizer.java" startLine="12" startPosition="30" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="6334444805435347978" fileName="MethodOptimizer.java" startLine="65" startPosition="188" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8492459591399168891" fileName="MethodOptimizer.java" startLine="85" startPosition="172" endLine="87" endPosition="57" />
+    <scopeInfo nodeId="8492459591399168891" fileName="MethodOptimizer.java" startLine="93" startPosition="172" endLine="95" endPosition="57" />
     <scopeInfo nodeId="6195342755327886613" fileName="MethodOptimizer.java" startLine="31" startPosition="152" endLine="34" endPosition="5">
       <varInfo nodeId="6195342755327886614" varName="declaration" />
     </scopeInfo>
@@ -4409,7 +4421,7 @@
     <scopeInfo nodeId="6195342755327886672" fileName="MethodOptimizer.java" startLine="38" startPosition="75" endLine="42" endPosition="0">
       <varInfo nodeId="6195342755327886672" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399168884" fileName="MethodOptimizer.java" startLine="83" startPosition="135" endLine="88" endPosition="7">
+    <scopeInfo nodeId="8492459591399168884" fileName="MethodOptimizer.java" startLine="91" startPosition="135" endLine="96" endPosition="7">
       <varInfo nodeId="8492459591399168886" varName="declarationStatement" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399168704" fileName="MethodOptimizer.java" startLine="18" startPosition="110" endLine="25" endPosition="7">
@@ -4419,7 +4431,6 @@
       <varInfo nodeId="6195342755327886611" varName="body" />
     </scopeInfo>
     <scopeInfo nodeId="6334444805435347944" fileName="MethodOptimizer.java" startLine="37" startPosition="95" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="8492459591399168805" fileName="MethodOptimizer.java" startLine="61" startPosition="162" endLine="69" endPosition="0" />
     <scopeInfo nodeId="6334444805435347941" fileName="MethodOptimizer.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="6334444805435347945" varName="declaration" />
       <varInfo nodeId="6334444805435347947" varName="references" />
@@ -4427,10 +4438,7 @@
     <scopeInfo nodeId="8492459591399168694" fileName="MethodOptimizer.java" startLine="16" startPosition="43" endLine="27" endPosition="14">
       <varInfo nodeId="8492459591399168696" varName="lastStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399168796" fileName="MethodOptimizer.java" startLine="59" startPosition="161" endLine="70" endPosition="11">
-      <varInfo nodeId="8492459591399168798" varName="reference2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399168855" fileName="MethodOptimizer.java" startLine="76" startPosition="110" endLine="89" endPosition="5">
+    <scopeInfo nodeId="8492459591399168855" fileName="MethodOptimizer.java" startLine="84" startPosition="110" endLine="97" endPosition="5">
       <varInfo nodeId="8492459591399168875" varName="berforeLastStatement" />
       <varInfo nodeId="8492459591399168863" varName="size" />
       <varInfo nodeId="8492459591399168857" varName="statements" />
@@ -4438,29 +4446,27 @@
     <scopeInfo nodeId="8492459591399168691" fileName="MethodOptimizer.java" startLine="15" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8492459591399168746" varName="body" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399168787" fileName="MethodOptimizer.java" startLine="57" startPosition="170" endLine="71" endPosition="9">
-      <varInfo nodeId="8492459591399168789" varName="assignment" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399168847" fileName="MethodOptimizer.java" startLine="75" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="8492459591399168847" fileName="MethodOptimizer.java" startLine="83" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="8492459591399168848" varName="body" />
       <varInfo nodeId="8492459591399168850" varName="lastReturn" />
       <varInfo nodeId="8492459591399168852" varName="variableReference" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399168780" fileName="MethodOptimizer.java" startLine="55" startPosition="120" endLine="72" endPosition="7">
-      <varInfo nodeId="8492459591399168782" varName="expressionStatement" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399168751" fileName="MethodOptimizer.java" startLine="47" startPosition="112" endLine="73" endPosition="5">
+    <scopeInfo nodeId="8492459591399168751" fileName="MethodOptimizer.java" startLine="47" startPosition="112" endLine="81" endPosition="245">
+      <varInfo nodeId="8492459591399168789" varName="assignment" />
       <varInfo nodeId="8492459591399168771" varName="beforeLastStatement" />
+      <varInfo nodeId="3861276916194538318" varName="decl" />
+      <varInfo nodeId="8492459591399168782" varName="expressionStatement" />
+      <varInfo nodeId="8492459591399168798" varName="reference2" />
       <varInfo nodeId="8492459591399168759" varName="size" />
       <varInfo nodeId="8492459591399168753" varName="statements" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399168748" fileName="MethodOptimizer.java" startLine="46" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="8492459591399168748" fileName="MethodOptimizer.java" startLine="46" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="8492459591399168841" varName="body" />
       <varInfo nodeId="8492459591399168843" varName="lastReturn" />
       <varInfo nodeId="8492459591399168845" varName="variableReference" />
     </scopeInfo>
     <unitInfo nodeId="6195342755327886672" fileName="MethodOptimizer.java" startLine="38" startPosition="52" endLine="42" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer$1" />
-    <unitInfo nodeId="8492459591399168690" fileName="MethodOptimizer.java" startLine="12" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer" />
+    <unitInfo nodeId="8492459591399168690" fileName="MethodOptimizer.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer" />
   </root>
   <root nodeId="8492459591399168919" modelId="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)">
     <nodeInfo nodeId="8492459591399168920" fileName="MethodParameter.java" startLine="19" startPosition="59" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
