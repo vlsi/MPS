@@ -1168,5 +1168,29 @@
     </scopeInfo>
     <unitInfo nodeId="2598676492883164208" fileName="FactoryMigrationScriptPart_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.script.editor.FactoryMigrationScriptPart_Editor" />
   </root>
+  <root nodeId="2598676492883244608" modelId="r:00000000-0000-4000-0000-011c8959031f(jetbrains.mps.lang.script.editor)">
+    <nodeInfo nodeId="2598676492883244608" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="17" startPosition="86" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="17" startPosition="86" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="18" startPosition="46" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="19" startPosition="34" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2598676492883244608" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="11" startPosition="77" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vwvhta_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="2598676492883244608" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" />
+    <scopeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="17" startPosition="86" endLine="18" endPosition="46" />
+    <scopeInfo nodeId="2598676492883244608" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="11" startPosition="77" endLine="15" endPosition="0">
+      <varInfo nodeId="2598676492883244608" varName="editorContext" />
+      <varInfo nodeId="2598676492883244608" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="16" startPosition="87" endLine="20" endPosition="22">
+      <varInfo nodeId="2598676492883244610" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2598676492883244610" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="2598676492883244610" varName="editorContext" />
+      <varInfo nodeId="2598676492883244610" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2598676492883244608" fileName="WhitespaceMigrationScriptPart_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.script.editor.WhitespaceMigrationScriptPart_Editor" />
+  </root>
 </debugInfo>
 
