@@ -22,7 +22,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;

@@ -102,6 +102,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myRegistered = registered;
   }
 
+  @NotNull
   public SModelReference getModelReference() {
     return myModelReference;
   }

@@ -35,7 +35,7 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
