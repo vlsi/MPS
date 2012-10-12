@@ -57,13 +57,13 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
         Iterable<SNode> parameters = ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.smodel.structure.OperationParm_Concept")) {
-              return new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a0a0a0a0a0a0a4a0a0a1a0().createNode();
+              return new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a0a0a0a0a0a0a4a0a0a0a1a0().createNode();
             } else {
               return it;
             }
           }
         });
-        SNode result = new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a1a4a0a0a1a0().createNode(IOperation_Behavior.call_getOperand_1213877410070(node), Sequence.fromIterable(parameters).toListSequence());
+        SNode result = new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a1a4a0a0a0a1a0().createNode(IOperation_Behavior.call_getOperand_1213877410070(node), Sequence.fromIterable(parameters).toListSequence());
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
       }
 
@@ -89,7 +89,7 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode result = new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a0a4a0a0a2a0().createNode(IOperation_Behavior.call_getOperand_1213877410070(node), IOperation_Behavior.call_getOperand_1213877410070(node));
+        SNode result = new MigrateParameterReference_MigrationScript.QuotationClass_2t56b7_a0a0a4a0a0a0a2a0().createNode(IOperation_Behavior.call_getOperand_1213877410070(node), IOperation_Behavior.call_getOperand_1213877410070(node));
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
       }
 
@@ -275,8 +275,8 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
     });
   }
 
-  public static class QuotationClass_2t56b7_a0a0a0a0a0a0a0a4a0a0a1a0 {
-    public QuotationClass_2t56b7_a0a0a0a0a0a0a0a4a0a0a1a0() {
+  public static class QuotationClass_2t56b7_a0a0a0a0a0a0a0a4a0a0a0a1a0 {
+    public QuotationClass_2t56b7_a0a0a0a0a0a0a0a4a0a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -299,8 +299,8 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_2t56b7_a0a1a4a0a0a1a0 {
-    public QuotationClass_2t56b7_a0a1a4a0a0a1a0() {
+  public static class QuotationClass_2t56b7_a0a1a4a0a0a0a1a0 {
+    public QuotationClass_2t56b7_a0a1a4a0a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_36, Object parameter_37) {
@@ -432,8 +432,8 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_2t56b7_a0a0a4a0a0a2a0 {
-    public QuotationClass_2t56b7_a0a0a4a0a0a2a0() {
+  public static class QuotationClass_2t56b7_a0a0a4a0a0a0a2a0 {
+    public QuotationClass_2t56b7_a0a0a4a0a0a0a2a0() {
     }
 
     public SNode createNode(Object parameter_27, Object parameter_28) {
@@ -541,8 +541,8 @@ public class MigrateParameterReference_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_2t56b7_a0a2a0a1a4a0a0a3a0 {
-    public QuotationClass_2t56b7_a0a2a0a1a4a0a0a3a0() {
+  public static class QuotationClass_2t56b7_a0a2a0a1a4a0a0a0a3a0 {
+    public QuotationClass_2t56b7_a0a2a0a1a4a0a0a0a3a0() {
     }
 
     public SNode createNode(Object parameter_9) {

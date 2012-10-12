@@ -135,7 +135,7 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageEnhancements_MigrationScript.QuotationClass_3alopx_a0a0a0d0a0a0d0a().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageEnhancements_MigrationScript.QuotationClass_3alopx_a0a0a0d0a0a0a0d0a().createNode(), "classifier", false);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -148,8 +148,8 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
     });
   }
 
-  public static class QuotationClass_3alopx_a0a0a0d0a0a0d0a {
-    public QuotationClass_3alopx_a0a0a0d0a0a0d0a() {
+  public static class QuotationClass_3alopx_a0a0a0d0a0a0a0d0a {
+    public QuotationClass_3alopx_a0a0a0d0a0a0a0d0a() {
     }
 
     public SNode createNode() {

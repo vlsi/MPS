@@ -5,110 +5,24 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.smodel.SNode;
 
 public class UnifyVariableReferences_MigrationScript extends BaseMigrationScript {
   public UnifyVariableReferences_MigrationScript(IOperationContext operationContext) {
     super("Convert all local/parameter/local instance field/ local static field variable references to variable reference concept");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "Convert all local variable references to variable reference concept";
-      }
-
-      public String getAdditionalInfo() {
-        return "Convert all local variable references to variable reference concept";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalVariableReference";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return UnifyVariableMigrationUtils.isApplicable("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", node);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        UnifyVariableMigrationUtils.doMigration(node);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "Convert all parameter references to variable reference concept";
-      }
-
-      public String getAdditionalInfo() {
-        return "Convert all parameter references to variable reference concept";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ParameterReference";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return UnifyVariableMigrationUtils.isApplicable("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", node);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        UnifyVariableMigrationUtils.doMigration(node);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "Convert all local instance field references to variable reference concept";
-      }
-
-      public String getAdditionalInfo() {
-        return "Convert all local instance field references to variable reference concept";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return UnifyVariableMigrationUtils.isApplicable("jetbrains.mps.baseLanguage.structure.FieldDeclaration", node);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        UnifyVariableMigrationUtils.doMigration(node);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "Convert all local static field references to variable reference concept";
-      }
-
-      public String getAdditionalInfo() {
-        return "Convert all local static field references to variable reference concept";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return UnifyVariableMigrationUtils.isApplicable("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", node);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        UnifyVariableMigrationUtils.doMigration(node);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      this.addRefactoring(refactoring);
+    }
+    // whitespace part 
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      this.addRefactoring(refactoring);
+    }
+    // whitespace part 
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      this.addRefactoring(refactoring);
+    }
+    // whitespace part 
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+      this.addRefactoring(refactoring);
+    }
   }
 }
