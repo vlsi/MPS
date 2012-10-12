@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="FactoryMigrationScriptPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FactoryMigrationScriptPart_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
   <unitInfo fileName="MigrationScriptPart_Instance_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_BehaviorDescriptor" />
   <unitInfo fileName="MigrationScriptPart_Instance_Predicate_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_BehaviorDescriptor" />
   <unitInfo fileName="MigrationScriptPart_Instance_Updater_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_BehaviorDescriptor" />

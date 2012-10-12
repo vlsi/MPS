@@ -11,8 +11,8 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177457067821">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="MigrationScript" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/migrationScript.png" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationScript" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177457850499">
@@ -35,13 +35,20 @@
       <property name="name" nameId="tpck.1169194664001" value="ScriptType" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2598676492883163340">
+      <property name="name" nameId="tpck.1169194664001" value="MigrationScriptPart" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2598676492883164205">
+      <property name="name" nameId="tpck.1169194664001" value="FactoryMigrationScriptPart" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
   </roots>
   <root id="1177457067821">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177458178889">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="part" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1177457850499" resolveInfo="MigrationScriptPart_Instance" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2598676492883163340" resolveInfo="MigrationScriptPart" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1177457669450">
       <property name="name" nameId="tpck.1169194664001" value="title" />
@@ -103,6 +110,9 @@
       <property name="value" nameId="tpce.1105725733873" value="concept instances updater" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2598676492883163341">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2598676492883163340" resolveInfo="MigrationScriptPart" />
+    </node>
   </root>
   <root id="1177458061340">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1177458085888">
@@ -139,12 +149,28 @@
   </root>
   <root id="5299416737274925392">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5299416737274925393">
-      <property name="externalValue" nameId="tpce.1083923523172" value="enhancement" />
       <property name="internalValue" nameId="tpce.1083923523171" value="enhancement" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="enhancement" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5299416737274925394">
-      <property name="externalValue" nameId="tpce.1083923523172" value="migration" />
       <property name="internalValue" nameId="tpce.1083923523171" value="migration" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="migration" />
+    </node>
+  </root>
+  <root id="2598676492883163340" />
+  <root id="2598676492883164205">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2598676492883170108">
+      <property name="value" nameId="tpce.1105725733873" value="factory migration script part" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2598676492883164207">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="factoryMethod" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2598676492883164206">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2598676492883163340" resolveInfo="MigrationScriptPart" />
     </node>
   </root>
 </model>
