@@ -61,24 +61,24 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5425021671150136555" resolveInfo="ExportScope" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5169995583184591161">
-      <property name="name" nameId="1169194664001" value="Attribute" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/languages/languageDesign/structure/icons/annotationLink.png" />
+      <property name="name" nameId="1169194664001" value="Attribute" />
       <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049745">
-      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <property name="name" nameId="1169194664001" value="LinkAttribute" />
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049748">
-      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <property name="name" nameId="1169194664001" value="NodeAttribute" />
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049750">
-      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <property name="name" nameId="1169194664001" value="PropertyAttribute" />
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3734116213129792499">
@@ -135,9 +135,6 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1137473994950">
       <property name="name" nameId="1169194664001" value="dontSubstituteByDefault" />
       <property name="inheritable" nameId="tpce.1218571350029" value="true" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="1218562853918">
-      <property name="name" nameId="1169194664001" value="deprecated104" />
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="6293714305936158372">
       <property name="name" nameId="1169194664001" value="substituteInAmbigousPosition" />
