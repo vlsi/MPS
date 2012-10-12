@@ -18,10 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -67,7 +64,7 @@ public class DynamicReference extends SReferenceBase {
   protected SNode getTargetNode_internal(boolean silently) {
     if (myImmatureTargetNode != null) {
       synchronized (this) {
-        if (!mature()) {
+        if (!makeIndirect()) {
           return myImmatureTargetNode;
         }
       }

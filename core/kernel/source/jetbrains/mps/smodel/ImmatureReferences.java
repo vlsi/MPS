@@ -84,7 +84,7 @@ public class ImmatureReferences implements CoreComponent {
   public void cleanup() {
     for (Entry<SModelReference, ConcurrentMap<SReferenceBase, Object>> entry : myReferences.entrySet()) {
       for (SReferenceBase r : entry.getValue().keySet()) {
-        r.mature(true);
+        r.makeIndirect(true);
       }
     }
     myReferences.clear();

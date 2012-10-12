@@ -54,6 +54,13 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     myResolveInfo = InternUtil.intern(info);
   }
 
+  public void makeDirect() {
+  }
+
+  public boolean makeIndirect() {
+    return false;
+  }
+
   public String getRole() {
     return myRole;
   }
@@ -195,7 +202,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return null;
   }
 
-//  @Override
+  //  @Override
   public SModel getTargetModel() {
     // TODO API (implement)
     return null;

@@ -44,12 +44,12 @@ public final class StaticReference extends SReferenceBase {
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || mature()) return myTargetNodeId;
+    if (immatureNode == null || makeIndirect()) return myTargetNodeId;
     return immatureNode.getSNodeId();
   }
 
   public synchronized void setTargetNodeId(SNodeId nodeId) {
-    if (!mature()) makeMature();
+    if (!makeIndirect()) makeMature();
     myTargetNodeId = nodeId;
   }
 
@@ -58,7 +58,7 @@ public final class StaticReference extends SReferenceBase {
 
     if(myImmatureTargetNode != null) {
       synchronized (this) {
-        if (!mature()) {
+        if (!makeIndirect()) {
           return myImmatureTargetNode;
         }
       }

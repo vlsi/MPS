@@ -68,20 +68,25 @@ abstract class SReferenceBase extends SReference {
 
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || mature()) return myTargetModelReference;
+    if (immatureNode == null || makeIndirect()) return myTargetModelReference;
     return immatureNode.getModel().getSModelReference();
   }
 
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    if (!mature()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
+    if (!makeIndirect()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
     myTargetModelReference = modelReference;
   }
 
-  protected final boolean mature() {
-    return mature(false);
+  public final boolean makeIndirect() {
+    return makeIndirect(false);
   }
 
-  protected synchronized final boolean mature(boolean force) {
+  public void makeDirect() {
+    myImmatureTargetNode = getTargetNode();
+    ImmatureReferences.getInstance().add(this);
+  }
+
+  protected synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
       if (jetbrains.mps.util.SNodeOperations.isRegistered(getSourceNode()) && jetbrains.mps.util.SNodeOperations.isRegistered(myImmatureTargetNode) &&
         !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {
@@ -119,14 +124,13 @@ abstract class SReferenceBase extends SReference {
   }
 
   protected synchronized void makeMature() {
-    if (myImmatureTargetNode != null) {
-      ImmatureReferences.getInstance().remove(this);
-      final SNode immatureNode = myImmatureTargetNode;
-      myImmatureTargetNode = null;
-      adjustMature(immatureNode);
-      setTargetSModelReference(immatureNode.getModel().getSModelReference());
-      setResolveInfo(immatureNode.getResolveInfo());
-    }
+    if (myImmatureTargetNode == null) return;
+    ImmatureReferences.getInstance().remove(this);
+    final SNode immatureNode = myImmatureTargetNode;
+    myImmatureTargetNode = null;
+    adjustMature(immatureNode);
+    setTargetSModelReference(immatureNode.getModel().getSModelReference());
+    setResolveInfo(immatureNode.getResolveInfo());
   }
 
   protected void adjustMature(SNode immatureTarget) {

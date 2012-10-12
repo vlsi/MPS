@@ -658,7 +658,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     while (true) {
       current.fireNodeReadAccess();
       if (current.treeParent() == null) {
-        if (myModel!=null && myModel.isRoot(current)) {
+        if (myModel != null && myModel.isRoot(current)) {
           return current;
         } else {
           return null;
@@ -673,7 +673,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   replace with isDetached
    */
   public boolean isDeleted() {
-    return (myReferences.length == 0) && getParent() == null && myModel==null;
+    return (myReferences.length == 0) && getParent() == null && myModel == null;
   }
 
   /*
@@ -738,7 +738,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private static Set<String> ourReported = new THashSet<String>();
-  public SModel getOldModel(){
+
+  public SModel getOldModel() {
     Throwable t = new Throwable();
     String s = t.toString();
     if (!ourReported.contains(s)) {
@@ -817,6 +818,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (!myRegisteredInModelFlag) return;
     myRegisteredInModelFlag = false;
 
+    for (SReference ref : myReferences) {
+      ref.makeDirect();
+    }
+
     myModel.unregisterNode(this);
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
@@ -838,6 +843,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myModel = model;
     myModel.registerNode(this);
     myRegisteredInModelFlag = true;
+
+    for (SReference ref : myReferences) {
+      ref.makeIndirect();
+    }
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.registerInModel(model);
