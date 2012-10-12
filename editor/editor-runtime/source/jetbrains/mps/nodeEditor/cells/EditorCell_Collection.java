@@ -447,15 +447,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return;
     }
     setFolded(true);
-    adjustSelectionToFoldingState(getEditor());
     if (!isUnderFolded()) {
       addUnfoldingListener();
       removeFoldingListenerForChildren();
     }
-
     if (!programmaticaly) {
       getEditorContext().flushEvents();
       getEditor().relayout();
+      adjustSelectionToFoldingState(getEditor());
     }
   }
 
@@ -558,20 +557,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void unfold(boolean programmaticaly) {
-    if (!isFolded()) return;
-
-    getEditor().setFolded(this, false);
+    if (!isFolded()) {
+      return;
+    }
     setFolded(false);
-
     if (!isUnderFolded()) {
       removeUnfoldingListener();
       addUnfoldingListenerForChildren();
     }
-    adjustSelectionToFoldingState(getEditor());
 
     if (!programmaticaly) {
       getEditorContext().flushEvents();
       getEditor().relayout();
+      adjustSelectionToFoldingState(getEditor());
     }
   }
 
