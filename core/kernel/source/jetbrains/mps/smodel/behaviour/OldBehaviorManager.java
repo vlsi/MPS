@@ -130,16 +130,21 @@ public final class OldBehaviorManager implements CoreComponent {
     return methodsToCall;
   }
 
-  public void initNode(@NotNull SNode node) {
+  public void initNode(@NotNull final SNode node) {
     String conceptFqName = InternUtil.intern(node.getConcept().getId());
     String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConcept().getId());
-    Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+    final Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
 
     List<Method> methodsToCall;
 
     methodsToCall = myConstructors.get(conceptFqName);
     if (methodsToCall == null) {
-      methodsToCall = calculateConstructors(((SConceptNodeAdapter) node.getConcept()).getConcept(), language);
+      methodsToCall = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<Method>>() {
+        @Override
+        public List<Method> compute() {
+          return calculateConstructors(((SConceptNodeAdapter) node.getConcept()).getConcept(), language);
+        }
+      });
       myConstructors.putIfAbsent(conceptFqName, methodsToCall);
     }
 

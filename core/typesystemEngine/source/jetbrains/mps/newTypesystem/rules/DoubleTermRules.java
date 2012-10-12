@@ -16,7 +16,9 @@
 package jetbrains.mps.newTypesystem.rules;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Triplet;
 
@@ -38,22 +40,26 @@ public abstract class DoubleTermRules<K> {
 
   public Set<K> lookupRules(SNode leftTerm, SNode rightTerm) {
 
-    LanguageScope langScope = LanguageScope.getCurrent();
+    final LanguageScope langScope = LanguageScope.getCurrent();
 
-    String leftConceptFQName = leftTerm.getConceptFqName();
-    String rightConceptFQName = rightTerm.getConceptFqName();
+    final String leftConceptFQName = leftTerm.getConceptFqName();
+    final String rightConceptFQName = rightTerm.getConceptFqName();
 
-    Object compoundKey = new Triplet<Object, String, String>(langScope, leftConceptFQName, rightConceptFQName);
+    final Object compoundKey = new Triplet<Object, String, String>(langScope, leftConceptFQName, rightConceptFQName);
 
     Set<K> cachedRules = myCachedRules.get(compoundKey);
     if (cachedRules != null) {
       return cachedRules;
     }
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<K>>() {
+      @Override
+      public Set<K> compute() {
+        Set<K> computedRules = computeRules(leftConceptFQName, rightConceptFQName, langScope);
+        myCachedRules.put(compoundKey, computedRules);
 
-    Set<K> computedRules = computeRules(leftConceptFQName, rightConceptFQName, langScope);
-    myCachedRules.put(compoundKey, computedRules);
-
-    return computedRules;
+        return computedRules;
+      }
+    });
   }
 
   public void purgeCache() {
@@ -64,18 +70,18 @@ public abstract class DoubleTermRules<K> {
     THashSet<K> result = new THashSet<K>();
 
     LinkedList<Pair<String, String>> queue = new LinkedList<Pair<String, String>>();
-    queue.add(new Pair<String,String>(leftConceptFQName, rightConceptFQName));
-    for(String leftSuperConcept: allSuperConcepts(leftConceptFQName)) {
+    queue.add(new Pair<String, String>(leftConceptFQName, rightConceptFQName));
+    for (String leftSuperConcept : allSuperConcepts(leftConceptFQName)) {
       queue.add(new Pair<String, String>(leftSuperConcept, rightConceptFQName));
     }
 
     while (!queue.isEmpty()) {
-      Pair<String,String> nextConceptPair = queue.remove();
-      for (K applicableRule: allForConceptPair(nextConceptPair.o1, nextConceptPair.o2, langScope)) {
+      Pair<String, String> nextConceptPair = queue.remove();
+      for (K applicableRule : allForConceptPair(nextConceptPair.o1, nextConceptPair.o2, langScope)) {
         result.add(applicableRule);
       }
 
-      for(String rightSuperConcept: allSuperConcepts(nextConceptPair.o2)) {
+      for (String rightSuperConcept : allSuperConcepts(nextConceptPair.o2)) {
         queue.add(new Pair<String, String>(nextConceptPair.o1, rightSuperConcept));
       }
     }
@@ -83,7 +89,7 @@ public abstract class DoubleTermRules<K> {
     return Collections.unmodifiableSet(result);
   }
 
-  abstract protected Iterable<String> allSuperConcepts (String conceptFQName);
+  abstract protected Iterable<String> allSuperConcepts(String conceptFQName);
 
   abstract protected Iterable<K> allForConceptPair(String leftConceptFQName, String rightConceptFQName, LanguageScope langScope);
 

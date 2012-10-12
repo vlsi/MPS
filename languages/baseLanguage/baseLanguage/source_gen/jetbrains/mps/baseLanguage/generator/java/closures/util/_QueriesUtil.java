@@ -6,12 +6,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
@@ -32,7 +30,7 @@ public class _QueriesUtil {
         return generatedClass;
       }
     }
-    return SModelUtil.findNodeByFQName("java.lang.Object", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), generator.getScope());
+    return SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {

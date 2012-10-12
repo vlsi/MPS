@@ -485,8 +485,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getInteger(java.lang.String):int")));
+        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298626")));
+        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298519")));
         result = quotedNode1_2;
       }
       return result;
@@ -504,8 +504,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getBoolean(java.lang.String):boolean")));
-        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
+        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298668")));
+        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298519")));
         result = quotedNode1_2;
       }
       return result;
@@ -523,8 +523,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getString(java.lang.String):java.lang.String")));
+        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298583")));
+        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298519")));
         result = quotedNode1_2;
       }
       return result;

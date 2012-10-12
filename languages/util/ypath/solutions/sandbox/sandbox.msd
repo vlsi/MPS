@@ -9,6 +9,7 @@
     <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
     <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
+    <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
     <dependency reexport="true">d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</dependency>
     <dependency reexport="true">084f8779-0bb0-44bf-8a8b-1214d7acfbc5(ypath.main)</dependency>
     <dependency reexport="true">c13beb70-150a-461e-b6de-05489d7b1dd3(ypath.sandbox)</dependency>

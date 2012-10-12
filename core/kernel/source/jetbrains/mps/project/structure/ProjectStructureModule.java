@@ -256,35 +256,40 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     protected ProjectStructureSModel createModel() {
-      ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
+      final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
       final ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
-      IFile file = myModule.getDescriptorFile();
+      final IFile file = myModule.getDescriptorFile();
 
       if (file != null && moduleDescriptor != null) {
-        new ProjectStructureBuilder(moduleDescriptor, file, model) {
+        NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
           @Override
-          public Iterable<SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
-            IModule module = moduleDescriptor == descriptor ? myModule :
-              MPSModuleRepository.getInstance().getModule(descriptor.getModuleReference());
-            if (module == null) {
-              return Collections.emptyList();
-            }
+          public void run() {
+            new ProjectStructureBuilder(moduleDescriptor, file, model) {
+              @Override
+              public Iterable<SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
+                IModule module = moduleDescriptor == descriptor ? myModule :
+                  MPSModuleRepository.getInstance().getModule(descriptor.getModuleReference());
+                if (module == null) {
+                  return Collections.emptyList();
+                }
 
-            return Sequence.<SModelDescriptor>fromIterable(module.getOwnModelDescriptors()).
-              where(new IWhereFilter<SModelDescriptor>() {
-                @Override
-                public boolean accept(SModelDescriptor o) {
-                  return SModelStereotype.isUserModel(o);
-                }
-              }).
-              select(new ISelector<SModelDescriptor, SModelReference>() {
-                @Override
-                public SModelReference select(SModelDescriptor o) {
-                  return o.getSModelReference();
-                }
-              });
+                return Sequence.<SModelDescriptor>fromIterable(module.getOwnModelDescriptors()).
+                  where(new IWhereFilter<SModelDescriptor>() {
+                    @Override
+                    public boolean accept(SModelDescriptor o) {
+                      return SModelStereotype.isUserModel(o);
+                    }
+                  }).
+                  select(new ISelector<SModelDescriptor, SModelReference>() {
+                    @Override
+                    public SModelReference select(SModelDescriptor o) {
+                      return o.getSModelReference();
+                    }
+                  });
+              }
+            }.convert();
           }
-        }.convert();
+        });
       }
       return model;
     }

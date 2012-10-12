@@ -39,10 +39,8 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

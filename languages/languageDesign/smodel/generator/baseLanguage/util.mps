@@ -13,6 +13,7 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="q383" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="i8bi" modelUID="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -401,21 +402,8 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1239206931283">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1239490689071">
-              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1239206956131">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwwu.1238267513315" resolveInfo="findNodeByFQName" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1239206956132">
-                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1239206956133">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1239206956134">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239206587647" resolveInfo="scope" />
-                </node>
-              </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="4973731216424892664">
+              <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="i8bi.6599163591527282020" resolveInfo="SConceptPropertyOperations" />
             </node>
           </node>
         </node>
@@ -556,21 +544,8 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2648652578096508208">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="2648652578096508209">
-              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2648652578096508210">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwwu.1238267513315" resolveInfo="findNodeByFQName" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2648652578096508211">
-                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2648652578096508212">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2648652578096508213">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2648652578096508234" resolveInfo="scope" />
-                </node>
-              </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="4973731216424924595">
+              <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="i8bi.6599163591527282020" resolveInfo="SConceptPropertyOperations" />
             </node>
           </node>
         </node>
@@ -746,21 +721,8 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1239207077003">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1239490689153">
-              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1239207077006">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwwu.1238267513315" resolveInfo="findNodeByFQName" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1239207077007">
-                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1239207077008">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1239207077009">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239207077031" resolveInfo="scope" />
-                </node>
-              </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="4973731216424924597">
+              <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="i8bi.6599163591527298519" resolveInfo="SPropertyOperations" />
             </node>
           </node>
         </node>
@@ -929,21 +891,8 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1239207395012">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1239490684136">
-              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1239207395015">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwwu.1238267513315" resolveInfo="findNodeByFQName" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1239207395016">
-                  <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1239207395017">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1239207395018">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239207345674" resolveInfo="scope" />
-                </node>
-              </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="4973731216424924599">
+              <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="i8bi.6599163591527298519" resolveInfo="SPropertyOperations" />
             </node>
           </node>
         </node>
