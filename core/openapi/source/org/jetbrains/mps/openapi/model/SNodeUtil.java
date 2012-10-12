@@ -29,15 +29,11 @@ public class SNodeUtil {
   public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
-      SModel model = node.getContainingModel();
+      jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode)node).getModel();
       node.delete();
-      ((jetbrains.mps.smodel.SModel) model).addRoot((jetbrains.mps.smodel.SNode) replacer);
+      model.addRoot((jetbrains.mps.smodel.SNode) replacer);
       return replacer;
     }
-
-    // old and new child can have the same node Id
-    // thus it is important to remove old child first
-
 
     if (replacer != null) {
       SNode replacerParent = replacer.getParent();
@@ -48,6 +44,8 @@ public class SNodeUtil {
       SNode anchor = nodeParent.getPrevChild(node);
       String role = nodeParent.getRoleOf(node);
       assert role != null;
+      // old and new child can have the same node Id
+      // thus it is important to remove old child first
       nodeParent.removeChild(node);
       nodeParent.insertChild(role, replacer, anchor);
     } else {
