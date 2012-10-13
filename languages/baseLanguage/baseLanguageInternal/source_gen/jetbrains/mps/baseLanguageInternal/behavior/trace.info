@@ -20,7 +20,7 @@
   <unitInfo fileName="InternalPartialFieldReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="InternalPartialInstanceMethodCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialInstanceMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="InternalStaticFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticFieldReference_BehaviorDescriptor" />
-  <unitInfo fileName="InternalStaticMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="InternalStaticMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="InternalSuperMethodCallOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalSuperMethodCallOperation_BehaviorDescriptor" />
   <unitInfo fileName="InternalThisExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalThisExpression_BehaviorDescriptor" />
   <unitInfo fileName="InternalVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
@@ -375,6 +375,20 @@
       <varInfo nodeId="3585982959253821896" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior" />
+  </root>
+  <root nodeId="3650511996773376131" modelId="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)">
+    <nodeInfo nodeId="3650511996773376143" fileName="InternalStaticMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3650511996773376131" fileName="InternalStaticMethodCall_Behavior.java" startLine="7" startPosition="48" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3650511996773376131" fileName="InternalStaticMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="3650511996773376133" fileName="InternalStaticMethodCall_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3650511996773376136" fileName="InternalStaticMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="3650511996773376131" fileName="InternalStaticMethodCall_Behavior.java" startLine="7" startPosition="48" endLine="10" endPosition="0">
+      <varInfo nodeId="3650511996773376131" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3650511996773376131" fileName="InternalStaticMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="3650511996773376131" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3650511996773376131" fileName="InternalStaticMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_Behavior" />
   </root>
 </debugInfo>
 
