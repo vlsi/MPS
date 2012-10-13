@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest$1" />
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest" />
   <root nodeId="10342590403667037" modelId="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)">
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="32" startPosition="54" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="33" startPosition="82" endLine="34" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -133,6 +133,7 @@
       <varInfo nodeId="10342590403667037" varName="props" />
     </scopeInfo>
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="35" startPosition="0" endLine="38" endPosition="3" />
+    <scopeInfo nodeId="10342590403670665" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21" />
     <scopeInfo nodeId="10342590403677933" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21">
       <varInfo nodeId="10342590403677935" varName="file" />
     </scopeInfo>
@@ -199,6 +200,7 @@
       <varInfo nodeId="10342590403677920" varName="gres" />
       <varInfo nodeId="10342590403669885" varName="status" />
     </scopeInfo>
+    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="78" startPosition="19" endLine="91" endPosition="15" />
     <scopeInfo nodeId="10342590403668935" fileName="CollectHashes_Facet.java" startLine="78" startPosition="19" endLine="91" endPosition="15">
       <varInfo nodeId="10342590403668937" varName="res" />
     </scopeInfo>
@@ -216,11 +218,11 @@
     </scopeInfo>
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="73" startPosition="29" endLine="96" endPosition="8" />
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="72" startPosition="0" endLine="98" endPosition="0" />
-    <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="32" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet" />
     <unitInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="74" startPosition="17" endLine="96" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$1" />
+    <unitInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="155" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet.Target_collect$Parameters" />
     <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="179" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$TargetProperties" />
     <unitInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="64" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$Target_collect" />
-    <unitInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="155" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet.Target_collect$Parameters" />
+    <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="32" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet" />
   </root>
   <root nodeId="8795824097439267909" modelId="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)">
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="34" startPosition="52" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
@@ -455,15 +457,15 @@
     </scopeInfo>
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="75" startPosition="29" endLine="111" endPosition="8" />
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="74" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="34" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet" />
-    <unitInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="76" startPosition="17" endLine="111" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$1" />
-    <unitInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="81" startPosition="54" endLine="105" endPosition="15" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$2" />
     <unitInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="83" startPosition="81" endLine="87" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
     <unitInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="87" startPosition="31" endLine="91" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
     <unitInfo nodeId="8795824097439402281" fileName="ReportFiles_Facet.java" startLine="91" startPosition="35" endLine="103" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
-    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="202" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$TargetProperties" />
-    <unitInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="66" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$Target_report" />
+    <unitInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="81" startPosition="54" endLine="105" endPosition="15" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$2" />
     <unitInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="170" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet.Target_report$Parameters" />
+    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="202" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$TargetProperties" />
+    <unitInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="76" startPosition="17" endLine="111" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$1" />
+    <unitInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="66" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$Target_report" />
+    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="34" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet" />
   </root>
 </debugInfo>
 

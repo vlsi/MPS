@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Startup_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.startup.structure.Startup_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.startup.structure.StructureAspectDescriptor" />
-  <root nodeId="3885435385580582152">
+  <root nodeId="3885435385580582152" modelId="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)">
     <nodeInfo nodeId="3885435385580582152" fileName="MpsStartupScript.java" startLine="15" startPosition="76" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3885435385580582152" fileName="MpsStartupScript.java" startLine="16" startPosition="96" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STARTUP_FOLDER" />
     <nodeInfo nodeId="3885435385580582152" fileName="MpsStartupScript.java" startLine="17" startPosition="62" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STARTUP_CLASS" />
@@ -169,7 +169,7 @@
     </scopeInfo>
     <unitInfo nodeId="3885435385580582152" fileName="MpsStartupScript.java" startLine="15" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.build.startup.structure.MpsStartupScript" />
   </root>
-  <root nodeId="3885435385580582153">
+  <root nodeId="3885435385580582153" modelId="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)">
     <nodeInfo nodeId="3885435385580582153" fileName="ClassPathItem.java" startLine="11" startPosition="48" endLine="12" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3885435385580582153" fileName="ClassPathItem.java" startLine="12" startPosition="93" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
     <nodeInfo nodeId="3885435385580582153" fileName="ClassPathItem.java" startLine="15" startPosition="36" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -203,7 +203,7 @@
     </scopeInfo>
     <unitInfo nodeId="3885435385580582153" fileName="ClassPathItem.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.startup.structure.ClassPathItem" />
   </root>
-  <root nodeId="3885435385580582157">
+  <root nodeId="3885435385580582157" modelId="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)">
     <nodeInfo nodeId="3885435385580582157" fileName="VmOptions.java" startLine="11" startPosition="44" endLine="12" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3885435385580582157" fileName="VmOptions.java" startLine="14" startPosition="32" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3885435385580582157" fileName="VmOptions.java" startLine="18" startPosition="64" endLine="19" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -226,7 +226,7 @@
     </scopeInfo>
     <unitInfo nodeId="3885435385580582157" fileName="VmOptions.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.startup.structure.VmOptions" />
   </root>
-  <root nodeId="3885435385580582732">
+  <root nodeId="3885435385580582732" modelId="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)">
     <nodeInfo nodeId="3885435385580582732" fileName="SimpleVmOptions.java" startLine="10" startPosition="48" endLine="11" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3885435385580582732" fileName="SimpleVmOptions.java" startLine="11" startPosition="95" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OPTIONS" />
     <nodeInfo nodeId="3885435385580582732" fileName="SimpleVmOptions.java" startLine="12" startPosition="49" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMENTED" />

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.StructureAspectDescriptor" />
   <unitInfo fileName="UiLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.UiLanguage_Language" />
-  <root nodeId="1203592595174">
+  <root nodeId="1203592595174" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="16" startPosition="74" endLine="17" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="17" startPosition="90" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TITLE" />
     <nodeInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="18" startPosition="45" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -180,7 +180,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203592595174" fileName="IDEDialog.java" startLine="16" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" />
   </root>
-  <root nodeId="1203592642690">
+  <root nodeId="1203592642690" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="12" startPosition="50" endLine="13" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="13" startPosition="96" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEXT" />
     <nodeInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="14" startPosition="43" endLine="15" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_DEFAULT" />
@@ -236,7 +236,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203592642690" fileName="IDEDialogButton.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" />
   </root>
-  <root nodeId="1203606241544">
+  <root nodeId="1203606241544" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="11" startPosition="57" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="14" startPosition="46" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="18" startPosition="78" endLine="19" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -259,7 +259,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203606241544" fileName="DisposeDialogExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" />
   </root>
-  <root nodeId="1203607523033">
+  <root nodeId="1203607523033" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="11" startPosition="55" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="12" startPosition="102" endLine="13" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEXT" />
     <nodeInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="15" startPosition="44" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -293,7 +293,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203607523033" fileName="ReportErrorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" />
   </root>
-  <root nodeId="1203610466731">
+  <root nodeId="1203610466731" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="11" startPosition="50" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="14" startPosition="39" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="18" startPosition="71" endLine="19" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -316,7 +316,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203610466731" fileName="DialogExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DialogExpression" />
   </root>
-  <root nodeId="1226850367300">
+  <root nodeId="1226850367300" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="11" startPosition="51" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="12" startPosition="97" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LEFT" />
     <nodeInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="13" startPosition="43" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOP" />
@@ -383,7 +383,7 @@
     </scopeInfo>
     <unitInfo nodeId="1226850367300" fileName="DialogDimensions.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DialogDimensions" />
   </root>
-  <root nodeId="3734045384532546729">
+  <root nodeId="3734045384532546729" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="12" startPosition="53" endLine="13" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="13" startPosition="101" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEXT" />
     <nodeInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="16" startPosition="43" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -417,7 +417,7 @@
     </scopeInfo>
     <unitInfo nodeId="3734045384532546729" fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" />
   </root>
-  <root nodeId="3734045384532546800">
+  <root nodeId="3734045384532546800" modelId="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)">
     <nodeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="11" startPosition="55" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="14" startPosition="45" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3734045384532546800" fileName="DisposeDialogStatement.java" startLine="18" startPosition="77" endLine="19" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

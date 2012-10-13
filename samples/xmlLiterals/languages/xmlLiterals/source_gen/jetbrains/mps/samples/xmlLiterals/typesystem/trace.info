@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.TypesystemDescriptor" />
-  <root nodeId="9152904044274365443">
+  <root nodeId="9152904044274365443" modelId="r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)">
     <nodeInfo nodeId="9152904044274382249" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274382249" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="25" startPosition="49" endLine="26" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274382249" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="26" startPosition="210" endLine="27" endPosition="349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,10 +86,10 @@
       <varInfo nodeId="9152904044274382254" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="9152904044274382254" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="9152904044274365443" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_XmlLiteral_InferenceRule" />
     <unitInfo nodeId="9152904044274382254" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_XmlLiteral_InferenceRule$QuotationClass_j6j4pq_a0a0a0" />
+    <unitInfo nodeId="9152904044274365443" fileName="typeof_XmlLiteral_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_XmlLiteral_InferenceRule" />
   </root>
-  <root nodeId="9152904044274516047">
+  <root nodeId="9152904044274516047" modelId="r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)">
     <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="26" startPosition="94" endLine="27" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="27" startPosition="210" endLine="28" endPosition="371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -174,10 +174,10 @@
       <varInfo nodeId="9152904044274518120" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="9152904044274518120" fileName="typeof_TextMacro_InferenceRule.java" startLine="63" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="9152904044274516047" fileName="typeof_TextMacro_InferenceRule.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_TextMacro_InferenceRule" />
     <unitInfo nodeId="9152904044274518120" fileName="typeof_TextMacro_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_TextMacro_InferenceRule$QuotationClass_9yudn7_a0a0a0" />
+    <unitInfo nodeId="9152904044274516047" fileName="typeof_TextMacro_InferenceRule.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_TextMacro_InferenceRule" />
   </root>
-  <root nodeId="9152904044274518139">
+  <root nodeId="9152904044274518139" modelId="r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)">
     <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="26" startPosition="94" endLine="27" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="27" startPosition="210" endLine="28" endPosition="374" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -262,8 +262,8 @@
       <varInfo nodeId="9152904044274518156" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="9152904044274518156" fileName="typeof_ElementMacro_InferenceRule.java" startLine="63" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="9152904044274518139" fileName="typeof_ElementMacro_InferenceRule.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_ElementMacro_InferenceRule" />
     <unitInfo nodeId="9152904044274518156" fileName="typeof_ElementMacro_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_ElementMacro_InferenceRule$QuotationClass_uze9ii_a0a0a0" />
+    <unitInfo nodeId="9152904044274518139" fileName="typeof_ElementMacro_InferenceRule.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_ElementMacro_InferenceRule" />
   </root>
 </debugInfo>
 

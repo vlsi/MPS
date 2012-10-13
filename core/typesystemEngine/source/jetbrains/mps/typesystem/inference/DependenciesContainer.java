@@ -19,9 +19,11 @@ import gnu.trove.THashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -60,28 +62,33 @@ public class DependenciesContainer {
   }
 
   private Set<IDependency_Runtime> get(@NotNull final String key) {
-    Set<IDependency_Runtime> result = myDependenciesCache.get(key);
-    if (result != null) {
-      return result;
-    }
-
-    if (!isInterfaceConcept(key)) {
-      String conceptDeclaration = key;
-      while (conceptDeclaration != null) {
-        Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
-        if (rules != null) {
-          if (conceptDeclaration != key) {
-            myDependencies.putIfAbsent(key, new THashSet<IDependency_Runtime>(rules));
-          }
-          myDependenciesCache.putIfAbsent(key, rules);
-          return Collections.unmodifiableSet(rules);
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<IDependency_Runtime>>() {
+      @Override
+      public Set<IDependency_Runtime> compute() {
+        Set<IDependency_Runtime> result = myDependenciesCache.get(key);
+        if (result != null) {
+          return result;
         }
-        conceptDeclaration = getSuperConcept(conceptDeclaration);
+
+        if (!isInterfaceConcept(key)) {
+          String conceptDeclaration = key;
+          while (conceptDeclaration != null) {
+            Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
+            if (rules != null) {
+              if (conceptDeclaration != key) {
+                myDependencies.putIfAbsent(key, new THashSet<IDependency_Runtime>(rules));
+              }
+              myDependenciesCache.putIfAbsent(key, rules);
+              return Collections.unmodifiableSet(rules);
+            }
+            conceptDeclaration = getSuperConcept(conceptDeclaration);
+          }
+        }
+        myDependencies.putIfAbsent(key, new THashSet<IDependency_Runtime>(1));
+        myDependenciesCache.putIfAbsent(key, Collections.<IDependency_Runtime>emptySet());
+        return Collections.emptySet();
       }
-    }
-    myDependencies.putIfAbsent(key, new THashSet<IDependency_Runtime>(1));
-    myDependenciesCache.putIfAbsent(key, Collections.<IDependency_Runtime>emptySet());
-    return Collections.emptySet();
+    });
   }
 
   void addDependencies(Set<IDependency_Runtime> dependencies) {

@@ -17,7 +17,9 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 
 import java.util.Collections;
 import java.util.Set;
@@ -28,83 +30,87 @@ import java.util.concurrent.ConcurrentMap;
  *  Synchronized.
  */
 public class RuleSet<T extends IApplicableToConcept> {
-  ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
-  ConcurrentMap<String, Set<T>> myRulesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<T>>();
+    ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
+    ConcurrentMap<String, Set<T>> myRulesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<T>>();
 
-  public void addRuleSetItem(Set<T> rules) {
-    for (T rule : rules) {
-      addRule_internal(rule);
-    }
-    myRulesCache.clear();
-  }
-
-  public void addRule(T rule) {
-    addRule_internal(rule);
-    myRulesCache.clear();
-  }
-
-  private void addRule_internal(T rule) {
-    String concept = rule.getApplicableConceptFQName();
-    Set<T> existingRules = myRules.get(concept);
-    while (existingRules == null) {
-      myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<T>(2)));
-      existingRules = myRules.get(concept);
-    }
-    existingRules.add(rule);
-  }
-
-  public Set<T> getRules(SNode node) {
-    return get(node.getConceptFqName());
-  }
-
-  protected Set<T> get(String key) {
-    Set<T> cachedResult = myRulesCache.get(key);
-    if (cachedResult != null) {
-      return cachedResult;
+    public void addRuleSetItem(Set<T> rules) {
+        for (T rule : rules) {
+            addRule_internal(rule);
+        }
+        myRulesCache.clear();
     }
 
-    Set<T> result = Collections.unmodifiableSet(computeRuleSet(key));
-    myRulesCache.put(key, result);
-    return result;
-  }
+    public void addRule(T rule) {
+        addRule_internal(rule);
+        myRulesCache.clear();
+    }
 
-  private Set<T> computeRuleSet(String concept) {
-    Set<T> result = new THashSet<T>();
-    Set<String> frontier = new THashSet<String>();
-    Set<String> newFrontier = new THashSet<String>();
-    frontier.add(concept);
+    private void addRule_internal(T rule) {
+        String concept = rule.getApplicableConceptFQName();
+        Set<T> existingRules = myRules.get(concept);
+        while (existingRules == null) {
+            myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<T>(2)));
+            existingRules = myRules.get(concept);
+        }
+        existingRules.add(rule);
+    }
 
-    while (!frontier.isEmpty()) {
-      for (String abstractConcept : frontier) {
-        Set<T> rules = myRules.get(abstractConcept);
-        boolean overrides = false;
-        if (rules != null) {
-          synchronized (rules) {
-            result.addAll(rules);
-            for (T rule : rules) {
-              if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
-                overrides = true;
-              }
+    public Set<T> getRules(SNode node) {
+        return get(node.getConceptFqName());
+    }
+
+    protected Set<T> get(final String key) {
+        Set<T> cachedResult = myRulesCache.get(key);
+        if (cachedResult != null) {
+            return cachedResult;
+        }
+        return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<T>>() {
+            @Override
+            public Set<T> compute() {
+                Set<T> result = Collections.unmodifiableSet(computeRuleSet(key));
+                myRulesCache.put(key, result);
+                return result;
             }
-          }
-        }
-        //else {
-        if (overrides) {
-          continue;
-        }
-
-        newFrontier.addAll(LanguageHierarchyCache.getParentsNames(abstractConcept));
-        //}
-
-      }
-      frontier = newFrontier;
-      newFrontier = new THashSet<String>();
+        });
     }
-    return result;
-  }
 
-  public void clear() {
-    myRules.clear();
-    myRulesCache.clear();
-  }
+    private Set<T> computeRuleSet(String concept) {
+        Set<T> result = new THashSet<T>();
+        Set<String> frontier = new THashSet<String>();
+        Set<String> newFrontier = new THashSet<String>();
+        frontier.add(concept);
+
+        while (!frontier.isEmpty()) {
+            for (String abstractConcept : frontier) {
+                Set<T> rules = myRules.get(abstractConcept);
+                boolean overrides = false;
+                if (rules != null) {
+                    synchronized (rules) {
+                        result.addAll(rules);
+                        for (T rule : rules) {
+                            if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
+                                overrides = true;
+                            }
+                        }
+                    }
+                }
+                //else {
+                if (overrides) {
+                    continue;
+                }
+
+                newFrontier.addAll(LanguageHierarchyCache.getParentsNames(abstractConcept));
+                //}
+
+            }
+            frontier = newFrontier;
+            newFrontier = new THashSet<String>();
+        }
+        return result;
+    }
+
+    public void clear() {
+        myRules.clear();
+        myRulesCache.clear();
+    }
 }

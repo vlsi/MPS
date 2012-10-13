@@ -77,12 +77,12 @@
       <varInfo nodeId="1585405235656310170" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="53" startPosition="0" endLine="94" endPosition="0" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="29" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="36" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$1" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="35" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$3" />
     <unitInfo nodeId="3189559528229799703" fileName="ConstantValue_Constraints.java" startLine="69" startPosition="208" endLine="73" endPosition="13" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
     <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="78" startPosition="23" endLine="82" endPosition="13" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="36" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$1" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$3" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="35" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="29" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" />
   </root>
   <root nodeId="3421461530438560155" modelId="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)">
     <nodeInfo nodeId="3421461530438560155" fileName="InternalAnonymousClass_Constraints.java" startLine="8" startPosition="47" endLine="9" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -166,9 +166,9 @@
       <varInfo nodeId="3928209435773827186" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="24" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints" />
-    <unitInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="28" startPosition="37" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints$1" />
     <unitInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints$2" />
+    <unitInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="28" startPosition="37" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints$1" />
+    <unitInfo nodeId="3928209435773827186" fileName="WeakClassReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints" />
   </root>
   <root nodeId="5822086619725599106" modelId="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)">
     <nodeInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="27" startPosition="91" endLine="28" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a0" />
@@ -235,9 +235,9 @@
       <varInfo nodeId="5822086619725599106" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="33" startPosition="0" endLine="88" endPosition="0" />
-    <unitInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="27" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints" />
-    <unitInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="37" startPosition="48" endLine="85" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$1" />
     <unitInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="46" startPosition="19" endLine="83" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$2" />
+    <unitInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="37" startPosition="48" endLine="85" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$1" />
+    <unitInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="27" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints" />
   </root>
   <root nodeId="5857910569715972120" modelId="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)">
     <nodeInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="18" startPosition="95" endLine="19" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a0" />
@@ -272,9 +272,9 @@
       <varInfo nodeId="5857910569715972120" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="24" startPosition="0" endLine="55" endPosition="0" />
-    <unitInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints" />
-    <unitInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="28" startPosition="48" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints$1" />
     <unitInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="37" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints$2" />
+    <unitInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="28" startPosition="48" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints$1" />
+    <unitInfo nodeId="5857910569715972120" fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints" />
   </root>
   <root nodeId="8733626498296461355" modelId="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)">
     <nodeInfo nodeId="8733626498296461355" fileName="ExtractStatementListInnerExpression_Constraints.java" startLine="13" startPosition="96" endLine="14" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -388,8 +388,8 @@
       <varInfo nodeId="937236280924494203" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="937236280924494203" fileName="ExtractStaticInnerClassConcept_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="937236280924494203" fileName="ExtractStaticInnerClassConcept_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassConcept_Constraints" />
     <unitInfo nodeId="937236280924494203" fileName="ExtractStaticInnerClassConcept_Constraints.java" startLine="22" startPosition="38" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassConcept_Constraints$1" />
+    <unitInfo nodeId="937236280924494203" fileName="ExtractStaticInnerClassConcept_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassConcept_Constraints" />
   </root>
   <root nodeId="99767819676012236" modelId="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)">
     <nodeInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="20" startPosition="91" endLine="21" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_o7daap_a0a3a0a0a1a0b0a1a0" />
@@ -435,9 +435,9 @@
       <varInfo nodeId="99767819676012236" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="26" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints" />
-    <unitInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="30" startPosition="35" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints$1" />
     <unitInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="39" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints$2" />
+    <unitInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="30" startPosition="35" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints$1" />
+    <unitInfo nodeId="99767819676012236" fileName="ExtractToConstantRefExpression_Constraints.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints" />
   </root>
 </debugInfo>
 

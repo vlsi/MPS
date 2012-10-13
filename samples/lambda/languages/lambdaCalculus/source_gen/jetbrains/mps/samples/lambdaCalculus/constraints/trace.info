@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="4022026349915821207">
+  <root nodeId="4022026349915821207" modelId="r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)">
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="23" startPosition="78" endLine="24" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_3k454j_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="26" startPosition="42" endLine="27" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -45,9 +45,9 @@
       <varInfo nodeId="4022026349915821207" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints" />
-    <unitInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="33" startPosition="35" endLine="59" endPosition="5" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$1" />
     <unitInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="42" startPosition="19" endLine="57" endPosition="9" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$2" />
+    <unitInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="33" startPosition="35" endLine="59" endPosition="5" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$1" />
+    <unitInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints" />
   </root>
 </debugInfo>
 

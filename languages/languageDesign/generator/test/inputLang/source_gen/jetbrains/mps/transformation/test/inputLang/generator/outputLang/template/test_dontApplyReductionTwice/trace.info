@@ -2,8 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
-  <root nodeId="1209604518979">
-    <nodeInfo nodeId="1209604582248" fileName="QueriesGenerated.java" startLine="12" startPosition="146" endLine="13" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root nodeId="1209604518979" modelId="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)">
     <nodeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="24" startPosition="66" endLine="25" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="rootMappingRule_417xrn_a0a0a" />
     <nodeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="25" startPosition="251" endLine="26" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="rootMappingRule_417xrn_b0b0a0a4a" />
     <nodeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="27" startPosition="0" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootRules" />
@@ -51,8 +50,8 @@
     <nodeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keepSourceRoot#()Z" />
     <nodeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="103" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+    <nodeInfo nodeId="1209604582248" fileName="QueriesGenerated.java" startLine="12" startPosition="146" endLine="13" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="85" startPosition="31" endLine="85" endPosition="31" />
-    <scopeInfo nodeId="1209604575153" fileName="QueriesGenerated.java" startLine="12" startPosition="146" endLine="13" endPosition="108" />
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="36" startPosition="27" endLine="37" endPosition="18" />
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="40" startPosition="35" endLine="41" endPosition="24" />
     <scopeInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="44" startPosition="40" endLine="45" endPosition="201" />
@@ -105,10 +104,11 @@
       <varInfo nodeId="1209604518979" varName="context" />
       <varInfo nodeId="1209604518979" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain" />
+    <scopeInfo nodeId="1209604575153" fileName="QueriesGenerated.java" startLine="12" startPosition="146" endLine="13" endPosition="108" />
     <unitInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="84" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain$RootMappingRule0" />
+    <unitInfo nodeId="1209604518979" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain" />
   </root>
-  <root nodeId="1209605205934">
+  <root nodeId="1209605205934" modelId="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)">
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="15" startPosition="64" endLine="16" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_9pkn2m_a0a0" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="16" startPosition="243" endLine="17" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_9pkn2m_a0a0a1a1" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="17" startPosition="251" endLine="18" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_9pkn2m_a0a0a1a5a1a1" />

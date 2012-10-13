@@ -119,8 +119,8 @@
       <varInfo nodeId="1213877252294" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1213877252294" fileName="GridRow_Behavior.java" startLine="36" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="1213877252263" fileName="GridRow_Behavior.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.GridRow_Behavior" />
     <unitInfo nodeId="1213877252294" fileName="GridRow_Behavior.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.GridRow_Behavior$QuotationClass_cglpzy_a0a0a0d0b" />
+    <unitInfo nodeId="1213877252263" fileName="GridRow_Behavior.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.GridRow_Behavior" />
   </root>
   <root nodeId="1213877265049" modelId="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)">
     <nodeInfo nodeId="1213877265049" fileName="RaiseInternalStatement_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -391,8 +391,8 @@
       <varInfo nodeId="1213877406996" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1213877406996" fileName="StandardDialog_Behavior.java" startLine="26" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="1213877406991" fileName="StandardDialog_Behavior.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.StandardDialog_Behavior" />
     <unitInfo nodeId="1213877406996" fileName="StandardDialog_Behavior.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.StandardDialog_Behavior$QuotationClass_isnud2_a0a0a1" />
+    <unitInfo nodeId="1213877406991" fileName="StandardDialog_Behavior.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.StandardDialog_Behavior" />
   </root>
   <root nodeId="1213877414350" modelId="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)">
     <nodeInfo nodeId="1213877414353" fileName="ComponentInstance_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -426,8 +426,8 @@
     <scopeInfo nodeId="1213877438936" fileName="Scroller_Behavior.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1213877438936" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877438936" fileName="Scroller_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.Scroller_Behavior" />
     <unitInfo nodeId="1227876802846" fileName="Scroller_Behavior.java" startLine="16" startPosition="119" endLine="20" endPosition="5" unitName="jetbrains.mps.uiLanguage.behavior.Scroller_Behavior$1" />
+    <unitInfo nodeId="1213877438936" fileName="Scroller_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.Scroller_Behavior" />
   </root>
   <root nodeId="1213877442497" modelId="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)">
     <nodeInfo nodeId="1213877442502" fileName="BeanType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -602,8 +602,8 @@
     <scopeInfo nodeId="1213877495345" fileName="ComponentDeclaration_Behavior.java" startLine="110" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1213877495345" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877495345" fileName="ComponentDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior" />
     <unitInfo nodeId="1227876799307" fileName="ComponentDeclaration_Behavior.java" startLine="39" startPosition="164" endLine="43" endPosition="5" unitName="jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior$1" />
+    <unitInfo nodeId="1213877495345" fileName="ComponentDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior" />
   </root>
   <root nodeId="1213877498059" modelId="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)">
     <nodeInfo nodeId="1213877498059" fileName="IComponentInstance_Behavior.java" startLine="14" startPosition="42" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1213877498080" />
@@ -646,8 +646,8 @@
     <scopeInfo nodeId="1213877498059" fileName="IComponentInstance_Behavior.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1213877498059" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877498059" fileName="IComponentInstance_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.IComponentInstance_Behavior" />
     <unitInfo nodeId="1227876805211" fileName="IComponentInstance_Behavior.java" startLine="21" startPosition="119" endLine="25" endPosition="5" unitName="jetbrains.mps.uiLanguage.behavior.IComponentInstance_Behavior$1" />
+    <unitInfo nodeId="1213877498059" fileName="IComponentInstance_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.uiLanguage.behavior.IComponentInstance_Behavior" />
   </root>
   <root nodeId="6242401288845940752" modelId="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)">
     <nodeInfo nodeId="6242401288845940752" fileName="PngIcon_Behavior.java" startLine="7" startPosition="31" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />

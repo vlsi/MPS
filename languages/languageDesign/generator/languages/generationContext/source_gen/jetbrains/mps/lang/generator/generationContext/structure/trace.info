@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="GenerationContext_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.StructureAspectDescriptor" />
-  <root nodeId="1216860049619">
+  <root nodeId="1216860049619" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1216860049619" fileName="GenerationContextOp_Base.java" startLine="15" startPosition="81" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216860049619" fileName="GenerationContextOp_Base.java" startLine="16" startPosition="123" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1216860049619" fileName="GenerationContextOp_Base.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -84,7 +84,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216860049619" fileName="GenerationContextOp_Base.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base" />
   </root>
-  <root nodeId="1216860049622">
+  <root nodeId="1216860049622" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1216860049622" fileName="GenerationContextOp_GetOutputByLabel.java" startLine="11" startPosition="84" endLine="12" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216860049622" fileName="GenerationContextOp_GetOutputByLabel.java" startLine="12" startPosition="135" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL_NAME_INTERN" />
     <nodeInfo nodeId="1216860049622" fileName="GenerationContextOp_GetOutputByLabel.java" startLine="13" startPosition="68" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
@@ -129,7 +129,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216860049622" fileName="GenerationContextOp_GetOutputByLabel.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel" />
   </root>
-  <root nodeId="1216860049627">
+  <root nodeId="1216860049627" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1216860049627" fileName="GenerationContextOp_GetOutputByLabelAndInput.java" startLine="12" startPosition="92" endLine="13" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216860049627" fileName="GenerationContextOp_GetOutputByLabelAndInput.java" startLine="13" startPosition="143" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL_NAME_INTERN" />
     <nodeInfo nodeId="1216860049627" fileName="GenerationContextOp_GetOutputByLabelAndInput.java" startLine="14" startPosition="68" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
@@ -185,7 +185,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216860049627" fileName="GenerationContextOp_GetOutputByLabelAndInput.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" />
   </root>
-  <root nodeId="1216860049633">
+  <root nodeId="1216860049633" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1216860049633" fileName="GenerationContextType.java" startLine="11" startPosition="49" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216860049633" fileName="GenerationContextType.java" startLine="14" startPosition="44" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1216860049633" fileName="GenerationContextType.java" startLine="18" startPosition="76" endLine="19" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -208,7 +208,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216860049633" fileName="GenerationContextType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" />
   </root>
-  <root nodeId="1216860049635">
+  <root nodeId="1216860049635" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1216860049635" fileName="TemplateFunctionParameter_generationContext.java" startLine="11" startPosition="91" endLine="12" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216860049635" fileName="TemplateFunctionParameter_generationContext.java" startLine="14" startPosition="66" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1216860049635" fileName="TemplateFunctionParameter_generationContext.java" startLine="18" startPosition="98" endLine="19" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -231,7 +231,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216860049635" fileName="TemplateFunctionParameter_generationContext.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" />
   </root>
-  <root nodeId="1216945228272">
+  <root nodeId="1216945228272" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1216945228272" fileName="GenerationContextOp_GetScope.java" startLine="10" startPosition="76" endLine="11" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1216945228272" fileName="GenerationContextOp_GetScope.java" startLine="13" startPosition="51" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1216945228272" fileName="GenerationContextOp_GetScope.java" startLine="17" startPosition="83" endLine="18" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -254,7 +254,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216945228272" fileName="GenerationContextOp_GetScope.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" />
   </root>
-  <root nodeId="1217004708011">
+  <root nodeId="1217004708011" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217004708011" fileName="GenerationContextOp_GetInputModel.java" startLine="10" startPosition="81" endLine="11" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217004708011" fileName="GenerationContextOp_GetInputModel.java" startLine="13" startPosition="56" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217004708011" fileName="GenerationContextOp_GetInputModel.java" startLine="17" startPosition="88" endLine="18" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -277,7 +277,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217004708011" fileName="GenerationContextOp_GetInputModel.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" />
   </root>
-  <root nodeId="1217026863835">
+  <root nodeId="1217026863835" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217026863835" fileName="GenerationContextOp_GetOriginalInputModel.java" startLine="10" startPosition="89" endLine="11" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217026863835" fileName="GenerationContextOp_GetOriginalInputModel.java" startLine="13" startPosition="64" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217026863835" fileName="GenerationContextOp_GetOriginalInputModel.java" startLine="17" startPosition="96" endLine="18" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -300,7 +300,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217026863835" fileName="GenerationContextOp_GetOriginalInputModel.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" />
   </root>
-  <root nodeId="1217282130234">
+  <root nodeId="1217282130234" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217282130234" fileName="GenerationContextOp_GetOutputModel.java" startLine="10" startPosition="82" endLine="11" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217282130234" fileName="GenerationContextOp_GetOutputModel.java" startLine="13" startPosition="57" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217282130234" fileName="GenerationContextOp_GetOutputModel.java" startLine="17" startPosition="89" endLine="18" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -323,7 +323,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217282130234" fileName="GenerationContextOp_GetOutputModel.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" />
   </root>
-  <root nodeId="1217369610610">
+  <root nodeId="1217369610610" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217369610610" fileName="GenerationContextOp_GetTemplateNode.java" startLine="10" startPosition="83" endLine="11" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217369610610" fileName="GenerationContextOp_GetTemplateNode.java" startLine="13" startPosition="58" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217369610610" fileName="GenerationContextOp_GetTemplateNode.java" startLine="17" startPosition="90" endLine="18" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -346,7 +346,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217369610610" fileName="GenerationContextOp_GetTemplateNode.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode" />
   </root>
-  <root nodeId="1217881979074">
+  <root nodeId="1217881979074" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217881979074" fileName="GenerationContextOp_GetPrevInputByLabel.java" startLine="11" startPosition="87" endLine="12" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217881979074" fileName="GenerationContextOp_GetPrevInputByLabel.java" startLine="12" startPosition="138" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL_NAME_INTERN" />
     <nodeInfo nodeId="1217881979074" fileName="GenerationContextOp_GetPrevInputByLabel.java" startLine="13" startPosition="68" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
@@ -391,7 +391,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217881979074" fileName="GenerationContextOp_GetPrevInputByLabel.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel" />
   </root>
-  <root nodeId="1217884725453">
+  <root nodeId="1217884725453" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217884725453" fileName="GenerationContextOp_GetCopiedOutputByInput.java" startLine="11" startPosition="90" endLine="12" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217884725453" fileName="GenerationContextOp_GetCopiedOutputByInput.java" startLine="12" startPosition="141" endLine="13" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INPUT_NODE" />
     <nodeInfo nodeId="1217884725453" fileName="GenerationContextOp_GetCopiedOutputByInput.java" startLine="15" startPosition="65" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -425,7 +425,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217884725453" fileName="GenerationContextOp_GetCopiedOutputByInput.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" />
   </root>
-  <root nodeId="1217889725928">
+  <root nodeId="1217889725928" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217889725928" fileName="GenerationContextOp_SessionObjectAccess.java" startLine="10" startPosition="103" endLine="11" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217889725928" fileName="GenerationContextOp_SessionObjectAccess.java" startLine="13" startPosition="62" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217889725928" fileName="GenerationContextOp_SessionObjectAccess.java" startLine="17" startPosition="94" endLine="18" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -448,7 +448,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217889725928" fileName="GenerationContextOp_SessionObjectAccess.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" />
   </root>
-  <root nodeId="1217889960776">
+  <root nodeId="1217889960776" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217889960776" fileName="GenerationContextOp_UserObjectAccessBase.java" startLine="11" startPosition="88" endLine="12" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217889960776" fileName="GenerationContextOp_UserObjectAccessBase.java" startLine="12" startPosition="139" endLine="13" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USER_KEY" />
     <nodeInfo nodeId="1217889960776" fileName="GenerationContextOp_UserObjectAccessBase.java" startLine="15" startPosition="63" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -482,7 +482,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217889960776" fileName="GenerationContextOp_UserObjectAccessBase.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase" />
   </root>
-  <root nodeId="1217894011536">
+  <root nodeId="1217894011536" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217894011536" fileName="GenerationContextOp_StepObjectAccess.java" startLine="10" startPosition="100" endLine="11" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217894011536" fileName="GenerationContextOp_StepObjectAccess.java" startLine="13" startPosition="59" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217894011536" fileName="GenerationContextOp_StepObjectAccess.java" startLine="17" startPosition="91" endLine="18" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -505,7 +505,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217894011536" fileName="GenerationContextOp_StepObjectAccess.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess" />
   </root>
-  <root nodeId="1217894033795">
+  <root nodeId="1217894033795" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217894033795" fileName="GenerationContextOp_TransientObjectAccess.java" startLine="10" startPosition="105" endLine="11" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217894033795" fileName="GenerationContextOp_TransientObjectAccess.java" startLine="13" startPosition="64" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217894033795" fileName="GenerationContextOp_TransientObjectAccess.java" startLine="17" startPosition="96" endLine="18" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -528,7 +528,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217894033795" fileName="GenerationContextOp_TransientObjectAccess.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess" />
   </root>
-  <root nodeId="1217960179967">
+  <root nodeId="1217960179967" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217960179967" fileName="GenerationContextOp_ShowErrorMessage.java" startLine="10" startPosition="95" endLine="11" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217960179967" fileName="GenerationContextOp_ShowErrorMessage.java" startLine="13" startPosition="59" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217960179967" fileName="GenerationContextOp_ShowErrorMessage.java" startLine="17" startPosition="91" endLine="18" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -551,7 +551,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217960179967" fileName="GenerationContextOp_ShowErrorMessage.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage" />
   </root>
-  <root nodeId="1217960314443">
+  <root nodeId="1217960314443" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217960314443" fileName="GenerationContextOp_ShowMessageBase.java" startLine="11" startPosition="83" endLine="12" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217960314443" fileName="GenerationContextOp_ShowMessageBase.java" startLine="12" startPosition="134" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE_TEXT" />
     <nodeInfo nodeId="1217960314443" fileName="GenerationContextOp_ShowMessageBase.java" startLine="13" startPosition="58" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFERENCE_NODE" />
@@ -596,7 +596,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217960314443" fileName="GenerationContextOp_ShowMessageBase.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase" />
   </root>
-  <root nodeId="1217969995796">
+  <root nodeId="1217969995796" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217969995796" fileName="GenerationContextOp_ShowWarningMessage.java" startLine="10" startPosition="97" endLine="11" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217969995796" fileName="GenerationContextOp_ShowWarningMessage.java" startLine="13" startPosition="61" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217969995796" fileName="GenerationContextOp_ShowWarningMessage.java" startLine="17" startPosition="93" endLine="18" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -619,7 +619,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217969995796" fileName="GenerationContextOp_ShowWarningMessage.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" />
   </root>
-  <root nodeId="1217970068025">
+  <root nodeId="1217970068025" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1217970068025" fileName="GenerationContextOp_ShowInfoMessage.java" startLine="10" startPosition="94" endLine="11" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1217970068025" fileName="GenerationContextOp_ShowInfoMessage.java" startLine="13" startPosition="58" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1217970068025" fileName="GenerationContextOp_ShowInfoMessage.java" startLine="17" startPosition="90" endLine="18" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -642,7 +642,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217970068025" fileName="GenerationContextOp_ShowInfoMessage.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" />
   </root>
-  <root nodeId="1218047638031">
+  <root nodeId="1218047638031" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1218047638031" fileName="GenerationContextOp_CreateUniqueName.java" startLine="11" startPosition="84" endLine="12" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1218047638031" fileName="GenerationContextOp_CreateUniqueName.java" startLine="12" startPosition="135" endLine="13" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BASE_NAME" />
     <nodeInfo nodeId="1218047638031" fileName="GenerationContextOp_CreateUniqueName.java" startLine="13" startPosition="52" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTEXT_NODE" />
@@ -687,7 +687,7 @@
     </scopeInfo>
     <unitInfo nodeId="1218047638031" fileName="GenerationContextOp_CreateUniqueName.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" />
   </root>
-  <root nodeId="1221156564099">
+  <root nodeId="1221156564099" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1221156564099" fileName="GenerationContextOp_GetOutputListByLabelAndInput.java" startLine="12" startPosition="96" endLine="13" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1221156564099" fileName="GenerationContextOp_GetOutputListByLabelAndInput.java" startLine="13" startPosition="147" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL_NAME_INTERN" />
     <nodeInfo nodeId="1221156564099" fileName="GenerationContextOp_GetOutputListByLabelAndInput.java" startLine="14" startPosition="68" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
@@ -743,7 +743,7 @@
     </scopeInfo>
     <unitInfo nodeId="1221156564099" fileName="GenerationContextOp_GetOutputListByLabelAndInput.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" />
   </root>
-  <root nodeId="1221218985173">
+  <root nodeId="1221218985173" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1221218985173" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope.java" startLine="12" startPosition="109" endLine="13" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1221218985173" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope.java" startLine="13" startPosition="160" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL_NAME_INTERN" />
     <nodeInfo nodeId="1221218985173" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope.java" startLine="14" startPosition="68" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
@@ -799,7 +799,7 @@
     </scopeInfo>
     <unitInfo nodeId="1221218985173" fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
   </root>
-  <root nodeId="1224102704684">
+  <root nodeId="1224102704684" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1224102704684" fileName="GenerationContextOp_GetInvocationContext.java" startLine="10" startPosition="88" endLine="11" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1224102704684" fileName="GenerationContextOp_GetInvocationContext.java" startLine="13" startPosition="63" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1224102704684" fileName="GenerationContextOp_GetInvocationContext.java" startLine="17" startPosition="95" endLine="18" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -822,7 +822,7 @@
     </scopeInfo>
     <unitInfo nodeId="1224102704684" fileName="GenerationContextOp_GetInvocationContext.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext" />
   </root>
-  <root nodeId="1229477454423">
+  <root nodeId="1229477454423" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1229477454423" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput.java" startLine="11" startPosition="98" endLine="12" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1229477454423" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput.java" startLine="12" startPosition="149" endLine="13" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_NODE" />
     <nodeInfo nodeId="1229477454423" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput.java" startLine="15" startPosition="73" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -856,7 +856,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229477454423" fileName="GenerationContextOp_GetOriginalCopiedInputByOutput.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" />
   </root>
-  <root nodeId="1758784108619220823">
+  <root nodeId="1758784108619220823" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1758784108619220823" fileName="GenerationContextOp_LinkPatternRef.java" startLine="11" startPosition="88" endLine="12" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1758784108619220823" fileName="GenerationContextOp_LinkPatternRef.java" startLine="12" startPosition="133" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINK_PATTERN_VAR" />
     <nodeInfo nodeId="1758784108619220823" fileName="GenerationContextOp_LinkPatternRef.java" startLine="15" startPosition="57" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -890,7 +890,7 @@
     </scopeInfo>
     <unitInfo nodeId="1758784108619220823" fileName="GenerationContextOp_LinkPatternRef.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef" />
   </root>
-  <root nodeId="1758784108619220824">
+  <root nodeId="1758784108619220824" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1758784108619220824" fileName="GenerationContextOp_PropertyPatternRef.java" startLine="11" startPosition="92" endLine="12" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1758784108619220824" fileName="GenerationContextOp_PropertyPatternRef.java" startLine="12" startPosition="137" endLine="13" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_PATTERN_VAR" />
     <nodeInfo nodeId="1758784108619220824" fileName="GenerationContextOp_PropertyPatternRef.java" startLine="15" startPosition="61" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -924,7 +924,7 @@
     </scopeInfo>
     <unitInfo nodeId="1758784108619220824" fileName="GenerationContextOp_PropertyPatternRef.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef" />
   </root>
-  <root nodeId="1758784108619328022">
+  <root nodeId="1758784108619328022" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="1758784108619328022" fileName="GenerationContextOp_PatternRef.java" startLine="10" startPosition="78" endLine="11" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1758784108619328022" fileName="GenerationContextOp_PatternRef.java" startLine="11" startPosition="129" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME_INTERN" />
     <nodeInfo nodeId="1758784108619328022" fileName="GenerationContextOp_PatternRef.java" startLine="14" startPosition="53" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -958,7 +958,7 @@
     </scopeInfo>
     <unitInfo nodeId="1758784108619328022" fileName="GenerationContextOp_PatternRef.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef" />
   </root>
-  <root nodeId="2507865635201615235">
+  <root nodeId="2507865635201615235" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="11" startPosition="83" endLine="12" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="12" startPosition="134" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME_INTERN" />
     <nodeInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="13" startPosition="57" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IMPORT_CLAUSE" />
@@ -1003,7 +1003,7 @@
     </scopeInfo>
     <unitInfo nodeId="2507865635201615235" fileName="GenerationContextOp_GenParameterRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef" />
   </root>
-  <root nodeId="2721957369897614808">
+  <root nodeId="2721957369897614808" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="11" startPosition="74" endLine="12" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="12" startPosition="125" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME_INTERN" />
     <nodeInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="13" startPosition="57" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARMACRO" />
@@ -1048,7 +1048,7 @@
     </scopeInfo>
     <unitInfo nodeId="2721957369897614808" fileName="GenerationContextOp_VarRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" />
   </root>
-  <root nodeId="4589968773278056990">
+  <root nodeId="4589968773278056990" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="4589968773278056990" fileName="GenerationContextOp_NodePatternRef.java" startLine="11" startPosition="88" endLine="12" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4589968773278056990" fileName="GenerationContextOp_NodePatternRef.java" startLine="12" startPosition="133" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERN_VAR_DECL" />
     <nodeInfo nodeId="4589968773278056990" fileName="GenerationContextOp_NodePatternRef.java" startLine="15" startPosition="57" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1082,7 +1082,7 @@
     </scopeInfo>
     <unitInfo nodeId="4589968773278056990" fileName="GenerationContextOp_NodePatternRef.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef" />
   </root>
-  <root nodeId="5190093307972723402">
+  <root nodeId="5190093307972723402" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="5190093307972723402" fileName="GenerationContextOp_ParameterRef.java" startLine="11" startPosition="80" endLine="12" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5190093307972723402" fileName="GenerationContextOp_ParameterRef.java" startLine="12" startPosition="131" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME_INTERN" />
     <nodeInfo nodeId="5190093307972723402" fileName="GenerationContextOp_ParameterRef.java" startLine="13" startPosition="57" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETER" />
@@ -1127,7 +1127,7 @@
     </scopeInfo>
     <unitInfo nodeId="5190093307972723402" fileName="GenerationContextOp_ParameterRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef" />
   </root>
-  <root nodeId="5403673535105109113">
+  <root nodeId="5403673535105109113" modelId="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
     <nodeInfo nodeId="5403673535105109113" fileName="GenerationContextOp_DirtyNode.java" startLine="11" startPosition="77" endLine="12" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5403673535105109113" fileName="GenerationContextOp_DirtyNode.java" startLine="12" startPosition="128" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NODE_TO_CHECK" />
     <nodeInfo nodeId="5403673535105109113" fileName="GenerationContextOp_DirtyNode.java" startLine="15" startPosition="52" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

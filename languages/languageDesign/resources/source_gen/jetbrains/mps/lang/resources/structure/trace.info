@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Resources_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.Resources_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.StructureAspectDescriptor" />
-  <root nodeId="8974276187400029883">
+  <root nodeId="8974276187400029883" modelId="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
     <nodeInfo nodeId="8974276187400029883" fileName="IconResource.java" startLine="14" startPosition="67" endLine="15" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8974276187400029883" fileName="IconResource.java" startLine="15" startPosition="93" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
     <nodeInfo nodeId="8974276187400029883" fileName="IconResource.java" startLine="16" startPosition="43" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -95,7 +95,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029883" fileName="IconResource.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.IconResource" />
   </root>
-  <root nodeId="8974276187400029885">
+  <root nodeId="8974276187400029885" modelId="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
     <nodeInfo nodeId="8974276187400029885" fileName="IconResourceBundle.java" startLine="15" startPosition="78" endLine="16" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8974276187400029885" fileName="IconResourceBundle.java" startLine="16" startPosition="99" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="8974276187400029885" fileName="IconResourceBundle.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -214,7 +214,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029885" fileName="IconResourceBundle.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.IconResourceBundle" />
   </root>
-  <root nodeId="8974276187400029888">
+  <root nodeId="8974276187400029888" modelId="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
     <nodeInfo nodeId="8974276187400029888" fileName="IconResourceDeclaration.java" startLine="16" startPosition="83" endLine="17" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8974276187400029888" fileName="IconResourceDeclaration.java" startLine="17" startPosition="104" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="8974276187400029888" fileName="IconResourceDeclaration.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -318,7 +318,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029888" fileName="IconResourceDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.IconResourceDeclaration" />
   </root>
-  <root nodeId="8974276187400029891">
+  <root nodeId="8974276187400029891" modelId="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
     <nodeInfo nodeId="8974276187400029891" fileName="IconResourceExpression.java" startLine="11" startPosition="56" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8974276187400029891" fileName="IconResourceExpression.java" startLine="12" startPosition="103" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8974276187400029891" fileName="IconResourceExpression.java" startLine="15" startPosition="45" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -352,7 +352,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029891" fileName="IconResourceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.IconResourceExpression" />
   </root>
-  <root nodeId="8974276187400029895">
+  <root nodeId="8974276187400029895" modelId="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
     <nodeInfo nodeId="8974276187400029895" fileName="IconResourceReference.java" startLine="11" startPosition="55" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8974276187400029895" fileName="IconResourceReference.java" startLine="12" startPosition="102" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DECLARATION" />
     <nodeInfo nodeId="8974276187400029895" fileName="IconResourceReference.java" startLine="15" startPosition="44" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -386,7 +386,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029895" fileName="IconResourceReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.resources.structure.IconResourceReference" />
   </root>
-  <root nodeId="8974276187400029898">
+  <root nodeId="8974276187400029898" modelId="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
     <nodeInfo nodeId="8974276187400029898" fileName="Resource.java" startLine="7" startPosition="48" endLine="8" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8974276187400029898" fileName="Resource.java" startLine="8" startPosition="89" endLine="9" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
     <nodeInfo nodeId="8974276187400029898" fileName="Resource.java" startLine="10" startPosition="0" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPath#()Ljava/lang/String;" />

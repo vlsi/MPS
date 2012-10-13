@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1178529045424">
+  <root nodeId="1178529045424" modelId="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)">
     <nodeInfo nodeId="1178529133696" fileName="EmailExample.java" startLine="8" startPosition="32" endLine="9" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_qkhp2f_a0a0a0a" />
     <nodeInfo nodeId="1222878828916" fileName="EmailExample.java" startLine="9" startPosition="96" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_qkhp2f_a0a1a0" />
     <nodeInfo nodeId="1178529080149" fileName="EmailExample.java" startLine="16" startPosition="5" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -27,17 +27,12 @@
     </scopeInfo>
     <unitInfo nodeId="1178529045424" fileName="EmailExample.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.regexp.examples.EmailExample" />
   </root>
-  <root nodeId="1178535069057">
-    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="8" startPosition="59" endLine="9" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
+  <root nodeId="1178535069057" modelId="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)">
     <nodeInfo nodeId="1178535102782" fileName="BaseLanguageIntegration.java" startLine="9" startPosition="43" endLine="10" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_efh9at_a0a0a0a" />
-    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="9" startPosition="54" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
     <nodeInfo nodeId="1178535147654" fileName="BaseLanguageIntegration.java" startLine="10" startPosition="96" endLine="11" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_efh9at_a0a0a0b" />
     <nodeInfo nodeId="1178535193340" fileName="BaseLanguageIntegration.java" startLine="11" startPosition="78" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_efh9at_a0a0a0c" />
     <nodeInfo nodeId="1178535238356" fileName="BaseLanguageIntegration.java" startLine="12" startPosition="78" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_efh9at_b0a0a3" />
-    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="12" startPosition="98" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="13" startPosition="42" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1178535309012" fileName="BaseLanguageIntegration.java" startLine="13" startPosition="82" endLine="14" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_efh9at_b0a0e" />
-    <nodeInfo nodeId="1178535270085" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="17" startPosition="42" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1178535102780" fileName="BaseLanguageIntegration.java" startLine="20" startPosition="5" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178535102780" fileName="BaseLanguageIntegration.java" startLine="21" startPosition="49" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178535102799" fileName="BaseLanguageIntegration.java" startLine="23" startPosition="33" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -55,8 +50,6 @@
     <nodeInfo nodeId="1178535140358" fileName="BaseLanguageIntegration.java" startLine="33" startPosition="49" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1178535184339" fileName="BaseLanguageIntegration.java" startLine="43" startPosition="52" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1178535286955" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Replacer_efh9at_a0a0a0d#(Ljetbrains/mps/regexp/examples/BaseLanguageIntegration;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
     <nodeInfo nodeId="1178535102780" fileName="BaseLanguageIntegration.java" startLine="22" startPosition="62" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1178535219991" fileName="BaseLanguageIntegration.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="replaceAll#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1178535280596" fileName="BaseLanguageIntegration.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="split#(Ljava/lang/String;)V" />
@@ -66,25 +59,23 @@
     <nodeInfo nodeId="1178535132007" fileName="BaseLanguageIntegration.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="contains#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="1178535173848" fileName="BaseLanguageIntegration.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="forEach#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="1178535091152" fileName="BaseLanguageIntegration.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="email#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="8" startPosition="59" endLine="9" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
+    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="9" startPosition="54" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
+    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="12" startPosition="98" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="13" startPosition="42" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178535270085" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="17" startPosition="42" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Replacer_efh9at_a0a0a0d#(Ljetbrains/mps/regexp/examples/BaseLanguageIntegration;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
     <scopeInfo nodeId="1848533035883009397" fileName="BaseLanguageIntegration.java" startLine="16" startPosition="36" endLine="16" endPosition="36" />
-    <scopeInfo nodeId="1178535234175" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="17" startPosition="42" endLine="18" endPosition="40" />
     <scopeInfo nodeId="1178535140360" fileName="BaseLanguageIntegration.java" startLine="34" startPosition="30" endLine="35" endPosition="48" />
     <scopeInfo nodeId="1178535184341" fileName="BaseLanguageIntegration.java" startLine="44" startPosition="33" endLine="45" endPosition="62" />
     <scopeInfo nodeId="1178535286959" fileName="BaseLanguageIntegration.java" startLine="56" startPosition="70" endLine="57" endPosition="38" />
-    <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="12" startPosition="98" endLine="14" endPosition="51" />
     <scopeInfo nodeId="1848533035883009395" fileName="BaseLanguageIntegration.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
     <scopeInfo nodeId="1178535102798" fileName="BaseLanguageIntegration.java" startLine="23" startPosition="33" endLine="25" endPosition="62" />
     <scopeInfo nodeId="1178535219994" fileName="BaseLanguageIntegration.java" startLine="50" startPosition="45" endLine="52" endPosition="13" />
     <scopeInfo nodeId="1178535280599" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5" />
     <scopeInfo nodeId="1178535286955" fileName="BaseLanguageIntegration.java" startLine="55" startPosition="38" endLine="58" endPosition="5">
       <varInfo nodeId="1178535286957" varName="st" />
-    </scopeInfo>
-    <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
-      <varInfo nodeId="1178535234174" varName="closureContext" />
-      <varInfo nodeId="1178535234174" varName="enclosingClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="1178535234174" varName="matcher" />
     </scopeInfo>
     <scopeInfo nodeId="1178535140358" fileName="BaseLanguageIntegration.java" startLine="31" startPosition="5" endLine="36" endPosition="7">
       <varInfo nodeId="1178535140358" varName="_matcher_0" />
@@ -115,6 +106,15 @@
     </scopeInfo>
     <scopeInfo nodeId="1178535091152" fileName="BaseLanguageIntegration.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1178535120003" varName="emailToAnalyse" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178535234175" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="17" startPosition="42" endLine="18" endPosition="40" />
+    <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="12" startPosition="98" endLine="14" endPosition="51" />
+    <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1178535234174" varName="closureContext" />
+      <varInfo nodeId="1178535234174" varName="enclosingClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1178535234174" varName="matcher" />
     </scopeInfo>
     <unitInfo nodeId="1178535069057" fileName="BaseLanguageIntegration.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.regexp.examples.BaseLanguageIntegration" />
     <unitInfo nodeId="1178535234174" fileName="_Replacer_efh9at_a0a0a0d.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0d" />

@@ -233,22 +233,27 @@
     <scopeInfo nodeId="4963955491753976920" fileName="EvaluationUtils.java" startLine="232" startPosition="0" endLine="235" endPosition="7">
       <varInfo nodeId="4963955491753976921" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="4963955491753976923" fileName="EvaluationUtils.java" startLine="232" startPosition="53" endLine="235" endPosition="7" />
     <scopeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="232" startPosition="53" endLine="235" endPosition="7" />
     <scopeInfo nodeId="4963955491753977077" fileName="EvaluationUtils.java" startLine="236" startPosition="0" endLine="239" endPosition="7">
       <varInfo nodeId="4963955491753977078" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="4963955491753977080" fileName="EvaluationUtils.java" startLine="236" startPosition="53" endLine="239" endPosition="7" />
     <scopeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="236" startPosition="53" endLine="239" endPosition="7" />
     <scopeInfo nodeId="4963955491753977085" fileName="EvaluationUtils.java" startLine="240" startPosition="0" endLine="243" endPosition="7">
       <varInfo nodeId="4963955491753977086" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="4963955491753977088" fileName="EvaluationUtils.java" startLine="240" startPosition="45" endLine="243" endPosition="7" />
+    <scopeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="240" startPosition="45" endLine="243" endPosition="7" />
     <scopeInfo nodeId="4963955491753986485" fileName="EvaluationUtils.java" startLine="244" startPosition="0" endLine="247" endPosition="7">
       <varInfo nodeId="4963955491753986486" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="4963955491753986488" fileName="EvaluationUtils.java" startLine="244" startPosition="56" endLine="247" endPosition="7" />
     <scopeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="244" startPosition="56" endLine="247" endPosition="7" />
     <scopeInfo nodeId="4963955491753977093" fileName="EvaluationUtils.java" startLine="248" startPosition="0" endLine="251" endPosition="7">
       <varInfo nodeId="4963955491753977094" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="4963955491753977096" fileName="EvaluationUtils.java" startLine="248" startPosition="37" endLine="251" endPosition="7" />
     <scopeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="248" startPosition="37" endLine="251" endPosition="7" />
     <scopeInfo nodeId="4727801710070561569" fileName="EvaluationUtils.java" startLine="284" startPosition="0" endLine="287" endPosition="5">
       <varInfo nodeId="4727801710070561572" varName="threadReference" />
@@ -331,10 +336,10 @@
       <varInfo nodeId="4963955491753977105" varName="failure" />
       <varInfo nodeId="4963955491753976914" varName="invocatable" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070561555" fileName="EvaluationUtils.java" startLine="30" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
-    <unitInfo nodeId="4963955491753976889" fileName="EvaluationUtils.java" startLine="266" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$EvaluationInvocatable" />
     <unitInfo nodeId="4727801710070560806" fileName="EvaluationUtils.java" startLine="256" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$Invocatable" />
+    <unitInfo nodeId="4963955491753976889" fileName="EvaluationUtils.java" startLine="266" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$EvaluationInvocatable" />
     <unitInfo nodeId="4727801710070560807" fileName="EvaluationUtils.java" startLine="276" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$ThreadInvocatable" />
+    <unitInfo nodeId="4727801710070561555" fileName="EvaluationUtils.java" startLine="30" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
   </root>
   <root nodeId="4727801710070563175" modelId="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)">
     <nodeInfo nodeId="4727801710070563177" fileName="Evaluator.java" startLine="15" startPosition="33" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUiState" />

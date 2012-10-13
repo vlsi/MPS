@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3097384118511823189">
+  <root nodeId="3097384118511823189" modelId="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)">
     <nodeInfo nodeId="3097384118511826155" fileName="Test.java" startLine="7" startPosition="19" endLine="8" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="d" />
     <nodeInfo nodeId="7517860079983491600" fileName="Test.java" startLine="13" startPosition="21" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7517860079983491638" fileName="Test.java" startLine="14" startPosition="55" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -15,7 +15,7 @@
     <scopeInfo nodeId="3097384118511823195" fileName="Test.java" startLine="12" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="3097384118511823189" fileName="Test.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Test" />
   </root>
-  <root nodeId="6791353716095480383">
+  <root nodeId="6791353716095480383" modelId="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)">
     <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="6" startPosition="37" endLine="7" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="str" />
     <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="7" startPosition="42" endLine="8" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="a" />
     <nodeInfo nodeId="7685333756920163917" fileName="StringExtensionMethods.java" startLine="13" startPosition="48" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -43,7 +43,7 @@
     </scopeInfo>
     <unitInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="6" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.StringExtensionMethods" />
   </root>
-  <root nodeId="6791353716095480385">
+  <root nodeId="6791353716095480385" modelId="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)">
     <nodeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="7" startPosition="18" endLine="8" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="b" />
     <nodeInfo nodeId="3097384118512197977" fileName="Abc.java" startLine="13" startPosition="48" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7517860079983491575" fileName="Abc.java" startLine="17" startPosition="58" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

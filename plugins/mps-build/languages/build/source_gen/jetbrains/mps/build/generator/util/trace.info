@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8775597636506088045">
+  <root nodeId="8775597636506088045" modelId="r:9a95c968-dcbf-4b0d-8fd9-b8db00f89883(jetbrains.mps.build.generator.util)">
     <nodeInfo nodeId="8775597636506088069" fileName="JavaExternalLibraryHelper.java" startLine="26" startPosition="40" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="library" />
     <nodeInfo nodeId="8775597636506088078" fileName="JavaExternalLibraryHelper.java" startLine="27" startPosition="24" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
     <nodeInfo nodeId="8775597636506120595" fileName="JavaExternalLibraryHelper.java" startLine="28" startPosition="36" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
@@ -257,10 +257,10 @@
       <varInfo nodeId="8775597636506121298" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8775597636506088064" fileName="JavaExternalLibraryHelper.java" startLine="36" startPosition="0" endLine="129" endPosition="0" />
-    <unitInfo nodeId="8775597636506088045" fileName="JavaExternalLibraryHelper.java" startLine="26" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
     <unitInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="130" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper$QuotationClass_g6ffke_a1a0d0j0a" />
     <unitInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="155" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper$QuotationClass_g6ffke_a1a0d0k0a" />
     <unitInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="180" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper$QuotationClass_g6ffke_a1a0e0k0a" />
+    <unitInfo nodeId="8775597636506088045" fileName="JavaExternalLibraryHelper.java" startLine="26" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
   </root>
 </debugInfo>
 

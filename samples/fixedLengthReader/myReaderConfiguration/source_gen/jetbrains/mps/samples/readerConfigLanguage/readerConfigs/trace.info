@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1127341420738">
+  <root nodeId="1127341420738" modelId="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)">
     <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="40" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="15" startPosition="52" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="48" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -33,8 +33,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="27" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1127341420738" fileName="Config1.xml" startLine="1" startPosition="0" endLine="14" endPosition="22" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
     <unitInfo nodeId="1127341420738" fileName="Config1.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
+    <unitInfo nodeId="1127341420738" fileName="Config1.xml" startLine="1" startPosition="0" endLine="14" endPosition="22" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
   </root>
 </debugInfo>
 

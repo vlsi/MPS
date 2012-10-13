@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="SampleLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.SampleLanguage_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.StructureAspectDescriptor" />
-  <root nodeId="1816315258006256015">
+  <root nodeId="1816315258006256015" modelId="r:57521e28-7db0-46ec-92c2-8736b3aa197c(jetbrains.mps.debug.sampleLanguage.structure)">
     <nodeInfo nodeId="1816315258006256015" fileName="WannabeClass.java" startLine="16" startPosition="84" endLine="17" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1816315258006256015" fileName="WannabeClass.java" startLine="17" startPosition="99" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1816315258006256015" fileName="WannabeClass.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -121,7 +121,7 @@
     </scopeInfo>
     <unitInfo nodeId="1816315258006256015" fileName="WannabeClass.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.WannabeClass" />
   </root>
-  <root nodeId="1816315258006256016">
+  <root nodeId="1816315258006256016" modelId="r:57521e28-7db0-46ec-92c2-8736b3aa197c(jetbrains.mps.debug.sampleLanguage.structure)">
     <nodeInfo nodeId="1816315258006256016" fileName="WannabeMethod.java" startLine="16" startPosition="73" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1816315258006256016" fileName="WannabeMethod.java" startLine="17" startPosition="100" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1816315258006256016" fileName="WannabeMethod.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -236,7 +236,7 @@
     </scopeInfo>
     <unitInfo nodeId="1816315258006256016" fileName="WannabeMethod.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.WannabeMethod" />
   </root>
-  <root nodeId="1816315258006256050">
+  <root nodeId="1816315258006256050" modelId="r:57521e28-7db0-46ec-92c2-8736b3aa197c(jetbrains.mps.debug.sampleLanguage.structure)">
     <nodeInfo nodeId="1816315258006256050" fileName="WannabeMethodCall.java" startLine="11" startPosition="51" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1816315258006256050" fileName="WannabeMethodCall.java" startLine="12" startPosition="104" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="METHOD" />
     <nodeInfo nodeId="1816315258006256050" fileName="WannabeMethodCall.java" startLine="15" startPosition="40" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

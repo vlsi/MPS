@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Tuples_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.Tuples_Language" />
-  <root nodeId="1238852151516">
+  <root nodeId="1238852151516" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1238852151516" fileName="IndexedTupleType.java" startLine="13" startPosition="44" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1238852151516" fileName="IndexedTupleType.java" startLine="14" startPosition="102" endLine="15" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_LeftBracket" />
     <nodeInfo nodeId="1238852151516" fileName="IndexedTupleType.java" startLine="15" startPosition="61" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_RightBracket" />
@@ -53,7 +53,7 @@
     </scopeInfo>
     <unitInfo nodeId="1238852151516" fileName="IndexedTupleType.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" />
   </root>
-  <root nodeId="1238853782547">
+  <root nodeId="1238853782547" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1238853782547" fileName="IndexedTupleLiteral.java" startLine="13" startPosition="53" endLine="14" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1238853782547" fileName="IndexedTupleLiteral.java" startLine="14" startPosition="105" endLine="15" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_LeftBracket" />
     <nodeInfo nodeId="1238853782547" fileName="IndexedTupleLiteral.java" startLine="15" startPosition="61" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_RightBracket" />
@@ -104,7 +104,7 @@
     </scopeInfo>
     <unitInfo nodeId="1238853782547" fileName="IndexedTupleLiteral.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" />
   </root>
-  <root nodeId="1238857743184">
+  <root nodeId="1238857743184" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1238857743184" fileName="IndexedTupleMemberAccessExpression.java" startLine="11" startPosition="68" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1238857743184" fileName="IndexedTupleMemberAccessExpression.java" startLine="12" startPosition="120" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TUPLE" />
     <nodeInfo nodeId="1238857743184" fileName="IndexedTupleMemberAccessExpression.java" startLine="13" startPosition="45" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDEX" />
@@ -149,7 +149,7 @@
     </scopeInfo>
     <unitInfo nodeId="1238857743184" fileName="IndexedTupleMemberAccessExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" />
   </root>
-  <root nodeId="1239360506533">
+  <root nodeId="1239360506533" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1239360506533" fileName="NamedTupleDeclaration.java" startLine="14" startPosition="55" endLine="15" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1239360506533" fileName="NamedTupleDeclaration.java" startLine="15" startPosition="107" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_LeftBracket" />
     <nodeInfo nodeId="1239360506533" fileName="NamedTupleDeclaration.java" startLine="16" startPosition="61" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_RightBracket" />
@@ -237,7 +237,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239360506533" fileName="NamedTupleDeclaration.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
   </root>
-  <root nodeId="1239462176079">
+  <root nodeId="1239462176079" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1239462176079" fileName="NamedTupleComponentDeclaration.java" startLine="21" startPosition="152" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1239462176079" fileName="NamedTupleComponentDeclaration.java" startLine="22" startPosition="116" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1239462176079" fileName="NamedTupleComponentDeclaration.java" startLine="23" startPosition="43" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -389,7 +389,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239462176079" fileName="NamedTupleComponentDeclaration.java" startLine="21" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
   </root>
-  <root nodeId="1239531918181">
+  <root nodeId="1239531918181" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1239531918181" fileName="NamedTupleType.java" startLine="11" startPosition="52" endLine="12" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1239531918181" fileName="NamedTupleType.java" startLine="12" startPosition="100" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_LeftBracket" />
     <nodeInfo nodeId="1239531918181" fileName="NamedTupleType.java" startLine="13" startPosition="61" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_RightBracket" />
@@ -424,7 +424,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239531918181" fileName="NamedTupleType.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" />
   </root>
-  <root nodeId="1239559992092">
+  <root nodeId="1239559992092" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1239559992092" fileName="NamedTupleLiteral.java" startLine="13" startPosition="51" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1239559992092" fileName="NamedTupleLiteral.java" startLine="14" startPosition="103" endLine="15" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_LeftBracket" />
     <nodeInfo nodeId="1239559992092" fileName="NamedTupleLiteral.java" startLine="15" startPosition="61" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_RightBracket" />
@@ -486,7 +486,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239559992092" fileName="NamedTupleLiteral.java" startLine="13" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" />
   </root>
-  <root nodeId="1239560581441">
+  <root nodeId="1239560581441" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1239560581441" fileName="NamedTupleComponentReference.java" startLine="12" startPosition="63" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1239560581441" fileName="NamedTupleComponentReference.java" startLine="13" startPosition="114" endLine="14" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPONENT_DECLARATION" />
     <nodeInfo nodeId="1239560581441" fileName="NamedTupleComponentReference.java" startLine="14" startPosition="76" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
@@ -531,7 +531,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239560581441" fileName="NamedTupleComponentReference.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" />
   </root>
-  <root nodeId="1239576519914">
+  <root nodeId="1239576519914" modelId="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
     <nodeInfo nodeId="1239576519914" fileName="NamedTupleComponentAccessOperation.java" startLine="15" startPosition="91" endLine="16" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1239576519914" fileName="NamedTupleComponentAccessOperation.java" startLine="16" startPosition="120" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1239576519914" fileName="NamedTupleComponentAccessOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />

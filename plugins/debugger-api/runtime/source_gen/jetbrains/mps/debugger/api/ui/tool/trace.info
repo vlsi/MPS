@@ -84,6 +84,7 @@
     <scopeInfo nodeId="4474271214083120615" fileName="DebuggerToolContentBuilder.java" startLine="112" startPosition="31" endLine="113" endPosition="71" />
     <scopeInfo nodeId="4474271214083120652" fileName="DebuggerToolContentBuilder.java" startLine="128" startPosition="47" endLine="129" endPosition="31" />
     <scopeInfo nodeId="4474271214083120655" fileName="DebuggerToolContentBuilder.java" startLine="132" startPosition="27" endLine="134" endPosition="22" />
+    <scopeInfo nodeId="4474271214083120344" fileName="DebuggerToolContentBuilder.java" startLine="54" startPosition="25" endLine="57" endPosition="5" />
     <scopeInfo nodeId="4474271214083120345" fileName="DebuggerToolContentBuilder.java" startLine="54" startPosition="25" endLine="57" endPosition="5">
       <varInfo nodeId="4474271214083120347" varName="disposable" />
     </scopeInfo>
@@ -139,8 +140,8 @@
       <varInfo nodeId="4474271214083120517" varName="ui" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083120354" fileName="DebuggerToolContentBuilder.java" startLine="59" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="4474271214083120245" fileName="DebuggerToolContentBuilder.java" startLine="34" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" />
     <unitInfo nodeId="4474271214083120248" fileName="DebuggerToolContentBuilder.java" startLine="118" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$MyRunContentDescriptor" />
+    <unitInfo nodeId="4474271214083120245" fileName="DebuggerToolContentBuilder.java" startLine="34" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" />
   </root>
   <root nodeId="4474271214083120661" modelId="r:891e5016-c8e3-4b89-90ed-01a5f21e6fc3(jetbrains.mps.debugger.api.ui.tool)">
     <nodeInfo nodeId="4474271214083120736" fileName="DebuggerToolPanel.java" startLine="41" startPosition="32" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
@@ -383,14 +384,14 @@
     </scopeInfo>
     <scopeInfo nodeId="4474271214083120975" fileName="DebuggerToolPanel.java" startLine="96" startPosition="50" endLine="136" endPosition="42" />
     <scopeInfo nodeId="4474271214083120972" fileName="DebuggerToolPanel.java" startLine="95" startPosition="0" endLine="138" endPosition="0" />
-    <unitInfo nodeId="4474271214083120661" fileName="DebuggerToolPanel.java" startLine="41" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel" />
-    <unitInfo nodeId="4474271214083120952" fileName="DebuggerToolPanel.java" startLine="84" startPosition="36" endLine="92" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$1" />
     <unitInfo nodeId="4474271214083120993" fileName="DebuggerToolPanel.java" startLine="99" startPosition="46" endLine="106" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$2" />
-    <unitInfo nodeId="4474271214083121010" fileName="DebuggerToolPanel.java" startLine="108" startPosition="37" endLine="135" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$3" />
+    <unitInfo nodeId="4474271214083120952" fileName="DebuggerToolPanel.java" startLine="84" startPosition="36" endLine="92" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$1" />
     <unitInfo nodeId="4474271214083121038" fileName="DebuggerToolPanel.java" startLine="140" startPosition="56" endLine="151" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$4" />
-    <unitInfo nodeId="4474271214083120663" fileName="DebuggerToolPanel.java" startLine="154" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$MySessionChangeListener" />
     <unitInfo nodeId="4474271214083120714" fileName="DebuggerToolPanel.java" startLine="220" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$StackFramesListModel" />
+    <unitInfo nodeId="4474271214083121010" fileName="DebuggerToolPanel.java" startLine="108" startPosition="37" endLine="135" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$3" />
+    <unitInfo nodeId="4474271214083120663" fileName="DebuggerToolPanel.java" startLine="154" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$MySessionChangeListener" />
     <unitInfo nodeId="4474271214083120684" fileName="DebuggerToolPanel.java" startLine="183" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel$ThreadsComboBoxModel" />
+    <unitInfo nodeId="4474271214083120661" fileName="DebuggerToolPanel.java" startLine="41" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel" />
   </root>
 </debugInfo>
 

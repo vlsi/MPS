@@ -529,9 +529,9 @@
       <varInfo nodeId="6268941039745711578" varName="nodeEditorComponent" />
       <varInfo nodeId="6268941039745707954" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior" />
-    <unitInfo nodeId="6268941039745711531" fileName="AnonymousCellAnnotation_Behavior.java" startLine="26" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$1" />
     <unitInfo nodeId="7465350948216906313" fileName="AnonymousCellAnnotation_Behavior.java" startLine="39" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$2" />
+    <unitInfo nodeId="6268941039745711531" fileName="AnonymousCellAnnotation_Behavior.java" startLine="26" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$1" />
+    <unitInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior" />
   </root>
 </debugInfo>
 

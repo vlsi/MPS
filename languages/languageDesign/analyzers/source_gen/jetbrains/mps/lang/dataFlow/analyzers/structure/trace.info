@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Analyzers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzers_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.StructureAspectDescriptor" />
-  <root nodeId="2045671745393426211">
+  <root nodeId="2045671745393426211" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="2045671745393426211" fileName="AnalyzerRunnerType.java" startLine="11" startPosition="46" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2045671745393426211" fileName="AnalyzerRunnerType.java" startLine="14" startPosition="41" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2045671745393426211" fileName="AnalyzerRunnerType.java" startLine="18" startPosition="73" endLine="19" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     </scopeInfo>
     <unitInfo nodeId="2045671745393426211" fileName="AnalyzerRunnerType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType" />
   </root>
-  <root nodeId="3325264799421290200">
+  <root nodeId="3325264799421290200" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="3325264799421290200" fileName="ApplicableCondition.java" startLine="15" startPosition="79" endLine="16" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3325264799421290200" fileName="ApplicableCondition.java" startLine="16" startPosition="109" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="3325264799421290200" fileName="ApplicableCondition.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -118,7 +118,7 @@
     </scopeInfo>
     <unitInfo nodeId="3325264799421290200" fileName="ApplicableCondition.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition" />
   </root>
-  <root nodeId="3325264799421303651">
+  <root nodeId="3325264799421303651" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="3325264799421303651" fileName="PatternCondition.java" startLine="11" startPosition="59" endLine="12" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3325264799421303651" fileName="PatternCondition.java" startLine="12" startPosition="106" endLine="13" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERN" />
     <nodeInfo nodeId="3325264799421303651" fileName="PatternCondition.java" startLine="15" startPosition="39" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -152,7 +152,7 @@
     </scopeInfo>
     <unitInfo nodeId="3325264799421303651" fileName="PatternCondition.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition" />
   </root>
-  <root nodeId="4217760266503579796">
+  <root nodeId="4217760266503579796" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4217760266503579796" fileName="EmitInstruction.java" startLine="13" startPosition="54" endLine="14" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4217760266503579796" fileName="EmitInstruction.java" startLine="14" startPosition="105" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTRUCTION_REF" />
     <nodeInfo nodeId="4217760266503579796" fileName="EmitInstruction.java" startLine="15" startPosition="64" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET" />
@@ -208,7 +208,7 @@
     </scopeInfo>
     <unitInfo nodeId="4217760266503579796" fileName="EmitInstruction.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction" />
   </root>
-  <root nodeId="4217760266503638748">
+  <root nodeId="4217760266503638748" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4217760266503638748" fileName="InstructionReference.java" startLine="14" startPosition="55" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4217760266503638748" fileName="InstructionReference.java" startLine="15" startPosition="110" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTRUCTION" />
     <nodeInfo nodeId="4217760266503638748" fileName="InstructionReference.java" startLine="16" startPosition="57" endLine="17" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARGUMENT" />
@@ -268,7 +268,7 @@
     </scopeInfo>
     <unitInfo nodeId="4217760266503638748" fileName="InstructionReference.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference" />
   </root>
-  <root nodeId="430844094082168520">
+  <root nodeId="430844094082168520" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="430844094082168520" fileName="Rule.java" startLine="16" startPosition="64" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="430844094082168520" fileName="Rule.java" startLine="17" startPosition="94" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="430844094082168520" fileName="Rule.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -394,7 +394,7 @@
     </scopeInfo>
     <unitInfo nodeId="430844094082168520" fileName="Rule.java" startLine="16" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.Rule" />
   </root>
-  <root nodeId="430844094082202272">
+  <root nodeId="430844094082202272" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="430844094082202272" fileName="InstructionParameter.java" startLine="16" startPosition="80" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="430844094082202272" fileName="InstructionParameter.java" startLine="17" startPosition="110" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="430844094082202272" fileName="InstructionParameter.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -498,7 +498,7 @@
     </scopeInfo>
     <unitInfo nodeId="430844094082202272" fileName="InstructionParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter" />
   </root>
-  <root nodeId="4746038179140566716">
+  <root nodeId="4746038179140566716" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4746038179140566716" fileName="AnalyzerParameterProgram.java" startLine="11" startPosition="72" endLine="12" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4746038179140566716" fileName="AnalyzerParameterProgram.java" startLine="14" startPosition="47" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140566716" fileName="AnalyzerParameterProgram.java" startLine="18" startPosition="79" endLine="19" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -521,7 +521,7 @@
     </scopeInfo>
     <unitInfo nodeId="4746038179140566716" fileName="AnalyzerParameterProgram.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram" />
   </root>
-  <root nodeId="4746038179140566725">
+  <root nodeId="4746038179140566725" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4746038179140566725" fileName="AnalyzerMergeParameterInput.java" startLine="11" startPosition="75" endLine="12" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4746038179140566725" fileName="AnalyzerMergeParameterInput.java" startLine="14" startPosition="50" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140566725" fileName="AnalyzerMergeParameterInput.java" startLine="18" startPosition="82" endLine="19" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -544,7 +544,7 @@
     </scopeInfo>
     <unitInfo nodeId="4746038179140566725" fileName="AnalyzerMergeParameterInput.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput" />
   </root>
-  <root nodeId="4746038179140588744">
+  <root nodeId="4746038179140588744" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4746038179140588744" fileName="AnalyzerInitialFunction.java" startLine="11" startPosition="62" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4746038179140588744" fileName="AnalyzerInitialFunction.java" startLine="14" startPosition="46" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140588744" fileName="AnalyzerInitialFunction.java" startLine="18" startPosition="78" endLine="19" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -567,7 +567,7 @@
     </scopeInfo>
     <unitInfo nodeId="4746038179140588744" fileName="AnalyzerInitialFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction" />
   </root>
-  <root nodeId="4746038179140588745">
+  <root nodeId="4746038179140588745" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4746038179140588745" fileName="AnalyzerFunFunction.java" startLine="11" startPosition="58" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4746038179140588745" fileName="AnalyzerFunFunction.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140588745" fileName="AnalyzerFunFunction.java" startLine="18" startPosition="74" endLine="19" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -590,7 +590,7 @@
     </scopeInfo>
     <unitInfo nodeId="4746038179140588745" fileName="AnalyzerFunFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction" />
   </root>
-  <root nodeId="4746038179140588754">
+  <root nodeId="4746038179140588754" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4746038179140588754" fileName="AnalyzerFunParameterProgramState.java" startLine="11" startPosition="80" endLine="12" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4746038179140588754" fileName="AnalyzerFunParameterProgramState.java" startLine="14" startPosition="55" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140588754" fileName="AnalyzerFunParameterProgramState.java" startLine="18" startPosition="87" endLine="19" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -613,7 +613,7 @@
     </scopeInfo>
     <unitInfo nodeId="4746038179140588754" fileName="AnalyzerFunParameterProgramState.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState" />
   </root>
-  <root nodeId="4746038179140588756">
+  <root nodeId="4746038179140588756" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4746038179140588756" fileName="AnalyzerFunParameterInput.java" startLine="11" startPosition="73" endLine="12" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4746038179140588756" fileName="AnalyzerFunParameterInput.java" startLine="14" startPosition="48" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140588756" fileName="AnalyzerFunParameterInput.java" startLine="18" startPosition="80" endLine="19" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -636,7 +636,7 @@
     </scopeInfo>
     <unitInfo nodeId="4746038179140588756" fileName="AnalyzerFunParameterInput.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput" />
   </root>
-  <root nodeId="4943044633101449694">
+  <root nodeId="4943044633101449694" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4943044633101449694" fileName="ConceptCondition.java" startLine="15" startPosition="84" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4943044633101449694" fileName="ConceptCondition.java" startLine="16" startPosition="106" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="4943044633101449694" fileName="ConceptCondition.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -740,7 +740,7 @@
     </scopeInfo>
     <unitInfo nodeId="4943044633101449694" fileName="ConceptCondition.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition" />
   </root>
-  <root nodeId="4943044633102057744">
+  <root nodeId="4943044633102057744" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="4943044633102057744" fileName="ApplicableNodeReference.java" startLine="11" startPosition="57" endLine="12" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4943044633102057744" fileName="ApplicableNodeReference.java" startLine="12" startPosition="113" endLine="13" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="APPLICABLE_NODE" />
     <nodeInfo nodeId="4943044633102057744" fileName="ApplicableNodeReference.java" startLine="15" startPosition="46" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -774,7 +774,7 @@
     </scopeInfo>
     <unitInfo nodeId="4943044633102057744" fileName="ApplicableNodeReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference" />
   </root>
-  <root nodeId="6393434056522580745">
+  <root nodeId="6393434056522580745" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="6393434056522580745" fileName="AnalyzerMergeFunction.java" startLine="11" startPosition="60" endLine="12" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6393434056522580745" fileName="AnalyzerMergeFunction.java" startLine="14" startPosition="44" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6393434056522580745" fileName="AnalyzerMergeFunction.java" startLine="18" startPosition="76" endLine="19" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -797,7 +797,7 @@
     </scopeInfo>
     <unitInfo nodeId="6393434056522580745" fileName="AnalyzerMergeFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction" />
   </root>
-  <root nodeId="6618572076229093257">
+  <root nodeId="6618572076229093257" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="6618572076229093257" fileName="Analyzer.java" startLine="16" startPosition="68" endLine="17" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6618572076229093257" fileName="Analyzer.java" startLine="17" startPosition="98" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6618572076229093257" fileName="Analyzer.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -971,7 +971,7 @@
     </scopeInfo>
     <unitInfo nodeId="6618572076229093257" fileName="Analyzer.java" startLine="16" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer" />
   </root>
-  <root nodeId="6618572076229093258">
+  <root nodeId="6618572076229093258" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="6618572076229093258" fileName="Instruction.java" startLine="15" startPosition="71" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6618572076229093258" fileName="Instruction.java" startLine="16" startPosition="101" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6618572076229093258" fileName="Instruction.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -1090,7 +1090,7 @@
     </scopeInfo>
     <unitInfo nodeId="6618572076229093258" fileName="Instruction.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction" />
   </root>
-  <root nodeId="752944717341640112">
+  <root nodeId="752944717341640112" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="752944717341640112" fileName="RuleReference.java" startLine="11" startPosition="48" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="752944717341640112" fileName="RuleReference.java" startLine="12" startPosition="103" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RULE" />
     <nodeInfo nodeId="752944717341640112" fileName="RuleReference.java" startLine="15" startPosition="36" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1124,7 +1124,7 @@
     </scopeInfo>
     <unitInfo nodeId="752944717341640112" fileName="RuleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference" />
   </root>
-  <root nodeId="7985661997283714146">
+  <root nodeId="7985661997283714146" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="7985661997283714146" fileName="IsOperation.java" startLine="11" startPosition="45" endLine="12" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7985661997283714146" fileName="IsOperation.java" startLine="12" startPosition="101" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTRUCTION" />
     <nodeInfo nodeId="7985661997283714146" fileName="IsOperation.java" startLine="13" startPosition="57" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LEFT" />
@@ -1169,7 +1169,7 @@
     </scopeInfo>
     <unitInfo nodeId="7985661997283714146" fileName="IsOperation.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation" />
   </root>
-  <root nodeId="8424563347437821087">
+  <root nodeId="8424563347437821087" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="8424563347437821087" fileName="InsertBeforePosition.java" startLine="11" startPosition="55" endLine="12" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8424563347437821087" fileName="InsertBeforePosition.java" startLine="14" startPosition="43" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8424563347437821087" fileName="InsertBeforePosition.java" startLine="18" startPosition="75" endLine="19" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1192,7 +1192,7 @@
     </scopeInfo>
     <unitInfo nodeId="8424563347437821087" fileName="InsertBeforePosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition" />
   </root>
-  <root nodeId="8424563347437829923">
+  <root nodeId="8424563347437829923" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="8424563347437829923" fileName="InsertPosition.java" startLine="11" startPosition="49" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8424563347437829923" fileName="InsertPosition.java" startLine="14" startPosition="37" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8424563347437829923" fileName="InsertPosition.java" startLine="18" startPosition="69" endLine="19" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1215,7 +1215,7 @@
     </scopeInfo>
     <unitInfo nodeId="8424563347437829923" fileName="InsertPosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition" />
   </root>
-  <root nodeId="8424563347437829924">
+  <root nodeId="8424563347437829924" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="8424563347437829924" fileName="InsertAfterPosition.java" startLine="11" startPosition="54" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8424563347437829924" fileName="InsertAfterPosition.java" startLine="14" startPosition="42" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8424563347437829924" fileName="InsertAfterPosition.java" startLine="18" startPosition="74" endLine="19" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1238,7 +1238,7 @@
     </scopeInfo>
     <unitInfo nodeId="8424563347437829924" fileName="InsertAfterPosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition" />
   </root>
-  <root nodeId="9177062368042220422">
+  <root nodeId="9177062368042220422" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="9177062368042220422" fileName="AnalysisDirection.java" startLine="11" startPosition="52" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9177062368042220422" fileName="AnalysisDirection.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9177062368042220422" fileName="AnalysisDirection.java" startLine="18" startPosition="72" endLine="19" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1261,7 +1261,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042220422" fileName="AnalysisDirection.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection" />
   </root>
-  <root nodeId="9177062368042220424">
+  <root nodeId="9177062368042220424" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="9177062368042220424" fileName="ForwardDirection.java" startLine="10" startPosition="57" endLine="11" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9177062368042220424" fileName="ForwardDirection.java" startLine="13" startPosition="39" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9177062368042220424" fileName="ForwardDirection.java" startLine="17" startPosition="71" endLine="18" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1284,7 +1284,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042220424" fileName="ForwardDirection.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection" />
   </root>
-  <root nodeId="9177062368042220438">
+  <root nodeId="9177062368042220438" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="9177062368042220438" fileName="BackwardDirection.java" startLine="10" startPosition="58" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9177062368042220438" fileName="BackwardDirection.java" startLine="13" startPosition="40" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9177062368042220438" fileName="BackwardDirection.java" startLine="17" startPosition="72" endLine="18" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1307,7 +1307,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042220438" fileName="BackwardDirection.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection" />
   </root>
-  <root nodeId="9177062368042364839">
+  <root nodeId="9177062368042364839" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="9177062368042364839" fileName="AnalyzerFunctionResultType.java" startLine="11" startPosition="54" endLine="12" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="9177062368042364839" fileName="AnalyzerFunctionResultType.java" startLine="14" startPosition="49" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9177062368042364839" fileName="AnalyzerFunctionResultType.java" startLine="18" startPosition="81" endLine="19" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1330,7 +1330,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042364839" fileName="AnalyzerFunctionResultType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType" />
   </root>
-  <root nodeId="95073643532950033">
+  <root nodeId="95073643532950033" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="95073643532950033" fileName="AnalyzerRunnerAnalyzeOperation.java" startLine="15" startPosition="87" endLine="16" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="95073643532950033" fileName="AnalyzerRunnerAnalyzeOperation.java" startLine="16" startPosition="120" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="95073643532950033" fileName="AnalyzerRunnerAnalyzeOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -1412,7 +1412,7 @@
     </scopeInfo>
     <unitInfo nodeId="95073643532950033" fileName="AnalyzerRunnerAnalyzeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation" />
   </root>
-  <root nodeId="95073643532950038">
+  <root nodeId="95073643532950038" modelId="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)">
     <nodeInfo nodeId="95073643532950038" fileName="AnalyzerRunnerCreator.java" startLine="11" startPosition="55" endLine="12" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="95073643532950038" fileName="AnalyzerRunnerCreator.java" startLine="12" startPosition="111" endLine="13" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANALYZER" />
     <nodeInfo nodeId="95073643532950038" fileName="AnalyzerRunnerCreator.java" startLine="13" startPosition="51" endLine="14" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NODE_TO_CHECK" />

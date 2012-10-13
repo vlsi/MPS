@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1241366278147">
+  <root nodeId="1241366278147" modelId="r:1ce92b75-a0c5-43f1-a14e-cfe3b58c4978(jetbrains.mps.calculator.sandbox.sandbox)">
     <nodeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="15" startPosition="48" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="19" startPosition="48" endLine="20" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="23" startPosition="49" endLine="24" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -73,9 +73,9 @@
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="31" startPosition="21" endLine="45" endPosition="21" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="30" startPosition="0" endLine="46" endPosition="3" />
-    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
     <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="60" startPosition="35" endLine="64" endPosition="5" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$1" />
     <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="14" startPosition="42" endLine="26" endPosition="3" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$2" />
+    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
   </root>
 </debugInfo>
 

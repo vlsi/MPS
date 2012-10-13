@@ -133,6 +133,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1585405235656481458" fileName="ClassRunner.java" startLine="32" startPosition="67" endLine="38" endPosition="12" />
     <scopeInfo nodeId="1585405235656481646" fileName="ClassRunner.java" startLine="75" startPosition="11" endLine="82" endPosition="9" />
+    <scopeInfo nodeId="1585405235656482706" fileName="ClassRunner.java" startLine="75" startPosition="11" endLine="82" endPosition="9">
+      <varInfo nodeId="1585405235656482709" varName="cp" />
+    </scopeInfo>
     <scopeInfo nodeId="1585405235656481833" fileName="ClassRunner.java" startLine="114" startPosition="18" endLine="122" endPosition="23">
       <varInfo nodeId="1585405235656481835" varName="line" />
     </scopeInfo>

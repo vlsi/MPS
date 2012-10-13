@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1790427706118304183">
+  <root nodeId="1790427706118304183" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="16" startPosition="72" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="19" startPosition="36" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,7 +42,7 @@
     </scopeInfo>
     <unitInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.GetCurrency_Constraints" />
   </root>
-  <root nodeId="1790427706118381728">
+  <root nodeId="1790427706118381728" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="16" startPosition="70" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="19" startPosition="34" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -83,14 +83,14 @@
     </scopeInfo>
     <unitInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.ConvertTo_Constraints" />
   </root>
-  <root nodeId="3607579524910558859">
+  <root nodeId="3607579524910558859" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
     <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="7" startPosition="73" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyLiteral_Constraints#()V" />
     <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" />
     <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="7" startPosition="73" endLine="10" endPosition="3" />
     <unitInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.MoneyLiteral_Constraints" />
   </root>
-  <root nodeId="5447719361346553527">
+  <root nodeId="5447719361346553527" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="16" startPosition="70" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="19" startPosition="34" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

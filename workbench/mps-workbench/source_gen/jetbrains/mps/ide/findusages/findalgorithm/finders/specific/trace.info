@@ -83,8 +83,8 @@
       <varInfo nodeId="6056923343037305762" varName="monitor" />
       <varInfo nodeId="6056923343037305760" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="6056923343037305731" fileName="MappingConfigFinder.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" />
     <unitInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="100" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder$1" />
+    <unitInfo nodeId="6056923343037305731" fileName="MappingConfigFinder.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" />
   </root>
   <root nodeId="7228605397000826641" modelId="r:3decc57d-6015-4d6c-ad86-7f2134c013b6(jetbrains.mps.ide.findusages.findalgorithm.finders.specific)">
     <nodeInfo nodeId="7228605397000826656" fileName="LanguageConceptsUsagesFinder.java" startLine="29" startPosition="73" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -226,6 +226,9 @@
     <scopeInfo nodeId="7228605397000826881" fileName="AspectMethodsFinder.java" startLine="103" startPosition="0" endLine="105" endPosition="5" />
     <scopeInfo nodeId="7228605397000827095" fileName="AspectMethodsFinder.java" startLine="34" startPosition="131" endLine="37" endPosition="11" />
     <scopeInfo nodeId="7228605397000826935" fileName="AspectMethodsFinder.java" startLine="42" startPosition="53" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="7228605397000826936" fileName="AspectMethodsFinder.java" startLine="42" startPosition="53" endLine="45" endPosition="7">
+      <varInfo nodeId="7228605397000826940" varName="root" />
+    </scopeInfo>
     <scopeInfo nodeId="7228605397000826990" fileName="AspectMethodsFinder.java" startLine="56" startPosition="5" endLine="59" endPosition="5">
       <varInfo nodeId="7228605397000826994" varName="child" />
     </scopeInfo>
@@ -236,6 +239,7 @@
       <varInfo nodeId="7228605397000826846" varName="modelName" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826850" fileName="AspectMethodsFinder.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="7228605397000827085" fileName="AspectMethodsFinder.java" startLine="33" startPosition="25" endLine="38" endPosition="9" />
     <scopeInfo nodeId="7228605397000827086" fileName="AspectMethodsFinder.java" startLine="33" startPosition="25" endLine="38" endPosition="9">
       <varInfo nodeId="7228605397000827093" varName="descriptor" />
     </scopeInfo>
@@ -270,10 +274,10 @@
       <varInfo nodeId="7228605397000826894" varName="monitor" />
       <varInfo nodeId="7228605397000826892" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="7228605397000826824" fileName="AspectMethodsFinder.java" startLine="25" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder" />
-    <unitInfo nodeId="7228605397000826920" fileName="AspectMethodsFinder.java" startLine="32" startPosition="45" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$1" />
     <unitInfo nodeId="7228605397000826873" fileName="AspectMethodsFinder.java" startLine="100" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$AspectMethodQueryData" />
+    <unitInfo nodeId="7228605397000826920" fileName="AspectMethodsFinder.java" startLine="32" startPosition="45" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$1" />
     <unitInfo nodeId="7228605397000826827" fileName="AspectMethodsFinder.java" startLine="66" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder$AspectMethodsHolder" />
+    <unitInfo nodeId="7228605397000826824" fileName="AspectMethodsFinder.java" startLine="25" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder" />
   </root>
   <root nodeId="7228605397000827110" modelId="r:3decc57d-6015-4d6c-ad86-7f2134c013b6(jetbrains.mps.ide.findusages.findalgorithm.finders.specific)">
     <nodeInfo nodeId="7228605397000827169" fileName="ConstantFinder.java" startLine="21" startPosition="48" endLine="22" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
@@ -319,6 +323,7 @@
     <scopeInfo nodeId="7228605397000827131" fileName="ConstantFinder.java" startLine="42" startPosition="0" endLine="45" endPosition="5">
       <varInfo nodeId="7228605397000827134" varName="data" />
     </scopeInfo>
+    <scopeInfo nodeId="7228605397000827241" fileName="ConstantFinder.java" startLine="49" startPosition="27" endLine="52" endPosition="11" />
     <scopeInfo nodeId="7228605397000827242" fileName="ConstantFinder.java" startLine="49" startPosition="27" endLine="52" endPosition="11">
       <varInfo nodeId="7228605397000827244" varName="node" />
     </scopeInfo>
@@ -344,9 +349,9 @@
       <varInfo nodeId="7228605397000827143" varName="categoryName" />
       <varInfo nodeId="7228605397000827140" varName="nodes" />
     </scopeInfo>
-    <unitInfo nodeId="7228605397000827110" fileName="ConstantFinder.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" />
     <unitInfo nodeId="7228605397000827215" fileName="ConstantFinder.java" startLine="48" startPosition="47" endLine="54" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder$1" />
     <unitInfo nodeId="7228605397000827113" fileName="ConstantFinder.java" startLine="35" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder$ConstantHolder" />
+    <unitInfo nodeId="7228605397000827110" fileName="ConstantFinder.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" />
   </root>
   <root nodeId="7228605397000827258" modelId="r:3decc57d-6015-4d6c-ad86-7f2134c013b6(jetbrains.mps.ide.findusages.findalgorithm.finders.specific)">
     <nodeInfo nodeId="7228605397000827273" fileName="ModelUsagesFinder.java" startLine="24" startPosition="73" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -467,6 +472,9 @@
       <varInfo nodeId="7228605397000827622" varName="searchedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827677" fileName="LanguageUsagesFinder.java" startLine="95" startPosition="109" endLine="104" endPosition="5" />
+    <scopeInfo nodeId="7228605397000827678" fileName="LanguageUsagesFinder.java" startLine="95" startPosition="109" endLine="104" endPosition="5">
+      <varInfo nodeId="7228605397000827682" varName="modelDescriptor" />
+    </scopeInfo>
     <scopeInfo nodeId="7228605397000827488" fileName="LanguageUsagesFinder.java" startLine="62" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="7228605397000827495" varName="searchResults" />
       <varInfo nodeId="7228605397000827491" varName="searchedLanguage" />

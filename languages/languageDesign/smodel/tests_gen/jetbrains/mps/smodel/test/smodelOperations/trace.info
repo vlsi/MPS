@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2282909602806268536">
+  <root nodeId="2282909602806268536" modelId="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)">
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="25" startPosition="127" endLine="26" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -279,11 +279,11 @@
     <scopeInfo nodeId="2282909602806536986" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="257" startPosition="0" endLine="271" endPosition="0" />
     <scopeInfo nodeId="2282909602806523726" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="229" startPosition="0" endLine="244" endPosition="0" />
     <scopeInfo nodeId="2521183994567837298" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="132" startPosition="0" endLine="149" endPosition="0" />
-    <unitInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="21" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test" />
     <unitInfo nodeId="2282909602806523757" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="235" startPosition="203" endLine="239" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$1" />
     <unitInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="113" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody" />
+    <unitInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="21" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test" />
   </root>
-  <root nodeId="278471160714179981">
+  <root nodeId="278471160714179981" modelId="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)">
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="25" startPosition="45" endLine="26" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="26" startPosition="127" endLine="27" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -555,8 +555,15 @@
     <scopeInfo nodeId="7199441945722555925" fileName="SLinkImplicitSelect_Test.java" startLine="155" startPosition="0" endLine="188" endPosition="0" />
     <scopeInfo nodeId="416617593863839726" fileName="SLinkImplicitSelect_Test.java" startLine="62" startPosition="47" endLine="120" endPosition="20" />
     <scopeInfo nodeId="416617593863839726" fileName="SLinkImplicitSelect_Test.java" startLine="61" startPosition="53" endLine="122" endPosition="0" />
-    <unitInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="22" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test" />
     <unitInfo nodeId="7199441945722528140" fileName="SLinkImplicitSelect_Test.java" startLine="65" startPosition="214" endLine="69" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$1" />
+    <unitInfo nodeId="7199441945722528140" fileName="SLinkImplicitSelect_Test.java" startLine="69" startPosition="20" endLine="73" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$2" />
+    <unitInfo nodeId="7199441945722530797" fileName="SLinkImplicitSelect_Test.java" startLine="74" startPosition="218" endLine="78" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$3" />
+    <unitInfo nodeId="7199441945722530801" fileName="SLinkImplicitSelect_Test.java" startLine="79" startPosition="214" endLine="83" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$4" />
+    <unitInfo nodeId="7199441945722530801" fileName="SLinkImplicitSelect_Test.java" startLine="83" startPosition="20" endLine="87" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$5" />
+    <unitInfo nodeId="7199441945722530813" fileName="SLinkImplicitSelect_Test.java" startLine="88" startPosition="218" endLine="92" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$6" />
+    <unitInfo nodeId="7199441945722533456" fileName="SLinkImplicitSelect_Test.java" startLine="93" startPosition="214" endLine="97" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$7" />
+    <unitInfo nodeId="7199441945722533456" fileName="SLinkImplicitSelect_Test.java" startLine="97" startPosition="20" endLine="101" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$8" />
+    <unitInfo nodeId="416617593863863684" fileName="SLinkImplicitSelect_Test.java" startLine="102" startPosition="218" endLine="106" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$9" />
     <unitInfo nodeId="416617593863863690" fileName="SLinkImplicitSelect_Test.java" startLine="107" startPosition="214" endLine="111" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$10" />
     <unitInfo nodeId="416617593863863690" fileName="SLinkImplicitSelect_Test.java" startLine="111" startPosition="20" endLine="115" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$11" />
     <unitInfo nodeId="416617593863863704" fileName="SLinkImplicitSelect_Test.java" startLine="116" startPosition="218" endLine="120" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$12" />
@@ -567,7 +574,6 @@
     <unitInfo nodeId="7551657168186611737" fileName="SLinkImplicitSelect_Test.java" startLine="144" startPosition="219" endLine="148" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$17" />
     <unitInfo nodeId="7551657168186616986" fileName="SLinkImplicitSelect_Test.java" startLine="149" startPosition="488" endLine="153" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$18" />
     <unitInfo nodeId="7199441945722555936" fileName="SLinkImplicitSelect_Test.java" startLine="159" startPosition="215" endLine="163" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$19" />
-    <unitInfo nodeId="7199441945722528140" fileName="SLinkImplicitSelect_Test.java" startLine="69" startPosition="20" endLine="73" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$2" />
     <unitInfo nodeId="7199441945722555936" fileName="SLinkImplicitSelect_Test.java" startLine="163" startPosition="20" endLine="167" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$20" />
     <unitInfo nodeId="7199441945722555983" fileName="SLinkImplicitSelect_Test.java" startLine="168" startPosition="484" endLine="172" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$21" />
     <unitInfo nodeId="7199441945722555983" fileName="SLinkImplicitSelect_Test.java" startLine="172" startPosition="20" endLine="176" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$22" />
@@ -578,15 +584,9 @@
     <unitInfo nodeId="34342663958922859" fileName="SLinkImplicitSelect_Test.java" startLine="208" startPosition="490" endLine="212" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$27" />
     <unitInfo nodeId="34342663958922859" fileName="SLinkImplicitSelect_Test.java" startLine="212" startPosition="20" endLine="216" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$28" />
     <unitInfo nodeId="3246402855336138753" fileName="SLinkImplicitSelect_Test.java" startLine="222" startPosition="610" endLine="226" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$29" />
-    <unitInfo nodeId="7199441945722530797" fileName="SLinkImplicitSelect_Test.java" startLine="74" startPosition="218" endLine="78" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$3" />
     <unitInfo nodeId="278471160714203836" fileName="SLinkImplicitSelect_Test.java" startLine="231" startPosition="51" endLine="235" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$30" />
-    <unitInfo nodeId="7199441945722530801" fileName="SLinkImplicitSelect_Test.java" startLine="79" startPosition="214" endLine="83" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$4" />
-    <unitInfo nodeId="7199441945722530801" fileName="SLinkImplicitSelect_Test.java" startLine="83" startPosition="20" endLine="87" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$5" />
-    <unitInfo nodeId="7199441945722530813" fileName="SLinkImplicitSelect_Test.java" startLine="88" startPosition="218" endLine="92" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$6" />
-    <unitInfo nodeId="7199441945722533456" fileName="SLinkImplicitSelect_Test.java" startLine="93" startPosition="214" endLine="97" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$7" />
-    <unitInfo nodeId="7199441945722533456" fileName="SLinkImplicitSelect_Test.java" startLine="97" startPosition="20" endLine="101" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$8" />
-    <unitInfo nodeId="416617593863863684" fileName="SLinkImplicitSelect_Test.java" startLine="102" startPosition="218" endLine="106" endPosition="7" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$9" />
     <unitInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="60" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody" />
+    <unitInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="22" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test" />
   </root>
 </debugInfo>
 

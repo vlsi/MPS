@@ -119,11 +119,27 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
-    if (eq_1myh1n_a0a0r(getLineDistance(), p.getLineDistance())) {
-      if (eq_1myh1n_a0a0a0r(myStartLine, p.myStartLine)) {
-        if (eq_1myh1n_a0a0a0a0r(myStartPosition, p.myStartPosition)) {
-          if (eq_1myh1n_a0a0a0a0a0r(myCachedModelId, p.myCachedModelId)) {
+    if (myFileName == null) {
+      if (p.myFileName != null) {
+        return 1;
+      }
+    } else {
+      if (p.myFileName == null) {
+        return -1;
+      }
+      int compareTo = myFileName.compareTo(p.myFileName);
+      if (compareTo != 0) {
+        return compareTo;
+      }
+    }
+    if (getLineDistance() == p.getLineDistance()) {
+      if (myStartLine == p.myStartLine) {
+        if (myStartPosition == p.myStartPosition) {
+          if (myEndPosition == p.myEndPosition) {
             if (myNodeId == null) {
+              if (p.myNodeId == null) {
+                return 0;
+              }
               return -1;
             }
             if (p.myNodeId == null) {
@@ -131,7 +147,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
             }
             return myNodeId.compareTo(p.myNodeId);
           } else {
-            return check_1myh1n_a0a0a0a0a0a0r(myCachedModelId, p);
+            return myEndPosition - p.myEndPosition;
           }
         } else {
           return myStartPosition - p.myStartPosition;
@@ -174,41 +190,6 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
       return checkedDotOperand.getValue();
     }
     return null;
-  }
-
-  private static int check_1myh1n_a0a0a0a0a0a0r(String checkedDotOperand, PositionInfo p) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.compareTo(p.myCachedModelId);
-    }
-    return 0;
-  }
-
-  private static boolean eq_1myh1n_a0a0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a0a0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_1myh1n_a0a0a0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   private static boolean eq_1myh1n_a0a0a0a0s(Object a, Object b) {

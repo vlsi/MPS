@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8534969608023739564">
+  <root nodeId="8534969608023739564" modelId="r:0b4f9bd8-28ae-4fed-96c9-ff2aa7974180(jetbrains.mps.lang.plugin.standalone.scripts)">
     <nodeInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="22" startPosition="90" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="25" startPosition="31" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="29" startPosition="41" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -137,9 +137,9 @@
       <varInfo nodeId="1457992527037889663" varName="parameter_14" />
       <varInfo nodeId="1457992527037889663" varName="parameter_15" />
     </scopeInfo>
-    <unitInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript" />
     <unitInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="24" startPosition="28" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript$1" />
     <unitInfo nodeId="1457992527037889663" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="58" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript$QuotationClass_vfglur_a1a3a4a0a0a1a0" />
+    <unitInfo nodeId="8534969608023739564" fileName="Mps25ApiMigrationStandalone_MigrationScript.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.scripts.Mps25ApiMigrationStandalone_MigrationScript" />
   </root>
 </debugInfo>
 

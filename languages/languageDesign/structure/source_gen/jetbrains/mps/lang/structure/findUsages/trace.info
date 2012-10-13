@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FindUsagesDescriptor.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
-  <root nodeId="1197632773078">
+  <root nodeId="1197632773078" modelId="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)">
     <nodeInfo nodeId="1197632773078" fileName="ConceptInstances_Finder.java" startLine="17" startPosition="62" endLine="18" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1197632773078" fileName="ConceptInstances_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197632773078" fileName="ConceptInstances_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -48,7 +48,7 @@
     </scopeInfo>
     <unitInfo nodeId="1197632773078" fileName="ConceptInstances_Finder.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
   </root>
-  <root nodeId="1197636141662">
+  <root nodeId="1197636141662" modelId="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)">
     <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="18" startPosition="56" endLine="19" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="24" startPosition="34" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="28" startPosition="38" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -95,7 +95,7 @@
     </scopeInfo>
     <unitInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
   </root>
-  <root nodeId="1198430852441">
+  <root nodeId="1198430852441" modelId="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)">
     <nodeInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="20" startPosition="70" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="26" startPosition="34" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="30" startPosition="38" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -162,7 +162,7 @@
     </scopeInfo>
     <unitInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder" />
   </root>
-  <root nodeId="1201275992898">
+  <root nodeId="1201275992898" modelId="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)">
     <nodeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="21" startPosition="59" endLine="22" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="27" startPosition="34" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -245,7 +245,7 @@
     </scopeInfo>
     <unitInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" />
   </root>
-  <root nodeId="1211301915928">
+  <root nodeId="1211301915928" modelId="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)">
     <nodeInfo nodeId="1211301915928" fileName="ExactConceptInstances_Finder.java" startLine="17" startPosition="67" endLine="18" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1211301915928" fileName="ExactConceptInstances_Finder.java" startLine="23" startPosition="34" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1211301915928" fileName="ExactConceptInstances_Finder.java" startLine="27" startPosition="38" endLine="28" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -292,7 +292,7 @@
     </scopeInfo>
     <unitInfo nodeId="1211301915928" fileName="ExactConceptInstances_Finder.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" />
   </root>
-  <root nodeId="1225128146050">
+  <root nodeId="1225128146050" modelId="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)">
     <nodeInfo nodeId="1225128146050" fileName="PropertyInstances_Finder.java" startLine="16" startPosition="63" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1225128146050" fileName="PropertyInstances_Finder.java" startLine="22" startPosition="34" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225128146050" fileName="PropertyInstances_Finder.java" startLine="26" startPosition="38" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

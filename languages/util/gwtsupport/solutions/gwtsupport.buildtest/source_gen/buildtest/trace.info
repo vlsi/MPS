@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3789315678729139399">
+  <root nodeId="3789315678729139399" modelId="r:77b60a8d-2582-4f88-b038-f330599ad949(buildtest)">
     <nodeInfo nodeId="3789315678729221765" fileName="SampleModule.java" startLine="72" startPosition="27" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3789315678729221770" fileName="SampleModule.java" startLine="75" startPosition="27" endLine="75" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3789315678729139415" fileName="SampleModule.java" startLine="26" startPosition="30" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -99,12 +99,12 @@
       <varInfo nodeId="3789315678729221739" varName="widgets" />
     </scopeInfo>
     <scopeInfo nodeId="3789315678729139428" fileName="SampleModule.java" startLine="30" startPosition="0" endLine="94" endPosition="0" />
-    <unitInfo nodeId="3789315678729139399" fileName="SampleModule.java" startLine="22" startPosition="0" endLine="105" endPosition="0" unitName="buildtest.SampleModule" />
-    <unitInfo nodeId="3789315678729221743" fileName="SampleModule.java" startLine="33" startPosition="46" endLine="39" endPosition="5" unitName="buildtest.SampleModule$1" />
-    <unitInfo nodeId="3789315678729221764" fileName="SampleModule.java" startLine="39" startPosition="32" endLine="88" endPosition="5" unitName="buildtest.SampleModule$2" />
     <unitInfo nodeId="3789315678729158627" fileName="SampleModule.java" startLine="97" startPosition="45" endLine="101" endPosition="5" unitName="buildtest.SampleModule$3" />
-    <unitInfo nodeId="3789315678729221764" fileName="SampleModule.java" startLine="41" startPosition="19" endLine="86" endPosition="9" unitName="buildtest.SampleModule$3" />
+    <unitInfo nodeId="3789315678729221743" fileName="SampleModule.java" startLine="33" startPosition="46" endLine="39" endPosition="5" unitName="buildtest.SampleModule$1" />
     <unitInfo nodeId="3789315678729221764" fileName="SampleModule.java" startLine="43" startPosition="23" endLine="84" endPosition="13" unitName="buildtest.SampleModule$4" />
+    <unitInfo nodeId="3789315678729221764" fileName="SampleModule.java" startLine="41" startPosition="19" endLine="86" endPosition="9" unitName="buildtest.SampleModule$3" />
+    <unitInfo nodeId="3789315678729221764" fileName="SampleModule.java" startLine="39" startPosition="32" endLine="88" endPosition="5" unitName="buildtest.SampleModule$2" />
+    <unitInfo nodeId="3789315678729139399" fileName="SampleModule.java" startLine="22" startPosition="0" endLine="105" endPosition="0" unitName="buildtest.SampleModule" />
   </root>
 </debugInfo>
 

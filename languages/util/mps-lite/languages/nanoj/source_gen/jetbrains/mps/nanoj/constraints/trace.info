@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="689680155165915392">
+  <root nodeId="689680155165915392" modelId="r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)">
     <nodeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="23" startPosition="77" endLine="24" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6gh6zs_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="26" startPosition="41" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -63,10 +63,10 @@
       <varInfo nodeId="689680155165915392" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="29" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints" />
-    <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="33" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$1" />
-    <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="42" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$2" />
     <unitInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="52" startPosition="112" endLine="56" endPosition="15" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$3" />
+    <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="42" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$2" />
+    <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="33" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$1" />
+    <unitInfo nodeId="689680155165915392" fileName="VarDeclReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints" />
   </root>
 </debugInfo>
 

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QuickQueryLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.QuickQueryLanguage_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.StructureAspectDescriptor" />
-  <root nodeId="1218793502081">
+  <root nodeId="1218793502081" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="1218793502081" fileName="ModelQuery.java" startLine="10" startPosition="43" endLine="11" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1218793502081" fileName="ModelQuery.java" startLine="13" startPosition="33" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1218793502081" fileName="ModelQuery.java" startLine="17" startPosition="65" endLine="18" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     </scopeInfo>
     <unitInfo nodeId="1218793502081" fileName="ModelQuery.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.ModelQuery" />
   </root>
-  <root nodeId="1218793664585">
+  <root nodeId="1218793664585" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="1218793664585" fileName="QueryCondition.java" startLine="10" startPosition="59" endLine="11" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1218793664585" fileName="QueryCondition.java" startLine="13" startPosition="37" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1218793664585" fileName="QueryCondition.java" startLine="17" startPosition="69" endLine="18" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -48,7 +48,7 @@
     </scopeInfo>
     <unitInfo nodeId="1218793664585" fileName="QueryCondition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.QueryCondition" />
   </root>
-  <root nodeId="1218793728835">
+  <root nodeId="1218793728835" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="1218793728835" fileName="Query_node_Parameter.java" startLine="11" startPosition="68" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1218793728835" fileName="Query_node_Parameter.java" startLine="14" startPosition="43" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1218793728835" fileName="Query_node_Parameter.java" startLine="18" startPosition="75" endLine="19" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -71,7 +71,7 @@
     </scopeInfo>
     <unitInfo nodeId="1218793728835" fileName="Query_node_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter" />
   </root>
-  <root nodeId="1219745756351">
+  <root nodeId="1219745756351" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="1219745756351" fileName="ReplaceModelQuery.java" startLine="10" startPosition="50" endLine="11" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1219745756351" fileName="ReplaceModelQuery.java" startLine="11" startPosition="102" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REPLACE" />
     <nodeInfo nodeId="1219745756351" fileName="ReplaceModelQuery.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -105,7 +105,7 @@
     </scopeInfo>
     <unitInfo nodeId="1219745756351" fileName="ReplaceModelQuery.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery" />
   </root>
-  <root nodeId="1219745924291">
+  <root nodeId="1219745924291" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="1219745924291" fileName="QueryReplace.java" startLine="10" startPosition="57" endLine="11" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1219745924291" fileName="QueryReplace.java" startLine="13" startPosition="35" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1219745924291" fileName="QueryReplace.java" startLine="17" startPosition="67" endLine="18" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -128,7 +128,7 @@
     </scopeInfo>
     <unitInfo nodeId="1219745924291" fileName="QueryReplace.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.QueryReplace" />
   </root>
-  <root nodeId="1219752983955">
+  <root nodeId="1219752983955" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="1219752983955" fileName="BaseQuery.java" startLine="12" startPosition="44" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1219752983955" fileName="BaseQuery.java" startLine="13" startPosition="94" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONCEPT_DECLARATION" />
     <nodeInfo nodeId="1219752983955" fileName="BaseQuery.java" startLine="14" startPosition="72" endLine="15" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONDITION" />
@@ -173,7 +173,7 @@
     </scopeInfo>
     <unitInfo nodeId="1219752983955" fileName="BaseQuery.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.BaseQuery" />
   </root>
-  <root nodeId="5046156961652249692">
+  <root nodeId="5046156961652249692" modelId="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)">
     <nodeInfo nodeId="5046156961652249692" fileName="AbstractQueryFunction.java" startLine="11" startPosition="60" endLine="12" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5046156961652249692" fileName="AbstractQueryFunction.java" startLine="14" startPosition="44" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5046156961652249692" fileName="AbstractQueryFunction.java" startLine="18" startPosition="76" endLine="19" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

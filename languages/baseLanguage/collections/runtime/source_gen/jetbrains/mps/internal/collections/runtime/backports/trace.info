@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="617707180879463996">
+  <root nodeId="617707180879463996" modelId="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)">
     <nodeInfo nodeId="617707180879464001" fileName="Deque.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFirst#(null)V" />
     <nodeInfo nodeId="617707180879464007" fileName="Deque.java" startLine="9" startPosition="28" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLast#(null)V" />
     <nodeInfo nodeId="617707180879464013" fileName="Deque.java" startLine="10" startPosition="27" endLine="11" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="descendingIterator#()Ljava/util/Iterator;" />
@@ -51,7 +51,7 @@
     </scopeInfo>
     <unitInfo nodeId="617707180879463996" fileName="Deque.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </root>
-  <root nodeId="617707180879468785">
+  <root nodeId="617707180879468785" modelId="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)">
     <nodeInfo nodeId="617707180879468817" fileName="LinkedList.java" startLine="9" startPosition="94" endLine="10" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="serialVersionUID" />
     <nodeInfo nodeId="617707180879468831" fileName="LinkedList.java" startLine="15" startPosition="43" endLine="16" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="617707180879468843" fileName="LinkedList.java" startLine="19" startPosition="34" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -151,10 +151,10 @@
     <scopeInfo nodeId="617707180879468931" fileName="LinkedList.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="617707180879468934" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="617707180879468785" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <unitInfo nodeId="617707180879468793" fileName="LinkedList.java" startLine="77" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
+    <unitInfo nodeId="617707180879468785" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </root>
-  <root nodeId="6543581031674027297">
+  <root nodeId="6543581031674027297" modelId="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)">
     <nodeInfo nodeId="6543581031674027302" fileName="Deque.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFirst#(null)V" />
     <nodeInfo nodeId="6543581031674027308" fileName="Deque.java" startLine="9" startPosition="28" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLast#(null)V" />
     <nodeInfo nodeId="6543581031674027314" fileName="Deque.java" startLine="10" startPosition="27" endLine="11" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="descendingIterator#()Ljava/util/Iterator;" />
@@ -205,7 +205,7 @@
     </scopeInfo>
     <unitInfo nodeId="6543581031674027297" fileName="Deque.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </root>
-  <root nodeId="6543581031674032086">
+  <root nodeId="6543581031674032086" modelId="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)">
     <nodeInfo nodeId="6543581031674032118" fileName="LinkedList.java" startLine="9" startPosition="94" endLine="10" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="serialVersionUID" />
     <nodeInfo nodeId="6543581031674032132" fileName="LinkedList.java" startLine="15" startPosition="43" endLine="16" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674032144" fileName="LinkedList.java" startLine="19" startPosition="34" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -307,8 +307,8 @@
     <scopeInfo nodeId="6543581031674032218" fileName="LinkedList.java" startLine="62" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="6543581031674032221" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674032086" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <unitInfo nodeId="6543581031674032094" fileName="LinkedList.java" startLine="80" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
+    <unitInfo nodeId="6543581031674032086" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </root>
 </debugInfo>
 

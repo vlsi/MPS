@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1238932916942">
+  <root nodeId="1238932916942" modelId="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)">
     <nodeInfo nodeId="1238932916943" fileName="MultiTuple.java" startLine="7" startPosition="25" endLine="8" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY" />
     <nodeInfo nodeId="1238932916952" fileName="MultiTuple.java" startLine="9" startPosition="0" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="values" />
     <nodeInfo nodeId="1238932917200" fileName="MultiTuple.java" startLine="13" startPosition="43" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1274,7 +1274,6 @@
       <varInfo nodeId="1238932917053" varName="that" />
     </scopeInfo>
     <scopeInfo nodeId="1238932917103" fileName="MultiTuple.java" startLine="44" startPosition="0" endLine="55" endPosition="0" />
-    <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="7" startPosition="0" endLine="1100" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="165" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_0" />
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="182" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_1" />
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="216" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_2" />
@@ -1285,8 +1284,9 @@
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="641" startPosition="0" endLine="776" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_7" />
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="777" startPosition="0" endLine="929" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_8" />
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="930" startPosition="0" endLine="1099" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_9" />
+    <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="7" startPosition="0" endLine="1100" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </root>
-  <root nodeId="1238932923132">
+  <root nodeId="1238932923132" modelId="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)">
     <nodeInfo nodeId="1238932923132" fileName="Tuples.java" startLine="10" startPosition="30" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assign#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="1238932923132" fileName="Tuples.java" startLine="14" startPosition="52" endLine="15" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_0#(null)null" />
     <nodeInfo nodeId="1238932923132" fileName="Tuples.java" startLine="15" startPosition="27" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_0#()null" />
@@ -1600,7 +1600,6 @@
       <varInfo nodeId="1238932923132" varName="from" />
     </scopeInfo>
     <scopeInfo nodeId="1238932923134" fileName="Tuples.java" startLine="6" startPosition="21" endLine="8" endPosition="3" />
-    <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="6" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="10" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples$_0" />
     <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="14" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples$_1" />
     <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples$_2" />
@@ -1611,6 +1610,7 @@
     <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples$_7" />
     <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="98" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples$_8" />
     <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="118" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples$_9" />
+    <unitInfo nodeId="1238932923132" fileName="Tuples.java" startLine="6" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
   </root>
 </debugInfo>
 

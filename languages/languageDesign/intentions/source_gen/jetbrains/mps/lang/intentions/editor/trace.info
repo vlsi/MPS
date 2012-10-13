@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1240319625734">
+  <root nodeId="1240319625734" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="1240319632814" fileName="QueryBlock_Editor.java" startLine="61" startPosition="69" endLine="61" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240319625734" fileName="QueryBlock_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240319625734" fileName="QueryBlock_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -208,11 +208,11 @@
       <varInfo nodeId="1240319640305" varName="editorContext" />
       <varInfo nodeId="1240319640305" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1240319625734" fileName="QueryBlock_Editor.java" startLine="28" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor" />
-    <unitInfo nodeId="1240319640305" fileName="QueryBlock_Editor.java" startLine="94" startPosition="40" endLine="118" endPosition="5" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$1" />
     <unitInfo nodeId="1240319640311" fileName="QueryBlock_Editor.java" startLine="96" startPosition="19" endLine="116" endPosition="9" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$2" />
+    <unitInfo nodeId="1240319640305" fileName="QueryBlock_Editor.java" startLine="94" startPosition="40" endLine="118" endPosition="5" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$1" />
+    <unitInfo nodeId="1240319625734" fileName="QueryBlock_Editor.java" startLine="28" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor" />
   </root>
-  <root nodeId="1240395571943">
+  <root nodeId="1240395571943" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="1240395573443" fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="268" startPosition="58" endLine="268" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240395573445" fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="285" startPosition="58" endLine="285" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240395573448" fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="302" startPosition="58" endLine="302" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -966,10 +966,10 @@
       <varInfo nodeId="1240395573457" varName="editorContext" />
       <varInfo nodeId="1240395573457" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1240395571943" fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="29" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor" />
     <unitInfo nodeId="1240395573458" fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="393" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor$_Inline_crf3gy_a4a0a" />
+    <unitInfo nodeId="1240395571943" fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="29" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor" />
   </root>
-  <root nodeId="1240405347587">
+  <root nodeId="1240405347587" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="1240405347587" fileName="IntentionParameter_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240405367294" fileName="IntentionParameter_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240405367294" fileName="IntentionParameter_Editor.java" startLine="25" startPosition="99" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1035,7 +1035,7 @@
     </scopeInfo>
     <unitInfo nodeId="1240405347587" fileName="IntentionParameter_Editor.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionParameter_Editor" />
   </root>
-  <root nodeId="4359456199357025378">
+  <root nodeId="4359456199357025378" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="4359456199357025383" fileName="IntentionContextParamReference_Editor.java" startLine="36" startPosition="58" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4359456199357025378" fileName="IntentionContextParamReference_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4359456199357025380" fileName="IntentionContextParamReference_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1144,10 +1144,10 @@
       <varInfo nodeId="4359456199357025386" varName="editorContext" />
       <varInfo nodeId="4359456199357025386" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4359456199357025378" fileName="IntentionContextParamReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParamReference_Editor" />
     <unitInfo nodeId="4359456199357025384" fileName="IntentionContextParamReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParamReference_Editor$_Inline_vks2hh_a0a" />
+    <unitInfo nodeId="4359456199357025378" fileName="IntentionContextParamReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParamReference_Editor" />
   </root>
-  <root nodeId="4359456199357188673">
+  <root nodeId="4359456199357188673" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="4359456199357188680" fileName="IntentionContextParameterDeclaration_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4359456199357188673" fileName="IntentionContextParameterDeclaration_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4359456199357188675" fileName="IntentionContextParameterDeclaration_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1242,7 +1242,7 @@
     </scopeInfo>
     <unitInfo nodeId="4359456199357188673" fileName="IntentionContextParameterDeclaration_Editor.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParameterDeclaration_Editor" />
   </root>
-  <root nodeId="5180116501957618331">
+  <root nodeId="5180116501957618331" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="5180116501957618350" fileName="GenerateIntentionDeclaration_Editor.java" startLine="328" startPosition="58" endLine="328" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5180116501957618358" fileName="GenerateIntentionDeclaration_Editor.java" startLine="345" startPosition="58" endLine="345" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5180116501957618361" fileName="GenerateIntentionDeclaration_Editor.java" startLine="362" startPosition="58" endLine="362" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2165,11 +2165,11 @@
       <varInfo nodeId="5180116501957618370" varName="editorContext" />
       <varInfo nodeId="5180116501957618370" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5180116501957618331" fileName="GenerateIntentionDeclaration_Editor.java" startLine="38" startPosition="0" endLine="526" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor" />
     <unitInfo nodeId="5180116501957618371" fileName="GenerateIntentionDeclaration_Editor.java" startLine="456" startPosition="0" endLine="489" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$_Inline_l6fw9g_a3a0a" />
     <unitInfo nodeId="4359456199356557604" fileName="GenerateIntentionDeclaration_Editor.java" startLine="490" startPosition="0" endLine="525" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$parameterListHandler_l6fw9g_b5b1a" />
+    <unitInfo nodeId="5180116501957618331" fileName="GenerateIntentionDeclaration_Editor.java" startLine="38" startPosition="0" endLine="526" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor" />
   </root>
-  <root nodeId="6263518417926799610">
+  <root nodeId="6263518417926799610" modelId="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)">
     <nodeInfo nodeId="6263518417926799629" fileName="BaseIntentionDeclaration_Editor.java" startLine="273" startPosition="58" endLine="273" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6263518417926799637" fileName="BaseIntentionDeclaration_Editor.java" startLine="290" startPosition="58" endLine="290" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6263518417926799640" fileName="BaseIntentionDeclaration_Editor.java" startLine="307" startPosition="58" endLine="307" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2942,8 +2942,8 @@
       <varInfo nodeId="6263518417926799649" varName="editorContext" />
       <varInfo nodeId="6263518417926799649" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6263518417926799610" fileName="BaseIntentionDeclaration_Editor.java" startLine="30" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor" />
     <unitInfo nodeId="6263518417926799650" fileName="BaseIntentionDeclaration_Editor.java" startLine="402" startPosition="0" endLine="435" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor$_Inline_2ji0fa_a3a0a" />
+    <unitInfo nodeId="6263518417926799610" fileName="BaseIntentionDeclaration_Editor.java" startLine="30" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor" />
   </root>
 </debugInfo>
 

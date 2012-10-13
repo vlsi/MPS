@@ -33,10 +33,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -320,38 +317,43 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     myNamesWithNoConcepts.clear();
   }
 
-  public SNode findConceptDeclaration(@NotNull String conceptName) {
+  public SNode findConceptDeclaration(@NotNull final String conceptName) {
     if (myNamesLoadingState == ModelLoadingState.FULLY_LOADED) return myNameToConceptCache.get(conceptName);
     if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     if (myNamesWithNoConcepts.contains(conceptName)) return null;
 
-    SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-    if (structureModelDescriptor == null) return null;
-    SModel structureModel = structureModelDescriptor.getSModel();
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+        if (structureModelDescriptor == null) return null;
+        SModel structureModel = structureModelDescriptor.getSModel();
 
-    //if not all the model is loaded, we try to look up the given concept only between root nodes first
-    if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-      for (SNode root : structureModel.roots()) {
-        String name = getConceptName(root);
-        if (name == null) continue;
-        myNameToConceptCache.putIfAbsent(name, root);
+        //if not all the model is loaded, we try to look up the given concept only between root nodes first
+        if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
+          for (SNode root : structureModel.roots()) {
+            String name = getConceptName(root);
+            if (name == null) continue;
+            myNameToConceptCache.putIfAbsent(name, root);
+          }
+          if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
+        }
+
+        //if we haven't found a root concept, then try to find in any node in the model
+        for (SNode node : structureModel.nodes()) {
+          String name = getConceptName(node);
+          if (name == null) continue;
+          myNameToConceptCache.putIfAbsent(name, node);
+        }
+
+        SNode result = myNameToConceptCache.get(conceptName);
+        if (result == null) {
+          myNamesWithNoConcepts.add(conceptName);
+        }
+
+        return result;
       }
-      if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
-    }
-
-    //if we haven't found a root concept, then try to find in any node in the model
-    for (SNode node : structureModel.nodes()) {
-      String name = getConceptName(node);
-      if (name == null) continue;
-      myNameToConceptCache.putIfAbsent(name, node);
-    }
-
-    SNode result = myNameToConceptCache.get(conceptName);
-    if (result == null) {
-      myNamesWithNoConcepts.add(conceptName);
-    }
-
-    return result;
+    });
   }
 
   private String getConceptName(SNode node) {

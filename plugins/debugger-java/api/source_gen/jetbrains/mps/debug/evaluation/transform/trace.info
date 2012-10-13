@@ -38,8 +38,8 @@
     <scopeInfo nodeId="8321799582438670187" fileName="TransformatorBuilder.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="4871586248217809910" fileName="TransformatorBuilder.java" startLine="25" startPosition="52" endLine="28" endPosition="5" />
     <scopeInfo nodeId="4871586248217809907" fileName="TransformatorBuilder.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="4871586248217809898" fileName="TransformatorBuilder.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
     <unitInfo nodeId="8321799582438650756" fileName="TransformatorBuilder.java" startLine="31" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder$Transformator" />
+    <unitInfo nodeId="4871586248217809898" fileName="TransformatorBuilder.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
   </root>
 </debugInfo>
 

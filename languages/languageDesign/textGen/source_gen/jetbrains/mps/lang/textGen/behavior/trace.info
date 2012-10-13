@@ -103,6 +103,7 @@
     <scopeInfo nodeId="1234781318164" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="29" startPosition="36" endLine="34" endPosition="7">
       <varInfo nodeId="1234781318181" varName="func" />
     </scopeInfo>
+    <scopeInfo nodeId="1234781318218" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1234781318219" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7">
       <varInfo nodeId="1234781318236" varName="func" />
     </scopeInfo>

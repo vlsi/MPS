@@ -2,15 +2,15 @@
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Traceable_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.Traceable_Language" />
-  <root nodeId="5067982036267369890">
+  <root nodeId="5067982036267369890" modelId="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)">
     <nodeInfo nodeId="5067982036267369890" fileName="ScopeConcept.java" startLine="7" startPosition="52" endLine="8" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="5067982036267369890" fileName="ScopeConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
   </root>
-  <root nodeId="5067982036267369891">
+  <root nodeId="5067982036267369891" modelId="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)">
     <nodeInfo nodeId="5067982036267369891" fileName="TraceableConcept.java" startLine="7" startPosition="56" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="5067982036267369891" fileName="TraceableConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
   </root>
-  <root nodeId="5067982036267369892">
+  <root nodeId="5067982036267369892" modelId="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)">
     <nodeInfo nodeId="5067982036267369892" fileName="UnitConcept.java" startLine="7" startPosition="51" endLine="8" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="5067982036267369892" fileName="UnitConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.UnitConcept" />
   </root>

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ExtensionMethods_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethods_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.StructureAspectDescriptor" />
-  <root nodeId="1550313277221324859">
+  <root nodeId="1550313277221324859" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="1550313277221324859" fileName="ExtensionMethodCall.java" startLine="18" startPosition="89" endLine="19" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1550313277221324859" fileName="ExtensionMethodCall.java" startLine="19" startPosition="115" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1550313277221324859" fileName="ExtensionMethodCall.java" startLine="20" startPosition="68" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -131,7 +131,7 @@
     </scopeInfo>
     <unitInfo nodeId="1550313277221324859" fileName="ExtensionMethodCall.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall" />
   </root>
-  <root nodeId="1550313277222152185">
+  <root nodeId="1550313277222152185" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="1550313277222152185" fileName="ExtensionMethodDeclaration.java" startLine="17" startPosition="99" endLine="18" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1550313277222152185" fileName="ExtensionMethodDeclaration.java" startLine="18" startPosition="122" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1550313277222152185" fileName="ExtensionMethodDeclaration.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -235,7 +235,7 @@
     </scopeInfo>
     <unitInfo nodeId="1550313277222152185" fileName="ExtensionMethodDeclaration.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration" />
   </root>
-  <root nodeId="1894531970723270160">
+  <root nodeId="1894531970723270160" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="1894531970723270160" fileName="TypeExtension.java" startLine="11" startPosition="65" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1894531970723270160" fileName="TypeExtension.java" startLine="12" startPosition="109" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
     <nodeInfo nodeId="1894531970723270160" fileName="TypeExtension.java" startLine="15" startPosition="36" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -269,7 +269,7 @@
     </scopeInfo>
     <unitInfo nodeId="1894531970723270160" fileName="TypeExtension.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension" />
   </root>
-  <root nodeId="1973189701690850247">
+  <root nodeId="1973189701690850247" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="1973189701690850247" fileName="ExtensionStaticFieldReference.java" startLine="11" startPosition="70" endLine="12" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1973189701690850247" fileName="ExtensionStaticFieldReference.java" startLine="14" startPosition="52" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1973189701690850247" fileName="ExtensionStaticFieldReference.java" startLine="18" startPosition="70" endLine="19" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -302,7 +302,7 @@
     </scopeInfo>
     <unitInfo nodeId="1973189701690850247" fileName="ExtensionStaticFieldReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference" />
   </root>
-  <root nodeId="1973189701691027447">
+  <root nodeId="1973189701691027447" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="1973189701691027447" fileName="ExtensionStaticFieldDeclaration.java" startLine="11" startPosition="74" endLine="12" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1973189701691027447" fileName="ExtensionStaticFieldDeclaration.java" startLine="14" startPosition="54" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1973189701691027447" fileName="ExtensionStaticFieldDeclaration.java" startLine="18" startPosition="86" endLine="19" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -325,7 +325,7 @@
     </scopeInfo>
     <unitInfo nodeId="1973189701691027447" fileName="ExtensionStaticFieldDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration" />
   </root>
-  <root nodeId="3316739663067157299">
+  <root nodeId="3316739663067157299" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="3316739663067157299" fileName="ThisExtensionExpression.java" startLine="11" startPosition="57" endLine="12" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3316739663067157299" fileName="ThisExtensionExpression.java" startLine="14" startPosition="46" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3316739663067157299" fileName="ThisExtensionExpression.java" startLine="18" startPosition="78" endLine="19" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -348,7 +348,7 @@
     </scopeInfo>
     <unitInfo nodeId="3316739663067157299" fileName="ThisExtensionExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression" />
   </root>
-  <root nodeId="7685333756920172912">
+  <root nodeId="7685333756920172912" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="7685333756920172912" fileName="LocalExtendedMethodCall.java" startLine="12" startPosition="61" endLine="13" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7685333756920172912" fileName="LocalExtendedMethodCall.java" startLine="15" startPosition="46" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7685333756920172912" fileName="LocalExtendedMethodCall.java" startLine="19" startPosition="67" endLine="20" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -381,7 +381,7 @@
     </scopeInfo>
     <unitInfo nodeId="7685333756920172912" fileName="LocalExtendedMethodCall.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall" />
   </root>
-  <root nodeId="8022092943109322131">
+  <root nodeId="8022092943109322131" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="8022092943109322131" fileName="SimpleExtensionMethodsContainer.java" startLine="10" startPosition="83" endLine="11" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8022092943109322131" fileName="SimpleExtensionMethodsContainer.java" startLine="13" startPosition="54" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8022092943109322131" fileName="SimpleExtensionMethodsContainer.java" startLine="17" startPosition="86" endLine="18" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -404,7 +404,7 @@
     </scopeInfo>
     <unitInfo nodeId="8022092943109322131" fileName="SimpleExtensionMethodsContainer.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer" />
   </root>
-  <root nodeId="8022092943110829337">
+  <root nodeId="8022092943110829337" modelId="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
     <nodeInfo nodeId="8022092943110829337" fileName="BaseExtensionMethodContainer.java" startLine="17" startPosition="108" endLine="18" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8022092943110829337" fileName="BaseExtensionMethodContainer.java" startLine="18" startPosition="124" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="8022092943110829337" fileName="BaseExtensionMethodContainer.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />

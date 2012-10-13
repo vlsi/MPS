@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="9152904044274358977">
+  <root nodeId="9152904044274358977" modelId="r:63e559bf-39bb-4209-acb3-f4d189328793(jetbrains.mps.samples.xmlLiterals.sandbox.sandbox)">
     <nodeInfo nodeId="7417816926334720594" fileName="Person.java" startLine="9" startPosition="21" endLine="10" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="7417816926334720598" fileName="Person.java" startLine="10" startPosition="22" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="lastName" />
     <nodeInfo nodeId="7417816926334720602" fileName="Person.java" startLine="11" startPosition="26" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="address" />
@@ -66,10 +66,10 @@
     <scopeInfo nodeId="9152904044274464620" fileName="Person.java" startLine="42" startPosition="56" endLine="59" endPosition="0" />
     <scopeInfo nodeId="9152904044274458174" fileName="Person.java" startLine="41" startPosition="26" endLine="59" endPosition="15" />
     <scopeInfo nodeId="9152904044274458171" fileName="Person.java" startLine="40" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="9152904044274358977" fileName="Person.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" />
     <unitInfo nodeId="9152904044274464620" fileName="Person.java" startLine="42" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person$1" />
+    <unitInfo nodeId="9152904044274358977" fileName="Person.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" />
   </root>
-  <root nodeId="9152904044274518176">
+  <root nodeId="9152904044274518176" modelId="r:63e559bf-39bb-4209-acb3-f4d189328793(jetbrains.mps.samples.xmlLiterals.sandbox.sandbox)">
     <nodeInfo nodeId="7417816926334720689" fileName="Address.java" startLine="9" startPosition="22" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addressString" />
     <nodeInfo nodeId="7946777123643247292" fileName="Address.java" startLine="12" startPosition="40" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7417816926334720722" fileName="Address.java" startLine="16" startPosition="36" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -95,8 +95,8 @@
     <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="56" endLine="28" endPosition="0" />
     <scopeInfo nodeId="9152904044274518185" fileName="Address.java" startLine="20" startPosition="26" endLine="28" endPosition="15" />
     <scopeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="9152904044274518176" fileName="Address.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
     <unitInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="15" endLine="28" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
+    <unitInfo nodeId="9152904044274518176" fileName="Address.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
   </root>
 </debugInfo>
 

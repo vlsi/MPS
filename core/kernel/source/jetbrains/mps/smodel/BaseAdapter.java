@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -225,22 +226,22 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public void addChild(@NotNull String role,
-                       @NotNull INodeAdapter child) {
+             @NotNull INodeAdapter child) {
     myNode.addChild(role, child.getNode());
   }
 
 
   public void insertChild(@Nullable INodeAdapter anchorChild,
-                          @NotNull String role,
-                          @NotNull INodeAdapter child,
-                          boolean insertBefore) {
+              @NotNull String role,
+              @NotNull INodeAdapter child,
+              boolean insertBefore) {
     myNode.insertChild(BaseAdapter.fromAdapter(anchorChild), role, BaseAdapter.fromAdapter(child), insertBefore);
   }
 
 
   public void insertChild(@Nullable INodeAdapter anchorChild,
-                          @NotNull String role,
-                          @NotNull INodeAdapter child) {
+              @NotNull String role,
+              @NotNull INodeAdapter child) {
     SNode anchorNode = null;
     if (anchorChild != null) {
       anchorNode = anchorChild.getNode();
@@ -553,21 +554,26 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
 
     if (lookupHierarchy) {
-      return new ConceptAndSuperConceptsScope(conceptDeclaration).
-        getNodes(new Condition<SNode>() {
-          public boolean met(SNode n) {
-            if (SNodeUtil.isInstanceOfConceptLink(n)) {
-              SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
-              return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
-            }
-            return false;
-          }
-        });
+      final SNode finalConceptDeclaration = conceptDeclaration;
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+        public List<SNode> compute() {
+          return new ConceptAndSuperConceptsScope(finalConceptDeclaration).
+            getNodes(new Condition<SNode>() {
+              public boolean met(SNode n) {
+                if (SNodeUtil.isInstanceOfConceptLink(n)) {
+                  SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
+                  return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
+                }
+                return false;
+              }
+            });
+        }
+      });
     }
 
     List<SNode> result = new ArrayList<SNode>();
     Iterable<SNode> conceptLinks = SNodeUtil.getConcept_ConceptLinks(conceptDeclaration);
-    for(SNode conceptLink : conceptLinks) {
+    for (SNode conceptLink : conceptLinks) {
       SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(conceptLink);
       if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
         result.add(conceptLink);

@@ -211,13 +211,13 @@
     <scopeInfo nodeId="173672751428921493" fileName="GeneratedTextPreviewEditor.java" startLine="156" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="173672751428921664" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
-    <unitInfo nodeId="173672751428921316" fileName="GeneratedTextPreviewEditor.java" startLine="101" startPosition="15" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$1" />
     <unitInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="131" startPosition="31" endLine="134" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$2" />
+    <unitInfo nodeId="173672751428921316" fileName="GeneratedTextPreviewEditor.java" startLine="101" startPosition="15" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$1" />
     <unitInfo nodeId="173672751428921464" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="129" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$3" />
-    <unitInfo nodeId="173672751428921591" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="24" endLine="187" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$4" />
     <unitInfo nodeId="173672751428921203" fileName="GeneratedTextPreviewEditor.java" startLine="232" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$EditorStateStub" />
+    <unitInfo nodeId="173672751428921591" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="24" endLine="187" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$4" />
     <unitInfo nodeId="173672751428921113" fileName="GeneratedTextPreviewEditor.java" startLine="192" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$Panel" />
+    <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
   </root>
   <root nodeId="173672751428921679" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428921691" fileName="GeneratedTextPreviewEditorProvider.java" startLine="22" startPosition="39" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -273,8 +273,8 @@
       <varInfo nodeId="173672751428921723" varName="file" />
       <varInfo nodeId="173672751428921720" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921679" fileName="GeneratedTextPreviewEditorProvider.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider" />
     <unitInfo nodeId="173672751428921731" fileName="GeneratedTextPreviewEditorProvider.java" startLine="37" startPosition="15" endLine="41" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider$1" />
+    <unitInfo nodeId="173672751428921679" fileName="GeneratedTextPreviewEditorProvider.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider" />
   </root>
   <root nodeId="173672751428921785" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428921786" fileName="Icons.java" startLine="8" startPosition="20" endLine="9" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED" />
@@ -506,12 +506,12 @@
     <scopeInfo nodeId="173672751428921835" fileName="MakeTask.java" startLine="55" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="173672751428921838" varName="monitor" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921800" fileName="MakeTask.java" startLine="35" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask" />
     <unitInfo nodeId="173672751428922291" fileName="MakeTask.java" startLine="169" startPosition="64" endLine="177" endPosition="7" unitName="jetbrains.mps.ide.make.MakeTask$1" />
     <unitInfo nodeId="173672751428921855" fileName="MakeTask.java" startLine="58" startPosition="43" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.MakeTask$1" />
-    <unitInfo nodeId="173672751428922191" fileName="MakeTask.java" startLine="156" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState" />
     <unitInfo nodeId="173672751428922083" fileName="MakeTask.java" startLine="120" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$WorkbenchMakeTask" />
     <unitInfo nodeId="173672751428922192" fileName="MakeTask.java" startLine="166" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask.TaskState$RelayingLoggingHandler" />
+    <unitInfo nodeId="173672751428922191" fileName="MakeTask.java" startLine="156" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState" />
+    <unitInfo nodeId="173672751428921800" fileName="MakeTask.java" startLine="35" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask" />
   </root>
   <root nodeId="173672751428922365" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428922366" fileName="TextPreviewFile.java" startLine="20" startPosition="54" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FS" />
@@ -803,8 +803,8 @@
       <varInfo nodeId="1147673792958720117" varName="flags" />
     </scopeInfo>
     <scopeInfo nodeId="173672751428922726" fileName="TextPreviewFile.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="173672751428922365" fileName="TextPreviewFile.java" startLine="20" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile" />
     <unitInfo nodeId="173672751428922371" fileName="TextPreviewFile.java" startLine="124" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile$TextPreviewVirtualFileSystem" />
+    <unitInfo nodeId="173672751428922365" fileName="TextPreviewFile.java" startLine="20" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile" />
   </root>
   <root nodeId="173672751428922919" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428922924" fileName="TextPreviewUtil.java" startLine="36" startPosition="126" endLine="37" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -868,10 +868,10 @@
       <varInfo nodeId="173672751428923094" varName="md" />
       <varInfo nodeId="173672751428923090" varName="session" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428922919" fileName="TextPreviewUtil.java" startLine="32" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewUtil" />
     <unitInfo nodeId="173672751428922952" fileName="TextPreviewUtil.java" startLine="39" startPosition="59" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$1" />
-    <unitInfo nodeId="173672751428922997" fileName="TextPreviewUtil.java" startLine="47" startPosition="66" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$2" />
     <unitInfo nodeId="173672751428923053" fileName="TextPreviewUtil.java" startLine="56" startPosition="43" endLine="61" endPosition="13" unitName="jetbrains.mps.ide.make.TextPreviewUtil$3" />
+    <unitInfo nodeId="173672751428922997" fileName="TextPreviewUtil.java" startLine="47" startPosition="66" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$2" />
+    <unitInfo nodeId="173672751428922919" fileName="TextPreviewUtil.java" startLine="32" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewUtil" />
   </root>
   <root nodeId="173672751428923101" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428923186" fileName="UIFeedbackStrategy.java" startLine="10" startPosition="33" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="handler" />
@@ -945,10 +945,10 @@
       <varInfo nodeId="173672751428923194" varName="context" />
       <varInfo nodeId="173672751428923191" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428923189" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
+    <unitInfo nodeId="173672751428923279" fileName="UIQueryRelayStrategy.java" startLine="41" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$DialogListener" />
     <unitInfo nodeId="173672751428923215" fileName="UIQueryRelayStrategy.java" startLine="23" startPosition="71" endLine="27" endPosition="5" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$1" />
     <unitInfo nodeId="173672751428923239" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="41" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$2" />
-    <unitInfo nodeId="173672751428923279" fileName="UIQueryRelayStrategy.java" startLine="41" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$DialogListener" />
+    <unitInfo nodeId="173672751428923189" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
   </root>
   <root nodeId="173672751428923285" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428923286" fileName="WorkbenchMakeService.java" startLine="64" startPosition="109" endLine="65" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1488,18 +1488,18 @@
       <varInfo nodeId="173672751428923329" varName="controller" />
       <varInfo nodeId="173672751428923326" varName="scripts" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428923285" fileName="WorkbenchMakeService.java" startLine="64" startPosition="0" endLine="500" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService" />
     <unitInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="190" startPosition="127" endLine="194" endPosition="5" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-    <unitInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="384" startPosition="48" endLine="393" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-    <unitInfo nodeId="173672751428923348" fileName="WorkbenchMakeService.java" startLine="310" startPosition="32" endLine="327" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
     <unitInfo nodeId="173672751428923738" fileName="WorkbenchMakeService.java" startLine="423" startPosition="20" endLine="427" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
-    <unitInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="331" startPosition="30" endLine="345" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
+    <unitInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="384" startPosition="48" endLine="393" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
     <unitInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="333" startPosition="43" endLine="343" endPosition="13" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
     <unitInfo nodeId="173672751428923820" fileName="WorkbenchMakeService.java" startLine="447" startPosition="25" endLine="459" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
-    <unitInfo nodeId="173672751428923869" fileName="WorkbenchMakeService.java" startLine="460" startPosition="24" endLine="478" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$4" />
-    <unitInfo nodeId="173672751428923520" fileName="WorkbenchMakeService.java" startLine="365" startPosition="0" endLine="481" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$Controller" />
+    <unitInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="331" startPosition="30" endLine="345" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
+    <unitInfo nodeId="173672751428923348" fileName="WorkbenchMakeService.java" startLine="310" startPosition="32" endLine="327" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
     <unitInfo nodeId="173672751428923922" fileName="WorkbenchMakeService.java" startLine="482" startPosition="0" endLine="499" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$MessageHandler" />
+    <unitInfo nodeId="173672751428923869" fileName="WorkbenchMakeService.java" startLine="460" startPosition="24" endLine="478" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$4" />
     <unitInfo nodeId="173672751428923295" fileName="WorkbenchMakeService.java" startLine="293" startPosition="0" endLine="364" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$TaskRunner" />
+    <unitInfo nodeId="173672751428923520" fileName="WorkbenchMakeService.java" startLine="365" startPosition="0" endLine="481" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$Controller" />
+    <unitInfo nodeId="173672751428923285" fileName="WorkbenchMakeService.java" startLine="64" startPosition="0" endLine="500" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService" />
   </root>
 </debugInfo>
 

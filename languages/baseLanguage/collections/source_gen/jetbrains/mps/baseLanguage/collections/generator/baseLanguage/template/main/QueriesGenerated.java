@@ -2305,7 +2305,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8293956702610522707(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "variable", true));
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "variable", true));
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      return type;
+    }
+    return ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"));
   }
 
   public static SNode sourceNodeQuery_8293956702610523083(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

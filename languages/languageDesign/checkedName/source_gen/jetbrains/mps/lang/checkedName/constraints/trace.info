@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.checkedName.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="4844813484172611610">
+  <root nodeId="4844813484172611610" modelId="r:bfde7c59-4df1-47aa-b96c-63906ea441df(jetbrains.mps.lang.checkedName.constraints)">
     <nodeInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="23" startPosition="82" endLine="24" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_e11h12_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="26" startPosition="46" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -37,9 +37,9 @@
       <varInfo nodeId="4844813484172611610" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="29" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="23" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.checkedName.constraints.PropertyRefExpression_Constraints" />
-    <unitInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="33" startPosition="46" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.checkedName.constraints.PropertyRefExpression_Constraints$1" />
     <unitInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="42" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.lang.checkedName.constraints.PropertyRefExpression_Constraints$2" />
+    <unitInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="33" startPosition="46" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.checkedName.constraints.PropertyRefExpression_Constraints$1" />
+    <unitInfo nodeId="4844813484172611610" fileName="PropertyRefExpression_Constraints.java" startLine="23" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.checkedName.constraints.PropertyRefExpression_Constraints" />
   </root>
 </debugInfo>
 

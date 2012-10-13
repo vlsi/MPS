@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1153940807216">
+  <root nodeId="1153940807216" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
     <nodeInfo nodeId="1224754223483" fileName="Main_map_operation.java" startLine="49" startPosition="27" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="119" startPosition="27" endLine="119" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223624" fileName="Main_map_operation.java" startLine="122" startPosition="27" endLine="122" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -158,15 +158,15 @@
     <scopeInfo nodeId="1153940807217" fileName="Main_map_operation.java" startLine="16" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="1153940807312" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1153940807216" fileName="Main_map_operation.java" startLine="13" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation" />
-    <unitInfo nodeId="1224754223475" fileName="Main_map_operation.java" startLine="18" startPosition="54" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$1" />
-    <unitInfo nodeId="1224754223475" fileName="Main_map_operation.java" startLine="20" startPosition="19" endLine="64" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$2" />
-    <unitInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="71" startPosition="73" endLine="144" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$2" />
     <unitInfo nodeId="1224754223475" fileName="Main_map_operation.java" startLine="22" startPosition="23" endLine="62" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$3" />
-    <unitInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="73" startPosition="19" endLine="142" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$3" />
+    <unitInfo nodeId="1224754223475" fileName="Main_map_operation.java" startLine="20" startPosition="19" endLine="64" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$2" />
+    <unitInfo nodeId="1224754223475" fileName="Main_map_operation.java" startLine="18" startPosition="54" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$1" />
     <unitInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="75" startPosition="23" endLine="140" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$4" />
+    <unitInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="73" startPosition="19" endLine="142" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$3" />
+    <unitInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="71" startPosition="73" endLine="144" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$2" />
+    <unitInfo nodeId="1153940807216" fileName="Main_map_operation.java" startLine="13" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation" />
   </root>
-  <root nodeId="1153941117383">
+  <root nodeId="1153941117383" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
     <nodeInfo nodeId="1224754223337" fileName="Main_forEach_operation.java" startLine="48" startPosition="27" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="21" startPosition="52" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1224754223332" fileName="Main_forEach_operation.java" startLine="22" startPosition="37" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_num" />
@@ -246,13 +246,13 @@
     <scopeInfo nodeId="1153941117384" fileName="Main_forEach_operation.java" startLine="15" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1153941117455" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1153941117383" fileName="Main_forEach_operation.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation" />
-    <unitInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="17" startPosition="54" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$1" />
     <unitInfo nodeId="1224754223573" fileName="Main_forEach_operation.java" startLine="69" startPosition="45" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$2" />
-    <unitInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="19" startPosition="19" endLine="63" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$2" />
     <unitInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="21" startPosition="23" endLine="61" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$3" />
+    <unitInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="19" startPosition="19" endLine="63" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$2" />
+    <unitInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="17" startPosition="54" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$1" />
+    <unitInfo nodeId="1153941117383" fileName="Main_forEach_operation.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation" />
   </root>
-  <root nodeId="1153941284364">
+  <root nodeId="1153941284364" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
     <nodeInfo nodeId="1224754223365" fileName="Main_where_select_operations.java" startLine="51" startPosition="27" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223370" fileName="Main_where_select_operations.java" startLine="54" startPosition="27" endLine="54" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="22" startPosition="52" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -341,14 +341,14 @@
     <scopeInfo nodeId="1153941284365" fileName="Main_where_select_operations.java" startLine="16" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1153941284450" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1153941284364" fileName="Main_where_select_operations.java" startLine="13" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations" />
-    <unitInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="18" startPosition="54" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$1" />
     <unitInfo nodeId="1224754223774" fileName="Main_where_select_operations.java" startLine="72" startPosition="69" endLine="76" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$2" />
-    <unitInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="20" startPosition="19" endLine="65" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$2" />
     <unitInfo nodeId="1224754223676" fileName="Main_where_select_operations.java" startLine="76" startPosition="18" endLine="81" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$3" />
     <unitInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="22" startPosition="23" endLine="63" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$3" />
+    <unitInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="20" startPosition="19" endLine="65" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$2" />
+    <unitInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="18" startPosition="54" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$1" />
+    <unitInfo nodeId="1153941284364" fileName="Main_where_select_operations.java" startLine="13" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations" />
   </root>
-  <root nodeId="1154036214581">
+  <root nodeId="1154036214581" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
     <nodeInfo nodeId="1224754223444" fileName="Main_forEach_loop.java" startLine="46" startPosition="27" endLine="46" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="19" startPosition="52" endLine="20" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1224754223439" fileName="Main_forEach_loop.java" startLine="20" startPosition="37" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_num" />
@@ -427,10 +427,10 @@
     <scopeInfo nodeId="1154036214582" fileName="Main_forEach_loop.java" startLine="13" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1154036214665" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1154036214581" fileName="Main_forEach_loop.java" startLine="10" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop" />
-    <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="15" startPosition="54" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$1" />
-    <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="17" startPosition="19" endLine="61" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$2" />
     <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="19" startPosition="23" endLine="59" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$3" />
+    <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="17" startPosition="19" endLine="61" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$2" />
+    <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="15" startPosition="54" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$1" />
+    <unitInfo nodeId="1154036214581" fileName="Main_forEach_loop.java" startLine="10" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop" />
   </root>
 </debugInfo>
 

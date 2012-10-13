@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6243486444683604044">
+  <root nodeId="6243486444683604044" modelId="r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)">
     <nodeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="13" startPosition="80" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,8 +42,8 @@
     <scopeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="76" endLine="39" endPosition="3">
       <varInfo nodeId="6243486444683604044" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript" />
     <unitInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="15" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
+    <unitInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript" />
   </root>
 </debugInfo>
 

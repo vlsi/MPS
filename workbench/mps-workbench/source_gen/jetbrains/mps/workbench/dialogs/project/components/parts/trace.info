@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499494350">
+  <root nodeId="1560298786499494350" modelId="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)">
     <nodeInfo nodeId="1560298786499494375" fileName="CopySupport.java" startLine="24" startPosition="63" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499494380" fileName="CopySupport.java" startLine="25" startPosition="44" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499494533" fileName="CopySupport.java" startLine="28" startPosition="50" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -81,12 +81,12 @@
       <varInfo nodeId="1560298786499494362" varName="clip" />
       <varInfo nodeId="1560298786499494360" varName="comp" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
     <unitInfo nodeId="1560298786499494392" fileName="CopySupport.java" startLine="27" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$1" />
     <unitInfo nodeId="1560298786499494414" fileName="CopySupport.java" startLine="35" startPosition="35" endLine="42" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$2" />
     <unitInfo nodeId="1560298786499494352" fileName="CopySupport.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$ModelReferenceTransferHandler" />
+    <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
   </root>
-  <root nodeId="4972790448884483620">
+  <root nodeId="4972790448884483620" modelId="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)">
     <nodeInfo nodeId="4972790448884504767" fileName="StateUtil.java" startLine="16" startPosition="24" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="normal" />
     <nodeInfo nodeId="7189497640396657007" fileName="StateUtil.java" startLine="22" startPosition="75" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7567158975345112824" fileName="StateUtil.java" startLine="26" startPosition="70" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -174,8 +174,8 @@
       <varInfo nodeId="7189497640396657021" varName="modelReference" />
       <varInfo nodeId="7189497640396657017" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="4972790448884483620" fileName="StateUtil.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
     <unitInfo nodeId="7189497640396657058" fileName="StateUtil.java" startLine="41" startPosition="55" endLine="45" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil$1" />
+    <unitInfo nodeId="4972790448884483620" fileName="StateUtil.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
   </root>
 </debugInfo>
 

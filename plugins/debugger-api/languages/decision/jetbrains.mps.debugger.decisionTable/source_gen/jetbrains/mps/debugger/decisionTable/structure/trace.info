@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="DecisionTable_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.DecisionTable_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.StructureAspectDescriptor" />
-  <root nodeId="5202024118203914171">
+  <root nodeId="5202024118203914171" modelId="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)">
     <nodeInfo nodeId="5202024118203914171" fileName="XVariableReference.java" startLine="15" startPosition="77" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5202024118203914171" fileName="XVariableReference.java" startLine="16" startPosition="107" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5202024118203914171" fileName="XVariableReference.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -95,7 +95,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203914171" fileName="XVariableReference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.XVariableReference" />
   </root>
-  <root nodeId="5202024118203914172">
+  <root nodeId="5202024118203914172" modelId="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)">
     <nodeInfo nodeId="5202024118203914172" fileName="YVariableReference.java" startLine="15" startPosition="77" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5202024118203914172" fileName="YVariableReference.java" startLine="16" startPosition="107" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="5202024118203914172" fileName="YVariableReference.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -188,7 +188,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203914172" fileName="YVariableReference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.YVariableReference" />
   </root>
-  <root nodeId="5202024118203995643">
+  <root nodeId="5202024118203995643" modelId="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)">
     <nodeInfo nodeId="5202024118203995643" fileName="DecideOperation.java" startLine="16" startPosition="72" endLine="17" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5202024118203995643" fileName="DecideOperation.java" startLine="17" startPosition="104" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="5202024118203995643" fileName="DecideOperation.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
@@ -292,7 +292,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203995643" fileName="DecideOperation.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.DecideOperation" />
   </root>
-  <root nodeId="6409088484822265794">
+  <root nodeId="6409088484822265794" modelId="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)">
     <nodeInfo nodeId="6409088484822265794" fileName="DecisionTable.java" startLine="17" startPosition="87" endLine="18" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6409088484822265794" fileName="DecisionTable.java" startLine="18" startPosition="102" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="6409088484822265794" fileName="DecisionTable.java" startLine="19" startPosition="43" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -463,7 +463,7 @@
     </scopeInfo>
     <unitInfo nodeId="6409088484822265794" fileName="DecisionTable.java" startLine="17" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.DecisionTable" />
   </root>
-  <root nodeId="6409088484822290058">
+  <root nodeId="6409088484822290058" modelId="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)">
     <nodeInfo nodeId="6409088484822290058" fileName="DecisionTableType.java" startLine="11" startPosition="45" endLine="12" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6409088484822290058" fileName="DecisionTableType.java" startLine="14" startPosition="40" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6409088484822290058" fileName="DecisionTableType.java" startLine="18" startPosition="72" endLine="19" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -486,7 +486,7 @@
     </scopeInfo>
     <unitInfo nodeId="6409088484822290058" fileName="DecisionTableType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.structure.DecisionTableType" />
   </root>
-  <root nodeId="6487201325881248120">
+  <root nodeId="6487201325881248120" modelId="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)">
     <nodeInfo nodeId="6487201325881248120" fileName="CaseExpression.java" startLine="12" startPosition="49" endLine="13" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6487201325881248120" fileName="CaseExpression.java" startLine="13" startPosition="103" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
     <nodeInfo nodeId="6487201325881248120" fileName="CaseExpression.java" startLine="16" startPosition="37" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -18,6 +18,7 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.template.TracingUtil;
@@ -29,10 +30,7 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
@@ -241,12 +239,14 @@ public class TextGenerator {
     GenerationDependencies dependencies = status.getDependencies();
     if (dependencies != null) {
       // process unchanged files
-      for (GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
+      List<GenerationRootDependencies> unchangedDependencies = dependencies.getUnchangedDependencies();
+      SModelDescriptor originalInputModel = status.getOriginalInputModel();
+      for (GenerationRootDependencies rdep : unchangedDependencies) {
         for (String filename : rdep.getFiles()) {
           if (myStreamHandler.touch(filename, false)) {
             // re-register baselanguage dependencies
             if (modelDep == null) {
-              modelDep = BLDependenciesCache.getInstance().get(status.getOriginalInputModel());
+              modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
             }
             if (modelDep != null) {
               RootDependencies root = modelDep.getDependency(filename);
@@ -257,15 +257,26 @@ public class TextGenerator {
           }
         }
 
-        // re-register debug
-        if (debugInfoCache == null) {
-          debugInfoCache = TraceInfoCache.getInstance().get(status.getOriginalInputModel());
-        }
-        if (debugInfoCache != null) {
-          SNode node = rdep.getRootId() == null ? null : new SNodePointer(status.getOriginalInputModel().getSModelReference().toString(), rdep.getRootId()).getNode();
-          DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(node);
-          if (infoRoot != null && status.getDebugInfo() != null) {
-            status.getDebugInfo().replaceRoot(infoRoot);
+      }
+
+      DebugInfo statusDebugInfo = status.getDebugInfo();
+      if (!unchangedDependencies.isEmpty()) {
+        if (statusDebugInfo == null) {
+          // touch
+          myStreamHandler.touch(TraceInfoCache.getInstance().getCacheFileName(), false);
+        } else {
+          for (GenerationRootDependencies rdep : unchangedDependencies) {
+            // re-register debug
+            if (debugInfoCache == null) {
+              debugInfoCache = TraceInfoCache.getInstance().get(originalInputModel);
+            }
+            if (debugInfoCache != null) {
+              SNode node = rdep.getRootId() == null ? null : new SNodePointer(originalInputModel.getSModelReference().toString(), rdep.getRootId()).getNode();
+              DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(node);
+              if (infoRoot != null) {
+                statusDebugInfo.replaceRoot(infoRoot);
+              }
+            }
           }
         }
       }

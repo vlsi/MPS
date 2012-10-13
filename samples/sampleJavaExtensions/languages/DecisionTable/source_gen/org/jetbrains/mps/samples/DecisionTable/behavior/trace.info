@@ -48,9 +48,9 @@
     <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="14" startPosition="37" endLine="25" endPosition="0">
       <varInfo nodeId="1987251859606942546" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" />
     <unitInfo nodeId="3863300516938155447" fileName="DecisionTable_Behavior.java" startLine="28" startPosition="202" endLine="32" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior$1" />
     <unitInfo nodeId="3863300516938159659" fileName="DecisionTable_Behavior.java" startLine="38" startPosition="201" endLine="42" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior$2" />
+    <unitInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" />
   </root>
 </debugInfo>
 

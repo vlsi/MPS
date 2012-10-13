@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="12077399789561866">
+  <root nodeId="12077399789561866" modelId="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest)">
     <nodeInfo nodeId="12077399789562075" fileName="PropertiesTest_Test.java" startLine="9" startPosition="50" endLine="10" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="12077399789563368" fileName="PropertiesTest_Test.java" startLine="10" startPosition="45" endLine="11" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="12077399789563374" fileName="PropertiesTest_Test.java" startLine="11" startPosition="59" endLine="12" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -16,7 +16,7 @@
     <scopeInfo nodeId="12077399789562069" fileName="PropertiesTest_Test.java" startLine="8" startPosition="51" endLine="19" endPosition="0" />
     <unitInfo nodeId="12077399789561866" fileName="PropertiesTest_Test.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
   </root>
-  <root nodeId="12077399789561873">
+  <root nodeId="12077399789561873" modelId="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest)">
     <nodeInfo nodeId="12077399789561978" fileName="TestClass.java" startLine="6" startPosition="24" endLine="7" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="value" />
     <nodeInfo nodeId="12077399789561879" fileName="TestClass.java" startLine="7" startPosition="19" endLine="8" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyValue" />
     <nodeInfo nodeId="7542046987151769304" fileName="TestClass.java" startLine="8" startPosition="30" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySecondPropertyValue" />
@@ -72,8 +72,8 @@
     <scopeInfo nodeId="12077399789561939" fileName="TestClass.java" startLine="40" startPosition="32" endLine="48" endPosition="5">
       <varInfo nodeId="12077399789561943" varName="newValue" />
     </scopeInfo>
-    <unitInfo nodeId="12077399789561873" fileName="TestClass.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.propertiesTest.TestClass" />
     <unitInfo nodeId="12077399789561937" fileName="TestClass.java" startLine="40" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.propertiesTest.TestClass$PropertyChanger" />
+    <unitInfo nodeId="12077399789561873" fileName="TestClass.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.propertiesTest.TestClass" />
   </root>
 </debugInfo>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1228171888558">
+  <root nodeId="1228171888558" modelId="r:09ff0d94-0967-4235-bb59-9c3480dd53fe(foo)">
     <nodeInfo nodeId="5451047975133046784" fileName="Foo.java" startLine="67" startPosition="27" endLine="67" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2826767102480533361" fileName="Foo.java" startLine="111" startPosition="27" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211295963330346959" fileName="Foo.java" startLine="177" startPosition="24" endLine="177" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" />
@@ -325,16 +325,16 @@
     <scopeInfo nodeId="1228171899064" fileName="Foo.java" startLine="90" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="1228171903091" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1228171888558" fileName="Foo.java" startLine="35" startPosition="0" endLine="316" endPosition="0" unitName="foo.Foo" />
-    <unitInfo nodeId="5451047975133046783" fileName="Foo.java" startLine="40" startPosition="36" endLine="88" endPosition="5" unitName="foo.Foo$1" />
-    <unitInfo nodeId="2826767102480533360" fileName="Foo.java" startLine="92" startPosition="59" endLine="124" endPosition="5" unitName="foo.Foo$2" />
-    <unitInfo nodeId="5451047975133046783" fileName="Foo.java" startLine="42" startPosition="19" endLine="86" endPosition="9" unitName="foo.Foo$2" />
-    <unitInfo nodeId="2826767102480533360" fileName="Foo.java" startLine="94" startPosition="19" endLine="122" endPosition="9" unitName="foo.Foo$3" />
-    <unitInfo nodeId="5451047975133046783" fileName="Foo.java" startLine="44" startPosition="23" endLine="84" endPosition="13" unitName="foo.Foo$3" />
-    <unitInfo nodeId="7211295963330346956" fileName="Foo.java" startLine="125" startPosition="77" endLine="197" endPosition="5" unitName="foo.Foo$3" />
     <unitInfo nodeId="2826767102480533360" fileName="Foo.java" startLine="96" startPosition="23" endLine="120" endPosition="13" unitName="foo.Foo$4" />
-    <unitInfo nodeId="7211295963330346956" fileName="Foo.java" startLine="127" startPosition="19" endLine="195" endPosition="9" unitName="foo.Foo$4" />
+    <unitInfo nodeId="2826767102480533360" fileName="Foo.java" startLine="94" startPosition="19" endLine="122" endPosition="9" unitName="foo.Foo$3" />
+    <unitInfo nodeId="2826767102480533360" fileName="Foo.java" startLine="92" startPosition="59" endLine="124" endPosition="5" unitName="foo.Foo$2" />
+    <unitInfo nodeId="5451047975133046783" fileName="Foo.java" startLine="44" startPosition="23" endLine="84" endPosition="13" unitName="foo.Foo$3" />
+    <unitInfo nodeId="5451047975133046783" fileName="Foo.java" startLine="42" startPosition="19" endLine="86" endPosition="9" unitName="foo.Foo$2" />
+    <unitInfo nodeId="5451047975133046783" fileName="Foo.java" startLine="40" startPosition="36" endLine="88" endPosition="5" unitName="foo.Foo$1" />
     <unitInfo nodeId="7211295963330346956" fileName="Foo.java" startLine="129" startPosition="23" endLine="193" endPosition="13" unitName="foo.Foo$5" />
+    <unitInfo nodeId="7211295963330346956" fileName="Foo.java" startLine="127" startPosition="19" endLine="195" endPosition="9" unitName="foo.Foo$4" />
+    <unitInfo nodeId="7211295963330346956" fileName="Foo.java" startLine="125" startPosition="77" endLine="197" endPosition="5" unitName="foo.Foo$3" />
+    <unitInfo nodeId="1228171888558" fileName="Foo.java" startLine="35" startPosition="0" endLine="316" endPosition="0" unitName="foo.Foo" />
   </root>
 </debugInfo>
 

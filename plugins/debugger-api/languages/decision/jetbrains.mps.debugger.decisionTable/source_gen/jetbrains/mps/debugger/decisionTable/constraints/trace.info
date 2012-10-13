@@ -100,8 +100,8 @@
       <varInfo nodeId="5202024118203914179" varName="operationContext" />
       <varInfo nodeId="5202024118203914179" varName="parentNode" />
     </scopeInfo>
-    <unitInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.XVariableReference_Constraints" />
     <unitInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="46" startPosition="31" endLine="57" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.constraints.XVariableReference_Constraints$1" />
+    <unitInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.XVariableReference_Constraints" />
   </root>
   <root nodeId="5202024118203919168" modelId="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)">
     <nodeInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="20" startPosition="79" endLine="21" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -202,8 +202,8 @@
       <varInfo nodeId="5202024118203919168" varName="operationContext" />
       <varInfo nodeId="5202024118203919168" varName="parentNode" />
     </scopeInfo>
-    <unitInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.YVariableReference_Constraints" />
     <unitInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="46" startPosition="31" endLine="57" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.constraints.YVariableReference_Constraints$1" />
+    <unitInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.YVariableReference_Constraints" />
   </root>
   <root nodeId="5202024118204000603" modelId="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)">
     <nodeInfo nodeId="5202024118204000603" fileName="DecideOperation_Constraints.java" startLine="16" startPosition="76" endLine="17" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
