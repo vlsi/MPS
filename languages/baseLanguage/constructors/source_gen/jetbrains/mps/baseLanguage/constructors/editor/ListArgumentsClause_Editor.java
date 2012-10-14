@@ -33,7 +33,7 @@ public class ListArgumentsClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_ljswaq_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ljswaq_b0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list");
     provider.setNoTargetText("<no list>");

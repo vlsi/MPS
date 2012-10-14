@@ -228,7 +228,7 @@
                                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6820702584720069043">
                                   <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
                                   <link role="classifier" roleId="tpee.1170346070688" targetNodeId="o70u.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dnodeEditor%dEditorContext)" resolveInfo="RefNodeListHandler" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dopenapi%deditor%dEditorContext)" resolveInfo="RefNodeListHandler" />
                                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6820702584720069044" />
                                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720069045">
                                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -269,7 +269,7 @@
                                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
                                           </node>
                                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6820702584720070191">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%dcreateNodeCell(jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createNodeCell" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%dcreateNodeCell(jetbrains%dmps%dopenapi%deditor%dEditorContext,jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createNodeCell" />
                                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6820702584720070192">
                                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720070180" resolveInfo="editorContext" />
                                             </node>
@@ -341,7 +341,7 @@
                                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
                                           </node>
                                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6820702584720070245">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%dcreateEmptyCell(jetbrains%dmps%dnodeEditor%dEditorContext)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createEmptyCell" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%dcreateEmptyCell(jetbrains%dmps%dopenapi%deditor%dEditorContext)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createEmptyCell" />
                                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6820702584720070365">
                                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720070266" resolveInfo="editorContext" />
                                             </node>
@@ -507,7 +507,7 @@
                                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~EditorCell%dsetSubstituteInfo(jetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteInfo)%cvoid" resolveInfo="setSubstituteInfo" />
                                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6820702584720070402">
                                                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6820702584720070404">
-                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~DefaultChildSubstituteInfo%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)" resolveInfo="DefaultChildSubstituteInfo" />
+                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~DefaultChildSubstituteInfo%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dopenapi%deditor%dEditorContext)" resolveInfo="DefaultChildSubstituteInfo" />
                                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6820702584720070405">
                                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720070210" resolveInfo="listOwner" />
                                                         </node>
@@ -710,7 +710,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720069039" resolveInfo="handler" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6820702584720069057">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qv3m.~AbstractCellListHandler%dcreateCells(jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dnodeEditor%dcellLayout%dCellLayout)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Collection" resolveInfo="createCells" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qv3m.~AbstractCellListHandler%dcreateCells(jetbrains%dmps%dopenapi%deditor%dEditorContext,jetbrains%dmps%dnodeEditor%dcellLayout%dCellLayout)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Collection" resolveInfo="createCells" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6820702584720070511">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720060143" resolveInfo="editorContext" />
                               </node>

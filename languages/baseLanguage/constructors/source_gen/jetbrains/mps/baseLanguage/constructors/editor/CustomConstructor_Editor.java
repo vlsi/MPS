@@ -94,7 +94,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_pn47sh_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pn47sh_g0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("arguments");
     provider.setNoTargetText("<no arguments>");
@@ -111,7 +111,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_pn47sh_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pn47sh_j0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("returnType");
     provider.setNoTargetText("<no returnType>");
@@ -132,7 +132,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_pn47sh_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pn47sh_c0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -154,7 +154,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_pn47sh_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pn47sh_e0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("shortDescription");
     provider.setNoTargetText("<no shortDescription>");
@@ -177,7 +177,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_pn47sh_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pn47sh_f0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("leftParenthesis");
     provider.setNoTargetText("<lp");
@@ -195,7 +195,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_pn47sh_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pn47sh_h0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("rightParenthesis");
     provider.setNoTargetText("rp>");
@@ -213,7 +213,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_pn47sh_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pn47sh_m0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("separator");
     provider.setNoTargetText("<no separator>");

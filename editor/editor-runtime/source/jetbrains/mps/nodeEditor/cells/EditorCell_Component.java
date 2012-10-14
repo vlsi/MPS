@@ -94,8 +94,8 @@ public class EditorCell_Component extends EditorCell_Basic {
     return ascent;
   }
 
-  public static EditorCell createComponentCell(EditorContext context, SNode node, JComponent component, String cellId) {
-    EditorCell_Component editorCell_component = new EditorCell_Component(context, node, component);
+  public static EditorCell createComponentCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node, JComponent component, String cellId) {
+    EditorCell_Component editorCell_component = new EditorCell_Component((EditorContext) context, node, component);
     return editorCell_component;
   }
 

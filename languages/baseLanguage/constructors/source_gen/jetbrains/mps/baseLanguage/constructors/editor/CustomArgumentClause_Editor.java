@@ -31,7 +31,7 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_iqoiiv_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_iqoiiv_a0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new CustomArgumentClause_Editor.parameterListHandler_iqoiiv_a0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
@@ -40,7 +40,7 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
   }
 
   private static class parameterListHandler_iqoiiv_a0 extends RefNodeListHandler {
-    public parameterListHandler_iqoiiv_a0(SNode ownerNode, String childRole, EditorContext context) {
+    public parameterListHandler_iqoiiv_a0(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

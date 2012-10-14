@@ -16,9 +16,10 @@
 package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.Condition;
 
 /**
@@ -28,7 +29,7 @@ import jetbrains.mps.util.Condition;
 public class CallAction_ToggleCellFolding extends EditorCellAction {
   @Override
   public boolean canExecute(EditorContext context) {
-    return findCell(context.getNodeEditorComponent().getSelectedCell()) != null;
+    return findCell(((EditorComponent) context.getEditorComponent()).getSelectedCell()) != null;
   }
 
   @Override
@@ -38,7 +39,7 @@ public class CallAction_ToggleCellFolding extends EditorCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    EditorCell_Collection targetCell = findCell(context.getNodeEditorComponent().getSelectedCell());
+    EditorCell_Collection targetCell = findCell(((EditorComponent) context.getEditorComponent()).getSelectedCell());
     if (targetCell.isFolded()) {
       targetCell.unfold();
     } else {

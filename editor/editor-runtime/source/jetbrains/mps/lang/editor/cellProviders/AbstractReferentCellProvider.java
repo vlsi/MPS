@@ -151,8 +151,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   protected abstract EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node);
 
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
-    if (myIsAggregation) return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, (jetbrains.mps.nodeEditor.EditorContext) myEditorContext);
-    return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, (jetbrains.mps.nodeEditor.EditorContext) myEditorContext);
+    if (myIsAggregation) return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
+    return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
   }
 
 

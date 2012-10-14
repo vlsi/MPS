@@ -4,7 +4,7 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CellAction_DeletePropertyOrNode extends EditorCellAction {
   private SNode mySemanticNode;

@@ -195,11 +195,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (action.executeInCommand()) {
       getEditorContext().executeCommand(new Runnable() {
         public void run() {
-          action.execute(myEditorContext);
+          action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
         }
       });
     } else {
-      action.execute(myEditorContext);
+      action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
     }
     return true;
   }
@@ -444,7 +444,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public jetbrains.mps.openapi.editor.EditorContext getContext() {
-    return null;
+    return myEditorContext;
   }
 
   public IOperationContext getOperationContext() {

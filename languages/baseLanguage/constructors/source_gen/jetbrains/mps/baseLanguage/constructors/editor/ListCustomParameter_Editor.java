@@ -26,7 +26,7 @@ public class ListCustomParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_fzywrt_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_fzywrt_a0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -43,7 +43,7 @@ public class ListCustomParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_fzywrt_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_fzywrt_b0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

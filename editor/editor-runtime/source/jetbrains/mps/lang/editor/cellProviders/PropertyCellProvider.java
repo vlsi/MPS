@@ -86,10 +86,10 @@ public class PropertyCellProvider extends CellProviderWithRole {
         SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(myPropertyDeclaration);
 
         if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
-          return new BooleanPropertySubstituteInfo(getSNode(), myPropertyName, (jetbrains.mps.nodeEditor.EditorContext) myEditorContext);
+          return new BooleanPropertySubstituteInfo(getSNode(), myPropertyName, myEditorContext);
         }
         if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataType)) {
-          return new EnumPropertySubstituteInfo(getSNode(), myPropertyDeclaration, (jetbrains.mps.nodeEditor.EditorContext) myEditorContext);
+          return new EnumPropertySubstituteInfo(getSNode(), myPropertyDeclaration, myEditorContext);
         }
         return null;
       }

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.logging.Logger;
 
@@ -43,7 +43,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SubstituteInfoPart menuPart : myParts) {
       try {
-        actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
+        actions.addAll(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));
       } catch (Throwable e) {
         LOG.error(e);
       }

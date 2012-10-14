@@ -61,14 +61,14 @@ public class EditorCell_Image extends EditorCell_Basic {
     getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
-  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
-    EditorCell_Image result = new EditorCell_Image(editorContext, node);
+  public static EditorCell_Image createImageCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String imageFileName) {
+    EditorCell_Image result = new EditorCell_Image((EditorContext) editorContext, node);
     result.setImageFileName(expandIconPath(imageFileName, node));
     return result;
   }
 
-  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, Image image) {
-    EditorCell_Image result = new EditorCell_Image(editorContext, node);
+  public static EditorCell_Image createImageCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, Image image) {
+    EditorCell_Image result = new EditorCell_Image((EditorContext) editorContext, node);
     result.setImage(image);
     return result;
   }

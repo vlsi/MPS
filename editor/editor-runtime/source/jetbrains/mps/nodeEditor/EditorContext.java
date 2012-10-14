@@ -174,7 +174,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
-    EditorCell nodeCell = inlineComponent.createEditorCell(this);
+    EditorCell nodeCell = inlineComponent.createEditorCell((jetbrains.mps.openapi.editor.EditorContext) this);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
   }
@@ -344,7 +344,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
-  public EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute) {
+  public jetbrains.mps.openapi.editor.EditorCell createRoleAttributeCell(Class attributeKind, jetbrains.mps.openapi.editor.EditorCell cellWithRole, SNode roleAttribute) {
     if (myCurrentRefNodeContext != null) {
       if (attributeKind != AttributeKind.Reference.class && myCurrentRefNodeContext.hasRoles())
         //Do not show attributes on reference cells.

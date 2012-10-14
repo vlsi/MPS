@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
-
 import java.awt.event.KeyEvent;
 
 public class KeyMap_EditorCellActionWrapper extends EditorCellKeyMapAction {
@@ -33,6 +29,6 @@ public class KeyMap_EditorCellActionWrapper extends EditorCellKeyMapAction {
   }
 
   public void execute(KeyEvent keyEvent, EditorContext context) {
-    myCellAction.execute(context);
+    myCellAction.execute((jetbrains.mps.openapi.editor.EditorContext) context);
   }
 }

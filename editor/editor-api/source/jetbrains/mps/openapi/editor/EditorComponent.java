@@ -62,4 +62,6 @@ public interface EditorComponent {
   IOperationContext getOperationContext();
 
   EditorContext getEditorContext();
+
+  boolean isReadOnly();
 }

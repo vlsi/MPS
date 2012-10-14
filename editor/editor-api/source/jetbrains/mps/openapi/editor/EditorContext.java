@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
@@ -43,6 +44,8 @@ public interface EditorContext {
 
   EditorCell getSelectedCell();
 
+  EditorCell getContextCell();
+
   EditorInspector getInspector();
 
   EditorComponent getEditorComponent();
@@ -60,4 +63,8 @@ public interface EditorContext {
   EditorCell createNodeCell(SNode node);
 
   EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
+
+  EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
+
+  IOperationContext getOperationContext();
 }

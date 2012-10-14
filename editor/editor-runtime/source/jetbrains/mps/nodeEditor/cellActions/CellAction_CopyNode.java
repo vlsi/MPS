@@ -22,12 +22,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
@@ -42,7 +42,7 @@ public class CellAction_CopyNode extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_CopyNode.class);
 
   public boolean canExecute(EditorContext context) {
-    return context.getNodeEditorComponent().getSelectionManager().getSelection() != null;
+    return ((EditorComponent) context.getEditorComponent()).getSelectionManager().getSelection() != null;
   }
 
   public void execute(EditorContext context) {
@@ -52,7 +52,7 @@ public class CellAction_CopyNode extends EditorCellAction {
   }
 
   protected _3<List<SNode>, Map<SNode, Set<SNode>>, String> extractSelection (EditorContext context) {
-    EditorComponent editorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
 
     SelectionManager selectionManager = editorComponent.getSelectionManager();

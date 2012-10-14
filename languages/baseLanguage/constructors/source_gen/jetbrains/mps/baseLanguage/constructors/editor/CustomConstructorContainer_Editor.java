@@ -58,7 +58,7 @@ public class CustomConstructorContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9w29gq_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_9w29gq_a2a(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new CustomConstructorContainer_Editor.constructorsListHandler_9w29gq_a2a(node, "constructors", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_constructors");
@@ -72,7 +72,7 @@ public class CustomConstructorContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9w29gq_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9w29gq_b0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -95,7 +95,7 @@ public class CustomConstructorContainer_Editor extends DefaultNodeEditor {
   }
 
   private static class constructorsListHandler_9w29gq_a2a extends RefNodeListHandler {
-    public constructorsListHandler_9w29gq_a2a(SNode ownerNode, String childRole, EditorContext context) {
+    public constructorsListHandler_9w29gq_a2a(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

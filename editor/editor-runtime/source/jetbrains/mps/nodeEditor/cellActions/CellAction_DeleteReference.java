@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
 
 /**
  * Author: Sergey Dmitriev.

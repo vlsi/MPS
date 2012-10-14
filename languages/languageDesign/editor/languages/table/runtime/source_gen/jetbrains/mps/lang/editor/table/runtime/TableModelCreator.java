@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.table.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
+@Deprecated
 public interface TableModelCreator {
   public TableModel getTable(SNode node, EditorContext editorContext);
 }

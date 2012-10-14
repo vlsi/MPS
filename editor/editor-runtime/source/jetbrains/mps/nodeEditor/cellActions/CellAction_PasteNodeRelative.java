@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -24,8 +28,6 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 
@@ -43,7 +45,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
   }
 
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     if (selectedCell == null) {
       return false;
     }
@@ -65,7 +67,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
 
   public void execute(EditorContext context) {
     LOG.assertInCommand();
-    EditorComponent editorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     EditorCell selectedCell = editorComponent.getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
 

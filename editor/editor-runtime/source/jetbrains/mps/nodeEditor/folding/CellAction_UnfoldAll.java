@@ -16,10 +16,10 @@
 package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -28,11 +28,11 @@ public class CellAction_UnfoldAll extends EditorCellAction {
 
 
   public boolean canExecute(EditorContext context) {
-    return context.getNodeEditorComponent().getRootCell() instanceof EditorCell_Collection;
+    return context.getEditorComponent().getRootCell() instanceof EditorCell_Collection;
   }
 
   public void execute(EditorContext context) {
-    EditorComponent component = context.getNodeEditorComponent();
+    EditorComponent component = context.getEditorComponent();
     Queue<EditorCell_Collection> cellsToProcess = new LinkedList<EditorCell_Collection>();
     cellsToProcess.add((EditorCell_Collection) component.getRootCell());
     while (!cellsToProcess.isEmpty()) {

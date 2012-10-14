@@ -20,7 +20,7 @@ public abstract class EditorCellAction {
     return "no description : " + this.getClass().getName();
   }
 
-  public boolean canExecute(EditorContext context) {
+  public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
     return true;
   }
 
@@ -28,5 +28,19 @@ public abstract class EditorCellAction {
     return true;
   }
 
-  public abstract void execute(EditorContext context); 
+  /**
+   * Since MPS 3.0
+   * should be transformed to abstract method in future
+   */
+  public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
+    execute((EditorContext) context);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>execute(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  protected void execute(EditorContext context) {
+  }
 }

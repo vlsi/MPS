@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.smodel.SNode;
+
 /**
  * evgeny, 11/17/11
  */
@@ -29,4 +31,6 @@ public interface EditorCell {
   EditorContext getContext();
 
   String getCellId();
+
+  SNode getSNode();
 }
