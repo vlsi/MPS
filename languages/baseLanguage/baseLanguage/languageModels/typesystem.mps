@@ -27588,8 +27588,8 @@
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="843236768047887691">
                     <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
                   </node>
-                  <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="843236768047887692">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
+                  <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="8567847449660559138">
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                   </node>
                 </node>
               </node>
