@@ -67,7 +67,7 @@ public class TransformationTestRunner {
         }
       }
       if (test.getProject() == null) {
-        Assert.fail("MPS Project was not specfied in test class, no currently open project was not found");
+        Assert.fail("MPS Project was not specified in test class, no currently open project were found.");
       }
     } else {
       test.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.getGlobal().expandPath(projectName)));
