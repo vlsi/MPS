@@ -43,7 +43,7 @@ public class ConvertExecuteFinders_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(SLinkOperations.getTargets(replacer, "finder", true)).addElement(finderRef);
         }
         SLinkOperations.setTarget(replacer, "queryNode", ((SLinkOperations.getTarget(node, "searchNode", true) == null) ?
-          new ConvertExecuteFinders_MigrationScript.QuotationClass_v4ym8i_a0a0c0e0a0a0b0a().createNode() :
+          new ConvertExecuteFinders_MigrationScript.QuotationClass_v4ym8i_a0a0c0e0a0a0a0b0a().createNode() :
           SLinkOperations.getTarget(node, "searchNode", true)
         ), true);
         SLinkOperations.setTarget(replacer, "scope", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "searchScope", true)), true);
@@ -56,8 +56,8 @@ public class ConvertExecuteFinders_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_v4ym8i_a0a0c0e0a0a0b0a {
-    public QuotationClass_v4ym8i_a0a0c0e0a0a0b0a() {
+  public static class QuotationClass_v4ym8i_a0a0c0e0a0a0a0b0a {
+    public QuotationClass_v4ym8i_a0a0c0e0a0a0a0b0a() {
     }
 
     public SNode createNode() {

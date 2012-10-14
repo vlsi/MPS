@@ -46,8 +46,8 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
         for (SNode arg : SLinkOperations.getTargets(node, "actualArgument", true)) {
           ListSequence.fromList(args).addElement(SNodeOperations.copyNode(arg));
         }
-        ListSequence.fromList(args).insertElement(1, new Mps25JavaApiMigration_MigrationScript.QuotationClass_31im5t_a1a0c0e0a0a0b0a().createNode());
-        StubRefUtil.replaceNode(node, new Mps25JavaApiMigration_MigrationScript.QuotationClass_31im5t_a1a3a4a0a0a1a0().createNode(args));
+        ListSequence.fromList(args).insertElement(1, new Mps25JavaApiMigration_MigrationScript.QuotationClass_31im5t_a1a0c0e0a0a0a0b0a().createNode());
+        StubRefUtil.replaceNode(node, new Mps25JavaApiMigration_MigrationScript.QuotationClass_31im5t_a1a3a4a0a0a0a1a0().createNode(args));
       }
 
       public boolean isShowAsIntention() {
@@ -56,8 +56,8 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_31im5t_a1a0c0e0a0a0b0a {
-    public QuotationClass_31im5t_a1a0c0e0a0a0b0a() {
+  public static class QuotationClass_31im5t_a1a0c0e0a0a0a0b0a {
+    public QuotationClass_31im5t_a1a0c0e0a0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -75,8 +75,8 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_31im5t_a1a3a4a0a0a1a0 {
-    public QuotationClass_31im5t_a1a3a4a0a0a1a0() {
+  public static class QuotationClass_31im5t_a1a3a4a0a0a0a1a0 {
+    public QuotationClass_31im5t_a1a3a4a0a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_34) {

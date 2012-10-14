@@ -30,7 +30,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || isEmpty_m98j7p_a0a0a3a0a0a1a0(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || isEmpty_m98j7p_a0a0a3a0a0a0a1a0(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
           return false;
         }
         if ((SLinkOperations.getTarget(node, "alternativeConsequence", true) != null)) {
@@ -70,7 +70,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || isEmpty_m98j7p_a0a0a3a0a0a2a0(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || isEmpty_m98j7p_a0a0a3a0a0a0a2a0(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
           return false;
         }
         if ((SLinkOperations.getTarget(node, "mapperFunction", true) != null) || (SLinkOperations.getTarget(node, "postMapperFunction", true) != null) || (SLinkOperations.getTarget(node, "sourceNodeQuery", true) != null)) {
@@ -89,11 +89,11 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static boolean isEmpty_m98j7p_a0a0a3a0a0a1a0(String str) {
+  public static boolean isEmpty_m98j7p_a0a0a3a0a0a0a1a0(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_m98j7p_a0a0a3a0a0a2a0(String str) {
+  public static boolean isEmpty_m98j7p_a0a0a3a0a0a0a2a0(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -36,9 +36,9 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         if (SPropertyOperations.getBoolean(node, "useTmpDir")) {
-          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "name") + ".artifacts"), true);
+          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0a0b0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "name") + ".artifacts"), true);
         } else {
-          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
+          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a0a1a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
         }
       }
 
@@ -64,10 +64,10 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        if (isNotEmpty_6u5ptb_a0a0e0a0a0c0a(SPropertyOperations.getString(node, "scriptsFolder"))) {
-          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "scriptsFolder")), true);
+        if (isNotEmpty_6u5ptb_a0a0e0a0a0a0c0a(SPropertyOperations.getString(node, "scriptsFolder"))) {
+          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0a0c0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "scriptsFolder")), true);
         } else {
-          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
+          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a0a2a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
         }
       }
 
@@ -102,12 +102,12 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static boolean isNotEmpty_6u5ptb_a0a0e0a0a0c0a(String str) {
+  public static boolean isNotEmpty_6u5ptb_a0a0e0a0a0a0c0a(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static class QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a {
-    public QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a() {
+  public static class QuotationClass_6u5ptb_a0a0a0a0e0a0a0a0b0a {
+    public QuotationClass_6u5ptb_a0a0a0a0e0a0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_11, Object parameter_12) {
@@ -150,8 +150,8 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0 {
-    public QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0() {
+  public static class QuotationClass_6u5ptb_a0a0a0a0a4a0a0a0a1a0 {
+    public QuotationClass_6u5ptb_a0a0a0a0a4a0a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -187,8 +187,8 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a {
-    public QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a() {
+  public static class QuotationClass_6u5ptb_a0a0a0a0e0a0a0a0c0a {
+    public QuotationClass_6u5ptb_a0a0a0a0e0a0a0a0c0a() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10) {
@@ -224,8 +224,8 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0 {
-    public QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0() {
+  public static class QuotationClass_6u5ptb_a0a0a0a0a4a0a0a0a2a0 {
+    public QuotationClass_6u5ptb_a0a0a0a0a4a0a0a0a2a0() {
     }
 
     public SNode createNode(Object parameter_7) {

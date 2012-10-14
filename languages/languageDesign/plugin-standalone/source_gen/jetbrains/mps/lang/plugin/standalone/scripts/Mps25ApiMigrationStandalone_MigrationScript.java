@@ -46,7 +46,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
           SReference sref = operation.getReferences().get(0);
           tool = sref.getTargetNode();
         }
-        StubRefUtil.replaceNode(node, new Mps25ApiMigrationStandalone_MigrationScript.QuotationClass_vfglur_a1a3a4a0a0a1a0().createNode(tool, SLinkOperations.getTarget(node, "operand", true)));
+        StubRefUtil.replaceNode(node, new Mps25ApiMigrationStandalone_MigrationScript.QuotationClass_vfglur_a1a3a4a0a0a0a1a0().createNode(tool, SLinkOperations.getTarget(node, "operand", true)));
       }
 
       public boolean isShowAsIntention() {
@@ -55,8 +55,8 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
     });
   }
 
-  public static class QuotationClass_vfglur_a1a3a4a0a0a1a0 {
-    public QuotationClass_vfglur_a1a3a4a0a0a1a0() {
+  public static class QuotationClass_vfglur_a1a3a4a0a0a0a1a0 {
+    public QuotationClass_vfglur_a1a3a4a0a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_14, Object parameter_15) {
