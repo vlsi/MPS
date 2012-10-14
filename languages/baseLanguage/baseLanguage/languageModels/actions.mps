@@ -16138,7 +16138,7 @@
   <root id="6682205036352986039">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="6682205036352986040">
       <property name="side" nameId="tpdg.1215605257730" value="left" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="6682205036352986043">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="6682205036352988532">
@@ -16176,10 +16176,13 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6682205036352997614">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6682205036352997615">
-                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6682205036352997616">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="6682205036352997617" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6682205036352998773">
-                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.7785501532031731645" />
+                  <node role="rValue" roleId="tpee.1068498886297" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="583966111002832848">
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6682205036352997616">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="6682205036352997617" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="583966111002832824">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
+                      </node>
                     </node>
                   </node>
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6682205036352997619">
@@ -16241,6 +16244,25 @@
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="6682205036352988535">
             <property name="text" nameId="tpdg.1196433942569" value="." />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="583966111002832759">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="583966111002832760">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="583966111002832761">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="583966111002832815">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="583966111002832785">
+                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="583966111002832762" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="583966111002832791">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="583966111002832820">
+                <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="583966111002832822">
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
