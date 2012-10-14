@@ -26,25 +26,25 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1240068519431">
-      <property name="category" nameId="tp33.1206123296179" value="find java util reference" />
       <property name="title" nameId="tp33.1177457669450" value="Show java.util.* References" />
+      <property name="category" nameId="tp33.1206123296179" value="find java util reference" />
       <property name="name" nameId="tpck.1169194664001" value="ShowJavaUtilReferences" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4581730695772514123">
       <property name="title" nameId="tp33.1177457669450" value="BaseLanguage Enhancements" />
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEnhancements" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEnhancements" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1704189004094297789">
-      <property name="category" nameId="tp33.1206123296179" value="baseLanguage" />
       <property name="title" nameId="tp33.1177457669450" value="Remove &quot;this&quot; Where Appropriate" />
-      <property name="name" nameId="tpck.1169194664001" value="RemoveThisWhereAppropriate" />
+      <property name="category" nameId="tp33.1206123296179" value="baseLanguage" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="6252" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveThisWhereAppropriate" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8647043020514320142">
       <property name="title" nameId="tp33.1177457669450" value="Convert Deprecated Annotation Instances" />
-      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
       <property name="name" nameId="tpck.1169194664001" value="ConvertAnnotationInstances" />
+      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
@@ -69,6 +69,13 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7159297221554223394">
       <property name="title" nameId="tp33.1177457669450" value="Migrate local static reference smodel usages" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateLocalStaticFieldReference" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="vars_unifying" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+    </node>
+    <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1466384023878141384">
+      <property name="title" nameId="tp33.1177457669450" value="Migrate local instance reference smodel usages" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrateLocalInstanceFieldReference" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="vars_unifying" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
@@ -3370,6 +3377,20 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="7159297221554223398">
           <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1466384023878141384">
+    <node role="part" roleId="tp33.1177458178889" type="tp33.FactoryMigrationScriptPart" typeId="tp33.2598676492883164205" id="1466384023878141385">
+      <node role="factoryMethod" roleId="tp33.2598676492883164207" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1466384023878141386">
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7159297221553599103" resolveInfo="migrateVariableReferenceSModelUsages" />
+        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1408799705057550234" resolveInfo="MigrationsFactory" />
+        <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1466384023878141387">
+          <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
+        </node>
+        <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1466384023878141388">
+          <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
         </node>
       </node>
     </node>
