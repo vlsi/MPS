@@ -130,6 +130,14 @@ public class DynamicReference extends SReferenceBase {
     return null;
   }
 
+  public void makeDirect() {
+
+  }
+
+  protected synchronized void makeMature() {
+
+  }
+
   public DynamicReferenceOrigin getOrigin() {
     return myOrigin;
   }
