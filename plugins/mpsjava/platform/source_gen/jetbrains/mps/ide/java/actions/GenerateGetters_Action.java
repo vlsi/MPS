@@ -105,7 +105,7 @@ public class GenerateGetters_Action extends BaseAction {
         final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
         // Method creation begins 
-        SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
         SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGetters_Action.QuotationClass_jzv2hd_a0a0a5a41a0a4().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
         lastAdded = added;

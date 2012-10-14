@@ -110,7 +110,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
 
       SNode thatRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
       SLinkOperations.setTarget(thatRef, "variableDeclaration", thatDeclaration, false);
-      SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SNode fieldRefOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
 
       for (SNodePointer fieldPtr : selectedFields) {

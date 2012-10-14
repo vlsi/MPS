@@ -701,7 +701,7 @@ public class JavaConverterTreeBuilder {
     } else {
       if (instanceExpression == null) {
         role = "variableDeclaration";
-        SNode lifr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode lifr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
         sourceNode = lifr;
         result = lifr;
       } else {

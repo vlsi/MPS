@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -39,7 +40,11 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
     ListSequence.fromList(mayInitialize).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)));
     for (SNode member : mayInitialize) {
       if (member != null) {
-        for (SNode reference : SNodeOperations.getDescendants(member, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})) {
+        for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(member, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          }
+        }).toListSequence()) {
           if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == field && CheckingUtil.isAssigned(reference)) {
             return;
           }

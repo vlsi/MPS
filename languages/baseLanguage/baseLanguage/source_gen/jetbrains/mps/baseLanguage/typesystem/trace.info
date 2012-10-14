@@ -2188,16 +2188,16 @@
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="201" startPosition="67" endLine="202" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="203" startPosition="7" endLine="204" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="204" startPosition="163" endLine="205" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="205" startPosition="43" endLine="206" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="206" startPosition="243" endLine="207" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="205" startPosition="43" endLine="206" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="206" startPosition="239" endLine="207" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="208" startPosition="7" endLine="209" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="212" startPosition="31" endLine="213" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="213" startPosition="26" endLine="214" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="214" startPosition="67" endLine="215" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="216" startPosition="7" endLine="217" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="217" startPosition="163" endLine="218" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="218" startPosition="43" endLine="219" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="219" startPosition="243" endLine="220" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="218" startPosition="43" endLine="219" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="219" startPosition="239" endLine="220" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2233570453276392983" fileName="typeOf_VarRef_InferenceRule.java" startLine="221" startPosition="7" endLine="222" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="230" startPosition="96" endLine="231" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="231" startPosition="26" endLine="232" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14972,55 +14972,61 @@
     <nodeInfo nodeId="7970711249077252095" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="30" startPosition="41" endLine="31" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7581428506283755723" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="469835530123105228" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="35" startPosition="12" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7970711249077251964" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="36" startPosition="60" endLine="37" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7970711249077251991" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="37" startPosition="163" endLine="38" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7970711249077252052" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="40" startPosition="41" endLine="41" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6582171520145974383" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="45" startPosition="41" endLine="46" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7581428506283755541" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="48" startPosition="9" endLine="49" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7581428506283755748" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="49" startPosition="128" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="54" startPosition="46" endLine="55" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="60" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="60" startPosition="119" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="65" startPosition="30" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1466384023878382081" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="38" startPosition="41" endLine="39" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7970711249077251991" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="41" startPosition="26" endLine="42" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7970711249077252052" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="44" startPosition="41" endLine="45" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6582171520145974383" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="49" startPosition="41" endLine="50" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7581428506283755541" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="52" startPosition="9" endLine="53" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7581428506283755748" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="53" startPosition="128" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="58" startPosition="46" endLine="59" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="63" startPosition="5" endLine="64" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="64" startPosition="119" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="69" startPosition="30" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="18" startPosition="144" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule#()V" />
     <nodeInfo nodeId="1239631759848" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="22" startPosition="118" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7970711249077252093" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="29" startPosition="108" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7970711249077252050" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="39" startPosition="116" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6582171520145974381" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="44" startPosition="124" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="58" startPosition="68" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1466384023878382079" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="37" startPosition="209" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7970711249077252050" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="43" startPosition="116" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6582171520145974381" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="48" startPosition="124" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="62" startPosition="68" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="7970711249077252086" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="28" startPosition="194" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7970711249077252043" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="38" startPosition="163" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6582171520145974374" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="7970711249077251962" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="35" startPosition="10" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7970711249077251921" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="7970711249077251964" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="36" startPosition="60" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7970711249077252043" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="42" startPosition="163" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6582171520145974374" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="47" startPosition="9" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7970711249077251962" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="35" startPosition="10" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7970711249077251921" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="19" startPosition="63" endLine="19" endPosition="63" />
     <scopeInfo nodeId="1239631759850" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="23" startPosition="154" endLine="24" endPosition="13" />
     <scopeInfo nodeId="7970711249077252094" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="30" startPosition="41" endLine="31" endPosition="74" />
-    <scopeInfo nodeId="7970711249077252051" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="40" startPosition="41" endLine="41" endPosition="86" />
-    <scopeInfo nodeId="6582171520145974382" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="45" startPosition="41" endLine="46" endPosition="83" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="54" startPosition="46" endLine="55" endPosition="67" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="65" startPosition="30" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="1466384023878382080" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="38" startPosition="41" endLine="39" endPosition="244" />
+    <scopeInfo nodeId="7970711249077252051" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="44" startPosition="41" endLine="45" endPosition="86" />
+    <scopeInfo nodeId="6582171520145974382" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="49" startPosition="41" endLine="50" endPosition="83" />
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="58" startPosition="46" endLine="59" endPosition="67" />
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="69" startPosition="30" endLine="70" endPosition="17" />
     <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="18" startPosition="144" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="61" endPosition="45">
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="63" startPosition="5" endLine="65" endPosition="45">
       <varInfo nodeId="1239631684045" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="7970711249077252093" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="29" startPosition="108" endLine="33" endPosition="0">
       <varInfo nodeId="7970711249077252093" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7970711249077252050" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="39" startPosition="116" endLine="43" endPosition="0">
+    <scopeInfo nodeId="1466384023878382079" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="37" startPosition="209" endLine="41" endPosition="0">
+      <varInfo nodeId="1466384023878382079" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7970711249077252050" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="43" startPosition="116" endLine="47" endPosition="0">
       <varInfo nodeId="7970711249077252050" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6582171520145974381" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="44" startPosition="124" endLine="48" endPosition="0">
+    <scopeInfo nodeId="6582171520145974381" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="48" startPosition="124" endLine="52" endPosition="0">
       <varInfo nodeId="6582171520145974381" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="58" startPosition="68" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="62" startPosition="68" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1239631684045" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="7970711249077251922" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="26" startPosition="106" endLine="34" endPosition="79">
@@ -15028,7 +15034,7 @@
       <varInfo nodeId="7970711249077251929" varName="memberOperations" />
       <varInfo nodeId="7970711249077252087" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="7970711249077251963" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="35" startPosition="12" endLine="50" endPosition="73">
+    <scopeInfo nodeId="7970711249077251963" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="35" startPosition="12" endLine="54" endPosition="73">
       <varInfo nodeId="7970711249077251992" varName="fieldRefOperations" />
       <varInfo nodeId="6582171520145974375" varName="fieldReferenceOperations" />
       <varInfo nodeId="7970711249077252044" varName="localFieldReferences" />
@@ -15036,16 +15042,17 @@
       <varInfo nodeId="7581428506283755542" varName="refs" />
       <varInfo nodeId="469835530123105229" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1239631684046" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="22" startPosition="118" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1239631684046" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="22" startPosition="118" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1239631684045" varName="field" />
       <varInfo nodeId="1239631684045" varName="status" />
       <varInfo nodeId="1239631684045" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="7970711249077252093" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="29" startPosition="85" endLine="33" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$1" />
-    <unitInfo nodeId="7970711249077252050" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="39" startPosition="93" endLine="43" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$2" />
-    <unitInfo nodeId="6582171520145974381" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="44" startPosition="101" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$3" />
-    <unitInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule" />
+    <unitInfo nodeId="1466384023878382079" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="37" startPosition="186" endLine="41" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$2" />
+    <unitInfo nodeId="7970711249077252050" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="43" startPosition="93" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$3" />
+    <unitInfo nodeId="6582171520145974381" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="48" startPosition="101" endLine="52" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$4" />
+    <unitInfo nodeId="1239631684045" fileName="check_FieldIsNeverUsedOrAssigned_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule" />
   </root>
   <root nodeId="1239715048280" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
     <nodeInfo nodeId="5885703495931979621" fileName="typeof_AbstractUnaryNumberOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -22995,84 +23002,91 @@
     <unitInfo nodeId="8319647327702769215" fileName="check_DuplicateClassifierNames_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule" />
   </root>
   <root nodeId="843236768047671205" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
-    <nodeInfo nodeId="469468540691054198" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="26" startPosition="62" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047680736" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="29" startPosition="72" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047680554" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="32" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="843236768047680719" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="33" startPosition="29" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768048013313" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="843236768047887594" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="843236768047887605" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="37" startPosition="55" endLine="38" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="843236768048021695" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="38" startPosition="120" endLine="39" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="843236768047887655" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="43" startPosition="130" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047887709" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="48" startPosition="127" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047887624" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="52" startPosition="7" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="55" startPosition="5" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="56" startPosition="58" endLine="57" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="61" startPosition="46" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="66" startPosition="5" endLine="67" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="67" startPosition="119" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="72" startPosition="30" endLine="73" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="21" startPosition="139" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FinalFieldWasAssigned_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="469468540691054186" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="25" startPosition="118" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047680722" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047680710" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="32" startPosition="125" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047887645" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="42" startPosition="163" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047887699" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="47" startPosition="159" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="54" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="65" startPosition="68" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="843236768047887641" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="41" startPosition="27" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="843236768047887695" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="46" startPosition="9" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="843236768047887630" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="40" startPosition="40" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047887621" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="39" startPosition="137" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="22" startPosition="58" endLine="22" endPosition="58" />
-    <scopeInfo nodeId="469468540691054187" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="26" startPosition="62" endLine="27" endPosition="13" />
-    <scopeInfo nodeId="843236768047680723" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="29" startPosition="72" endLine="30" endPosition="13" />
-    <scopeInfo nodeId="843236768047680711" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="33" startPosition="29" endLine="34" endPosition="13" />
-    <scopeInfo nodeId="843236768047887654" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="43" startPosition="130" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="843236768047887708" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="48" startPosition="127" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="61" startPosition="46" endLine="62" endPosition="67" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="72" startPosition="30" endLine="73" endPosition="17" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="21" startPosition="139" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="55" startPosition="5" endLine="57" endPosition="308">
+    <nodeInfo nodeId="469468540691054198" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="27" startPosition="62" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047680736" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="30" startPosition="72" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047680554" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="33" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="843236768047680719" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="34" startPosition="29" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768048013313" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="843236768047887594" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="843236768047887605" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="38" startPosition="55" endLine="39" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="843236768048021695" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="39" startPosition="120" endLine="40" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1466384023878382018" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="44" startPosition="43" endLine="45" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047887655" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="48" startPosition="130" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047887709" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="53" startPosition="127" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047887624" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="57" startPosition="7" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="60" startPosition="5" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="61" startPosition="58" endLine="62" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="66" startPosition="46" endLine="67" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="71" startPosition="5" endLine="72" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="72" startPosition="119" endLine="73" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="77" startPosition="30" endLine="78" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FinalFieldWasAssigned_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="469468540691054186" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="26" startPosition="118" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="843236768047680722" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="843236768047680710" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="33" startPosition="125" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="843236768047887645" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="47" startPosition="30" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="843236768047887699" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="52" startPosition="159" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1466384023878382016" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="43" startPosition="207" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="70" startPosition="68" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="843236768047887695" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="69" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="843236768047887641" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="42" startPosition="27" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="843236768047887630" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="41" startPosition="40" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="843236768047887621" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="40" startPosition="137" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="23" startPosition="58" endLine="23" endPosition="58" />
+    <scopeInfo nodeId="469468540691054187" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="27" startPosition="62" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="843236768047680723" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="30" startPosition="72" endLine="31" endPosition="13" />
+    <scopeInfo nodeId="843236768047680711" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="34" startPosition="29" endLine="35" endPosition="13" />
+    <scopeInfo nodeId="1466384023878382017" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="44" startPosition="43" endLine="45" endPosition="246" />
+    <scopeInfo nodeId="843236768047887654" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="48" startPosition="130" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="843236768047887708" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="53" startPosition="127" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="66" startPosition="46" endLine="67" endPosition="67" />
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="77" startPosition="30" endLine="78" endPosition="17" />
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="843236768047887576" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="60" startPosition="5" endLine="62" endPosition="308">
       <varInfo nodeId="843236768047887576" varName="_reporter_2309309498" />
       <varInfo nodeId="843236768047887576" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="66" startPosition="5" endLine="68" endPosition="45">
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="71" startPosition="5" endLine="73" endPosition="45">
       <varInfo nodeId="843236768047671205" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047887644" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="42" startPosition="163" endLine="45" endPosition="11" />
-    <scopeInfo nodeId="843236768047887698" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="47" startPosition="159" endLine="50" endPosition="11" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="65" startPosition="68" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="843236768047887641" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="41" startPosition="27" endLine="46" endPosition="9">
-      <varInfo nodeId="843236768047887642" varName="reference" />
+    <scopeInfo nodeId="843236768047887644" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="47" startPosition="30" endLine="50" endPosition="11" />
+    <scopeInfo nodeId="843236768047887698" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="52" startPosition="159" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="1466384023878382016" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="43" startPosition="207" endLine="47" endPosition="0">
+      <varInfo nodeId="1466384023878382016" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047887695" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="46" startPosition="9" endLine="51" endPosition="9">
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="70" startPosition="68" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="843236768047887695" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="56" endPosition="9">
       <varInfo nodeId="843236768047887696" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="843236768047671205" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047887631" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="41" startPosition="27" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="843236768047887623" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="40" startPosition="40" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="843236768047887621" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="39" startPosition="137" endLine="54" endPosition="5">
+    <scopeInfo nodeId="843236768047887641" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="42" startPosition="27" endLine="51" endPosition="9">
+      <varInfo nodeId="843236768047887642" varName="reference" />
+    </scopeInfo>
+    <scopeInfo nodeId="843236768047887631" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="42" startPosition="27" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="843236768047887623" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="41" startPosition="40" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="843236768047887621" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="40" startPosition="137" endLine="59" endPosition="5">
       <varInfo nodeId="843236768047887622" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047671206" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="25" startPosition="118" endLine="58" endPosition="5">
+    <scopeInfo nodeId="843236768047671206" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="26" startPosition="118" endLine="63" endPosition="5">
       <varInfo nodeId="843236768047680555" varName="classifier" />
       <varInfo nodeId="843236768047887595" varName="mayInitialize" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="843236768047671205" varName="field" />
       <varInfo nodeId="843236768047671205" varName="status" />
       <varInfo nodeId="843236768047671205" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalFieldWasAssigned_NonTypesystemRule" />
+    <unitInfo nodeId="1466384023878382016" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="43" startPosition="184" endLine="47" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalFieldWasAssigned_NonTypesystemRule$1" />
+    <unitInfo nodeId="843236768047671205" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalFieldWasAssigned_NonTypesystemRule" />
   </root>
   <root nodeId="843236768047679839" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
     <nodeInfo nodeId="469468540691054212" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="23" startPosition="62" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -21,22 +21,25 @@ public class RuleFieldReference extends DataFlowConstructor {
   }
 
   public String getApplicableConceptFqName() {
-    return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public void performActions(Program o, SNode node) {
-    if (SLinkOperations.getTargets(SLinkOperations.getTarget(node, "variableDeclaration", false), "annotation", true) != null) {
-      for (SNode annotation : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "variableDeclaration", false), "annotation", true)) {
-        String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
-        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~NotNull")) {
-          {
-            Object object = node;
-            if (((Program) o).contains(object)) {
-              boolean before = false;
-              int position = ((Program) (o)).getEnd(object);
-              Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
-              instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true, before);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      SNode field = SNodeOperations.cast(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      if (SLinkOperations.getTargets(field, "annotation", true) != null) {
+        for (SNode annotation : SLinkOperations.getTargets(field, "annotation", true)) {
+          String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
+          if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~NotNull")) {
+            {
+              Object object = node;
+              if (((Program) o).contains(object)) {
+                boolean before = false;
+                int position = ((Program) (o)).getEnd(object);
+                Instruction instruction = new notNullInstruction(field);
+                instruction.setSource(node);
+                ((Program) (o)).insert(instruction, position, true, before);
+              }
             }
           }
         }

@@ -73,7 +73,7 @@ public class FieldReferenceOperation_Behavior {
   }
 
   public static void call_convertToLocal_5311267937735269195(SNode thisNode) {
-    SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference");
+    SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.VariableReference");
     SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), false);
   }
 }
