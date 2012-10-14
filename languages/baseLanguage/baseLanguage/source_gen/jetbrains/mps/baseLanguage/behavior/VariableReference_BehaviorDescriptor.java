@@ -5,12 +5,16 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 
-public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements TypeAnnotable_BehaviorDescriptor, IVariableReference_BehaviorDescriptor {
+public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements TypeAnnotable_BehaviorDescriptor, IVariableReference_BehaviorDescriptor, ILocalReference_BehaviorDescriptor {
   public VariableReference_BehaviorDescriptor() {
   }
 
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return VariableReference_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
+  }
+
+  public SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
+    return VariableReference_Behavior.virtual_getDeclaration_3262277503800831941(thisNode);
   }
 
   public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {

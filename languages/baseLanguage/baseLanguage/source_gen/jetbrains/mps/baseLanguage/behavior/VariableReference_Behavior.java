@@ -105,6 +105,15 @@ public class VariableReference_Behavior {
     return false;
   }
 
+  public static SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
+    // todo: method from LocalVariableReference. Remove 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    } else {
+      return null;
+    }
+  }
+
   private static IModule check_gidzrl_a0e0a0e(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
