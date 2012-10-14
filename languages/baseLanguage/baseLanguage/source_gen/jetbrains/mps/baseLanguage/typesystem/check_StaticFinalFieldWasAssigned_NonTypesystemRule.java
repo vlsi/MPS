@@ -32,7 +32,7 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
     }
     SNode initializer = SLinkOperations.getTarget(classifier, "classInitializer", true);
     if (initializer != null) {
-      for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"}, false, new String[]{})) {
+      for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference"}, false, new String[]{})) {
         if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == field && CheckingUtil.isAssigned(reference)) {
           return;
         }

@@ -9,6 +9,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ClassRefactoringUtils {
   public ClassRefactoringUtils() {
@@ -27,7 +28,11 @@ public class ClassRefactoringUtils {
     for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{}))) {
       SetSequence.fromSet(nodesToCheck).addElement(SLinkOperations.getTarget(call, "variableDeclaration", false));
     }
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
+    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+      }
+    })) {
       SetSequence.fromSet(nodesToCheck).addElement(SLinkOperations.getTarget(call, "variableDeclaration", false));
     }
     return nodesToCheck;

@@ -23110,7 +23110,7 @@
     <nodeInfo nodeId="469468540691054200" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="22" startPosition="118" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="843236768047680738" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="843236768047680754" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="29" startPosition="125" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="843236768047704525" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="35" startPosition="257" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="843236768047704525" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="35" startPosition="249" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="843236768047680817" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="40" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="843236768047679839" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="843236768047679839" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -23134,7 +23134,7 @@
     <scopeInfo nodeId="843236768047679839" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="54" endPosition="45">
       <varInfo nodeId="843236768047679839" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="843236768047680881" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="35" startPosition="257" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="843236768047680881" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="35" startPosition="249" endLine="38" endPosition="9" />
     <scopeInfo nodeId="843236768047679839" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="843236768047679839" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" />
     <scopeInfo nodeId="843236768047679839" fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />

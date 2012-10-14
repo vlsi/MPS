@@ -688,7 +688,7 @@ public class JavaConverterTreeBuilder {
       } else
       if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
         role = "variableDeclaration";
-        SNode lsfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null);
+        SNode lsfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
         sourceNode = lsfr;
         result = lsfr;
       } else {
