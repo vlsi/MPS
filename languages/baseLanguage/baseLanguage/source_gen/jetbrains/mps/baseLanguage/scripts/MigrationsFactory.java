@@ -13,8 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
-import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -144,7 +144,16 @@ public class MigrationsFactory {
     return refactorings;
   }
 
-  private static List<AbstractMigrationRefactoring> migrateSModelAccess(final SNode referenceConcept, SNode targetConcept) {
+  private static List<AbstractMigrationRefactoring> migrateSModelAccess(final SNode referenceConcept, final SNode targetConcept) {
+    final SNode linkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(referenceConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "target", false) == targetConcept;
+      }
+    });
+    if (linkDeclaration == null) {
+      throw new IllegalArgumentException();
+    }
+
     return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
       public String getName() {
         return "Migrate specialized link reference access for " + SPropertyOperations.getString(referenceConcept, "name");
@@ -159,7 +168,7 @@ public class MigrationsFactory {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "link", false) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", "parameterDeclaration");
+        return SLinkOperations.getTarget(node, "link", false) == linkDeclaration;
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -335,8 +344,8 @@ public class MigrationsFactory {
     }
   }
 
-  public static class QuotationClass_uzzzvm_a0a2a0a1a4a0a0a0d {
-    public QuotationClass_uzzzvm_a0a2a0a1a4a0a0a0d() {
+  public static class QuotationClass_uzzzvm_a0a3a0a1a4a0a0d0d {
+    public QuotationClass_uzzzvm_a0a3a0a1a4a0a0d0d() {
     }
 
     public SNode createNode(Object parameter_9) {
