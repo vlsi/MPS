@@ -3387,7 +3387,7 @@
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7159297221553599103" resolveInfo="migrateVariableReferenceSModelUsages" />
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1408799705057550234" resolveInfo="MigrationsFactory" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1466384023878141387">
-          <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
+          <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1466384023878141388">
           <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
