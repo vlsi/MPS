@@ -40,8 +40,8 @@ abstract class SReferenceBase extends SReference {
       if (targetModelReference != null) {
         try {
           SModelId id = targetModelReference.getSModelId();
-          SModelId nid = StubMigrationHelper.convertModelId(id,false);
-          if (nid!=null){
+          SModelId nid = StubMigrationHelper.convertModelId(id, false);
+          if (nid != null) {
             targetModelReference = new SModelReference(targetModelReference.getSModelFqName(), nid);
           }
         } catch (Throwable t) {
@@ -62,7 +62,7 @@ abstract class SReferenceBase extends SReference {
 
   public boolean isExternal() {
     SModel m = getSourceNode().getModel();
-    SModelReference ref = m==null?getSourceNode().getOldModel().getSModelReference():m.getSModelReference();
+    SModelReference ref = m == null ? getSourceNode().getOldModel().getSModelReference() : m.getSModelReference();
     return !(ref.equals(getTargetSModelReference()));
   }
 
@@ -82,8 +82,10 @@ abstract class SReferenceBase extends SReference {
   }
 
   public void makeDirect() {
-    myImmatureTargetNode = getTargetNode();
-    ImmatureReferences.getInstance().add(this);
+    myImmatureTargetNode = getTargetNodeSilently();
+    if (myImmatureTargetNode != null) {
+      ImmatureReferences.getInstance().add(this);
+    }
   }
 
   protected synchronized final boolean makeIndirect(boolean force) {
