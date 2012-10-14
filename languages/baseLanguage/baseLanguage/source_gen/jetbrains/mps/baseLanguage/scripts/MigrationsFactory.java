@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.scripts;
 
 import java.util.List;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,8 +23,11 @@ public class MigrationsFactory {
   private MigrationsFactory() {
   }
 
-  public static List<AbstractMigrationRefactoring> migrateVariableReferenceNodes(final String referenceConcept, final String targetConcept) {
-    final String referenceConceptSimpleName = referenceConcept.substring(referenceConcept.lastIndexOf(".") + 1);
+  public static List<AbstractMigrationRefactoring> migrateVariableReferenceNodes(final SNode referenceConcept, final SNode targetConcept) {
+    final String referenceConceptSimpleName = SPropertyOperations.getString(referenceConcept, "name");
+    final String referenceConceptFqName = INamedConcept_Behavior.call_getFqName_1213877404258(referenceConcept);
+    final String targetConceptFqName = INamedConcept_Behavior.call_getFqName_1213877404258(targetConcept);
+
     return ListSequence.fromListAndArray(new ArrayList<AbstractMigrationRefactoring>(), new AbstractMigrationRefactoring(null) {
       public String getName() {
         return "Convert all nodes of " + referenceConceptSimpleName + " concept to VariableReference nodes";
@@ -33,15 +38,15 @@ public class MigrationsFactory {
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return referenceConcept;
+        return referenceConceptFqName;
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(targetConcept.equals(check_uzzzvm_a0a0a0d0a0a0b0a(check_uzzzvm_a0a0a0a3a0a0a1a0(check_uzzzvm_a0a0a0a0a3a0a0a1a0(node)))))) {
+        if (!(targetConceptFqName.equals(check_uzzzvm_a0a0a0d0a0a0e0a(check_uzzzvm_a0a0a0a3a0a0a4a0(check_uzzzvm_a0a0a0a0a3a0a0a4a0(node)))))) {
           return false;
         }
 
-        String modelName = check_uzzzvm_a0c0d0a0a0b0a(check_uzzzvm_a0a2a3a0a0a1a0(check_uzzzvm_a0a0c0d0a0a0b0a(check_uzzzvm_a0a0a2a3a0a0a1a0(SNodeOperations.getModel(node)))));
+        String modelName = check_uzzzvm_a0c0d0a0a0e0a(check_uzzzvm_a0a2a3a0a0a4a0(check_uzzzvm_a0a0c0d0a0a0e0a(check_uzzzvm_a0a0a2a3a0a0a4a0(SNodeOperations.getModel(node)))));
         if (!("jetbrains.mps.ide.java.parser".equals(modelName))) {
           return false;
         }
@@ -68,52 +73,88 @@ public class MigrationsFactory {
     });
   }
 
-  private static String check_uzzzvm_a0a0a0d0a0a0b0a(SConcept checkedDotOperand) {
+  public static List<AbstractMigrationRefactoring> migrateVariableReferenceSModelUsages(SNode referenceConcept, SNode targetConcept) {
+    return ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
+  }
+
+  private static String check_uzzzvm_a0a0a0d0a0a0e0a(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getId();
     }
     return null;
   }
 
-  private static SConcept check_uzzzvm_a0a0a0a3a0a0a1a0(SNode checkedDotOperand) {
+  private static SConcept check_uzzzvm_a0a0a0a3a0a0a4a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConcept();
     }
     return null;
   }
 
-  private static SNode check_uzzzvm_a0a0a0a0a3a0a0a1a0(SNode checkedDotOperand) {
+  private static SNode check_uzzzvm_a0a0a0a0a3a0a0a4a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "variableDeclaration", false);
     }
     return null;
   }
 
-  private static String check_uzzzvm_a0c0d0a0a0b0a(SModelFqName checkedDotOperand) {
+  private static String check_uzzzvm_a0c0d0a0a0e0a(SModelFqName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelFqName check_uzzzvm_a0a2a3a0a0a1a0(SModelReference checkedDotOperand) {
+  private static SModelFqName check_uzzzvm_a0a2a3a0a0a4a0(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelFqName();
     }
     return null;
   }
 
-  private static SModelReference check_uzzzvm_a0a0c0d0a0a0b0a(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_uzzzvm_a0a0c0d0a0a0e0a(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static SModelDescriptor check_uzzzvm_a0a0a2a3a0a0a1a0(SModel checkedDotOperand) {
+  private static SModelDescriptor check_uzzzvm_a0a0a2a3a0a0a4a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
+  }
+
+  public abstract class SModelMethodMigration extends AbstractMigrationRefactoring {
+    private final String methodName;
+    protected final SNode referenceConcept;
+    protected final SNode targetConcept;
+    protected final SNode smodelFunctionConcept;
+
+    public SModelMethodMigration(String methodName, SNode referenceConcept, SNode targetConcept, SNode smodelFunctionConcept) {
+      super(null);
+      this.methodName = methodName;
+      this.referenceConcept = referenceConcept;
+      this.targetConcept = targetConcept;
+      this.smodelFunctionConcept = smodelFunctionConcept;
+    }
+
+    public String getName() {
+      return "Migrate " + methodName + "(" + SPropertyOperations.getString(referenceConcept, "name") + ") usages";
+    }
+
+    public String getAdditionalInfo() {
+      return getName();
+    }
+
+    @Override
+    public boolean isShowAsIntention() {
+      return false;
+    }
+
+    public String getFqNameOfConceptToSearchInstances() {
+      return INamedConcept_Behavior.call_getFqName_1213877404258(smodelFunctionConcept);
+    }
   }
 }

@@ -5,23 +5,24 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class UnifyVariableReferences_MigrationScript extends BaseMigrationScript {
   public UnifyVariableReferences_MigrationScript(IOperationContext operationContext) {
     super("Convert all local/parameter/local instance field/ local static field variable references to variable reference concept");
-    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       this.addRefactoring(refactoring);
     }
     // whitespace part 
-    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       this.addRefactoring(refactoring);
     }
     // whitespace part 
-    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
       this.addRefactoring(refactoring);
     }
     // whitespace part 
-    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       this.addRefactoring(refactoring);
     }
   }
