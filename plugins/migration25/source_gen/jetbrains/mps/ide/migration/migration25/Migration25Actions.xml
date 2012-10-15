@@ -7,6 +7,7 @@
     <action id="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.ConvertLanguageRuntimes_Action" class="jetbrains.mps.ide.migration.migration25.ConvertLanguageRuntimes_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluginMove_Action" class="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluginMove_Action"/>
+    <action id="jetbrains.mps.ide.migration.migration25.DoNotGenerateAdapters_Action" class="jetbrains.mps.ide.migration.migration25.DoNotGenerateAdapters_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"/>
@@ -61,6 +62,7 @@
       <reference ref="jetbrains.mps.ide.migration.migration25.CorrectIconsAfterPluginMove_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.UpdateRefactoringVersions_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.ConvertLanguageRuntimes_Action"/>
+      <reference ref="jetbrains.mps.ide.migration.migration25.DoNotGenerateAdapters_Action"/>
       <add-to-group group-id="Migrations25_ActionGroupoptional" anchor="last"/>
     </group>
   </actions>
