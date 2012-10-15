@@ -14,7 +14,7 @@
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1167245922666">
-      <property name="name" nameId="tpck.1169194664001" value="logging_nodeSubstitue" />
+      <property name="name" nameId="tpck.1169194664001" value="logging_nodeSubstitute" />
     </node>
   </roots>
   <root id="1167245922666">
@@ -155,8 +155,8 @@
                             <link role="link" roleId="tp25.1138056516764" targetNodeId="tpib.1167227561449" />
                           </node>
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="6357564549601506860">
-                          <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="3905062763624719026">
+                          <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                         </node>
                       </node>
                     </node>
