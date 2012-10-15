@@ -29,9 +29,11 @@ public class SNodeUtil {
   public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
-      jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode)node).getModel();
-      node.delete();
-      model.addRoot((jetbrains.mps.smodel.SNode) replacer);
+      if (((jetbrains.mps.smodel.SNode) node).isRoot()) {
+        jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode) node).getModel();
+        node.delete();
+        model.addRoot((jetbrains.mps.smodel.SNode) replacer);
+      }
       return replacer;
     }
 
