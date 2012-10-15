@@ -84,6 +84,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     this(model, conceptFqName, true);
   }
 
+  public SNode(String conceptFqName) {
+    this(null, conceptFqName, true);
+  }
+
   public SModel getModelInternal() {
     return myModel;
   }
