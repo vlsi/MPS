@@ -171,7 +171,7 @@ public class ProjectTestHelper {
   }
 
   private class PrivToken extends ProjectTestHelper.Token {
-    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", ".dependencies", ".generated", ".debug");
+    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies");
     private final Project project;
     private final IModule module;
     private String tmpPath;
@@ -197,6 +197,7 @@ public class ProjectTestHelper {
       boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
       if (isParallel) {
         optBuilder.strictMode(true).generateInParallel(isParallel, 8);
+        SetSequence.fromSet(ignoredFiles).removeElement("generated");
       }
 
       final IScriptController ctl = new IScriptController.Stub() {
