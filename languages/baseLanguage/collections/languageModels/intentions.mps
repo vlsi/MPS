@@ -25,8 +25,8 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1193396656620">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertForEachStatementToForeachStatement" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertForEachStatementToForeachStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1153943597977" resolveInfo="ForEachStatement" />
     </node>
@@ -44,8 +44,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1237721394592" resolveInfo="AbstractContainerCreator" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2826767102480497650">
-      <property name="name" nameId="tpck.1169194664001" value="add_sequence_initializer" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="add_sequence_initializer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1224414427926" resolveInfo="SequenceCreator" />
     </node>
@@ -58,27 +58,27 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051453872">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
-      <property name="name" nameId="tpck.1169194664001" value="RemoveSetElementOperation_replace" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveSetElementOperation_replace" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226591481394" resolveInfo="RemoveSetElementOperation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051469795">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
-      <property name="name" nameId="tpck.1169194664001" value="AddSetElementOperation_replace" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="AddSetElementOperation_replace" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226566855640" resolveInfo="AddSetElementOperation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051516260">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
-      <property name="name" nameId="tpck.1169194664001" value="AddAllSetElementsOperation_replace" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="AddAllSetElementsOperation_replace" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226592602759" resolveInfo="AddAllSetElementsOperation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051516296">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
-      <property name="name" nameId="tpck.1169194664001" value="RemoveAllSetElementsOperation_replace" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveAllSetElementsOperation_replace" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226593880804" resolveInfo="RemoveAllSetElementsOperation" />
     </node>
   </roots>
@@ -282,11 +282,11 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1193397276524" resolveInfo="oldRef" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Node_ReplaceWithNewOperation" typeId="tpdg.767145758118872828" id="6357564549601506835">
-                      <link role="concept" roleId="tp25.1139867957129" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
+                      <link role="concept" roleId="tp25.1139867957129" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1193397312802">
-                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070568296581" />
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1193397315664">
