@@ -29,8 +29,8 @@ public class SNodeUtil {
   public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
-      if (((jetbrains.mps.smodel.SNode) node).isRoot()) {
-        jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode) node).getModel();
+      jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode) node).getModel();
+      if (model.isRoot((jetbrains.mps.smodel.SNode)node)) {
         node.delete();
         model.addRoot((jetbrains.mps.smodel.SNode) replacer);
       }

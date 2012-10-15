@@ -895,9 +895,8 @@ public class SModel {
     return changed;
   }
 
-  //this method is only for access from SNode. Use SNode.isRoot from outer code
 
-  boolean isRoot(@Nullable SNode node) {
+  public boolean isRoot(@Nullable SNode node) {
     return myRoots.contains(node);
   }
 
