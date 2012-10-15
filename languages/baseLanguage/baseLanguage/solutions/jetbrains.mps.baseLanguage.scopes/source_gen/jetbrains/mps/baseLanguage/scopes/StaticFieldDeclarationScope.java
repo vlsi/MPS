@@ -72,7 +72,7 @@ public class StaticFieldDeclarationScope extends Scope {
 
     for (IMapping<String, List<SNode>> group : MapSequence.fromMap(groups)) {
       if ((int) ListSequence.fromList(group.value()).count() == 1) {
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(group.value()));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(group.value()));
       }
     }
 

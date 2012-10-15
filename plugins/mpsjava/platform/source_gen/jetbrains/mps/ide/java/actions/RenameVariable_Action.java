@@ -95,6 +95,9 @@ public class RenameVariable_Action extends BaseAction {
         }
       });
       final String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName.value, "Variable");
+      if (newName == null) {
+        return;
+      }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SPropertyOperations.set(varDeclNode.value, "name", newName);

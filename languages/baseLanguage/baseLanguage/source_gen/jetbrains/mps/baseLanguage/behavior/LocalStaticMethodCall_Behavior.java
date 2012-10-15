@@ -4,16 +4,27 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LocalStaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<SNode> methods = new ClassifierAndSuperClassifiersScope(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
-    return methods;
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
+    return Sequence.fromIterable(Scope.getScope(SNodeOperations.getParent(thisNode), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")).getAvailableElements(methodName)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, "name").equals(methodName);
+      }
+    }).toListSequence();
   }
 }

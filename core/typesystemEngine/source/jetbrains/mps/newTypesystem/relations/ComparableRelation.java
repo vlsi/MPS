@@ -16,16 +16,15 @@
 package jetbrains.mps.newTypesystem.relations;
 
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.SubtypingUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ComparableRelation extends AbstractRelation {
   public boolean accept(RelationKind kind) {
@@ -40,8 +39,9 @@ public class ComparableRelation extends AbstractRelation {
     if (nodes.isEmpty()) {
       return false;
     }
+    // TODO: why not use global TypeChecker? there can be the only one, after all
     SubTypingManagerNew subTypingManager = (SubTypingManagerNew) state.getTypeCheckingContext().getTypeChecker().getSubtypingManager();
-    nodes = subTypingManager.eliminateSuperTypes(nodes);
+    nodes = SubtypingUtil.eliminateSuperTypes(nodes);
     List<SNode> types = new LinkedList<SNode>();
     SNode result = null;
     for (SNode type : nodes) {
@@ -53,7 +53,7 @@ public class ComparableRelation extends AbstractRelation {
       types.add(type);
     }
     if (result == null) {
-      result = subTypingManager.createMeet(nodes);
+      result = createMeet(nodes);
     }
     if (result != null) {
       RelationBlock block = typesToBlocks.get(result);
@@ -61,6 +61,13 @@ public class ComparableRelation extends AbstractRelation {
       state.addEquation(node, result, info);
     }
     return result != null;
+  }
+
+  private SNode createMeet(List<SNode> nodes) {
+    if (nodes.size() > 1) {
+      nodes = SubtypingUtil.eliminateSuperTypes(nodes);
+    }
+    return LatticeUtil.meetNodes(new LinkedHashSet<SNode>(nodes));
   }
 
 }

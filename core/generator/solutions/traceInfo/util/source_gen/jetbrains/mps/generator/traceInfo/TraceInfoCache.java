@@ -23,6 +23,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import java.net.MalformedURLException;
@@ -171,7 +172,12 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Nullable
   public DebugInfo getLastGeneratedDebugInfo(@NotNull SModelDescriptor descriptor) {
-    String generatorOutputPath = descriptor.getModule().getGeneratorOutputPath();
+    String generatorOutputPath;
+    if (neq_xlaj1j_a0b0m(descriptor.getStereotype(), SModelStereotype.TESTS)) {
+      generatorOutputPath = descriptor.getModule().getGeneratorOutputPath();
+    } else {
+      generatorOutputPath = descriptor.getModule().getTestsGeneratorOutputPath();
+    }
     if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
       return null;
     }
@@ -228,6 +234,13 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       file = file.substring(prefix.length());
     }
     return FileSystem.getInstance().getFileByPath(file);
+  }
+
+  private static boolean neq_xlaj1j_a0b0m(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 
   public static interface TraceInfoResourceProvider {

@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 
 public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -158,24 +160,12 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6n82d8_a0d0(editorContext, node);
+      return this.createReferencePresentation_6n82d8_a0d0(editorContext, node);
     }
 
-    private EditorCell createProperty_6n82d8_a0d0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("");
-      provider.setNoTargetText("<no null>");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_null");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
+    private EditorCell createReferencePresentation_6n82d8_a0d0(EditorContext editorContext, SNode node) {
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      editorCell.setCellId("ReferencePresentation_6n82d8_a0d0");
       return editorCell;
     }
   }

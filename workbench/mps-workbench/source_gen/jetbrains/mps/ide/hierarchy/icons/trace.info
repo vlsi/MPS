@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5797068448049410884">
+  <root nodeId="5797068448049410884" modelId="r:72d64ad3-3ff4-48cf-ad25-2f545520d9c5(jetbrains.mps.ide.hierarchy.icons)">
     <nodeInfo nodeId="5797068448049415570" fileName="Icons.java" startLine="9" startPosition="20" endLine="10" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHILDREN_ICON" />
     <nodeInfo nodeId="5797068448049415579" fileName="Icons.java" startLine="10" startPosition="98" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARENT_ICON" />
     <nodeInfo nodeId="5797068448049415588" fileName="Icons.java" startLine="11" startPosition="98" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ZOOM_IN_ICON" />

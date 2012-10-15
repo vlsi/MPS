@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6374750171056867477">
+  <root nodeId="6374750171056867477" modelId="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)">
     <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="28" startPosition="51" endLine="29" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="29" startPosition="185" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="35" startPosition="53" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -84,11 +84,11 @@
       <varInfo nodeId="6374750171056899811" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="58" startPosition="0" endLine="85" endPosition="0" />
-    <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
+    <unitInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="55" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody$QuotationClass_7325qm_a2a0g0a0" />
     <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="33" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody" />
-    <unitInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="55" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test.TestBody$QuotationClass_7325qm_a2a0g0a0" />
+    <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
   </root>
-  <root nodeId="7178287329507395260">
+  <root nodeId="7178287329507395260" modelId="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)">
     <nodeInfo nodeId="7178287329507546914" fileName="MockTemplateQueryContext.java" startLine="10" startPosition="68" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sessionObjects" />
     <nodeInfo nodeId="7178287329507396063" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7178287329507551690" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -122,7 +122,7 @@
     </scopeInfo>
     <unitInfo nodeId="7178287329507395260" fileName="MockTemplateQueryContext.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.closures.test.helper.MockTemplateQueryContext" />
   </root>
-  <root nodeId="7178287329507546162">
+  <root nodeId="7178287329507546162" modelId="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)">
     <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="27" startPosition="43" endLine="28" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="28" startPosition="185" endLine="29" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="33" startPosition="44" endLine="34" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -420,12 +420,12 @@
       <varInfo nodeId="7178287329507578907" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="0" endLine="122" endPosition="0" />
-    <unitInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="24" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" />
+    <unitInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a2a0f0a0" />
+    <unitInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="194" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a2a0f0b0" />
+    <unitInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="156" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a1a0e0b0" />
+    <unitInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="68" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a1a0e0a0" />
     <unitInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="38" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody" />
-    <unitInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="68" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test.TestBody$QuotationClass_u745oo_a1a0e0a0" />
-    <unitInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="156" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test.TestBody$QuotationClass_u745oo_a1a0e0b0" />
-    <unitInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test.TestBody$QuotationClass_u745oo_a2a0f0a0" />
-    <unitInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="194" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test.TestBody$QuotationClass_u745oo_a2a0f0b0" />
+    <unitInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="24" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" />
   </root>
 </debugInfo>
 

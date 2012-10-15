@@ -12,7 +12,7 @@ import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -24,7 +24,7 @@ import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
+import jetbrains.mps.debugger.java.api.state.watchables.CalculatedWatchable;
 import jetbrains.mps.debugger.api.ui.tree.WatchableNode;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -371,7 +371,7 @@ import jetbrains.mps.ide.messages.Icons;
   private static class InitialTreeNode extends TextTreeNode {
     public InitialTreeNode(AbstractEvaluationModel model) {
       super(model.getPresentation() + " = ");
-      setIcon(jetbrains.mps.debug.integration.ui.icons.Icons.WATCH);
+      setIcon(jetbrains.mps.debugger.java.api.ui.Icons.WATCH);
     }
 
     public boolean isLeaf() {

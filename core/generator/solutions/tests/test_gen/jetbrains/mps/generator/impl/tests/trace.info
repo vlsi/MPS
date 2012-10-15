@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="9030062148735499870">
+  <root nodeId="9030062148735499870" modelId="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)">
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="32" startPosition="49" endLine="33" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="33" startPosition="125" endLine="34" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="38" startPosition="57" endLine="39" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -223,8 +223,8 @@
       <varInfo nodeId="3541188775018139356" varName="userObjects" />
       <varInfo nodeId="759291420779681183" varName="userObjectsToLoose" />
     </scopeInfo>
-    <unitInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="29" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test" />
     <unitInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="91" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody" />
+    <unitInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="29" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test" />
   </root>
 </debugInfo>
 

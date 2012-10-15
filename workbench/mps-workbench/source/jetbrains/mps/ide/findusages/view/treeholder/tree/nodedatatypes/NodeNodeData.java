@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
-import org.apache.commons.lang.StringEscapeUtils;
+import jetbrains.mps.util.StringUtil;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -117,7 +117,7 @@ public class NodeNodeData extends BaseNodeData {
           String presentation = SNodeUtil.getPresentation(node);
           String result = (presentation != null) ? presentation : node.toString();
           LOG.assertLog(result != null);
-          result = StringEscapeUtils.escapeHtml(result);
+          result = StringUtil.escapeXml(result);
           return result;
         } catch (Throwable t) {
           LOG.error(t);
@@ -133,7 +133,7 @@ public class NodeNodeData extends BaseNodeData {
         if (node.getParent() == null) return "";
         return "role: " +
           "<i>" +
-          StringEscapeUtils.escapeHtml(node.getRole_()) +
+          StringUtil.escapeXml(node.getRole_()) +
           "</i>" +
           "; " +
           "in: " +

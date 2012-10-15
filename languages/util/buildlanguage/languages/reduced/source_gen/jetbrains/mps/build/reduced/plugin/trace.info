@@ -1,471 +1,473 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest$1" />
-  <root nodeId="10342590403667037">
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="32" startPosition="54" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="33" startPosition="82" endLine="34" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="36" startPosition="32" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="40" startPosition="38" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="44" startPosition="43" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="48" startPosition="43" endLine="49" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="52" startPosition="43" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="56" startPosition="32" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="60" startPosition="57" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="64" startPosition="59" endLine="65" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="65" startPosition="126" endLine="66" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="67" startPosition="0" endLine="68" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="75" startPosition="122" endLine="76" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403677919" fileName="CollectHashes_Facet.java" startLine="79" startPosition="43" endLine="80" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403669884" fileName="CollectHashes_Facet.java" startLine="80" startPosition="49" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103966615" fileName="CollectHashes_Facet.java" startLine="82" startPosition="36" endLine="83" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5443024688829587529" fileName="CollectHashes_Facet.java" startLine="83" startPosition="79" endLine="84" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403677940" fileName="CollectHashes_Facet.java" startLine="86" startPosition="56" endLine="87" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="92" startPosition="20" endLine="93" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="99" startPosition="35" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="103" startPosition="46" endLine="104" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="107" startPosition="43" endLine="108" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="111" startPosition="47" endLine="112" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="115" startPosition="44" endLine="116" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="119" startPosition="35" endLine="120" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="123" startPosition="33" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="127" startPosition="36" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="131" startPosition="37" endLine="132" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="135" startPosition="65" endLine="136" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="139" startPosition="66" endLine="140" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="143" startPosition="49" endLine="144" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="147" startPosition="61" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="149" startPosition="22" endLine="150" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="151" startPosition="7" endLine="152" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="156" startPosition="27" endLine="157" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="160" startPosition="57" endLine="161" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="164" startPosition="72" endLine="165" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="168" startPosition="47" endLine="169" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="173" startPosition="108" endLine="174" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="184" startPosition="7" endLine="185" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="186" startPosition="45" endLine="187" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="187" startPosition="145" endLine="188" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="195" startPosition="9" endLine="196" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="196" startPosition="100" endLine="197" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="198" startPosition="119" endLine="199" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="69" startPosition="0" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_collect#()V" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="179" startPosition="74" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="35" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CollectHashes_Facet#()V" />
-    <nodeInfo nodeId="10342590403677933" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="148" startPosition="34" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="155" startPosition="79" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="159" startPosition="0" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="197" startPosition="145" endLine="200" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="163" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileHashes#(Ljava/util/Map;)Ljava/util/Map;" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="167" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileHashes#()Ljava/util/Map;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="185" startPosition="98" endLine="189" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="10342590403670664" fileName="CollectHashes_Facet.java" startLine="84" startPosition="152" endLine="89" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="171" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/build/reduced/plugin/CollectHashes_Facet/Target_collect/Parameters;" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="183" startPosition="84" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="194" startPosition="11" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="146" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="10342590403670632" fileName="CollectHashes_Facet.java" startLine="81" startPosition="58" endLine="90" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="182" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="193" startPosition="83" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="10342590403668935" fileName="CollectHashes_Facet.java" startLine="78" startPosition="19" endLine="91" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="192" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="76" startPosition="56" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="74" startPosition="30" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="73" startPosition="29" endLine="96" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="72" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="70" startPosition="29" endLine="70" endPosition="29" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="180" startPosition="31" endLine="180" endPosition="31" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="202" startPosition="0" endLine="202" endPosition="37">
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest" />
+  <root nodeId="10342590403667037" modelId="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)">
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="34" startPosition="54" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="35" startPosition="82" endLine="36" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="38" startPosition="32" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="42" startPosition="38" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="46" startPosition="43" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="50" startPosition="43" endLine="51" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="54" startPosition="43" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="58" startPosition="32" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="62" startPosition="57" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="66" startPosition="59" endLine="67" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="67" startPosition="126" endLine="68" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="69" startPosition="0" endLine="70" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="77" startPosition="164" endLine="78" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403677919" fileName="CollectHashes_Facet.java" startLine="81" startPosition="43" endLine="82" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403669884" fileName="CollectHashes_Facet.java" startLine="82" startPosition="49" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6648795410103966615" fileName="CollectHashes_Facet.java" startLine="84" startPosition="36" endLine="85" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5443024688829587529" fileName="CollectHashes_Facet.java" startLine="85" startPosition="79" endLine="86" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403677940" fileName="CollectHashes_Facet.java" startLine="88" startPosition="56" endLine="89" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="94" startPosition="20" endLine="95" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="101" startPosition="35" endLine="102" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="105" startPosition="46" endLine="106" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="109" startPosition="43" endLine="110" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="113" startPosition="47" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="117" startPosition="44" endLine="118" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="121" startPosition="35" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="125" startPosition="33" endLine="126" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="129" startPosition="36" endLine="130" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="133" startPosition="37" endLine="134" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="137" startPosition="65" endLine="138" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="141" startPosition="66" endLine="142" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="145" startPosition="49" endLine="146" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="149" startPosition="61" endLine="150" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="151" startPosition="22" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="153" startPosition="7" endLine="154" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="158" startPosition="27" endLine="159" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="162" startPosition="57" endLine="163" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="166" startPosition="72" endLine="167" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="170" startPosition="47" endLine="171" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="175" startPosition="108" endLine="176" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="186" startPosition="7" endLine="187" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="188" startPosition="45" endLine="189" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="189" startPosition="145" endLine="190" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="197" startPosition="9" endLine="198" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="198" startPosition="100" endLine="199" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="200" startPosition="119" endLine="201" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="71" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_collect#()V" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="181" startPosition="74" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="37" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CollectHashes_Facet#()V" />
+    <nodeInfo nodeId="10342590403677933" fileName="CollectHashes_Facet.java" startLine="87" startPosition="105" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="150" startPosition="34" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="157" startPosition="79" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="161" startPosition="0" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="199" startPosition="145" endLine="202" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileHashes#(Ljava/util/Map;)Ljava/util/Map;" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="169" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileHashes#()Ljava/util/Map;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="187" startPosition="98" endLine="191" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="10342590403670664" fileName="CollectHashes_Facet.java" startLine="86" startPosition="152" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="173" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/build/reduced/plugin/CollectHashes_Facet/Target_collect/Parameters;" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="185" startPosition="84" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="196" startPosition="11" endLine="203" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="148" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
+    <nodeInfo nodeId="10342590403670632" fileName="CollectHashes_Facet.java" startLine="83" startPosition="58" endLine="92" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="184" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="195" startPosition="83" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="10342590403668935" fileName="CollectHashes_Facet.java" startLine="80" startPosition="19" endLine="93" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="194" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="78" startPosition="56" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="76" startPosition="30" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="75" startPosition="29" endLine="98" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="74" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="72" startPosition="29" endLine="72" endPosition="29" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="182" startPosition="31" endLine="182" endPosition="31" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="204" startPosition="0" endLine="204" endPosition="37">
       <varInfo nodeId="10342590403667037" varName="re" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="202" startPosition="37" endLine="202" endPosition="37" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="36" startPosition="32" endLine="37" endPosition="88" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="40" startPosition="38" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="44" startPosition="43" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="48" startPosition="43" endLine="49" endPosition="151" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="52" startPosition="43" endLine="53" endPosition="16" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="56" startPosition="32" endLine="57" endPosition="21" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="60" startPosition="57" endLine="61" endPosition="54" />
-    <scopeInfo nodeId="10342590403677934" fileName="CollectHashes_Facet.java" startLine="86" startPosition="56" endLine="87" endPosition="237" />
-    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="92" startPosition="20" endLine="93" endPosition="61" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="99" startPosition="35" endLine="100" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="103" startPosition="46" endLine="104" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="107" startPosition="43" endLine="108" endPosition="115" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="111" startPosition="47" endLine="112" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="115" startPosition="44" endLine="116" endPosition="107" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="119" startPosition="35" endLine="120" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="123" startPosition="33" endLine="124" endPosition="19" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="127" startPosition="36" endLine="128" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="131" startPosition="37" endLine="132" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="135" startPosition="65" endLine="136" endPosition="48" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="139" startPosition="66" endLine="140" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="143" startPosition="49" endLine="144" endPosition="40" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="149" startPosition="22" endLine="150" endPosition="53" />
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="156" startPosition="27" endLine="157" endPosition="16" />
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="160" startPosition="57" endLine="161" endPosition="26" />
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="164" startPosition="72" endLine="165" endPosition="31" />
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="168" startPosition="47" endLine="169" endPosition="26" />
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="173" startPosition="108" endLine="174" endPosition="82" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="198" startPosition="119" endLine="199" endPosition="35" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="69" startPosition="0" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="179" startPosition="74" endLine="181" endPosition="5" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="186" startPosition="45" endLine="188" endPosition="111">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="204" startPosition="37" endLine="204" endPosition="37" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="38" startPosition="32" endLine="39" endPosition="88" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="42" startPosition="38" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="46" startPosition="43" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="50" startPosition="43" endLine="51" endPosition="151" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="54" startPosition="43" endLine="55" endPosition="16" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="58" startPosition="32" endLine="59" endPosition="21" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="62" startPosition="57" endLine="63" endPosition="54" />
+    <scopeInfo nodeId="10342590403677934" fileName="CollectHashes_Facet.java" startLine="88" startPosition="56" endLine="89" endPosition="237" />
+    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="94" startPosition="20" endLine="95" endPosition="61" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="101" startPosition="35" endLine="102" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="105" startPosition="46" endLine="106" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="109" startPosition="43" endLine="110" endPosition="115" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="113" startPosition="47" endLine="114" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="117" startPosition="44" endLine="118" endPosition="107" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="121" startPosition="35" endLine="122" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="125" startPosition="33" endLine="126" endPosition="19" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="129" startPosition="36" endLine="130" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="133" startPosition="37" endLine="134" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="137" startPosition="65" endLine="138" endPosition="48" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="141" startPosition="66" endLine="142" endPosition="18" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="145" startPosition="49" endLine="146" endPosition="40" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="151" startPosition="22" endLine="152" endPosition="53" />
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="158" startPosition="27" endLine="159" endPosition="16" />
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="162" startPosition="57" endLine="163" endPosition="26" />
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="166" startPosition="72" endLine="167" endPosition="31" />
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="170" startPosition="47" endLine="171" endPosition="26" />
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="175" startPosition="108" endLine="176" endPosition="82" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="200" startPosition="119" endLine="201" endPosition="35" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="71" startPosition="0" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="181" startPosition="74" endLine="183" endPosition="5" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="188" startPosition="45" endLine="190" endPosition="111">
       <varInfo nodeId="10342590403667037" varName="props" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="35" startPosition="0" endLine="38" endPosition="3" />
-    <scopeInfo nodeId="10342590403670665" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21" />
-    <scopeInfo nodeId="10342590403677933" fileName="CollectHashes_Facet.java" startLine="85" startPosition="105" endLine="88" endPosition="21">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="37" startPosition="0" endLine="40" endPosition="3" />
+    <scopeInfo nodeId="10342590403670665" fileName="CollectHashes_Facet.java" startLine="87" startPosition="105" endLine="90" endPosition="21" />
+    <scopeInfo nodeId="10342590403677933" fileName="CollectHashes_Facet.java" startLine="87" startPosition="105" endLine="90" endPosition="21">
       <varInfo nodeId="10342590403677935" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="155" startPosition="79" endLine="158" endPosition="7" />
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="159" startPosition="0" endLine="162" endPosition="7">
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="157" startPosition="79" endLine="160" endPosition="7" />
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="161" startPosition="0" endLine="164" endPosition="7">
       <varInfo nodeId="10342590403670681" varName="fileHashes" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="10342590403667041" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="163" startPosition="0" endLine="167" endPosition="0">
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="10342590403670681" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="167" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="10342590403670664" fileName="CollectHashes_Facet.java" startLine="84" startPosition="152" endLine="89" endPosition="19">
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="10342590403670664" fileName="CollectHashes_Facet.java" startLine="86" startPosition="152" endLine="91" endPosition="19">
       <varInfo nodeId="10342590403670666" varName="grd" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="147" startPosition="61" endLine="152" endPosition="15">
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="149" startPosition="61" endLine="154" endPosition="15">
       <varInfo nodeId="10342590403667041" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="171" startPosition="0" endLine="176" endPosition="0">
+    <scopeInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="173" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="10342590403670681" varName="from" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="184" startPosition="7" endLine="189" endPosition="9">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="186" startPosition="7" endLine="191" endPosition="9">
       <varInfo nodeId="10342590403667037" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="195" startPosition="9" endLine="200" endPosition="11">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="197" startPosition="9" endLine="202" endPosition="11">
       <varInfo nodeId="10342590403667037" varName="name" />
       <varInfo nodeId="10342590403667037" varName="props" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403670633" fileName="CollectHashes_Facet.java" startLine="82" startPosition="36" endLine="89" endPosition="19">
+    <scopeInfo nodeId="10342590403670633" fileName="CollectHashes_Facet.java" startLine="84" startPosition="36" endLine="91" endPosition="19">
       <varInfo nodeId="5443024688829587530" varName="outputDir" />
       <varInfo nodeId="6648795410103966616" varName="outputRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="183" startPosition="84" endLine="190" endPosition="7" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="194" startPosition="11" endLine="201" endPosition="9" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="146" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="185" startPosition="84" endLine="192" endPosition="7" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="196" startPosition="11" endLine="203" endPosition="9" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="148" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="10342590403667041" varName="cls" />
       <varInfo nodeId="10342590403667041" varName="copyFrom" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="182" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="184" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="10342590403667037" varName="properties" />
       <varInfo nodeId="10342590403667037" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="193" startPosition="83" endLine="203" endPosition="7" />
-    <scopeInfo nodeId="10342590403668936" fileName="CollectHashes_Facet.java" startLine="79" startPosition="43" endLine="90" endPosition="17">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="195" startPosition="83" endLine="205" endPosition="7" />
+    <scopeInfo nodeId="10342590403668936" fileName="CollectHashes_Facet.java" startLine="81" startPosition="43" endLine="92" endPosition="17">
       <varInfo nodeId="10342590403677920" varName="gres" />
       <varInfo nodeId="10342590403669885" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="78" startPosition="19" endLine="91" endPosition="15" />
-    <scopeInfo nodeId="10342590403668935" fileName="CollectHashes_Facet.java" startLine="78" startPosition="19" endLine="91" endPosition="15">
+    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="80" startPosition="19" endLine="93" endPosition="15" />
+    <scopeInfo nodeId="10342590403668935" fileName="CollectHashes_Facet.java" startLine="80" startPosition="19" endLine="93" endPosition="15">
       <varInfo nodeId="10342590403668937" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="192" startPosition="0" endLine="205" endPosition="0">
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="194" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="10342590403667037" varName="properties" />
       <varInfo nodeId="10342590403667037" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="75" startPosition="122" endLine="94" endPosition="11">
+    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="77" startPosition="164" endLine="96" endPosition="11">
       <varInfo nodeId="10342590403667043" varName="_output_revm5v_a0a" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="74" startPosition="30" endLine="96" endPosition="0">
+    <scopeInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="76" startPosition="30" endLine="98" endPosition="0">
       <varInfo nodeId="10342590403667043" varName="input" />
       <varInfo nodeId="10342590403667043" varName="monitor" />
       <varInfo nodeId="10342590403667043" varName="pa" />
+      <varInfo nodeId="10342590403667043" varName="progressMonitor" />
     </scopeInfo>
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="73" startPosition="29" endLine="96" endPosition="8" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="72" startPosition="0" endLine="98" endPosition="0" />
-    <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="32" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet" />
-    <unitInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="74" startPosition="17" endLine="96" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$1" />
-    <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="179" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$TargetProperties" />
-    <unitInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="64" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$Target_collect" />
-    <unitInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="155" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet.Target_collect$Parameters" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="75" startPosition="29" endLine="98" endPosition="8" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="74" startPosition="0" endLine="100" endPosition="0" />
+    <unitInfo nodeId="10342590403667043" fileName="CollectHashes_Facet.java" startLine="76" startPosition="17" endLine="98" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$1" />
+    <unitInfo nodeId="10342590403670681" fileName="CollectHashes_Facet.java" startLine="157" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$Target_collect$Parameters" />
+    <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="181" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$TargetProperties" />
+    <unitInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="66" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$Target_collect" />
+    <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="34" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet" />
   </root>
-  <root nodeId="8795824097439267909">
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="34" startPosition="52" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="35" startPosition="82" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="38" startPosition="30" endLine="39" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="42" startPosition="38" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="46" startPosition="43" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="50" startPosition="43" endLine="51" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="54" startPosition="43" endLine="55" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="58" startPosition="32" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="62" startPosition="57" endLine="63" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="66" startPosition="58" endLine="67" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="67" startPosition="130" endLine="68" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="69" startPosition="0" endLine="70" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="77" startPosition="122" endLine="78" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8096124782826059796" fileName="ReportFiles_Facet.java" startLine="84" startPosition="70" endLine="85" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8096124782826059808" fileName="ReportFiles_Facet.java" startLine="88" startPosition="53" endLine="89" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439402301" fileName="ReportFiles_Facet.java" startLine="93" startPosition="62" endLine="94" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439402318" fileName="ReportFiles_Facet.java" startLine="94" startPosition="190" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6144857275938718814" fileName="ReportFiles_Facet.java" startLine="99" startPosition="62" endLine="100" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6144857275938718841" fileName="ReportFiles_Facet.java" startLine="100" startPosition="190" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5256897414278166122" fileName="ReportFiles_Facet.java" startLine="105" startPosition="17" endLine="106" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="107" startPosition="20" endLine="108" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="114" startPosition="35" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="118" startPosition="46" endLine="119" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="122" startPosition="43" endLine="123" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="126" startPosition="47" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="130" startPosition="44" endLine="131" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="134" startPosition="35" endLine="135" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="138" startPosition="33" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="142" startPosition="36" endLine="143" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="146" startPosition="37" endLine="147" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="150" startPosition="65" endLine="151" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="154" startPosition="66" endLine="155" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="158" startPosition="49" endLine="159" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="162" startPosition="61" endLine="163" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="164" startPosition="22" endLine="165" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="166" startPosition="7" endLine="167" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="171" startPosition="27" endLine="172" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="175" startPosition="79" endLine="176" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="179" startPosition="60" endLine="180" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="183" startPosition="60" endLine="184" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="187" startPosition="42" endLine="188" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="191" startPosition="42" endLine="192" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="196" startPosition="112" endLine="197" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="207" startPosition="7" endLine="208" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="209" startPosition="45" endLine="210" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="210" startPosition="139" endLine="211" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="211" startPosition="110" endLine="212" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="219" startPosition="9" endLine="220" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="220" startPosition="97" endLine="221" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="222" startPosition="118" endLine="223" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="225" startPosition="118" endLine="226" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="71" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_report#()V" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="202" startPosition="74" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="37" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReportFiles_Facet#()V" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="163" startPosition="34" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="170" startPosition="86" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="174" startPosition="0" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/util/List;Ljava/util/List;)V" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="221" startPosition="139" endLine="224" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="224" startPosition="11" endLine="227" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="83" startPosition="116" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="87" startPosition="55" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/delta/IDelta;)Z" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="178" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writtenFiles#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deletedFiles#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writtenFiles#()Ljava/util/List;" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deletedFiles#()Ljava/util/List;" />
-    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="194" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/build/reduced/plugin/ReportFiles_Facet/Target_report/Parameters;" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="208" startPosition="95" endLine="213" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8795824097439402283" fileName="ReportFiles_Facet.java" startLine="91" startPosition="57" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="6144857275938718803" fileName="ReportFiles_Facet.java" startLine="97" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptDeleted#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="161" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="206" startPosition="84" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="218" startPosition="11" endLine="228" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="205" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="217" startPosition="83" endLine="230" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="216" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="8096124782826059786" fileName="ReportFiles_Facet.java" startLine="82" startPosition="35" endLine="103" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="81" startPosition="66" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8795824097439267922" fileName="ReportFiles_Facet.java" startLine="80" startPosition="19" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="78" startPosition="56" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="76" startPosition="30" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="75" startPosition="29" endLine="111" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="74" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="72" startPosition="28" endLine="72" endPosition="28" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="203" startPosition="31" endLine="203" endPosition="31" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="229" startPosition="0" endLine="229" endPosition="37">
+  <root nodeId="8795824097439267909" modelId="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)">
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="36" startPosition="52" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="37" startPosition="82" endLine="38" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="40" startPosition="30" endLine="41" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="44" startPosition="38" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="48" startPosition="43" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="52" startPosition="43" endLine="53" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="56" startPosition="43" endLine="57" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="60" startPosition="32" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="64" startPosition="57" endLine="65" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="68" startPosition="58" endLine="69" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="69" startPosition="130" endLine="70" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="71" startPosition="0" endLine="72" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="79" startPosition="164" endLine="80" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8096124782826059796" fileName="ReportFiles_Facet.java" startLine="86" startPosition="70" endLine="87" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8096124782826059808" fileName="ReportFiles_Facet.java" startLine="90" startPosition="53" endLine="91" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439402301" fileName="ReportFiles_Facet.java" startLine="95" startPosition="62" endLine="96" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439402318" fileName="ReportFiles_Facet.java" startLine="96" startPosition="190" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6144857275938718814" fileName="ReportFiles_Facet.java" startLine="101" startPosition="62" endLine="102" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6144857275938718841" fileName="ReportFiles_Facet.java" startLine="102" startPosition="190" endLine="103" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5256897414278166122" fileName="ReportFiles_Facet.java" startLine="107" startPosition="17" endLine="108" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="109" startPosition="20" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="116" startPosition="35" endLine="117" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="120" startPosition="46" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="124" startPosition="43" endLine="125" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="128" startPosition="47" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="132" startPosition="44" endLine="133" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="136" startPosition="35" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="140" startPosition="33" endLine="141" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="144" startPosition="36" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="148" startPosition="37" endLine="149" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="152" startPosition="65" endLine="153" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="156" startPosition="66" endLine="157" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="160" startPosition="49" endLine="161" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="164" startPosition="61" endLine="165" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="166" startPosition="22" endLine="167" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="168" startPosition="7" endLine="169" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="173" startPosition="27" endLine="174" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="177" startPosition="79" endLine="178" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="181" startPosition="60" endLine="182" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="185" startPosition="60" endLine="186" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="189" startPosition="42" endLine="190" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="193" startPosition="42" endLine="194" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="198" startPosition="112" endLine="199" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="209" startPosition="7" endLine="210" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="211" startPosition="45" endLine="212" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="212" startPosition="139" endLine="213" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="213" startPosition="110" endLine="214" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="221" startPosition="9" endLine="222" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="222" startPosition="97" endLine="223" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="224" startPosition="118" endLine="225" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="227" startPosition="118" endLine="228" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="73" startPosition="0" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_report#()V" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="204" startPosition="74" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="39" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReportFiles_Facet#()V" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="165" startPosition="34" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="172" startPosition="86" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="176" startPosition="0" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/util/List;Ljava/util/List;)V" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="223" startPosition="139" endLine="226" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="226" startPosition="11" endLine="229" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
+    <nodeInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="85" startPosition="116" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="89" startPosition="55" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/delta/IDelta;)Z" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="159" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writtenFiles#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deletedFiles#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writtenFiles#()Ljava/util/List;" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deletedFiles#()Ljava/util/List;" />
+    <nodeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="196" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/build/reduced/plugin/ReportFiles_Facet/Target_report/Parameters;" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="210" startPosition="95" endLine="215" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8795824097439402283" fileName="ReportFiles_Facet.java" startLine="93" startPosition="57" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="6144857275938718803" fileName="ReportFiles_Facet.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptDeleted#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="163" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="208" startPosition="84" endLine="216" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="220" startPosition="11" endLine="230" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="207" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="219" startPosition="83" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="218" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+    <nodeInfo nodeId="8096124782826059786" fileName="ReportFiles_Facet.java" startLine="84" startPosition="35" endLine="105" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="83" startPosition="66" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8795824097439267922" fileName="ReportFiles_Facet.java" startLine="82" startPosition="19" endLine="107" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="80" startPosition="56" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="78" startPosition="30" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="77" startPosition="29" endLine="113" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="76" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="74" startPosition="28" endLine="74" endPosition="28" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="205" startPosition="31" endLine="205" endPosition="31" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="231" startPosition="0" endLine="231" endPosition="37">
       <varInfo nodeId="8795824097439267909" varName="re" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="229" startPosition="37" endLine="229" endPosition="37" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="38" startPosition="30" endLine="39" endPosition="85" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="42" startPosition="38" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="46" startPosition="43" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="50" startPosition="43" endLine="51" endPosition="150" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="54" startPosition="43" endLine="55" endPosition="98" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="58" startPosition="32" endLine="59" endPosition="21" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="62" startPosition="57" endLine="63" endPosition="52" />
-    <scopeInfo nodeId="8096124782826059795" fileName="ReportFiles_Facet.java" startLine="84" startPosition="70" endLine="85" endPosition="60" />
-    <scopeInfo nodeId="8096124782826059807" fileName="ReportFiles_Facet.java" startLine="88" startPosition="53" endLine="89" endPosition="60" />
-    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="107" startPosition="20" endLine="108" endPosition="61" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="114" startPosition="35" endLine="115" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="118" startPosition="46" endLine="119" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="122" startPosition="43" endLine="123" endPosition="113" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="126" startPosition="47" endLine="127" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="130" startPosition="44" endLine="131" endPosition="112" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="134" startPosition="35" endLine="135" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="138" startPosition="33" endLine="139" endPosition="19" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="142" startPosition="36" endLine="143" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="146" startPosition="37" endLine="147" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="150" startPosition="65" endLine="151" endPosition="48" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="154" startPosition="66" endLine="155" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="158" startPosition="49" endLine="159" endPosition="40" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="164" startPosition="22" endLine="165" endPosition="53" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="171" startPosition="27" endLine="172" endPosition="16" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="175" startPosition="79" endLine="176" endPosition="42" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="179" startPosition="60" endLine="180" endPosition="31" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="183" startPosition="60" endLine="184" endPosition="31" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="187" startPosition="42" endLine="188" endPosition="26" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="191" startPosition="42" endLine="192" endPosition="26" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="196" startPosition="112" endLine="197" endPosition="79" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="222" startPosition="118" endLine="223" endPosition="37" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="225" startPosition="118" endLine="226" endPosition="37" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="71" startPosition="0" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="8795824097439402288" fileName="ReportFiles_Facet.java" startLine="93" startPosition="62" endLine="95" endPosition="34" />
-    <scopeInfo nodeId="6144857275938718808" fileName="ReportFiles_Facet.java" startLine="99" startPosition="62" endLine="101" endPosition="34" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="202" startPosition="74" endLine="204" endPosition="5" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="37" startPosition="0" endLine="40" endPosition="3" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="170" startPosition="86" endLine="173" endPosition="7" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="174" startPosition="0" endLine="177" endPosition="7">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="231" startPosition="37" endLine="231" endPosition="37" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="40" startPosition="30" endLine="41" endPosition="85" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="44" startPosition="38" endLine="45" endPosition="19" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="48" startPosition="43" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="52" startPosition="43" endLine="53" endPosition="150" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="56" startPosition="43" endLine="57" endPosition="98" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="60" startPosition="32" endLine="61" endPosition="21" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="64" startPosition="57" endLine="65" endPosition="52" />
+    <scopeInfo nodeId="8096124782826059795" fileName="ReportFiles_Facet.java" startLine="86" startPosition="70" endLine="87" endPosition="60" />
+    <scopeInfo nodeId="8096124782826059807" fileName="ReportFiles_Facet.java" startLine="90" startPosition="53" endLine="91" endPosition="60" />
+    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="109" startPosition="20" endLine="110" endPosition="61" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="116" startPosition="35" endLine="117" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="120" startPosition="46" endLine="121" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="124" startPosition="43" endLine="125" endPosition="113" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="128" startPosition="47" endLine="129" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="132" startPosition="44" endLine="133" endPosition="112" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="136" startPosition="35" endLine="137" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="140" startPosition="33" endLine="141" endPosition="19" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="144" startPosition="36" endLine="145" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="148" startPosition="37" endLine="149" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="152" startPosition="65" endLine="153" endPosition="48" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="156" startPosition="66" endLine="157" endPosition="18" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="160" startPosition="49" endLine="161" endPosition="40" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="166" startPosition="22" endLine="167" endPosition="53" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="173" startPosition="27" endLine="174" endPosition="16" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="177" startPosition="79" endLine="178" endPosition="42" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="181" startPosition="60" endLine="182" endPosition="31" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="185" startPosition="60" endLine="186" endPosition="31" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="189" startPosition="42" endLine="190" endPosition="26" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="193" startPosition="42" endLine="194" endPosition="26" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="198" startPosition="112" endLine="199" endPosition="79" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="224" startPosition="118" endLine="225" endPosition="37" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="227" startPosition="118" endLine="228" endPosition="37" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="73" startPosition="0" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="8795824097439402288" fileName="ReportFiles_Facet.java" startLine="95" startPosition="62" endLine="97" endPosition="34" />
+    <scopeInfo nodeId="6144857275938718808" fileName="ReportFiles_Facet.java" startLine="101" startPosition="62" endLine="103" endPosition="34" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="204" startPosition="74" endLine="206" endPosition="5" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="39" startPosition="0" endLine="42" endPosition="3" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="172" startPosition="86" endLine="175" endPosition="7" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="176" startPosition="0" endLine="179" endPosition="7">
       <varInfo nodeId="8795824097439402293" varName="deletedFiles" />
       <varInfo nodeId="8795824097439402293" varName="writtenFiles" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="209" startPosition="45" endLine="212" endPosition="110">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="211" startPosition="45" endLine="214" endPosition="110">
       <varInfo nodeId="8795824097439267909" varName="props" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="83" startPosition="116" endLine="87" endPosition="0">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="85" startPosition="116" endLine="89" endPosition="0">
       <varInfo nodeId="8096124782826059794" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="87" startPosition="55" endLine="91" endPosition="0">
+    <scopeInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="89" startPosition="55" endLine="93" endPosition="0">
       <varInfo nodeId="8096124782826059806" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="149" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="151" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="159" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="8795824097439267911" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="178" startPosition="0" endLine="182" endPosition="0">
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="180" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="8795824097439402293" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="182" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="184" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="8795824097439402293" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="186" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="190" startPosition="0" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="162" startPosition="61" endLine="167" endPosition="15">
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="164" startPosition="61" endLine="169" endPosition="15">
       <varInfo nodeId="8795824097439267911" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="194" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="196" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="8795824097439402293" varName="from" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439402283" fileName="ReportFiles_Facet.java" startLine="91" startPosition="57" endLine="97" endPosition="0">
+    <scopeInfo nodeId="8795824097439402283" fileName="ReportFiles_Facet.java" startLine="93" startPosition="57" endLine="99" endPosition="0">
       <varInfo nodeId="8795824097439402286" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="6144857275938718803" fileName="ReportFiles_Facet.java" startLine="97" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="6144857275938718803" fileName="ReportFiles_Facet.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="6144857275938718804" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="207" startPosition="7" endLine="213" endPosition="9">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="209" startPosition="7" endLine="215" endPosition="9">
       <varInfo nodeId="8795824097439267909" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="161" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="163" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="8795824097439267911" varName="cls" />
       <varInfo nodeId="8795824097439267911" varName="copyFrom" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="206" startPosition="84" endLine="214" endPosition="7" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="219" startPosition="9" endLine="227" endPosition="11">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="208" startPosition="84" endLine="216" endPosition="7" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="221" startPosition="9" endLine="229" endPosition="11">
       <varInfo nodeId="8795824097439267909" varName="name" />
       <varInfo nodeId="8795824097439267909" varName="props" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="218" startPosition="11" endLine="228" endPosition="9" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="205" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="220" startPosition="11" endLine="230" endPosition="9" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="207" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="8795824097439267909" varName="properties" />
       <varInfo nodeId="8795824097439267909" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="217" startPosition="83" endLine="230" endPosition="7" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="216" startPosition="0" endLine="232" endPosition="0">
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="219" startPosition="83" endLine="232" endPosition="7" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="218" startPosition="0" endLine="234" endPosition="0">
       <varInfo nodeId="8795824097439267909" varName="properties" />
       <varInfo nodeId="8795824097439267909" varName="store" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439268860" fileName="ReportFiles_Facet.java" startLine="82" startPosition="35" endLine="103" endPosition="21" />
-    <scopeInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="81" startPosition="66" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="80" startPosition="19" endLine="106" endPosition="114" />
-    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="77" startPosition="122" endLine="109" endPosition="11">
+    <scopeInfo nodeId="8795824097439268860" fileName="ReportFiles_Facet.java" startLine="84" startPosition="35" endLine="105" endPosition="21" />
+    <scopeInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="83" startPosition="66" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="82" startPosition="19" endLine="108" endPosition="114" />
+    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="79" startPosition="164" endLine="111" endPosition="11">
       <varInfo nodeId="8795824097439267913" varName="_output_bk4wqp_a0a" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="76" startPosition="30" endLine="111" endPosition="0">
+    <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="78" startPosition="30" endLine="113" endPosition="0">
       <varInfo nodeId="8795824097439267913" varName="input" />
       <varInfo nodeId="8795824097439267913" varName="monitor" />
       <varInfo nodeId="8795824097439267913" varName="pa" />
+      <varInfo nodeId="8795824097439267913" varName="progressMonitor" />
     </scopeInfo>
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="75" startPosition="29" endLine="111" endPosition="8" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="74" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="34" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet" />
-    <unitInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="76" startPosition="17" endLine="111" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$1" />
-    <unitInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="81" startPosition="54" endLine="105" endPosition="15" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$2" />
-    <unitInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="83" startPosition="81" endLine="87" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
-    <unitInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="87" startPosition="31" endLine="91" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
-    <unitInfo nodeId="8795824097439402281" fileName="ReportFiles_Facet.java" startLine="91" startPosition="35" endLine="103" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
-    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="202" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$TargetProperties" />
-    <unitInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="66" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$Target_report" />
-    <unitInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="170" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet.Target_report$Parameters" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="77" startPosition="29" endLine="113" endPosition="8" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="76" startPosition="0" endLine="115" endPosition="0" />
+    <unitInfo nodeId="8096124782826059794" fileName="ReportFiles_Facet.java" startLine="85" startPosition="81" endLine="89" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
+    <unitInfo nodeId="8096124782826059806" fileName="ReportFiles_Facet.java" startLine="89" startPosition="31" endLine="93" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
+    <unitInfo nodeId="8795824097439402281" fileName="ReportFiles_Facet.java" startLine="93" startPosition="35" endLine="105" endPosition="19" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$3" />
+    <unitInfo nodeId="8795824097439268859" fileName="ReportFiles_Facet.java" startLine="83" startPosition="54" endLine="107" endPosition="15" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$2" />
+    <unitInfo nodeId="8795824097439402293" fileName="ReportFiles_Facet.java" startLine="172" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$Target_report$Parameters" />
+    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="204" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$TargetProperties" />
+    <unitInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="78" startPosition="17" endLine="113" endPosition="7" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$1" />
+    <unitInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="68" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet$Target_report" />
+    <unitInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="36" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet" />
   </root>
 </debugInfo>
 

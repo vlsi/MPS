@@ -9,6 +9,7 @@
   <language namespace="dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)" />
   <import index="fn29" modelUID="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" version="-1" />
   <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
@@ -16,7 +17,6 @@
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="z5g5" modelUID="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="8351679702044320280">
       <property name="name" nameId="tpck.1169194664001" value="Generate" />
@@ -242,9 +242,6 @@
     </node>
   </root>
   <root id="6418371274763153153">
-    <node role="optional" roleId="vvvw.6447445394688422657" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="694641402828041917">
-      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044326367" resolveInfo="GenerateSpecial" />
-    </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8351679702044371556">
       <property name="name" nameId="tpck.1169194664001" value="QQQ" />
       <link role="overrides" roleId="vvvw.6418371274763029589" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
@@ -360,6 +357,9 @@
     </node>
     <node role="extended" roleId="vvvw.6447445394688422654" type="vvvw.ExtendsFacetReference" typeId="vvvw.6447445394688555033" id="2360002718792654715">
       <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044320280" resolveInfo="Generate" />
+    </node>
+    <node role="optional" roleId="vvvw.6447445394688422657" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="8994051335328971739">
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044326367" resolveInfo="GenerateSpecial" />
     </node>
   </root>
 </model>

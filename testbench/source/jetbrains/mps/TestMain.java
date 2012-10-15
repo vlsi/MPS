@@ -27,6 +27,7 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
@@ -46,7 +47,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
-import org.apache.commons.lang.StringUtils;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.JDOMException;
@@ -60,10 +60,7 @@ import java.io.StringWriter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 public class TestMain {
   private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make", "Git4Idea"};
@@ -470,16 +467,18 @@ public class TestMain {
 
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(com.intellij.openapi.application.PathManager.getPreinstalledPluginsPath());
-    for (File pluginFolder : pluginDir.listFiles()) {
-      if (pluginPath.length() > 0) {
-        pluginPath.append(File.pathSeparator);
+    if(pluginDir.listFiles() != null) {
+      for (File pluginFolder : pluginDir.listFiles()) {
+        if (pluginPath.length() > 0) {
+          pluginPath.append(File.pathSeparator);
+        }
+        pluginPath.append(pluginFolder.getPath());
       }
-      pluginPath.append(pluginFolder.getPath());
     }
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
     if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
-      System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
+      System.setProperty("idea.load.plugins.id", IterableUtils.join(Arrays.asList(plugins), ","));
     }
     if (!cachesInvalidated) {
       FSRecords.invalidateCaches();

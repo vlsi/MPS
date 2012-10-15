@@ -46,7 +46,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.messages.Icons;
-import org.apache.commons.lang.StringEscapeUtils;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Arrays;
 import org.jdom.Element;
@@ -270,7 +270,7 @@ public abstract class ModelCheckerViewer extends JPanel {
 
     @NotNull
     public String getPresentation(ModelCheckerIssue issue) {
-      return StringEscapeUtils.escapeHtml(issue.getMessage());
+      return StringUtil.escapeXml(issue.getMessage());
     }
 
     public List<CategoryKind> getCategoryKinds() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7316415153790561334">
+  <root nodeId="7316415153790561334" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
     <nodeInfo nodeId="7316415153790561785" fileName="AbstractMigrationScriptHelper.java" startLine="29" startPosition="97" endLine="30" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790561807" fileName="AbstractMigrationScriptHelper.java" startLine="33" startPosition="125" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7316415153790561820" fileName="AbstractMigrationScriptHelper.java" startLine="36" startPosition="45" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -162,10 +162,10 @@
       <varInfo nodeId="7316415153790561798" varName="models" />
       <varInfo nodeId="7316415153790561801" varName="modules" />
     </scopeInfo>
-    <unitInfo nodeId="7316415153790561334" fileName="AbstractMigrationScriptHelper.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper" />
     <unitInfo nodeId="7316415153790561716" fileName="AbstractMigrationScriptHelper.java" startLine="75" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper$MigrationScope" />
+    <unitInfo nodeId="7316415153790561334" fileName="AbstractMigrationScriptHelper.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper" />
   </root>
-  <root nodeId="7316415153790561545">
+  <root nodeId="7316415153790561545" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
     <nodeInfo nodeId="7316415153790561548" fileName="RunMigrationScriptAction.java" startLine="20" startPosition="79" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScript" />
     <nodeInfo nodeId="7316415153790561551" fileName="RunMigrationScriptAction.java" startLine="21" startPosition="25" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myApplyToSelection" />
     <nodeInfo nodeId="7316415153790561554" fileName="RunMigrationScriptAction.java" startLine="22" startPosition="37" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
@@ -227,7 +227,7 @@
     </scopeInfo>
     <unitInfo nodeId="7316415153790561545" fileName="RunMigrationScriptAction.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptAction" />
   </root>
-  <root nodeId="7316415153790565440">
+  <root nodeId="7316415153790565440" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
     <nodeInfo nodeId="7316415153790565442" fileName="ScriptsActionGroupHelper.java" startLine="22" startPosition="39" endLine="23" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourSelectedScripts" />
     <nodeInfo nodeId="7316415153790565458" fileName="ScriptsActionGroupHelper.java" startLine="28" startPosition="50" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5299416737275104571" fileName="ScriptsActionGroupHelper.java" startLine="34" startPosition="46" endLine="35" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -434,11 +434,11 @@
       <varInfo nodeId="7316415153790565529" varName="migrationScripts" />
       <varInfo nodeId="7316415153790565532" varName="ownerGroup" />
     </scopeInfo>
-    <unitInfo nodeId="7316415153790565440" fileName="ScriptsActionGroupHelper.java" startLine="22" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper" />
-    <unitInfo nodeId="7316415153790565472" fileName="ScriptsActionGroupHelper.java" startLine="33" startPosition="34" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper$1" />
     <unitInfo nodeId="7316415153790565600" fileName="ScriptsActionGroupHelper.java" startLine="80" startPosition="49" endLine="90" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper$2" />
+    <unitInfo nodeId="7316415153790565472" fileName="ScriptsActionGroupHelper.java" startLine="33" startPosition="34" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper$1" />
+    <unitInfo nodeId="7316415153790565440" fileName="ScriptsActionGroupHelper.java" startLine="22" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper" />
   </root>
-  <root nodeId="7316415153790566285">
+  <root nodeId="7316415153790566285" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
     <nodeInfo nodeId="7316415153790566472" fileName="RunMigrationScriptsDialog.java" startLine="47" startPosition="56" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />
     <nodeInfo nodeId="7316415153790566476" fileName="RunMigrationScriptsDialog.java" startLine="48" startPosition="32" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedScriptIds" />
     <nodeInfo nodeId="7316415153790566480" fileName="RunMigrationScriptsDialog.java" startLine="49" startPosition="42" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />
@@ -968,22 +968,22 @@
       <varInfo nodeId="7316415153790566591" varName="tm" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790566535" fileName="RunMigrationScriptsDialog.java" startLine="66" startPosition="0" endLine="147" endPosition="0" />
-    <unitInfo nodeId="7316415153790566285" fileName="RunMigrationScriptsDialog.java" startLine="47" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog" />
     <unitInfo nodeId="7316415153790566567" fileName="RunMigrationScriptsDialog.java" startLine="71" startPosition="43" endLine="75" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
-    <unitInfo nodeId="7316415153790567253" fileName="RunMigrationScriptsDialog.java" startLine="298" startPosition="55" endLine="315" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
-    <unitInfo nodeId="7316415153790566710" fileName="RunMigrationScriptsDialog.java" startLine="98" startPosition="40" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
-    <unitInfo nodeId="7316415153790567281" fileName="RunMigrationScriptsDialog.java" startLine="318" startPosition="34" endLine="352" endPosition="7" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
-    <unitInfo nodeId="7316415153790567353" fileName="RunMigrationScriptsDialog.java" startLine="365" startPosition="43" endLine="369" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
-    <unitInfo nodeId="7316415153790566722" fileName="RunMigrationScriptsDialog.java" startLine="106" startPosition="42" endLine="113" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
-    <unitInfo nodeId="7316415153790566734" fileName="RunMigrationScriptsDialog.java" startLine="114" startPosition="45" endLine="119" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$4" />
-    <unitInfo nodeId="7316415153790566746" fileName="RunMigrationScriptsDialog.java" startLine="120" startPosition="47" endLine="125" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$5" />
     <unitInfo nodeId="7316415153790566758" fileName="RunMigrationScriptsDialog.java" startLine="126" startPosition="38" endLine="130" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$6" />
     <unitInfo nodeId="7316415153790566800" fileName="RunMigrationScriptsDialog.java" startLine="135" startPosition="49" endLine="139" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$7" />
     <unitInfo nodeId="7316415153790566814" fileName="RunMigrationScriptsDialog.java" startLine="140" startPosition="61" endLine="144" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$8" />
+    <unitInfo nodeId="7316415153790567353" fileName="RunMigrationScriptsDialog.java" startLine="365" startPosition="43" endLine="369" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
+    <unitInfo nodeId="7316415153790566734" fileName="RunMigrationScriptsDialog.java" startLine="114" startPosition="45" endLine="119" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$4" />
+    <unitInfo nodeId="7316415153790566746" fileName="RunMigrationScriptsDialog.java" startLine="120" startPosition="47" endLine="125" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$5" />
+    <unitInfo nodeId="7316415153790566710" fileName="RunMigrationScriptsDialog.java" startLine="98" startPosition="40" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
+    <unitInfo nodeId="7316415153790566722" fileName="RunMigrationScriptsDialog.java" startLine="106" startPosition="42" endLine="113" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
+    <unitInfo nodeId="7316415153790567253" fileName="RunMigrationScriptsDialog.java" startLine="298" startPosition="55" endLine="315" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
     <unitInfo nodeId="7316415153790566404" fileName="RunMigrationScriptsDialog.java" startLine="382" startPosition="0" endLine="404" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyDownIcon" />
-    <unitInfo nodeId="7316415153790566323" fileName="RunMigrationScriptsDialog.java" startLine="243" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel" />
-    <unitInfo nodeId="7316415153790566288" fileName="RunMigrationScriptsDialog.java" startLine="194" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyTableModel" />
     <unitInfo nodeId="7316415153790566438" fileName="RunMigrationScriptsDialog.java" startLine="405" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyUpIcon" />
+    <unitInfo nodeId="7316415153790567281" fileName="RunMigrationScriptsDialog.java" startLine="318" startPosition="34" endLine="352" endPosition="7" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
+    <unitInfo nodeId="7316415153790566288" fileName="RunMigrationScriptsDialog.java" startLine="194" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyTableModel" />
+    <unitInfo nodeId="7316415153790566323" fileName="RunMigrationScriptsDialog.java" startLine="243" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel" />
+    <unitInfo nodeId="7316415153790566285" fileName="RunMigrationScriptsDialog.java" startLine="47" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog" />
   </root>
 </debugInfo>
 

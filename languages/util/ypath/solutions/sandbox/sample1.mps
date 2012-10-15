@@ -136,14 +136,22 @@
   <root id="1199640036833">
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.EnumClass" typeId="tpee.1083245097125" id="1201392172093">
       <property name="name" nameId="tpck.1169194664001" value="Enm" />
+      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2112552551406738047">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2112552551406738048" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2112552551406738049" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2112552551406738050" />
+      </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392185856">
         <property name="name" nameId="tpck.1169194664001" value="A" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392195515">
         <property name="name" nameId="tpck.1169194664001" value="B" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392198195">
         <property name="name" nameId="tpck.1169194664001" value="C" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201392172094" />
     </node>

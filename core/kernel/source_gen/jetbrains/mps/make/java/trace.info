@@ -292,11 +292,11 @@
       <varInfo nodeId="757342313568246027" varName="qName" />
       <varInfo nodeId="757342313568246027" varName="uri" />
     </scopeInfo>
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="13" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="219" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="130" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />
-    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="161" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="96" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="161" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
+    <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="13" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler" />
   </root>
   <root nodeId="757342313568265361" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
     <nodeInfo nodeId="757342313568265492" fileName="ModelDependencies.java" startLine="13" startPosition="32" endLine="14" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCY" />

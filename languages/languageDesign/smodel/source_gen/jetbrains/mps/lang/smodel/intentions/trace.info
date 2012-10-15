@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.IntentionsDescriptor" />
-  <root nodeId="1193745200272">
+  <root nodeId="1193745200272" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -104,7 +104,7 @@
     </scopeInfo>
     <unitInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.AddSNodeCastStatement_Intention" />
   </root>
-  <root nodeId="1203704393457">
+  <root nodeId="1203704393457" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -165,7 +165,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ReplaceConceptIsWithConceptEquals_Intention" />
   </root>
-  <root nodeId="1205354609722">
+  <root nodeId="1205354609722" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1205354609722" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205354609722" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205354609722" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -222,7 +222,7 @@
     </scopeInfo>
     <unitInfo nodeId="1205354609722" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.Replace_ListType_withNodeListType_Intention" />
   </root>
-  <root nodeId="1206998294783">
+  <root nodeId="1206998294783" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -290,7 +290,7 @@
     </scopeInfo>
     <unitInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.AddOperationParameter_Intention" />
   </root>
-  <root nodeId="1224687584077">
+  <root nodeId="1224687584077" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -343,7 +343,7 @@
     </scopeInfo>
     <unitInfo nodeId="1224687584077" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertPropertySetToAssignment_Intention" />
   </root>
-  <root nodeId="1224751635787">
+  <root nodeId="1224751635787" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -396,7 +396,7 @@
     </scopeInfo>
     <unitInfo nodeId="1224751635787" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertLinkSetToAssignment_Intention" />
   </root>
-  <root nodeId="1238684430905">
+  <root nodeId="1238684430905" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="1238684430905" fileName="ChangeAsCast_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238684430905" fileName="ChangeAsCast_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238684430905" fileName="ChangeAsCast_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -441,7 +441,7 @@
     </scopeInfo>
     <unitInfo nodeId="1238684430905" fileName="ChangeAsCast_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ChangeAsCast_Intention" />
   </root>
-  <root nodeId="4726561250374329612">
+  <root nodeId="4726561250374329612" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -494,7 +494,7 @@
     </scopeInfo>
     <unitInfo nodeId="4726561250374329612" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertConceptPropertySetToAssignment_Intention" />
   </root>
-  <root nodeId="8288233991428663607">
+  <root nodeId="8288233991428663607" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -558,7 +558,7 @@
     </scopeInfo>
     <unitInfo nodeId="8288233991428663607" fileName="ConvertCastToNodeCast_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertCastToNodeCast_Intention" />
   </root>
-  <root nodeId="8288233991428710054">
+  <root nodeId="8288233991428710054" modelId="r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)">
     <nodeInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8288233991428710054" fileName="ConvertInstanceofToNodeInstanceof_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

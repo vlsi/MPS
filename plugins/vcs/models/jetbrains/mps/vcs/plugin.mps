@@ -998,10 +998,6 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7545884443035919781" resolveInfo="ShowDiffererenceWithCurrentRevision" />
       </node>
     </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="7545884443035919876">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.2921528350547793592" resolveInfo="EditorTabActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.7545884443035919879" resolveInfo="diff" />
-    </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="7545884443035919877">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991215587" resolveInfo="NodeActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.7545884443035919881" resolveInfo="diff" />
@@ -2412,6 +2408,9 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7314351270975558036">
                     <property name="name" nameId="tpck.1169194664001" value="dialog" />
                     <property name="isFinal" nameId="tpee.1176718929932" value="false" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6358648183276601696">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wenr.708166622413807476" resolveInfo="MergeModelsDialog" />
+                    </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6673853250465401507">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7314351270975609505">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wenr.708166622413807578" resolveInfo="MergeModelsDialog" />
@@ -2466,9 +2465,6 @@
                           </node>
                         </node>
                       </node>
-                    </node>
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6358648183276601696">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wenr.708166622413807476" resolveInfo="MergeModelsDialog" />
                     </node>
                   </node>
                 </node>

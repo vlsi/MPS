@@ -97,7 +97,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewModelUtil" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.DirParser" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

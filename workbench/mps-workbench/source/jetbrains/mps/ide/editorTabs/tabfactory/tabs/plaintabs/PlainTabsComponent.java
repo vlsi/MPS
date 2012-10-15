@@ -24,7 +24,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
-import com.intellij.ui.tabs.JBTabs;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
@@ -36,7 +35,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -116,7 +115,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     if (myDisposed) return;
 
     //not to make infinite recursion when tab is clicked
-    if (ObjectUtils.equals(node, getLastNode())) return;
+    if (EqualUtil.equals(node, getLastNode())) return;
 
     super.setLastNode(node);
     selectNodeTab();
@@ -224,7 +223,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     if (myDisposed) return false;
 
     for (PlainEditorTab tab : myRealTabs) {
-      if (ObjectUtils.equals(tab.getNode(), node)) return true;
+      if (EqualUtil.equals(tab.getNode(), node)) return true;
     }
     return false;
   }

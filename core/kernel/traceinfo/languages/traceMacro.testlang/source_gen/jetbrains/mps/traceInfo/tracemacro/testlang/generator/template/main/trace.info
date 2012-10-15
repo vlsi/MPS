@@ -2,20 +2,14 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl" />
-  <root nodeId="7980748436587788164">
-    <nodeInfo nodeId="7980748436587793848" fileName="QueriesGenerated.java" startLine="18" startPosition="152" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7980748436587793605" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7980748436587793728" fileName="QueriesGenerated.java" startLine="26" startPosition="151" endLine="27" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7980748436587788182" fileName="QueriesGenerated.java" startLine="30" startPosition="150" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root nodeId="7980748436587788164" modelId="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)">
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="31" startPosition="66" endLine="32" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="32" startPosition="220" endLine="33" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_417xrn_a0a0a4a" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="33" startPosition="215" endLine="34" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_417xrn_a0a0a2a4a" />
-    <nodeInfo nodeId="7980748436587788203" fileName="QueriesGenerated.java" startLine="34" startPosition="150" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="34" startPosition="223" endLine="35" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="copySrcMacro_417xrn_a0a0a1a3a2a4a" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="35" startPosition="227" endLine="36" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="copySrcMacro_417xrn_a0a0a1a4a2a4a" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="36" startPosition="227" endLine="37" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="traceMacro_417xrn_a0a0a1a5a2a4a" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="37" startPosition="225" endLine="38" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_417xrn_a0a0a5a1a5a2a4a" />
-    <nodeInfo nodeId="7980748436587793695" fileName="QueriesGenerated.java" startLine="38" startPosition="150" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="38" startPosition="229" endLine="39" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="propertyMacro_417xrn_c0b0b0a2a5a1a5a2a4a" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="39" startPosition="234" endLine="40" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2b" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="40" startPosition="220" endLine="41" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_417xrn_a0a0a4b" />
@@ -153,14 +147,14 @@
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="164" startPosition="9" endLine="194" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="132" startPosition="143" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="129" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="7980748436587793848" fileName="QueriesGenerated.java" startLine="18" startPosition="152" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7980748436587793605" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7980748436587793728" fileName="QueriesGenerated.java" startLine="26" startPosition="151" endLine="27" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7980748436587788182" fileName="QueriesGenerated.java" startLine="30" startPosition="150" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7980748436587788203" fileName="QueriesGenerated.java" startLine="34" startPosition="150" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7980748436587793695" fileName="QueriesGenerated.java" startLine="38" startPosition="150" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="102" startPosition="29" endLine="102" endPosition="29" />
     <scopeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="205" startPosition="29" endLine="205" endPosition="29" />
-    <scopeInfo nodeId="7980748436587793847" fileName="QueriesGenerated.java" startLine="18" startPosition="152" endLine="19" endPosition="157" />
-    <scopeInfo nodeId="7980748436587793604" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="123" />
-    <scopeInfo nodeId="7980748436587793727" fileName="QueriesGenerated.java" startLine="26" startPosition="151" endLine="27" endPosition="262" />
-    <scopeInfo nodeId="7980748436587788181" fileName="QueriesGenerated.java" startLine="30" startPosition="150" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="7980748436587788202" fileName="QueriesGenerated.java" startLine="34" startPosition="150" endLine="35" endPosition="71" />
-    <scopeInfo nodeId="7980748436587793694" fileName="QueriesGenerated.java" startLine="38" startPosition="150" endLine="39" endPosition="75" />
     <scopeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="53" startPosition="27" endLine="54" endPosition="18" />
     <scopeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="57" startPosition="35" endLine="58" endPosition="24" />
     <scopeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="61" startPosition="40" endLine="62" endPosition="172" />
@@ -295,10 +289,16 @@
       <varInfo nodeId="7980748436587788164" varName="context" />
       <varInfo nodeId="7980748436587788164" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="31" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
+    <scopeInfo nodeId="7980748436587793847" fileName="QueriesGenerated.java" startLine="18" startPosition="152" endLine="19" endPosition="157" />
+    <scopeInfo nodeId="7980748436587793604" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="123" />
+    <scopeInfo nodeId="7980748436587793727" fileName="QueriesGenerated.java" startLine="26" startPosition="151" endLine="27" endPosition="262" />
+    <scopeInfo nodeId="7980748436587788181" fileName="QueriesGenerated.java" startLine="30" startPosition="150" endLine="31" endPosition="80" />
+    <scopeInfo nodeId="7980748436587788202" fileName="QueriesGenerated.java" startLine="34" startPosition="150" endLine="35" endPosition="71" />
+    <scopeInfo nodeId="7980748436587793694" fileName="QueriesGenerated.java" startLine="38" startPosition="150" endLine="39" endPosition="75" />
     <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="242" startPosition="32" endLine="254" endPosition="9" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$1" />
-    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="101" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="204" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule1" />
+    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="101" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule0" />
+    <unitInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="31" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
   </root>
 </debugInfo>
 

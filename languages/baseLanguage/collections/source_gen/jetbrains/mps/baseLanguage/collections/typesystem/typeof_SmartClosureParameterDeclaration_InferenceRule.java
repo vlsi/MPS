@@ -40,21 +40,33 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
         typeCheckingContext.whenConcrete(sequenceTypeConcrete, new Runnable() {
           public void run() {
             {
-              IMatchingPattern pattern_sg6z08_a0d0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-              SNode coercedNode_sg6z08_a0d0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(sequenceTypeConcrete), pattern_sg6z08_a0d0a0);
-              if (coercedNode_sg6z08_a0d0a0 != null) {
-                {
-                  SNode _nodeToCheck_1029348928467 = scpd;
-                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948105", 0, null);
-                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948109", true), (SNode) SLinkOperations.getTarget(coercedNode_sg6z08_a0d0a0, "elementType", true), _info_12389875345);
-                }
-              } else {
-                {
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(scpd, "Unable to compute type", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948143", null, errorTarget);
+              SNode _nodeToCheck_1029348928467 = scpd;
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120558", 0, null);
+              typeCheckingContext.createGreaterThanInequality((SNode) new typeof_SmartClosureParameterDeclaration_InferenceRule.QuotationClass_5rdbtv_a0a0a3a0a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1230315924141), typeCheckingContext), (SNode) typeCheckingContext.getRepresentative(seqType_typevar_2684739085678948053), false, true, _info_12389875345);
+            }
+            {
+              SNode _nodeToCheck_1029348928467 = scpd;
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120577", 0, null);
+              typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120581", true), (SNode) typeCheckingContext.getRepresentative(paramType_typevar_1230315924141), _info_12389875345);
+            }
+            /*
+              {
+                IMatchingPattern pattern_sg6z08_a2a3a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+                SNode coercedNode_sg6z08_a2a3a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(sequenceTypeConcrete), pattern_sg6z08_a2a3a0a);
+                if (coercedNode_sg6z08_a2a3a0a != null) {
+                  {
+                    SNode _nodeToCheck_1029348928467 = scpd;
+                    EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948105", 0, null);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948109", true), (SNode) SLinkOperations.getTarget(coercedNode_sg6z08_a2a3a0a, "elementType", true), _info_12389875345);
+                  }
+                } else {
+                  {
+                    MessageTarget errorTarget = new NodeMessageTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(scpd, "Unable to compute type", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948143", null, errorTarget);
+                  }
                 }
               }
-            }
+            */
           }
         }, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948093", false, false);
       }
@@ -76,6 +88,63 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
 
   public boolean overrides() {
     return true;
+  }
+
+  public static class QuotationClass_5rdbtv_a0a0a3a0a0 {
+    public QuotationClass_5rdbtv_a0a0a3a0a0() {
+    }
+
+    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2, typeCheckingContext);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 
   public static class QuotationClass_5rdbtv_a0a0a4a0a0 {

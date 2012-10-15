@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4990394870453870416">
+  <root nodeId="4990394870453870416" modelId="r:f9656055-0f14-4d17-b95d-d4f70ae376c5(jetbrains.mps.make.sandbox.sample.submodel1)">
     <unitInfo nodeId="4990394870453870416" fileName="Foo.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.submodel1.Foo" />
   </root>
 </debugInfo>

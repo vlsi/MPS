@@ -16,7 +16,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.ThreadUtils;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
@@ -78,11 +78,11 @@ public class MergeDriverNotification {
     }));
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        String whichVcses = StringUtils.join(SetSequence.fromSet(vcsNames).select(new ISelector<String, String>() {
+        String whichVcses = IterableUtils.join(SetSequence.fromSet(vcsNames).select(new ISelector<String, String>() {
           public String select(String vn) {
             return AllVcses.getInstance(myProject).getByName(vn).getDisplayName();
           }
-        }).toListSequence(), "and");
+        }), "and");
         String mainMessage = (myCompositeState == AbstractInstaller.State.OUTDATED ?
           "You have some of the global settings outdated, you need to <a href=\"install\">update them</a>" :
           "To make it work better with MPS, it is recommended to <a href=\"install\">update some of their global settings</a>"

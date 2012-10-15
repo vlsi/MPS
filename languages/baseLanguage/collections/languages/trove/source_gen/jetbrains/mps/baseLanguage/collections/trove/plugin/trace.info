@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.plugin.ExtensionDescriptor" />
-  <root nodeId="5633688998557455347">
+  <root nodeId="5633688998557455347" modelId="r:a6657f88-2637-4f34-9cd2-e8804cb17987(jetbrains.mps.baseLanguage.collections.trove.plugin)">
     <nodeInfo nodeId="5633688998557455347" fileName="Extension_customContainers5633688998557455347_.java" startLine="18" startPosition="59" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841887664" fileName="Extension_customContainers5633688998557455347_.java" startLine="24" startPosition="35" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841887670" fileName="Extension_customContainers5633688998557455347_.java" startLine="25" startPosition="49" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -25,8 +25,8 @@
     <scopeInfo nodeId="5487985028841887662" fileName="Extension_customContainers5633688998557455347_.java" startLine="23" startPosition="60" endLine="34" endPosition="0" />
     <scopeInfo nodeId="5633688998557455347" fileName="Extension_customContainers5633688998557455347_.java" startLine="22" startPosition="68" endLine="34" endPosition="6" />
     <scopeInfo nodeId="5633688998557455347" fileName="Extension_customContainers5633688998557455347_.java" startLine="21" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5633688998557455347" fileName="Extension_customContainers5633688998557455347_.java" startLine="17" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers5633688998557455347_" />
     <unitInfo nodeId="5487985028841887662" fileName="Extension_customContainers5633688998557455347_.java" startLine="23" startPosition="15" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers5633688998557455347_$1" />
+    <unitInfo nodeId="5633688998557455347" fileName="Extension_customContainers5633688998557455347_.java" startLine="17" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers5633688998557455347_" />
   </root>
 </debugInfo>
 

@@ -14,6 +14,7 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="tya3" modelUID="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" version="-1" />
   <import index="ff4b" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp1h" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" implicit="yes" />
@@ -21,7 +22,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp3b" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" implicit="yes" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="7874812549549771289">
@@ -32,22 +32,24 @@
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="2869783065404758436">
       <property name="name" nameId="tpck.1169194664001" value="MakeFieldFinal" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Make Field Final" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="5142438244426791432">
       <property name="name" nameId="tpck.1169194664001" value="MoveStaticField" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Static Field" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="418677511065471952">
       <property name="name" nameId="tpck.1169194664001" value="MoveStaticMethod" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Static Method" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="4946830740863976385">
       <property name="name" nameId="tpck.1169194664001" value="ConvertAnonymousClass" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Convert Anonymous to Inner Class" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="9118878263582100185">
@@ -57,7 +59,7 @@
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="5161277940733430086">
       <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignature" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Change Method Signature" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
   </roots>
   <root id="7874812549549771289">

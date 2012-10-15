@@ -18,9 +18,9 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Matcher;
@@ -72,7 +72,7 @@ public class ModuleReference {
   }
 
   public boolean differs(ModuleReference ref) {
-    return !(ObjectUtils.equals(myModuleFqName, ref.myModuleFqName) && ObjectUtils.equals(myModuleId, ref.myModuleId));
+    return !(EqualUtil.equals(myModuleFqName, ref.myModuleFqName) && EqualUtil.equals(myModuleId, ref.myModuleId));
   }
 
   public int hashCode() {
@@ -85,7 +85,7 @@ public class ModuleReference {
     ModuleReference p = (ModuleReference) obj;
 
     if (myModuleId == null && p.myModuleId == null) return myModuleFqName.equals(p.myModuleFqName);
-    return ObjectUtils.equals(myModuleId, p.myModuleId);
+    return EqualUtil.equals(myModuleId, p.myModuleId);
   }
 
   public String toString() {

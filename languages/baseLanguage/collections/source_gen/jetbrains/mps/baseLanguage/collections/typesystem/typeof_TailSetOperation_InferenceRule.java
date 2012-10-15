@@ -24,13 +24,15 @@ public class typeof_TailSetOperation_InferenceRule extends AbstractInferenceRule
     final SNode ELEMENT_TYPE_typevar_1240251634178 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634179", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634187", true), (SNode) new typeof_TailSetOperation_InferenceRule.QuotationClass_xnmcfw_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_1240251634178), typeCheckingContext), false, true, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120533", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_TailSetOperation_InferenceRule.QuotationClass_xnmcfw_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_1240251634178), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634187", true), false, true, _info_12389875345);
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "fromElement", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634191", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634195", true), (SNode) typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_1240251634178), false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "fromElement", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634191", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240251634195", true), (SNode) typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_1240251634178), true, true, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;

@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import java.util.Set;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import java.util.List;
+import jetbrains.mps.newTypesystem.SubtypingUtil;
+import java.util.Arrays;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class Queries {
   public Queries() {
@@ -28,8 +29,7 @@ public class Queries {
 
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
     SModel runtimeTypesModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    Set<SNode> types = CollectionUtil.set((SNode) leftType, rightType);
-    Set<SNode> leastCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types, true);
+    List<SNode> leastCommonSupertypes = SubtypingUtil.leastCommonSuperTypes(Arrays.asList(leftType, rightType), null);
     if (mayBeString) {
       SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("java.lang@java_stub"));
       assert javaLangJavaStubModelDescriptor != null;
@@ -48,10 +48,10 @@ public class Queries {
     }
     SNode type = leastCommonSupertypes.iterator().next();
     {
-      IMatchingPattern pattern_j6k1pf_g0b = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
-      SNode coercedNode_j6k1pf_g0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_g0b);
-      if (coercedNode_j6k1pf_g0b != null) {
-        return coercedNode_j6k1pf_g0b;
+      IMatchingPattern pattern_j6k1pf_f0b = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+      SNode coercedNode_j6k1pf_f0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_f0b);
+      if (coercedNode_j6k1pf_f0b != null) {
+        return coercedNode_j6k1pf_f0b;
       } else {
         return type;
       }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6033226775805315496">
+  <root nodeId="6033226775805315496" modelId="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)">
     <nodeInfo nodeId="6033226775805315814" fileName="YNode.java" startLine="11" startPosition="37" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6033226775805315820" fileName="YNode.java" startLine="16" startPosition="46" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6033226775805315674" fileName="YNode.java" startLine="20" startPosition="0" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -80,10 +80,10 @@
     <scopeInfo nodeId="6033226775805315785" fileName="YNode.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="6033226775805315788" varName="iterable" />
     </scopeInfo>
-    <unitInfo nodeId="6033226775805315496" fileName="YNode.java" startLine="8" startPosition="0" endLine="75" endPosition="0" unitName="test.ypath.util.YNode" />
     <unitInfo nodeId="6033226775805315661" fileName="YNode.java" startLine="9" startPosition="54" endLine="19" endPosition="3" unitName="test.ypath.util.YNode$1" />
+    <unitInfo nodeId="6033226775805315496" fileName="YNode.java" startLine="8" startPosition="0" endLine="75" endPosition="0" unitName="test.ypath.util.YNode" />
   </root>
-  <root nodeId="6033226775805315497">
+  <root nodeId="6033226775805315497" modelId="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)">
     <nodeInfo nodeId="6033226775805315499" fileName="TestFilterTraversal.java" startLine="11" startPosition="34" endLine="12" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE_PATH" />
     <nodeInfo nodeId="6033226775805315504" fileName="TestFilterTraversal.java" startLine="12" startPosition="66" endLine="13" endPosition="460" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1" />
     <nodeInfo nodeId="6033226775805315582" fileName="TestFilterTraversal.java" startLine="13" startPosition="460" endLine="14" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1_PRECEDING_SIBLINGS_D" />
@@ -105,10 +105,10 @@
       <varInfo nodeId="6033226775805315599" varName="nameStartsWithD" />
     </scopeInfo>
     <scopeInfo nodeId="6033226775805315594" fileName="TestFilterTraversal.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="6033226775805315497" fileName="TestFilterTraversal.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="test.ypath.util.TestFilterTraversal" />
     <unitInfo nodeId="6033226775805315604" fileName="TestFilterTraversal.java" startLine="22" startPosition="41" endLine="26" endPosition="5" unitName="test.ypath.util.TestFilterTraversal$1" />
+    <unitInfo nodeId="6033226775805315497" fileName="TestFilterTraversal.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="test.ypath.util.TestFilterTraversal" />
   </root>
-  <root nodeId="6033226775805315825">
+  <root nodeId="6033226775805315825" modelId="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)">
     <nodeInfo nodeId="6033226775805315827" fileName="TestTraversal.java" startLine="10" startPosition="28" endLine="11" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE_PATH" />
     <nodeInfo nodeId="6033226775805315832" fileName="TestTraversal.java" startLine="11" startPosition="66" endLine="12" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1" />
     <nodeInfo nodeId="6033226775805315856" fileName="TestTraversal.java" startLine="12" startPosition="147" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1_DESCENDANTS" />

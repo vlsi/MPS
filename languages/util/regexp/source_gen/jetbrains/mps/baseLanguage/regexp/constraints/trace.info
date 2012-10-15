@@ -34,9 +34,9 @@
       <varInfo nodeId="1213104858749" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints" />
-    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="32" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$1" />
     <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="36" startPosition="19" endLine="46" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$2" />
+    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="27" startPosition="32" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104858749" fileName="MatchVariableReference_Constraints.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_Constraints" />
   </root>
   <root nodeId="1213104860358" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="24" startPosition="89" endLine="25" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_15u81x_a0a3a0a0a1a0b0a1a0" />
@@ -94,9 +94,9 @@
       <varInfo nodeId="1213104860358" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="30" startPosition="0" endLine="80" endPosition="0" />
-    <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="24" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints" />
-    <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="34" startPosition="32" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$1" />
     <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="43" startPosition="19" endLine="75" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$2" />
+    <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="34" startPosition="32" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$1" />
+    <unitInfo nodeId="1213104860358" fileName="MatchVariableReferenceRegexp_Constraints.java" startLine="24" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints" />
   </root>
   <root nodeId="1231768529435" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="1231768529435" fileName="ReplaceWithRegexpOperation_Constraints.java" startLine="16" startPosition="87" endLine="17" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -300,9 +300,9 @@
       <varInfo nodeId="3796137614137558190" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="31" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints" />
-    <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="35" startPosition="32" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints$1" />
     <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="44" startPosition="19" endLine="72" endPosition="9" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints$2" />
+    <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="35" startPosition="32" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints$1" />
+    <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints" />
   </root>
   <root nodeId="3796137614137565252" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="15" startPosition="43" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -334,8 +334,8 @@
       <varInfo nodeId="3796137614137565252" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints" />
     <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints$1" />
+    <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints" />
   </root>
   <root nodeId="5533535376639427526" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="15" startPosition="57" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -366,8 +366,8 @@
       <varInfo nodeId="5533535376639427526" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints" />
     <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="22" startPosition="43" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints$1" />
+    <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints" />
   </root>
   <root nodeId="5533535376639522935" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="42" endLine="16" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -404,8 +404,8 @@
       <varInfo nodeId="5533535376639522935" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints" />
     <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="22" startPosition="43" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints$1" />
+    <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints" />
   </root>
   <root nodeId="698920857052391451" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="15" startPosition="44" endLine="16" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -437,8 +437,8 @@
       <varInfo nodeId="698920857052391451" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints" />
     <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints$1" />
+    <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints" />
   </root>
   <root nodeId="8030573611853647771" modelId="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)">
     <nodeInfo nodeId="8030573611853647782" fileName="RegexUtil.java" startLine="16" startPosition="73" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -512,6 +512,7 @@
     <scopeInfo nodeId="8030573611853647788" fileName="RegexUtil.java" startLine="17" startPosition="49" endLine="20" endPosition="5">
       <varInfo nodeId="8030573611853647795" varName="ruc" />
     </scopeInfo>
+    <scopeInfo nodeId="8030573611853647855" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9" />
     <scopeInfo nodeId="8030573611853647856" fileName="RegexUtil.java" startLine="33" startPosition="30" endLine="36" endPosition="9">
       <varInfo nodeId="8030573611853647870" varName="expr" />
     </scopeInfo>
@@ -525,9 +526,11 @@
       <varInfo nodeId="8030573611853795830" varName="mpe" />
     </scopeInfo>
     <scopeInfo nodeId="8030573611853647835" fileName="RegexUtil.java" startLine="26" startPosition="85" endLine="30" endPosition="11" />
+    <scopeInfo nodeId="8030573611853647933" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9" />
     <scopeInfo nodeId="8030573611853647934" fileName="RegexUtil.java" startLine="51" startPosition="143" endLine="56" endPosition="9">
       <varInfo nodeId="8030573611853647935" varName="regref" />
     </scopeInfo>
+    <scopeInfo nodeId="8030573611853647959" fileName="RegexUtil.java" startLine="60" startPosition="116" endLine="65" endPosition="7" />
     <scopeInfo nodeId="8030573611853647960" fileName="RegexUtil.java" startLine="60" startPosition="116" endLine="65" endPosition="7">
       <varInfo nodeId="8030573611853647969" varName="expr" />
     </scopeInfo>
@@ -537,6 +540,7 @@
     <scopeInfo nodeId="8030573611853795850" fileName="RegexUtil.java" startLine="92" startPosition="53" endLine="97" endPosition="16">
       <varInfo nodeId="8030573611853795852" varName="container" />
     </scopeInfo>
+    <scopeInfo nodeId="8030573611853647828" fileName="RegexUtil.java" startLine="25" startPosition="14" endLine="31" endPosition="9" />
     <scopeInfo nodeId="8030573611853647829" fileName="RegexUtil.java" startLine="25" startPosition="14" endLine="31" endPosition="9">
       <varInfo nodeId="8030573611853647833" varName="elseif" />
     </scopeInfo>
@@ -544,6 +548,9 @@
       <varInfo nodeId="8030573611853648017" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8030573611853647924" fileName="RegexUtil.java" startLine="50" startPosition="22" endLine="57" endPosition="7" />
+    <scopeInfo nodeId="8030573611853647925" fileName="RegexUtil.java" startLine="50" startPosition="22" endLine="57" endPosition="7">
+      <varInfo nodeId="8030573611853647931" varName="parentRuc" />
+    </scopeInfo>
     <scopeInfo nodeId="8030573611853647956" fileName="RegexUtil.java" startLine="59" startPosition="0" endLine="66" endPosition="5">
       <varInfo nodeId="8030573611853647957" varName="ifst" />
     </scopeInfo>

@@ -91,6 +91,7 @@
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="74" startPosition="25" endLine="79" endPosition="5" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="74" startPosition="25" endLine="79" endPosition="5">
       <varInfo nodeId="1203601634745" varName="binding" />
     </scopeInfo>
@@ -119,9 +120,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="88" startPosition="0" endLine="100" endPosition="0" />
-    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.common.PathField" />
-    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="30" startPosition="32" endLine="36" endPosition="3" unitName="jetbrains.mps.ide.common.PathField$1" />
     <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="93" startPosition="36" endLine="97" endPosition="5" unitName="jetbrains.mps.ide.common.PathField$2" />
+    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="30" startPosition="32" endLine="36" endPosition="3" unitName="jetbrains.mps.ide.common.PathField$1" />
+    <unitInfo nodeId="1203601634745" fileName="PathField.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.common.PathField" />
   </root>
   <root nodeId="1203601659817" modelId="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)">
     <nodeInfo nodeId="1203605616825" fileName="PathField.java" startLine="44" startPosition="31" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -254,11 +255,11 @@
       <varInfo nodeId="1482618131069177617" varName="project" />
       <varInfo nodeId="1482618131069177619" varName="unitName" />
     </scopeInfo>
-    <unitInfo nodeId="1482618131069177615" fileName="FileOpenUtil.java" startLine="23" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.common.FileOpenUtil" />
     <unitInfo nodeId="1482618131069177689" fileName="FileOpenUtil.java" startLine="39" startPosition="105" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.common.FileOpenUtil$1" />
     <unitInfo nodeId="1482618131069177712" fileName="FileOpenUtil.java" startLine="44" startPosition="76" endLine="48" endPosition="5" unitName="jetbrains.mps.ide.common.FileOpenUtil$2" />
     <unitInfo nodeId="1482618131069177721" fileName="FileOpenUtil.java" startLine="48" startPosition="18" endLine="52" endPosition="5" unitName="jetbrains.mps.ide.common.FileOpenUtil$3" />
     <unitInfo nodeId="1482618131069177733" fileName="FileOpenUtil.java" startLine="52" startPosition="17" endLine="56" endPosition="5" unitName="jetbrains.mps.ide.common.FileOpenUtil$4" />
+    <unitInfo nodeId="1482618131069177615" fileName="FileOpenUtil.java" startLine="23" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.common.FileOpenUtil" />
   </root>
   <root nodeId="4251154893541678687" modelId="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)">
     <nodeInfo nodeId="4251154893541691633" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="25" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -280,8 +281,8 @@
     <scopeInfo nodeId="4251154893541678694" fileName="ReadComboBoxEditor.java" startLine="11" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4251154893541678697" varName="anObject" />
     </scopeInfo>
-    <unitInfo nodeId="4251154893541678687" fileName="ReadComboBoxEditor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor" />
     <unitInfo nodeId="4251154893541678723" fileName="ReadComboBoxEditor.java" startLine="14" startPosition="45" endLine="18" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor$1" />
+    <unitInfo nodeId="4251154893541678687" fileName="ReadComboBoxEditor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor" />
   </root>
   <root nodeId="4251154893541691639" modelId="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)">
     <nodeInfo nodeId="4251154893541691682" fileName="ReadComboBoxRenderrer.java" startLine="15" startPosition="158" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -315,8 +316,8 @@
       <varInfo nodeId="4251154893541691649" varName="list" />
       <varInfo nodeId="4251154893541691651" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="4251154893541691639" fileName="ReadComboBoxRenderrer.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer" />
     <unitInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="17" startPosition="45" endLine="21" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer$1" />
+    <unitInfo nodeId="4251154893541691639" fileName="ReadComboBoxRenderrer.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer" />
   </root>
   <root nodeId="8606486054003576517" modelId="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)">
     <nodeInfo nodeId="8606486054003576522" fileName="LayoutUtil.java" startLine="12" startPosition="66" endLine="13" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

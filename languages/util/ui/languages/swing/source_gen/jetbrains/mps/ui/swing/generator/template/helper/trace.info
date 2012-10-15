@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7617727720685157684">
+  <root nodeId="7617727720685157684" modelId="r:91ff8447-bd7d-4bda-8eca-b4411481c27f(jetbrains.mps.ui.swing.generator.template.helper)">
     <nodeInfo nodeId="7617727720685157753" fileName="SwingTransientValues.java" startLine="12" startPosition="0" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="7617727720685157761" fileName="SwingTransientValues.java" startLine="15" startPosition="37" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7617727720685157693" fileName="SwingTransientValues.java" startLine="20" startPosition="23" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

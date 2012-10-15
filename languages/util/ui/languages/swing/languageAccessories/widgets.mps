@@ -762,9 +762,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="262873202872806602">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="262873202872806603" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="262873202872806605">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dNORTH" resolveInfo="NORTH" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737975">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318838" resolveInfo="NORTH" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -782,9 +782,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9003987136928163985">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject,int)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="9003987136928163986" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="9003987136928164058">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dNORTH" resolveInfo="NORTH" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737989">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318838" resolveInfo="NORTH" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9003987136928164016">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9003987136928163998">
@@ -994,9 +994,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="262873202872806616">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="262873202872806617" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="262873202872806618">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dSOUTH" resolveInfo="SOUTH" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737961">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318840" resolveInfo="SOUTH" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1014,9 +1014,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9003987136928190084">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject,int)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="9003987136928190085" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="9003987136928190086">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dSOUTH" resolveInfo="SOUTH" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737955">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318840" resolveInfo="SOUTH" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9003987136928190087">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9003987136928190088">
@@ -1226,9 +1226,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="262873202872806626">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="262873202872806627" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="262873202872806628">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dEAST" resolveInfo="EAST" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737941">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318842" resolveInfo="EAST" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1246,9 +1246,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9003987136928190184">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject,int)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="9003987136928190185" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="9003987136928190186">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dEAST" resolveInfo="EAST" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737935">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318842" resolveInfo="EAST" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9003987136928190187">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9003987136928190188">
@@ -1458,9 +1458,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="262873202872806636">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="262873202872806637" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="262873202872806638">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dWEST" resolveInfo="WEST" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737921">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318844" resolveInfo="WEST" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1478,9 +1478,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9003987136928190294">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject,int)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="9003987136928190295" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="9003987136928190296">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dWEST" resolveInfo="WEST" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737915">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318844" resolveInfo="WEST" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9003987136928190297">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9003987136928190298">
@@ -1693,9 +1693,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="380233880019445739">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="380233880019445740" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="380233880019445741">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dCENTER" resolveInfo="CENTER" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406738001">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318846" resolveInfo="CENTER" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
               </node>
             </node>
@@ -1710,9 +1710,9 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9003987136928190399">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject,int)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="sqp9.ItemUIObjectParam" typeId="sqp9.4391079257750550368" id="9003987136928190400" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="9003987136928190401">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1t7x.~BorderLayout%dCENTER" resolveInfo="CENTER" />
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2112552551406737995">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="yv5b.7948103825060318846" resolveInfo="CENTER" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="yv5b.7948103825060318837" resolveInfo="DockLayoutData" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9003987136928190402">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9003987136928190403">

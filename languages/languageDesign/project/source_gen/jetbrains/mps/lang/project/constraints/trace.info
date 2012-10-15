@@ -49,8 +49,8 @@
       <varInfo nodeId="6370754048397725622" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6370754048397725622" fileName="Module_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6370754048397725622" fileName="Module_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints" />
     <unitInfo nodeId="6370754048397725622" fileName="Module_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints$1" />
+    <unitInfo nodeId="6370754048397725622" fileName="Module_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints" />
   </root>
 </debugInfo>
 

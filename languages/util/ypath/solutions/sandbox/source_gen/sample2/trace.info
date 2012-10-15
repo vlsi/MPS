@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1168883727781">
+  <root nodeId="1168883727781" modelId="r:00000000-0000-4000-0000-011c895905b9(sample2)">
     <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="13" startPosition="33" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="17" startPosition="39" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168884007317" fileName="File_TreePath.java" startLine="22" startPosition="39" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -105,17 +105,17 @@
     <scopeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="69" startPosition="42" endLine="91" endPosition="0">
       <varInfo nodeId="1175164134728" varName="matchValue" />
     </scopeInfo>
-    <unitInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="9" startPosition="0" endLine="99" endPosition="0" unitName="sample2.File_TreePath" />
+    <unitInfo nodeId="1168883727783" fileName="File_TreePath.java" startLine="21" startPosition="0" endLine="26" endPosition="0" unitName="sample2.File_TreePath$Parent" />
+    <unitInfo nodeId="1168883727786" fileName="File_TreePath.java" startLine="27" startPosition="0" endLine="32" endPosition="0" unitName="sample2.File_TreePath$Children" />
+    <unitInfo nodeId="1175164134729" fileName="File_TreePath.java" startLine="92" startPosition="0" endLine="97" endPosition="0" unitName="sample2.File_TreePath$FILE_name_Property$Getter" />
     <unitInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="73" startPosition="21" endLine="79" endPosition="9" unitName="sample2.File_TreePath$1" />
     <unitInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="81" startPosition="21" endLine="87" endPosition="9" unitName="sample2.File_TreePath$2" />
-    <unitInfo nodeId="1168883727786" fileName="File_TreePath.java" startLine="27" startPosition="0" endLine="32" endPosition="0" unitName="sample2.File_TreePath$Children" />
-    <unitInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="51" startPosition="0" endLine="68" endPosition="0" unitName="sample2.File_TreePath$DIR_NodeKindTrigger" />
     <unitInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="sample2.File_TreePath$FILE_NodeKindTrigger" />
+    <unitInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="51" startPosition="0" endLine="68" endPosition="0" unitName="sample2.File_TreePath$DIR_NodeKindTrigger" />
     <unitInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="69" startPosition="0" endLine="98" endPosition="0" unitName="sample2.File_TreePath$FILE_name_Property" />
-    <unitInfo nodeId="1168883727783" fileName="File_TreePath.java" startLine="21" startPosition="0" endLine="26" endPosition="0" unitName="sample2.File_TreePath$Parent" />
-    <unitInfo nodeId="1175164134729" fileName="File_TreePath.java" startLine="92" startPosition="0" endLine="97" endPosition="0" unitName="sample2.File_TreePath.FILE_name_Property$Getter" />
+    <unitInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="9" startPosition="0" endLine="99" endPosition="0" unitName="sample2.File_TreePath" />
   </root>
-  <root nodeId="1168894188335">
+  <root nodeId="1168894188335" modelId="r:00000000-0000-4000-0000-011c895905b9(sample2)">
     <nodeInfo nodeId="1227876789870" fileName="FileDemo.java" startLine="52" startPosition="27" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1168894296986" fileName="FileDemo.java" startLine="16" startPosition="42" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168983971103" fileName="FileDemo.java" startLine="18" startPosition="211" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -192,10 +192,10 @@
     <scopeInfo nodeId="1168894268794" fileName="FileDemo.java" startLine="15" startPosition="23" endLine="71" endPosition="0">
       <varInfo nodeId="1168894275019" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1168894188335" fileName="FileDemo.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="sample2.FileDemo" />
-    <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="62" endLine="65" endPosition="5" unitName="sample2.FileDemo$1" />
-    <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="35" startPosition="19" endLine="63" endPosition="9" unitName="sample2.FileDemo$2" />
     <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="37" startPosition="23" endLine="61" endPosition="13" unitName="sample2.FileDemo$3" />
+    <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="35" startPosition="19" endLine="63" endPosition="9" unitName="sample2.FileDemo$2" />
+    <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="62" endLine="65" endPosition="5" unitName="sample2.FileDemo$1" />
+    <unitInfo nodeId="1168894188335" fileName="FileDemo.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="sample2.FileDemo" />
   </root>
 </debugInfo>
 

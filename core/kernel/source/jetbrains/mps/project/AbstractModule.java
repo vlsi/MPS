@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -152,7 +151,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void setModuleReference(@NotNull ModuleReference reference) {
-    LOG.assertLog(myModuleReference == null || ObjectUtils.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
+    LOG.assertLog(myModuleReference == null || EqualUtil.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
 
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
@@ -200,7 +199,7 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     for (Dependency dep : descriptor.getDependencies()) {
-      if (!ObjectUtils.equals(dep.getModuleRef(), moduleRef)) continue;
+      if (!EqualUtil.equals(dep.getModuleRef(), moduleRef)) continue;
 
       if (reexport && !dep.isReexport()) {
         dep.setReexport(true);

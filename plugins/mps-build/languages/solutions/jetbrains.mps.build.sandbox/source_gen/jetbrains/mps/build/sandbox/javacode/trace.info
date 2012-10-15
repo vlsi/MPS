@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7778259556894381376">
+  <root nodeId="7778259556894381376" modelId="r:e048c524-1f34-4982-8ec8-bba3c4aba827(jetbrains.mps.build.sandbox.javacode)">
     <nodeInfo nodeId="7778259556894544428" fileName="TestScope.java" startLine="26" startPosition="72" endLine="27" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7778259556894515686" fileName="TestScope.java" startLine="29" startPosition="39" endLine="30" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7778259556894515732" fileName="TestScope.java" startLine="36" startPosition="68" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -35,9 +35,9 @@
       <varInfo nodeId="7778259556894515616" varName="contextNode" />
       <varInfo nodeId="7778259556894515618" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7778259556894381376" fileName="TestScope.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.sandbox.javacode.TestScope" />
     <unitInfo nodeId="7778259556894515682" fileName="TestScope.java" startLine="28" startPosition="110" endLine="32" endPosition="5" unitName="jetbrains.mps.build.sandbox.javacode.TestScope$1" />
     <unitInfo nodeId="7778259556894515738" fileName="TestScope.java" startLine="42" startPosition="15" endLine="46" endPosition="5" unitName="jetbrains.mps.build.sandbox.javacode.TestScope$2" />
+    <unitInfo nodeId="7778259556894381376" fileName="TestScope.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.sandbox.javacode.TestScope" />
   </root>
 </debugInfo>
 

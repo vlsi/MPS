@@ -213,8 +213,8 @@
       <varInfo nodeId="3961775458390497604" varName="kind" />
       <varInfo nodeId="3961775458390497598" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3961775458390497598" fileName="BwfSubTask_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_Behavior" />
     <unitInfo nodeId="3961775458390497833" fileName="BwfSubTask_Behavior.java" startLine="20" startPosition="19" endLine="25" endPosition="9" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_Behavior$1" />
+    <unitInfo nodeId="3961775458390497598" fileName="BwfSubTask_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_Behavior" />
   </root>
   <root nodeId="6647099934207210772" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="6647099934207210780" fileName="BwfPathDeclaration_Behavior.java" startLine="12" startPosition="75" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

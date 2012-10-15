@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3990508698139424671">
+  <root nodeId="3990508698139424671" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
     <nodeInfo nodeId="3990508698139429515" fileName="DefaultThread.java" startLine="18" startPosition="56" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STACK" />
     <nodeInfo nodeId="3990508698139429519" fileName="DefaultThread.java" startLine="19" startPosition="45" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME" />
     <nodeInfo nodeId="3990508698139429523" fileName="DefaultThread.java" startLine="21" startPosition="0" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFrames" />
@@ -97,11 +97,11 @@
       <varInfo nodeId="3990508698139429536" varName="resultAnswer" />
       <varInfo nodeId="3990508698139429538" varName="sourceGen" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
     <unitInfo nodeId="3990508698139429471" fileName="DefaultThread.java" startLine="62" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor1" />
     <unitInfo nodeId="3990508698139429493" fileName="DefaultThread.java" startLine="78" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor2" />
+    <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
   </root>
-  <root nodeId="3990508698139427312">
+  <root nodeId="3990508698139427312" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
     <nodeInfo nodeId="3990508698139427315" fileName="GDBLocation.java" startLine="10" startPosition="47" endLine="11" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3990508698139427320" fileName="GDBLocation.java" startLine="12" startPosition="0" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
     <nodeInfo nodeId="3990508698139427323" fileName="GDBLocation.java" startLine="13" startPosition="27" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoutine" />
@@ -151,7 +151,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139427312" fileName="GDBLocation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.GDBLocation" />
   </root>
-  <root nodeId="3990508698139428770">
+  <root nodeId="3990508698139428770" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
     <nodeInfo nodeId="3990508698139428773" fileName="SimpleVarWatchable.java" startLine="11" startPosition="55" endLine="12" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLES_CATEGORY" />
     <nodeInfo nodeId="3990508698139428779" fileName="SimpleVarWatchable.java" startLine="13" startPosition="0" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVarName" />
     <nodeInfo nodeId="3990508698139428782" fileName="SimpleVarWatchable.java" startLine="14" startPosition="27" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
@@ -185,7 +185,7 @@
     <scopeInfo nodeId="3990508698139428831" fileName="SimpleVarWatchable.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="3990508698139428770" fileName="SimpleVarWatchable.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.SimpleVarWatchable" />
   </root>
-  <root nodeId="3990508698139428964">
+  <root nodeId="3990508698139428964" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
     <nodeInfo nodeId="3990508698139428967" fileName="SimpleValue.java" startLine="11" startPosition="44" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3990508698139428976" fileName="SimpleValue.java" startLine="14" startPosition="36" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428984" fileName="SimpleValue.java" startLine="18" startPosition="40" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -211,7 +211,7 @@
     <scopeInfo nodeId="3990508698139429004" fileName="SimpleValue.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="3990508698139428964" fileName="SimpleValue.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.SimpleValue" />
   </root>
-  <root nodeId="3990508698139429870">
+  <root nodeId="3990508698139429870" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
     <nodeInfo nodeId="3990508698139429873" fileName="GDBStackFrame.java" startLine="18" startPosition="51" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FUNCTION" />
     <nodeInfo nodeId="3990508698139429877" fileName="GDBStackFrame.java" startLine="19" startPosition="47" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE" />
     <nodeInfo nodeId="3990508698139429881" fileName="GDBStackFrame.java" startLine="20" startPosition="43" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE" />

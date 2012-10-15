@@ -293,6 +293,9 @@
     </scopeInfo>
     <scopeInfo nodeId="478744034994717552" fileName="RefactoringArgument_Behavior.java" startLine="23" startPosition="63" endLine="26" endPosition="9" />
     <scopeInfo nodeId="478744034994716033" fileName="RefactoringArgument_Behavior.java" startLine="22" startPosition="40" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="478744034994717551" fileName="RefactoringArgument_Behavior.java" startLine="22" startPosition="40" endLine="27" endPosition="7">
+      <varInfo nodeId="478744034994717555" varName="sreference" />
+    </scopeInfo>
     <scopeInfo nodeId="478744034994716032" fileName="RefactoringArgument_Behavior.java" startLine="21" startPosition="222" endLine="28" endPosition="5">
       <varInfo nodeId="478744034994716044" varName="reference" />
     </scopeInfo>
@@ -397,8 +400,8 @@
       <varInfo nodeId="7012097027058652486" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_Behavior" />
     <unitInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_Behavior$QuotationClass_7nimzl_a0a0b" />
+    <unitInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_Behavior" />
   </root>
   <root nodeId="7012097027058652491" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="7012097027058652491" fileName="ModuleOperation_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7012097027058652494" />
@@ -460,8 +463,8 @@
       <varInfo nodeId="7012097027058652499" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058652499" fileName="ModuleOperation_Behavior.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="7012097027058652491" fileName="ModuleOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_Behavior" />
     <unitInfo nodeId="7012097027058652499" fileName="ModuleOperation_Behavior.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_Behavior$QuotationClass_t7bv23_a0a0b" />
+    <unitInfo nodeId="7012097027058652491" fileName="ModuleOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_Behavior" />
   </root>
   <root nodeId="7012097027058652503" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="7012097027058652503" fileName="NodeOperation_Behavior.java" startLine="16" startPosition="37" endLine="17" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7012097027058652506" />
@@ -554,9 +557,9 @@
     <scopeInfo nodeId="7012097027058652672" fileName="NodeOperation_Behavior.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="7012097027058652672" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="7012097027058652503" fileName="NodeOperation_Behavior.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior" />
-    <unitInfo nodeId="7012097027058652672" fileName="NodeOperation_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior$QuotationClass_qyvi86_a0a0b0b" />
     <unitInfo nodeId="7012097027058652685" fileName="NodeOperation_Behavior.java" startLine="62" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior$QuotationClass_qyvi86_a0c0b" />
+    <unitInfo nodeId="7012097027058652672" fileName="NodeOperation_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior$QuotationClass_qyvi86_a0a0b0b" />
+    <unitInfo nodeId="7012097027058652503" fileName="NodeOperation_Behavior.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior" />
   </root>
   <root nodeId="7012097027058652510" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="7012097027058652510" fileName="NodesOperation_Behavior.java" startLine="16" startPosition="38" endLine="17" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7012097027058652513" />
@@ -649,9 +652,9 @@
     <scopeInfo nodeId="7012097027058652608" fileName="NodesOperation_Behavior.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="7012097027058652608" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="7012097027058652510" fileName="NodesOperation_Behavior.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior" />
-    <unitInfo nodeId="7012097027058652608" fileName="NodesOperation_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior$QuotationClass_b95jz1_a0a0b0b" />
     <unitInfo nodeId="7012097027058652626" fileName="NodesOperation_Behavior.java" startLine="62" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior$QuotationClass_b95jz1_a0c0b" />
+    <unitInfo nodeId="7012097027058652608" fileName="NodesOperation_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior$QuotationClass_b95jz1_a0a0b0b" />
+    <unitInfo nodeId="7012097027058652510" fileName="NodesOperation_Behavior.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior" />
   </root>
   <root nodeId="7012097027058652517" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="7012097027058652517" fileName="OperationContextOperation_Behavior.java" startLine="18" startPosition="49" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7012097027058652520" />
@@ -713,8 +716,8 @@
       <varInfo nodeId="7012097027058652525" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058652525" fileName="OperationContextOperation_Behavior.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="7012097027058652517" fileName="OperationContextOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_Behavior" />
     <unitInfo nodeId="7012097027058652525" fileName="OperationContextOperation_Behavior.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_Behavior$QuotationClass_h3t8x5_a0a0b" />
+    <unitInfo nodeId="7012097027058652517" fileName="OperationContextOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_Behavior" />
   </root>
   <root nodeId="7012097027058652533" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="7012097027058652533" fileName="ProjectOperation_Behavior.java" startLine="18" startPosition="40" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7012097027058652539" />
@@ -776,8 +779,8 @@
       <varInfo nodeId="7012097027058652544" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058652544" fileName="ProjectOperation_Behavior.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="7012097027058652533" fileName="ProjectOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_Behavior" />
     <unitInfo nodeId="7012097027058652544" fileName="ProjectOperation_Behavior.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_Behavior$QuotationClass_td9bpt_a0a0b" />
+    <unitInfo nodeId="7012097027058652533" fileName="ProjectOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_Behavior" />
   </root>
   <root nodeId="7012097027058652547" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="18" startPosition="38" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7012097027058652550" />
@@ -839,8 +842,8 @@
       <varInfo nodeId="7012097027058652555" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_Behavior" />
     <unitInfo nodeId="7012097027058652555" fileName="ScopeOperation_Behavior.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_Behavior$QuotationClass_p44uz3_a0a0b" />
+    <unitInfo nodeId="7012097027058652547" fileName="ScopeOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_Behavior" />
   </root>
   <root nodeId="8113680833395644312" modelId="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)">
     <nodeInfo nodeId="8113680833395644312" fileName="MainProjectOperation_Behavior.java" startLine="18" startPosition="44" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8113680833395644315" />
@@ -902,8 +905,8 @@
       <varInfo nodeId="8113680833395644459" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8113680833395644459" fileName="MainProjectOperation_Behavior.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="8113680833395644312" fileName="MainProjectOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_Behavior" />
     <unitInfo nodeId="8113680833395644459" fileName="MainProjectOperation_Behavior.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_Behavior$QuotationClass_sim1f9_a0a0b" />
+    <unitInfo nodeId="8113680833395644312" fileName="MainProjectOperation_Behavior.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_Behavior" />
   </root>
 </debugInfo>
 

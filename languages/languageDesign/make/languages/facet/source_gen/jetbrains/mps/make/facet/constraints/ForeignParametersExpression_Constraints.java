@@ -52,6 +52,10 @@ public class ForeignParametersExpression_Constraints extends BaseConstraintsDesc
               public Iterable<SNode> translate(SNode rfd) {
                 return SLinkOperations.getTargets(SLinkOperations.getTarget(rfd, "facet", false), "targetDeclaration", true);
               }
+            })).concat(ListSequence.fromList(SLinkOperations.getTargets(fd, "optional", true)).translate(new ITranslator2<SNode, SNode>() {
+              public Iterable<SNode> translate(SNode rfd) {
+                return SLinkOperations.getTargets(SLinkOperations.getTarget(rfd, "facet", false), "targetDeclaration", true);
+              }
             }));
           }
 

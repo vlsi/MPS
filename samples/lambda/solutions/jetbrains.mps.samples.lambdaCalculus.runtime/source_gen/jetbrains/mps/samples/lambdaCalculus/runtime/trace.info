@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1308935328408154909">
+  <root nodeId="1308935328408154909" modelId="r:60e4aec5-7588-4ab2-b82c-70333f477a53(jetbrains.mps.samples.lambdaCalculus.runtime)">
     <nodeInfo nodeId="1308935328408154919" fileName="Function.java" startLine="8" startPosition="32" endLine="9" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myArgs" />
     <nodeInfo nodeId="2985097847315916739" fileName="Function.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
     <nodeInfo nodeId="1308935328408157907" fileName="Function.java" startLine="16" startPosition="33" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

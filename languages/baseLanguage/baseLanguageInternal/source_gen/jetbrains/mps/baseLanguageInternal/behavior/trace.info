@@ -290,9 +290,9 @@
       <varInfo nodeId="3421461530438560202" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3421461530438560202" fileName="InternalAnonymousClass_Behavior.java" startLine="128" startPosition="0" endLine="141" endPosition="0" />
-    <unitInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="23" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior" />
     <unitInfo nodeId="3421461530438560510" fileName="InternalAnonymousClass_Behavior.java" startLine="46" startPosition="271" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior$1" />
     <unitInfo nodeId="3421461530438560202" fileName="InternalAnonymousClass_Behavior.java" startLine="125" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior$QuotationClass_bwi1fo_a0a0e" />
+    <unitInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="23" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior" />
   </root>
   <root nodeId="3585982959253821896" modelId="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)">
     <nodeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="16" startPosition="58" endLine="17" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3585982959253821899" />

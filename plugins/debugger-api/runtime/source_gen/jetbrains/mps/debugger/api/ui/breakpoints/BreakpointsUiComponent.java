@@ -10,7 +10,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
-import jetbrains.mps.debug.api.DebugInfoManager;
+import jetbrains.mps.debug.api.BreakpointCreatorsManager;
 import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -48,13 +48,13 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
   private final Project myProject;
   private final BreakpointManagerComponent myBreakpointsManagerComponent;
   private final BreakpointProvidersManager myProvidersManager;
-  private final DebugInfoManager myDebugInfoManager;
+  private final BreakpointCreatorsManager myDebugInfoManager;
   private final BreakpointsUiComponent.MyBreakpointManagerListener myBreakpointManagerListener = new BreakpointsUiComponent.MyBreakpointManagerListener();
   private final BreakpointsUiComponent.MyBreakpointListener myBreakpointListener = new BreakpointsUiComponent.MyBreakpointListener();
   private final SessionChangeListener myChangeListener = new BreakpointsUiComponent.MySessionChangeAdapter();
   private final DebugSessionManagerComponent.DebugSessionListener myDebugSessionListener = new BreakpointsUiComponent.MyDebugSessionAdapter();
 
-  public BreakpointsUiComponent(Project project, BreakpointManagerComponent breakpointsManagerComponent, DebugInfoManager debugInfoManager, BreakpointProvidersManager providersManager, FileEditorManager fileEditorManager) {
+  public BreakpointsUiComponent(Project project, BreakpointManagerComponent breakpointsManagerComponent, BreakpointCreatorsManager debugInfoManager, BreakpointProvidersManager providersManager, FileEditorManager fileEditorManager) {
     super(project, fileEditorManager);
     myProject = project;
     myBreakpointsManagerComponent = breakpointsManagerComponent;

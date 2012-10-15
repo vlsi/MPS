@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1802459475176570754">
+  <root nodeId="1802459475176570754" modelId="r:e83eb82a-b3b8-4003-84af-b40cb742ea94(jetbrains.mps.ide.editor.resolver)">
     <nodeInfo nodeId="1802459475176571506" fileName="EditorResolverComponent.java" startLine="11" startPosition="70" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResolver" />
     <nodeInfo nodeId="1802459475176571511" fileName="EditorResolverComponent.java" startLine="17" startPosition="31" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1802459475176570783" fileName="EditorResolverComponent.java" startLine="18" startPosition="38" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -23,7 +23,7 @@
     <scopeInfo nodeId="1802459475176570773" fileName="EditorResolverComponent.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
     <unitInfo nodeId="1802459475176570754" fileName="EditorResolverComponent.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" />
   </root>
-  <root nodeId="1802459475176571473">
+  <root nodeId="1802459475176571473" modelId="r:e83eb82a-b3b8-4003-84af-b40cb742ea94(jetbrains.mps.ide.editor.resolver)">
     <nodeInfo nodeId="1802459475176585196" fileName="EditorResolver.java" startLine="31" startPosition="129" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4953860923773790232" fileName="EditorResolver.java" startLine="33" startPosition="30" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1802459475176582994" fileName="EditorResolver.java" startLine="35" startPosition="5" endLine="36" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -129,8 +129,8 @@
       <varInfo nodeId="1802459475176571481" varName="reference" />
       <varInfo nodeId="1802459475176571484" varName="sourceNode" />
     </scopeInfo>
-    <unitInfo nodeId="1802459475176571473" fileName="EditorResolver.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.editor.resolver.EditorResolver" />
     <unitInfo nodeId="1802459475176572296" fileName="EditorResolver.java" startLine="88" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.editor.resolver.EditorResolver$FakeEditorComponent" />
+    <unitInfo nodeId="1802459475176571473" fileName="EditorResolver.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.editor.resolver.EditorResolver" />
   </root>
 </debugInfo>
 

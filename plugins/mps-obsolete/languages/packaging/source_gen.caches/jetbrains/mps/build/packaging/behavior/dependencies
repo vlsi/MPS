@@ -21,8 +21,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor" file="AbstractProjectComponent_BehaviorDescriptor.java">
     <classNode dependClassName="java.io.File" />
@@ -259,8 +259,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.Copy_BehaviorDescriptor" file="Copy_BehaviorDescriptor.java">
     <classNode dependClassName="java.io.File" />

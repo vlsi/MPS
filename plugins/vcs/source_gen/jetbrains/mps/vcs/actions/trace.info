@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7705742079275757540">
+  <root nodeId="7705742079275757540" modelId="r:b2d164a2-987a-4229-af85-1f4f7d3ef996(jetbrains.mps.vcs.actions)">
     <nodeInfo nodeId="7705742079275757553" fileName="ShowInFileView.java" startLine="17" startPosition="58" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7705742079275757568" fileName="ShowInFileView.java" startLine="21" startPosition="63" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7705742079275757543" fileName="ShowInFileView.java" startLine="13" startPosition="60" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowInFileView#()V" />
@@ -18,7 +18,7 @@
     </scopeInfo>
     <unitInfo nodeId="7705742079275757540" fileName="ShowInFileView.java" startLine="13" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInFileView" />
   </root>
-  <root nodeId="7705742079275757770">
+  <root nodeId="7705742079275757770" modelId="r:b2d164a2-987a-4229-af85-1f4f7d3ef996(jetbrains.mps.vcs.actions)">
     <nodeInfo nodeId="7705742079275757781" fileName="AbstractShowInFileView.java" startLine="20" startPosition="48" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7705742079275757787" fileName="AbstractShowInFileView.java" startLine="21" startPosition="43" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7705742079275757797" fileName="AbstractShowInFileView.java" startLine="23" startPosition="31" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -97,7 +97,7 @@
     </scopeInfo>
     <unitInfo nodeId="7705742079275757770" fileName="AbstractShowInFileView.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.AbstractShowInFileView" />
   </root>
-  <root nodeId="7705742079275757969">
+  <root nodeId="7705742079275757969" modelId="r:b2d164a2-987a-4229-af85-1f4f7d3ef996(jetbrains.mps.vcs.actions)">
     <nodeInfo nodeId="7705742079275757982" fileName="ShowInLogicalView.java" startLine="24" startPosition="48" endLine="25" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7705742079275757988" fileName="ShowInLogicalView.java" startLine="25" startPosition="43" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7705742079275757998" fileName="ShowInLogicalView.java" startLine="27" startPosition="31" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -163,9 +163,9 @@
     <scopeInfo nodeId="7705742079275757976" fileName="ShowInLogicalView.java" startLine="23" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7705742079275757979" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="7705742079275757969" fileName="ShowInLogicalView.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView" />
-    <unitInfo nodeId="7705742079275758027" fileName="ShowInLogicalView.java" startLine="43" startPosition="64" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
     <unitInfo nodeId="7705742079275758052" fileName="ShowInLogicalView.java" startLine="33" startPosition="72" endLine="37" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$2" />
+    <unitInfo nodeId="7705742079275758027" fileName="ShowInLogicalView.java" startLine="43" startPosition="64" endLine="47" endPosition="7" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView$1" />
+    <unitInfo nodeId="7705742079275757969" fileName="ShowInLogicalView.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInLogicalView" />
   </root>
 </debugInfo>
 

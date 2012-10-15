@@ -20,7 +20,6 @@
     <orderEntry type="library" name="Commons-httpclient" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />

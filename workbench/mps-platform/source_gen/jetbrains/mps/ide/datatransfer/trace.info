@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6299533519672638253">
+  <root nodeId="6299533519672638253" modelId="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)">
     <nodeInfo nodeId="1963440973928775596" fileName="CopyPasteUtil.java" startLine="45" startPosition="28" endLine="46" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myDataConverter" />
     <nodeInfo nodeId="6299533519672638253" fileName="CopyPasteUtil.java" startLine="46" startPosition="69" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6299533519672649781" fileName="CopyPasteUtil.java" startLine="52" startPosition="202" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -657,20 +657,20 @@
       <varInfo nodeId="8490755084402469902" varName="requiredLanguages" />
       <varInfo nodeId="8490755084402469900" varName="targetModel" />
     </scopeInfo>
-    <unitInfo nodeId="6299533519672638253" fileName="CopyPasteUtil.java" startLine="45" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <unitInfo nodeId="3395068133255677804" fileName="CopyPasteUtil.java" startLine="125" startPosition="35" endLine="130" endPosition="5" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$1" />
+    <unitInfo nodeId="1963440973928775580" fileName="CopyPasteUtil.java" startLine="445" startPosition="0" endLine="450" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$IDataConverter" />
     <unitInfo nodeId="6299533519672650924" fileName="CopyPasteUtil.java" startLine="337" startPosition="45" endLine="356" endPosition="5" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$2" />
     <unitInfo nodeId="2199634891381804954" fileName="CopyPasteUtil.java" startLine="372" startPosition="15" endLine="405" endPosition="5" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$3" />
-    <unitInfo nodeId="1963440973928775580" fileName="CopyPasteUtil.java" startLine="445" startPosition="0" endLine="450" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil$IDataConverter" />
+    <unitInfo nodeId="6299533519672638253" fileName="CopyPasteUtil.java" startLine="45" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
   </root>
-  <root nodeId="6299533519672649753">
+  <root nodeId="6299533519672649753" modelId="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)">
     <nodeInfo nodeId="6299533519672652323" fileName="SModelDataFlavor.java" startLine="7" startPosition="50" endLine="8" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="sNode" />
     <nodeInfo nodeId="6299533519672652330" fileName="SModelDataFlavor.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelDataFlavor#()V" />
     <scopeInfo nodeId="6299533519672652333" fileName="SModelDataFlavor.java" startLine="10" startPosition="29" endLine="10" endPosition="29" />
     <scopeInfo nodeId="6299533519672652330" fileName="SModelDataFlavor.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
     <unitInfo nodeId="6299533519672649753" fileName="SModelDataFlavor.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
   </root>
-  <root nodeId="6299533519672651952">
+  <root nodeId="6299533519672651952" modelId="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)">
     <nodeInfo nodeId="6299533519672651955" fileName="SNodeTransferable.java" startLine="25" startPosition="56" endLine="26" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NODE" />
     <nodeInfo nodeId="6299533519672651959" fileName="SNodeTransferable.java" startLine="26" startPosition="36" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRING" />
     <nodeInfo nodeId="6299533519672651963" fileName="SNodeTransferable.java" startLine="27" startPosition="38" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PLAIN_TEXT" />
@@ -801,7 +801,7 @@
     </scopeInfo>
     <unitInfo nodeId="6299533519672651952" fileName="SNodeTransferable.java" startLine="25" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
   </root>
-  <root nodeId="6299533519672652334">
+  <root nodeId="6299533519672652334" modelId="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)">
     <nodeInfo nodeId="6299533519672652344" fileName="TextPasteUtil.java" startLine="13" startPosition="48" endLine="14" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6299533519672652365" fileName="TextPasteUtil.java" startLine="16" startPosition="78" endLine="17" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6299533519672652369" fileName="TextPasteUtil.java" startLine="18" startPosition="7" endLine="19" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />

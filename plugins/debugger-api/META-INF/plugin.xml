@@ -18,7 +18,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.api.DebugInfoManager</implementation-class>
+      <implementation-class>jetbrains.mps.debug.api.BreakpointCreatorsManager</implementation-class>
     </component>
 
     <!--runtime-->

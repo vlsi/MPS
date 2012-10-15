@@ -40,7 +40,6 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
@@ -160,7 +159,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(pp, toExecute, input);
 
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         // don't do rebuild all 
         vars._2(false);
 

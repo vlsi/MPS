@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.TypesystemDescriptor" />
-  <root nodeId="178770917832494464">
+  <root nodeId="178770917832494464" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="178770917832644953" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="178770917832644953" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="27" startPosition="63" endLine="28" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="178770917832644953" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="28" startPosition="213" endLine="29" endPosition="487" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -129,10 +129,10 @@
     <scopeInfo nodeId="4072414341992344847" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="78" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="4072414341992344847" varName="parameter_5" />
     </scopeInfo>
-    <unitInfo nodeId="178770917832494464" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerRunnerCreator_InferenceRule" />
     <unitInfo nodeId="4072414341992344847" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="48" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerRunnerCreator_InferenceRule$QuotationClass_tazfkf_a0a0a0" />
+    <unitInfo nodeId="178770917832494464" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerRunnerCreator_InferenceRule" />
   </root>
-  <root nodeId="4217760266503638769">
+  <root nodeId="4217760266503638769" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="4217760266503638783" fileName="typeof_InstructionReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4217760266503638783" fileName="typeof_InstructionReference_InferenceRule.java" startLine="20" startPosition="51" endLine="21" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4217760266503638783" fileName="typeof_InstructionReference_InferenceRule.java" startLine="21" startPosition="214" endLine="22" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -172,7 +172,7 @@
     </scopeInfo>
     <unitInfo nodeId="4217760266503638769" fileName="typeof_InstructionReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionReference_InferenceRule" />
   </root>
-  <root nodeId="4943044633101742738">
+  <root nodeId="4943044633101742738" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="4943044633101742741" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="21" startPosition="129" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633101742745" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633101742745" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="24" startPosition="58" endLine="25" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -263,10 +263,10 @@
     <scopeInfo nodeId="4943044633101742750" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="61" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="4943044633101742750" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="4943044633101742738" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_ConceptCondition_InferenceRule" />
     <unitInfo nodeId="4943044633101742750" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="45" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_ConceptCondition_InferenceRule$QuotationClass_uj83zv_a0a1a0" />
+    <unitInfo nodeId="4943044633101742738" fileName="typeof_ConceptCondition_InferenceRule.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_ConceptCondition_InferenceRule" />
   </root>
-  <root nodeId="4943044633102057756">
+  <root nodeId="4943044633102057756" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="4943044633102057763" fileName="typeof_ApplicableNodeReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633102057763" fileName="typeof_ApplicableNodeReference_InferenceRule.java" startLine="20" startPosition="65" endLine="21" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633102057763" fileName="typeof_ApplicableNodeReference_InferenceRule.java" startLine="21" startPosition="214" endLine="22" endPosition="479" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -306,7 +306,7 @@
     </scopeInfo>
     <unitInfo nodeId="4943044633102057756" fileName="typeof_ApplicableNodeReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_ApplicableNodeReference_InferenceRule" />
   </root>
-  <root nodeId="7985661997283730035">
+  <root nodeId="7985661997283730035" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="7985661997283737353" fileName="typeof_InstructionType_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7985661997283737353" fileName="typeof_InstructionType_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7985661997283737353" fileName="typeof_InstructionType_InferenceRule.java" startLine="27" startPosition="214" endLine="28" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -446,11 +446,11 @@
       <varInfo nodeId="7985661997283737371" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="7985661997283737371" fileName="typeof_InstructionType_InferenceRule.java" startLine="99" startPosition="0" endLine="112" endPosition="0" />
-    <unitInfo nodeId="7985661997283730035" fileName="typeof_InstructionType_InferenceRule.java" startLine="20" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionType_InferenceRule" />
     <unitInfo nodeId="7985661997283737359" fileName="typeof_InstructionType_InferenceRule.java" startLine="52" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionType_InferenceRule$QuotationClass_topy54_a0a0a0" />
     <unitInfo nodeId="7985661997283737371" fileName="typeof_InstructionType_InferenceRule.java" startLine="83" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionType_InferenceRule$QuotationClass_topy54_a0a1a0" />
+    <unitInfo nodeId="7985661997283730035" fileName="typeof_InstructionType_InferenceRule.java" startLine="20" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionType_InferenceRule" />
   </root>
-  <root nodeId="9177062368042317188">
+  <root nodeId="9177062368042317188" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="9177062368042322944" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042322944" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="25" startPosition="54" endLine="26" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042322944" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="26" startPosition="214" endLine="27" endPosition="375" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -535,10 +535,10 @@
       <varInfo nodeId="9177062368042359695" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="9177062368042359695" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="9177062368042317188" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunParameterProgramState_InferenceRule" />
     <unitInfo nodeId="9177062368042359695" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunParameterProgramState_InferenceRule$QuotationClass_hgy1cg_a0a0a0" />
+    <unitInfo nodeId="9177062368042317188" fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunParameterProgramState_InferenceRule" />
   </root>
-  <root nodeId="9177062368042359783">
+  <root nodeId="9177062368042359783" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="9177062368042359803" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042359803" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="25" startPosition="47" endLine="26" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042359803" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="26" startPosition="214" endLine="27" endPosition="535" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -664,10 +664,10 @@
     <scopeInfo nodeId="9177062368042359852" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="75" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="9177062368042359852" varName="parameter_5" />
     </scopeInfo>
-    <unitInfo nodeId="9177062368042359783" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="19" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerMergeParameterInput_InferenceRule" />
     <unitInfo nodeId="9177062368042359852" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="46" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerMergeParameterInput_InferenceRule$QuotationClass_rg9vlp_a0a0a0" />
+    <unitInfo nodeId="9177062368042359783" fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="19" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerMergeParameterInput_InferenceRule" />
   </root>
-  <root nodeId="9177062368042364854">
+  <root nodeId="9177062368042364854" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="9177062368042364861" fileName="typeof_AnalyzerFunParameterInput_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042364861" fileName="typeof_AnalyzerFunParameterInput_InferenceRule.java" startLine="21" startPosition="47" endLine="22" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042364861" fileName="typeof_AnalyzerFunParameterInput_InferenceRule.java" startLine="22" startPosition="214" endLine="23" endPosition="418" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -707,7 +707,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042364854" fileName="typeof_AnalyzerFunParameterInput_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunParameterInput_InferenceRule" />
   </root>
-  <root nodeId="9177062368042364884">
+  <root nodeId="9177062368042364884" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="430844094082159326" fileName="typeof_AnalyzerFunctionResultType_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="430844094082159326" fileName="typeof_AnalyzerFunctionResultType_InferenceRule.java" startLine="21" startPosition="52" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="430844094082159326" fileName="typeof_AnalyzerFunctionResultType_InferenceRule.java" startLine="22" startPosition="213" endLine="23" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -747,7 +747,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042364884" fileName="typeof_AnalyzerFunctionResultType_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunctionResultType_InferenceRule" />
   </root>
-  <root nodeId="9177062368042364920">
+  <root nodeId="9177062368042364920" modelId="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)">
     <nodeInfo nodeId="9177062368042364923" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042364923" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="25" startPosition="49" endLine="26" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042364923" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="26" startPosition="214" endLine="27" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -832,8 +832,8 @@
       <varInfo nodeId="9177062368042364928" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="9177062368042364928" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="9177062368042364920" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerParameterProgram_InferenceRule" />
     <unitInfo nodeId="9177062368042364928" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerParameterProgram_InferenceRule$QuotationClass_kemg9u_a0a0a0" />
+    <unitInfo nodeId="9177062368042364920" fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerParameterProgram_InferenceRule" />
   </root>
 </debugInfo>
 

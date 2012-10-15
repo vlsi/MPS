@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5447719361346501252">
+  <root nodeId="5447719361346501252" modelId="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)">
     <nodeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="7" startPosition="20" endLine="8" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
     <nodeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="8" startPosition="30" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrency" />
     <nodeInfo nodeId="5447719361346501289" fileName="Money.java" startLine="11" startPosition="52" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -73,7 +73,7 @@
     </scopeInfo>
     <unitInfo nodeId="5447719361346501252" fileName="Money.java" startLine="7" startPosition="0" endLine="62" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.Money" />
   </root>
-  <root nodeId="5447719361346501301">
+  <root nodeId="5447719361346501301" modelId="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)">
     <nodeInfo nodeId="5447719361346501314" fileName="MoneyConversion.java" startLine="10" startPosition="30" endLine="11" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="exchangeRates" />
     <nodeInfo nodeId="5447719361346501312" fileName="MoneyConversion.java" startLine="16" startPosition="72" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5447719361346501324" fileName="MoneyConversion.java" startLine="12" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyConversion#()V" />

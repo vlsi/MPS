@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8307544070813664740">
+  <root nodeId="8307544070813664740" modelId="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)">
     <nodeInfo nodeId="8307544070813664744" fileName="MultiplyOperation.java" startLine="6" startPosition="60" endLine="7" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftOperand" />
     <nodeInfo nodeId="8307544070813664748" fileName="MultiplyOperation.java" startLine="7" startPosition="41" endLine="8" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightOperand" />
     <nodeInfo nodeId="8307544070813664762" fileName="MultiplyOperation.java" startLine="10" startPosition="89" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -24,7 +24,7 @@
     </scopeInfo>
     <unitInfo nodeId="8307544070813664740" fileName="MultiplyOperation.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation" />
   </root>
-  <root nodeId="8307544070813664794">
+  <root nodeId="8307544070813664794" modelId="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)">
     <nodeInfo nodeId="8307544070813664799" fileName="IfFunction.java" startLine="6" startPosition="51" endLine="7" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLogicalTest" />
     <nodeInfo nodeId="8307544070813664803" fileName="IfFunction.java" startLine="7" startPosition="42" endLine="8" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueIfTrue" />
     <nodeInfo nodeId="8307544070813664807" fileName="IfFunction.java" startLine="8" startPosition="36" endLine="9" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueIfFalse" />
@@ -49,14 +49,14 @@
     </scopeInfo>
     <unitInfo nodeId="8307544070813664794" fileName="IfFunction.java" startLine="6" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.api.IfFunction" />
   </root>
-  <root nodeId="8307544070813664858">
+  <root nodeId="8307544070813664858" modelId="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)">
     <nodeInfo nodeId="8307544070813664861" fileName="Function.java" startLine="6" startPosition="30" endLine="7" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)null" />
     <scopeInfo nodeId="8307544070813664861" fileName="Function.java" startLine="6" startPosition="30" endLine="7" endPosition="32">
       <varInfo nodeId="8307544070813664864" varName="parm" />
     </scopeInfo>
     <unitInfo nodeId="8307544070813664858" fileName="Function.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </root>
-  <root nodeId="8307544070813664867">
+  <root nodeId="8307544070813664867" modelId="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)">
     <nodeInfo nodeId="8307544070813664871" fileName="DoubleConstant.java" startLine="6" startPosition="57" endLine="7" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDouble" />
     <nodeInfo nodeId="8307544070813664880" fileName="DoubleConstant.java" startLine="9" startPosition="35" endLine="10" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8307544070813664890" fileName="DoubleConstant.java" startLine="13" startPosition="38" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

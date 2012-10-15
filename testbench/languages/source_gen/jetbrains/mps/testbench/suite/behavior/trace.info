@@ -64,8 +64,8 @@
     <scopeInfo nodeId="1280144168199506814" fileName="ModuleSuite_Behavior.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1280144168199506814" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1280144168199506814" fileName="ModuleSuite_Behavior.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" />
     <unitInfo nodeId="8605005254686522450" fileName="ModuleSuite_Behavior.java" startLine="49" startPosition="98" endLine="53" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior$1" />
+    <unitInfo nodeId="1280144168199506814" fileName="ModuleSuite_Behavior.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" />
   </root>
   <root nodeId="1280144168199506911" modelId="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)">
     <nodeInfo nodeId="1280144168199513565" fileName="SolutionRef_Behavior.java" startLine="13" startPosition="93" endLine="14" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -232,8 +232,8 @@
     <scopeInfo nodeId="2956932267233324542" fileName="TestCaseRef_Behavior.java" startLine="21" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="2956932267233324542" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2956932267233324542" fileName="TestCaseRef_Behavior.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" />
     <unitInfo nodeId="4089647634160991476" fileName="TestCaseRef_Behavior.java" startLine="29" startPosition="57" endLine="33" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior$1" />
+    <unitInfo nodeId="2956932267233324542" fileName="TestCaseRef_Behavior.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" />
   </root>
   <root nodeId="2956932267233324561" modelId="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)">
     <nodeInfo nodeId="2956932267233336791" fileName="JUnit3TestCaseRef_Behavior.java" startLine="25" startPosition="80" endLine="26" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -299,11 +299,11 @@
     <scopeInfo nodeId="2956932267233324561" fileName="JUnit3TestCaseRef_Behavior.java" startLine="28" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2956932267233324561" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2956932267233324561" fileName="JUnit3TestCaseRef_Behavior.java" startLine="21" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" />
-    <unitInfo nodeId="4089647634160960736" fileName="JUnit3TestCaseRef_Behavior.java" startLine="32" startPosition="140" endLine="40" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$1" />
     <unitInfo nodeId="1178539434126757486" fileName="JUnit3TestCaseRef_Behavior.java" startLine="34" startPosition="431" endLine="38" endPosition="9" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$2" />
     <unitInfo nodeId="4089647634160960799" fileName="JUnit3TestCaseRef_Behavior.java" startLine="40" startPosition="18" endLine="44" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$2" />
+    <unitInfo nodeId="4089647634160960736" fileName="JUnit3TestCaseRef_Behavior.java" startLine="32" startPosition="140" endLine="40" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$1" />
     <unitInfo nodeId="1178539434126757467" fileName="JUnit3TestCaseRef_Behavior.java" startLine="47" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$QuotationClass_6e9f36_a0a0a0c" />
+    <unitInfo nodeId="2956932267233324561" fileName="JUnit3TestCaseRef_Behavior.java" startLine="21" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" />
   </root>
   <root nodeId="2956932267233336804" modelId="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)">
     <nodeInfo nodeId="2956932267233336811" fileName="JUnit4TestCaseRef_Behavior.java" startLine="24" startPosition="80" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -401,13 +401,13 @@
     <scopeInfo nodeId="2956932267233336804" fileName="JUnit4TestCaseRef_Behavior.java" startLine="27" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="2956932267233336804" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2956932267233336804" fileName="JUnit4TestCaseRef_Behavior.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" />
-    <unitInfo nodeId="4089647634160960832" fileName="JUnit4TestCaseRef_Behavior.java" startLine="32" startPosition="140" endLine="44" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$1" />
     <unitInfo nodeId="4089647634160960848" fileName="JUnit4TestCaseRef_Behavior.java" startLine="34" startPosition="96" endLine="38" endPosition="9" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$2" />
     <unitInfo nodeId="1178539434126757447" fileName="JUnit4TestCaseRef_Behavior.java" startLine="38" startPosition="97" endLine="42" endPosition="9" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$2" />
     <unitInfo nodeId="4089647634160991442" fileName="JUnit4TestCaseRef_Behavior.java" startLine="44" startPosition="18" endLine="48" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$2" />
+    <unitInfo nodeId="4089647634160960832" fileName="JUnit4TestCaseRef_Behavior.java" startLine="32" startPosition="140" endLine="44" endPosition="5" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$1" />
     <unitInfo nodeId="4089647634160991431" fileName="JUnit4TestCaseRef_Behavior.java" startLine="51" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$QuotationClass_856esj_a0a0a0c" />
     <unitInfo nodeId="1178539434126757428" fileName="JUnit4TestCaseRef_Behavior.java" startLine="69" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$QuotationClass_856esj_a0a0b0c" />
+    <unitInfo nodeId="2956932267233336804" fileName="JUnit4TestCaseRef_Behavior.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" />
   </root>
 </debugInfo>
 

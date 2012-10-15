@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.IntentionsDescriptor" />
-  <root nodeId="202934866058893735">
+  <root nodeId="202934866058893735" modelId="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)">
     <nodeInfo nodeId="202934866058893735" fileName="AddCustomLocationRuntime_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="202934866058893735" fileName="AddCustomLocationRuntime_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="202934866058893735" fileName="AddCustomLocationRuntime_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="202934866058893735" fileName="AddCustomLocationRuntime_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.AddCustomLocationRuntime_Intention" />
   </root>
-  <root nodeId="2798275735916376328">
+  <root nodeId="2798275735916376328" modelId="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)">
     <nodeInfo nodeId="2798275735916376328" fileName="AddCustomLocationDependency_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2798275735916376328" fileName="AddCustomLocationDependency_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2798275735916376328" fileName="AddCustomLocationDependency_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -115,7 +115,7 @@
     </scopeInfo>
     <unitInfo nodeId="2798275735916376328" fileName="AddCustomLocationDependency_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.AddCustomLocationDependency_Intention" />
   </root>
-  <root nodeId="4034578608468929409">
+  <root nodeId="4034578608468929409" modelId="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)">
     <nodeInfo nodeId="4034578608468929409" fileName="AddCustomPackaging_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4034578608468929409" fileName="AddCustomPackaging_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4034578608468929409" fileName="AddCustomPackaging_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -172,7 +172,7 @@
     </scopeInfo>
     <unitInfo nodeId="4034578608468929409" fileName="AddCustomPackaging_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.AddCustomPackaging_Intention" />
   </root>
-  <root nodeId="8369506495128778230">
+  <root nodeId="8369506495128778230" modelId="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)">
     <nodeInfo nodeId="8369506495128778230" fileName="ToggleCompactMpsModule_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8369506495128778230" fileName="ToggleCompactMpsModule_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8369506495128778230" fileName="ToggleCompactMpsModule_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

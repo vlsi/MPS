@@ -646,6 +646,9 @@
     <scopeInfo nodeId="121110127371513428" fileName="FileStructurePopup.java" startLine="814" startPosition="20" endLine="817" endPosition="27" />
     <scopeInfo nodeId="121110127371513618" fileName="FileStructurePopup.java" startLine="852" startPosition="27" endLine="855" endPosition="23" />
     <scopeInfo nodeId="121110127371513186" fileName="FileStructurePopup.java" startLine="887" startPosition="31" endLine="890" endPosition="13" />
+    <scopeInfo nodeId="121110127371513187" fileName="FileStructurePopup.java" startLine="887" startPosition="31" endLine="890" endPosition="13">
+      <varInfo nodeId="121110127371513189" varName="range" />
+    </scopeInfo>
     <scopeInfo nodeId="121110127371514023" fileName="FileStructurePopup.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="121110127371514026" varName="element" />
     </scopeInfo>
@@ -712,6 +715,9 @@
     </scopeInfo>
     <scopeInfo nodeId="121110127371514887" fileName="FileStructurePopup.java" startLine="401" startPosition="58" endLine="406" endPosition="9" />
     <scopeInfo nodeId="121110127371514914" fileName="FileStructurePopup.java" startLine="408" startPosition="58" endLine="413" endPosition="9" />
+    <scopeInfo nodeId="121110127371514915" fileName="FileStructurePopup.java" startLine="408" startPosition="58" endLine="413" endPosition="9">
+      <varInfo nodeId="121110127371514922" varName="provider" />
+    </scopeInfo>
     <scopeInfo nodeId="121110127371515017" fileName="FileStructurePopup.java" startLine="430" startPosition="52" endLine="435" endPosition="9" />
     <scopeInfo nodeId="121110127371515157" fileName="FileStructurePopup.java" startLine="464" startPosition="50" endLine="469" endPosition="69">
       <varInfo nodeId="121110127371515159" varName="node" />
@@ -1028,37 +1034,37 @@
       <varInfo nodeId="121110127371514238" varName="shouldSetWidth" />
     </scopeInfo>
     <scopeInfo nodeId="121110127371514221" fileName="FileStructurePopup.java" startLine="229" startPosition="0" endLine="333" endPosition="0" />
-    <unitInfo nodeId="121110127371512982" fileName="FileStructurePopup.java" startLine="114" startPosition="0" endLine="964" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
-    <unitInfo nodeId="121110127371513750" fileName="FileStructurePopup.java" startLine="922" startPosition="30" endLine="927" endPosition="11" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
-    <unitInfo nodeId="121110127371513835" fileName="FileStructurePopup.java" startLine="120" startPosition="73" endLine="129" endPosition="3" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
-    <unitInfo nodeId="121110127371513267" fileName="FileStructurePopup.java" startLine="768" startPosition="48" endLine="778" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
+    <unitInfo nodeId="121110127371515656" fileName="FileStructurePopup.java" startLine="604" startPosition="10" endLine="608" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$17" />
     <unitInfo nodeId="121110127371514465" fileName="FileStructurePopup.java" startLine="279" startPosition="67" endLine="284" endPosition="13" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$10" />
+    <unitInfo nodeId="121110127371513750" fileName="FileStructurePopup.java" startLine="922" startPosition="30" endLine="927" endPosition="11" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
+    <unitInfo nodeId="121110127371514288" fileName="FileStructurePopup.java" startLine="236" startPosition="345" endLine="242" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$5" />
+    <unitInfo nodeId="121110127371515359" fileName="FileStructurePopup.java" startLine="524" startPosition="35" endLine="530" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$15" />
+    <unitInfo nodeId="121110127371514356" fileName="FileStructurePopup.java" startLine="256" startPosition="35" endLine="263" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$7" />
     <unitInfo nodeId="121110127371514987" fileName="FileStructurePopup.java" startLine="421" startPosition="8" endLine="428" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$10" />
-    <unitInfo nodeId="121110127371514553" fileName="FileStructurePopup.java" startLine="307" startPosition="64" endLine="324" endPosition="13" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$10" />
+    <unitInfo nodeId="121110127371515047" fileName="FileStructurePopup.java" startLine="438" startPosition="32" endLine="445" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$12" />
+    <unitInfo nodeId="121110127371515598" fileName="FileStructurePopup.java" startLine="581" startPosition="83" endLine="588" endPosition="15" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$18" />
     <unitInfo nodeId="121110127371514582" fileName="FileStructurePopup.java" startLine="311" startPosition="89" endLine="319" endPosition="19" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$11" />
     <unitInfo nodeId="121110127371515011" fileName="FileStructurePopup.java" startLine="429" startPosition="8" endLine="437" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$11" />
-    <unitInfo nodeId="121110127371515047" fileName="FileStructurePopup.java" startLine="438" startPosition="32" endLine="445" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$12" />
-    <unitInfo nodeId="121110127371515136" fileName="FileStructurePopup.java" startLine="458" startPosition="48" endLine="476" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$13" />
-    <unitInfo nodeId="121110127371515275" fileName="FileStructurePopup.java" startLine="501" startPosition="51" endLine="517" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$14" />
-    <unitInfo nodeId="121110127371515359" fileName="FileStructurePopup.java" startLine="524" startPosition="35" endLine="530" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$15" />
-    <unitInfo nodeId="121110127371515498" fileName="FileStructurePopup.java" startLine="560" startPosition="36" endLine="600" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$16" />
-    <unitInfo nodeId="121110127371515656" fileName="FileStructurePopup.java" startLine="604" startPosition="10" endLine="608" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$17" />
-    <unitInfo nodeId="121110127371515569" fileName="FileStructurePopup.java" startLine="577" startPosition="38" endLine="593" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$17" />
-    <unitInfo nodeId="121110127371515598" fileName="FileStructurePopup.java" startLine="581" startPosition="83" endLine="588" endPosition="15" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$18" />
+    <unitInfo nodeId="121110127371513835" fileName="FileStructurePopup.java" startLine="120" startPosition="73" endLine="129" endPosition="3" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
     <unitInfo nodeId="121110127371513637" fileName="FileStructurePopup.java" startLine="862" startPosition="32" endLine="871" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$2" />
-    <unitInfo nodeId="121110127371514006" fileName="FileStructurePopup.java" startLine="165" startPosition="26" endLine="184" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$2" />
+    <unitInfo nodeId="121110127371514447" fileName="FileStructurePopup.java" startLine="276" startPosition="60" endLine="286" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$9" />
+    <unitInfo nodeId="121110127371513267" fileName="FileStructurePopup.java" startLine="768" startPosition="48" endLine="778" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
+    <unitInfo nodeId="121110127371514313" fileName="FileStructurePopup.java" startLine="243" startPosition="40" endLine="254" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$6" />
     <unitInfo nodeId="121110127371514074" fileName="FileStructurePopup.java" startLine="186" startPosition="31" endLine="201" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$3" />
     <unitInfo nodeId="121110127371514167" fileName="FileStructurePopup.java" startLine="206" startPosition="32" endLine="222" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$4" />
-    <unitInfo nodeId="121110127371514288" fileName="FileStructurePopup.java" startLine="236" startPosition="345" endLine="242" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$5" />
-    <unitInfo nodeId="121110127371514313" fileName="FileStructurePopup.java" startLine="243" startPosition="40" endLine="254" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$6" />
-    <unitInfo nodeId="121110127371514356" fileName="FileStructurePopup.java" startLine="256" startPosition="35" endLine="263" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$7" />
     <unitInfo nodeId="121110127371514432" fileName="FileStructurePopup.java" startLine="272" startPosition="55" endLine="288" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$8" />
-    <unitInfo nodeId="121110127371514447" fileName="FileStructurePopup.java" startLine="276" startPosition="60" endLine="286" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$9" />
+    <unitInfo nodeId="121110127371515275" fileName="FileStructurePopup.java" startLine="501" startPosition="51" endLine="517" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$14" />
+    <unitInfo nodeId="121110127371515569" fileName="FileStructurePopup.java" startLine="577" startPosition="38" endLine="593" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$17" />
+    <unitInfo nodeId="121110127371514553" fileName="FileStructurePopup.java" startLine="307" startPosition="64" endLine="324" endPosition="13" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$10" />
+    <unitInfo nodeId="121110127371515136" fileName="FileStructurePopup.java" startLine="458" startPosition="48" endLine="476" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$13" />
+    <unitInfo nodeId="121110127371514006" fileName="FileStructurePopup.java" startLine="165" startPosition="26" endLine="184" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$2" />
+    <unitInfo nodeId="121110127371512981" fileName="FileStructurePopup.java" startLine="878" startPosition="0" endLine="910" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch$ObjectWithWeight" />
     <unitInfo nodeId="121110127371514494" fileName="FileStructurePopup.java" startLine="291" startPosition="27" endLine="330" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$9" />
+    <unitInfo nodeId="121110127371515498" fileName="FileStructurePopup.java" startLine="560" startPosition="36" endLine="600" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$16" />
     <unitInfo nodeId="121110127371512985" fileName="FileStructurePopup.java" startLine="718" startPosition="0" endLine="765" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$FileStructurePopupFilter" />
     <unitInfo nodeId="121110127371513691" fileName="FileStructurePopup.java" startLine="912" startPosition="0" endLine="963" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$FileStructureTree" />
     <unitInfo nodeId="121110127371513137" fileName="FileStructurePopup.java" startLine="766" startPosition="0" endLine="911" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch" />
-    <unitInfo nodeId="121110127371512981" fileName="FileStructurePopup.java" startLine="878" startPosition="0" endLine="910" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup.MyTreeSpeedSearch$ObjectWithWeight" />
+    <unitInfo nodeId="121110127371512982" fileName="FileStructurePopup.java" startLine="114" startPosition="0" endLine="964" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
   </root>
   <root nodeId="121110127371584518" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
     <nodeInfo nodeId="121110127371584520" fileName="TreeStructureActionsOwner.java" startLine="16" startPosition="73" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />
@@ -1210,11 +1216,11 @@
       <varInfo nodeId="397101727194120998" varName="nodes" />
       <varInfo nodeId="397101727194120973" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="25" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
-    <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="32" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
     <unitInfo nodeId="397101727194124269" fileName="NodeChooserDialog.java" startLine="35" startPosition="19" endLine="38" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
     <unitInfo nodeId="397101727194137596" fileName="NodeChooserDialog.java" startLine="60" startPosition="25" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
     <unitInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="70" startPosition="58" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
+    <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="32" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
+    <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="25" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
   </root>
   <root nodeId="890761188649854308" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
     <nodeInfo nodeId="8178553721056070910" fileName="NodeTreeModel.java" startLine="29" startPosition="58" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAKE_ROOT" />
@@ -1335,12 +1341,12 @@
     <scopeInfo nodeId="3443324735214106044" fileName="NodeTreeModel.java" startLine="91" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="3443324735214106047" varName="b" />
     </scopeInfo>
-    <unitInfo nodeId="890761188649854308" fileName="NodeTreeModel.java" startLine="29" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" />
     <unitInfo nodeId="3443324735214113174" fileName="NodeTreeModel.java" startLine="85" startPosition="54" endLine="89" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$1" />
-    <unitInfo nodeId="3443324735214113815" fileName="NodeTreeModel.java" startLine="93" startPosition="73" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$2" />
-    <unitInfo nodeId="3443324735214113851" fileName="NodeTreeModel.java" startLine="99" startPosition="51" endLine="116" endPosition="11" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$3" />
-    <unitInfo nodeId="890761188649874964" fileName="NodeTreeModel.java" startLine="59" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement" />
     <unitInfo nodeId="3443324735214114413" fileName="NodeTreeModel.java" startLine="130" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElementPresentation" />
+    <unitInfo nodeId="3443324735214113851" fileName="NodeTreeModel.java" startLine="99" startPosition="51" endLine="116" endPosition="11" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$3" />
+    <unitInfo nodeId="3443324735214113815" fileName="NodeTreeModel.java" startLine="93" startPosition="73" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$2" />
+    <unitInfo nodeId="890761188649874964" fileName="NodeTreeModel.java" startLine="59" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement" />
+    <unitInfo nodeId="890761188649854308" fileName="NodeTreeModel.java" startLine="29" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" />
   </root>
 </debugInfo>
 

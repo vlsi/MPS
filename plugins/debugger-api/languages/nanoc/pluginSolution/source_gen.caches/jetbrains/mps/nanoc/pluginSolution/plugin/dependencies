@@ -46,7 +46,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
+    <classNode dependClassName="jetbrains.mps.debug.api.BreakpointCreatorsManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebuggerNotPresentException" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
@@ -241,7 +241,7 @@
     <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" />
     <classNode dependClassName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
     <classNode dependClassName="jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode extendsClassName="jetbrains.mps.plugins.prefs.BasePrefsPage" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" file="ProgramsLocationComponent_PreferencesComponent.java">

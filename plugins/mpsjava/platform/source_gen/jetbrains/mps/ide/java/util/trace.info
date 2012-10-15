@@ -79,82 +79,77 @@
     <nodeInfo nodeId="5646944109420336659" fileName="JavaPaster.java" startLine="76" startPosition="32" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646944109420336683" fileName="JavaPaster.java" startLine="79" startPosition="5" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5646944109420336699" fileName="JavaPaster.java" startLine="83" startPosition="160" endLine="84" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420336707" fileName="JavaPaster.java" startLine="84" startPosition="60" endLine="85" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4018023047320280003" fileName="JavaPaster.java" startLine="85" startPosition="140" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4901369180371243437" fileName="JavaPaster.java" startLine="84" startPosition="60" endLine="85" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4018023047320280003" fileName="JavaPaster.java" startLine="85" startPosition="14" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2537348641689779824" fileName="JavaPaster.java" startLine="86" startPosition="18" endLine="87" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2537348641689779819" fileName="JavaPaster.java" startLine="87" startPosition="41" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2537348641689790463" fileName="JavaPaster.java" startLine="89" startPosition="9" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5646944109420336731" fileName="JavaPaster.java" startLine="90" startPosition="0" endLine="91" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4018023047320279895" fileName="JavaPaster.java" startLine="92" startPosition="96" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047320279836" fileName="JavaPaster.java" startLine="93" startPosition="22" endLine="94" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4018023047320279910" fileName="JavaPaster.java" startLine="95" startPosition="14" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4018023047320279931" fileName="JavaPaster.java" startLine="96" startPosition="30" endLine="97" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2537348641689790421" fileName="JavaPaster.java" startLine="98" startPosition="7" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5646944109420336745" fileName="JavaPaster.java" startLine="100" startPosition="51" endLine="101" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420336751" fileName="JavaPaster.java" startLine="101" startPosition="108" endLine="102" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1418985936284183501" fileName="JavaPaster.java" startLine="107" startPosition="43" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5611348363757634391" fileName="JavaPaster.java" startLine="110" startPosition="13" endLine="111" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1418985936284183834" fileName="JavaPaster.java" startLine="114" startPosition="119" endLine="115" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6143900558605454733" fileName="JavaPaster.java" startLine="116" startPosition="123" endLine="117" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6143900558605454764" fileName="JavaPaster.java" startLine="118" startPosition="117" endLine="119" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6143900558605454796" fileName="JavaPaster.java" startLine="120" startPosition="124" endLine="121" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6143900558605454823" fileName="JavaPaster.java" startLine="122" startPosition="123" endLine="123" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6143900558605454831" fileName="JavaPaster.java" startLine="124" startPosition="111" endLine="125" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5611348363757634394" fileName="JavaPaster.java" startLine="127" startPosition="11" endLine="128" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9154129924133556765" fileName="JavaPaster.java" startLine="130" startPosition="59" endLine="131" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9154129924133556758" fileName="JavaPaster.java" startLine="132" startPosition="11" endLine="133" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5646944109420336720" fileName="JavaPaster.java" startLine="136" startPosition="44" endLine="137" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418985936284183547" fileName="JavaPaster.java" startLine="141" startPosition="105" endLine="142" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1418985936284183692" fileName="JavaPaster.java" startLine="143" startPosition="27" endLine="144" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1418985936284183572" fileName="JavaPaster.java" startLine="145" startPosition="5" endLine="146" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418985936284183748" fileName="JavaPaster.java" startLine="147" startPosition="74" endLine="148" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418985936284183796" fileName="JavaPaster.java" startLine="149" startPosition="12" endLine="150" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418985936284183830" fileName="JavaPaster.java" startLine="151" startPosition="5" endLine="152" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3256924578580312278" fileName="JavaPaster.java" startLine="155" startPosition="130" endLine="156" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3256924578580312339" fileName="JavaPaster.java" startLine="157" startPosition="9" endLine="158" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3256924578580312352" fileName="JavaPaster.java" startLine="160" startPosition="5" endLine="161" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5662895729668301265" fileName="JavaPaster.java" startLine="164" startPosition="55" endLine="165" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5662895729668294581" fileName="JavaPaster.java" startLine="166" startPosition="75" endLine="167" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5662895729668294600" fileName="JavaPaster.java" startLine="169" startPosition="61" endLine="170" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5662895729668294604" fileName="JavaPaster.java" startLine="171" startPosition="5" endLine="172" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420336731" fileName="JavaPaster.java" startLine="90" startPosition="0" endLine="91" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2537348641689790421" fileName="JavaPaster.java" startLine="91" startPosition="117" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5646944109420336745" fileName="JavaPaster.java" startLine="93" startPosition="51" endLine="94" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420336751" fileName="JavaPaster.java" startLine="94" startPosition="108" endLine="95" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1418985936284183501" fileName="JavaPaster.java" startLine="100" startPosition="43" endLine="101" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5611348363757634391" fileName="JavaPaster.java" startLine="103" startPosition="13" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1418985936284183834" fileName="JavaPaster.java" startLine="107" startPosition="119" endLine="108" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6143900558605454733" fileName="JavaPaster.java" startLine="109" startPosition="123" endLine="110" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6143900558605454764" fileName="JavaPaster.java" startLine="111" startPosition="117" endLine="112" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6143900558605454796" fileName="JavaPaster.java" startLine="113" startPosition="124" endLine="114" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6143900558605454823" fileName="JavaPaster.java" startLine="115" startPosition="123" endLine="116" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1023591392840591474" fileName="JavaPaster.java" startLine="117" startPosition="128" endLine="118" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6143900558605454831" fileName="JavaPaster.java" startLine="119" startPosition="111" endLine="120" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5611348363757634394" fileName="JavaPaster.java" startLine="122" startPosition="11" endLine="123" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9154129924133556765" fileName="JavaPaster.java" startLine="125" startPosition="59" endLine="126" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9154129924133556758" fileName="JavaPaster.java" startLine="127" startPosition="11" endLine="128" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5646944109420336720" fileName="JavaPaster.java" startLine="131" startPosition="44" endLine="132" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418985936284183547" fileName="JavaPaster.java" startLine="136" startPosition="105" endLine="137" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1418985936284183692" fileName="JavaPaster.java" startLine="138" startPosition="27" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1418985936284183572" fileName="JavaPaster.java" startLine="140" startPosition="5" endLine="141" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418985936284183748" fileName="JavaPaster.java" startLine="142" startPosition="74" endLine="143" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418985936284183796" fileName="JavaPaster.java" startLine="144" startPosition="12" endLine="145" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418985936284183830" fileName="JavaPaster.java" startLine="146" startPosition="5" endLine="147" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3256924578580312278" fileName="JavaPaster.java" startLine="150" startPosition="130" endLine="151" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3256924578580312339" fileName="JavaPaster.java" startLine="152" startPosition="9" endLine="153" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3256924578580312352" fileName="JavaPaster.java" startLine="155" startPosition="5" endLine="156" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5662895729668301265" fileName="JavaPaster.java" startLine="159" startPosition="55" endLine="160" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5662895729668294581" fileName="JavaPaster.java" startLine="161" startPosition="75" endLine="162" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5662895729668294600" fileName="JavaPaster.java" startLine="164" startPosition="61" endLine="165" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5662895729668294604" fileName="JavaPaster.java" startLine="166" startPosition="5" endLine="167" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5646944109420336549" fileName="JavaPaster.java" startLine="37" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaPaster#()V" />
-    <nodeInfo nodeId="1418985936284183794" fileName="JavaPaster.java" startLine="149" startPosition="10" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1418985936284183794" fileName="JavaPaster.java" startLine="144" startPosition="10" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5646944109420336567" fileName="JavaPaster.java" startLine="42" startPosition="47" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336594" fileName="JavaPaster.java" startLine="50" startPosition="47" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336622" fileName="JavaPaster.java" startLine="59" startPosition="82" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336637" fileName="JavaPaster.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336674" fileName="JavaPaster.java" startLine="70" startPosition="72" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4018023047320279882" fileName="JavaPaster.java" startLine="95" startPosition="12" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9154129924133556760" fileName="JavaPaster.java" startLine="129" startPosition="24" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1418985936284183679" fileName="JavaPaster.java" startLine="142" startPosition="104" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5662895729668294572" fileName="JavaPaster.java" startLine="165" startPosition="72" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5662895729668294592" fileName="JavaPaster.java" startLine="168" startPosition="5" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420336740" fileName="JavaPaster.java" startLine="99" startPosition="0" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="106" startPosition="71" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3256924578580312332" fileName="JavaPaster.java" startLine="156" startPosition="60" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1418985936284183490" fileName="JavaPaster.java" startLine="105" startPosition="19" endLine="110" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418985936284183725" fileName="JavaPaster.java" startLine="146" startPosition="134" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9154129924133556760" fileName="JavaPaster.java" startLine="124" startPosition="24" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1418985936284183679" fileName="JavaPaster.java" startLine="137" startPosition="104" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5662895729668294572" fileName="JavaPaster.java" startLine="160" startPosition="72" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5662895729668294592" fileName="JavaPaster.java" startLine="163" startPosition="5" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420336740" fileName="JavaPaster.java" startLine="92" startPosition="0" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="99" startPosition="71" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3256924578580312332" fileName="JavaPaster.java" startLine="151" startPosition="60" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1418985936284183490" fileName="JavaPaster.java" startLine="98" startPosition="19" endLine="103" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418985936284183725" fileName="JavaPaster.java" startLine="141" startPosition="134" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336615" fileName="JavaPaster.java" startLine="58" startPosition="33" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4018023047320279777" fileName="JavaPaster.java" startLine="91" startPosition="24" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336553" fileName="JavaPaster.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJava#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/parser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="5646944109420336582" fileName="JavaPaster.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJavaAsClass#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="3256924578580258449" fileName="JavaPaster.java" startLine="154" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStatementsFromJavaText#(Ljava/lang/String;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/Project;)Ljava/util/List;" />
+    <nodeInfo nodeId="3256924578580258449" fileName="JavaPaster.java" startLine="149" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStatementsFromJavaText#(Ljava/lang/String;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/Project;)Ljava/util/List;" />
     <nodeInfo nodeId="5646944109420336650" fileName="JavaPaster.java" startLine="68" startPosition="66" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5662895729668271035" fileName="JavaPaster.java" startLine="163" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="areDataAvailableInClipboard#()Z" />
+    <nodeInfo nodeId="5662895729668271035" fileName="JavaPaster.java" startLine="158" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="areDataAvailableInClipboard#()Z" />
     <nodeInfo nodeId="5646944109420336644" fileName="JavaPaster.java" startLine="67" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8782942717408904347" fileName="JavaPaster.java" startLine="113" startPosition="59" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1418985936284183532" fileName="JavaPaster.java" startLine="140" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="pasteAtAnchorInRole#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5611348363757640816" fileName="JavaPaster.java" startLine="112" startPosition="27" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1418985936284183532" fileName="JavaPaster.java" startLine="135" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="pasteAtAnchorInRole#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8782942717408904347" fileName="JavaPaster.java" startLine="106" startPosition="59" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5611348363757640816" fileName="JavaPaster.java" startLine="105" startPosition="27" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5646944109420336607" fileName="JavaPaster.java" startLine="56" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStringFromClipboard#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5611348363757625096" fileName="JavaPaster.java" startLine="103" startPosition="7" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="5646944109420336717" fileName="JavaPaster.java" startLine="88" startPosition="0" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="82" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJavaAsNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/parser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="5611348363757625096" fileName="JavaPaster.java" startLine="96" startPosition="7" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="5646944109420336717" fileName="JavaPaster.java" startLine="88" startPosition="0" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="82" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJavaAsNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/parser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
     <scopeInfo nodeId="5646944109420336552" fileName="JavaPaster.java" startLine="38" startPosition="23" endLine="38" endPosition="23" />
-    <scopeInfo nodeId="5611348363757625098" fileName="JavaPaster.java" startLine="134" startPosition="16" endLine="134" endPosition="16" />
-    <scopeInfo nodeId="3256924578580312335" fileName="JavaPaster.java" startLine="159" startPosition="0" endLine="159" endPosition="43">
+    <scopeInfo nodeId="5611348363757625098" fileName="JavaPaster.java" startLine="129" startPosition="16" endLine="129" endPosition="16" />
+    <scopeInfo nodeId="3256924578580312335" fileName="JavaPaster.java" startLine="154" startPosition="0" endLine="154" endPosition="43">
       <varInfo nodeId="3256924578580312336" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3256924578580312338" fileName="JavaPaster.java" startLine="159" startPosition="43" endLine="159" endPosition="43" />
+    <scopeInfo nodeId="3256924578580312338" fileName="JavaPaster.java" startLine="154" startPosition="43" endLine="154" endPosition="43" />
     <scopeInfo nodeId="5646944109420336571" fileName="JavaPaster.java" startLine="43" startPosition="27" endLine="44" endPosition="13" />
     <scopeInfo nodeId="5646944109420336598" fileName="JavaPaster.java" startLine="51" startPosition="27" endLine="52" endPosition="13" />
     <scopeInfo nodeId="5646944109420336631" fileName="JavaPaster.java" startLine="60" startPosition="78" endLine="61" endPosition="23" />
@@ -168,39 +163,38 @@
       <varInfo nodeId="5646944109420336664" varName="ex" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336658" fileName="JavaPaster.java" startLine="76" startPosition="32" endLine="77" endPosition="22" />
-    <scopeInfo nodeId="1418985936284183498" fileName="JavaPaster.java" startLine="107" startPosition="43" endLine="108" endPosition="56" />
-    <scopeInfo nodeId="8782942717408904348" fileName="JavaPaster.java" startLine="114" startPosition="119" endLine="115" endPosition="240" />
-    <scopeInfo nodeId="8782942717408904367" fileName="JavaPaster.java" startLine="116" startPosition="123" endLine="117" endPosition="245" />
-    <scopeInfo nodeId="8782942717408904384" fileName="JavaPaster.java" startLine="118" startPosition="117" endLine="119" endPosition="243" />
-    <scopeInfo nodeId="8782942717408904401" fileName="JavaPaster.java" startLine="120" startPosition="124" endLine="121" endPosition="250" />
-    <scopeInfo nodeId="8782942717408904418" fileName="JavaPaster.java" startLine="122" startPosition="123" endLine="123" endPosition="249" />
-    <scopeInfo nodeId="8782942717408904435" fileName="JavaPaster.java" startLine="124" startPosition="111" endLine="125" endPosition="256" />
-    <scopeInfo nodeId="9154129924133556763" fileName="JavaPaster.java" startLine="130" startPosition="59" endLine="131" endPosition="247" />
-    <scopeInfo nodeId="5646944109420336718" fileName="JavaPaster.java" startLine="136" startPosition="0" endLine="137" endPosition="95">
+    <scopeInfo nodeId="1418985936284183498" fileName="JavaPaster.java" startLine="100" startPosition="43" endLine="101" endPosition="56" />
+    <scopeInfo nodeId="8782942717408904348" fileName="JavaPaster.java" startLine="107" startPosition="119" endLine="108" endPosition="240" />
+    <scopeInfo nodeId="8782942717408904367" fileName="JavaPaster.java" startLine="109" startPosition="123" endLine="110" endPosition="245" />
+    <scopeInfo nodeId="8782942717408904384" fileName="JavaPaster.java" startLine="111" startPosition="117" endLine="112" endPosition="243" />
+    <scopeInfo nodeId="8782942717408904401" fileName="JavaPaster.java" startLine="113" startPosition="124" endLine="114" endPosition="250" />
+    <scopeInfo nodeId="8782942717408904418" fileName="JavaPaster.java" startLine="115" startPosition="123" endLine="116" endPosition="249" />
+    <scopeInfo nodeId="1023591392840591440" fileName="JavaPaster.java" startLine="117" startPosition="128" endLine="118" endPosition="250" />
+    <scopeInfo nodeId="8782942717408904435" fileName="JavaPaster.java" startLine="119" startPosition="111" endLine="120" endPosition="256" />
+    <scopeInfo nodeId="9154129924133556763" fileName="JavaPaster.java" startLine="125" startPosition="59" endLine="126" endPosition="247" />
+    <scopeInfo nodeId="5646944109420336718" fileName="JavaPaster.java" startLine="131" startPosition="0" endLine="132" endPosition="95">
       <varInfo nodeId="5646944109420336728" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420336719" fileName="JavaPaster.java" startLine="136" startPosition="44" endLine="137" endPosition="95" />
-    <scopeInfo nodeId="1418985936284183680" fileName="JavaPaster.java" startLine="143" startPosition="27" endLine="144" endPosition="19" />
-    <scopeInfo nodeId="1418985936284183726" fileName="JavaPaster.java" startLine="147" startPosition="74" endLine="148" endPosition="73" />
-    <scopeInfo nodeId="1418985936284183795" fileName="JavaPaster.java" startLine="149" startPosition="12" endLine="150" endPosition="90" />
-    <scopeInfo nodeId="3256924578580312333" fileName="JavaPaster.java" startLine="157" startPosition="9" endLine="158" endPosition="162" />
-    <scopeInfo nodeId="5662895729668294573" fileName="JavaPaster.java" startLine="166" startPosition="75" endLine="167" endPosition="19" />
-    <scopeInfo nodeId="5662895729668294593" fileName="JavaPaster.java" startLine="169" startPosition="61" endLine="170" endPosition="18" />
+    <scopeInfo nodeId="5646944109420336719" fileName="JavaPaster.java" startLine="131" startPosition="44" endLine="132" endPosition="95" />
+    <scopeInfo nodeId="1418985936284183680" fileName="JavaPaster.java" startLine="138" startPosition="27" endLine="139" endPosition="19" />
+    <scopeInfo nodeId="1418985936284183726" fileName="JavaPaster.java" startLine="142" startPosition="74" endLine="143" endPosition="73" />
+    <scopeInfo nodeId="1418985936284183795" fileName="JavaPaster.java" startLine="144" startPosition="12" endLine="145" endPosition="90" />
+    <scopeInfo nodeId="3256924578580312333" fileName="JavaPaster.java" startLine="152" startPosition="9" endLine="153" endPosition="162" />
+    <scopeInfo nodeId="5662895729668294573" fileName="JavaPaster.java" startLine="161" startPosition="75" endLine="162" endPosition="19" />
+    <scopeInfo nodeId="5662895729668294593" fileName="JavaPaster.java" startLine="164" startPosition="61" endLine="165" endPosition="18" />
     <scopeInfo nodeId="5646944109420336549" fileName="JavaPaster.java" startLine="37" startPosition="0" endLine="39" endPosition="3" />
-    <scopeInfo nodeId="4018023047320279778" fileName="JavaPaster.java" startLine="92" startPosition="96" endLine="94" endPosition="96" />
-    <scopeInfo nodeId="4018023047320279883" fileName="JavaPaster.java" startLine="95" startPosition="14" endLine="97" endPosition="68" />
-    <scopeInfo nodeId="5646944109420336744" fileName="JavaPaster.java" startLine="100" startPosition="51" endLine="102" endPosition="15" />
-    <scopeInfo nodeId="9154129924133556760" fileName="JavaPaster.java" startLine="129" startPosition="24" endLine="132" endPosition="11">
+    <scopeInfo nodeId="5646944109420336744" fileName="JavaPaster.java" startLine="93" startPosition="51" endLine="95" endPosition="15" />
+    <scopeInfo nodeId="9154129924133556760" fileName="JavaPaster.java" startLine="124" startPosition="24" endLine="127" endPosition="11">
       <varInfo nodeId="9154129924133556761" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336621" fileName="JavaPaster.java" startLine="59" startPosition="82" endLine="63" endPosition="12" />
     <scopeInfo nodeId="5646944109420336666" fileName="JavaPaster.java" startLine="69" startPosition="11" endLine="73" endPosition="9">
       <varInfo nodeId="5646944109420336668" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="106" startPosition="71" endLine="110" endPosition="0">
+    <scopeInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="99" startPosition="71" endLine="103" endPosition="0">
       <varInfo nodeId="1418985936284183497" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1855439628317371231" fileName="JavaPaster.java" startLine="129" startPosition="24" endLine="133" endPosition="16" />
+    <scopeInfo nodeId="1855439628317371231" fileName="JavaPaster.java" startLine="124" startPosition="24" endLine="128" endPosition="16" />
     <scopeInfo nodeId="5646944109420336562" fileName="JavaPaster.java" startLine="41" startPosition="117" endLine="46" endPosition="97">
       <varInfo nodeId="5646944109420336564" varName="javaCode" />
     </scopeInfo>
@@ -210,8 +204,8 @@
     <scopeInfo nodeId="5646944109420336615" fileName="JavaPaster.java" startLine="58" startPosition="33" endLine="64" endPosition="5">
       <varInfo nodeId="5646944109420336619" varName="trf" />
     </scopeInfo>
-    <scopeInfo nodeId="5611348363757625102" fileName="JavaPaster.java" startLine="105" startPosition="19" endLine="111" endPosition="16" />
-    <scopeInfo nodeId="3256924578580258452" fileName="JavaPaster.java" startLine="155" startPosition="130" endLine="161" endPosition="34">
+    <scopeInfo nodeId="5611348363757625102" fileName="JavaPaster.java" startLine="98" startPosition="19" endLine="104" endPosition="16" />
+    <scopeInfo nodeId="3256924578580258452" fileName="JavaPaster.java" startLine="150" startPosition="130" endLine="156" endPosition="34">
       <varInfo nodeId="3256924578580312279" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336553" fileName="JavaPaster.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
@@ -225,44 +219,43 @@
       <varInfo nodeId="5646944109420336587" varName="operationContext" />
       <varInfo nodeId="912131512389473200" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5662895729668271038" fileName="JavaPaster.java" startLine="164" startPosition="55" endLine="172" endPosition="17">
+    <scopeInfo nodeId="5662895729668271038" fileName="JavaPaster.java" startLine="159" startPosition="55" endLine="167" endPosition="17">
       <varInfo nodeId="5662895729668301266" varName="trf" />
     </scopeInfo>
-    <scopeInfo nodeId="3256924578580258449" fileName="JavaPaster.java" startLine="154" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="3256924578580258449" fileName="JavaPaster.java" startLine="149" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="3256924578580258459" varName="context" />
       <varInfo nodeId="3256924578580258454" varName="javaCode" />
       <varInfo nodeId="3256924578580258456" varName="model" />
       <varInfo nodeId="912131512389474055" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336649" fileName="JavaPaster.java" startLine="68" startPosition="66" endLine="78" endPosition="7" />
-    <scopeInfo nodeId="1418985936284183535" fileName="JavaPaster.java" startLine="141" startPosition="105" endLine="152" endPosition="16">
+    <scopeInfo nodeId="1418985936284183535" fileName="JavaPaster.java" startLine="136" startPosition="105" endLine="147" endPosition="16">
       <varInfo nodeId="1418985936284183548" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="5662895729668271035" fileName="JavaPaster.java" startLine="163" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="5611348363757640819" fileName="JavaPaster.java" startLine="113" startPosition="59" endLine="126" endPosition="13" />
-    <scopeInfo nodeId="1418985936284183532" fileName="JavaPaster.java" startLine="140" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="5662895729668271035" fileName="JavaPaster.java" startLine="158" startPosition="0" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="1418985936284183532" fileName="JavaPaster.java" startLine="135" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="1418985936284183536" varName="anchor" />
       <varInfo nodeId="1418985936284183852" varName="node" />
       <varInfo nodeId="1418985936284183544" varName="parentConcept" />
       <varInfo nodeId="1418985936284183541" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="5611348363757640816" fileName="JavaPaster.java" startLine="112" startPosition="27" endLine="127" endPosition="11">
+    <scopeInfo nodeId="5611348363757640819" fileName="JavaPaster.java" startLine="106" startPosition="59" endLine="121" endPosition="13" />
+    <scopeInfo nodeId="5611348363757640816" fileName="JavaPaster.java" startLine="105" startPosition="27" endLine="122" endPosition="11">
       <varInfo nodeId="5611348363757640817" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5611348363757634389" fileName="JavaPaster.java" startLine="112" startPosition="27" endLine="128" endPosition="16" />
+    <scopeInfo nodeId="5611348363757634389" fileName="JavaPaster.java" startLine="105" startPosition="27" endLine="123" endPosition="16" />
     <scopeInfo nodeId="5646944109420336610" fileName="JavaPaster.java" startLine="57" startPosition="42" endLine="80" endPosition="16">
       <varInfo nodeId="5646944109420336612" varName="contents" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420336607" fileName="JavaPaster.java" startLine="56" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="5646944109420336730" fileName="JavaPaster.java" startLine="89" startPosition="9" endLine="135" endPosition="7">
+    <scopeInfo nodeId="5646944109420336730" fileName="JavaPaster.java" startLine="89" startPosition="9" endLine="130" endPosition="7">
       <varInfo nodeId="5646944109420336732" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420336698" fileName="JavaPaster.java" startLine="83" startPosition="160" endLine="138" endPosition="5">
-      <varInfo nodeId="5646944109420336708" varName="javaCompiler" />
+    <scopeInfo nodeId="5646944109420336698" fileName="JavaPaster.java" startLine="83" startPosition="160" endLine="133" endPosition="5">
       <varInfo nodeId="5646944109420336700" varName="module" />
       <varInfo nodeId="2537348641689779825" varName="parser" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="82" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="82" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="5646944109420336688" varName="anchor" />
       <varInfo nodeId="5646944109420336696" varName="featureKind" />
       <varInfo nodeId="5646944109420336692" varName="javaCode" />
@@ -270,8 +263,8 @@
       <varInfo nodeId="5646944109420336694" varName="operationContext" />
       <varInfo nodeId="912131512389473690" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="5646944109420335310" fileName="JavaPaster.java" startLine="35" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaPaster" />
-    <unitInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="106" startPosition="52" endLine="110" endPosition="11" unitName="jetbrains.mps.ide.java.util.JavaPaster$1" />
+    <unitInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="99" startPosition="52" endLine="103" endPosition="11" unitName="jetbrains.mps.ide.java.util.JavaPaster$1" />
+    <unitInfo nodeId="5646944109420335310" fileName="JavaPaster.java" startLine="35" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaPaster" />
   </root>
   <root nodeId="5778265495851109956" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
     <nodeInfo nodeId="5778265495851109972" fileName="StubResolver.java" startLine="45" startPosition="27" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JAVA_STUB" />
@@ -386,7 +379,11 @@
     <scopeInfo nodeId="9073603541474867759" fileName="StubResolver.java" startLine="80" startPosition="91" endLine="82" endPosition="56" />
     <scopeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="112" startPosition="88" endLine="115" endPosition="5" />
     <scopeInfo nodeId="2082194532791124435" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5" />
+    <scopeInfo nodeId="2082194532791126333" fileName="StubResolver.java" startLine="118" startPosition="89" endLine="121" endPosition="5">
+      <varInfo nodeId="2082194532791126334" varName="model" />
+    </scopeInfo>
     <scopeInfo nodeId="9164503229271486529" fileName="StubResolver.java" startLine="129" startPosition="93" endLine="132" endPosition="9" />
+    <scopeInfo nodeId="2742102018362199454" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" />
     <scopeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="162" startPosition="58" endLine="165" endPosition="11" />
     <scopeInfo nodeId="5778265495851109958" fileName="StubResolver.java" startLine="50" startPosition="0" endLine="54" endPosition="3" />
     <scopeInfo nodeId="9073603541474867580" fileName="StubResolver.java" startLine="58" startPosition="160" endLine="62" endPosition="0">
@@ -421,6 +418,9 @@
     <scopeInfo nodeId="9164503229271455507" fileName="StubResolver.java" startLine="125" startPosition="86" endLine="133" endPosition="7" />
     <scopeInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="153" startPosition="121" endLine="161" endPosition="0" />
     <scopeInfo nodeId="4326588611400152020" fileName="StubResolver.java" startLine="124" startPosition="79" endLine="134" endPosition="5" />
+    <scopeInfo nodeId="9164503229271455504" fileName="StubResolver.java" startLine="124" startPosition="79" endLine="134" endPosition="5">
+      <varInfo nodeId="9164503229271455505" varName="module" />
+    </scopeInfo>
     <scopeInfo nodeId="9073603541474871836" fileName="StubResolver.java" startLine="123" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="4326588611400153916" varName="context" />
       <varInfo nodeId="4326588611400153914" varName="project" />
@@ -430,6 +430,7 @@
       <varInfo nodeId="9073603541474867744" varName="modelRef" />
       <varInfo nodeId="9073603541474867707" varName="targetModelRef" />
     </scopeInfo>
+    <scopeInfo nodeId="9073603541474867699" fileName="StubResolver.java" startLine="68" startPosition="92" endLine="84" endPosition="7" />
     <scopeInfo nodeId="9073603541474867700" fileName="StubResolver.java" startLine="68" startPosition="92" endLine="84" endPosition="7">
       <varInfo nodeId="9073603541474867701" varName="ref" />
     </scopeInfo>
@@ -473,12 +474,12 @@
       <varInfo nodeId="2742102018362199347" varName="models" />
       <varInfo nodeId="2742102018362199346" varName="toResolve" />
     </scopeInfo>
-    <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="45" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
-    <unitInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="153" startPosition="85" endLine="161" endPosition="9" unitName="jetbrains.mps.ide.java.util.StubResolver$1" />
     <unitInfo nodeId="9073603541474867580" fileName="StubResolver.java" startLine="58" startPosition="122" endLine="62" endPosition="5" unitName="jetbrains.mps.ide.java.util.StubResolver$2" />
-    <unitInfo nodeId="6770603745029716120" fileName="StubResolver.java" startLine="155" startPosition="88" endLine="159" endPosition="13" unitName="jetbrains.mps.ide.java.util.StubResolver$2" />
     <unitInfo nodeId="2354139374978876832" fileName="StubResolver.java" startLine="96" startPosition="114" endLine="100" endPosition="5" unitName="jetbrains.mps.ide.java.util.StubResolver$3" />
     <unitInfo nodeId="2354139374978876859" fileName="StubResolver.java" startLine="101" startPosition="52" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.java.util.StubResolver$4" />
+    <unitInfo nodeId="6770603745029716120" fileName="StubResolver.java" startLine="155" startPosition="88" endLine="159" endPosition="13" unitName="jetbrains.mps.ide.java.util.StubResolver$2" />
+    <unitInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="153" startPosition="85" endLine="161" endPosition="9" unitName="jetbrains.mps.ide.java.util.StubResolver$1" />
+    <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="45" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
   </root>
 </debugInfo>
 

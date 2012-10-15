@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1564819815921013157">
+  <root nodeId="1564819815921013157" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="1564819815921013157" fileName="MultipleExpression_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1564819815921057680" fileName="MultipleExpression_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1564819815921057680" fileName="MultipleExpression_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -110,10 +110,10 @@
       <varInfo nodeId="1564819815921057683" varName="elementNode" />
       <varInfo nodeId="1564819815921057683" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="1564819815921013157" fileName="MultipleExpression_Editor.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
     <unitInfo nodeId="1564819815921057683" fileName="MultipleExpression_Editor.java" startLine="42" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor$expressionsListHandler_24hnc2_a0" />
+    <unitInfo nodeId="1564819815921013157" fileName="MultipleExpression_Editor.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
   </root>
-  <root nodeId="1934341835352312158">
+  <root nodeId="1934341835352312158" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="1934341835352312163" fileName="BinaryOperation_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1934341835352312158" fileName="BinaryOperation_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1934341835352312160" fileName="BinaryOperation_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -244,7 +244,7 @@
     </scopeInfo>
     <unitInfo nodeId="1934341835352312158" fileName="BinaryOperation_Editor.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Editor" />
   </root>
-  <root nodeId="2076063674015982318">
+  <root nodeId="2076063674015982318" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="2076063674015982318" fileName="Application_Argument_actions.java" startLine="14" startPosition="95" endLine="15" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2076063674015982318" fileName="Application_Argument_actions.java" startLine="18" startPosition="84" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="2076063674015982318" fileName="Application_Argument_actions.java" startLine="21" startPosition="60" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -280,10 +280,10 @@
       <varInfo nodeId="2076063674015982318" varName="editorContext" />
       <varInfo nodeId="2076063674015982318" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2076063674015982318" fileName="Application_Argument_actions.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Application_Argument_actions" />
     <unitInfo nodeId="2076063674015982318" fileName="Application_Argument_actions.java" startLine="18" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Application_Argument_actions$Application_Argument_actions_DELETE" />
+    <unitInfo nodeId="2076063674015982318" fileName="Application_Argument_actions.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Application_Argument_actions" />
   </root>
-  <root nodeId="3333953058369882579">
+  <root nodeId="3333953058369882579" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="3333953058369882584" fileName="VariableReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3333953058369882579" fileName="VariableReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3333953058369882581" fileName="VariableReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -391,10 +391,10 @@
       <varInfo nodeId="3333953058369882587" varName="editorContext" />
       <varInfo nodeId="3333953058369882587" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3333953058369882579" fileName="VariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor" />
     <unitInfo nodeId="3333953058369882585" fileName="VariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor$_Inline_ge17fi_a0a" />
+    <unitInfo nodeId="3333953058369882579" fileName="VariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor" />
   </root>
-  <root nodeId="3978364766705449819">
+  <root nodeId="3978364766705449819" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="3978364766705456163" fileName="ParenthesisExpression_Editor.java" startLine="61" startPosition="58" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3978364766705449819" fileName="ParenthesisExpression_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3978364766705456156" fileName="ParenthesisExpression_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -500,7 +500,7 @@
     </scopeInfo>
     <unitInfo nodeId="3978364766705449819" fileName="ParenthesisExpression_Editor.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisExpression_Editor" />
   </root>
-  <root nodeId="4022026349914762683">
+  <root nodeId="4022026349914762683" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4022026349914762695" fileName="LambdaAbstraction_Editor.java" startLine="119" startPosition="58" endLine="119" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4022026349914762683" fileName="LambdaAbstraction_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349914762685" fileName="LambdaAbstraction_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -755,10 +755,10 @@
       <varInfo nodeId="4022026349914762695" varName="editorContext" />
       <varInfo nodeId="4022026349914762695" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4022026349914762683" fileName="LambdaAbstraction_Editor.java" startLine="26" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
     <unitInfo nodeId="4022026349914762690" fileName="LambdaAbstraction_Editor.java" startLine="131" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor$variableListHandler_w093uu_b0a" />
+    <unitInfo nodeId="4022026349914762683" fileName="LambdaAbstraction_Editor.java" startLine="26" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
   </root>
-  <root nodeId="4022026349914762698">
+  <root nodeId="4022026349914762698" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4022026349914762698" fileName="StringConstant_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349914762700" fileName="StringConstant_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4022026349914762700" fileName="StringConstant_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -863,7 +863,7 @@
     </scopeInfo>
     <unitInfo nodeId="4022026349914762698" fileName="StringConstant_Editor.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.StringConstant_Editor" />
   </root>
-  <root nodeId="4022026349914762711">
+  <root nodeId="4022026349914762711" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4022026349914762711" fileName="NumericConstant_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349914762713" fileName="NumericConstant_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4022026349914762713" fileName="NumericConstant_Editor.java" startLine="21" startPosition="96" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -922,7 +922,7 @@
     </scopeInfo>
     <unitInfo nodeId="4022026349914762711" fileName="NumericConstant_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.NumericConstant_Editor" />
   </root>
-  <root nodeId="4022026349914894289">
+  <root nodeId="4022026349914894289" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4022026349914894289" fileName="LambdaApplication_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349914894291" fileName="LambdaApplication_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4022026349914894291" fileName="LambdaApplication_Editor.java" startLine="32" startPosition="96" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1113,10 +1113,10 @@
       <varInfo nodeId="4022026349914894297" varName="editorContext" />
       <varInfo nodeId="4022026349914894297" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4022026349914894289" fileName="LambdaApplication_Editor.java" startLine="26" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor" />
     <unitInfo nodeId="247065157658991468" fileName="LambdaApplication_Editor.java" startLine="98" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor$argumentListHandler_ppbi6p_c0" />
+    <unitInfo nodeId="4022026349914894289" fileName="LambdaApplication_Editor.java" startLine="26" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor" />
   </root>
-  <root nodeId="4022026349915669387">
+  <root nodeId="4022026349915669387" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4022026349915669387" fileName="Program_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349915669400" fileName="Program_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4022026349915669400" fileName="Program_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1245,7 +1245,7 @@
     </scopeInfo>
     <unitInfo nodeId="4022026349915669387" fileName="Program_Editor.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Program_Editor" />
   </root>
-  <root nodeId="4516885200389677659">
+  <root nodeId="4516885200389677659" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4516885200389677659" fileName="Abstraction_Variable_actions.java" startLine="14" startPosition="95" endLine="15" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4516885200389677659" fileName="Abstraction_Variable_actions.java" startLine="18" startPosition="84" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="4516885200389677659" fileName="Abstraction_Variable_actions.java" startLine="21" startPosition="60" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1277,10 +1277,10 @@
       <varInfo nodeId="4516885200389677659" varName="editorContext" />
       <varInfo nodeId="4516885200389677659" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4516885200389677659" fileName="Abstraction_Variable_actions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Abstraction_Variable_actions" />
     <unitInfo nodeId="4516885200389677659" fileName="Abstraction_Variable_actions.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Abstraction_Variable_actions$Abstraction_Variable_actions_DELETE" />
+    <unitInfo nodeId="4516885200389677659" fileName="Abstraction_Variable_actions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Abstraction_Variable_actions" />
   </root>
-  <root nodeId="4530871765544139483">
+  <root nodeId="4530871765544139483" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4530871765544139483" fileName="NumberType_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4530871765544139485" fileName="NumberType_Editor.java" startLine="17" startPosition="89" endLine="18" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4530871765544139485" fileName="NumberType_Editor.java" startLine="18" startPosition="96" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1320,7 +1320,7 @@
     </scopeInfo>
     <unitInfo nodeId="4530871765544139483" fileName="NumberType_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.NumberType_Editor" />
   </root>
-  <root nodeId="4530871765544139490">
+  <root nodeId="4530871765544139490" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4530871765544139490" fileName="StringType_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4530871765544139492" fileName="StringType_Editor.java" startLine="17" startPosition="89" endLine="18" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4530871765544139492" fileName="StringType_Editor.java" startLine="18" startPosition="96" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1360,7 +1360,7 @@
     </scopeInfo>
     <unitInfo nodeId="4530871765544139490" fileName="StringType_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.StringType_Editor" />
   </root>
-  <root nodeId="4530871765544139499">
+  <root nodeId="4530871765544139499" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="4530871765544139506" fileName="FunctionType_Editor.java" startLine="42" startPosition="58" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4530871765544139508" fileName="FunctionType_Editor.java" startLine="59" startPosition="58" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4530871765544139499" fileName="FunctionType_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1470,7 +1470,7 @@
     </scopeInfo>
     <unitInfo nodeId="4530871765544139499" fileName="FunctionType_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" />
   </root>
-  <root nodeId="4939219901991602651">
+  <root nodeId="4939219901991602651" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="8360767178776358706" fileName="LetExpression_Editor.java" startLine="59" startPosition="58" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4939219901991609024" fileName="LetExpression_Editor.java" startLine="76" startPosition="58" endLine="76" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4939219901991609028" fileName="LetExpression_Editor.java" startLine="93" startPosition="58" endLine="93" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1649,7 +1649,7 @@
     </scopeInfo>
     <unitInfo nodeId="4939219901991602651" fileName="LetExpression_Editor.java" startLine="16" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LetExpression_Editor" />
   </root>
-  <root nodeId="6213838193799310583">
+  <root nodeId="6213838193799310583" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="6213838193799310583" fileName="ParenthesisActions.java" startLine="14" startPosition="95" endLine="15" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6213838193799310583" fileName="ParenthesisActions.java" startLine="18" startPosition="74" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="6213838193799310583" fileName="ParenthesisActions.java" startLine="21" startPosition="50" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1681,10 +1681,10 @@
       <varInfo nodeId="6213838193799310583" varName="editorContext" />
       <varInfo nodeId="6213838193799310583" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6213838193799310583" fileName="ParenthesisActions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisActions" />
     <unitInfo nodeId="6213838193799310583" fileName="ParenthesisActions.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisActions$ParenthesisActions_DELETE" />
+    <unitInfo nodeId="6213838193799310583" fileName="ParenthesisActions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisActions" />
   </root>
-  <root nodeId="7794386159928013858">
+  <root nodeId="7794386159928013858" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="7794386159928013858" fileName="BinaryOperation_Right_actions.java" startLine="14" startPosition="95" endLine="15" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7794386159928013858" fileName="BinaryOperation_Right_actions.java" startLine="18" startPosition="85" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="7794386159928013858" fileName="BinaryOperation_Right_actions.java" startLine="21" startPosition="61" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1716,10 +1716,10 @@
       <varInfo nodeId="7794386159928013858" varName="editorContext" />
       <varInfo nodeId="7794386159928013858" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7794386159928013858" fileName="BinaryOperation_Right_actions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Right_actions" />
     <unitInfo nodeId="7794386159928013858" fileName="BinaryOperation_Right_actions.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Right_actions$BinaryOperation_Right_actions_DELETE" />
+    <unitInfo nodeId="7794386159928013858" fileName="BinaryOperation_Right_actions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Right_actions" />
   </root>
-  <root nodeId="8981808925914762646">
+  <root nodeId="8981808925914762646" modelId="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)">
     <nodeInfo nodeId="8981808925914762646" fileName="Variable_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8981808925914762648" fileName="Variable_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8981808925914762648" fileName="Variable_Editor.java" startLine="21" startPosition="96" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

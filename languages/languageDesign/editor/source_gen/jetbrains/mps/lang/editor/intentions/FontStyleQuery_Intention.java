@@ -40,11 +40,12 @@ public class FontStyleQuery_Intention extends BaseIntention implements Intention
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "style", null);
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
+      SPropertyOperations.set(node, "style", "QUERY");
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle");
     } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
+      SPropertyOperations.set(node, "style", "PLAIN");
     }
   }
 

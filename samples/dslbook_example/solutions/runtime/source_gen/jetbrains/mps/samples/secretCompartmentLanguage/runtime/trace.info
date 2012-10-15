@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6877931680625740132">
+  <root nodeId="6877931680625740132" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625740134" fileName="Controller.java" startLine="6" startPosition="25" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentState" />
     <nodeInfo nodeId="6877931680625740137" fileName="Controller.java" startLine="7" startPosition="29" endLine="8" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="commandsChannel" />
     <nodeInfo nodeId="6877931680625740148" fileName="Controller.java" startLine="10" startPosition="74" endLine="11" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -32,7 +32,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625740132" fileName="Controller.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Controller" />
   </root>
-  <root nodeId="6877931680625740198">
+  <root nodeId="6877931680625740198" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625740200" fileName="CommandChannel.java" startLine="8" startPosition="29" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="history" />
     <nodeInfo nodeId="6877931680625740216" fileName="CommandChannel.java" startLine="14" startPosition="45" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6877931680625740227" fileName="CommandChannel.java" startLine="18" startPosition="30" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -65,7 +65,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625740198" fileName="CommandChannel.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.CommandChannel" />
   </root>
-  <root nodeId="6877931680625740260">
+  <root nodeId="6877931680625740260" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625740262" fileName="AbstractEvent.java" startLine="6" startPosition="28" endLine="7" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="6877931680625740265" fileName="AbstractEvent.java" startLine="7" startPosition="22" endLine="8" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="code" />
     <nodeInfo nodeId="6877931680625740276" fileName="AbstractEvent.java" startLine="10" startPosition="50" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -106,7 +106,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625740260" fileName="AbstractEvent.java" startLine="6" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.AbstractEvent" />
   </root>
-  <root nodeId="6877931680625740350">
+  <root nodeId="6877931680625740350" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625740361" fileName="Event.java" startLine="7" startPosition="42" endLine="8" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6877931680625740353" fileName="Event.java" startLine="6" startPosition="42" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Event#(Ljava/lang/String;Ljava/lang/String;)V" />
     <scopeInfo nodeId="6877931680625740360" fileName="Event.java" startLine="7" startPosition="42" endLine="8" endPosition="22" />
@@ -116,7 +116,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625740350" fileName="Event.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event" />
   </root>
-  <root nodeId="6877931680625740406">
+  <root nodeId="6877931680625740406" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625740408" fileName="State.java" startLine="12" startPosition="20" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="6877931680625740411" fileName="State.java" startLine="13" startPosition="22" endLine="14" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="transitions" />
     <nodeInfo nodeId="6877931680625740420" fileName="State.java" startLine="14" startPosition="70" endLine="15" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="transitionsByCode" />
@@ -280,7 +280,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625740406" fileName="State.java" startLine="12" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.State" />
   </root>
-  <root nodeId="6877931680625740838">
+  <root nodeId="6877931680625740838" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625740840" fileName="StateMachine.java" startLine="9" startPosition="27" endLine="10" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="start" />
     <nodeInfo nodeId="6877931680625740849" fileName="StateMachine.java" startLine="12" startPosition="36" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6877931680625740858" fileName="StateMachine.java" startLine="16" startPosition="32" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -436,7 +436,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625740838" fileName="StateMachine.java" startLine="9" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.StateMachine" />
   </root>
-  <root nodeId="6877931680625741136">
+  <root nodeId="6877931680625741136" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625741147" fileName="Command.java" startLine="7" startPosition="44" endLine="8" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6877931680625741139" fileName="Command.java" startLine="6" startPosition="44" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Command#(Ljava/lang/String;Ljava/lang/String;)V" />
     <scopeInfo nodeId="6877931680625741146" fileName="Command.java" startLine="7" startPosition="44" endLine="8" endPosition="22" />
@@ -446,7 +446,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625741136" fileName="Command.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Command" />
   </root>
-  <root nodeId="6877931680625741150">
+  <root nodeId="6877931680625741150" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625741153" fileName="StateMachineTest.java" startLine="7" startPosition="57" endLine="8" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myController" />
     <nodeInfo nodeId="6877931680625741166" fileName="StateMachineTest.java" startLine="13" startPosition="70" endLine="14" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6877931680625741172" fileName="StateMachineTest.java" startLine="14" startPosition="70" endLine="15" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -466,7 +466,7 @@
     </scopeInfo>
     <unitInfo nodeId="6877931680625741150" fileName="StateMachineTest.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.StateMachineTest" />
   </root>
-  <root nodeId="6877931680625741186">
+  <root nodeId="6877931680625741186" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625741188" fileName="Notification.java" startLine="8" startPosition="27" endLine="9" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errors" />
     <nodeInfo nodeId="6877931680625741204" fileName="Notification.java" startLine="14" startPosition="36" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6877931680625741217" fileName="Notification.java" startLine="18" startPosition="52" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -511,7 +511,7 @@
     <scopeInfo nodeId="6877931680625741230" fileName="Notification.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="6877931680625741186" fileName="Notification.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Notification" />
   </root>
-  <root nodeId="6877931680625741402">
+  <root nodeId="6877931680625741402" modelId="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)">
     <nodeInfo nodeId="6877931680625741404" fileName="StateMachineFactory.java" startLine="8" startPosition="43" endLine="9" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventMap" />
     <nodeInfo nodeId="6877931680625741413" fileName="StateMachineFactory.java" startLine="9" startPosition="77" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStateMap" />
     <nodeInfo nodeId="6877931680625741434" fileName="StateMachineFactory.java" startLine="15" startPosition="59" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

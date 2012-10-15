@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2391321168245498466">
+  <root nodeId="2391321168245498466" modelId="r:686ee360-aa95-429c-8923-576d8ce88ea8(jetbrains.mps.internalCollections.test.runtime)">
     <nodeInfo nodeId="2391321168245786074" fileName="MPS13933.java" startLine="10" startPosition="26" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="2391321168245786084" fileName="MPS13933.java" startLine="16" startPosition="36" endLine="17" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2391321168245519089" fileName="MPS13933.java" startLine="26" startPosition="28" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -23,10 +23,10 @@
     <scopeInfo nodeId="2391321168245519082" fileName="MPS13933.java" startLine="24" startPosition="27" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2391321168245498488" fileName="MPS13933.java" startLine="23" startPosition="29" endLine="30" endPosition="6" />
     <scopeInfo nodeId="2391321168245498485" fileName="MPS13933.java" startLine="22" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="2391321168245498466" fileName="MPS13933.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.internalCollections.test.runtime.MPS13933" />
     <unitInfo nodeId="2391321168245519069" fileName="MPS13933.java" startLine="24" startPosition="8" endLine="30" endPosition="5" unitName="jetbrains.mps.internalCollections.test.runtime.MPS13933$1" />
+    <unitInfo nodeId="2391321168245498466" fileName="MPS13933.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.internalCollections.test.runtime.MPS13933" />
   </root>
-  <root nodeId="2391321168245786035">
+  <root nodeId="2391321168245786035" modelId="r:686ee360-aa95-429c-8923-576d8ce88ea8(jetbrains.mps.internalCollections.test.runtime)">
     <nodeInfo nodeId="2391321168245786387" fileName="Generics_Test.java" startLine="14" startPosition="28" endLine="15" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2391321168245786397" fileName="Generics_Test.java" startLine="17" startPosition="6" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2391321168245786117" fileName="Generics_Test.java" startLine="18" startPosition="16" endLine="19" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -59,10 +59,10 @@
       <varInfo nodeId="2391321168245786405" varName="o2" />
     </scopeInfo>
     <scopeInfo nodeId="2391321168245786042" fileName="Generics_Test.java" startLine="10" startPosition="45" endLine="29" endPosition="0" />
-    <unitInfo nodeId="2391321168245786035" fileName="Generics_Test.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internalCollections.test.runtime.Generics_Test" />
     <unitInfo nodeId="2391321168245786380" fileName="Generics_Test.java" startLine="12" startPosition="30" endLine="17" endPosition="5" unitName="jetbrains.mps.internalCollections.test.runtime.Generics_Test$1" />
     <unitInfo nodeId="2391321168245786410" fileName="Generics_Test.java" startLine="20" startPosition="31" endLine="25" endPosition="5" unitName="jetbrains.mps.internalCollections.test.runtime.Generics_Test$2" />
     <unitInfo nodeId="2391321168245786502" fileName="Generics_Test.java" startLine="31" startPosition="22" endLine="36" endPosition="5" unitName="jetbrains.mps.internalCollections.test.runtime.Generics_Test$3" />
+    <unitInfo nodeId="2391321168245786035" fileName="Generics_Test.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internalCollections.test.runtime.Generics_Test" />
   </root>
 </debugInfo>
 

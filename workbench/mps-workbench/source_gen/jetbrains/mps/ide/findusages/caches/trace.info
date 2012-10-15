@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2810982631457564914">
+  <root nodeId="2810982631457564914" modelId="r:b2a7657d-6c68-41ef-9453-bffc0c6d445b(jetbrains.mps.ide.findusages.caches)">
     <nodeInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="42" startPosition="89" endLine="43" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="2810982631457564926" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="31" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2810982631457564936" fileName="StubModelsFastFindSupport.java" startLine="52" startPosition="34" endLine="53" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -163,13 +163,13 @@
       <varInfo nodeId="2810982631457565004" varName="id" />
       <varInfo nodeId="2810982631457564998" varName="models" />
     </scopeInfo>
-    <unitInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="42" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport" />
     <unitInfo nodeId="368138058575778549" fileName="StubModelsFastFindSupport.java" startLine="62" startPosition="101" endLine="66" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$1" />
     <unitInfo nodeId="303301571174693041" fileName="StubModelsFastFindSupport.java" startLine="67" startPosition="77" endLine="71" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$2" />
     <unitInfo nodeId="368138058575806226" fileName="StubModelsFastFindSupport.java" startLine="83" startPosition="116" endLine="87" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$3" />
     <unitInfo nodeId="4614401897484748097" fileName="StubModelsFastFindSupport.java" startLine="122" startPosition="53" endLine="130" endPosition="9" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$4" />
+    <unitInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="42" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport" />
   </root>
-  <root nodeId="2810982631457565446">
+  <root nodeId="2810982631457565446" modelId="r:b2a7657d-6c68-41ef-9453-bffc0c6d445b(jetbrains.mps.ide.findusages.caches)">
     <nodeInfo nodeId="2810982631457565446" fileName="StubModelsIndexer.java" startLine="22" startPosition="64" endLine="23" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="2810982631457565470" fileName="StubModelsIndexer.java" startLine="28" startPosition="31" endLine="29" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2810982631457565483" fileName="StubModelsIndexer.java" startLine="36" startPosition="36" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -227,10 +227,10 @@
     <scopeInfo nodeId="2810982631457565455" fileName="StubModelsIndexer.java" startLine="43" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="2810982631457565460" varName="inputData" />
     </scopeInfo>
-    <unitInfo nodeId="2810982631457565446" fileName="StubModelsIndexer.java" startLine="22" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsIndexer" />
     <unitInfo nodeId="2810982631457565449" fileName="StubModelsIndexer.java" startLine="40" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsIndexer$MyFileTypeIdIndexer" />
+    <unitInfo nodeId="2810982631457565446" fileName="StubModelsIndexer.java" startLine="22" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsIndexer" />
   </root>
-  <root nodeId="3822554386093951004">
+  <root nodeId="3822554386093951004" modelId="r:b2a7657d-6c68-41ef-9453-bffc0c6d445b(jetbrains.mps.ide.findusages.caches)">
     <nodeInfo nodeId="303301571174689096" fileName="ClassifierCacher.java" startLine="33" startPosition="31" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="303301571174689387" fileName="ClassifierCacher.java" startLine="39" startPosition="49" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="303301571174689335" fileName="ClassifierCacher.java" startLine="43" startPosition="41" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -890,9 +890,9 @@
     <scopeInfo nodeId="2566197375814063869" fileName="ClassifierCacher.java" startLine="429" startPosition="0" endLine="488" endPosition="0">
       <varInfo nodeId="2566197375814063872" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="3822554386093951004" fileName="ClassifierCacher.java" startLine="33" startPosition="0" endLine="511" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.ClassifierCacher" />
     <unitInfo nodeId="303301571174692107" fileName="ClassifierCacher.java" startLine="366" startPosition="45" endLine="370" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.ClassifierCacher$1" />
     <unitInfo nodeId="303301571174692231" fileName="ClassifierCacher.java" startLine="413" startPosition="47" endLine="417" endPosition="7" unitName="jetbrains.mps.ide.findusages.caches.ClassifierCacher$2" />
+    <unitInfo nodeId="3822554386093951004" fileName="ClassifierCacher.java" startLine="33" startPosition="0" endLine="511" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.ClassifierCacher" />
   </root>
 </debugInfo>
 

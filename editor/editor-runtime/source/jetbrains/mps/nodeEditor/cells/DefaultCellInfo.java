@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -137,7 +137,7 @@ public class DefaultCellInfo implements CellInfo {
           // it should be used instead of model in model repository.
           SNode node;
           if (editorComponent.getEditedNode() != null &&
-            ObjectUtils.equals(myNodePointer.getModelReference(),
+            EqualUtil.equals(myNodePointer.getModelReference(),
               editorComponent.getEditedNode().getModel().getSModelReference())) {
             node = editorComponent.getEditedNode().getModel().getNodeById(myNodePointer.getNodeId());
           } else {
@@ -173,7 +173,7 @@ public class DefaultCellInfo implements CellInfo {
   public boolean equals(Object o) {
     if (!(o instanceof DefaultCellInfo)) return false;
     DefaultCellInfo cellInfo = (DefaultCellInfo) o;
-    if (!ObjectUtils.equals(cellInfo.myParentInfo, myParentInfo)) return false;
+    if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
     if (cellInfo.myNodePointer == null) return false;
     boolean idsBothNull = false;
     if (cellInfo.myCellId == null && myCellId == null) idsBothNull = true;

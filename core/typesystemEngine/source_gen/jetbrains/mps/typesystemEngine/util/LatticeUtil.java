@@ -156,6 +156,10 @@ public class LatticeUtil {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.JoinType");
   }
 
+  public static boolean isPolymorphic(SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.MeetType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.JoinType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LowerBoundType");
+  }
+
   public static List<SNode> getMeetArguments(SNode meet) {
     return SLinkOperations.getTargets(SNodeOperations.as(meet, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
   }

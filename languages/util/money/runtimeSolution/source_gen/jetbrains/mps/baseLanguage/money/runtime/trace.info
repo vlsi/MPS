@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3840741013873804939">
+  <root nodeId="3840741013873804939" modelId="r:b41a3969-fb3d-4631-b2b9-af87e454b590(jetbrains.mps.baseLanguage.money.runtime)">
     <nodeInfo nodeId="3840741013873804941" fileName="Currency.java" startLine="7" startPosition="23" endLine="8" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrency" />
     <nodeInfo nodeId="3840741013873804944" fileName="Currency.java" startLine="8" startPosition="28" endLine="9" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
     <nodeInfo nodeId="3840741013873804955" fileName="Currency.java" startLine="11" startPosition="51" endLine="12" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
@@ -100,7 +100,7 @@
     </scopeInfo>
     <unitInfo nodeId="3840741013873804939" fileName="Currency.java" startLine="7" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.runtime.Currency" />
   </root>
-  <root nodeId="3840741013873805187">
+  <root nodeId="3840741013873805187" modelId="r:b41a3969-fb3d-4631-b2b9-af87e454b590(jetbrains.mps.baseLanguage.money.runtime)">
     <nodeInfo nodeId="3840741013873805190" fileName="NotCompatibleCurrencies.java" startLine="6" startPosition="63" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NotCompatibleCurrencies#()V" />
     <scopeInfo nodeId="3840741013873805193" fileName="NotCompatibleCurrencies.java" startLine="7" startPosition="36" endLine="7" endPosition="36" />
     <scopeInfo nodeId="3840741013873805190" fileName="NotCompatibleCurrencies.java" startLine="6" startPosition="63" endLine="8" endPosition="3" />

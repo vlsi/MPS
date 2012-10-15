@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2891782949125146377">
+  <root nodeId="2891782949125146377" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
     <unitInfo nodeId="2891782949125146377" fileName="Requestor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
   </root>
-  <root nodeId="2891782949125170507">
+  <root nodeId="2891782949125170507" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
     <nodeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepare#(Ljetbrains/mps/debugger/java/runtime/engine/events/EventsProcessor;Lcom/sun/jdi/ReferenceType;)V" />
     <scopeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="101">
       <varInfo nodeId="2891782949125170515" varName="classType" />
@@ -11,7 +11,7 @@
     </scopeInfo>
     <unitInfo nodeId="2891782949125170507" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.ClassPrepareRequestor" />
   </root>
-  <root nodeId="2891782949125205202">
+  <root nodeId="2891782949125205202" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
     <nodeInfo nodeId="2891782949125205205" fileName="LocatableEventRequestor.java" startLine="8" startPosition="60" endLine="9" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRequestHitByEvent#(Ljetbrains/mps/debugger/java/runtime/engine/events/EventContext;Lcom/sun/jdi/event/LocatableEvent;)Z" />
     <nodeInfo nodeId="2891782949125205213" fileName="LocatableEventRequestor.java" startLine="9" startPosition="81" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuspendPolicy#()I" />
     <scopeInfo nodeId="2891782949125205205" fileName="LocatableEventRequestor.java" startLine="8" startPosition="60" endLine="9" endPosition="81">
@@ -21,10 +21,10 @@
     <scopeInfo nodeId="2891782949125205213" fileName="LocatableEventRequestor.java" startLine="9" startPosition="81" endLine="10" endPosition="32" />
     <unitInfo nodeId="2891782949125205202" fileName="LocatableEventRequestor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequestor" />
   </root>
-  <root nodeId="6460341978864598530">
+  <root nodeId="6460341978864598530" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
     <unitInfo nodeId="6460341978864598530" fileName="IRequestManager.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.IRequestManager" />
   </root>
-  <root nodeId="6460341978864599228">
+  <root nodeId="6460341978864599228" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
     <nodeInfo nodeId="6460341978864599231" fileName="StepRequestor.java" startLine="16" startPosition="49" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STOP" />
     <nodeInfo nodeId="6460341978864599235" fileName="StepRequestor.java" startLine="17" startPosition="35" endLine="18" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6460341978864599240" fileName="StepRequestor.java" startLine="19" startPosition="0" endLine="20" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStepType" />

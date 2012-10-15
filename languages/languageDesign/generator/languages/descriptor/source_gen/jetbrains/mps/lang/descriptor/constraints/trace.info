@@ -30,8 +30,8 @@
       <varInfo nodeId="8780540425167303919" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints" />
     <unitInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints$1" />
+    <unitInfo nodeId="8780540425167303919" fileName="LanguageDescriptor_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints" />
   </root>
 </debugInfo>
 

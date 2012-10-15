@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3043583937669651975">
+  <root nodeId="3043583937669651975" modelId="r:8e3e04f1-29b6-48a5-be72-ba14354808dd(jetbrains.mps.testModels.finalClass2)">
     <nodeInfo nodeId="3043583937669651977" fileName="Superclass.java" startLine="6" startPosition="25" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Superclass#()V" />
     <scopeInfo nodeId="3043583937669651980" fileName="Superclass.java" startLine="7" startPosition="23" endLine="7" endPosition="23" />
     <scopeInfo nodeId="3043583937669651977" fileName="Superclass.java" startLine="6" startPosition="25" endLine="8" endPosition="3" />

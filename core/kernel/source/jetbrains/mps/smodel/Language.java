@@ -33,14 +33,10 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -74,6 +70,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
+  private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
     myDescriptorFile = file;
@@ -94,7 +91,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public LanguageDependenciesManager getDependenciesManager() {
-    return new LanguageDependenciesManager(this);
+    return myLanguageDependenciesManager;
   }
 
   public void addExtendedLanguage(ModuleReference langRef) {
@@ -179,6 +176,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   public void dispose() {
     super.dispose();
+    myLanguageDependenciesManager.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
@@ -378,7 +376,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   public boolean isAccessoryModel(SModelReference modelReference) {
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      if (ObjectUtils.equals(model, modelReference)) return true;
+      if (EqualUtil.equals(model, modelReference)) return true;
     }
     return false;
   }

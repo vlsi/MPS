@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841901770">
+  <root nodeId="5487985028841901770" modelId="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="21" startPosition="54" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="25" startPosition="33" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -87,7 +87,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.quotation.pluginSolution.plugin.ShowMetaLevel_Action" />
   </root>
-  <root nodeId="5487985028841901793">
+  <root nodeId="5487985028841901793" modelId="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="8" startPosition="72" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="9" startPosition="83" endLine="10" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -106,7 +106,7 @@
     <scopeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
   </root>
-  <root nodeId="7162597690967660606">
+  <root nodeId="7162597690967660606" modelId="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

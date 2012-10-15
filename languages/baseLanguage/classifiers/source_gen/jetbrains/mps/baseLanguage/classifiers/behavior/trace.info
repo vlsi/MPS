@@ -617,8 +617,8 @@
       <varInfo nodeId="1213877528122" varName="contextNode" />
       <varInfo nodeId="1213877527939" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877527939" fileName="IClassifier_Behavior.java" startLine="20" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior" />
     <unitInfo nodeId="1221661952191" fileName="IClassifier_Behavior.java" startLine="86" startPosition="15" endLine="100" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior$1" />
+    <unitInfo nodeId="1213877527939" fileName="IClassifier_Behavior.java" startLine="20" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior" />
   </root>
   <root nodeId="1214047465024" modelId="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
     <nodeInfo nodeId="1214047523550" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

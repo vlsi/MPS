@@ -33,10 +33,8 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
-    <orderEntry type="library" name="XStream" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="ASM" level="project" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" scope="TEST" name="JMock" level="project" />

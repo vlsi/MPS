@@ -53,6 +53,18 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_ClassNesting", true);
   }
 
+  @Test
+  public void test_FullSource() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_FullSource", true);
+  }
+
+  @Test
+  public void test_LittleSource() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_LittleSource", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_SelfRef() throws Exception {
@@ -74,21 +86,21 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir1", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1.sub", "")).getSModel()));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir1", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1.sub", "")).getSModel()));
     }
 
     public void test_Imports2() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir2", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2.sub", "")).getSModel()));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir2", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2.sub", "")).getSModel()));
     }
 
     public void test_Imports3() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir3", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3.sub", "")).getSModel()));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir3", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3.sub", "")).getSModel()));
     }
 
     public void test_ClassNesting() throws Exception {
@@ -96,6 +108,20 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
       Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/NestContainer.java", SNodeOperations.cast(this.getNodeById("8083368042256419834"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    }
+
+    public void test_FullSource() throws Exception {
+      this.addNodeById("4795297196607520929");
+      this.addNodeById("1218582063869484737");
+      this.addNodeById("8083368042256419833");
+      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir4/jetbrains/mps/ide/java/testMaterial4", SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial4", "")).getSModel());
+    }
+
+    public void test_LittleSource() throws Exception {
+      this.addNodeById("4795297196607520929");
+      this.addNodeById("1218582063869484737");
+      this.addNodeById("8083368042256419833");
+      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/statements", SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.singleFiles", "")).getSModel());
     }
   }
 }

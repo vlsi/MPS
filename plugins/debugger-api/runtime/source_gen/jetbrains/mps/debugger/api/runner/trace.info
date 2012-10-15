@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4474271214083126640">
+  <root nodeId="4474271214083126640" modelId="r:2a614e43-21e7-49b5-9503-c8251b638b89(jetbrains.mps.debugger.api.runner)">
     <nodeInfo nodeId="4474271214083126643" fileName="MPSDebugRunner.java" startLine="29" startPosition="58" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214083126675" fileName="MPSDebugRunner.java" startLine="36" startPosition="9" endLine="37" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083126665" fileName="MPSDebugRunner.java" startLine="38" startPosition="35" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

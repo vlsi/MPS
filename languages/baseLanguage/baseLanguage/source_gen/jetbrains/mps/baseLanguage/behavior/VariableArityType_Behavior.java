@@ -9,6 +9,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class VariableArityType_Behavior {
   public static void init(SNode thisNode) {
@@ -34,5 +39,44 @@ public class VariableArityType_Behavior {
       }
     }
     return variableSuffixes;
+  }
+
+  public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return new VariableArityType_Behavior.QuotationClass_mwp9ln_a0a0d().createNode(Type_Behavior.call_getErasure_702942408396803226(SLinkOperations.getTarget(thisNode, "componentType", true)));
+  }
+
+  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(thisNode, "componentType", true)) + "...";
+  }
+
+  public static class QuotationClass_mwp9ln_a0a0d {
+    public QuotationClass_mwp9ln_a0a0d() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

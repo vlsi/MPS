@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1796275887793108017">
+  <root nodeId="1796275887793108017" modelId="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)">
     <nodeInfo nodeId="1796275887793108314" fileName="TestEvent.java" startLine="12" startPosition="24" endLine="13" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="START_TEST_PREFIX" />
     <nodeInfo nodeId="1796275887793108318" fileName="TestEvent.java" startLine="13" startPosition="64" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="END_TEST_PREFIX" />
     <nodeInfo nodeId="1796275887793108322" fileName="TestEvent.java" startLine="14" startPosition="60" endLine="15" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEST_PREFIX" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="873604604380664433">
+  <root nodeId="873604604380664433" modelId="r:2ca63f28-9d3e-4a14-8ffa-4a524cb41743(jetbrains.mps.ui.swt.generator.template.helper)">
     <nodeInfo nodeId="873604604380664504" fileName="SWTTransientValues.java" startLine="12" startPosition="0" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="873604604380664512" fileName="SWTTransientValues.java" startLine="15" startPosition="35" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="873604604380664444" fileName="SWTTransientValues.java" startLine="20" startPosition="23" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

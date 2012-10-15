@@ -114,8 +114,8 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> toRef = new _FunctionTypes._return_P1_E0<SNode, Object>() {
-                  public SNode invoke(Object cmp) {
+                _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> toRef = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
+                  public SNode invoke(SNode cmp) {
                     return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0a0a2a2a0a1a5().createNode(cmp);
                   }
                 };

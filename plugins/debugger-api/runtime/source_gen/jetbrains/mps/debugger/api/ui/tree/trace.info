@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4474271214083118048">
+  <root nodeId="4474271214083118048" modelId="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)">
     <nodeInfo nodeId="4474271214083118062" fileName="VariablesTree.java" startLine="45" startPosition="68" endLine="46" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMAND_OPEN_NODE_IN_PROJECT" />
     <nodeInfo nodeId="418270182880555024" fileName="VariablesTree.java" startLine="46" startPosition="92" endLine="47" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_DEBUGGER_VALUE" />
     <nodeInfo nodeId="4474271214083118056" fileName="VariablesTree.java" startLine="50" startPosition="36" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -215,12 +215,12 @@
       <varInfo nodeId="4474271214083118140" varName="watchables" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083118135" fileName="VariablesTree.java" startLine="77" startPosition="0" endLine="157" endPosition="0" />
-    <unitInfo nodeId="4474271214083118048" fileName="VariablesTree.java" startLine="45" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
-    <unitInfo nodeId="4474271214083118108" fileName="VariablesTree.java" startLine="60" startPosition="57" endLine="68" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$1" />
     <unitInfo nodeId="4474271214083118417" fileName="VariablesTree.java" startLine="131" startPosition="37" endLine="136" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$2" />
     <unitInfo nodeId="8843354299459826448" fileName="VariablesTree.java" startLine="160" startPosition="35" endLine="165" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$3" />
+    <unitInfo nodeId="4474271214083118108" fileName="VariablesTree.java" startLine="60" startPosition="57" endLine="68" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$1" />
+    <unitInfo nodeId="4474271214083118048" fileName="VariablesTree.java" startLine="45" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
   </root>
-  <root nodeId="4474271214083118844">
+  <root nodeId="4474271214083118844" modelId="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)">
     <nodeInfo nodeId="4474271214083118846" fileName="AbstractWatchableNode.java" startLine="18" startPosition="70" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="4474271214083118870" fileName="AbstractWatchableNode.java" startLine="21" startPosition="54" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4474271214083118883" fileName="AbstractWatchableNode.java" startLine="25" startPosition="91" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -275,10 +275,10 @@
       <varInfo nodeId="4474271214083118913" varName="focus" />
       <varInfo nodeId="4474271214083118915" varName="select" />
     </scopeInfo>
-    <unitInfo nodeId="4474271214083118844" fileName="AbstractWatchableNode.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" />
     <unitInfo nodeId="4474271214083118947" fileName="AbstractWatchableNode.java" startLine="47" startPosition="48" endLine="51" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode$1" />
+    <unitInfo nodeId="4474271214083118844" fileName="AbstractWatchableNode.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" />
   </root>
-  <root nodeId="4474271214083120082">
+  <root nodeId="4474271214083120082" modelId="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)">
     <nodeInfo nodeId="4474271214083120085" fileName="WatchableNode.java" startLine="12" startPosition="58" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
     <nodeInfo nodeId="4474271214083120099" fileName="WatchableNode.java" startLine="17" startPosition="55" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4474271214083120111" fileName="WatchableNode.java" startLine="21" startPosition="82" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -353,7 +353,7 @@
     <scopeInfo nodeId="4474271214083120211" fileName="WatchableNode.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
     <unitInfo nodeId="4474271214083120082" fileName="WatchableNode.java" startLine="12" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
   </root>
-  <root nodeId="4474271214083122145">
+  <root nodeId="4474271214083122145" modelId="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)">
     <nodeInfo nodeId="4474271214083122155" fileName="NodeTreeNode.java" startLine="11" startPosition="44" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4474271214083122167" fileName="NodeTreeNode.java" startLine="15" startPosition="71" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4474271214083122170" fileName="NodeTreeNode.java" startLine="16" startPosition="25" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

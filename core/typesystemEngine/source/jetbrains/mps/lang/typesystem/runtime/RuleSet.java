@@ -16,10 +16,14 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.newTypesystem.rules.SingleTermRules;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -28,19 +32,40 @@ import java.util.concurrent.ConcurrentMap;
  *  Synchronized.
  */
 public class RuleSet<T extends IApplicableToConcept> {
-  ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
-  ConcurrentMap<String, Set<T>> myRulesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<T>>();
+
+  private static final String TYPESYSTEM_SUFFIX = ".typesystem";
+  private ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
+
+  private SingleTermRules<T> mySingleTermRules = new SingleTermRules<T>() {
+
+    @Override
+    protected List<String> getParents(String nextConceptFQName) {
+      return LanguageHierarchyCache.getParentsNames(nextConceptFQName);
+    }
+
+    @Override
+    protected Iterable<T> allForConcept(String conceptFQName, LanguageScope langScope) {
+      return getAllApplicableTo(conceptFQName, langScope);
+    }
+
+    @Override
+    protected boolean isOverriding(T rule) {
+      return rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides();
+    }
+   };
+
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
       addRule_internal(rule);
     }
-    myRulesCache.clear();
+    mySingleTermRules.purgeCache();
   }
 
+  @Deprecated
   public void addRule(T rule) {
     addRule_internal(rule);
-    myRulesCache.clear();
+    mySingleTermRules.purgeCache();
   }
 
   private void addRule_internal(T rule) {
@@ -53,58 +78,35 @@ public class RuleSet<T extends IApplicableToConcept> {
     existingRules.add(rule);
   }
 
-  public Set<T> getRules(SNode node) {
-    return get(node.getConceptFqName());
+  public Set<T> getRules(SNode term) {
+    return mySingleTermRules.lookupRules(term);
   }
 
-  protected Set<T> get(String key) {
-    Set<T> cachedResult = myRulesCache.get(key);
-    if (cachedResult != null) {
-      return cachedResult;
-    }
+  private Iterable<T> getAllApplicableTo(String conceptFQName, LanguageScope scope) {
+    if (!myRules.containsKey(conceptFQName)) return Collections.emptyList();
 
-    Set<T> result = Collections.unmodifiableSet(computeRuleSet(key));
-    myRulesCache.put(key, result);
-    return result;
-  }
-
-  private Set<T> computeRuleSet(String concept) {
-    Set<T> result = new THashSet<T>();
-    Set<String> frontier = new THashSet<String>();
-    Set<String> newFrontier = new THashSet<String>();
-    frontier.add(concept);
-
-    while (!frontier.isEmpty()) {
-      for (String abstractConcept : frontier) {
-        Set<T> rules = myRules.get(abstractConcept);
-        boolean overrides = false;
-        if (rules != null) {
-          synchronized (rules) {
-            result.addAll(rules);
-            for (T rule : rules) {
-              if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
-                overrides = true;
-              }
-            }
-          }
+    List<T> result = new ArrayList<T>(4);
+    Set<T> rules = myRules.get(conceptFQName);
+    synchronized (rules) {
+      for (T rule: rules) {
+        if (scope.containsNamespace(getNamespace(rule))) {
+          result.add(rule);
         }
-        //else {
-        if (overrides) {
-          continue;
-        }
-
-        newFrontier.addAll(LanguageHierarchyCache.getParentsNames(abstractConcept));
-        //}
-
       }
-      frontier = newFrontier;
-      newFrontier = new THashSet<String>();
     }
-    return result;
+    return Collections.unmodifiableList(result);
+  }
+
+  private String getNamespace (T rule) {
+    String pkg = rule.getClass().getPackage().getName();
+    if (pkg.endsWith(TYPESYSTEM_SUFFIX)) {
+      return pkg.substring(0, pkg.length()-TYPESYSTEM_SUFFIX.length());
+    }
+    return pkg;
   }
 
   public void clear() {
     myRules.clear();
-    myRulesCache.clear();
+    mySingleTermRules.purgeCache();
   }
 }

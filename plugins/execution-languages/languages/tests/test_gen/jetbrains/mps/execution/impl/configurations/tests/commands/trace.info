@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8128243960970298224">
+  <root nodeId="8128243960970298224" modelId="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)">
     <nodeInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="38" startPosition="60" endLine="39" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="39" startPosition="149" endLine="40" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="44" startPosition="60" endLine="45" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -100,12 +100,12 @@
       <varInfo nodeId="7120092006645143068" varName="failure" />
       <varInfo nodeId="7120092006645138821" varName="success" />
     </scopeInfo>
-    <unitInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="35" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test" />
-    <unitInfo nodeId="7120092006645138838" fileName="JUnitCommand_Test.java" startLine="85" startPosition="47" endLine="97" endPosition="7" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$1" />
     <unitInfo nodeId="7120092006645138852" fileName="JUnitCommand_Test.java" startLine="89" startPosition="150" endLine="93" endPosition="13" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$2" />
+    <unitInfo nodeId="7120092006645138838" fileName="JUnitCommand_Test.java" startLine="85" startPosition="47" endLine="97" endPosition="7" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$1" />
     <unitInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="49" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody" />
+    <unitInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="35" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test" />
   </root>
-  <root nodeId="8128243960970298272">
+  <root nodeId="8128243960970298272" modelId="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)">
     <nodeInfo nodeId="8128243960970298272" fileName="JavaCommand_Test.java" startLine="34" startPosition="55" endLine="35" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970298272" fileName="JavaCommand_Test.java" startLine="35" startPosition="149" endLine="36" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970298482" fileName="JavaCommand_Test.java" startLine="41" startPosition="57" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -190,13 +190,13 @@
       <varInfo nodeId="8128243960970298458" varName="expectedSysErr" />
       <varInfo nodeId="8128243960970298456" varName="process" />
     </scopeInfo>
-    <unitInfo nodeId="8128243960970298272" fileName="JavaCommand_Test.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test" />
-    <unitInfo nodeId="8128243960970298486" fileName="JavaCommand_Test.java" startLine="43" startPosition="47" endLine="53" endPosition="7" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$1" />
     <unitInfo nodeId="8128243960970298500" fileName="JavaCommand_Test.java" startLine="46" startPosition="148" endLine="50" endPosition="11" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
+    <unitInfo nodeId="8128243960970298486" fileName="JavaCommand_Test.java" startLine="43" startPosition="47" endLine="53" endPosition="7" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$1" />
     <unitInfo nodeId="8128243960970298364" fileName="JavaCommand_Test.java" startLine="61" startPosition="45" endLine="76" endPosition="7" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
     <unitInfo nodeId="8128243960970298272" fileName="JavaCommand_Test.java" startLine="39" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody" />
+    <unitInfo nodeId="8128243960970298272" fileName="JavaCommand_Test.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test" />
   </root>
-  <root nodeId="8128243960970298959">
+  <root nodeId="8128243960970298959" modelId="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)">
     <nodeInfo nodeId="8128243960970298970" fileName="SplitCommandInParts_Test.java" startLine="12" startPosition="53" endLine="13" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970298984" fileName="SplitCommandInParts_Test.java" startLine="16" startPosition="50" endLine="17" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970299000" fileName="SplitCommandInParts_Test.java" startLine="20" startPosition="54" endLine="21" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -227,7 +227,7 @@
     <scopeInfo nodeId="8128243960970299063" fileName="SplitCommandInParts_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <unitInfo nodeId="8128243960970298959" fileName="SplitCommandInParts_Test.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" />
   </root>
-  <root nodeId="8128243960970299735">
+  <root nodeId="8128243960970299735" modelId="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)">
     <nodeInfo nodeId="8128243960970299784" fileName="CheckTestStateListener.java" startLine="17" startPosition="66" endLine="18" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccessExpected" />
     <nodeInfo nodeId="8128243960970299790" fileName="CheckTestStateListener.java" startLine="18" startPosition="91" endLine="19" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailExpected" />
     <nodeInfo nodeId="7213670651543787499" fileName="CheckTestStateListener.java" startLine="19" startPosition="88" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailed" />
@@ -320,8 +320,8 @@
     <scopeInfo nodeId="8552960886532766006" fileName="CheckTestStateListener.java" startLine="27" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="8552960886532766014" varName="tests" />
     </scopeInfo>
-    <unitInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
     <unitInfo nodeId="8552960886532765803" fileName="CheckTestStateListener.java" startLine="32" startPosition="106" endLine="36" endPosition="9" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener$1" />
+    <unitInfo nodeId="8128243960970299735" fileName="CheckTestStateListener.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
   </root>
 </debugInfo>
 

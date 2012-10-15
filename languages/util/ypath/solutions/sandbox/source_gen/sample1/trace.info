@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1199467210284">
+  <root nodeId="1199467210284" modelId="r:00000000-0000-4000-0000-011c895905b8(sample1)">
     <nodeInfo nodeId="1199467299272" fileName="TestLabel.java" startLine="15" startPosition="38" endLine="16" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1199470845196" fileName="TestLabel.java" startLine="17" startPosition="23" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1199467319328" fileName="TestLabel.java" startLine="16" startPosition="39" endLine="19" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -24,7 +24,7 @@
     </scopeInfo>
     <unitInfo nodeId="1199467210284" fileName="TestLabel.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="sample1.TestLabel" />
   </root>
-  <root nodeId="1199640036833">
+  <root nodeId="1199640036833" modelId="r:00000000-0000-4000-0000-011c895905b8(sample1)">
     <nodeInfo nodeId="1201092112339" fileName="TestClosure.java" startLine="143" startPosition="27" endLine="143" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201198409716" fileName="TestClosure.java" startLine="146" startPosition="28" endLine="146" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201198434700" fileName="TestClosure.java" startLine="149" startPosition="28" endLine="149" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -305,6 +305,7 @@
     <nodeInfo nodeId="1201392423639" fileName="TestClosure.java" startLine="492" startPosition="40" endLine="494" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201392431935" fileName="TestClosure.java" startLine="496" startPosition="41" endLine="498" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201392446891" fileName="TestClosure.java" startLine="500" startPosition="42" endLine="502" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2112552551406738047" fileName="TestClosure.java" startLine="527" startPosition="0" endLine="529" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Enm#()V" />
     <nodeInfo nodeId="1201048598680" fileName="TestClosure.java" startLine="163" startPosition="41" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1201289463794" fileName="TestClosure.java" startLine="243" startPosition="15" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1201293236223" fileName="TestClosure.java" startLine="311" startPosition="15" endLine="314" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -398,6 +399,7 @@
     <scopeInfo nodeId="1201360043317" fileName="TestClosure.java" startLine="351" startPosition="27" endLine="351" endPosition="27" />
     <scopeInfo nodeId="1201360098078" fileName="TestClosure.java" startLine="396" startPosition="27" endLine="396" endPosition="27" />
     <scopeInfo nodeId="1201360105436" fileName="TestClosure.java" startLine="399" startPosition="27" endLine="399" endPosition="27" />
+    <scopeInfo nodeId="2112552551406738050" fileName="TestClosure.java" startLine="528" startPosition="11" endLine="528" endPosition="11" />
     <scopeInfo nodeId="1199652610617" fileName="TestClosure.java" startLine="30" startPosition="31" endLine="31" endPosition="21" />
     <scopeInfo nodeId="1201092112338" fileName="TestClosure.java" startLine="64" startPosition="27" endLine="65" endPosition="38" />
     <scopeInfo nodeId="1201198409715" fileName="TestClosure.java" startLine="77" startPosition="28" endLine="78" endPosition="39" />
@@ -467,6 +469,7 @@
     <scopeInfo nodeId="1201392423639" fileName="TestClosure.java" startLine="492" startPosition="40" endLine="494" endPosition="28" />
     <scopeInfo nodeId="1201392431935" fileName="TestClosure.java" startLine="496" startPosition="41" endLine="498" endPosition="28" />
     <scopeInfo nodeId="1201392446891" fileName="TestClosure.java" startLine="500" startPosition="42" endLine="502" endPosition="28" />
+    <scopeInfo nodeId="2112552551406738047" fileName="TestClosure.java" startLine="527" startPosition="0" endLine="529" endPosition="5" />
     <scopeInfo nodeId="1201092112338" fileName="TestClosure.java" startLine="73" startPosition="27" endLine="76" endPosition="28" />
     <scopeInfo nodeId="1201198409715" fileName="TestClosure.java" startLine="86" startPosition="28" endLine="89" endPosition="28" />
     <scopeInfo nodeId="1201198434699" fileName="TestClosure.java" startLine="99" startPosition="28" endLine="102" endPosition="28" />
@@ -598,30 +601,30 @@
     <scopeInfo nodeId="1199640036834" fileName="TestClosure.java" startLine="9" startPosition="26" endLine="522" endPosition="0">
       <varInfo nodeId="1199640036862" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1199640036833" fileName="TestClosure.java" startLine="9" startPosition="0" endLine="529" endPosition="0" unitName="sample1.TestClosure" />
+    <unitInfo nodeId="1199652610616" fileName="TestClosure.java" startLine="29" startPosition="19" endLine="33" endPosition="5" unitName="sample1.TestClosure$3" />
     <unitInfo nodeId="1199652567564" fileName="TestClosure.java" startLine="12" startPosition="79" endLine="19" endPosition="5" unitName="sample1.TestClosure$1" />
+    <unitInfo nodeId="1199654606685" fileName="TestClosure.java" startLine="21" startPosition="39" endLine="28" endPosition="5" unitName="sample1.TestClosure$2" />
+    <unitInfo nodeId="1201392172093" fileName="TestClosure.java" startLine="523" startPosition="0" endLine="531" endPosition="0" unitName="sample1.TestClosure$Enm" />
+    <unitInfo nodeId="1199652693926" fileName="TestClosure.java" startLine="35" startPosition="40" endLine="44" endPosition="5" unitName="sample1.TestClosure$4" />
+    <unitInfo nodeId="1201360098077" fileName="TestClosure.java" startLine="369" startPosition="23" endLine="408" endPosition="13" unitName="sample1.TestClosure$11" />
     <unitInfo nodeId="1201360037132" fileName="TestClosure.java" startLine="319" startPosition="23" endLine="360" endPosition="13" unitName="sample1.TestClosure$10" />
     <unitInfo nodeId="1201360098077" fileName="TestClosure.java" startLine="367" startPosition="19" endLine="410" endPosition="9" unitName="sample1.TestClosure$10" />
-    <unitInfo nodeId="1201392249101" fileName="TestClosure.java" startLine="415" startPosition="14" endLine="517" endPosition="5" unitName="sample1.TestClosure$10" />
-    <unitInfo nodeId="1201360098077" fileName="TestClosure.java" startLine="369" startPosition="23" endLine="408" endPosition="13" unitName="sample1.TestClosure$11" />
-    <unitInfo nodeId="1201392249101" fileName="TestClosure.java" startLine="417" startPosition="19" endLine="515" endPosition="9" unitName="sample1.TestClosure$11" />
-    <unitInfo nodeId="1201392249101" fileName="TestClosure.java" startLine="419" startPosition="23" endLine="513" endPosition="13" unitName="sample1.TestClosure$12" />
-    <unitInfo nodeId="1199654606685" fileName="TestClosure.java" startLine="21" startPosition="39" endLine="28" endPosition="5" unitName="sample1.TestClosure$2" />
-    <unitInfo nodeId="1199652610616" fileName="TestClosure.java" startLine="29" startPosition="19" endLine="33" endPosition="5" unitName="sample1.TestClosure$3" />
-    <unitInfo nodeId="1199652693926" fileName="TestClosure.java" startLine="35" startPosition="40" endLine="44" endPosition="5" unitName="sample1.TestClosure$4" />
-    <unitInfo nodeId="1200832124876" fileName="TestClosure.java" startLine="45" startPosition="72" endLine="162" endPosition="5" unitName="sample1.TestClosure$5" />
-    <unitInfo nodeId="1201289341069" fileName="TestClosure.java" startLine="167" startPosition="14" endLine="243" endPosition="5" unitName="sample1.TestClosure$6" />
-    <unitInfo nodeId="1200832124876" fileName="TestClosure.java" startLine="47" startPosition="19" endLine="160" endPosition="9" unitName="sample1.TestClosure$6" />
-    <unitInfo nodeId="1201293160340" fileName="TestClosure.java" startLine="247" startPosition="14" endLine="311" endPosition="5" unitName="sample1.TestClosure$7" />
-    <unitInfo nodeId="1201289341069" fileName="TestClosure.java" startLine="169" startPosition="19" endLine="241" endPosition="9" unitName="sample1.TestClosure$7" />
-    <unitInfo nodeId="1200832124876" fileName="TestClosure.java" startLine="49" startPosition="23" endLine="158" endPosition="13" unitName="sample1.TestClosure$7" />
-    <unitInfo nodeId="1201360037132" fileName="TestClosure.java" startLine="315" startPosition="37" endLine="364" endPosition="5" unitName="sample1.TestClosure$8" />
-    <unitInfo nodeId="1201293160340" fileName="TestClosure.java" startLine="249" startPosition="19" endLine="309" endPosition="9" unitName="sample1.TestClosure$8" />
-    <unitInfo nodeId="1201289341069" fileName="TestClosure.java" startLine="171" startPosition="23" endLine="239" endPosition="13" unitName="sample1.TestClosure$8" />
     <unitInfo nodeId="1201360037132" fileName="TestClosure.java" startLine="317" startPosition="19" endLine="362" endPosition="9" unitName="sample1.TestClosure$9" />
     <unitInfo nodeId="1201360098077" fileName="TestClosure.java" startLine="365" startPosition="21" endLine="412" endPosition="5" unitName="sample1.TestClosure$9" />
+    <unitInfo nodeId="1201360037132" fileName="TestClosure.java" startLine="315" startPosition="37" endLine="364" endPosition="5" unitName="sample1.TestClosure$8" />
     <unitInfo nodeId="1201293160340" fileName="TestClosure.java" startLine="251" startPosition="23" endLine="307" endPosition="13" unitName="sample1.TestClosure$9" />
-    <unitInfo nodeId="1201392172093" fileName="TestClosure.java" startLine="523" startPosition="0" endLine="528" endPosition="0" unitName="sample1.TestClosure$Enm" />
+    <unitInfo nodeId="1201293160340" fileName="TestClosure.java" startLine="249" startPosition="19" endLine="309" endPosition="9" unitName="sample1.TestClosure$8" />
+    <unitInfo nodeId="1201293160340" fileName="TestClosure.java" startLine="247" startPosition="14" endLine="311" endPosition="5" unitName="sample1.TestClosure$7" />
+    <unitInfo nodeId="1201289341069" fileName="TestClosure.java" startLine="171" startPosition="23" endLine="239" endPosition="13" unitName="sample1.TestClosure$8" />
+    <unitInfo nodeId="1201289341069" fileName="TestClosure.java" startLine="169" startPosition="19" endLine="241" endPosition="9" unitName="sample1.TestClosure$7" />
+    <unitInfo nodeId="1201289341069" fileName="TestClosure.java" startLine="167" startPosition="14" endLine="243" endPosition="5" unitName="sample1.TestClosure$6" />
+    <unitInfo nodeId="1201392249101" fileName="TestClosure.java" startLine="419" startPosition="23" endLine="513" endPosition="13" unitName="sample1.TestClosure$12" />
+    <unitInfo nodeId="1201392249101" fileName="TestClosure.java" startLine="417" startPosition="19" endLine="515" endPosition="9" unitName="sample1.TestClosure$11" />
+    <unitInfo nodeId="1201392249101" fileName="TestClosure.java" startLine="415" startPosition="14" endLine="517" endPosition="5" unitName="sample1.TestClosure$10" />
+    <unitInfo nodeId="1200832124876" fileName="TestClosure.java" startLine="49" startPosition="23" endLine="158" endPosition="13" unitName="sample1.TestClosure$7" />
+    <unitInfo nodeId="1200832124876" fileName="TestClosure.java" startLine="47" startPosition="19" endLine="160" endPosition="9" unitName="sample1.TestClosure$6" />
+    <unitInfo nodeId="1200832124876" fileName="TestClosure.java" startLine="45" startPosition="72" endLine="162" endPosition="5" unitName="sample1.TestClosure$5" />
+    <unitInfo nodeId="1199640036833" fileName="TestClosure.java" startLine="9" startPosition="0" endLine="532" endPosition="0" unitName="sample1.TestClosure" />
   </root>
 </debugInfo>
 

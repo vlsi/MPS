@@ -41,6 +41,9 @@ public class ModelValidator {
     if (myModel.isTransient()) {
       return errors;
     }
+    if (myModel.isDisposed()) {
+      return errors;
+    }
     if (myModel instanceof StubModel) {
       errors.add(messageFromModelReadException(((StubModel) myModel).getCause()));
       return errors;

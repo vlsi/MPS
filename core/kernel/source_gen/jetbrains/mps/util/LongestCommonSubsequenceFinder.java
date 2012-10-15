@@ -6,7 +6,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.ObjectUtils;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -38,7 +37,7 @@ public class LongestCommonSubsequenceFinder<E> {
 
       for (int i = 1; i < ListSequence.fromList(myA).count() + 1; i++) {
         for (int j = 1; j < ListSequence.fromList(myB).count() + 1; j++) {
-          if (ObjectUtils.equals(ListSequence.fromList(myA).getElement(i - 1), ListSequence.fromList(myB).getElement(j - 1))) {
+          if (EqualUtil.equals(ListSequence.fromList(myA).getElement(i - 1), ListSequence.fromList(myB).getElement(j - 1))) {
             myCommonLengths[i][j] = myCommonLengths[i - 1][j - 1] + 1;
           } else {
             myCommonLengths[i][j] = Math.max(myCommonLengths[i - 1][j], myCommonLengths[i][j - 1]);
@@ -60,7 +59,7 @@ public class LongestCommonSubsequenceFinder<E> {
       int i = ListSequence.fromList(myA).count();
       int j = ListSequence.fromList(myB).count();
       while (i > 0 && j > 0) {
-        if (ObjectUtils.equals(ListSequence.fromList(myA).getElement(i - 1), ListSequence.fromList(myB).getElement(j - 1))) {
+        if (EqualUtil.equals(ListSequence.fromList(myA).getElement(i - 1), ListSequence.fromList(myB).getElement(j - 1))) {
           ListSequence.fromList(indices).addElement(MultiTuple.<Integer,Integer>from(i - 1, j - 1));
           i--;
           j--;

@@ -4,9 +4,10 @@ package jetbrains.mps.traceInfo;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.util.Map;
+import java.util.SortedMap;
 import jetbrains.mps.internal.collections.runtime.SortedMapSequence;
 import java.util.TreeMap;
+import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -14,12 +15,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
   protected static Log log = LogFactory.getLog(ScopePositionInfo.class);
 
-  private Map<String, VarInfo> myVars = SortedMapSequence.fromMap(new TreeMap<String, VarInfo>());
+  private SortedMap<String, VarInfo> myNamesToVars = SortedMapSequence.fromMap(new TreeMap<String, VarInfo>());
   private Map<SNode, VarInfo> myTempNodeToVarMap = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
 
   public ScopePositionInfo() {
@@ -30,14 +33,14 @@ public class ScopePositionInfo extends PositionInfo {
     for (Object varInfoElement_ : element.getChildren(ScopePositionInfo.VAR_INFO)) {
       Element varInfoElement = (Element) varInfoElement_;
       VarInfo varInfo = new VarInfo(varInfoElement);
-      MapSequence.fromMap(myVars).put(varInfo.getVarName(), varInfo);
+      SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     }
   }
 
   @Override
   protected void saveTo(Element element) {
     super.saveTo(element);
-    for (VarInfo varInfo : MapSequence.fromMap(myVars).values()) {
+    for (VarInfo varInfo : SortedMapSequence.fromMap(myNamesToVars).values()) {
       Element child = new Element(ScopePositionInfo.VAR_INFO);
       varInfo.saveTo(child);
       element.addContent(child);
@@ -45,7 +48,7 @@ public class ScopePositionInfo extends PositionInfo {
   }
 
   public SNode getVarNode(String varName) {
-    VarInfo varInfo = MapSequence.fromMap(myVars).get(varName);
+    VarInfo varInfo = SortedMapSequence.fromMap(myNamesToVars).get(varName);
     if (varInfo == null) {
       return null;
     }
@@ -58,7 +61,7 @@ public class ScopePositionInfo extends PositionInfo {
       VarInfo varInfo = new VarInfo();
       varInfo.setVarName(varName);
       MapSequence.fromMap(myTempNodeToVarMap).put(node, varInfo);
-      MapSequence.fromMap(myVars).put(varInfo.getVarName(), varInfo);
+      SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     } else {
       if (log.isWarnEnabled()) {
         log.warn("variable name is null for node " + node.getId());
@@ -75,11 +78,57 @@ public class ScopePositionInfo extends PositionInfo {
   }
 
   /*package*/ void removeVarInfo(VarInfo varInfo) {
-    MapSequence.fromMap(myVars).removeKey(varInfo.getVarName());
+    SortedMapSequence.fromMap(myNamesToVars).removeKey(varInfo.getVarName());
   }
 
   @Override
   public int compareTo(PositionInfo p) {
-    return super.compareTo(p);
+    int result = super.compareTo(p);
+    if (result != 0) {
+      return result;
+    }
+    if ((int) SortedMapSequence.fromMap(myNamesToVars).count() == (int) SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).count()) {
+      Iterator<IMapping<String, VarInfo>> vars = SortedMapSequence.fromMap(myNamesToVars).iterator();
+      Iterator<IMapping<String, VarInfo>> theirvars = SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).iterator();
+      while (vars.hasNext()) {
+        IMapping<String, VarInfo> first = vars.next();
+        IMapping<String, VarInfo> theirfirst = theirvars.next();
+        int compare = compare(first, theirfirst);
+        if (compare != 0) {
+          return compare;
+        }
+      }
+      return 0;
+    }
+    return SortedMapSequence.fromMap(myNamesToVars).count() - SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).count();
+  }
+
+  public int compare(IMapping<String, VarInfo> mapping1, IMapping<String, VarInfo> mapping2) {
+    if (mapping1.key() == null) {
+      if (mapping2.key() != null) {
+        return 1;
+      }
+    } else {
+      if (mapping2.key() == null) {
+        return -1;
+      }
+      int compareTo = mapping1.key().compareTo(mapping2.key());
+      if (compareTo != 0) {
+        return compareTo;
+      }
+    }
+
+    String id1 = mapping1.value().getNodeId();
+    String id2 = mapping2.value().getNodeId();
+    if (id1 == null) {
+      if (id2 == null) {
+        return 0;
+      }
+      return -1;
+    }
+    if (id2 == null) {
+      return 1;
+    }
+    return id1.compareTo(id2);
   }
 }

@@ -23,13 +23,15 @@ public class typeof_ListElementAccessExpression_InferenceRule extends AbstractIn
     final SNode elementType_typevar_1225711334597 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "list", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711322689", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711317313", true), (SNode) new typeof_ListElementAccessExpression_InferenceRule.QuotationClass_129lj5_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1225711334597), typeCheckingContext), false, true, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120473", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_ListElementAccessExpression_InferenceRule.QuotationClass_129lj5_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1225711334597), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711317313", true), false, true, _info_12389875345);
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "index", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711362428", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711355326", true), (SNode) new typeof_ListElementAccessExpression_InferenceRule.QuotationClass_129lj5_a0a2a0().createNode(typeCheckingContext), false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "index", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711362428", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225711355326", true), (SNode) new typeof_ListElementAccessExpression_InferenceRule.QuotationClass_129lj5_a0a2a0().createNode(typeCheckingContext), true, true, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = expression;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.intentions.IntentionsDescriptor" />
-  <root nodeId="1576918603588812821">
+  <root nodeId="1576918603588812821" modelId="r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)">
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.intentions.replace_UIObjectStatement_AppendUIObjectStatement_Intention" />
   </root>
-  <root nodeId="8381258131358771407">
+  <root nodeId="8381258131358771407" modelId="r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)">
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -124,7 +124,7 @@
     </scopeInfo>
     <unitInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="13" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.intentions.View_wrap_with_ValidatingView_Intention" />
   </root>
-  <root nodeId="8905126934806239993">
+  <root nodeId="8905126934806239993" modelId="r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)">
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="31" startPosition="98" endLine="32" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameter" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="37" startPosition="30" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="41" startPosition="36" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -306,6 +306,9 @@
       <varInfo nodeId="2441084687258555760" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="116" startPosition="28" endLine="121" endPosition="7" />
+    <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="116" startPosition="28" endLine="121" endPosition="7">
+      <varInfo nodeId="8905126934806239993" varName="param" />
+    </scopeInfo>
     <scopeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="222" endLine="184" endPosition="11" />
     <scopeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="85" endLine="76" endPosition="5">
       <varInfo nodeId="8717063129899256931" varName="depOn" />
@@ -379,15 +382,15 @@
       <varInfo nodeId="8905126934806239993" varName="editorContext" />
       <varInfo nodeId="8905126934806239993" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="31" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention" />
+    <unitInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="59" startPosition="106" endLine="63" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$4" />
     <unitInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="97" startPosition="168" endLine="101" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$1" />
     <unitInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="101" startPosition="38" endLine="105" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$2" />
     <unitInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="105" startPosition="18" endLine="109" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$3" />
-    <unitInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="59" startPosition="106" endLine="63" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$4" />
     <unitInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="126" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0a0a" />
-    <unitInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="162" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0a0a2a5" />
     <unitInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="144" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0a0f" />
     <unitInfo nodeId="2441084687258555760" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="193" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0d0f" />
+    <unitInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="162" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0a0a2a5" />
+    <unitInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="31" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention" />
   </root>
 </debugInfo>
 

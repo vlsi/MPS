@@ -244,6 +244,21 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_subtypeOf_bound_InequationReplacementRule" file="LowerBoundType_subtypeOf_bound_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_supertypeOf_bound_InequationReplacementRule" file="LowerBoundType_supertypeOf_bound_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -401,13 +416,15 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.Queries" file="Queries.java">
-    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.SubtypingUtil" />
     <classNode dependClassName="jetbrains.mps.project.AuxilaryRuntimeModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -416,7 +433,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.RemoveExcessTypeCast_QuickFix" file="RemoveExcessTypeCast_QuickFix.java">
     <classNode dependClassName="java.lang.String" />
@@ -461,6 +477,8 @@
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix" file="ResolvedUnknownNode_QuickFix.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
@@ -531,6 +549,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Class_Void_weak_supertypeof_void_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.EnumsAreEnum_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_subtypeOf_bound_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_supertypeOf_bound_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.NonFinalParametersInAnonymousClass_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.NonFinalVariablesInAnonymousClass_NonTypesystemRule" />
@@ -539,6 +558,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.PrimitiveSubtyping_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.PrimitiveTypesInInstanceOfNotAllowed_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Queries" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.UpperBoundType_supertypeOf_bound_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.anonymousClassExtendsItsClassifier_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_to_wildcard_type_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_with_nulltype_ComparisonRule" />
@@ -784,6 +804,21 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.UpperBoundType_supertypeOf_bound_InequationReplacementRule" file="UpperBoundType_supertypeOf_bound_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil" file="VariableReferenceUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -2229,16 +2264,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnknownConsCall_NonTypesystemRule" file="check_UnknownConsCall_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -2248,41 +2278,26 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnknownDotCall_NonTypesystemRule" file="check_UnknownDotCall_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnknownLocalCall_NonTypesystemRule" file="check_UnknownLocalCall_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
@@ -2291,13 +2306,12 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnknownNameRef_NonTypesystemRule" file="check_UnknownNameRef_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -2308,17 +2322,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnknownNew_NonTypesystemRule" file="check_UnknownNew_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.UnknownNew_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -3065,9 +3073,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.typeOf_ConceptFunctionParameter_InferenceRule" file="typeOf_ConceptFunctionParameter_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1196985119947853642">
+  <root nodeId="1196985119947853642" modelId="r:fdeb7acd-bf73-473a-b179-49cceada9138(jetbrains.mps.testModels.anonymousClass1)">
     <nodeInfo nodeId="1196985119947853648" fileName="SomeClass.java" startLine="8" startPosition="22" endLine="9" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196985119947853644" fileName="SomeClass.java" startLine="7" startPosition="24" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SomeClass#()V" />
     <scopeInfo nodeId="1196985119947853647" fileName="SomeClass.java" startLine="8" startPosition="22" endLine="9" endPosition="45">

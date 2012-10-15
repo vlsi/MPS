@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1194533670612">
+  <root nodeId="1194533670612" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
     <nodeInfo nodeId="1194537616584" fileName="DependenciesCollector.java" startLine="25" startPosition="120" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1194537876793" fileName="DependenciesCollector.java" startLine="28" startPosition="156" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1194538029691" fileName="DependenciesCollector.java" startLine="31" startPosition="5" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -689,17 +689,17 @@
       <varInfo nodeId="1194535127693" varName="inferenceRule" />
       <varInfo nodeId="1194612324558" varName="leaves" />
     </scopeInfo>
-    <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
     <unitInfo nodeId="1194969746832" fileName="DependenciesCollector.java" startLine="114" startPosition="131" endLine="118" endPosition="31" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$1" />
-    <unitInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="287" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0" />
-    <unitInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="212" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a" />
     <unitInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a1a1a2a5a0" />
+    <unitInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="212" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a" />
+    <unitInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="287" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0" />
     <unitInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="362" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$QuotationClass_bcwvc2_a1a1a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a" />
+    <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
   </root>
-  <root nodeId="1196177069451">
+  <root nodeId="1196177069451" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
     <unitInfo nodeId="1196177069451" fileName="InferenceMethod.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />
   </root>
-  <root nodeId="1223644778913">
+  <root nodeId="1223644778913" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
     <unitInfo nodeId="1223644778913" fileName="CheckingMethod.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.CheckingMethod" />
   </root>
 </debugInfo>

@@ -567,7 +567,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1174933130150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "whereBlock", true);
+    if ((SLinkOperations.getTarget(_context.getNode(), "whereBlock", true) != null)) {
+      return SLinkOperations.getTarget(_context.getNode(), "whereBlock", true);
+    } else {
+      return SLinkOperations.getTarget(_context.getNode(), "filter", true);
+    }
   }
 
   public static SNode sourceNodeQuery_4112797171562913863(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

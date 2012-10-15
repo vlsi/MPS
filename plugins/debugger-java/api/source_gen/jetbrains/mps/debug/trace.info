@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="251277163127780701">
+  <root nodeId="251277163127780701" modelId="r:00f87323-e6a8-42b3-9a91-892d878daf8f(jetbrains.mps.debug)">
     <nodeInfo nodeId="251277163127780704" fileName="BaseRunProfileState.java" startLine="24" startPosition="75" endLine="25" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUserData" />
     <nodeInfo nodeId="251277163127780728" fileName="BaseRunProfileState.java" startLine="31" startPosition="61" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="251277163127780742" fileName="BaseRunProfileState.java" startLine="36" startPosition="40" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -46,10 +46,10 @@
     <scopeInfo nodeId="251277163127780769" fileName="BaseRunProfileState.java" startLine="47" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="251277163127780786" fileName="BaseRunProfileState.java" startLine="56" startPosition="60" endLine="67" endPosition="6" />
     <scopeInfo nodeId="251277163127780783" fileName="BaseRunProfileState.java" startLine="53" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="251277163127780701" fileName="BaseRunProfileState.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debug.BaseRunProfileState" />
     <unitInfo nodeId="251277163127780790" fileName="BaseRunProfileState.java" startLine="57" startPosition="15" endLine="67" endPosition="5" unitName="jetbrains.mps.debug.BaseRunProfileState$1" />
+    <unitInfo nodeId="251277163127780701" fileName="BaseRunProfileState.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debug.BaseRunProfileState" />
   </root>
-  <root nodeId="3432969378036017734">
+  <root nodeId="3432969378036017734" modelId="r:00f87323-e6a8-42b3-9a91-892d878daf8f(jetbrains.mps.debug)">
     <nodeInfo nodeId="3432969378036017736" fileName="DebuggerKeys.java" startLine="10" startPosition="27" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONNECTION_SETTINGS" />
     <nodeInfo nodeId="3432969378036017743" fileName="DebuggerKeys.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerKeys#()V" />
     <scopeInfo nodeId="3432969378036017746" fileName="DebuggerKeys.java" startLine="14" startPosition="25" endLine="14" endPosition="25" />

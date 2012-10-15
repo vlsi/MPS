@@ -29,8 +29,6 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescripto
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import org.apache.commons.lang.ObjectUtils;
-import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -420,7 +418,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public void setId(@Nullable SNodeId id) {
-    if (ObjectUtils.equals(id, myId)) return;
+    if (EqualUtil.equals(id, myId)) return;
 
     if (!isRegistered()) {
       myId = id;
@@ -822,7 +820,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   private int getPropertyIndex(String propertyName) {
     if (myProperties == null) return -1;
     for (int i = 0; i < myProperties.length; i += 2) {
-      if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
+      if (EqualUtil.equals(myProperties[i], propertyName)) return i;
     }
     return -1;
   }

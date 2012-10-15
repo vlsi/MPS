@@ -20,7 +20,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
@@ -33,6 +32,7 @@ import java.util.*;
 
 public class CoercionManager {
   private final TypeChecker myTypeChecker;
+  // TODO: why this dependency?
   private final SubTypingManagerNew mySubTyping;
 
   public CoercionManager(TypeChecker typeChecker, SubTypingManagerNew subTyping) {
@@ -57,7 +57,7 @@ public class CoercionManager {
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
 
-      SNode lcs = mySubTyping.createLCS(children, typeCheckingContext);
+      SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, typeCheckingContext);
       return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 
@@ -130,7 +130,7 @@ public class CoercionManager {
       }
       if (!results.isEmpty()) {
         if (results.size() > 1) {
-          results = mySubTyping.eliminateSuperTypes(results);
+          results = SubtypingUtil.eliminateSuperTypes(results);
         }
         if (!results.isEmpty()) {
           return results.get(0);

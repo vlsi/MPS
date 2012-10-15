@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1186475525107">
+  <root nodeId="1186475525107" modelId="r:00000000-0000-4000-0000-011c895905ca(jetbrains.mps.bootstrap.helgins.sandbox.sb1)">
     <nodeInfo nodeId="1196960455591" fileName="AClssssssssssssssssass.java" startLine="18" startPosition="5" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="20" startPosition="7" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="21" startPosition="44" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -103,9 +103,9 @@
     <scopeInfo nodeId="1186475535908" fileName="AClssssssssssssssssass.java" startLine="17" startPosition="31" endLine="30" endPosition="5" />
     <scopeInfo nodeId="1196960542693" fileName="AClssssssssssssssssass.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1186475535905" fileName="AClssssssssssssssssass.java" startLine="16" startPosition="37" endLine="32" endPosition="0" />
-    <unitInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb1.AClssssssssssssssssass" />
-    <unitInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="54" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb1.AClssssssssssssssssass$Pattern_axt657_a0a1a1a0a0" />
     <unitInfo nodeId="1196960542693" fileName="AClssssssssssssssssass.java" startLine="36" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb1.AClssssssssssssssssass$QuotationClass_axt657_a0a0a0a0" />
+    <unitInfo nodeId="1196960555088" fileName="AClssssssssssssssssass.java" startLine="54" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb1.AClssssssssssssssssass$Pattern_axt657_a0a1a1a0a0" />
+    <unitInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb1.AClssssssssssssssssass" />
   </root>
 </debugInfo>
 

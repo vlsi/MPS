@@ -46,6 +46,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -169,7 +170,7 @@ public class ProjectTestHelper {
   }
 
   private class PrivToken extends ProjectTestHelper.Token {
-    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "trace.info", "dependencies", ".dependencies", ".generated", ".debug");
+    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", ".dependencies", ".generated", ".debug");
     private final Project project;
     private final IModule module;
     private String tmpPath;
@@ -223,7 +224,7 @@ public class ProjectTestHelper {
           IOperationContext context = new ProjectOperationContext(project);
           IScript scr = defaultScriptBuilder().toScript();
           try {
-            result.value = new TestMakeService(context, myMessageHandler).make(collectResources(context, module), scr, ctl).get();
+            result.value = new TestMakeService(context, myMessageHandler).make(null, collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
           } catch (InterruptedException ignore) {
           } catch (ExecutionException ignore) {
           }

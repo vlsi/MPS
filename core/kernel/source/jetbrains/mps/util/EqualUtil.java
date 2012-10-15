@@ -22,4 +22,14 @@ public class EqualUtil {
     if (o1 == null || o2 == null) return false;
     return o1.equals(o2);
   }
+
+  public static boolean equalsIgnoreCase(String s1, String s2) {
+    return s1 == null ? s2 == null : s1.equalsIgnoreCase(s2);
+  }
+
+  public static int hashCode(Object o) {
+    if (o == null) return 0;
+    return o.hashCode();
+  }
+
 }

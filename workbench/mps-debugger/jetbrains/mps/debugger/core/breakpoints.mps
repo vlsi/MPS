@@ -1233,20 +1233,14 @@
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4474271214083124467">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4474271214083124479">
                   <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="941063590543854203">
-                    <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="941063590543854204">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="941063590543854205">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="941063590543854206">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124469" resolveInfo="debugInfo" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="941063590543854207">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4hf9.~DebugInfo%dgetPositions(jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dSet" resolveInfo="getPositions" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="941063590543854208">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124458" resolveInfo="node" />
-                          </node>
-                        </node>
+                    <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5288964220667904775">
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceDown" resolveInfo="TraceDown" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceDown%disTraceable(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dtraceInfo%dDebugInfo)%cboolean" resolveInfo="isTraceable" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5288964220667904777">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124458" resolveInfo="node" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="941063590543854209">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Set%disEmpty()%cboolean" resolveInfo="isEmpty" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5288964220667904779">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083124469" resolveInfo="debugInfo" />
                       </node>
                     </node>
                   </node>

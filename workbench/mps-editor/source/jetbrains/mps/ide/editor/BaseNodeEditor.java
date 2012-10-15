@@ -26,7 +26,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -246,7 +246,7 @@ public abstract class BaseNodeEditor implements Editor {
       }
 
       BaseEditorState state = (BaseEditorState) obj;
-      return ObjectUtils.equals(state.myMemento, myMemento) && ObjectUtils.equals(state.myInspectorMemento, myInspectorMemento);
+      return EqualUtil.equals(state.myMemento, myMemento) && EqualUtil.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }
 }

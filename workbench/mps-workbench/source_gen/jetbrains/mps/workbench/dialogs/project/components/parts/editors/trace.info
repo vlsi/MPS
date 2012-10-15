@@ -132,8 +132,8 @@
       <varInfo nodeId="1560298786499491264" varName="table" />
       <varInfo nodeId="1560298786499491266" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499491170" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor" />
     <unitInfo nodeId="1560298786499491287" fileName="RuleOperandEditor.java" startLine="54" startPosition="35" endLine="67" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor$1" />
+    <unitInfo nodeId="1560298786499491170" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor" />
   </root>
   <root nodeId="1560298786499495476" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="4256903895781701718" fileName="ManagerTableCellEditor.java" startLine="31" startPosition="63" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCombo" />
@@ -215,6 +215,7 @@
       <varInfo nodeId="4256903895781784718" varName="selected" />
       <varInfo nodeId="4256903895781784714" varName="value" />
     </scopeInfo>
+    <scopeInfo nodeId="4256903895781786765" fileName="ManagerTableCellEditor.java" startLine="53" startPosition="25" endLine="62" endPosition="9" />
     <scopeInfo nodeId="4256903895781786771" fileName="ManagerTableCellEditor.java" startLine="53" startPosition="25" endLine="62" endPosition="9">
       <varInfo nodeId="4256903895781786772" varName="node" />
     </scopeInfo>
@@ -242,10 +243,10 @@
     <scopeInfo nodeId="4256903895781788722" fileName="ManagerTableCellEditor.java" startLine="71" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="1560298786499495556" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499495476" fileName="ManagerTableCellEditor.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" />
     <unitInfo nodeId="4256903895781784707" fileName="ManagerTableCellEditor.java" startLine="38" startPosition="28" endLine="47" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$1" />
     <unitInfo nodeId="4256903895781786764" fileName="ManagerTableCellEditor.java" startLine="52" startPosition="45" endLine="64" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$2" />
     <unitInfo nodeId="8571970830724169285" fileName="ManagerTableCellEditor.java" startLine="74" startPosition="45" endLine="100" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor$3" />
+    <unitInfo nodeId="1560298786499495476" fileName="ManagerTableCellEditor.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" />
   </root>
   <root nodeId="1560298786499498080" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
     <nodeInfo nodeId="1560298786499498086" fileName="RuleTypeEditor.java" startLine="11" startPosition="27" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

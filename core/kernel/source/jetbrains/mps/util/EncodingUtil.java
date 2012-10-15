@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import com.thoughtworks.xstream.core.util.Base64Encoder;
-
+import javax.xml.bind.DatatypeConverter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -27,11 +26,11 @@ import java.io.OutputStreamWriter;
 public class EncodingUtil {
 
   public static String encodeBase64(byte[] bytes) {
-    return new Base64Encoder().encode(bytes);
+    return DatatypeConverter.printBase64Binary(bytes);
   }
 
   public static byte[] decodeBase64(String base64) {
-    return new Base64Encoder().decode(base64);
+    return DatatypeConverter.parseBase64Binary(base64);
   }
 
   public static byte[] encode(String text, String encoding) throws IOException {

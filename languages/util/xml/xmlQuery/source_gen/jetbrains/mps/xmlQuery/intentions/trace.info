@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.xmlQuery.intentions.IntentionsDescriptor" />
-  <root nodeId="2286463592495362683">
+  <root nodeId="2286463592495362683" modelId="r:8f700e9e-5913-47c1-bdb0-221d47528dda(jetbrains.mps.xmlQuery.intentions)">
     <nodeInfo nodeId="2286463592495362683" fileName="Switch_HasAttributes_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495362683" fileName="Switch_HasAttributes_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495362683" fileName="Switch_HasAttributes_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,7 +41,7 @@
     </scopeInfo>
     <unitInfo nodeId="2286463592495362683" fileName="Switch_HasAttributes_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.xmlQuery.intentions.Switch_HasAttributes_Intention" />
   </root>
-  <root nodeId="2286463592495455974">
+  <root nodeId="2286463592495455974" modelId="r:8f700e9e-5913-47c1-bdb0-221d47528dda(jetbrains.mps.xmlQuery.intentions)">
     <nodeInfo nodeId="2286463592495455974" fileName="addHandler_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495455974" fileName="addHandler_Intention.java" startLine="20" startPosition="36" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495455974" fileName="addHandler_Intention.java" startLine="24" startPosition="37" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -80,7 +80,7 @@ public class AbstractProjectComponent_Behavior {
     if (!(SNodeOperations.isInstanceOf(snode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
       return false;
     }
-    return StringUtils.equalsIgnoreCase(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(snode, "name"));
+    return EqualUtil.equalsIgnoreCase(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(snode, "name"));
   }
 
   public static File call_getPath_1213877333777(SNode thisNode) {

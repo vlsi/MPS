@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1603335834236229182">
+  <root nodeId="1603335834236229182" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="1603335834236229183" fileName="MyConstants.java" startLine="6" startPosition="32" endLine="7" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MINIMUM" />
     <nodeInfo nodeId="1603335834236229186" fileName="MyConstants.java" startLine="7" startPosition="38" endLine="8" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT" />
     <nodeInfo nodeId="1603335834236229195" fileName="MyConstants.java" startLine="8" startPosition="49" endLine="9" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAXIMUM" />
@@ -12,7 +12,7 @@
     <scopeInfo nodeId="1603335834236229182" fileName="MyConstants.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <unitInfo nodeId="1603335834236229182" fileName="MyConstants.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="Samples.MyConstants" />
   </root>
-  <root nodeId="1603335834236231963">
+  <root nodeId="1603335834236231963" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="1987251859607101931" fileName="DecisionSample.java" startLine="13" startPosition="34" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1987251859607101969" fileName="DecisionSample.java" startLine="14" startPosition="53" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7427325263439042344" fileName="DecisionSample.java" startLine="15" startPosition="0" endLine="16" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -168,7 +168,7 @@
     </scopeInfo>
     <unitInfo nodeId="1603335834236231963" fileName="DecisionSample.java" startLine="9" startPosition="0" endLine="138" endPosition="0" unitName="Samples.DecisionSample" />
   </root>
-  <root nodeId="1603335834236290404">
+  <root nodeId="1603335834236290404" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="1603335834236290420" fileName="ParallelForSample.java" startLine="20" startPosition="42" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4659204813808501232" fileName="ParallelForSample.java" startLine="21" startPosition="32" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4659204813808501240" fileName="ParallelForSample.java" startLine="22" startPosition="67" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -397,12 +397,12 @@
     <scopeInfo nodeId="8923957828369564585" fileName="ParallelForSample.java" startLine="19" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="8923957828369564589" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1603335834236290404" fileName="ParallelForSample.java" startLine="16" startPosition="0" endLine="180" endPosition="0" unitName="Samples.ParallelForSample" />
+    <unitInfo nodeId="633195941006828922" fileName="ParallelForSample.java" startLine="142" startPosition="38" endLine="155" endPosition="9" unitName="Samples.ParallelForSample$3" />
     <unitInfo nodeId="8923957828369582224" fileName="ParallelForSample.java" startLine="37" startPosition="38" endLine="52" endPosition="9" unitName="Samples.ParallelForSample$1" />
     <unitInfo nodeId="7793246093816008675" fileName="ParallelForSample.java" startLine="88" startPosition="38" endLine="116" endPosition="9" unitName="Samples.ParallelForSample$2" />
-    <unitInfo nodeId="633195941006828922" fileName="ParallelForSample.java" startLine="142" startPosition="38" endLine="155" endPosition="9" unitName="Samples.ParallelForSample$3" />
+    <unitInfo nodeId="1603335834236290404" fileName="ParallelForSample.java" startLine="16" startPosition="0" endLine="180" endPosition="0" unitName="Samples.ParallelForSample" />
   </root>
-  <root nodeId="2975785153735164887">
+  <root nodeId="2975785153735164887" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="2975785153735223616" fileName="DropBox.java" startLine="6" startPosition="31" endLine="7" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="storage" />
     <nodeInfo nodeId="2975785153735248694" fileName="DropBox.java" startLine="9" startPosition="20" endLine="10" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2975785153735248698" fileName="DropBox.java" startLine="10" startPosition="84" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -433,7 +433,7 @@
     <scopeInfo nodeId="2975785153735223696" fileName="DropBox.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="2975785153735164887" fileName="DropBox.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="Samples.DropBox" />
   </root>
-  <root nodeId="2975785153735223829">
+  <root nodeId="2975785153735223829" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="2975785153735296330" fileName="ThreadSafeSample.java" startLine="12" startPosition="31" endLine="13" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="fixedFieldValue" />
     <nodeInfo nodeId="2975785153735248672" fileName="ThreadSafeSample.java" startLine="18" startPosition="70" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2975785153735248675" fileName="ThreadSafeSample.java" startLine="19" startPosition="78" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -596,12 +596,12 @@
     <scopeInfo nodeId="2975785153735223835" fileName="ThreadSafeSample.java" startLine="17" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="2975785153735223839" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="2975785153735223829" fileName="ThreadSafeSample.java" startLine="12" startPosition="0" endLine="129" endPosition="0" unitName="Samples.ThreadSafeSample" />
     <unitInfo nodeId="2975785153735224006" fileName="ThreadSafeSample.java" startLine="27" startPosition="35" endLine="37" endPosition="5" unitName="Samples.ThreadSafeSample$1" />
-    <unitInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="50" startPosition="38" endLine="67" endPosition="9" unitName="Samples.ThreadSafeSample$2" />
     <unitInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="96" startPosition="38" endLine="107" endPosition="9" unitName="Samples.ThreadSafeSample$3" />
+    <unitInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="50" startPosition="38" endLine="67" endPosition="9" unitName="Samples.ThreadSafeSample$2" />
+    <unitInfo nodeId="2975785153735223829" fileName="ThreadSafeSample.java" startLine="12" startPosition="0" endLine="129" endPosition="0" unitName="Samples.ThreadSafeSample" />
   </root>
-  <root nodeId="3385910400465347285">
+  <root nodeId="3385910400465347285" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="7427325263439038937" fileName="MoneySample.java" startLine="11" startPosition="42" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7427325263439038942" fileName="MoneySample.java" startLine="12" startPosition="107" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7427325263439038946" fileName="MoneySample.java" startLine="13" startPosition="53" endLine="14" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -629,7 +629,7 @@
     </scopeInfo>
     <unitInfo nodeId="3385910400465347285" fileName="MoneySample.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="Samples.MoneySample" />
   </root>
-  <root nodeId="3385910400465380671">
+  <root nodeId="3385910400465380671" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="3385910400465380722" fileName="UnlessSample.java" startLine="10" startPosition="42" endLine="11" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3385910400465380725" fileName="UnlessSample.java" startLine="11" startPosition="81" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3385910400465380684" fileName="UnlessSample.java" startLine="12" startPosition="0" endLine="13" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -673,7 +673,7 @@
     </scopeInfo>
     <unitInfo nodeId="3385910400465380671" fileName="UnlessSample.java" startLine="6" startPosition="0" endLine="44" endPosition="0" unitName="Samples.UnlessSample" />
   </root>
-  <root nodeId="3385910400465407946">
+  <root nodeId="3385910400465407946" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="3385910400465411644" fileName="SidewaysIfSample.java" startLine="10" startPosition="42" endLine="11" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3863300516938089426" fileName="SidewaysIfSample.java" startLine="12" startPosition="26" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8238782355405273199" fileName="SidewaysIfSample.java" startLine="13" startPosition="45" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -701,7 +701,7 @@
     </scopeInfo>
     <unitInfo nodeId="3385910400465407946" fileName="SidewaysIfSample.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="Samples.SidewaysIfSample" />
   </root>
-  <root nodeId="4120418308310980273">
+  <root nodeId="4120418308310980273" modelId="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
     <nodeInfo nodeId="4120418308311049471" fileName="SimpleParallelForSample.java" startLine="17" startPosition="42" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4120418308310980286" fileName="SimpleParallelForSample.java" startLine="18" startPosition="0" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4723123923088182030" fileName="SimpleParallelForSample.java" startLine="19" startPosition="109" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -787,9 +787,9 @@
     <scopeInfo nodeId="4120418308310980279" fileName="SimpleParallelForSample.java" startLine="16" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="4120418308310980283" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="4120418308310980273" fileName="SimpleParallelForSample.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="Samples.SimpleParallelForSample" />
-    <unitInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="30" startPosition="38" endLine="47" endPosition="9" unitName="Samples.SimpleParallelForSample$1" />
     <unitInfo nodeId="1404827149555729958" fileName="SimpleParallelForSample.java" startLine="67" startPosition="0" endLine="75" endPosition="0" unitName="Samples.SimpleParallelForSample$Logger" />
+    <unitInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="30" startPosition="38" endLine="47" endPosition="9" unitName="Samples.SimpleParallelForSample$1" />
+    <unitInfo nodeId="4120418308310980273" fileName="SimpleParallelForSample.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="Samples.SimpleParallelForSample" />
   </root>
 </debugInfo>
 

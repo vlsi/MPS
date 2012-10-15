@@ -21,10 +21,12 @@ public class typeof_SingletonSequenceCreator_InferenceRule extends AbstractInfer
 
   public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode elementType = SLinkOperations.getTarget(creator, "elementType", true);
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "singletonValue", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235574608531", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235574583102", true), (SNode) elementType, false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "singletonValue", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235574608531", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235574583102", true), (SNode) elementType, true, true, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = creator;

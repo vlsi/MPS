@@ -1059,6 +1059,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
@@ -1259,6 +1260,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
@@ -3656,7 +3658,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.plugin" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.resources, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.smodel.runtime, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.plugin" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.gtext.runtime, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.resources, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.smodel.runtime, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -3684,6 +3686,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.constraints" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.resources" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.sharedConcepts" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />

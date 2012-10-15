@@ -23,8 +23,10 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.progress.ProgressMonitor;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeNotification;
@@ -51,8 +53,6 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.make.script.IOption;
@@ -104,21 +104,21 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    this.checkValidUsage();
-    this.checkValidSession(session);
-    return doMake(resources, null, null);
+    return make(session, resources, null, null, new EmptyProgressMonitor());
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    this.checkValidUsage();
-    this.checkValidSession(session);
-    return doMake(resources, script, null);
+    return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
+    return make(session, resources, script, controller, new EmptyProgressMonitor());
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     this.checkValidUsage();
     this.checkValidSession(session);
-    return doMake(resources, script, controller);
+    return doMake(resources, script, controller, monitor);
   }
 
   public boolean isSessionActive() {
@@ -151,27 +151,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
   }
 
-  public Future<IResult> make(Iterable<? extends IResource> resources) {
-    if (isInstance()) {
-      throw new IllegalStateException("deprecated API called on a service");
-    }
-    return _doMake(resources, null, null);
-  }
-
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
-    if (isInstance()) {
-      throw new IllegalStateException("deprecated API called on a service");
-    }
-    return _doMake(resources, script, null);
-  }
-
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController ctl) {
-    if (isInstance()) {
-      throw new IllegalStateException("deprecated API called on a service");
-    }
-    return _doMake(resources, script, ctl);
-  }
-
   private MakeSession getSession() {
     return currentSessionStickyMark.getReference();
   }
@@ -194,11 +173,11 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     });
   }
 
-  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
+  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     Future<IResult> result = null;
     try {
       awaitCurrentProcess();
-      result = _doMake(inputRes, script, controller);
+      result = _doMake(inputRes, script, controller, monitor);
     } finally {
       if (result == null || result.isDone()) {
         this.attemptCloseSession();
@@ -237,7 +216,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
   }
 
-  private Future<IResult> _doMake(Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller) {
+  private Future<IResult> _doMake(Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
 
     String scrName = ((this.getSession().isCleanMake() ?
       "Rebuild" :
@@ -261,7 +240,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
 
-    return new WorkbenchMakeService.TaskRunner(scrName, mh).runTask(inputRes, defaultScript, controller);
+    return new WorkbenchMakeService.TaskRunner(scrName, mh).runTask(inputRes, defaultScript, controller, monitor);
   }
 
   private void checkValidUsage() {
@@ -299,12 +278,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       this.mh = mh;
     }
 
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
-      return processRawInput(inputRes, defaultScript, controller);
+    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
+      return processRawInput(inputRes, defaultScript, controller, monitor);
     }
 
     @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
+    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
       final ProgressMonitorProgressStrategy pmps = new ProgressMonitorProgressStrategy();
       WorkbenchMakeService.this.getSession();
       final MakeTask task = new MakeTask(ProjectHelper.toIdeaProject(WorkbenchMakeService.this.getSession().getContext().getProject()), taskName, scripts, taskName, clustRes, new WorkbenchMakeService.Controller(controller, mh, pmps), mh, PerformInBackgroundOption.DEAF) {
@@ -414,17 +393,11 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     public void setup(IPropertiesPool ppool, Iterable<ITarget> targets, Iterable<? extends IResource> input) {
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
-      final ProgressMonitor monitor = new JobProgressMonitorAdapter(jobMon);
-      Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+      Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
       if (vars != null) {
         vars._0(getSession().getContext().getProject());
         vars._1(getSession().getContext());
         vars._2(getSession().isCleanMake());
-        vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
-          public ProgressMonitor invoke() {
-            return monitor;
-          }
-        });
       }
 
       Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
@@ -460,10 +433,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       this.jobMon = new IJobMonitor.Stub() {
         @Override
         public boolean stopRequested() {
-          return (pmps.getProgressMonitor() != null ?
-            pmps.getProgressMonitor().isCanceled() :
-            false
-          );
+          return pmps.isCanceled();
         }
 
         @Override

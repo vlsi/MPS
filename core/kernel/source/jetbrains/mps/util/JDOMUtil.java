@@ -22,6 +22,8 @@ import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -129,7 +131,7 @@ public class JDOMUtil {
     final SAXBuilder saxBuilder = new SAXBuilder();
     saxBuilder.setEntityResolver(new EntityResolver() {
       public InputSource resolveEntity(String publicId,
-                                       String systemId)
+                       String systemId)
         throws SAXException, IOException {
         return new InputSource(new CharArrayReader(new char[0]));
       }
@@ -199,129 +201,145 @@ public class JDOMUtil {
     return xmlOutputter;
   }
 
-  private static class MyXMLOutputter extends XMLOutputter {
+  public static class MyXMLOutputter extends XMLOutputter {
     public String escapeAttributeEntities(String str) {
-      StringBuffer buffer;
-      char ch;
-      String entity;
-
-      buffer = null;
-      for (int i = 0; i < str.length(); i++) {
-        ch = str.charAt(i);
-        switch (ch) {
-          case '<':
-            entity = "&lt;";
-            break;
-          case '>':
-            entity = "&gt;";
-            break;
-/*
-case '\'' :
-entity = "&apos;";
-break;
-*/
-          case '\"':
-            entity = "&quot;";
-            break;
-          case '&':
-            entity = "&amp;";
-            break;
-
-// start Max patch
-          case '\n':
-            entity = "&#10;";
-            break;
-
-          case '\r':
-            entity = "&#13;";
-            break;
-
-          case '\t':
-            entity = "&#9;";
-            break;
-// end Max patch
-
-          default:
-            entity = null;
-            break;
-        }
-        if (buffer == null) {
-          if (entity != null) {
-            // An entity occurred, so we'll have to use StringBuffer
-            // (allocate room for it plus a few more entities).
-            buffer = new StringBuffer(str.length() + 20);
-            // Copy previous skipped characters and fall through
-            // to pickup current character
-            buffer.append(str.substring(0, i));
-            buffer.append(entity);
-          }
-        } else {
-          if (entity == null) {
-            buffer.append(ch);
-          } else {
-            buffer.append(entity);
-          }
-        }
-      }
-
-      // If there were any entities, return the escaped characters
-      // that we put in the StringBuffer. Otherwise, just return
-      // the unmodified input string.
-      return (buffer == null) ? str : buffer.toString();
+      return escapeText(str, false, true);
     }
 
     public String escapeElementEntities(String str) {
-      StringBuffer buffer;
-      char ch;
-      String entity;
+      return escapeText(str, false, false);
+    }
+  }
 
-      buffer = null;
-      for (int i = 0; i < str.length(); i++) {
-        ch = str.charAt(i);
-        switch (ch) {
-// Start patch by Max.
-          case '\"':
-            entity = "&quot;";
-            break;
-// End patch by Max.
 
-          case '<':
-            entity = "&lt;";
-            break;
-          case '>':
-            entity = "&gt;";
-            break;
-          case '&':
-            entity = "&amp;";
-            break;
-          default:
-            entity = null;
-            break;
+  @NotNull
+  public static String escapeText(String text, boolean escapeSpaces, boolean escapeLineEnds) {
+    return escapeText(text, false, escapeSpaces, escapeLineEnds);
+  }
+
+  @NotNull
+  public static String escapeText(String text, boolean escapeApostrophes, boolean escapeSpaces, boolean escapeLineEnds) {
+    StringBuilder buffer = null;
+    for (int i = 0; i < text.length(); i++) {
+      final char ch = text.charAt(i);
+      final String quotation = escapeChar(ch, escapeApostrophes, escapeSpaces, escapeLineEnds);
+
+      if (buffer == null) {
+        if (quotation != null) {
+          // An quotation occurred, so we'll have to use StringBuilder
+          // (allocate room for it plus a few more entities).
+          buffer = new StringBuilder(text.length() + 20);
+          // Copy previous skipped characters and fall through
+          // to pickup current character
+          buffer.append(text.substring(0, i));
+          buffer.append(quotation);
         }
-        if (buffer == null) {
-          if (entity != null) {
-            // An entity occurred, so we'll have to use StringBuffer
-            // (allocate room for it plus a few more entities).
-            buffer = new StringBuffer(str.length() + 20);
-            // Copy previous skipped characters and fall through
-            // to pickup current character
-            buffer.append(str.substring(0, i));
-            buffer.append(entity);
-          }
+      } else {
+        if (quotation == null) {
+          buffer.append(ch);
         } else {
-          if (entity == null) {
-            buffer.append(ch);
+          buffer.append(quotation);
+        }
+      }
+    }
+    // If there were any entities, return the escaped characters
+    // that we put in the StringBuilder. Otherwise, just return
+    // the unmodified input string.
+    return buffer == null ? text : buffer.toString();
+  }
+
+  /**
+   * Returns null if no escapement necessary.
+   */
+  @Nullable
+  private static String escapeChar(char c, boolean escapeApostrophes, boolean escapeSpaces, boolean escapeLineEnds) {
+    switch (c) {
+      case '\n':
+        return escapeLineEnds ? "&#10;" : null;
+      case '\r':
+        return escapeLineEnds ? "&#13;" : null;
+      case '\t':
+        return escapeLineEnds ? "&#9;" : null;
+      case ' ':
+        return escapeSpaces ? "&#20" : null;
+      case '<':
+        return "&lt;";
+      case '>':
+        return "&gt;";
+      case '\"':
+        return "&quot;";
+      case '\'':
+        return escapeApostrophes ? "&apos;" : null;
+      case '&':
+        return "&amp;";
+    }
+    return null;
+  }
+
+  public static String unescapeText(@NotNull String text) {
+    StringBuilder buffer = null;
+    for (int i = 0; i < text.length(); i++) {
+      final char ch = text.charAt(i);
+      String quotation = null;
+      int start = i;
+      if (ch == '&') {
+        int semicolon = text.indexOf(';', start + 1);
+        if (semicolon > 0) {
+          String val = text.substring(start + 1, semicolon);
+          if (val.startsWith("#")) {
+            try {
+              int value;
+              if (val.length() > 2 && (val.charAt(1) == 'x' || val.charAt(1) == 'X')) {
+                value = Integer.parseInt(val.substring(2), 16);
+              } else {
+                value = Integer.parseInt(val.substring(1), 10);
+              }
+              if (value >= 0 && value < 0xffff) {
+                quotation = Character.toString((char) value);
+              }
+            } catch (NumberFormatException ex) {
+              /* ignore, skip */
+            }
           } else {
-            buffer.append(entity);
+            if (val.length() == 2) {
+              if ("lt".equals(val)) {
+                quotation = "<";
+              } else if ("gt".equals(val)) {
+                quotation = ">";
+              }
+            } else if ("amp".equals(val)) {
+              quotation = "&";
+            } else if ("apos".equals(val)) {
+              quotation = "'";
+            } else if ("quot".equals(val)) {
+              quotation = "\"";
+            }
+          }
+          if (quotation != null) {
+            i = semicolon;
           }
         }
       }
 
-      // If there were any entities, return the escaped characters
-      // that we put in the StringBuffer. Otherwise, just return
-      // the unmodified input string.
-      return (buffer == null) ? str : buffer.toString();
+      if (buffer == null) {
+        if (quotation != null) {
+          buffer = new StringBuilder(text.length());
+          // Copy previous skipped characters and fall through
+          // to pickup current character
+          buffer.append(text.substring(0, start));
+          buffer.append(quotation);
+        }
+      } else {
+        if (quotation == null) {
+          buffer.append(ch);
+        } else {
+          buffer.append(quotation);
+        }
+      }
     }
+    // If there were any entities, return the escaped characters
+    // that we put in the StringBuilder. Otherwise, just return
+    // the unmodified input string.
+    return buffer == null ? text : buffer.toString();
   }
-
 }

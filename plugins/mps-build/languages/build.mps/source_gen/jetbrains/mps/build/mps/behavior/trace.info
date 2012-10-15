@@ -78,8 +78,8 @@
       <varInfo nodeId="1224588814561913843" varName="kind" />
       <varInfo nodeId="1224588814561889092" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior" />
     <unitInfo nodeId="1224588814561913949" fileName="BuildMPSPlugin_Behavior.java" startLine="30" startPosition="207" endLine="34" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior$1" />
+    <unitInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior" />
   </root>
   <root nodeId="1265949165890654187" modelId="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)">
     <nodeInfo nodeId="6547494638219485350" fileName="BuildMpsLayout_ModuleJars_Behavior.java" startLine="15" startPosition="122" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -393,6 +393,9 @@
     <scopeInfo nodeId="6859736767834855066" fileName="BuildMps_Module_Behavior.java" startLine="87" startPosition="77" endLine="109" endPosition="9">
       <varInfo nodeId="202934866058962899" varName="jarRuntime" />
     </scopeInfo>
+    <scopeInfo nodeId="6859736767834855065" fileName="BuildMps_Module_Behavior.java" startLine="86" startPosition="79" endLine="110" endPosition="7">
+      <varInfo nodeId="6859736767834855085" varName="runtime" />
+    </scopeInfo>
     <scopeInfo nodeId="6859736767834900794" fileName="BuildMps_Module_Behavior.java" startLine="86" startPosition="79" endLine="110" endPosition="7" />
     <scopeInfo nodeId="6859736767834900791" fileName="BuildMps_Module_Behavior.java" startLine="85" startPosition="0" endLine="111" endPosition="5">
       <varInfo nodeId="6859736767834900792" varName="lr" />
@@ -417,10 +420,10 @@
       <varInfo nodeId="5908258303322131578" varName="builder" />
       <varInfo nodeId="2569834391839790363" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="25" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
-    <unitInfo nodeId="202934866058963171" fileName="BuildMps_Module_Behavior.java" startLine="50" startPosition="109" endLine="57" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$1" />
     <unitInfo nodeId="202934866058963187" fileName="BuildMps_Module_Behavior.java" startLine="57" startPosition="19" endLine="61" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$2" />
     <unitInfo nodeId="202934866058963197" fileName="BuildMps_Module_Behavior.java" startLine="61" startPosition="20" endLine="65" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$3" />
+    <unitInfo nodeId="202934866058963171" fileName="BuildMps_Module_Behavior.java" startLine="50" startPosition="109" endLine="57" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$1" />
+    <unitInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="25" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
   </root>
   <root nodeId="6592112598314855408" modelId="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)">
     <nodeInfo nodeId="1368030936106665746" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="25" startPosition="102" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -585,13 +588,13 @@
       <varInfo nodeId="7128123785277830866" varName="helper" />
       <varInfo nodeId="6592112598314855408" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6592112598314855408" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior" />
     <unitInfo nodeId="2219920121494203730" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="38" startPosition="108" endLine="42" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$1" />
     <unitInfo nodeId="2219920121494203953" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="42" startPosition="18" endLine="46" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$2" />
-    <unitInfo nodeId="6673387549253676713" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="70" startPosition="174" endLine="74" endPosition="11" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$3" />
     <unitInfo nodeId="7117056644539913800" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="65" startPosition="141" endLine="69" endPosition="9" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$4" />
+    <unitInfo nodeId="6673387549253676713" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="70" startPosition="174" endLine="74" endPosition="11" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$3" />
     <unitInfo nodeId="7984891866938355234" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="91" startPosition="101" endLine="95" endPosition="9" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$5" />
     <unitInfo nodeId="1957532277556933925" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="98" startPosition="144" endLine="102" endPosition="9" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior$6" />
+    <unitInfo nodeId="6592112598314855408" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior" />
   </root>
   <root nodeId="6592112598314896727" modelId="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)">
     <nodeInfo nodeId="6592112598314896843" fileName="BuildMps_IdeaPlugin_Behavior.java" startLine="13" startPosition="39" endLine="14" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

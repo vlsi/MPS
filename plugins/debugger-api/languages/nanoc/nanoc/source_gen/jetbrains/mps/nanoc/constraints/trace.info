@@ -32,8 +32,8 @@
       <varInfo nodeId="6585869519574764229" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="6585869519574764229" fileName="VarDecl_Constraints.java" startLine="21" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="6585869519574764229" fileName="VarDecl_Constraints.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints" />
     <unitInfo nodeId="6585869519574764229" fileName="VarDecl_Constraints.java" startLine="25" startPosition="31" endLine="36" endPosition="5" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints$1" />
+    <unitInfo nodeId="6585869519574764229" fileName="VarDecl_Constraints.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints" />
   </root>
 </debugInfo>
 

@@ -344,11 +344,11 @@
     </scopeInfo>
     <scopeInfo nodeId="314981645426570550" fileName="RunConfigurationDeclaration_Behavior.java" startLine="130" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="314981645426570556" fileName="RunConfigurationDeclaration_Behavior.java" startLine="148" startPosition="0" endLine="161" endPosition="0" />
-    <unitInfo nodeId="314981645426570422" fileName="RunConfigurationDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior" />
     <unitInfo nodeId="314981645426570505" fileName="RunConfigurationDeclaration_Behavior.java" startLine="61" startPosition="52" endLine="65" endPosition="5" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior$1" />
-    <unitInfo nodeId="314981645426570550" fileName="RunConfigurationDeclaration_Behavior.java" startLine="127" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior$QuotationClass_ym0401_a0a0b0i" />
     <unitInfo nodeId="314981645426570485" fileName="RunConfigurationDeclaration_Behavior.java" startLine="109" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior$QuotationClass_ym0401_a0a0g" />
+    <unitInfo nodeId="314981645426570550" fileName="RunConfigurationDeclaration_Behavior.java" startLine="127" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior$QuotationClass_ym0401_a0a0b0i" />
     <unitInfo nodeId="314981645426570556" fileName="RunConfigurationDeclaration_Behavior.java" startLine="145" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior$QuotationClass_ym0401_a0c0i" />
+    <unitInfo nodeId="314981645426570422" fileName="RunConfigurationDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.RunConfigurationDeclaration_Behavior" />
   </root>
   <root nodeId="314981645426570589" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="314981645426570592" fileName="RunConfigType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -520,8 +520,8 @@
       <varInfo nodeId="314981645426570678" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="314981645426570678" fileName="ParametrizedExecuteConsole_Behavior.java" startLine="25" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="314981645426570674" fileName="ParametrizedExecuteConsole_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.ParametrizedExecuteConsole_Behavior" />
     <unitInfo nodeId="314981645426570678" fileName="ParametrizedExecuteConsole_Behavior.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.ParametrizedExecuteConsole_Behavior$QuotationClass_n7vuic_a0a0b" />
+    <unitInfo nodeId="314981645426570674" fileName="ParametrizedExecuteConsole_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.ParametrizedExecuteConsole_Behavior" />
   </root>
   <root nodeId="314981645426570687" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="314981645426570690" fileName="ParametrizedExecuteProcess_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -559,8 +559,8 @@
       <varInfo nodeId="314981645426570691" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="314981645426570691" fileName="ParametrizedExecuteProcess_Behavior.java" startLine="25" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="314981645426570687" fileName="ParametrizedExecuteProcess_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.ParametrizedExecuteProcess_Behavior" />
     <unitInfo nodeId="314981645426570691" fileName="ParametrizedExecuteProcess_Behavior.java" startLine="22" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.ParametrizedExecuteProcess_Behavior$QuotationClass_9hdhrc_a0a0b" />
+    <unitInfo nodeId="314981645426570687" fileName="ParametrizedExecuteProcess_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.ParametrizedExecuteProcess_Behavior" />
   </root>
   <root nodeId="314981645426570697" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="314981645426570700" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -615,8 +615,8 @@
     <scopeInfo nodeId="314981645426570697" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="20" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="314981645426570697" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="314981645426570697" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.AbstractEnhancedConceptFunction_Behavior" />
     <unitInfo nodeId="314981645426570776" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="39" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.AbstractEnhancedConceptFunction_Behavior$QuotationClass_73aeno_a1a0a0b0a0i0b" />
+    <unitInfo nodeId="314981645426570697" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.AbstractEnhancedConceptFunction_Behavior" />
   </root>
   <root nodeId="314981645426570796" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="314981645426570796" fileName="IEnhancedRunConfiguration_Behavior.java" startLine="14" startPosition="49" endLine="15" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_314981645426570797" />
@@ -754,8 +754,8 @@
       <varInfo nodeId="5147346160405686393" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5147346160405686393" fileName="Node_FunctionParameter_Behavior.java" startLine="43" startPosition="0" endLine="55" endPosition="0" />
-    <unitInfo nodeId="3607966867310747821" fileName="Node_FunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.Node_FunctionParameter_Behavior" />
     <unitInfo nodeId="5147346160405686393" fileName="Node_FunctionParameter_Behavior.java" startLine="40" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.Node_FunctionParameter_Behavior$QuotationClass_2ajjny_a0b0e" />
+    <unitInfo nodeId="3607966867310747821" fileName="Node_FunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.Node_FunctionParameter_Behavior" />
   </root>
   <root nodeId="4462513030604244387" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="4462513030604246383" fileName="IsApplicableBlock_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -792,8 +792,8 @@
       <varInfo nodeId="4462513030604246385" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4462513030604246385" fileName="IsApplicableBlock_Behavior.java" startLine="22" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="4462513030604244387" fileName="IsApplicableBlock_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.IsApplicableBlock_Behavior" />
     <unitInfo nodeId="4462513030604246385" fileName="IsApplicableBlock_Behavior.java" startLine="19" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.IsApplicableBlock_Behavior$QuotationClass_alktie_a0a0b" />
+    <unitInfo nodeId="4462513030604244387" fileName="IsApplicableBlock_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.IsApplicableBlock_Behavior" />
   </root>
   <root nodeId="4964800443628310125" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="4964800443628319890" fileName="JavaRunConfiguration_Behavior.java" startLine="22" startPosition="96" endLine="23" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -875,9 +875,9 @@
     </scopeInfo>
     <scopeInfo nodeId="9017024590936608827" fileName="JavaRunConfiguration_Behavior.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="9017024590936850773" fileName="JavaRunConfiguration_Behavior.java" startLine="61" startPosition="0" endLine="74" endPosition="0" />
-    <unitInfo nodeId="4964800443628310125" fileName="JavaRunConfiguration_Behavior.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaRunConfiguration_Behavior" />
     <unitInfo nodeId="9017024590936608827" fileName="JavaRunConfiguration_Behavior.java" startLine="40" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaRunConfiguration_Behavior$QuotationClass_r2ediq_a0a0a0d" />
     <unitInfo nodeId="9017024590936850773" fileName="JavaRunConfiguration_Behavior.java" startLine="58" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaRunConfiguration_Behavior$QuotationClass_r2ediq_a0b0d" />
+    <unitInfo nodeId="4964800443628310125" fileName="JavaRunConfiguration_Behavior.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaRunConfiguration_Behavior" />
   </root>
   <root nodeId="6629582826328967165" modelId="r:44be5a71-98f4-4137-88b1-8ccaf67186a8(jetbrains.mps.execution.configurations.deprecated.behavior)">
     <nodeInfo nodeId="3592413331517228993" fileName="JavaNodeRunConfiguration_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -944,8 +944,8 @@
       <varInfo nodeId="1810772216404820855" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1810772216404820855" fileName="JavaConfigurationRunParameters_FunctionParameter_Behavior.java" startLine="33" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="8126994885493110310" fileName="JavaConfigurationRunParameters_FunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaConfigurationRunParameters_FunctionParameter_Behavior" />
     <unitInfo nodeId="1810772216404820855" fileName="JavaConfigurationRunParameters_FunctionParameter_Behavior.java" startLine="30" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaConfigurationRunParameters_FunctionParameter_Behavior$QuotationClass_xwtk3j_a0a0c" />
+    <unitInfo nodeId="8126994885493110310" fileName="JavaConfigurationRunParameters_FunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.behavior.JavaConfigurationRunParameters_FunctionParameter_Behavior" />
   </root>
 </debugInfo>
 

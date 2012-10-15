@@ -96,6 +96,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
@@ -168,9 +170,11 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IDeltaResource" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
@@ -247,6 +251,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -260,6 +265,7 @@
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />

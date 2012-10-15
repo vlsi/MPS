@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841950114">
+  <root nodeId="5487985028841950114" modelId="r:4ce56964-b22a-4d19-97e7-bc025372f3fa(jetbrains.mps.ui.internal.testdata.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841950115" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="90" endLine="9" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
     <nodeInfo nodeId="5487985028841950133" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="17" startPosition="64" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950144" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="22" startPosition="58" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -27,10 +27,10 @@
     <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="5487985028841950119" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="24" endLine="26" endPosition="63" />
     <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin" />
     <unitInfo nodeId="5487985028841950124" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="15" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin$1" />
+    <unitInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin" />
   </root>
-  <root nodeId="7162597690967997053">
+  <root nodeId="7162597690967997053" modelId="r:4ce56964-b22a-4d19-97e7-bc025372f3fa(jetbrains.mps.ui.internal.testdata.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

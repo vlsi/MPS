@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3201398707754971881">
+  <root nodeId="3201398707754971881" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="3201398707754971893" fileName="ModelFeature.java" startLine="10" startPosition="64" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3201398707754971909" fileName="ModelFeature.java" startLine="15" startPosition="30" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201398707754971911" fileName="ModelFeature.java" startLine="20" startPosition="28" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -17,7 +17,7 @@
     <scopeInfo nodeId="3201398707754971899" fileName="ModelFeature.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="3201398707754971881" fileName="ModelFeature.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature" />
   </root>
-  <root nodeId="5060092229902868246">
+  <root nodeId="5060092229902868246" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868247" fileName="DeletedChildFeature.java" startLine="9" startPosition="62" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
     <nodeInfo nodeId="5060092229902868250" fileName="DeletedChildFeature.java" startLine="10" startPosition="24" endLine="11" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIndex" />
     <nodeInfo nodeId="5060092229902868279" fileName="DeletedChildFeature.java" startLine="13" startPosition="89" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -40,7 +40,7 @@
     <scopeInfo nodeId="5060092229902868296" fileName="DeletedChildFeature.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="5060092229902868246" fileName="DeletedChildFeature.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" />
   </root>
-  <root nodeId="5060092229902868305">
+  <root nodeId="5060092229902868305" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868326" fileName="Feature.java" startLine="17" startPosition="31" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />
     <nodeInfo nodeId="5060092229902868329" fileName="Feature.java" startLine="18" startPosition="49" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHashCode" />
     <nodeInfo nodeId="5060092229902868337" fileName="Feature.java" startLine="21" startPosition="62" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -98,7 +98,7 @@
     </scopeInfo>
     <unitInfo nodeId="5060092229902868305" fileName="Feature.java" startLine="12" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
   </root>
-  <root nodeId="5060092229902868472">
+  <root nodeId="5060092229902868472" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868479" fileName="NodeAggregationFeature.java" startLine="9" startPosition="71" endLine="10" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5060092229902868489" fileName="NodeAggregationFeature.java" startLine="14" startPosition="30" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5060092229902868475" fileName="NodeAggregationFeature.java" startLine="8" startPosition="74" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeAggregationFeature#(Ljetbrains/mps/smodel/SNodePointer;)V" />
@@ -111,7 +111,7 @@
     <scopeInfo nodeId="5060092229902868484" fileName="NodeAggregationFeature.java" startLine="12" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="5060092229902868472" fileName="NodeAggregationFeature.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
   </root>
-  <root nodeId="5060092229902868493">
+  <root nodeId="5060092229902868493" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868500" fileName="NodeFeature.java" startLine="13" startPosition="48" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8214059917935787121" fileName="NodeFeature.java" startLine="18" startPosition="30" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5060092229902868509" fileName="NodeFeature.java" startLine="19" startPosition="44" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -144,7 +144,7 @@
     <scopeInfo nodeId="5060092229902868504" fileName="NodeFeature.java" startLine="16" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="5060092229902868493" fileName="NodeFeature.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
   </root>
-  <root nodeId="5060092229902868543">
+  <root nodeId="5060092229902868543" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868563" fileName="PropertiesFeature.java" startLine="9" startPosition="63" endLine="10" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5060092229902868548" fileName="PropertiesFeature.java" startLine="15" startPosition="28" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5060092229902868559" fileName="PropertiesFeature.java" startLine="8" startPosition="63" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertiesFeature#(Ljetbrains/mps/smodel/SNodePointer;)V" />
@@ -157,7 +157,7 @@
     <scopeInfo nodeId="5060092229902868544" fileName="PropertiesFeature.java" startLine="12" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="5060092229902868543" fileName="PropertiesFeature.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature" />
   </root>
-  <root nodeId="5060092229902868568">
+  <root nodeId="5060092229902868568" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868569" fileName="PropertyFeature.java" startLine="9" startPosition="58" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyName" />
     <nodeInfo nodeId="5060092229902868578" fileName="PropertyFeature.java" startLine="12" startPosition="91" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5060092229902868580" fileName="PropertyFeature.java" startLine="13" startPosition="23" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -187,7 +187,7 @@
     <scopeInfo nodeId="5060092229902868628" fileName="PropertyFeature.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="5060092229902868568" fileName="PropertyFeature.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" />
   </root>
-  <root nodeId="5060092229902868645">
+  <root nodeId="5060092229902868645" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868646" fileName="ReferenceFeature.java" startLine="9" startPosition="59" endLine="10" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceRole" />
     <nodeInfo nodeId="5060092229902868655" fileName="ReferenceFeature.java" startLine="12" startPosition="93" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5060092229902868657" fileName="ReferenceFeature.java" startLine="13" startPosition="23" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -217,7 +217,7 @@
     <scopeInfo nodeId="5060092229902868705" fileName="ReferenceFeature.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="5060092229902868645" fileName="ReferenceFeature.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature" />
   </root>
-  <root nodeId="5060092229902868722">
+  <root nodeId="5060092229902868722" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="5060092229902868742" fileName="ReferencesFeature.java" startLine="9" startPosition="63" endLine="10" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5060092229902868727" fileName="ReferencesFeature.java" startLine="15" startPosition="28" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5060092229902868738" fileName="ReferencesFeature.java" startLine="8" startPosition="63" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReferencesFeature#(Ljetbrains/mps/smodel/SNodePointer;)V" />
@@ -230,7 +230,7 @@
     <scopeInfo nodeId="5060092229902868723" fileName="ReferencesFeature.java" startLine="12" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="5060092229902868722" fileName="ReferencesFeature.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature" />
   </root>
-  <root nodeId="6277750378633134066">
+  <root nodeId="6277750378633134066" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="6277750378633134073" fileName="AbstractNodeFeature.java" startLine="9" startPosition="59" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
     <nodeInfo nodeId="6277750378633134080" fileName="AbstractNodeFeature.java" startLine="12" startPosition="68" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6277750378633134084" fileName="AbstractNodeFeature.java" startLine="13" startPosition="43" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -255,7 +255,7 @@
     </scopeInfo>
     <unitInfo nodeId="6277750378633134066" fileName="AbstractNodeFeature.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />
   </root>
-  <root nodeId="8214059917935786316">
+  <root nodeId="8214059917935786316" modelId="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)">
     <nodeInfo nodeId="8214059917935786322" fileName="VirtualPackageFeature.java" startLine="9" startPosition="52" endLine="10" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualPackage" />
     <nodeInfo nodeId="8214059917935786332" fileName="VirtualPackageFeature.java" startLine="12" startPosition="105" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8214059917935786339" fileName="VirtualPackageFeature.java" startLine="13" startPosition="26" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

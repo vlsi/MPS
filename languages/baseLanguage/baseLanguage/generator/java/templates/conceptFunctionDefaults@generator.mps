@@ -19,7 +19,7 @@
   <roots>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1143148725345">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConceptFunctionParameter_default" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.conceptFunction" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
   </roots>

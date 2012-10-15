@@ -390,12 +390,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ArrayClassExpression_BehaviorDescriptor();
       case 175:
         return new UnknownConsCall_BehaviorDescriptor();
-      case 178:
-        return new UnknownNew_BehaviorDescriptor();
       case 177:
         return new UnknownLocalCall_BehaviorDescriptor();
       case 176:
         return new UnknownDotCall_BehaviorDescriptor();
+      case 178:
+        return new UnknownNew_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

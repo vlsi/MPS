@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="877422884702758832">
+  <root nodeId="877422884702758832" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702865346" fileName="MatrixScalarOperations.java" startLine="6" startPosition="44" endLine="7" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cast#(Ljava/lang/Object;)null" />
     <nodeInfo nodeId="877422884702865352" fileName="MatrixScalarOperations.java" startLine="7" startPosition="26" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljava/lang/Object;Ljava/lang/Object;)null" />
     <nodeInfo nodeId="877422884702865360" fileName="MatrixScalarOperations.java" startLine="8" startPosition="37" endLine="9" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="neg#(Ljava/lang/Object;)null" />
@@ -33,7 +33,7 @@
     </scopeInfo>
     <unitInfo nodeId="877422884702758832" fileName="MatrixScalarOperations.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations" />
   </root>
-  <root nodeId="877422884702771039">
+  <root nodeId="877422884702771039" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702865400" fileName="Complex.java" startLine="6" startPosition="37" endLine="7" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="I" />
     <nodeInfo nodeId="877422884702865407" fileName="Complex.java" startLine="7" startPosition="52" endLine="8" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ONE" />
     <nodeInfo nodeId="877422884702865414" fileName="Complex.java" startLine="8" startPosition="54" endLine="9" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ZERO" />
@@ -179,7 +179,7 @@
     <scopeInfo nodeId="877422884702865461" fileName="Complex.java" startLine="26" startPosition="0" endLine="39" endPosition="0" />
     <unitInfo nodeId="877422884702771039" fileName="Complex.java" startLine="6" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.Complex" />
   </root>
-  <root nodeId="877422884702771040">
+  <root nodeId="877422884702771040" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702866048" fileName="BigComplex.java" startLine="8" startPosition="40" endLine="9" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRealPart" />
     <nodeInfo nodeId="877422884702866051" fileName="BigComplex.java" startLine="9" startPosition="32" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myImagPart" />
     <nodeInfo nodeId="877422884702866060" fileName="BigComplex.java" startLine="12" startPosition="32" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -335,7 +335,7 @@
     <scopeInfo nodeId="877422884702866154" fileName="BigComplex.java" startLine="34" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="877422884702771040" fileName="BigComplex.java" startLine="8" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.BigComplex" />
   </root>
-  <root nodeId="877422884702861181">
+  <root nodeId="877422884702861181" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702861203" fileName="MathRuntime.java" startLine="14" startPosition="30" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702861214" fileName="MathRuntime.java" startLine="16" startPosition="5" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="877422884702861222" fileName="MathRuntime.java" startLine="17" startPosition="31" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -383,7 +383,7 @@
     </scopeInfo>
     <unitInfo nodeId="877422884702861181" fileName="MathRuntime.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.MathRuntime" />
   </root>
-  <root nodeId="877422884702861367">
+  <root nodeId="877422884702861367" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702864595" fileName="Matrix.java" startLine="13" startPosition="30" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="877422884702864605" fileName="Matrix.java" startLine="16" startPosition="32" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="877422884702864612" fileName="Matrix.java" startLine="18" startPosition="7" endLine="19" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -1780,25 +1780,25 @@
       <varInfo nodeId="877422884702861974" varName="items" />
       <varInfo nodeId="877422884702861972" varName="operations" />
     </scopeInfo>
-    <unitInfo nodeId="877422884702861367" fileName="Matrix.java" startLine="10" startPosition="0" endLine="949" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix" />
-    <unitInfo nodeId="877422884702861375" fileName="Matrix.java" startLine="11" startPosition="64" endLine="45" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$1" />
-    <unitInfo nodeId="877422884702861798" fileName="Matrix.java" startLine="329" startPosition="76" endLine="373" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$10" />
     <unitInfo nodeId="3840741013873810233" fileName="Matrix.java" startLine="374" startPosition="117" endLine="378" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$11" />
-    <unitInfo nodeId="3840741013873810247" fileName="Matrix.java" startLine="379" startPosition="120" endLine="386" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$12" />
     <unitInfo nodeId="3840741013873810277" fileName="Matrix.java" startLine="620" startPosition="43" endLine="624" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$13" />
     <unitInfo nodeId="3840741013873810297" fileName="Matrix.java" startLine="649" startPosition="40" endLine="653" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$14" />
     <unitInfo nodeId="3840741013873810316" fileName="Matrix.java" startLine="685" startPosition="48" endLine="689" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$15" />
     <unitInfo nodeId="3840741013873810332" fileName="Matrix.java" startLine="693" startPosition="48" endLine="697" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$16" />
+    <unitInfo nodeId="3840741013873810247" fileName="Matrix.java" startLine="379" startPosition="120" endLine="386" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$12" />
+    <unitInfo nodeId="877422884702861375" fileName="Matrix.java" startLine="11" startPosition="64" endLine="45" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$1" />
     <unitInfo nodeId="877422884702861422" fileName="Matrix.java" startLine="46" startPosition="66" endLine="80" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$2" />
     <unitInfo nodeId="877422884702861469" fileName="Matrix.java" startLine="81" startPosition="66" endLine="115" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$3" />
     <unitInfo nodeId="877422884702861516" fileName="Matrix.java" startLine="116" startPosition="64" endLine="150" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$4" />
     <unitInfo nodeId="877422884702861563" fileName="Matrix.java" startLine="151" startPosition="66" endLine="185" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$5" />
     <unitInfo nodeId="877422884702861610" fileName="Matrix.java" startLine="186" startPosition="68" endLine="220" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$6" />
     <unitInfo nodeId="877422884702861657" fileName="Matrix.java" startLine="221" startPosition="76" endLine="255" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$7" />
-    <unitInfo nodeId="877422884702861704" fileName="Matrix.java" startLine="256" startPosition="76" endLine="293" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$8" />
     <unitInfo nodeId="877422884702861751" fileName="Matrix.java" startLine="294" startPosition="70" endLine="328" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$9" />
+    <unitInfo nodeId="877422884702861704" fileName="Matrix.java" startLine="256" startPosition="76" endLine="293" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$8" />
+    <unitInfo nodeId="877422884702861798" fileName="Matrix.java" startLine="329" startPosition="76" endLine="373" endPosition="3" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix$10" />
+    <unitInfo nodeId="877422884702861367" fileName="Matrix.java" startLine="10" startPosition="0" endLine="949" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.Matrix" />
   </root>
-  <root nodeId="877422884702865830">
+  <root nodeId="877422884702865830" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702865833" fileName="BigComplexScalarOperations.java" startLine="9" startPosition="75" endLine="10" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
     <nodeInfo nodeId="877422884702866042" fileName="BigComplexScalarOperations.java" startLine="15" startPosition="58" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702865847" fileName="BigComplexScalarOperations.java" startLine="20" startPosition="34" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1882,13 +1882,13 @@
     </scopeInfo>
     <unitInfo nodeId="877422884702865830" fileName="BigComplexScalarOperations.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.BigComplexScalarOperations" />
   </root>
-  <root nodeId="877422884702866560">
+  <root nodeId="877422884702866560" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702866565" fileName="MatrixOperation.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixOperation#()V" />
     <scopeInfo nodeId="877422884702866568" fileName="MatrixOperation.java" startLine="11" startPosition="21" endLine="11" endPosition="21" />
     <scopeInfo nodeId="877422884702866565" fileName="MatrixOperation.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <unitInfo nodeId="877422884702866560" fileName="MatrixOperation.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.MatrixOperation" />
   </root>
-  <root nodeId="877422884702866569">
+  <root nodeId="877422884702866569" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702866589" fileName="Interval.java" startLine="9" startPosition="68" endLine="10" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourIteratorFactories" />
     <nodeInfo nodeId="877422884702866598" fileName="Interval.java" startLine="11" startPosition="0" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStart" />
     <nodeInfo nodeId="877422884702866601" fileName="Interval.java" startLine="12" startPosition="26" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnd" />
@@ -2172,26 +2172,26 @@
       <varInfo nodeId="877422884702866949" varName="startIncluded" />
     </scopeInfo>
     <scopeInfo nodeId="877422884702866849" fileName="Interval.java" startLine="98" startPosition="10" endLine="253" endPosition="7" />
-    <unitInfo nodeId="877422884702866569" fileName="Interval.java" startLine="9" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval" />
-    <unitInfo nodeId="877422884702866857" fileName="Interval.java" startLine="99" startPosition="50" endLine="129" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$1" />
-    <unitInfo nodeId="877422884702866960" fileName="Interval.java" startLine="101" startPosition="19" endLine="127" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$2" />
-    <unitInfo nodeId="877422884702866878" fileName="Interval.java" startLine="130" startPosition="45" endLine="160" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$2" />
-    <unitInfo nodeId="877422884702867028" fileName="Interval.java" startLine="132" startPosition="19" endLine="158" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$3" />
-    <unitInfo nodeId="877422884702866899" fileName="Interval.java" startLine="161" startPosition="46" endLine="191" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$3" />
-    <unitInfo nodeId="877422884702867096" fileName="Interval.java" startLine="163" startPosition="19" endLine="189" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$4" />
-    <unitInfo nodeId="877422884702866920" fileName="Interval.java" startLine="192" startPosition="48" endLine="222" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$4" />
-    <unitInfo nodeId="877422884702867162" fileName="Interval.java" startLine="194" startPosition="19" endLine="220" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$5" />
-    <unitInfo nodeId="877422884702866941" fileName="Interval.java" startLine="223" startPosition="45" endLine="253" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$5" />
-    <unitInfo nodeId="877422884702867225" fileName="Interval.java" startLine="225" startPosition="19" endLine="251" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$6" />
     <unitInfo nodeId="877422884702842719" fileName="Interval.java" startLine="94" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$IteratorFactory" />
+    <unitInfo nodeId="877422884702866960" fileName="Interval.java" startLine="101" startPosition="19" endLine="127" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$2" />
+    <unitInfo nodeId="877422884702867028" fileName="Interval.java" startLine="132" startPosition="19" endLine="158" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$3" />
+    <unitInfo nodeId="877422884702867096" fileName="Interval.java" startLine="163" startPosition="19" endLine="189" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$4" />
+    <unitInfo nodeId="877422884702867162" fileName="Interval.java" startLine="194" startPosition="19" endLine="220" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$5" />
+    <unitInfo nodeId="877422884702867225" fileName="Interval.java" startLine="225" startPosition="19" endLine="251" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$6" />
+    <unitInfo nodeId="877422884702866857" fileName="Interval.java" startLine="99" startPosition="50" endLine="129" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$1" />
+    <unitInfo nodeId="877422884702866878" fileName="Interval.java" startLine="130" startPosition="45" endLine="160" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$2" />
+    <unitInfo nodeId="877422884702866899" fileName="Interval.java" startLine="161" startPosition="46" endLine="191" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$3" />
+    <unitInfo nodeId="877422884702866920" fileName="Interval.java" startLine="192" startPosition="48" endLine="222" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$4" />
+    <unitInfo nodeId="877422884702866941" fileName="Interval.java" startLine="223" startPosition="45" endLine="253" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval$5" />
+    <unitInfo nodeId="877422884702866569" fileName="Interval.java" startLine="9" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.Interval" />
   </root>
-  <root nodeId="877422884702867284">
+  <root nodeId="877422884702867284" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702867290" fileName="NormKind.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NormKind#()V" />
     <scopeInfo nodeId="877422884702867293" fileName="NormKind.java" startLine="12" startPosition="14" endLine="12" endPosition="14" />
     <scopeInfo nodeId="877422884702867290" fileName="NormKind.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
     <unitInfo nodeId="877422884702867284" fileName="NormKind.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.runtime.NormKind" />
   </root>
-  <root nodeId="877422884702867294">
+  <root nodeId="877422884702867294" modelId="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)">
     <nodeInfo nodeId="877422884702867297" fileName="BigDecimalScalarOperations.java" startLine="9" startPosition="75" endLine="10" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
     <nodeInfo nodeId="877422884702867454" fileName="BigDecimalScalarOperations.java" startLine="15" startPosition="58" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702867311" fileName="BigDecimalScalarOperations.java" startLine="20" startPosition="34" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

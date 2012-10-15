@@ -27,10 +27,12 @@ public class typeof_ContainsOperation_InferenceRule extends AbstractInferenceRul
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2762046050488366609", 0, null);
       typeCheckingContext.createGreaterThanInequality((SNode) new typeof_ContainsOperation_InferenceRule.QuotationClass_qqu4bs_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_6126991172893688470), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "6126991172893688473", true), false, true, _info_12389875345);
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "argument", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5332044122260178142", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5332044122260178144", true), (SNode) typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_6126991172893688470), false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "argument", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5332044122260178142", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5332044122260178144", true), (SNode) typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_6126991172893688470), true, true, _info_12389875345);
+      }
     }
     {
       SNode _nodeToCheck_1029348928467 = op;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.TypesystemDescriptor" />
-  <root nodeId="1628770029971140613">
+  <root nodeId="1628770029971140613" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="5003188907305524502" fileName="FixNamingPolicy_QuickFix.java" startLine="16" startPosition="44" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1628770029971140620" fileName="FixNamingPolicy_QuickFix.java" startLine="21" startPosition="162" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140637" fileName="FixNamingPolicy_QuickFix.java" startLine="24" startPosition="173" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -35,7 +35,7 @@
     </scopeInfo>
     <unitInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.FixNamingPolicy_QuickFix" />
   </root>
-  <root nodeId="1628770029971140674">
+  <root nodeId="1628770029971140674" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="1628770029971140693" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1628770029971140681" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="10" startPosition="77" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixNamingPolicy_literal_once_QuickFix#()V" />
@@ -53,7 +53,7 @@
     </scopeInfo>
     <unitInfo nodeId="1628770029971140674" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.FixNamingPolicy_literal_once_QuickFix" />
   </root>
-  <root nodeId="1628770029971140695">
+  <root nodeId="1628770029971140695" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="1628770029971140712" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1628770029971140702" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="10" startPosition="78" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixNamingPolicy_property_once_QuickFix#()V" />
@@ -71,7 +71,7 @@
     </scopeInfo>
     <unitInfo nodeId="1628770029971140695" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.FixNamingPolicy_property_once_QuickFix" />
   </root>
-  <root nodeId="4844813484172611479">
+  <root nodeId="4844813484172611479" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="4844813484172611481" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="26" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611496" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="93" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611502" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -189,7 +189,7 @@
     </scopeInfo>
     <unitInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.check_NamingPolicy_NonTypesystemRule" />
   </root>
-  <root nodeId="4844813484172611581">
+  <root nodeId="4844813484172611581" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="4844813484172611583" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="23" startPosition="7" endLine="24" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611583" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="24" startPosition="99" endLine="25" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611583" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="25" startPosition="209" endLine="26" endPosition="382" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -274,10 +274,10 @@
       <varInfo nodeId="4844813484172611585" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611585" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="4844813484172611581" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule" />
     <unitInfo nodeId="4844813484172611585" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule$QuotationClass_r5x3lr_a0a0a0" />
+    <unitInfo nodeId="4844813484172611581" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule" />
   </root>
-  <root nodeId="4844813484172611593">
+  <root nodeId="4844813484172611593" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="4844813484172611595" fileName="typeof_PropertyRefExpression_PropertyRefType_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611595" fileName="typeof_PropertyRefExpression_PropertyRefType_InferenceRule.java" startLine="20" startPosition="52" endLine="21" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611595" fileName="typeof_PropertyRefExpression_PropertyRefType_InferenceRule.java" startLine="21" startPosition="207" endLine="22" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -317,7 +317,7 @@
     </scopeInfo>
     <unitInfo nodeId="4844813484172611593" fileName="typeof_PropertyRefExpression_PropertyRefType_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_PropertyRefType_InferenceRule" />
   </root>
-  <root nodeId="4844813484172611604">
+  <root nodeId="4844813484172611604" modelId="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)">
     <nodeInfo nodeId="4844813484172611606" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611604" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="26" startPosition="46" endLine="27" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611604" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="31" startPosition="5" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -395,8 +395,8 @@
       <varInfo nodeId="4844813484172611607" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611607" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="4844813484172611604" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" />
     <unitInfo nodeId="4844813484172611607" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule$QuotationClass_d1kmw7_a0a0a" />
+    <unitInfo nodeId="4844813484172611604" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" />
   </root>
 </debugInfo>
 

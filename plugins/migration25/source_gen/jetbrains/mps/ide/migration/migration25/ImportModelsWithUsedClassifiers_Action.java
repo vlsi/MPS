@@ -91,6 +91,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
             }
           }
           // remove all imported already models 
+          SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getSModelReference());
           for (SModel.ImportElement importedElement : ListSequence.fromList(model.importedModels())) {
             SetSequence.fromSet(dependencies).removeElement(importedElement.getModelReference());
           }

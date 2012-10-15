@@ -24,7 +24,6 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="refactoring-runtime" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="module" module-name="mpsjava" />
     <orderEntry type="module" module-name="editor-runtime" />
   </component>

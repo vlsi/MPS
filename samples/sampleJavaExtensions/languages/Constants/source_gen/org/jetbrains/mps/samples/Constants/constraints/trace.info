@@ -65,9 +65,9 @@
       <varInfo nodeId="3990190717072399938" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="3990190717072399938" fileName="ConstantReference_Constraints.java" startLine="29" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="3990190717072399938" fileName="ConstantReference_Constraints.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints" />
-    <unitInfo nodeId="3990190717072399938" fileName="ConstantReference_Constraints.java" startLine="33" startPosition="35" endLine="67" endPosition="5" unitName="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$1" />
     <unitInfo nodeId="3990190717072399938" fileName="ConstantReference_Constraints.java" startLine="42" startPosition="19" endLine="65" endPosition="9" unitName="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$2" />
+    <unitInfo nodeId="3990190717072399938" fileName="ConstantReference_Constraints.java" startLine="33" startPosition="35" endLine="67" endPosition="5" unitName="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$1" />
+    <unitInfo nodeId="3990190717072399938" fileName="ConstantReference_Constraints.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints" />
   </root>
 </debugInfo>
 

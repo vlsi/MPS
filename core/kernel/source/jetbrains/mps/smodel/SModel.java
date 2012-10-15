@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -55,7 +54,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
-  private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
+  private Element myStructureModificationHistory;
 
   private final SModelHeader myHeader = new SModelHeader();
 
@@ -63,6 +62,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   private boolean fullLoadUpdateMode;
 
   private StackTraceElement[] myDisposedStacktrace = null;
+  private final ModelDependenciesManager myModelDependenciesManager = new ModelDependenciesManager(this);
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -507,7 +507,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
-    return new ModelDependenciesManager(this);
+    return myModelDependenciesManager;
   }
 
   //language
@@ -819,18 +819,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return myHeader;
   }
 
-  public void refreshRefactoringHistory() {
-    ModelChange.assertLegalChange(this);
-
-    try {
-      Element e = myStructureModificationHistory.toElement();
-      myStructureModificationHistory = new StructureModificationHistory();
-      myStructureModificationHistory.fromElement(e);
-    } catch (Throwable t) {
-      LOG.error("refactoring history refresh failed " + this, t, this);
-    }
-  }
-
   public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
     ModelChange.assertLegalChange(this);
 
@@ -865,6 +853,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
+    myModelDependenciesManager.dispose();
   }
 
   public boolean updateSModelReferences() {
@@ -990,15 +979,20 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    * @deprecated Use SModelDescriptor.getRefactoringsHistory()
    */
   @Deprecated
-  public StructureModificationHistory getRefactoringHistory() {
+  public Element getRefactoringHistoryElement() {
     return myStructureModificationHistory;
   }
 
   @Deprecated
-  public void setRefactoringHistory(StructureModificationHistory history) {
+  public void setRefactoringHistoryElement(Element history) {
     ModelChange.assertLegalChange(this);
 
     myStructureModificationHistory = history;
+  }
+
+  @Deprecated
+  public void refreshRefactoringHistory() {
+    // NOP
   }
 
   @Nullable

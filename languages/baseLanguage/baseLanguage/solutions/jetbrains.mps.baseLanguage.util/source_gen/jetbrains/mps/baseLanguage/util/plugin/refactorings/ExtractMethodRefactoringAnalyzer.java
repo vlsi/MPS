@@ -167,7 +167,7 @@ public class ExtractMethodRefactoringAnalyzer {
     Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
     Set<Instruction> instructions = this.getInstructions();
     for (Instruction instruction : SetSequence.fromSet(instructions)) {
-      SetSequence.fromSet(result).addSequence(Sequence.fromIterable(instruction.succ()));
+      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(instruction.succ()));
     }
     SetSequence.fromSet(result).removeSequence(SetSequence.fromSet(instructions));
     return result;
@@ -177,7 +177,7 @@ public class ExtractMethodRefactoringAnalyzer {
     Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
     Set<Instruction> exitPoints = this.getExitPoints();
     for (Instruction exitPoint : SetSequence.fromSet(exitPoints)) {
-      SetSequence.fromSet(result).addSequence(Sequence.fromIterable(exitPoint.pred()));
+      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(exitPoint.pred()));
     }
     Set<Instruction> tmp = SetSequence.fromSet(new HashSet<Instruction>());
     SetSequence.fromSet(tmp).addSequence(SetSequence.fromSet(result).intersect(SetSequence.fromSet(this.getInstructions())));

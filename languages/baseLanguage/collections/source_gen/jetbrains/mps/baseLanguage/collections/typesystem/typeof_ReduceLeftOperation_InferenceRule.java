@@ -32,10 +32,12 @@ public class typeof_ReduceLeftOperation_InferenceRule extends AbstractInferenceR
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069359758", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069359763", true), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), _info_12389875345);
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "closure", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069359765", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069359774", true), (SNode) new typeof_ReduceLeftOperation_InferenceRule.QuotationClass_lspyj5_a0a3a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), typeCheckingContext), false, true, _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "closure", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069359765", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069359774", true), (SNode) new typeof_ReduceLeftOperation_InferenceRule.QuotationClass_lspyj5_a0a3a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), typeCheckingContext.getRepresentative(elementType_typevar_1522217801069359744), typeCheckingContext), true, true, _info_12389875345);
+      }
     }
   }
 

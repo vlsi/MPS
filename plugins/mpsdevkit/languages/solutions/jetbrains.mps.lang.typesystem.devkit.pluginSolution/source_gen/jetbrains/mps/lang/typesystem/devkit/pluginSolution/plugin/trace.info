@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5181507218630412169">
+  <root nodeId="5181507218630412169" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="24" startPosition="69" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="28" startPosition="48" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -90,10 +90,10 @@
       <varInfo nodeId="5181507218630412169" varName="_params" />
       <varInfo nodeId="5181507218630412169" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action" />
     <unitInfo nodeId="5181507218630412179" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="74" startPosition="47" endLine="79" endPosition="7" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action$1" />
+    <unitInfo nodeId="5181507218630412169" fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action" />
   </root>
-  <root nodeId="5181507218630412221">
+  <root nodeId="5181507218630412221" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="61" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="24" startPosition="40" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="27" startPosition="40" endLine="28" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -186,10 +186,10 @@
       <varInfo nodeId="5181507218630412221" varName="_params" />
       <varInfo nodeId="5181507218630412221" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowInferredNodeType_Action" />
     <unitInfo nodeId="5181507218630412234" fileName="ShowInferredNodeType_Action.java" startLine="71" startPosition="47" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowInferredNodeType_Action$1" />
+    <unitInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowInferredNodeType_Action" />
   </root>
-  <root nodeId="5181507218630412277">
+  <root nodeId="5181507218630412277" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="23" startPosition="57" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="24" startPosition="40" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="27" startPosition="36" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -282,10 +282,10 @@
       <varInfo nodeId="5181507218630412277" varName="_params" />
       <varInfo nodeId="5181507218630412277" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowExpectedType_Action" />
     <unitInfo nodeId="5181507218630412290" fileName="ShowExpectedType_Action.java" startLine="71" startPosition="47" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowExpectedType_Action$1" />
+    <unitInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.ShowExpectedType_Action" />
   </root>
-  <root nodeId="5181507218630412336">
+  <root nodeId="5181507218630412336" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412336" fileName="InternalTypeSystemActions_ActionGroup.java" startLine="8" startPosition="81" endLine="9" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5181507218630412336" fileName="InternalTypeSystemActions_ActionGroup.java" startLine="9" startPosition="92" endLine="10" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5181507218630412336" fileName="InternalTypeSystemActions_ActionGroup.java" startLine="12" startPosition="50" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -304,7 +304,7 @@
     <scopeInfo nodeId="5181507218630412336" fileName="InternalTypeSystemActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="5181507218630412336" fileName="InternalTypeSystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.InternalTypeSystemActions_ActionGroup" />
   </root>
-  <root nodeId="5181507218630412340">
+  <root nodeId="5181507218630412340" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412340" fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="18" startPosition="66" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5181507218630412340" fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="19" startPosition="40" endLine="20" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5181507218630412341" fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorId" />
@@ -412,7 +412,7 @@
     </scopeInfo>
     <unitInfo nodeId="5181507218630412340" fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="18" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorRule_InGroup_Action" />
   </root>
-  <root nodeId="5181507218630412410">
+  <root nodeId="5181507218630412410" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412410" fileName="GoToTypeErrorRule_Action.java" startLine="21" startPosition="58" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5181507218630412410" fileName="GoToTypeErrorRule_Action.java" startLine="22" startPosition="40" endLine="23" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5181507218630412410" fileName="GoToTypeErrorRule_Action.java" startLine="25" startPosition="37" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -509,7 +509,7 @@
     </scopeInfo>
     <unitInfo nodeId="5181507218630412410" fileName="GoToTypeErrorRule_Action.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorRule_Action" />
   </root>
-  <root nodeId="5181507218630412486">
+  <root nodeId="5181507218630412486" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5181507218630412486" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="23" startPosition="74" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5181507218630412486" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="24" startPosition="85" endLine="25" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5181507218630412486" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="26" startPosition="0" endLine="27" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
@@ -588,7 +588,7 @@
     </scopeInfo>
     <unitInfo nodeId="5181507218630412486" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="23" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorGroup_ActionGroup" />
   </root>
-  <root nodeId="5487985028841908585">
+  <root nodeId="5487985028841908585" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="73" endLine="9" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="84" endLine="10" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="12" startPosition="42" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -610,7 +610,7 @@
     <scopeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="11" startPosition="0" endLine="24" endPosition="3" />
     <unitInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.TypesystemActions_ActionGroup" />
   </root>
-  <root nodeId="5487985028841909059">
+  <root nodeId="5487985028841909059" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="12" startPosition="14" endLine="13" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="13" startPosition="136" endLine="14" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -632,7 +632,7 @@
     <scopeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="10" startPosition="62" endLine="18" endPosition="3" />
     <unitInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.Default_KeymapChanges" />
   </root>
-  <root nodeId="7162597690967702203">
+  <root nodeId="7162597690967702203" modelId="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967702203" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="77" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967702203" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="27" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967702203" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="30" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

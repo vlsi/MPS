@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.IntentionsDescriptor" />
-  <root nodeId="1229717881949">
+  <root nodeId="1229717881949" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="1229717881949" fileName="add_throws_to_FunctionType_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229717881949" fileName="add_throws_to_FunctionType_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229717881949" fileName="add_throws_to_FunctionType_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229717881949" fileName="add_throws_to_FunctionType_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.add_throws_to_FunctionType_Intention" />
   </root>
-  <root nodeId="1229783473290">
+  <root nodeId="1229783473290" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="1229783473290" fileName="convert_to_unrestricted_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229783473290" fileName="convert_to_unrestricted_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229783473290" fileName="convert_to_unrestricted_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -134,7 +134,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229783473290" fileName="convert_to_unrestricted_Intention.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_unrestricted_Intention" />
   </root>
-  <root nodeId="1229783748457">
+  <root nodeId="1229783748457" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="1229783748457" fileName="convert_to_restricted_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229783748457" fileName="convert_to_restricted_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229783748457" fileName="convert_to_restricted_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -210,7 +210,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229783748457" fileName="convert_to_restricted_Intention.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_restricted_Intention" />
   </root>
-  <root nodeId="1230480249136">
+  <root nodeId="1230480249136" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="1230480249136" fileName="convert_to_from_unrestricted_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230480249136" fileName="convert_to_from_unrestricted_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230480249136" fileName="convert_to_from_unrestricted_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -282,7 +282,7 @@
     </scopeInfo>
     <unitInfo nodeId="1230480249136" fileName="convert_to_from_unrestricted_Intention.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_from_unrestricted_Intention" />
   </root>
-  <root nodeId="1235748072133">
+  <root nodeId="1235748072133" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -401,10 +401,10 @@
       <varInfo nodeId="1235748173357" varName="parameter_6" />
       <varInfo nodeId="1235748173357" varName="parameter_7" />
     </scopeInfo>
-    <unitInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention" />
     <unitInfo nodeId="1235748173357" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="62" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention$QuotationClass_fknil1_a1a1a7" />
+    <unitInfo nodeId="1235748072133" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention" />
   </root>
-  <root nodeId="890797661671409032">
+  <root nodeId="890797661671409032" modelId="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)">
     <nodeInfo nodeId="890797661671409032" fileName="ToggleMultiLine_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="890797661671409032" fileName="ToggleMultiLine_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="890797661671409032" fileName="ToggleMultiLine_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

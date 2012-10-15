@@ -13,11 +13,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel" />
@@ -82,15 +82,15 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IterableArrayProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IterableProxy" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableArrayProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -102,7 +102,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" />
   </dependency>
 </dependenciesRoot>
 

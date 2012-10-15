@@ -24,8 +24,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -126,7 +126,7 @@ public class ClassLoaderManager implements CoreComponent {
     synchronized (myLoadedClasses) {
       if (myLoadedClasses.containsKey(name)) {
         ModuleReference oldLoaderId = myLoadedClasses.get(name);
-        if (!ObjectUtils.equals(oldLoaderId, id)) {
+        if (!EqualUtil.equals(oldLoaderId, id)) {
           String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
             "Classloaders: \n" +
             "  " + id.toString() + "\n" +

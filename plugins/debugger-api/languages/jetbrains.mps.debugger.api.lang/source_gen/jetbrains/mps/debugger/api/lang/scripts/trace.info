@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4899606958030665162">
+  <root nodeId="4899606958030665162" modelId="r:89ed2c62-93d2-424b-93aa-b8a2e95c351f(jetbrains.mps.debugger.api.lang.scripts)">
     <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="17" startPosition="84" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -320,22 +320,22 @@
     <scopeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="16" startPosition="80" endLine="270" endPosition="3">
       <varInfo nodeId="4899606958030665162" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="16" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript" />
-    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="19" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$1" />
     <unitInfo nodeId="5992322387945375717" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="38" startPosition="209" endLine="42" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$2" />
+    <unitInfo nodeId="7594826025259993407" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="146" startPosition="237" endLine="150" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$6" />
+    <unitInfo nodeId="4239159129956943531" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="176" startPosition="215" endLine="180" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$7" />
+    <unitInfo nodeId="7594826025259993483" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="207" startPosition="219" endLine="211" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$8" />
     <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="49" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$2" />
     <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="75" startPosition="28" endLine="100" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$3" />
     <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="101" startPosition="28" endLine="126" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$4" />
-    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="127" startPosition="28" endLine="156" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$5" />
-    <unitInfo nodeId="7594826025259993407" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="146" startPosition="237" endLine="150" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$6" />
-    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="157" startPosition="28" endLine="187" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$6" />
-    <unitInfo nodeId="4239159129956943531" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="176" startPosition="215" endLine="180" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$7" />
-    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="188" startPosition="28" endLine="217" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$7" />
-    <unitInfo nodeId="7594826025259993483" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="207" startPosition="219" endLine="211" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$8" />
     <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="218" startPosition="28" endLine="243" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$8" />
     <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="244" startPosition="28" endLine="269" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$9" />
+    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="19" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$1" />
+    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="127" startPosition="28" endLine="156" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$5" />
+    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="188" startPosition="28" endLine="217" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$7" />
+    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="157" startPosition="28" endLine="187" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$6" />
+    <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="16" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript" />
   </root>
-  <root nodeId="5992322387945369927">
+  <root nodeId="5992322387945369927" modelId="r:89ed2c62-93d2-424b-93aa-b8a2e95c351f(jetbrains.mps.debugger.api.lang.scripts)">
     <nodeInfo nodeId="4149553233885954361" fileName="StubUtil.java" startLine="31" startPosition="73" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4149553233885954397" fileName="StubUtil.java" startLine="33" startPosition="24" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6727196686829006647" fileName="StubUtil.java" startLine="35" startPosition="5" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -466,9 +466,9 @@
       <varInfo nodeId="8285632988623946833" varName="node" />
       <varInfo nodeId="8285632988623946835" varName="role" />
     </scopeInfo>
-    <unitInfo nodeId="5992322387945369927" fileName="StubUtil.java" startLine="27" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil" />
     <unitInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="80" startPosition="151" endLine="84" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil$1" />
     <unitInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="94" startPosition="37" endLine="98" endPosition="7" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil$2" />
+    <unitInfo nodeId="5992322387945369927" fileName="StubUtil.java" startLine="27" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil" />
   </root>
 </debugInfo>
 

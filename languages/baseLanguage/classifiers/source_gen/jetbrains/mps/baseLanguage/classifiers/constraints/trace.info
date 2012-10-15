@@ -35,6 +35,9 @@
     <scopeInfo nodeId="1213104844364" fileName="IMemberOperation_Constraints.java" startLine="57" startPosition="150" endLine="60" endPosition="19" />
     <scopeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="39" startPosition="85" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1213104844356" fileName="IMemberOperation_Constraints.java" startLine="56" startPosition="52" endLine="61" endPosition="17" />
+    <scopeInfo nodeId="1213104844357" fileName="IMemberOperation_Constraints.java" startLine="56" startPosition="52" endLine="61" endPosition="17">
+      <varInfo nodeId="1213104844362" varName="member" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="53" startPosition="13" endLine="63" endPosition="15">
       <varInfo nodeId="1213104844351" varName="coercedNode_dyvyal_c0a0" />
@@ -54,9 +57,9 @@
       <varInfo nodeId="1213104844334" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="35" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="29" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints" />
-    <unitInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="39" startPosition="33" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$1" />
     <unitInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="48" startPosition="19" endLine="72" endPosition="9" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$2" />
+    <unitInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="39" startPosition="33" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$1" />
+    <unitInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="29" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints" />
   </root>
   <root nodeId="1213107438049" modelId="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)">
     <nodeInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="21" startPosition="85" endLine="22" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -125,9 +128,9 @@
       <varInfo nodeId="1213107438049" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="44" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="21" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints" />
-    <unitInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="48" startPosition="37" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$1" />
     <unitInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="57" startPosition="19" endLine="67" endPosition="9" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$2" />
+    <unitInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="48" startPosition="37" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$1" />
+    <unitInfo nodeId="1213107438049" fileName="ThisClassifierExpression_Constraints.java" startLine="21" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints" />
   </root>
   <root nodeId="1216915253694" modelId="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)">
     <nodeInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="25" startPosition="82" endLine="26" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8s7bhl_a0a1a0a0a1a0b0a1a0" />
@@ -172,10 +175,10 @@
       <varInfo nodeId="1216915253694" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="31" startPosition="0" endLine="65" endPosition="0" />
-    <unitInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="25" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints" />
-    <unitInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="35" startPosition="37" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1" />
-    <unitInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="44" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$2" />
     <unitInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="48" startPosition="71" endLine="52" endPosition="13" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$3" />
+    <unitInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="44" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$2" />
+    <unitInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="35" startPosition="37" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1" />
+    <unitInfo nodeId="1216915253694" fileName="DefaultClassifierType_Constraints.java" startLine="25" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints" />
   </root>
   <root nodeId="1217433542422" modelId="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)">
     <nodeInfo nodeId="1217433542422" fileName="SuperClassifierExpresson_Constraints.java" startLine="14" startPosition="85" endLine="15" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

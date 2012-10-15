@@ -865,7 +865,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
@@ -1528,7 +1527,13 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" file="TraceTool_Tool.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.openapi.wm.ex.ToolWindowEx" />
+    <classNode dependClassName="com.intellij.openapi.wm.impl.ToolWindowImpl" />
+    <classNode dependClassName="java.beans.PropertyChangeEvent" />
+    <classNode dependClassName="java.beans.PropertyChangeListener" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />

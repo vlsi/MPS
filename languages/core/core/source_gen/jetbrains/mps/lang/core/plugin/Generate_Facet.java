@@ -15,14 +15,14 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
@@ -44,6 +44,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.messages.IMessageHandler;
@@ -103,7 +104,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0a = null;
           switch (0) {
             case 0:
@@ -177,18 +178,18 @@ public class Generate_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._4) t).assign((Tuples._4) copyFrom);
+        ((Tuples._3) t).assign((Tuples._3) copyFrom);
       }
       return t;
     }
 
-    public static class Variables extends MultiTuple._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> {
+    public static class Variables extends MultiTuple._3<Project, IOperationContext, Boolean> {
       public Variables() {
         super();
       }
 
-      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake, _FunctionTypes._return_P0_E0<? extends ProgressMonitor> monitorProvider) {
-        super(project, operationContext, cleanMake, monitorProvider);
+      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake) {
+        super(project, operationContext, cleanMake);
       }
 
       public Project project(Project value) {
@@ -203,10 +204,6 @@ public class Generate_Facet extends IFacet.Stub {
         return super._2(value);
       }
 
-      public _FunctionTypes._return_P0_E0<? extends ProgressMonitor> monitorProvider(_FunctionTypes._return_P0_E0<? extends ProgressMonitor> value) {
-        return super._3(value);
-      }
-
       public Project project() {
         return super._0();
       }
@@ -219,12 +216,8 @@ public class Generate_Facet extends IFacet.Stub {
         return super._2();
       }
 
-      public _FunctionTypes._return_P0_E0<? extends ProgressMonitor> monitorProvider() {
-        return super._3();
-      }
-
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> from) {
+      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._3<Project, IOperationContext, Boolean> from) {
         return (Generate_Facet.Target_checkParameters.Variables) super.assign(from);
       }
     }
@@ -241,7 +234,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0b = null;
           switch (0) {
             case 0:
@@ -414,7 +407,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0c = null;
           switch (0) {
             case 0:
@@ -514,11 +507,11 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
-              boolean generationOk;
+              boolean generationOk = false;
               if (!(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
                 IGenerationTracer tracer = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class);
                 if (tracer != null) {
@@ -535,7 +528,6 @@ public class Generate_Facet extends IFacet.Stub {
 
               IGenerationHandler gh = new MakeGenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
-                  monitor.currentProgress().advanceWork("Generating", 1000);
                   data.retainedModels(MapSequence.fromMap(retainedModels.value).get(data.module()));
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
@@ -550,21 +542,23 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               };
 
-              monitor.currentProgress().beginWork("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+              progressMonitor.start("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
-              }) + 1000, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("Generating", 1000);
-              List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<IResource, SModelDescriptor>() {
-                public Iterable<SModelDescriptor> translate(IResource in) {
-                  return ((MResource) in).models();
-                }
-              }).toListSequence();
+              }));
+              try {
+                List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<IResource, SModelDescriptor>() {
+                  public Iterable<SModelDescriptor> translate(IResource in) {
+                    return ((MResource) in).models();
+                  }
+                }).toListSequence();
 
-              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).monitorProvider().invoke(), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).transientModelsProvider());
+                generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, progressMonitor.subTask(1000), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).transientModelsProvider());
+              } finally {
+                progressMonitor.done();
+              }
 
-              monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
@@ -661,7 +655,6 @@ public class Generate_Facet extends IFacet.Stub {
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.operationContext", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.monitorProvider", null);
         }
       }
       {
@@ -689,9 +682,6 @@ public class Generate_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
             props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));
-          }
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.monitorProvider")) {
-            props.monitorProvider(null);
           }
         }
         {

@@ -255,7 +255,6 @@
   <dependency className="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" file="Vcs_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.AddModuleToVcs_Action" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4346819404427339851">
+  <root nodeId="4346819404427339851" modelId="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)">
     <nodeInfo nodeId="4346819404427345646" fileName="GitUtils.java" startLine="15" startPosition="90" endLine="16" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4346819404427345637" fileName="GitUtils.java" startLine="16" startPosition="82" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155185413" fileName="GitUtils.java" startLine="17" startPosition="40" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -18,7 +18,7 @@
     </scopeInfo>
     <unitInfo nodeId="4346819404427339851" fileName="GitUtils.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.vcs.concrete.GitUtils" />
   </root>
-  <root nodeId="4346819404427368280">
+  <root nodeId="4346819404427368280" modelId="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)">
     <nodeInfo nodeId="4346819404427368425" fileName="MPSSourceRevision.java" startLine="20" startPosition="30" endLine="21" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4346819404427368427" fileName="MPSSourceRevision.java" startLine="21" startPosition="101" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4346819404427368439" fileName="MPSSourceRevision.java" startLine="27" startPosition="45" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

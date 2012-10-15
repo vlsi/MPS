@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1165449350640">
+  <root nodeId="1165449350640" modelId="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)">
     <nodeInfo nodeId="1224596675512" fileName="Sequence_iteration1.java" startLine="54" startPosition="27" endLine="54" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596675281" fileName="Sequence_iteration1.java" startLine="117" startPosition="27" endLine="117" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596675286" fileName="Sequence_iteration1.java" startLine="120" startPosition="27" endLine="120" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -321,21 +321,21 @@
     </scopeInfo>
     <scopeInfo nodeId="1165451039404" fileName="Sequence_iteration1.java" startLine="80" startPosition="0" endLine="152" endPosition="0" />
     <scopeInfo nodeId="1165597014964" fileName="Sequence_iteration1.java" startLine="218" startPosition="0" endLine="291" endPosition="0" />
-    <unitInfo nodeId="1165449350640" fileName="Sequence_iteration1.java" startLine="13" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1" />
-    <unitInfo nodeId="1224596675511" fileName="Sequence_iteration1.java" startLine="19" startPosition="51" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$1" />
-    <unitInfo nodeId="1224596675511" fileName="Sequence_iteration1.java" startLine="21" startPosition="19" endLine="65" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2" />
-    <unitInfo nodeId="1224596675280" fileName="Sequence_iteration1.java" startLine="84" startPosition="51" endLine="137" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2" />
     <unitInfo nodeId="1224596675511" fileName="Sequence_iteration1.java" startLine="23" startPosition="23" endLine="63" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
-    <unitInfo nodeId="1224596675280" fileName="Sequence_iteration1.java" startLine="86" startPosition="19" endLine="135" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
-    <unitInfo nodeId="1224596674692" fileName="Sequence_iteration1.java" startLine="156" startPosition="51" endLine="205" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
+    <unitInfo nodeId="1224596674692" fileName="Sequence_iteration1.java" startLine="160" startPosition="23" endLine="201" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$5" />
+    <unitInfo nodeId="1224596675511" fileName="Sequence_iteration1.java" startLine="21" startPosition="19" endLine="65" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2" />
     <unitInfo nodeId="1224596675280" fileName="Sequence_iteration1.java" startLine="88" startPosition="23" endLine="133" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
     <unitInfo nodeId="1224596674692" fileName="Sequence_iteration1.java" startLine="158" startPosition="19" endLine="203" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
-    <unitInfo nodeId="1224596674578" fileName="Sequence_iteration1.java" startLine="223" startPosition="51" endLine="276" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
-    <unitInfo nodeId="1224596674692" fileName="Sequence_iteration1.java" startLine="160" startPosition="23" endLine="201" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$5" />
-    <unitInfo nodeId="1224596674578" fileName="Sequence_iteration1.java" startLine="225" startPosition="19" endLine="274" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$5" />
     <unitInfo nodeId="1224596674578" fileName="Sequence_iteration1.java" startLine="227" startPosition="23" endLine="272" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$6" />
+    <unitInfo nodeId="1224596675511" fileName="Sequence_iteration1.java" startLine="19" startPosition="51" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$1" />
+    <unitInfo nodeId="1224596675280" fileName="Sequence_iteration1.java" startLine="86" startPosition="19" endLine="135" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
+    <unitInfo nodeId="1224596674692" fileName="Sequence_iteration1.java" startLine="156" startPosition="51" endLine="205" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
+    <unitInfo nodeId="1224596674578" fileName="Sequence_iteration1.java" startLine="225" startPosition="19" endLine="274" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$5" />
+    <unitInfo nodeId="1224596675280" fileName="Sequence_iteration1.java" startLine="84" startPosition="51" endLine="137" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2" />
+    <unitInfo nodeId="1224596674578" fileName="Sequence_iteration1.java" startLine="223" startPosition="51" endLine="276" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
+    <unitInfo nodeId="1165449350640" fileName="Sequence_iteration1.java" startLine="13" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1" />
   </root>
-  <root nodeId="1165600539955">
+  <root nodeId="1165600539955" modelId="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)">
     <nodeInfo nodeId="1224596675063" fileName="Sequence_iteration2.java" startLine="53" startPosition="27" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7376433222636453769" fileName="Sequence_iteration2.java" startLine="16" startPosition="24" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="22" startPosition="51" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -413,10 +413,10 @@
       <varInfo nodeId="1165600539963" varName="ss" />
     </scopeInfo>
     <scopeInfo nodeId="1165600539956" fileName="Sequence_iteration2.java" startLine="15" startPosition="0" endLine="80" endPosition="0" />
-    <unitInfo nodeId="1165600539955" fileName="Sequence_iteration2.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2" />
-    <unitInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="18" startPosition="51" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$1" />
-    <unitInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="20" startPosition="19" endLine="64" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$2" />
     <unitInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="22" startPosition="23" endLine="62" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$3" />
+    <unitInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="20" startPosition="19" endLine="64" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$2" />
+    <unitInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="18" startPosition="51" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$1" />
+    <unitInfo nodeId="1165600539955" fileName="Sequence_iteration2.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2" />
   </root>
 </debugInfo>
 

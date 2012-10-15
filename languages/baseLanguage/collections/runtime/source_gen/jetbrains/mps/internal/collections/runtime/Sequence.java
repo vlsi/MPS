@@ -62,7 +62,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
   }
 
   public <U> ISequence<U> ofType(Class<U> type) {
-    return new OfTypeSequence(this, type);
+    return new OfTypeSequence<T, U>(this, type);
   }
 
   public ISequence<T> sort(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector, boolean ascending) {
@@ -152,7 +152,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
   }
 
   public ISequence<T> reverse() {
-    return new ReversingSequence(this);
+    return new ReversingSequence<T>(this);
   }
 
   public boolean contains(T t) {

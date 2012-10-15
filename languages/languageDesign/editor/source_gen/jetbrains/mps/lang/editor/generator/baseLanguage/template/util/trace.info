@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1186771508849">
+  <root nodeId="1186771508849" modelId="r:00000000-0000-4000-0000-011c895902a0(jetbrains.mps.lang.editor.generator.baseLanguage.template.util)">
     <nodeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="84" startPosition="27" endLine="84" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227876793101" fileName="QueriesUtil.java" startLine="91" startPosition="27" endLine="91" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1210358696034" fileName="QueriesUtil.java" startLine="23" startPosition="26" endLine="24" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_READABLE_ID" />
@@ -158,10 +158,10 @@
       <varInfo nodeId="1216921955896" varName="genctx" />
       <varInfo nodeId="1186775920918" varName="inputNode" />
     </scopeInfo>
-    <unitInfo nodeId="1186771508849" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
-    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="83" endLine="106" endPosition="5" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$1" />
-    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="52" startPosition="19" endLine="104" endPosition="9" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$2" />
     <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="54" startPosition="23" endLine="102" endPosition="13" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$3" />
+    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="52" startPosition="19" endLine="104" endPosition="9" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$2" />
+    <unitInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="50" startPosition="83" endLine="106" endPosition="5" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$1" />
+    <unitInfo nodeId="1186771508849" fileName="QueriesUtil.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
   </root>
 </debugInfo>
 

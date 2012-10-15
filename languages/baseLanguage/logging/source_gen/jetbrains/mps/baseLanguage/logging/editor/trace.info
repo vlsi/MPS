@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1167245582276">
+  <root nodeId="1167245582276" modelId="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)">
     <nodeInfo nodeId="1167245583616" fileName="LogStatement_Editor.java" startLine="110" startPosition="58" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167245583619" fileName="LogStatement_Editor.java" startLine="127" startPosition="58" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167245582276" fileName="LogStatement_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -307,7 +307,7 @@
     </scopeInfo>
     <unitInfo nodeId="1167245582276" fileName="LogStatement_Editor.java" startLine="24" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.LogStatement_Editor" />
   </root>
-  <root nodeId="1168401886773">
+  <root nodeId="1168401886773" modelId="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)">
     <nodeInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168401889745" fileName="PrintStatement_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168401889745" fileName="PrintStatement_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -520,8 +520,8 @@
       <varInfo nodeId="1168401913942" varName="elementNode" />
       <varInfo nodeId="1168401913942" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="24" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor" />
     <unitInfo nodeId="1168401913942" fileName="PrintStatement_Editor.java" startLine="82" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor$textExpressionListHandler_nmgex1_c0" />
+    <unitInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="24" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor" />
   </root>
 </debugInfo>
 

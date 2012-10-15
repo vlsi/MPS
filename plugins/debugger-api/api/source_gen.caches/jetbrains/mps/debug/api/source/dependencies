@@ -46,7 +46,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.TextPositionProvider" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.TextSourcePosition" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

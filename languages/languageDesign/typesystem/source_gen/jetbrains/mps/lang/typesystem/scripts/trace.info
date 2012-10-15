@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6587431012884472434">
+  <root nodeId="6587431012884472434" modelId="r:74ea17b8-4df0-45ea-b42a-e8bc07b3a0ab(jetbrains.mps.lang.typesystem.scripts)">
     <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="14" startPosition="89" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,10 +42,10 @@
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="85" endLine="47" endPosition="3">
       <varInfo nodeId="6587431012884472434" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript" />
     <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript$1" />
+    <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript" />
   </root>
-  <root nodeId="7286989617095153002">
+  <root nodeId="7286989617095153002" modelId="r:74ea17b8-4df0-45ea-b42a-e8bc07b3a0ab(jetbrains.mps.lang.typesystem.scripts)">
     <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="12" startPosition="81" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -110,9 +110,9 @@
     <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="11" startPosition="77" endLine="64" endPosition="3">
       <varInfo nodeId="7286989617095153002" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveDependencies_MigrationScript" />
     <unitInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveDependencies_MigrationScript$1" />
     <unitInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="39" startPosition="28" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveDependencies_MigrationScript$2" />
+    <unitInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveDependencies_MigrationScript" />
   </root>
 </debugInfo>
 

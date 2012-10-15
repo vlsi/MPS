@@ -20,6 +20,7 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1152552359277">
       <property name="name" nameId="tpck.1169194664001" value="MAPPING_closures" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.conceptFunction" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1152552655480">
       <property name="name" nameId="tpck.1169194664001" value="class_ClosureContext" />
@@ -30,6 +31,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1152729181498">
       <property name="name" nameId="tpck.1169194664001" value="weave_ClosureAdapter_members" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1152728232947" resolveInfo="Closure" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1152740850684">
@@ -48,14 +50,17 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1152750787488">
       <property name="name" nameId="tpck.1169194664001" value="reduce_VariableDeclStmtWithInit_ClosureContextField" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1152823060739">
       <property name="name" nameId="tpck.1169194664001" value="reduce_Closure_NewClosureAdapterExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1152728232947" resolveInfo="Closure" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1153259191716">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ClosureParmReference_MethodParmReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="to_remove" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1153179560115" resolveInfo="ClosureParameterReference" />
     </node>
   </roots>

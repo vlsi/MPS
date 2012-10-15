@@ -7,17 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.UnknownNameRef_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,62 +19,7 @@ public class check_UnknownDotCall_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode unkCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode result = null;
-    SNode operand = UnknownNameRef_Behavior.call_resolveTokens_4018023047319628331(unkCall);
-
-    if ((operand == null)) {
-      return;
-
-    } else if (SNodeOperations.isInstanceOf(operand, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      SNode target = SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Classifier");
-
-      if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-        // show proper error message 
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkCall, "Operand resolved to classifier other than class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4872723285943444880", null, errorTarget);
-        }
-        return;
-      }
-
-      SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
-      SReference sref = new DynamicReference("staticMethodDeclaration", call, null, SPropertyOperations.getString(unkCall, "callee"));
-      call.addReference(sref);
-
-      for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(unkCall, "actualArgument", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
-      }
-
-      result = call;
-
-
-    } else if (SNodeOperations.isInstanceOf(operand, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      // operand is some other expression. it's supposed to an instance method call then 
-
-      System.out.println("DEBUG: operand in dot call is expression");
-
-      SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-      SLinkOperations.setTarget(dotExpr, "operand", SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Expression"), true);
-
-      SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
-      SLinkOperations.setTarget(dotExpr, "operation", call, true);
-
-      SReference sref = new DynamicReference("instanceMethodDeclaration", call, null, SPropertyOperations.getString(unkCall, "callee"));
-      call.addReference(sref);
-
-      for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(unkCall, "actualArgument", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
-      }
-
-      result = dotExpr;
-
-    } else {
-      // something unexpected 
-      return;
-    }
-
-    if ((result != null)) {
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkCall) != null) {
       // success 
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -89,10 +27,15 @@ public class check_UnknownDotCall_NonTypesystemRule extends AbstractNonTypesyste
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
           intentionProvider.putArgument("unknownNode", unkCall);
-          intentionProvider.putArgument("theRightNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
+      return;
+    }
+
+    {
+      MessageTarget errorTarget = new NodeMessageTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkCall, "Unresolved method call", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6396739326936528605", null, errorTarget);
     }
   }
 

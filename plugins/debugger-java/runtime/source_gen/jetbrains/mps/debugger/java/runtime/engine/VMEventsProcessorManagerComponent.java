@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.engine;
 import com.intellij.openapi.components.ProjectComponent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
-import jetbrains.mps.debugger.java.runtime.DebugSession;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.List;

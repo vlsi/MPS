@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2808756344206283880">
+  <root nodeId="2808756344206283880" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="2808756344206284083" fileName="GoToHelper.java" startLine="46" startPosition="131" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2808756344206284091" fileName="GoToHelper.java" startLine="47" startPosition="85" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2808756344206284096" fileName="GoToHelper.java" startLine="48" startPosition="81" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -243,19 +243,19 @@
       <varInfo nodeId="2808756344206463621" varName="method" />
       <varInfo nodeId="2808756344206463722" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="2808756344206283880" fileName="GoToHelper.java" startLine="42" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper" />
+    <unitInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="121" startPosition="90" endLine="125" endPosition="13" unitName="jetbrains.mps.ide.editor.util.GoToHelper$5" />
     <unitInfo nodeId="2808756344206283902" fileName="GoToHelper.java" startLine="143" startPosition="54" endLine="147" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-    <unitInfo nodeId="2808756344206283990" fileName="GoToHelper.java" startLine="177" startPosition="54" endLine="187" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-    <unitInfo nodeId="2808756344206284272" fileName="GoToHelper.java" startLine="86" startPosition="96" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
     <unitInfo nodeId="2808756344206283927" fileName="GoToHelper.java" startLine="151" startPosition="54" endLine="155" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$2" />
     <unitInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="108" startPosition="45" endLine="113" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$2" />
-    <unitInfo nodeId="2808756344206270606" fileName="GoToHelper.java" startLine="116" startPosition="42" endLine="129" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$3" />
     <unitInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="118" startPosition="49" endLine="127" endPosition="9" unitName="jetbrains.mps.ide.editor.util.GoToHelper$4" />
-    <unitInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="121" startPosition="90" endLine="125" endPosition="13" unitName="jetbrains.mps.ide.editor.util.GoToHelper$5" />
-    <unitInfo nodeId="2808756344206283882" fileName="GoToHelper.java" startLine="138" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$DefaultNodeNavigationItemCellRenderer" />
+    <unitInfo nodeId="2808756344206283990" fileName="GoToHelper.java" startLine="177" startPosition="54" endLine="187" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+    <unitInfo nodeId="2808756344206284272" fileName="GoToHelper.java" startLine="86" startPosition="96" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+    <unitInfo nodeId="2808756344206270606" fileName="GoToHelper.java" startLine="116" startPosition="42" endLine="129" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$3" />
     <unitInfo nodeId="2808756344206283971" fileName="GoToHelper.java" startLine="171" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$MethodCellRenderer" />
+    <unitInfo nodeId="2808756344206283882" fileName="GoToHelper.java" startLine="138" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$DefaultNodeNavigationItemCellRenderer" />
+    <unitInfo nodeId="2808756344206283880" fileName="GoToHelper.java" startLine="42" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper" />
   </root>
-  <root nodeId="2808756344206284331">
+  <root nodeId="2808756344206284331" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="2808756344206284452" fileName="NodeListCellRenderer.java" startLine="22" startPosition="36" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2808756344206284469" fileName="NodeListCellRenderer.java" startLine="26" startPosition="128" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2808756344206284471" fileName="NodeListCellRenderer.java" startLine="27" startPosition="16" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -366,11 +366,11 @@
       <varInfo nodeId="2808756344206284458" varName="list" />
       <varInfo nodeId="2808756344206284460" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="2808756344206284331" fileName="NodeListCellRenderer.java" startLine="21" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer" />
     <unitInfo nodeId="2808756344206284592" fileName="NodeListCellRenderer.java" startLine="64" startPosition="15" endLine="77" endPosition="5" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer$1" />
     <unitInfo nodeId="2808756344206284336" fileName="NodeListCellRenderer.java" startLine="80" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer$LeftRenderer" />
+    <unitInfo nodeId="2808756344206284331" fileName="NodeListCellRenderer.java" startLine="21" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer" />
   </root>
-  <root nodeId="4491627601716787026">
+  <root nodeId="4491627601716787026" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="4491627601716787044" fileName="EditorComponentUtil.java" startLine="25" startPosition="131" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787058" fileName="EditorComponentUtil.java" startLine="27" startPosition="49" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787062" fileName="EditorComponentUtil.java" startLine="28" startPosition="40" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -514,7 +514,7 @@
     </scopeInfo>
     <unitInfo nodeId="4491627601716787026" fileName="EditorComponentUtil.java" startLine="20" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.editor.util.EditorComponentUtil" />
   </root>
-  <root nodeId="7973955287399271868">
+  <root nodeId="7973955287399271868" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
     <nodeInfo nodeId="7973955287399271882" fileName="EditorUtil.java" startLine="29" startPosition="98" endLine="30" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7973955287399271897" fileName="EditorUtil.java" startLine="33" startPosition="131" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572311180462203034" fileName="EditorUtil.java" startLine="34" startPosition="82" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -617,11 +617,11 @@
       <varInfo nodeId="1572311180462136271" varName="shrinkPath" />
       <varInfo nodeId="1572311180462136077" varName="sourceNode" />
     </scopeInfo>
-    <unitInfo nodeId="7973955287399271868" fileName="EditorUtil.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.editor.util.EditorUtil" />
     <unitInfo nodeId="1572311180462203045" fileName="EditorUtil.java" startLine="36" startPosition="75" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.editor.util.EditorUtil$1" />
     <unitInfo nodeId="1572311180462205589" fileName="EditorUtil.java" startLine="40" startPosition="11" endLine="44" endPosition="5" unitName="jetbrains.mps.ide.editor.util.EditorUtil$2" />
-    <unitInfo nodeId="1572311180462136147" fileName="EditorUtil.java" startLine="54" startPosition="25" endLine="81" endPosition="5" unitName="jetbrains.mps.ide.editor.util.EditorUtil$3" />
     <unitInfo nodeId="1572311180462136250" fileName="EditorUtil.java" startLine="75" startPosition="59" endLine="79" endPosition="9" unitName="jetbrains.mps.ide.editor.util.EditorUtil$4" />
+    <unitInfo nodeId="1572311180462136147" fileName="EditorUtil.java" startLine="54" startPosition="25" endLine="81" endPosition="5" unitName="jetbrains.mps.ide.editor.util.EditorUtil$3" />
+    <unitInfo nodeId="7973955287399271868" fileName="EditorUtil.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.editor.util.EditorUtil" />
   </root>
 </debugInfo>
 

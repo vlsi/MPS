@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1880762541167901524">
+  <root nodeId="1880762541167901524" modelId="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)">
     <nodeInfo nodeId="1880762541167901535" fileName="GWTDemo.java" startLine="16" startPosition="22" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1880762541167901544" fileName="GWTDemo.java" startLine="17" startPosition="64" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1880762541167901553" fileName="GWTDemo.java" startLine="21" startPosition="30" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20,7 +20,7 @@
     <scopeInfo nodeId="1880762541167901549" fileName="GWTDemo.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="1880762541167901524" fileName="GWTDemo.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ui.sandbox.gwt.GWTDemo" />
   </root>
-  <root nodeId="7046856741208198535">
+  <root nodeId="7046856741208198535" modelId="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)">
     <nodeInfo nodeId="7046856741208198536" fileName="gwtdemo.css" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="7046856741208198537" fileName="gwtdemo.css" startLine="1" startPosition="0" endLine="1" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="7046856741208198538" fileName="gwtdemo.css" startLine="2" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
@@ -254,9 +254,9 @@
     <nodeInfo nodeId="7046856741208198644" fileName="gwtdemo.css" startLine="60" startPosition="1" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="7046856741208198646" fileName="gwtdemo.css" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="7046856741208198646" fileName="gwtdemo.css" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <unitInfo nodeId="7046856741208198535" fileName="gwtdemo.css" startLine="1" startPosition="0" endLine="62" endPosition="0" unitName="gwtdemo.css" />
+    <unitInfo nodeId="7046856741208198535" fileName="gwtdemo.css" startLine="1" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.sandbox.gwt.gwtdemo$css" />
   </root>
-  <root nodeId="7046856741208198647">
+  <root nodeId="7046856741208198647" modelId="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)">
     <nodeInfo nodeId="7046856741208198655" fileName="MyResources.java" startLine="9" startPosition="51" endLine="10" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="7046856741208198648" fileName="MyResources.java" startLine="11" startPosition="0" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="css#()Lcom/google/gwt/resources/client/CssResource;" />
     <scopeInfo nodeId="7046856741208198648" fileName="MyResources.java" startLine="11" startPosition="0" endLine="13" endPosition="27" />

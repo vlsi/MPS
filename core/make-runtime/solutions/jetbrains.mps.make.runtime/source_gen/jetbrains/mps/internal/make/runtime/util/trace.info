@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1936544640085949692">
+  <root nodeId="1936544640085949692" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="1936544640085949751" fileName="GraphAnalyzer.java" startLine="18" startPosition="40" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="wrapMap" />
     <nodeInfo nodeId="2611988743427260338" fileName="GraphAnalyzer.java" startLine="23" startPosition="53" endLine="24" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6976901853022624212" fileName="GraphAnalyzer.java" startLine="32" startPosition="53" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -286,31 +286,31 @@
       <varInfo nodeId="6329960826076759421" varName="trivial" />
       <varInfo nodeId="2105022298825483323" varName="ws" />
     </scopeInfo>
-    <unitInfo nodeId="1936544640085949692" fileName="GraphAnalyzer.java" startLine="18" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
+    <unitInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="70" endLine="26" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$16" />
+    <unitInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="71" endLine="35" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$17" />
     <unitInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="60" startPosition="63" endLine="64" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$1" />
-    <unitInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="126" startPosition="24" endLine="133" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$10" />
-    <unitInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="143" startPosition="53" endLine="150" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$10" />
+    <unitInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="69" startPosition="111" endLine="73" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$2" />
+    <unitInfo nodeId="5566937012378945105" fileName="GraphAnalyzer.java" startLine="99" startPosition="43" endLine="103" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$5" />
+    <unitInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="115" startPosition="43" endLine="119" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$7" />
+    <unitInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="120" startPosition="40" endLine="124" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$8" />
     <unitInfo nodeId="8382282457890483462" fileName="GraphAnalyzer.java" startLine="155" startPosition="43" endLine="159" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$11" />
     <unitInfo nodeId="1150613940746737201" fileName="GraphAnalyzer.java" startLine="160" startPosition="40" endLine="164" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$12" />
     <unitInfo nodeId="1150613940746737221" fileName="GraphAnalyzer.java" startLine="164" startPosition="20" endLine="168" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$13" />
-    <unitInfo nodeId="8382282457890465324" fileName="GraphAnalyzer.java" startLine="173" startPosition="26" endLine="185" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$14" />
     <unitInfo nodeId="8382282457890465333" fileName="GraphAnalyzer.java" startLine="175" startPosition="57" endLine="179" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$15" />
     <unitInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="179" startPosition="24" endLine="183" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$15" />
-    <unitInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="20" startPosition="133" endLine="28" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$15" />
-    <unitInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="70" endLine="26" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$16" />
-    <unitInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="29" startPosition="134" endLine="37" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$16" />
-    <unitInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="71" endLine="35" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$17" />
-    <unitInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="69" startPosition="111" endLine="73" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$2" />
-    <unitInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="77" startPosition="54" endLine="83" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$3" />
     <unitInfo nodeId="4141757805202317986" fileName="GraphAnalyzer.java" startLine="88" startPosition="16" endLine="93" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$4" />
-    <unitInfo nodeId="5566937012378945105" fileName="GraphAnalyzer.java" startLine="99" startPosition="43" endLine="103" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$5" />
     <unitInfo nodeId="5566937012378945122" fileName="GraphAnalyzer.java" startLine="104" startPosition="23" endLine="109" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$6" />
-    <unitInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="115" startPosition="43" endLine="119" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$7" />
-    <unitInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="120" startPosition="40" endLine="124" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$8" />
+    <unitInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="77" startPosition="54" endLine="83" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$3" />
+    <unitInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="126" startPosition="24" endLine="133" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$10" />
+    <unitInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="143" startPosition="53" endLine="150" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$10" />
+    <unitInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="20" startPosition="133" endLine="28" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$15" />
+    <unitInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="29" startPosition="134" endLine="37" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$16" />
+    <unitInfo nodeId="8382282457890465324" fileName="GraphAnalyzer.java" startLine="173" startPosition="26" endLine="185" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$14" />
     <unitInfo nodeId="8382282457890483502" fileName="GraphAnalyzer.java" startLine="124" startPosition="20" endLine="138" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$9" />
     <unitInfo nodeId="1936544640085949704" fileName="GraphAnalyzer.java" startLine="189" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$Wrapper" />
+    <unitInfo nodeId="1936544640085949692" fileName="GraphAnalyzer.java" startLine="18" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
   </root>
-  <root nodeId="315679020132025010">
+  <root nodeId="315679020132025010" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="315679020132025026" fileName="FqName.java" startLine="8" startPosition="21" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAMESPACE" />
     <nodeInfo nodeId="315679020132025120" fileName="FqName.java" startLine="9" startPosition="69" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_NS" />
     <nodeInfo nodeId="315679020132025016" fileName="FqName.java" startLine="11" startPosition="0" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="namespace" />
@@ -384,7 +384,7 @@
     </scopeInfo>
     <unitInfo nodeId="315679020132025010" fileName="FqName.java" startLine="8" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FqName" />
   </root>
-  <root nodeId="505174985642691359">
+  <root nodeId="505174985642691359" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="5675045708290411509" fileName="DeltaReconciler.java" startLine="16" startPosition="30" endLine="17" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="topContainer" />
     <nodeInfo nodeId="505174985642741940" fileName="DeltaReconciler.java" startLine="22" startPosition="56" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1040398553439436270" fileName="DeltaReconciler.java" startLine="26" startPosition="38" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -499,15 +499,15 @@
       <varInfo nodeId="1040398553439436264" varName="delta" />
       <varInfo nodeId="1040398553439436266" varName="into" />
     </scopeInfo>
-    <unitInfo nodeId="505174985642691359" fileName="DeltaReconciler.java" startLine="16" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
     <unitInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="31" startPosition="52" endLine="35" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
-    <unitInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="92" startPosition="55" endLine="96" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
     <unitInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="39" startPosition="53" endLine="43" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$2" />
-    <unitInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="63" startPosition="69" endLine="67" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$2" />
     <unitInfo nodeId="7471912399447708279" fileName="DeltaReconciler.java" startLine="47" startPosition="53" endLine="51" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$3" />
+    <unitInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="63" startPosition="69" endLine="67" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$2" />
+    <unitInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="92" startPosition="55" endLine="96" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
     <unitInfo nodeId="5675045708290409138" fileName="DeltaReconciler.java" startLine="54" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$DeltaContainer" />
+    <unitInfo nodeId="505174985642691359" fileName="DeltaReconciler.java" startLine="16" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
   </root>
-  <root nodeId="505174985642693148">
+  <root nodeId="505174985642693148" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="3227965627236270953" fileName="FilesDelta.java" startLine="28" startPosition="43" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="505174985642735427" fileName="FilesDelta.java" startLine="30" startPosition="0" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootDir" />
     <nodeInfo nodeId="505174985642740316" fileName="FilesDelta.java" startLine="31" startPosition="24" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="files" />
@@ -790,19 +790,19 @@
       <varInfo nodeId="7471912399447720960" varName="pathsToKeep" />
     </scopeInfo>
     <scopeInfo nodeId="7471912399447720969" fileName="FilesDelta.java" startLine="118" startPosition="0" endLine="179" endPosition="0" />
-    <unitInfo nodeId="505174985642693148" fileName="FilesDelta.java" startLine="28" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
-    <unitInfo nodeId="7471912399447720927" fileName="FilesDelta.java" startLine="69" startPosition="29" endLine="80" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$1" />
-    <unitInfo nodeId="7471912399447721246" fileName="FilesDelta.java" startLine="102" startPosition="44" endLine="110" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$2" />
     <unitInfo nodeId="7471912399447726327" fileName="FilesDelta.java" startLine="111" startPosition="68" endLine="115" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$3" />
     <unitInfo nodeId="7471912399447720982" fileName="FilesDelta.java" startLine="120" startPosition="64" endLine="124" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$4" />
-    <unitInfo nodeId="7471912399447720992" fileName="FilesDelta.java" startLine="124" startPosition="18" endLine="131" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$5" />
     <unitInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="131" startPosition="16" endLine="135" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$6" />
     <unitInfo nodeId="7471912399447721194" fileName="FilesDelta.java" startLine="145" startPosition="101" endLine="149" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$7" />
     <unitInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="149" startPosition="18" endLine="153" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$8" />
+    <unitInfo nodeId="7471912399447720992" fileName="FilesDelta.java" startLine="124" startPosition="18" endLine="131" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$5" />
+    <unitInfo nodeId="7471912399447721246" fileName="FilesDelta.java" startLine="102" startPosition="44" endLine="110" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$2" />
     <unitInfo nodeId="1268765481875666722" fileName="FilesDelta.java" startLine="240" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$Status" />
+    <unitInfo nodeId="7471912399447720927" fileName="FilesDelta.java" startLine="69" startPosition="29" endLine="80" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$1" />
     <unitInfo nodeId="7471912399447707915" fileName="FilesDelta.java" startLine="219" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta$Visitor" />
+    <unitInfo nodeId="505174985642693148" fileName="FilesDelta.java" startLine="28" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
   </root>
-  <root nodeId="5105453120349025843">
+  <root nodeId="5105453120349025843" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="8321680453184998988" fileName="SmartWrapper.java" startLine="10" startPosition="30" endLine="11" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WRAPPERS_CACHE" />
     <nodeInfo nodeId="8991950132407604980" fileName="SmartWrapper.java" startLine="11" startPosition="105" endLine="12" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERN" />
     <nodeInfo nodeId="5105453120349025855" fileName="SmartWrapper.java" startLine="13" startPosition="0" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="towrap" />
@@ -864,7 +864,7 @@
     </scopeInfo>
     <unitInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="10" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.SmartWrapper" />
   </root>
-  <root nodeId="6106640680373200863">
+  <root nodeId="6106640680373200863" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="6106640680373201055" fileName="DirUtil.java" startLine="14" startPosition="22" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="URL" />
     <nodeInfo nodeId="6106640680373200952" fileName="DirUtil.java" startLine="15" startPosition="66" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH_CHAR" />
     <nodeInfo nodeId="6106640680373200956" fileName="DirUtil.java" startLine="16" startPosition="45" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH" />
@@ -984,11 +984,11 @@
       <varInfo nodeId="6106640680373200885" varName="path1" />
       <varInfo nodeId="6106640680373200888" varName="path2" />
     </scopeInfo>
-    <unitInfo nodeId="6106640680373200863" fileName="DirUtil.java" startLine="14" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
     <unitInfo nodeId="6106640680373201322" fileName="DirUtil.java" startLine="20" startPosition="54" endLine="24" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil$1" />
     <unitInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="24" startPosition="16" endLine="28" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil$2" />
+    <unitInfo nodeId="6106640680373200863" fileName="DirUtil.java" startLine="14" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
   </root>
-  <root nodeId="9121742173815455696">
+  <root nodeId="9121742173815455696" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="9121742173815457660" fileName="FutureValue.java" startLine="10" startPosition="50" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="value" />
     <nodeInfo nodeId="9121742173815457663" fileName="FutureValue.java" startLine="13" startPosition="31" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9121742173815457669" fileName="FutureValue.java" startLine="17" startPosition="105" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1023,7 +1023,7 @@
     </scopeInfo>
     <unitInfo nodeId="9121742173815455696" fileName="FutureValue.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
   </root>
-  <root nodeId="922321631991212011">
+  <root nodeId="922321631991212011" modelId="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)">
     <nodeInfo nodeId="1150121516825542388" fileName="DefaultHName.java" startLine="9" startPosition="60" endLine="10" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FQNAME" />
     <nodeInfo nodeId="922321631991212045" fileName="DefaultHName.java" startLine="11" startPosition="0" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="parentName" />
     <nodeInfo nodeId="922321631991212054" fileName="DefaultHName.java" startLine="12" startPosition="23" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />

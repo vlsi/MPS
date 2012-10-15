@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="VarVariableDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" />
+  <root nodeId="8425555512443914486" modelId="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)">
+    <nodeInfo nodeId="8425555512443914489" fileName="VarVariableDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8425555512443914486" fileName="VarVariableDeclaration_Behavior.java" startLine="8" startPosition="46" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="8425555512443914488" fileName="VarVariableDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />
+    <scopeInfo nodeId="8425555512443914486" fileName="VarVariableDeclaration_Behavior.java" startLine="8" startPosition="46" endLine="12" endPosition="0">
+      <varInfo nodeId="8425555512443914486" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8425555512443914486" fileName="VarVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_Behavior" />
+  </root>
+</debugInfo>
+

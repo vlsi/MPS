@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.TypesystemDescriptor" />
-  <root nodeId="2526721715665547048">
+  <root nodeId="2526721715665547048" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="2526721715665562909" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2526721715665562909" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="23" startPosition="59" endLine="24" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2526721715665562909" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="24" startPosition="208" endLine="25" endPosition="420" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -89,10 +89,10 @@
     <scopeInfo nodeId="2526721715665562914" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="60" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="2526721715665562914" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerReference_InferenceRule" />
     <unitInfo nodeId="2526721715665562914" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerReference_InferenceRule$QuotationClass_uu2qih_a0a0a0" />
+    <unitInfo nodeId="2526721715665547048" fileName="typeof_DebuggerReference_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerReference_InferenceRule" />
   </root>
-  <root nodeId="3570824963050586846">
+  <root nodeId="3570824963050586846" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="3570824963050586849" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="19" startPosition="122" endLine="20" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -172,10 +172,10 @@
       <varInfo nodeId="3570824963050586851" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="3570824963050586851" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="57" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
     <unitInfo nodeId="3570824963050586851" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="42" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule$QuotationClass_ueeq0q_a0a0a" />
+    <unitInfo nodeId="3570824963050586846" fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
   </root>
-  <root nodeId="4030433165041852571">
+  <root nodeId="4030433165041852571" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="7329423411587718639" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="26" startPosition="156" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7329423411587718646" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="27" startPosition="72" endLine="28" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7329423411587718652" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="28" startPosition="179" endLine="29" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -259,10 +259,10 @@
       <varInfo nodeId="7329423411587718650" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="7329423411587718650" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
     <unitInfo nodeId="7329423411587718650" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule$QuotationClass_fpej4j_a0a0b0a0a" />
+    <unitInfo nodeId="4030433165041852571" fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
   </root>
-  <root nodeId="5365453833390544926">
+  <root nodeId="5365453833390544926" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="5365453833390548228" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="22" startPosition="138" endLine="23" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5365453833390548276" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5365453833390548276" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="26" startPosition="170" endLine="27" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -350,10 +350,10 @@
       <varInfo nodeId="5365453833390571559" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="5365453833390571559" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="63" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" />
     <unitInfo nodeId="5365453833390571559" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="48" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_CreateBreakpointOperation_InferenceRule$QuotationClass_btj441_a0a0a1a0" />
+    <unitInfo nodeId="5365453833390544926" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" />
   </root>
-  <root nodeId="6586232406240905081">
+  <root nodeId="6586232406240905081" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="23" startPosition="108" endLine="24" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="24" startPosition="208" endLine="25" endPosition="382" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -436,10 +436,10 @@
       <varInfo nodeId="6586232406240905087" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="6586232406240905087" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="59" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerConfiguration_InferenceRule" />
     <unitInfo nodeId="6586232406240905087" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerConfiguration_InferenceRule$QuotationClass_p6alym_a0a0a0" />
+    <unitInfo nodeId="6586232406240905081" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.typeof_DebuggerConfiguration_InferenceRule" />
   </root>
-  <root nodeId="8321799582437916610">
+  <root nodeId="8321799582437916610" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="15" startPosition="79" endLine="16" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0d" />
     <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="17" startPosition="0" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern2" />
     <nodeInfo nodeId="8321799582437927607" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="23" startPosition="86" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -541,8 +541,8 @@
     <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="58" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8321799582437916617" varName="nodeToMatch" />
     </scopeInfo>
-    <unitInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" />
     <unitInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="55" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule$Pattern_wcp5kc_a0a0a0a3" />
+    <unitInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" />
   </root>
 </debugInfo>
 

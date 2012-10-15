@@ -2267,7 +2267,7 @@
                                     </node>
                                   </node>
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7316415153790565027">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b1vz.~Task%dgetProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getProject" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7316415153790565008" resolveInfo="getProject" />
                                   </node>
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7316415153790565028">
                                     <property name="value" nameId="tpee.1070475926801" value="Searching" />

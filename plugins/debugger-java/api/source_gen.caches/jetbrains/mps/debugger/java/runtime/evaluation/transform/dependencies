@@ -41,7 +41,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformationUtil" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl" file="TransformatorImpl.java">
     <classNode dependClassName="java.lang.Class" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformationUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode extendsClassName="jetbrains.mps.debug.evaluation.transform.Transformator" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.transform.Transformator" />
   </dependency>
 </dependenciesRoot>
 

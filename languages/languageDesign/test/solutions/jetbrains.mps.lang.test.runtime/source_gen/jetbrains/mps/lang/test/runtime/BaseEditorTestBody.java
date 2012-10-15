@@ -21,9 +21,8 @@ import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
-import com.intellij.openapi.util.Pair;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -145,9 +144,9 @@ public class BaseEditorTestBody extends BaseTestBody {
             query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
             Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, (EditorContext) editor.getEditorContext());
-            for (Pair<Intention, SNode> intention : CollectionSequence.fromCollection(intentions)) {
-              if (intention.first.getClass().getCanonicalName().equals(name)) {
-                intention.first.execute(intention.second, (EditorContext) editor.getEditorContext());
+            for (Pair<Intention, SNode> intention : intentions) {
+              if (intention.o1.getClass().getCanonicalName().equals(name)) {
+                intention.o1.execute(intention.o2, (EditorContext) editor.getEditorContext());
               }
             }
           }

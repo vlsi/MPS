@@ -15,7 +15,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -48,7 +48,7 @@ public class RenameConcept extends BaseLoggableRefactoring {
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       for (List<SModel> value : CollectionSequence.fromCollection(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage).values())) {
-        SetSequence.fromSet(result).addSequence(Sequence.fromIterable(value));
+        SetSequence.fromSet(result).addSequence(ListSequence.fromList(value));
       }
     }
     return SetSequence.fromSet(result).toListSequence();

@@ -52,6 +52,7 @@
       <varInfo nodeId="6647443673251160583" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="6647443673251160585" fileName="SeveralThreads.java" startLine="51" startPosition="38" endLine="51" endPosition="38" />
+    <scopeInfo nodeId="774465993226016887" fileName="SeveralThreads.java" startLine="21" startPosition="32" endLine="22" endPosition="55" />
     <scopeInfo nodeId="774465993226016889" fileName="SeveralThreads.java" startLine="21" startPosition="32" endLine="22" endPosition="55" />
     <scopeInfo nodeId="8841338956805577136" fileName="SeveralThreads.java" startLine="41" startPosition="18" endLine="42" endPosition="20" />
     <scopeInfo nodeId="1876713722539579912" fileName="SeveralThreads.java" startLine="9" startPosition="29" endLine="11" endPosition="3" />
@@ -75,9 +76,9 @@
     <scopeInfo nodeId="1876713722539579916" fileName="SeveralThreads.java" startLine="12" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1876713722539579920" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1876713722539579910" fileName="SeveralThreads.java" startLine="9" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" />
-    <unitInfo nodeId="6814978825597950761" fileName="SeveralThreads.java" startLine="14" startPosition="19" endLine="40" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1" />
     <unitInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="20" startPosition="44" endLine="24" endPosition="9" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$2" />
+    <unitInfo nodeId="6814978825597950761" fileName="SeveralThreads.java" startLine="14" startPosition="19" endLine="40" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1" />
+    <unitInfo nodeId="1876713722539579910" fileName="SeveralThreads.java" startLine="9" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" />
   </root>
   <root nodeId="236633587817012660" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
     <nodeInfo nodeId="236633587817012671" fileName="BaseClass.java" startLine="10" startPosition="31" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -134,8 +135,8 @@
       <varInfo nodeId="7658771663429108147" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="3337698516783078481" fileName="DebugObjects.java" startLine="12" startPosition="0" endLine="26" endPosition="3" />
-    <unitInfo nodeId="3337698516783078479" fileName="DebugObjects.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugObjects" />
     <unitInfo nodeId="3139492450371519437" fileName="DebugObjects.java" startLine="35" startPosition="8" endLine="42" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugObjects$1" />
+    <unitInfo nodeId="3337698516783078479" fileName="DebugObjects.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugObjects" />
   </root>
   <root nodeId="4060685206781456017" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
     <nodeInfo nodeId="7474628078187305917" fileName="DerivedClass.java" startLine="6" startPosition="45" endLine="7" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myStaticField" />
@@ -336,8 +337,8 @@
       <varInfo nodeId="7328148232284238030" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="7328148232284234512" fileName="InnerClassTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="7328148232284234498" fileName="InnerClassTest.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.InnerClassTest" />
     <unitInfo nodeId="7328148232284234506" fileName="InnerClassTest.java" startLine="15" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.InnerClassTest$MyInnerClass" />
+    <unitInfo nodeId="7328148232284234498" fileName="InnerClassTest.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.InnerClassTest" />
   </root>
 </debugInfo>
 

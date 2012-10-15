@@ -17,6 +17,7 @@ public class ConceptFunctionParameter_Behavior {
   private static Class[] PARAMETERS_1213877522908 = {SNode.class};
   private static Class[] PARAMETERS_1213877522926 = {SNode.class};
   private static Class[] PARAMETERS_1236687728308 = {SNode.class};
+  private static Class[] PARAMETERS_2443692612523876968 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -54,6 +55,15 @@ public class ConceptFunctionParameter_Behavior {
     return true;
   }
 
+  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    List<SNode> conceptFunctionParameters = SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameterType");
+    if (!(ListSequence.fromList(conceptFunctionParameters).isEmpty())) {
+      return ListSequence.fromList(conceptFunctionParameters).first();
+    } else {
+      return null;
+    }
+  }
+
   public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908, new Object[]{});
@@ -69,6 +79,11 @@ public class ConceptFunctionParameter_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
   }
 
+  public static SNode call_getType_2443692612523876968(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_getType_2443692612523876968", PARAMETERS_2443692612523876968, new Object[]{});
+  }
+
   public static boolean callSuperNew_getFromParameterObject_1213877522908(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908, new Object[]{});
   }
@@ -79,6 +94,10 @@ public class ConceptFunctionParameter_Behavior {
 
   public static boolean callSuperNew_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getType_2443692612523876968(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getType_2443692612523876968", PARAMETERS_2443692612523876968, new Object[]{});
   }
 
   @Deprecated
@@ -94,5 +113,10 @@ public class ConceptFunctionParameter_Behavior {
   @Deprecated
   public static boolean callSuper_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_getType_2443692612523876968(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getType_2443692612523876968", PARAMETERS_2443692612523876968, new Object[]{});
   }
 }

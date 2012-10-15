@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2241895627641426680">
+  <root nodeId="2241895627641426680" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="5505786199853653305" fileName="ModuleDependencyChange.java" startLine="11" startPosition="62" endLine="12" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleReference" />
     <nodeInfo nodeId="5505786199853653309" fileName="ModuleDependencyChange.java" startLine="12" startPosition="44" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
     <nodeInfo nodeId="5505786199853653318" fileName="ModuleDependencyChange.java" startLine="15" startPosition="174" endLine="16" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -97,7 +97,6 @@
       <varInfo nodeId="5505786199853653521" varName="model" />
       <varInfo nodeId="5505786199853653524" varName="nodeCopier" />
     </scopeInfo>
-    <unitInfo nodeId="2241895627641426680" fileName="ModuleDependencyChange.java" startLine="11" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     <unitInfo nodeId="5505786199853651874" fileName="ModuleDependencyChange.java" startLine="51" startPosition="35" endLine="55" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$1" />
     <unitInfo nodeId="5505786199853653244" fileName="ModuleDependencyChange.java" startLine="55" startPosition="11" endLine="59" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$2" />
     <unitInfo nodeId="5505786199853653260" fileName="ModuleDependencyChange.java" startLine="60" startPosition="35" endLine="64" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$3" />
@@ -105,8 +104,9 @@
     <unitInfo nodeId="5505786199853653283" fileName="ModuleDependencyChange.java" startLine="69" startPosition="69" endLine="73" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$5" />
     <unitInfo nodeId="5505786199853653294" fileName="ModuleDependencyChange.java" startLine="73" startPosition="11" endLine="77" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$6" />
     <unitInfo nodeId="5505786199853651271" fileName="ModuleDependencyChange.java" startLine="50" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType" />
+    <unitInfo nodeId="2241895627641426680" fileName="ModuleDependencyChange.java" startLine="11" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
   </root>
-  <root nodeId="2729259761016168456">
+  <root nodeId="2729259761016168456" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="2732852465125548113" fileName="SetPropertyChange.java" startLine="11" startPosition="51" endLine="12" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyName" />
     <nodeInfo nodeId="2732852465125672527" fileName="SetPropertyChange.java" startLine="12" startPosition="32" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewValue" />
     <nodeInfo nodeId="5694687812507036239" fileName="SetPropertyChange.java" startLine="15" startPosition="121" endLine="16" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -157,7 +157,7 @@
     <scopeInfo nodeId="3395217057974219931" fileName="SetPropertyChange.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
     <unitInfo nodeId="2729259761016168456" fileName="SetPropertyChange.java" startLine="11" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
   </root>
-  <root nodeId="2732852465125672459">
+  <root nodeId="2732852465125672459" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="2732852465125674136" fileName="SetReferenceChange.java" startLine="17" startPosition="52" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
     <nodeInfo nodeId="2732852465125674140" fileName="SetReferenceChange.java" startLine="18" startPosition="24" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetModelReference" />
     <nodeInfo nodeId="2732852465125674144" fileName="SetReferenceChange.java" startLine="19" startPosition="49" endLine="20" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetNodeId" />
@@ -354,12 +354,12 @@
       <varInfo nodeId="5786223774279747063" varName="what" />
     </scopeInfo>
     <scopeInfo nodeId="5786223774279741768" fileName="SetReferenceChange.java" startLine="81" startPosition="0" endLine="122" endPosition="0" />
-    <unitInfo nodeId="2732852465125672459" fileName="SetReferenceChange.java" startLine="17" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <unitInfo nodeId="5786223774279747180" fileName="SetReferenceChange.java" startLine="95" startPosition="22" endLine="99" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange$1" />
     <unitInfo nodeId="5786223774279747159" fileName="SetReferenceChange.java" startLine="102" startPosition="22" endLine="106" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange$2" />
     <unitInfo nodeId="5786223774279747115" fileName="SetReferenceChange.java" startLine="110" startPosition="22" endLine="114" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange$3" />
+    <unitInfo nodeId="2732852465125672459" fileName="SetReferenceChange.java" startLine="17" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
   </root>
-  <root nodeId="4209733725028893042">
+  <root nodeId="4209733725028893042" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="4209733725028893049" fileName="ModelVersionChange.java" startLine="11" startPosition="59" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4209733725028893064" fileName="ModelVersionChange.java" startLine="15" startPosition="76" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4209733725028894511" fileName="ModelVersionChange.java" startLine="16" startPosition="46" endLine="17" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -394,7 +394,7 @@
     </scopeInfo>
     <unitInfo nodeId="4209733725028893042" fileName="ModelVersionChange.java" startLine="10" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModelVersionChange" />
   </root>
-  <root nodeId="4972886494893223485">
+  <root nodeId="4972886494893223485" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="4972886494893223503" fileName="NodeGroupChange.java" startLine="19" startPosition="50" endLine="20" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParentNodeId" />
     <nodeInfo nodeId="4972886494893223507" fileName="NodeGroupChange.java" startLine="20" startPosition="33" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
     <nodeInfo nodeId="959738663751379601" fileName="NodeGroupChange.java" startLine="21" startPosition="24" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBegin" />
@@ -609,11 +609,11 @@
     <scopeInfo nodeId="5814105446971274098" fileName="NodeGroupChange.java" startLine="141" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="5814105446971274231" varName="verbose" />
     </scopeInfo>
-    <unitInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="19" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <unitInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="85" startPosition="62" endLine="89" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$1" />
     <unitInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="147" startPosition="113" endLine="151" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$2" />
+    <unitInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="19" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
   </root>
-  <root nodeId="5505786199853653616">
+  <root nodeId="5505786199853653616" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="5505786199853656967" fileName="DoNotGenerateOptionChange.java" startLine="11" startPosition="66" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2404019329992942225" fileName="DoNotGenerateOptionChange.java" startLine="15" startPosition="76" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2404019329992942242" fileName="DoNotGenerateOptionChange.java" startLine="17" startPosition="21" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -646,7 +646,7 @@
     </scopeInfo>
     <unitInfo nodeId="5505786199853653616" fileName="DoNotGenerateOptionChange.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" />
   </root>
-  <root nodeId="5694687812507036176">
+  <root nodeId="5694687812507036176" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="5694687812507036183" fileName="NodeChange.java" startLine="10" startPosition="54" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAffectedNodeId" />
     <nodeInfo nodeId="5694687812507036192" fileName="NodeChange.java" startLine="13" startPosition="84" endLine="14" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5694687812507036199" fileName="NodeChange.java" startLine="14" startPosition="21" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -670,7 +670,7 @@
     <scopeInfo nodeId="4453118635377437362" fileName="NodeChange.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="5694687812507036176" fileName="NodeChange.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeChange" />
   </root>
-  <root nodeId="6359197607515881703">
+  <root nodeId="6359197607515881703" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="6359197607515881781" fileName="AddRootChange.java" startLine="12" startPosition="48" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
     <nodeInfo nodeId="6359197607515881770" fileName="AddRootChange.java" startLine="15" startPosition="79" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6359197607515881786" fileName="AddRootChange.java" startLine="16" startPosition="21" endLine="17" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -712,7 +712,7 @@
     <scopeInfo nodeId="4453118635377434925" fileName="AddRootChange.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="6359197607515881703" fileName="AddRootChange.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
   </root>
-  <root nodeId="6359197607515894913">
+  <root nodeId="6359197607515894913" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="6359197607515894914" fileName="DeleteRootChange.java" startLine="10" startPosition="51" endLine="11" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
     <nodeInfo nodeId="6359197607515894923" fileName="DeleteRootChange.java" startLine="13" startPosition="64" endLine="14" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6359197607515894925" fileName="DeleteRootChange.java" startLine="14" startPosition="21" endLine="15" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -752,7 +752,7 @@
     <scopeInfo nodeId="4453118635377434938" fileName="DeleteRootChange.java" startLine="17" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="6359197607515894913" fileName="DeleteRootChange.java" startLine="10" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
   </root>
-  <root nodeId="6562343564267115985">
+  <root nodeId="6562343564267115985" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="6562343564267115999" fileName="MetadataChange.java" startLine="11" startPosition="58" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6562343564267116020" fileName="MetadataChange.java" startLine="17" startPosition="36" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5786223774279741708" fileName="MetadataChange.java" startLine="21" startPosition="34" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -769,7 +769,7 @@
     <scopeInfo nodeId="6562343564267116012" fileName="MetadataChange.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="6562343564267115985" fileName="MetadataChange.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.MetadataChange" />
   </root>
-  <root nodeId="6562343564267116024">
+  <root nodeId="6562343564267116024" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="6562343564267116031" fileName="DependencyChange.java" startLine="8" startPosition="63" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDelete" />
     <nodeInfo nodeId="6562343564267121749" fileName="DependencyChange.java" startLine="11" startPosition="73" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6562343564267121756" fileName="DependencyChange.java" startLine="12" startPosition="21" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -789,7 +789,7 @@
     <scopeInfo nodeId="6562343564267116042" fileName="DependencyChange.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="6562343564267116024" fileName="DependencyChange.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.DependencyChange" />
   </root>
-  <root nodeId="6562343564267124230">
+  <root nodeId="6562343564267124230" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="6562343564267124237" fileName="ImportedModelChange.java" startLine="10" startPosition="59" endLine="11" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />
     <nodeInfo nodeId="6562343564267124246" fileName="ImportedModelChange.java" startLine="13" startPosition="117" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6562343564267124257" fileName="ImportedModelChange.java" startLine="14" startPosition="29" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -826,7 +826,7 @@
     </scopeInfo>
     <unitInfo nodeId="6562343564267124230" fileName="ImportedModelChange.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ImportedModelChange" />
   </root>
-  <root nodeId="7082523601896465910">
+  <root nodeId="7082523601896465910" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="7082523601896465911" fileName="NodeCopier.java" startLine="21" startPosition="25" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdReplacementCache" />
     <nodeInfo nodeId="7082523601896465920" fileName="NodeCopier.java" startLine="22" startPosition="108" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="7082523601896466233" fileName="NodeCopier.java" startLine="25" startPosition="35" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -966,18 +966,18 @@
     <scopeInfo nodeId="7082523601896465934" fileName="NodeCopier.java" startLine="32" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="7082523601896465935" varName="sourceNode" />
     </scopeInfo>
-    <unitInfo nodeId="7082523601896465910" fileName="NodeCopier.java" startLine="21" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <unitInfo nodeId="7082523601896466011" fileName="NodeCopier.java" startLine="54" startPosition="95" endLine="58" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$1" />
     <unitInfo nodeId="7082523601896466174" fileName="NodeCopier.java" startLine="98" startPosition="59" endLine="102" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$2" />
     <unitInfo nodeId="7082523601896466221" fileName="NodeCopier.java" startLine="112" startPosition="93" endLine="116" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$3" />
+    <unitInfo nodeId="7082523601896465910" fileName="NodeCopier.java" startLine="21" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
   </root>
-  <root nodeId="8401260027345476466">
+  <root nodeId="8401260027345476466" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="8401260027345476489" fileName="ChangeType.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#()V" />
     <scopeInfo nodeId="8401260027345476494" fileName="ChangeType.java" startLine="12" startPosition="16" endLine="12" endPosition="16" />
     <scopeInfo nodeId="8401260027345476489" fileName="ChangeType.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
     <unitInfo nodeId="8401260027345476466" fileName="ChangeType.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeType" />
   </root>
-  <root nodeId="8813828754313712692">
+  <root nodeId="8813828754313712692" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
     <nodeInfo nodeId="6359197607515881709" fileName="ModelChange.java" startLine="11" startPosition="35" endLine="12" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
     <nodeInfo nodeId="3395217057974209352" fileName="ModelChange.java" startLine="12" startPosition="32" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpposite" />
     <nodeInfo nodeId="6359197607515881720" fileName="ModelChange.java" startLine="15" startPosition="55" endLine="16" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -4,13 +4,22 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MethodSignature implements Signature {
   private final String singature;
 
+  public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, MembersPopulatingContext context) {
+    this.singature = getStringSignature(method, typeByTypeVariable, context);
+  }
+
   public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable) {
-    this.singature = getStringSignature(method, typeByTypeVariable);
+    this.singature = getStringSignature(method, typeByTypeVariable, null);
   }
 
   @Override
@@ -27,8 +36,35 @@ public class MethodSignature implements Signature {
     return eq_1fkaqj_a0c0b(this.singature, arg.singature);
   }
 
-  public static String getStringSignature(SNode method, Map<SNode, SNode> typeByTypeVariable) {
-    return SPropertyOperations.getString(method, "name") + "(" + ClassifierScopeUtils.createMethodParameterTypesString(method, typeByTypeVariable) + ")";
+  public static String getStringSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, @Nullable MembersPopulatingContext context) {
+    StringBuilder result = new StringBuilder();
+    result.append(SPropertyOperations.getString(method, "name"));
+    result.append('(');
+    for (SNode parm : SLinkOperations.getTargets(method, "parameter", true)) {
+      SNode type = SLinkOperations.getTarget(parm, "type", true);
+      type = GenericTypesUtil.getTypeWithResolvedTypeVars(type, typeByTypeVariable);
+      if (result.length() > 0) {
+        result.append(',');
+      }
+      if (type != null) {
+        if (context != null) {
+          Tuples._2<Class, SNode> cacheKey = MultiTuple.<Class,SNode>from(MethodSignature.class, type);
+          if (context.containsUserObject(cacheKey)) {
+            result.append(context.getUserObject(cacheKey));
+          } else {
+            String typeSignature = ((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class}));
+            context.putUserObject(cacheKey, typeSignature);
+            result.append(typeSignature);
+          }
+        } else {
+          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
+        }
+      } else {
+        result.append("");
+      }
+    }
+    result.append(')');
+    return result.toString();
   }
 
   private static boolean eq_1fkaqj_a0c0b(Object a, Object b) {

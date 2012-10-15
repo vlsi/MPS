@@ -21,4 +21,22 @@ public class TestInfo_Behavior {
     SNode testInfo = ListSequence.fromList(infos).first();
     return SPropertyOperations.getString(testInfo, "projectPath");
   }
+
+  public static boolean isUITest_4484885613884830715(SModel model) {
+    List<SNode> infos = SModelOperations.getRoots(model, "jetbrains.mps.lang.test.structure.TestInfo");
+    if (ListSequence.fromList(infos).isEmpty()) {
+      return false;
+    }
+    SNode testInfo = ListSequence.fromList(infos).first();
+    return SPropertyOperations.getBoolean(testInfo, "uiTest");
+  }
+
+  public static boolean reOpenProject_1031873601093419509(SModel model) {
+    List<SNode> infos = SModelOperations.getRoots(model, "jetbrains.mps.lang.test.structure.TestInfo");
+    if (ListSequence.fromList(infos).isEmpty()) {
+      return false;
+    }
+    SNode testInfo = ListSequence.fromList(infos).first();
+    return SPropertyOperations.getBoolean(testInfo, "reOpenProject");
+  }
 }

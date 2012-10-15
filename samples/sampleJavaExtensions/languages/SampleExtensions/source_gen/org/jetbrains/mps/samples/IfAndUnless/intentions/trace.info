@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor" />
-  <root nodeId="393299394024647596">
+  <root nodeId="393299394024647596" modelId="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)">
     <nodeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -54,7 +54,7 @@
     </scopeInfo>
     <unitInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.SurroundWithUnless_Intention" />
   </root>
-  <root nodeId="393299394024667052">
+  <root nodeId="393299394024667052" modelId="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)">
     <nodeInfo nodeId="393299394024667052" fileName="UnwrapUnlessBlock_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024667052" fileName="UnwrapUnlessBlock_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024667052" fileName="UnwrapUnlessBlock_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -149,10 +149,10 @@
       <varInfo nodeId="393299394024667052" varName="editorContext" />
       <varInfo nodeId="393299394024667052" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="393299394024667052" fileName="UnwrapUnlessBlock_Intention.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention" />
     <unitInfo nodeId="917166302016112143" fileName="UnwrapUnlessBlock_Intention.java" startLine="62" startPosition="135" endLine="67" endPosition="7" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention$1" />
+    <unitInfo nodeId="393299394024667052" fileName="UnwrapUnlessBlock_Intention.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention" />
   </root>
-  <root nodeId="393299394024668987">
+  <root nodeId="393299394024668987" modelId="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)">
     <nodeInfo nodeId="393299394024668987" fileName="TurnToIfStatement_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024668987" fileName="TurnToIfStatement_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024668987" fileName="TurnToIfStatement_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -241,7 +241,7 @@
     </scopeInfo>
     <unitInfo nodeId="393299394024668987" fileName="TurnToIfStatement_Intention.java" startLine="14" startPosition="0" endLine="85" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.TurnToIfStatement_Intention" />
   </root>
-  <root nodeId="8008559088281289910">
+  <root nodeId="8008559088281289910" modelId="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)">
     <nodeInfo nodeId="8008559088281289910" fileName="SplitIf_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8008559088281289910" fileName="SplitIf_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8008559088281289910" fileName="SplitIf_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -311,7 +311,7 @@
     </scopeInfo>
     <unitInfo nodeId="8008559088281289910" fileName="SplitIf_Intention.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.SplitIf_Intention" />
   </root>
-  <root nodeId="954830572076058611">
+  <root nodeId="954830572076058611" modelId="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)">
     <nodeInfo nodeId="954830572076058611" fileName="ConvertMyIfToIf_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572076058611" fileName="ConvertMyIfToIf_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572076058611" fileName="ConvertMyIfToIf_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -366,7 +366,7 @@
     </scopeInfo>
     <unitInfo nodeId="954830572076058611" fileName="ConvertMyIfToIf_Intention.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.intentions.ConvertMyIfToIf_Intention" />
   </root>
-  <root nodeId="954830572076084528">
+  <root nodeId="954830572076084528" modelId="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)">
     <nodeInfo nodeId="954830572076084528" fileName="ConvertIfToMyIf_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572076084528" fileName="ConvertIfToMyIf_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572076084528" fileName="ConvertIfToMyIf_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

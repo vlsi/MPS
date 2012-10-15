@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1850528335647299603">
+  <root nodeId="1850528335647299603" modelId="r:83565bcd-fedf-48c1-8194-677ec562ba77(jetbrains.mps.ui.unittest.mockup)">
     <nodeInfo nodeId="4343029777915768161" fileName="MockPanel.java" startLine="11" startPosition="43" endLine="12" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="type" />
     <nodeInfo nodeId="1850528335647300242" fileName="MockPanel.java" startLine="12" startPosition="24" endLine="13" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="widgets" />
     <nodeInfo nodeId="4343029777915768173" fileName="MockPanel.java" startLine="15" startPosition="33" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -83,10 +83,10 @@
     <scopeInfo nodeId="1850528335647300219" fileName="MockPanel.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1850528335647300220" varName="sb" />
     </scopeInfo>
-    <unitInfo nodeId="1850528335647299603" fileName="MockPanel.java" startLine="11" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockPanel" />
     <unitInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockPanel$WidgetComp" />
+    <unitInfo nodeId="1850528335647299603" fileName="MockPanel.java" startLine="11" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockPanel" />
   </root>
-  <root nodeId="5211164146775800836">
+  <root nodeId="5211164146775800836" modelId="r:83565bcd-fedf-48c1-8194-677ec562ba77(jetbrains.mps.ui.unittest.mockup)">
     <nodeInfo nodeId="4343029777915609942" fileName="MockWidget.java" startLine="13" startPosition="25" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="props" />
     <nodeInfo nodeId="5520428330967858511" fileName="MockWidget.java" startLine="14" startPosition="89" endLine="15" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="propHandlers" />
     <nodeInfo nodeId="6876714382652027905" fileName="MockWidget.java" startLine="15" startPosition="130" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="eventHandlers" />
@@ -259,11 +259,11 @@
       <varInfo nodeId="6876714382652027965" varName="event" />
       <varInfo nodeId="6876714382652027967" varName="hdlr" />
     </scopeInfo>
-    <unitInfo nodeId="5211164146775800836" fileName="MockWidget.java" startLine="13" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockWidget" />
-    <unitInfo nodeId="6876714382652027770" fileName="MockWidget.java" startLine="116" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockWidget$EventHandlers" />
     <unitInfo nodeId="5520428330967858544" fileName="MockWidget.java" startLine="93" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockWidget$PropHandlers" />
+    <unitInfo nodeId="6876714382652027770" fileName="MockWidget.java" startLine="116" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockWidget$EventHandlers" />
+    <unitInfo nodeId="5211164146775800836" fileName="MockWidget.java" startLine="13" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockWidget" />
   </root>
-  <root nodeId="5520428330967858496">
+  <root nodeId="5520428330967858496" modelId="r:83565bcd-fedf-48c1-8194-677ec562ba77(jetbrains.mps.ui.unittest.mockup)">
     <nodeInfo nodeId="5520428330967858498" fileName="MockPropChngHandler.java" startLine="6" startPosition="38" endLine="7" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/ui/unittest/mockup/MockWidget;Ljava/lang/String;)V" />
     <scopeInfo nodeId="5520428330967858498" fileName="MockPropChngHandler.java" startLine="6" startPosition="38" endLine="7" endPosition="53">
       <varInfo nodeId="5520428330967858505" varName="propKey" />
@@ -271,7 +271,7 @@
     </scopeInfo>
     <unitInfo nodeId="5520428330967858496" fileName="MockPropChngHandler.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockPropChngHandler" />
   </root>
-  <root nodeId="6876714382651943235">
+  <root nodeId="6876714382651943235" modelId="r:83565bcd-fedf-48c1-8194-677ec562ba77(jetbrains.mps.ui.unittest.mockup)">
     <nodeInfo nodeId="6876714382652027653" fileName="MockEvent.java" startLine="9" startPosition="24" endLine="10" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="props" />
     <nodeInfo nodeId="6876714382652027702" fileName="MockEvent.java" startLine="15" startPosition="53" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6876714382652027688" fileName="MockEvent.java" startLine="19" startPosition="41" endLine="20" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -291,7 +291,7 @@
     </scopeInfo>
     <unitInfo nodeId="6876714382651943235" fileName="MockEvent.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.unittest.mockup.MockEvent" />
   </root>
-  <root nodeId="6876714382652027729">
+  <root nodeId="6876714382652027729" modelId="r:83565bcd-fedf-48c1-8194-677ec562ba77(jetbrains.mps.ui.unittest.mockup)">
     <nodeInfo nodeId="6876714382652027731" fileName="MockEventHandler.java" startLine="6" startPosition="35" endLine="7" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/ui/unittest/mockup/MockWidget;Ljetbrains/mps/ui/unittest/mockup/MockEvent;)V" />
     <scopeInfo nodeId="6876714382652027731" fileName="MockEventHandler.java" startLine="6" startPosition="35" endLine="7" endPosition="52">
       <varInfo nodeId="6876714382652027738" varName="evt" />

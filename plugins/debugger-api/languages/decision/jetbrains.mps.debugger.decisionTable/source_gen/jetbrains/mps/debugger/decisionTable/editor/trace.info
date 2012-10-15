@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5202024118203914173">
+  <root nodeId="5202024118203914173" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="5202024118203914173" fileName="YVariableReference_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118203914175" fileName="YVariableReference_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203914175" fileName="YVariableReference_Editor.java" startLine="17" startPosition="87" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -24,7 +24,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203914173" fileName="YVariableReference_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.YVariableReference_Editor" />
   </root>
-  <root nodeId="5202024118203914176">
+  <root nodeId="5202024118203914176" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="5202024118203914176" fileName="XVariableReference_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118203914178" fileName="XVariableReference_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203914178" fileName="XVariableReference_Editor.java" startLine="17" startPosition="87" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -48,7 +48,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203914176" fileName="XVariableReference_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.XVariableReference_Editor" />
   </root>
-  <root nodeId="5202024118203995646">
+  <root nodeId="5202024118203995646" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="5202024118203995659" fileName="DecideOperation_Editor.java" startLine="60" startPosition="58" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5202024118203995663" fileName="DecideOperation_Editor.java" startLine="77" startPosition="58" endLine="77" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5202024118203995646" fileName="DecideOperation_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -228,7 +228,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203995646" fileName="DecideOperation_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.DecideOperation_Editor" />
   </root>
-  <root nodeId="6409088484822265797">
+  <root nodeId="6409088484822265797" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="6409088484822265797" fileName="DecisionTable_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6409088484822265802" fileName="DecisionTable_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6409088484822265802" fileName="DecisionTable_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -310,10 +310,10 @@
       <varInfo nodeId="6409088484822265806" varName="editorContext" />
       <varInfo nodeId="6409088484822265806" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6409088484822265797" fileName="DecisionTable_Editor.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTable_Editor" />
     <unitInfo nodeId="6409088484822280597" fileName="DecisionTable_Editor.java" startLine="52" startPosition="36" endLine="56" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTable_Editor$1" />
+    <unitInfo nodeId="6409088484822265797" fileName="DecisionTable_Editor.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTable_Editor" />
   </root>
-  <root nodeId="6409088484822290060">
+  <root nodeId="6409088484822290060" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="6409088484822290060" fileName="DecisionTableType_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6409088484822290062" fileName="DecisionTableType_Editor.java" startLine="19" startPosition="94" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6409088484822290062" fileName="DecisionTableType_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -356,7 +356,7 @@
     </scopeInfo>
     <unitInfo nodeId="6409088484822290060" fileName="DecisionTableType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.DecisionTableType_Editor" />
   </root>
-  <root nodeId="6487201325881248122">
+  <root nodeId="6487201325881248122" modelId="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)">
     <nodeInfo nodeId="6487201325881248124" fileName="CaseExpression_Editor.java" startLine="32" startPosition="58" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6487201325881248122" fileName="CaseExpression_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6487201325881248124" fileName="CaseExpression_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

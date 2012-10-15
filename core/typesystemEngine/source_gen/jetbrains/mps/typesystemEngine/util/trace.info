@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1883223317720973623">
+  <root nodeId="1883223317720973623" modelId="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)">
     <nodeInfo nodeId="1883223317721339522" fileName="LatticeUtil.java" startLine="21" startPosition="5" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1883223317721339532" fileName="LatticeUtil.java" startLine="24" startPosition="84" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1883223317721339536" fileName="LatticeUtil.java" startLine="26" startPosition="11" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -59,8 +59,9 @@
     <nodeInfo nodeId="6007597446559193393" fileName="LatticeUtil.java" startLine="147" startPosition="35" endLine="148" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1883223317720980514" fileName="LatticeUtil.java" startLine="151" startPosition="44" endLine="152" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1883223317720980532" fileName="LatticeUtil.java" startLine="155" startPosition="44" endLine="156" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1883223317720980579" fileName="LatticeUtil.java" startLine="159" startPosition="58" endLine="160" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4545016991847816071" fileName="LatticeUtil.java" startLine="163" startPosition="58" endLine="164" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8183958085762408353" fileName="LatticeUtil.java" startLine="159" startPosition="51" endLine="160" endPosition="374" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1883223317720980579" fileName="LatticeUtil.java" startLine="163" startPosition="58" endLine="164" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4545016991847816071" fileName="LatticeUtil.java" startLine="167" startPosition="58" endLine="168" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1883223317720979776" fileName="LatticeUtil.java" startLine="16" startPosition="26" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LatticeUtil#()V" />
     <nodeInfo nodeId="1883223317720980034" fileName="LatticeUtil.java" startLine="71" startPosition="12" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4545016991847814959" fileName="LatticeUtil.java" startLine="100" startPosition="12" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -80,8 +81,9 @@
     <nodeInfo nodeId="1883223317721340778" fileName="LatticeUtil.java" startLine="46" startPosition="114" endLine="50" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1883223317720980508" fileName="LatticeUtil.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMeet#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1883223317720980526" fileName="LatticeUtil.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isJoin#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1883223317720980544" fileName="LatticeUtil.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMeetArguments#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1883223317720980584" fileName="LatticeUtil.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getJoinArguments#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="8183958085762408345" fileName="LatticeUtil.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPolymorphic#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1883223317720980544" fileName="LatticeUtil.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMeetArguments#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1883223317720980584" fileName="LatticeUtil.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getJoinArguments#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="1883223317721339536" fileName="LatticeUtil.java" startLine="27" startPosition="40" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1883223317721340775" fileName="LatticeUtil.java" startLine="45" startPosition="40" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1883223317720980029" fileName="LatticeUtil.java" startLine="65" startPosition="7" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -118,8 +120,9 @@
     <scopeInfo nodeId="6007597446559193342" fileName="LatticeUtil.java" startLine="138" startPosition="28" endLine="139" endPosition="37" />
     <scopeInfo nodeId="1883223317720980513" fileName="LatticeUtil.java" startLine="151" startPosition="44" endLine="152" endPosition="98" />
     <scopeInfo nodeId="1883223317720980531" fileName="LatticeUtil.java" startLine="155" startPosition="44" endLine="156" endPosition="98" />
-    <scopeInfo nodeId="1883223317720980550" fileName="LatticeUtil.java" startLine="159" startPosition="58" endLine="160" endPosition="134" />
-    <scopeInfo nodeId="1883223317720980590" fileName="LatticeUtil.java" startLine="163" startPosition="58" endLine="164" endPosition="134" />
+    <scopeInfo nodeId="8183958085762408348" fileName="LatticeUtil.java" startLine="159" startPosition="51" endLine="160" endPosition="374" />
+    <scopeInfo nodeId="1883223317720980550" fileName="LatticeUtil.java" startLine="163" startPosition="58" endLine="164" endPosition="134" />
+    <scopeInfo nodeId="1883223317720980590" fileName="LatticeUtil.java" startLine="167" startPosition="58" endLine="168" endPosition="134" />
     <scopeInfo nodeId="1883223317720979776" fileName="LatticeUtil.java" startLine="16" startPosition="26" endLine="18" endPosition="3" />
     <scopeInfo nodeId="1883223317720979900" fileName="LatticeUtil.java" startLine="29" startPosition="100" endLine="31" endPosition="117" />
     <scopeInfo nodeId="1883223317721340784" fileName="LatticeUtil.java" startLine="47" startPosition="100" endLine="49" endPosition="117" />
@@ -161,10 +164,13 @@
     <scopeInfo nodeId="1883223317720980526" fileName="LatticeUtil.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="1883223317720980529" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1883223317720980544" fileName="LatticeUtil.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="8183958085762408345" fileName="LatticeUtil.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
+      <varInfo nodeId="8183958085762408350" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1883223317720980544" fileName="LatticeUtil.java" startLine="162" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1883223317720980548" varName="meet" />
     </scopeInfo>
-    <scopeInfo nodeId="1883223317720980584" fileName="LatticeUtil.java" startLine="162" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="1883223317720980584" fileName="LatticeUtil.java" startLine="166" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="1883223317720980588" varName="join" />
     </scopeInfo>
     <scopeInfo nodeId="1883223317721339538" fileName="LatticeUtil.java" startLine="28" startPosition="114" endLine="33" endPosition="48" />
@@ -239,9 +245,9 @@
     <scopeInfo nodeId="1883223317720979806" fileName="LatticeUtil.java" startLine="19" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1883223317720979809" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1883223317720973623" fileName="LatticeUtil.java" startLine="16" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.LatticeUtil" />
+    <unitInfo nodeId="1883223317720973623" fileName="LatticeUtil.java" startLine="16" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.LatticeUtil" />
   </root>
-  <root nodeId="6321644624958548836">
+  <root nodeId="6321644624958548836" modelId="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)">
     <nodeInfo nodeId="3635379492312128764" fileName="CoerceUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CoerceUtil#()V" />
     <nodeInfo nodeId="3635379492312128739" fileName="CoerceUtil.java" startLine="13" startPosition="72" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.InternUtil;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 
 public class SPropertyOperations {
   public SPropertyOperations() {
@@ -132,7 +132,7 @@ public class SPropertyOperations {
     if (node != null) {
       String value = node.getProperty(propertyName);
       if (value == null) {
-        return ObjectUtils.equals(defaultValue, propertyValue);
+        return EqualUtil.equals(defaultValue, propertyValue);
       }
       return value.equals(propertyValue);
     }

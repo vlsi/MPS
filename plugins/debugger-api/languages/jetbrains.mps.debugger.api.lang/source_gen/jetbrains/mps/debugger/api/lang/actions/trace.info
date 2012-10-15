@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="28" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="35" startPosition="36" endLine="43" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="47" startPosition="57" endLine="65" endPosition="13" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="79" startPosition="36" endLine="90" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated$3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="47" startPosition="57" endLine="65" endPosition="13" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="94" startPosition="57" endLine="113" endPosition="13" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated$4" />
-  <root nodeId="1104094430779069344">
+  <unitInfo fileName="QueriesGenerated.java" startLine="28" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.actions.QueriesGenerated" />
+  <root nodeId="1104094430779069344" modelId="r:3e17b4e0-d419-49ad-b23b-6739959ae535(jetbrains.mps.debugger.api.lang.actions)">
     <nodeInfo nodeId="337851360307413977" fileName="QueriesGenerated.java" startLine="36" startPosition="35" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="337851360307414003" fileName="QueriesGenerated.java" startLine="38" startPosition="102" endLine="39" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="337851360307414000" fileName="QueriesGenerated.java" startLine="40" startPosition="13" endLine="41" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -28,7 +28,7 @@
       <varInfo nodeId="337851360307413978" varName="debuggerNames" />
     </scopeInfo>
   </root>
-  <root nodeId="2569394751387978975">
+  <root nodeId="2569394751387978975" modelId="r:3e17b4e0-d419-49ad-b23b-6739959ae535(jetbrains.mps.debugger.api.lang.actions)">
     <nodeInfo nodeId="2569394751388009812" fileName="QueriesGenerated.java" startLine="80" startPosition="35" endLine="81" endPosition="378" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2569394751388019611" fileName="QueriesGenerated.java" startLine="82" startPosition="133" endLine="83" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2569394751388019632" fileName="QueriesGenerated.java" startLine="84" startPosition="37" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

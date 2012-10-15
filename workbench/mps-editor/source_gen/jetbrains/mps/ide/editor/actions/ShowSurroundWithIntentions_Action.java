@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.util.Pair;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import java.util.Comparator;
@@ -146,7 +146,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
         public void actionPerformed(AnActionEvent event) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
             public void run() {
-              finalPair.getFirst().execute(finalPair.getSecond(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+              finalPair.o1.execute(finalPair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
             }
           }, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
         }
@@ -165,6 +165,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   }
 
   private String getDescriptior(Pair<Intention, SNode> pair, final Map<String, Object> _params) {
-    return pair.getFirst().getDescription(pair.getSecond(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    return pair.o1.getDescription(pair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
 }

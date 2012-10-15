@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2203155934614032173">
+  <root nodeId="2203155934614032173" modelId="r:c41b5217-d750-4a2d-b348-9962831f1048(jetbrains.mps.baseLanguage.contracts.editor)">
     <nodeInfo nodeId="2203155934614032173" fileName="ResultExpression_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8892289062514336368" fileName="ResultExpression_Editor.java" startLine="19" startPosition="94" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8892289062514336368" fileName="ResultExpression_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -43,7 +43,7 @@
     </scopeInfo>
     <unitInfo nodeId="2203155934614032173" fileName="ResultExpression_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.ResultExpression_Editor" />
   </root>
-  <root nodeId="2203155934615032376">
+  <root nodeId="2203155934615032376" modelId="r:c41b5217-d750-4a2d-b348-9962831f1048(jetbrains.mps.baseLanguage.contracts.editor)">
     <nodeInfo nodeId="2203155934615032390" fileName="Postcondition_Editor.java" startLine="34" startPosition="58" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2203155934615032376" fileName="Postcondition_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2203155934615032381" fileName="Postcondition_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -137,7 +137,7 @@
     </scopeInfo>
     <unitInfo nodeId="2203155934615032376" fileName="Postcondition_Editor.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.Postcondition_Editor" />
   </root>
-  <root nodeId="2329648364425490220">
+  <root nodeId="2329648364425490220" modelId="r:c41b5217-d750-4a2d-b348-9962831f1048(jetbrains.mps.baseLanguage.contracts.editor)">
     <nodeInfo nodeId="2329648364425490220" fileName="ContractThisExpression_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2329648364425490223" fileName="ContractThisExpression_Editor.java" startLine="20" startPosition="94" endLine="21" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2329648364425490223" fileName="ContractThisExpression_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -181,7 +181,7 @@
     </scopeInfo>
     <unitInfo nodeId="2329648364425490220" fileName="ContractThisExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.ContractThisExpression_Editor" />
   </root>
-  <root nodeId="332248429538012440">
+  <root nodeId="332248429538012440" modelId="r:c41b5217-d750-4a2d-b348-9962831f1048(jetbrains.mps.baseLanguage.contracts.editor)">
     <nodeInfo nodeId="332248429538012447" fileName="Precondition_Editor.java" startLine="34" startPosition="58" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="332248429538012440" fileName="Precondition_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="332248429538012442" fileName="Precondition_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -275,7 +275,7 @@
     </scopeInfo>
     <unitInfo nodeId="332248429538012440" fileName="Precondition_Editor.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.Precondition_Editor" />
   </root>
-  <root nodeId="332248429538012448">
+  <root nodeId="332248429538012448" modelId="r:c41b5217-d750-4a2d-b348-9962831f1048(jetbrains.mps.baseLanguage.contracts.editor)">
     <nodeInfo nodeId="332248429538012460" fileName="MethodConditions_Editor.java" startLine="39" startPosition="67" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="332248429538012448" fileName="MethodConditions_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="332248429538012450" fileName="MethodConditions_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -397,8 +397,8 @@
       <varInfo nodeId="332248429538012452" varName="editorContext" />
       <varInfo nodeId="332248429538012452" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="332248429538012448" fileName="MethodConditions_Editor.java" startLine="23" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.MethodConditions_Editor" />
     <unitInfo nodeId="332248429538012452" fileName="MethodConditions_Editor.java" startLine="56" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.MethodConditions_Editor$conditionListHandler_p1nx89_a0" />
+    <unitInfo nodeId="332248429538012448" fileName="MethodConditions_Editor.java" startLine="23" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.editor.MethodConditions_Editor" />
   </root>
 </debugInfo>
 

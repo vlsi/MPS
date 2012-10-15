@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
-import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 
 public class Mps_Command {

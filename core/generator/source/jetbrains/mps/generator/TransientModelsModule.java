@@ -263,7 +263,7 @@ public class TransientModelsModule extends ClassLoadingModule   {
     private void dropModel() {
       if (mySModel != null) {
         LOG.debug("Dropped " + getSModelReference());
-
+        mySModel.dispose();
         mySModel = null;
         fireModelReplaced();
       }

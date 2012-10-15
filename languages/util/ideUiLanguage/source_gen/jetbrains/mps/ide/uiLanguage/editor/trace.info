@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1203592631206">
+  <root nodeId="1203592631206" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="1226851029035" fileName="IDEDialog_Editor.java" startLine="191" startPosition="58" endLine="191" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203592748177" fileName="IDEDialog_Editor.java" startLine="208" startPosition="58" endLine="208" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -508,10 +508,10 @@
       <varInfo nodeId="1203603985511" varName="editorContext" />
       <varInfo nodeId="1203603985511" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="29" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor" />
     <unitInfo nodeId="1203592765859" fileName="IDEDialog_Editor.java" startLine="256" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor$buttonListHandler_8w6pz1_h1b0" />
+    <unitInfo nodeId="1203592631206" fileName="IDEDialog_Editor.java" startLine="29" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor" />
   </root>
-  <root nodeId="1203592668804">
+  <root nodeId="1203592668804" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="1203592694546" fileName="IDEDialogButton_Editor.java" startLine="111" startPosition="58" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203592668804" fileName="IDEDialogButton_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203592671520" fileName="IDEDialogButton_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -787,7 +787,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203592668804" fileName="IDEDialogButton_Editor.java" startLine="19" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.IDEDialogButton_Editor" />
   </root>
-  <root nodeId="1203606607647">
+  <root nodeId="1203606607647" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="1203606607647" fileName="DisposeDialogExpression_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203606609555" fileName="DisposeDialogExpression_Editor.java" startLine="17" startPosition="87" endLine="18" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203606609555" fileName="DisposeDialogExpression_Editor.java" startLine="18" startPosition="99" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -812,7 +812,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203606607647" fileName="DisposeDialogExpression_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.DisposeDialogExpression_Editor" />
   </root>
-  <root nodeId="1203607543068">
+  <root nodeId="1203607543068" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="1203607551918" fileName="ReportErrorExpression_Editor.java" startLine="43" startPosition="58" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203607543068" fileName="ReportErrorExpression_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203607545085" fileName="ReportErrorExpression_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -888,7 +888,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203607543068" fileName="ReportErrorExpression_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.ReportErrorExpression_Editor" />
   </root>
-  <root nodeId="1203610520597">
+  <root nodeId="1203610520597" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="1203610520597" fileName="DialogExpression_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203610523146" fileName="DialogExpression_Editor.java" startLine="17" startPosition="87" endLine="18" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203610523146" fileName="DialogExpression_Editor.java" startLine="18" startPosition="92" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -913,7 +913,7 @@
     </scopeInfo>
     <unitInfo nodeId="1203610520597" fileName="DialogExpression_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.DialogExpression_Editor" />
   </root>
-  <root nodeId="1226850414603">
+  <root nodeId="1226850414603" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="1226850414603" fileName="DialogDimensions_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226850428417" fileName="DialogDimensions_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226850428417" fileName="DialogDimensions_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1172,7 +1172,7 @@
     </scopeInfo>
     <unitInfo nodeId="1226850414603" fileName="DialogDimensions_Editor.java" startLine="18" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.DialogDimensions_Editor" />
   </root>
-  <root nodeId="3734045384532546734">
+  <root nodeId="3734045384532546734" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="3734045384532546738" fileName="ReportErrorStatement_Editor.java" startLine="52" startPosition="58" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3734045384532546734" fileName="ReportErrorStatement_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3734045384532546736" fileName="ReportErrorStatement_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1266,7 +1266,7 @@
     </scopeInfo>
     <unitInfo nodeId="3734045384532546734" fileName="ReportErrorStatement_Editor.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.editor.ReportErrorStatement_Editor" />
   </root>
-  <root nodeId="3734045384532546804">
+  <root nodeId="3734045384532546804" modelId="r:00000000-0000-4000-0000-011c895904af(jetbrains.mps.ide.uiLanguage.editor)">
     <nodeInfo nodeId="3734045384532546804" fileName="DisposeDialogStatement_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3734045384532546807" fileName="DisposeDialogStatement_Editor.java" startLine="18" startPosition="89" endLine="19" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3734045384532546807" fileName="DisposeDialogStatement_Editor.java" startLine="19" startPosition="99" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

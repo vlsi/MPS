@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1241009437488">
+  <root nodeId="1241009437488" modelId="r:26fc506c-44aa-4c44-b7bf-9712d972460d(jetbrains.mps.baseLanguage.tuples.shared)">
     <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="9" startPosition="29" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="13" startPosition="46" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="17" startPosition="27" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

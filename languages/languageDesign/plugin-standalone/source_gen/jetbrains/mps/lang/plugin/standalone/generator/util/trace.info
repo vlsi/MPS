@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="681855071694482336">
+  <root nodeId="681855071694482336" modelId="r:2d25e22e-2ee8-4e84-89da-295e3fc8de94(jetbrains.mps.lang.plugin.standalone.generator.util)">
     <nodeInfo nodeId="5023285075122028228" fileName="PluginUtils.java" startLine="15" startPosition="72" endLine="16" endPosition="1121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5023285075122038876" fileName="PluginUtils.java" startLine="19" startPosition="76" endLine="20" endPosition="966" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6362460243896632403" fileName="PluginUtils.java" startLine="24" startPosition="165" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

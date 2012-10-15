@@ -12,25 +12,24 @@
   <application-components>
     <!--api-->
     <component>
-      <implementation-class>jetbrains.mps.debug.customViewers.CustomViewersManager</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager</implementation-class>
     </component>
 
     <!--runtime-->
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.JavaDebugger</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer
-      </implementation-class>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
     </component>
   </application-components>
 
   <project-components>
     <!--api-->
+    <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.JavaNodePositionProvider</implementation-class>
     </component>
-    <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent</implementation-class>
     </component>

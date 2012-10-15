@@ -7,13 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,47 +19,23 @@ public class check_UnknownLocalCall_NonTypesystemRule extends AbstractNonTypesys
   }
 
   public void applyRule(final SNode unkCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode result = null;
-    SNode call = null;
-
-    Scope staticMethodsScope = Scope.getScope(SNodeOperations.getParent(unkCall), unkCall, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-    Scope instMethodsScope = Scope.getScope(SNodeOperations.getParent(unkCall), unkCall, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-
-    Iterable<SNode> staticMethods = staticMethodsScope.getAvailableElements(SPropertyOperations.getString(unkCall, "callee"));
-    if (Sequence.fromIterable(staticMethods).isNotEmpty()) {
-      SNode decl = SNodeOperations.cast(Sequence.fromIterable(staticMethods).iterator().next(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-      SNode scall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(scall, "baseMethodDeclaration", decl, false);
-      call = scall;
-      result = scall;
-
-    } else {
-      Iterable<SNode> instMethods = instMethodsScope.getAvailableElements(SPropertyOperations.getString(unkCall, "callee"));
-      SNode decl = null;
-      if (Sequence.fromIterable(instMethods).isNotEmpty()) {
-        decl = SNodeOperations.cast(Sequence.fromIterable(instMethods).iterator().next(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      }
-      SNode icall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
-      SLinkOperations.setTarget(icall, "baseMethodDeclaration", decl, false);
-      call = icall;
-      result = icall;
-    }
-
-    if ((result != null)) {
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkCall) != null) {
       // success 
-      for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(unkCall, "actualArgument", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
-      }
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkCall, "Resolved local call", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6021327890422133162", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
           intentionProvider.putArgument("unknownNode", unkCall);
-          intentionProvider.putArgument("theRightNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
+      return;
+    }
+
+    {
+      MessageTarget errorTarget = new NodeMessageTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkCall, "Unresolved method call", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6396739326936528614", null, errorTarget);
     }
   }
 

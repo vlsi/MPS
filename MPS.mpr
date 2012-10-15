@@ -348,10 +348,9 @@
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/pluginSolution.msd" folder="baseLanguage" />
-      <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/pluginSolution.msd" folder="language-design" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/mpsjava/languages/javaSource/javaSource.mpl" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/stubs/sources.msd" folder="plugins.mpsjava" />
@@ -413,6 +412,7 @@
       <modulePath path="${project}/testbench/languages/solutions/pluginSolution/pluginSolution.msd" folder="testbench" />
       <modulePath path="${project}/testbench/languages/suite.mpl" folder="testbench" />
       <modulePath path="${project}/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="testbench" />
+      <modulePath path="${project}/testbench/modules/testActions/testActions.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testAntTask/solutions/testAntTask/testAntTask.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/jetbrains.mps.makeTest.msd" folder="core.make" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.testModels/jetbrains.mps.testModels.msd" folder="testbench" />

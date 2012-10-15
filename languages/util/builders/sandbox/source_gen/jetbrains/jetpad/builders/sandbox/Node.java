@@ -21,4 +21,7 @@ public class Node {
 
   public void setName(String name) {
   }
+
+  public void setChild(Node node) {
+  }
 }

@@ -754,6 +754,12 @@
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6742265879766300881">
+              <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5380162141339395182">
+                <property name="name" nameId="tpck.1169194664001" value="tvr" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5380162141339395184">
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1109279763828" resolveInfo="TypeVariableDeclaration" />
+                </node>
+              </node>
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6742265879766300882">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6742265879766300886">
                   <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6742265879766300887">
@@ -761,17 +767,13 @@
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6742265879766300890">
                         <property name="label" nameId="tp3r.6489343236075007666" value="TypeVariableReference" />
                         <property name="linkRole" nameId="tpck.1757699476691236116" value="typeVariableDeclaration" />
-                        <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6742265879766300892">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6742265879766300883" resolveInfo="tvr" />
+                        <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5380162141339395185">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5380162141339395182" resolveInfo="tvr" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="6742265879766300883">
-                <property name="name" nameId="tpck.1169194664001" value="tvr" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490255" />
               </node>
             </node>
           </node>

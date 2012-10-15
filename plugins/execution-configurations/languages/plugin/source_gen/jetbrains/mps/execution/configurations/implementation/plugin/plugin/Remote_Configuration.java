@@ -13,7 +13,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
+import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;

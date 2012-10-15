@@ -148,9 +148,9 @@
       <varInfo nodeId="6121364846593790766" varName="name" />
       <varInfo nodeId="6121364846593790730" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6121364846593790730" fileName="BeanExtensionPoint_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior" />
     <unitInfo nodeId="618741292999315227" fileName="BeanExtensionPoint_Behavior.java" startLine="20" startPosition="122" endLine="24" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior$1" />
     <unitInfo nodeId="7161354651095876259" fileName="BeanExtensionPoint_Behavior.java" startLine="28" startPosition="125" endLine="32" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior$2" />
+    <unitInfo nodeId="6121364846593790730" fileName="BeanExtensionPoint_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior" />
   </root>
   <root nodeId="6121364846593790745" modelId="r:8f4e8d01-a81e-409b-a7a6-092ad440588f(jetbrains.mps.platform.conf.behavior)">
     <nodeInfo nodeId="6121364846593790745" fileName="BeanProperty.java" startLine="9" startPosition="25" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -304,16 +304,16 @@
     <scopeInfo nodeId="6121364846593825092" fileName="BeanUtil.java" startLine="40" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6121364846593825092" varName="_this" />
     </scopeInfo>
-    <unitInfo nodeId="6121364846593825092" fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
     <unitInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="26" startPosition="97" endLine="30" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$1" />
     <unitInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="30" startPosition="18" endLine="34" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$2" />
     <unitInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="34" startPosition="15" endLine="38" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$3" />
-    <unitInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="43" startPosition="93" endLine="55" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$4" />
     <unitInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="45" startPosition="100" endLine="49" endPosition="9" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
     <unitInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="49" startPosition="19" endLine="53" endPosition="9" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
     <unitInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="55" startPosition="18" endLine="59" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
+    <unitInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="43" startPosition="93" endLine="55" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$4" />
     <unitInfo nodeId="6121364846593826267" fileName="BeanUtil.java" startLine="62" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
     <unitInfo nodeId="6121364846593826365" fileName="BeanUtil.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0b" />
+    <unitInfo nodeId="6121364846593825092" fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
   </root>
 </debugInfo>
 

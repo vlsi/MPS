@@ -9,6 +9,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.make.facet.IFacet;
 import org.jmock.Mockery;
 import org.jmock.Expectations;
@@ -26,7 +27,7 @@ public class Mockups {
     }
   };
   private static IJob DefaultJob = new IJob() {
-    public IResult execute(final Iterable<IResource> ignore, IJobMonitor mon, IPropertiesAccessor pa) {
+    public IResult execute(final Iterable<IResource> ignore, IJobMonitor mon, IPropertiesAccessor pa, ProgressMonitor progressMonitor) {
       return DefaultResult;
     }
   };
@@ -140,7 +141,7 @@ public class Mockups {
     final IJob job = context.mock(IJob.class, name);
     context.checking(new Expectations() {
       {
-        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IJobMonitor.class)), this.with(aNonNull(IPropertiesAccessor.class)));
+        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IJobMonitor.class)), this.with(aNonNull(IPropertiesAccessor.class)), this.with(aNonNull(ProgressMonitor.class)));
         this.will(returnValue(fun.invoke()));
       }
     });

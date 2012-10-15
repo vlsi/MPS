@@ -22,7 +22,7 @@
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
   <import index="go48" modelUID="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)" version="5" />
   <import index="xk9i" modelUID="r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)" version="0" />
-  <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debug.runtime.settings)" version="-1" />
+  <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" version="-1" />
   <import index="eva" modelUID="r:a1b1112d-dd34-4046-a6a3-811fd290d232(jetbrains.mps.execution.configurations.pluginSolution.plugin)" version="-1" />
   <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -117,7 +117,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="529406319400385951">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381385" resolveInfo="setNode" />
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768364" resolveInfo="setNode" />
                 <node role="actualArgument" roleId="tp4f.1205770614681" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="529406319400385952" />
               </node>
             </node>
@@ -349,8 +349,8 @@
                 <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="node" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="5039342337170369476">
-              <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381357" resolveInfo="getNodePointer" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2522309100156671520">
+              <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768336" resolveInfo="getNodePointer" />
             </node>
           </node>
           <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5039342337170369478">
@@ -410,8 +410,8 @@
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="4945938494951535109" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="3445893456318120658">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.1977878056377381357" resolveInfo="getNodePointer" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2522309100156671518">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.8278380780105768336" resolveInfo="getNodePointer" />
                 </node>
               </node>
             </node>

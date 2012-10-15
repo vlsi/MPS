@@ -13,6 +13,14 @@ public class VariableArityType_BehaviorDescriptor extends Type_BehaviorDescripto
     return VariableArityType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
 
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return VariableArityType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
+  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return VariableArityType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return VariableArityType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }

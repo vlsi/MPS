@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3316697760692356691">
+  <root nodeId="3316697760692356691" modelId="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
     <nodeInfo nodeId="3316697760692356719" fileName="ModelFocusSynchronizer.java" startLine="38" startPosition="29" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3316697760692356734" fileName="ModelFocusSynchronizer.java" startLine="42" startPosition="55" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3316697760692356741" fileName="ModelFocusSynchronizer.java" startLine="43" startPosition="69" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -81,11 +81,11 @@
     <scopeInfo nodeId="3316697760692356693" fileName="ModelFocusSynchronizer.java" startLine="30" startPosition="69" endLine="74" endPosition="3">
       <varInfo nodeId="3316697760692356845" varName="frameStateManager" />
     </scopeInfo>
-    <unitInfo nodeId="3316697760692356691" fileName="ModelFocusSynchronizer.java" startLine="30" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
-    <unitInfo nodeId="3316697760692356703" fileName="ModelFocusSynchronizer.java" startLine="32" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
     <unitInfo nodeId="3316697760692356717" fileName="ModelFocusSynchronizer.java" startLine="37" startPosition="48" endLine="71" endPosition="9" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
+    <unitInfo nodeId="3316697760692356703" fileName="ModelFocusSynchronizer.java" startLine="32" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
+    <unitInfo nodeId="3316697760692356691" fileName="ModelFocusSynchronizer.java" startLine="30" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
   </root>
-  <root nodeId="4707157387247361035">
+  <root nodeId="4707157387247361035" modelId="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
     <nodeInfo nodeId="4707157387247361038" fileName="WatchedRoots.java" startLine="25" startPosition="59" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraryManager" />
     <nodeInfo nodeId="4707157387247361041" fileName="WatchedRoots.java" startLine="26" startPosition="48" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
     <nodeInfo nodeId="4707157387247361044" fileName="WatchedRoots.java" startLine="27" startPosition="56" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadHandler" />
@@ -233,9 +233,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247361112" fileName="WatchedRoots.java" startLine="47" startPosition="31" endLine="67" endPosition="73" />
     <scopeInfo nodeId="4707157387247361109" fileName="WatchedRoots.java" startLine="46" startPosition="0" endLine="69" endPosition="0" />
-    <unitInfo nodeId="4707157387247361035" fileName="WatchedRoots.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.watching.WatchedRoots" />
     <unitInfo nodeId="4707157387247361118" fileName="WatchedRoots.java" startLine="48" startPosition="26" endLine="53" endPosition="5" unitName="jetbrains.mps.watching.WatchedRoots$1" />
     <unitInfo nodeId="4707157387247361134" fileName="WatchedRoots.java" startLine="56" startPosition="35" endLine="66" endPosition="5" unitName="jetbrains.mps.watching.WatchedRoots$2" />
+    <unitInfo nodeId="4707157387247361035" fileName="WatchedRoots.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.watching.WatchedRoots" />
   </root>
 </debugInfo>
 

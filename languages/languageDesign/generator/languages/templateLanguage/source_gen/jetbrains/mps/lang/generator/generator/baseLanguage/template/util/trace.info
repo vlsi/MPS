@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8285036680620268543">
+  <root nodeId="8285036680620268543" modelId="r:00000000-0000-4000-0000-011c895902ea(jetbrains.mps.lang.generator.generator.baseLanguage.template.util)">
     <nodeInfo nodeId="8285036680620277770" fileName="GenUtil.java" startLine="16" startPosition="22" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEY" />
     <nodeInfo nodeId="8285036680620283507" fileName="GenUtil.java" startLine="24" startPosition="39" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8285036680620283528" fileName="GenUtil.java" startLine="31" startPosition="6" endLine="32" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -87,8 +87,8 @@
     <scopeInfo nodeId="5980832251990194296" fileName="GenUtil.java" startLine="54" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="5980832251990194301" varName="s" />
     </scopeInfo>
-    <unitInfo nodeId="8285036680620268543" fileName="GenUtil.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
     <unitInfo nodeId="8285036680620283505" fileName="GenUtil.java" startLine="23" startPosition="92" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$1" />
+    <unitInfo nodeId="8285036680620268543" fileName="GenUtil.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
   </root>
 </debugInfo>
 

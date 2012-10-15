@@ -45,6 +45,12 @@ public class VisibleClassConstructorsScope extends Scope {
     });
   }
 
+  @Override
+  public boolean contains(SNode node) {
+    // todo: visibility check! 
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && classifiers.contains(SNodeOperations.getParent(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
+  }
+
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return SPropertyOperations.getString(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "name");

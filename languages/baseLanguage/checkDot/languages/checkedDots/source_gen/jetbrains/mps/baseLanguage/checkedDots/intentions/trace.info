@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.intentions.IntentionsDescriptor" />
-  <root nodeId="1038097819968653124">
+  <root nodeId="1038097819968653124" modelId="r:e7b16359-4f7b-4995-8330-19c6bbadce25(jetbrains.mps.baseLanguage.checkedDots.intentions)">
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5202024118203907621">
+  <root nodeId="5202024118203907621" modelId="r:e3c42010-b0d3-46f2-9b82-7b4237c3c5f4(jetbrains.mps.debugger.decisionTable.sandbox)">
     <nodeInfo nodeId="6487201325881254538" fileName="Test.java" startLine="13" startPosition="50" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6487201325881254556" fileName="Test.java" startLine="17" startPosition="50" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6487201325881254540" fileName="Test.java" startLine="21" startPosition="50" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -63,8 +63,8 @@
     <scopeInfo nodeId="5202024118203907627" fileName="Test.java" startLine="10" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5202024118203907628" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="5202024118203907621" fileName="Test.java" startLine="7" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.sandbox.Test" />
     <unitInfo nodeId="6487201325881254537" fileName="Test.java" startLine="12" startPosition="31" endLine="48" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.sandbox.Test$1" />
+    <unitInfo nodeId="5202024118203907621" fileName="Test.java" startLine="7" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.sandbox.Test" />
   </root>
 </debugInfo>
 

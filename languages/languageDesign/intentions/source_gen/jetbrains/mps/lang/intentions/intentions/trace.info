@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.intentions.intentions.IntentionsDescriptor" />
-  <root nodeId="4203998840477564642">
+  <root nodeId="4203998840477564642" modelId="r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)">
     <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

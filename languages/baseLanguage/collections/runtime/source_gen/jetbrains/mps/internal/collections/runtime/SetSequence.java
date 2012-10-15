@@ -158,12 +158,12 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
 
   @Override
   public ISetSequence<T> asUnmodifiable() {
-    return new SetSequence(Collections.unmodifiableSet(getSet()));
+    return new SetSequence<T>(Collections.unmodifiableSet(getSet()));
   }
 
   @Override
   public ISetSequence<T> asSynchronized() {
-    return new SetSequence(Collections.unmodifiableSet(getSet()));
+    return new SetSequence<T>(Collections.unmodifiableSet(getSet()));
   }
 
   protected Set<T> getSet() {

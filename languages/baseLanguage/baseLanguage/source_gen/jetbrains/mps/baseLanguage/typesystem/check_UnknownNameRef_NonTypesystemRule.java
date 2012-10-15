@@ -9,8 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.UnknownNameRef_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,49 +21,27 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode unkName, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-
     if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(unkName), "jetbrains.mps.baseLanguage.structure.UnknownNameRef"))) {
       // it's subconcept, leave the work to them 
       return;
     }
 
-    SNode result = UnknownNameRef_Behavior.call_resolveTokens_4018023047319628331(unkName);
-
-    if ((result == null)) {
-      return;
-    } else if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      // change to something real as default, e.g. static field access expression without the field 
-      SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-      SLinkOperations.setTarget(fieldRef, "classifier", SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
-      result = fieldRef;
-
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkName) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Making up a static field reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4965738712233789301", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Resolved qualified name reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8504030010050377272", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
           intentionProvider.putArgument("unknownNode", unkName);
-          intentionProvider.putArgument("theRightNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-
-    } else if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      // success 
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Resolved qualified name reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8473865358220100935", null, errorTarget);
-        {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
-          intentionProvider.putArgument("unknownNode", unkName);
-          intentionProvider.putArgument("theRightNode", result);
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
-        }
-      }
-    } else {
-      // something unexpected 
-      // TODO maybe signal an error without quick fix 
       return;
+    }
+
+    {
+      MessageTarget errorTarget = new NodeMessageTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Unresolved qualified name", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6396739326936464050", null, errorTarget);
     }
   }
 

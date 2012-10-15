@@ -79,7 +79,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   };
 
   private IMakeNotificationListener myMakeNotificationListener = new Stub() {
-    public void finished(MakeNotification notification) {
+    @Override
+    public void sessionClosed(MakeNotification notification) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
       rebuild();
     }

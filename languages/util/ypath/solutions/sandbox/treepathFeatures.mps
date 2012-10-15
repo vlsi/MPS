@@ -281,7 +281,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888419882">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%d&lt;init&gt;(java%dlang%dString)" resolveInfo="String" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1184148604084">
-                  <property name="value" nameId="tpee.1070475926801" value="&lt;root&gt;&lt;a a1=&quot;a1&quot;&gt;&lt;b b1=&quot;b1&quot; b2=&quot;b2&quot;&gt;&lt;c c1=&quot;c1&quot;/&gt;&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;" />
+                  <property name="value" nameId="tpee.1070475926801" value="&lt;root&gt;&lt;a a1=\&quot;a1\&quot;&gt;&lt;b b1=\&quot;b1\&quot; b2=\&quot;b2\&quot;&gt;&lt;c c1=\&quot;c1\&quot;/&gt;&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;" />
                 </node>
               </node>
             </node>
@@ -363,16 +363,19 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpki.1168468671991" type="tpki.WhereOperation" typeId="tpki.1168527701993" id="1184149365358">
-                  <node role="whereBlock" roleId="tpki.1168527754706" type="tpki.WhereBlock" typeId="tpki.1168527733553" id="1184149365359">
-                    <node role="parameter" roleId="tpki.1168428725556" type="tpki.LambdaMethodParameter" typeId="tpki.1168428709096" id="1184149365360">
+                  <node role="filter" roleId="tpki.4234084459083986488" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="7120113277826389000">
+                    <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7120113277826389001">
                       <property name="name" nameId="tpck.1169194664001" value="node" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7120113277826389002">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kvg6.~Node" resolveInfo="Node" />
+                      </node>
                     </node>
-                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184149365361">
+                    <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184149365361">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184246467860">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628990879">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628989910">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ClosureParameterReference" typeId="tpee.1153179560115" id="1184246467861">
-                              <link role="closureParameter" roleId="tpee.1153179615652" targetNodeId="1184149365360" resolveInfo="node" />
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7120113277826389003">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7120113277826389001" resolveInfo="node" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217628989911">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kvg6.~Node%dgetNodeValue()%cjava%dlang%dString" resolveInfo="getNodeValue" />

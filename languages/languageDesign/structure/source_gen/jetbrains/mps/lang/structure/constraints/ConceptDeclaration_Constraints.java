@@ -15,14 +15,15 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
-  private static SNodePointer breakingNode_8geshg_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841231");
+  private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
 
   public ConceptDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
@@ -63,16 +64,16 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            // don't allow cycling 
-            return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_8geshg_a0a0a0a0a1a0b0a1a3;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_8geshg_a0a1a0a0a1a0b0a1a3;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            // don't allow cycling 
+            return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
           }
         };
       }

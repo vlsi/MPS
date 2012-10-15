@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499489584">
+  <root nodeId="1560298786499489584" modelId="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)">
     <nodeInfo nodeId="1560298786499489588" fileName="SortedList.java" startLine="10" startPosition="57" endLine="11" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComparator" />
     <nodeInfo nodeId="1560298786499489592" fileName="SortedList.java" startLine="11" startPosition="54" endLine="12" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="1560298786499489605" fileName="SortedList.java" startLine="14" startPosition="64" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -123,7 +123,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499489584" fileName="SortedList.java" startLine="10" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedList" />
   </root>
-  <root nodeId="1560298786499493498">
+  <root nodeId="1560298786499493498" modelId="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)">
     <nodeInfo nodeId="1560298786499493769" fileName="ListsFactory.java" startLine="27" startPosition="64" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493785" fileName="ListsFactory.java" startLine="29" startPosition="36" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493787" fileName="ListsFactory.java" startLine="31" startPosition="7" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -438,21 +438,21 @@
     <scopeInfo nodeId="7567158975344817764" fileName="ListsFactory.java" startLine="187" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="7567158975344817832" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="25" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
-    <unitInfo nodeId="1560298786499493519" fileName="ListsFactory.java" startLine="26" startPosition="94" endLine="43" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$1" />
     <unitInfo nodeId="1560298786499493693" fileName="ListsFactory.java" startLine="160" startPosition="99" endLine="164" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$10" />
     <unitInfo nodeId="1560298786499493708" fileName="ListsFactory.java" startLine="165" startPosition="90" endLine="169" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$11" />
     <unitInfo nodeId="1560298786499493723" fileName="ListsFactory.java" startLine="170" startPosition="84" endLine="175" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$12" />
-    <unitInfo nodeId="7567158975344817776" fileName="ListsFactory.java" startLine="189" startPosition="15" endLine="204" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$13" />
-    <unitInfo nodeId="1560298786499493541" fileName="ListsFactory.java" startLine="44" startPosition="95" endLine="57" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$2" />
-    <unitInfo nodeId="7567158975345112861" fileName="ListsFactory.java" startLine="58" startPosition="101" endLine="70" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$3" />
-    <unitInfo nodeId="1560298786499493563" fileName="ListsFactory.java" startLine="71" startPosition="89" endLine="98" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$4" />
-    <unitInfo nodeId="1560298786499493585" fileName="ListsFactory.java" startLine="99" startPosition="90" endLine="112" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$5" />
-    <unitInfo nodeId="1560298786499493607" fileName="ListsFactory.java" startLine="113" startPosition="99" endLine="124" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$6" />
     <unitInfo nodeId="1560298786499493629" fileName="ListsFactory.java" startLine="125" startPosition="102" endLine="133" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$7" />
-    <unitInfo nodeId="1560298786499493673" fileName="ListsFactory.java" startLine="134" startPosition="78" endLine="150" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$8" />
     <unitInfo nodeId="59624520828736537" fileName="ListsFactory.java" startLine="151" startPosition="84" endLine="159" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$9" />
     <unitInfo nodeId="1560298786499486566" fileName="ListsFactory.java" startLine="235" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator" />
+    <unitInfo nodeId="1560298786499493607" fileName="ListsFactory.java" startLine="113" startPosition="99" endLine="124" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$6" />
+    <unitInfo nodeId="7567158975345112861" fileName="ListsFactory.java" startLine="58" startPosition="101" endLine="70" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$3" />
+    <unitInfo nodeId="1560298786499493541" fileName="ListsFactory.java" startLine="44" startPosition="95" endLine="57" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$2" />
+    <unitInfo nodeId="1560298786499493585" fileName="ListsFactory.java" startLine="99" startPosition="90" endLine="112" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$5" />
+    <unitInfo nodeId="7567158975344817776" fileName="ListsFactory.java" startLine="189" startPosition="15" endLine="204" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$13" />
+    <unitInfo nodeId="1560298786499493673" fileName="ListsFactory.java" startLine="134" startPosition="78" endLine="150" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$8" />
+    <unitInfo nodeId="1560298786499493519" fileName="ListsFactory.java" startLine="26" startPosition="94" endLine="43" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$1" />
+    <unitInfo nodeId="1560298786499493563" fileName="ListsFactory.java" startLine="71" startPosition="89" endLine="98" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$4" />
+    <unitInfo nodeId="1560298786499493498" fileName="ListsFactory.java" startLine="25" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
   </root>
 </debugInfo>
 

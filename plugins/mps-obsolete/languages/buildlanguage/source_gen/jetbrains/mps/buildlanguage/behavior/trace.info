@@ -253,6 +253,7 @@
       <varInfo nodeId="1213877351736" varName="pimport" />
     </scopeInfo>
     <scopeInfo nodeId="1213877351761" fileName="Project_Behavior.java" startLine="35" startPosition="116" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1213877351789" fileName="Project_Behavior.java" startLine="45" startPosition="116" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1213877351790" fileName="Project_Behavior.java" startLine="45" startPosition="116" endLine="48" endPosition="7">
       <varInfo nodeId="1213877351791" varName="target" />
     </scopeInfo>
@@ -301,8 +302,8 @@
     <scopeInfo nodeId="1213877351719" fileName="Project_Behavior.java" startLine="61" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1213877351719" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877351719" fileName="Project_Behavior.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.buildlanguage.behavior.Project_Behavior" />
     <unitInfo nodeId="1227876791086" fileName="Project_Behavior.java" startLine="65" startPosition="100" endLine="69" endPosition="5" unitName="jetbrains.mps.buildlanguage.behavior.Project_Behavior$1" />
+    <unitInfo nodeId="1213877351719" fileName="Project_Behavior.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.buildlanguage.behavior.Project_Behavior" />
   </root>
   <root nodeId="1213877353434" modelId="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)">
     <nodeInfo nodeId="1213877353437" fileName="PlusOperation_Behavior.java" startLine="13" startPosition="71" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

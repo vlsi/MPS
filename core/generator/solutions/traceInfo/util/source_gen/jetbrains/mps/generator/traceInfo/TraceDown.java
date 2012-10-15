@@ -69,4 +69,31 @@ public class TraceDown {
     }
     return null;
   }
+
+  public static boolean isTraceable(@NotNull final SNode node, @NotNull DebugInfo info) {
+    DebugInfoRoot rootInfo = info.getRootInfo(SNodeOperations.getContainingRoot(node));
+    if (rootInfo == null) {
+      return false;
+    }
+    return SetSequence.fromSet(rootInfo.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
+      public boolean accept(TraceablePositionInfo it) {
+        return eq_mk0t6b_a0a0a0a0a0a2a3(it.getNodeId(), node.getId());
+      }
+    }) != null;
+  }
+
+  public static boolean isTraceable(@NotNull SNode node) {
+    DebugInfo info = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node).getModelDescriptor());
+    if (info == null) {
+      return false;
+    }
+    return isTraceable(node, info);
+  }
+
+  private static boolean eq_mk0t6b_a0a0a0a0a0a2a3(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }

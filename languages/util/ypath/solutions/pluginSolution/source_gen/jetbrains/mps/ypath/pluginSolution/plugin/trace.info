@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841950502">
+  <root nodeId="5487985028841950502" modelId="r:cd46292e-0883-4867-a8d5-cdf2d82800c8(jetbrains.mps.ypath.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841950505" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="11" startPosition="24" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950511" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950502" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="7" startPosition="91" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DesignPartLoader_CustomApplicationPlugin#()V" />
@@ -14,7 +14,7 @@
     <scopeInfo nodeId="5487985028841950502" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="5487985028841950502" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader_CustomApplicationPlugin" />
   </root>
-  <root nodeId="5487985028841950515">
+  <root nodeId="5487985028841950515" modelId="r:cd46292e-0883-4867-a8d5-cdf2d82800c8(jetbrains.mps.ypath.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841950530" fileName="DesignPartLoader.java" startLine="20" startPosition="31" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841950535" fileName="DesignPartLoader.java" startLine="21" startPosition="77" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="5487985028841950540" fileName="DesignPartLoader.java" startLine="23" startPosition="0" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="alreadyRegistered" />
@@ -117,10 +117,10 @@
       <varInfo nodeId="5487985028841950597" varName="fqClassName" />
       <varInfo nodeId="5487985028841950599" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841950515" fileName="DesignPartLoader.java" startLine="20" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader" />
     <unitInfo nodeId="5487985028841950517" fileName="DesignPartLoader.java" startLine="98" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader$ReloadHandler" />
+    <unitInfo nodeId="5487985028841950515" fileName="DesignPartLoader.java" startLine="20" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader" />
   </root>
-  <root nodeId="7162597690968011888">
+  <root nodeId="7162597690968011888" modelId="r:cd46292e-0883-4867-a8d5-cdf2d82800c8(jetbrains.mps.ypath.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690968011888" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968011888" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968011888" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

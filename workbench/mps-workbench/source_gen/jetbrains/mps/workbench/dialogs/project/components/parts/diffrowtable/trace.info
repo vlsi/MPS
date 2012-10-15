@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499490568">
+  <root nodeId="1560298786499490568" modelId="r:2645cf7b-becf-4fd8-946c-a69d83379844(jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable)">
     <nodeInfo nodeId="1455071715283756131" fileName="DiffRowTable.java" startLine="17" startPosition="25" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499490694" fileName="DiffRowTable.java" startLine="21" startPosition="38" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499490700" fileName="DiffRowTable.java" startLine="22" startPosition="20" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -156,7 +156,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499490568" fileName="DiffRowTable.java" startLine="16" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable" />
   </root>
-  <root nodeId="1560298786499496072">
+  <root nodeId="1560298786499496072" modelId="r:2645cf7b-becf-4fd8-946c-a69d83379844(jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable)">
     <nodeInfo nodeId="1560298786499496077" fileName="BasicDiffRowTableUI.java" startLine="19" startPosition="32" endLine="20" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499496084" fileName="BasicDiffRowTableUI.java" startLine="23" startPosition="49" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499496092" fileName="BasicDiffRowTableUI.java" startLine="24" startPosition="41" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestRunner" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Thread" />
   </dependency>

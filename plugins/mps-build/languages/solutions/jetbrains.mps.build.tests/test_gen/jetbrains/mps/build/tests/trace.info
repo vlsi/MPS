@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="193602448594327346">
+  <root nodeId="193602448594327346" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="19" startPosition="116" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="24" startPosition="70" endLine="25" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,10 +86,10 @@
     <scopeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="96" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="81" startPosition="0" endLine="89" endPosition="0" />
-    <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="15" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.tests.MacroTest_Test" />
     <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="59" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.tests.MacroTest_Test$TestBody" />
+    <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="15" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.tests.MacroTest_Test" />
   </root>
-  <root nodeId="4045247515868358877">
+  <root nodeId="4045247515868358877" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="19" startPosition="116" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="24" startPosition="54" endLine="25" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -103,83 +103,65 @@
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="48" startPosition="55" endLine="49" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="49" startPosition="116" endLine="50" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="55" startPosition="53" endLine="56" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="57" startPosition="45" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="58" startPosition="46" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4045247515868406038" fileName="TestTemporalPaths_Test.java" startLine="59" startPosition="46" endLine="60" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="63" startPosition="56" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="64" startPosition="46" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="65" startPosition="45" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="66" startPosition="46" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="280273048052535341" fileName="TestTemporalPaths_Test.java" startLine="67" startPosition="46" endLine="68" endPosition="396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="71" startPosition="59" endLine="72" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="72" startPosition="46" endLine="73" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="73" startPosition="45" endLine="74" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="74" startPosition="46" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7422876504327290556" fileName="TestTemporalPaths_Test.java" startLine="75" startPosition="46" endLine="76" endPosition="406" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="79" startPosition="53" endLine="80" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="80" startPosition="46" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="81" startPosition="45" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="82" startPosition="46" endLine="83" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="280273048052535304" fileName="TestTemporalPaths_Test.java" startLine="83" startPosition="46" endLine="84" endPosition="402" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="87" startPosition="53" endLine="88" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="88" startPosition="46" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="89" startPosition="45" endLine="90" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="90" startPosition="46" endLine="91" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870549128" fileName="TestTemporalPaths_Test.java" startLine="91" startPosition="46" endLine="92" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8104754176559709915" fileName="TestTemporalPaths_Test.java" startLine="92" startPosition="170" endLine="93" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8104754176559709940" fileName="TestTemporalPaths_Test.java" startLine="93" startPosition="294" endLine="94" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="97" startPosition="57" endLine="98" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="98" startPosition="46" endLine="99" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="99" startPosition="45" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="100" startPosition="46" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870558823" fileName="TestTemporalPaths_Test.java" startLine="101" startPosition="46" endLine="102" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4209004860870558828" fileName="TestTemporalPaths_Test.java" startLine="102" startPosition="170" endLine="103" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4209004860870558836" fileName="TestTemporalPaths_Test.java" startLine="103" startPosition="290" endLine="104" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4045247515868406038" fileName="TestTemporalPaths_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="60" startPosition="56" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="280273048052535341" fileName="TestTemporalPaths_Test.java" startLine="61" startPosition="46" endLine="62" endPosition="396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="65" startPosition="59" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7422876504327290556" fileName="TestTemporalPaths_Test.java" startLine="66" startPosition="46" endLine="67" endPosition="406" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="70" startPosition="53" endLine="71" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="280273048052535304" fileName="TestTemporalPaths_Test.java" startLine="71" startPosition="46" endLine="72" endPosition="402" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="75" startPosition="53" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4209004860870549128" fileName="TestTemporalPaths_Test.java" startLine="76" startPosition="46" endLine="77" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8104754176559709915" fileName="TestTemporalPaths_Test.java" startLine="77" startPosition="170" endLine="78" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8104754176559709940" fileName="TestTemporalPaths_Test.java" startLine="78" startPosition="294" endLine="79" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="82" startPosition="57" endLine="83" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4209004860870558823" fileName="TestTemporalPaths_Test.java" startLine="83" startPosition="46" endLine="84" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4209004860870558828" fileName="TestTemporalPaths_Test.java" startLine="84" startPosition="170" endLine="85" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4209004860870558836" fileName="TestTemporalPaths_Test.java" startLine="85" startPosition="290" endLine="86" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="54" startPosition="53" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topLevelJar#()V" />
+    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topLevelFolder#()V" />
+    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topInternalFolder#()V" />
+    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_jarInFolder#()V" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="16" startPosition="69" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topLevelJar#()V" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topLevelFolder#()V" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topInternalFolder#()V" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_jarInFolder#()V" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_folderInJar#()V" />
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_duplicatedNames#()V" />
-    <nodeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="54" startPosition="53" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topLevelJar#()V" />
-    <nodeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="62" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topLevelFolder#()V" />
-    <nodeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_topInternalFolder#()V" />
-    <nodeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="78" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_jarInFolder#()V" />
-    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="86" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_folderInJar#()V" />
-    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="96" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_duplicatedNames#()V" />
+    <nodeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="74" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_folderInJar#()V" />
+    <nodeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="81" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_duplicatedNames#()V" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="18" startPosition="51" endLine="20" endPosition="104" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="24" startPosition="54" endLine="26" endPosition="107" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="30" startPosition="57" endLine="32" endPosition="110" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="36" startPosition="51" endLine="38" endPosition="104" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="42" startPosition="51" endLine="44" endPosition="104" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="48" startPosition="55" endLine="50" endPosition="108" />
-    <scopeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="55" startPosition="53" endLine="60" endPosition="395" />
-    <scopeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="63" startPosition="56" endLine="68" endPosition="396" />
-    <scopeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="71" startPosition="59" endLine="76" endPosition="406" />
-    <scopeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="79" startPosition="53" endLine="84" endPosition="402" />
+    <scopeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="55" startPosition="53" endLine="57" endPosition="395" />
+    <scopeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="60" startPosition="56" endLine="62" endPosition="396" />
+    <scopeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="65" startPosition="59" endLine="67" endPosition="406" />
+    <scopeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="70" startPosition="53" endLine="72" endPosition="402" />
+    <scopeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="75" startPosition="53" endLine="79" endPosition="310">
+      <varInfo nodeId="4209004860870549129" varName="testContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="82" startPosition="57" endLine="86" endPosition="291">
+      <varInfo nodeId="4209004860870558824" varName="testContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="54" startPosition="53" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="16" startPosition="69" endLine="22" endPosition="0" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="46" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="87" startPosition="53" endLine="94" endPosition="310">
-      <varInfo nodeId="4209004860870549129" varName="testContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="97" startPosition="57" endLine="104" endPosition="291">
-      <varInfo nodeId="4209004860870558824" varName="testContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4045247515868358881" fileName="TestTemporalPaths_Test.java" startLine="54" startPosition="53" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="8104754176559709905" fileName="TestTemporalPaths_Test.java" startLine="62" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7422876504327290553" fileName="TestTemporalPaths_Test.java" startLine="70" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="280273048052535301" fileName="TestTemporalPaths_Test.java" startLine="78" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="86" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="96" startPosition="0" endLine="106" endPosition="0" />
-    <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test" />
-    <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="53" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody" />
+    <scopeInfo nodeId="8104754176559709912" fileName="TestTemporalPaths_Test.java" startLine="74" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="4209004860870558820" fileName="TestTemporalPaths_Test.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="53" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody" />
+    <unitInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.tests.TestTemporalPaths_Test" />
   </root>
-  <root nodeId="5368511706901688070">
+  <root nodeId="5368511706901688070" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="1841835149314679084" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="52" endLine="12" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1841835149314679092" fileName="TestRelativePathHelper_Test.java" startLine="12" startPosition="70" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1841835149314679120" fileName="TestRelativePathHelper_Test.java" startLine="13" startPosition="21" endLine="14" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -222,7 +204,7 @@
     <scopeInfo nodeId="5368511706901692172" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="59" endLine="44" endPosition="0" />
     <unitInfo nodeId="5368511706901688070" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
   </root>
-  <root nodeId="5584673629410321146">
+  <root nodeId="5584673629410321146" modelId="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)">
     <nodeInfo nodeId="5584673629410321283" fileName="TestContext.java" startLine="17" startPosition="42" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP_MACRO" />
     <nodeInfo nodeId="193602448594332738" fileName="TestContext.java" startLine="18" startPosition="54" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP" />
     <nodeInfo nodeId="5584673629410321288" fileName="TestContext.java" startLine="19" startPosition="60" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPLOY_MACRO" />
@@ -453,8 +435,8 @@
       <varInfo nodeId="6547494638219647434" varName="string" />
     </scopeInfo>
     <scopeInfo nodeId="6547494638219647383" fileName="TestContext.java" startLine="181" startPosition="0" endLine="187" endPosition="0" />
-    <unitInfo nodeId="5584673629410321146" fileName="TestContext.java" startLine="17" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.build.tests.TestContext" />
     <unitInfo nodeId="6547494638219647276" fileName="TestContext.java" startLine="32" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.build.tests.TestContext$TestGenContext" />
+    <unitInfo nodeId="5584673629410321146" fileName="TestContext.java" startLine="17" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.build.tests.TestContext" />
   </root>
 </debugInfo>
 

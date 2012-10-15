@@ -565,8 +565,8 @@
       <varInfo nodeId="2133624044437891381" varName="element" />
       <varInfo nodeId="2133624044437891373" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2133624044437891373" fileName="XmlProlog_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior" />
     <unitInfo nodeId="2133624044437891486" fileName="XmlProlog_Behavior.java" startLine="17" startPosition="116" endLine="21" endPosition="5" unitName="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior$1" />
+    <unitInfo nodeId="2133624044437891373" fileName="XmlProlog_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior" />
   </root>
   <root nodeId="3080189811177259777" modelId="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
     <nodeInfo nodeId="3080189811177259824" fileName="XmlAttribute_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

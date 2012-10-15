@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4928971978190304902">
+  <root nodeId="4928971978190304902" modelId="r:363113bf-a0f4-4959-a96d-48dcb69bed7e(jetbrains.mps.execution.demo.editor)">
     <nodeInfo nodeId="4928971978190304902" fileName="SomeConcept_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4928971978190605253" fileName="SomeConcept_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4928971978190605253" fileName="SomeConcept_Editor.java" startLine="25" startPosition="97" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

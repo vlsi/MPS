@@ -31,6 +31,9 @@
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="58" startPosition="61" endLine="59" endPosition="58" />
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1213104844739" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15" />
+    <scopeInfo nodeId="1213104844740" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15">
+      <varInfo nodeId="1213104844741" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="32" startPosition="95" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1213104844719" fileName="TestNodeReference_Constraints.java" startLine="43" startPosition="142" endLine="54" endPosition="26">
@@ -47,9 +50,9 @@
       <varInfo nodeId="1213104844716" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="28" startPosition="0" endLine="66" endPosition="0" />
-    <unitInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints" />
-    <unitInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="32" startPosition="38" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1" />
     <unitInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="41" startPosition="19" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$2" />
+    <unitInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="32" startPosition="38" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1" />
+    <unitInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints" />
   </root>
 </debugInfo>
 

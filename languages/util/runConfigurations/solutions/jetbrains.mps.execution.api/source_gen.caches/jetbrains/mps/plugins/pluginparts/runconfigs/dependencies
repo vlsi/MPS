@@ -17,7 +17,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

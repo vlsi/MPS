@@ -23,7 +23,9 @@ public class ClassifierScopeUtils {
   private ClassifierScopeUtils() {
   }
 
+  @Deprecated
   public static String createMethodParameterTypesString(SNode method, Map<SNode, SNode> typeByTypeVar) {
+    // use MethodSignature instead 
     StringBuilder result = new StringBuilder();
     for (SNode parm : SLinkOperations.getTargets(method, "parameter", true)) {
       SNode type = SLinkOperations.getTarget(parm, "type", true);

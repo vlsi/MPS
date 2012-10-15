@@ -116,9 +116,9 @@
       <varInfo nodeId="6036237525966325224" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="47" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
-    <unitInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="51" startPosition="48" endLine="75" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$1" />
     <unitInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="60" startPosition="19" endLine="73" endPosition="9" unitName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$2" />
+    <unitInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="51" startPosition="48" endLine="75" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$1" />
+    <unitInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
   </root>
   <root nodeId="6146091894852365519" modelId="r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)">
     <nodeInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="25" startPosition="86" endLine="26" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8w715n_a0a2a0a0a1a0b0a1a0" />
@@ -178,11 +178,11 @@
       <varInfo nodeId="6146091894852365519" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="31" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints" />
-    <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="35" startPosition="50" endLine="73" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1" />
-    <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="44" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$2" />
     <unitInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_Constraints.java" startLine="51" startPosition="109" endLine="55" endPosition="13" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$3" />
     <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="60" startPosition="23" endLine="64" endPosition="13" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$3" />
+    <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="44" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$2" />
+    <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="35" startPosition="50" endLine="73" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1" />
+    <unitInfo nodeId="6146091894852365519" fileName="LowLevelVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints" />
   </root>
 </debugInfo>
 

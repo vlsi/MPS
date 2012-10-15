@@ -448,6 +448,12 @@
                     </node>
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6880792723345007008">
+                    <node role="parameter" roleId="tp2c.1199569906740" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5380162141339396604">
+                      <property name="name" nameId="tpck.1169194664001" value="cmp" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5380162141339396606">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="cx9y.1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+                      </node>
+                    </node>
                     <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6880792723345007009">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6880792723345007013">
                         <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6880792723345007014">
@@ -455,17 +461,13 @@
                             <node role="value" roleId="cx9y.1239560837729" type="tpee.Expression" typeId="tpee.1068431790191" id="6880792723345007017" />
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345007018">
                               <property name="linkRole" nameId="tpck.1757699476691236116" value="componentDeclaration" />
-                              <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6880792723345007020">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6880792723345007010" resolveInfo="cmp" />
+                              <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5380162141339396607">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5380162141339396604" resolveInfo="cmp" />
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                    </node>
-                    <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="6880792723345007010">
-                      <property name="name" nameId="tpck.1169194664001" value="cmp" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490486" />
                     </node>
                   </node>
                 </node>

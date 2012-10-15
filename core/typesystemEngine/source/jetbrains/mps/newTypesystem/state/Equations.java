@@ -73,6 +73,10 @@ public class Equations {
     return getRepresentative(node,true);
   }
 
+  public SNode getRepresentativeNoShortenPaths(final SNode node) {
+    return getRepresentative(node,false);
+  }
+
   private SNode getRepresentative(final SNode node, final boolean shortenPaths) {
     if (node == null || !TypesUtil.isVariable(node)) {
       return node;
@@ -133,7 +137,12 @@ public class Equations {
     if (left == right) {
       return true;
     }
-    return TypesUtil.match(left, right, this, info);
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    boolean match = TypesUtil.match(left, right, matchingPairs);
+    if (match) {
+      addEquations(matchingPairs, info);
+    }
+    return match;
   }
 
   private boolean processEquation(SNode var, SNode type, EquationInfo info) {
@@ -157,7 +166,7 @@ public class Equations {
     if (node == null) {
       return null;
     }
-    SNode type = getRepresentative(node);
+    SNode type = getRepresentativeNoShortenPaths(node);
     if (type != node) {
       SNode result = expandNode(type, variablesMet, finalExpansion, copy);
       variablesMet.remove(type);
@@ -236,7 +245,7 @@ public class Equations {
     Map<SNode, Set<SNode>> map = new THashMap<SNode, Set<SNode>>();
     all.addAll(myRepresentatives.keySet());
     for (SNode node : all) {
-      SNode representative = getRepresentative(node);
+      SNode representative = getRepresentativeNoShortenPaths(node);
       Set<SNode> value = map.get(representative);
       if (value == null) {
         value = new THashSet<SNode>();

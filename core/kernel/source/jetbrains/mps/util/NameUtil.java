@@ -19,9 +19,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import org.apache.commons.lang.ObjectUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.WordUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -78,11 +75,11 @@ public class NameUtil {
 
   // ------ Naming policy methods --------
   public static boolean satisfiesNamingPolicy(String s) {
-    return ObjectUtils.equals(captionWithNamingPolicy(s), s);
+    return EqualUtil.equals(captionWithNamingPolicy(s), s);
   }
 
   public static boolean satisfiesPartNamingPolicy(String s) {
-    return ObjectUtils.equals(captionPartWithNamingPolicy(s), s);
+    return EqualUtil.equals(captionPartWithNamingPolicy(s), s);
   }
 
   public static String captionWithNamingPolicy(String s) {
@@ -165,11 +162,28 @@ public class NameUtil {
 
   // ------ Capitalization methods methods --------
   public static String capitalize(String s) {
-    return StringUtils.capitalize(s);
+    if (s == null || s.isEmpty()) return s;
+    char[] chars = s.toCharArray();
+    chars[0] = Character.toTitleCase(chars[0]);
+    return new String(chars);
   }
 
   public static String multiWordCapitalize(String s) {
-    return WordUtils.capitalize(s);
+    if (s == null || s.length() == 0) {
+      return s;
+    }
+    char[] result = s.toCharArray();
+    boolean capitalizeNext = true;
+    for (int i = 0; i < result.length; i++) {
+      char ch = result[i];
+      if (Character.isWhitespace(ch)) {
+        capitalizeNext = true;
+      } else if (capitalizeNext) {
+        result[i] = Character.toTitleCase(ch);
+        capitalizeNext = false;
+      }
+    }
+    return new String(result);
   }
 
   public static String decapitalize(String s) {
@@ -188,7 +202,7 @@ public class NameUtil {
   }
 
   public static String multiWordDecapitalize(String s) {
-    if (StringUtils.isEmpty(s)) {
+    if (StringUtil.isEmpty(s)) {
       return s;
     }
     StringBuilder result = new StringBuilder(s.length());
@@ -201,7 +215,7 @@ public class NameUtil {
 
   // ----- Pluralize/singularize utils -----
   public static String pluralize(String singular) {
-    if (StringUtils.isEmpty(singular)) return singular;
+    if (StringUtil.isEmpty(singular)) return singular;
     // This condition is to distinguish "berry"->"berries" and "array"->"arrays"
     if (singular.endsWith("y") && singular.length() > 1
       && isConsonant(singular.charAt(singular.length() - 2))) {
@@ -216,7 +230,7 @@ public class NameUtil {
   }
 
   public static String singularize(String plural) {
-    if (StringUtils.isEmpty(plural)) return plural;
+    if (StringUtil.isEmpty(plural)) return plural;
 
     if (plural.endsWith("ies")) {
       return plural.substring(0, plural.length() - 3) + "y";
@@ -359,7 +373,7 @@ public class NameUtil {
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
-    if (StringUtils.isEmpty(namespace)) {
+    if (StringUtil.isEmpty(namespace)) {
       return name;
     }
     return namespace + '.' + name;
@@ -527,24 +541,27 @@ public class NameUtil {
   }
 
   public static String getGetterName(String property) {
-    return "get" + StringUtils.capitalize(property);
+    return "get" + capitalize(property);
   }
 
   public static String getSetterName(String property) {
-    return "set" + StringUtils.capitalize(property);
+    return "set" + capitalize(property);
   }
 
   public static String getAdderName(String property) {
-    return "add" + StringUtils.capitalize(property);
+    return "add" + capitalize(property);
   }
 
   public static String getRemoverName(String property) {
-    return "remove" + StringUtils.capitalize(property);
+    return "remove" + capitalize(property);
   }
 
   public static String getPropertyNameFromGetterOrSetter(String name) {
     assert name.startsWith("get") || name.startsWith("set");
     String propertyName = name.substring(3);
-    return StringUtils.uncapitalize(propertyName);
+    if (propertyName.isEmpty()) return propertyName;
+    char[] result = propertyName.toCharArray();
+    result[0] = Character.toLowerCase(result[0]);
+    return new String(result);
   }
 }

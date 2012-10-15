@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.TypesystemDescriptor" />
-  <root nodeId="1241364865026">
+  <root nodeId="1241364865026" modelId="r:450e06fb-ac8b-4ea9-abbf-87478c21328b(jetbrains.mps.calculator.typesystem)">
     <nodeInfo nodeId="1241364869216" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241364869216" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="22" startPosition="51" endLine="23" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241364869216" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="23" startPosition="195" endLine="24" endPosition="343" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -84,8 +84,8 @@
       <varInfo nodeId="1241364883334" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="1241364883334" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule" />
     <unitInfo nodeId="1241364883334" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule$QuotationClass_q8g7ld_a0a0a0" />
+    <unitInfo nodeId="1241364865026" fileName="typeof_InputFieldReference_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule" />
   </root>
 </debugInfo>
 

@@ -99,7 +99,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
@@ -124,6 +126,8 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
@@ -151,6 +155,8 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
@@ -174,6 +180,8 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />

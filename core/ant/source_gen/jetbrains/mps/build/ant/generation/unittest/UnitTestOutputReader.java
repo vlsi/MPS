@@ -5,7 +5,6 @@ package jetbrains.mps.build.ant.generation.unittest;
 import java.io.BufferedWriter;
 import org.jetbrains.annotations.NotNull;
 import java.io.OutputStreamWriter;
-import org.apache.commons.lang.StringUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -38,8 +37,8 @@ public class UnitTestOutputReader {
     myOutputWriter = new BufferedWriter(new OutputStreamWriter(myUnitTestProcess.getOutputStream()));
   }
 
-  private void parseMessage(String text, boolean error) {
-    String textTrimmed = StringUtils.trim(text);
+  private void parseMessage(@NotNull String text, boolean error) {
+    String textTrimmed = text.trim();
     if (text.startsWith(UnitTestRunner.START_TEST_PREFIX)) {
       saveLastTestIfNecessary();
       myCurrentlyRunningTest = removeTag(text, UnitTestRunner.START_TEST_PREFIX);

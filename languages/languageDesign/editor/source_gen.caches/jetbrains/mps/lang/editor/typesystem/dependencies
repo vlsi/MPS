@@ -281,7 +281,6 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6877931680625740364">
+  <root nodeId="6877931680625740364" modelId="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)">
     <nodeInfo nodeId="6877931680625740375" fileName="Test.java" startLine="13" startPosition="22" endLine="14" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6877931680625740380" fileName="Test.java" startLine="14" startPosition="73" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6877931680625740383" fileName="Test.java" startLine="15" startPosition="30" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -17,7 +17,7 @@
     <scopeInfo nodeId="6877931680625740371" fileName="Test.java" startLine="12" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="6877931680625740364" fileName="Test.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test" />
   </root>
-  <root nodeId="6877931680625741277">
+  <root nodeId="6877931680625741277" modelId="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)">
     <nodeInfo nodeId="6877931680625741288" fileName="HStateMachineFactory.java" startLine="14" startPosition="41" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6877931680625741295" fileName="HStateMachineFactory.java" startLine="15" startPosition="55" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6877931680625741302" fileName="HStateMachineFactory.java" startLine="16" startPosition="55" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

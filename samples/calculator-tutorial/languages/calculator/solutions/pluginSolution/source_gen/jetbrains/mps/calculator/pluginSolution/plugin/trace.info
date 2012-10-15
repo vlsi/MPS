@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841950969">
+  <root nodeId="5487985028841950969" modelId="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="58" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="23" startPosition="37" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -143,10 +143,10 @@
       <varInfo nodeId="5487985028841950969" varName="_params" />
       <varInfo nodeId="5487985028841950969" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.calculator.pluginSolution.plugin.ExecuteCalculator_Action" />
     <unitInfo nodeId="5487985028841950987" fileName="ExecuteCalculator_Action.java" startLine="75" startPosition="39" endLine="84" endPosition="9" unitName="jetbrains.mps.calculator.pluginSolution.plugin.ExecuteCalculator_Action$1" />
+    <unitInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.calculator.pluginSolution.plugin.ExecuteCalculator_Action" />
   </root>
-  <root nodeId="5487985028841951123">
+  <root nodeId="5487985028841951123" modelId="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="8" startPosition="75" endLine="9" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="9" startPosition="86" endLine="10" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="12" startPosition="44" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -165,7 +165,7 @@
     <scopeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
     <unitInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.calculator.pluginSolution.plugin.NodeActionsAddition_ActionGroup" />
   </root>
-  <root nodeId="7162597690968188472">
+  <root nodeId="7162597690968188472" modelId="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690968188472" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="77" endLine="10" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968188472" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968188472" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

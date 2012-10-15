@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
-import jetbrains.mps.debug.api.DebugInfoManager;
+import jetbrains.mps.debug.api.BreakpointCreatorsManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
@@ -30,11 +30,11 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
   }
 
   public void doInit() {
-    PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.DebugInfoManager");
+    PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.BreakpointCreatorsManager");
     if (debuggerPlugin == null) {
       return;
     }
-    DebugInfoManager manager = DebugInfoManager.getInstance();
+    BreakpointCreatorsManager manager = BreakpointCreatorsManager.getInstance();
     if (manager == null) {
       return;
     }
@@ -57,11 +57,11 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
   }
 
   public void doDispose() {
-    PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.DebugInfoManager");
+    PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.BreakpointCreatorsManager");
     if (debuggerPlugin == null) {
       return;
     }
-    final DebugInfoManager manager = DebugInfoManager.getInstance();
+    final BreakpointCreatorsManager manager = BreakpointCreatorsManager.getInstance();
     if (manager == null) {
       return;
     }

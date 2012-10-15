@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="33" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="166" startPosition="53" endLine="172" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$5" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="194" startPosition="53" endLine="200" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$7" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="154" startPosition="205" endLine="164" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="182" startPosition="205" endLine="192" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$6" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="232" startPosition="51" endLine="244" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$9" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="210" startPosition="51" endLine="223" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$8" />
   <unitInfo fileName="QueriesGenerated.java" startLine="56" startPosition="38" endLine="76" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="85" startPosition="38" endLine="105" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="118" startPosition="53" endLine="144" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$3" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="154" startPosition="205" endLine="164" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$4" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="166" startPosition="53" endLine="172" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$5" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="182" startPosition="205" endLine="192" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$6" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="194" startPosition="53" endLine="200" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$7" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="210" startPosition="51" endLine="223" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$8" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="232" startPosition="51" endLine="244" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$9" />
-  <root nodeId="6585869519574700078">
+  <unitInfo fileName="QueriesGenerated.java" startLine="33" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated" />
+  <root nodeId="6585869519574700078" modelId="r:06cc3258-66fd-4250-9712-b65b9d7d629a(jetbrains.mps.nanoc.actions)">
     <nodeInfo nodeId="6585869519574747622" fileName="QueriesGenerated.java" startLine="57" startPosition="65" endLine="58" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6585869519574747630" fileName="QueriesGenerated.java" startLine="58" startPosition="120" endLine="59" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574762756" fileName="QueriesGenerated.java" startLine="59" startPosition="72" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -24,7 +24,7 @@
       <varInfo nodeId="6585869519574721409" varName="expressionStatement" />
     </scopeInfo>
   </root>
-  <root nodeId="6585869519574724394">
+  <root nodeId="6585869519574724394" modelId="r:06cc3258-66fd-4250-9712-b65b9d7d629a(jetbrains.mps.nanoc.actions)">
     <nodeInfo nodeId="6585869519574724413" fileName="QueriesGenerated.java" startLine="42" startPosition="108" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6585869519574724419" fileName="QueriesGenerated.java" startLine="43" startPosition="113" endLine="44" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574724442" fileName="QueriesGenerated.java" startLine="44" startPosition="120" endLine="45" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -34,7 +34,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6585869519574724397" fileName="QueriesGenerated.java" startLine="41" startPosition="149" endLine="46" endPosition="5" />
   </root>
-  <root nodeId="6585869519574739817">
+  <root nodeId="6585869519574739817" modelId="r:06cc3258-66fd-4250-9712-b65b9d7d629a(jetbrains.mps.nanoc.actions)">
     <nodeInfo nodeId="6585869519574740985" fileName="QueriesGenerated.java" startLine="33" startPosition="31" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a3" />
     <nodeInfo nodeId="6585869519574740995" fileName="QueriesGenerated.java" startLine="34" startPosition="93" endLine="35" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0d" />
     <nodeInfo nodeId="6585869519574741007" fileName="QueriesGenerated.java" startLine="119" startPosition="94" endLine="120" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -53,7 +53,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6585869519574740970" fileName="QueriesGenerated.java" startLine="129" startPosition="83" endLine="134" endPosition="13" />
   </root>
-  <root nodeId="6585869519574743563">
+  <root nodeId="6585869519574743563" modelId="r:06cc3258-66fd-4250-9712-b65b9d7d629a(jetbrains.mps.nanoc.actions)">
     <nodeInfo nodeId="6585869519574765730" fileName="QueriesGenerated.java" startLine="37" startPosition="199" endLine="38" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6585869519574743588" fileName="QueriesGenerated.java" startLine="159" startPosition="64" endLine="160" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574743581" fileName="QueriesGenerated.java" startLine="160" startPosition="79" endLine="161" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

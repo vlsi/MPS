@@ -20,7 +20,6 @@
     <orderEntry type="module" module-name="intentions-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="mps-editor" />

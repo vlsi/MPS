@@ -12,6 +12,10 @@ public abstract class ConceptFunctionParameter_BehaviorDescriptor extends Expres
     return ConceptFunctionParameter_Behavior.virtual_needConceptFunction_1236687728308(thisNode);
   }
 
+  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    return ConceptFunctionParameter_Behavior.virtual_getType_2443692612523876968(thisNode);
+  }
+
   public boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return ConceptFunctionParameter_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
   }

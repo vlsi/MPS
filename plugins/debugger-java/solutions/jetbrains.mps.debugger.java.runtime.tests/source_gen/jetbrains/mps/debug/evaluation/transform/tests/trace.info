@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3102837338445023976">
+  <root nodeId="3102837338445023976" modelId="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)">
     <nodeInfo nodeId="3102837338445023990" fileName="DebuggerInitializer.java" startLine="13" startPosition="29" endLine="14" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338445023995" fileName="DebuggerInitializer.java" startLine="14" startPosition="42" endLine="15" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338445023955" fileName="DebuggerInitializer.java" startLine="18" startPosition="32" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -16,7 +16,7 @@
     <scopeInfo nodeId="3102837338445024000" fileName="DebuggerInitializer.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="3102837338445023976" fileName="DebuggerInitializer.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.DebuggerInitializer" />
   </root>
-  <root nodeId="5543996881668550053">
+  <root nodeId="5543996881668550053" modelId="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)">
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="28" startPosition="56" endLine="29" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="29" startPosition="131" endLine="30" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="34" startPosition="56" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2120,12 +2120,12 @@
     <scopeInfo nodeId="5543996881668550127" fileName="TransformationUtil_Expressions_Test.java" startLine="761" startPosition="0" endLine="827" endPosition="0" />
     <scopeInfo nodeId="607759879653655637" fileName="TransformationUtil_Expressions_Test.java" startLine="949" startPosition="0" endLine="1015" endPosition="0" />
     <scopeInfo nodeId="607759879653674966" fileName="TransformationUtil_Expressions_Test.java" startLine="1137" startPosition="0" endLine="1203" endPosition="0" />
-    <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="25" startPosition="0" endLine="2117" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test" />
+    <unitInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="2068" startPosition="0" endLine="2091" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody$QuotationClass_n7zrdh_a0a75a21a" />
+    <unitInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="2092" startPosition="0" endLine="2115" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody$QuotationClass_n7zrdh_a0a75a51a" />
     <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="207" startPosition="0" endLine="2116" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody" />
-    <unitInfo nodeId="607759879653673818" fileName="TransformationUtil_Expressions_Test.java" startLine="2068" startPosition="0" endLine="2091" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a75a21a" />
-    <unitInfo nodeId="607759879653674990" fileName="TransformationUtil_Expressions_Test.java" startLine="2092" startPosition="0" endLine="2115" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a75a51a" />
+    <unitInfo nodeId="5543996881668550053" fileName="TransformationUtil_Expressions_Test.java" startLine="25" startPosition="0" endLine="2117" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test" />
   </root>
-  <root nodeId="7696059916860905164">
+  <root nodeId="7696059916860905164" modelId="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)">
     <nodeInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="20" startPosition="67" endLine="21" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="21" startPosition="131" endLine="22" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="26" startPosition="72" endLine="27" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5004,8 +5004,8 @@
     <scopeInfo nodeId="5586226261252412191" fileName="TransformationUtil_Complex_Test.java" startLine="2694" startPosition="0" endLine="2771" endPosition="0" />
     <scopeInfo nodeId="3525964900474536346" fileName="TransformationUtil_Complex_Test.java" startLine="2771" startPosition="0" endLine="2848" endPosition="0" />
     <scopeInfo nodeId="5586226261252412204" fileName="TransformationUtil_Complex_Test.java" startLine="2848" startPosition="0" endLine="2925" endPosition="0" />
-    <unitInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="17" startPosition="0" endLine="2935" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test" />
     <unitInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="229" startPosition="0" endLine="2934" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody" />
+    <unitInfo nodeId="7696059916860905164" fileName="TransformationUtil_Complex_Test.java" startLine="17" startPosition="0" endLine="2935" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test" />
   </root>
 </debugInfo>
 

@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.project.structure.model;
 
-import org.apache.commons.lang.ObjectUtils;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.EqualUtil;
 
 //should implement Comparable in order to be saved from idea-plugin
 public class ModelRoot implements Comparable<ModelRoot> {
@@ -61,8 +60,8 @@ public class ModelRoot implements Comparable<ModelRoot> {
 
     ModelRoot that = (ModelRoot) o;
 
-    if (!ObjectUtils.equals(myManager, that.myManager)) return false;
-    if (!ObjectUtils.equals(myPath, that.myPath)) return false;
+    if (!EqualUtil.equals(myManager, that.myManager)) return false;
+    if (!EqualUtil.equals(myPath, that.myPath)) return false;
 
     return true;
   }
@@ -84,25 +83,25 @@ public class ModelRoot implements Comparable<ModelRoot> {
   @Override
   public int compareTo(ModelRoot o) {
     if (myPath == null && o.myPath != null) return -1;
-    if (myPath!=null){
+    if (myPath != null) {
       int pc = myPath.compareTo(o.myPath);
       if (pc != 0) return pc;
     }
 
     if (myManager == null && o.myManager != null) return -1;
-    if (myManager!=null){
+    if (myManager != null) {
       String c1 = myManager.getClassName();
       String c2 = o.myManager.getClassName();
 
       if (c1 == null && c2 != null) return -1;
-      if (c1!=null){
+      if (c1 != null) {
         int pc = c1.compareTo(c2);
         if (pc != 0) return pc;
       }
 
       String mi1 = myManager.getModuleId();
       String mi2 = o.myManager.getModuleId();
-      if (mi1!=null){
+      if (mi1 != null) {
         int pc = mi1.compareTo(mi2);
         if (pc != 0) return pc;
       }

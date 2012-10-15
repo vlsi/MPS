@@ -132,9 +132,9 @@
       <varInfo nodeId="1213104837475" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104837475" fileName="WhenConcreteVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="65" endPosition="0" />
-    <unitInfo nodeId="1213104837475" fileName="WhenConcreteVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_Constraints" />
-    <unitInfo nodeId="1213104837475" fileName="WhenConcreteVariableReference_Constraints.java" startLine="33" startPosition="42" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_Constraints$1" />
     <unitInfo nodeId="1213104837475" fileName="WhenConcreteVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_Constraints$2" />
+    <unitInfo nodeId="1213104837475" fileName="WhenConcreteVariableReference_Constraints.java" startLine="33" startPosition="42" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104837475" fileName="WhenConcreteVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_Constraints" />
   </root>
   <root nodeId="1213104844579" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="23" startPosition="93" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_g13cad_a0a1a0a0a1a0b0a1a0" />
@@ -193,9 +193,9 @@
       <varInfo nodeId="1213104844579" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_Constraints" />
-    <unitInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="33" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_Constraints$1" />
     <unitInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_Constraints$2" />
+    <unitInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="33" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104844579" fileName="PropertyPatternVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_Constraints" />
   </root>
   <root nodeId="1213104844757" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="23" startPosition="89" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_rydrrc_a0a1a0a0a1a0b0a1a0" />
@@ -254,9 +254,9 @@
       <varInfo nodeId="1213104844757" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_Constraints" />
-    <unitInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="33" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_Constraints$1" />
     <unitInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_Constraints$2" />
+    <unitInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="33" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104844757" fileName="LinkPatternVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_Constraints" />
   </root>
   <root nodeId="1213104846662" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="23" startPosition="85" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_fw8caj_a0a1a0a0a1a0b0a1a0" />
@@ -331,9 +331,9 @@
       <varInfo nodeId="1213104846662" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="88" endPosition="0" />
-    <unitInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_Constraints" />
-    <unitInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="33" startPosition="41" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_Constraints$1" />
     <unitInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="83" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_Constraints$2" />
+    <unitInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="33" startPosition="41" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_Constraints$1" />
+    <unitInfo nodeId="1213104846662" fileName="PatternVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_Constraints" />
   </root>
   <root nodeId="1213104847200" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="17" startPosition="77" endLine="18" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_hzrg7u_a0a1a0a0a1a0b0a1a0" />
@@ -368,9 +368,9 @@
       <varInfo nodeId="1213104847200" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_Constraints" />
-    <unitInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="27" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_Constraints$1" />
     <unitInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="36" startPosition="19" endLine="46" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_Constraints$2" />
+    <unitInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="27" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_Constraints$1" />
+    <unitInfo nodeId="1213104847200" fileName="TypeVarReference_Constraints.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_Constraints" />
   </root>
   <root nodeId="1213104856925" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="20" startPosition="41" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -417,6 +417,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="23" startPosition="0" endLine="56" endPosition="0" />
     <unitInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="51" startPosition="19" endLine="19" endPosition="0" />
+    <unitInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="27" startPosition="34" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptReference_Constraints$1" />
+    <unitInfo nodeId="1213104856925" fileName="ConceptReference_Constraints.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptReference_Constraints" />
   </root>
   <root nodeId="1213104858863" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="23" startPosition="84" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_b5wqlc_a0a1a0a0a1a0b0a1a0" />
@@ -496,9 +498,9 @@
       <varInfo nodeId="1213104858863" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="29" startPosition="0" endLine="91" endPosition="0" />
-    <unitInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="23" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_Constraints" />
-    <unitInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="33" startPosition="41" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_Constraints$1" />
     <unitInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="42" startPosition="19" endLine="86" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_Constraints$2" />
+    <unitInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="33" startPosition="41" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_Constraints$1" />
+    <unitInfo nodeId="1213104858863" fileName="ApplicableNodeReference_Constraints.java" startLine="23" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_Constraints" />
   </root>
   <root nodeId="1213104860682" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="23" startPosition="88" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8vu3gr_a0a1a0a0a1a0b0a1a0" />
@@ -541,9 +543,9 @@
       <varInfo nodeId="1213104860682" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints" />
-    <unitInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="33" startPosition="43" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints$1" />
     <unitInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="42" startPosition="19" endLine="57" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints$2" />
+    <unitInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="33" startPosition="43" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints$1" />
+    <unitInfo nodeId="1213104860682" fileName="TypesystemIntentionArgument_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints" />
   </root>
   <root nodeId="1216390479216" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="23" startPosition="86" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_tpj9r2_a0a1a0a0a1a0b0a1a0" />
@@ -586,9 +588,9 @@
       <varInfo nodeId="1216390479216" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_Constraints" />
-    <unitInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="33" startPosition="43" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_Constraints$1" />
     <unitInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="42" startPosition="19" endLine="57" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_Constraints$2" />
+    <unitInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="33" startPosition="43" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_Constraints$1" />
+    <unitInfo nodeId="1216390479216" fileName="QuickFixArgumentReference_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_Constraints" />
   </root>
   <root nodeId="1227088436106" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="14" startPosition="74" endLine="15" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
@@ -853,9 +855,9 @@
       <varInfo nodeId="1227098342559" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1227098342559" fileName="PropertyMessageTarget_Constraints.java" startLine="32" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="1227098342559" fileName="PropertyMessageTarget_Constraints.java" startLine="26" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_Constraints" />
-    <unitInfo nodeId="1227098342559" fileName="PropertyMessageTarget_Constraints.java" startLine="36" startPosition="46" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_Constraints$1" />
     <unitInfo nodeId="1227098342559" fileName="PropertyMessageTarget_Constraints.java" startLine="45" startPosition="19" endLine="68" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_Constraints$2" />
+    <unitInfo nodeId="1227098342559" fileName="PropertyMessageTarget_Constraints.java" startLine="36" startPosition="46" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_Constraints$1" />
+    <unitInfo nodeId="1227098342559" fileName="PropertyMessageTarget_Constraints.java" startLine="26" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_Constraints" />
   </root>
   <root nodeId="1227101197786" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="26" startPosition="83" endLine="27" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_h95xiq_a0a1a0a0a1a0b0a1a0" />
@@ -910,9 +912,9 @@
       <varInfo nodeId="1227101197786" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="32" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="26" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_Constraints" />
-    <unitInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="36" startPosition="42" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_Constraints$1" />
     <unitInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="45" startPosition="19" endLine="68" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_Constraints$2" />
+    <unitInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="36" startPosition="42" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_Constraints$1" />
+    <unitInfo nodeId="1227101197786" fileName="ReferenceMessageTarget_Constraints.java" startLine="26" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_Constraints" />
   </root>
   <root nodeId="1240322964495" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1240322964495" fileName="ConceptTypeClause_Constraints.java" startLine="13" startPosition="78" endLine="14" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
@@ -988,9 +990,9 @@
       <varInfo nodeId="1240323011427" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1240323011427" fileName="ConceptClauseLinkInfo_Constraints.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="1240323011427" fileName="ConceptClauseLinkInfo_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_Constraints" />
-    <unitInfo nodeId="1240323011427" fileName="ConceptClauseLinkInfo_Constraints.java" startLine="29" startPosition="42" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_Constraints$1" />
     <unitInfo nodeId="1240323011427" fileName="ConceptClauseLinkInfo_Constraints.java" startLine="38" startPosition="19" endLine="48" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_Constraints$2" />
+    <unitInfo nodeId="1240323011427" fileName="ConceptClauseLinkInfo_Constraints.java" startLine="29" startPosition="42" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_Constraints$1" />
+    <unitInfo nodeId="1240323011427" fileName="ConceptClauseLinkInfo_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_Constraints" />
   </root>
   <root nodeId="1998873705041899571" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="1998873705041899574" fileName="TypeVarScope.java" startLine="16" startPosition="55" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentNode" />
@@ -1212,9 +1214,9 @@
       <varInfo nodeId="7857223919215948959" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="22" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints" />
-    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="26" startPosition="37" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$1" />
     <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="30" startPosition="19" endLine="44" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$2" />
+    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="26" startPosition="37" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints$1" />
+    <unitInfo nodeId="7857223919215948959" fileName="InequationReference_Constraints.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_Constraints" />
   </root>
   <root nodeId="8090891477833132962" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="23" startPosition="83" endLine="24" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_rgybaw_a0a1a0a0a1a0b0a1a0" />
@@ -1257,9 +1259,9 @@
       <varInfo nodeId="8090891477833132962" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_Constraints" />
-    <unitInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="33" startPosition="40" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_Constraints$1" />
     <unitInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="42" startPosition="19" endLine="57" endPosition="9" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_Constraints$2" />
+    <unitInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="33" startPosition="40" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_Constraints$1" />
+    <unitInfo nodeId="8090891477833132962" fileName="QuickFixFieldReference_Constraints.java" startLine="23" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_Constraints" />
   </root>
   <root nodeId="919572754501607735" modelId="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)">
     <nodeInfo nodeId="919572754501607735" fileName="MessageStatement_Constraints.java" startLine="13" startPosition="77" endLine="14" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

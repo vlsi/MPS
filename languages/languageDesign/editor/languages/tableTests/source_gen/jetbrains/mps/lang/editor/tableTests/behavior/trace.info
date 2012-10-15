@@ -36,6 +36,7 @@
     <scopeInfo nodeId="2882388703616228648" fileName="Table_Behavior.java" startLine="14" startPosition="98" endLine="21" endPosition="96">
       <varInfo nodeId="2882388703616228650" varName="row" />
     </scopeInfo>
+    <scopeInfo nodeId="2882388703616228640" fileName="Table_Behavior.java" startLine="13" startPosition="43" endLine="22" endPosition="5" />
     <scopeInfo nodeId="2882388703616228647" fileName="Table_Behavior.java" startLine="13" startPosition="43" endLine="22" endPosition="5">
       <varInfo nodeId="2882388703616228695" varName="i" />
     </scopeInfo>
@@ -140,6 +141,7 @@
     <scopeInfo nodeId="2422839104779457219" fileName="HierarchycalTable_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5">
       <varInfo nodeId="2422839104779457242" varName="i" />
     </scopeInfo>
+    <scopeInfo nodeId="8506335436194799576" fileName="HierarchycalTable_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5" />
     <scopeInfo nodeId="8506335436194799574" fileName="HierarchycalTable_Behavior.java" startLine="12" startPosition="41" endLine="20" endPosition="0">
       <varInfo nodeId="8506335436194799574" varName="thisNode" />
     </scopeInfo>

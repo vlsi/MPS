@@ -9,8 +9,10 @@ import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import java.util.List;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,9 +27,12 @@ public class StaticMethodCall_Behavior {
     return ReflectionUtil.staticInvoke(method, actualArguments);
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<SNode> methods = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(thisNode, "classConcept", false), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
-    return methods;
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
+    return Sequence.fromIterable(Members.visibleStaticMethods(SLinkOperations.getTarget(thisNode, "classConcept", false), thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_8wxa2a_a0a0a0a0a0a0a2(SPropertyOperations.getString(it, "name"), methodName);
+      }
+    }).toListSequence();
   }
 
   public static boolean call_canBeConvertedToLocal_3299924278393499101(SNode thisNode) {
@@ -42,5 +47,12 @@ public class StaticMethodCall_Behavior {
     for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
     }
+  }
+
+  private static boolean eq_8wxa2a_a0a0a0a0a0a0a2(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

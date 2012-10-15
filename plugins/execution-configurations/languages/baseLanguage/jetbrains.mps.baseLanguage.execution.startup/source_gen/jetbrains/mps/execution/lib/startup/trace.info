@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1585405235656481406">
+  <root nodeId="1585405235656481406" modelId="r:236bdcfa-29d1-4eb2-b71e-5029df588527(jetbrains.mps.execution.lib.startup)">
     <nodeInfo nodeId="1585405235656481407" fileName="ClassRunner.java" startLine="17" startPosition="26" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS_PREFIX" />
     <nodeInfo nodeId="1585405235656481412" fileName="ClassRunner.java" startLine="18" startPosition="48" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE_PREFIX" />
     <nodeInfo nodeId="1585405235656481417" fileName="ClassRunner.java" startLine="19" startPosition="47" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASSPATH_PREFIX" />

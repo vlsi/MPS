@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.newTypesystem.state.blocks;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.SubtypingResolver;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.CheckSubTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ProcessReplacementRuleOperation;
+import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -110,11 +113,24 @@ public class InequalityBlock extends RelationBlock {
     final SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
     myState.executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
       public void run() {
-        if (!subTyping.isSubType(subType, superType, myEquationInfo, myState, myRelationKind.isWeak())) {
+        if (!calcIsSubtype(subTyping, subType, superType)) {
           myState.getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
         }
       }
     }));
+  }
+
+  private boolean calcIsSubtype(SubTypingManagerNew subTyping, SNode subType, SNode superType) {
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    SubtypingResolver subtypingResolver = new SubtypingResolver(myRelationKind.isWeak(), myState.getTypeCheckingContext(), matchingPairs);
+    boolean result = subtypingResolver.calcIsSubType(subType, superType);
+    if (result) {
+      Equations equations = myState.getEquations();
+      if (equations != null) {
+        equations.addEquations(matchingPairs, myEquationInfo);
+      }
+    }
+    return result;
   }
 
   @Override
@@ -125,11 +141,11 @@ public class InequalityBlock extends RelationBlock {
     } else {
       //hack
       ConditionKind left = ConditionKind.SHALLOW;
-      if (LatticeUtil.isMeet(myLeftNode)) {
+      if (LatticeUtil.isPolymorphic(myLeftNode)) {
         left = ConditionKind.CONCRETE;
       }
       ConditionKind right = ConditionKind.SHALLOW;
-      if (LatticeUtil.isMeet(myRightNode)) {
+      if (LatticeUtil.isPolymorphic(myRightNode)) {
         right = ConditionKind.CONCRETE;
       }
       return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, left),

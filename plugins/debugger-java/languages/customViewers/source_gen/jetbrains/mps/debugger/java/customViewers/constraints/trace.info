@@ -166,9 +166,9 @@
       <varInfo nodeId="43370322128310819" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="29" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
-    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="36" endLine="58" endPosition="5" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
     <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$2" />
+    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="36" endLine="58" endPosition="5" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
+    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
   </root>
 </debugInfo>
 

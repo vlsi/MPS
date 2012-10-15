@@ -45,7 +45,7 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.ui.ModelRootContentEntryEditor.DummyContentEntry;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -108,7 +108,7 @@ public class MPSFacetSourcesTab {
     Iterator<ModelRoot> mri2 = mr2.iterator();
 
     while (mri1.hasNext()) {
-      if (!ObjectUtils.equals(mri1.next(), mri2.next())) return true;
+      if (!EqualUtil.equals(mri1.next(), mri2.next())) return true;
     }
     return false;
   }

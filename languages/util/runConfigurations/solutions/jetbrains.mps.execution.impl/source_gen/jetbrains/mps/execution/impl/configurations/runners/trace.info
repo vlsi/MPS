@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5145867626676109821">
+  <root nodeId="5145867626676109821" modelId="r:8b4f0747-4cce-403c-a9ed-8700a357a916(jetbrains.mps.execution.impl.configurations.runners)">
     <nodeInfo nodeId="5145867626676112554" fileName="LegacyBeforeTaskProvider.java" startLine="24" startPosition="104" endLine="25" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEY" />
     <nodeInfo nodeId="5145867626676109821" fileName="LegacyBeforeTaskProvider.java" startLine="25" startPosition="89" endLine="26" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5145867626676112569" fileName="LegacyBeforeTaskProvider.java" startLine="33" startPosition="57" endLine="34" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -116,10 +116,10 @@
       <varInfo nodeId="5145867626676112643" varName="context" />
       <varInfo nodeId="5145867626676112647" varName="task" />
     </scopeInfo>
-    <unitInfo nodeId="5145867626676109821" fileName="LegacyBeforeTaskProvider.java" startLine="18" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider" />
     <unitInfo nodeId="5145867626676112543" fileName="LegacyBeforeTaskProvider.java" startLine="102" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider$MakeTask" />
+    <unitInfo nodeId="5145867626676109821" fileName="LegacyBeforeTaskProvider.java" startLine="18" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider" />
   </root>
-  <root nodeId="5145867626676113213">
+  <root nodeId="5145867626676113213" modelId="r:8b4f0747-4cce-403c-a9ed-8700a357a916(jetbrains.mps.execution.impl.configurations.runners)">
     <nodeInfo nodeId="5145867626676113213" fileName="MPSProgramRunner.java" startLine="13" startPosition="60" endLine="14" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5145867626676113224" fileName="MPSProgramRunner.java" startLine="20" startPosition="31" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5145867626676113237" fileName="MPSProgramRunner.java" startLine="25" startPosition="9" endLine="26" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

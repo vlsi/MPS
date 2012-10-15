@@ -8,7 +8,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationMo
 import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.runtime.DebugSession;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;

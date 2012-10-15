@@ -24,7 +24,7 @@ import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
-import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;

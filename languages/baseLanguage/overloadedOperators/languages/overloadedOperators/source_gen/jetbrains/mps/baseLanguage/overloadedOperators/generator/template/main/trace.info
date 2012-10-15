@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main.QueriesGenerated" />
-  <root nodeId="3100399657864694362">
+  <root nodeId="3100399657864694362" modelId="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)">
     <nodeInfo nodeId="2673276898228775826" fileName="QueriesGenerated.java" startLine="43" startPosition="50" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3524394717035465476" fileName="QueriesGenerated.java" startLine="46" startPosition="25" endLine="47" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2673276898228775858" fileName="QueriesGenerated.java" startLine="52" startPosition="50" endLine="53" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -53,7 +53,7 @@
     <unitInfo nodeId="2673276898228778853" fileName="QueriesGenerated.java" startLine="76" startPosition="517" endLine="80" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main.QueriesGenerated$4" />
     <unitInfo nodeId="2673276898228778828" fileName="QueriesGenerated.java" startLine="88" startPosition="517" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main.QueriesGenerated$5" />
   </root>
-  <root nodeId="6677452554239629696">
+  <root nodeId="6677452554239629696" modelId="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)">
     <nodeInfo nodeId="3100399657865298804" fileName="QueriesGenerated.java" startLine="26" startPosition="50" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8177032930858802027" fileName="QueriesGenerated.java" startLine="29" startPosition="7" endLine="30" endPosition="342" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100399657865298804" fileName="QueriesGenerated.java" startLine="25" startPosition="285" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
@@ -67,7 +67,7 @@
     </scopeInfo>
     <unitInfo nodeId="3100399657865298804" fileName="QueriesGenerated.java" startLine="25" startPosition="255" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main.QueriesGenerated$1" />
   </root>
-  <root nodeId="6677452554240268192">
+  <root nodeId="6677452554240268192" modelId="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)">
     <nodeInfo nodeId="6677452554240297633" fileName="QueriesGenerated.java" startLine="33" startPosition="154" endLine="34" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6677452554240269756" fileName="QueriesGenerated.java" startLine="37" startPosition="154" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6677452554240291135" fileName="QueriesGenerated.java" startLine="59" startPosition="150" endLine="60" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

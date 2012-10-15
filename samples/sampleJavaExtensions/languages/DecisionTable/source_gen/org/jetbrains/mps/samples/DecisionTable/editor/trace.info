@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1987251859606934921">
+  <root nodeId="1987251859606934921" modelId="r:b96dcc7d-bee1-45db-9bae-10fd8574af99(org.jetbrains.mps.samples.DecisionTable.editor)">
     <nodeInfo nodeId="1987251859606934926" fileName="DecisionTable_Editor.java" startLine="48" startPosition="58" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1987251859606934928" fileName="DecisionTable_Editor.java" startLine="65" startPosition="58" endLine="65" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1987251859606934921" fileName="DecisionTable_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -133,8 +133,8 @@
       <varInfo nodeId="1987251859606934928" varName="editorContext" />
       <varInfo nodeId="1987251859606934928" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1987251859606934921" fileName="DecisionTable_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.editor.DecisionTable_Editor" />
     <unitInfo nodeId="1987251859606934930" fileName="DecisionTable_Editor.java" startLine="78" startPosition="36" endLine="82" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.editor.DecisionTable_Editor$1" />
+    <unitInfo nodeId="1987251859606934921" fileName="DecisionTable_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.editor.DecisionTable_Editor" />
   </root>
 </debugInfo>
 

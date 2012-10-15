@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5015601397718077769">
+  <root nodeId="5015601397718077769" modelId="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)">
     <nodeInfo nodeId="5015601397718077942" fileName="SourceRevision.java" startLine="17" startPosition="25" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015601397718077923" fileName="SourceRevision.java" startLine="28" startPosition="59" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5015601397718077931" fileName="SourceRevision.java" startLine="33" startPosition="44" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -21,10 +21,10 @@
     </scopeInfo>
     <scopeInfo nodeId="5015601397718077905" fileName="SourceRevision.java" startLine="15" startPosition="68" endLine="20" endPosition="0" />
     <scopeInfo nodeId="5015601397718077927" fileName="SourceRevision.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
     <unitInfo nodeId="5015601397718077904" fileName="SourceRevision.java" startLine="15" startPosition="50" endLine="20" endPosition="3" unitName="jetbrains.mps.ide.vcs.SourceRevision$1" />
+    <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
   </root>
-  <root nodeId="5015601397718560603">
+  <root nodeId="5015601397718560603" modelId="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)">
     <nodeInfo nodeId="5015601397718560606" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="14" startPosition="77" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="5015601397718560615" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="17" startPosition="56" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5015601397718560617" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="18" startPosition="19" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

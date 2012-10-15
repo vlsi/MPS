@@ -58,8 +58,8 @@
       <varInfo nodeId="1213104840433" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="43" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_Constraints" />
     <unitInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="47" startPosition="31" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_Constraints$1" />
+    <unitInfo nodeId="1213104840433" fileName="DataFlowBuilderDeclaration_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_Constraints" />
   </root>
   <root nodeId="1213104855807" modelId="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)">
     <nodeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="22" startPosition="74" endLine="23" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_t9qyyi_a0a1a0a0a1a0b0a1a0" />
@@ -100,9 +100,9 @@
       <varInfo nodeId="1213104855807" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="28" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints" />
-    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="32" startPosition="32" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
     <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="41" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$2" />
+    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="32" startPosition="32" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
+    <unitInfo nodeId="1213104855807" fileName="LabelPosition_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints" />
   </root>
   <root nodeId="1213107437881" modelId="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)">
     <nodeInfo nodeId="1213107437881" fileName="EmitStatement_Constraints.java" startLine="13" startPosition="74" endLine="14" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />

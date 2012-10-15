@@ -534,8 +534,8 @@
       <varInfo nodeId="8259195909097980947" varName="namespace" />
       <varInfo nodeId="8259195909097980944" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="22" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
     <unitInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="53" startPosition="130" endLine="57" endPosition="7" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />
+    <unitInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="22" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
   </root>
   <root nodeId="3393165121846091588" modelId="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)">
     <nodeInfo nodeId="3393165121846091588" fileName="ISuppressErrors_Behavior.java" startLine="11" startPosition="39" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3393165121846091591" />

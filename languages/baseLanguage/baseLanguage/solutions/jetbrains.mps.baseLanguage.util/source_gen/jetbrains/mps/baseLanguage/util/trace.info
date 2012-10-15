@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1650638035896359074">
+  <root nodeId="1650638035896359074" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
     <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="7" startPosition="32" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldPrefix" />
     <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="8" startPosition="31" endLine="9" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldSuffix" />
     <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="9" startPosition="31" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticFieldPrefix" />
@@ -109,7 +109,7 @@
     <scopeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="1650638035896359074" fileName="CodeStyleSettings.java" startLine="7" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
   </root>
-  <root nodeId="644116965567343729">
+  <root nodeId="644116965567343729" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
     <nodeInfo nodeId="920705696368452801" fileName="CodeStyleSettingsRegistry.java" startLine="10" startPosition="40" endLine="11" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myProjectToSettingsMap" />
     <nodeInfo nodeId="1650638035896359059" fileName="CodeStyleSettingsRegistry.java" startLine="16" startPosition="64" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="920705696368452814" fileName="CodeStyleSettingsRegistry.java" startLine="20" startPosition="84" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -135,7 +135,7 @@
     </scopeInfo>
     <unitInfo nodeId="644116965567343729" fileName="CodeStyleSettingsRegistry.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry" />
   </root>
-  <root nodeId="8432634623182691821">
+  <root nodeId="8432634623182691821" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
     <nodeInfo nodeId="8432634623182692263" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="38" endLine="29" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingToOverridenMethodsMap" />
     <nodeInfo nodeId="8432634623182692283" fileName="OverridingMethodsFinder.java" startLine="31" startPosition="51" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="8432634623182692298" fileName="OverridingMethodsFinder.java" startLine="35" startPosition="76" endLine="36" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -362,17 +362,17 @@
       <varInfo nodeId="8432634623182691851" varName="nameToMethodsMap" />
       <varInfo nodeId="8432634623182691856" varName="visitedClassifiers" />
     </scopeInfo>
-    <unitInfo nodeId="8432634623182691821" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" />
-    <unitInfo nodeId="8432634623182691906" fileName="OverridingMethodsFinder.java" startLine="67" startPosition="104" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$1" />
     <unitInfo nodeId="8432634623182692314" fileName="OverridingMethodsFinder.java" startLine="37" startPosition="72" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$10" />
+    <unitInfo nodeId="8432634623182691906" fileName="OverridingMethodsFinder.java" startLine="67" startPosition="104" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$1" />
     <unitInfo nodeId="8432634623182691915" fileName="OverridingMethodsFinder.java" startLine="71" startPosition="19" endLine="75" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$2" />
     <unitInfo nodeId="8432634623182691924" fileName="OverridingMethodsFinder.java" startLine="75" startPosition="22" endLine="79" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$3" />
     <unitInfo nodeId="8432634623182691967" fileName="OverridingMethodsFinder.java" startLine="87" startPosition="178" endLine="91" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$4" />
     <unitInfo nodeId="8432634623182691976" fileName="OverridingMethodsFinder.java" startLine="91" startPosition="19" endLine="95" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$5" />
     <unitInfo nodeId="8432634623182691985" fileName="OverridingMethodsFinder.java" startLine="95" startPosition="22" endLine="99" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$6" />
-    <unitInfo nodeId="8432634623182692084" fileName="OverridingMethodsFinder.java" startLine="118" startPosition="82" endLine="122" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$7" />
     <unitInfo nodeId="8432634623182692115" fileName="OverridingMethodsFinder.java" startLine="108" startPosition="128" endLine="112" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$8" />
+    <unitInfo nodeId="8432634623182692084" fileName="OverridingMethodsFinder.java" startLine="118" startPosition="82" endLine="122" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$7" />
     <unitInfo nodeId="8432634623182692145" fileName="OverridingMethodsFinder.java" startLine="137" startPosition="54" endLine="141" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$9" />
+    <unitInfo nodeId="8432634623182691821" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" />
   </root>
 </debugInfo>
 

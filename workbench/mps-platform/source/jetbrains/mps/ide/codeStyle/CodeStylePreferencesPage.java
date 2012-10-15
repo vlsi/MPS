@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.codeStyle;
 
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -150,7 +150,7 @@ public class CodeStylePreferencesPage {
     myParameter.setSettings(mySettings.getParameterPrefix(), mySettings.getParameterSuffix());
     myLocalVariable.setSettings(mySettings.getLocalVariablePrefix(), mySettings.getLocalVariableSuffix());
     for (LineSeparatorOption option : LineSeparatorOption.values()) {
-      if (ObjectUtils.equals(option.getSetting(), mySettings.getLineSeparator())) {
+      if (EqualUtil.equals(option.getSetting(), mySettings.getLineSeparator())) {
         myLineSeparatorComboBox.setSelectedItem(option);
       }
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.TypesystemDescriptor" />
-  <root nodeId="3294321158385517948">
+  <root nodeId="3294321158385517948" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="3294321158385517964" fileName="typeof_ThreadPool_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3294321158385517964" fileName="typeof_ThreadPool_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3294321158385517964" fileName="typeof_ThreadPool_InferenceRule.java" startLine="26" startPosition="214" endLine="27" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,10 +86,10 @@
       <varInfo nodeId="3294321158385517975" varName="typeCheckingContext" />
     </scopeInfo>
     <scopeInfo nodeId="3294321158385517975" fileName="typeof_ThreadPool_InferenceRule.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <unitInfo nodeId="3294321158385517948" fileName="typeof_ThreadPool_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ThreadPool_InferenceRule" />
     <unitInfo nodeId="3294321158385517975" fileName="typeof_ThreadPool_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ThreadPool_InferenceRule$QuotationClass_p78ud1_a0a0a0" />
+    <unitInfo nodeId="3294321158385517948" fileName="typeof_ThreadPool_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ThreadPool_InferenceRule" />
   </root>
-  <root nodeId="3540747636396547801">
+  <root nodeId="3540747636396547801" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="3540747636396559126" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="28" startPosition="126" endLine="29" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3540747636396559125" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="29" startPosition="147" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3540747636396547817" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="32" startPosition="213" endLine="33" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -227,11 +227,11 @@
       <varInfo nodeId="3540747636396547801" varName="status" />
       <varInfo nodeId="3540747636396547801" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="3540747636396547801" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="123" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule" />
     <unitInfo nodeId="3540747636396649380" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="50" startPosition="83" endLine="54" endPosition="11" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule$1" />
     <unitInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="111" endLine="89" endPosition="11" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule$2" />
+    <unitInfo nodeId="3540747636396547801" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="123" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule" />
   </root>
-  <root nodeId="3540747636396649292">
+  <root nodeId="3540747636396649292" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="3540747636396649302" fileName="CheckingRuleHelper.java" startLine="21" startPosition="46" endLine="22" endPosition="988" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3540747636396649356" fileName="CheckingRuleHelper.java" startLine="22" startPosition="988" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3540747636396649306" fileName="CheckingRuleHelper.java" startLine="30" startPosition="31" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -553,13 +553,9 @@
     <scopeInfo nodeId="3540747636396649324" fileName="CheckingRuleHelper.java" startLine="191" startPosition="0" endLine="204" endPosition="0" />
     <scopeInfo nodeId="3540747636396649326" fileName="CheckingRuleHelper.java" startLine="209" startPosition="0" endLine="222" endPosition="0" />
     <scopeInfo nodeId="3540747636396718230" fileName="CheckingRuleHelper.java" startLine="227" startPosition="0" endLine="240" endPosition="0" />
-    <unitInfo nodeId="3540747636396649292" fileName="CheckingRuleHelper.java" startLine="17" startPosition="0" endLine="259" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper" />
-    <unitInfo nodeId="3540747636396649324" fileName="CheckingRuleHelper.java" startLine="188" startPosition="0" endLine="205" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a01a0a0a" />
-    <unitInfo nodeId="3540747636396649326" fileName="CheckingRuleHelper.java" startLine="206" startPosition="0" endLine="223" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a11a0a0a" />
-    <unitInfo nodeId="3540747636396649306" fileName="CheckingRuleHelper.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a1a0a0a" />
-    <unitInfo nodeId="3540747636396718230" fileName="CheckingRuleHelper.java" startLine="224" startPosition="0" endLine="241" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a21a0a0a" />
-    <unitInfo nodeId="3540747636396649308" fileName="CheckingRuleHelper.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a2a0a0a" />
     <unitInfo nodeId="3540747636396718235" fileName="CheckingRuleHelper.java" startLine="242" startPosition="0" endLine="258" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a31a0a0a" />
+    <unitInfo nodeId="3540747636396649306" fileName="CheckingRuleHelper.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a1a0a0a" />
+    <unitInfo nodeId="3540747636396649308" fileName="CheckingRuleHelper.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a2a0a0a" />
     <unitInfo nodeId="3540747636396649310" fileName="CheckingRuleHelper.java" startLine="62" startPosition="0" endLine="79" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a3a0a0a" />
     <unitInfo nodeId="3540747636396649312" fileName="CheckingRuleHelper.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a4a0a0a" />
     <unitInfo nodeId="3540747636396649314" fileName="CheckingRuleHelper.java" startLine="98" startPosition="0" endLine="115" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a5a0a0a" />
@@ -567,8 +563,12 @@
     <unitInfo nodeId="3540747636396649318" fileName="CheckingRuleHelper.java" startLine="134" startPosition="0" endLine="151" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a7a0a0a" />
     <unitInfo nodeId="3540747636396649320" fileName="CheckingRuleHelper.java" startLine="152" startPosition="0" endLine="169" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a8a0a0a" />
     <unitInfo nodeId="3540747636396649322" fileName="CheckingRuleHelper.java" startLine="170" startPosition="0" endLine="187" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a9a0a0a" />
+    <unitInfo nodeId="3540747636396649324" fileName="CheckingRuleHelper.java" startLine="188" startPosition="0" endLine="205" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a01a0a0a" />
+    <unitInfo nodeId="3540747636396649326" fileName="CheckingRuleHelper.java" startLine="206" startPosition="0" endLine="223" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a11a0a0a" />
+    <unitInfo nodeId="3540747636396718230" fileName="CheckingRuleHelper.java" startLine="224" startPosition="0" endLine="241" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper$QuotationClass_lq9iuq_a21a0a0a" />
+    <unitInfo nodeId="3540747636396649292" fileName="CheckingRuleHelper.java" startLine="17" startPosition="0" endLine="259" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CheckingRuleHelper" />
   </root>
-  <root nodeId="4697196167065854783">
+  <root nodeId="4697196167065854783" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="4697196167065941944" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="26" startPosition="39" endLine="27" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4697196167065890748" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="31" startPosition="9" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4697196167065890748" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="32" startPosition="62" endLine="33" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -623,11 +623,11 @@
       <varInfo nodeId="4697196167065854783" varName="status" />
       <varInfo nodeId="4697196167065854783" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="4697196167065854783" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule" />
     <unitInfo nodeId="4697196167065941940" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="25" startPosition="160" endLine="29" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule$1" />
     <unitInfo nodeId="4697196167065890744" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="29" startPosition="20" endLine="40" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule$2" />
+    <unitInfo nodeId="4697196167065854783" fileName="NoReturnInsideParallelFor_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="58" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule" />
   </root>
-  <root nodeId="4697196167065890753">
+  <root nodeId="4697196167065890753" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="4697196167065941784" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="26" startPosition="39" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4697196167065941903" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="31" startPosition="9" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4697196167065941903" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="32" startPosition="62" endLine="33" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -676,11 +676,11 @@
       <varInfo nodeId="4697196167065890753" varName="status" />
       <varInfo nodeId="4697196167065890753" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="4697196167065890753" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule" />
     <unitInfo nodeId="4697196167065941780" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="25" startPosition="159" endLine="29" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule$1" />
     <unitInfo nodeId="4697196167065941899" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="29" startPosition="20" endLine="36" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule$2" />
+    <unitInfo nodeId="4697196167065890753" fileName="NoBreakInsideParallelFor_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule" />
   </root>
-  <root nodeId="4697196167066002108">
+  <root nodeId="4697196167066002108" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="4697196167066002113" fileName="TurnReturnToContinue_QuickFix.java" startLine="13" startPosition="44" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4697196167066002115" fileName="TurnReturnToContinue_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4697196167066002108" fileName="TurnReturnToContinue_QuickFix.java" startLine="9" startPosition="69" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TurnReturnToContinue_QuickFix#()V" />
@@ -698,7 +698,7 @@
     </scopeInfo>
     <unitInfo nodeId="4697196167066002108" fileName="TurnReturnToContinue_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.TurnReturnToContinue_QuickFix" />
   </root>
-  <root nodeId="5384012304952354752">
+  <root nodeId="5384012304952354752" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="5384012304952426601" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="27" startPosition="127" endLine="28" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952500232" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="31" startPosition="295" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952426712" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -828,10 +828,10 @@
       <varInfo nodeId="5384012304952354752" varName="status" />
       <varInfo nodeId="5384012304952354752" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="5384012304952354752" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="114" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CallsToNonThreadSafeMethod_NonTypesystemRule" />
     <unitInfo nodeId="3540747636396672053" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="44" startPosition="83" endLine="48" endPosition="11" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CallsToNonThreadSafeMethod_NonTypesystemRule$1" />
+    <unitInfo nodeId="5384012304952354752" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="114" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.CallsToNonThreadSafeMethod_NonTypesystemRule" />
   </root>
-  <root nodeId="7793246093816012185">
+  <root nodeId="7793246093816012185" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="7942685431171333076" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="23" startPosition="130" endLine="24" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2975785153735291553" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="25" startPosition="33" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2975785153735291562" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="26" startPosition="109" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -891,7 +891,7 @@
     </scopeInfo>
     <unitInfo nodeId="7793246093816012185" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule" />
   </root>
-  <root nodeId="7793246093816040820">
+  <root nodeId="7793246093816040820" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="7793246093816040825" fileName="MakeDeclarationFinal_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7793246093816040828" fileName="MakeDeclarationFinal_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="11" startPosition="69" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeDeclarationFinal_QuickFix#()V" />
@@ -909,7 +909,7 @@
     </scopeInfo>
     <unitInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.MakeDeclarationFinal_QuickFix" />
   </root>
-  <root nodeId="8923957828369554117">
+  <root nodeId="8923957828369554117" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="4659204813808532920" fileName="typeof_ParallelFor_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4659204813808532920" fileName="typeof_ParallelFor_InferenceRule.java" startLine="27" startPosition="100" endLine="28" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4659204813808532920" fileName="typeof_ParallelFor_InferenceRule.java" startLine="28" startPosition="214" endLine="29" endPosition="378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1194,9 +1194,9 @@
       <varInfo nodeId="3261041752321174553" varName="parameter_11" />
       <varInfo nodeId="3261041752321174553" varName="parameter_12" />
     </scopeInfo>
-    <unitInfo nodeId="8923957828369554117" fileName="typeof_ParallelFor_InferenceRule.java" startLine="21" startPosition="0" endLine="203" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ParallelFor_InferenceRule" />
     <unitInfo nodeId="4659204813808532925" fileName="typeof_ParallelFor_InferenceRule.java" startLine="63" startPosition="0" endLine="93" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ParallelFor_InferenceRule$QuotationClass_68f1fp_a0a0a0" />
     <unitInfo nodeId="3261041752321174553" fileName="typeof_ParallelFor_InferenceRule.java" startLine="94" startPosition="0" endLine="202" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ParallelFor_InferenceRule$QuotationClass_68f1fp_a0a1a3a0" />
+    <unitInfo nodeId="8923957828369554117" fileName="typeof_ParallelFor_InferenceRule.java" startLine="21" startPosition="0" endLine="203" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.typeof_ParallelFor_InferenceRule" />
   </root>
 </debugInfo>
 

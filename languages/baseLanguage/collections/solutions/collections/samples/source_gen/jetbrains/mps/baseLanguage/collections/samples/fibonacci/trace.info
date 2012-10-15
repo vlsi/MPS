@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1152305201679">
+  <root nodeId="1152305201679" modelId="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)">
     <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="62" startPosition="27" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="65" startPosition="27" endLine="65" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="19" startPosition="52" endLine="20" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -99,12 +99,12 @@
     <scopeInfo nodeId="1152305253646" fileName="FibonacciSequence.java" startLine="13" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1152828713003" varName="max" />
     </scopeInfo>
-    <unitInfo nodeId="1152305201679" fileName="FibonacciSequence.java" startLine="10" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" />
-    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="15" startPosition="36" endLine="95" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1" />
-    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="17" startPosition="19" endLine="93" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$2" />
     <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="19" startPosition="23" endLine="91" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$3" />
+    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="17" startPosition="19" endLine="93" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$2" />
+    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="15" startPosition="36" endLine="95" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1" />
+    <unitInfo nodeId="1152305201679" fileName="FibonacciSequence.java" startLine="10" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" />
   </root>
-  <root nodeId="1152305715106">
+  <root nodeId="1152305715106" modelId="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)">
     <nodeInfo nodeId="1152305767927" fileName="Main.java" startLine="8" startPosition="42" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1154035900116" fileName="Main.java" startLine="10" startPosition="65" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1154035872811" fileName="Main.java" startLine="9" startPosition="52" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

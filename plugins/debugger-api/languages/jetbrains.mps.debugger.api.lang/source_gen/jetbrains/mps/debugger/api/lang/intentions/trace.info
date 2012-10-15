@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.intentions.IntentionsDescriptor" />
-  <root nodeId="8751745335399757635">
+  <root nodeId="8751745335399757635" modelId="r:e5ea276a-79c7-4383-9407-3428086d3297(jetbrains.mps.debugger.api.lang.intentions)">
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="20" startPosition="36" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="24" startPosition="37" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

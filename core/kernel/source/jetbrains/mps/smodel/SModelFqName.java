@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
-import org.apache.commons.lang.ObjectUtils;
 
 @ImmutableObject
 public class SModelFqName implements Comparable<Object> {
@@ -66,7 +66,7 @@ public class SModelFqName implements Comparable<Object> {
     if (o == this) return true;
     if (!(o instanceof SModelFqName)) return false;
     SModelFqName otherUID = (SModelFqName) o;
-    return ObjectUtils.equals(otherUID.myLongName, myLongName) && ObjectUtils.equals(otherUID.myStereotype, myStereotype);
+    return EqualUtil.equals(otherUID.myLongName, myLongName) && EqualUtil.equals(otherUID.myStereotype, myStereotype);
   }
 
   public int hashCode() {

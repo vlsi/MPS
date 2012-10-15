@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="28859145781927652">
+  <root nodeId="28859145781927652" modelId="r:39c01cc7-82c8-4706-9a38-48a33acb0535(jetbrains.mps.ide.findusages.view.optionseditor)">
     <nodeInfo nodeId="28859145781927985" fileName="DefaultSearchOptionsComponent.java" startLine="19" startPosition="107" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefaultOptions" />
     <nodeInfo nodeId="28859145781927989" fileName="DefaultSearchOptionsComponent.java" startLine="20" startPosition="58" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="28859145781927992" fileName="DefaultSearchOptionsComponent.java" startLine="21" startPosition="28" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
@@ -58,10 +58,10 @@
     <scopeInfo nodeId="28859145781928095" fileName="DefaultSearchOptionsComponent.java" startLine="61" startPosition="82" endLine="69" endPosition="0" />
     <scopeInfo nodeId="28859145781928086" fileName="DefaultSearchOptionsComponent.java" startLine="60" startPosition="31" endLine="69" endPosition="7" />
     <scopeInfo nodeId="28859145781928083" fileName="DefaultSearchOptionsComponent.java" startLine="59" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="28859145781927652" fileName="DefaultSearchOptionsComponent.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" />
     <unitInfo nodeId="28859145781928094" fileName="DefaultSearchOptionsComponent.java" startLine="61" startPosition="70" endLine="69" endPosition="5" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent$1" />
+    <unitInfo nodeId="28859145781927652" fileName="DefaultSearchOptionsComponent.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" />
   </root>
-  <root nodeId="28859145781927653">
+  <root nodeId="28859145781927653" modelId="r:39c01cc7-82c8-4706-9a38-48a33acb0535(jetbrains.mps.ide.findusages.view.optionseditor)">
     <nodeInfo nodeId="28859145781927668" fileName="DefaultOptionsContainer.java" startLine="19" startPosition="38" endLine="20" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_SEARCH_OPTIONS" />
     <nodeInfo nodeId="28859145781927672" fileName="DefaultOptionsContainer.java" startLine="20" startPosition="80" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SEARCH_OPTION" />
     <nodeInfo nodeId="28859145781927676" fileName="DefaultOptionsContainer.java" startLine="21" startPosition="63" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FINDERS_OPTION" />
@@ -183,8 +183,8 @@
       <varInfo nodeId="28859145781927883" varName="project" />
       <varInfo nodeId="28859145781927881" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="28859145781927653" fileName="DefaultOptionsContainer.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
     <unitInfo nodeId="28859145781928873" fileName="DefaultOptionsContainer.java" startLine="62" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer$1" />
+    <unitInfo nodeId="28859145781927653" fileName="DefaultOptionsContainer.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
   </root>
 </debugInfo>
 

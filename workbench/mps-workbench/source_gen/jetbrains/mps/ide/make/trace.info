@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="173672751428921112">
+  <root nodeId="173672751428921112" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428921666" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="90" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="file" />
     <nodeInfo nodeId="173672751428921669" fileName="GeneratedTextPreviewEditor.java" startLine="50" startPosition="31" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
     <nodeInfo nodeId="173672751428921672" fileName="GeneratedTextPreviewEditor.java" startLine="51" startPosition="26" endLine="52" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tabs" />
@@ -211,15 +211,15 @@
     <scopeInfo nodeId="173672751428921493" fileName="GeneratedTextPreviewEditor.java" startLine="156" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="173672751428921664" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
-    <unitInfo nodeId="173672751428921316" fileName="GeneratedTextPreviewEditor.java" startLine="101" startPosition="15" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$1" />
     <unitInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="131" startPosition="31" endLine="134" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$2" />
+    <unitInfo nodeId="173672751428921316" fileName="GeneratedTextPreviewEditor.java" startLine="101" startPosition="15" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$1" />
     <unitInfo nodeId="173672751428921464" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="129" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$3" />
-    <unitInfo nodeId="173672751428921591" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="24" endLine="187" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$4" />
     <unitInfo nodeId="173672751428921203" fileName="GeneratedTextPreviewEditor.java" startLine="232" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$EditorStateStub" />
+    <unitInfo nodeId="173672751428921591" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="24" endLine="187" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$4" />
     <unitInfo nodeId="173672751428921113" fileName="GeneratedTextPreviewEditor.java" startLine="192" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$Panel" />
+    <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
   </root>
-  <root nodeId="173672751428921679">
+  <root nodeId="173672751428921679" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428921691" fileName="GeneratedTextPreviewEditorProvider.java" startLine="22" startPosition="39" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428921699" fileName="GeneratedTextPreviewEditorProvider.java" startLine="28" startPosition="35" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428921741" fileName="GeneratedTextPreviewEditorProvider.java" startLine="38" startPosition="83" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -273,17 +273,17 @@
       <varInfo nodeId="173672751428921723" varName="file" />
       <varInfo nodeId="173672751428921720" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921679" fileName="GeneratedTextPreviewEditorProvider.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider" />
     <unitInfo nodeId="173672751428921731" fileName="GeneratedTextPreviewEditorProvider.java" startLine="37" startPosition="15" endLine="41" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider$1" />
+    <unitInfo nodeId="173672751428921679" fileName="GeneratedTextPreviewEditorProvider.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider" />
   </root>
-  <root nodeId="173672751428921785">
+  <root nodeId="173672751428921785" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428921786" fileName="Icons.java" startLine="8" startPosition="20" endLine="9" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED" />
     <nodeInfo nodeId="173672751428921796" fileName="Icons.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Icons#()V" />
     <scopeInfo nodeId="173672751428921799" fileName="Icons.java" startLine="11" startPosition="19" endLine="11" endPosition="19" />
     <scopeInfo nodeId="173672751428921796" fileName="Icons.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <unitInfo nodeId="173672751428921785" fileName="Icons.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ide.make.Icons" />
   </root>
-  <root nodeId="173672751428921800">
+  <root nodeId="173672751428921800" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428922060" fileName="MakeTask.java" startLine="35" startPosition="78" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLatch" />
     <nodeInfo nodeId="173672751428922066" fileName="MakeTask.java" startLine="36" startPosition="57" endLine="37" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="173672751428922074" fileName="MakeTask.java" startLine="37" startPosition="128" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="coreTask" />
@@ -506,14 +506,14 @@
     <scopeInfo nodeId="173672751428921835" fileName="MakeTask.java" startLine="55" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="173672751428921838" varName="monitor" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921800" fileName="MakeTask.java" startLine="35" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask" />
     <unitInfo nodeId="173672751428922291" fileName="MakeTask.java" startLine="169" startPosition="64" endLine="177" endPosition="7" unitName="jetbrains.mps.ide.make.MakeTask$1" />
     <unitInfo nodeId="173672751428921855" fileName="MakeTask.java" startLine="58" startPosition="43" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.MakeTask$1" />
-    <unitInfo nodeId="173672751428922191" fileName="MakeTask.java" startLine="156" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState" />
     <unitInfo nodeId="173672751428922083" fileName="MakeTask.java" startLine="120" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$WorkbenchMakeTask" />
-    <unitInfo nodeId="173672751428922192" fileName="MakeTask.java" startLine="166" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask.TaskState$RelayingLoggingHandler" />
+    <unitInfo nodeId="173672751428922192" fileName="MakeTask.java" startLine="166" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState$RelayingLoggingHandler" />
+    <unitInfo nodeId="173672751428922191" fileName="MakeTask.java" startLine="156" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState" />
+    <unitInfo nodeId="173672751428921800" fileName="MakeTask.java" startLine="35" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask" />
   </root>
-  <root nodeId="173672751428922365">
+  <root nodeId="173672751428922365" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428922366" fileName="TextPreviewFile.java" startLine="20" startPosition="54" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FS" />
     <nodeInfo nodeId="173672751428922904" fileName="TextPreviewFile.java" startLine="22" startPosition="0" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forkNames" />
     <nodeInfo nodeId="173672751428922908" fileName="TextPreviewFile.java" startLine="23" startPosition="29" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forks" />
@@ -803,10 +803,10 @@
       <varInfo nodeId="1147673792958720117" varName="flags" />
     </scopeInfo>
     <scopeInfo nodeId="173672751428922726" fileName="TextPreviewFile.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="173672751428922365" fileName="TextPreviewFile.java" startLine="20" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile" />
     <unitInfo nodeId="173672751428922371" fileName="TextPreviewFile.java" startLine="124" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile$TextPreviewVirtualFileSystem" />
+    <unitInfo nodeId="173672751428922365" fileName="TextPreviewFile.java" startLine="20" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile" />
   </root>
-  <root nodeId="173672751428922919">
+  <root nodeId="173672751428922919" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428922924" fileName="TextPreviewUtil.java" startLine="36" startPosition="126" endLine="37" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="173672751428922944" fileName="TextPreviewUtil.java" startLine="37" startPosition="303" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="173672751428922963" fileName="TextPreviewUtil.java" startLine="40" startPosition="64" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -868,12 +868,12 @@
       <varInfo nodeId="173672751428923094" varName="md" />
       <varInfo nodeId="173672751428923090" varName="session" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428922919" fileName="TextPreviewUtil.java" startLine="32" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewUtil" />
     <unitInfo nodeId="173672751428922952" fileName="TextPreviewUtil.java" startLine="39" startPosition="59" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$1" />
-    <unitInfo nodeId="173672751428922997" fileName="TextPreviewUtil.java" startLine="47" startPosition="66" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$2" />
     <unitInfo nodeId="173672751428923053" fileName="TextPreviewUtil.java" startLine="56" startPosition="43" endLine="61" endPosition="13" unitName="jetbrains.mps.ide.make.TextPreviewUtil$3" />
+    <unitInfo nodeId="173672751428922997" fileName="TextPreviewUtil.java" startLine="47" startPosition="66" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$2" />
+    <unitInfo nodeId="173672751428922919" fileName="TextPreviewUtil.java" startLine="32" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewUtil" />
   </root>
-  <root nodeId="173672751428923101">
+  <root nodeId="173672751428923101" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428923186" fileName="UIFeedbackStrategy.java" startLine="10" startPosition="33" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="handler" />
     <nodeInfo nodeId="173672751428923178" fileName="UIFeedbackStrategy.java" startLine="13" startPosition="54" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428923106" fileName="UIFeedbackStrategy.java" startLine="17" startPosition="45" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -909,7 +909,7 @@
     </scopeInfo>
     <unitInfo nodeId="173672751428923101" fileName="UIFeedbackStrategy.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.make.UIFeedbackStrategy" />
   </root>
-  <root nodeId="173672751428923189">
+  <root nodeId="173672751428923189" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428923198" fileName="UIQueryRelayStrategy.java" startLine="21" startPosition="99" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="173672751428923217" fileName="UIQueryRelayStrategy.java" startLine="24" startPosition="33" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428923224" fileName="UIQueryRelayStrategy.java" startLine="27" startPosition="36" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -945,12 +945,12 @@
       <varInfo nodeId="173672751428923194" varName="context" />
       <varInfo nodeId="173672751428923191" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428923189" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
+    <unitInfo nodeId="173672751428923279" fileName="UIQueryRelayStrategy.java" startLine="41" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$DialogListener" />
     <unitInfo nodeId="173672751428923215" fileName="UIQueryRelayStrategy.java" startLine="23" startPosition="71" endLine="27" endPosition="5" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$1" />
     <unitInfo nodeId="173672751428923239" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="41" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$2" />
-    <unitInfo nodeId="173672751428923279" fileName="UIQueryRelayStrategy.java" startLine="41" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$DialogListener" />
+    <unitInfo nodeId="173672751428923189" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
   </root>
-  <root nodeId="173672751428923285">
+  <root nodeId="173672751428923285" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428923286" fileName="WorkbenchMakeService.java" startLine="64" startPosition="109" endLine="65" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="173672751428923291" fileName="WorkbenchMakeService.java" startLine="65" startPosition="75" endLine="66" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="173672751428924816" fileName="WorkbenchMakeService.java" startLine="67" startPosition="0" endLine="68" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentSessionStickyMark" />
@@ -969,15 +969,12 @@
     <nodeInfo nodeId="173672751428924102" fileName="WorkbenchMakeService.java" startLine="92" startPosition="36" endLine="93" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428924112" fileName="WorkbenchMakeService.java" startLine="98" startPosition="36" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428924118" fileName="WorkbenchMakeService.java" startLine="102" startPosition="32" endLine="103" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924133" fileName="WorkbenchMakeService.java" startLine="106" startPosition="93" endLine="107" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924137" fileName="WorkbenchMakeService.java" startLine="107" startPosition="27" endLine="108" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924142" fileName="WorkbenchMakeService.java" startLine="108" startPosition="36" endLine="109" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924160" fileName="WorkbenchMakeService.java" startLine="112" startPosition="109" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924164" fileName="WorkbenchMakeService.java" startLine="113" startPosition="27" endLine="114" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924169" fileName="WorkbenchMakeService.java" startLine="114" startPosition="36" endLine="115" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924189" fileName="WorkbenchMakeService.java" startLine="118" startPosition="139" endLine="119" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924193" fileName="WorkbenchMakeService.java" startLine="119" startPosition="27" endLine="120" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924198" fileName="WorkbenchMakeService.java" startLine="120" startPosition="36" endLine="121" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872906334" fileName="WorkbenchMakeService.java" startLine="106" startPosition="93" endLine="107" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872906353" fileName="WorkbenchMakeService.java" startLine="110" startPosition="109" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872912881" fileName="WorkbenchMakeService.java" startLine="114" startPosition="139" endLine="115" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872912829" fileName="WorkbenchMakeService.java" startLine="118" startPosition="173" endLine="119" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671800353872912833" fileName="WorkbenchMakeService.java" startLine="119" startPosition="27" endLine="120" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671800353872912838" fileName="WorkbenchMakeService.java" startLine="120" startPosition="36" endLine="121" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428924207" fileName="WorkbenchMakeService.java" startLine="124" startPosition="36" endLine="125" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428924211" fileName="WorkbenchMakeService.java" startLine="125" startPosition="27" endLine="126" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428924223" fileName="WorkbenchMakeService.java" startLine="129" startPosition="54" endLine="130" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -991,297 +988,281 @@
     <nodeInfo nodeId="173672751428924288" fileName="WorkbenchMakeService.java" startLine="144" startPosition="36" endLine="145" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428924294" fileName="WorkbenchMakeService.java" startLine="145" startPosition="57" endLine="146" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="173672751428924327" fileName="WorkbenchMakeService.java" startLine="148" startPosition="150" endLine="149" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924343" fileName="WorkbenchMakeService.java" startLine="155" startPosition="23" endLine="156" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428924347" fileName="WorkbenchMakeService.java" startLine="157" startPosition="5" endLine="158" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924366" fileName="WorkbenchMakeService.java" startLine="162" startPosition="23" endLine="163" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428924370" fileName="WorkbenchMakeService.java" startLine="164" startPosition="5" endLine="165" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924391" fileName="WorkbenchMakeService.java" startLine="169" startPosition="23" endLine="170" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428924395" fileName="WorkbenchMakeService.java" startLine="171" startPosition="5" endLine="172" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924406" fileName="WorkbenchMakeService.java" startLine="175" startPosition="36" endLine="176" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924416" fileName="WorkbenchMakeService.java" startLine="179" startPosition="63" endLine="180" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924418" fileName="WorkbenchMakeService.java" startLine="180" startPosition="22" endLine="181" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924429" fileName="WorkbenchMakeService.java" startLine="184" startPosition="66" endLine="185" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924431" fileName="WorkbenchMakeService.java" startLine="185" startPosition="22" endLine="186" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924449" fileName="WorkbenchMakeService.java" startLine="191" startPosition="55" endLine="192" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924471" fileName="WorkbenchMakeService.java" startLine="197" startPosition="126" endLine="198" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924478" fileName="WorkbenchMakeService.java" startLine="199" startPosition="9" endLine="200" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924480" fileName="WorkbenchMakeService.java" startLine="200" startPosition="28" endLine="201" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924490" fileName="WorkbenchMakeService.java" startLine="203" startPosition="46" endLine="204" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924501" fileName="WorkbenchMakeService.java" startLine="206" startPosition="5" endLine="207" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924507" fileName="WorkbenchMakeService.java" startLine="210" startPosition="38" endLine="211" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924516" fileName="WorkbenchMakeService.java" startLine="211" startPosition="36" endLine="212" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924525" fileName="WorkbenchMakeService.java" startLine="213" startPosition="105" endLine="214" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924551" fileName="WorkbenchMakeService.java" startLine="218" startPosition="31" endLine="219" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924560" fileName="WorkbenchMakeService.java" startLine="219" startPosition="36" endLine="220" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924567" fileName="WorkbenchMakeService.java" startLine="220" startPosition="58" endLine="221" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924575" fileName="WorkbenchMakeService.java" startLine="222" startPosition="23" endLine="223" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924588" fileName="WorkbenchMakeService.java" startLine="227" startPosition="51" endLine="228" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924601" fileName="WorkbenchMakeService.java" startLine="230" startPosition="45" endLine="231" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924622" fileName="WorkbenchMakeService.java" startLine="235" startPosition="15" endLine="236" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924640" fileName="WorkbenchMakeService.java" startLine="240" startPosition="134" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428924653" fileName="WorkbenchMakeService.java" startLine="245" startPosition="7" endLine="246" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924663" fileName="WorkbenchMakeService.java" startLine="247" startPosition="21" endLine="248" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924677" fileName="WorkbenchMakeService.java" startLine="249" startPosition="5" endLine="250" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924681" fileName="WorkbenchMakeService.java" startLine="250" startPosition="15" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428924686" fileName="WorkbenchMakeService.java" startLine="253" startPosition="44" endLine="254" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924692" fileName="WorkbenchMakeService.java" startLine="254" startPosition="57" endLine="255" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924700" fileName="WorkbenchMakeService.java" startLine="255" startPosition="55" endLine="256" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924705" fileName="WorkbenchMakeService.java" startLine="256" startPosition="30" endLine="257" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924718" fileName="WorkbenchMakeService.java" startLine="258" startPosition="14" endLine="259" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428924723" fileName="WorkbenchMakeService.java" startLine="259" startPosition="50" endLine="260" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924732" fileName="WorkbenchMakeService.java" startLine="262" startPosition="5" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428924733" fileName="WorkbenchMakeService.java" startLine="263" startPosition="0" endLine="264" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428924751" fileName="WorkbenchMakeService.java" startLine="268" startPosition="27" endLine="269" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428924762" fileName="WorkbenchMakeService.java" startLine="271" startPosition="26" endLine="272" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428924772" fileName="WorkbenchMakeService.java" startLine="277" startPosition="42" endLine="278" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428924790" fileName="WorkbenchMakeService.java" startLine="282" startPosition="41" endLine="283" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428924806" fileName="WorkbenchMakeService.java" startLine="284" startPosition="24" endLine="285" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923984" fileName="WorkbenchMakeService.java" startLine="289" startPosition="45" endLine="290" endPosition="460" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923296" fileName="WorkbenchMakeService.java" startLine="293" startPosition="79" endLine="294" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="taskName" />
-    <nodeInfo nodeId="173672751428923299" fileName="WorkbenchMakeService.java" startLine="294" startPosition="28" endLine="295" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mh" />
-    <nodeInfo nodeId="173672751428923503" fileName="WorkbenchMakeService.java" startLine="297" startPosition="61" endLine="298" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923509" fileName="WorkbenchMakeService.java" startLine="298" startPosition="31" endLine="299" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923315" fileName="WorkbenchMakeService.java" startLine="302" startPosition="129" endLine="303" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923333" fileName="WorkbenchMakeService.java" startLine="307" startPosition="160" endLine="308" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923338" fileName="WorkbenchMakeService.java" startLine="308" startPosition="89" endLine="309" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923373" fileName="WorkbenchMakeService.java" startLine="312" startPosition="39" endLine="313" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923384" fileName="WorkbenchMakeService.java" startLine="317" startPosition="31" endLine="318" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923390" fileName="WorkbenchMakeService.java" startLine="318" startPosition="51" endLine="319" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923392" fileName="WorkbenchMakeService.java" startLine="319" startPosition="32" endLine="320" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923405" fileName="WorkbenchMakeService.java" startLine="324" startPosition="49" endLine="325" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923411" fileName="WorkbenchMakeService.java" startLine="327" startPosition="8" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428923412" fileName="WorkbenchMakeService.java" startLine="328" startPosition="0" endLine="329" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923430" fileName="WorkbenchMakeService.java" startLine="334" startPosition="33" endLine="335" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923436" fileName="WorkbenchMakeService.java" startLine="336" startPosition="63" endLine="337" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923448" fileName="WorkbenchMakeService.java" startLine="338" startPosition="24" endLine="339" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428923452" fileName="WorkbenchMakeService.java" startLine="340" startPosition="17" endLine="341" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923456" fileName="WorkbenchMakeService.java" startLine="345" startPosition="11" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428923461" fileName="WorkbenchMakeService.java" startLine="347" startPosition="38" endLine="348" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="173672751428923465" fileName="WorkbenchMakeService.java" startLine="349" startPosition="43" endLine="350" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923472" fileName="WorkbenchMakeService.java" startLine="351" startPosition="9" endLine="352" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428923474" fileName="WorkbenchMakeService.java" startLine="353" startPosition="7" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428923475" fileName="WorkbenchMakeService.java" startLine="354" startPosition="0" endLine="355" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923486" fileName="WorkbenchMakeService.java" startLine="359" startPosition="61" endLine="360" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923492" fileName="WorkbenchMakeService.java" startLine="360" startPosition="67" endLine="361" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923521" fileName="WorkbenchMakeService.java" startLine="365" startPosition="59" endLine="366" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pmps" />
-    <nodeInfo nodeId="173672751428923524" fileName="WorkbenchMakeService.java" startLine="366" startPosition="55" endLine="367" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateScrCtr" />
-    <nodeInfo nodeId="173672751428923527" fileName="WorkbenchMakeService.java" startLine="367" startPosition="51" endLine="368" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateConfMon" />
-    <nodeInfo nodeId="173672751428923530" fileName="WorkbenchMakeService.java" startLine="368" startPosition="43" endLine="369" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="confMon" />
-    <nodeInfo nodeId="173672751428923533" fileName="WorkbenchMakeService.java" startLine="369" startPosition="35" endLine="370" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="jobMon" />
-    <nodeInfo nodeId="173672751428923915" fileName="WorkbenchMakeService.java" startLine="370" startPosition="31" endLine="371" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mh" />
-    <nodeInfo nodeId="173672751428923918" fileName="WorkbenchMakeService.java" startLine="371" startPosition="31" endLine="372" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="predParamPool" />
-    <nodeInfo nodeId="173672751428923541" fileName="WorkbenchMakeService.java" startLine="374" startPosition="109" endLine="375" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923547" fileName="WorkbenchMakeService.java" startLine="375" startPosition="37" endLine="376" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923553" fileName="WorkbenchMakeService.java" startLine="376" startPosition="23" endLine="377" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923559" fileName="WorkbenchMakeService.java" startLine="377" startPosition="19" endLine="378" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923585" fileName="WorkbenchMakeService.java" startLine="386" startPosition="17" endLine="387" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923591" fileName="WorkbenchMakeService.java" startLine="387" startPosition="50" endLine="388" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923596" fileName="WorkbenchMakeService.java" startLine="389" startPosition="23" endLine="390" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923609" fileName="WorkbenchMakeService.java" startLine="394" startPosition="14" endLine="395" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923622" fileName="WorkbenchMakeService.java" startLine="400" startPosition="89" endLine="401" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923629" fileName="WorkbenchMakeService.java" startLine="402" startPosition="11" endLine="403" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923637" fileName="WorkbenchMakeService.java" startLine="404" startPosition="36" endLine="405" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923643" fileName="WorkbenchMakeService.java" startLine="405" startPosition="63" endLine="406" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923651" fileName="WorkbenchMakeService.java" startLine="406" startPosition="75" endLine="407" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="173672751428923654" fileName="WorkbenchMakeService.java" startLine="408" startPosition="17" endLine="409" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923671" fileName="WorkbenchMakeService.java" startLine="414" startPosition="110" endLine="415" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923676" fileName="WorkbenchMakeService.java" startLine="415" startPosition="42" endLine="416" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923680" fileName="WorkbenchMakeService.java" startLine="416" startPosition="28" endLine="417" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923686" fileName="WorkbenchMakeService.java" startLine="417" startPosition="76" endLine="418" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923710" fileName="WorkbenchMakeService.java" startLine="419" startPosition="25" endLine="420" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923720" fileName="WorkbenchMakeService.java" startLine="420" startPosition="56" endLine="421" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923728" fileName="WorkbenchMakeService.java" startLine="421" startPosition="43" endLine="422" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923740" fileName="WorkbenchMakeService.java" startLine="424" startPosition="43" endLine="425" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923748" fileName="WorkbenchMakeService.java" startLine="428" startPosition="7" endLine="429" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428923749" fileName="WorkbenchMakeService.java" startLine="429" startPosition="0" endLine="430" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923767" fileName="WorkbenchMakeService.java" startLine="431" startPosition="28" endLine="432" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923775" fileName="WorkbenchMakeService.java" startLine="432" startPosition="78" endLine="433" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923786" fileName="WorkbenchMakeService.java" startLine="434" startPosition="7" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428923789" fileName="WorkbenchMakeService.java" startLine="436" startPosition="35" endLine="437" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923806" fileName="WorkbenchMakeService.java" startLine="442" startPosition="53" endLine="443" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923831" fileName="WorkbenchMakeService.java" startLine="449" startPosition="66" endLine="450" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923837" fileName="WorkbenchMakeService.java" startLine="451" startPosition="40" endLine="452" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923895" fileName="WorkbenchMakeService.java" startLine="470" startPosition="52" endLine="471" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923907" fileName="WorkbenchMakeService.java" startLine="475" startPosition="44" endLine="476" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923975" fileName="WorkbenchMakeService.java" startLine="482" startPosition="59" endLine="483" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="173672751428923978" fileName="WorkbenchMakeService.java" startLine="483" startPosition="24" endLine="484" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mvt" />
-    <nodeInfo nodeId="173672751428923928" fileName="WorkbenchMakeService.java" startLine="486" startPosition="67" endLine="487" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923934" fileName="WorkbenchMakeService.java" startLine="487" startPosition="23" endLine="488" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923954" fileName="WorkbenchMakeService.java" startLine="491" startPosition="25" endLine="492" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923967" fileName="WorkbenchMakeService.java" startLine="495" startPosition="42" endLine="496" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923446" fileName="WorkbenchMakeService.java" startLine="338" startPosition="22" endLine="340" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="173672751428923607" fileName="WorkbenchMakeService.java" startLine="394" startPosition="12" endLine="396" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="173672751428924406" fileName="WorkbenchMakeService.java" startLine="154" startPosition="36" endLine="155" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428924416" fileName="WorkbenchMakeService.java" startLine="158" startPosition="63" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924418" fileName="WorkbenchMakeService.java" startLine="159" startPosition="22" endLine="160" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924429" fileName="WorkbenchMakeService.java" startLine="163" startPosition="66" endLine="164" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924431" fileName="WorkbenchMakeService.java" startLine="164" startPosition="22" endLine="165" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924449" fileName="WorkbenchMakeService.java" startLine="170" startPosition="55" endLine="171" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924471" fileName="WorkbenchMakeService.java" startLine="176" startPosition="160" endLine="177" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924478" fileName="WorkbenchMakeService.java" startLine="178" startPosition="9" endLine="179" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924480" fileName="WorkbenchMakeService.java" startLine="179" startPosition="28" endLine="180" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924490" fileName="WorkbenchMakeService.java" startLine="182" startPosition="46" endLine="183" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924501" fileName="WorkbenchMakeService.java" startLine="185" startPosition="5" endLine="186" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428924507" fileName="WorkbenchMakeService.java" startLine="189" startPosition="38" endLine="190" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924516" fileName="WorkbenchMakeService.java" startLine="190" startPosition="36" endLine="191" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924525" fileName="WorkbenchMakeService.java" startLine="192" startPosition="105" endLine="193" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924551" fileName="WorkbenchMakeService.java" startLine="197" startPosition="31" endLine="198" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924560" fileName="WorkbenchMakeService.java" startLine="198" startPosition="36" endLine="199" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924567" fileName="WorkbenchMakeService.java" startLine="199" startPosition="58" endLine="200" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924575" fileName="WorkbenchMakeService.java" startLine="201" startPosition="23" endLine="202" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924588" fileName="WorkbenchMakeService.java" startLine="206" startPosition="51" endLine="207" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924601" fileName="WorkbenchMakeService.java" startLine="209" startPosition="45" endLine="210" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924622" fileName="WorkbenchMakeService.java" startLine="214" startPosition="15" endLine="215" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924640" fileName="WorkbenchMakeService.java" startLine="219" startPosition="168" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428924653" fileName="WorkbenchMakeService.java" startLine="224" startPosition="7" endLine="225" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924663" fileName="WorkbenchMakeService.java" startLine="226" startPosition="21" endLine="227" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924677" fileName="WorkbenchMakeService.java" startLine="228" startPosition="5" endLine="229" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924681" fileName="WorkbenchMakeService.java" startLine="229" startPosition="15" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428924686" fileName="WorkbenchMakeService.java" startLine="232" startPosition="44" endLine="233" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924692" fileName="WorkbenchMakeService.java" startLine="233" startPosition="57" endLine="234" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924700" fileName="WorkbenchMakeService.java" startLine="234" startPosition="55" endLine="235" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924705" fileName="WorkbenchMakeService.java" startLine="235" startPosition="30" endLine="236" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428924718" fileName="WorkbenchMakeService.java" startLine="237" startPosition="14" endLine="238" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924723" fileName="WorkbenchMakeService.java" startLine="238" startPosition="50" endLine="239" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428924732" fileName="WorkbenchMakeService.java" startLine="241" startPosition="5" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428924733" fileName="WorkbenchMakeService.java" startLine="242" startPosition="0" endLine="243" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428924751" fileName="WorkbenchMakeService.java" startLine="247" startPosition="27" endLine="248" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="173672751428924762" fileName="WorkbenchMakeService.java" startLine="250" startPosition="26" endLine="251" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="173672751428924772" fileName="WorkbenchMakeService.java" startLine="256" startPosition="42" endLine="257" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="173672751428924790" fileName="WorkbenchMakeService.java" startLine="261" startPosition="41" endLine="262" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428924806" fileName="WorkbenchMakeService.java" startLine="263" startPosition="24" endLine="264" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923984" fileName="WorkbenchMakeService.java" startLine="268" startPosition="45" endLine="269" endPosition="460" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923296" fileName="WorkbenchMakeService.java" startLine="272" startPosition="79" endLine="273" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="taskName" />
+    <nodeInfo nodeId="173672751428923299" fileName="WorkbenchMakeService.java" startLine="273" startPosition="28" endLine="274" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mh" />
+    <nodeInfo nodeId="173672751428923503" fileName="WorkbenchMakeService.java" startLine="276" startPosition="61" endLine="277" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923509" fileName="WorkbenchMakeService.java" startLine="277" startPosition="31" endLine="278" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923315" fileName="WorkbenchMakeService.java" startLine="281" startPosition="163" endLine="282" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923333" fileName="WorkbenchMakeService.java" startLine="286" startPosition="194" endLine="287" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923338" fileName="WorkbenchMakeService.java" startLine="287" startPosition="89" endLine="288" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756319" fileName="WorkbenchMakeService.java" startLine="291" startPosition="39" endLine="292" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756330" fileName="WorkbenchMakeService.java" startLine="296" startPosition="31" endLine="297" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756336" fileName="WorkbenchMakeService.java" startLine="297" startPosition="51" endLine="298" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756338" fileName="WorkbenchMakeService.java" startLine="298" startPosition="32" endLine="299" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756351" fileName="WorkbenchMakeService.java" startLine="303" startPosition="49" endLine="304" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923411" fileName="WorkbenchMakeService.java" startLine="306" startPosition="8" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428923412" fileName="WorkbenchMakeService.java" startLine="307" startPosition="0" endLine="308" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923430" fileName="WorkbenchMakeService.java" startLine="313" startPosition="33" endLine="314" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923436" fileName="WorkbenchMakeService.java" startLine="315" startPosition="63" endLine="316" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923448" fileName="WorkbenchMakeService.java" startLine="317" startPosition="24" endLine="318" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="173672751428923452" fileName="WorkbenchMakeService.java" startLine="319" startPosition="17" endLine="320" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923456" fileName="WorkbenchMakeService.java" startLine="324" startPosition="11" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428923461" fileName="WorkbenchMakeService.java" startLine="326" startPosition="38" endLine="327" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="173672751428923465" fileName="WorkbenchMakeService.java" startLine="328" startPosition="43" endLine="329" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923472" fileName="WorkbenchMakeService.java" startLine="330" startPosition="9" endLine="331" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="173672751428923474" fileName="WorkbenchMakeService.java" startLine="332" startPosition="7" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428923475" fileName="WorkbenchMakeService.java" startLine="333" startPosition="0" endLine="334" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923486" fileName="WorkbenchMakeService.java" startLine="338" startPosition="61" endLine="339" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923492" fileName="WorkbenchMakeService.java" startLine="339" startPosition="67" endLine="340" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923521" fileName="WorkbenchMakeService.java" startLine="344" startPosition="59" endLine="345" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pmps" />
+    <nodeInfo nodeId="173672751428923524" fileName="WorkbenchMakeService.java" startLine="345" startPosition="55" endLine="346" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateScrCtr" />
+    <nodeInfo nodeId="173672751428923527" fileName="WorkbenchMakeService.java" startLine="346" startPosition="51" endLine="347" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegateConfMon" />
+    <nodeInfo nodeId="173672751428923530" fileName="WorkbenchMakeService.java" startLine="347" startPosition="43" endLine="348" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="confMon" />
+    <nodeInfo nodeId="173672751428923533" fileName="WorkbenchMakeService.java" startLine="348" startPosition="35" endLine="349" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="jobMon" />
+    <nodeInfo nodeId="173672751428923915" fileName="WorkbenchMakeService.java" startLine="349" startPosition="31" endLine="350" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mh" />
+    <nodeInfo nodeId="173672751428923918" fileName="WorkbenchMakeService.java" startLine="350" startPosition="31" endLine="351" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="predParamPool" />
+    <nodeInfo nodeId="173672751428923541" fileName="WorkbenchMakeService.java" startLine="353" startPosition="109" endLine="354" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923547" fileName="WorkbenchMakeService.java" startLine="354" startPosition="37" endLine="355" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923553" fileName="WorkbenchMakeService.java" startLine="355" startPosition="23" endLine="356" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923559" fileName="WorkbenchMakeService.java" startLine="356" startPosition="19" endLine="357" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923585" fileName="WorkbenchMakeService.java" startLine="365" startPosition="17" endLine="366" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923591" fileName="WorkbenchMakeService.java" startLine="366" startPosition="50" endLine="367" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923596" fileName="WorkbenchMakeService.java" startLine="368" startPosition="23" endLine="369" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923609" fileName="WorkbenchMakeService.java" startLine="373" startPosition="14" endLine="374" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923622" fileName="WorkbenchMakeService.java" startLine="379" startPosition="89" endLine="380" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923629" fileName="WorkbenchMakeService.java" startLine="381" startPosition="11" endLine="382" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923637" fileName="WorkbenchMakeService.java" startLine="383" startPosition="36" endLine="384" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923643" fileName="WorkbenchMakeService.java" startLine="384" startPosition="63" endLine="385" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923651" fileName="WorkbenchMakeService.java" startLine="385" startPosition="75" endLine="386" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="173672751428923654" fileName="WorkbenchMakeService.java" startLine="387" startPosition="17" endLine="388" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923671" fileName="WorkbenchMakeService.java" startLine="393" startPosition="110" endLine="394" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923676" fileName="WorkbenchMakeService.java" startLine="394" startPosition="42" endLine="395" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923686" fileName="WorkbenchMakeService.java" startLine="395" startPosition="28" endLine="396" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923710" fileName="WorkbenchMakeService.java" startLine="397" startPosition="25" endLine="398" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923720" fileName="WorkbenchMakeService.java" startLine="398" startPosition="56" endLine="399" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923728" fileName="WorkbenchMakeService.java" startLine="399" startPosition="43" endLine="400" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923748" fileName="WorkbenchMakeService.java" startLine="401" startPosition="7" endLine="402" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428923749" fileName="WorkbenchMakeService.java" startLine="402" startPosition="0" endLine="403" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923767" fileName="WorkbenchMakeService.java" startLine="404" startPosition="28" endLine="405" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923775" fileName="WorkbenchMakeService.java" startLine="405" startPosition="78" endLine="406" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923786" fileName="WorkbenchMakeService.java" startLine="407" startPosition="7" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428923789" fileName="WorkbenchMakeService.java" startLine="409" startPosition="35" endLine="410" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923806" fileName="WorkbenchMakeService.java" startLine="415" startPosition="53" endLine="416" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923831" fileName="WorkbenchMakeService.java" startLine="422" startPosition="66" endLine="423" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923837" fileName="WorkbenchMakeService.java" startLine="424" startPosition="40" endLine="425" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5054006938939416842" fileName="WorkbenchMakeService.java" startLine="435" startPosition="40" endLine="436" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923895" fileName="WorkbenchMakeService.java" startLine="440" startPosition="52" endLine="441" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923907" fileName="WorkbenchMakeService.java" startLine="445" startPosition="44" endLine="446" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923975" fileName="WorkbenchMakeService.java" startLine="452" startPosition="59" endLine="453" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="173672751428923978" fileName="WorkbenchMakeService.java" startLine="453" startPosition="24" endLine="454" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mvt" />
+    <nodeInfo nodeId="173672751428923928" fileName="WorkbenchMakeService.java" startLine="456" startPosition="67" endLine="457" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923934" fileName="WorkbenchMakeService.java" startLine="457" startPosition="23" endLine="458" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923954" fileName="WorkbenchMakeService.java" startLine="461" startPosition="25" endLine="462" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923967" fileName="WorkbenchMakeService.java" startLine="465" startPosition="42" endLine="466" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923446" fileName="WorkbenchMakeService.java" startLine="317" startPosition="22" endLine="319" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="173672751428923607" fileName="WorkbenchMakeService.java" startLine="373" startPosition="12" endLine="375" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="173672751428924010" fileName="WorkbenchMakeService.java" startLine="72" startPosition="0" endLine="75" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WorkbenchMakeService#(Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;)V" />
     <nodeInfo nodeId="173672751428924251" fileName="WorkbenchMakeService.java" startLine="134" startPosition="5" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="173672751428924310" fileName="WorkbenchMakeService.java" startLine="147" startPosition="36" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924340" fileName="WorkbenchMakeService.java" startLine="154" startPosition="72" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924363" fileName="WorkbenchMakeService.java" startLine="161" startPosition="88" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924388" fileName="WorkbenchMakeService.java" startLine="168" startPosition="111" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924488" fileName="WorkbenchMakeService.java" startLine="202" startPosition="15" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924523" fileName="WorkbenchMakeService.java" startLine="212" startPosition="58" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924573" fileName="WorkbenchMakeService.java" startLine="221" startPosition="46" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924599" fileName="WorkbenchMakeService.java" startLine="229" startPosition="9" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924661" fileName="WorkbenchMakeService.java" startLine="246" startPosition="63" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924716" fileName="WorkbenchMakeService.java" startLine="258" startPosition="12" endLine="261" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="173672751428924749" fileName="WorkbenchMakeService.java" startLine="267" startPosition="34" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924758" fileName="WorkbenchMakeService.java" startLine="270" startPosition="5" endLine="273" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924770" fileName="WorkbenchMakeService.java" startLine="276" startPosition="54" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924804" fileName="WorkbenchMakeService.java" startLine="283" startPosition="135" endLine="286" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923463" fileName="WorkbenchMakeService.java" startLine="348" startPosition="25" endLine="351" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923787" fileName="WorkbenchMakeService.java" startLine="435" startPosition="0" endLine="438" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923835" fileName="WorkbenchMakeService.java" startLine="450" startPosition="23" endLine="453" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924488" fileName="WorkbenchMakeService.java" startLine="181" startPosition="15" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924523" fileName="WorkbenchMakeService.java" startLine="191" startPosition="58" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924573" fileName="WorkbenchMakeService.java" startLine="200" startPosition="46" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924599" fileName="WorkbenchMakeService.java" startLine="208" startPosition="9" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924661" fileName="WorkbenchMakeService.java" startLine="225" startPosition="63" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924716" fileName="WorkbenchMakeService.java" startLine="237" startPosition="12" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="173672751428924749" fileName="WorkbenchMakeService.java" startLine="246" startPosition="34" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924758" fileName="WorkbenchMakeService.java" startLine="249" startPosition="5" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924770" fileName="WorkbenchMakeService.java" startLine="255" startPosition="54" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924804" fileName="WorkbenchMakeService.java" startLine="262" startPosition="135" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923463" fileName="WorkbenchMakeService.java" startLine="327" startPosition="25" endLine="330" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923787" fileName="WorkbenchMakeService.java" startLine="408" startPosition="0" endLine="411" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923835" fileName="WorkbenchMakeService.java" startLine="423" startPosition="23" endLine="426" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="173672751428924030" fileName="WorkbenchMakeService.java" startLine="76" startPosition="0" endLine="80" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WorkbenchMakeService#(Ljetbrains/mps/smodel/IOperationContext;Z)V" />
     <nodeInfo nodeId="173672751428924114" fileName="WorkbenchMakeService.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstance#()Z" />
+    <nodeInfo nodeId="173672751428924122" fileName="WorkbenchMakeService.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="173672751428924147" fileName="WorkbenchMakeService.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="173672751428924174" fileName="WorkbenchMakeService.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="173672751428924227" fileName="WorkbenchMakeService.java" startLine="130" startPosition="27" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924402" fileName="WorkbenchMakeService.java" startLine="174" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSession#()Ljetbrains/mps/make/MakeSession;" />
-    <nodeInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="190" startPosition="166" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="173672751428924641" fileName="WorkbenchMakeService.java" startLine="241" startPosition="0" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923981" fileName="WorkbenchMakeService.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultMakeScript#()Ljetbrains/mps/make/script/IScript;" />
-    <nodeInfo nodeId="173672751428923499" fileName="WorkbenchMakeService.java" startLine="296" startPosition="0" endLine="300" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskRunner#(Ljava/lang/String;Ljetbrains/mps/messages/IMessageHandler;)V" />
-    <nodeInfo nodeId="173672751428923302" fileName="WorkbenchMakeService.java" startLine="301" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTask#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428923738" fileName="WorkbenchMakeService.java" startLine="423" startPosition="69" endLine="427" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/progress/ProgressMonitor;" />
-    <nodeInfo nodeId="173672751428923765" fileName="WorkbenchMakeService.java" startLine="430" startPosition="166" endLine="434" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923847" fileName="WorkbenchMakeService.java" startLine="453" startPosition="11" endLine="457" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923875" fileName="WorkbenchMakeService.java" startLine="462" startPosition="40" endLine="466" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428923924" fileName="WorkbenchMakeService.java" startLine="485" startPosition="0" endLine="489" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageHandler#(Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="173672751428923950" fileName="WorkbenchMakeService.java" startLine="490" startPosition="0" endLine="494" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="173672751428923961" fileName="WorkbenchMakeService.java" startLine="494" startPosition="0" endLine="498" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
+    <nodeInfo nodeId="173672751428924402" fileName="WorkbenchMakeService.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSession#()Ljetbrains/mps/make/MakeSession;" />
+    <nodeInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="169" startPosition="166" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="173672751428924641" fileName="WorkbenchMakeService.java" startLine="220" startPosition="0" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923981" fileName="WorkbenchMakeService.java" startLine="267" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultMakeScript#()Ljetbrains/mps/make/script/IScript;" />
+    <nodeInfo nodeId="173672751428923499" fileName="WorkbenchMakeService.java" startLine="275" startPosition="0" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskRunner#(Ljava/lang/String;Ljetbrains/mps/messages/IMessageHandler;)V" />
+    <nodeInfo nodeId="173672751428923302" fileName="WorkbenchMakeService.java" startLine="280" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTask#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/progress/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="173672751428923765" fileName="WorkbenchMakeService.java" startLine="403" startPosition="166" endLine="407" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923847" fileName="WorkbenchMakeService.java" startLine="426" startPosition="11" endLine="430" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428923924" fileName="WorkbenchMakeService.java" startLine="455" startPosition="0" endLine="459" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageHandler#(Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="173672751428923950" fileName="WorkbenchMakeService.java" startLine="460" startPosition="0" endLine="464" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="173672751428923961" fileName="WorkbenchMakeService.java" startLine="464" startPosition="0" endLine="468" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
     <nodeInfo nodeId="173672751428924203" fileName="WorkbenchMakeService.java" startLine="123" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
     <nodeInfo nodeId="173672751428924301" fileName="WorkbenchMakeService.java" startLine="146" startPosition="46" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924410" fileName="WorkbenchMakeService.java" startLine="178" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="173672751428924423" fileName="WorkbenchMakeService.java" startLine="183" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="173672751428924440" fileName="WorkbenchMakeService.java" startLine="189" startPosition="69" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923369" fileName="WorkbenchMakeService.java" startLine="310" startPosition="271" endLine="315" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="aboutToStart#()V" />
-    <nodeInfo nodeId="173672751428923399" fileName="WorkbenchMakeService.java" startLine="322" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="displayInfo#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="173672751428923434" fileName="WorkbenchMakeService.java" startLine="335" startPosition="57" endLine="340" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923736" fileName="WorkbenchMakeService.java" startLine="422" startPosition="44" endLine="427" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923800" fileName="WorkbenchMakeService.java" startLine="440" startPosition="0" endLine="445" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="useMonitor#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
-    <nodeInfo nodeId="173672751428923889" fileName="WorkbenchMakeService.java" startLine="468" startPosition="0" endLine="473" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
-    <nodeInfo nodeId="173672751428923903" fileName="WorkbenchMakeService.java" startLine="473" startPosition="0" endLine="478" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
+    <nodeInfo nodeId="173672751428924410" fileName="WorkbenchMakeService.java" startLine="157" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="173672751428924423" fileName="WorkbenchMakeService.java" startLine="162" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
+    <nodeInfo nodeId="173672751428924440" fileName="WorkbenchMakeService.java" startLine="168" startPosition="69" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756315" fileName="WorkbenchMakeService.java" startLine="289" startPosition="271" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="aboutToStart#()V" />
+    <nodeInfo nodeId="6088474966771756345" fileName="WorkbenchMakeService.java" startLine="301" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="displayInfo#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="173672751428923434" fileName="WorkbenchMakeService.java" startLine="314" startPosition="57" endLine="319" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923708" fileName="WorkbenchMakeService.java" startLine="396" startPosition="210" endLine="401" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923800" fileName="WorkbenchMakeService.java" startLine="413" startPosition="0" endLine="418" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="useMonitor#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="173672751428923871" fileName="WorkbenchMakeService.java" startLine="433" startPosition="44" endLine="438" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" />
+    <nodeInfo nodeId="173672751428923889" fileName="WorkbenchMakeService.java" startLine="438" startPosition="0" endLine="443" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
+    <nodeInfo nodeId="173672751428923903" fileName="WorkbenchMakeService.java" startLine="443" startPosition="0" endLine="448" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
     <nodeInfo nodeId="173672751428924106" fileName="WorkbenchMakeService.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="173672751428924122" fileName="WorkbenchMakeService.java" startLine="105" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924147" fileName="WorkbenchMakeService.java" startLine="111" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924174" fileName="WorkbenchMakeService.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924766" fileName="WorkbenchMakeService.java" startLine="275" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkValidSession#(Ljetbrains/mps/make/MakeSession;)V" />
-    <nodeInfo nodeId="173672751428923480" fileName="WorkbenchMakeService.java" startLine="357" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
-    <nodeInfo nodeId="173672751428923537" fileName="WorkbenchMakeService.java" startLine="373" startPosition="0" endLine="379" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Controller#(Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/messages/IMessageHandler;Ljetbrains/mps/internal/make/runtime/backports/ProgressMonitorProgressStrategy;)V" />
-    <nodeInfo nodeId="173672751428923583" fileName="WorkbenchMakeService.java" startLine="385" startPosition="48" endLine="391" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4671800353872912814" fileName="WorkbenchMakeService.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/progress/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="173672751428924766" fileName="WorkbenchMakeService.java" startLine="254" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkValidSession#(Ljetbrains/mps/make/MakeSession;)V" />
+    <nodeInfo nodeId="173672751428923480" fileName="WorkbenchMakeService.java" startLine="336" startPosition="0" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
+    <nodeInfo nodeId="173672751428923537" fileName="WorkbenchMakeService.java" startLine="352" startPosition="0" endLine="358" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Controller#(Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/messages/IMessageHandler;Ljetbrains/mps/internal/make/runtime/backports/ProgressMonitorProgressStrategy;)V" />
+    <nodeInfo nodeId="173672751428923583" fileName="WorkbenchMakeService.java" startLine="364" startPosition="48" endLine="370" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="173672751428924054" fileName="WorkbenchMakeService.java" startLine="81" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="173672751428924080" fileName="WorkbenchMakeService.java" startLine="88" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="173672751428924333" fileName="WorkbenchMakeService.java" startLine="153" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924354" fileName="WorkbenchMakeService.java" startLine="160" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924377" fileName="WorkbenchMakeService.java" startLine="167" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924784" fileName="WorkbenchMakeService.java" startLine="281" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="displayInfo#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="173672751428923380" fileName="WorkbenchMakeService.java" startLine="315" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="done#()V" />
-    <nodeInfo nodeId="173672751428924436" fileName="WorkbenchMakeService.java" startLine="188" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notifyListeners#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="173672751428924476" fileName="WorkbenchMakeService.java" startLine="198" startPosition="34" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="173672751428924503" fileName="WorkbenchMakeService.java" startLine="209" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attemptCloseSession#()V" />
-    <nodeInfo nodeId="173672751428923871" fileName="WorkbenchMakeService.java" startLine="460" startPosition="44" endLine="468" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" />
-    <nodeInfo nodeId="173672751428924547" fileName="WorkbenchMakeService.java" startLine="217" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="abortSession#()V" />
-    <nodeInfo nodeId="173672751428924597" fileName="WorkbenchMakeService.java" startLine="228" startPosition="53" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="173672751428924684" fileName="WorkbenchMakeService.java" startLine="252" startPosition="52" endLine="261" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924745" fileName="WorkbenchMakeService.java" startLine="266" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkValidUsage#()V" />
-    <nodeInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="384" startPosition="94" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
-    <nodeInfo nodeId="173672751428923627" fileName="WorkbenchMakeService.java" startLine="401" startPosition="91" endLine="410" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="333" startPosition="55" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="173672751428923577" fileName="WorkbenchMakeService.java" startLine="383" startPosition="35" endLine="393" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923708" fileName="WorkbenchMakeService.java" startLine="418" startPosition="324" endLine="428" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428924682" fileName="WorkbenchMakeService.java" startLine="251" startPosition="0" endLine="262" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923426" fileName="WorkbenchMakeService.java" startLine="332" startPosition="29" endLine="343" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924784" fileName="WorkbenchMakeService.java" startLine="260" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="displayInfo#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6088474966771756326" fileName="WorkbenchMakeService.java" startLine="294" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="done#()V" />
+    <nodeInfo nodeId="173672751428924436" fileName="WorkbenchMakeService.java" startLine="167" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notifyListeners#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="173672751428924476" fileName="WorkbenchMakeService.java" startLine="177" startPosition="34" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="173672751428924503" fileName="WorkbenchMakeService.java" startLine="188" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attemptCloseSession#()V" />
+    <nodeInfo nodeId="173672751428924547" fileName="WorkbenchMakeService.java" startLine="196" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="abortSession#()V" />
+    <nodeInfo nodeId="173672751428924597" fileName="WorkbenchMakeService.java" startLine="207" startPosition="53" endLine="216" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="173672751428924684" fileName="WorkbenchMakeService.java" startLine="231" startPosition="52" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428924745" fileName="WorkbenchMakeService.java" startLine="245" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkValidUsage#()V" />
+    <nodeInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="363" startPosition="94" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" />
+    <nodeInfo nodeId="173672751428923627" fileName="WorkbenchMakeService.java" startLine="380" startPosition="91" endLine="389" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="312" startPosition="55" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="173672751428923577" fileName="WorkbenchMakeService.java" startLine="362" startPosition="35" endLine="372" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428924682" fileName="WorkbenchMakeService.java" startLine="230" startPosition="0" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923426" fileName="WorkbenchMakeService.java" startLine="311" startPosition="29" endLine="322" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428924273" fileName="WorkbenchMakeService.java" startLine="141" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
-    <nodeInfo nodeId="173672751428923822" fileName="WorkbenchMakeService.java" startLine="447" startPosition="48" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+    <nodeInfo nodeId="173672751428923822" fileName="WorkbenchMakeService.java" startLine="420" startPosition="48" endLine="432" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="173672751428924217" fileName="WorkbenchMakeService.java" startLine="128" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
-    <nodeInfo nodeId="173672751428924458" fileName="WorkbenchMakeService.java" startLine="196" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMake#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428924584" fileName="WorkbenchMakeService.java" startLine="226" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="awaitCurrentProcess#()V" />
-    <nodeInfo nodeId="173672751428923816" fileName="WorkbenchMakeService.java" startLine="446" startPosition="25" endLine="459" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="331" startPosition="42" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="173672751428923575" fileName="WorkbenchMakeService.java" startLine="382" startPosition="101" endLine="396" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428923614" fileName="WorkbenchMakeService.java" startLine="398" startPosition="0" endLine="412" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="173672751428923420" fileName="WorkbenchMakeService.java" startLine="330" startPosition="11" endLine="345" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923342" fileName="WorkbenchMakeService.java" startLine="309" startPosition="45" endLine="327" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428923567" fileName="WorkbenchMakeService.java" startLine="380" startPosition="0" endLine="398" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="173672751428923865" fileName="WorkbenchMakeService.java" startLine="459" startPosition="8" endLine="478" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428923418" fileName="WorkbenchMakeService.java" startLine="329" startPosition="67" endLine="353" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="173672751428924629" fileName="WorkbenchMakeService.java" startLine="239" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_doMake#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="173672751428923658" fileName="WorkbenchMakeService.java" startLine="412" startPosition="0" endLine="440" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="173672751428923812" fileName="WorkbenchMakeService.java" startLine="445" startPosition="0" endLine="480" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="173672751428923320" fileName="WorkbenchMakeService.java" startLine="305" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClusteredInput#(Ljava/lang/Iterable;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <scopeInfo nodeId="173672751428924613" fileName="WorkbenchMakeService.java" startLine="233" startPosition="0" endLine="233" endPosition="43">
+    <nodeInfo nodeId="173672751428924458" fileName="WorkbenchMakeService.java" startLine="175" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMake#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/progress/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="173672751428924584" fileName="WorkbenchMakeService.java" startLine="205" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="awaitCurrentProcess#()V" />
+    <nodeInfo nodeId="173672751428923816" fileName="WorkbenchMakeService.java" startLine="419" startPosition="25" endLine="432" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="310" startPosition="42" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="173672751428923575" fileName="WorkbenchMakeService.java" startLine="361" startPosition="101" endLine="375" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428923614" fileName="WorkbenchMakeService.java" startLine="377" startPosition="0" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="173672751428923420" fileName="WorkbenchMakeService.java" startLine="309" startPosition="11" endLine="324" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428923865" fileName="WorkbenchMakeService.java" startLine="432" startPosition="8" endLine="448" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6088474966771756169" fileName="WorkbenchMakeService.java" startLine="288" startPosition="45" endLine="306" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428923567" fileName="WorkbenchMakeService.java" startLine="359" startPosition="0" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="173672751428923658" fileName="WorkbenchMakeService.java" startLine="391" startPosition="0" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="173672751428923418" fileName="WorkbenchMakeService.java" startLine="308" startPosition="67" endLine="332" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="173672751428924629" fileName="WorkbenchMakeService.java" startLine="218" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_doMake#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/progress/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="173672751428923812" fileName="WorkbenchMakeService.java" startLine="418" startPosition="0" endLine="450" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="173672751428923320" fileName="WorkbenchMakeService.java" startLine="284" startPosition="0" endLine="336" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClusteredInput#(Ljava/lang/Iterable;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/progress/ProgressMonitor;)Ljava/util/concurrent/Future;" />
+    <scopeInfo nodeId="173672751428924613" fileName="WorkbenchMakeService.java" startLine="212" startPosition="0" endLine="212" endPosition="43">
       <varInfo nodeId="173672751428924614" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924616" fileName="WorkbenchMakeService.java" startLine="233" startPosition="43" endLine="233" endPosition="43" />
-    <scopeInfo nodeId="173672751428924617" fileName="WorkbenchMakeService.java" startLine="234" startPosition="0" endLine="234" endPosition="41">
+    <scopeInfo nodeId="173672751428924616" fileName="WorkbenchMakeService.java" startLine="212" startPosition="43" endLine="212" endPosition="43" />
+    <scopeInfo nodeId="173672751428924617" fileName="WorkbenchMakeService.java" startLine="213" startPosition="0" endLine="213" endPosition="41">
       <varInfo nodeId="173672751428924618" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924620" fileName="WorkbenchMakeService.java" startLine="234" startPosition="41" endLine="234" endPosition="41" />
+    <scopeInfo nodeId="173672751428924620" fileName="WorkbenchMakeService.java" startLine="213" startPosition="41" endLine="213" endPosition="41" />
     <scopeInfo nodeId="173672751428924013" fileName="WorkbenchMakeService.java" startLine="73" startPosition="57" endLine="74" endPosition="27" />
     <scopeInfo nodeId="173672751428924037" fileName="WorkbenchMakeService.java" startLine="78" startPosition="77" endLine="79" endPosition="140" />
     <scopeInfo nodeId="173672751428924111" fileName="WorkbenchMakeService.java" startLine="98" startPosition="36" endLine="99" endPosition="36" />
     <scopeInfo nodeId="173672751428924117" fileName="WorkbenchMakeService.java" startLine="102" startPosition="32" endLine="103" endPosition="28" />
+    <scopeInfo nodeId="173672751428924132" fileName="WorkbenchMakeService.java" startLine="106" startPosition="93" endLine="107" endPosition="76" />
+    <scopeInfo nodeId="173672751428924159" fileName="WorkbenchMakeService.java" startLine="110" startPosition="109" endLine="111" endPosition="78" />
+    <scopeInfo nodeId="173672751428924188" fileName="WorkbenchMakeService.java" startLine="114" startPosition="139" endLine="115" endPosition="84" />
     <scopeInfo nodeId="173672751428924262" fileName="WorkbenchMakeService.java" startLine="135" startPosition="94" endLine="136" endPosition="19" />
     <scopeInfo nodeId="173672751428924326" fileName="WorkbenchMakeService.java" startLine="148" startPosition="150" endLine="149" endPosition="90" />
-    <scopeInfo nodeId="173672751428924342" fileName="WorkbenchMakeService.java" startLine="155" startPosition="23" endLine="156" endPosition="76" />
-    <scopeInfo nodeId="173672751428924365" fileName="WorkbenchMakeService.java" startLine="162" startPosition="23" endLine="163" endPosition="76" />
-    <scopeInfo nodeId="173672751428924390" fileName="WorkbenchMakeService.java" startLine="169" startPosition="23" endLine="170" endPosition="76" />
-    <scopeInfo nodeId="173672751428924405" fileName="WorkbenchMakeService.java" startLine="175" startPosition="36" endLine="176" endPosition="51" />
-    <scopeInfo nodeId="173672751428924448" fileName="WorkbenchMakeService.java" startLine="191" startPosition="55" endLine="192" endPosition="44" />
-    <scopeInfo nodeId="173672751428924489" fileName="WorkbenchMakeService.java" startLine="203" startPosition="46" endLine="204" endPosition="35" />
-    <scopeInfo nodeId="173672751428924524" fileName="WorkbenchMakeService.java" startLine="213" startPosition="105" endLine="214" endPosition="88" />
-    <scopeInfo nodeId="173672751428924574" fileName="WorkbenchMakeService.java" startLine="222" startPosition="23" endLine="223" endPosition="88" />
-    <scopeInfo nodeId="173672751428924600" fileName="WorkbenchMakeService.java" startLine="230" startPosition="45" endLine="231" endPosition="19" />
-    <scopeInfo nodeId="173672751428924621" fileName="WorkbenchMakeService.java" startLine="235" startPosition="15" endLine="236" endPosition="36" />
-    <scopeInfo nodeId="173672751428924662" fileName="WorkbenchMakeService.java" startLine="247" startPosition="21" endLine="248" endPosition="91" />
-    <scopeInfo nodeId="173672751428924750" fileName="WorkbenchMakeService.java" startLine="268" startPosition="27" endLine="269" endPosition="58" />
-    <scopeInfo nodeId="173672751428924761" fileName="WorkbenchMakeService.java" startLine="271" startPosition="26" endLine="272" endPosition="66" />
-    <scopeInfo nodeId="173672751428924771" fileName="WorkbenchMakeService.java" startLine="277" startPosition="42" endLine="278" endPosition="57" />
-    <scopeInfo nodeId="173672751428924805" fileName="WorkbenchMakeService.java" startLine="284" startPosition="24" endLine="285" endPosition="41" />
-    <scopeInfo nodeId="173672751428923983" fileName="WorkbenchMakeService.java" startLine="289" startPosition="45" endLine="290" endPosition="460" />
-    <scopeInfo nodeId="173672751428923314" fileName="WorkbenchMakeService.java" startLine="302" startPosition="129" endLine="303" endPosition="66" />
-    <scopeInfo nodeId="173672751428923372" fileName="WorkbenchMakeService.java" startLine="312" startPosition="39" endLine="313" endPosition="120" />
-    <scopeInfo nodeId="173672751428923404" fileName="WorkbenchMakeService.java" startLine="324" startPosition="49" endLine="325" endPosition="54" />
-    <scopeInfo nodeId="173672751428923435" fileName="WorkbenchMakeService.java" startLine="336" startPosition="63" endLine="337" endPosition="58" />
-    <scopeInfo nodeId="173672751428923447" fileName="WorkbenchMakeService.java" startLine="338" startPosition="24" endLine="339" endPosition="94" />
-    <scopeInfo nodeId="173672751428923464" fileName="WorkbenchMakeService.java" startLine="349" startPosition="43" endLine="350" endPosition="25" />
-    <scopeInfo nodeId="173672751428923595" fileName="WorkbenchMakeService.java" startLine="389" startPosition="23" endLine="390" endPosition="53" />
-    <scopeInfo nodeId="173672751428923608" fileName="WorkbenchMakeService.java" startLine="394" startPosition="14" endLine="395" endPosition="29" />
-    <scopeInfo nodeId="173672751428923628" fileName="WorkbenchMakeService.java" startLine="402" startPosition="11" endLine="403" endPosition="28" />
-    <scopeInfo nodeId="173672751428923653" fileName="WorkbenchMakeService.java" startLine="408" startPosition="17" endLine="409" endPosition="72" />
-    <scopeInfo nodeId="173672751428923739" fileName="WorkbenchMakeService.java" startLine="424" startPosition="43" endLine="425" endPosition="27" />
-    <scopeInfo nodeId="173672751428923788" fileName="WorkbenchMakeService.java" startLine="436" startPosition="35" endLine="437" endPosition="52" />
-    <scopeInfo nodeId="173672751428923805" fileName="WorkbenchMakeService.java" startLine="442" startPosition="53" endLine="443" endPosition="26" />
-    <scopeInfo nodeId="173672751428923836" fileName="WorkbenchMakeService.java" startLine="451" startPosition="40" endLine="452" endPosition="52" />
-    <scopeInfo nodeId="173672751428923894" fileName="WorkbenchMakeService.java" startLine="470" startPosition="52" endLine="471" endPosition="58" />
-    <scopeInfo nodeId="173672751428923906" fileName="WorkbenchMakeService.java" startLine="475" startPosition="44" endLine="476" endPosition="40" />
-    <scopeInfo nodeId="173672751428923953" fileName="WorkbenchMakeService.java" startLine="491" startPosition="25" endLine="492" endPosition="27" />
-    <scopeInfo nodeId="173672751428923966" fileName="WorkbenchMakeService.java" startLine="495" startPosition="42" endLine="496" endPosition="34" />
+    <scopeInfo nodeId="173672751428924405" fileName="WorkbenchMakeService.java" startLine="154" startPosition="36" endLine="155" endPosition="51" />
+    <scopeInfo nodeId="173672751428924448" fileName="WorkbenchMakeService.java" startLine="170" startPosition="55" endLine="171" endPosition="44" />
+    <scopeInfo nodeId="173672751428924489" fileName="WorkbenchMakeService.java" startLine="182" startPosition="46" endLine="183" endPosition="35" />
+    <scopeInfo nodeId="173672751428924524" fileName="WorkbenchMakeService.java" startLine="192" startPosition="105" endLine="193" endPosition="88" />
+    <scopeInfo nodeId="173672751428924574" fileName="WorkbenchMakeService.java" startLine="201" startPosition="23" endLine="202" endPosition="88" />
+    <scopeInfo nodeId="173672751428924600" fileName="WorkbenchMakeService.java" startLine="209" startPosition="45" endLine="210" endPosition="19" />
+    <scopeInfo nodeId="173672751428924621" fileName="WorkbenchMakeService.java" startLine="214" startPosition="15" endLine="215" endPosition="36" />
+    <scopeInfo nodeId="173672751428924662" fileName="WorkbenchMakeService.java" startLine="226" startPosition="21" endLine="227" endPosition="91" />
+    <scopeInfo nodeId="173672751428924750" fileName="WorkbenchMakeService.java" startLine="247" startPosition="27" endLine="248" endPosition="58" />
+    <scopeInfo nodeId="173672751428924761" fileName="WorkbenchMakeService.java" startLine="250" startPosition="26" endLine="251" endPosition="66" />
+    <scopeInfo nodeId="173672751428924771" fileName="WorkbenchMakeService.java" startLine="256" startPosition="42" endLine="257" endPosition="57" />
+    <scopeInfo nodeId="173672751428924805" fileName="WorkbenchMakeService.java" startLine="263" startPosition="24" endLine="264" endPosition="41" />
+    <scopeInfo nodeId="173672751428923983" fileName="WorkbenchMakeService.java" startLine="268" startPosition="45" endLine="269" endPosition="460" />
+    <scopeInfo nodeId="173672751428923314" fileName="WorkbenchMakeService.java" startLine="281" startPosition="163" endLine="282" endPosition="75" />
+    <scopeInfo nodeId="6088474966771756318" fileName="WorkbenchMakeService.java" startLine="291" startPosition="39" endLine="292" endPosition="120" />
+    <scopeInfo nodeId="6088474966771756350" fileName="WorkbenchMakeService.java" startLine="303" startPosition="49" endLine="304" endPosition="54" />
+    <scopeInfo nodeId="173672751428923435" fileName="WorkbenchMakeService.java" startLine="315" startPosition="63" endLine="316" endPosition="58" />
+    <scopeInfo nodeId="173672751428923447" fileName="WorkbenchMakeService.java" startLine="317" startPosition="24" endLine="318" endPosition="94" />
+    <scopeInfo nodeId="173672751428923464" fileName="WorkbenchMakeService.java" startLine="328" startPosition="43" endLine="329" endPosition="25" />
+    <scopeInfo nodeId="173672751428923595" fileName="WorkbenchMakeService.java" startLine="368" startPosition="23" endLine="369" endPosition="53" />
+    <scopeInfo nodeId="173672751428923608" fileName="WorkbenchMakeService.java" startLine="373" startPosition="14" endLine="374" endPosition="29" />
+    <scopeInfo nodeId="173672751428923628" fileName="WorkbenchMakeService.java" startLine="381" startPosition="11" endLine="382" endPosition="28" />
+    <scopeInfo nodeId="173672751428923653" fileName="WorkbenchMakeService.java" startLine="387" startPosition="17" endLine="388" endPosition="72" />
+    <scopeInfo nodeId="173672751428923788" fileName="WorkbenchMakeService.java" startLine="409" startPosition="35" endLine="410" endPosition="52" />
+    <scopeInfo nodeId="173672751428923805" fileName="WorkbenchMakeService.java" startLine="415" startPosition="53" endLine="416" endPosition="26" />
+    <scopeInfo nodeId="173672751428923836" fileName="WorkbenchMakeService.java" startLine="424" startPosition="40" endLine="425" endPosition="52" />
+    <scopeInfo nodeId="173672751428923874" fileName="WorkbenchMakeService.java" startLine="435" startPosition="40" endLine="436" endPosition="35" />
+    <scopeInfo nodeId="173672751428923894" fileName="WorkbenchMakeService.java" startLine="440" startPosition="52" endLine="441" endPosition="58" />
+    <scopeInfo nodeId="173672751428923906" fileName="WorkbenchMakeService.java" startLine="445" startPosition="44" endLine="446" endPosition="40" />
+    <scopeInfo nodeId="173672751428923953" fileName="WorkbenchMakeService.java" startLine="461" startPosition="25" endLine="462" endPosition="27" />
+    <scopeInfo nodeId="173672751428923966" fileName="WorkbenchMakeService.java" startLine="465" startPosition="42" endLine="466" endPosition="34" />
     <scopeInfo nodeId="173672751428924206" fileName="WorkbenchMakeService.java" startLine="124" startPosition="36" endLine="126" endPosition="37" />
     <scopeInfo nodeId="173672751428924228" fileName="WorkbenchMakeService.java" startLine="131" startPosition="107" endLine="133" endPosition="19" />
-    <scopeInfo nodeId="173672751428924415" fileName="WorkbenchMakeService.java" startLine="179" startPosition="63" endLine="181" endPosition="58" />
-    <scopeInfo nodeId="173672751428924428" fileName="WorkbenchMakeService.java" startLine="184" startPosition="66" endLine="186" endPosition="61" />
-    <scopeInfo nodeId="173672751428924477" fileName="WorkbenchMakeService.java" startLine="199" startPosition="9" endLine="201" endPosition="53" />
-    <scopeInfo nodeId="173672751428924717" fileName="WorkbenchMakeService.java" startLine="258" startPosition="14" endLine="260" endPosition="58" />
-    <scopeInfo nodeId="173672751428923502" fileName="WorkbenchMakeService.java" startLine="297" startPosition="61" endLine="299" endPosition="19" />
-    <scopeInfo nodeId="173672751428923485" fileName="WorkbenchMakeService.java" startLine="359" startPosition="61" endLine="361" endPosition="45">
+    <scopeInfo nodeId="173672751428924415" fileName="WorkbenchMakeService.java" startLine="158" startPosition="63" endLine="160" endPosition="58" />
+    <scopeInfo nodeId="173672751428924428" fileName="WorkbenchMakeService.java" startLine="163" startPosition="66" endLine="165" endPosition="61" />
+    <scopeInfo nodeId="173672751428924477" fileName="WorkbenchMakeService.java" startLine="178" startPosition="9" endLine="180" endPosition="62" />
+    <scopeInfo nodeId="173672751428924717" fileName="WorkbenchMakeService.java" startLine="237" startPosition="14" endLine="239" endPosition="58" />
+    <scopeInfo nodeId="173672751428923502" fileName="WorkbenchMakeService.java" startLine="276" startPosition="61" endLine="278" endPosition="19" />
+    <scopeInfo nodeId="173672751428923485" fileName="WorkbenchMakeService.java" startLine="338" startPosition="61" endLine="340" endPosition="45">
       <varInfo nodeId="173672751428923487" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923584" fileName="WorkbenchMakeService.java" startLine="386" startPosition="17" endLine="388" endPosition="35" />
-    <scopeInfo nodeId="173672751428923766" fileName="WorkbenchMakeService.java" startLine="431" startPosition="28" endLine="433" endPosition="75" />
-    <scopeInfo nodeId="173672751428923927" fileName="WorkbenchMakeService.java" startLine="486" startPosition="67" endLine="488" endPosition="75" />
+    <scopeInfo nodeId="173672751428923584" fileName="WorkbenchMakeService.java" startLine="365" startPosition="17" endLine="367" endPosition="35" />
+    <scopeInfo nodeId="173672751428923766" fileName="WorkbenchMakeService.java" startLine="404" startPosition="28" endLine="406" endPosition="75" />
+    <scopeInfo nodeId="173672751428923927" fileName="WorkbenchMakeService.java" startLine="456" startPosition="67" endLine="458" endPosition="75" />
     <scopeInfo nodeId="173672751428924010" fileName="WorkbenchMakeService.java" startLine="72" startPosition="0" endLine="75" endPosition="3">
       <varInfo nodeId="173672751428924028" varName="watcher" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924132" fileName="WorkbenchMakeService.java" startLine="106" startPosition="93" endLine="109" endPosition="41" />
-    <scopeInfo nodeId="173672751428924159" fileName="WorkbenchMakeService.java" startLine="112" startPosition="109" endLine="115" endPosition="43" />
-    <scopeInfo nodeId="173672751428924188" fileName="WorkbenchMakeService.java" startLine="118" startPosition="139" endLine="121" endPosition="49" />
+    <scopeInfo nodeId="4671800353872912828" fileName="WorkbenchMakeService.java" startLine="118" startPosition="173" endLine="121" endPosition="58" />
     <scopeInfo nodeId="173672751428924309" fileName="WorkbenchMakeService.java" startLine="147" startPosition="36" endLine="150" endPosition="7" />
-    <scopeInfo nodeId="173672751428924487" fileName="WorkbenchMakeService.java" startLine="202" startPosition="15" endLine="205" endPosition="7" />
-    <scopeInfo nodeId="173672751428924598" fileName="WorkbenchMakeService.java" startLine="229" startPosition="9" endLine="232" endPosition="7" />
-    <scopeInfo nodeId="173672751428924769" fileName="WorkbenchMakeService.java" startLine="276" startPosition="54" endLine="279" endPosition="5" />
-    <scopeInfo nodeId="173672751428923383" fileName="WorkbenchMakeService.java" startLine="317" startPosition="31" endLine="320" endPosition="114" />
-    <scopeInfo nodeId="173672751428923633" fileName="WorkbenchMakeService.java" startLine="404" startPosition="0" endLine="407" endPosition="16">
+    <scopeInfo nodeId="173672751428924487" fileName="WorkbenchMakeService.java" startLine="181" startPosition="15" endLine="184" endPosition="7" />
+    <scopeInfo nodeId="173672751428924598" fileName="WorkbenchMakeService.java" startLine="208" startPosition="9" endLine="211" endPosition="7" />
+    <scopeInfo nodeId="173672751428924769" fileName="WorkbenchMakeService.java" startLine="255" startPosition="54" endLine="258" endPosition="5" />
+    <scopeInfo nodeId="6088474966771756329" fileName="WorkbenchMakeService.java" startLine="296" startPosition="31" endLine="299" endPosition="114" />
+    <scopeInfo nodeId="173672751428923633" fileName="WorkbenchMakeService.java" startLine="383" startPosition="0" endLine="386" endPosition="16">
       <varInfo nodeId="173672751428923634" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923636" fileName="WorkbenchMakeService.java" startLine="404" startPosition="36" endLine="407" endPosition="16" />
+    <scopeInfo nodeId="173672751428923636" fileName="WorkbenchMakeService.java" startLine="383" startPosition="36" endLine="386" endPosition="16" />
+    <scopeInfo nodeId="173672751428923709" fileName="WorkbenchMakeService.java" startLine="397" startPosition="25" endLine="400" endPosition="44" />
     <scopeInfo nodeId="173672751428924030" fileName="WorkbenchMakeService.java" startLine="76" startPosition="0" endLine="80" endPosition="3">
       <varInfo nodeId="173672751428924033" varName="cleanMake" />
       <varInfo nodeId="173672751428924031" varName="context" />
@@ -1289,217 +1270,208 @@
     <scopeInfo nodeId="173672751428924057" fileName="WorkbenchMakeService.java" startLine="82" startPosition="31" endLine="86" endPosition="101" />
     <scopeInfo nodeId="173672751428924083" fileName="WorkbenchMakeService.java" startLine="89" startPosition="34" endLine="93" endPosition="20" />
     <scopeInfo nodeId="173672751428924114" fileName="WorkbenchMakeService.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="173672751428924339" fileName="WorkbenchMakeService.java" startLine="154" startPosition="72" endLine="158" endPosition="42" />
-    <scopeInfo nodeId="173672751428924362" fileName="WorkbenchMakeService.java" startLine="161" startPosition="88" endLine="165" endPosition="44" />
-    <scopeInfo nodeId="173672751428924387" fileName="WorkbenchMakeService.java" startLine="168" startPosition="111" endLine="172" endPosition="43" />
-    <scopeInfo nodeId="173672751428924402" fileName="WorkbenchMakeService.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
-    <scopeInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="190" startPosition="166" endLine="194" endPosition="0">
-      <varInfo nodeId="173672751428924447" varName="li" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924685" fileName="WorkbenchMakeService.java" startLine="253" startPosition="44" endLine="257" endPosition="58">
-      <varInfo nodeId="173672751428924687" varName="msg" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924789" fileName="WorkbenchMakeService.java" startLine="282" startPosition="41" endLine="286" endPosition="5">
-      <varInfo nodeId="173672751428924791" varName="frame" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923981" fileName="WorkbenchMakeService.java" startLine="288" startPosition="0" endLine="292" endPosition="0" />
-    <scopeInfo nodeId="173672751428923499" fileName="WorkbenchMakeService.java" startLine="296" startPosition="0" endLine="300" endPosition="5">
-      <varInfo nodeId="173672751428923517" varName="mh" />
-      <varInfo nodeId="173672751428923515" varName="taskName" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923302" fileName="WorkbenchMakeService.java" startLine="301" startPosition="0" endLine="305" endPosition="0">
-      <varInfo nodeId="173672751428923309" varName="controller" />
-      <varInfo nodeId="173672751428923307" varName="defaultScript" />
-      <varInfo nodeId="173672751428923303" varName="inputRes" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923540" fileName="WorkbenchMakeService.java" startLine="374" startPosition="109" endLine="378" endPosition="13" />
-    <scopeInfo nodeId="173672751428923738" fileName="WorkbenchMakeService.java" startLine="423" startPosition="69" endLine="427" endPosition="0" />
-    <scopeInfo nodeId="173672751428923874" fileName="WorkbenchMakeService.java" startLine="462" startPosition="40" endLine="466" endPosition="12" />
-    <scopeInfo nodeId="173672751428923924" fileName="WorkbenchMakeService.java" startLine="485" startPosition="0" endLine="489" endPosition="5">
-      <varInfo nodeId="173672751428923947" varName="context" />
-      <varInfo nodeId="173672751428923945" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923950" fileName="WorkbenchMakeService.java" startLine="490" startPosition="0" endLine="494" endPosition="0" />
-    <scopeInfo nodeId="173672751428923961" fileName="WorkbenchMakeService.java" startLine="494" startPosition="0" endLine="498" endPosition="0">
-      <varInfo nodeId="173672751428923964" varName="message" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924203" fileName="WorkbenchMakeService.java" startLine="123" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="173672751428924410" fileName="WorkbenchMakeService.java" startLine="178" startPosition="0" endLine="183" endPosition="0">
-      <varInfo nodeId="173672751428924411" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924423" fileName="WorkbenchMakeService.java" startLine="183" startPosition="0" endLine="188" endPosition="0">
-      <varInfo nodeId="173672751428924426" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924439" fileName="WorkbenchMakeService.java" startLine="189" startPosition="69" endLine="194" endPosition="7" />
-    <scopeInfo nodeId="173672751428924506" fileName="WorkbenchMakeService.java" startLine="210" startPosition="38" endLine="215" endPosition="5">
-      <varInfo nodeId="173672751428924508" varName="mark" />
-      <varInfo nodeId="173672751428924517" varName="sess" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923369" fileName="WorkbenchMakeService.java" startLine="310" startPosition="271" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="173672751428923399" fileName="WorkbenchMakeService.java" startLine="322" startPosition="0" endLine="327" endPosition="0">
-      <varInfo nodeId="173672751428923400" varName="info" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923457" fileName="WorkbenchMakeService.java" startLine="347" startPosition="0" endLine="352" endPosition="18">
-      <varInfo nodeId="173672751428923458" varName="rex" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923460" fileName="WorkbenchMakeService.java" startLine="347" startPosition="38" endLine="352" endPosition="18" />
-    <scopeInfo nodeId="173672751428923800" fileName="WorkbenchMakeService.java" startLine="440" startPosition="0" endLine="445" endPosition="0">
-      <varInfo nodeId="173672751428923803" varName="monitor" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923889" fileName="WorkbenchMakeService.java" startLine="468" startPosition="0" endLine="473" endPosition="0">
-      <varInfo nodeId="173672751428923890" varName="fdbk" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923903" fileName="WorkbenchMakeService.java" startLine="473" startPosition="0" endLine="478" endPosition="0" />
-    <scopeInfo nodeId="173672751428924106" fileName="WorkbenchMakeService.java" startLine="95" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="173672751428924122" fileName="WorkbenchMakeService.java" startLine="105" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="173672751428924122" fileName="WorkbenchMakeService.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="173672751428924125" varName="resources" />
       <varInfo nodeId="173672751428924123" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924147" fileName="WorkbenchMakeService.java" startLine="111" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="173672751428924147" fileName="WorkbenchMakeService.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="173672751428924150" varName="resources" />
       <varInfo nodeId="173672751428924155" varName="script" />
       <varInfo nodeId="173672751428924148" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924174" fileName="WorkbenchMakeService.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="173672751428924174" fileName="WorkbenchMakeService.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="173672751428924184" varName="controller" />
       <varInfo nodeId="173672751428924177" varName="resources" />
       <varInfo nodeId="173672751428924182" varName="script" />
       <varInfo nodeId="173672751428924175" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924550" fileName="WorkbenchMakeService.java" startLine="218" startPosition="31" endLine="224" endPosition="5">
+    <scopeInfo nodeId="173672751428924402" fileName="WorkbenchMakeService.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="169" startPosition="166" endLine="173" endPosition="0">
+      <varInfo nodeId="173672751428924447" varName="li" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924685" fileName="WorkbenchMakeService.java" startLine="232" startPosition="44" endLine="236" endPosition="58">
+      <varInfo nodeId="173672751428924687" varName="msg" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924789" fileName="WorkbenchMakeService.java" startLine="261" startPosition="41" endLine="265" endPosition="5">
+      <varInfo nodeId="173672751428924791" varName="frame" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923981" fileName="WorkbenchMakeService.java" startLine="267" startPosition="0" endLine="271" endPosition="0" />
+    <scopeInfo nodeId="173672751428923499" fileName="WorkbenchMakeService.java" startLine="275" startPosition="0" endLine="279" endPosition="5">
+      <varInfo nodeId="173672751428923517" varName="mh" />
+      <varInfo nodeId="173672751428923515" varName="taskName" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923302" fileName="WorkbenchMakeService.java" startLine="280" startPosition="0" endLine="284" endPosition="0">
+      <varInfo nodeId="173672751428923309" varName="controller" />
+      <varInfo nodeId="173672751428923307" varName="defaultScript" />
+      <varInfo nodeId="173672751428923303" varName="inputRes" />
+      <varInfo nodeId="4671800353872688835" varName="monitor" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923540" fileName="WorkbenchMakeService.java" startLine="353" startPosition="109" endLine="357" endPosition="13" />
+    <scopeInfo nodeId="173672751428923924" fileName="WorkbenchMakeService.java" startLine="455" startPosition="0" endLine="459" endPosition="5">
+      <varInfo nodeId="173672751428923947" varName="context" />
+      <varInfo nodeId="173672751428923945" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923950" fileName="WorkbenchMakeService.java" startLine="460" startPosition="0" endLine="464" endPosition="0" />
+    <scopeInfo nodeId="173672751428923961" fileName="WorkbenchMakeService.java" startLine="464" startPosition="0" endLine="468" endPosition="0">
+      <varInfo nodeId="173672751428923964" varName="message" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924203" fileName="WorkbenchMakeService.java" startLine="123" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="173672751428924410" fileName="WorkbenchMakeService.java" startLine="157" startPosition="0" endLine="162" endPosition="0">
+      <varInfo nodeId="173672751428924411" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924423" fileName="WorkbenchMakeService.java" startLine="162" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="173672751428924426" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924439" fileName="WorkbenchMakeService.java" startLine="168" startPosition="69" endLine="173" endPosition="7" />
+    <scopeInfo nodeId="173672751428924506" fileName="WorkbenchMakeService.java" startLine="189" startPosition="38" endLine="194" endPosition="5">
+      <varInfo nodeId="173672751428924508" varName="mark" />
+      <varInfo nodeId="173672751428924517" varName="sess" />
+    </scopeInfo>
+    <scopeInfo nodeId="6088474966771756315" fileName="WorkbenchMakeService.java" startLine="289" startPosition="271" endLine="294" endPosition="0" />
+    <scopeInfo nodeId="6088474966771756345" fileName="WorkbenchMakeService.java" startLine="301" startPosition="0" endLine="306" endPosition="0">
+      <varInfo nodeId="6088474966771756346" varName="info" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923457" fileName="WorkbenchMakeService.java" startLine="326" startPosition="0" endLine="331" endPosition="18">
+      <varInfo nodeId="173672751428923458" varName="rex" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923460" fileName="WorkbenchMakeService.java" startLine="326" startPosition="38" endLine="331" endPosition="18" />
+    <scopeInfo nodeId="173672751428923800" fileName="WorkbenchMakeService.java" startLine="413" startPosition="0" endLine="418" endPosition="0">
+      <varInfo nodeId="173672751428923803" varName="monitor" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923871" fileName="WorkbenchMakeService.java" startLine="433" startPosition="44" endLine="438" endPosition="0" />
+    <scopeInfo nodeId="173672751428923889" fileName="WorkbenchMakeService.java" startLine="438" startPosition="0" endLine="443" endPosition="0">
+      <varInfo nodeId="173672751428923890" varName="fdbk" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923903" fileName="WorkbenchMakeService.java" startLine="443" startPosition="0" endLine="448" endPosition="0" />
+    <scopeInfo nodeId="173672751428924106" fileName="WorkbenchMakeService.java" startLine="95" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="4671800353872912814" fileName="WorkbenchMakeService.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="4671800353872912824" varName="controller" />
+      <varInfo nodeId="4671800353872912856" varName="monitor" />
+      <varInfo nodeId="4671800353872912817" varName="resources" />
+      <varInfo nodeId="4671800353872912822" varName="script" />
+      <varInfo nodeId="4671800353872912815" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924550" fileName="WorkbenchMakeService.java" startLine="197" startPosition="31" endLine="203" endPosition="5">
       <varInfo nodeId="173672751428924552" varName="mark" />
       <varInfo nodeId="173672751428924561" varName="sess" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924748" fileName="WorkbenchMakeService.java" startLine="267" startPosition="34" endLine="273" endPosition="5" />
-    <scopeInfo nodeId="173672751428924766" fileName="WorkbenchMakeService.java" startLine="275" startPosition="0" endLine="281" endPosition="0">
+    <scopeInfo nodeId="173672751428924748" fileName="WorkbenchMakeService.java" startLine="246" startPosition="34" endLine="252" endPosition="5" />
+    <scopeInfo nodeId="173672751428924766" fileName="WorkbenchMakeService.java" startLine="254" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="173672751428924782" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923480" fileName="WorkbenchMakeService.java" startLine="357" startPosition="0" endLine="363" endPosition="0">
+    <scopeInfo nodeId="173672751428923480" fileName="WorkbenchMakeService.java" startLine="336" startPosition="0" endLine="342" endPosition="0">
       <varInfo nodeId="173672751428923481" varName="scriptBuilder" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923537" fileName="WorkbenchMakeService.java" startLine="373" startPosition="0" endLine="379" endPosition="5">
+    <scopeInfo nodeId="173672751428923537" fileName="WorkbenchMakeService.java" startLine="352" startPosition="0" endLine="358" endPosition="5">
       <varInfo nodeId="173672751428923561" varName="delegate" />
       <varInfo nodeId="173672751428923563" varName="mh" />
       <varInfo nodeId="173672751428923565" varName="pmps" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923582" fileName="WorkbenchMakeService.java" startLine="385" startPosition="48" endLine="391" endPosition="13" />
+    <scopeInfo nodeId="173672751428923582" fileName="WorkbenchMakeService.java" startLine="364" startPosition="48" endLine="370" endPosition="13" />
     <scopeInfo nodeId="173672751428924054" fileName="WorkbenchMakeService.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="173672751428924080" fileName="WorkbenchMakeService.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="173672751428924333" fileName="WorkbenchMakeService.java" startLine="153" startPosition="0" endLine="160" endPosition="0">
-      <varInfo nodeId="173672751428924335" varName="resources" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924354" fileName="WorkbenchMakeService.java" startLine="160" startPosition="0" endLine="167" endPosition="0">
-      <varInfo nodeId="173672751428924356" varName="resources" />
-      <varInfo nodeId="173672751428924360" varName="script" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924377" fileName="WorkbenchMakeService.java" startLine="167" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="173672751428924385" varName="ctl" />
-      <varInfo nodeId="173672751428924379" varName="resources" />
-      <varInfo nodeId="173672751428924383" varName="script" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428924784" fileName="WorkbenchMakeService.java" startLine="281" startPosition="0" endLine="288" endPosition="0">
+    <scopeInfo nodeId="173672751428924784" fileName="WorkbenchMakeService.java" startLine="260" startPosition="0" endLine="267" endPosition="0">
       <varInfo nodeId="173672751428924787" varName="info" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923380" fileName="WorkbenchMakeService.java" startLine="315" startPosition="0" endLine="322" endPosition="0" />
-    <scopeInfo nodeId="173672751428923429" fileName="WorkbenchMakeService.java" startLine="334" startPosition="33" endLine="341" endPosition="57" />
-    <scopeInfo nodeId="173672751428924436" fileName="WorkbenchMakeService.java" startLine="188" startPosition="0" endLine="196" endPosition="0">
+    <scopeInfo nodeId="6088474966771756326" fileName="WorkbenchMakeService.java" startLine="294" startPosition="0" endLine="301" endPosition="0" />
+    <scopeInfo nodeId="173672751428923429" fileName="WorkbenchMakeService.java" startLine="313" startPosition="33" endLine="320" endPosition="57" />
+    <scopeInfo nodeId="173672751428924436" fileName="WorkbenchMakeService.java" startLine="167" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="173672751428924456" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924503" fileName="WorkbenchMakeService.java" startLine="209" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="173672751428923709" fileName="WorkbenchMakeService.java" startLine="419" startPosition="25" endLine="427" endPosition="11" />
-    <scopeInfo nodeId="173672751428923830" fileName="WorkbenchMakeService.java" startLine="449" startPosition="66" endLine="457" endPosition="12">
+    <scopeInfo nodeId="173672751428924503" fileName="WorkbenchMakeService.java" startLine="188" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="173672751428923830" fileName="WorkbenchMakeService.java" startLine="422" startPosition="66" endLine="430" endPosition="12">
       <varInfo nodeId="173672751428923832" varName="opt" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923871" fileName="WorkbenchMakeService.java" startLine="460" startPosition="44" endLine="468" endPosition="0" />
     <scopeInfo nodeId="173672751428924278" fileName="WorkbenchMakeService.java" startLine="142" startPosition="49" endLine="151" endPosition="5">
       <varInfo nodeId="173672751428924295" varName="cp" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924547" fileName="WorkbenchMakeService.java" startLine="217" startPosition="0" endLine="226" endPosition="0" />
-    <scopeInfo nodeId="173672751428924683" fileName="WorkbenchMakeService.java" startLine="252" startPosition="52" endLine="261" endPosition="7" />
-    <scopeInfo nodeId="173672751428924745" fileName="WorkbenchMakeService.java" startLine="266" startPosition="0" endLine="275" endPosition="0" />
-    <scopeInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="384" startPosition="94" endLine="393" endPosition="0">
+    <scopeInfo nodeId="173672751428924547" fileName="WorkbenchMakeService.java" startLine="196" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="173672751428924683" fileName="WorkbenchMakeService.java" startLine="231" startPosition="52" endLine="240" endPosition="7" />
+    <scopeInfo nodeId="173672751428924745" fileName="WorkbenchMakeService.java" startLine="245" startPosition="0" endLine="254" endPosition="0" />
+    <scopeInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="363" startPosition="94" endLine="372" endPosition="0">
       <varInfo nodeId="173672751428923581" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="173672751428924222" fileName="WorkbenchMakeService.java" startLine="129" startPosition="54" endLine="139" endPosition="16" />
-    <scopeInfo nodeId="173672751428924470" fileName="WorkbenchMakeService.java" startLine="197" startPosition="126" endLine="207" endPosition="18">
+    <scopeInfo nodeId="173672751428924470" fileName="WorkbenchMakeService.java" startLine="176" startPosition="160" endLine="186" endPosition="18">
       <varInfo nodeId="173672751428924472" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924587" fileName="WorkbenchMakeService.java" startLine="227" startPosition="51" endLine="237" endPosition="5">
+    <scopeInfo nodeId="173672751428924587" fileName="WorkbenchMakeService.java" startLine="206" startPosition="51" endLine="216" endPosition="5">
       <varInfo nodeId="173672751428924589" varName="proc" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="333" startPosition="55" endLine="343" endPosition="0" />
-    <scopeInfo nodeId="173672751428923576" fileName="WorkbenchMakeService.java" startLine="383" startPosition="35" endLine="393" endPosition="11" />
-    <scopeInfo nodeId="173672751428923621" fileName="WorkbenchMakeService.java" startLine="400" startPosition="89" endLine="410" endPosition="7">
+    <scopeInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="312" startPosition="55" endLine="322" endPosition="0" />
+    <scopeInfo nodeId="173672751428923576" fileName="WorkbenchMakeService.java" startLine="362" startPosition="35" endLine="372" endPosition="11" />
+    <scopeInfo nodeId="173672751428923621" fileName="WorkbenchMakeService.java" startLine="379" startPosition="89" endLine="389" endPosition="7">
       <varInfo nodeId="173672751428923623" varName="oldFlag" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923425" fileName="WorkbenchMakeService.java" startLine="332" startPosition="29" endLine="343" endPosition="15" />
+    <scopeInfo nodeId="173672751428923425" fileName="WorkbenchMakeService.java" startLine="311" startPosition="29" endLine="322" endPosition="15" />
     <scopeInfo nodeId="173672751428924273" fileName="WorkbenchMakeService.java" startLine="141" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="173672751428924274" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923822" fileName="WorkbenchMakeService.java" startLine="447" startPosition="48" endLine="459" endPosition="0">
+    <scopeInfo nodeId="173672751428923822" fileName="WorkbenchMakeService.java" startLine="420" startPosition="48" endLine="432" endPosition="0">
       <varInfo nodeId="173672751428923823" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="173672751428924217" fileName="WorkbenchMakeService.java" startLine="128" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="173672751428924220" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924458" fileName="WorkbenchMakeService.java" startLine="196" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="173672751428924458" fileName="WorkbenchMakeService.java" startLine="175" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="173672751428924465" varName="controller" />
       <varInfo nodeId="173672751428924459" varName="inputRes" />
+      <varInfo nodeId="4671800353872697634" varName="monitor" />
       <varInfo nodeId="173672751428924463" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924584" fileName="WorkbenchMakeService.java" startLine="226" startPosition="0" endLine="239" endPosition="0" />
-    <scopeInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="331" startPosition="42" endLine="345" endPosition="0" />
-    <scopeInfo nodeId="173672751428923574" fileName="WorkbenchMakeService.java" startLine="382" startPosition="101" endLine="396" endPosition="7" />
-    <scopeInfo nodeId="173672751428923614" fileName="WorkbenchMakeService.java" startLine="398" startPosition="0" endLine="412" endPosition="0">
+    <scopeInfo nodeId="173672751428924584" fileName="WorkbenchMakeService.java" startLine="205" startPosition="0" endLine="218" endPosition="0" />
+    <scopeInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="310" startPosition="42" endLine="324" endPosition="0" />
+    <scopeInfo nodeId="173672751428923574" fileName="WorkbenchMakeService.java" startLine="361" startPosition="101" endLine="375" endPosition="7" />
+    <scopeInfo nodeId="173672751428923614" fileName="WorkbenchMakeService.java" startLine="377" startPosition="0" endLine="391" endPosition="0">
       <varInfo nodeId="173672751428923615" varName="code" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923419" fileName="WorkbenchMakeService.java" startLine="330" startPosition="11" endLine="346" endPosition="0" />
-    <scopeInfo nodeId="173672751428923567" fileName="WorkbenchMakeService.java" startLine="380" startPosition="0" endLine="398" endPosition="0">
+    <scopeInfo nodeId="173672751428923419" fileName="WorkbenchMakeService.java" startLine="309" startPosition="11" endLine="325" endPosition="0" />
+    <scopeInfo nodeId="173672751428923567" fileName="WorkbenchMakeService.java" startLine="359" startPosition="0" endLine="377" endPosition="0">
       <varInfo nodeId="173672751428923570" varName="code" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924639" fileName="WorkbenchMakeService.java" startLine="240" startPosition="134" endLine="264" endPosition="105">
-      <varInfo nodeId="173672751428924654" varName="mh" />
-      <varInfo nodeId="173672751428924642" varName="scrName" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923670" fileName="WorkbenchMakeService.java" startLine="414" startPosition="110" endLine="438" endPosition="7">
-      <varInfo nodeId="173672751428923681" varName="monitor" />
+    <scopeInfo nodeId="173672751428923670" fileName="WorkbenchMakeService.java" startLine="393" startPosition="110" endLine="411" endPosition="7">
       <varInfo nodeId="173672751428923750" varName="tparams" />
       <varInfo nodeId="173672751428923687" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428924629" fileName="WorkbenchMakeService.java" startLine="239" startPosition="0" endLine="266" endPosition="0">
-      <varInfo nodeId="173672751428924636" varName="controller" />
-      <varInfo nodeId="173672751428924634" varName="defaultScript" />
-      <varInfo nodeId="173672751428924630" varName="inputRes" />
-    </scopeInfo>
-    <scopeInfo nodeId="173672751428923658" fileName="WorkbenchMakeService.java" startLine="412" startPosition="0" endLine="440" endPosition="0">
+    <scopeInfo nodeId="173672751428923658" fileName="WorkbenchMakeService.java" startLine="391" startPosition="0" endLine="413" endPosition="0">
       <varInfo nodeId="173672751428923666" varName="input" />
       <varInfo nodeId="173672751428923661" varName="ppool" />
       <varInfo nodeId="173672751428923663" varName="targets" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923815" fileName="WorkbenchMakeService.java" startLine="446" startPosition="25" endLine="478" endPosition="8" />
-    <scopeInfo nodeId="173672751428923812" fileName="WorkbenchMakeService.java" startLine="445" startPosition="0" endLine="480" endPosition="0" />
-    <scopeInfo nodeId="173672751428923332" fileName="WorkbenchMakeService.java" startLine="307" startPosition="160" endLine="355" endPosition="18">
+    <scopeInfo nodeId="173672751428924639" fileName="WorkbenchMakeService.java" startLine="219" startPosition="168" endLine="243" endPosition="114">
+      <varInfo nodeId="173672751428924654" varName="mh" />
+      <varInfo nodeId="173672751428924642" varName="scrName" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428924629" fileName="WorkbenchMakeService.java" startLine="218" startPosition="0" endLine="245" endPosition="0">
+      <varInfo nodeId="173672751428924636" varName="controller" />
+      <varInfo nodeId="173672751428924634" varName="defaultScript" />
+      <varInfo nodeId="173672751428924630" varName="inputRes" />
+      <varInfo nodeId="4671800353872691474" varName="monitor" />
+    </scopeInfo>
+    <scopeInfo nodeId="173672751428923815" fileName="WorkbenchMakeService.java" startLine="419" startPosition="25" endLine="448" endPosition="8" />
+    <scopeInfo nodeId="173672751428923812" fileName="WorkbenchMakeService.java" startLine="418" startPosition="0" endLine="450" endPosition="0" />
+    <scopeInfo nodeId="173672751428923332" fileName="WorkbenchMakeService.java" startLine="286" startPosition="194" endLine="334" endPosition="18">
       <varInfo nodeId="173672751428923334" varName="pmps" />
       <varInfo nodeId="173672751428923413" varName="session" />
-      <varInfo nodeId="173672751428923343" varName="task" />
+      <varInfo nodeId="6088474966771756170" varName="task" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428923320" fileName="WorkbenchMakeService.java" startLine="305" startPosition="0" endLine="357" endPosition="0">
+    <scopeInfo nodeId="173672751428923320" fileName="WorkbenchMakeService.java" startLine="284" startPosition="0" endLine="336" endPosition="0">
       <varInfo nodeId="173672751428923321" varName="clustRes" />
       <varInfo nodeId="173672751428923329" varName="controller" />
+      <varInfo nodeId="4671800353872688354" varName="monitor" />
       <varInfo nodeId="173672751428923326" varName="scripts" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428923285" fileName="WorkbenchMakeService.java" startLine="64" startPosition="0" endLine="500" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService" />
-    <unitInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="190" startPosition="127" endLine="194" endPosition="5" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-    <unitInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="384" startPosition="48" endLine="393" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-    <unitInfo nodeId="173672751428923348" fileName="WorkbenchMakeService.java" startLine="310" startPosition="32" endLine="327" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-    <unitInfo nodeId="173672751428923738" fileName="WorkbenchMakeService.java" startLine="423" startPosition="20" endLine="427" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
-    <unitInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="331" startPosition="30" endLine="345" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
-    <unitInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="333" startPosition="43" endLine="343" endPosition="13" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
-    <unitInfo nodeId="173672751428923820" fileName="WorkbenchMakeService.java" startLine="447" startPosition="25" endLine="459" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
-    <unitInfo nodeId="173672751428923869" fileName="WorkbenchMakeService.java" startLine="460" startPosition="24" endLine="478" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$4" />
-    <unitInfo nodeId="173672751428923520" fileName="WorkbenchMakeService.java" startLine="365" startPosition="0" endLine="481" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$Controller" />
-    <unitInfo nodeId="173672751428923922" fileName="WorkbenchMakeService.java" startLine="482" startPosition="0" endLine="499" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$MessageHandler" />
-    <unitInfo nodeId="173672751428923295" fileName="WorkbenchMakeService.java" startLine="293" startPosition="0" endLine="364" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$TaskRunner" />
+    <unitInfo nodeId="173672751428924447" fileName="WorkbenchMakeService.java" startLine="169" startPosition="127" endLine="173" endPosition="5" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
+    <unitInfo nodeId="173672751428923581" fileName="WorkbenchMakeService.java" startLine="363" startPosition="48" endLine="372" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
+    <unitInfo nodeId="173672751428923428" fileName="WorkbenchMakeService.java" startLine="312" startPosition="43" endLine="322" endPosition="13" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
+    <unitInfo nodeId="173672751428923820" fileName="WorkbenchMakeService.java" startLine="420" startPosition="25" endLine="432" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
+    <unitInfo nodeId="173672751428923424" fileName="WorkbenchMakeService.java" startLine="310" startPosition="30" endLine="324" endPosition="9" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
+    <unitInfo nodeId="173672751428923869" fileName="WorkbenchMakeService.java" startLine="433" startPosition="24" endLine="448" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
+    <unitInfo nodeId="6088474966771756193" fileName="WorkbenchMakeService.java" startLine="289" startPosition="32" endLine="306" endPosition="7" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
+    <unitInfo nodeId="173672751428923922" fileName="WorkbenchMakeService.java" startLine="452" startPosition="0" endLine="469" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$MessageHandler" />
+    <unitInfo nodeId="173672751428923295" fileName="WorkbenchMakeService.java" startLine="272" startPosition="0" endLine="343" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$TaskRunner" />
+    <unitInfo nodeId="173672751428923520" fileName="WorkbenchMakeService.java" startLine="344" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService$Controller" />
+    <unitInfo nodeId="173672751428923285" fileName="WorkbenchMakeService.java" startLine="64" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.ide.make.WorkbenchMakeService" />
   </root>
 </debugInfo>
 

@@ -20,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -32,6 +31,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dependencies.CheckingMethod" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.SubtypingUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -62,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.nlist_subtypeOf_list_of_nodes_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ListType_ListType_elementSNode_SubtypingRule" />
@@ -73,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_BaseConcept_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SEnumMemberType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SNodeType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SReferenceType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SearchScopeType_ISearchScope_SubtypingRule" />
@@ -162,6 +164,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SearchScope_ContainsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
@@ -360,6 +363,24 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.nlist_subtypeOf_list_of_nodes_InequationReplacementRule" file="nlist_subtypeOf_list_of_nodes_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule" file="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -453,12 +474,19 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule" file="supertypesOf_SEnumMemberType_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
@@ -549,6 +577,23 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SEnumMemberType_SubtypingRule" file="supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />

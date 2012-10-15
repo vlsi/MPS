@@ -24,6 +24,9 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
+import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
@@ -54,6 +57,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
   private boolean myIsSingleTypeComputation = false;
+
   //normal mode - all types calculation, generation mode - single type computation
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
@@ -89,8 +93,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
-      myNodeTypesComponent.computeTypes(refreshTypes);
-      myNodeTypesComponent.setCheckedTypesystem();
+      LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
+        @Override
+        public Object compute() {
+          myNodeTypesComponent.computeTypes(refreshTypes);
+          myNodeTypesComponent.setCheckedTypesystem();
+          return null;
+        }
+      });
     }
   }
 
@@ -312,10 +322,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  protected SNode getTypeOf_generationMode(SNode node) {
+  protected SNode getTypeOf_generationMode(final SNode node) {
     myIsSingleTypeComputation = true;
     long start = System.nanoTime();
-    SNode result = myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+      }
+    });
     TypeSystemReporter.getInstance().reportTypeOf(node,(System.nanoTime() - start));
     return result;
   }

@@ -366,8 +366,8 @@
     <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="30" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1213877280281" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior" />
     <unitInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior$QuotationClass_tzpw84_a0e0b" />
+    <unitInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior" />
   </root>
   <root nodeId="1213877296560" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1216812512094" fileName="CellModel_Component_Behavior.java" startLine="14" startPosition="100" endLine="15" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -550,9 +550,9 @@
     <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="53" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1213877323482" varName="parameter_5" />
     </scopeInfo>
-    <unitInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="14" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" />
     <unitInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="27" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior$QuotationClass_ygqhl6_a0a0c0b" />
     <unitInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="50" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior$QuotationClass_ygqhl6_a0a3a1" />
+    <unitInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="14" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" />
   </root>
   <root nodeId="1213877329110" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="13" startPosition="42" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1216377898846" />
@@ -775,8 +775,8 @@
       <varInfo nodeId="1213877372458" varName="scope" />
       <varInfo nodeId="1213877372456" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877372456" fileName="BaseEditorComponent_Behavior.java" startLine="15" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" />
     <unitInfo nodeId="1227876803538" fileName="BaseEditorComponent_Behavior.java" startLine="22" startPosition="61" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior$1" />
+    <unitInfo nodeId="1213877372456" fileName="BaseEditorComponent_Behavior.java" startLine="15" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" />
   </root>
   <root nodeId="1213877386047" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1213877386047" fileName="EditorCellModel_Behavior.java" startLine="20" startPosition="39" endLine="21" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1216737839993" />
@@ -1243,9 +1243,9 @@
     <scopeInfo nodeId="1213877395571" fileName="SelectOperation_Behavior.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1213877395571" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877395571" fileName="SelectOperation_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior" />
     <unitInfo nodeId="1227876804453" fileName="SelectOperation_Behavior.java" startLine="17" startPosition="119" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior$1" />
     <unitInfo nodeId="1227876801318" fileName="SelectOperation_Behavior.java" startLine="25" startPosition="119" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior$2" />
+    <unitInfo nodeId="1213877395571" fileName="SelectOperation_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior" />
   </root>
   <root nodeId="1213877438486" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1213877438494" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1295,8 +1295,8 @@
     <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="30" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1213877438523" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior" />
     <unitInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior$QuotationClass_jf8h0a_a0e0b" />
+    <unitInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior" />
   </root>
   <root nodeId="1213877510877" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1213877510877" fileName="ConceptEditorDeclaration_Behavior.java" startLine="15" startPosition="48" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8952337903384629359" />
@@ -1518,8 +1518,8 @@
     <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="30" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1213877516061" varName="parameter_5" />
     </scopeInfo>
-    <unitInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior" />
     <unitInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="27" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior$QuotationClass_b08ikr_a0d0b" />
+    <unitInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior" />
   </root>
   <root nodeId="1213877538771" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1213877538771" fileName="CellMenuComponentFeature_Property_Behavior.java" startLine="7" startPosition="57" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -2948,6 +2948,7 @@
       <varInfo nodeId="2970389781192938027" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="2970389781192937837" fileName="DefaultEditorBuilder.java" startLine="176" startPosition="69" endLine="188" endPosition="7" />
+    <scopeInfo nodeId="2970389781192937834" fileName="DefaultEditorBuilder.java" startLine="175" startPosition="56" endLine="189" endPosition="5" />
     <scopeInfo nodeId="2970389781192937835" fileName="DefaultEditorBuilder.java" startLine="175" startPosition="56" endLine="189" endPosition="5">
       <varInfo nodeId="2970389781192937836" varName="linkDeclaration" />
     </scopeInfo>
@@ -3012,7 +3013,6 @@
     </scopeInfo>
     <scopeInfo nodeId="2970389781192937610" fileName="DefaultEditorBuilder.java" startLine="106" startPosition="0" endLine="174" endPosition="0" />
     <scopeInfo nodeId="2970389781192937389" fileName="DefaultEditorBuilder.java" startLine="36" startPosition="0" endLine="106" endPosition="0" />
-    <unitInfo nodeId="2970389781192937388" fileName="DefaultEditorBuilder.java" startLine="27" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder" />
     <unitInfo nodeId="2970389781192937424" fileName="DefaultEditorBuilder.java" startLine="45" startPosition="160" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder$1" />
     <unitInfo nodeId="2970389781192937447" fileName="DefaultEditorBuilder.java" startLine="50" startPosition="155" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder$2" />
     <unitInfo nodeId="2970389781192937465" fileName="DefaultEditorBuilder.java" startLine="55" startPosition="71" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder$3" />
@@ -3021,6 +3021,7 @@
     <unitInfo nodeId="2970389781192937686" fileName="DefaultEditorBuilder.java" startLine="125" startPosition="71" endLine="129" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder$6" />
     <unitInfo nodeId="2970389781192937755" fileName="DefaultEditorBuilder.java" startLine="147" startPosition="74" endLine="151" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder$7" />
     <unitInfo nodeId="2970389781192938568" fileName="DefaultEditorBuilder.java" startLine="372" startPosition="84" endLine="376" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder$8" />
+    <unitInfo nodeId="2970389781192937388" fileName="DefaultEditorBuilder.java" startLine="27" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder" />
   </root>
   <root nodeId="3696012239575646494" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="3696012239575646494" fileName="CellModel_URL_Behavior.java" startLine="13" startPosition="37" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3696012239575646497" />
@@ -3589,9 +3590,9 @@
     <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="72" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="6552123473822749318" varName="parameter_5" />
     </scopeInfo>
-    <unitInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="17" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" />
     <unitInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="46" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior$QuotationClass_1gao1h_a0a0c0b" />
     <unitInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="69" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior$QuotationClass_1gao1h_a0d0b" />
+    <unitInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="17" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" />
   </root>
   <root nodeId="8255250703325737458" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="8255250703325740974" fileName="ScriptKindClassItem_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3620,8 +3621,10 @@
     <scopeInfo nodeId="8255250703325737460" fileName="ScriptKindClassItem_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="21" startPosition="48" endLine="22" endPosition="172" />
     <scopeInfo nodeId="8255250703325740976" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
+    <scopeInfo nodeId="8255250703325740978" fileName="ScriptKindClassItem_Behavior.java" startLine="25" startPosition="33" endLine="26" endPosition="178" />
     <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="176" />
     <scopeInfo nodeId="8255250703325740985" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
+    <scopeInfo nodeId="8255250703325740987" fileName="ScriptKindClassItem_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="180" />
     <scopeInfo nodeId="8255250703325737458" fileName="ScriptKindClassItem_Behavior.java" startLine="10" startPosition="43" endLine="13" endPosition="0">
       <varInfo nodeId="8255250703325737458" varName="thisNode" />
     </scopeInfo>
@@ -3674,8 +3677,10 @@
     <scopeInfo nodeId="8598098202018087056" fileName="DefaultBaseLine_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="8598098202018154477" fileName="DefaultBaseLine_Behavior.java" startLine="21" startPosition="49" endLine="22" endPosition="175" />
     <scopeInfo nodeId="8598098202018154477" fileName="DefaultBaseLine_Behavior.java" startLine="25" startPosition="34" endLine="26" endPosition="497" />
+    <scopeInfo nodeId="8598098202018154479" fileName="DefaultBaseLine_Behavior.java" startLine="25" startPosition="34" endLine="26" endPosition="497" />
     <scopeInfo nodeId="8598098202018154481" fileName="DefaultBaseLine_Behavior.java" startLine="31" startPosition="51" endLine="32" endPosition="176" />
     <scopeInfo nodeId="8598098202018154481" fileName="DefaultBaseLine_Behavior.java" startLine="35" startPosition="36" endLine="36" endPosition="499" />
+    <scopeInfo nodeId="8598098202018154483" fileName="DefaultBaseLine_Behavior.java" startLine="35" startPosition="36" endLine="36" endPosition="499" />
     <scopeInfo nodeId="8598098202018087054" fileName="DefaultBaseLine_Behavior.java" startLine="10" startPosition="39" endLine="13" endPosition="0">
       <varInfo nodeId="8598098202018087054" varName="thisNode" />
     </scopeInfo>

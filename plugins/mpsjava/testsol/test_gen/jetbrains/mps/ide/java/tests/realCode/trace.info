@@ -15,8 +15,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7016215775330902578" fileName="BytecodeVsSourceStubs_Test.java" startLine="13" startPosition="73" endLine="19" endPosition="0" />
     <scopeInfo nodeId="7016215775330902582" fileName="BytecodeVsSourceStubs_Test.java" startLine="21" startPosition="53" endLine="27" endPosition="0" />
-    <unitInfo nodeId="7016215775330902578" fileName="BytecodeVsSourceStubs_Test.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.java.tests.realCode.BytecodeVsSourceStubs_Test" />
     <unitInfo nodeId="7016215775330902578" fileName="BytecodeVsSourceStubs_Test.java" startLine="20" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.java.tests.realCode.BytecodeVsSourceStubs_Test$TestBody" />
+    <unitInfo nodeId="7016215775330902578" fileName="BytecodeVsSourceStubs_Test.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.java.tests.realCode.BytecodeVsSourceStubs_Test" />
   </root>
 </debugInfo>
 

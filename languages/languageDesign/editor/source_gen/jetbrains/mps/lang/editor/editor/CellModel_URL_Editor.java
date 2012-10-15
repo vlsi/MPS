@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
@@ -76,9 +75,6 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_wgj6gq_c3a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_wgj6gq_d3a(editorContext, node));
-    if (renderingCondition_wgj6gq_a4d0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_wgj6gq_e3a(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -131,19 +127,6 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_wgj6gq_a3d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_wgj6gq_b3d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_wgj6gq_e3a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_wgj6gq_e3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
-    editorCell.addEditorCell(this.createConstant_wgj6gq_a4d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_wgj6gq_b4d0(editorContext, node));
     return editorCell;
   }
 
@@ -231,14 +214,6 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_wgj6gq_a3d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "read only");
     editorCell.setCellId("Constant_wgj6gq_a3d0");
-    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_wgj6gq_a4d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow empty");
-    editorCell.setCellId("Constant_wgj6gq_a4d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -426,38 +401,12 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_wgj6gq_b4d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("allowEmptyText");
-    provider.setNoTargetText("<no allowEmptyText>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_allowEmptyText");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private static boolean renderingCondition_wgj6gq_a1d0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
   }
 
   private static boolean renderingCondition_wgj6gq_a2d0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
-  }
-
-  private static boolean renderingCondition_wgj6gq_a4d0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
   }
 
   private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(SNode node, EditorContext editorContext) {

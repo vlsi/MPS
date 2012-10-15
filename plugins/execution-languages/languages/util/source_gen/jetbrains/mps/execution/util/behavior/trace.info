@@ -76,8 +76,8 @@
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4666195181811081430" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
     <unitInfo nodeId="4666195181811081439" fileName="IMainClass_Behavior.java" startLine="23" startPosition="45" endLine="27" endPosition="5" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior$1" />
+    <unitInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
   </root>
 </debugInfo>
 

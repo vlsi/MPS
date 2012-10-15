@@ -35,8 +35,8 @@
     <scopeInfo nodeId="3310779261129642871" fileName="TransformationTestRunner.java" startLine="14" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="3310779261129642936" varName="argv" />
     </scopeInfo>
-    <unitInfo nodeId="3310779261129642822" fileName="TransformationTestRunner.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner" />
     <unitInfo nodeId="3310779261129642909" fileName="TransformationTestRunner.java" startLine="26" startPosition="39" endLine="30" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner$1" />
+    <unitInfo nodeId="3310779261129642822" fileName="TransformationTestRunner.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner" />
   </root>
   <root nodeId="5881102044690167886" modelId="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)">
     <nodeInfo nodeId="5881102044690168082" fileName="TestRunner.java" startLine="26" startPosition="33" endLine="27" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -186,12 +186,15 @@
     </scopeInfo>
     <scopeInfo nodeId="5881102044690168079" fileName="TestRunner.java" startLine="25" startPosition="43" endLine="54" endPosition="7" />
     <scopeInfo nodeId="5881102044690168077" fileName="TestRunner.java" startLine="24" startPosition="131" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="5881102044690168078" fileName="TestRunner.java" startLine="24" startPosition="131" endLine="55" endPosition="5">
+      <varInfo nodeId="5881102044690168225" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="5881102044690168069" fileName="TestRunner.java" startLine="23" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="5881102044690168071" varName="argv" />
       <varInfo nodeId="5881102044690168074" varName="requests" />
     </scopeInfo>
-    <unitInfo nodeId="5881102044690167886" fileName="TestRunner.java" startLine="20" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner" />
     <unitInfo nodeId="5881102044690167908" fileName="TestRunner.java" startLine="79" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner$MyRunListener" />
+    <unitInfo nodeId="5881102044690167886" fileName="TestRunner.java" startLine="20" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner" />
   </root>
   <root nodeId="5881102044690168334" modelId="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)">
     <nodeInfo nodeId="5881102044690168349" fileName="CommandOutputStream.java" startLine="9" startPosition="61" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastChar" />

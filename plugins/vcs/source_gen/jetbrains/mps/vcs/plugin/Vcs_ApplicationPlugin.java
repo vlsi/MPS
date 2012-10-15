@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 
@@ -41,7 +40,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MakeFromChangesView_ActionGroup.ID, "ChangesViewPopupMenu", null);
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
-    insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ModuleVcsActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
   }

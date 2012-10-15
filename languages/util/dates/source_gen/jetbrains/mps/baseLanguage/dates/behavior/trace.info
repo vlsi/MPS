@@ -403,11 +403,11 @@
     <scopeInfo nodeId="4555537781928193682" fileName="FormatExpression_Behavior.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="4555537781928387852" fileName="FormatExpression_Behavior.java" startLine="75" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="4555537781928387861" fileName="FormatExpression_Behavior.java" startLine="92" startPosition="0" endLine="104" endPosition="0" />
-    <unitInfo nodeId="1213877472159" fileName="FormatExpression_Behavior.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior" />
-    <unitInfo nodeId="4555537781928387861" fileName="FormatExpression_Behavior.java" startLine="89" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0a0a2" />
-    <unitInfo nodeId="4555537781928387852" fileName="FormatExpression_Behavior.java" startLine="72" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0a0c" />
-    <unitInfo nodeId="4555537781928193682" fileName="FormatExpression_Behavior.java" startLine="55" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0a1a0a1" />
     <unitInfo nodeId="4555537781928193673" fileName="FormatExpression_Behavior.java" startLine="38" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0b0a0b" />
+    <unitInfo nodeId="4555537781928193682" fileName="FormatExpression_Behavior.java" startLine="55" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0a1a0a1" />
+    <unitInfo nodeId="4555537781928387852" fileName="FormatExpression_Behavior.java" startLine="72" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0a0c" />
+    <unitInfo nodeId="4555537781928387861" fileName="FormatExpression_Behavior.java" startLine="89" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior$QuotationClass_w5avkh_a0a0a0a2" />
+    <unitInfo nodeId="1213877472159" fileName="FormatExpression_Behavior.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatExpression_Behavior" />
   </root>
   <root nodeId="1213877526003" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="1213877526389" fileName="DateTimeCompareOperation_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -521,8 +521,8 @@
       <varInfo nodeId="1227698927239" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1227698927239" fileName="DateTimeType_Behavior.java" startLine="25" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="1227698902205" fileName="DateTimeType_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTimeType_Behavior" />
     <unitInfo nodeId="1227698927239" fileName="DateTimeType_Behavior.java" startLine="22" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTimeType_Behavior$QuotationClass_rg6b2_a0a0b" />
+    <unitInfo nodeId="1227698902205" fileName="DateTimeType_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTimeType_Behavior" />
   </root>
   <root nodeId="1238250703195" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="1238250819151" fileName="MathDateTimeOperation_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -654,11 +654,11 @@
     <scopeInfo nodeId="1238250788335" fileName="MathDateTimeOperation_Behavior.java" startLine="42" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1238250788343" fileName="MathDateTimeOperation_Behavior.java" startLine="60" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1238250788352" fileName="MathDateTimeOperation_Behavior.java" startLine="78" startPosition="0" endLine="91" endPosition="0" />
-    <unitInfo nodeId="1238250703195" fileName="MathDateTimeOperation_Behavior.java" startLine="16" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior" />
-    <unitInfo nodeId="1238250788343" fileName="MathDateTimeOperation_Behavior.java" startLine="57" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior$QuotationClass_26vghy_a1a0a0d0d" />
-    <unitInfo nodeId="1238250788352" fileName="MathDateTimeOperation_Behavior.java" startLine="75" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior$QuotationClass_26vghy_a1a0a0e0d" />
     <unitInfo nodeId="1238250788361" fileName="MathDateTimeOperation_Behavior.java" startLine="93" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior$QuotationClass_26vghy_a1a0a0f0d" />
     <unitInfo nodeId="1238250788335" fileName="MathDateTimeOperation_Behavior.java" startLine="39" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior$QuotationClass_26vghy_a1a0a2a3" />
+    <unitInfo nodeId="1238250788343" fileName="MathDateTimeOperation_Behavior.java" startLine="57" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior$QuotationClass_26vghy_a1a0a0d0d" />
+    <unitInfo nodeId="1238250788352" fileName="MathDateTimeOperation_Behavior.java" startLine="75" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior$QuotationClass_26vghy_a1a0a0e0d" />
+    <unitInfo nodeId="1238250703195" fileName="MathDateTimeOperation_Behavior.java" startLine="16" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.MathDateTimeOperation_Behavior" />
   </root>
   <root nodeId="1239206692654" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="1239206693910" fileName="WithPropertyCompareExpression_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -815,9 +815,9 @@
     </scopeInfo>
     <scopeInfo nodeId="34521615669576891" fileName="FormatPeriodExpression_Behavior.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="34521615669576922" fileName="FormatPeriodExpression_Behavior.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
-    <unitInfo nodeId="34521615669576863" fileName="FormatPeriodExpression_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatPeriodExpression_Behavior" />
-    <unitInfo nodeId="34521615669576922" fileName="FormatPeriodExpression_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatPeriodExpression_Behavior$QuotationClass_tjsbw0_a0a0a0c" />
     <unitInfo nodeId="34521615669576891" fileName="FormatPeriodExpression_Behavior.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatPeriodExpression_Behavior$QuotationClass_tjsbw0_a0a0b0a0b" />
+    <unitInfo nodeId="34521615669576922" fileName="FormatPeriodExpression_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatPeriodExpression_Behavior$QuotationClass_tjsbw0_a0a0a0c" />
+    <unitInfo nodeId="34521615669576863" fileName="FormatPeriodExpression_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatPeriodExpression_Behavior" />
   </root>
   <root nodeId="4555537781927648382" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="4555537781927648382" fileName="TimeZoneIDExpression_Behavior.java" startLine="7" startPosition="44" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -976,9 +976,9 @@
     </scopeInfo>
     <scopeInfo nodeId="5034322243092302108" fileName="FormatDateTimeExpression_Behavior.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="5034322243092302129" fileName="FormatDateTimeExpression_Behavior.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
-    <unitInfo nodeId="5034322243092301670" fileName="FormatDateTimeExpression_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatDateTimeExpression_Behavior" />
-    <unitInfo nodeId="5034322243092302129" fileName="FormatDateTimeExpression_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatDateTimeExpression_Behavior$QuotationClass_s69rer_a0a0a0c" />
     <unitInfo nodeId="5034322243092302108" fileName="FormatDateTimeExpression_Behavior.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatDateTimeExpression_Behavior$QuotationClass_s69rer_a0a0b0a0b" />
+    <unitInfo nodeId="5034322243092302129" fileName="FormatDateTimeExpression_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatDateTimeExpression_Behavior$QuotationClass_s69rer_a0a0a0c" />
+    <unitInfo nodeId="5034322243092301670" fileName="FormatDateTimeExpression_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.FormatDateTimeExpression_Behavior" />
   </root>
   <root nodeId="5251619021093068639" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="5251619021093068640" fileName="DateTypeUtil.java" startLine="24" startPosition="27" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="dateTimeType" />
@@ -1368,7 +1368,6 @@
     <scopeInfo nodeId="5251619021093068934" fileName="DateTypeUtil.java" startLine="136" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="5251619021093068994" varName="expr" />
     </scopeInfo>
-    <unitInfo nodeId="5251619021093068639" fileName="DateTypeUtil.java" startLine="24" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil" />
     <unitInfo nodeId="5251619021093068642" fileName="DateTypeUtil.java" startLine="155" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil$QuotationClass_hzl4bp_a0a" />
     <unitInfo nodeId="5251619021093068648" fileName="DateTypeUtil.java" startLine="172" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil$QuotationClass_hzl4bp_a0b" />
     <unitInfo nodeId="5251619021093068653" fileName="DateTypeUtil.java" startLine="189" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil$QuotationClass_hzl4bp_a0c" />
@@ -1378,6 +1377,7 @@
     <unitInfo nodeId="5251619021093068672" fileName="DateTypeUtil.java" startLine="257" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil$QuotationClass_hzl4bp_a0g" />
     <unitInfo nodeId="5251619021093068677" fileName="DateTypeUtil.java" startLine="275" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil$QuotationClass_hzl4bp_a0h" />
     <unitInfo nodeId="5251619021093068682" fileName="DateTypeUtil.java" startLine="293" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil$QuotationClass_hzl4bp_a0i" />
+    <unitInfo nodeId="5251619021093068639" fileName="DateTypeUtil.java" startLine="24" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.DateTypeUtil" />
   </root>
   <root nodeId="5581663871704498938" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="5581663871704500956" fileName="PeriodPropertyFormatToken_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1575,11 +1575,11 @@
       <varInfo nodeId="6626410111395872161" varName="expression" />
       <varInfo nodeId="6626410111395870950" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6626410111395870950" fileName="InTimezoneExpression_Behavior.java" startLine="17" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior" />
-    <unitInfo nodeId="2890840340813585312" fileName="InTimezoneExpression_Behavior.java" startLine="109" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior$QuotationClass_g9idtp_a0a0a0c" />
     <unitInfo nodeId="2890840340813585625" fileName="InTimezoneExpression_Behavior.java" startLine="75" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior$QuotationClass_g9idtp_a0a0b0a0b" />
-    <unitInfo nodeId="2890840340813585328" fileName="InTimezoneExpression_Behavior.java" startLine="126" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior$QuotationClass_g9idtp_a0a0b0c" />
     <unitInfo nodeId="2890840340813585651" fileName="InTimezoneExpression_Behavior.java" startLine="92" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior$QuotationClass_g9idtp_a0a0c0a0b" />
+    <unitInfo nodeId="2890840340813585312" fileName="InTimezoneExpression_Behavior.java" startLine="109" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior$QuotationClass_g9idtp_a0a0a0c" />
+    <unitInfo nodeId="2890840340813585328" fileName="InTimezoneExpression_Behavior.java" startLine="126" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior$QuotationClass_g9idtp_a0a0b0c" />
+    <unitInfo nodeId="6626410111395870950" fileName="InTimezoneExpression_Behavior.java" startLine="17" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.InTimezoneExpression_Behavior" />
   </root>
   <root nodeId="7499037524191428321" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="7499037524191428321" fileName="ParseDateTimeExpression_Behavior.java" startLine="17" startPosition="47" endLine="18" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7499037524191428325" />
@@ -1716,9 +1716,9 @@
     </scopeInfo>
     <scopeInfo nodeId="7499037524191428861" fileName="ParseDateTimeExpression_Behavior.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="7499037524191428874" fileName="ParseDateTimeExpression_Behavior.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
-    <unitInfo nodeId="7499037524191428321" fileName="ParseDateTimeExpression_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.ParseDateTimeExpression_Behavior" />
-    <unitInfo nodeId="7499037524191428874" fileName="ParseDateTimeExpression_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.ParseDateTimeExpression_Behavior$QuotationClass_b1835x_a0a0a0c" />
     <unitInfo nodeId="7499037524191428861" fileName="ParseDateTimeExpression_Behavior.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.ParseDateTimeExpression_Behavior$QuotationClass_b1835x_a0a0b0a0b" />
+    <unitInfo nodeId="7499037524191428874" fileName="ParseDateTimeExpression_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.ParseDateTimeExpression_Behavior$QuotationClass_b1835x_a0a0a0c" />
+    <unitInfo nodeId="7499037524191428321" fileName="ParseDateTimeExpression_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.ParseDateTimeExpression_Behavior" />
   </root>
   <root nodeId="779372288056821935" modelId="r:00000000-0000-4000-0000-011c895903ce(jetbrains.mps.baseLanguage.dates.behavior)">
     <nodeInfo nodeId="779372288056821935" fileName="TimeConstant_Behavior.java" startLine="17" startPosition="36" endLine="18" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_779372288056823164" />
@@ -1855,9 +1855,9 @@
     </scopeInfo>
     <scopeInfo nodeId="779372288056825312" fileName="TimeConstant_Behavior.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="779372288056825364" fileName="TimeConstant_Behavior.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
-    <unitInfo nodeId="779372288056821935" fileName="TimeConstant_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.TimeConstant_Behavior" />
-    <unitInfo nodeId="779372288056825364" fileName="TimeConstant_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.TimeConstant_Behavior$QuotationClass_annx5s_a0a0a0c" />
     <unitInfo nodeId="779372288056825312" fileName="TimeConstant_Behavior.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.TimeConstant_Behavior$QuotationClass_annx5s_a0a0b0a0b" />
+    <unitInfo nodeId="779372288056825364" fileName="TimeConstant_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.TimeConstant_Behavior$QuotationClass_annx5s_a0a0a0c" />
+    <unitInfo nodeId="779372288056821935" fileName="TimeConstant_Behavior.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.behavior.TimeConstant_Behavior" />
   </root>
 </debugInfo>
 

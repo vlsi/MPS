@@ -16,10 +16,8 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -114,8 +112,12 @@ public class ModelWriter4 implements IModelWriter {
 
   protected void saveRefactorings(Element rootElement, SModel sourceModel) {
     //noinspection deprecation
-    StructureModificationHistory history = sourceModel.getRefactoringHistory();
-    rootElement.addContent(history.toElement());
+    Element history = sourceModel.getRefactoringHistoryElement();
+    if (history != null) {
+      Element copy = (Element) history.clone();
+      copy.detach();
+      rootElement.addContent(copy);
+    }
   }
 
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {

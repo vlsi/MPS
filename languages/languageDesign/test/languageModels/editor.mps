@@ -1027,6 +1027,24 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5097124989038916371">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.5097124989038916363" resolveInfo="projectPath" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="7812749223771022483">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7812749223771022485">
+        <property name="text" nameId="tpc2.1073389577007" value="UI test:" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7812749223771022487">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.4484885613884808424" resolveInfo="uiTest" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="1031873601093404123">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1031873601093404125">
+        <property name="text" nameId="tpc2.1073389577007" value="ReOpen project:" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1031873601093404127">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.1031873601093404121" resolveInfo="reOpenProject" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5097124989038916368" />
     </node>

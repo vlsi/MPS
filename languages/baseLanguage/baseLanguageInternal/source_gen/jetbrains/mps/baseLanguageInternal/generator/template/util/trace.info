@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5546896804536303363">
+  <root nodeId="5546896804536303363" modelId="r:99451de3-aa41-4a05-92a3-2879d5c07b99(jetbrains.mps.baseLanguageInternal.generator.template.util)">
     <nodeInfo nodeId="5546896804536307365" fileName="Flags.java" startLine="9" startPosition="0" endLine="10" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="5546896804536307371" fileName="Flags.java" startLine="12" startPosition="22" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5546896804536307391" fileName="Flags.java" startLine="16" startPosition="32" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="5546896804536303363" fileName="Flags.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.Flags" />
   </root>
-  <root nodeId="8835849473318892499">
+  <root nodeId="8835849473318892499" modelId="r:99451de3-aa41-4a05-92a3-2879d5c07b99(jetbrains.mps.baseLanguageInternal.generator.template.util)">
     <nodeInfo nodeId="8835849473318892517" fileName="ContextUtil.java" startLine="18" startPosition="107" endLine="19" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8835849473318892583" fileName="ContextUtil.java" startLine="21" startPosition="20" endLine="22" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8835849473318892620" fileName="ContextUtil.java" startLine="25" startPosition="43" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -144,10 +144,10 @@
       <varInfo nodeId="5822086619725756008" varName="node" />
       <varInfo nodeId="5822086619725756010" varName="topmost" />
     </scopeInfo>
-    <unitInfo nodeId="8835849473318892499" fileName="ContextUtil.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil" />
     <unitInfo nodeId="8835849473318892611" fileName="ContextUtil.java" startLine="24" startPosition="144" endLine="28" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil$1" />
     <unitInfo nodeId="8835849473318893071" fileName="ContextUtil.java" startLine="45" startPosition="144" endLine="49" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil$2" />
     <unitInfo nodeId="5822086619725755965" fileName="ContextUtil.java" startLine="69" startPosition="144" endLine="73" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil$3" />
+    <unitInfo nodeId="8835849473318892499" fileName="ContextUtil.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil" />
   </root>
 </debugInfo>
 

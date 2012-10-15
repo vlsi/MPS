@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.IntentionsDescriptor" />
-  <root nodeId="1236698667104">
+  <root nodeId="1236698667104" modelId="r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)">
     <nodeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -66,7 +66,7 @@
     </scopeInfo>
     <unitInfo nodeId="1236698667104" fileName="SetWithIndent_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.SetWithIndent_Intention" />
   </root>
-  <root nodeId="1237984182824">
+  <root nodeId="1237984182824" modelId="r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)">
     <nodeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -109,7 +109,7 @@
     </scopeInfo>
     <unitInfo nodeId="1237984182824" fileName="AddRemoveSeparator_Intention.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.AddRemoveSeparator_Intention" />
   </root>
-  <root nodeId="590757823759470534">
+  <root nodeId="590757823759470534" modelId="r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)">
     <nodeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="590757823759470534" fileName="SetUniqueNameInFile_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

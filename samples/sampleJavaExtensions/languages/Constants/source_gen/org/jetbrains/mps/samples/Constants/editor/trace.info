@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1494751830318912540">
+  <root nodeId="1494751830318912540" modelId="r:2bfc79e0-0d9b-47c9-b525-e58fbef017f6(org.jetbrains.mps.samples.Constants.editor)">
     <nodeInfo nodeId="2001769927721010659" fileName="Constant_Editor.java" startLine="52" startPosition="58" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1494751830318912540" fileName="Constant_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1494751830318912542" fileName="Constant_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -131,7 +131,7 @@
     </scopeInfo>
     <unitInfo nodeId="1494751830318912540" fileName="Constant_Editor.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.Constant_Editor" />
   </root>
-  <root nodeId="1494751830318912553">
+  <root nodeId="1494751830318912553" modelId="r:2bfc79e0-0d9b-47c9-b525-e58fbef017f6(org.jetbrains.mps.samples.Constants.editor)">
     <nodeInfo nodeId="1494751830318912553" fileName="Constants_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1494751830318912555" fileName="Constants_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1494751830318912555" fileName="Constants_Editor.java" startLine="32" startPosition="96" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -288,10 +288,10 @@
       <varInfo nodeId="1494751830318912560" varName="editorContext" />
       <varInfo nodeId="1494751830318912560" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1494751830318912553" fileName="Constants_Editor.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.Constants_Editor" />
     <unitInfo nodeId="1494751830319061355" fileName="Constants_Editor.java" startLine="79" startPosition="0" endLine="114" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.Constants_Editor$constantsListHandler_v2fri_c0" />
+    <unitInfo nodeId="1494751830318912553" fileName="Constants_Editor.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.Constants_Editor" />
   </root>
-  <root nodeId="3990190717072393831">
+  <root nodeId="3990190717072393831" modelId="r:2bfc79e0-0d9b-47c9-b525-e58fbef017f6(org.jetbrains.mps.samples.Constants.editor)">
     <nodeInfo nodeId="3990190717072393833" fileName="ConstantReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3990190717072393831" fileName="ConstantReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990190717072393833" fileName="ConstantReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -399,8 +399,8 @@
       <varInfo nodeId="3990190717072393836" varName="editorContext" />
       <varInfo nodeId="3990190717072393836" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3990190717072393831" fileName="ConstantReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.ConstantReference_Editor" />
     <unitInfo nodeId="3990190717072393834" fileName="ConstantReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.ConstantReference_Editor$_Inline_ue2hde_a0a" />
+    <unitInfo nodeId="3990190717072393831" fileName="ConstantReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.editor.ConstantReference_Editor" />
   </root>
 </debugInfo>
 

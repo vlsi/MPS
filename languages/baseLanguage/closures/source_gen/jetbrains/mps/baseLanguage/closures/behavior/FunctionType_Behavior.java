@@ -255,7 +255,7 @@ with_throws:
       IMatchingPattern pattern_ksvwin_a0o = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_ksvwin_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "resultType", true), pattern_ksvwin_a0o);
       if (coercedNode_ksvwin_a0o != null) {
-        return SNodeOperations.cast(FunctionTypeUtil.unbound(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_ksvwin_a0o, "elementType", true))), "jetbrains.mps.baseLanguage.structure.Type");
+        return SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_ksvwin_a0o, "elementType", true)))), "jetbrains.mps.baseLanguage.structure.Type");
       } else {
       }
     }

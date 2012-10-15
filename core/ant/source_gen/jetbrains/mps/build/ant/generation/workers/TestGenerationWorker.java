@@ -34,6 +34,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.progress.ProgressMonitorBase;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
@@ -245,7 +246,31 @@ public class TestGenerationWorker extends MpsWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl).get();
+      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new ProgressMonitorBase() {
+        protected void update(double p0) {
+        }
+
+        protected void startInternal(String text) {
+          reportIfStartsWith("Generating ", text, startTestFormat);
+        }
+
+        protected void doneInternal(String text) {
+          reportIfStartsWith("Generating ", text, finishTestFormat);
+        }
+
+        protected void setTitleInternal(String p0) {
+        }
+
+        protected void setStepInternal(String p0) {
+        }
+
+        public boolean isCanceled() {
+          return false;
+        }
+
+        public void cancel() {
+        }
+      }).get();
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     }
