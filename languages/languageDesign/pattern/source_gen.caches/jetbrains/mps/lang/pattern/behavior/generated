@@ -112,7 +112,6 @@
     <file name="PatternVarsUtil.java" />
   </source>
   <source id="111677556049506422" name="ActionStatement_Behavior" hash="-2lth1yidpvsmiogt6dc77ted5wwi2zo">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />

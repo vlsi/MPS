@@ -422,7 +422,6 @@
     <file name="CellMenuComponentFeature_Link_Behavior.java" />
   </source>
   <source id="1213877323455" name="CellMenuPart_ReplaceChild_Group_Query_Behavior" hash="2tp3rh6ii41v6b0hgev0ccqiv8qgpes">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -723,7 +722,6 @@
     <file name="CellModel_NonEmptyProperty_Behavior.java" />
   </source>
   <source id="1219409807383" name="CellMenuPart_Abstract_Behavior" hash="-1io9lc2qmojhx0aowqqes7vebr7i9iy">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -991,7 +989,6 @@
   <source id="7055725856388840245" name="InlineEditorComponent_Behavior" hash="7d4mv5loi7qb9ccame8gttd9b5f7gwh">
     <dep root="7055725856388417600" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

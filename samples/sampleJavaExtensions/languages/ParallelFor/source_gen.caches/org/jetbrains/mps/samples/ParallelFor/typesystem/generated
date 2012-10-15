@@ -69,7 +69,6 @@
     <file name="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" />
   </source>
   <source id="7793246093816040820" name="MakeDeclarationFinal" hash="7hi5bix1be5378it7267uu358jhh7ka">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -149,7 +148,6 @@
     <file name="NoBreakInsideParallelFor_NonTypesystemRule.java" />
   </source>
   <source id="4697196167066002108" name="TurnReturnToContinue" hash="9ficu5oadac22u1og8qfepmtgh7a5ql">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

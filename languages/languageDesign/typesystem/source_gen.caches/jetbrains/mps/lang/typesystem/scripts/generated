@@ -37,7 +37,6 @@
     <file name="RemoveInequalityPriorities_MigrationScript.java" />
   </source>
   <source id="7286989617095153002" name="RemoveDependencies" hash="7qg0df1ro4v5ggzjt8fk1e21v235wq2">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

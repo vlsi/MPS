@@ -189,7 +189,6 @@
     <file name="check_DuplicatedConceptName_NonTypesystemRule.java" />
   </source>
   <source id="3013258720419439302" name="AddExtendedLanguage" hash="-bj2e4vf84pc1b30vnegqxweiwj523l">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

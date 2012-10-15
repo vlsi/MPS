@@ -99,7 +99,6 @@
     <file name="NodeScopeFactory_BehaviorDescriptor.java" />
   </common>
   <source id="1213877261402" name="NodeDefaultSearchScope_Behavior" hash="d8bkk9t8us2krmg31tf90mvcgmnw2mx">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -111,7 +110,6 @@
     <file name="NodeDefaultSearchScope_Behavior.java" />
   </source>
   <source id="1213877292344" name="NodePropertyConstraint_Behavior" hash="-ewhzhawc1izg5t3ktm3xzkvgyjoiiva">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -233,7 +231,6 @@
     <file name="ConstraintFunction_CanBeAnAncestor_Behavior.java" />
   </source>
   <source id="2990203945683058804" name="ConstraintFunction_ReferentSearchScope_Validator_Behavior" hash="-alvokzn835z5xz84ivdmx4sie033h71">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />

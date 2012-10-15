@@ -304,7 +304,6 @@
     <file name="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" />
   </source>
   <source id="1213877437423" name="QueryFunction_SubstituteVariableInitializer_Behavior" hash="-3027ikgn43fgxqcq741alc1e4o6pj7o">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -330,7 +329,6 @@
     <file name="QueryFunction_SideTransform_ConceptHandler_Behavior.java" />
   </source>
   <source id="1213877533502" name="QueryFunction_ParameterizedSideTransform_Query_Behavior" hash="-cc8t4ikq6fmpgu9ed9c75vjalrc1oeh">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
