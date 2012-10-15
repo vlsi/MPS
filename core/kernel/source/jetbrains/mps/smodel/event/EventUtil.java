@@ -26,19 +26,19 @@ public class EventUtil {
     for (SModelEvent e : events) {
       e.accept(new SModelEventVisitorAdapter() {
         public void visitChildEvent(SModelChildEvent event) {
-          if (!event.getParent().isDetached()) {
+          if (event.getParent().getModel() != null) {
             result[0] = false;
           }
         }
 
         public void visitPropertyEvent(SModelPropertyEvent event) {
-          if (!event.getNode().isDetached()) {
+          if (event.getNode().getModel() != null) {
             result[0] = false;
           }
         }
 
         public void visitReferenceEvent(SModelReferenceEvent event) {
-          if (!event.getReference().getSourceNode().isDetached()) {
+          if (event.getReference().getSourceNode().getModel() != null) {
             result[0] = false;
           }
         }

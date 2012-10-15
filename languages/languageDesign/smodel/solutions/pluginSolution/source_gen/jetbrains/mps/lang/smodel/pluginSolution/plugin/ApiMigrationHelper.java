@@ -196,7 +196,7 @@ public class ApiMigrationHelper {
       }
     }, new SearchResults(nodes, Sequence.fromIterable(results).where(new IWhereFilter<SearchResult<SNode>>() {
       public boolean accept(SearchResult<SNode> it) {
-        return !(it.getObject().isDetached());
+        return it.getObject().getModel() != null;
       }
     }).toListSequence()), false, "usages");
   }
@@ -287,7 +287,7 @@ public class ApiMigrationHelper {
       }
     })), ListSequence.fromList(results).where(new IWhereFilter<SearchResult<SNode>>() {
       public boolean accept(SearchResult<SNode> it) {
-        return !(it.getObject().isDetached());
+        return it.getObject().getModel() != null;
       }
     }).toListSequence()), false, "usages");
   }

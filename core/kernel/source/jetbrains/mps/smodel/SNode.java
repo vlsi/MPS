@@ -678,14 +678,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   /*
-  make model of detached nodes null
-  replace with getModel==null
-   */
-  public boolean isDetached() {
-    return getContainingRoot() == null;
-  }
-
-  /*
     refactor typesystem
     !isDetached
    */
@@ -1141,6 +1133,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   *  replace with getModel==null
+   * @Deprecated in 3.0
+   */
+  public boolean isDetached() {
+    return getContainingRoot() == null;
+  }
+
 
   @Deprecated
   public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
