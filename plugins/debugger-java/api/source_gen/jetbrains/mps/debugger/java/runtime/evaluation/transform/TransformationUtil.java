@@ -161,7 +161,7 @@ public class TransformationUtil {
     if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference")) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableRef, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+    if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.VariableReference") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableRef, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableRef, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       return SNodeOperations.getContainingRoot(SLinkOperations.getTarget(variableRef, "baseVariableDeclaration", false)) != SNodeOperations.getContainingRoot(variableRef);
     }
     return false;

@@ -64,7 +64,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
         return SLinkOperations.getTarget(it, "variable", false) == oldVariable;
       }
     })) {
-      SLinkOperations.setTarget(SNodeFactoryOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", newVariable, false);
+      SLinkOperations.setTarget(SNodeFactoryOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", newVariable, false);
     }
   }
 

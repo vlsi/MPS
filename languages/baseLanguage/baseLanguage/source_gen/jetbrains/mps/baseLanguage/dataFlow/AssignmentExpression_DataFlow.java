@@ -18,7 +18,7 @@ public class AssignmentExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));
     SNode variable = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      if (!(SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) || VariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+      if (!((SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) || VariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
         _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), SLinkOperations.getTarget(_context.getNode(), "rValue", true));
       }
     } else {

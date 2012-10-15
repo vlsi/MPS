@@ -973,7 +973,7 @@ public class JavaConverterTreeBuilder {
     SNode variable = SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     SNode result;
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+      SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
       reference.setReference(SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")).getRole(), SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")));
       result = reference;
     } else

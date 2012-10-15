@@ -35,7 +35,7 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest4 {
       this.addNodeById("1230052684588");
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684590"), "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"), false);
-      SNode var = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+      SNode var = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(var, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052684575"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
       ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(var);
       SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), false);

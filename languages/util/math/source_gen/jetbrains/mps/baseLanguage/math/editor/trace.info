@@ -6299,8 +6299,8 @@
     <nodeInfo nodeId="6389121991274625018" fileName="MatrixElementAccessExpression_Editor.java" startLine="156" startPosition="72" endLine="157" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6389121991274625018" fileName="MatrixElementAccessExpression_Editor.java" startLine="157" startPosition="78" endLine="158" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6389121991274625018" fileName="MatrixElementAccessExpression_Editor.java" startLine="159" startPosition="10" endLine="160" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6389121991274628637" fileName="MatrixElementAccessExpression_Editor.java" startLine="163" startPosition="111" endLine="164" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6389121991274628660" fileName="MatrixElementAccessExpression_Editor.java" startLine="167" startPosition="111" endLine="168" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6389121991274628637" fileName="MatrixElementAccessExpression_Editor.java" startLine="163" startPosition="111" endLine="164" endPosition="443" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6389121991274628660" fileName="MatrixElementAccessExpression_Editor.java" startLine="167" startPosition="111" endLine="168" endPosition="443" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="964810815943181432" fileName="MatrixElementAccessExpression_Editor.java" startLine="171" startPosition="111" endLine="172" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="964810815943182575" fileName="MatrixElementAccessExpression_Editor.java" startLine="175" startPosition="111" endLine="176" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6389121991274625019" fileName="MatrixElementAccessExpression_Editor.java" startLine="116" startPosition="26" endLine="118" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6354,8 +6354,8 @@
     <scopeInfo nodeId="6389121991274625003" fileName="MatrixElementAccessExpression_Editor.java" startLine="41" startPosition="109" endLine="42" endPosition="83" />
     <scopeInfo nodeId="6389121991274625003" fileName="MatrixElementAccessExpression_Editor.java" startLine="44" startPosition="109" endLine="45" endPosition="82" />
     <scopeInfo nodeId="6389121991274625003" fileName="MatrixElementAccessExpression_Editor.java" startLine="46" startPosition="5" endLine="47" endPosition="81" />
-    <scopeInfo nodeId="6389121991274625301" fileName="MatrixElementAccessExpression_Editor.java" startLine="163" startPosition="111" endLine="164" endPosition="159" />
-    <scopeInfo nodeId="6389121991274628659" fileName="MatrixElementAccessExpression_Editor.java" startLine="167" startPosition="111" endLine="168" endPosition="159" />
+    <scopeInfo nodeId="6389121991274625301" fileName="MatrixElementAccessExpression_Editor.java" startLine="163" startPosition="111" endLine="164" endPosition="443" />
+    <scopeInfo nodeId="6389121991274628659" fileName="MatrixElementAccessExpression_Editor.java" startLine="167" startPosition="111" endLine="168" endPosition="443" />
     <scopeInfo nodeId="964810815943164617" fileName="MatrixElementAccessExpression_Editor.java" startLine="171" startPosition="111" endLine="172" endPosition="189" />
     <scopeInfo nodeId="964810815943182574" fileName="MatrixElementAccessExpression_Editor.java" startLine="175" startPosition="111" endLine="176" endPosition="189" />
     <scopeInfo nodeId="6389121991274625012" fileName="MatrixElementAccessExpression_Editor.java" startLine="104" startPosition="5" endLine="106" endPosition="56">

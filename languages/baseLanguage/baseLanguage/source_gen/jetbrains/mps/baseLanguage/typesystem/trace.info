@@ -12591,7 +12591,7 @@
     <nodeInfo nodeId="1223640624803" fileName="DataFlowUtil.java" startLine="113" startPosition="76" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1223642397405" fileName="DataFlowUtil.java" startLine="207" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUnusedVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
     <nodeInfo nodeId="8249991444799099454" fileName="DataFlowUtil.java" startLine="45" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7567158975344997872" fileName="DataFlowUtil.java" startLine="144" startPosition="593" endLine="163" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7567158975344997872" fileName="DataFlowUtil.java" startLine="144" startPosition="879" endLine="163" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640343583" fileName="DataFlowUtil.java" startLine="70" startPosition="37" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223642282214" fileName="DataFlowUtil.java" startLine="143" startPosition="9" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640343581" fileName="DataFlowUtil.java" startLine="69" startPosition="70" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -12749,7 +12749,7 @@
     <scopeInfo nodeId="1223640603751" fileName="DataFlowUtil.java" startLine="112" startPosition="111" endLine="131" endPosition="5">
       <varInfo nodeId="1223640624792" varName="uninitializedReads" />
     </scopeInfo>
-    <scopeInfo nodeId="1223642282215" fileName="DataFlowUtil.java" startLine="144" startPosition="593" endLine="163" endPosition="11" />
+    <scopeInfo nodeId="1223642282215" fileName="DataFlowUtil.java" startLine="144" startPosition="879" endLine="163" endPosition="11" />
     <scopeInfo nodeId="1223640343582" fileName="DataFlowUtil.java" startLine="70" startPosition="37" endLine="90" endPosition="7" />
     <scopeInfo nodeId="1223640343581" fileName="DataFlowUtil.java" startLine="69" startPosition="70" endLine="91" endPosition="5">
       <varInfo nodeId="1223640343643" varName="n" />

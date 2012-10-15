@@ -1801,8 +1801,8 @@ __switch__:
               } else {
                 var = _context.getCurrentTargetNode();
               }
-              if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
-                varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false), "name");
+              if ((SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+                varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "name");
               } else if ((SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
                 varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "name");
               }

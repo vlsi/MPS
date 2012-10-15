@@ -161,7 +161,7 @@
   <root nodeId="1206460339989" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="1206460344649" fileName="AssignmentExpression_DataFlow.java" startLine="17" startPosition="102" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225456499111" fileName="AssignmentExpression_DataFlow.java" startLine="18" startPosition="103" endLine="19" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225456606795" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="291" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225456606795" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="527" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207060739945" fileName="AssignmentExpression_DataFlow.java" startLine="24" startPosition="12" endLine="25" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="13" startPosition="68" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AssignmentExpression_DataFlow#()V" />
     <nodeInfo nodeId="1207060738396" fileName="AssignmentExpression_DataFlow.java" startLine="24" startPosition="10" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -169,7 +169,7 @@
     <nodeInfo nodeId="1206460370422" fileName="AssignmentExpression_DataFlow.java" startLine="19" startPosition="83" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="14" startPosition="42" endLine="14" endPosition="42" />
-    <scopeInfo nodeId="1225456443750" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="291" endLine="22" endPosition="303" />
+    <scopeInfo nodeId="1225456443750" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="527" endLine="22" endPosition="303" />
     <scopeInfo nodeId="1207060738397" fileName="AssignmentExpression_DataFlow.java" startLine="24" startPosition="12" endLine="25" endPosition="105" />
     <scopeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="13" startPosition="68" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1206460370423" fileName="AssignmentExpression_DataFlow.java" startLine="20" startPosition="107" endLine="23" endPosition="7" />
