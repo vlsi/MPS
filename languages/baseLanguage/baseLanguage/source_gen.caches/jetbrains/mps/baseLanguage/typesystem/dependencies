@@ -3842,6 +3842,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ITypeApplicable_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -3878,6 +3879,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Iterator" />

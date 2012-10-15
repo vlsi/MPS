@@ -4863,6 +4863,7 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.WhenConcreteStatement" typeId="tpd4.1185805035213" id="2684739085678948093">
+            <property name="isShallow" nameId="tpd4.1227279857428" value="true" />
             <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="2684739085678948094">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="7668447476859120558">
                 <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
