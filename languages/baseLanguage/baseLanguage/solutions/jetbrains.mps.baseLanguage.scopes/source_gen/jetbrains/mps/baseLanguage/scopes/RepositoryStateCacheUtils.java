@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.util.Computable;
 
 public class RepositoryStateCacheUtils {
   private RepositoryStateCacheUtils() {
   }
 
-  public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
+  public static <K, V> V getFromCache(Class clazz, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
     ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz);
     if (cache == null) {
       return creator.invoke();
@@ -20,7 +22,11 @@ public class RepositoryStateCacheUtils {
     if (v != null) {
       return v;
     }
-    v = creator.invoke();
+    v = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<V>() {
+      public V compute() {
+        return creator.invoke();
+      }
+    });
     cache.putIfAbsent(key, v);
     return v;
   }
