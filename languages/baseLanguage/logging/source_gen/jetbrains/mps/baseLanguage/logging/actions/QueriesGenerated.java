@@ -43,7 +43,7 @@ public class QueriesGenerated {
                 SNode catchClause = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.CatchClause", true, false);
                 if ((catchClause != null) && (SLinkOperations.getTarget(catchClause, "throwable", true) != null)) {
                   SPropertyOperations.set(logStatement, "hasException", "" + (true));
-                  SNode lvr = SNodeFactoryOperations.setNewChild(logStatement, "exception", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+                  SNode lvr = SLinkOperations.setNewChild(logStatement, "exception", "jetbrains.mps.baseLanguage.structure.VariableReference");
                   SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(catchClause, "throwable", true), false);
                 }
                 return logStatement;
