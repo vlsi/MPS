@@ -245,6 +245,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myPopupMenuEnabled = true;
   private boolean myIsInFiguresHierarchy = false;
 
+  private Set<SModelDescriptor> myLastDeps = new HashSet<SModelDescriptor>();
+
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false, false);
   }
@@ -1298,6 +1300,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     for (SModelDescriptor sm : myModelDescriptorsWithListener.toArray(new SModelDescriptor[myModelDescriptorsWithListener.size()])) {
       removeOurListeners(sm);
     }
+    myLastDeps = new HashSet<SModelDescriptor>();
   }
 
   private void clearCaches() {
@@ -1312,8 +1315,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void setRootCell(EditorCell rootCell) {
     getEditorContext().pushTracerTask("setting root cell", true);
-    Set<SNode> oldNodesToDependOn = myCellsToNodesToDependOnMap.get(myRootCell);
-    Set<SNodePointer> oldRefTargetsToDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
 
     if (myRootCell != null) {
       ((EditorCell_Basic) myRootCell).onRemove();
@@ -1325,18 +1326,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ((EditorCell_Basic) myRootCell).onAdd();
     }
 
-    Set<SModelDescriptor> oldModelsToDependOn = getModels(oldNodesToDependOn);
-    Set<SModelDescriptor> newModelsToDependOn = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
-    oldModelsToDependOn.addAll(getModelsAndPurgeOrphaned(oldRefTargetsToDependsOn));
-    newModelsToDependOn.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
+    Set<SModelDescriptor> oldDeps = myLastDeps;
 
-    for (SModelDescriptor newDep : newModelsToDependOn) {
-      if (!oldModelsToDependOn.contains(newDep)) {
+    myLastDeps = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
+    myLastDeps.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
+
+    for (SModelDescriptor newDep : myLastDeps) {
+      if (!oldDeps.contains(newDep)) {
         addOurListeners(newDep);
       }
     }
-    for (SModelDescriptor oldDep : oldModelsToDependOn) {
-      if (!newModelsToDependOn.contains(oldDep)) {
+    for (SModelDescriptor oldDep : oldDeps) {
+      if (!myLastDeps.contains(oldDep)) {
         removeOurListeners(oldDep);
       }
     }
@@ -1375,7 +1376,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Set<SModelDescriptor> getModels(@Nullable Set<SNode> nodes) {
     if (nodes == null) {
-      return Collections.emptySet();
+      return new HashSet<SModelDescriptor>();
     }
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode node : nodes) {
