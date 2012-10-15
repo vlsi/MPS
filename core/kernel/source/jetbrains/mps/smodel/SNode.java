@@ -72,11 +72,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
-    if (callIntern) {
-      myConceptFqName = InternUtil.intern(conceptFqName);
-    } else {
-      myConceptFqName = conceptFqName;
-    }
+    myConceptFqName = callIntern ? InternUtil.intern(conceptFqName) : conceptFqName;
   }
 
   public SNode(SModel model, String conceptFqName) {
@@ -95,11 +91,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
-      // TODO remove id generation
-      myId = SModel.generateUniqueId();
-      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
-    }
     return myId;
   }
 
@@ -681,14 +672,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   /*
-    refactor typesystem
-    !isDetached
-   */
-  public boolean isRegistered() {
-    return myModel != null;
-  }
-
-  /*
   calling this means we've held a node between read actions and now it is deleted
   this won't happen if we store only node pointers
   in this case, isDisposed() can be replaced with false
@@ -704,7 +687,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void setId(@Nullable SNodeId id) {
     if (EqualUtil.equals(id, myId)) return;
 
-    if (!jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+    if (myModel == null) {
       myId = id;
     } else {
       LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
@@ -835,8 +818,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return;
     }
 
+    model.registerNode(this);
     myModel = model;
-    myModel.registerNode(this);
 
     for (SReference ref : myReferences) {
       ref.makeIndirect();
@@ -1137,13 +1120,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Deprecated
   /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return myModel != null;
+  }
+
+  @Deprecated
+  /**
    *  replace with getModel==null
    * @Deprecated in 3.0
    */
   public boolean isDetached() {
     return getContainingRoot() == null;
   }
-
 
   @Deprecated
   public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;

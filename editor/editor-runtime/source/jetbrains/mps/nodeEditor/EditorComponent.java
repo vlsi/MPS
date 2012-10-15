@@ -1343,7 +1343,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !myNode.isDeleted() && myNode.isRegistered()) {
+    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
