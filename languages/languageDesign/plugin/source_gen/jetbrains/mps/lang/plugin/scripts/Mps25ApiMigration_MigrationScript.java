@@ -1931,7 +1931,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
                 SNode quotedNode1_40 = quotedNode_13;
                 quotedNode1_40.setProperty("nonStatic", "true");
                 quotedNode1_40.setReference("classifier", SReference.create("classifier", quotedNode1_40, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~ModelCommandExecutor$RunnableWithProgress")));
-                quotedNode1_40.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_40, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.<init>()")));
+                quotedNode1_40.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_40, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.<init>()")));
                 {
                   quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_41 = quotedNode_14;
