@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
@@ -60,16 +61,22 @@ public class SNodeOperations {
     }
 
     if (lookupHierarchy) {
-      return new ConceptAndSuperConceptsScope(conceptDeclaration).
-        getNodes(new Condition<SNode>() {
-          public boolean met(SNode n) {
-            if (SNodeUtil.isInstanceOfConceptLink(n)) {
-              SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
-              return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
-            }
-            return false;
-          }
-        });
+      final SNode finalConceptDeclaration = conceptDeclaration;
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+        public List<SNode> compute() {
+          return new ConceptAndSuperConceptsScope(finalConceptDeclaration).
+            getNodes(new Condition<SNode>() {
+              public boolean met(SNode n) {
+                if (SNodeUtil.isInstanceOfConceptLink(n)) {
+                  SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
+                  return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
+                }
+                return false;
+              }
+            });
+
+        }
+      });
     }
 
     List<SNode> result = new ArrayList<SNode>();
