@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -31,7 +31,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4112907264514778044(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.getConceptDeclaration(((SNode) _context.getPatternVariable("patternVar_yy"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.getConceptDeclaration(((SNode) _context.getPatternVariable("patternVar_xx"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) && SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) && SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
   public static boolean baseMappingRule_Condition_8900764248744322639(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
