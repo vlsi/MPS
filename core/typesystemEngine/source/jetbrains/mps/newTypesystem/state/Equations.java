@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -192,7 +193,7 @@ public class Equations {
       SNode parent = child.getParent();
       assert parent != null;
       SNode childReplacement = CopyUtil.copy(childrenReplacement.get(child));
-      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(child, childReplacement);
+      SNodeUtil.replaceWithAnother(child, childReplacement);
     }
   }
 

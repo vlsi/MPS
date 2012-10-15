@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -64,7 +65,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
         public SNode doSubstitute(String pattern) {
           SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context.getScope(), context);
           if (newNode != node) {
-            org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
+            SNodeUtil.replaceWithAnother(node, newNode);
             node.delete();
           }
 

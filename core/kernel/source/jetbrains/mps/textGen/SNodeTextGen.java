@@ -17,6 +17,7 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public abstract class SNodeTextGen {
   private TextGenBuffer myBuffer;
@@ -94,8 +95,8 @@ public abstract class SNodeTextGen {
 
   public void foundError(@Nullable String info) {
     String message = info != null ?
-      "textgen error: '" + info + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSNode()) :
-      "textgen error in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSNode());
+      "textgen error: '" + info + "' in " + SNodeUtil.getDebugText(getSNode()) :
+      "textgen error in " + SNodeUtil.getDebugText(getSNode());
     getBuffer().foundError(message, getSNode(), new Throwable());
   }
 

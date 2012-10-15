@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -67,7 +68,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
       return null;
     }
     SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
-    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(nodeToEquate, hole);
+    SNodeUtil.replaceWithAnother(nodeToEquate, hole);
     InequalitySystem inequalitiesForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, false);
     auxModel.removeRoot(nodeCopyRoot);
     return inequalitiesForHole;

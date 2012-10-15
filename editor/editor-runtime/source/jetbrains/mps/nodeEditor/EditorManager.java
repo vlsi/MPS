@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -346,8 +347,8 @@ public class EditorManager {
           return nodeCell;
         }
       } catch (Throwable e) {
-        LOG.error("Failed to create cell for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), e);
-        nodeCell = new EditorCell_Error(context, node, "!exception!:" + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+        LOG.error("Failed to create cell for node " + SNodeUtil.getDebugText(node), e);
+        nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         if (nodeCell != null && !isAttributedCell(nodeCell)) {

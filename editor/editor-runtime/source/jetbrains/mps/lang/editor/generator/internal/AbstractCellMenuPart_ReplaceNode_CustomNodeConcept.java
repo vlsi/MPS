@@ -16,20 +16,22 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.*;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -84,7 +86,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
    * implements IChildNodeSetter
    */
   public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope) {
-    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldNode, newNode);
+    SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
   }
 }

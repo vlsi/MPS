@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -120,7 +121,7 @@ public class ModelReader6 implements IModelReader {
       String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       SNode childNode = readNode(child, model);
       if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+        LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));
       } else {
         node.addChild(role, childNode);
       }

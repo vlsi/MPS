@@ -25,6 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   private static Logger LOG = Logger.getLogger(ReferenceInfo_Macro.class);
@@ -112,7 +113,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
         myOutputTargetNode = outputTargetNode_output;
       } else {
         // FIXME showErrorIfStrict
-        generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + linkRole + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getOutputSourceNode()),
+        generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + linkRole + " in " + SNodeUtil.getDebugText(getOutputSourceNode()),
           GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"),
           GeneratorUtil.describeIfExists(getMacroNode(), "reference macro"));
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);

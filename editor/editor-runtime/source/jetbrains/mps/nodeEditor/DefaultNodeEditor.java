@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class DefaultNodeEditor implements INodeEditor {
 
@@ -28,7 +29,7 @@ public class DefaultNodeEditor implements INodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return new DefaultInspectorCell(editorContext, node, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), true);
+    return new DefaultInspectorCell(editorContext, node, SNodeUtil.getDebugText(node), true);
   }
 
   public static class DefaultInspectorCell extends EditorCell_Constant {

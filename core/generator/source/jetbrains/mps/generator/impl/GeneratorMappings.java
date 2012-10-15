@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -171,9 +172,9 @@ public class GeneratorMappings {
       List<SNode> list = (List<SNode>) o;
       ProblemDescription[] descr = new ProblemDescription[list.size()];
       for (int i = 0; i < list.size(); i++) {
-        descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(list.get(i)));
+        descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + SNodeUtil.getDebugText(list.get(i)));
       }
-      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode), descr);
+      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + SNodeUtil.getDebugText(inputNode), descr);
       return list.get(0);
     }
 

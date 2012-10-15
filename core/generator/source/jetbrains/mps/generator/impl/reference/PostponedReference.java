@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
  * Igor Alshannikov
@@ -123,7 +124,7 @@ public class PostponedReference extends SReference {
         }
       } else if (myReferenceInfo.isRequired()) {
         myGenerator.getLogger().error(myReferenceInfo.getOutputSourceNode(),
-          "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(myReferenceInfo.getOutputSourceNode()),
+          "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + SNodeUtil.getDebugText(myReferenceInfo.getOutputSourceNode()),
           myReferenceInfo.getErrorDescriptions());
 
         myReplacementReference = new StaticReference(
@@ -161,13 +162,13 @@ public class PostponedReference extends SReference {
     if (referentNodeModel != outputNode.getModel()) {
       if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
         // references on template nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a generator model: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(outputNode),
+        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a generator model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
           myReferenceInfo.getErrorDescriptions());
         return false;
       }
       if (referentNodeModel instanceof TransientSModel) {
         // references on transient nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(outputNode),
+        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
           myReferenceInfo.getErrorDescriptions());
         return false;
       }

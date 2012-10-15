@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
   public DefaultAttributeNodeSetter(SNode linkDeclaration) {
@@ -25,7 +26,7 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
     if (oldChild != null) {
-      org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
+      SNodeUtil.replaceWithAnother(oldChild, newChild);
       oldChild.delete();
     }
     return newChild;

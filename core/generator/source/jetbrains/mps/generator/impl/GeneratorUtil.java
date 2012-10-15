@@ -27,6 +27,7 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -121,7 +122,7 @@ public class GeneratorUtil {
     StringBuilder indent = new StringBuilder();
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
-      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(pair.o1) : "");
+      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + SNodeUtil.getDebugText(pair.o1) : "");
       if (error) {
         logger.error(pair.o1, logMessage);
       } else {
@@ -142,11 +143,11 @@ public class GeneratorUtil {
   }
 
   public static ProblemDescription describe(SNode node, String nodeRole) {
-    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node)));
+    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : SNodeUtil.getDebugText(node)));
   }
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
-    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node)) : null;
+    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + SNodeUtil.getDebugText(node)) : null;
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {
