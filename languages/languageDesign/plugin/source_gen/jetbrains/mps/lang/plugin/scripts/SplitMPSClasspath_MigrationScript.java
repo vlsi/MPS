@@ -30,7 +30,8 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return it.getTargetSModelReference().getSModelFqName().toString().contains("MPS.Classpath");
+            String modelName = it.getTargetSModelReference().getSModelFqName().toString();
+            return modelName.contains("MPS.Classpath") || modelName.contains("MPS.Core");
           }
         }).isNotEmpty();
 
