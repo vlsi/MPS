@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -34,7 +34,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2kc2ry_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "//");
     editorCell.setCellId("Constant_2kc2ry_a0");
     {
       Style style = editorCell.getStyle();
@@ -88,7 +88,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
       return MPSFonts.BOLD_ITALIC;
     } else {
@@ -96,7 +96,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
       return Color.BLUE;
     } else {

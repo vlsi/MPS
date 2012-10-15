@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -53,7 +53,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_fao2ea_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_fao2ea_a0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -75,7 +75,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_fao2ea_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_fao2ea_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -118,11 +118,11 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
-  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 }

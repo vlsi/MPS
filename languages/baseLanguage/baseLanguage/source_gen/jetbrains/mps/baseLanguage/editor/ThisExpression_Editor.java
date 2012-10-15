@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -60,7 +60,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xaaxob_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "this");
     editorCell.setCellId("Constant_xaaxob_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -74,7 +74,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xaaxob_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
     editorCell.setCellId("Constant_xaaxob_b0a");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -82,7 +82,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xaaxob_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "this");
     editorCell.setCellId("Constant_xaaxob_c0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -98,7 +98,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xaaxob_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classifier");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "classifier");
     editorCell.setCellId("Constant_xaaxob_a0_0");
     editorCell.setDefaultText("");
     return editorCell;

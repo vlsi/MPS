@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -138,7 +138,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "final");
     editorCell.setCellId("Constant_j4vm40_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
@@ -147,7 +147,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "static");
     editorCell.setCellId("Constant_j4vm40_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -155,7 +155,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "synchronized");
     editorCell.setCellId("Constant_j4vm40_f0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
@@ -164,7 +164,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_j4vm40_j0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -172,7 +172,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_j4vm40_l0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
@@ -185,7 +185,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_a21a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "throws");
     editorCell.setCellId("Constant_j4vm40_a21a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -197,7 +197,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_j4vm40_o0");
     {
       Style style = editorCell.getStyle();
@@ -208,7 +208,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4vm40_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "annotations:");
     editorCell.setCellId("Constant_j4vm40_a0");
     {
       Style style = editorCell.getStyle();
@@ -328,7 +328,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -336,7 +336,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_j4vm40_a01a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_j4vm40_a01a");
       {
         Style style = editorCell.getStyle();
@@ -386,7 +386,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

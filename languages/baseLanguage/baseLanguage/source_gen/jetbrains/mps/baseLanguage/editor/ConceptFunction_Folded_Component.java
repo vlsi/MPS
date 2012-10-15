@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ConceptFunction_Folded_Component extends AbstractCellProvider {
@@ -22,7 +22,7 @@ public class ConceptFunction_Folded_Component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_hl0bni_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{...}");
     editorCell.setCellId("Constant_hl0bni_a");
     BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

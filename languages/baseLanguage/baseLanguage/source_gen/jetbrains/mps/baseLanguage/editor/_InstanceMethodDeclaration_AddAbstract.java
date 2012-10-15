@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class _InstanceMethodDeclaration_AddAbstract {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
