@@ -121,7 +121,7 @@ public class DataFlowUtil {
       }
       if (localReference != null && !(ILocalDeclaration_Behavior.call_isReferencedInClosure_3262277503800823422(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference)))) {
         SNode refAncestor = SNodeOperations.getAncestor(read, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
-        if (refAncestor == null || (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == refAncestor)) {
+        if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && (refAncestor == null || SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == refAncestor)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable '" + BaseConcept_Behavior.call_getPresentation_1213877396640(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference)) + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", null, errorTarget);
