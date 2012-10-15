@@ -20,11 +20,11 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -35,7 +35,7 @@ public class DirParser {
 
   private CompositeClassPathItem myClassPathItem;
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
-  private List<SModel> myCreatedModels = ListSequence.fromList(new ArrayList<SModel>());
+  private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<File> mySourceDirs;
   private IModule myModule;
   private SModel myBaseModelToAddSource;
@@ -71,33 +71,19 @@ public class DirParser {
 
   public void parseDirs() {
     // <node> 
-    // <node> 
     for (File sourceDir : ListSequence.fromList(mySourceDirs)) {
       myPrefix = null;
-      addSourceFromDirectory(sourceDir, "");
+      addSourceFromDirectory(sourceDir);
     }
 
-    for (SModel m : ListSequence.fromList(myCreatedModels)) {
+    for (SModel m : ListSequence.fromList(myAffectedModels)) {
       System.out.println("DEBUG:  model " + SModelOperations.getModelName(m));
       myJavaParser.tryResolveRoots(SModelOperations.getRoots(m, null));
     }
 
   }
 
-  private void initClassPathItem(final IModule module) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        CompositeClassPathItem compositeClassPathItem = new CompositeClassPathItem();
-        compositeClassPathItem.add(module.getModuleWithDependenciesClassPathItem());
-        compositeClassPathItem.add(CommonPaths.getJDKClassPath());
-        compositeClassPathItem.add(CommonPaths.getMPSClassPath());
-        myClassPathItem = compositeClassPathItem;
-      }
-    });
-  }
-
-  public void addSourceFromDirectory(File dir, final String packageNameWithoutPrefix) {
+  public void addSourceFromDirectory(File dir) {
     assert dir.isDirectory();
 
     // packages which match the directory 
@@ -108,10 +94,8 @@ public class DirParser {
 
     for (File file : dir.listFiles()) {
       if (file.isDirectory()) {
-        addSourceFromDirectory(file, packageNameWithoutPrefix + (((packageNameWithoutPrefix == null || packageNameWithoutPrefix.length() == 0) ?
-          "" :
-          "."
-        )) + file.getName());
+        addSourceFromDirectory(file);
+
       } else if (file.getName().endsWith(".java")) {
 
         JavaParser.JavaParseResult parseRes = parseFile(file);
@@ -147,13 +131,13 @@ public class DirParser {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SModel mdl = registerModelForPackage(finalPkg);
-          // <node> 
+          mdl.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
 
           if (mdl != null) {
             for (SNode r : ListSequence.fromList(roots)) {
               SModelOperations.addRootNode(mdl, r);
             }
-            ListSequence.fromList(myCreatedModels).addElement(mdl);
+            ListSequence.fromList(myAffectedModels).addElement(mdl);
           }
         }
       });
@@ -165,82 +149,6 @@ public class DirParser {
   private JavaParser.JavaParseResult parseFile(File file) {
     String contents = FileUtil.read(file);
     return myJavaParser.parseCompilationUnit(contents);
-  }
-
-  public void addSourceFromFile(File file, String packageNameWithoutPrefix) {
-    try {
-      final String str = "package ";
-      String fileContents = FileUtil.read(file);
-      StringBuilder classFQName = new StringBuilder();
-      for (int i = fileContents.indexOf(str) + str.length(); i < fileContents.length(); i++) {
-        char c = fileContents.charAt(i);
-        if (Character.isWhitespace(c) || c == ';') {
-          break;
-        }
-        classFQName.append(c);
-      }
-      String packageNameFromFile = classFQName.toString();
-      if (myPrefix != null) {
-        String pattern;
-        if ("".equals(packageNameWithoutPrefix) || "".equals(myPrefix)) {
-          pattern = myPrefix + packageNameWithoutPrefix;
-        } else {
-          pattern = myPrefix + "." + packageNameWithoutPrefix;
-        }
-        if (!(pattern.equals(packageNameFromFile))) {
-          LOG.error("package " + packageNameFromFile + " in a source file " + file.getName() + " does not correspond to file path: " + pattern);
-          return;
-        }
-      } else {
-        if (packageNameFromFile.endsWith(packageNameWithoutPrefix)) {
-          int index = packageNameFromFile.length() - packageNameWithoutPrefix.length();
-          myPrefix = packageNameFromFile.substring(0, index);
-          if (myPrefix.endsWith(".")) {
-            myPrefix = myPrefix.substring(0, myPrefix.length() - 1);
-          }
-        } else {
-          LOG.error("package " + packageNameFromFile + " in a source file " + file.getName() + " does not correspond to file path: " + packageNameWithoutPrefix);
-          return;
-        }
-      }
-      String fileName;
-      String nameAndExtension = file.getName();
-      int offset = nameAndExtension.lastIndexOf('.');
-      if (offset < 0) {
-        fileName = nameAndExtension;
-      } else {
-        fileName = nameAndExtension.substring(0, offset);
-      }
-      classFQName.append(".");
-      classFQName.append(fileName);
-      registerModelForPackage(packageNameFromFile);
-
-      final SModel pkgModel = (packageNameWithoutPrefix.equals("") ?
-        myBaseModelToAddSource :
-        getModelForPackage(packageNameFromFile)
-      );
-
-      if (pkgModel != null) {
-        try {
-          final List<SNode> classes = myJavaParser.parse(fileContents, packageNameFromFile, FeatureKind.CLASS, true).getNodes();
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              for (SNode cls : ListSequence.fromList(classes)) {
-                SModelOperations.addRootNode(pkgModel, cls);
-              }
-            }
-          });
-
-        } catch (Exception e) {
-          // FIXME 
-          e.printStackTrace();
-        }
-        // <node> 
-      }
-
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
   }
 
   private SModel registerModelForPackage(String fqName) {
@@ -257,23 +165,6 @@ public class DirParser {
     } else {
       return createModel(fqName);
     }
-  }
-
-  public void addSource(String classFqName, String text) {
-    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + MPSExtentions.DOT_JAVAFILE, FileUtil.DEFAULT_CHARSET_NAME);
-    myCompilationUnits.put(classFqName, compilationUnit);
-  }
-
-  public SModel getModelForPackage(String packageName) {
-    SModel result = myPackageFQNamesToModels.get(packageName);
-
-    if (result == null) {
-      result = createModel(packageName);
-      if (result != null) {
-        myPackageFQNamesToModels.put(packageName, result);
-      }
-    }
-    return result;
   }
 
   private SModel createModel(String packageName) {

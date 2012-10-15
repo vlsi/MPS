@@ -40,7 +40,7 @@ public class NewModelFromSource_Action extends BaseAction {
   protected static Log log = LogFactory.getLog(NewModelFromSource_Action.class);
 
   public NewModelFromSource_Action() {
-    super("Model from Source", "", ICON);
+    super("Models from Java Sources", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

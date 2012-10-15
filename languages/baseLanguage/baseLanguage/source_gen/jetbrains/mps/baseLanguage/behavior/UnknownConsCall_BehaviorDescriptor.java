@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 
 public class UnknownConsCall_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IYetUnresolved_BehaviorDescriptor {
@@ -18,7 +19,7 @@ public class UnknownConsCall_BehaviorDescriptor extends Statement_BehaviorDescri
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
-  public SNode virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
+  public _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
     return UnknownConsCall_Behavior.virtual_evaluateSubst_8136348407761606764(thisNode);
   }
 

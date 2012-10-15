@@ -7,13 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.UnknownNew_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,42 +19,17 @@ public class check_UnknownNew_NonTypesystemRule extends AbstractNonTypesystemRul
   }
 
   public void applyRule(final SNode unkNew, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode typ = UnknownNew_Behavior.findClass_4175350419479594579(unkNew, SPropertyOperations.getString(unkNew, "className"));
-    if ((typ == null)) {
-      return;
-    }
-
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
-    SNode create = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
-
-    if (!(SNodeOperations.isInstanceOf(typ, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      return;
-    }
-
-    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(unkNew, "actualArgument", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(create, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
-    }
-    // <node> 
-
-    SNode cons = UnknownConsCall_Behavior.findConstructor_9100188248702369190(SNodeOperations.cast(typ, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.getTargets(create, "actualArgument", true));
-    if ((cons == null)) {
-      return;
-    }
-
-    // success 
-    SLinkOperations.setTarget(create, "baseMethodDeclaration", cons, false);
-    SLinkOperations.setTarget(result, "creator", create, true);
-    {
-      MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkNew, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3564968026865776747", null, errorTarget);
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkNew) != null) {
       {
-        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
-        intentionProvider.putArgument("unknownNode", unkNew);
-        intentionProvider.putArgument("theRightNode", result);
-        _reporter_2309309498.addIntentionProvider(intentionProvider);
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkNew, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8504030010050787969", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
+          intentionProvider.putArgument("unknownNode", unkNew);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
-
   }
 
   public String getApplicableConceptFQName() {

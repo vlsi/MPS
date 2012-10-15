@@ -21,25 +21,26 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode unkName, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-
     if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(unkName), "jetbrains.mps.baseLanguage.structure.UnknownNameRef"))) {
       // it's subconcept, leave the work to them 
       return;
     }
 
-    SNode result = IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkName);
-
-    if ((result != null)) {
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkName) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Resolved qualified name reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6072020170586016137", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Resolved qualified name reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8504030010050377272", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
           intentionProvider.putArgument("unknownNode", unkName);
-          intentionProvider.putArgument("theRightNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
+    }
+
+    {
+      MessageTarget errorTarget = new NodeMessageTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Unresolved qualified name", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6396739326936464050", null, errorTarget);
     }
   }
 

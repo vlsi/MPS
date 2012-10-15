@@ -14,9 +14,6 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
-import java.io.File;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -29,6 +26,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.parser.ConversionFailedException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
+import java.io.File;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
@@ -82,20 +82,13 @@ public class JavaPaster {
 
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     IModule module = model.getModelDescriptor().getModule();
-    JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, (File) null, false, model, ProjectHelper.toIdeaProject(project));
+    // <node> 
     // new parser 
     JavaParser parser = new JavaParser();
 
     try {
 
-      List<SNode> nodes;
-      if (FeatureKind.STATEMENTS.equals(featureKind) || FeatureKind.CLASS.equals(featureKind) || FeatureKind.CLASS_CONTENT.equals(featureKind)) {
-        // new parser 
-        nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
-      } else {
-        // old parser for now 
-        nodes = javaCompiler.compileIsolated(javaCode, featureKind);
-      }
+      List<SNode> nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
 
       if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);

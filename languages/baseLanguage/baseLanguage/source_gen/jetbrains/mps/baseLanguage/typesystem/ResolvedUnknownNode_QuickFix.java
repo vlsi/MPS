@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ResolvedUnknownNode_QuickFix extends QuickFix_Runtime {
@@ -11,6 +13,10 @@ public class ResolvedUnknownNode_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), ((SNode) ResolvedUnknownNode_QuickFix.this.getField("theRightNode")[0]));
+    _FunctionTypes._return_P0_E0<? extends SNode> nodeBuilder = IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]));
+    if (nodeBuilder != null) {
+      SNode theRightNode = nodeBuilder.invoke();
+      SNodeOperations.replaceWithAnother(((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), theRightNode);
+    }
   }
 }

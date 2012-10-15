@@ -19,6 +19,7 @@ import org.eclipse.jdt.internal.compiler.ast.Statement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
@@ -29,7 +30,9 @@ public class JavaParser {
 
   @NotNull
   public JavaParser.JavaParseResult parseCompilationUnit(String code) {
-    return parse(code, null, FeatureKind.CLASS, true);
+    // temp thing: peek at the package name 
+    String pkg = peekPackage(code);
+    return parse(code, pkg, FeatureKind.CLASS, true);
   }
 
   public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, boolean recovery) {
@@ -100,7 +103,7 @@ public class JavaParser {
     } else if (FeatureKind.CLASS_CONTENT.equals(what)) {
 
       CodeSnippetParsingUtil util = new CodeSnippetParsingUtil(false);
-      ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, false, true);
+      ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, true, recovery);
 
       TypeNameResolver typeResolver = new TypeNameResolver(pkg);
       ASTConverter converter = new ASTConverter(null, typeResolver, false);
@@ -157,25 +160,47 @@ public class JavaParser {
     for (SNode node : ListSequence.fromList(roots)) {
       List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
       for (SNode unk : ListSequence.fromList(unknowns)) {
+
         final SNode unkNode = unk;
-        final SNode subst = ((SNode) BehaviorManager.getInstance().invoke(Object.class, unk, "virtual_evaluateSubst_8136348407761606764", new Class[]{SNode.class}));
-        if ((subst != null)) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              SNodeOperations.replaceWithAnother(unkNode, subst);
-            }
-          });
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BehaviorManager.getInstance().invoke(Object.class, unk, "virtual_evaluateSubst_8136348407761606764", new Class[]{SNode.class}));
+        if (subst == null) {
+          continue;
         }
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SNode theRightNode = subst.invoke();
+            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+          }
+        });
+
       }
     }
   }
 
-  private String problemDescription(@NotNull RecordedParsingInformation info) {
+  private String problemDescription(RecordedParsingInformation info) {
+    if (info == null) {
+      return null;
+    }
     if (info.problems != null && info.problems.length > 0) {
       return "There were some problems";
     } else {
       return null;
     }
+  }
+
+  private String peekPackage(String source) {
+    // WILL GO AWAY COMPLETELY 
+    final String str = "package ";
+    StringBuilder packageName = new StringBuilder();
+    for (int i = source.indexOf(str) + str.length(); i < source.length(); i++) {
+      char c = source.charAt(i);
+      if (Character.isWhitespace(c) || c == ';') {
+        break;
+      }
+      packageName.append(c);
+    }
+    return packageName.toString();
   }
 
   public static class JavaParseResult {

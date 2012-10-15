@@ -19,8 +19,7 @@ public class check_UnknownDotCall_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode unkCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode result = IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkCall);
-    if ((result != null)) {
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(unkCall) != null) {
       // success 
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -28,7 +27,6 @@ public class check_UnknownDotCall_NonTypesystemRule extends AbstractNonTypesyste
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
           intentionProvider.putArgument("unknownNode", unkCall);
-          intentionProvider.putArgument("theRightNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

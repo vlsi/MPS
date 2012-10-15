@@ -19,15 +19,15 @@ public class check_UnknownConsCall_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode result = IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(call);
-    {
-      MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9100188248702475686", null, errorTarget);
+    if (IYetUnresolved_Behavior.call_evaluateSubst_8136348407761606764(call) != null) {
       {
-        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
-        intentionProvider.putArgument("unknownNode", call);
-        intentionProvider.putArgument("theRightNode", result);
-        _reporter_2309309498.addIntentionProvider(intentionProvider);
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9100188248702475686", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ResolvedUnknownNode_QuickFix", true);
+          intentionProvider.putArgument("unknownNode", call);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
   }
