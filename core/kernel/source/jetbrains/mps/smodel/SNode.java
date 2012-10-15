@@ -61,7 +61,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private String[] myProperties = null;
 
-  private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private SModel myOldModel;// DO NOT USE!!!
   private SNodeId myId;
@@ -649,7 +648,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   replace with getContainingRoot==this and fix tests
    */
   public boolean isRoot() {
-    return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
+    return myModel != null && getParent() == null && myModel.isRoot(this);
   }
 
   /*
@@ -686,7 +685,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     !isDetached
    */
   public boolean isRegistered() {
-    return myRegisteredInModelFlag;
+    return myModel != null;
   }
 
   /*
@@ -812,8 +811,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------private (SNode and SModel usages)-------
 
   void unRegisterFromModel() {
-    if (!myRegisteredInModelFlag) return;
-    myRegisteredInModelFlag = false;
+    if (myModel == null) return;
 
     for (SReference ref : myReferences) {
       ref.makeDirect();
@@ -830,7 +828,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   void registerInModel(SModel model) {
-    if (myRegisteredInModelFlag) {
+    if (myModel != null) {
       if (model != myModel) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
       }
@@ -839,7 +837,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     myModel = model;
     myModel.registerNode(this);
-    myRegisteredInModelFlag = true;
 
     for (SReference ref : myReferences) {
       ref.makeIndirect();
