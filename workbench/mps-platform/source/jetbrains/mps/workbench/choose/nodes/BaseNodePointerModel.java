@@ -19,6 +19,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -63,7 +64,12 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePoint
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             SNode node = getNode();
-            if (node == null || node.isDisposed() || !(node.getModel() != null) || node.getModel().getModelDescriptor() != null) {
+            if (
+              node == null ||
+                node.isDisposed() ||
+                node.getModel() == null ||
+                AuxilaryRuntimeModel.isAuxModel(node.getModel()) ||
+                node.getModel().getModelDescriptor() != null) {
               return;
             }
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
