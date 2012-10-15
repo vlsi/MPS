@@ -164,7 +164,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   final public SNode getParent() {
-    ModelAccess.assertLegalRead(this);
+    //todo: ModelAccess.assertLegalRead(this);
     return (SNode) treeParent();
   }
 
