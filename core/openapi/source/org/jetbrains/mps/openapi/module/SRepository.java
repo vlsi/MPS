@@ -20,4 +20,8 @@ public interface SRepository {
   SModule getModule(SModuleId ref);
 
   Iterable<SModule> getModules();
+
+  void addRepositoryListener(SRepositoryListener listener);
+
+  void removeRepositoryListener(SRepositoryListener listener);
 }

@@ -94,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLinkScopeProvider" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SLink" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.adapter.SPrimitiveDataTypeAdapter" file="SPrimitiveDataTypeAdapter.java">
