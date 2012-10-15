@@ -55,6 +55,8 @@ public class GenerationOptions {
   private final boolean myShowBadChildWarning;
   private final int myNumberOfModelsToKeep;
 
+  private final boolean myDebugIncrementalDependencies;
+
   private IGenerationTracer myGenerationTracer;
 
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll,
@@ -62,7 +64,8 @@ public class GenerationOptions {
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
                             GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
-                            Map<SModelDescriptor, ModelGenerationPlan> customPlans) {
+                            Map<SModelDescriptor, ModelGenerationPlan> customPlans,
+                            boolean debugIncrementalDependencies) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -79,6 +82,7 @@ public class GenerationOptions {
     myKeepOutputModel = keepOutputModel;
     myShowBadChildWarning = showBadChildWarning;
     myCustomPlans = customPlans;
+    myDebugIncrementalDependencies = debugIncrementalDependencies;
   }
 
   public boolean isSaveTransientModels() {
@@ -157,12 +161,16 @@ public class GenerationOptions {
       strictMode(settings.isStrictMode()).
       generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
       reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).
-      showBadChildWarning(settings.isShowBadChildWarning());
+      showBadChildWarning(settings.isShowBadChildWarning()).debugIncrementalDependencies(settings.isDebugIncrementalDependencies());
   }
 
 
   public boolean isKeepOutputModel() {
     return myKeepOutputModel;
+  }
+
+  public boolean isDebugIncrementalDependencies() {
+    return myDebugIncrementalDependencies;
   }
 
   /**
@@ -210,7 +218,9 @@ public class GenerationOptions {
     private GenerationParametersProvider myParametersProvider = null;
 
     private IGenerationTracer myGenerationTracer = null;
+
     private boolean myKeepOutputModel;
+    private boolean myDebugIncrementalDependencies = false;
 
     private OptionsBuilder() {
     }
@@ -224,7 +234,8 @@ public class GenerationOptions {
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
         myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
-        myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning, myCustomPlans);
+        myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
+        myCustomPlans, myDebugIncrementalDependencies);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
@@ -244,6 +255,11 @@ public class GenerationOptions {
 
     public OptionsBuilder showBadChildWarning(boolean value) {
       myShowBadChildWarning = value;
+      return this;
+    }
+
+    public OptionsBuilder debugIncrementalDependencies(boolean value) {
+      myDebugIncrementalDependencies = value;
       return this;
     }
 

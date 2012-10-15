@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -88,6 +89,18 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return dependencies.toXml();
   }
 
+  @Override
+  protected void saveCache(@NotNull GenerationDependencies cache, SModelDescriptor model, StreamHandler handler) {
+    super.saveCache(cache, model, handler);
+
+    if (InternalFlag.isInternalMode()) {
+      String trace = cache.extractDependenciesTraces();
+      if(trace != null) {
+        handler.saveStream(getCacheFileName() + ".trace", trace, true);
+      }
+    }
+  }
+
   protected GenerationDependencies fromXml(Element e) {
     return GenerationDependencies.fromXml(e);
   }
@@ -107,18 +120,20 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
 
   public IFile findCachesPathRedirect(IFile cachesPath) {
     IFile redir;
-    for (CachePathRedirect cdl: myCachePathRedirects) {
+    for (CachePathRedirect cdl : myCachePathRedirects) {
       if ((redir = cdl.redirectTo(cachesPath)) != null) {
         return redir;
       }
     }
     return null;
   }
-  
+
   @Override
   protected IFile getCachesDirInternal(IModule module, String outputPath) {
     IFile cachesPath = super.getCachesDirInternal(module, outputPath);
-    if (cachesPath == null) { return null; }
+    if (cachesPath == null) {
+      return null;
+    }
     IFile redir = findCachesPathRedirect(cachesPath);
     return redir != null ? redir : cachesPath;
   }

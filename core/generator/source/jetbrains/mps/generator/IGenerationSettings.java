@@ -42,4 +42,6 @@ public interface IGenerationSettings {
   boolean isFailOnMissingTextGen();
 
   boolean isShowBadChildWarning();
+
+  boolean isDebugIncrementalDependencies();
 }
