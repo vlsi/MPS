@@ -1,7 +1,6 @@
 :openapi
 core/openapi/classes
 :core
-core/openapi/classes
 core/analyzers/classes
 core/kernel/classes
 core/runtime/classes

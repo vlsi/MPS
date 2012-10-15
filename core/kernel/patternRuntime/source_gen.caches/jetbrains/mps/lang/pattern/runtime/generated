@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dhvyi30iqosfowevqt1bvmavhhw8fmf">
+<dependencies version="2" modelHash="-433qopv4l20wh9g2exhzh06hljhix2h">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5hj4jf6p21h298g5nmfhjuo414lwbmo" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-djmnpmg1bhn2mn53expf0s1xxpkcwj0" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="cu62tgo43sas694vvnt7vfzogem7h1n">
+  <common hash="pf0xjfmimhwm2f4qu94csv2ibe0v4f">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="7783830406851712418" name="PatternUtil" hash="-28h42xk3ddkj4tktsq6uyx6x68ldm73">
+  <source id="7783830406851712418" name="PatternUtil" hash="-503l15bu4w7wad4ub05q7a6x29y5jca">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="PatternUtil.java" />
