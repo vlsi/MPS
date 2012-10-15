@@ -36,6 +36,11 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return this.createCollection_ohhbpy_a(editorContext, node);
   }
 
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_ohhbpy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ohhbpy_a");

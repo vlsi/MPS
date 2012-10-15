@@ -33,6 +33,11 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return this.createCollection_k0lfun_a(editorContext, node);
   }
 
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_k0lfun_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k0lfun_a");

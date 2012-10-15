@@ -15,7 +15,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.INodeEditor;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.ErrorNodeEditor;
@@ -206,11 +206,11 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return new EditorCell_Error(context, node, "    ");
+      return new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, "    ");
     }
 
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
-      return new EditorCell_Constant(context, node, node.getDebugText());
+      return new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, node.getDebugText());
     }
   }
 }

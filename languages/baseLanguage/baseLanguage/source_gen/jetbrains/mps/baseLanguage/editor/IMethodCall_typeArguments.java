@@ -36,6 +36,11 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
     return this.createCollection_q1hswy_a(editorContext, node);
   }
 
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_q1hswy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_q1hswy_a");

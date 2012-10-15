@@ -21,6 +21,11 @@ public class ConceptFunction_Folded_Component extends AbstractCellProvider {
     return this.createConstant_hl0bni_a(editorContext, node);
   }
 
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createConstant_hl0bni_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{...}");
     editorCell.setCellId("Constant_hl0bni_a");

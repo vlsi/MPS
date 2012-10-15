@@ -27,6 +27,11 @@ public class _Component_Visibility extends AbstractCellProvider {
     return this.createCollection_4j2lax_a(editorContext, node);
   }
 
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_4j2lax_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4j2lax_a");

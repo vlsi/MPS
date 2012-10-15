@@ -21,6 +21,11 @@ public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellPr
     return this.createConstant_2ccpf5_a(editorContext, node);
   }
 
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createConstant_2ccpf5_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{...}");
     editorCell.setCellId("Constant_2ccpf5_a");
