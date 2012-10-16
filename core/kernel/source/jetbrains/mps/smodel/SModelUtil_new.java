@@ -143,7 +143,7 @@ public class SModelUtil_new implements CoreComponent {
       conceptFqName = languageNamespace + ".structure." + conceptName;
     }
 
-    SNode newNode = new SNode(conceptFqName);
+    SNode newNode = new SNode(model, conceptFqName);
     if (nodeId!=null){
       newNode.setId(nodeId);
     }
@@ -154,7 +154,6 @@ public class SModelUtil_new implements CoreComponent {
       SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
       createNodeStructure(conceptDeclaration, newNode, model);
     }
-    newNode.registerInModel(model);
     return newNode;
   }
 

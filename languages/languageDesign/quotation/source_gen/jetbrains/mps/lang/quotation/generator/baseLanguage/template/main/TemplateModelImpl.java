@@ -25,7 +25,7 @@ public class TemplateModelImpl implements TemplateModel {
 
   public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchQuotationModel__switch(), new SwitchQuotation__switch());
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchQuotation__switch());
     templateModule = module;
   }
 
@@ -52,20 +52,6 @@ public class TemplateModelImpl implements TemplateModel {
     SNodeId id = template.getNodeId();
     if (id instanceof SNodeId.Regular) {
       long idValue = ((SNodeId.Regular) id).getId();
-      if (idValue == 1196351886629L) {
-        if (arguments.length != 0) {
-          // TODO report `wrong arguments count` 
-          return null;
-        }
-        return new TemplateQuotationModel__modelToCreate();
-      }
-      if (idValue == 1196351886651L) {
-        if (arguments.length != 0) {
-          // TODO report `wrong arguments count` 
-          return null;
-        }
-        return new TemplateQuotationModel__NullModel();
-      }
       if (idValue == 1196351886669L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
