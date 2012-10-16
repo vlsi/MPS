@@ -114,14 +114,14 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir4/jetbrains/mps/ide/java/testMaterial4", SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial4", "")).getSModel());
+      // <node> 
     }
 
     public void test_LittleSource() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/statements", SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.singleFiles", "")).getSModel());
+      // <node> 
     }
   }
 }

@@ -8,7 +8,10 @@ import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Map;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -22,6 +25,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.eclipse.jdt.internal.compiler.ast.MethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeParameter;
@@ -127,6 +132,8 @@ public class ASTConverter {
   private CompilationUnitDeclaration myCud;
   private boolean myOnlyStubs = false;
   private List<ASTConverter.CodeBlock> myBlocks = ListSequence.fromList(new ArrayList<ASTConverter.CodeBlock>());
+  private Map<SNode, Integer> myPositions = MapSequence.fromMap(new HashMap<SNode, Integer>());
+  private Map<Integer, SNode> myJavadocs = MapSequence.fromMap(new HashMap<Integer, SNode>());
 
   public ASTConverter(CompilationUnitDeclaration cud, @NotNull TypeNameResolver typeResolver, boolean onlyStubs) {
     myTypeResolver = typeResolver;
@@ -292,6 +299,11 @@ public class ASTConverter {
 
     myTypeResolver.leaveTypeVarFrame();
 
+    if (x.javadoc != null) {
+      AttributeOperations.createAndSetAttrbiute(cls, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+      MapSequence.fromMap(myJavadocs).put(x.javadoc.sourceStart, AttributeOperations.getAttribute(cls, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
+    }
+
     return cls;
   }
 
@@ -346,6 +358,18 @@ public class ASTConverter {
         ListSequence.fromList(container).addElement(fDecl);
       }
     }
+
+    if (f.javadoc != null) {
+      int start = f.javadoc.sourceStart;
+      SNode doc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", null);
+      if (SNodeOperations.isInstanceOf(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+        AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), doc);
+      } else if (SNodeOperations.isInstanceOf(fDecl, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+        AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), doc);
+      }
+      MapSequence.fromMap(myJavadocs).put(start, doc);
+    }
+
     return fDecl;
   }
 
@@ -401,6 +425,12 @@ public class ASTConverter {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       }
     }
+
+    if (method.javadoc != null) {
+      AttributeOperations.createAndSetAttrbiute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
+      MapSequence.fromMap(myJavadocs).put(method.javadoc.sourceStart, AttributeOperations.getAttribute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
+    }
+
     return result;
   }
 
@@ -544,6 +574,8 @@ public class ASTConverter {
     if (!(myOnlyStubs)) {
       SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatements(x.statements)));
+      addBlock(SLinkOperations.getTarget(result, "body", true), x.declarationSourceStart, x.declarationSourceEnd);
+
     } else {
       // make a different stub statement list 'source code' ? 
       SLinkOperations.setTarget(result, "body", new ASTConverter.QuotationClass_rbndtb_a0a1a0t0l().createNode(), true);
@@ -726,6 +758,7 @@ public class ASTConverter {
     } else {
       statement = SNodeOperations.cast(dispatchRefl("convertStatement", x), "jetbrains.mps.baseLanguage.structure.Statement");
     }
+    MapSequence.fromMap(myPositions).put(statement, x.sourceEnd());
     return statement;
   }
 
@@ -814,7 +847,7 @@ public class ASTConverter {
         if (stmt instanceof CaseStatement) {
           // advance end of previous case block 
           if ((currentSwitchCase != null)) {
-            getBlock(currentSwitchCase).endPos = stmt.sourceStart;
+            getBlock(currentSwitchCase).setEndPos(stmt.sourceStart);
           }
           CaseStatement caseStatement = (CaseStatement) stmt;
           if (caseStatement.constantExpression == null) {
@@ -833,13 +866,13 @@ public class ASTConverter {
         } else
         if ((currentSwitchCase != null)) {
           // advance end of case block 
-          getBlock(currentSwitchCase).endPos = stmt.sourceEnd;
+          getBlock(currentSwitchCase).setEndPos(stmt.sourceEnd);
           ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(convertStatementRefl(stmt));
         }
       }
       // adjust end of last case block up to the end of switch statement 
       if ((currentSwitchCase != null)) {
-        getBlock(currentSwitchCase).endPos = x.sourceEnd;
+        getBlock(currentSwitchCase).setEndPos(x.sourceEnd);
       }
     }
     return result;
@@ -980,7 +1013,7 @@ public class ASTConverter {
     SLinkOperations.setTarget(result, "ifFalseStatement", convertStatementRefl(x.elseStatement), true);
     SNode ifTrue = getStatementListFromStatement(thenStmt, x.thenStatement);
     // adjust start of the "if" statement list block to get comments from "if (...)" there 
-    getBlock(ifTrue).startPos = x.sourceStart;
+    getBlock(ifTrue).setStartPos(x.sourceStart);
     // replacing the ifTrue node 
     // <node> 
     SLinkOperations.setTarget(result, "ifTrue", ifTrue, true);
@@ -1837,6 +1870,18 @@ public class ASTConverter {
     }
   }
 
+  public Map<SNode, Integer> getPositions() {
+    return myPositions;
+  }
+
+  public Map<Integer, SNode> getJavadocs() {
+    return myJavadocs;
+  }
+
+  public Iterable<ASTConverter.CodeBlock> getCodeBlocks() {
+    return myBlocks;
+  }
+
   private void addBlock(SNode node, int start, int end) {
     ListSequence.fromList(myBlocks).addElement(new ASTConverter.CodeBlock(node, myCud, Math.abs(start), Math.abs(end)));
   }
@@ -1844,7 +1889,7 @@ public class ASTConverter {
   private ASTConverter.CodeBlock getBlock(final SNode node) {
     return ListSequence.fromList(myBlocks).findFirst(new IWhereFilter<ASTConverter.CodeBlock>() {
       public boolean accept(ASTConverter.CodeBlock it) {
-        return it.stmt == node;
+        return it.getStatementList() == node;
       }
     });
   }
@@ -1857,13 +1902,13 @@ public class ASTConverter {
     // then we would just take the topmost element from the stack 
     for (ASTConverter.CodeBlock block : ListSequence.fromList(myBlocks).where(new IWhereFilter<ASTConverter.CodeBlock>() {
       public boolean accept(ASTConverter.CodeBlock it) {
-        return it.startPos <= sourcePos && sourcePos <= it.endPos;
+        return it.getStartPos() <= sourcePos && sourcePos <= it.getEndPos();
       }
     })) {
-      long w = block.endPos - block.startPos;
+      long w = block.getEndPos() - block.getStartPos();
       if (w < min) {
         min = w;
-        stmt = block.stmt;
+        stmt = block.getStatementList();
       }
     }
 
@@ -1919,16 +1964,40 @@ public class ASTConverter {
   }
 
   public class CodeBlock {
-    private SNode stmt;
     private CompilationUnitDeclaration cud;
-    private long startPos;
-    private long endPos;
+    private SNode myStatementList;
+    private int myStartPos;
+    private int myEndPos;
 
-    public CodeBlock(SNode n, CompilationUnitDeclaration d, long s, long e) {
-      stmt = n;
+    public CodeBlock(SNode n, CompilationUnitDeclaration d, int s, int e) {
+      CodeBlock.this.setStatementList(n);
       cud = d;
-      startPos = s;
-      endPos = e;
+      CodeBlock.this.setStartPos(s);
+      CodeBlock.this.setEndPos(e);
+    }
+
+    public SNode getStatementList() {
+      return this.myStatementList;
+    }
+
+    private void setStatementList(SNode value) {
+      this.myStatementList = value;
+    }
+
+    public int getStartPos() {
+      return this.myStartPos;
+    }
+
+    private void setStartPos(int value) {
+      this.myStartPos = value;
+    }
+
+    public int getEndPos() {
+      return this.myEndPos;
+    }
+
+    private void setEndPos(int value) {
+      this.myEndPos = value;
     }
   }
 
