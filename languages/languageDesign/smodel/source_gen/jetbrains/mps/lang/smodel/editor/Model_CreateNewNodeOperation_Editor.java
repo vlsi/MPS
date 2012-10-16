@@ -27,12 +27,24 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_tsmvai_a_0(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tsmvai_a(editorContext, node);
   }
 
   private EditorCell createCollection_tsmvai_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tsmvai_a");
+    editorCell.addEditorCell(this.createConstant_tsmvai_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_tsmvai_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_tsmvai_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_tsmvai_a_0");
     editorCell.addEditorCell(this.createComponent_tsmvai_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tsmvai_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_tsmvai_c0(editorContext, node));
@@ -58,6 +70,13 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_tsmvai_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createConstant_tsmvai_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id =");
+    editorCell.setCellId("Constant_tsmvai_a0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -95,6 +114,23 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_tsmvai_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("nodeId");
+    provider.setNoTargetText("<no nodeId>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
