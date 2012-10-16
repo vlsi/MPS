@@ -69,10 +69,4 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  //--------------model command listeners-------------
-
-  void addModelCommandListener(@NotNull SModelCommandListener listener);
-
-  void removeModelCommandListener(@NotNull SModelCommandListener listener);
 }
