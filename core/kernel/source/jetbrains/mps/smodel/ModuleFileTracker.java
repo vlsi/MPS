@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;

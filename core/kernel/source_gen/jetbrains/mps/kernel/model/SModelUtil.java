@@ -54,6 +54,7 @@ public class SModelUtil {
     }
   }
 
+  @Deprecated
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
@@ -111,7 +112,7 @@ public class SModelUtil {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
 
-  public static Language getDeclaringLanguage(SNode concept) {
+  public static Language getDeclaringLanguage(final SNode concept) {
     if (concept == null) {
       return null;
     }
@@ -119,15 +120,19 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
-    if (languageFqName == null) {
-      return null;
-    }
-    l = ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
-    if (l != null) {
-      myConceptToLanguage.putIfAbsent(concept, l);
-    }
-    return l;
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Language>() {
+      public Language compute() {
+        String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
+        if (languageFqName == null) {
+          return null;
+        }
+        Language l = ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
+        if (l != null) {
+          myConceptToLanguage.putIfAbsent(concept, l);
+        }
+        return l;
+      }
+    });
   }
 
   public static SNode getGenuineLinkDeclaration(SNode linkDeclaration) {

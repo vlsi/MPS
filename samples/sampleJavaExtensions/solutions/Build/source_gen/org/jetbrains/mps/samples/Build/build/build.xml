@@ -222,6 +222,7 @@
         <path location="${project_home}/languages/Constants/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />
@@ -259,6 +260,7 @@
         <path location="${project_home}/languages/SampleExtensions/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />
@@ -327,6 +329,7 @@
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-closures.jar" />
         <pathelement path="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-editor-api.jar" />
@@ -362,6 +365,7 @@
         <path location="${project_home}/languages/ParallelFor/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />

@@ -72,6 +72,7 @@
         <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildMPS}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-tuples.jar" />

@@ -31,7 +31,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.components.CoreComponent" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.ConstraintsChecker" file="ConstraintsChecker.java">
     <classNode dependClassName="java.lang.Boolean" />

@@ -71,7 +71,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private final IGenerationTracer myGenerationTracer;
   private IPerformanceTracer ttrace;
-  private DependenciesBuilder myDependenciesBuilder;
+  private final DependenciesBuilder myDependenciesBuilder;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,

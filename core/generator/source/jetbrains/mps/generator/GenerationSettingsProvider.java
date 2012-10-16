@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 
 public class GenerationSettingsProvider implements CoreComponent {
 

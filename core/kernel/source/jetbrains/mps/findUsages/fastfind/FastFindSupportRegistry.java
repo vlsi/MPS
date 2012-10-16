@@ -16,7 +16,7 @@
 package jetbrains.mps.findUsages.fastfind;
 
 import gnu.trove.THashMap;
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 
 import java.util.Map;
 

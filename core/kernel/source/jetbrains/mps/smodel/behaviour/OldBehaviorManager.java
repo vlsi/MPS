@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
@@ -130,16 +130,21 @@ public final class OldBehaviorManager implements CoreComponent {
     return methodsToCall;
   }
 
-  public void initNode(@NotNull SNode node) {
+  public void initNode(@NotNull final SNode node) {
     String conceptFqName = InternUtil.intern(node.getConcept().getId());
     String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConcept().getId());
-    Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+    final Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
 
     List<Method> methodsToCall;
 
     methodsToCall = myConstructors.get(conceptFqName);
     if (methodsToCall == null) {
-      methodsToCall = calculateConstructors(((SConceptNodeAdapter) node.getConcept()).getConcept(), language);
+      methodsToCall = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<Method>>() {
+        @Override
+        public List<Method> compute() {
+          return calculateConstructors(((SConceptNodeAdapter) node.getConcept()).getConcept(), language);
+        }
+      });
       myConstructors.putIfAbsent(conceptFqName, methodsToCall);
     }
 

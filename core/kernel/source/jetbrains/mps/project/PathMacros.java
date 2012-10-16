@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
+import jetbrains.mps.components.CoreComponent;
 
 import java.util.Collections;
 import java.util.HashSet;

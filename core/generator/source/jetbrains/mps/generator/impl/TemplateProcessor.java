@@ -62,41 +62,51 @@ public class TemplateProcessor {
   public List<SNode> processTemplateNode(String mappingName, SNode templateNode, @NotNull TemplateContext context)
     throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
     IGeneratorLogger logger = myGenerator.getLogger();
-
-    if (myGenerator.getProgressMonitor().isCanceled()) {
-      if (myGenerator.getGenerationTracer().isTracing() && logger.needsInfo()) {
-        logger.info("generation canceled when processing branch:");
-        GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), false);
-      }
-      throw new GenerationCanceledException();
+    if (myGenerator.isIncremental()) {
+      // turn off tracing
+      NodeReadEventsCaster.setNodesReadListener(null);
     }
-
     try {
-      List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, context.subContext(mappingName), 0);
-      if (outputNodes == null) {
-        throw new TemplateProcessingFailureException();
+      if (myGenerator.getProgressMonitor().isCanceled()) {
+        if (myGenerator.getGenerationTracer().isTracing() && logger.needsInfo()) {
+          logger.info("generation canceled when processing branch:");
+          GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), false);
+        }
+        throw new GenerationCanceledException();
       }
-      return outputNodes;
-    } catch (StackOverflowError e) {
-      // this is critical
-      logger.error("generation thread run out of stack space :(");
-      if (myGenerator.getGenerationTracer().isTracing()) {
-        logger.error("failed branch was:");
-        GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), true);
-      } else {
-        logger.error("try to increase JVM stack size (-Xss option)");
-        logger.error("to get more diagnostic generate model with the 'save transient models' option");
+
+      try {
+        List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, context.subContext(mappingName), 0);
+        if (outputNodes == null) {
+          throw new TemplateProcessingFailureException();
+        }
+        return outputNodes;
+      } catch (StackOverflowError e) {
+        // this is critical
+        logger.error("generation thread run out of stack space :(");
+        if (myGenerator.getGenerationTracer().isTracing()) {
+          logger.error("failed branch was:");
+          GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), true);
+        } else {
+          logger.error("try to increase JVM stack size (-Xss option)");
+          logger.error("to get more diagnostic generate model with the 'save transient models' option");
+        }
+        myGenerator.showErrorMessage(context.getInput(), templateNode, "couldn't process template");
+        throw new GenerationFailureException(e);
       }
-      myGenerator.showErrorMessage(context.getInput(), templateNode, "couldn't process template");
-      throw new GenerationFailureException(e);
+    } finally {
+      if (myGenerator.isIncremental()) {
+        // restore tracing
+        NodeReadEventsCaster.removeNodesReadListener();
+      }
     }
   }
 
   @Nullable
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
-                                                       SNode templateNode,
-                                                       @NotNull TemplateContext context,
-                                                       int nodeMacrosToSkip)
+                             SNode templateNode,
+                             @NotNull TemplateContext context,
+                             int nodeMacrosToSkip)
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
@@ -640,8 +650,8 @@ public class TemplateProcessor {
 
   @Nullable
   private List<SNode> createOutputNodesForExternalTemplateNode(String mappingName,
-                                                               SNode templateNode,
-                                                               TemplateContext context)
+                                 SNode templateNode,
+                                 TemplateContext context)
     throws
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {

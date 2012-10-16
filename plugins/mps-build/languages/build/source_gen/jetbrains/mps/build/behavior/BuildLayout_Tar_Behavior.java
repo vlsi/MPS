@@ -63,8 +63,8 @@ public class BuildLayout_Tar_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("shortEmptyNotation", "true");
           quotedNode1_6.setProperty("tagName", "mkdir");
+          quotedNode1_6.setProperty("shortEmptyNotation", "true");
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
@@ -106,8 +106,8 @@ public class BuildLayout_Tar_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_2;
-          quotedNode1_10.setProperty("shortEmptyNotation", "true");
           quotedNode1_10.setProperty("tagName", "untar");
+          quotedNode1_10.setProperty("shortEmptyNotation", "true");
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_11 = quotedNode_3;

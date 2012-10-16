@@ -314,6 +314,8 @@
     <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.Scopes" file="Scopes.java">
     <classNode dependClassName="java.lang.Iterable" />

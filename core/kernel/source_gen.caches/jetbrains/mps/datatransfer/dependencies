@@ -35,8 +35,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
     <classNode extendsClassName="jetbrains.mps.datatransfer.AbstractManager" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.datatransfer.CopyPreProcessor" file="CopyPreProcessor.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

@@ -13,7 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.language;
+package org.jetbrains.mps.openapi.persistence;
 
-public interface SScopePlace {
+public interface DataSource {
+
+  void addListener(DataSourceListener listener);
+
+  void removeListener(DataSourceListener listener);
+
+  long getTimestamp();
 }

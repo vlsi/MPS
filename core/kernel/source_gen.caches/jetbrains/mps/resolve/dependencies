@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.components.CoreComponent" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.resolve.ScopeResolver" file="ScopeResolver.java">
     <classNode dependClassName="java.lang.Boolean" />

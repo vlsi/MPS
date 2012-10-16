@@ -35,17 +35,15 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010
@@ -78,11 +76,7 @@ public class MPSCore extends ComponentPlugin {
     myModelRepository = init(new SModelRepository(classLoaderManager));
     myModuleRepository = init(new MPSModuleRepository(classLoaderManager));
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
-    init(new SConceptRepository() {
-      public SConcept getConcept(String id) {
-        return new SConceptNodeAdapter(id);
-      }
-    });
+    init(new ConceptRepository());
 
     init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));
@@ -155,4 +149,5 @@ public class MPSCore extends ComponentPlugin {
   public void setMergeDriverMode(boolean mergeDriverMode) {
     this.mergeDriverMode = mergeDriverMode;
   }
+
 }

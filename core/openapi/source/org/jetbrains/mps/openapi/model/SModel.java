@@ -34,5 +34,7 @@ public interface SModel {
 
   Iterable<? extends SNode> getRootNodes();
 
+  void addRootNode(SNode node);
+
   SNode getNode(SNodeId id);
 }

@@ -1,7 +1,8 @@
+:openapi
+core/openapi/classes
 :core
 core/analyzers/classes
 core/kernel/classes
-core/openapi/classes
 core/runtime/classes
 core/findUsages-runtime/classes
 core/refactoring-runtime/classes

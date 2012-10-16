@@ -136,23 +136,23 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2584857295430340569(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "parameterFromVar"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_2584857295430340546(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "parameterFromVar"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_2584857295430340722(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "parameterLetExpr");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_5142899583592522507(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "parameterLetExpr");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_2167053794906731184(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameterFromVar"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static SNode sourceNodeQuery_391739495267927128(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

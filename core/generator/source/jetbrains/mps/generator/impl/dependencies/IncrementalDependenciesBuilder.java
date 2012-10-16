@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.GenerationFailureException;
@@ -24,12 +25,11 @@ import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.*;
 
 /**
@@ -42,6 +42,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   private static final Logger LOG = Logger.getLogger(IncrementalDependenciesBuilder.class);
 
   /* generation data */
+  private Map<String, String> myDependenciesTraces;
   private final Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
   private final String myModelHash;
   private final String myParametersHash;
@@ -66,7 +67,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   private Map<String, SNode> myRequiredSet;
 
   public IncrementalDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
-                                        String parametersHash, IntermediateModelsCache cache) {
+                      String parametersHash, IntermediateModelsCache cache) {
     this.originalInputModel = currentInputModel = originalInputModel;
     myParametersHash = parametersHash;
     myCache = cache;
@@ -86,6 +87,22 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       myRootBuilders.put(root, myAllBuilders[e++]);
       currentToOriginalMap.put(root, root);
     }
+  }
+
+  public void traceDependencyOrigins() {
+    if (!InternalFlag.isInternalMode()) return;
+
+    myDependenciesTraces = new HashMap<String, String>();
+  }
+
+  void reportModelAccess(SModelDescriptor model, SNode root) {
+    if (myDependenciesTraces == null) return;
+    String key = model.getSModelReference().toString() + " in " + (root == null ? "common" : root.getId());
+    if (myDependenciesTraces.containsKey(key)) return;
+
+    StringWriter stringWriter = new StringWriter();
+    new Throwable().printStackTrace(new PrintWriter(stringWriter));
+    myDependenciesTraces.put(key, stringWriter.toString());
   }
 
   public void propagateDependencies(Set<SNode> unchangedRoots, Set<SNode> requiredRoots, boolean conditionalsUnchanged, boolean conditionalsRequired, GenerationDependencies saved) {
@@ -128,7 +145,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     for (SNode root : newmodel.roots()) {
       SNodeId id = root.getSNodeId();
       SNode original = oldidsToOriginal.get(id);
-      if(original == null) {
+      if (original == null) {
         // TODO if original is null -> new root added, warning/error(strict)?
         LOG.debug("script created a new node");
       }
@@ -155,8 +172,8 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   }
 
   public void rootReplaced(SNode oldOutputRoot, SNode newOutputRoot) {
-    if(nextStepToOriginalMap != null && nextStepToOriginalMap.containsKey(oldOutputRoot)) {
-        SNode original = nextStepToOriginalMap.remove(oldOutputRoot);
+    if (nextStepToOriginalMap != null && nextStepToOriginalMap.containsKey(oldOutputRoot)) {
+      SNode original = nextStepToOriginalMap.remove(oldOutputRoot);
       nextStepToOriginalMap.put(newOutputRoot, original);
     }
   }
@@ -227,7 +244,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromIncremental(currentToOriginalMap, myAllBuilders, myModelHash, myParametersHash, operationContext, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size());
+    return GenerationDependencies.fromIncremental(currentToOriginalMap, myAllBuilders, myModelHash, myParametersHash, operationContext, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
   }
 
   /* working with cache */

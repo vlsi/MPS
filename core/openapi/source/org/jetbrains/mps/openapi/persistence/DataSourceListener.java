@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.language;
+package org.jetbrains.mps.openapi.persistence;
 
-public interface SLinkScopeProvider {
-  SScope getScope(SScopePlace place);
+public interface DataSourceListener {
+
+  void changed(DataSource source);
 }

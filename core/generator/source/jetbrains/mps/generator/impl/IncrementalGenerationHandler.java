@@ -19,7 +19,6 @@ import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.*;
-import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;

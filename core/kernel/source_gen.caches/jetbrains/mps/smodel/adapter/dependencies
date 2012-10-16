@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter" file="SConceptNodeAdapter.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" file="SConceptNodeAdapter.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SInterfaceConceptNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SInterfaceConceptNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SInterfaceConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.apiadapter.SConceptNodeAdapterBase" />
+    <classNode extendsClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SConceptNodeAdapterBase" file="SConceptNodeAdapterBase.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase" file="SConceptNodeAdapterBase.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -30,9 +30,9 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLanguageLanguageAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLinkNodeAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SPropertyNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SLinkNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SPropertyNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -42,14 +42,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SDataTypeAdapter" file="SDataTypeAdapter.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SDataTypeAdapter" file="SDataTypeAdapter.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SDataType" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SInterfaceConceptNodeAdapter" file="SInterfaceConceptNodeAdapter.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SInterfaceConceptNodeAdapter" file="SInterfaceConceptNodeAdapter.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -58,10 +58,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.apiadapter.SConceptNodeAdapterBase" />
+    <classNode extendsClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SInterfaceConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SLanguageLanguageAdapter" file="SLanguageLanguageAdapter.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter" file="SLanguageLanguageAdapter.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -74,35 +74,46 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SInterfaceConceptNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SInterfaceConceptNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SLanguage" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SLinkNodeAdapter" file="SLinkNodeAdapter.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SLinkNodeAdapter" file="SLinkNodeAdapter.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SInterfaceConceptNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SInterfaceConceptNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLinkScopeProvider" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SLink" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.apiadapter.SPropertyNodeAdapter" file="SPropertyNodeAdapter.java">
+  <dependency className="jetbrains.mps.smodel.adapter.SPrimitiveDataTypeAdapter" file="SPrimitiveDataTypeAdapter.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.language.SPrimitiveDataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.smodel.adapter.SPropertyNodeAdapter" file="SPropertyNodeAdapter.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SDataTypeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SDataTypeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SPrimitiveDataTypeAdapter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SDataType" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SProperty" />

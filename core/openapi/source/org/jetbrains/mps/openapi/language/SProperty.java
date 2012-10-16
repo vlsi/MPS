@@ -20,4 +20,6 @@ public interface SProperty {
   String getName();
 
   SDataType getType();
+
+  boolean isValid(String value);
 }

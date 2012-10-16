@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

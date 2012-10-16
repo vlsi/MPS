@@ -20,7 +20,7 @@ package org.jetbrains.mps.openapi.language;
  */
 public interface SEnumerationLiteral {
 
-  SEnumeration getContainer();
+  SEnumeration getEnumeration();
 
   String getPresentation();
 

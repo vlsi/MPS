@@ -106,6 +106,7 @@
         <path location="${mps_home}/testbench/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />
