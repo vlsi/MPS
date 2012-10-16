@@ -523,7 +523,7 @@
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2598676492883244754" />
           <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2598676492883244759">
             <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2598676492883244760">
-              <property name="text" nameId="tpee.6329021646629104958" value="whitespace part" />
+              <property name="text" nameId="tpee.6329021646629104958" value="whitespace" />
             </node>
           </node>
         </node>
