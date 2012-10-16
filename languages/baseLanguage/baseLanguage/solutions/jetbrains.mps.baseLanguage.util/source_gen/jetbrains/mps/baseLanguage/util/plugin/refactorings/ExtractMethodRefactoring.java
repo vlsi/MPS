@@ -115,7 +115,7 @@ public abstract class ExtractMethodRefactoring {
       SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a6().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0g().createNode(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
-        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0g().createNode(newDeclaration));
+        SNodeOperations.replaceWithAnother(reference, ((SNode) BehaviorManager.getInstance().invoke(Object.class, newDeclaration, "virtual_createReference_1213877517482", new Class[]{SNode.class})));
       }
     }
   }
@@ -333,24 +333,6 @@ public abstract class ExtractMethodRefactoring {
           }
         }
         result = quotedNode1_4;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_jq3ovj_a0a0a0c0c0g {
-    public QuotationClass_jq3ovj_a0a0a0c0c0g() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
       }
       return result;
     }
