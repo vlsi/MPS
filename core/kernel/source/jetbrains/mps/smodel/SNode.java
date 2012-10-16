@@ -75,14 +75,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myConceptFqName = conceptFqName;
   }
 
-  public SModel getModelInternal() {
-    return myModel;
-  }
-
   public SNodeId getSNodeId() {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
+    if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+      // TODO remove id generation
+      myId = SModel.generateUniqueId();
+      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
+    }
     return myId;
   }
 
@@ -672,6 +673,39 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
+  public SModel getModelInternal() {
+    return myModel;
+  }
+
+  @Deprecated
+  //for migration purposes only. Should be removed in release
+  public void setModel(SModel model) {
+    myModel = model;
+  }
+
+  /**
+   * Use<br/>
+   *  n = new SNode(concept);<br/>
+   *  model.addNode(n)<br/>
+   * or<br/>
+   *  n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   * InternUtil.intern should be done in outer code
+   *
+   * @Deprecated in 3.0
+   */
+  @Deprecated
+  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
+    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
+    setModel(model);
+  }
+
+  @Deprecated
+  public SNode(SModel model, String conceptFqName) {
+    this(InternUtil.intern(conceptFqName));
+    setModel(model);
+  }
+
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -1109,35 +1143,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
-
-  @Deprecated
-  //for migration purposes only. Should be removed in release
-  public void setModel(SModel model) {
-    myModel = model;
-  }
-
-  /**
-   * Use<br/>
-   *  n = new SNode(concept);<br/>
-   *  model.addNode(n)<br/>
-   * or<br/>
-   *  n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   * InternUtil.intern should be done in outer code
-   *
-   * @Deprecated in 3.0
-   */
-  @Deprecated
-  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
-    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
-    setModel(model);
-  }
-
-  @Deprecated
-  public SNode(SModel model, String conceptFqName) {
-    this(InternUtil.intern(conceptFqName));
-    setModel(model);
-  }
 
   @Deprecated
   /**
