@@ -13,15 +13,15 @@ public class UnifyVariableReferences_MigrationScript extends BaseMigrationScript
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       this.addRefactoring(refactoring);
     }
-    // whitespace part 
+    // whitespace 
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       this.addRefactoring(refactoring);
     }
-    // whitespace part 
+    // whitespace 
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
       this.addRefactoring(refactoring);
     }
-    // whitespace part 
+    // whitespace 
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       this.addRefactoring(refactoring);
     }

@@ -1451,45 +1451,45 @@
   <root nodeId="8897506886668070863" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
     <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="11" startPosition="86" endLine="12" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2598676492883241351" fileName="UnifyVariableReferences_MigrationScript.java" startLine="13" startPosition="316" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2598676492883248853" fileName="UnifyVariableReferences_MigrationScript.java" startLine="15" startPosition="5" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="15" startPosition="5" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883248853" fileName="UnifyVariableReferences_MigrationScript.java" startLine="15" startPosition="5" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="15" startPosition="5" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="17" startPosition="308" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2598676492883248855" fileName="UnifyVariableReferences_MigrationScript.java" startLine="19" startPosition="5" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="19" startPosition="5" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883248855" fileName="UnifyVariableReferences_MigrationScript.java" startLine="19" startPosition="5" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="19" startPosition="5" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="21" startPosition="313" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2598676492883248859" fileName="UnifyVariableReferences_MigrationScript.java" startLine="23" startPosition="5" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="23" startPosition="5" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883248859" fileName="UnifyVariableReferences_MigrationScript.java" startLine="23" startPosition="5" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="23" startPosition="5" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="25" startPosition="317" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2598676492883241351" fileName="UnifyVariableReferences_MigrationScript.java" startLine="12" startPosition="132" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="12" startPosition="132" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="23" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="23" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="23" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="23" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="23" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="23" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="18" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="18" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="18" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="18" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="18" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="18" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="10" startPosition="82" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnifyVariableReferences_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
     <scopeInfo nodeId="2598676492883241351" fileName="UnifyVariableReferences_MigrationScript.java" startLine="13" startPosition="316" endLine="14" endPosition="39" />
-    <scopeInfo nodeId="2598676492883248853" fileName="UnifyVariableReferences_MigrationScript.java" startLine="15" startPosition="5" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="2598676492883248853" fileName="UnifyVariableReferences_MigrationScript.java" startLine="15" startPosition="5" endLine="16" endPosition="18" />
     <scopeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="17" startPosition="308" endLine="18" endPosition="39" />
-    <scopeInfo nodeId="2598676492883248855" fileName="UnifyVariableReferences_MigrationScript.java" startLine="19" startPosition="5" endLine="20" endPosition="23" />
+    <scopeInfo nodeId="2598676492883248855" fileName="UnifyVariableReferences_MigrationScript.java" startLine="19" startPosition="5" endLine="20" endPosition="18" />
     <scopeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="21" startPosition="313" endLine="22" endPosition="39" />
-    <scopeInfo nodeId="2598676492883248859" fileName="UnifyVariableReferences_MigrationScript.java" startLine="23" startPosition="5" endLine="24" endPosition="23" />
+    <scopeInfo nodeId="2598676492883248859" fileName="UnifyVariableReferences_MigrationScript.java" startLine="23" startPosition="5" endLine="24" endPosition="18" />
     <scopeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="25" startPosition="317" endLine="26" endPosition="39" />
     <scopeInfo nodeId="2598676492883241351" fileName="UnifyVariableReferences_MigrationScript.java" startLine="12" startPosition="132" endLine="15" endPosition="5" />
     <scopeInfo nodeId="2598676492883241351" fileName="UnifyVariableReferences_MigrationScript.java" startLine="12" startPosition="132" endLine="15" endPosition="5">
       <varInfo nodeId="2598676492883241351" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="23" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="23" endLine="19" endPosition="5">
+    <scopeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="18" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="2598676492883241383" fileName="UnifyVariableReferences_MigrationScript.java" startLine="16" startPosition="18" endLine="19" endPosition="5">
       <varInfo nodeId="2598676492883241383" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="23" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="23" endLine="23" endPosition="5">
+    <scopeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="18" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="2598676492883241387" fileName="UnifyVariableReferences_MigrationScript.java" startLine="20" startPosition="18" endLine="23" endPosition="5">
       <varInfo nodeId="2598676492883241387" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="23" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="23" endLine="27" endPosition="5">
+    <scopeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="18" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="2598676492883241391" fileName="UnifyVariableReferences_MigrationScript.java" startLine="24" startPosition="18" endLine="27" endPosition="5">
       <varInfo nodeId="2598676492883241391" varName="refactoring" />
     </scopeInfo>
     <scopeInfo nodeId="8897506886668070863" fileName="UnifyVariableReferences_MigrationScript.java" startLine="11" startPosition="86" endLine="27" endPosition="5" />
