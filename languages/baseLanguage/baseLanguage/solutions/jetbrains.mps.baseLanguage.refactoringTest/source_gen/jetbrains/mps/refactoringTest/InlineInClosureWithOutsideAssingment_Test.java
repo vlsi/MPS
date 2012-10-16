@@ -28,7 +28,7 @@ public class InlineInClosureWithOutsideAssingment_Test extends BaseTransformatio
     public void test_InlineInClosureWithOutsideAssingmentTest() throws Exception {
       this.addNodeById("7093131866560585772");
       this.addNodeById("7093131866560585816");
-      InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("7093131866560585802"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+      InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("7093131866560585802"), "jetbrains.mps.baseLanguage.structure.VariableReference"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7093131866560585780"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7093131866560585820"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
