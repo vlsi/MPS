@@ -1110,6 +1110,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
 
+  @Deprecated
+  //for migration purposes only. Should be removed in release
+  public void setModel(SModel model) {
+    myModel = model;
+  }
+
   /**
    * Use<br/>
    *  n = new SNode(concept);<br/>
@@ -1123,13 +1129,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   @Deprecated
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
-    myModel = model;
-    myConceptFqName = callIntern ? InternUtil.intern(conceptFqName) : conceptFqName;
+    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
+    setModel(model);
   }
 
   @Deprecated
   public SNode(SModel model, String conceptFqName) {
-    this(model, conceptFqName, true);
+    this(InternUtil.intern(conceptFqName));
+    setModel(model);
   }
 
   @Deprecated
