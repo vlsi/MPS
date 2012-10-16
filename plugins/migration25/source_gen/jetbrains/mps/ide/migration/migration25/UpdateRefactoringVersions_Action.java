@@ -11,13 +11,13 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 
 public class UpdateRefactoringVersions_Action extends BaseAction {
@@ -59,20 +59,20 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModelDescriptor model : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
+      for (SModel model : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
         if (!(model instanceof DefaultSModelDescriptor)) {
           continue;
         }
-        if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
+        if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
           continue;
         }
         UpdateRefactoringVersions_Action.this.updateModelVersion((DefaultSModelDescriptor) model, _params);
       }
-      for (SModelDescriptor model : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
+      for (SModel model : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
         if (!(model instanceof DefaultSModelDescriptor)) {
           continue;
         }
-        if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
+        if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
           continue;
         }
         UpdateRefactoringVersions_Action.this.updateImportVersions((DefaultSModelDescriptor) model, _params);
@@ -102,8 +102,8 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   }
 
   /*package*/ void updateImportVersions(DefaultSModelDescriptor model, final Map<String, Object> _params) {
-    SModel m = model.getSModel();
-    for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
+    jetbrains.mps.smodel.SModel m = model.getSModel();
+    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
       DefaultSModelDescriptor usedModel = as_hexye9_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
       if (usedModel == null) {
         continue;

@@ -53,7 +53,7 @@ public class _LinkAccessT_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -71,7 +71,7 @@ public class _LinkAccessT_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("elementConcept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

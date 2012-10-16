@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.adapter.BehaviorDescriptorAdapter;
 import org.jetbrains.annotations.Nullable;
 
+@Deprecated //remove after 3.0
 public class ConceptRegistry {
   private static final ConceptRegistry REGISTRY = new ConceptRegistry();
 

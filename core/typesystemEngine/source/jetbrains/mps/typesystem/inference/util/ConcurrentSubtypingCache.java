@@ -116,7 +116,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       SNode value = map.get(conceptFQName);
       if (value != null) {
         SNode result = postprocessGetNode(value);
-        if (result != null && result.shouldHaveBeenDisposed()) {
+        if (result != null && jetbrains.mps.util.SNodeOperations.isDisposed(result)) {
           map.remove(conceptFQName);
         } else {
           return new Pair<Boolean, SNode>(true, result);
@@ -147,7 +147,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     if (map != null && map.containsKey(c)) {
       Pair<SNode, GeneratedMatchingPattern> patternPair = map.get(c);
       SNode resultNode = patternPair.o1;
-      if (resultNode != null && resultNode.shouldHaveBeenDisposed()) {
+      if (resultNode != null && jetbrains.mps.util.SNodeOperations.isDisposed(resultNode)) {
         map.remove(c);
         return null;
       } else {

@@ -9,10 +9,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ChangeProperty_Intention extends BaseIntention implements Intention {
   public ChangeProperty_Intention() {
@@ -42,18 +42,18 @@ public class ChangeProperty_Intention extends BaseIntention implements Intention
     SNode transactional = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", node);
     SLinkOperations.setTarget(transactional, "property", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
-    for (SNode child : ListSequence.fromList(node.getChildren())) {
-      String role = child.getRole_();
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+      String role = child.getRole();
       node.removeChild(child);
       transactional.addChild(role, child);
     }
-    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
+    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(SNodeOperations.getProperties(node).entrySet())) {
       transactional.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
-      transactional.addReference(reference);
+      transactional.setReference(reference.getRole(), reference);
     }
-    SNodeOperations.replaceWithAnother(node, transactional);
+    jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, transactional);
   }
 
   public String getLocationString() {

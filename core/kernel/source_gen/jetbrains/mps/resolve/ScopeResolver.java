@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.util.NameUtil;
 
@@ -32,7 +32,7 @@ public class ScopeResolver implements IResolver {
     return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        Scope refScope = ModelConstraintsUtil.getScope(reference, operationContext);
+        Scope refScope = ModelConstraints.getScope(reference);
         if (refScope instanceof ErrorScope) {
           LOG.error("Couldn't create referent search scope : " + ((ErrorScope) refScope).getMessage());
           return false;

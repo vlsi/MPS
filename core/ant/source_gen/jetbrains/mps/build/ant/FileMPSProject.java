@@ -12,12 +12,13 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.ProjectManager;
 import java.util.Set;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import java.util.Collections;
@@ -34,6 +35,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class FileMPSProject extends Project {
   private static Logger LOG = Logger.getLogger(FileMPSProject.class);
@@ -84,7 +86,7 @@ public class FileMPSProject extends Project {
   protected void readModules(FileMPSProject.ProjectDescriptor projDesc) {
     myErrors = null;
     //  load solutions 
-    Set<ModuleReference> existingModules = getModuleReferences();
+    Set<SModuleReference> existingModules = getModuleReferences();
     for (Path modulePath : projDesc.getModules()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
@@ -92,8 +94,8 @@ public class FileMPSProject extends Project {
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
           ModulesMiner.ModuleHandle moduleHandle = new ModulesMiner.ModuleHandle(descriptorFile, descriptor);
-          IModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
-          ModuleReference moduleReference = m.getModuleReference();
+          SModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
+          SModuleReference moduleReference = m.getModuleReference();
           if (!(existingModules.remove(moduleReference))) {
             super.addModule(moduleReference);
           }
@@ -104,7 +106,7 @@ public class FileMPSProject extends Project {
         error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
-    for (ModuleReference ref : existingModules) {
+    for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
   }
@@ -128,8 +130,8 @@ public class FileMPSProject extends Project {
       public void run() {
         readModules(myDescriptor);
         //  TODO FIXME get rid of onModuleLoad 
-        for (IModule m : getModules()) {
-          m.onModuleLoad();
+        for (SModule m : getModules()) {
+          ((IModule) m).onModuleLoad();
         }
       }
     });

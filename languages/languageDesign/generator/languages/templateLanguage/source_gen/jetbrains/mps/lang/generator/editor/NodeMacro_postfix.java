@@ -80,7 +80,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   private EditorCell createReadOnlyModelAccessor_crgygw_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return node.getRole_();
+        return node.getRole();
       }
 
       public void setText(String s) {
@@ -146,7 +146,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    String actualRole = node.getRole_();
+    String actualRole = node.getRole();
     String expectedRole = "smodelAttribute";
     return !(actualRole.equals(expectedRole));
   }

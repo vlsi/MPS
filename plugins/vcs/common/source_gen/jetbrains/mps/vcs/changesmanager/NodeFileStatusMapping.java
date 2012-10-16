@@ -29,7 +29,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -137,8 +137,8 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 SModelDescriptor modelDescriptor = null;
-                if (!(root.isDisposed() || SNodeOperations.getModel(root).isDisposed())) {
-                  modelDescriptor = SNodeOperations.getModel(root).getModelDescriptor();
+                if (!(SNodeOperations.isDisposed(root) || jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).isDisposed())) {
+                  modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).getModelDescriptor();
                 }
                 if (modelDescriptor instanceof DefaultSModelDescriptor) {
                   myRegistry.getCurrentDifference((DefaultSModelDescriptor) modelDescriptor).setEnabled(true);

@@ -32,7 +32,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -41,6 +40,8 @@ import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -65,7 +66,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private Element myProjectElement;
   protected ProjectDescriptor myProjectDescriptor;
 
-  private final Map<ModuleReference, Path> myModuleToPath = new HashMap<ModuleReference, Path>();
+  private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
   public StandaloneMPSProject(Project project) {
     super(project);
@@ -146,8 +147,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void addModule(ModuleReference ref) {
-    IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  public void addModule(SModuleReference ref) {
+    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.addModule(ref);
       IFile descriptorFile = module.getDescriptorFile();
@@ -157,8 +158,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void removeModule(ModuleReference ref) {
-    IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  public void removeModule(SModuleReference ref) {
+    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.removeModule(ref);
       IFile descriptorFile = module.getDescriptorFile();
@@ -173,7 +174,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     myErrors = null;
 
     // load solutions
-    Set<ModuleReference> existingModules = getModuleReferences();
+    Set<SModuleReference> existingModules = getModuleReferences();
     for (Path modulePath : myProjectDescriptor.getModules()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
@@ -193,7 +194,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
-    for (ModuleReference ref : existingModules) {
+    for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
   }
@@ -229,7 +230,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Nullable
-  public String getFolderFor(IModule module) {
+  public String getFolderFor(SModule module) {
     Path path = getPathForModule(module);
     if (path != null) {
       return path.getMPSFolder();
@@ -238,7 +239,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     }
   }
 
-  public void setFolderFor(IModule module, String newFolder) {
+  public void setFolderFor(SModule module, String newFolder) {
     Path path = getPathForModule(module);
     if (path != null) {
       path.setMPSFolder(newFolder);
@@ -269,8 +270,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     }
   }
 
-  private Path getPathForModule(IModule module) {
-    ModuleReference reference = module.getModuleReference();
+  private Path getPathForModule(SModule module) {
+    SModuleReference reference = module.getModuleReference();
     if (myModuleToPath.containsKey(reference)) {
       return myModuleToPath.get(reference);
     } else {
@@ -280,8 +281,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     }
   }
 
-  private Path getPathForModule_Internal(IModule module) {
-    IFile file = module.getDescriptorFile();
+  private Path getPathForModule_Internal(SModule module) {
+    if (!(module instanceof AbstractModule)) return null;
+    IFile file = ((AbstractModule) module).getDescriptorFile();
     assert file != null;
     String path = file.getPath();
     for (Path sp : getAllModulePaths()) {

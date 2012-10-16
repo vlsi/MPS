@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -73,7 +72,7 @@ public class TypeContextManager implements CoreComponent {
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
           if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
-            nodePointer.getNode().shouldHaveBeenDisposed() || modelRef.equals(nodePointer.getModelReference())) {
+            jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.getNode()) || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -178,7 +177,7 @@ public class TypeContextManager implements CoreComponent {
         }
       } else {
         TypeCheckingContext context = contextWithOwners.o1;
-        if (context.getNode().isDisposed()) {
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(context.getNode())) {
           removeContextForNode(nodePointer);
           LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
           return getOrCreateContext(node, owner, createIfAbsent);
@@ -193,7 +192,7 @@ public class TypeContextManager implements CoreComponent {
 
   public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
-    if (node == null || node.isDisposed()) return;
+    if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return;
     //if node is disposed, then context was removed by beforeModelDisposed listener
     synchronized (myLock) {
       SNodePointer nodePointer = new SNodePointer(node);

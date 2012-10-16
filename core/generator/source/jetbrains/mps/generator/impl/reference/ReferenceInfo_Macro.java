@@ -21,16 +21,14 @@ import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
 
-import java.util.ArrayList;
-
-/**
- * Created by: Sergey Dmitriev
- * Date: Jan 25, 2007
- */
 public abstract class ReferenceInfo_Macro extends ReferenceInfo {
+  private static Logger LOG = Logger.getLogger(ReferenceInfo_Macro.class);
+
   protected final TemplateContext myContext;
   protected final ReductionContext myReductionContext;
 
@@ -80,7 +78,15 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public boolean isRequired() {
-    return getOutputSourceNode().isReferentRequired(getReferenceRole());
+    String role = getReferenceRole();
+    SConcept concept = getOutputSourceNode().getConcept();
+    SLink link = concept.findLink(role);
+    if (link == null) {
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + concept.getId());
+      return false;
+    }
+
+    return !link.isOptional();
   }
 
   private void expandReferenceMacro(ITemplateGenerator generator) {

@@ -22,6 +22,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -62,7 +63,7 @@ public abstract class DefaultScope extends BaseScope {
     return null;
   }
 
-  public Language getLanguage(ModuleReference moduleReference) {
+  public Language getLanguage(SModuleReference moduleReference) {
     Language l = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (l == null) return null;
 

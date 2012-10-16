@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.ArrayList;
@@ -48,12 +49,12 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     super.doInit();
 
-    List<String> props = new ArrayList<String>(myNode.getPropertyNames());
-
-    for (final String p : props) {
-      add(new PropertyTreeNode(getOperationContext(), myNode, p));
-    }
-
+    myNode.visitProperties(new PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        add(new PropertyTreeNode(getOperationContext(), myNode, name));
+        return true;
+      }
+    });
     myInitialized = true;
 
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);

@@ -80,7 +80,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -93,7 +93,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -111,7 +111,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -128,10 +128,10 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         SNode nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a;
         nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getConcept().getId()))) {
           return false;
         }
-        patternVar_CONCEPT = nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getReferent("elementConcept");
+        patternVar_CONCEPT = nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getReferenceTarget("elementConcept");
       }
       return true;
     }
@@ -167,7 +167,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         SNode nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0;
         nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getConcept().getId()))) {
           return false;
         }
         {

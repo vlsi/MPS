@@ -46,7 +46,7 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("conceptDeclaraton", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("conceptDeclaraton", (SNode) parameter_5);
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
         result = quotedNode1_3;

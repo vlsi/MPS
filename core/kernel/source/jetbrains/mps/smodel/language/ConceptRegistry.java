@@ -168,7 +168,7 @@ public class ConceptRegistry implements CoreComponent {
       // todo: more clearly logic
       return BehaviorAspectInterpreted.getInstance().getDescriptor(null);
     } else {
-      return getBehaviorDescriptor(node.getConceptFqName());
+      return getBehaviorDescriptor(node.getConcept().getId());
     }
   }
 

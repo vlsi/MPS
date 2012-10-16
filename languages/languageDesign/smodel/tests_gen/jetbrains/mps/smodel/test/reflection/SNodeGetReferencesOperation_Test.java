@@ -242,7 +242,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest4 {
 
     public String addUnspecifiedReference(SNode input, SNode referenceTarget) {
       String referenceName = "unspecifiedReference";
-      input.setReferent(referenceName, referenceTarget);
+      input.setReferenceTarget(referenceName, referenceTarget);
       return referenceName;
     }
   }

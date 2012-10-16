@@ -675,13 +675,13 @@ public class Classifier_Behavior {
       {
         SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
         nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getId()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a42;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferent("classifier") != referent) {
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

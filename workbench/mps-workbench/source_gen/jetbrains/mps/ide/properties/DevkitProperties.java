@@ -8,7 +8,10 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFacto
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 
-public class DevkitProperties extends ModuleProperties {
+public class DevkitProperties {
+  public static final String NAMESPACE = "namespace";
+
+  private String myNamespace;
   private List<ModuleReference> myExportedLanguages;
   private List<ModuleReference> myExportedSolutions;
   private List<ModuleReference> myExtendedDevkits;
@@ -17,6 +20,14 @@ public class DevkitProperties extends ModuleProperties {
     myExportedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myExtendedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+  }
+
+  public String getNamespace() {
+    return myNamespace;
+  }
+
+  public void setNamespace(String namespace) {
+    myNamespace = namespace;
   }
 
   public List<ModuleReference> getExportedLanguages() {
@@ -31,10 +42,9 @@ public class DevkitProperties extends ModuleProperties {
     return myExtendedDevkits;
   }
 
-  @Override
   public void loadFrom(ModuleDescriptor descriptor) {
     assert descriptor instanceof DevkitDescriptor;
-    super.loadFrom(descriptor);
+    myNamespace = descriptor.getNamespace();
     DevkitDescriptor d = (DevkitDescriptor) descriptor;
     for (ModuleReference ref : d.getExportedLanguages()) {
       myExportedLanguages.add(ref);
@@ -47,11 +57,10 @@ public class DevkitProperties extends ModuleProperties {
     }
   }
 
-  @Override
   public void saveTo(ModuleDescriptor descriptor) {
     assert descriptor instanceof DevkitDescriptor;
-    super.saveTo(descriptor);
     DevkitDescriptor d = (DevkitDescriptor) descriptor;
+    d.setNamespace(myNamespace);
     d.getExportedLanguages().clear();
     d.getExportedLanguages().addAll(myExportedLanguages);
     d.getExportedSolutions().clear();

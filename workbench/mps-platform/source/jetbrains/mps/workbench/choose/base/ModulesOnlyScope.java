@@ -19,6 +19,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,7 +40,7 @@ public class ModulesOnlyScope extends BaseScope {
     return null;
   }
 
-  public Language getLanguage(ModuleReference moduleReference) {
+  public Language getLanguage(SModuleReference moduleReference) {
     Language lang = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (lang == null) return null;
     if (myModules.contains(lang)) return lang;

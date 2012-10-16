@@ -15,21 +15,23 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.File;
 import java.util.*;
 
 /**
- *  Core MPS Project.
+ * Core MPS Project.
  */
 public abstract class Project implements MPSModuleOwner {
 
   protected File myProjectFile;
-  protected final Set<ModuleReference> myModules = new LinkedHashSet<ModuleReference>();
+  protected final Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
   private final ProjectScope myScope = new ProjectScope();
   private boolean isDisposed;
 
@@ -38,12 +40,12 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   public abstract List<String> getWatchedModulesPaths();
-  
+
   @NotNull
-  public List<IModule> getModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    for (ModuleReference ref : myModules) {
-      IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  public Iterable<? extends SModule> getModules() {
+    List<SModule> result = new ArrayList<SModule>();
+    for (SModuleReference ref : myModules) {
+      IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
       if (module != null) {
         result.add(module);
       }
@@ -51,20 +53,19 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  public Set<ModuleReference> getModuleReferences() {
-    return new HashSet<ModuleReference>(myModules);
+  public Set<SModuleReference> getModuleReferences() {
+    return new HashSet<SModuleReference>(myModules);
   }
 
-  public List<IModule> getModulesWithGenerators() {
-    List<IModule> modules = getModules();
-    List<IModule> generators = new ArrayList<IModule>();
-    for (IModule m : modules) {
+  public Iterable<? extends SModule> getModulesWithGenerators() {
+    List<SModule> result = new ArrayList<SModule>();
+    for (SModule m : getModules()) {
+      result.add(m);
       if (m instanceof Language) {
-        generators.addAll(((Language) m).getGenerators());
+        result.addAll(((Language) m).getGenerators());
       }
     }
-    modules.addAll(generators);
-    return modules;
+    return result;
   }
 
   @Nullable
@@ -76,15 +77,15 @@ public abstract class Project implements MPSModuleOwner {
     myProjectFile = file;
   }
 
-  public boolean isProjectModule(@NotNull IModule module) {
+  public boolean isProjectModule(@NotNull SModule module) {
     return myModules.contains(module.getModuleReference());
   }
 
   @NotNull
   public <T extends IModule> List<T> getProjectModules(Class<T> moduleClass) {
     List<T> result = new ArrayList<T>();
-    for (ModuleReference mr : myModules) {
-      IModule module = MPSModuleRepository.getInstance().getModule(mr);
+    for (SModuleReference mr : myModules) {
+      IModule module = ModuleRepositoryFacade.getInstance().getModule(mr);
       if (module == null) continue;
       if (!moduleClass.isInstance(module)) continue;
 
@@ -93,20 +94,27 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  public List<SModelDescriptor> getProjectModels() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<IModule> modules = getModules();
-    for (IModule module : modules) {
-      result.addAll(module.getOwnModelDescriptors());
+  public Iterable<SModel> getProjectModels() {
+    List<SModel> result = new ArrayList<SModel>();
+
+    for (SModule module : getModules()) {
+      Iterable<SModel> models = module.getModels();
+      if (models instanceof Collection) {
+        result.addAll((Collection<SModel>) models);
+      } else {
+        for (SModel model : models) {
+          result.add(model);
+        }
+      }
     }
     return result;
   }
 
-  public void addModule(ModuleReference module) {
+  public void addModule(SModuleReference module) {
     myModules.add(module);
   }
 
-  public void removeModule(ModuleReference module) {
+  public void removeModule(SModuleReference module) {
     myModules.remove(module);
   }
 

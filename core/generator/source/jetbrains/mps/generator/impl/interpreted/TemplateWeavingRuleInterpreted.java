@@ -124,7 +124,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
 
     environment.getTracer().pushRuleConsequence(new SNodePointer(consequence));
-    String consequenceConceptFQName = consequence.getConceptFqName();
+    String consequenceConceptFQName = consequence.getConcept().getId();
     if (consequenceConceptFQName.equals(RuleUtil.concept_TemplateDeclarationReference)) {
       SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
       weaveTemplateDeclaration(template, outputContextNode,

@@ -142,7 +142,7 @@ public class JavaPaster {
     if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
       parent.addChild(SPropertyOperations.getString(role, "role"), node);
     } else {
-      parent.insertChild(anchor, SPropertyOperations.getString(role, "role"), node, true);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, SPropertyOperations.getString(role, "role"), node, anchor, true);
     }
     return true;
   }

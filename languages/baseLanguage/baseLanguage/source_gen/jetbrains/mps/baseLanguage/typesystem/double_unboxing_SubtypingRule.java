@@ -82,12 +82,12 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
       {
         SNode nodeToMatch_double_unboxing_31y3xb_a0a;
         nodeToMatch_double_unboxing_31y3xb_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_double_unboxing_31y3xb_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_double_unboxing_31y3xb_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_jy4zax_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_double_unboxing_31y3xb_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_double_unboxing_31y3xb_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

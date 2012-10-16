@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 import java.util.HashSet;
+import jetbrains.mps.util.SNodeOperations;
 
 public class NodesMatcher {
   public NodesMatcher() {
@@ -54,12 +55,12 @@ public class NodesMatcher {
   }
 
   private static void match(SNode a, SNode b, Map<SNode, SNode> map) {
-    if (!(a.getConceptFqName().equals(b.getConceptFqName()))) {
+    if (!(a.getConcept().getId().equals(b.getConcept().getId()))) {
       return;
     }
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(a.getChildRoles());
-    roles.addAll(b.getChildRoles());
+    roles.addAll(SNodeOperations.getChildRoles(a));
+    roles.addAll(SNodeOperations.getChildRoles(b));
     for (String role : roles) {
       List<SNode> children1 = a.getChildren(role);
       List<SNode> children2 = b.getChildren(role);
@@ -76,20 +77,20 @@ public class NodesMatcher {
   public static NodeDifference matchNodes(SNode a, SNode b, Map<SNode, SNode> map) {
     ArrayList<DifferanceItem> difference = new ArrayList<DifferanceItem>();
     if (NodesMatcher.matchConcepts(a, b, difference)) {
-      return new NodeDifference(a.toString(), difference);
+      return new NodeDifference(a.getPresentation(), difference);
     }
     NodesMatcher.matchProperties(a, b, difference);
     NodesMatcher.matchChildren(a, b, map, difference);
     NodesMatcher.matchReferences(a, b, map, difference);
     if (difference.size() != 0) {
-      return new NodeDifference(a.toString(), difference);
+      return new NodeDifference(a.getPresentation(), difference);
     }
     return null;
   }
 
   private static boolean matchConcepts(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
-    if (!(a.getConceptFqName().equals(b.getConceptFqName()))) {
-      difference.add(new ConceptDifference(a.getConceptFqName(), b.getConceptFqName()));
+    if (!(a.getConcept().getId().equals(b.getConcept().getId()))) {
+      difference.add(new ConceptDifference(a.getConcept().getId(), b.getConcept().getId()));
       return true;
     }
     return false;
@@ -97,8 +98,8 @@ public class NodesMatcher {
 
   private static void matchReferences(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(a.getReferenceRoles());
-    roles.addAll(b.getReferenceRoles());
+    roles.addAll(SNodeOperations.getReferenceRoles(a));
+    roles.addAll(SNodeOperations.getReferenceRoles(b));
     for (String role : roles) {
       SNode reference1 = null;
       if (a.getReference(role) != null) {
@@ -122,8 +123,8 @@ public class NodesMatcher {
 
   private static void matchChildren(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(a.getChildRoles());
-    roles.addAll(b.getChildRoles());
+    roles.addAll(SNodeOperations.getChildRoles(a));
+    roles.addAll(SNodeOperations.getChildRoles(b));
     for (String role : roles) {
       List<SNode> children1 = a.getChildren(role);
       List<SNode> children2 = b.getChildren(role);
@@ -142,17 +143,11 @@ public class NodesMatcher {
 
   private static void matchProperties(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
     HashSet<String> propertes = new HashSet<String>();
-    propertes.addAll(a.getPropertyNames());
-    propertes.addAll(b.getPropertyNames());
+    propertes.addAll(SNodeOperations.getProperties(a).keySet());
+    propertes.addAll(SNodeOperations.getProperties(b).keySet());
     for (String key : propertes) {
-      String p1 = a.getProperties().get(key);
-      String p2 = b.getProperties().get(key);
-      if (p1 == null && "false".equals(p2)) {
-        continue;
-      }
-      if (p2 == null && "false".equals(p1)) {
-        continue;
-      }
+      String p1 = SNodeOperations.getProperties(a).get(key);
+      String p2 = SNodeOperations.getProperties(b).get(key);
       if (p1 == null || p2 == null || !(p1.equals(p2))) {
         difference.add(new PropertyDifferense(key));
       }

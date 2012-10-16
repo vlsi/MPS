@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
@@ -26,12 +25,10 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -46,7 +43,7 @@ public class SModelRepository implements CoreComponent {
     return MPSCore.getInstance().getModelRepository();
   }
 
-  private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModelDescriptor>();
+  private final Map<org.jetbrains.mps.openapi.model.SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<org.jetbrains.mps.openapi.model.SModelId, SModelDescriptor>();
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
@@ -57,7 +54,6 @@ public class SModelRepository implements CoreComponent {
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
-  private boolean myWasError = false;
 
   public SModelRepository(ClassLoaderManager manager) {
     myManager = manager;
@@ -106,8 +102,8 @@ public class SModelRepository implements CoreComponent {
       ownerModels.add(modelDescriptor);
       owners.add(owner);
 
-      if (modelReference.getSModelId() != null) {
-        myIdToModelDescriptorMap.put(modelReference.getSModelId(), modelDescriptor);
+      if (modelReference.getModelId() != null) {
+        myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
         if (modelDescriptor instanceof BaseSModelDescriptor) {
           ((BaseSModelDescriptor) modelDescriptor).setRegistered(true);
         }
@@ -144,8 +140,8 @@ public class SModelRepository implements CoreComponent {
         }
       }
       myModelsWithOwners.remove(md);
-      if (md.getSModelReference().getSModelId() != null) {
-        myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+      if (md.getSModelReference().getModelId() != null) {
+        myIdToModelDescriptorMap.remove(md.getSModelReference().getModelId());
         if (md instanceof BaseSModelDescriptor) {
           ((BaseSModelDescriptor) md).setRegistered(false);
         }
@@ -203,22 +199,14 @@ public class SModelRepository implements CoreComponent {
     return result;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+  public SModelDescriptor getModelDescriptor(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     if (modelReference == null) return null;
-    SModelId id = modelReference.getSModelId();
+    org.jetbrains.mps.openapi.model.SModelId id = modelReference.getModelId();
 
     //todo remove this code
     if (id == null) {
-      SModelFqName fqName = modelReference.getSModelFqName();
+      SModelFqName fqName = ((SModelReference) modelReference).getSModelFqName();
       if (fqName == null) return null;
-
-      if (InternalFlag.isInternalMode()) {
-        if (!myWasError) {
-          myWasError = true;
-          LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.");
-        }
-      }
-
       return getModelDescriptor(fqName);
     }
 

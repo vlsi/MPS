@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -97,7 +98,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).any(new IWhereFilter<SReference>() {
+    return Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).any(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;
       }
@@ -105,7 +106,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {
-    String txt = Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).where(new IWhereFilter<SReference>() {
+    String txt = Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;
       }

@@ -9,11 +9,14 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -37,11 +40,12 @@ public class RebuildSelectedModules_Action extends BaseAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    IModule cmd = ((IModule) MapSequence.fromMap(_params).get("cmodule"));
+    SModule cmd = ((IModule) MapSequence.fromMap(_params).get("cmodule"));
     if (cmd instanceof Generator) {
       cmd = ((Generator) cmd).getSourceLanguage();
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.fromMap(_params).get("modules")), cmd).actionText(true);
+    List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, cmd).actionText(true);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -78,11 +82,12 @@ public class RebuildSelectedModules_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule cmd = ((IModule) MapSequence.fromMap(_params).get("cmodule"));
+      SModule cmd = ((IModule) MapSequence.fromMap(_params).get("cmodule"));
       if (cmd instanceof Generator) {
         cmd = ((Generator) cmd).getSourceLanguage();
       }
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.fromMap(_params).get("modules")), cmd), true).executeAction();
+      List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, cmd), true).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RebuildSelectedModules", t);

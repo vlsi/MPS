@@ -23,7 +23,7 @@ public class Tracer {
       String sep = "";
       for (SNode n : nodes) {
         sb.append(sep).append((n != null ?
-          n.getId() :
+          n.getSNodeId().toString() :
           "null"
         ));
         sep = ", ";

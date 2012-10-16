@@ -28,6 +28,7 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myKeepModelsWithWarnings;
   private boolean myIncremental;
   private boolean myIncrementalUseCache;
+  private boolean myDebugIncrementalDependencies;
   private boolean myFail;
   private boolean myGenerateDebugInfo;
   private boolean myShowBadChildWarning;
@@ -150,6 +151,16 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   @Override
   public void setIncrementalUseCache(boolean incrementalUseCache) {
     myIncrementalUseCache = incrementalUseCache;
+  }
+
+  @Override
+  public boolean isDebugIncrementalDependencies() {
+    return myDebugIncrementalDependencies;
+  }
+
+  @Override
+  public void setDebugIncrementalDependencies(boolean value) {
+    myDebugIncrementalDependencies = value;
   }
 
   @Override

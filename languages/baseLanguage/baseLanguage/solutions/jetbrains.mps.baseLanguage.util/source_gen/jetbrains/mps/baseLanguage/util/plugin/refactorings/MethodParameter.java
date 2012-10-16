@@ -28,7 +28,7 @@ public class MethodParameter extends MethodParameterModel {
     this.myDeclaration = variable;
     this.myType = type;
     if (type != null) {
-      this.setTypeName(type.toString());
+      this.setTypeName(type.getPresentation());
     } else {
       this.setTypeName("null");
     }
@@ -59,8 +59,8 @@ public class MethodParameter extends MethodParameterModel {
     }
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (SNode node : ListSequence.fromList(found)) {
-      ListSequence.fromList(result).addElement(node.toString());
-      MapSequence.fromMap(this.myTypesMap).put(node.toString(), node);
+      ListSequence.fromList(result).addElement(node.getPresentation());
+      MapSequence.fromMap(this.myTypesMap).put(node.getPresentation(), node);
     }
     return result;
   }

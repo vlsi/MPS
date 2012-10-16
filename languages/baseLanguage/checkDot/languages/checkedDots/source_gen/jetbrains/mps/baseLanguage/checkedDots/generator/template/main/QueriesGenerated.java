@@ -27,12 +27,12 @@ import jetbrains.mps.project.GlobalScope;
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_2319519288049917875(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode checkedDot = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", false, false);
-    return checkedDot != null && SLinkOperations.getTarget(checkedDot, "operation", true) != null && SLinkOperations.getTarget(checkedDot, "operation", true).isAncestorOf(_context.getNode());
+    return checkedDot != null && SLinkOperations.getTarget(checkedDot, "operation", true) != null && jetbrains.mps.util.SNodeOperations.isAncestor(SLinkOperations.getTarget(checkedDot, "operation", true), _context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_3905905920761714586(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode checkedDot = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", false, false);
-    return checkedDot != null && SLinkOperations.getTarget(checkedDot, "operation", true) != null && SLinkOperations.getTarget(checkedDot, "operation", true).isAncestorOf(_context.getNode());
+    return checkedDot != null && SLinkOperations.getTarget(checkedDot, "operation", true) != null && jetbrains.mps.util.SNodeOperations.isAncestor(SLinkOperations.getTarget(checkedDot, "operation", true), _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4549711462050029098(final IOperationContext operationContext, final PropertyMacroContext _context) {

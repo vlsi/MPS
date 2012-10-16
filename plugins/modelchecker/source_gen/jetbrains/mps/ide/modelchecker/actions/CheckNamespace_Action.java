@@ -10,7 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.tree.TreeNode;
@@ -40,7 +40,7 @@ public class CheckNamespace_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
+    List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     for (TreeNode node : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")))) {
       if (!(node instanceof NamespaceTextNode)) {
         return false;
@@ -85,7 +85,7 @@ public class CheckNamespace_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
+      List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
       for (TreeNode node : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")))) {
         ListSequence.fromList(modules).addSequence(ListSequence.fromList(((NamespaceTextNode) node).getModulesUnder()));
       }

@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
@@ -60,7 +60,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     return new ReloadClasses_Facet.TargetProperties();
   }
 
-  public static class Target_reloadClasses implements ITargetEx {
+  public static class Target_reloadClasses implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -71,7 +71,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_i849au_a0a = null;
           switch (0) {
             case 0:
@@ -154,6 +154,10 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+
+    public int workEstimate() {
+      return 300;
     }
   }
 

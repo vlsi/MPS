@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
-  <property name="plugin.version" value="1.0.SNAPSHOT" />
+  <property name="plugin.version" value="1.1.SNAPSHOT" />
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>
@@ -51,6 +51,7 @@
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" todir="${build.layout}/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" todir="${build.layout}/mps-core/lib" />
@@ -188,6 +189,7 @@
         <path location="${mps_home}/IdeaPlugin/mps-core/src" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -225,6 +227,7 @@
         <path location="${mps_home}/plugins/vcs-core/core/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -258,6 +261,7 @@
         <path location="${mps_home}/IdeaPlugin/mps-vcs/source" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -298,6 +302,7 @@
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />

@@ -67,7 +67,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         if (lang == language)
           errors.add("Behavior aspect is absent");
         else
-          errors.add("Cannot extend language without behavior aspect: " + language.getModuleFqName());
+          errors.add("Cannot extend language without behavior aspect: " + language.getModuleName());
       }
     }
   }

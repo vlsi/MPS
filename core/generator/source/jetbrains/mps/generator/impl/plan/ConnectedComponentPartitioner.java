@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.GraphUtil;
+import jetbrains.mps.util.SNodeOperations;
 
 import java.util.*;
 
@@ -53,7 +54,7 @@ public class ConnectedComponentPartitioner {
       SNode root = myRoots[index];
       Arrays.fill(dependsOn, 0);
       buildNodeDependencies(root, dependsOn, rootIndex);
-      for (SNode node : root.getDescendants(null)) {
+      for (SNode node : ((List<SNode>)(List) SNodeOperations.getDescendants(root, null))) {
         buildNodeDependencies(node, dependsOn, rootIndex);
       }
       dependsOn[index] = 0;

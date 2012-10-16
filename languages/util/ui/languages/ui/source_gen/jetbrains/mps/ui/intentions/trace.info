@@ -161,16 +161,16 @@
     <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="132" startPosition="67" endLine="133" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="134" startPosition="7" endLine="135" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="135" startPosition="163" endLine="136" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="136" startPosition="43" endLine="137" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="137" startPosition="227" endLine="138" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="136" startPosition="43" endLine="137" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="137" startPosition="241" endLine="138" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="139" startPosition="7" endLine="140" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="148" startPosition="31" endLine="149" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="149" startPosition="26" endLine="150" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="150" startPosition="67" endLine="151" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="152" startPosition="7" endLine="153" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="153" startPosition="163" endLine="154" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="154" startPosition="43" endLine="155" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="155" startPosition="227" endLine="156" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="154" startPosition="43" endLine="155" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="155" startPosition="241" endLine="156" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555596" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="157" startPosition="7" endLine="158" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="166" startPosition="31" endLine="167" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="167" startPosition="26" endLine="168" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -179,10 +179,10 @@
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="170" startPosition="32" endLine="171" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="172" startPosition="7" endLine="173" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="173" startPosition="167" endLine="174" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="174" startPosition="43" endLine="175" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="174" startPosition="43" endLine="175" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="176" startPosition="9" endLine="177" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="177" startPosition="174" endLine="178" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="178" startPosition="45" endLine="179" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="178" startPosition="45" endLine="179" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="180" startPosition="11" endLine="181" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="181" startPosition="165" endLine="182" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="182" startPosition="47" endLine="183" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -219,8 +219,8 @@
     <nodeInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="105" startPosition="46" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="2441084687258555617" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="58" startPosition="159" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="116" startPosition="28" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="222" endLine="184" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="222" endLine="184" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="229" endLine="184" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="229" endLine="184" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="85" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8717063129899258283" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="79" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="133" startPosition="32" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -230,8 +230,8 @@
     <nodeInfo nodeId="2441084687258555760" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="200" startPosition="32" endLine="206" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2441084687258555760" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="200" startPosition="32" endLine="206" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="115" startPosition="60" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="175" startPosition="227" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="175" startPosition="227" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="175" startPosition="241" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="175" startPosition="241" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2441084687258535883" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="96" startPosition="159" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="112" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="2441084687258535821" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="129" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
@@ -309,7 +309,7 @@
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="116" startPosition="28" endLine="121" endPosition="7">
       <varInfo nodeId="8905126934806239993" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="222" endLine="184" endPosition="11" />
+    <scopeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="179" startPosition="229" endLine="184" endPosition="11" />
     <scopeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="85" endLine="76" endPosition="5">
       <varInfo nodeId="8717063129899256931" varName="depOn" />
     </scopeInfo>
@@ -341,7 +341,7 @@
       <varInfo nodeId="2441084687258555760" varName="quotedNode_1" />
       <varInfo nodeId="2441084687258555760" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="175" startPosition="227" endLine="186" endPosition="9" />
+    <scopeInfo nodeId="2441084687258555715" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="175" startPosition="241" endLine="186" endPosition="9" />
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="112" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="8905126934806239993" varName="editorContext" />
       <varInfo nodeId="8905126934806239993" varName="node" />

@@ -142,12 +142,12 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
       {
         SNode nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a;
         nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

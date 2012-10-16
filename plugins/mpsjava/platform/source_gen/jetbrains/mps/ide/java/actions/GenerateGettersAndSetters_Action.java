@@ -294,7 +294,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_5);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_5);
       return result;
     }
   }

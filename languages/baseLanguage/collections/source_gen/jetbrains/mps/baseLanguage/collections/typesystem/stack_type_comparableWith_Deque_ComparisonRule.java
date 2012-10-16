@@ -30,7 +30,7 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -62,12 +62,12 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
       {
         SNode nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a;
         nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

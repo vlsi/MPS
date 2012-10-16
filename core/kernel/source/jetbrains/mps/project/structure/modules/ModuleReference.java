@@ -22,12 +22,15 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @ImmutableObject
-public class ModuleReference {
+public class ModuleReference implements SModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static ModuleReference fromString(String text) {
@@ -91,6 +94,16 @@ public class ModuleReference {
   public String toString() {
     if (myModuleId == null) return myModuleFqName;
     return myModuleId.toString() + "(" + myModuleFqName + ")";
+  }
+
+  @Override
+  public String getModuleName() {
+    return getModuleFqName();
+  }
+
+  @Override
+  public SModule resolve(SRepository repo) {
+    return repo.getModule(getModuleId());
   }
 }
 

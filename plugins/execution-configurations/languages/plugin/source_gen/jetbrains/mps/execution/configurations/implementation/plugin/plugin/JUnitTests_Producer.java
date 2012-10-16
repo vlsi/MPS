@@ -8,15 +8,14 @@ import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,8 +32,8 @@ public class JUnitTests_Producer {
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Model_f2w1m9_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_IModule_f2w1m9_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_SModel_f2w1m9_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_MPSProject_f2w1m9_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Node_f2w1m9_d(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Node_f2w1m9_e(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
@@ -43,8 +42,8 @@ public class JUnitTests_Producer {
     return creators;
   }
 
-  public static class ProducerPart_Model_f2w1m9_a extends BaseConfigCreator<SModel> {
-    public ProducerPart_Model_f2w1m9_a(ConfigurationType configurationType, String factoryName) {
+  public static class ProducerPart_SModel_f2w1m9_a extends BaseConfigCreator<SModel> {
+    public ProducerPart_SModel_f2w1m9_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
 
@@ -57,42 +56,42 @@ public class JUnitTests_Producer {
       if (Sequence.fromIterable(TestUtils.getModelTests(source)).isEmpty()) {
         return null;
       }
-      String name = SModelOperations.getModelName(source);
+      String name = source.getModelName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.MODEL);
-      configuration.getJUnitSettings().setModel(source.getSModelFqName().toString());
+      configuration.getJUnitSettings().setModel(source.getModelName());
       return configuration;
     }
 
     @Override
-    public JUnitTests_Producer.ProducerPart_Model_f2w1m9_a clone() {
-      return (JUnitTests_Producer.ProducerPart_Model_f2w1m9_a) super.clone();
+    public JUnitTests_Producer.ProducerPart_SModel_f2w1m9_a clone() {
+      return (JUnitTests_Producer.ProducerPart_SModel_f2w1m9_a) super.clone();
     }
   }
 
-  public static class ProducerPart_IModule_f2w1m9_b extends BaseConfigCreator<IModule> {
-    public ProducerPart_IModule_f2w1m9_b(ConfigurationType configurationType, String factoryName) {
+  public static class ProducerPart_SModule_f2w1m9_b extends BaseConfigCreator<SModule> {
+    public ProducerPart_SModule_f2w1m9_b(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
 
     protected boolean isApplicable(Object source) {
-      return source instanceof IModule;
+      return source instanceof SModule;
     }
 
-    protected JUnitTests_Configuration doCreateConfiguration(final IModule source) {
+    protected JUnitTests_Configuration doCreateConfiguration(final SModule source) {
       setSourceElement(new MPSPsiElement(source));
       // commented out due to perfomance problems 
       // <node> 
-      String name = source.getModuleFqName();
+      String name = source.getModuleName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.MODULE);
-      configuration.getJUnitSettings().setModule(source.getModuleFqName());
+      configuration.getJUnitSettings().setModule(source.getModuleName());
       return configuration;
     }
 
     @Override
-    public JUnitTests_Producer.ProducerPart_IModule_f2w1m9_b clone() {
-      return (JUnitTests_Producer.ProducerPart_IModule_f2w1m9_b) super.clone();
+    public JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b clone() {
+      return (JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b) super.clone();
     }
   }
 

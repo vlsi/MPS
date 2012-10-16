@@ -19,6 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -230,15 +231,22 @@ __switch__:
     }
   }
 
+  private int workEstimate(ITarget target) {
+    if (target instanceof ITargetEx2) {
+      return ((ITargetEx2) target).workEstimate();
+    }
+    return (target.requiresInput() || target.producesOutput() ?
+      100 :
+      10
+    );
+  }
+
   private void executeTargets(final IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results, final ProgressMonitor monitor) {
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
         monitor.start("", Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
           public Integer combine(Integer s, ITarget it) {
-            return s + ((it.requiresInput() || it.producesOutput() ?
-              1000 :
-              10
-            ));
+            return s + workEstimate(it);
           }
         }));
         try {
@@ -287,10 +295,7 @@ with_targets:
                 }
               }
 
-              ProgressMonitor subMonitor = monitor.subTask((trg.requiresInput() || trg.producesOutput() ?
-                1000 :
-                10
-              ));
+              ProgressMonitor subMonitor = monitor.subTask(workEstimate(trg));
               ctl.useMonitor(subMonitor);
               IJob job = trg.createJob();
               IResult jr = job.execute(Sequence.fromIterable(input).where(new IWhereFilter<IResource>() {

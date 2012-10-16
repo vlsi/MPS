@@ -49,7 +49,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention implemen
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     boolean applicable = false;
     if ((SNodeOperations.getParent(node) != null)) {
-      String role = node.getRole_();
+      String role = node.getRole();
       SNode linkDeclaration = ((SNode) SModelSearchUtil.findLinkDeclaration(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), role));
       if (SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"), NameUtil.nodeFQName(SLinkOperations.getTarget(linkDeclaration, "target", false)))) {
         int statementsCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).count();

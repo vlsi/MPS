@@ -15,16 +15,26 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface SModel {
+
   SModelId getModelId();
 
-  String getPresentation();
+  /*
+   * Includes stereotype.
+   */
+  String getModelName();
+
+  @NotNull
+  SModelReference getModelReference();
 
   SModule getModule();
 
-  Iterable<SNode> getRootNodes();
+  Iterable<? extends SNode> getRootNodes();
+
+  void addRootNode(SNode node);
 
   SNode getNode(SNodeId id);
 }

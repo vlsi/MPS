@@ -18,11 +18,12 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.SNodeEditorUtil;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.NameUtil;
+
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 1/4/11
@@ -71,9 +72,10 @@ public class SNodeFactoryOperations {
 
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      SNode prototypeNode = node.getChild(role);
+      List<SNode> ch = node.getChildren(role);
+      SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
-      node.setChild(role, newChild);
+      SNodeEditorUtil.setSingleChild(node,role,newChild);
       return newChild;
     }
     return null;
@@ -110,12 +112,12 @@ public class SNodeFactoryOperations {
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
-      String role = attribute.getRole_();
+      String role = attribute.getRole();
       if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
         if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationNode(), propertyName) == null) {
           // no such property in new child : don't copy the attribute
-          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConceptShortName(), newChild);
+          LOG.error("couldn't copy attribute " + NameUtil.shortNameFromLongName(attribute.getConcept().getId()) + " for property '" + propertyName + "' : so such property in concept " + NameUtil.shortNameFromLongName(newChild.getConcept().getId()), newChild);
           continue;
         }
       }
@@ -123,7 +125,7 @@ public class SNodeFactoryOperations {
         String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
         if (SModelSearchUtil.findLinkDeclaration(newChild.getConceptDeclarationNode(), linkRole) == null) {
           // no such link in new child : don't copy the attribute
-          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConceptShortName(), newChild);
+          LOG.error("couldn't copy attribute " + NameUtil.shortNameFromLongName(attribute.getConcept().getId()) + " for link '" + linkRole + "' : so such link in concept " + NameUtil.shortNameFromLongName(newChild.getConcept().getId()), newChild);
           continue;
         }
       }
@@ -138,9 +140,9 @@ public class SNodeFactoryOperations {
     SNode parent = node.getParent();
     SNode newChild = NodeFactoryManager.createNode(conceptFQName, null, parent, node.getModel());
     if (newChild == null) return null;
-    String role = node.getRole_();
+    String role = node.getRole();
     assert parent != null && role != null;
-    parent.insertChild(node, role, newChild);
+    parent.insertChild(role, newChild, node);
     return newChild;
   }
 
@@ -150,9 +152,9 @@ public class SNodeFactoryOperations {
     if (parent == null) return null;
     SNode newChild = NodeFactoryManager.createNode(conceptFqName, null, parent, node.getModel());
     if (newChild == null) return null;
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
-    parent.insertChild(node, role, newChild, true);
+    parent.insertChild(role, newChild, parent.getPrevChild(node));
     return newChild;
   }
 }

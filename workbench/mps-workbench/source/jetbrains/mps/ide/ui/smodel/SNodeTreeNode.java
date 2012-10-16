@@ -58,12 +58,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
-    setUserObject(node.getId());
+    setUserObject(node.getSNodeId().toString());
 
     if (myNode == null) {
       setNodeIdentifier("null");
     } else {
-      setNodeIdentifier(myNode.getId());
+      setNodeIdentifier(myNode.getSNodeId().toString());
     }
   }
 
@@ -87,7 +87,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   protected void doUpdatePresentation_internal() {
-    if (myNode.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode)) {
       return;
     }
     if (hasErrors()) {
@@ -155,7 +155,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
-    if (n == null || n.isDisposed()) return;
+    if (n == null || jetbrains.mps.util.SNodeOperations.isDisposed(n)) return;
 
     if (showPropertiesAndReferences()) {
       add(new ConceptTreeNode(getOperationContext(),n));
@@ -166,7 +166,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     List<SNode> children = n.getChildren();
     List<SNode> filteredChildren = CollectionUtil.filter(children, myCondition);
     for (SNode childNode : filteredChildren) {
-      SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRole_(), getOperationContext());
+      SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRole(), getOperationContext());
       child.myCondition = myCondition;
       add(child);
     }
@@ -207,7 +207,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (myNode.isDisposed() || !myNode.isRegistered() || myNode.getModel().getModelDescriptor() == null) {
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !jetbrains.mps.util.SNodeOperations.isRegistered(myNode) || myNode.getModel().getModelDescriptor() == null) {
           return;
         }
         treeView.editNode(myNode, getOperationContext(), focus);

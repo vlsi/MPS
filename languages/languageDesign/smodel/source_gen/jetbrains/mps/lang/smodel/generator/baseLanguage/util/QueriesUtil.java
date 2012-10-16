@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -62,7 +61,7 @@ public class QueriesUtil {
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
       methodName = "getBoolean";
     }
-    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527282020");
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
@@ -78,7 +77,7 @@ public class QueriesUtil {
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
       methodName = "setBoolean";
     }
-    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527282020");
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
@@ -98,7 +97,7 @@ public class QueriesUtil {
         methodName = "getBoolean";
       }
     }
-    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298519");
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
@@ -116,7 +115,7 @@ public class QueriesUtil {
     } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(primitiveDatatype)) {
       methodName = "getBoolean_def";
     }
-    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298519");
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;

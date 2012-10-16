@@ -44,6 +44,7 @@ import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -99,7 +100,7 @@ public class ModuleMaker {
     }
   }
 
-  public MPSCompilationResult make(Set<IModule> modules, @NotNull final ProgressMonitor monitor) {
+  public MPSCompilationResult make(Set<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Compiling", 12);
     ttrace.push("making " + modules.size() + " modules", false);
     try {

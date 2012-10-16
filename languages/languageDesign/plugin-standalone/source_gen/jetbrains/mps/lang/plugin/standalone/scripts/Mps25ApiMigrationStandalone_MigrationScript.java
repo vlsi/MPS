@@ -36,7 +36,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
 
       public boolean isApplicableInstanceNode(SNode node) {
         SNode operation = SLinkOperations.getTarget(node, "operation", true);
-        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConceptFqName());
+        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConcept().getId());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -76,7 +76,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_2;
-          quotedNode1_10.setReferent("tool", (SNode) parameter_14);
+          quotedNode1_10.setReferenceTarget("tool", (SNode) parameter_14);
           quotedNode_1.addChild("operation", quotedNode1_10);
         }
         {
@@ -98,7 +98,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_13 = quotedNode_5;
-            quotedNode1_13.addReference(SReference.create("baseMethodDeclaration", quotedNode1_13, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~MPSProject.getProject():com.intellij.openapi.project.Project")));
+            quotedNode1_13.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_13, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~MPSProject.getProject():com.intellij.openapi.project.Project")));
             quotedNode_3.addChild("operation", quotedNode1_13);
           }
           quotedNode_1.addChild("operand", quotedNode1_11);

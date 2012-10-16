@@ -158,7 +158,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
           for (SNode type : SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), "typeParameter", true)) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(type);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(type.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(type, null, false, new String[]{})));
           }
         } else {
           for (SNode typeVariableDecl : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
@@ -169,17 +169,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
           SNode classifierType0 = SLinkOperations.getTarget((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "superclass", true);
           if (classifierType0 != null) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType0);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(classifierType0.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(classifierType0, null, false, new String[]{})));
           }
           for (SNode classifierType1 : SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "implementedInterface", true)) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType1);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(classifierType1.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(classifierType1, null, false, new String[]{})));
           }
         } else
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
           for (SNode classifierType : SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface")), "extendedInterface", true)) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(classifierType.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(classifierType, null, false, new String[]{})));
           }
         }
       }
@@ -377,7 +377,7 @@ forEachInAllMethods:
             continue;
           }
           SetSequence.fromSet(myDependsOnNodes).addElement(type);
-          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(type.getDescendants()));
+          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(type, null, false, new String[]{})));
         }
       }
     }

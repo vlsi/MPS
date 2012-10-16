@@ -105,7 +105,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     public void modelReplaced(SModelDescriptor sm) {
       for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
         SNode sNode = editorComponent.getEditedNode();
-        if (sNode != null && !sNode.isDisposed() && sNode.getModel().getModelDescriptor() == sm) {
+        if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getModelDescriptor() == sm) {
           myCheckedOnceEditors.remove(editorComponent);
         }
       }
@@ -402,7 +402,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && !editedNode.isDisposed()) {
+        if (editedNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(editedNode)) {
           final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
           boolean rootWasCheckedOnce = wasCheckedOnce(component);
           if (!rootWasCheckedOnce) {
@@ -483,7 +483,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) return false;
 
           SNode node = editor.getEditedNode();
-          if (node == null || node.isDisposed()) return false;
+          if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return false;
           if (node.getModel().getModelDescriptor() == null) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.

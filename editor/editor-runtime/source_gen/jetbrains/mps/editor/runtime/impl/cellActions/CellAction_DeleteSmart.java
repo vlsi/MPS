@@ -36,7 +36,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       }
     } else {
       // <node> 
-      mySource.removeReferent(SPropertyOperations.getString(genuineLinkDeclaration, "role"));
+      mySource.setReferenceTarget(SPropertyOperations.getString(genuineLinkDeclaration, "role"), null);
     }
   }
 }

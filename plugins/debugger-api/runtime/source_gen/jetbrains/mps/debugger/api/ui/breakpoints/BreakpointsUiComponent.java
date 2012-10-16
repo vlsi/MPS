@@ -22,6 +22,7 @@ import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
@@ -107,7 +108,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     if (editedNode == null) {
       return Collections.emptySet();
     }
-    if (editedNode.isDisposed()) {
+    if (SNodeOperations.isDisposed(editedNode)) {
       Set<IBreakpoint> allBreakpoints = myBreakpointsManagerComponent.getAllIBreakpoints();
       Set<ILocationBreakpoint> locationBreakpoints = new HashSet<ILocationBreakpoint>();
       for (IBreakpoint breakpoint : allBreakpoints) {

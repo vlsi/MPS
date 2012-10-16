@@ -2,11 +2,11 @@
 <debugInfo>
   <root nodeId="3715237098669772783" modelId="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)">
     <nodeInfo nodeId="3715237098669909854" fileName="TraceInfoTest.java" startLine="30" startPosition="32" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669909819" fileName="TraceInfoTest.java" startLine="33" startPosition="11" endLine="34" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669909819" fileName="TraceInfoTest.java" startLine="33" startPosition="11" endLine="34" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909873" fileName="TraceInfoTest.java" startLine="44" startPosition="32" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669909875" fileName="TraceInfoTest.java" startLine="47" startPosition="11" endLine="48" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669909875" fileName="TraceInfoTest.java" startLine="47" startPosition="11" endLine="48" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909908" fileName="TraceInfoTest.java" startLine="58" startPosition="32" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669909910" fileName="TraceInfoTest.java" startLine="61" startPosition="11" endLine="62" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669909910" fileName="TraceInfoTest.java" startLine="61" startPosition="11" endLine="62" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="441885278109150228" fileName="TraceInfoTest.java" startLine="71" startPosition="13" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="441885278109150243" fileName="TraceInfoTest.java" startLine="73" startPosition="31" endLine="74" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="441885278109150251" fileName="TraceInfoTest.java" startLine="74" startPosition="69" endLine="75" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -102,13 +102,13 @@
       <varInfo nodeId="3715237098669773046" varName="stackTraceElement" />
     </scopeInfo>
     <scopeInfo nodeId="3715237098669837856" fileName="TraceInfoTest.java" startLine="99" startPosition="9" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="3715237098669909807" fileName="TraceInfoTest.java" startLine="28" startPosition="28" endLine="34" endPosition="204">
+    <scopeInfo nodeId="3715237098669909807" fileName="TraceInfoTest.java" startLine="28" startPosition="28" endLine="34" endPosition="220">
       <varInfo nodeId="3715237098669909810" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3715237098669909866" fileName="TraceInfoTest.java" startLine="42" startPosition="28" endLine="48" endPosition="205">
+    <scopeInfo nodeId="3715237098669909866" fileName="TraceInfoTest.java" startLine="42" startPosition="28" endLine="48" endPosition="221">
       <varInfo nodeId="3715237098669909868" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3715237098669909901" fileName="TraceInfoTest.java" startLine="56" startPosition="28" endLine="62" endPosition="207">
+    <scopeInfo nodeId="3715237098669909901" fileName="TraceInfoTest.java" startLine="56" startPosition="28" endLine="62" endPosition="223">
       <varInfo nodeId="3715237098669909903" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3715237098669794698" fileName="TraceInfoTest.java" startLine="124" startPosition="53" endLine="130" endPosition="0" />

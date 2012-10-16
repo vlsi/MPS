@@ -28,7 +28,7 @@ import java.util.HashMap;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
@@ -130,14 +130,14 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
   @Override
   protected Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
-    final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
+    final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
       }
     });
-    return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor smd) {
+    return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }
     })).resources(false)).select(new ISelector<IResource, IMResource>() {

@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -65,13 +66,13 @@ public class HUtil {
 
   public static boolean isRuntimeTypeVariable(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName);
   }
 
   public static boolean isRuntimeListVariable(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable".equals(conceptFqName);
   }
 
@@ -84,7 +85,7 @@ public class HUtil {
         return true;
       }
     }
-    for (SNode referent : node.getReferents()) {
+    for (SNode referent : TypesUtil.getNodeReferents(node)) {
       if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
         return true;
       }
@@ -95,13 +96,13 @@ public class HUtil {
   @Deprecated
   public static boolean isRuntimeErrorType(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(conceptFqName);
   }
 
   public static boolean isRuntimeHoleType(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName);
   }
 

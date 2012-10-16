@@ -86,7 +86,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append(", model = ");
       sb.append(sourceNode.getModel());
       sb.append(", id = ");
-      sb.append(sourceNode.getId());
+      sb.append(sourceNode.getSNodeId().toString());
       sb.append("\ntarget node id = ");
       sb.append(targetNodeId);
       String canRead = ModelAccess.instance().canRead() ? "can read" : "can not read";

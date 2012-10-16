@@ -108,7 +108,7 @@ public class VariableConcept_Behavior {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "_");
-        quotedNode1_2.addReference(SReference.create("dataType", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
+        quotedNode1_2.setReference("dataType", SReference.create("dataType", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
         result = quotedNode1_2;
       }
       return result;
@@ -126,7 +126,7 @@ public class VariableConcept_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -223,7 +223,7 @@ public class VariableConcept_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_81 = quotedNode_1;
-        quotedNode1_81.setReferent("applicableLink", (SNode) parameter_160);
+        quotedNode1_81.setReferenceTarget("applicableLink", (SNode) parameter_160);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_82 = quotedNode_2;
@@ -295,7 +295,7 @@ public class VariableConcept_Behavior {
                       {
                         quotedNode_49 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, GlobalScope.getInstance(), false);
                         SNode quotedNode1_98 = quotedNode_49;
-                        quotedNode1_98.setReferent("conceptDeclaration", (SNode) parameter_161);
+                        quotedNode1_98.setReferenceTarget("conceptDeclaration", (SNode) parameter_161);
                         quotedNode_35.addChild("conceptArgument", quotedNode1_98);
                       }
                       quotedNode_26.addChild("parameter", quotedNode1_97);
@@ -523,7 +523,7 @@ public class VariableConcept_Behavior {
                                 {
                                   quotedNode_80 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, GlobalScope.getInstance(), false);
                                   SNode quotedNode1_144 = quotedNode_80;
-                                  quotedNode1_144.setReferent("conceptDeclaration", (SNode) parameter_163);
+                                  quotedNode1_144.setReferenceTarget("conceptDeclaration", (SNode) parameter_163);
                                   quotedNode_79.addChild("conceptArgument", quotedNode1_144);
                                 }
                                 quotedNode_77.addChild("operation", quotedNode1_143);
@@ -587,7 +587,7 @@ public class VariableConcept_Behavior {
                           {
                             quotedNode_74 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, GlobalScope.getInstance(), false);
                             SNode quotedNode1_155 = quotedNode_74;
-                            quotedNode1_155.setReferent("conceptDeclaration", (SNode) parameter_164);
+                            quotedNode1_155.setReferenceTarget("conceptDeclaration", (SNode) parameter_164);
                             quotedNode_68.addChild("conceptArgument", quotedNode1_155);
                           }
                           quotedNode_59.addChild("parameter", quotedNode1_154);
@@ -630,18 +630,18 @@ public class VariableConcept_Behavior {
         }
         result = quotedNode1_81;
       }
-      quotedNode_12.setReferent("variableDeclaration", quotedNode_8);
-      quotedNode_18.setReferent("variableDeclaration", quotedNode_9);
-      quotedNode_40.setReferent("variableDeclaration", quotedNode_27);
-      quotedNode_48.setReferent("variableDeclaration", quotedNode_9);
-      quotedNode_50.setReferent("variableDeclaration", quotedNode_9);
-      quotedNode_55.setReferent("variableDeclaration", quotedNode_27);
-      quotedNode_58.setReferent("variableDeclaration", quotedNode_27);
-      quotedNode_61.setReferent("variableDeclaration", quotedNode_9);
-      quotedNode_62.setReferent("variableDeclaration", quotedNode_32);
-      quotedNode_64.setReferent("variableDeclaration", quotedNode_8);
-      quotedNode_75.setReferent("variableDeclaration", quotedNode_32);
-      quotedNode_78.setReferent("variableDeclaration", quotedNode_67);
+      quotedNode_12.setReferenceTarget("variableDeclaration", quotedNode_8);
+      quotedNode_18.setReferenceTarget("variableDeclaration", quotedNode_9);
+      quotedNode_40.setReferenceTarget("variableDeclaration", quotedNode_27);
+      quotedNode_48.setReferenceTarget("variableDeclaration", quotedNode_9);
+      quotedNode_50.setReferenceTarget("variableDeclaration", quotedNode_9);
+      quotedNode_55.setReferenceTarget("variableDeclaration", quotedNode_27);
+      quotedNode_58.setReferenceTarget("variableDeclaration", quotedNode_27);
+      quotedNode_61.setReferenceTarget("variableDeclaration", quotedNode_9);
+      quotedNode_62.setReferenceTarget("variableDeclaration", quotedNode_32);
+      quotedNode_64.setReferenceTarget("variableDeclaration", quotedNode_8);
+      quotedNode_75.setReferenceTarget("variableDeclaration", quotedNode_32);
+      quotedNode_78.setReferenceTarget("variableDeclaration", quotedNode_67);
       return result;
     }
   }

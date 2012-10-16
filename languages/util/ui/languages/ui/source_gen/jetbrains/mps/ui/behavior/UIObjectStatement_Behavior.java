@@ -82,7 +82,7 @@ public class UIObjectStatement_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

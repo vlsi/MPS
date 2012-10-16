@@ -10,8 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.ModuleOperationContext;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -48,7 +47,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-      Scope refScope = ModelConstraintsUtil.getScope(ref, new ModuleOperationContext(module));
+      Scope refScope = ModelConstraints.getScope(ref);
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       } else if (!(refScope.contains(target))) {

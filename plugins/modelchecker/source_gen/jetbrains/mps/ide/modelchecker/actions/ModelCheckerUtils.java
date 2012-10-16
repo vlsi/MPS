@@ -4,9 +4,9 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -19,12 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelCheckerUtils {
   private ModelCheckerUtils() {
-  }
-
-  public static List<SModelDescriptor> getModelDescriptors(SModelDescriptor modelDescriptor) {
-    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
-    return modelDescrpitors;
   }
 
   public static List<SModelDescriptor> getModelDescriptors(IModule module) {

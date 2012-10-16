@@ -44,7 +44,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8820339482096486801(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()) + _context.getNode().getId(), null);
+    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()) + _context.getNode().getSNodeId().toString(), null);
 
   }
 

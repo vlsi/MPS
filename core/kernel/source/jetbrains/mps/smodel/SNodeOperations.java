@@ -18,7 +18,9 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,7 @@ import java.util.List;
 public class SNodeOperations {
   public static int depth(SNode sNode) {
     int childDepth = 0;
-    for (SNode child : sNode.getChildrenIterable()) {
+    for (SNode child : sNode.getChildren()) {
       int depth = depth(child);
       if (childDepth < depth) {
         childDepth = depth;
@@ -36,8 +38,8 @@ public class SNodeOperations {
   }
 
   public static boolean isUnknown(SNode sNode) {
-    Language language = GlobalScope.getInstance().getLanguage(sNode.getLanguageNamespace());
-    return language == null || language.findConceptDeclaration(sNode.getConceptShortName()) == null;
+    Language language = GlobalScope.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
+    return language == null || language.findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConcept().getId())) == null;
   }
 
   public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {
@@ -59,16 +61,22 @@ public class SNodeOperations {
     }
 
     if (lookupHierarchy) {
-      return new ConceptAndSuperConceptsScope(conceptDeclaration).
-        getNodes(new Condition<SNode>() {
-          public boolean met(SNode n) {
-            if (SNodeUtil.isInstanceOfConceptLink(n)) {
-              SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
-              return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
-            }
-            return false;
-          }
-        });
+      final SNode finalConceptDeclaration = conceptDeclaration;
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+        public List<SNode> compute() {
+          return new ConceptAndSuperConceptsScope(finalConceptDeclaration).
+            getNodes(new Condition<SNode>() {
+              public boolean met(SNode n) {
+                if (SNodeUtil.isInstanceOfConceptLink(n)) {
+                  SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
+                  return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
+                }
+                return false;
+              }
+            });
+
+        }
+      });
     }
 
     List<SNode> result = new ArrayList<SNode>();

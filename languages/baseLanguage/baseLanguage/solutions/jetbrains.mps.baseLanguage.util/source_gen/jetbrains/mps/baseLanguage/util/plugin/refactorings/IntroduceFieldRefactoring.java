@@ -220,7 +220,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_11 = quotedNode_6;
-              quotedNode1_11.setReferent("fieldDeclaration", (SNode) parameter_13);
+              quotedNode1_11.setReferenceTarget("fieldDeclaration", (SNode) parameter_13);
               quotedNode_3.addChild("operation", quotedNode1_11);
             }
             quotedNode_2.addChild("lValue", quotedNode1_9);
@@ -267,7 +267,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_7);
+          quotedNode1_6.setReferenceTarget("fieldDeclaration", (SNode) parameter_7);
           quotedNode_1.addChild("operation", quotedNode1_6);
         }
         result = quotedNode1_4;

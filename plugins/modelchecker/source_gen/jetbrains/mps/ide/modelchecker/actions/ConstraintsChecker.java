@@ -87,7 +87,7 @@ public class ConstraintsChecker extends SpecificChecker {
         if (!(ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
           addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.SEVERITY_WARNING, "undeclared reference", new IModelCheckerFix() {
             public boolean doFix() {
-              node.removeReferent(SLinkOperations.getRole(reference));
+              node.setReferenceTarget(SLinkOperations.getRole(reference), null);
               return true;
             }
           });

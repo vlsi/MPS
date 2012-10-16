@@ -19,6 +19,7 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -72,7 +73,7 @@ public class MappingDialog extends BaseDialog {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             SNode node = treeNode.getSNode();
-            if (node.isDisposed() || !(node.isRegistered()) || node.getModel().getModelDescriptor() != null) {
+            if (SNodeOperations.isDisposed(node) || !(SNodeOperations.isRegistered(node)) || node.getModel().getModelDescriptor() != null) {
               return;
             }
             // TODO: use node pointers here 

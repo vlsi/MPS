@@ -91,8 +91,8 @@
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1204478979997">
       <property name="name" nameId="tpck.1169194664001" value="Actions" />
-      <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="false" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1204479048161">
       <property name="name" nameId="tpck.1169194664001" value="EditorTabs" />
@@ -297,14 +297,14 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.3205675194086686068" resolveInfo="GroupAccessOperation" />
     </node>
     <node type="tpjh.XmlFile" typeId="tpjh.1166472279594" id="880980402160494591">
-      <property name="name" nameId="tpck.1169194664001" value="_name_" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <property name="extension" nameId="tpjh.1188753321461" value="xml" />
+      <property name="name" nameId="tpck.1169194664001" value="_name_" />
       <property name="fileName" nameId="tpjh.1167755304238" value="plugin" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="4930090896471982417">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="IdeaInit" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Plugin" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="2713887941725402117">
       <property name="name" nameId="tpck.1169194664001" value="transform_ActionMethods" />
@@ -322,8 +322,8 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.8131292300541727132" resolveInfo="AddKeystrokeStatement" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3552608880959559172">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
       <property name="name" nameId="tpck.1169194664001" value="TabDescriptor_Template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3038738109028888981">
       <property name="name" nameId="tpck.1169194664001" value="GeneratedOrder" />
@@ -345,18 +345,18 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.1988288734101112751" resolveInfo="ButtonCreator" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6789255557380167576">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <property name="name" nameId="tpck.1169194664001" value="actions_element" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.331224023792854814" resolveInfo="IdeaActionsDescriptor" />
     </node>
     <node type="tpjh.XmlFile" typeId="tpjh.1166472279594" id="3205778618063718888">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
-      <property name="fileName" nameId="tpjh.1167755304238" value="components" />
       <property name="extension" nameId="tpjh.1188753321461" value="xml" />
+      <property name="fileName" nameId="tpjh.1167755304238" value="components" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6368583333374165040">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <property name="name" nameId="tpck.1169194664001" value="group_element" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7266073704221023814">
       <property name="name" nameId="tpck.1169194664001" value="reduce_CustomCondition" />
@@ -364,8 +364,8 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.5538333046911298739" resolveInfo="CustomCondition" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="7266073704221015703">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
       <property name="name" nameId="tpck.1169194664001" value="switch_ParameterCondition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1207145850643">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AddElementStatement" />
@@ -378,8 +378,8 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="pvwh.~BaseAction" resolveInfo="BaseAction" />
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1205857751486">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ICON" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1205857751487" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1205857760440">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
@@ -2084,8 +2084,8 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1205525460110">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ID" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225192526775" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1205525538923">
         <property name="value" nameId="tpee.1070475926801" value="" />
@@ -2111,8 +2111,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1205585482484" />
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1205588290676">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="_String" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1205588309057" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225192526477" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1207148690122">
@@ -4144,8 +4144,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1206097891872">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="1206097897310">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="this type of action parameter is not known about by generator" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>
@@ -7493,8 +7493,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1203092361741" resolveInfo="ModificationStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1228240947945">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalStaticFieldReference" typeId="tp68.1173995204289" id="1228240948525">
-          <property name="fieldName" nameId="tp68.1173995466678" value="ID" />
           <property name="fqClassName" nameId="tp68.1173995448817" value="ClassName" />
+          <property name="fieldName" nameId="tp68.1173995466678" value="ID" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1228240948526">
             <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1228240948527">
@@ -7908,8 +7908,8 @@
   </root>
   <root id="6277721878946463778">
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2386704358800555378">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ShortcutChange" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2386704358800555379" />
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2386704358800555380">
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2386704358800555381" />
@@ -9207,8 +9207,8 @@
   </root>
   <root id="5508914264442964685">
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6791676465872024679">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ICON" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1474977673367987892">
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~IconUtil%dgetIcon(java%dlang%dString)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~IconUtil" resolveInfo="IconUtil" />
@@ -10559,8 +10559,8 @@
   </root>
   <root id="7792877032403711913">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7792877032403711918">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="GeneratedAction_Template" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7792877032404025359">
         <property name="name" nameId="tpck.1169194664001" value="method" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7792877032404025360" />
@@ -11079,8 +11079,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6769912430829078887" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2386275659558608681">
-      <property name="name" nameId="tpck.1169194664001" value="getIcon" />
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getIcon" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2386275659558608682" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2386275659558608683">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
@@ -11610,7 +11610,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3038738109028954250" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3038738109028954251">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3038738109028971491">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3038738109028954248" resolveInfo="GeneratedOrder" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2oml.~BaseOrder%d&lt;init&gt;(java%dutil%dList)" resolveInfo="BaseOrder" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3038738109028971493">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k7g3.~Arrays" resolveInfo="Arrays" />
@@ -11823,10 +11823,10 @@
       </node>
     </node>
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpjh.XmlFile" typeId="tpjh.1166472279594" id="6789255557380167578">
-      <property name="name" nameId="tpck.1169194664001" value="_name_" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <property name="extension" nameId="tpjh.1188753321461" value="xml" />
+      <property name="name" nameId="tpck.1169194664001" value="_name_" />
       <property name="fileName" nameId="tpjh.1167755304238" value="actions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="idea" />
       <node role="document" roleId="tpjh.1174833330733" type="tpjh.Document" typeId="tpjh.1174840096626" id="6789255557380167579">
         <node role="rootElement" roleId="tpjh.1174840096627" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="6789255557380167580">
           <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="6789255557380167581">
@@ -13652,8 +13652,8 @@
   </root>
   <root id="7266073704221023814">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7266073704221023817">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ActionClass" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7266073704221023843">
         <property name="name" nameId="tpck.1169194664001" value="method" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7266073704221023844">

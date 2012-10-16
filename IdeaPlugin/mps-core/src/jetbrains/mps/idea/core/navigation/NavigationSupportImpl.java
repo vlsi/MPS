@@ -72,7 +72,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   }
 
   @Override
-  public void selectInTree(@NotNull IOperationContext context, @NotNull IModule module, boolean focus) {
+  public void selectInTree(@NotNull IOperationContext context, @NotNull SModule module, boolean focus) {
       // TODO
   }
 

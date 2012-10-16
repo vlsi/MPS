@@ -66,6 +66,6 @@ public class BuildSource_JavaModule_Constraints extends BaseConstraintsDescripto
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildJavaPlugin");
       }
-    }) || parentNode.getConceptFqName().startsWith("jetbrains.mps.lang.generator");
+    }) || parentNode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
   }
 }

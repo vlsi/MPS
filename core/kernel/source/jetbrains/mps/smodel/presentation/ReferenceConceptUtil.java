@@ -110,7 +110,7 @@ public class ReferenceConceptUtil {
     if (reference instanceof DynamicReference) {
       return reference.getResolveInfo();
     }
-    SNode referentNode = node.getReferent(genuineRole);
+    SNode referentNode = (SNode) node.getReferenceTarget(genuineRole);
     String referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
     if (referentNode != null) {
       referentPresentation = referentNode.toString();

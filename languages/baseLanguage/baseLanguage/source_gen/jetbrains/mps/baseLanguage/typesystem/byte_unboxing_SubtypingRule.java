@@ -82,12 +82,12 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
       {
         SNode nodeToMatch_byte_unboxing_omlyur_a0a;
         nodeToMatch_byte_unboxing_omlyur_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_byte_unboxing_omlyur_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_byte_unboxing_omlyur_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_1sray5_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_byte_unboxing_omlyur_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_byte_unboxing_omlyur_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

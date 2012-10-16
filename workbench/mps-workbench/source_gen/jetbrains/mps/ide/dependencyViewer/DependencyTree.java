@@ -6,12 +6,14 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import javax.swing.JPopupMenu;
 import javax.swing.event.TreeSelectionListener;
@@ -32,15 +34,15 @@ public class DependencyTree extends MPSTree {
 
   protected MPSTreeNode rebuild() {
     TextMPSTreeNode root = new TextMPSTreeNode("root", null);
-    for (IModule module : myScope.getModules()) {
+    for (SModule module : myScope.getModules()) {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
-    for (SModelDescriptor modelDescriptor : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode(modelDescriptor, null, new ModuleContext(modelDescriptor.getModule(), myProject));
+    for (SModel model : myScope.getModels()) {
+      SModelTreeNode node = new SModelTreeNode((SModelDescriptor) model, null, new ModuleContext((IModule) model.getModule(), myProject));
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {
-      SNodeTreeNode treeNode = new SNodeTreeNode(node, null, new ModuleContext(node.getModel().getModelDescriptor().getModule(), myProject));
+      SNodeTreeNode treeNode = new SNodeTreeNode((jetbrains.mps.smodel.SNode) node, null, new ModuleContext((IModule) ((jetbrains.mps.smodel.SNode) node).getModel().getModelDescriptor().getModule(), myProject));
       root.add(treeNode);
     }
     setRootVisible(false);
@@ -81,7 +83,7 @@ public class DependencyTree extends MPSTree {
           scope.add(((SNodeTreeNode) node).getSNode());
         }
         if (node instanceof NamespaceTextNode) {
-          for (IModule module : ((NamespaceTextNode) node).getModulesUnder()) {
+          for (SModule module : ((NamespaceTextNode) node).getModulesUnder()) {
             scope.add(module);
           }
           for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
@@ -89,7 +91,7 @@ public class DependencyTree extends MPSTree {
           }
         }
         if (node instanceof PackageNode) {
-          for (SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
+          for (jetbrains.mps.smodel.SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
             scope.add(nodeUnder);
           }
         }

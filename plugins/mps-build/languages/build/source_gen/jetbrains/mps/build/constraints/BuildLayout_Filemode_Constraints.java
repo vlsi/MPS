@@ -36,6 +36,6 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode archive = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", true, false);
-    return archive != null && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasFileModeAttribute_6408167411310575237(archive) || parentNode.getConceptFqName().startsWith("jetbrains.mps.lang.generator");
+    return archive != null && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasFileModeAttribute_6408167411310575237(archive) || parentNode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
   }
 }

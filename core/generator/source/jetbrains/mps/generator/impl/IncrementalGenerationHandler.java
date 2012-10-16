@@ -19,12 +19,10 @@ import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.*;
-import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
 
@@ -244,7 +242,7 @@ public class IncrementalGenerationHandler {
 
     myUnchangedRoots = new HashSet<SNode>();
     for (SNode root : smodel.roots()) {
-      String id = root.getId();
+      String id = root.getSNodeId().toString();
       GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
       String oldHash;
       if (rd == null || (oldHash = rd.getHash()) == null) continue;
@@ -269,7 +267,7 @@ public class IncrementalGenerationHandler {
       Iterator<SNode> it = myUnchangedRoots.iterator();
       while (it.hasNext()) {
         SNode root = it.next();
-        String id = root.getId();
+        String id = root.getSNodeId().toString();
         GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
         if (rd.isDependsOnNodes()) {
           it.remove();
@@ -383,7 +381,7 @@ public class IncrementalGenerationHandler {
       if (hasUnchanged && hasChanged) {
         for (SNode n : component) {
           myUnchangedRoots.remove(n);
-          dep.remove(n.getId());
+          dep.remove(n.getSNodeId().toString());
           result = true;
         }
       }
@@ -418,7 +416,7 @@ public class IncrementalGenerationHandler {
       if (hasUnchanged && hasChanged) {
         for (SNode n : component.getRoots()) {
           if (myUnchangedRoots.remove(n)) {
-            dep.remove(n.getId());
+            dep.remove(n.getSNodeId().toString());
             result = true;
           }
         }
@@ -439,7 +437,7 @@ public class IncrementalGenerationHandler {
       Iterator<SNode> it = myUnchangedRoots.iterator();
       while (it.hasNext()) {
         SNode root = it.next();
-        Set<String> rootDeps = dep.get(root.getId());
+        Set<String> rootDeps = dep.get(root.getSNodeId().toString());
         boolean dirty = false;
         for (String localRootId : rootDeps) {
           if (!dep.containsKey(localRootId)) {
@@ -449,7 +447,7 @@ public class IncrementalGenerationHandler {
         }
         if (dirty) {
           it.remove();
-          dep.remove(root.getId());
+          dep.remove(root.getSNodeId().toString());
           changed = true;
         }
       }
@@ -494,7 +492,7 @@ public class IncrementalGenerationHandler {
   private static Map<String, Set<String>> getDependencies(GenerationDependencies dependencies, Set<SNode> selectedRoots, boolean condUnchanged) {
     Map<String, Set<String>> graph = new HashMap<String, Set<String>>();
     for (SNode n : selectedRoots) {
-      graph.put(n.getId(), new HashSet<String>());
+      graph.put(n.getSNodeId().toString(), new HashSet<String>());
     }
     if (condUnchanged) {
       graph.put(CONDITIONALS_ID, new HashSet<String>());

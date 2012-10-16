@@ -3148,11 +3148,11 @@
     <nodeInfo nodeId="2662234144540708566" fileName="LanguagePaths_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708576" fileName="LanguagePaths_Action.java" startLine="73" startPosition="104" endLine="74" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708586" fileName="LanguagePaths_Action.java" startLine="74" startPosition="106" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2662234144540708587" fileName="LanguagePaths_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2662234144540708587" fileName="LanguagePaths_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708597" fileName="LanguagePaths_Action.java" startLine="77" startPosition="55" endLine="78" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708607" fileName="LanguagePaths_Action.java" startLine="80" startPosition="56" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708615" fileName="LanguagePaths_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2662234144540708616" fileName="LanguagePaths_Action.java" startLine="83" startPosition="0" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2662234144540708616" fileName="LanguagePaths_Action.java" startLine="83" startPosition="0" endLine="84" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2662234144540708626" fileName="LanguagePaths_Action.java" startLine="85" startPosition="56" endLine="86" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708636" fileName="LanguagePaths_Action.java" startLine="88" startPosition="55" endLine="89" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708644" fileName="LanguagePaths_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -3170,9 +3170,9 @@
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="57" startPosition="95" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="43" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="51" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2662234144540708604" fileName="LanguagePaths_Action.java" startLine="79" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="44" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="52" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2662234144540708633" fileName="LanguagePaths_Action.java" startLine="87" startPosition="9" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2662234144540708645" fileName="LanguagePaths_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="105" startPosition="27" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3197,13 +3197,13 @@
     <scopeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="106" startPosition="33" endLine="107" endPosition="87" />
     <scopeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="35" startPosition="33" endLine="38" endPosition="41" />
     <scopeInfo nodeId="2662234144540708521" fileName="LanguagePaths_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="43" endLine="79" endPosition="9">
+    <scopeInfo nodeId="2662234144540708593" fileName="LanguagePaths_Action.java" startLine="76" startPosition="51" endLine="79" endPosition="9">
       <varInfo nodeId="2662234144540708594" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="2662234144540708604" fileName="LanguagePaths_Action.java" startLine="79" startPosition="9" endLine="82" endPosition="9">
       <varInfo nodeId="2662234144540708605" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="44" endLine="87" endPosition="9">
+    <scopeInfo nodeId="2662234144540708622" fileName="LanguagePaths_Action.java" startLine="84" startPosition="52" endLine="87" endPosition="9">
       <varInfo nodeId="2662234144540708623" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="2662234144540708633" fileName="LanguagePaths_Action.java" startLine="87" startPosition="9" endLine="90" endPosition="9">
@@ -3269,7 +3269,7 @@
     <nodeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="45" startPosition="5" endLine="46" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="47" startPosition="59" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2662234144540708712" fileName="PrintNodeID_Action.java" startLine="54" startPosition="9" endLine="55" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2662234144540708712" fileName="PrintNodeID_Action.java" startLine="54" startPosition="9" endLine="55" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="57" startPosition="33" endLine="58" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="34" startPosition="27" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="34" startPosition="27" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3290,7 +3290,7 @@
     <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="35" startPosition="33" endLine="36" endPosition="86" />
     <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="43" startPosition="53" endLine="44" endPosition="19" />
     <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="47" startPosition="59" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="54" startPosition="9" endLine="55" endPosition="95" />
+    <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="54" startPosition="9" endLine="55" endPosition="111" />
     <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="57" startPosition="33" endLine="58" endPosition="85" />
     <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="20" startPosition="31" endLine="23" endPosition="41" />
     <scopeInfo nodeId="2662234144540708709" fileName="PrintNodeID_Action.java" startLine="34" startPosition="27" endLine="37" endPosition="7" />
@@ -4189,7 +4189,7 @@
     <nodeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="14" startPosition="53" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="15" startPosition="46" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="16" startPosition="30" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3465865320786328045" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="19" startPosition="61" endLine="20" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3465865320786328046" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="19" startPosition="61" endLine="20" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3465865320786328043" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="18" startPosition="9" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="17" startPosition="25" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -4842,7 +4842,7 @@
   <root nodeId="8321617901826002785" modelId="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)">
     <nodeInfo nodeId="8321617901826002817" fileName="GoToEditorDeclarationHelper.java" startLine="26" startPosition="30" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321617901826002828" fileName="GoToEditorDeclarationHelper.java" startLine="30" startPosition="36" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321617901826002844" fileName="GoToEditorDeclarationHelper.java" startLine="34" startPosition="31" endLine="35" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321617901826002844" fileName="GoToEditorDeclarationHelper.java" startLine="34" startPosition="31" endLine="35" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321617901826002854" fileName="GoToEditorDeclarationHelper.java" startLine="37" startPosition="7" endLine="38" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8321617901826002868" fileName="GoToEditorDeclarationHelper.java" startLine="39" startPosition="43" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321617901826002882" fileName="GoToEditorDeclarationHelper.java" startLine="43" startPosition="30" endLine="44" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4882,7 +4882,7 @@
     <scopeInfo nodeId="8321617901826002790" fileName="GoToEditorDeclarationHelper.java" startLine="21" startPosition="40" endLine="21" endPosition="40" />
     <scopeInfo nodeId="8321617901826002816" fileName="GoToEditorDeclarationHelper.java" startLine="26" startPosition="30" endLine="27" endPosition="74" />
     <scopeInfo nodeId="8321617901826002827" fileName="GoToEditorDeclarationHelper.java" startLine="30" startPosition="36" endLine="31" endPosition="31" />
-    <scopeInfo nodeId="8321617901826002843" fileName="GoToEditorDeclarationHelper.java" startLine="34" startPosition="31" endLine="35" endPosition="101" />
+    <scopeInfo nodeId="8321617901826002843" fileName="GoToEditorDeclarationHelper.java" startLine="34" startPosition="31" endLine="35" endPosition="103" />
     <scopeInfo nodeId="8321617901826002867" fileName="GoToEditorDeclarationHelper.java" startLine="39" startPosition="43" endLine="40" endPosition="18" />
     <scopeInfo nodeId="8321617901826002881" fileName="GoToEditorDeclarationHelper.java" startLine="43" startPosition="30" endLine="44" endPosition="99" />
     <scopeInfo nodeId="8321617901826002908" fileName="GoToEditorDeclarationHelper.java" startLine="51" startPosition="33" endLine="52" endPosition="28" />

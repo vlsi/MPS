@@ -203,7 +203,7 @@ public class InequalitySystem {
         SNode target = ref.getTargetNodeSilently();
         SNode restored = mapping.get(target);
         if (restored != null) {
-          node.replaceReference(ref, new StaticReference(ref.getRole(), ref.getSourceNode(), restored));
+          node.setReference(ref.getRole(), new StaticReference(ref.getRole(), ref.getSourceNode(), restored));
         }
       }
     }

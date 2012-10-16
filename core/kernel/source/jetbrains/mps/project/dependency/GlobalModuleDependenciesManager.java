@@ -18,6 +18,7 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -31,15 +32,15 @@ import java.util.Set;
  * this will work O(M+N) in the worst case, regardless of S
  */
 public class GlobalModuleDependenciesManager {
-  private Set<IModule> myModules;
+  private Set<SModule> myModules;
 
-  public GlobalModuleDependenciesManager(Collection<IModule> modules) {
-    myModules = new HashSet<IModule>(modules);
+  public GlobalModuleDependenciesManager(Collection<? extends SModule> modules) {
+    myModules = new HashSet<SModule>(modules);
     addGenerators();
   }
 
-  public GlobalModuleDependenciesManager(@NotNull IModule module) {
-    myModules = new HashSet<IModule>();
+  public GlobalModuleDependenciesManager(@NotNull SModule module) {
+    myModules = new HashSet<SModule>();
     myModules.add(module);
     addGenerators();
   }
@@ -47,7 +48,7 @@ public class GlobalModuleDependenciesManager {
   // this is a temporary fix for MPS-15883, should be removed when generators are compiled with their own classpath
   private void addGenerators() {
     Set<IModule> addModules = new HashSet<IModule>();
-    for (IModule m : myModules) {
+    for (SModule m : myModules) {
       if (!(m instanceof Language)) continue;
       addModules.addAll(((Language) m).getGenerators());
     }
@@ -59,8 +60,8 @@ public class GlobalModuleDependenciesManager {
    */
   public Collection<Language> getUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
-    for (IModule module : myModules) {
-      result.addAll(module.getDependenciesManager().directlyUsedLanguages());
+    for (SModule module : myModules) {
+      result.addAll(((IModule)module).getDependenciesManager().directlyUsedLanguages());
     }
     return result;
   }
@@ -83,29 +84,29 @@ public class GlobalModuleDependenciesManager {
    * @return all modules in scope of given
    */
   public Collection<IModule> getModules(Deptype depType) {
-    Set<IModule> neighbours = collectNeighbours(depType);
+    Set<SModule> neighbours = collectNeighbours(depType);
 
-    HashSet<IModule> result = new HashSet<IModule>();
-    for (IModule neighbour : neighbours) {
+    Set<IModule> result = new HashSet<IModule>();
+    for (SModule neighbour : neighbours) {
       collect(neighbour, result, depType);
     }
 
     return result;
   }
 
-  private Set<IModule> collectNeighbours(Deptype depType) {
-    HashSet<IModule> result = new HashSet<IModule>();
-    for (IModule module : myModules) {
-      result.addAll(module.getDependenciesManager().directlyUsedModules(true, depType.runtimes));
+  private Set<SModule> collectNeighbours(Deptype depType) {
+    HashSet<SModule> result = new HashSet<SModule>();
+    for (SModule module : myModules) {
+      result.addAll(((IModule)module).getDependenciesManager().directlyUsedModules(true, depType.runtimes));
     }
     result.addAll(myModules);
     return result;
   }
 
-  private void collect(IModule current, Set<IModule> result, Deptype depType) {
+  private void collect(SModule current, Set<IModule> result, Deptype depType) {
     if (result.contains(current)) return;
-    result.add(current);
-    for (IModule m : current.getDependenciesManager().directlyUsedModules(depType.reexportAll, depType.runtimes)) {
+    result.add((IModule)current);
+    for (SModule m : ((IModule)current).getDependenciesManager().directlyUsedModules(depType.reexportAll, depType.runtimes)) {
       collect(m, result, depType);
     }
   }

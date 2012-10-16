@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
@@ -51,6 +52,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   }
 
   @Override
+  @Nullable
   protected String getClassNameToPrepare() {
     return myLocation.getTargetUnitName();
   }

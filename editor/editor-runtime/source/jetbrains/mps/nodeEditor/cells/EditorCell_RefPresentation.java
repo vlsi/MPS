@@ -82,7 +82,7 @@ public class EditorCell_RefPresentation {
           // FIXME throw exception if reference is null
           return myNode.getPresentation();
         }
-        IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
+        IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref).getReferencePresentation();
         if (presentation == null) {
           return myNode.getPresentation();
         }
@@ -100,7 +100,7 @@ public class EditorCell_RefPresentation {
         // FIXME throw exception if reference is null
         return referenceTarget.getPresentation();
       }
-      IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
+      IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref).getReferencePresentation();
       if (presentation == null) {
         return referenceTarget.getPresentation();
       }

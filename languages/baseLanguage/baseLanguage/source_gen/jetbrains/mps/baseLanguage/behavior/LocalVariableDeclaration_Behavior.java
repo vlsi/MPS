@@ -11,6 +11,10 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -76,6 +80,29 @@ public class LocalVariableDeclaration_Behavior {
 
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {
     throw new UnsupportedOperationException();
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      if (ScopeUtils.comeFrom("initializer", thisNode, child)) {
+        return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
+      } else {
+        return ScopeUtils.lazyParentScope(thisNode, kind);
+      }
+    }
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", kind, child);
+  }
+
+  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      if (role.equals("initializer")) {
+        return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
+      } else {
+        return ScopeUtils.lazyParentScope(thisNode, kind);
+      }
+    }
+
+    return ScopeProvider_Behavior.callSuperNew_getScope_7722139651431880752(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", kind, role, index);
   }
 
   public static String call_getPrefix_3012473318495506424(SNode thisNode, Project project) {

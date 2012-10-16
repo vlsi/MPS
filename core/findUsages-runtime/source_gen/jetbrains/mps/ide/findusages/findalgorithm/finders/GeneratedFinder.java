@@ -88,7 +88,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
       }
     } else {
-      LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConceptFqName());
+      LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConcept().getId());
     }
     return results;
   }
@@ -106,7 +106,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   private int compareBrothers(SNode n1, SNode n2) {
     if (SNodeOperations.getContainingLinkRole(n1) == null) {
-      return n1.toString().compareTo(n2.toString());
+      return n1.getPresentation().compareTo(n2.getPresentation());
     }
     if (SNodeOperations.getContainingLinkRole(n1).equals(SNodeOperations.getContainingLinkRole(n2))) {
       return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);

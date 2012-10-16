@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -76,7 +77,7 @@ class IntelligentNodeMover {
     if (current.getParent() == null) return;
 
     final SNode parent = current.getParent();
-    final String role = current.getRole_();
+    final String role = current.getRole();
     assert parent != null && role != null;
 
     final SNode acd = parent.getConceptDeclarationNode();
@@ -98,14 +99,14 @@ class IntelligentNodeMover {
       SNode currentTarget = parent.getParent();
 
       while (currentTarget != null) {
-        if (currentTarget.isInstanceOfConcept(NameUtil.nodeFQName(targetType))) {
+        if (currentTarget.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetType)))) {
           parent.removeChild(current);
           addWithAnchor(currentTarget, currentAnchor, role, current);
           moveOtherNodes(current);
           return;
         }
 
-        SNode levelCurrent = sibling(currentAnchor);
+        SNode levelCurrent = siblingWithTheSameRole(currentAnchor);
         while (levelCurrent != null) {
           SNode result = findNodeAtBoundary(targetType, levelCurrent, true);
           if (result != null) {
@@ -115,7 +116,7 @@ class IntelligentNodeMover {
             return;
           }
 
-          levelCurrent = sibling(levelCurrent);
+          levelCurrent = siblingWithTheSameRole(levelCurrent);
         }
 
         currentTarget = currentTarget.getParent();
@@ -144,23 +145,24 @@ class IntelligentNodeMover {
   }
 
   private void moveOtherNodes(SNode current) {
+    SNode parent = current.getParent();
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        current.getParent().insertChild(current.getRole(), node, current.getPrevSibling());
+        parent.insertChild(current.getRole(), node, parent.getPrevChild(current));
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        current.getParent().insertChild(current.getRole(), node, current);
+        parent.insertChild(current.getRole(), node, current);
       }
     }
   }
 
   private SNode findNodeAtBoundary(SNode acd, SNode current, boolean includeThis) {
-    if (includeThis && current.isInstanceOfConcept(NameUtil.nodeFQName(acd))) {
+    if (includeThis && current.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(acd)))) {
       return current;
     }
 
@@ -178,14 +180,6 @@ class IntelligentNodeMover {
     return null;
   }
 
-  private SNode sibling(SNode node) {
-    if (forward()) {
-      return node.nextSibling();
-    } else {
-      return node.prevSibling();
-    }
-  }
-
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
       return node.getParent().getNextChild(node);
@@ -195,7 +189,7 @@ class IntelligentNodeMover {
   }
 
   private boolean isBoundary(SNode node) {
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     List<SNode> siblings = node.getParent().getChildren(role);
     int index = siblings.indexOf(node);
@@ -208,15 +202,15 @@ class IntelligentNodeMover {
 
   private void addWithAnchor(SNode parent, SNode prevChild, String role, SNode current) {
     if (forward()) {
-      parent.insertChild(prevChild, role, current);
+      parent.insertChild(role, current, prevChild);
     } else {
-      parent.insertChild(prevChild, role, current, true);
+      parent.insertChild(role, current, parent.getPrevChild(prevChild));
     }
   }
 
   private void addAtBoundary(SNode result, String role, SNode current) {
     if (forward()) {
-      result.insertChild(null, role, current);
+      result.insertChild(role, current, null);
     } else {
       result.addChild(role, current);
     }

@@ -16,7 +16,7 @@ public enum SessionObjects {
 
   public void associate(TemplateQueryContext genContext, SNode context, Object key, Object value) {
     if (context != null) {
-      genContext.putSessionObject(this.name + context.getId() + "+" + String.valueOf(key), value);
+      genContext.putSessionObject(this.name + context.getSNodeId().toString() + "+" + String.valueOf(key), value);
 
     }
   }
@@ -25,7 +25,7 @@ public enum SessionObjects {
     if (context == null) {
       return null;
     }
-    return genContext.getSessionObject(this.name + context.getId() + "+" + String.valueOf(key));
+    return genContext.getSessionObject(this.name + context.getSNodeId().toString() + "+" + String.valueOf(key));
   }
 
   private String prefix() {

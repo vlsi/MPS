@@ -62,7 +62,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              result[0] = sModel.rootsIterator().next().getConceptFqName().equals(targetStructureModelReference[0].getSModelFqName() + "." + conceptName);
+              result[0] = sModel.rootsIterator().next().getConcept().getId().equals(targetStructureModelReference[0].getSModelFqName() + "." + conceptName);
             } catch (Throwable t) {
               t.printStackTrace();
               result[0] = false;

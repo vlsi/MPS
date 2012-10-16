@@ -68,7 +68,7 @@ public class ForeignReferencesConvertor {
     if ((node == null)) {
       return null;
     }
-    if (ourAllowedClassifierConcepts.contains(node.getConceptFqName())) {
+    if (ourAllowedClassifierConcepts.contains(node.getConcept().getId())) {
       return SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
     } else {
       return null;

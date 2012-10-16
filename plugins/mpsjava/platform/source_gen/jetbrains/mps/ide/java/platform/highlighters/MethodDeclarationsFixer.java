@@ -143,7 +143,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           public void run() {
             for (SNode methodCall : reResolvedTargets.keySet()) {
               SNode referent = reResolvedTargets.get(methodCall);
-              if (referent != null && !(referent.shouldHaveBeenDisposed())) {
+              if (referent != null && !(jetbrains.mps.util.SNodeOperations.isDisposed(referent))) {
                 SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
               }
             }
@@ -216,7 +216,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         myMethodDeclsToCheckedMethodCalls.put(newTargetPointer, nodeSet);
       }
       nodeSet.add(methodCallPointer);
-      Pair<String, String> key = new Pair<String, String>(newTarget.getConceptFqName(), methodName);
+      Pair<String, String> key = new Pair<String, String>(newTarget.getConcept().getId(), methodName);
       Set<SNodePointer> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
       if (nodesByNameAndConcept == null) {
         nodesByNameAndConcept = new HashSet<SNodePointer>();
@@ -263,7 +263,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodePointer> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConceptFqName(), method.getName()));
+    Set<SNodePointer> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getId(), method.getName()));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }

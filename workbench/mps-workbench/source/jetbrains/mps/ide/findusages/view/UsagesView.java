@@ -46,6 +46,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -144,7 +145,7 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   private void regenerate() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    List<SModel> models = new ArrayList<SModel>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       if (!GenerationFacade.canGenerate(modelDescriptor)) continue;
       models.add(modelDescriptor);

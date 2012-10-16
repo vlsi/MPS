@@ -22,7 +22,7 @@
     <nodeInfo nodeId="4483399040246412800" fileName="DirctoriesInLayout_MigrationScript.java" startLine="91" startPosition="59" endLine="92" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4483399040246412814" fileName="DirctoriesInLayout_MigrationScript.java" startLine="95" startPosition="52" endLine="96" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="99" startPosition="42" endLine="100" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="462257719548525353" fileName="DirctoriesInLayout_MigrationScript.java" startLine="105" startPosition="69" endLine="106" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="462257719548526049" fileName="DirctoriesInLayout_MigrationScript.java" startLine="105" startPosition="69" endLine="106" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="113" startPosition="71" endLine="114" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="114" startPosition="26" endLine="115" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="115" startPosition="67" endLine="116" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -129,7 +129,7 @@
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="462257719548525353" fileName="DirctoriesInLayout_MigrationScript.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_6u5ptb_a0a0e0a0a0c0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="462257719548526049" fileName="DirctoriesInLayout_MigrationScript.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_6u5ptb_a0a0e0a0a0c0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="462257719548525230" fileName="DirctoriesInLayout_MigrationScript.java" startLine="37" startPosition="52" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="462257719548525305" fileName="DirctoriesInLayout_MigrationScript.java" startLine="66" startPosition="52" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="462257719548525336" fileName="DirctoriesInLayout_MigrationScript.java" startLine="245" startPosition="9" endLine="250" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -198,7 +198,7 @@
     <scopeInfo nodeId="4483399040246412799" fileName="DirctoriesInLayout_MigrationScript.java" startLine="91" startPosition="59" endLine="92" endPosition="77" />
     <scopeInfo nodeId="4483399040246412797" fileName="DirctoriesInLayout_MigrationScript.java" startLine="95" startPosition="52" endLine="96" endPosition="94" />
     <scopeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="99" startPosition="42" endLine="100" endPosition="21" />
-    <scopeInfo nodeId="462257719548525353" fileName="DirctoriesInLayout_MigrationScript.java" startLine="105" startPosition="69" endLine="106" endPosition="43" />
+    <scopeInfo nodeId="462257719548526049" fileName="DirctoriesInLayout_MigrationScript.java" startLine="105" startPosition="69" endLine="106" endPosition="43" />
     <scopeInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="109" startPosition="63" endLine="111" endPosition="5" />
     <scopeInfo nodeId="462257719548525296" fileName="DirctoriesInLayout_MigrationScript.java" startLine="153" startPosition="64" endLine="155" endPosition="5" />
     <scopeInfo nodeId="462257719548525316" fileName="DirctoriesInLayout_MigrationScript.java" startLine="190" startPosition="63" endLine="192" endPosition="5" />
@@ -230,8 +230,8 @@
       <varInfo nodeId="462257719548498247" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="462257719548498247" fileName="DirctoriesInLayout_MigrationScript.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="462257719548525353" fileName="DirctoriesInLayout_MigrationScript.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="462257719548525353" varName="str" />
+    <scopeInfo nodeId="462257719548526049" fileName="DirctoriesInLayout_MigrationScript.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="462257719548526049" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="462257719548507237" fileName="DirctoriesInLayout_MigrationScript.java" startLine="124" startPosition="9" endLine="128" endPosition="56">
       <varInfo nodeId="462257719548507237" varName="quotedNode1_7" />

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
+public class BaseModuleValidator<T extends AbstractModule> implements ModuleValidator {
   protected final T myModule;
 
   public BaseModuleValidator(@NotNull T module) {
@@ -46,7 +46,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
       errors.add("Couldn't load module: " + loadException.getMessage());
       return errors;
     }
-    
+
     for (Dependency dep : myModule.getDependencies()) {
       ModuleReference moduleRef = dep.getModuleRef();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {

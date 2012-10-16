@@ -1,5 +1,5 @@
 <component>
-  <version codename="MPS" major="2" minor="5" eap="false" update-channel="MPS25"/>
+  <version codename="MPS" major="3" minor="0" eap="true" update-channel="MPS30"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387"/>
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>

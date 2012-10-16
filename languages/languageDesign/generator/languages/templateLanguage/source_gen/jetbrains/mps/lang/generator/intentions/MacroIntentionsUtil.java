@@ -102,10 +102,10 @@ public class MacroIntentionsUtil {
       {
         SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1;
         nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getConceptFqName()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getConcept().getId()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getReferent("concept");
+        patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a1.getReferenceTarget("concept");
       }
       return true;
     }
@@ -141,7 +141,7 @@ public class MacroIntentionsUtil {
       {
         SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b;
         nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b.getConcept().getId()))) {
           return false;
         }
         {
@@ -154,10 +154,10 @@ public class MacroIntentionsUtil {
             {
               SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1;
               nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1 = childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a1;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getConceptFqName()))) {
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getConcept().getId()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getReferent("concept");
+              patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getReferenceTarget("concept");
             }
           }
         }
