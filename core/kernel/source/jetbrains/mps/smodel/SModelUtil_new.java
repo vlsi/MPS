@@ -120,6 +120,10 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
+    return instantiateConceptDeclaration(conceptFqName, model, null, scope, fullNodeStructure);
+  }
+
+  public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
@@ -139,7 +143,10 @@ public class SModelUtil_new implements CoreComponent {
       conceptFqName = languageNamespace + ".structure." + conceptName;
     }
 
-    SNode newNode = new SNode(model, conceptFqName);
+    SNode newNode = new SNode(conceptFqName);
+    if (nodeId!=null){
+      newNode.setId(nodeId);
+    }
     // create the node structure
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used
@@ -147,6 +154,7 @@ public class SModelUtil_new implements CoreComponent {
       SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
       createNodeStructure(conceptDeclaration, newNode, model);
     }
+    newNode.registerInModel(model);
     return newNode;
   }
 
