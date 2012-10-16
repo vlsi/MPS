@@ -93,7 +93,7 @@
     <nodeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="116" startPosition="51" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_l77foe_a0a0d#()V" />
     <nodeInfo nodeId="1239708048982" fileName="ClosureLiteral_Behavior.java" startLine="161" startPosition="51" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_l77foe_a0c0g#()V" />
     <nodeInfo nodeId="1213877338503" fileName="ClosureLiteral_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2832018561209150994" fileName="ClosureLiteral_Behavior.java" startLine="80" startPosition="111" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2832018561209150994" fileName="ClosureLiteral_Behavior.java" startLine="80" startPosition="105" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="131" startPosition="56" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="141" startPosition="16" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="144" startPosition="11" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -162,7 +162,7 @@
       <varInfo nodeId="1213877338503" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1239707822366" fileName="ClosureLiteral_Behavior.java" startLine="61" startPosition="80" endLine="64" endPosition="82" />
-    <scopeInfo nodeId="3032204829141691017" fileName="ClosureLiteral_Behavior.java" startLine="80" startPosition="111" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="3032204829141691017" fileName="ClosureLiteral_Behavior.java" startLine="80" startPosition="105" endLine="83" endPosition="7" />
     <scopeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="131" startPosition="56" endLine="134" endPosition="11">
       <varInfo nodeId="1229718192191" varName="child" />
     </scopeInfo>

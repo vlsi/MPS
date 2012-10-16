@@ -161,11 +161,11 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_x06od6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+    return !((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
   }
 
   private static boolean renderingCondition_x06od6_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+    return !((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
   }
 
   private static boolean renderingCondition_x06od6_a5a(SNode node, EditorContext editorContext, IScope scope) {

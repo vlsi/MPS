@@ -51,10 +51,10 @@ public class AssignmentExpression_Behavior {
     SNode varType = TypeChecker.getInstance().getRuntimeSupport().coerce_(valueType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SLinkOperations.setNewChild(varDeclStmnt, "localVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-    SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+    SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference");
     String name = (varName == null ?
       ((SLinkOperations.getTarget(ref, "variableDeclaration", false) == null) ?
-        SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")).getResolveInfo() :
+        SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")).getResolveInfo() :
         SPropertyOperations.getString(SLinkOperations.getTarget(ref, "variableDeclaration", false), "name")
       ) :
       varName

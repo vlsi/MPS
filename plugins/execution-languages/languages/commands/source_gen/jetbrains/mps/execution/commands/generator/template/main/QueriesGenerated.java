@@ -422,7 +422,11 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_865001690840233535(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      }
+    }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter"))) != null);
       }
@@ -441,7 +445,11 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_8980950851470008745(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      }
+    }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter"))) != null);
       }

@@ -66,6 +66,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -233,6 +234,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
@@ -350,6 +352,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -407,6 +410,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" file="InlineVariableReferenceRefactoring.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -446,6 +450,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -458,6 +463,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring" file="IntroduceLocalVariableRefactoring.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -472,6 +478,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" file="IntroduceVariableRefactoring.java">
@@ -641,6 +648,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

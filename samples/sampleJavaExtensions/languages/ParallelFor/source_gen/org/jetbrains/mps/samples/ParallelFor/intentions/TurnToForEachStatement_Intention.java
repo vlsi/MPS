@@ -44,7 +44,11 @@ public class TurnToForEachStatement_Intention extends BaseIntention implements I
     SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(node, "loopVariable", true), "name"));
     SLinkOperations.setTarget(forStatement, "variable", variable, true);
     SLinkOperations.setTarget(forStatement, "inputSequence", SLinkOperations.getTarget(node, "inputSequence", true), true);
-    ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      }
+    }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(node, "loopVariable", true);
       }

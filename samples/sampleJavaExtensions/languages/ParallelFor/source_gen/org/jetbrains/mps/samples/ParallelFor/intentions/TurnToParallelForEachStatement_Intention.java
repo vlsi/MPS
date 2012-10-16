@@ -63,7 +63,7 @@ public class TurnToParallelForEachStatement_Intention extends BaseIntention impl
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNode newReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SNode newReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(newReference, "variableDeclaration", variable, false);
         SNodeOperations.replaceWithAnother(it, newReference);
       }

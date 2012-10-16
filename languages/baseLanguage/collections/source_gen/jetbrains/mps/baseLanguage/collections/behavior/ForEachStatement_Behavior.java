@@ -15,7 +15,7 @@ public class ForEachStatement_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return Scopes.forVariables(kind, SLinkOperations.getTarget(thisNode, "variable", true), ScopeUtils.lazyParentScope(thisNode, kind));
       }

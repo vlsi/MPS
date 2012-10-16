@@ -195,7 +195,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_ds6c8y_a0a0a0d0a0a0h0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashMap") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 0;
+        return eq_ds6c8y_a0a0a0d0a0a0a0h0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashMap") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 0;
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -211,7 +211,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
     });
   }
 
-  private static boolean eq_ds6c8y_a0a0a0d0a0a0h0a(Object a, Object b) {
+  private static boolean eq_ds6c8y_a0a0a0d0a0a0a0h0a(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -17,7 +17,7 @@ public class MultipleForeachLoop_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return CompositeWithParentScope.from(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "loopVariable", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

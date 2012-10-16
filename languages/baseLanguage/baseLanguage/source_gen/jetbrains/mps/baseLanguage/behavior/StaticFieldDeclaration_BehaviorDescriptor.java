@@ -72,6 +72,10 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
+  public SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
+    return StaticFieldDeclaration_Behavior.virtual_getQualifiedReference_4598334504606213641(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";

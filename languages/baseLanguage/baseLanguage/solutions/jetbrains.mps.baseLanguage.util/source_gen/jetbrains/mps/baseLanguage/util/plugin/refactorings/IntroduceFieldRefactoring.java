@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -74,7 +75,11 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", true, new String[]{})).isEmpty();
+        result.value = ListSequence.fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          }
+        }).toListSequence().isEmpty();
       }
     });
     return result.value;

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-bbw1j7sbel6vml77yiwkpo5blcwchoa">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5hj4jf6p21h298g5nmfhjuo414lwbmo" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-djmnpmg1bhn2mn53expf0s1xxpkcwj0" />
+  <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="44lzlq1u85ktrzs2pfmlcov6gdlbsb6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
   <common hash="-dqpv554ddf38uubjoeldp3f8xt9ijqi">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
@@ -17,6 +18,7 @@
     <file name="ExpandController.java" />
   </source>
   <source id="4983682755224323286" name="StubDialog" hash="-ee6fhjgrhur4p74gzqg31fkxyalvra2">
+    <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="StubDialog.java" />

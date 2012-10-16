@@ -18,7 +18,7 @@ public class MultiForEachStatement_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return Scopes.forVariables(kind, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "forEach", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

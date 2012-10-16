@@ -7,15 +7,15 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 
 public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntention implements Intention {
   public ConvertAssignmentToVariableDeclaration_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.LocalVariableReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public boolean isParameterized() {
@@ -42,6 +42,9 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      return false;
+    }
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
       return false;
     }
