@@ -4,7 +4,7 @@ package jetbrains.mps.lang.extension.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -53,7 +53,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hr8njl_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_b0");
     BaseLanguageStyle_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
@@ -66,7 +66,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hr8njl_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_d0");
     BaseLanguageStyle_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
@@ -78,7 +78,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hr8njl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "id:");
     editorCell.setCellId("Constant_hr8njl_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -197,7 +197,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
         }
 
         public boolean isValidText(String s) {
-          return EqualUtil.equals(s, this.getText());
+          return EqualUtil.equals(s, getText());
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());

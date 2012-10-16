@@ -4,7 +4,7 @@ package jetbrains.mps.core.xml.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -55,7 +55,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dsthrr_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "PUBLIC");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "PUBLIC");
     editorCell.setCellId("Constant_dsthrr_a0a0");
     XmlSS_StyleSheet.getXmlTagName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -64,7 +64,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dsthrr_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SYSTEM");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "SYSTEM");
     editorCell.setCellId("Constant_dsthrr_a0a");
     XmlSS_StyleSheet.getXmlTagName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -123,7 +123,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
       this.myComponent = new ExternalIdMenu();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -135,7 +135,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
       this.myComponent = new ExternalIdMenu();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

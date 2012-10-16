@@ -5,7 +5,7 @@ package jetbrains.mps.build.packaging.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -31,6 +31,12 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_odw917_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_odw917_a(EditorContext editorContext, SNode node) {
@@ -59,7 +65,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
   }
 
   private EditorCell createIndentCell_odw917_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
@@ -103,7 +109,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     }
 
     private EditorCell createConstant_odw917_a1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<entries>");
       editorCell.setCellId("Constant_odw917_a1a");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

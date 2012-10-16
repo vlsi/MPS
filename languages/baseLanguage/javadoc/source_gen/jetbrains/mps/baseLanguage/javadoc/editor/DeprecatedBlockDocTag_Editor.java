@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javadoc.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -22,7 +22,7 @@ public class DeprecatedBlockDocTag_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y08oko_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@deprecated");
     editorCell.setCellId("Constant_y08oko_a0");
     editorCell.setDefaultText("");
     return editorCell;

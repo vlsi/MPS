@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -35,7 +35,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdp2qu_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "symbol class");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "symbol class");
     editorCell.setCellId("Constant_tdp2qu_a0");
     {
       Style style = editorCell.getStyle();
@@ -46,7 +46,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdp2qu_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_tdp2qu_c0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
@@ -58,7 +58,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdp2qu_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "description:");
     editorCell.setCellId("Constant_tdp2qu_d0");
     {
       Style style = editorCell.getStyle();
@@ -69,7 +69,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdp2qu_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_tdp2qu_f0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {

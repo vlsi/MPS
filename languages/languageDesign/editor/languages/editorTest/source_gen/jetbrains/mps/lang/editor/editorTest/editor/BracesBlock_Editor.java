@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editorTest.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -78,7 +78,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_nhnpdb_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no statements");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "no statements");
       editorCell.setCellId("Constant_nhnpdb_a0a");
       editorCell.setDefaultText("");
       return editorCell;

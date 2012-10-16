@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.constructors.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -26,7 +26,7 @@ public class CustomConstructorParameterReference_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  private EditorCell createRefCell_hi58r4_a0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_hi58r4_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
@@ -49,15 +49,15 @@ public class CustomConstructorParameterReference_Editor extends DefaultNodeEdito
       super();
     }
 
-    public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
+    public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
 
-    public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_hi58r4_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_hi58r4_a0a0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_hi58r4_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

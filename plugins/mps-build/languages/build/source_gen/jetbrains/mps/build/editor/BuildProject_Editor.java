@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -140,7 +140,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "build");
     editorCell.setCellId("Constant_vny568_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -148,7 +148,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generates");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generates");
     editorCell.setCellId("Constant_vny568_c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -156,7 +156,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_vny568_e0");
     {
       Style style = editorCell.getStyle();
@@ -167,7 +167,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "base directory:");
     editorCell.setCellId("Constant_vny568_f0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -175,7 +175,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_vny568_h0");
     {
       Style style = editorCell.getStyle();
@@ -186,7 +186,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use plugins:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "use plugins:");
     editorCell.setCellId("Constant_vny568_i0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -198,7 +198,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_vny568_k0");
     {
       Style style = editorCell.getStyle();
@@ -209,7 +209,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macros:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "macros:");
     editorCell.setCellId("Constant_vny568_l0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -221,7 +221,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_vny568_n0");
     {
       Style style = editorCell.getStyle();
@@ -232,7 +232,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_vny568_o0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -244,7 +244,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_q0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_vny568_q0");
     {
       Style style = editorCell.getStyle();
@@ -255,7 +255,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_r0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "project structure:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "project structure:");
     editorCell.setCellId("Constant_vny568_r0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -267,7 +267,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_t0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_vny568_t0");
     {
       Style style = editorCell.getStyle();
@@ -278,7 +278,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_u0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default layout:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default layout:");
     editorCell.setCellId("Constant_vny568_u0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -290,7 +290,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ant file location:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ant file location:");
     editorCell.setCellId("Constant_vny568_a0_0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -311,7 +311,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -343,7 +343,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -753,7 +753,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_vny568_a22a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_vny568_a22a");
       {
         Style style = editorCell.getStyle();

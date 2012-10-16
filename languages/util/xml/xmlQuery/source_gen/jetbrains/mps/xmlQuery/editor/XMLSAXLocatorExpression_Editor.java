@@ -4,7 +4,7 @@ package jetbrains.mps.xmlQuery.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -18,7 +18,7 @@ public class XMLSAXLocatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4uaul4_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "locator");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "locator");
     editorCell.setCellId("Constant_4uaul4_a");
     {
       Style style = editorCell.getStyle();

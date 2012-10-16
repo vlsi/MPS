@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -60,14 +60,14 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hfot0g_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "foreach");
     editorCell.setCellId("Constant_hfot0g_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_hfot0g_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_hfot0g_b0a");
     {
       Style style = editorCell.getStyle();
@@ -79,7 +79,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hfot0g_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "apply");
     editorCell.setCellId("Constant_hfot0g_a1a");
     {
       Style style = editorCell.getStyle();
@@ -90,7 +90,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hfot0g_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_hfot0g_b1a");
     {
       Style style = editorCell.getStyle();
@@ -102,7 +102,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hfot0g_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_hfot0g_c0");
     {
       Style style = editorCell.getStyle();

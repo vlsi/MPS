@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.helgins.test.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -14,7 +14,7 @@ public class BConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_f44cz_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BCONCEPT");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "BCONCEPT");
     editorCell.setCellId("Constant_f44cz_a");
     editorCell.setDefaultText("");
     return editorCell;

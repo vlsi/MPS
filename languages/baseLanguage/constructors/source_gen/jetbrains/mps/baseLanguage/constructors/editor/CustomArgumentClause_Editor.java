@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.constructors.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -31,7 +31,7 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_iqoiiv_a0(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_iqoiiv_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new CustomArgumentClause_Editor.parameterListHandler_iqoiiv_a0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
@@ -40,7 +40,7 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
   }
 
   private static class parameterListHandler_iqoiiv_a0 extends RefNodeListHandler {
-    public parameterListHandler_iqoiiv_a0(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext context) {
+    public parameterListHandler_iqoiiv_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -77,7 +77,7 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

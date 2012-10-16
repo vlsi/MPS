@@ -4,7 +4,7 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -62,7 +62,7 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k2fdvc_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default");
     editorCell.setCellId("Constant_k2fdvc_a0a");
     {
       Style style = editorCell.getStyle();
@@ -73,7 +73,7 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k2fdvc_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_k2fdvc_b0a");
     {
       Style style = editorCell.getStyle();
@@ -85,7 +85,7 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k2fdvc_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_k2fdvc_a1a");
     {
       Style style = editorCell.getStyle();
@@ -96,7 +96,7 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k2fdvc_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "break");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "break");
     editorCell.setCellId("Constant_k2fdvc_a1b1a");
     {
       Style style = editorCell.getStyle();
@@ -107,7 +107,7 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k2fdvc_b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_k2fdvc_b1b1a");
     {
       Style style = editorCell.getStyle();

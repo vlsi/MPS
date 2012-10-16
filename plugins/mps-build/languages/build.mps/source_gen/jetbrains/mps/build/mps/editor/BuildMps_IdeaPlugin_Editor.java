@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -83,7 +83,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from");
     editorCell.setCellId("Constant_dvtb4y_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -91,7 +91,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "name");
     editorCell.setCellId("Constant_dvtb4y_a3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -99,7 +99,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "short (folder) name");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "short (folder) name");
     editorCell.setCellId("Constant_dvtb4y_c3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -107,7 +107,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_e3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "version");
     editorCell.setCellId("Constant_dvtb4y_e3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -115,7 +115,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_h3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "content:");
     editorCell.setCellId("Constant_dvtb4y_h3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -127,7 +127,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_j3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_dvtb4y_j3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -139,7 +139,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_dvtb4y_e0");
     editorCell.setDefaultText("");
     return editorCell;

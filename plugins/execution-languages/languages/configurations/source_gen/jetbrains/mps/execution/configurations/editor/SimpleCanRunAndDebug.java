@@ -5,7 +5,7 @@ package jetbrains.mps.execution.configurations.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -33,6 +33,12 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_o92gz8_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_o92gz8_a(EditorContext editorContext, SNode node) {
@@ -79,7 +85,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_o92gz8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can:");
     editorCell.setCellId("Constant_o92gz8_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -87,7 +93,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_o92gz8_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "run");
     editorCell.setCellId("Constant_o92gz8_b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -96,7 +102,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_o92gz8_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't run");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can't run");
     editorCell.setCellId("Constant_o92gz8_c1a");
     {
       Style style = editorCell.getStyle();
@@ -108,14 +114,14 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_o92gz8_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_o92gz8_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o92gz8_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debug");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "debug");
     editorCell.setCellId("Constant_o92gz8_a3a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -124,7 +130,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_o92gz8_b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't debug");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can't debug");
     editorCell.setCellId("Constant_o92gz8_b3a");
     {
       Style style = editorCell.getStyle();
@@ -136,7 +142,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_o92gz8_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

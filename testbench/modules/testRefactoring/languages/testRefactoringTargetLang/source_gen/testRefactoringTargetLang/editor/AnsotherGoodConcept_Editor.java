@@ -4,7 +4,7 @@ package testRefactoringTargetLang.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -14,7 +14,7 @@ public class AnsotherGoodConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x6a4n9_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "another");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "another");
     editorCell.setCellId("Constant_x6a4n9_a");
     editorCell.setDefaultText("");
     return editorCell;
