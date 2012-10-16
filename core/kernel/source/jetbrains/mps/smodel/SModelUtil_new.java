@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -31,6 +30,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.components.CoreComponent;
 
 import java.util.List;
 
@@ -143,10 +143,11 @@ public class SModelUtil_new implements CoreComponent {
       conceptFqName = languageNamespace + ".structure." + conceptName;
     }
 
-    SNode newNode = new SNode(model, conceptFqName);
-    if (nodeId!=null){
+    SNode newNode = new SNode(conceptFqName);
+    if (nodeId != null) {
       newNode.setId(nodeId);
     }
+    newNode.setModel(model);
     // create the node structure
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used
