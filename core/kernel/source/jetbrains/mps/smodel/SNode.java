@@ -685,10 +685,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   /**
    * Use<br/>
-   *  n = new SNode(concept);<br/>
-   *  model.addNode(n)<br/>
+   * n = new SNode(concept);<br/>
+   * model.addNode(n)<br/>
    * or<br/>
-   *  n = model.newNode(concept)<br/>
+   * n = model.newNode(concept)<br/>
    * Set id if needed before adding to model
    * InternUtil.intern should be done in outer code
    *
@@ -837,11 +837,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   void registerInModel(SModel model) {
-    if (myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel)) {
-      if (model != myModel) {
+    if (model != myModel) {
+      if (myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel)) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
+        return;
       }
-      return;
     }
 
     model.registerNode(this);

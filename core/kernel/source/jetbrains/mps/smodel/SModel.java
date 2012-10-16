@@ -464,15 +464,30 @@ public class SModel {
 
     enforceFullLoad();
     SNodeId id = node.getSNodeId();
-    org.jetbrains.mps.openapi.model.SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
-    if (id == null || existingNode != null && existingNode != node) {
-      id = generateUniqueId();
-      while (myIdToNodeMap.containsKey(id)) {
-        resetIdCounter();
-        id = generateUniqueId();
-      }
-      node.setId(id);
+    if (id == null) {
+      assignNewId(node);
+      return;
     }
+
+    org.jetbrains.mps.openapi.model.SNode existingNode = myIdToNodeMap.get(id);
+    if (existingNode == null) {
+      myIdToNodeMap.put(node.getSNodeId(), node);
+    }
+
+    if (existingNode != null && existingNode != node) {
+      assignNewId(node);
+      return;
+    }
+  }
+
+  private void assignNewId(SNode node) {
+    SNodeId id;
+    id = generateUniqueId();
+    while (myIdToNodeMap.containsKey(id)) {
+      resetIdCounter();
+      id = generateUniqueId();
+    }
+    node.setId(id);
     myIdToNodeMap.put(id, node);
   }
 
