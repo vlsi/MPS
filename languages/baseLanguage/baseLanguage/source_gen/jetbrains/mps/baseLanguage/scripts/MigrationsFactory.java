@@ -58,7 +58,12 @@ public class MigrationsFactory {
           return false;
         }
 
-        String modelName = check_uzzzvm_a0c0d0a0a0e0a(check_uzzzvm_a0a2a3a0a0a4a0(check_uzzzvm_a0a0c0d0a0a0e0a(check_uzzzvm_a0a0a2a3a0a0a4a0(SNodeOperations.getModel(node)))));
+        String moduleName = SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleName();
+        String modelName = check_uzzzvm_a0d0d0a0a0e0a(check_uzzzvm_a0a3a3a0a0a4a0(check_uzzzvm_a0a0d0d0a0a0e0a(check_uzzzvm_a0a0a3a3a0a0a4a0(SNodeOperations.getModel(node)))));
+
+        if (!("jetbrains.mps.baseLanguage.test".equals(moduleName))) {
+          return false;
+        }
         if (!("jetbrains.mps.ide.java.parser".equals(modelName))) {
           return false;
         }
@@ -281,28 +286,28 @@ public class MigrationsFactory {
     return null;
   }
 
-  private static String check_uzzzvm_a0c0d0a0a0e0a(SModelFqName checkedDotOperand) {
+  private static String check_uzzzvm_a0d0d0a0a0e0a(SModelFqName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelFqName check_uzzzvm_a0a2a3a0a0a4a0(SModelReference checkedDotOperand) {
+  private static SModelFqName check_uzzzvm_a0a3a3a0a0a4a0(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelFqName();
     }
     return null;
   }
 
-  private static SModelReference check_uzzzvm_a0a0c0d0a0a0e0a(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_uzzzvm_a0a0d0d0a0a0e0a(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static SModelDescriptor check_uzzzvm_a0a0a2a3a0a0a4a0(SModel checkedDotOperand) {
+  private static SModelDescriptor check_uzzzvm_a0a0a3a3a0a0a4a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
