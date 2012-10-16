@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -128,14 +129,20 @@ public class SModelOperations {
   }
 
   public static SNode createNewNode(SModel model, String conceptFqName) {
+    return createNewNode(model, null, conceptFqName);
+  }
+
+  public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     if (conceptFqName == null) {
       return null;
     }
     SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      return new SNode(model, conceptFqName);
+      SNode node = new SNode(model, conceptFqName);
+      node.setId(id);
+      return node;
     }
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, GlobalScope.getInstance(), false);
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
     if (result == null) {
       return null;
     }
@@ -181,7 +188,7 @@ public class SModelOperations {
         null :
         ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_kkj9n5_a0a0a0a0a0a4a1a01(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
+            return eq_kkj9n5_a0a0a0a0a0a4a1a11(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
           }
         })
       );
@@ -194,7 +201,7 @@ public class SModelOperations {
     }
   }
 
-  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a01(Object a, Object b) {
+  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a11(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
