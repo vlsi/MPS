@@ -42,6 +42,14 @@ public interface EditorContext {
    */
   void selectWRTFocusPolicy(SNode node, boolean force);
 
+  void select(SNode node);
+
+  void selectBefore(SNode node);
+
+  void selectAfter(SNode node);
+
+  void selectAndSetCaret(SNode node, int position);
+
   EditorCell getSelectedCell();
 
   EditorCell getContextCell();
@@ -67,4 +75,6 @@ public interface EditorContext {
   EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
 
   IOperationContext getOperationContext();
+
+  boolean isInspector();
 }

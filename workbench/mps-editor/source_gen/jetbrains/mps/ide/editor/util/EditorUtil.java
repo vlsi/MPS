@@ -4,7 +4,7 @@ package jetbrains.mps.ide.editor.util;
 
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.MacrosFactory;
