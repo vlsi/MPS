@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_35" class="java.beans.XMLDecoder"> 
+ <object class="java.util.HashMap"> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.putUserObject(java.lang.Object,java.lang.Object)</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.Iterable&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildrenIterable()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final void java.lang.Object.wait() throws java.lang.InterruptedException</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getRoleOf(org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.shouldHaveBeenDisposed()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getReferents()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.insertChild(jetbrains.mps.smodel.SNodeBase,java.lang.String,jetbrains.mps.smodel.SNode)</string> 
+   <int>7</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.hasConceptProperty(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.findParent(jetbrains.mps.util.Condition&lt;jetbrains.mps.smodel.SNode&gt;)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.prevSibling()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.addPrevSibling(org.jetbrains.mps.openapi.model.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.insertChild(jetbrains.mps.smodel.SNodeBase,java.lang.String,jetbrains.mps.smodel.SNode,boolean)</string> 
+   <int>7</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.addNextSibling(org.jetbrains.mps.openapi.model.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(boolean)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getNextChild(org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.visitProperties(org.jetbrains.mps.openapi.model.SNode$PropertyVisitor)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.addChildRoles(java.util.Set&lt;java.lang.String&gt;)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.insertChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>7</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean java.lang.Object.equals(java.lang.Object)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SReference jetbrains.mps.smodel.SNode.getReference(java.lang.String)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getChildRoles()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getAncestors(boolean)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.setReferent(java.lang.String,jetbrains.mps.smodel.SNode,boolean)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.nextSibling()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.removeAllUserObjects()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isDisposed()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getDescendants()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.Iterable&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getDescendantsIterable(jetbrains.mps.util.Condition&lt;jetbrains.mps.smodel.SNode&gt;,boolean)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public native int java.lang.Object.hashCode()</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Map&lt;java.lang.Object, java.lang.Object&gt; jetbrains.mps.smodel.SNode.getUserObjects()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isInstanceOfConcept(jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.removeReferent(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getNextChild(jetbrains.mps.smodel.SNode)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.findConceptProperty(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.replaceChild(jetbrains.mps.smodel.SNode,java.util.List&lt;jetbrains.mps.smodel.SNode&gt;)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getResolveInfo()</string> 
+   <int>4</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(java.lang.String)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final native void java.lang.Object.notifyAll()</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getName()</string> 
+   <int>4</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.visitUserObjects(org.jetbrains.mps.openapi.model.SNode$UserObjectVisitor)</string> 
+   <int>8</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.addChildRoles(java.util.Set&lt;java.lang.String&gt;,boolean)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getContainingRoot()</string> 
+   <int>2</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Map&lt;java.lang.String, java.lang.String&gt; jetbrains.mps.smodel.SNode.getProperties()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isInstanceOfConcept(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getDebugText()</string> 
+   <int>2</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final native java.lang.Class&lt;?&gt; java.lang.Object.getClass()</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getPersistentProperty(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public int jetbrains.mps.smodel.SNode.getIndexOfChild(jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.addReference(jetbrains.mps.smodel.SReference)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.findChildByPath(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public int jetbrains.mps.smodel.SNode.getIntegerProperty(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getLanguageNamespace()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setIntegerProperty(java.lang.String,int)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public int jetbrains.mps.smodel.SNode.getChildCount()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.changeModel(jetbrains.mps.smodel.SModel)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SModel jetbrains.mps.smodel.SNode.getModel()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getPresentation()</string> 
+   <int>8</int>
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.removeChild(org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>9</int> 
+  </void> 
+  <void method="put"> 
+   <string>public int jetbrains.mps.smodel.SNode.getChildCount(java.lang.String)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPrevChild(jetbrains.mps.smodel.SNode)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isRegistered()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getRole()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SReference[] jetbrains.mps.smodel.SNode.getReferencesArray()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(java.lang.String)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
+   <int>9</int>
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isAncestorOf(jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getNodePath(jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getNextSibling()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getDescendants(jetbrains.mps.util.Condition&lt;jetbrains.mps.smodel.SNode&gt;)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getConceptDeclarationNode()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isDescendantOf(jetbrains.mps.smodel.SNode,boolean)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getPrevChild(org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setName(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.toString()</string> 
+   <int>8</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getPrevSibling()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isRoot()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getChildren(java.lang.String)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setBooleanProperty(java.lang.String,boolean)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getChild(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.visitChildren(org.jetbrains.mps.openapi.model.SNode$ChildVisitor)</string> 
+   <int>2</int>
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptProperty(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getRoleOf(jetbrains.mps.smodel.SNode)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final native void java.lang.Object.notify()</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.putUserObjects(jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public static void jetbrains.mps.smodel.SNode.setNodeMemberAccessModifier(jetbrains.mps.smodel.NodeMemberAccessModifier)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getRole_()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.language.SConcept jetbrains.mps.smodel.SNode.getConcept()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.Language jetbrains.mps.smodel.SNode.getNodeLanguage()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.Language jetbrains.mps.smodel.SNode.getLanguage()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final java.lang.String jetbrains.mps.smodel.SNode.getProperty(java.lang.String)</string> 
+   <int>4</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string> 
+   <int>2</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.removeUserObject(java.lang.Object)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getReferent(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.StackTraceElement[] jetbrains.mps.smodel.SNode.getModelDisposedTrace()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isDeleted()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>8</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setId(jetbrains.mps.smodel.SNodeId)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isDetached()</string> 
+   <int>2</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.visitReferences(org.jetbrains.mps.openapi.model.SNode$ReferenceVisitor)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.setReferent(java.lang.String,jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.replaceChild(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SReference&gt; jetbrains.mps.smodel.SNode.getReferences()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SModel jetbrains.mps.smodel.SNode.getModel()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Collection&lt;jetbrains.mps.smodel.SReference&gt; jetbrains.mps.smodel.SNode.getReferencesIterable()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.Object jetbrains.mps.smodel.SNode.getUserObject(java.lang.Object)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptFqName()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPropertyDeclaration(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getParent()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getChildRoles(boolean)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.replaceReference(jetbrains.mps.smodel.SReference,jetbrains.mps.smodel.SReference)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.getReference(java.lang.String)</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptShortName()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
+   <int>8</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.delete()</string> 
+   <int>38</int>
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.isReferentRequired(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getLinkDeclaration(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.getBooleanProperty(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNodeId jetbrains.mps.smodel.SNode.getSNodeId()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setRoleInParent(java.lang.String)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getChildAt(int)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.project.structure.modules.ModuleReference jetbrains.mps.smodel.SNode.getConceptLanguage()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getRoleLink()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public boolean jetbrains.mps.smodel.SNode.hasId()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final boolean jetbrains.mps.smodel.SNode.hasProperty(java.lang.String)</string> 
+   <int>4</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.reference.SNodeReference jetbrains.mps.smodel.SNode.getReference()</string> 
+   <int>1</int> 
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNodeReference jetbrains.mps.smodel.SNode.getReference()</string>
+   <int>2</int>
+  </void>
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.removeReference(org.jetbrains.mps.openapi.model.SReference)</string> 
+   <int>9</int>
+  </void> 
+  <void method="put"> 
+   <string>public final jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setProperty(java.lang.String,java.lang.String,boolean)</string> 
+   <int>8</int> 
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.putProperties(jetbrains.mps.smodel.SNode)</string> 
+   <null/> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getPresentation(boolean)</string> 
+   <int>8</int>
+  </void> 
+  <void method="put"> 
+   <string>public void jetbrains.mps.smodel.SNode.setProperty(java.lang.String,java.lang.String)</string> 
+   <int>8</int> 
+  </void> 
+  <void method="put"> 
+   <string>public final jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getParent()</string> 
+   <int>0</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.lang.String jetbrains.mps.smodel.SNode.getId()</string> 
+   <int>1</int> 
+  </void> 
+  <void method="put"> 
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getReferenceRoles()</string> 
+   <int>2</int> 
+  </void> 
+  <void method="put"> 
+   <string>public org.jetbrains.mps.openapi.model.SNodeId jetbrains.mps.smodel.SNode.getNodeId()</string> 
+   <int>1</int> 
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SModel jetbrains.mps.smodel.SNode.getContainingModel()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getChildren()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNodeId jetbrains.mps.smodel.SNode.getSNodeId()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getReferences()</string>
+   <int>1</int>
+  </void>
+ </object> 
+</java> 

@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
+import jetbrains.mps.util.SNodeOperations;
 
 public class SubnodesSearchScope extends AbstractSearchScope {
   private SNode myEnclosingNode;
@@ -20,6 +21,6 @@ public class SubnodesSearchScope extends AbstractSearchScope {
     if (myEnclosingNode == null) {
       return new ArrayList<SNode>();
     }
-    return myEnclosingNode.getDescendants(condition);
+    return SNodeOperations.getDescendants(myEnclosingNode, condition);
   }
 }

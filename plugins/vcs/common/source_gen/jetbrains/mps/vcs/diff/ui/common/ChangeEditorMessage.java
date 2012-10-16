@@ -18,6 +18,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
@@ -117,15 +119,19 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public EditorCell getCell(EditorComponent editor) {
-    EditorCell cell = super.getCell(editor);
-    if (check_myu41h_a0b0h(cell) && !(isDirectCell(cell))) {
-      SNode node = getNode();
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-        return CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
-      }
+  public EditorCell getCell(final EditorComponent editor) {
+    final Wrappers._T<EditorCell> cell = new Wrappers._T<EditorCell>(super.getCell(editor));
+    if (check_myu41h_a0b0h(cell.value) && !(isDirectCell(cell.value))) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SNode node = getNode();
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+            cell.value = CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
+          }
+        }
+      });
     }
-    return cell;
+    return cell.value;
   }
 
   @Override

@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NonNls;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class PositionProvider implements ProjectComponent {
   private final Project myProject;
@@ -75,7 +74,7 @@ public class PositionProvider implements ProjectComponent {
 
   public boolean removeProvider(@NotNull IPositionProvider provider) {
     for (List<IPositionProvider> providerList : Sequence.fromIterable(MapSequence.fromMap(myKeysToProviders).values())) {
-      if (CollectionSequence.fromCollection(providerList).removeElement(provider) != null) {
+      if (ListSequence.fromList(providerList).removeElement(provider) != null) {
         return true;
       }
     }

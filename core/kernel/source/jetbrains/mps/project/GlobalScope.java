@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -56,8 +57,8 @@ public class GlobalScope extends BaseScope implements CoreComponent {
     return "global scope";
   }
 
-  public Language getLanguage(ModuleReference moduleReference) {
-    return ModuleRepositoryFacade.getInstance().getModule(moduleReference,Language.class);
+  public Language getLanguage(SModuleReference moduleReference) {
+    return ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
   }
 
   public DevKit getDevKit(ModuleReference ref) {

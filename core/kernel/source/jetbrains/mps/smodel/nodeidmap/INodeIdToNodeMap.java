@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.nodeidmap;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public interface INodeIdToNodeMap {
   int size();

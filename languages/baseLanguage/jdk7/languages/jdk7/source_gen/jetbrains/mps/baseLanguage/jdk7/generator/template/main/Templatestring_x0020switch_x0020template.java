@@ -140,16 +140,16 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
         try {
           environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a1);
           environment.nodeCopied(context, tnode10, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065051160");
-          tnode10.addReference(SReference.create("baseMethodDeclaration", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays.binarySearch(java.lang.Object[],java.lang.Object):int")));
-          tnode10.addReference(SReference.create("classConcept", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
+          tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays.binarySearch(java.lang.Object[],java.lang.Object):int")));
+          tnode10.setReference("classConcept", SReference.create("classConcept", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
 
           {
             final SNode tnode11 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", false);
             try {
               environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a5a1a1);
               environment.nodeCopied(context, tnode11, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083856");
-              tnode11.setProperty("fieldName", "stringSwitchCases");
               tnode11.setProperty("makeUnique", "true");
+              tnode11.setProperty("fieldName", "stringSwitchCases");
 
               {
                 final SNode tnode12 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false);

@@ -43,16 +43,16 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention impleme
     SLinkOperations.setTarget(transactional, "relationDeclaration", SLinkOperations.getTarget(node, "property", false), false);
     SLinkOperations.setTarget(node, "property", null, false);
     SNodeOperations.detachNode(SLinkOperations.getTarget(node, "handlerBlock", true));
-    for (SNode child : ListSequence.fromList(node.getChildren())) {
-      String role = child.getRole_();
+    for (SNode child : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getChildren(node))) {
+      String role = child.getRole();
       node.removeChild(child);
       transactional.addChild(role, child);
     }
-    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
+    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).entrySet())) {
       transactional.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
     for (SReference reference : ListSequence.fromList(node.getReferences())) {
-      transactional.addReference(reference);
+      transactional.setReference(reference.getRole(), reference);
     }
     SNodeOperations.replaceWithAnother(node, transactional);
   }

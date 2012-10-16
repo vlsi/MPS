@@ -238,12 +238,12 @@ public abstract class BaseLanguageTextGen {
     } else {
       SNode targetNode = reference.getTargetNodeSilently();
       if (targetNode == null) {
-        textGen.foundError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + classifierRef.getSourceNode().getDebugText());
+        textGen.foundError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
       return MultiTuple.<String,String>from(targetNode.getModel().getSModelReference().getLongName(), (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier") ?
         SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName") :
-        targetNode.getResolveInfo()
+        jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)
       ));
     }
   }

@@ -42,7 +42,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -62,8 +62,8 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("container", (SNode) parameter_3);
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("container", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;
@@ -76,8 +76,8 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("container", (SNode) parameter_3);
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("container", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;
@@ -95,7 +95,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -108,7 +108,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -126,7 +126,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -139,7 +139,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -157,7 +157,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -170,7 +170,7 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("uiObject", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

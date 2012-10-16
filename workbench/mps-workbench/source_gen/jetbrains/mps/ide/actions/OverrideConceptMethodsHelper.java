@@ -121,7 +121,7 @@ public class OverrideConceptMethodsHelper {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -145,13 +145,13 @@ public class OverrideConceptMethodsHelper {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setReferent("superConcept", (SNode) parameter_8);
+          quotedNode1_6.setReferenceTarget("superConcept", (SNode) parameter_8);
           quotedNode_1.addChild("operand", quotedNode1_6);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_3;
-          quotedNode1_7.setReferent("baseMethodDeclaration", (SNode) parameter_10);
+          quotedNode1_7.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_10);
           {
             List<SNode> nodes = (List<SNode>) parameter_9;
             for (SNode child : nodes) {

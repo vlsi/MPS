@@ -16,33 +16,33 @@
 package jetbrains.mps.workbench.choose.modules;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.Icon;
 
 public class ModulePresentation extends BasePresentation {
-  private ModuleReference myModuleReference;
+  private SModuleReference myModuleReference;
 
-  public ModulePresentation(ModuleReference moduleReference) {
+  public ModulePresentation(SModuleReference moduleReference) {
     myModuleReference = moduleReference;
   }
 
   @NotNull
   public String doGetPresentableText() {
-    IModule module = getModule();
+    SModule module = getModule();
     if (module instanceof Generator) {
       return ((Generator) module).getAlias();
     }
-    return myModuleReference.getModuleFqName();
+    return myModuleReference.getModuleName();
   }
 
-  private IModule getModule() {
-    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+  private SModule getModule() {
+    return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
   public String doGetLocationString() {

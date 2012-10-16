@@ -5,32 +5,32 @@ package jetbrains.mps.build.ant.generation.workers;
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.messages.IMessageHandler;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.facet.ITarget;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.service.CoreMakeTask;
-import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter;
@@ -41,28 +41,23 @@ import jetbrains.mps.make.script.IProgress;
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
   private static Logger LOG = Logger.getLogger(BuildMakeService.class);
 
-  private IOperationContext context;
-  private IMessageHandler messageHandler;
-
-  @Deprecated
-  /*package*/ BuildMakeService(IOperationContext context, IMessageHandler messageHandler) {
-    this.context = context;
-    this.messageHandler = messageHandler;
-  }
-
   /*package*/ BuildMakeService() {
   }
 
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
+    return doMake(session, resources, script, controller, monitor);
+  }
+
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return doMake(session, resources, script, controller);
+    return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return doMake(session, resources, script, null);
+    return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return doMake(session, resources, defaultMakeScript(), null);
+    return make(session, resources, defaultMakeScript(), null, new EmptyProgressMonitor());
   }
 
   public boolean isSessionActive() {
@@ -84,26 +79,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     throw new UnsupportedOperationException();
   }
 
-  public Future<IResult> make(Iterable<? extends IResource> resources) {
-    return doMake(internalMakeSession(), resources, defaultMakeScript(), null);
-  }
-
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
-    return doMake(internalMakeSession(), resources, script, null);
-  }
-
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return new FutureValue(doMake(internalMakeSession(), resources, script, controller));
-  }
-
-  private MakeSession internalMakeSession() {
-    if (context == null) {
-      throw new IllegalStateException("attempt to use deprecated API from modern context");
-    }
-    return new MakeSession(context, messageHandler, true);
-  }
-
-  private Future<IResult> doMake(MakeSession makeSession, Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
+  private Future<IResult> doMake(MakeSession makeSession, Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
     String scrName = "Build";
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -112,23 +88,18 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       return new FutureValue(new IResult.FAILURE(null));
     }
 
-    return new BuildMakeService.TaskRunner(scrName, makeSession).runTask(inputRes, defaultScript, controller);
+    return new BuildMakeService.TaskRunner(scrName, makeSession).runTask(inputRes, defaultScript, controller, monitor);
   }
 
   private IScriptController completeController(final MakeSession msess, final IScriptController ctl) {
     return new BuildMakeService.DelegatingScriptController(ctl, new BuildMakeService.MessageFeedbackStrategy(msess.getMessageHandler())) {
       public void setup(IPropertiesPool pool) {
         super.setup(pool);
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         if (vars != null) {
           vars._0(msess.getContext().getProject());
           vars._1(msess.getContext());
           vars._2(true);
-          vars._3(new _FunctionTypes._return_P0_E0<ProgressMonitor>() {
-            public ProgressMonitor invoke() {
-              return getProgressMonitor();
-            }
-          });
         }
       }
     };
@@ -159,16 +130,16 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       this.makeSession = makeSession;
     }
 
-    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
-      return processRawInput(inputRes, defaultScript, controller);
+    public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
+      return processRawInput(inputRes, defaultScript, controller, monitor);
     }
 
     @Override
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
+    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
       IScriptController ctl = BuildMakeService.this.completeController(makeSession, controller);
 
       CoreMakeTask task = new CoreMakeTask(taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler());
-      task.run(new EmptyProgressMonitor());
+      task.run(monitor);
       return new FutureValue(task.getResult());
     }
 

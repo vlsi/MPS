@@ -334,7 +334,7 @@ public class ConvertAnonymousRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -387,7 +387,7 @@ public class ConvertAnonymousRefactoring {
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
-            quotedNode1_9.setReferent("variableDeclaration", (SNode) parameter_13);
+            quotedNode1_9.setReferenceTarget("variableDeclaration", (SNode) parameter_13);
             quotedNode_2.addChild("rValue", quotedNode1_9);
           }
           {
@@ -396,13 +396,13 @@ public class ConvertAnonymousRefactoring {
             {
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_11 = quotedNode_5;
-              quotedNode1_11.setReferent("classConcept", (SNode) parameter_14);
+              quotedNode1_11.setReferenceTarget("classConcept", (SNode) parameter_14);
               quotedNode_4.addChild("operand", quotedNode1_11);
             }
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_12 = quotedNode_6;
-              quotedNode1_12.setReferent("fieldDeclaration", (SNode) parameter_15);
+              quotedNode1_12.setReferenceTarget("fieldDeclaration", (SNode) parameter_15);
               quotedNode_4.addChild("operation", quotedNode1_12);
             }
             quotedNode_2.addChild("lValue", quotedNode1_10);
@@ -431,13 +431,13 @@ public class ConvertAnonymousRefactoring {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setReferent("classConcept", (SNode) parameter_7);
+          quotedNode1_5.setReferenceTarget("classConcept", (SNode) parameter_7);
           quotedNode_1.addChild("operand", quotedNode1_5);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_8);
+          quotedNode1_6.setReferenceTarget("fieldDeclaration", (SNode) parameter_8);
           quotedNode_1.addChild("operation", quotedNode1_6);
         }
         result = quotedNode1_4;
@@ -457,7 +457,7 @@ public class ConvertAnonymousRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -478,7 +478,7 @@ public class ConvertAnonymousRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setReferent("baseMethodDeclaration", (SNode) parameter_6);
+        quotedNode1_5.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_6);
         {
           List<SNode> nodes = (List<SNode>) parameter_7;
           for (SNode child : nodes) {
@@ -502,7 +502,7 @@ public class ConvertAnonymousRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -520,7 +520,7 @@ public class ConvertAnonymousRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -538,7 +538,7 @@ public class ConvertAnonymousRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

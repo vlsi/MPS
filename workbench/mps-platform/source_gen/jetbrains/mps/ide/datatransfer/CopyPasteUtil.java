@@ -20,9 +20,9 @@ import java.util.HashSet;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelId;
@@ -54,7 +54,7 @@ public class CopyPasteUtil {
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      necessaryLanguages.add(node.getConceptLanguage().update());
+      necessaryLanguages.add(new ModuleReference(node.getLanguageNamespace()).update());
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
@@ -120,7 +120,7 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    final SNode targetNode = new SNode(sourceNode.getModel(), sourceNode.getConceptFqName());
+    final SNode targetNode = new SNode(sourceNode.getModel(), sourceNode.getConcept().getId());
     targetNode.setId(SNodeId.fromString(sourceNode.getSNodeId().toString()));
     sourceNode.visitProperties(new org.jetbrains.mps.openapi.model.SNode.PropertyVisitor() {
       public boolean visitProperty(String name, String value) {
@@ -133,7 +133,7 @@ public class CopyPasteUtil {
     for (SReference reference : references) {
       allReferences.add(reference);
     }
-    List<SNode> children = sourceNode.getChildren();
+    List<SNode> children = SNodeOperations.getChildren(sourceNode);
     for (SNode sourceChild : children) {
       if (nodesAndAttributes != null) {
         if (AttributeOperations.isAttribute(sourceChild)) {
@@ -144,7 +144,7 @@ public class CopyPasteUtil {
         }
       }
       SNode targetChild = CopyPasteUtil.copyNode_internal(sourceChild, nodesAndAttributes, sourceNodesToNewNodes, allReferences);
-      String role = sourceChild.getRole_();
+      String role = sourceChild.getRole();
       assert role != null;
       targetNode.addChild(role, targetChild);
     }
@@ -170,7 +170,7 @@ public class CopyPasteUtil {
           continue;
         }
       }
-      newSourceNode.addReference(newReference);
+      newSourceNode.setReference(newReference.getRole(), newReference);
     }
   }
 
@@ -184,7 +184,7 @@ public class CopyPasteUtil {
       if (newTargetNode != null) {
         newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
-        if (SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
+        if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = (oldTargetNode == null ?
@@ -192,7 +192,7 @@ public class CopyPasteUtil {
             oldTargetNode.getName()
           );
           if (resolveInfo != null) {
-            if (oldTargetNode != null && !(oldTargetNode.isDisposed()) && oldTargetNode.getModel() != null) {
+            if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
@@ -206,7 +206,7 @@ public class CopyPasteUtil {
           }
         }
       }
-      newSourceNode.addReference(newReference);
+      newSourceNode.setReference(newReference.getRole(), newReference);
     }
   }
 
@@ -275,7 +275,7 @@ public class CopyPasteUtil {
     int i = 1;
     int size = nodes.size();
     for (SNode node : nodes) {
-      stringBuilder.append(node.getDebugText());
+      stringBuilder.append(SNodeOperations.getDebugText(node));
       if (i < size) {
         stringBuilder.append("\n");
       }

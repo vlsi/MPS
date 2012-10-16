@@ -34,7 +34,7 @@ public class InlineController_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.EventType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setReferent("event", (SNode) parameter_7);
+          quotedNode1_5.setReferenceTarget("event", (SNode) parameter_7);
           quotedNode_1.addChild("parameterType", quotedNode1_5);
         }
         {

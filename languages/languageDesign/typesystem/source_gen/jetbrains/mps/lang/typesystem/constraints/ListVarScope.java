@@ -25,10 +25,10 @@ public class ListVarScope extends SearchScopeWithNode {
     if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
       statement = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement");
     } else {
-      statement = (SNode) enclosingNode.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+      statement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(enclosingNode, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
     }
     while ((statement != null)) {
-      SNode statementList = (SNode) statement.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+      SNode statementList = (SNode) jetbrains.mps.util.SNodeOperations.findParent(statement, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
       if ((statementList == null)) {
         return result;
       }
@@ -40,7 +40,7 @@ public class ListVarScope extends SearchScopeWithNode {
           result.add(aStatement);
         }
       }
-      statement = (SNode) statementList.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+      statement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(statementList, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
     }
     return result;
   }

@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
@@ -44,7 +46,7 @@ import java.util.*;
  * <p/>
  * Created once per model generation.
  */
-public class GenerationSession {
+class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
@@ -68,9 +70,9 @@ public class GenerationSession {
   private int myMinorStep = -1;
   private GenerationOptions myGenerationOptions;
 
-  public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
-                           ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
-                           IPerformanceTracer tracer, GenerationOptions generationOptions) {
+  GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
+            ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
+            IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
@@ -84,7 +86,7 @@ public class GenerationSession {
     myGenerationOptions = generationOptions;
   }
 
-  public GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
+  GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
     if (myMajorStep != 0) {
       throw new GenerationCanceledException();
     }
@@ -146,6 +148,11 @@ public class GenerationSession {
         }
       }
       monitor.advance(1);
+
+      if (InternalFlag.isInternalMode() && myGenerationOptions.isRebuildAll() && myGenerationOptions.isDebugIncrementalDependencies() && myDependenciesBuilder instanceof IncrementalDependenciesBuilder) {
+        myLogger.info("creating generated.trace");
+        ((IncrementalDependenciesBuilder)myDependenciesBuilder).traceDependencyOrigins();
+      }
 
       boolean success = false;
 
@@ -383,7 +390,7 @@ public class GenerationSession {
   }
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
-                             RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+                 RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     boolean hasChanges;
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     final TemplateGenerator tg =
@@ -435,7 +442,7 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       }
-      CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+      CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
 
       if (!myDiscardTransients) { // tracing
@@ -495,7 +502,7 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       }
-      CloneUtil.cloneModel(currentModel, currentOutputModel_clone, false);
+      CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, postMappingScripts);

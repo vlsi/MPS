@@ -7,13 +7,15 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.project.Project;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -30,23 +32,23 @@ public class MakeWorker extends MpsWorker {
 
   @Override
   protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
-    Set<IModule> toCompile = new LinkedHashSet<IModule>();
-    toCompile.addAll(go.getModules());
+    Set<SModule> toCompile = SetSequence.fromSet(new LinkedHashSet<SModule>());
+    SetSequence.fromSet(toCompile).addSequence(SetSequence.fromSet(go.getModules()));
     for (Project p : go.getProjects()) {
-      toCompile.addAll(p.getModules());
+      SetSequence.fromSet(toCompile).addSequence(SetSequence.fromSet(go.getModules()));
     }
-    for (final SModelDescriptor modelDescriptor : go.getModels()) {
-      IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-        public IModule compute() {
+    for (final SModel modelDescriptor : go.getModels()) {
+      SModule owningModule = ModelAccess.instance().runReadAction(new Computable<SModule>() {
+        public SModule compute() {
           return modelDescriptor.getModule();
         }
       });
-      toCompile.add(owningModule);
+      SetSequence.fromSet(toCompile).addElement(owningModule);
     }
-    final Set<IModule> finalToCompile = CollectionUtil.filter(toCompile, new Condition<IModule>() {
-      @Override
-      public boolean met(IModule module) {
-        return module.isCompileInMPS() && !(module.isPackaged());
+    final Set<SModule> finalToCompile = CollectionUtil.filter(toCompile, new Condition<SModule>() {
+      public boolean met(SModule module) {
+        boolean compileInMps = !(module instanceof IModule) || ((IModule) module).isCompileInMPS();
+        return compileInMps && !(module.isPackaged());
       }
     });
     if (finalToCompile.isEmpty()) {
@@ -54,9 +56,9 @@ public class MakeWorker extends MpsWorker {
     }
     info("Starting compilation:");
     StringBuffer sb = new StringBuffer();
-    for (IModule m : finalToCompile) {
+    for (SModule m : finalToCompile) {
       sb.append("    ");
-      sb.append(m.getModuleFqName());
+      sb.append(m.getModuleName());
       sb.append("\n");
     }
     info(sb.toString());

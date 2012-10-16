@@ -24,7 +24,7 @@ public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
 
   public static String getProviderClassNameForCellWithRole(SNode node) {
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     String something = NameUtil.removeStructureFromFqName(conceptFqName);
     return CellProviderNameUtil.getProviderClassName(something);
   }

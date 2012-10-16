@@ -56,7 +56,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7865129668867189303(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getNode().getReferent("exc"), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.cast(_context.getNode().getReferenceTarget("exc"), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_7793246093815939787(final IOperationContext operationContext, final ReferenceMacroContext _context) {

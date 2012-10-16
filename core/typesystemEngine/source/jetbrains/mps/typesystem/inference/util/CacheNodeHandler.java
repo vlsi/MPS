@@ -27,7 +27,7 @@ public class CacheNodeHandler {
 
   public CacheNodeHandler(SNode node) {
     myNodeRef = new WeakReference<SNode>(node);
-    myHash = MatchingUtil.hash(node, false);
+    myHash = MatchingUtil.hash(node);
   }
 
   public int hashCode() {
@@ -52,6 +52,6 @@ public class CacheNodeHandler {
 
   protected SNode getNode() {
     SNode sn = myNodeRef.get();
-    return sn != null && !(sn.shouldHaveBeenDisposed()) ? sn : null;
+    return sn != null && !(jetbrains.mps.util.SNodeOperations.isDisposed(sn)) ? sn : null;
   }
 }

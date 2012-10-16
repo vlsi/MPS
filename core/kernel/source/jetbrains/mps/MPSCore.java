@@ -37,6 +37,7 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
@@ -75,6 +76,7 @@ public class MPSCore extends ComponentPlugin {
     myModelRepository = init(new SModelRepository(classLoaderManager));
     myModuleRepository = init(new MPSModuleRepository(classLoaderManager));
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
+    init(new ConceptRepository());
 
     init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));
@@ -147,4 +149,5 @@ public class MPSCore extends ComponentPlugin {
   public void setMergeDriverMode(boolean mergeDriverMode) {
     this.mergeDriverMode = mergeDriverMode;
   }
+
 }

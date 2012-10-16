@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.presentation;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.awt.Font;
 
@@ -76,7 +77,7 @@ public class NodePresentationUtil {
     }
 
     if (!visible) {
-      if (node.isInstanceOfConcept(SNodeUtil.concept_IResolveInfo)) {
+      if (node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_IResolveInfo))) {
         return SNodeUtil.getResolveInfo(node);
       }
     }
@@ -117,10 +118,10 @@ public class NodePresentationUtil {
     }
 
     if (node.isRoot()) {
-      return NameUtil.shortNameFromLongName(node.getConceptFqName()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
+      return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
-    return node.getRole_() + " (" + NameUtil.compactNodeFQName(node.getTopmostAncestor()) + ")";
+    return node.getRole() + " (" + NameUtil.compactNodeFQName(node.getTopmostAncestor()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {
@@ -129,11 +130,11 @@ public class NodePresentationUtil {
       return alias;
     }
 
-    return node.getConceptShortName();
+    return NameUtil.shortNameFromLongName(node.getConcept().getId());
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {
-    String role = node.getRole_();
+    String role = node.getRole();
     if (role != null) {
       return role;
     }

@@ -13,8 +13,8 @@ import java.io.IOException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.generator.GenerationSettingsProvider;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -34,6 +34,8 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.progress.ProgressMonitorBase;
+import jetbrains.mps.progress.SubProgressKind;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
@@ -51,14 +53,15 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
@@ -125,11 +128,11 @@ public class TestGenerationWorker extends MpsWorker {
       s.append("\n    ");
       s.append(p);
     }
-    for (IModule m : go.getModules()) {
+    for (SModule m : go.getModules()) {
       s.append("\n    ");
       s.append(m);
     }
-    for (SModelDescriptor m : go.getModels()) {
+    for (SModel m : go.getModels()) {
       s.append("\n    ");
       s.append(m);
     }
@@ -245,7 +248,59 @@ public class TestGenerationWorker extends MpsWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl).get();
+      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new ProgressMonitorBase() {
+        private String prevTitle;
+
+        protected void update(double p0) {
+        }
+
+        protected void startInternal(String text) {
+        }
+
+        protected void doneInternal(String text) {
+        }
+
+        protected void setTitleInternal(String text) {
+          prevTitle = text;
+        }
+
+        protected void setStepInternal(String p0) {
+        }
+
+        public boolean isCanceled() {
+          return false;
+        }
+
+        public void cancel() {
+        }
+
+        private ProgressMonitorBase.SubProgressMonitor customSubProgress(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+          if (prevTitle != null && prevTitle.startsWith("Generating :: ")) {
+            return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
+              @Override
+              protected void startInternal(String text) {
+                reportIfStartsWith("Generating ", "Generating " + text, startTestFormat);
+              }
+
+              @Override
+              protected void doneInternal(String text) {
+                reportIfStartsWith("Generating ", "Generating " + text, finishTestFormat);
+              }
+            };
+          }
+          return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
+            @Override
+            protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+              return customSubProgress(this, work, kind);
+            }
+          };
+        }
+
+        @Override
+        protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+          return customSubProgress(this, work, kind);
+        }
+      }).get();
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     }
@@ -288,7 +343,7 @@ public class TestGenerationWorker extends MpsWorker {
 
       info("Loaded project " + p);
 
-      executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
+      executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<SModule>(), new HashSet<SModel>()));
 
       p.projectClosed();
       disposeProject(p);
@@ -297,8 +352,8 @@ public class TestGenerationWorker extends MpsWorker {
     }
 
     // the rest -- using dummy project 
-    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
-    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+    LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
+    LinkedHashSet<SModel> models = new LinkedHashSet<SModel>();
     collectFromModuleFiles(modules);
     collectFromModelFiles(models);
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
@@ -334,19 +389,19 @@ public class TestGenerationWorker extends MpsWorker {
     MapSequence.fromMap(path2tmp).clear();
   }
 
-  private Iterable<IResource> collectResources(IOperationContext context, final Iterable<Project> projects, Iterable<IModule> modules, final Iterable<SModelDescriptor> models) {
-    final Wrappers._T<Iterable<IModule>> _modules = new Wrappers._T<Iterable<IModule>>(modules);
-    final Wrappers._T<Iterable<SModelDescriptor>> result = new Wrappers._T<Iterable<SModelDescriptor>>(null);
+  private Iterable<IResource> collectResources(IOperationContext context, final Iterable<Project> projects, Iterable<SModule> modules, final Iterable<SModel> models) {
+    final Wrappers._T<Iterable<SModule>> _modules = new Wrappers._T<Iterable<SModule>>(modules);
+    final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Project prj : projects) {
           if (isWholeProject(prj)) {
-            _modules.value = Sequence.fromIterable(_modules.value).concat(ListSequence.fromList(prj.getModules()));
+            _modules.value = Sequence.fromIterable(_modules.value).concat(Sequence.fromIterable(prj.getModules()));
           } else
           if (!(((FileMPSProject) prj).getDescriptor().getTestConfiturations().isEmpty())) {
             for (BaseTestConfiguration tconf : ((FileMPSProject) prj).getDescriptor().getTestConfiturations()) {
               try {
-                result.value = Sequence.fromIterable(result.value).concat(ListSequence.fromList(tconf.getGenParams(prj, true).getModelDescriptors()));
+                result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable((Iterable<SModelDescriptor>) tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {
                 log("Error while reading configuration of project " + prj.getName(), e);
               }
@@ -355,17 +410,17 @@ public class TestGenerationWorker extends MpsWorker {
             warning("No test configurations for project " + prj.getName());
           }
         }
-        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).translate(new ITranslator2<IModule, SModelDescriptor>() {
-          public Iterable<SModelDescriptor> translate(IModule m) {
-            return m.getOwnModelDescriptors();
+        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).translate(new ITranslator2<SModule, SModel>() {
+          public Iterable<SModel> translate(SModule m) {
+            return m.getModels();
           }
         }));
-        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).where(new IWhereFilter<IModule>() {
-          public boolean accept(IModule it) {
+        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
             return it instanceof Language;
           }
-        }).translate(new ITranslator2<IModule, Generator>() {
-          public Iterable<Generator> translate(IModule it) {
+        }).translate(new ITranslator2<SModule, Generator>() {
+          public Iterable<Generator> translate(SModule it) {
             return ((Language) it).getGenerators();
           }
         }).translate(new ITranslator2<Generator, SModelDescriptor>() {
@@ -376,9 +431,9 @@ public class TestGenerationWorker extends MpsWorker {
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(models));
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(result.value).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor smd) {
-        return smd.isGeneratable();
+    return new ModelsToResources(context, Sequence.fromIterable(result.value).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel smd) {
+        return GenerationFacade.canGenerate(smd);
       }
     })).resources(false);
   }

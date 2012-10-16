@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -55,7 +56,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
         } else {
           SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-          SLinkOperations.setTarget(newStatement, "expression", new ExtractMethodWithOutputVariable.QuotationClass_n3576q_a0a1a0c0a0a0a0a0c().createNode(ExtractMethodWithOutputVariable.this.myOutputVariable, methodCall), true);
+          SLinkOperations.setTarget(newStatement, "expression", new ExtractMethodWithOutputVariable.QuotationClass_n3576q_a0a1a0c0a0a0a0a0c().createNode(((SNode) BehaviorManager.getInstance().invoke(Object.class, ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Class[]{SNode.class})), methodCall), true);
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }
         for (SNode statement : ListSequence.fromList(statements)) {
@@ -81,10 +82,17 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setReferent("variableDeclaration", (SNode) parameter_7);
-          quotedNode_1.addChild("lValue", quotedNode1_5);
+          quotedNode_2 = (SNode) parameter_7;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_5 = quotedNode_2;
+          }
+          if (quotedNode1_5 != null) {
+            quotedNode_1.addChild("lValue", HUtil.copyIfNecessary(quotedNode1_5));
+          }
         }
         {
           quotedNode_3 = (SNode) parameter_8;

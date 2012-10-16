@@ -187,7 +187,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     public SModelDescriptor getSModelDescriptor() {
-      return myTreeNode.getSModel().getModelDescriptor();
+      return myTreeNode.getSModelDescriptor();
     }
 
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {

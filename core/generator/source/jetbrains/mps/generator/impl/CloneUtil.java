@@ -21,10 +21,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 
-/**
- * Created by: Sergey Dmitriev
- * Date: Apr 2, 2007
- */
 public class CloneUtil {
   private static final Logger LOG = Logger.getLogger(CloneUtil.class);
 
@@ -56,16 +52,16 @@ public class CloneUtil {
   public static SNode clone(SNode inputNode, SModel outputModel, boolean originalInput) {
     // new SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
     // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
-    SNode outputNode = new SNode(outputModel, inputNode.getConceptFqName(), false);
+    final SNode outputNode = new SNode(outputModel, inputNode.getConcept().getId(), false);
 
     outputNode.setId(inputNode.getSNodeId());
-    outputNode.putProperties(inputNode);
-    outputNode.putUserObjects(inputNode);
+    jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
     if (originalInput) {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
-    for (SReference reference : inputNode.getReferencesIterable()) {
+    for (SReference reference : inputNode.getReferences()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
@@ -77,7 +73,7 @@ public class CloneUtil {
             targetModelReference,
             ((StaticReference) reference).getTargetNodeId(),
             reference.getResolveInfo());
-          outputNode.addReference(outputReference);
+          outputNode.setReference(outputReference.getRole(), outputReference);
         }
       } else if (reference instanceof DynamicReference) {
         DynamicReference outputReference = new DynamicReference(
@@ -86,19 +82,18 @@ public class CloneUtil {
           targetModelReference,
           reference.getResolveInfo());
         outputReference.setOrigin(((DynamicReference) reference).getOrigin());
-        outputNode.addReference(outputReference);
+        outputNode.setReference(outputReference.getRole(), outputReference);
       } else {
         LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
         LOG.error(" -- was reference class : " + reference.getClass().getName());
       }
     }
 
-    for (SNode child : inputNode.getChildrenIterable()) {
+    for (SNode child : inputNode.getChildren()) {
       String role = child.getRole_();
       assert role != null;
       outputNode.addChild(role, clone(child, outputModel, originalInput));
     }
     return outputNode;
   }
-
 }

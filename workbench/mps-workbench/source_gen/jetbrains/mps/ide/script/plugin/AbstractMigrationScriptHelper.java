@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.DevKit;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public abstract class AbstractMigrationScriptHelper {
@@ -117,7 +118,7 @@ public abstract class AbstractMigrationScriptHelper {
       throw new UnsupportedOperationException();
     }
 
-    public Language getLanguage(ModuleReference moduleReference) {
+    public Language getLanguage(SModuleReference moduleReference) {
       return GlobalScope.getInstance().getLanguage(moduleReference);
     }
 

@@ -154,11 +154,11 @@ public class Generator extends AbstractModule {
 
   public String getAlias() {
     String name = myGeneratorDescriptor.getNamespace();
-    return getSourceLanguage().getModuleFqName() + "/" + (name == null ? "<no name>" : name);
+    return getSourceLanguage().getModuleName() + "/" + (name == null ? "<no name>" : name);
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleFqName() + "#" + SModel.generateUniqueId();
+    return sourceLanguage.getModuleName() + "#" + SModel.generateUniqueId();
   }
 
   public Language getSourceLanguage() {

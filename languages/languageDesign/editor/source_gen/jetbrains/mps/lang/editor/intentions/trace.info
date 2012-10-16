@@ -671,12 +671,12 @@
     <nodeInfo nodeId="1235490274981" fileName="ChangeProperty_Intention.java" startLine="41" startPosition="76" endLine="42" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235498534586" fileName="ChangeProperty_Intention.java" startLine="42" startPosition="140" endLine="43" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235498542505" fileName="ChangeProperty_Intention.java" startLine="43" startPosition="127" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235496126724" fileName="ChangeProperty_Intention.java" startLine="45" startPosition="67" endLine="46" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235495035039" fileName="ChangeProperty_Intention.java" startLine="46" startPosition="37" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235496126724" fileName="ChangeProperty_Intention.java" startLine="45" startPosition="82" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235495035039" fileName="ChangeProperty_Intention.java" startLine="46" startPosition="36" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235493767028" fileName="ChangeProperty_Intention.java" startLine="47" startPosition="30" endLine="48" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235494031873" fileName="ChangeProperty_Intention.java" startLine="50" startPosition="106" endLine="51" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235494644282" fileName="ChangeProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235490449385" fileName="ChangeProperty_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235494031873" fileName="ChangeProperty_Intention.java" startLine="50" startPosition="121" endLine="51" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235494644282" fileName="ChangeProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235490449385" fileName="ChangeProperty_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="17" startPosition="82" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeProperty_Intention#()V" />
     <nodeInfo nodeId="1235493907065" fileName="ChangeProperty_Intention.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -695,11 +695,11 @@
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" />
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" />
     <scopeInfo nodeId="1235489867938" fileName="ChangeProperty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="64" />
-    <scopeInfo nodeId="1235493907068" fileName="ChangeProperty_Intention.java" startLine="50" startPosition="106" endLine="51" endPosition="82" />
-    <scopeInfo nodeId="1235494489277" fileName="ChangeProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="44" />
+    <scopeInfo nodeId="1235493907068" fileName="ChangeProperty_Intention.java" startLine="50" startPosition="121" endLine="51" endPosition="82" />
+    <scopeInfo nodeId="1235494489277" fileName="ChangeProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="65" />
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="50" />
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="17" startPosition="82" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1235493645192" fileName="ChangeProperty_Intention.java" startLine="45" startPosition="67" endLine="48" endPosition="42">
+    <scopeInfo nodeId="1235493645192" fileName="ChangeProperty_Intention.java" startLine="45" startPosition="82" endLine="48" endPosition="42">
       <varInfo nodeId="1235496126725" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="1235493907065" fileName="ChangeProperty_Intention.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
@@ -720,7 +720,7 @@
     <scopeInfo nodeId="1235493645189" fileName="ChangeProperty_Intention.java" startLine="44" startPosition="72" endLine="49" endPosition="5">
       <varInfo nodeId="1235493645190" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1235489867940" fileName="ChangeProperty_Intention.java" startLine="41" startPosition="76" endLine="56" endPosition="60">
+    <scopeInfo nodeId="1235489867940" fileName="ChangeProperty_Intention.java" startLine="41" startPosition="76" endLine="56" endPosition="110">
       <varInfo nodeId="1235490274982" varName="transactional" />
     </scopeInfo>
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="40" startPosition="0" endLine="58" endPosition="0">
@@ -739,11 +739,11 @@
     <nodeInfo nodeId="1235490990299" fileName="ChangeTransactionalProperty_Intention.java" startLine="42" startPosition="127" endLine="43" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235498475175" fileName="ChangeTransactionalProperty_Intention.java" startLine="43" startPosition="127" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235498604288" fileName="ChangeTransactionalProperty_Intention.java" startLine="44" startPosition="61" endLine="45" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235497836443" fileName="ChangeTransactionalProperty_Intention.java" startLine="46" startPosition="67" endLine="47" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235497836449" fileName="ChangeTransactionalProperty_Intention.java" startLine="47" startPosition="37" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235497836443" fileName="ChangeTransactionalProperty_Intention.java" startLine="46" startPosition="101" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235497836449" fileName="ChangeTransactionalProperty_Intention.java" startLine="47" startPosition="36" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235497836454" fileName="ChangeTransactionalProperty_Intention.java" startLine="48" startPosition="30" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235497836471" fileName="ChangeTransactionalProperty_Intention.java" startLine="51" startPosition="106" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235497836489" fileName="ChangeTransactionalProperty_Intention.java" startLine="54" startPosition="78" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235497836471" fileName="ChangeTransactionalProperty_Intention.java" startLine="51" startPosition="140" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235497836489" fileName="ChangeTransactionalProperty_Intention.java" startLine="54" startPosition="78" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235490990307" fileName="ChangeTransactionalProperty_Intention.java" startLine="56" startPosition="5" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="17" startPosition="95" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeTransactionalProperty_Intention#()V" />
@@ -763,11 +763,11 @@
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" />
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" />
     <scopeInfo nodeId="1235490923123" fileName="ChangeTransactionalProperty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="64" />
-    <scopeInfo nodeId="1235497836470" fileName="ChangeTransactionalProperty_Intention.java" startLine="51" startPosition="106" endLine="52" endPosition="82" />
-    <scopeInfo nodeId="1235497836488" fileName="ChangeTransactionalProperty_Intention.java" startLine="54" startPosition="78" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="1235497836470" fileName="ChangeTransactionalProperty_Intention.java" startLine="51" startPosition="140" endLine="52" endPosition="82" />
+    <scopeInfo nodeId="1235497836488" fileName="ChangeTransactionalProperty_Intention.java" startLine="54" startPosition="78" endLine="55" endPosition="65" />
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="50" />
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="17" startPosition="95" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1235497836442" fileName="ChangeTransactionalProperty_Intention.java" startLine="46" startPosition="67" endLine="49" endPosition="42">
+    <scopeInfo nodeId="1235497836442" fileName="ChangeTransactionalProperty_Intention.java" startLine="46" startPosition="101" endLine="49" endPosition="42">
       <varInfo nodeId="1235497836444" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="1235497836462" fileName="ChangeTransactionalProperty_Intention.java" startLine="50" startPosition="5" endLine="53" endPosition="5">
@@ -1571,11 +1571,11 @@
     <nodeInfo nodeId="5137527105084909354" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5137527105084909361" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="54" startPosition="130" endLine="55" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105084909369" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="55" startPosition="133" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105084909382" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="57" startPosition="67" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5137527105084909388" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="58" startPosition="37" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105084909382" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="57" startPosition="101" endLine="58" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5137527105084909388" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="58" startPosition="36" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105084909393" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="59" startPosition="30" endLine="60" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105084909409" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="62" startPosition="106" endLine="63" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105084909427" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="65" startPosition="78" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105084909409" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="62" startPosition="140" endLine="63" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105084909427" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="65" startPosition="78" endLine="66" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105084909433" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="67" startPosition="5" endLine="68" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="18" startPosition="94" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangePropertyWithNonEmpty_Intention#()V" />
@@ -1600,11 +1600,11 @@
     <scopeInfo nodeId="5137527105084909327" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="52" />
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" />
     <scopeInfo nodeId="5137527105085267275" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="158" />
-    <scopeInfo nodeId="5137527105084909408" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="62" startPosition="106" endLine="63" endPosition="77" />
-    <scopeInfo nodeId="5137527105084909426" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="65" startPosition="78" endLine="66" endPosition="39" />
+    <scopeInfo nodeId="5137527105084909408" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="62" startPosition="140" endLine="63" endPosition="77" />
+    <scopeInfo nodeId="5137527105084909426" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="65" startPosition="78" endLine="66" endPosition="60" />
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="50" />
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="18" startPosition="94" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="5137527105084909381" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="57" startPosition="67" endLine="60" endPosition="37">
+    <scopeInfo nodeId="5137527105084909381" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="57" startPosition="101" endLine="60" endPosition="37">
       <varInfo nodeId="5137527105084909383" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105084909400" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="61" startPosition="5" endLine="64" endPosition="5">
@@ -1652,12 +1652,12 @@
     <nodeInfo nodeId="5137527105085214149" fileName="ChangeNonEmptyProperty_Intention.java" startLine="41" startPosition="76" endLine="42" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5137527105085214155" fileName="ChangeNonEmptyProperty_Intention.java" startLine="42" startPosition="122" endLine="43" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105085214163" fileName="ChangeNonEmptyProperty_Intention.java" startLine="43" startPosition="133" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105085214182" fileName="ChangeNonEmptyProperty_Intention.java" startLine="45" startPosition="67" endLine="46" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5137527105085214188" fileName="ChangeNonEmptyProperty_Intention.java" startLine="46" startPosition="37" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105085214182" fileName="ChangeNonEmptyProperty_Intention.java" startLine="45" startPosition="82" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5137527105085214188" fileName="ChangeNonEmptyProperty_Intention.java" startLine="46" startPosition="36" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105085214193" fileName="ChangeNonEmptyProperty_Intention.java" startLine="47" startPosition="30" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105085214209" fileName="ChangeNonEmptyProperty_Intention.java" startLine="50" startPosition="106" endLine="51" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105085214227" fileName="ChangeNonEmptyProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5137527105085214233" fileName="ChangeNonEmptyProperty_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105085214209" fileName="ChangeNonEmptyProperty_Intention.java" startLine="50" startPosition="121" endLine="51" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105085214227" fileName="ChangeNonEmptyProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5137527105085214233" fileName="ChangeNonEmptyProperty_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="17" startPosition="90" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeNonEmptyProperty_Intention#()V" />
     <nodeInfo nodeId="5137527105085214200" fileName="ChangeNonEmptyProperty_Intention.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1676,11 +1676,11 @@
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" />
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="17" />
     <scopeInfo nodeId="5137527105085214127" fileName="ChangeNonEmptyProperty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="60" />
-    <scopeInfo nodeId="5137527105085214208" fileName="ChangeNonEmptyProperty_Intention.java" startLine="50" startPosition="106" endLine="51" endPosition="77" />
-    <scopeInfo nodeId="5137527105085214226" fileName="ChangeNonEmptyProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="39" />
+    <scopeInfo nodeId="5137527105085214208" fileName="ChangeNonEmptyProperty_Intention.java" startLine="50" startPosition="121" endLine="51" endPosition="77" />
+    <scopeInfo nodeId="5137527105085214226" fileName="ChangeNonEmptyProperty_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="60" />
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="59" startPosition="37" endLine="60" endPosition="50" />
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="17" startPosition="90" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5137527105085214181" fileName="ChangeNonEmptyProperty_Intention.java" startLine="45" startPosition="67" endLine="48" endPosition="37">
+    <scopeInfo nodeId="5137527105085214181" fileName="ChangeNonEmptyProperty_Intention.java" startLine="45" startPosition="82" endLine="48" endPosition="37">
       <varInfo nodeId="5137527105085214183" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214200" fileName="ChangeNonEmptyProperty_Intention.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
@@ -1701,7 +1701,7 @@
     <scopeInfo nodeId="5137527105085214175" fileName="ChangeNonEmptyProperty_Intention.java" startLine="44" startPosition="72" endLine="49" endPosition="5">
       <varInfo nodeId="5137527105085214176" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5137527105085214129" fileName="ChangeNonEmptyProperty_Intention.java" startLine="41" startPosition="76" endLine="56" endPosition="55">
+    <scopeInfo nodeId="5137527105085214129" fileName="ChangeNonEmptyProperty_Intention.java" startLine="41" startPosition="76" endLine="56" endPosition="105">
       <varInfo nodeId="5137527105085214150" varName="property" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="40" startPosition="0" endLine="58" endPosition="0">

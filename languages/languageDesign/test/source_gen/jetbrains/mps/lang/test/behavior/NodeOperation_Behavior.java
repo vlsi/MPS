@@ -31,7 +31,7 @@ public class NodeOperation_Behavior {
   }
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    return "test_" + NodeOperation_Behavior.call_getName_1217435265700(thisNode) + thisNode.getId();
+    return "test_" + NodeOperation_Behavior.call_getName_1217435265700(thisNode) + thisNode.getSNodeId().toString();
   }
 
   public static String call_getName_1217435265700(SNode thisNode) {

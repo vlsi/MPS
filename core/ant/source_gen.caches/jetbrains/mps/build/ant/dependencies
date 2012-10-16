@@ -102,6 +102,8 @@
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.project.Project" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.IBuildServerMessageFormat" file="IBuildServerMessageFormat.java">
@@ -252,6 +254,8 @@
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.build.ant.AntLogger" />
     <classNode extendsClassName="jetbrains.mps.logging.ILoggingHandler" />
   </dependency>

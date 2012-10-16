@@ -323,7 +323,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.CompartmentReferenceExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("container", (SNode) parameter_6);
+        quotedNode1_3.setReferenceTarget("container", (SNode) parameter_6);
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;

@@ -16,6 +16,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -56,7 +57,7 @@ public class EditorHighlighter implements EditorMessageOwner {
                 return;
               }
               final SNode editedNode = editorComponent.getEditedNode();
-              if (editedNode == null || editedNode.isDisposed() || !(editedNode.isRegistered())) {
+              if (editedNode == null || SNodeOperations.isDisposed(editedNode) || !(SNodeOperations.isRegistered(editedNode))) {
                 return;
               }
               final SModel model = editedNode.getModel();
@@ -118,7 +119,7 @@ public class EditorHighlighter implements EditorMessageOwner {
         public void run() {
           SModel model;
           SNode editedNode = myEditorComponent.getEditedNode();
-          if (editedNode == null || editedNode.isDisposed()) {
+          if (editedNode == null || SNodeOperations.isDisposed(editedNode)) {
             return;
           }
           model = editedNode.getModel();

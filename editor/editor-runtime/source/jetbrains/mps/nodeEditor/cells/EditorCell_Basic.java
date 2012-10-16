@@ -34,6 +34,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.*;
 
@@ -260,7 +261,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode operationNode = null;
     SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = node.getReferent(SModelUtil.getLinkDeclarationRole(linkDeclaration));
+      SNode referentNode = (SNode) node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
         operationNode = referentNode;
       }
@@ -513,10 +514,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = node.getParent().getLinkDeclaration(node.getRole_());
+    SNode link = node.getParent().getLinkDeclaration(node.getRole());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
-    if (node.getConceptFqName().equals(concreteConceptFqName)) {
+    String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
+    if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }
     SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
@@ -799,7 +800,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         return null;
       }
 
-      assert anchorCell.getParent() != null : "No cell parent for node " + node.getId() + " " + node.getModel();
+      assert anchorCell.getParent() != null : "No cell parent for node " + node.getSNodeId().toString() + " " + node.getModel();
 
       int indexInParent = anchorCell.getParent().indexOf(anchorCell);
 

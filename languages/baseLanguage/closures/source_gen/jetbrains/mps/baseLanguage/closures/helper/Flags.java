@@ -21,15 +21,15 @@ public enum Flags {
   }
 
   public void flag(TemplateQueryContext gtx, SNode node) {
-    gtx.putSessionObject(this.toString() + "_" + node.getId(), Boolean.TRUE);
+    gtx.putSessionObject(this.toString() + "_" + node.getSNodeId().toString(), Boolean.TRUE);
   }
 
   public void clear(TemplateQueryContext gtx, SNode node) {
-    gtx.putSessionObject(this.toString() + "_" + node.getId(), null);
+    gtx.putSessionObject(this.toString() + "_" + node.getSNodeId().toString(), null);
   }
 
   public boolean isFlagged(TemplateQueryContext gtx, SNode node) {
-    Object val = gtx.getSessionObject(this.toString() + "_" + node.getId());
+    Object val = gtx.getSessionObject(this.toString() + "_" + node.getSNodeId().toString());
     return val != null;
   }
 

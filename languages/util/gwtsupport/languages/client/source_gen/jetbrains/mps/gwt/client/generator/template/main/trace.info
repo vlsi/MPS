@@ -37,10 +37,10 @@
     </scopeInfo>
   </root>
   <root nodeId="1220369573364066229" modelId="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)">
-    <nodeInfo nodeId="1220369573364380938" fileName="QueriesGenerated.java" startLine="31" startPosition="152" endLine="32" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1220369573364380959" fileName="QueriesGenerated.java" startLine="132" startPosition="165" endLine="133" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220369573364256700" fileName="QueriesGenerated.java" startLine="133" startPosition="132" endLine="134" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1220369573364358068" fileName="QueriesGenerated.java" startLine="31" startPosition="152" endLine="32" endPosition="133" />
+    <nodeInfo nodeId="1220369573364380938" fileName="QueriesGenerated.java" startLine="31" startPosition="152" endLine="32" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1220369573364380959" fileName="QueriesGenerated.java" startLine="132" startPosition="165" endLine="133" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220369573364256700" fileName="QueriesGenerated.java" startLine="133" startPosition="148" endLine="134" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1220369573364358068" fileName="QueriesGenerated.java" startLine="31" startPosition="152" endLine="32" endPosition="149" />
     <scopeInfo nodeId="1220369573364066233" fileName="QueriesGenerated.java" startLine="132" startPosition="165" endLine="134" endPosition="72" />
   </root>
   <root nodeId="3852159904898253927" modelId="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)">

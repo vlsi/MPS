@@ -449,7 +449,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
         }
         SReference ref = fieldhelper.readLink(result, child[0], child[2], child[1]);
         if (ref != null) {
-          result.addReference(ref);
+          result.setReference(ref.getRole(), ref);
         }
         return;
       }

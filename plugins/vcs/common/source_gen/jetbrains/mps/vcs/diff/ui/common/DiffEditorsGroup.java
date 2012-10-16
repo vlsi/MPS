@@ -68,7 +68,7 @@ public class DiffEditorsGroup {
           }
 
           SNode prevSibling = SNodeOperations.getPrevSibling(visibleNode);
-          if (visibleNode.getRole_().equals(check_s6qw4f_a0a5a6a0b0a(prevSibling))) {
+          if (visibleNode.getRole().equals(check_s6qw4f_a0a5a6a0b0a(prevSibling))) {
             visibleNode = prevSibling;
           } else {
             visibleNode = visibleNode.getParent();
@@ -94,7 +94,7 @@ public class DiffEditorsGroup {
 
   private static String check_s6qw4f_a0a5a6a0b0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getRole_();
+      return checkedDotOperand.getRole();
     }
     return null;
   }

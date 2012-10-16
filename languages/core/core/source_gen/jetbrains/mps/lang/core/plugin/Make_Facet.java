@@ -8,13 +8,15 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.IDeltaResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -66,7 +68,7 @@ public class Make_Facet extends IFacet.Stub {
     return new Make_Facet.TargetProperties();
   }
 
-  public static class Target_reconcile implements ITargetEx {
+  public static class Target_reconcile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IDeltaResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -77,7 +79,7 @@ public class Make_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
@@ -85,47 +87,52 @@ public class Make_Facet extends IFacet.Stub {
                 _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
                 return new IResult.SUCCESS(_output_pm9z_a0a);
               }
-              FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                public void run() {
-                  final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
-                  DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                    public Iterable<IDelta> translate(IResource res) {
-                      return ((IDeltaResource) res).delta();
-                    }
-                  }).where(new IWhereFilter<IDelta>() {
-                    public boolean accept(IDelta d) {
-                      return !(d instanceof IInternalDelta);
-                    }
-                  }));
-                  reconciler.reconcileAll();
-                  reconciler.visitAll(new FilesDelta.Visitor() {
-                    @Override
-                    public boolean acceptWritten(IFile file) {
-                      ListSequence.fromList(writtenFiles).addElement(file);
-                      return true;
-                    }
-                  });
-                  DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                    public Iterable<IDelta> translate(IResource res) {
-                      return ((IDeltaResource) res).delta();
-                    }
-                  }).where(new IWhereFilter<IDelta>() {
-                    public boolean accept(IDelta d) {
-                      return d instanceof IInternalDelta;
-                    }
-                  }));
-                  internalReconciler.reconcileAll();
-                  internalReconciler.visitAll(new FilesDelta.Visitor() {
-                    @Override
-                    public boolean acceptWritten(IFile file) {
-                      ListSequence.fromList(writtenFiles).addElement(file);
-                      return true;
-                    }
-                  });
-                  FileSystem.getInstance().scheduleUpdateForWrittenFiles(writtenFiles);
-                }
-              });
-              _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
+              progressMonitor.start("Reconciling", 1);
+              try {
+                FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                  public void run() {
+                    final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
+                    DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
+                      public Iterable<IDelta> translate(IResource res) {
+                        return ((IDeltaResource) res).delta();
+                      }
+                    }).where(new IWhereFilter<IDelta>() {
+                      public boolean accept(IDelta d) {
+                        return !(d instanceof IInternalDelta);
+                      }
+                    }));
+                    reconciler.reconcileAll();
+                    reconciler.visitAll(new FilesDelta.Visitor() {
+                      @Override
+                      public boolean acceptWritten(IFile file) {
+                        ListSequence.fromList(writtenFiles).addElement(file);
+                        return true;
+                      }
+                    });
+                    DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
+                      public Iterable<IDelta> translate(IResource res) {
+                        return ((IDeltaResource) res).delta();
+                      }
+                    }).where(new IWhereFilter<IDelta>() {
+                      public boolean accept(IDelta d) {
+                        return d instanceof IInternalDelta;
+                      }
+                    }));
+                    internalReconciler.reconcileAll();
+                    internalReconciler.visitAll(new FilesDelta.Visitor() {
+                      @Override
+                      public boolean acceptWritten(IFile file) {
+                        ListSequence.fromList(writtenFiles).addElement(file);
+                        return true;
+                      }
+                    });
+                    FileSystem.getInstance().scheduleUpdateForWrittenFiles(writtenFiles);
+                  }
+                });
+                _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
+              } finally {
+                progressMonitor.done();
+              }
             default:
               return new IResult.SUCCESS(_output_pm9z_a0a);
           }
@@ -189,6 +196,10 @@ public class Make_Facet extends IFacet.Stub {
       return t;
     }
 
+    public int workEstimate() {
+      return 200;
+    }
+
     public static class Parameters extends MultiTuple._1<Boolean> {
       public Parameters() {
         super();
@@ -213,7 +224,7 @@ public class Make_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_make implements ITargetEx {
+  public static class Target_make implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -224,7 +235,7 @@ public class Make_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_pm9z_a0b = null;
           switch (0) {
             case 0:
@@ -305,6 +316,10 @@ public class Make_Facet extends IFacet.Stub {
         ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
+    }
+
+    public int workEstimate() {
+      return 1;
     }
 
     public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {

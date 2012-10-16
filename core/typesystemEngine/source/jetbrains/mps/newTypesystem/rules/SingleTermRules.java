@@ -16,11 +16,15 @@
 package jetbrains.mps.newTypesystem.rules;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -34,28 +38,32 @@ public abstract class SingleTermRules<K> {
 
   private ConcurrentHashMap<Object, Set<K>> myCachedRules = new ConcurrentHashMap<Object, Set<K>>();
 
-  public Set<K> lookupRules (SNode term) {
-    LanguageScope langScope = LanguageScope.getCurrent();
+  public Set<K> lookupRules(SNode term) {
+    final LanguageScope langScope = LanguageScope.getCurrent();
 
-    String conceptFQName = term.getConceptFqName();
-    Object compoundKey = new Pair<Object, String>(langScope, conceptFQName);
+    final String conceptFQName = term.getConceptFqName();
+    final Object compoundKey = new Pair<Object, String>(langScope, conceptFQName);
 
     Set<K> cachedRules = myCachedRules.get(compoundKey);
     if (cachedRules != null) {
       return cachedRules;
     }
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<K>>() {
+      @Override
+      public Set<K> compute() {
+        Set<K> computedRules = computeRules(conceptFQName, langScope);
+        myCachedRules.put(compoundKey, computedRules);
 
-    Set<K> computedRules = computeRules(conceptFQName, langScope);
-    myCachedRules.put(compoundKey, computedRules);
-
-    return computedRules;
+        return computedRules;
+      }
+    });
   }
 
   public void purgeCache() {
     myCachedRules.clear();
   }
 
-  private Set<K> computeRules (String conceptFQName, LanguageScope langScope) {
+  private Set<K> computeRules(String conceptFQName, LanguageScope langScope) {
     THashSet<K> result = new THashSet<K>();
 
     LinkedList<String> queue = new LinkedList<String>();
@@ -64,7 +72,7 @@ public abstract class SingleTermRules<K> {
     while (!queue.isEmpty()) {
       String nextConceptFQName = queue.remove();
       boolean overriding = false;
-      for (K applicableRule: allForConcept(nextConceptFQName, langScope)) {
+      for (K applicableRule : allForConcept(nextConceptFQName, langScope)) {
         overriding |= isOverriding(applicableRule);
         result.add(applicableRule);
       }
@@ -80,6 +88,6 @@ public abstract class SingleTermRules<K> {
 
   abstract protected Iterable<K> allForConcept(String conceptFQName, LanguageScope scope);
 
-  abstract protected boolean isOverriding (K rule);
+  abstract protected boolean isOverriding(K rule);
 
 }

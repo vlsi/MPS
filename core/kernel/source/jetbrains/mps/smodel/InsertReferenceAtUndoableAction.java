@@ -16,21 +16,20 @@
 package jetbrains.mps.smodel;
 
 class InsertReferenceAtUndoableAction extends SNodeUndoableAction {
-  private int myIndex;
+  private String myRole;
   private SReference myReference;
 
-  InsertReferenceAtUndoableAction(SNode node, int index, SReference reference) {
+  InsertReferenceAtUndoableAction(SNode node, SReference reference) {
     super(node);
-    myIndex = index;
+    myRole = reference.getRole();
     myReference = reference;
   }
 
   protected void doUndo() {
-    getAffectedNode().removeReferenceAt(myIndex);
+    getAffectedNode().setReferenceTarget(myRole, null);
   }
 
   protected void doRedo() {
-    getAffectedNode().insertReferenceAt(myIndex, myReference);
+    getAffectedNode().setReference(myReference.getRole(), myReference);
   }
-
 }

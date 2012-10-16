@@ -28,7 +28,7 @@ public class TargetBlock extends Block {
   private SNode myNode;
 
   public TargetBlock(State state, SNode node) {
-    super(state, node.getModel().getLongName(), node.getId());
+    super(state, node.getModel().getLongName(), node.getSNodeId().toString());
     myNode = node;
   }
 

@@ -17,13 +17,11 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public class UpgradePersistence_Action extends BaseAction {
@@ -66,8 +64,8 @@ public class UpgradePersistence_Action extends BaseAction {
 
       List<DefaultSModelDescriptor> modelDescriptors = new ArrayList<DefaultSModelDescriptor>();
       final MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
-      for (IModule module : mpsProject.getModulesWithGenerators()) {
-        for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(module)) {
+      for (SModule module : mpsProject.getModulesWithGenerators()) {
+        for (SModel smd : module.getModels()) {
           if (smd instanceof DefaultSModelDescriptor) {
             int modelVersion = ((DefaultSModelDescriptor) smd).getSModelHeader().getPersistenceVersion();
             if (modelVersion <= 4) {
@@ -92,7 +90,7 @@ public class UpgradePersistence_Action extends BaseAction {
         }
         assert file != null;
         try {
-          SModel model = (wasInitialized ?
+          jetbrains.mps.smodel.SModel model = (wasInitialized ?
             modelDescriptor.getSModel() :
             ModelPersistence.readModel(file, false)
           );

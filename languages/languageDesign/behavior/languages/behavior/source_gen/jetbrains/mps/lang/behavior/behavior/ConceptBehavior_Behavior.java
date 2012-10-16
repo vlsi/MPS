@@ -245,8 +245,8 @@ public class ConceptBehavior_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("baseMethodDeclaration", (SNode) parameter_5);
-        quotedNode1_3.setReferent("concept", (SNode) parameter_4);
+        quotedNode1_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_5);
+        quotedNode1_3.setReferenceTarget("concept", (SNode) parameter_4);
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
           for (SNode child : nodes) {

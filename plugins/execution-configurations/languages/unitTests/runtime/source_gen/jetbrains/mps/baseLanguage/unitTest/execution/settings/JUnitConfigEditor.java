@@ -8,8 +8,8 @@ import jetbrains.mps.uiLanguage.runtime.JbRadioButton;
 import javax.swing.JTextField;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.ButtonGroup;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import javax.swing.JRadioButton;
@@ -59,7 +59,7 @@ public class JUnitConfigEditor extends JPanel {
   private String myProjectName;
   private ButtonGroup myGroup;
   private SModel myModel;
-  private IModule myModule;
+  private SModule myModule;
   private List<ITestNodeWrapper> myNodes;
   private List<ITestNodeWrapper> myMethods;
   private JRadioButton[] myButtons;
@@ -354,7 +354,7 @@ public class JUnitConfigEditor extends JPanel {
     return this.myModel;
   }
 
-  public IModule getModule() {
+  public SModule getModule() {
     return this.myModule;
   }
 
@@ -394,8 +394,8 @@ public class JUnitConfigEditor extends JPanel {
     this.firePropertyChange("model", oldValue, newValue);
   }
 
-  public void setModule(IModule newValue) {
-    IModule oldValue = this.myModule;
+  public void setModule(SModule newValue) {
+    SModule oldValue = this.myModule;
     this.myModule = newValue;
     this.firePropertyChange("module", oldValue, newValue);
   }
@@ -452,7 +452,7 @@ public class JUnitConfigEditor extends JPanel {
     final List<ITestNodeWrapper> editorMethodList = myThis.getMethods();
     final List<ITestNodeWrapper> editorTestCasesList = myThis.getNodes();
     final SModel editorModel = myThis.getModel();
-    final IModule editorModule = myThis.getModule();
+    final SModule editorModule = myThis.getModule();
     // five of them, so we do not mind going twice 
     final int configTypeIndex = Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
       public boolean accept(JRadioButton it) {
@@ -480,10 +480,10 @@ public class JUnitConfigEditor extends JPanel {
             }
 
             if (editorModel != null) {
-              model.value = editorModel.getSModelFqName().toString();
+              model.value = editorModel.getModelName();
             }
             if (editorModule != null) {
-              module.value = editorModule.getModuleFqName();
+              module.value = editorModule.getModuleName();
             }
           }
         });
@@ -580,11 +580,11 @@ public class JUnitConfigEditor extends JPanel {
 
   private void resetEditorModelWith(final String modelName) {
     myThis.setModelValue(modelName);
-    if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+    if (myThis.getModel() != null && myThis.getModel().getModule() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myThis.myModelName_iqjve6_d5c0.setText(modelName);
-          String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
+          String moduleName = myThis.getModel().getModule().getModuleName();
           myThis.setModuleValue(moduleName);
           myThis.myModuleName_iqjve6_d4c0.setText(moduleName);
         }

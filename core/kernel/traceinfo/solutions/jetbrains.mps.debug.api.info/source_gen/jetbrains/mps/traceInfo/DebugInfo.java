@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -23,10 +24,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.LinkedHashMap;
 import org.jdom.Element;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.DataConversionException;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -68,6 +69,10 @@ public class DebugInfo {
     return MapSequence.fromMap(myRoots).get(tupleFrom(root));
   }
 
+  public DebugInfoRoot getRootInfo(@Nullable SNodePointer root) {
+    return MapSequence.fromMap(myRoots).get(tupleFrom(root));
+  }
+
   /*package*/ void putRootInfo(DebugInfoRoot root) {
     MapSequence.fromMap(myRoots).put(MultiTuple.<String,String>from(root.getRootId(), root.getModelId()), root);
   }
@@ -85,7 +90,7 @@ public class DebugInfo {
         return it.getPositions();
       }
     })) {
-      if (eq_exfyrk_a0a0b0g(element.getNodeId(), nodeId)) {
+      if (eq_exfyrk_a0a0b0h(element.getNodeId(), nodeId)) {
         return element;
       }
     }
@@ -101,7 +106,7 @@ public class DebugInfo {
     }
     return SetSequence.fromSet(root.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
       public boolean accept(TraceablePositionInfo it) {
-        return eq_exfyrk_a0a0a0a0a0d0h(it.getNodeId(), node.getId());
+        return eq_exfyrk_a0a0a0a0a0d0i(it.getNodeId(), node.getSNodeId().toString());
       }
     });
   }
@@ -115,7 +120,7 @@ public class DebugInfo {
     // for mbeddr 
     return SetSequence.fromSetWithValues(new HashSet<TraceablePositionInfo>(), SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).where(new IWhereFilter<Tuples._2<String, String>>() {
       public boolean accept(Tuples._2<String, String> it) {
-        return eq_exfyrk_a0a0a0a0a0b0b0i(it._0(), rootId);
+        return eq_exfyrk_a0a0a0a0a0b0b0j(it._0(), rootId);
       }
     }).translate(new ITranslator2<Tuples._2<String, String>, TraceablePositionInfo>() {
       public Iterable<TraceablePositionInfo> translate(Tuples._2<String, String> it) {
@@ -145,7 +150,7 @@ public class DebugInfo {
         }
       }, false).where(new IWhereFilter<UnitPositionInfo>() {
         public boolean accept(UnitPositionInfo it) {
-          return eq_exfyrk_a0a0a0a0a0a0a2a01(it.getNodeId(), tuple._0());
+          return eq_exfyrk_a0a0a0a0a0a0a2a11(it.getNodeId(), tuple._0());
         }
       }).toListSequence();
     }
@@ -173,6 +178,35 @@ public class DebugInfo {
         return it.getStartLine();
       }
     }, false).toListSequence();
+  }
+
+  @NotNull
+  public <T extends PositionInfo> Map<DebugInfoRoot, List<T>> getRootToInfoForPosition(final String file, int line, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
+    Map<DebugInfoRoot, List<T>> result = MapSequence.fromMap(new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false));
+    for (DebugInfoRoot root : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
+      public boolean accept(DebugInfoRoot it) {
+        return SetSequence.fromSet(it.getFileNames()).contains(file);
+      }
+    })) {
+      List<T> list = MapSequence.fromMap(result).get(root);
+      for (T element : SetSequence.fromSet(getAllPositionsForRoot.invoke(root))) {
+        if (element.isPositionInside(file, line)) {
+          if (list == null) {
+            list = ListSequence.fromList(new ArrayList<T>());
+            MapSequence.fromMap(result).put(root, list);
+          }
+          ListSequence.fromList(list).addElement(element);
+        }
+      }
+      if (list != null) {
+        MapSequence.fromMap(result).put(root, ListSequence.fromList(list).sort(new ISelector<T, Integer>() {
+          public Integer select(T it) {
+            return it.getStartLine();
+          }
+        }, false).toListSequence());
+      }
+    }
+    return result;
   }
 
   @NotNull
@@ -212,7 +246,7 @@ public class DebugInfo {
       }, true);
       for (Tuples._2<String, String> id : sorted) {
         DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
-        if (isEmpty_exfyrk_a0b0b0b0p(id._0())) {
+        if (isEmpty_exfyrk_a0b0b0b0r(id._0())) {
           dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
@@ -253,66 +287,71 @@ public class DebugInfo {
     if (node == null) {
       return UNSPECIFIED;
     }
-    return MultiTuple.<String,String>from(node.getId(), SNodeOperations.getModel(node).getSModelReference().toString());
+    return tupleFrom(new SNodePointer(node));
+  }
+
+  @NotNull
+  public static Tuples._2<String, String> tupleFrom(@Nullable SNodePointer node) {
+    if (node == null) {
+      return UNSPECIFIED;
+    }
+    return MultiTuple.<String,String>from(node.getNodeId().toString(), node.getModelReference().toString());
   }
 
   @Nullable
   public static SNode nodeFrom(@NotNull Tuples._2<String, String> tuple) {
-    if (isEmpty_exfyrk_a0a0a2_0(tuple._0()) || isEmpty_exfyrk_a0a0a2(tuple._1())) {
+    SNodePointer nodePointer = nodePointerFrom(tuple);
+    if (nodePointer == null) {
       return null;
     }
-    return new SNodePointer(SModelReference.fromString(tuple._1()), SNodeId.fromString(tuple._0())).getNode();
+    return nodePointer.getNode();
   }
 
-  public static SNode findNode(PositionInfo info) {
-    if (isEmpty_exfyrk_a0a0d(info.getNodeId())) {
+  @Nullable
+  public static SNodePointer nodePointerFrom(@NotNull Tuples._2<String, String> tuple) {
+    if (isEmpty_exfyrk_a0a0a4_0(tuple._0()) || isEmpty_exfyrk_a0a0a4(tuple._1())) {
       return null;
     }
-    SModelReference modelRef = SModelReference.fromString(info.getModelId());
-    return new SNodePointer(modelRef, SNodeId.fromString(info.getNodeId())).getNode();
+    return new SNodePointer(SModelReference.fromString(tuple._1()), SNodeId.fromString(tuple._0()));
   }
 
-  private static boolean eq_exfyrk_a0a0b0g(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0b0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0d0h(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0d0i(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0b0b0i(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0b0b0j(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a01(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a11(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static boolean isEmpty_exfyrk_a0b0b0b0p(String str) {
+  public static boolean isEmpty_exfyrk_a0b0b0b0r(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_exfyrk_a0a0a2(String str) {
+  public static boolean isEmpty_exfyrk_a0a0a4(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_exfyrk_a0a0a2_0(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_exfyrk_a0a0d(String str) {
+  public static boolean isEmpty_exfyrk_a0a0a4_0(String str) {
     return str == null || str.length() == 0;
   }
 }

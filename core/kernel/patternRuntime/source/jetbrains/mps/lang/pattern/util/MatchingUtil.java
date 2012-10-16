@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.lang.pattern.util;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MatchingUtil {
   private static final Logger LOG = Logger.getLogger(MatchingUtil.class);
@@ -41,21 +40,27 @@ public class MatchingUtil {
     if (!node1.getConceptFqName().equals(node2.getConceptFqName())) return false;
 
     //properties
-    Set<String> propertyNames1 = node1.getPropertyNames();
-    Set<String> propertyNames = propertyNames1;
-    propertyNames.addAll(node2.getPropertyNames());
+    final Set<String> propertyNames = new HashSet<String>();
+    PropertyVisitor collector = new PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        propertyNames.add(name);
+        return true;
+      }
+    };
+    node1.visitProperties(collector);
+    node2.visitProperties(collector);
+
+    SNode typeDeclaration = node1.getConceptDeclarationNode();
+
     for (String propertyName : propertyNames) {
-      SNode typeDeclaration = node1.getConceptDeclarationNode();
       SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
       String propertyValue1 = node1.getProperty(propertyName);
       String propertyValue2 = node2.getProperty(propertyName);
       if (propertyDeclaration == null) {
-        SNode diagnosticsNode = propertyNames1.contains(propertyName) ? node1 : node2;
+        SNode diagnosticsNode = node1.getProperty(propertyName) != null ? node1 : node2;
         LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
-        if (!EqualUtil.equals(propertyValue1, propertyValue2)) {
-          return false;
-        }
+        if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
       } else {
         PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
         if (!EqualUtil.equals(propertySupport.fromInternalValue(propertyValue1),
@@ -78,7 +83,7 @@ public class MatchingUtil {
 
     // children
     Set<String> childRoles = node1.getChildRoles(matchAttributes);
-    node2.addChildRoles(childRoles, matchAttributes);
+    childRoles.addAll(node2.getChildRoles(matchAttributes));
     for (String role : childRoles) {
       List<SNode> children1 = node1.getChildren(role);
       List<SNode> children2 = node2.getChildren(role);
@@ -109,7 +114,7 @@ public class MatchingUtil {
     return true;
   }
 
-  public static int hash(SNode node, boolean useAttributes) {
+  public static int hash(SNode node) {
     int result = node.getConceptFqName().hashCode();
     for (SReference reference : node.getReferences()) {
       SNode targetNode = reference.getTargetNodeSilently();
@@ -125,9 +130,10 @@ public class MatchingUtil {
     for (String propertyValue : properties.values()) {
       result = 31 * result + propertyValue.hashCode();
     }
-    for (SNode child : node.getChildren(useAttributes)) {
-      result = 31 * result + child.getRole_().hashCode();
-      result = 31 * result + hash(child, useAttributes);
+    for (SNode child : node.getChildren()) {
+      if (AttributeOperations.isAttribute(child)) continue;
+      result = 31 * result + child.getRole().hashCode();
+      result = 31 * result + hash(child);
     }
     return result;
   }

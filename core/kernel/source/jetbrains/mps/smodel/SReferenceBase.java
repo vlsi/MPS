@@ -81,20 +81,20 @@ abstract class SReferenceBase extends SReference {
 
   protected synchronized final boolean mature(boolean force) {
     if (myImmatureTargetNode != null) {
-      if (getSourceNode().isRegistered() && myImmatureTargetNode.isRegistered() &&
-        !(getSourceNode().isDisposed() || myImmatureTargetNode.isDisposed())) {
+      if (jetbrains.mps.util.SNodeOperations.isRegistered(getSourceNode()) && jetbrains.mps.util.SNodeOperations.isRegistered(myImmatureTargetNode) &&
+        !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
       if (force && myImmatureTargetNode != null) {
-        if (getSourceNode().isRegistered() && !getSourceNode().isDisposed()) {
+        if (jetbrains.mps.util.SNodeOperations.isRegistered(getSourceNode()) && !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode())) {
           error("Impossible to resolve immature reference",
             new ProblemDescription(new SNodePointer(myImmatureTargetNode),
               "ImmatureTargetNode(modelID: " +
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
-                ", nodeID: " + myImmatureTargetNode.getId() +
-                "): isRegistered = " + myImmatureTargetNode.isRegistered() +
-                ", isDisposed = " + myImmatureTargetNode.isDisposed() + dumpUnregisteredTrace()));
+                ", nodeID: " + myImmatureTargetNode.getSNodeId().toString() +
+                "): isRegistered = " + jetbrains.mps.util.SNodeOperations.isRegistered(myImmatureTargetNode) +
+                ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) + dumpUnregisteredTrace()));
           myImmatureTargetNode = null;
         }
       }

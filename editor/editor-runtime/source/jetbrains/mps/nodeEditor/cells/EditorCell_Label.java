@@ -429,7 +429,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
         @Override
         public String compute() {
-          return getCellId() + "_" + getSNode().getId();
+          return getCellId() + "_" + getSNode().getSNodeId().toString();
         }
       });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {

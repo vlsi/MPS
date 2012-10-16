@@ -150,7 +150,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   private Message prepare(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
-    if (node != null && node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
+    if (node != null && jetbrains.mps.util.SNodeOperations.isRegistered(node) && node.getModel() != null && !node.getModel().isTransient()) {
       message.setHintObject(new SNodePointer(node));
     }
     return message;

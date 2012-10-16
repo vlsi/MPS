@@ -22,12 +22,15 @@ import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
+import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import java.util.*;
 
@@ -53,38 +56,38 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private Icon myIcon;
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
-                        String label,
-                        @NotNull IOperationContext operationContext) {
+              String label,
+              @NotNull IOperationContext operationContext) {
     this(modelDescriptor, label, operationContext, true);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
-                        String label,
-                        @NotNull IOperationContext operationContext,
-                        Condition<SNode> condition) {
+              String label,
+              @NotNull IOperationContext operationContext,
+              Condition<SNode> condition) {
     this(modelDescriptor, label, operationContext, true, condition, 0);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
-                        String label,
-                        IOperationContext operationContext,
-                        boolean showLongName) {
+              String label,
+              IOperationContext operationContext,
+              boolean showLongName) {
     this(modelDescriptor, label, operationContext, showLongName, Condition.TRUE_CONDITION, 0);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
-                        String label,
-                        IOperationContext operationContext,
-                        int countNamePart) {
+              String label,
+              IOperationContext operationContext,
+              int countNamePart) {
     this(modelDescriptor, label, operationContext, false, Condition.TRUE_CONDITION, countNamePart);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
-                        String label,
-                        IOperationContext operationContext,
-                        boolean showLongName,
-                        Condition<SNode> condition,
-                        int countNamePart) {
+              String label,
+              IOperationContext operationContext,
+              boolean showLongName,
+              Condition<SNode> condition,
+              int countNamePart) {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
@@ -219,11 +222,23 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  public SModel getSModel() {
+  public org.jetbrains.mps.openapi.model.SModel getModel() {
+    return myModelDescriptor;
+  }
+
+  /**
+   * use getModel
+   */
+  @Deprecated
+  public final SModel getSModel() {
     return myModelDescriptor.getSModel();
   }
 
-  public SModelDescriptor getSModelDescriptor() {
+  /**
+   * use getModel
+   */
+  @Deprecated
+  public final SModelDescriptor getSModelDescriptor() {
     return myModelDescriptor;
   }
 
@@ -256,23 +271,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private String calculateText() {
-    SModelReference reference;
+    org.jetbrains.mps.openapi.model.SModelReference reference;
 
-    if (getSModelDescriptor() != null) {
-      reference = getSModelDescriptor().getSModelReference();
-    } else if (getSModel() != null) {
-      reference = getSModel().getSModelReference();
+    if (getModel() != null) {
+      reference = getModel().getModelReference();
     } else {
       return "";
     }
 
     String name = calculatePresentationText(reference);
-
-    if (reference.getStereotype().length() > 0) {
-      name += "@" + reference.getStereotype();
-    }
-
-
     String result;
 
     if (myLabel != null) {
@@ -297,7 +304,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (myModelDescriptor == null) return false;
     String modelName = myModelDescriptor.getLongName();
     String candidateName = candidate.getLongName();
-    if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) return false;
+    if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName))
+      return false;
     if (candidateName.charAt(modelName.length()) == '.') {
       String modelStereotype = myModelDescriptor.getStereotype();
       String candidateStereotype = candidate.getStereotype();
@@ -355,8 +363,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         int index = myChildModelTreeNodes.indexOf(newChildModel);
         treeModel.insertNodeInto(newChildModel, this, index);
       }
-      SModel model = getSModel();
-      Iterable<SNode> iter = new ConditionalIterable(model.roots(), myNodesCondition);
+      org.jetbrains.mps.openapi.model.SModel model = getModel();
+      Iterable<SNode> iter = new ConditionalIterable(model.getRootNodes(), myNodesCondition);
 
       List<SNode> filteredRoots = new ArrayList<SNode>();
       for (SNode node : iter) {
@@ -385,19 +393,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  private String calculatePresentationText(SModelReference reference) {
+  private String calculatePresentationText(org.jetbrains.mps.openapi.model.SModelReference reference) {
     if (myShowLongName) {
-      return reference.getLongName();
+      return reference.getModelName();
     } else if (myCountAdditionalNamePart == 0) {
-      return NameUtil.shortNameFromLongName(reference.getLongName());
+      return NameUtil.shortNameFromLongName(reference.getModelName());
     }
     StringBuilder stringBuilder = new StringBuilder();
-    String[] namePart = reference.getLongName().split("\\.");
+    String[] namePart = reference.getModelName().split("\\.");
     int firstPart = namePart.length - myCountAdditionalNamePart - 1;
     for (int i = firstPart; i < namePart.length - 1; i++) {
       stringBuilder.append(namePart[i]).append('.');
     }
-    stringBuilder.append(NameUtil.shortNameFromLongName(reference.getLongName()));
+    stringBuilder.append(NameUtil.shortNameFromLongName(reference.getModelName()));
     return stringBuilder.toString();
   }
 

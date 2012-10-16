@@ -71,7 +71,7 @@
     <nodeInfo nodeId="8974276187400029905" fileName="IconResource_Editor.java" startLine="153" startPosition="111" endLine="154" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029916" fileName="IconResource_Editor.java" startLine="157" startPosition="112" endLine="158" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029935" fileName="IconResource_Editor.java" startLine="161" startPosition="119" endLine="162" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400029906" fileName="IconResource_Editor.java" startLine="172" startPosition="58" endLine="173" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8974276187400029910" fileName="IconResource_Editor.java" startLine="172" startPosition="58" endLine="173" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029902" fileName="IconResource_Editor.java" startLine="44" startPosition="10" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029913" fileName="IconResource_Editor.java" startLine="56" startPosition="10" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029900" fileName="IconResource_Editor.java" startLine="29" startPosition="60" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -84,7 +84,7 @@
     <nodeInfo nodeId="8974276187400029914" fileName="IconResource_Editor.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_79r3b6_a0a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="8974276187400029933" fileName="IconResource_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_79r3b6_a1a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="8974276187400029945" fileName="IconResource_Editor.java" startLine="165" startPosition="131" endLine="169" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400029906" fileName="IconResource_Editor.java" startLine="171" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_79r3b6_a0a0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8974276187400029910" fileName="IconResource_Editor.java" startLine="171" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_79r3b6_a0a0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="8974276187400029902" fileName="IconResource_Editor.java" startLine="41" startPosition="33" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8974276187400029913" fileName="IconResource_Editor.java" startLine="53" startPosition="33" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8974276187400029920" fileName="IconResource_Editor.java" startLine="71" startPosition="99" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -126,7 +126,7 @@
     <scopeInfo nodeId="8974276187400029904" fileName="IconResource_Editor.java" startLine="153" startPosition="111" endLine="154" endPosition="77" />
     <scopeInfo nodeId="8974276187400029915" fileName="IconResource_Editor.java" startLine="157" startPosition="112" endLine="158" endPosition="72" />
     <scopeInfo nodeId="8974276187400029934" fileName="IconResource_Editor.java" startLine="161" startPosition="119" endLine="162" endPosition="74" />
-    <scopeInfo nodeId="8974276187400029906" fileName="IconResource_Editor.java" startLine="172" startPosition="58" endLine="173" endPosition="44" />
+    <scopeInfo nodeId="8974276187400029910" fileName="IconResource_Editor.java" startLine="172" startPosition="58" endLine="173" endPosition="44" />
     <scopeInfo nodeId="8974276187400029920" fileName="IconResource_Editor.java" startLine="73" startPosition="5" endLine="75" endPosition="51">
       <varInfo nodeId="8974276187400029920" varName="style" />
     </scopeInfo>
@@ -167,8 +167,8 @@
       <varInfo nodeId="8974276187400029933" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8974276187400029944" fileName="IconResource_Editor.java" startLine="165" startPosition="131" endLine="169" endPosition="6" />
-    <scopeInfo nodeId="8974276187400029906" fileName="IconResource_Editor.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
-      <varInfo nodeId="8974276187400029906" varName="str" />
+    <scopeInfo nodeId="8974276187400029910" fileName="IconResource_Editor.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
+      <varInfo nodeId="8974276187400029910" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="8974276187400029901" fileName="IconResource_Editor.java" startLine="62" startPosition="89" endLine="67" endPosition="22">
       <varInfo nodeId="8974276187400029901" varName="editorCell" />

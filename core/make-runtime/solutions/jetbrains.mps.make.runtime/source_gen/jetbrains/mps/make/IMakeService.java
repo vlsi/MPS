@@ -7,6 +7,8 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IMakeService {
   public boolean openNewSession(MakeSession session);
@@ -15,14 +17,9 @@ public interface IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources);
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script);
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller);
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor);
   public void addListener(IMakeNotificationListener listener);
   public void removeListener(IMakeNotificationListener listener);
-  @Deprecated
-  public Future<IResult> make(Iterable<? extends IResource> resources);
-  @Deprecated
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script);
-  @Deprecated
-  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller);
   public static class INSTANCE {
     private static IMakeService Component;
 

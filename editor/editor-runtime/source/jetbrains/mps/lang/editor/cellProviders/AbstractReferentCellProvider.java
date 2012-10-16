@@ -35,6 +35,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 
+import java.util.List;
+
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
 
   public static final Logger LOG = Logger.getLogger(AbstractReferentCellProvider.class);
@@ -107,7 +109,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     }
     SNode referentNode = null;
     if (myIsAggregation) {
-      referentNode = node.getChild(myGenuineRole);
+      List<SNode> ch = node.getChildren(myGenuineRole);
+      referentNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
     } else {
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
@@ -163,11 +166,12 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();
-      SNode currentChild = parentNode.getChild(myGenuineRole);
+      List<SNode> ch = parentNode.getChildren(myGenuineRole);
+      SNode currentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       return new AggregationCellContext(parentNode, currentChild, myLinkDeclaration);
     }
     SNode referenceNode = getSNode();
-    SNode currentReferent = referenceNode.getReferent(myGenuineRole);
+    SNode currentReferent = (SNode) referenceNode.getReferenceTarget(myGenuineRole);
     return new ReferenceCellContext(referenceNode, currentReferent, myLinkDeclaration);
   }
 }

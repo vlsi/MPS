@@ -20,12 +20,11 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 
@@ -42,11 +41,11 @@ public class LocationRule implements GetDataRule {
     if (nodes != null && nodes.size() > 1) return new MPSLocation(project, nodes);
     SNode node = (SNode) dataProvider.getData(MPSDataKeys.NODE.getName());
     if (node != null) return new MPSLocation(project, node);
-    SModelDescriptor model = (SModelDescriptor) dataProvider.getData(MPSDataKeys.MODEL.getName());
-    if (model != null) return new MPSLocation(project, model.getSModelReference());
-    IModule module = (IModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
+    SModel model = (SModel) dataProvider.getData(MPSDataKeys.MODEL.getName());
+    if (model != null) return new MPSLocation(project, model.getModelReference());
+    SModule module = (SModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
     if (module != null) return new MPSLocation(project, module);
-    MPSProject mpsProject = (MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
+    jetbrains.mps.project.Project mpsProject = (jetbrains.mps.project.Project) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
     if (mpsProject != null) return new MPSLocation(project, mpsProject);
     return null;
   }

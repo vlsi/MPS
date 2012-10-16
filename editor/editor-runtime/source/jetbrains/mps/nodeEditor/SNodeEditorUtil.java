@@ -18,31 +18,49 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 
 public class SNodeEditorUtil {
-  public static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
-  public static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
+  /**
+   * Todo
+   * This class is a dirty hack. It should be re-implemented via user objects since we don't have the used
+   * property declared and MUST NOT declare it in concept structure.
+   * We use property here just to call read/write listeners in editor to rebuild it.
+   */
 
-
-  public static void addRightTransformHint(SNode node) {
-    node.setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
-  }
+  private static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
+  private static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
 
   public static boolean hasRightTransformHint(SNode node) {
-    return node.getBooleanProperty(RIGHT_TRANSFORM_HINT);
+    return node.getProperty(RIGHT_TRANSFORM_HINT) != null;
+  }
+
+  public static void addRightTransformHint(SNode node) {
+    node.setProperty(RIGHT_TRANSFORM_HINT, "true");
   }
 
   public static void removeRightTransformHint(SNode node) {
-    node.setBooleanProperty(RIGHT_TRANSFORM_HINT, false);
-  }
-
-  public static void addLeftTransformHint(SNode node) {
-    node.setBooleanProperty(LEFT_TRANSFORM_HINT, true);
+    node.setProperty(RIGHT_TRANSFORM_HINT, null);
   }
 
   public static boolean hasLeftTransformHint(SNode node) {
-    return node.getBooleanProperty(LEFT_TRANSFORM_HINT);
+    return node.getProperty(LEFT_TRANSFORM_HINT)!=null;
+  }
+
+  public static void addLeftTransformHint(SNode node) {
+    node.setProperty(LEFT_TRANSFORM_HINT, "true");
   }
 
   public static void removeLeftTransformHint(SNode node) {
-    node.setBooleanProperty(LEFT_TRANSFORM_HINT, false);
+    node.setProperty(LEFT_TRANSFORM_HINT, null);
+  }
+
+  //---------------------
+
+  public static void setSingleChild(SNode node,String role, org.jetbrains.mps.openapi.model.SNode childNode) {
+    SNode oldChild = node.getChild(role);
+    if (oldChild != null) {
+      node.removeChild(oldChild);
+    }
+    if (childNode != null) {
+      node.addChild(role, childNode);
+    }
   }
 }

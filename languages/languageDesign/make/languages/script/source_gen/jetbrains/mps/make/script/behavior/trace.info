@@ -3,7 +3,8 @@
   <unitInfo fileName="AdvanceWorkStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.AdvanceWorkStatement_BehaviorDescriptor" />
   <unitInfo fileName="AllWorkLeftExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.AllWorkLeftExpression_BehaviorDescriptor" />
   <unitInfo fileName="BeginWorkStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.BeginWorkStatement_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_progressMonitor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ConceptFunctionParameter_progressMonitor_BehaviorDescriptor" />
   <unitInfo fileName="ConfigDefinition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ConfigDefinition_BehaviorDescriptor" />
   <unitInfo fileName="ExpectedInput_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedInput_BehaviorDescriptor" />
   <unitInfo fileName="ExpectedOption_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedOption_BehaviorDescriptor" />

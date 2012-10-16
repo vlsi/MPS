@@ -417,8 +417,8 @@
     <nodeInfo nodeId="9191251033651632976" fileName="DeprecatedAnnotation_Editor.java" startLine="253" startPosition="10" endLine="254" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651632182" fileName="DeprecatedAnnotation_Editor.java" startLine="257" startPosition="112" endLine="258" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651632943" fileName="DeprecatedAnnotation_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9191251033651632232" fileName="DeprecatedAnnotation_Editor.java" startLine="265" startPosition="61" endLine="266" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9191251033651632944" fileName="DeprecatedAnnotation_Editor.java" startLine="269" startPosition="61" endLine="270" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651632918" fileName="DeprecatedAnnotation_Editor.java" startLine="265" startPosition="61" endLine="266" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651632948" fileName="DeprecatedAnnotation_Editor.java" startLine="269" startPosition="61" endLine="270" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651632164" fileName="DeprecatedAnnotation_Editor.java" startLine="46" startPosition="82" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9191251033651632164" fileName="DeprecatedAnnotation_Editor.java" startLine="46" startPosition="82" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9191251033651632164" fileName="DeprecatedAnnotation_Editor.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -437,8 +437,8 @@
     <nodeInfo nodeId="9191251033651632168" fileName="DeprecatedAnnotation_Editor.java" startLine="117" startPosition="77" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9191251033651632180" fileName="DeprecatedAnnotation_Editor.java" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_lchw91_a1a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="9191251033651632941" fileName="DeprecatedAnnotation_Editor.java" startLine="260" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_lchw91_a2a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="9191251033651632232" fileName="DeprecatedAnnotation_Editor.java" startLine="264" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_lchw91_a0a0a#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="9191251033651632944" fileName="DeprecatedAnnotation_Editor.java" startLine="268" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_lchw91_a0a0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="9191251033651632918" fileName="DeprecatedAnnotation_Editor.java" startLine="264" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_lchw91_a0a0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="9191251033651632948" fileName="DeprecatedAnnotation_Editor.java" startLine="268" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_lchw91_a0a0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="9191251033651632164" fileName="DeprecatedAnnotation_Editor.java" startLine="40" startPosition="99" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9191251033651632170" fileName="DeprecatedAnnotation_Editor.java" startLine="57" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9191251033651632935" fileName="DeprecatedAnnotation_Editor.java" startLine="69" startPosition="99" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -502,8 +502,8 @@
     <scopeInfo nodeId="9191251033651632976" fileName="DeprecatedAnnotation_Editor.java" startLine="244" startPosition="58" endLine="245" endPosition="47" />
     <scopeInfo nodeId="9191251033651632181" fileName="DeprecatedAnnotation_Editor.java" startLine="257" startPosition="112" endLine="258" endPosition="81" />
     <scopeInfo nodeId="9191251033651632942" fileName="DeprecatedAnnotation_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="83" />
-    <scopeInfo nodeId="9191251033651632232" fileName="DeprecatedAnnotation_Editor.java" startLine="265" startPosition="61" endLine="266" endPosition="43" />
-    <scopeInfo nodeId="9191251033651632944" fileName="DeprecatedAnnotation_Editor.java" startLine="269" startPosition="61" endLine="270" endPosition="43" />
+    <scopeInfo nodeId="9191251033651632918" fileName="DeprecatedAnnotation_Editor.java" startLine="265" startPosition="61" endLine="266" endPosition="43" />
+    <scopeInfo nodeId="9191251033651632948" fileName="DeprecatedAnnotation_Editor.java" startLine="269" startPosition="61" endLine="270" endPosition="43" />
     <scopeInfo nodeId="9191251033651632164" fileName="DeprecatedAnnotation_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="51">
       <varInfo nodeId="9191251033651632164" varName="style" />
     </scopeInfo>
@@ -582,11 +582,11 @@
       <varInfo nodeId="9191251033651632941" varName="node" />
       <varInfo nodeId="9191251033651632941" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="9191251033651632232" fileName="DeprecatedAnnotation_Editor.java" startLine="264" startPosition="0" endLine="268" endPosition="0">
-      <varInfo nodeId="9191251033651632232" varName="str" />
+    <scopeInfo nodeId="9191251033651632918" fileName="DeprecatedAnnotation_Editor.java" startLine="264" startPosition="0" endLine="268" endPosition="0">
+      <varInfo nodeId="9191251033651632918" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="9191251033651632944" fileName="DeprecatedAnnotation_Editor.java" startLine="268" startPosition="0" endLine="272" endPosition="0">
-      <varInfo nodeId="9191251033651632944" varName="str" />
+    <scopeInfo nodeId="9191251033651632948" fileName="DeprecatedAnnotation_Editor.java" startLine="268" startPosition="0" endLine="272" endPosition="0">
+      <varInfo nodeId="9191251033651632948" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="9191251033651632161" fileName="DeprecatedAnnotation_Editor.java" startLine="31" startPosition="89" endLine="36" endPosition="22">
       <varInfo nodeId="9191251033651632161" varName="editorCell" />

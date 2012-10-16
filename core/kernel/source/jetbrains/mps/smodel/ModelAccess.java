@@ -147,7 +147,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   }
 
   static void assertLegalRead(SNode node) {
-    if (node.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
       SModel model = node.getModelInternal();
       String modelName = model == null ? "<null>" : model.getLongName();
       if (ourErroredModels.add(modelName)) {

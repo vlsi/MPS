@@ -37,7 +37,8 @@ public class RefNodeListHandlerElementKeyMap extends EditorCellKeyMap {
         public void execute(KeyEvent keyEvent, EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
-          myListHandler.getOwner().insertChild(anchorNode, myListHandler.getElementRole(), nodeToInsert, true);
+          SNode parentNode = myListHandler.getOwner();
+          parentNode.insertChild(myListHandler.getElementRole(), nodeToInsert, parentNode.getPrevChild(anchorNode));
         }
       };
       insertAction.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_FIRST_POSITION);
@@ -50,7 +51,7 @@ public class RefNodeListHandlerElementKeyMap extends EditorCellKeyMap {
         public void execute(KeyEvent keyEvent, EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
-          myListHandler.getOwner().insertChild(anchorNode, myListHandler.getElementRole(), nodeToInsert, false);
+          myListHandler.getOwner().insertChild(myListHandler.getElementRole(), nodeToInsert, anchorNode);
         }
       };
       addAction.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_LAST_POSITION);

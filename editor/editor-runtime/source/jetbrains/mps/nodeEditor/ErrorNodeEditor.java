@@ -31,7 +31,7 @@ public class ErrorNodeEditor implements INodeEditor {
   public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
     collection.addEditorCell(new EditorCell_Error((EditorContext) editorContext, node, "Can't find an editor."));
-    collection.addEditorCell(new EditorCell_Error((EditorContext) editorContext, node, "Concept = " + node.getConceptFqName()));
+    collection.addEditorCell(new EditorCell_Error((EditorContext) editorContext, node, "Concept = " + node.getConcept().getId()));
     return collection;
 
   }

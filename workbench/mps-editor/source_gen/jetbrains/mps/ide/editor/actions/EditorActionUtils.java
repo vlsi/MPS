@@ -17,8 +17,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorActionUtils {
@@ -144,7 +144,7 @@ public class EditorActionUtils {
           final Wrappers._boolean ancestor = new Wrappers._boolean(false);
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ancestor.value = parentCell.getSNode().isAncestorOf(nextLeaf.getSNode());
+              ancestor.value = SNodeOperations.isAncestor(parentCell.getSNode(), nextLeaf.getSNode());
             }
           });
           if (ancestor.value) {
@@ -177,7 +177,7 @@ public class EditorActionUtils {
           final Wrappers._boolean ancestor = new Wrappers._boolean(false);
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ancestor.value = parentCell.getSNode().isAncestorOf(prevLeaf.getSNode());
+              ancestor.value = SNodeOperations.isAncestor(parentCell.getSNode(), prevLeaf.getSNode());
             }
           });
           if (ancestor.value) {
@@ -194,7 +194,7 @@ public class EditorActionUtils {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode linkDeclaration = SNodeOperations.getContainingLinkDeclaration(((SNode) cell.getSNode()));
+        SNode linkDeclaration = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkDeclaration(((SNode) cell.getSNode()));
         result[0] = linkDeclaration != null && ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, linkDeclaration, "call_isSingular_1213877254557", new Class[]{SNode.class}));
       }
     });

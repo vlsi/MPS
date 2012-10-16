@@ -39,43 +39,47 @@
   <roots>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1193744597902">
       <property name="name" nameId="tpck.1169194664001" value="AddCastStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647385815">
-      <property name="name" nameId="tpck.1169194664001" value="SplitStringIntoConcatenation" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="SplitStringIntoConcatenation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647309293">
-      <property name="name" nameId="tpck.1169194664001" value="SplitIntoDeclarationAndAssignment" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SplitIntoDeclarationAndAssignment" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647284978">
-      <property name="name" nameId="tpck.1169194664001" value="AddAnnotation" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="AddAnnotation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1188208481402" resolveInfo="HasAnnotation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647334600">
-      <property name="name" nameId="tpck.1169194664001" value="FlipBinaryOperation" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="FlipBinaryOperation" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1195647359405">
-      <property name="name" nameId="tpck.1169194664001" value="InvertIfCondition" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="InvertIfCondition" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199557092807">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceEqualityWithEquals" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123152" resolveInfo="EqualsExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199559711021">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceEqualsWithEquality" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199561300578">
@@ -84,23 +88,27 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199621296757">
       <property name="name" nameId="tpck.1169194664001" value="ExtractWhileConditionToInternalIfStatement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1076505808687" resolveInfo="WhileStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199622460250">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceAssertWithIf" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1160998861373" resolveInfo="AssertStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199623693658">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceForLoopWithWhileLoop" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1144231330558" resolveInfo="ForStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199625900037">
-      <property name="name" nameId="tpck.1169194664001" value="FilpEqualsIntention" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="FilpEqualsIntention" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199627182107">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceForEachLoopWithIndexedLoop" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.loops" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1144226303539" resolveInfo="ForeachStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199627245932">
@@ -109,28 +117,32 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199627248517">
       <property name="name" nameId="tpck.1169194664001" value="AddRuntimeExceptionToMethodSignature" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.try_catch" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1164991038168" resolveInfo="ThrowStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1199892779474">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceBlockWithItsContent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1082485599095" resolveInfo="BlockStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1201102619707">
       <property name="name" nameId="tpck.1169194664001" value="MoveInitializerToConstructor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1202130221457">
       <property name="name" nameId="tpck.1169194664001" value="MergeStringConcatenation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068581242875" resolveInfo="PlusExpression" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1202861044458">
       <property name="name" nameId="tpck.1169194664001" value="CreateSetAccessor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="property.implementation.custom" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property.implementation.custom" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1201402044357" resolveInfo="GetAccessor" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1203413213560">
       <property name="name" nameId="tpck.1169194664001" value="MakeGeneric" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1203701450442">
@@ -138,8 +150,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1203703270380">
-      <property name="name" nameId="tpck.1169194664001" value="AddFinalModifierToAny" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="AddFinalModifierToAny" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206063267399">
@@ -154,17 +166,17 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206066794083">
       <property name="name" nameId="tpck.1169194664001" value="ElsifSwapWithMain" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="control_flow.if_switch" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1206060495898" resolveInfo="ElsifClause" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206631638103">
       <property name="name" nameId="tpck.1169194664001" value="AddInstanceInitializer" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1214431614908">
       <property name="name" nameId="tpck.1169194664001" value="ConvertClassCreatorToAnonimous" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1212685548494" resolveInfo="ClassCreator" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1215507513710">
@@ -178,6 +190,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1221573777472">
       <property name="name" nameId="tpck.1169194664001" value="ConvertAssignmentToVariableDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1223648378225">
@@ -186,7 +199,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1224168785803">
       <property name="name" nameId="tpck.1169194664001" value="AddFieldForUnUsedParameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1226917954178">
@@ -196,23 +209,23 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1226918395187">
       <property name="name" nameId="tpck.1169194664001" value="RemoveArrayType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1070534760951" resolveInfo="ArrayType" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1227519137253">
-      <property name="name" nameId="tpck.1169194664001" value="MakeClassAbstract" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeClassAbstract" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="class" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1230290102486">
       <property name="name" nameId="tpck.1169194664001" value="SpecifyClass" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1231930815009">
-      <property name="name" nameId="tpck.1169194664001" value="AddThrows" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="AddThrows" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1236007216018">
@@ -220,19 +233,19 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1236187435379">
-      <property name="name" nameId="tpck.1169194664001" value="MakeMethodAbstarct" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeMethodAbstarct" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1238764345596">
-      <property name="name" nameId="tpck.1169194664001" value="IterateOverIterable" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="IterateOverIterable" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123155" resolveInfo="ExpressionStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1240248297859">
-      <property name="name" nameId="tpck.1169194664001" value="MakeMethodFinal" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeMethodFinal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
@@ -250,32 +263,32 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2357139912674293033">
-      <property name="name" nameId="tpck.1169194664001" value="MakeClassAbstractFromMethod" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeClassAbstractFromMethod" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="class" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="521412098689817330">
       <property name="name" nameId="tpck.1169194664001" value="ChangeStaticInInner" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="class" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1705375422254837433">
-      <property name="name" nameId="tpck.1169194664001" value="MakeClassFinal" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeClassFinal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="class" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="3898325814824766814">
-      <property name="name" nameId="tpck.1169194664001" value="MakeParameterFinal" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeParameterFinal" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068581242874" resolveInfo="ParameterReference" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7288587046701126243">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertToReturnStatement" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertToReturnStatement" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123155" resolveInfo="ExpressionStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="8145509665020019463">
@@ -304,81 +317,81 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="5742179528877834612">
       <property name="name" nameId="tpck.1169194664001" value="CreateMethodDeclaration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6670547060642540858">
       <property name="name" nameId="tpck.1169194664001" value="CreateMethodDeclarationUtil" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707474220">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithIf" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithIf" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707626696">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithIfElse" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithIfElse" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707714383">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithWhile" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithWhile" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707819213">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithDoWhile" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithDoWhile" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707825816">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithFor" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithFor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707825882">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundStatementsWithForEach" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundStatementsWithForEach" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707825944">
-      <property name="name" nameId="tpck.1169194664001" value="SuroundWithTryCatch" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SuroundWithTryCatch" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707895805">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithTryFinally" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithTryFinally" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707929765">
-      <property name="name" nameId="tpck.1169194664001" value="TryCatchFinally" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="TryCatchFinally" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707929843">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithSynchronized" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithSynchronized" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707929907">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithBrackets" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithBrackets" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="3366354716707929978">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithComment" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithComment" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="surround" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
@@ -387,8 +400,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="985108658453262823">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithParenthesis" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithParenthesis" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="418779379561917490">
@@ -413,7 +426,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7992933469059517022">
       <property name="name" nameId="tpck.1169194664001" value="AddTypeParameters" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.base" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1204053956946" resolveInfo="IMethodCall" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4276006055363816691">
@@ -423,42 +436,42 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7638980610829995124">
       <property name="name" nameId="tpck.1169194664001" value="ConvertToClosure" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1170345865475" resolveInfo="AnonymousClass" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="917166302015890876">
-      <property name="name" nameId="tpck.1169194664001" value="UnwrapIfThenBlock" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="UnwrapIfThenBlock" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7093209195843978568">
-      <property name="name" nameId="tpck.1169194664001" value="UnwrapTryCatch" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="UnwrapTryCatch" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.3718132079121388578" resolveInfo="ITryCatchStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4138629533259838060">
-      <property name="name" nameId="tpck.1169194664001" value="RemoveTVDInAnonymousClass" />
-      <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveTVDInAnonymousClass" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1170345865475" resolveInfo="AnonymousClass" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="5155195849735077874">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
       <property name="name" nameId="tpck.1169194664001" value="SplitIf" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2040594400225274133">
       <property name="name" nameId="tpck.1169194664001" value="IntentionUtils" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2040594400225361890">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertIfReturnConditionToTernaryOperator" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertIfReturnConditionToTernaryOperator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2040594400225005124">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertIfConditionToTernaryOperator" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertIfConditionToTernaryOperator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
     </node>
@@ -5575,12 +5588,12 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1199893164707">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199893164708">
                 <property name="name" nameId="tpck.1169194664001" value="role" />
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204332445601">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="1199893164711">
-                    <node role="leftExpression" roleId="tp25.1145404616321" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1199893164712" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7313603104358600958">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="7313603104358600959">
+                    <node role="leftExpression" roleId="tp25.1145404616321" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="7313603104358600960" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1204332445602">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetRole_()%cjava%dlang%dString" resolveInfo="getRole_" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7313603104358600961">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
                   </node>
                 </node>
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225190468262" />

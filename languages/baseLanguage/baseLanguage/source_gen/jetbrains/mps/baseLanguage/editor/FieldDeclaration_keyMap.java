@@ -134,7 +134,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
                 {
                   quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_16 = quotedNode_8;
-                  quotedNode1_16.setReferent("fieldDeclaration", (SNode) parameter_18);
+                  quotedNode1_16.setReferenceTarget("fieldDeclaration", (SNode) parameter_18);
                   quotedNode_6.addChild("operation", quotedNode1_16);
                 }
                 quotedNode_5.addChild("expression", quotedNode1_14);
@@ -256,7 +256,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
                   {
                     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_22 = quotedNode_12;
-                    quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_25);
+                    quotedNode1_22.setReferenceTarget("fieldDeclaration", (SNode) parameter_25);
                     quotedNode_10.addChild("operation", quotedNode1_22);
                   }
                   quotedNode_8.addChild("lValue", quotedNode1_20);
@@ -288,7 +288,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
           }
           result = quotedNode1_13;
         }
-        quotedNode_9.setReferent("variableDeclaration", quotedNode_5);
+        quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_5);
         return result;
       }
     }

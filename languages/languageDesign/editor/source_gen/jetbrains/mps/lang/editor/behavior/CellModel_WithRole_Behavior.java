@@ -22,7 +22,7 @@ public class CellModel_WithRole_Behavior {
   }
 
   public static String virtual_getCellProviderClassName_1216378357889(SNode thisNode) {
-    String conceptFqName = thisNode.getConceptFqName();
+    String conceptFqName = thisNode.getConcept().getId();
     String something = NameUtil.removeStructureFromFqName(conceptFqName);
     return CellProviderNameUtil.getProviderClassName(something);
   }

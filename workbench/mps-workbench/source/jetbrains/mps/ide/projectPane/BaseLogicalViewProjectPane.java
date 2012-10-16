@@ -29,7 +29,6 @@ import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
@@ -44,6 +43,8 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -51,18 +52,21 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.JTree;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
   private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
@@ -79,7 +83,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   };
 
   private IMakeNotificationListener myMakeNotificationListener = new Stub() {
-    public void finished(MakeNotification notification) {
+    @Override
+    public void sessionClosed(MakeNotification notification) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
       rebuild();
     }
@@ -183,8 +188,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
             return ModelAccess.instance().runReadAction(new Computable<Integer>() {
               @Override
               public Integer compute() {
-                String concept1 = node1.getConceptFqName();
-                String concept2 = node2.getConceptFqName();
+                String concept1 = node1.getConcept().getId();
+                String concept2 = node2.getConcept().getId();
                 return concept1.compareTo(concept2);
               }
             });
@@ -261,13 +266,13 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ((SModelTreeNode) treeNode).getSModelDescriptor();
   }
 
-  public IModule getSelectedModule() {
+  public SModule getSelectedModule() {
     ProjectModuleTreeNode selectedTreeNode = getSelectedTreeNode(ProjectModuleTreeNode.class);
     if (selectedTreeNode == null) return null;
     return selectedTreeNode.getModule();
   }
 
-  public IModule getContextModule() {
+  public SModule getContextModule() {
     MPSTreeNode treeNode = (MPSTreeNode) getSelectedTreeNode(TreeNode.class);
     while (treeNode != null && !(treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
@@ -276,8 +281,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ((ProjectModuleTreeNode) treeNode).getModule();
   }
 
-  public List<IModule> getSelectedModules() {
-    List<IModule> result = new ArrayList<IModule>();
+  public List<SModule> getSelectedModules() {
+    List<SModule> result = new ArrayList<SModule>();
     for (ProjectModuleTreeNode node : getSelectedTreeNodes(ProjectModuleTreeNode.class)) {
       result.add(node.getModule());
     }
@@ -340,7 +345,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     } else if (treeNode instanceof NamespaceTextNode) {
       return ActionPlace.PROJECT_PANE_NAMESPACE;
     } else if (treeNode instanceof ProjectModuleTreeNode) {
-      IModule module = getSelectedModule();
+      SModule module = getSelectedModule();
       if (module instanceof Language) {
         return ActionPlace.PROJECT_PANE_LANGUAGE;
       } else if (module instanceof DevKit) {
@@ -390,9 +395,11 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
 
     // add selected modules files
-    List<IModule> modules = getSelectedModules();
+    List<SModule> modules = getSelectedModules();
     if (modules != null) {
-      for (IModule module : modules) {
+      for (SModule m : modules) {
+        if (!(m instanceof AbstractModule)) continue;
+        AbstractModule module = (AbstractModule) m;
         IFile home = module.getBundleHome();
         if (home != null) {
           VirtualFile vfile = VirtualFileUtils.getVirtualFile(home);

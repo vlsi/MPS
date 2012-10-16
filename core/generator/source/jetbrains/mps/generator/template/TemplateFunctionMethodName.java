@@ -23,74 +23,74 @@ import jetbrains.mps.smodel.SNode;
  */
 public class TemplateFunctionMethodName {
   public static String createRootRule_Condition(SNode function) {
-    return "createRootRule_Condition_" + function.getId();
+    return "createRootRule_Condition_" + function.getSNodeId().toString();
   }
 
   public static String ifMacro_Condition(SNode function) {
-    return "ifMacro_Condition_" + function.getId();
+    return "ifMacro_Condition_" + function.getSNodeId().toString();
   }
 
   public static String dropRootRule_Condition(SNode function) {
-    return "dropRootRule_Condition_" + function.getId();
+    return "dropRootRule_Condition_" + function.getSNodeId().toString();
   }
 
   public static String baseMappingRule_Condition(SNode function) {
-    return "baseMappingRule_Condition_" + function.getId();
+    return "baseMappingRule_Condition_" + function.getSNodeId().toString();
   }
 
   public static String propertyMacro_GetPropertyValue(SNode function) {
-    return "propertyMacro_GetPropertyValue_" + function.getId();
+    return "propertyMacro_GetPropertyValue_" + function.getSNodeId().toString();
   }
 
   public static String referenceMacro_GetReferent(SNode function) {
-    return "referenceMacro_GetReferent_" + function.getId();
+    return "referenceMacro_GetReferent_" + function.getSNodeId().toString();
   }
 
   public static String sourceSubstituteMacro_SourceNodesQuery(SNode function) {
-    return "sourceNodesQuery_" + function.getId();
+    return "sourceNodesQuery_" + function.getSNodeId().toString();
   }
 
   public static String sourceSubstituteMacro_SourceNodeQuery(SNode function) {
-    return "sourceNodeQuery_" + function.getId();
+    return "sourceNodeQuery_" + function.getSNodeId().toString();
   }
 
   public static String templateFragment_ContextNodeQuery(SNode function) {
-    return "templateFragment_ContextNodeQuery_" + function.getId();
+    return "templateFragment_ContextNodeQuery_" + function.getSNodeId().toString();
   }
 
   public static String weaving_MappingRule_ContextNodeQuery(SNode function) {
-    return "weaving_MappingRule_ContextNodeQuery_" + function.getId();
+    return "weaving_MappingRule_ContextNodeQuery_" + function.getSNodeId().toString();
   }
 
   public static String mapSrcMacro_MapperFunction(SNode function) {
-    return "mapSrcMacro_mapper_" + function.getId();
+    return "mapSrcMacro_mapper_" + function.getSNodeId().toString();
   }
 
   public static String mapSrcMacro_PostMapperFunction(SNode function) {
-    return "mapSrcMacro_post_mapper_" + function.getId();
+    return "mapSrcMacro_post_mapper_" + function.getSNodeId().toString();
   }
 
   public static String mappingScript_CodeBlock(SNode function) {
-    return "mappingScript_CodeBlock_" + function.getId();
+    return "mappingScript_CodeBlock_" + function.getSNodeId().toString();
   }
 
   public static String templateArgumentQuery(SNode function) {
-    return "templateArgumentQuery_" + function.getId();
+    return "templateArgumentQuery_" + function.getSNodeId().toString();
   }
 
   public static String patternRule_Condition(SNode pattern) {
-    return "patternRule_Condition_" + pattern.getId();
+    return "patternRule_Condition_" + pattern.getSNodeId().toString();
   }
 
   public static String mappingConfiguration_Condition(SNode function) {
-    return "mappingConfiguration_Condition_" + function.getId();
+    return "mappingConfiguration_Condition_" + function.getSNodeId().toString();
   }
 
   public static String insertMacro_Query(SNode function) {
-    return "insertMacro_Query_" + function.getId();
+    return "insertMacro_Query_" + function.getSNodeId().toString();
   }
 
   public static String varValue_Query(SNode function) {
-    return "insertMacro_varValue_" + function.getId();
+    return "insertMacro_varValue_" + function.getSNodeId().toString();
   }
 }

@@ -75,26 +75,4 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
   public void cancel() {
     myIndicator.cancel();
   }
-
-  @Override
-  protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
-    return new ProgressMonitorAdapter.SubProgressMonitor(this, work, kind);
-  }
-
-  protected class SubProgressMonitor extends ProgressMonitorBase.SubProgressMonitor {
-
-    private SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
-      super(parent, work, kind);
-    }
-
-    @Override
-    protected void setTitleInternal(String name) {
-      getParent().setTitleInternal(name);
-    }
-
-    @Override
-    protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
-      return new ProgressMonitorAdapter.SubProgressMonitor(this, work, kind);
-    }
-  }
 }

@@ -57,7 +57,7 @@ public class MappingConfigFinder implements IFinder {
   }
 
   private void collectChildrenThatMayHaveReferenceOnTemplate(SNode parent, List<SNode> result) {
-    List<SNode> children = parent.getChildren(false);
+    List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(parent, false);
     for (SNode child : children) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
         continue;

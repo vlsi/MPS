@@ -958,7 +958,7 @@
     <nodeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="181" startPosition="45" endLine="182" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="185" startPosition="59" endLine="186" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6899962303585736486" fileName="CreateBreakpointOperation_Editor.java" startLine="189" startPosition="77" endLine="190" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6899962303585736458" fileName="CreateBreakpointOperation_Editor.java" startLine="193" startPosition="65" endLine="194" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6899962303585736462" fileName="CreateBreakpointOperation_Editor.java" startLine="193" startPosition="65" endLine="194" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2569394751387978482" fileName="CreateBreakpointOperation_Editor.java" startLine="56" startPosition="133" endLine="58" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2569394751387978484" fileName="CreateBreakpointOperation_Editor.java" startLine="64" startPosition="128" endLine="66" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2569394751387978486" fileName="CreateBreakpointOperation_Editor.java" startLine="94" startPosition="128" endLine="96" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -974,7 +974,7 @@
     <nodeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
     <nodeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#(Ljava/lang/Object;)Ljava/lang/String;" />
     <nodeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText_internal#(Ljetbrains/mps/debug/api/breakpoints/IBreakpointKind;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6899962303585736458" fileName="CreateBreakpointOperation_Editor.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_vi48ux_a0a1a0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6899962303585736462" fileName="CreateBreakpointOperation_Editor.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_vi48ux_a0a1a0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2569394751387978490" fileName="CreateBreakpointOperation_Editor.java" startLine="72" startPosition="128" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2569394751387978971" fileName="CreateBreakpointOperation_Editor.java" startLine="83" startPosition="128" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2569394751387978488" fileName="CreateBreakpointOperation_Editor.java" startLine="140" startPosition="58" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1012,7 +1012,7 @@
     <scopeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="181" startPosition="45" endLine="182" endPosition="19" />
     <scopeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="185" startPosition="59" endLine="186" endPosition="78" />
     <scopeInfo nodeId="6899962303585736485" fileName="CreateBreakpointOperation_Editor.java" startLine="189" startPosition="77" endLine="190" endPosition="47" />
-    <scopeInfo nodeId="6899962303585736458" fileName="CreateBreakpointOperation_Editor.java" startLine="193" startPosition="65" endLine="194" endPosition="45" />
+    <scopeInfo nodeId="6899962303585736462" fileName="CreateBreakpointOperation_Editor.java" startLine="193" startPosition="65" endLine="194" endPosition="45" />
     <scopeInfo nodeId="2569394751387978482" fileName="CreateBreakpointOperation_Editor.java" startLine="56" startPosition="133" endLine="58" endPosition="74" />
     <scopeInfo nodeId="2569394751387978484" fileName="CreateBreakpointOperation_Editor.java" startLine="64" startPosition="128" endLine="66" endPosition="85" />
     <scopeInfo nodeId="2569394751387978490" fileName="CreateBreakpointOperation_Editor.java" startLine="74" startPosition="5" endLine="76" endPosition="56">
@@ -1063,8 +1063,8 @@
     <scopeInfo nodeId="6899962303585719081" fileName="CreateBreakpointOperation_Editor.java" startLine="188" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="6899962303585719081" varName="parameterObject" />
     </scopeInfo>
-    <scopeInfo nodeId="6899962303585736458" fileName="CreateBreakpointOperation_Editor.java" startLine="192" startPosition="0" endLine="196" endPosition="0">
-      <varInfo nodeId="6899962303585736458" varName="str" />
+    <scopeInfo nodeId="6899962303585736462" fileName="CreateBreakpointOperation_Editor.java" startLine="192" startPosition="0" endLine="196" endPosition="0">
+      <varInfo nodeId="6899962303585736462" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="2569394751387978482" fileName="CreateBreakpointOperation_Editor.java" startLine="55" startPosition="88" endLine="60" endPosition="22">
       <varInfo nodeId="2569394751387978482" varName="editorCell" />

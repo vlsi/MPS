@@ -15,9 +15,15 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.mps.openapi.module.SModule;
+
 public interface SLanguage {
 
   String getPresentation();
 
   Iterable<SAbstractConcept> getConcepts();
+
+  Iterable<SModule> getLanguageRuntimes();
+
+  SModule getModule();
 }

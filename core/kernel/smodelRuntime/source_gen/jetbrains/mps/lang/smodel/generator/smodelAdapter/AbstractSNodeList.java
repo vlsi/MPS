@@ -163,17 +163,17 @@ import java.util.Collection;
 
   public static class LinkedSNodesList extends AbstractSNodeList {
     public LinkedSNodesList(SNode referenceContainer, String role) {
-      super(referenceContainer, role, referenceContainer.getReferent(role));
+      super(referenceContainer, role, referenceContainer.getReferenceTarget(role));
     }
 
     @Override
     protected void doRemoveReference(SNode node) {
-      myReferenceContainer.removeReferent(myRole);
+      myReferenceContainer.setReferenceTarget(myRole, null);
     }
 
     @Override
     protected void doAddReference(SNode node) {
-      myReferenceContainer.setReferent(myRole, node);
+      myReferenceContainer.setReferenceTarget(myRole, node);
     }
 
     @Override

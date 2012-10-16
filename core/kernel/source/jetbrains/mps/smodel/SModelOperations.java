@@ -24,6 +24,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,9 +57,9 @@ public class SModelOperations {
     }
 
     for (SNode node : model.nodes()) {
-      Language lang = node.getLanguage();
+      Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) {
-        LOG.error("Can't find language " + node.getLanguageNamespace());
+        LOG.error("Can't find language " + NameUtil.namespaceFromConceptFQName(node.getConcept().getId()));
         continue;
       }
       ModuleReference ref = lang.getModuleReference();
@@ -73,7 +74,7 @@ public class SModelOperations {
         model.addLanguage(ref);
       }
 
-      for (SReference reference : node.getReferencesIterable()) {
+      for (SReference reference : node.getReferences()) {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
@@ -154,7 +155,7 @@ public class SModelOperations {
   public static Set<ModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
     for (SNode node : model.nodes()) {
-      Language lang = node.getLanguage();
+      Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) continue;
       result.add(lang.getModuleReference());
     }

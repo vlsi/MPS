@@ -6,6 +6,7 @@ import jetbrains.mps.components.CoreComponent;
 import java.util.Comparator;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -19,10 +20,10 @@ public class ResolverComponent implements CoreComponent {
     public int compare(SReference first, SReference second) {
       SNode firstNode = first.getSourceNode();
       SNode secondNode = second.getSourceNode();
-      if (firstNode.isAncestorOf(secondNode)) {
+      if (SNodeOperations.isAncestor(firstNode, secondNode)) {
         return 1;
       }
-      if (secondNode.isAncestorOf(firstNode)) {
+      if (SNodeOperations.isAncestor(secondNode, firstNode)) {
         return -1;
       }
       return 0;

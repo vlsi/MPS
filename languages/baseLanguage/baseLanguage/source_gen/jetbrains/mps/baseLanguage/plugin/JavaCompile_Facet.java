@@ -9,13 +9,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.resources.TResource;
@@ -26,8 +28,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
@@ -89,7 +89,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     return new JavaCompile_Facet.TargetProperties();
   }
 
-  public static class Target_compile implements ITargetEx {
+  public static class Target_compile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -100,7 +100,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
@@ -121,18 +121,12 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if ((int) Sequence.fromIterable(toCompile).count() == 0) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
-              monitor.currentProgress().beginWork("Compiling", 1, monitor.currentProgress().workLeft());
               final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  cr.value = new ModuleMaker().make(SetSequence.fromSetWithValues(new HashSet<IModule>(), toCompile), new EmptyProgressMonitor());
+                  cr.value = new ModuleMaker().make(SetSequence.fromSetWithValues(new HashSet<IModule>(), toCompile), progressMonitor);
                 }
               });
-              monitor.currentProgress().advanceWork("Compiling", 1, IterableUtils.join(Sequence.fromIterable(toCompile).select(new ISelector<IModule, String>() {
-                public String select(IModule it) {
-                  return it.getModuleReference().getModuleFqName();
-                }
-              }), ", "));
               if (cr.value != null) {
                 pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
                 for (IMessage msg : cr.value.getMessages()) {
@@ -162,8 +156,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 }
                 _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
-
-              monitor.currentProgress().finishWork("Compiling");
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0a);
           }
@@ -227,6 +219,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
       return t;
     }
 
+    public int workEstimate() {
+      return 300;
+    }
+
     public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
       public Parameters() {
         super();
@@ -259,7 +255,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_auxCompile implements ITargetEx {
+  public static class Target_auxCompile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -270,7 +266,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
@@ -405,6 +401,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
       return t;
     }
 
+    public int workEstimate() {
+      return 100;
+    }
+
     public static class Parameters extends MultiTuple._1<Boolean> {
       public Parameters() {
         super();
@@ -429,7 +429,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_compileToMemory implements ITargetEx {
+  public static class Target_compileToMemory implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IFResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -440,7 +440,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0c = null;
           switch (0) {
             case 0:
@@ -551,6 +551,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
         ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
+    }
+
+    public int workEstimate() {
+      return 200;
     }
 
     public static class Parameters extends MultiTuple._2<Iterable<IClassPathItem>, Boolean> {

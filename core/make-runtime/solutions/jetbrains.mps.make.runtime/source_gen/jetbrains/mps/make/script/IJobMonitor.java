@@ -5,6 +5,12 @@ package jetbrains.mps.make.script;
 
 public interface IJobMonitor {
   public boolean stopRequested();
+  /**
+   * Progress monitor is passed as a method parameter
+   * 
+   * @return dummy IProgress
+   */
+  @Deprecated
   public IProgress currentProgress();
   public void reportFeedback(IFeedback fdbk);
   public static class Stub implements IJobMonitor {

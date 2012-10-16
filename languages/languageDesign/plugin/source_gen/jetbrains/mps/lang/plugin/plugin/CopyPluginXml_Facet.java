@@ -9,13 +9,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -65,7 +67,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
     return new CopyPluginXml_Facet.TargetProperties();
   }
 
-  public static class Target_copyPluginXml implements ITargetEx {
+  public static class Target_copyPluginXml implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -76,53 +78,58 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ehksfb_a0a = null;
           switch (0) {
             case 0:
-              for (IResource resource : input) {
-                TResource tres = (TResource) resource;
+              progressMonitor.start("Copying resources", 2);
+              progressMonitor.step("plugin.xml");
+              try {
+                for (IResource resource : input) {
+                  TResource tres = (TResource) resource;
 
-                String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
+                  String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
 
-                if (dest != null) {
-                  final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModuleFile(tres.module().getDescriptorFile()).expandPath(dest));
-                  if (destDir.exists() && destDir.isDirectory()) {
-                    final IFile metaInf = destDir.getDescendant("META-INF");
-                    if (!(metaInf.exists()) || metaInf.isDirectory()) {
-                      final IFile[] pluginXml = new IFile[1];
-                      new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
-                        @Override
-                        public boolean acceptWritten(IFile file) {
-                          if (eq_mk86fn_a0a0a0a0a0b0b0b0e0a0a1a0a0a0a0a(file.getName(), "plugin.xml")) {
-                            pluginXml[0] = file;
-                            monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + file + " to " + metaInf + " directory.")));
-                            return false;
-                          }
-                          return true;
-                        }
-                      });
-                      if (pluginXml[0] != null) {
-                        ThreadUtils.runInUIThreadAndWait(new Runnable() {
-                          public void run() {
-                            ModelAccess.instance().requireWrite(new Runnable() {
-                              public void run() {
-                                if (!(metaInf.exists())) {
-                                  metaInf.mkdirs();
-                                }
-                                IFileUtils.copyFileContent(pluginXml[0], metaInf.getDescendant(pluginXml[0].getName()));
-                              }
-                            });
+                  if (dest != null) {
+                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModuleFile(tres.module().getDescriptorFile()).expandPath(dest));
+                    if (destDir.exists() && destDir.isDirectory()) {
+                      final IFile metaInf = destDir.getDescendant("META-INF");
+                      if (!(metaInf.exists()) || metaInf.isDirectory()) {
+                        final IFile[] pluginXml = new IFile[1];
+                        new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
+                          @Override
+                          public boolean acceptWritten(IFile file) {
+                            if (eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a0a(file.getName(), "plugin.xml")) {
+                              pluginXml[0] = file;
+                              monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + file + " to " + metaInf + " directory.")));
+                              return false;
+                            }
+                            return true;
                           }
                         });
+                        if (pluginXml[0] != null) {
+                          ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                            public void run() {
+                              ModelAccess.instance().requireWrite(new Runnable() {
+                                public void run() {
+                                  if (!(metaInf.exists())) {
+                                    metaInf.mkdirs();
+                                  }
+                                  IFileUtils.copyFileContent(pluginXml[0], metaInf.getDescendant(pluginXml[0].getName()));
+                                }
+                              });
+                            }
+                          });
+                        }
                       }
+
                     }
-
                   }
+
+                  _output_ehksfb_a0a = Sequence.fromIterable(_output_ehksfb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
                 }
-
-
-                _output_ehksfb_a0a = Sequence.fromIterable(_output_ehksfb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+              } finally {
+                progressMonitor.done();
               }
             default:
               return new IResult.SUCCESS(_output_ehksfb_a0a);
@@ -187,7 +194,11 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       return t;
     }
 
-    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0e0a0a1a0a0a0a0a(Object a, Object b) {
+    public int workEstimate() {
+      return 10;
+    }
+
+    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a0a(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b

@@ -37,9 +37,9 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.reference.SModuleReference;
 
 import java.io.File;
 import java.io.IOException;
@@ -111,12 +111,11 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public SModuleId getModuleId() {
-    // TODO API (implement)
-    return null;
+    return getModuleReference().getModuleId();
   }
 
   @Override
-  public String getPresentation() {
+  public String getModuleName() {
     return getModuleFqName();
   }
 
@@ -127,13 +126,13 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Override
-  public Collection<SModuleReference> getUsedModules() {
+  public Iterable<SDependency> getDeclaredDependencies() {
     // TODO API (implement)
     return null;
   }
 
   @Override
-  public Collection<SLanguage> getUsedLanguages() {
+  public Iterable<SLanguage> getUsedLanguages() {
     // TODO API (implement)
     return null;
   }
@@ -431,7 +430,7 @@ public abstract class AbstractModule implements IModule {
 
         for (String path : getAllStubPaths()) {
           try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleFqName());
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleName());
             myCachedClassPathItem.add(pathItem);
           } catch (IOException e) {
             LOG.error(e.getMessage());
@@ -494,6 +493,11 @@ public abstract class AbstractModule implements IModule {
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return SModelRepository.getInstance().getModelDescriptors(this);
+  }
+
+  @Override
+  public Collection<SModel> getModels() {
+    return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
   public List<SModelDescriptor> getHiddenModelDescriptors() {

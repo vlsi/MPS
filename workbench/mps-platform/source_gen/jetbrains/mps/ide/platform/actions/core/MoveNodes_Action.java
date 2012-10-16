@@ -105,11 +105,11 @@ public class MoveNodes_Action extends BaseAction {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
-            if (!(((SNode) node).isRegistered()) || ((SNode) node).isDisposed()) {
+            if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) node))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) node))) {
               return;
             }
           }
-          if (newNode instanceof SNode && (!(((SNode) newNode).isRegistered()) || ((SNode) newNode).isDisposed())) {
+          if (newNode instanceof SNode && (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) newNode))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) newNode)))) {
             return;
           }
           if (newNode instanceof SModelDescriptor && (!(((SModelDescriptor) newNode).isRegistered()))) {

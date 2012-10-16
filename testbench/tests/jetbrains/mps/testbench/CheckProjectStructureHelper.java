@@ -45,6 +45,11 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SNode.ChildVisitor;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
+import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -286,26 +291,42 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private static void checkModelNodes(@NotNull SModel model, @NotNull List<String> result) {
-    for (SNode node : model.nodes()) {
-      for (String propname : node.getProperties().keySet()) {
-        SNode decl = node.getPropertyDeclaration(propname);
-        if (decl == null) {
-          result.add("unknown property: `" + propname + "' in node " + node.getDebugText());
-        }
+  private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
+    for (final SNode node : model.nodes()) {
+      final SConcept concept = node.getConcept();
+      if (concept == null) {
+        result.add("unknown concept of node: " + node.getDebugText());
+        continue;
       }
-      for (SReference ref : node.getReferencesIterable()) {
-        SNode decl = node.getLinkDeclaration(ref.getRole());
-        if (decl == null) {
-          result.add("unknown link role: `" + ref.getRole() + "' in node " + node.getDebugText());
+
+      node.visitProperties(new PropertyVisitor() {
+        public boolean visitProperty(String name, String value) {
+          if (concept.findProperty(name) == null) {
+            result.add("unknown property: `" + name + "' in node " + node.getDebugText());
+          }
+          return true;
         }
-      }
-      for (SNode child : node.getChildren()) {
-        SNode decl = child.getRoleLink();
-        if (decl == null) {
-          result.add("unknown child role: `" + child.getRole_() + "' in node " + node.getDebugText());
+      });
+
+      node.visitReferences(new ReferenceVisitor() {
+        public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+          SLink link = concept.findLink(ref.getRole());
+          if (link == null || !link.isReference()) {
+            result.add("unknown link role: `" + ref.getRole() + "' in node " + node.getDebugText());
+          }
+          return true;
         }
-      }
+      });
+
+      node.visitChildren(new ChildVisitor() {
+        public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
+          SLink link = concept.findLink(role);
+          if (link == null || link.isReference()) {
+            result.add("unknown child role: `" + role + "' in node " + node.getDebugText());
+          }
+          return true;
+        }
+      });
     }
   }
 
@@ -382,7 +403,7 @@ public class CheckProjectStructureHelper {
             append(node.getModel().getLongName()).
             append("}").
             append(" node ").
-            append(node.getId()).
+            append(node.getSNodeId().toString()).
             append("(").
             append(node).
             append(")\n");

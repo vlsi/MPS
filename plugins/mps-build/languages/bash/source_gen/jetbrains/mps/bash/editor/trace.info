@@ -927,7 +927,7 @@
     <nodeInfo nodeId="3147078024757582238" fileName="ExternalCommandDescription_EditorComponent.java" startLine="75" startPosition="78" endLine="76" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3147078024757582238" fileName="ExternalCommandDescription_EditorComponent.java" startLine="77" startPosition="10" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3147078024757674243" fileName="ExternalCommandDescription_EditorComponent.java" startLine="81" startPosition="111" endLine="82" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3147078024757674250" fileName="ExternalCommandDescription_EditorComponent.java" startLine="85" startPosition="61" endLine="86" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3147078024757674254" fileName="ExternalCommandDescription_EditorComponent.java" startLine="85" startPosition="61" endLine="86" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3147078024757582238" fileName="ExternalCommandDescription_EditorComponent.java" startLine="67" startPosition="58" endLine="69" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3147078024757582231" fileName="ExternalCommandDescription_EditorComponent.java" startLine="20" startPosition="86" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExternalCommandDescription_EditorComponent#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3147078024757582233" fileName="ExternalCommandDescription_EditorComponent.java" startLine="41" startPosition="48" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -937,7 +937,7 @@
     <nodeInfo nodeId="3147078024757582236" fileName="ExternalCommandDescription_EditorComponent.java" startLine="52" startPosition="93" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3147078024757582238" fileName="ExternalCommandDescription_EditorComponent.java" startLine="66" startPosition="26" endLine="70" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3147078024757674241" fileName="ExternalCommandDescription_EditorComponent.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_3xyrme_a0a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="3147078024757674250" fileName="ExternalCommandDescription_EditorComponent.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_3xyrme_a0a0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3147078024757674254" fileName="ExternalCommandDescription_EditorComponent.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_3xyrme_a0a0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3147078024757582231" fileName="ExternalCommandDescription_EditorComponent.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3147078024757582236" fileName="ExternalCommandDescription_EditorComponent.java" startLine="50" startPosition="128" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3147078024757582238" fileName="ExternalCommandDescription_EditorComponent.java" startLine="72" startPosition="59" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -951,7 +951,7 @@
     <scopeInfo nodeId="3147078024757582233" fileName="ExternalCommandDescription_EditorComponent.java" startLine="42" startPosition="109" endLine="43" endPosition="83" />
     <scopeInfo nodeId="3147078024757582233" fileName="ExternalCommandDescription_EditorComponent.java" startLine="44" startPosition="5" endLine="45" endPosition="81" />
     <scopeInfo nodeId="3147078024757674242" fileName="ExternalCommandDescription_EditorComponent.java" startLine="81" startPosition="111" endLine="82" endPosition="87" />
-    <scopeInfo nodeId="3147078024757674250" fileName="ExternalCommandDescription_EditorComponent.java" startLine="85" startPosition="61" endLine="86" endPosition="43" />
+    <scopeInfo nodeId="3147078024757674254" fileName="ExternalCommandDescription_EditorComponent.java" startLine="85" startPosition="61" endLine="86" endPosition="43" />
     <scopeInfo nodeId="3147078024757582231" fileName="ExternalCommandDescription_EditorComponent.java" startLine="34" startPosition="92" endLine="36" endPosition="59" />
     <scopeInfo nodeId="3147078024757582236" fileName="ExternalCommandDescription_EditorComponent.java" startLine="53" startPosition="5" endLine="55" endPosition="57">
       <varInfo nodeId="3147078024757582236" varName="style" />
@@ -978,8 +978,8 @@
       <varInfo nodeId="3147078024757674241" varName="node" />
       <varInfo nodeId="3147078024757674241" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3147078024757674250" fileName="ExternalCommandDescription_EditorComponent.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="3147078024757674250" varName="str" />
+    <scopeInfo nodeId="3147078024757674254" fileName="ExternalCommandDescription_EditorComponent.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="3147078024757674254" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="3147078024757582231" fileName="ExternalCommandDescription_EditorComponent.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="3147078024757582231" varName="editorContext" />

@@ -75,7 +75,7 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public synchronized INodeEditor loadEditor(EditorContext context, SNode node) {
-    assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getId() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
+    assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getSNodeId().toString() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
 
     if (node.getLanguage() == null) {
       return new ErrorNodeEditor();
@@ -120,7 +120,7 @@ public class EditorsFinderManager implements ApplicationComponent {
       public INodeEditor compute() {
         SNode nodeConcept = SNodeOperations.getConceptDeclaration(nodeToEdit);
         if (nodeConcept == null) {
-          EditorsFinderManager.LOG.error("error loading editor for node " + nodeToEdit.getDebugText() + "\n" + "couldn't find node concept");
+          EditorsFinderManager.LOG.error("error loading editor for node " + jetbrains.mps.util.SNodeOperations.getDebugText(nodeToEdit) + "\n" + "couldn't find node concept");
           return null;
         }
         if (SNodeOperations.isInstanceOf(nodeConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
@@ -210,7 +210,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
-      return new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, node.getDebugText());
+      return new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }

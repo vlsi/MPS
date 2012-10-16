@@ -23,6 +23,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.List;
@@ -203,7 +204,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     String relationKind = child ? "child" : "referent";
     SNode concept = sourceNode.getConceptDeclarationNode();
     if (concept == null) {
-      return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConceptFqName() + "'");
+      return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConcept().getId() + "'");
     }
     SNode link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
@@ -221,7 +222,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       }
       SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(link);
       String expected = linkDeclarationTarget != null ? linkDeclarationTarget.getName() : "<unknown>";
-      String was = targetNode.getConceptShortName();
+      String was = NameUtil.shortNameFromLongName(targetNode.getConcept().getId());
       return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
         GeneratorUtil.describe(targetNode, relationKind));
     }

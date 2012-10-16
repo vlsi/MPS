@@ -16,27 +16,29 @@ import org.apache.tools.ant.BuildException;
 import java.util.Set;
 import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.build.ant.util.PathManager;
@@ -196,46 +198,40 @@ public abstract class MpsWorker {
     }
   }
 
-  protected void extractModels(Set<SModelDescriptor> modelDescriptors, Project project) {
-    List<SModelDescriptor> models = project.getProjectModels();
-    for (Language language : project.getProjectModules(Language.class)) {
-      models.addAll(language.getOwnModelDescriptors());
-      for (Generator gen : language.getGenerators()) {
-        models.addAll(gen.getOwnModelDescriptors());
-      }
-    }
-    for (SModelDescriptor modelDescriptor : models) {
-      if (includeModel(modelDescriptor)) {
-        modelDescriptors.add(modelDescriptor);
+  protected void extractModels(Set<SModel> result, Project project) {
+    for (SModule module : project.getModulesWithGenerators()) {
+      for (SModel model : module.getModels()) {
+        if (includeModel(model)) {
+          result.add(model);
+        }
       }
     }
   }
 
-  private boolean includeModel(SModelDescriptor modelDescriptor) {
-    return SModelStereotype.isUserModel(modelDescriptor) && GenerationFacade.canGenerate(modelDescriptor);
+  private boolean includeModel(SModel model) {
+    return SModelStereotype.isUserModel(model) && GenerationFacade.canGenerate(model);
   }
 
-  protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
-    List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
-    for (SModelDescriptor d : ownedModels) {
+  protected void extractModels(Collection<SModel> modelsList, SModule m) {
+    for (SModel d : m.getModels()) {
       if (includeModel(d)) {
         modelsList.add(d);
       }
     }
   }
 
-  protected void collectFromModuleFiles(Set<IModule> modules) {
+  protected void collectFromModuleFiles(Set<SModule> modules) {
     for (File moduleFile : myWhatToDo.getModules()) {
       processModuleFile(moduleFile, modules);
     }
   }
 
-  private void processModuleFile(final File moduleFile, final Set<IModule> modules) {
+  private void processModuleFile(final File moduleFile, final Set<SModule> modules) {
     if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
       return;
     }
-    List<IModule> tmpmodules;
-    IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+    List<SModule> tmpmodules;
+    SModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
         return ModuleFileTracker.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
       }
@@ -243,11 +239,11 @@ public abstract class MpsWorker {
     if (moduleByFile != null) {
       tmpmodules = Collections.singletonList(moduleByFile);
     } else {
-      tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
-        public List<IModule> compute() {
+      tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<SModule>>() {
+        public List<SModule> compute() {
           IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
           BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
-          List<IModule> modules = new ArrayList<IModule>();
+          List<SModule> modules = new ArrayList<SModule>();
           for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
             IModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
             if (module != null) {
@@ -259,7 +255,7 @@ public abstract class MpsWorker {
       });
     }
     modules.addAll(tmpmodules);
-    for (IModule module : tmpmodules) {
+    for (SModule module : tmpmodules) {
       info("Loaded module " + module);
       if (module.isPackaged()) {
         continue;
@@ -273,20 +269,20 @@ public abstract class MpsWorker {
     }
   }
 
-  protected void collectFromModelFiles(Set<SModelDescriptor> modelDescriptor) {
+  protected void collectFromModelFiles(Set<SModel> model) {
     for (File f : myWhatToDo.getModels()) {
       if (f.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
-        processModelFile(modelDescriptor, f);
+        processModelFile(model, f);
       }
     }
   }
 
-  private void processModelFile(Set<SModelDescriptor> modelDescriptors, File f) {
+  private void processModelFile(Set<SModel> models, File f) {
     final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
     //  try to find if model is loaded 
-    SModelDescriptor model = SModelFileTracker.getInstance().findModel(ifile);
+    SModel model = SModelFileTracker.getInstance().findModel(ifile);
     if (model != null) {
-      modelDescriptors.add(model);
+      models.add(model);
       info("Found model " + model);
       return;
     }
@@ -305,7 +301,7 @@ public abstract class MpsWorker {
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {
-        modelDescriptors.add(existingDescr);
+        models.add(existingDescr);
       }
     } catch (ModelReadException e) {
       log(e);
@@ -468,13 +464,13 @@ public abstract class MpsWorker {
 
   protected class ObjectsToProcess {
     private final Set<Project> myProjects = new LinkedHashSet<Project>();
-    private final Set<IModule> myModules = new LinkedHashSet<IModule>();
-    private final Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
+    private final Set<SModule> myModules = new LinkedHashSet<SModule>();
+    private final Set<SModel> myModels = new LinkedHashSet<SModel>();
 
     public ObjectsToProcess() {
     }
 
-    public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
+    public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<SModule> modules, Set<SModel> models) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
       myModels.addAll(models);
@@ -484,11 +480,11 @@ public abstract class MpsWorker {
       return myProjects;
     }
 
-    public Set<IModule> getModules() {
+    public Set<SModule> getModules() {
       return myModules;
     }
 
-    public Set<SModelDescriptor> getModels() {
+    public Set<SModel> getModels() {
       return myModels;
     }
 

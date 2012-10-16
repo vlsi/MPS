@@ -94,7 +94,7 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("param", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("param", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -112,7 +112,7 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("param", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("param", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

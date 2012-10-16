@@ -147,6 +147,8 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     protected void setTitleInternal(String name) {
       if (kind == SubProgressKind.DEFAULT) {
         parent.setTitleInternal(combineTasks(parent.getTaskName(), name));
+      } else if(kind == SubProgressKind.REPLACING){
+        parent.setTitleInternal(name);
       } else if (kind == SubProgressKind.AS_COMMENT) {
         parent.setStepInternal(name);
       }
@@ -154,19 +156,17 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
 
     @Override
     protected void setStepInternal(String comment) {
-      if (kind == SubProgressKind.DEFAULT) {
+      if (kind == SubProgressKind.DEFAULT || kind == SubProgressKind.REPLACING) {
         parent.setStepInternal(comment);
       }
     }
 
     @Override
     protected void doneInternal(String text) {
-
     }
 
     @Override
     protected void startInternal(String text) {
-
     }
 
     protected ProgressMonitorBase getParent () {

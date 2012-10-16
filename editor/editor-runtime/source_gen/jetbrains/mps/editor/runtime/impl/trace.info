@@ -297,8 +297,8 @@
     <nodeInfo nodeId="6001307866941562927" fileName="EditorsFinderManager.java" startLine="63" startPosition="31" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941563656" fileName="EditorsFinderManager.java" startLine="67" startPosition="34" endLine="68" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941538905" fileName="EditorsFinderManager.java" startLine="73" startPosition="36" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575556" fileName="EditorsFinderManager.java" startLine="77" startPosition="81" endLine="78" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6001307866941575634" fileName="EditorsFinderManager.java" startLine="78" startPosition="252" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6001307866941575556" fileName="EditorsFinderManager.java" startLine="77" startPosition="81" endLine="78" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6001307866941575634" fileName="EditorsFinderManager.java" startLine="78" startPosition="268" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6001307866941646991" fileName="EditorsFinderManager.java" startLine="80" startPosition="37" endLine="81" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941647643" fileName="EditorsFinderManager.java" startLine="82" startPosition="5" endLine="83" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941647002" fileName="EditorsFinderManager.java" startLine="84" startPosition="64" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -318,8 +318,8 @@
     <nodeInfo nodeId="6001307866941647085" fileName="EditorsFinderManager.java" startLine="111" startPosition="21" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941647121" fileName="EditorsFinderManager.java" startLine="114" startPosition="5" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2116786884968856745" fileName="EditorsFinderManager.java" startLine="120" startPosition="36" endLine="121" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856756" fileName="EditorsFinderManager.java" startLine="122" startPosition="34" endLine="123" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856770" fileName="EditorsFinderManager.java" startLine="123" startPosition="141" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2116786884968856756" fileName="EditorsFinderManager.java" startLine="122" startPosition="34" endLine="123" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2116786884968856770" fileName="EditorsFinderManager.java" startLine="123" startPosition="175" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2116786884968856774" fileName="EditorsFinderManager.java" startLine="126" startPosition="126" endLine="127" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2116786884968856776" fileName="EditorsFinderManager.java" startLine="127" startPosition="49" endLine="128" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2116786884968856783" fileName="EditorsFinderManager.java" startLine="129" startPosition="9" endLine="130" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -353,7 +353,7 @@
     <nodeInfo nodeId="6001307866941575538" fileName="EditorsFinderManager.java" startLine="196" startPosition="42" endLine="197" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941558449" fileName="EditorsFinderManager.java" startLine="200" startPosition="52" endLine="201" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941575666" fileName="EditorsFinderManager.java" startLine="208" startPosition="75" endLine="209" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575679" fileName="EditorsFinderManager.java" startLine="212" startPosition="78" endLine="213" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6001307866941575679" fileName="EditorsFinderManager.java" startLine="212" startPosition="78" endLine="213" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2116786884968856821" fileName="EditorsFinderManager.java" startLine="137" startPosition="16" endLine="139" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6001307866941575639" fileName="EditorsFinderManager.java" startLine="204" startPosition="69" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultInterfaceEditor#()V" />
     <nodeInfo nodeId="6001307866941531765" fileName="EditorsFinderManager.java" startLine="58" startPosition="0" endLine="61" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorsFinderManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
@@ -438,7 +438,7 @@
     <scopeInfo nodeId="6001307866941557305" fileName="EditorsFinderManager.java" startLine="196" startPosition="42" endLine="197" endPosition="49" />
     <scopeInfo nodeId="6001307866941557311" fileName="EditorsFinderManager.java" startLine="200" startPosition="52" endLine="201" endPosition="88" />
     <scopeInfo nodeId="6001307866941575651" fileName="EditorsFinderManager.java" startLine="208" startPosition="75" endLine="209" endPosition="98" />
-    <scopeInfo nodeId="6001307866941575661" fileName="EditorsFinderManager.java" startLine="212" startPosition="78" endLine="213" endPosition="114" />
+    <scopeInfo nodeId="6001307866941575661" fileName="EditorsFinderManager.java" startLine="212" startPosition="78" endLine="213" endPosition="148" />
     <scopeInfo nodeId="6001307866941647066" fileName="EditorsFinderManager.java" startLine="107" startPosition="0" endLine="109" endPosition="39">
       <varInfo nodeId="6001307866941647076" varName="e" />
     </scopeInfo>

@@ -29,6 +29,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.*;
 
@@ -51,7 +52,7 @@ public class TypesUtil {
         return true;
       }
     }
-    for (SNode referent : node.getReferents()) {
+    for (SNode referent : getNodeReferents(node)) {
       if (referent != null && TypesUtil.isVariable(referent)) {
         return true;
       }
@@ -61,7 +62,7 @@ public class TypesUtil {
 
   public static int depth(SNode sNode) {
     int childDepth = 0;
-    for (SNode child : sNode.getChildrenIterable()) {
+    for (SNode child : sNode.getChildren()) {
       int depth = depth(child);
       if (childDepth < depth) {
         childDepth = depth;
@@ -94,8 +95,8 @@ public class TypesUtil {
     for (SNode child : node.getChildren()) {
       getVariablesInside(child, result, state);
     }
-    for (SNode referent : node.getReferents()) {
-      if (state!= null) {
+    for (SNode referent : getNodeReferents(node)) {
+      if (state != null) {
         referent = state.getRepresentative(referent);
       }
       if (referent != null && isVariable(referent)) {
@@ -104,11 +105,22 @@ public class TypesUtil {
     }
   }
 
+  public static List<SNode> getNodeReferents(SNode node) {
+    final List<SNode> result = new ArrayList<SNode>();
+    node.visitReferences(new ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+        result.add(((SNode) ref.getTargetNode()));
+        return true;
+      }
+    });
+    return result;
+  }
+
   public static boolean match(SNode left, SNode right) {
     return match(left, right, null);
   }
 
-  public static boolean match(SNode left, SNode right, /*out*/ Collection<Pair<SNode,SNode>> matchingPairs) {
+  public static boolean match(SNode left, SNode right, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
     if (left == right) return true;
     if (left == null || right == null) return false;
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -27,7 +27,7 @@ public class DefaultClassifierMethodParameterInformationQuery extends Parameters
       SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation") :
       node
     );
-    Scope scope = ModelConstraintsUtil.getScope(methodCall, "method", 0, editorContext.getOperationContext());
+    Scope scope = ModelConstraints.getReferenceDescriptor(methodCall, "method").getScope();
     String name = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "member", false), "name");
     Iterable<SNode> availableElements = scope.getAvailableElements((name != null ?
       name :

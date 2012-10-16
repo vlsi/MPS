@@ -17,10 +17,7 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -51,7 +48,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
             }
           }
           Assert.assertNotNull("no method in class", found);
-          found.setName("testRename3");
+          found.setProperty(SNodeUtil.property_INamedConcept_name, "testRename3");
         }
       });
 
@@ -69,7 +66,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"GoToFile");
           Assert.assertNotNull("No root in model", root);
-          root.setName("GoToFile2");
+          root.setProperty(SNodeUtil.property_INamedConcept_name, "GoToFile2");
         }
       });
 
@@ -87,7 +84,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"Expression");
           Assert.assertNotNull("No root in model", root);
-          root.setName("ReExpression");
+          root.setProperty(SNodeUtil.property_INamedConcept_name, "ReExpression");
         }
       });
 

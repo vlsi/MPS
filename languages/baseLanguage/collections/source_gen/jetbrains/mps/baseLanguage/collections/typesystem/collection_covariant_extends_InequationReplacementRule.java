@@ -77,7 +77,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
       {
         SNode nodeToMatch_collection_covariant_extends_otuqx5_a0a;
         nodeToMatch_collection_covariant_extends_otuqx5_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.CollectionType".equals(nodeToMatch_collection_covariant_extends_otuqx5_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.CollectionType".equals(nodeToMatch_collection_covariant_extends_otuqx5_a0a.getConcept().getId()))) {
           return false;
         }
         {
@@ -125,7 +125,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
       {
         SNode nodeToMatch_collection_covariant_extends_otuqx5_a0a_0;
         nodeToMatch_collection_covariant_extends_otuqx5_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.CollectionType".equals(nodeToMatch_collection_covariant_extends_otuqx5_a0a_0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.CollectionType".equals(nodeToMatch_collection_covariant_extends_otuqx5_a0a_0.getConcept().getId()))) {
           return false;
         }
         {

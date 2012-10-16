@@ -15,9 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.workflow.util.XmlSignature;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import java.util.Collections;
 import java.util.Comparator;
@@ -48,7 +48,7 @@ public class CycleHelper {
         SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
         XmlSignature s = new XmlSignature().add(cp);
         String id = (s.hasErrors() ?
-          "dep." + cp.getId() :
+          "dep." + cp.getSNodeId().toString() :
           s.getResult()
         );
         return !(seenDependencies.add(id));
@@ -58,7 +58,6 @@ public class CycleHelper {
 
   public void processCycles() {
     List<SNode> modules = new ArrayList<SNode>();
-    Graph<CycleHelper.Module> graph = new Graph();
     ListSequence.fromList(modules).addSequence(ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
@@ -74,12 +73,13 @@ public class CycleHelper {
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);
-      if (isEmpty_yc0kju_a0c0e0b(SPropertyOperations.getString(jm, "outputFolder"))) {
+      if (isEmpty_yc0kju_a0c0d0b(SPropertyOperations.getString(jm, "outputFolder"))) {
         genContext.showErrorMessage(jm, "empty output path");
       } else if (SPropertyOperations.getString(jm, "outputFolder").endsWith("/") || SPropertyOperations.getString(jm, "outputFolder").endsWith("\\")) {
         genContext.showErrorMessage(jm, "output path shouldn't end with slash");
       }
     }
+    Graph<CycleHelper.Module> graph = new Graph();
     for (CycleHelper.Module module : map.values()) {
       graph.add(module);
     }
@@ -114,6 +114,7 @@ public class CycleHelper {
       List<SNode> deps = new ArrayList<SNode>();
       Set<SNode> seenModules = new LinkedHashSet<SNode>();
       Set<SNode> seenLibraries = new LinkedHashSet<SNode>();
+      Set<SNode> taskDependency = new LinkedHashSet<SNode>();
 
       int heapSize = 0;
       for (CycleHelper.Module m : cycle) {
@@ -133,7 +134,7 @@ public class CycleHelper {
             SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
             XmlSignature s = new XmlSignature().add(cp);
             String id = (s.hasErrors() ?
-              "dep." + cp.getId() :
+              "dep." + cp.getSNodeId().toString() :
               s.getResult()
             );
             if (seenDependencies.add(id)) {
@@ -141,6 +142,17 @@ public class CycleHelper {
             }
           } else {
             genContext.showErrorMessage(dep, "unexpected dependency type");
+          }
+
+        }
+
+        for (SNode task : ListSequence.fromList(SLinkOperations.getTargets(module, "taskDeps", true)).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "target", false);
+          }
+        })) {
+          if ((task != null)) {
+            taskDependency.add(task);
           }
         }
 
@@ -151,7 +163,7 @@ public class CycleHelper {
         for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(module, "sources", true), "elements", true))) {
           XmlSignature s = new XmlSignature().add(n);
           String id = (s.hasErrors() ?
-            "path." + n.getId() :
+            "path." + n.getSNodeId().toString() :
             s.getResult()
           );
           if (seenSources.add(id)) {
@@ -181,6 +193,11 @@ public class CycleHelper {
         SLinkOperations.setTarget(mref, "target", jm, false);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(mref);
       }
+      for (SNode task : taskDependency) {
+        SNode dependency = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfTaskDependency", null);
+        SLinkOperations.setTarget(dependency, "target", task, false);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "taskDeps", true)).addElement(dependency);
+      }
     }
     int cycleCounter = 0;
     Collections.sort(cyclesToName, new Comparator<SNode>() {
@@ -194,7 +211,7 @@ public class CycleHelper {
     }
   }
 
-  public static boolean isEmpty_yc0kju_a0c0e0b(String str) {
+  public static boolean isEmpty_yc0kju_a0c0d0b(String str) {
     return str == null || str.length() == 0;
   }
 

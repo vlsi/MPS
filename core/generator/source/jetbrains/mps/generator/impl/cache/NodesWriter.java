@@ -18,10 +18,13 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
+import org.jetbrains.mps.openapi.model.SNode.UserObjectVisitor;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -49,7 +52,7 @@ public class NodesWriter {
   }
 
   protected void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    os.writeString(node.getConceptFqName());
+    os.writeString(node.getConcept().getId());
     os.writeNodeId(node.getSNodeId());
     os.writeString(node.getRole_());
     os.writeByte('{');
@@ -70,7 +73,7 @@ public class NodesWriter {
   }
 
   protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {
-    Collection<SReference> refs = node.getReferencesIterable();
+    Collection<SReference> refs = node.getReferences();
     os.writeInt(refs.size());
     for (SReference reference : refs) {
       SModelReference targetModelReference = reference.getTargetSModelReference();
@@ -96,7 +99,13 @@ public class NodesWriter {
   }
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
-    Map<String, String> properties = node.getProperties();
+    final Map<String, String> properties = new HashMap<String, String>();
+    node.visitProperties(new PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        properties.put(name,value);
+        return true;
+      }
+    });
     os.writeInt(properties.size());
     for (Entry<String, String> entry : properties.entrySet()) {
       os.writeString(entry.getKey());
@@ -106,15 +115,16 @@ public class NodesWriter {
 
   protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
     // write user objects here
-    Map<Object, Object> userObjects = node.getUserObjects();
-    ArrayList<Object> knownUserObject = new ArrayList<Object>();
-    for (Object key : userObjects.keySet()) {
-      Object value = userObjects.get(key);
-      if (isKnownUserObject(key) && isKnownUserObject(value)) {
-        knownUserObject.add(key);
-        knownUserObject.add(value);
+    final ArrayList<Object> knownUserObject = new ArrayList<Object>();
+    node.visitUserObjects(new UserObjectVisitor() {
+      public boolean visitObject(Object key, Object value) {
+        if (isKnownUserObject(key) && isKnownUserObject(value)) {
+          knownUserObject.add(key);
+          knownUserObject.add(value);
+        }
+        return true;
       }
-    }
+    });
 
     os.writeInt(knownUserObject.size());
     for (int i = 0; i < knownUserObject.size(); i += 2) {

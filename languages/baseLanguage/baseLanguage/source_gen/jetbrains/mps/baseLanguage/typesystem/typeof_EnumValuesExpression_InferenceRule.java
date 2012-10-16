@@ -32,7 +32,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -56,7 +56,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("classifier", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("classifier", (SNode) parameter_5);
           quotedNode_1.addChild("componentType", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -75,7 +75,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("classifier", (SNode) parameter_5);
+          quotedNode1_4.setReferenceTarget("classifier", (SNode) parameter_5);
           quotedNode_1.addChild("componentType", quotedNode1_4);
         }
         result = quotedNode1_3;

@@ -208,7 +208,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
 
     public void visitPropertyEvent(final SModelPropertyEvent event) {
-      if (event.getNode().isDisposed()) return;
+      if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
       MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
       if (!event.getNode().isRoot() || vf == null) return;

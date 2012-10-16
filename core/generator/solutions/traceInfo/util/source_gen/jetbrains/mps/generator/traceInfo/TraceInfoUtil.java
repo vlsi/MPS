@@ -9,18 +9,24 @@ import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Map;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
-import java.util.Set;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
@@ -45,11 +51,11 @@ public class TraceInfoUtil {
   public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        UnitPositionInfo unitInfo = TraceInfoUtil.getUnitInfoForPosition(info, position, file);
+        Tuples._2<UnitPositionInfo, DebugInfoRoot> unitInfo = TraceInfoUtil.getRootInfoAndUnitInfoForPosition(info, position, file);
         if (unitInfo == null) {
           return null;
         }
-        return DebugInfo.findNode(unitInfo);
+        return unitInfo._1().findNode(unitInfo._0());
       }
     });
   }
@@ -66,6 +72,22 @@ public class TraceInfoUtil {
     }, false).first();
   }
 
+  private static Tuples._2<UnitPositionInfo, DebugInfoRoot> getRootInfoAndUnitInfoForPosition(DebugInfo info, final int position, final String file) {
+    Map<DebugInfoRoot, List<UnitPositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
+      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
+        return root.getUnitPositions();
+      }
+    });
+    for (IMapping<DebugInfoRoot, List<UnitPositionInfo>> mapping : MapSequence.fromMap(resultList)) {
+      return MultiTuple.<UnitPositionInfo,DebugInfoRoot>from(ListSequence.fromList(mapping.value()).sort(new ISelector<UnitPositionInfo, Integer>() {
+        public Integer select(UnitPositionInfo it) {
+          return it.getStartLine();
+        }
+      }, false).first(), mapping.key());
+    }
+    return null;
+  }
+
   /**
    * Use TraceDown.unitNames(node)
    */
@@ -73,12 +95,12 @@ public class TraceInfoUtil {
   @ToRemove(version = 3.0)
   @Nullable
   public static String getUnitName(SNode node) {
-    return check_4iwlxm_a0a3(TraceDown.unitNames((SNode) node));
+    return check_4iwlxm_a0a4(TraceDown.unitNames((SNode) node));
   }
 
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return check_4iwlxm_a0a4(getAllTraceableNodes(className, file, position));
+    return check_4iwlxm_a0a5(getAllTraceableNodes(className, file, position));
   }
 
   /**
@@ -93,64 +115,70 @@ public class TraceInfoUtil {
   public static SNode getJavaNode(@NonNls String unitName, final String fileName, final int lineNumber) {
     return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor modelDescriptor) {
-        List<TraceablePositionInfo> resultList = info.getTraceableInfoForPosition(fileName, lineNumber);
-        if (resultList == null || ListSequence.fromList(resultList).isEmpty()) {
+        Map<DebugInfoRoot, List<TraceablePositionInfo>> resultList = info.getRootToInfoForPosition(fileName, lineNumber, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
+          public Set<TraceablePositionInfo> invoke(DebugInfoRoot root) {
+            return root.getPositions();
+          }
+        });
+        if (resultList == null || MapSequence.fromMap(resultList).isEmpty()) {
           return null;
         }
-
-        Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
-          public TraceablePositionInfo select(TraceablePositionInfo it) {
-            return it;
-          }
-        }, true);
-        final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
-        PositionInfo result = firstPositionInfo;
-        // here we do some magic to fix the following bug: 
-        // each node in base language owns a '\n' symbol in a previous line 
-        // in the following code we will never get 'for' node quering line 1: 
-        // 1.  for (...) { 
-        // 2.    some statement 
-        // 3.  } 
-        // since 'some statement' takes lines 1-2 instead of just line 2 
-        if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
-          result = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1);
-        }
-        // here we have another example of how not to write code 
-        // this is a hack fixing MPS-8644 
-        // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
-        // so in the code like this: 
-        // 1. { 
-        // 2. statement 
-        // 3. } 
-        // block statement occupy the same place as "statement" because this code generates into: 
-        // 1. statement 
-        // the solution is simple: 
-        // among all node with same position we select the deepest 
-        if (Sequence.fromIterable(sorted).count() > 1) {
-          Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
-            public boolean accept(TraceablePositionInfo it) {
-              return firstPositionInfo.isOccupyTheSameSpace(it);
+        // todo impossible to read 
+        for (DebugInfoRoot root : SetSequence.fromSet(MapSequence.fromMap(resultList).keySet())) {
+          Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(MapSequence.fromMap(resultList).get(root)).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
+            public TraceablePositionInfo select(TraceablePositionInfo it) {
+              return it;
             }
-          });
-          if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
-            SNode currentNode = DebugInfo.findNode(firstPositionInfo);
-            boolean finished = false;
-            while (!(finished)) {
-              finished = true;
-              for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
-                SNode otherNode = DebugInfo.findNode(otherPos);
-                if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
-                  currentNode = otherNode;
-                  finished = false;
-                  break;
+          }, true);
+          final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+          PositionInfo result = firstPositionInfo;
+          // here we do some magic to fix the following bug: 
+          // each node in base language owns a '\n' symbol in a previous line 
+          // in the following code we will never get 'for' node quering line 1: 
+          // 1.  for (...) { 
+          // 2.    some statement 
+          // 3.  } 
+          // since 'some statement' takes lines 1-2 instead of just line 2 
+          if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
+            result = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1);
+          }
+          // here we have another example of how not to write code 
+          // this is a hack fixing MPS-8644 
+          // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
+          // so in the code like this: 
+          // 1. { 
+          // 2. statement 
+          // 3. } 
+          // block statement occupy the same place as "statement" because this code generates into: 
+          // 1. statement 
+          // the solution is simple: 
+          // among all node with same position we select the deepest 
+          if (Sequence.fromIterable(sorted).count() > 1) {
+            Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
+              public boolean accept(TraceablePositionInfo it) {
+                return firstPositionInfo.isOccupyTheSameSpace(it);
+              }
+            });
+            if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
+              SNode currentNode = root.findNode(firstPositionInfo);
+              boolean finished = false;
+              while (!(finished)) {
+                finished = true;
+                for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
+                  SNode otherNode = root.findNode(otherPos);
+                  if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
+                    currentNode = otherNode;
+                    finished = false;
+                    break;
+                  }
                 }
               }
+              return currentNode;
             }
-            return currentNode;
           }
+          return root.findNode(result);
         }
-        return DebugInfo.findNode(result);
-
+        return null;
       }
     });
   }
@@ -159,23 +187,25 @@ public class TraceInfoUtil {
   public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        List<ScopePositionInfo> resultList = info.getInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
+        Map<DebugInfoRoot, List<ScopePositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
           public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
             return root.getScopePositions();
           }
         });
-        if (ListSequence.fromList(resultList).isEmpty()) {
+        if (MapSequence.fromMap(resultList).isEmpty()) {
           return null;
         }
-        Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
-          public ScopePositionInfo select(ScopePositionInfo it) {
-            return it;
-          }
-        }, true);
-        for (ScopePositionInfo scopeInfo : sorted) {
-          SNode var = scopeInfo.getVarNode(varName);
-          if (var != null) {
-            return var;
+        for (DebugInfoRoot root : SetSequence.fromSet(MapSequence.fromMap(resultList).keySet())) {
+          Iterable<ScopePositionInfo> sorted = ListSequence.fromList(MapSequence.fromMap(resultList).get(root)).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
+            public ScopePositionInfo select(ScopePositionInfo it) {
+              return it;
+            }
+          }, true);
+          for (ScopePositionInfo scopeInfo : sorted) {
+            String varInfo = scopeInfo.getVarId(varName);
+            if ((varInfo != null && varInfo.length() > 0)) {
+              return root.findNode(varInfo);
+            }
           }
         }
         return null;
@@ -253,19 +283,21 @@ public class TraceInfoUtil {
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, final String file, final int lineNumber, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
     return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<List<SNode>, DebugInfo, SModelDescriptor>() {
       public List<SNode> invoke(DebugInfo debugInfo, SModelDescriptor descriptor) {
-        List<T> infoForPosition = debugInfo.getInfoForPosition(file, lineNumber, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+        Map<DebugInfoRoot, List<T>> infoForPosition = debugInfo.getRootToInfoForPosition(file, lineNumber, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
           public Set<T> invoke(DebugInfoRoot root) {
             return positionsGetter.invoke(root);
           }
         });
         List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
-        if (ListSequence.fromList(infoForPosition).isEmpty()) {
+        if (MapSequence.fromMap(infoForPosition).isEmpty()) {
           return null;
         }
-        for (T info : infoForPosition) {
-          SNode node = DebugInfo.findNode(info);
-          if (node != null) {
-            nodes.add(node);
+        for (IMapping<DebugInfoRoot, List<T>> rootToInfo : MapSequence.fromMap(infoForPosition)) {
+          for (T info : ListSequence.fromList(rootToInfo.value())) {
+            SNode node = rootToInfo.key().findNode(info);
+            if (node != null) {
+              nodes.add(node);
+            }
           }
         }
         if (ListSequence.fromList(nodes).isEmpty()) {
@@ -283,14 +315,14 @@ public class TraceInfoUtil {
     return null;
   }
 
-  private static String check_4iwlxm_a0a3(Iterable<String> checkedDotOperand) {
+  private static String check_4iwlxm_a0a4(Iterable<String> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return Sequence.fromIterable(checkedDotOperand).first();
     }
     return null;
   }
 
-  private static SNode check_4iwlxm_a0a4(List<SNode> checkedDotOperand) {
+  private static SNode check_4iwlxm_a0a5(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();
     }

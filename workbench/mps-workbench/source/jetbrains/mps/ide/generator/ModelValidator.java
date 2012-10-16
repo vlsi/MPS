@@ -18,7 +18,7 @@ package jetbrains.mps.ide.generator;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
@@ -29,5 +29,5 @@ public interface ModelValidator {
 
   ExtensionPointName<ModelValidator> EP_NAME = ExtensionPointName.create("com.intellij.mps.ModelValidator");
 
-  boolean check(Project p, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable);
+  boolean check(Project p, IOperationContext operationContext, List<SModel> modelDescriptors, Runnable regenerationRunnable);
 }

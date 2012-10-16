@@ -24,9 +24,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Set;
@@ -46,6 +47,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -144,7 +146,7 @@ public class ProjectTestHelper {
   }
 
   private Iterable<IResource> collectResources(IOperationContext context, final IModule module) {
-    final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
+    final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (IModule mod : withGenerators(Collections.singletonList(module))) {
@@ -156,8 +158,8 @@ public class ProjectTestHelper {
         }
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor smd) {
+    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }
     })).resources(false);
@@ -169,7 +171,7 @@ public class ProjectTestHelper {
   }
 
   private class PrivToken extends ProjectTestHelper.Token {
-    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", ".dependencies", ".generated", ".debug");
+    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies");
     private final Project project;
     private final IModule module;
     private String tmpPath;
@@ -195,6 +197,7 @@ public class ProjectTestHelper {
       boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
       if (isParallel) {
         optBuilder.strictMode(true).generateInParallel(isParallel, 8);
+        SetSequence.fromSet(ignoredFiles).removeElement("generated");
       }
 
       final IScriptController ctl = new IScriptController.Stub() {
@@ -223,7 +226,7 @@ public class ProjectTestHelper {
           IOperationContext context = new ProjectOperationContext(project);
           IScript scr = defaultScriptBuilder().toScript();
           try {
-            result.value = new TestMakeService(context, myMessageHandler).make(collectResources(context, module), scr, ctl).get();
+            result.value = new TestMakeService(context, myMessageHandler).make(null, collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
           } catch (InterruptedException ignore) {
           } catch (ExecutionException ignore) {
           }

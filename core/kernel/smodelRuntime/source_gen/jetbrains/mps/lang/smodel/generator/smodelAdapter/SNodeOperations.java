@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -270,7 +270,7 @@ public class SNodeOperations {
   }
 
   private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition, Condition<SNode> stopCondition) {
-    for (SNode child : node.getChildrenIterable()) {
+    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       if (condition.met(child)) {
         list.add(child);
       }
@@ -296,7 +296,7 @@ public class SNodeOperations {
     if (node == null) {
       return new ArrayList<SNode>();
     }
-    return node.getChildren();
+    return jetbrains.mps.util.SNodeOperations.getChildren(node);
   }
 
   public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {
@@ -347,7 +347,7 @@ public class SNodeOperations {
     if (parent == null) {
       return result;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -374,7 +374,7 @@ public class SNodeOperations {
       result.add(node);
     }
     boolean childFound = false;
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -396,7 +396,7 @@ public class SNodeOperations {
     if (parent == null) {
       return result;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -419,7 +419,7 @@ public class SNodeOperations {
     if (newChild == null) {
       return null;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert parent != null && role != null;
     parent.insertChild(node, role, newChild);
     return newChild;
@@ -437,7 +437,7 @@ public class SNodeOperations {
     if (newChild == null) {
       return null;
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     parent.insertChild(node, role, newChild, true);
     return newChild;
@@ -455,7 +455,7 @@ public class SNodeOperations {
     if (parent != null) {
       parent.removeChild(siblingNode);
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     nodeParent.insertChild(node, role, siblingNode, false);
     return siblingNode;
@@ -473,7 +473,7 @@ public class SNodeOperations {
     if (siblingParent != null) {
       siblingParent.removeChild(siblingNode);
     }
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     nodeParent.insertChild(node, role, siblingNode, true);
     return siblingNode;
@@ -506,7 +506,7 @@ public class SNodeOperations {
         String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
         if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(newChild), "call_findPropertyDeclaration_1219835742593", new Class[]{SNode.class, String.class}, propertyName)) == null)) {
           // no such property in new child : don't copy the attribute 
-          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConceptShortName(), newChild);
+          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }
@@ -514,7 +514,7 @@ public class SNodeOperations {
         String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"));
         if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(newChild), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, linkRole)) == null)) {
           // no such link in new child : don't copy the attribute 
-          LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConceptShortName(), newChild);
+          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }
@@ -554,7 +554,7 @@ public class SNodeOperations {
   }
 
   public static SNode detachNode(SNode node) {
-    if (node != null && node.isRegistered()) {
+    if (node != null && jetbrains.mps.util.SNodeOperations.isRegistered(node)) {
       SNode parent = node.getParent();
       if (parent != null) {
         parent.removeChild(node);
@@ -579,13 +579,13 @@ public class SNodeOperations {
     if (!(SModelUtil.isAssignableConcept(conceptOfParent, expectedConcept))) {
       return false;
     }
-    return role.equals(node.getRole_());
+    return role.equals(node.getRole());
   }
 
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance())
+      SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance())
     );
   }
 
@@ -609,14 +609,14 @@ public class SNodeOperations {
   }
 
   /**
-   * use ModelConstraintsUtil.getScope()
+   * use ModelConstraints.getScope() and ModelConstraints.getReferenceDescriptor()
    */
   @Deprecated
   public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
     if (referenceNode == null) {
       return null;
     }
-    Scope scope = ModelConstraintsUtil.getScope(referenceNode, referenceRole, 0, context);
+    Scope scope = ModelConstraints.getReferenceDescriptor(referenceNode, referenceRole).getScope();
     if (scope instanceof ErrorScope) {
       return null;
     }
@@ -634,9 +634,9 @@ public class SNodeOperations {
       // hack, remove? 
       if (!(HUtil.isRuntimeTypeVariable(node))) {
         if (ourCastsEnabled) {
-          throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+          throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
         } else {
-          LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
+          LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
         }
       }
     }
@@ -693,7 +693,7 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    return childNode.getRole();
+    return ((SNode) childNode).getRole();
   }
 
   public static List<SReference> getReferences(SNode node) {

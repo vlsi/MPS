@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
@@ -78,7 +79,7 @@ public class EditorComponentUtil {
   public static boolean isNodeShownInTheComponent(@NotNull EditorComponent component, @NotNull SNode node) {
     if (component instanceof InspectorEditorComponent) {
       SNode editedNode = component.getEditedNode();
-      return editedNode != null && editedNode.isAncestorOf(node) && (editedNode != node);
+      return editedNode != null && SNodeOperations.isAncestor(editedNode, node) && (editedNode != node);
     } else {
       return component.getEditedNode() == node.getTopmostAncestor();
     }

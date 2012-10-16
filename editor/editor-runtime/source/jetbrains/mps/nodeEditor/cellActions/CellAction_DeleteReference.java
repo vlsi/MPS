@@ -37,6 +37,6 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    mySource.removeReferent(myRole);
+    mySource.setReferenceTarget(myRole, null);
   }
 }

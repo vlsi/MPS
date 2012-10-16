@@ -56,14 +56,14 @@ public class DelayedChanges {
   }
 
   public void addExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-    childToReplace.putUserObjects(attrsHolder);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
     synchronized (this) {
       myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, reductionContext));
     }
   }
 
   public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-    childToReplace.putUserObjects(attrsHolder);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
     myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, reductionContext));
   }
 
@@ -113,7 +113,7 @@ public class DelayedChanges {
         if (child != null) {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
-          Language childLang = child.getNodeLanguage();
+          Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
           if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
             if (!childLang.getGenerators().isEmpty()) {
               myLogger.error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
@@ -123,7 +123,7 @@ public class DelayedChanges {
             }
           }
 
-          if (child.isRegistered()) {
+          if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
             // must be "in air"
             child = CopyUtil.copy(child);
           }
@@ -161,7 +161,7 @@ public class DelayedChanges {
     }
 
     private void validateReferences(SNode node) {
-      for (SReference reference : node.getReferencesIterable()) {
+      for (SReference reference : node.getReferences()) {
         validateReference(reference);
       }
             for (SNode child : node.getChildren()) {
@@ -181,7 +181,7 @@ public class DelayedChanges {
         PostponedReference postponedReference = new PostponedReference(
           refInfo,
           myGenerator);
-        reference.getSourceNode().replaceReference(reference, postponedReference);
+        reference.getSourceNode().setReference(reference.getRole(), postponedReference);
       }
     }
 

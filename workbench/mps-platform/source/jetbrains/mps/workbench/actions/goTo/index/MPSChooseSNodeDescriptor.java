@@ -39,6 +39,7 @@ import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -110,7 +111,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       for (SNode root : myIndex.getRootsToIterate(sm.getSModel())) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         BaseSNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), root.getSNodeId());
+          nodeName, root.getConcept().getId(), root.getModel().getSModelReference(), root.getSNodeId());
         keys.add(nodeDescriptor);
       }
     }
@@ -185,7 +186,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     }
 
     @Override
-    public Language getLanguage(ModuleReference moduleReference) {
+    public Language getLanguage(SModuleReference moduleReference) {
       return inner.getLanguage(moduleReference);
     }
 

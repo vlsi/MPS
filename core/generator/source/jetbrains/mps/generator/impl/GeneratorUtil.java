@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -58,7 +59,7 @@ public class GeneratorUtil {
 
   @NotNull
   public static TemplateContext createConsequenceContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence, SNode newInputNode, ITemplateGenerator generator) {
-    if (consequence.isInstanceOfConcept(RuleUtil.concept_ITemplateCall)) {
+    if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
       return createTemplateCallContext(inputNode, outerContext, reductionContext, consequence, newInputNode, generator);
     }
     return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);
@@ -83,14 +84,14 @@ public class GeneratorUtil {
       String name = parameters[i];
       Object value = null;
 
-      if (exprNode.isInstanceOfConcept(RuleUtil.concept_TemplateArgumentParameterExpression) && outerContext != null) {
+      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression)) && outerContext != null) {
         SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
         if (parameter == null) {
           generator.showErrorMessage(inputNode, exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
         } else {
           value = outerContext.getVariable(parameter.getName());
         }
-      } else if (exprNode.isInstanceOfConcept(RuleUtil.concept_TemplateArgumentPatternRef) && outerContext != null) {
+      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef)) && outerContext != null) {
         String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
         if (patternVar == null) {
           generator.showErrorMessage(inputNode, exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");

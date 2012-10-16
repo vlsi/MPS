@@ -70,7 +70,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
       final Set<String> usedConcepts = SetSequence.fromSet(new HashSet<String>());
       InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode node) {
-          SetSequence.fromSet(usedConcepts).addSequence(SetSequence.fromSet(LanguageHierarchyCache.getAncestorsNames(node.getConceptFqName())));
+          SetSequence.fromSet(usedConcepts).addSequence(SetSequence.fromSet(LanguageHierarchyCache.getAncestorsNames(node.getConcept().getId())));
         }
       });
 

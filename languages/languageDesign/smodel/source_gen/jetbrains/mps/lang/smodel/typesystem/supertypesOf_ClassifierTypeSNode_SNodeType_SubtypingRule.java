@@ -82,12 +82,12 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
       {
         SNode nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a;
         nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }

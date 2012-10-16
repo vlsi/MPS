@@ -61,7 +61,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myInitialized = true;
   }
 
-  public IModule getModule() {
+  public Language getModule() {
     return myLanguage;
   }
 

@@ -253,7 +253,7 @@ public class RuleUtil {
     if (node == null) {
       return null;
     }
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.LoopMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true);
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcListMacro")) {
@@ -274,7 +274,7 @@ public class RuleUtil {
     if (node == null) {
       return null;
     }
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {

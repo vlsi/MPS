@@ -2015,6 +2015,9 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="384280137912153748">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="384280137912153749">
         <property name="name" nameId="tpck.1169194664001" value="testVarReferences" />
+        <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="6573990804944969981">
+          <property name="name" nameId="tpck.1169194664001" value="first" />
+        </node>
         <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="384280137912153750" />
         <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153751">
           <property name="name" nameId="tpck.1169194664001" value="forward" />
@@ -2024,6 +2027,7 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
               </node>
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153758">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="6573990804944969981" resolveInfo="first" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153759">
                   <property name="name" nameId="tpck.1169194664001" value="forwardReference" />
                 </node>
@@ -2045,6 +2049,7 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
               </node>
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153762">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="384280137912153753" resolveInfo="middle" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153763">
                   <property name="name" nameId="tpck.1169194664001" value="backwardReference" />
                 </node>

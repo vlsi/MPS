@@ -13,12 +13,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class BuildAllGenerators_Action extends BaseAction {
@@ -64,10 +64,10 @@ public class BuildAllGenerators_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<List<IModule>> m = new Wrappers._T<List<IModule>>();
+      final Wrappers._T<List<SModule>> m = new Wrappers._T<List<SModule>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          m.value = ListSequence.fromListWithValues(new ArrayList<IModule>(), ModuleRepositoryFacade.getInstance().getAllModules(Generator.class));
+          m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<Generator>) ModuleRepositoryFacade.getInstance().getAllModules(Generator.class));
         }
       });
 

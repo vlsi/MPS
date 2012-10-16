@@ -3292,8 +3292,8 @@
     <nodeInfo nodeId="1238075498216" fileName="CollectionAppendPart_Editor.java" startLine="178" startPosition="10" endLine="179" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237984152458" fileName="CollectionAppendPart_Editor.java" startLine="182" startPosition="111" endLine="183" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238075498208" fileName="CollectionAppendPart_Editor.java" startLine="186" startPosition="111" endLine="187" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237984406068" fileName="CollectionAppendPart_Editor.java" startLine="190" startPosition="62" endLine="191" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238075498209" fileName="CollectionAppendPart_Editor.java" startLine="194" startPosition="61" endLine="195" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237984419792" fileName="CollectionAppendPart_Editor.java" startLine="190" startPosition="62" endLine="191" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238075498213" fileName="CollectionAppendPart_Editor.java" startLine="194" startPosition="61" endLine="195" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237305974543" fileName="CollectionAppendPart_Editor.java" startLine="131" startPosition="26" endLine="133" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237305969102" fileName="CollectionAppendPart_Editor.java" startLine="34" startPosition="80" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237305969102" fileName="CollectionAppendPart_Editor.java" startLine="34" startPosition="80" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3308,8 +3308,8 @@
     <nodeInfo nodeId="1237984077841" fileName="CollectionAppendPart_Editor.java" startLine="91" startPosition="73" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237984150690" fileName="CollectionAppendPart_Editor.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_wfu8o0_a2a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="1238075498206" fileName="CollectionAppendPart_Editor.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_wfu8o0_a0a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1237984406068" fileName="CollectionAppendPart_Editor.java" startLine="189" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_wfu8o0_a0a0a0#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1238075498209" fileName="CollectionAppendPart_Editor.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_wfu8o0_a0a0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1237984419792" fileName="CollectionAppendPart_Editor.java" startLine="189" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_wfu8o0_a0a0a0#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1238075498213" fileName="CollectionAppendPart_Editor.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_wfu8o0_a0a0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1237984062758" fileName="CollectionAppendPart_Editor.java" startLine="44" startPosition="49" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237305979638" fileName="CollectionAppendPart_Editor.java" startLine="78" startPosition="73" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237305988968" fileName="CollectionAppendPart_Editor.java" startLine="103" startPosition="73" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3354,8 +3354,8 @@
     <scopeInfo nodeId="1238075498216" fileName="CollectionAppendPart_Editor.java" startLine="169" startPosition="58" endLine="170" endPosition="49" />
     <scopeInfo nodeId="1237984150691" fileName="CollectionAppendPart_Editor.java" startLine="182" startPosition="111" endLine="183" endPosition="143" />
     <scopeInfo nodeId="1238075498207" fileName="CollectionAppendPart_Editor.java" startLine="186" startPosition="111" endLine="187" endPosition="85" />
-    <scopeInfo nodeId="1237984406068" fileName="CollectionAppendPart_Editor.java" startLine="190" startPosition="62" endLine="191" endPosition="43" />
-    <scopeInfo nodeId="1238075498209" fileName="CollectionAppendPart_Editor.java" startLine="194" startPosition="61" endLine="195" endPosition="43" />
+    <scopeInfo nodeId="1237984419792" fileName="CollectionAppendPart_Editor.java" startLine="190" startPosition="62" endLine="191" endPosition="43" />
+    <scopeInfo nodeId="1238075498213" fileName="CollectionAppendPart_Editor.java" startLine="194" startPosition="61" endLine="195" endPosition="43" />
     <scopeInfo nodeId="1237984077841" fileName="CollectionAppendPart_Editor.java" startLine="92" startPosition="5" endLine="94" endPosition="51">
       <varInfo nodeId="1237984077841" varName="style" />
     </scopeInfo>
@@ -3410,11 +3410,11 @@
       <varInfo nodeId="1238075498206" varName="node" />
       <varInfo nodeId="1238075498206" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1237984406068" fileName="CollectionAppendPart_Editor.java" startLine="189" startPosition="0" endLine="193" endPosition="0">
-      <varInfo nodeId="1237984406068" varName="str" />
+    <scopeInfo nodeId="1237984419792" fileName="CollectionAppendPart_Editor.java" startLine="189" startPosition="0" endLine="193" endPosition="0">
+      <varInfo nodeId="1237984419792" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="1238075498209" fileName="CollectionAppendPart_Editor.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
-      <varInfo nodeId="1238075498209" varName="str" />
+    <scopeInfo nodeId="1238075498213" fileName="CollectionAppendPart_Editor.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
+      <varInfo nodeId="1238075498213" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="1237984062758" fileName="CollectionAppendPart_Editor.java" startLine="43" startPosition="96" endLine="49" endPosition="5" />
     <scopeInfo nodeId="1238075496999" fileName="CollectionAppendPart_Editor.java" startLine="55" startPosition="91" endLine="61" endPosition="22">

@@ -127,7 +127,7 @@ public class BeanPropertyBuilder_Behavior {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_4;
-            quotedNode1_9.setReferent("baseMethodDeclaration", (SNode) parameter_13);
+            quotedNode1_9.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_13);
             {
               quotedNode_5 = (SNode) parameter_12;
               SNode quotedNode1_10;

@@ -35,7 +35,7 @@ public class SReferenceUtil {
 
     SNode link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
     if (link == null) {
-      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConceptFqName() + "'", sourceNode);
+      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getId() + "'", sourceNode);
       return false;
     }
 

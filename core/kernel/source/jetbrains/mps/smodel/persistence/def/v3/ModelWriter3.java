@@ -136,9 +136,9 @@ public class ModelWriter3 implements IModelWriter {
       theElementName = ModelPersistence.NODE;
     }
     Element element = new Element(theElementName);
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole_());
-    element.setAttribute(ModelPersistence.TYPE, node.getConceptFqName());
-    element.setAttribute(ModelPersistence.ID, node.getId());
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole());
+    element.setAttribute(ModelPersistence.TYPE, node.getConcept().getId());
+    element.setAttribute(ModelPersistence.ID, node.getSNodeId().toString());
 
     // properties ...
     Map<String, String> properties = node.getProperties();

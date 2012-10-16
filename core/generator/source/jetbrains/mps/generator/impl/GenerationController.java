@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -137,7 +138,7 @@ public class GenerationController implements ITaskPoolProvider {
 
   protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ProgressMonitor monitor) throws Exception {
     boolean currentGenerationOK = true;
-    monitor.start("Generating " + module.getModuleFqName(), inputModels.size());
+    monitor.start(module.getModuleFqName(), inputModels.size());
 
     // TODO fix context
     IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
@@ -151,7 +152,7 @@ public class GenerationController implements ITaskPoolProvider {
       }
 
       for (SModelDescriptor inputModel : inputModels) {
-        currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, monitor.subTask(1));
+        currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, monitor.subTask(1, SubProgressKind.REPLACING));
         monitor.advance(0);
       }
     } finally {

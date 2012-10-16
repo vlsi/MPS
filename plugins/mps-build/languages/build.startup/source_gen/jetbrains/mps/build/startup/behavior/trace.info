@@ -21,8 +21,8 @@
     <nodeInfo nodeId="5842819808956911423" fileName="MpsStartupScript_Behavior.java" startLine="40" startPosition="45" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathToVmOptionsFile_5842819808956911442#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVmOptionsExtension_5842819808956911479#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5842819808956701310" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842819808956701310" fileName="MpsStartupScript_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_p7akvg_a0a0b#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_p7akvg_a0a0b#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="5842819808956911353" fileName="MpsStartupScript_Behavior.java" startLine="35" startPosition="90" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCommentedOptions_5842819808956911345#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="5842819808956701278" fileName="MpsStartupScript_Behavior.java" startLine="19" startPosition="85" endLine="32" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -60,9 +60,9 @@
     <scopeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5842819808956701264" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5842819808956701310" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="59" endPosition="6" />
-    <scopeInfo nodeId="5842819808956701310" fileName="MpsStartupScript_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="5842819808956701310" varName="str" />
+    <scopeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="59" endPosition="6" />
+    <scopeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5842819808956701314" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="5842819808956911348" fileName="MpsStartupScript_Behavior.java" startLine="35" startPosition="90" endLine="44" endPosition="24" />
     <scopeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="34" startPosition="0" endLine="46" endPosition="0">

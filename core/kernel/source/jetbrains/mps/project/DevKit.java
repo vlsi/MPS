@@ -23,7 +23,10 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
@@ -31,10 +34,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class DevKit extends AbstractModule implements MPSModuleOwner {
+public class DevKit extends AbstractModule {
   private DevkitDescriptor myDescriptor;
   private IFile myDescriptorFile;
-  private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
   /* TODO make package local, move to appropriate package */
   public DevKit(DevkitDescriptor descriptor, IFile file) {
@@ -56,11 +58,9 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(descriptor,reloadClasses);
+    super.setModuleDescriptor(descriptor, reloadClasses);
 
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
 
     myDescriptor = descriptor;
 
@@ -85,19 +85,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
 
   public String getTestsGeneratorOutputPath() {
     return null;
-  }
-
-  //why?   [Mihail Muhin]
-  protected void reloadAfterDescriptorChange() {
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    super.reloadAfterDescriptorChange();
-  }
-
-  public void dispose() {
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
-
-    super.dispose();
   }
 
   @Override

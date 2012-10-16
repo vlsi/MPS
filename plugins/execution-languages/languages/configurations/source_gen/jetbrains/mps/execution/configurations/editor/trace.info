@@ -3459,7 +3459,7 @@
     <nodeInfo nodeId="7037083547576022986" fileName="BeforeTask_Editor.java" startLine="233" startPosition="78" endLine="234" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7037083547576022986" fileName="BeforeTask_Editor.java" startLine="235" startPosition="10" endLine="236" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="259833884788783340" fileName="BeforeTask_Editor.java" startLine="239" startPosition="112" endLine="240" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="259833884788783347" fileName="BeforeTask_Editor.java" startLine="243" startPosition="61" endLine="244" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="259833884788783351" fileName="BeforeTask_Editor.java" startLine="243" startPosition="61" endLine="244" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="248" startPosition="102" endLine="249" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="252" startPosition="66" endLine="253" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="253" startPosition="41" endLine="254" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3493,7 +3493,7 @@
     <nodeInfo nodeId="6550182048787568300" fileName="BeforeTask_Editor.java" startLine="120" startPosition="47" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7037083547576022986" fileName="BeforeTask_Editor.java" startLine="224" startPosition="26" endLine="228" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="259833884788781952" fileName="BeforeTask_Editor.java" startLine="238" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_bndx6c_a2a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="259833884788783347" fileName="BeforeTask_Editor.java" startLine="242" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_bndx6c_a0a0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="259833884788783351" fileName="BeforeTask_Editor.java" startLine="242" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_bndx6c_a0a0a#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7037083547576022982" fileName="BeforeTask_Editor.java" startLine="53" startPosition="99" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="259833884788781948" fileName="BeforeTask_Editor.java" startLine="68" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6550182048787568302" fileName="BeforeTask_Editor.java" startLine="80" startPosition="99" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3550,7 +3550,7 @@
     <scopeInfo nodeId="259833884788783354" fileName="BeforeTask_Editor.java" startLine="189" startPosition="58" endLine="190" endPosition="43" />
     <scopeInfo nodeId="259833884788781944" fileName="BeforeTask_Editor.java" startLine="207" startPosition="58" endLine="208" endPosition="45" />
     <scopeInfo nodeId="259833884788781953" fileName="BeforeTask_Editor.java" startLine="239" startPosition="112" endLine="240" endPosition="81" />
-    <scopeInfo nodeId="259833884788783347" fileName="BeforeTask_Editor.java" startLine="243" startPosition="61" endLine="244" endPosition="43" />
+    <scopeInfo nodeId="259833884788783351" fileName="BeforeTask_Editor.java" startLine="243" startPosition="61" endLine="244" endPosition="43" />
     <scopeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="248" startPosition="102" endLine="249" endPosition="50" />
     <scopeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="273" startPosition="34" endLine="274" endPosition="95" />
     <scopeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="276" startPosition="131" endLine="277" endPosition="139" />
@@ -3627,8 +3627,8 @@
       <varInfo nodeId="259833884788781952" varName="node" />
       <varInfo nodeId="259833884788781952" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="259833884788783347" fileName="BeforeTask_Editor.java" startLine="242" startPosition="0" endLine="246" endPosition="0">
-      <varInfo nodeId="259833884788783347" varName="str" />
+    <scopeInfo nodeId="259833884788783351" fileName="BeforeTask_Editor.java" startLine="242" startPosition="0" endLine="246" endPosition="0">
+      <varInfo nodeId="259833884788783351" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="6550182048787568308" fileName="BeforeTask_Editor.java" startLine="263" startPosition="68" endLine="267" endPosition="23">
       <varInfo nodeId="6550182048787568308" varName="emptyCell" />
