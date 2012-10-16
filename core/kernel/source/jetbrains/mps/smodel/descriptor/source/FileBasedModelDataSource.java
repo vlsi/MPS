@@ -16,10 +16,9 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
-import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -30,7 +29,7 @@ import java.util.List;
  */
 public abstract class FileBasedModelDataSource implements ModelDataSource {
   private final Object LOCK = new Object();
-  private List<ChangeListener> myListeners = new ArrayList<ChangeListener>();
+  private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
   private boolean myInvalidated = false;
   private final ModuleReference myOrigin;
 
@@ -42,19 +41,21 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     return myOrigin;
   }
 
-  public void startListening(ChangeListener l) {
+  @Override
+  public void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
         ModelFileWatcher.getInstance().startListening(this);
         ReloadableSources.getInstance().addSource(this);
       }
-      myListeners.add(l);
+      myListeners.add(listener);
     }
   }
 
-  public void stopListening(ChangeListener l) {
+  @Override
+  public void removeListener(DataSourceListener listener) {
     synchronized (LOCK) {
-      myListeners.remove(l);
+      myListeners.remove(listener);
       if (myListeners.isEmpty()) {
         ReloadableSources.getInstance().removeSource(this);
         ModelFileWatcher.getInstance().stopListening(this);
@@ -65,14 +66,15 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
   public void reload(ProgressMonitor monitor) {
     myInvalidated = false;
 
-    List<ChangeListener> listeners;
+    List<DataSourceListener> listeners;
     synchronized (LOCK) {
-      listeners = new ArrayList<ChangeListener>(myListeners);
+      listeners = new ArrayList<DataSourceListener>(myListeners);
     }
-    monitor.start("", listeners.size());
+    monitor.start("Reloading", listeners.size());
     try {
-      for (ChangeListener l : listeners) {
-        l.changed(monitor.subTask(1, SubProgressKind.AS_COMMENT));
+      for (DataSourceListener l : listeners) {
+        l.changed(this);
+        monitor.advance(1);
       }
     } finally {
       monitor.done();
@@ -81,15 +83,15 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
 
   public abstract Collection<String> getFilesToListen();
 
-  public boolean isInvalidated(){
+  public boolean isInvalidated() {
     return myInvalidated;
   }
 
   public void invalidate() {
     myInvalidated = true;
   }
-  
-  protected void sourceFilesChanged(){
+
+  protected void sourceFilesChanged() {
     invalidate();
     ModelFileWatcher.getInstance().stopListening(this);
     ModelFileWatcher.getInstance().startListening(this);

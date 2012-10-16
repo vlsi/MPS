@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def;
+package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
 
 import java.util.HashMap;
@@ -26,12 +28,12 @@ import java.util.Map;
  * Igor Alshannikov
  * Oct 9, 2007
  */
-public class DOMVisibleModelElements implements VisibleModelElements {
+class DOMVisibleModelElements implements VisibleModelElements {
   private Map<Integer, SModelReference> myVisibleModelElements = new HashMap<Integer, SModelReference>();
   private int myMaxVisibleModelIndex = 1;
   private Element myModelElement;
 
-  public DOMVisibleModelElements(Element modelElement) {
+  DOMVisibleModelElements(Element modelElement) {
     myModelElement = modelElement;
     parseVisibleElements();
   }

@@ -232,7 +232,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        fieldmodel.addAdditionalModelVersion(ModelUtil.upgradeModelUID(SModelReference.fromString(child[0])), version);
+        fieldmodel.addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
         return;
       }
       if ("language".equals(tagName)) {
@@ -403,7 +403,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SModel.ImportElement createObject(Attributes attrs) {
       int indexValue = Integer.parseInt(attrs.getValue("index"));
       int versionValue = Integer.parseInt(attrs.getValue("version"));
-      return new SModel.ImportElement(ModelUtil.upgradeModelUID(SModelReference.fromString(attrs.getValue("modelUID"))), indexValue, versionValue);
+      return new SModel.ImportElement(SModelReference.fromString(attrs.getValue("modelUID")), indexValue, versionValue);
     }
 
     @Override
