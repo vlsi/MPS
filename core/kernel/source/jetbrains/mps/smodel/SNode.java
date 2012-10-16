@@ -71,17 +71,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @NotNull
   private String myConceptFqName;
 
-  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
-    myModel = model;
-    myConceptFqName = callIntern ? InternUtil.intern(conceptFqName) : conceptFqName;
-  }
-
-  public SNode(SModel model, String conceptFqName) {
-    this(model, conceptFqName, true);
-  }
-
-  public SNode(String conceptFqName) {
-    this(null, conceptFqName, true);
+  public SNode(@NotNull String conceptFqName) {
+    myConceptFqName = conceptFqName;
   }
 
   public SModel getModelInternal() {
@@ -102,7 +93,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       assert current != current.treeParent();
       current = current.treeParent();
     }
-    return (SNode) current;
+    return current;
   }
 
   public String getName() {
@@ -160,13 +151,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   final public SNode getParent() {
     //todo: ModelAccess.assertLegalRead(this);
-    return (SNode) treeParent();
+    return treeParent();
   }
 
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SNode firstChild = firstChild();
     final SNode anchor = firstChild == null ? null : firstChild.treePrevious();
-    insertChild(role, (SNode) child, anchor);
+    insertChild(role, child, anchor);
   }
 
   @NotNull
@@ -1118,6 +1109,28 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  /**
+   * Use<br/>
+   *  n = new SNode(concept);<br/>
+   *  model.addNode(n)<br/>
+   * or<br/>
+   *  n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   * InternUtil.intern should be done in outer code
+   *
+   * @Deprecated in 3.0
+   */
+  @Deprecated
+  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
+    myModel = model;
+    myConceptFqName = callIntern ? InternUtil.intern(conceptFqName) : conceptFqName;
+  }
+
+  @Deprecated
+  public SNode(SModel model, String conceptFqName) {
+    this(model, conceptFqName, true);
+  }
 
   @Deprecated
   /**
