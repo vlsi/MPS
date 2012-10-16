@@ -387,8 +387,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myQueue.queue(new Update(myUpdateId) {
       @Override
       public void run() {
-        if (isDisposed()) return;
-        rebuildNow();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            if (isDisposed()) return;
+            rebuildNow();
+          }
+        });
       }
     });
   }
