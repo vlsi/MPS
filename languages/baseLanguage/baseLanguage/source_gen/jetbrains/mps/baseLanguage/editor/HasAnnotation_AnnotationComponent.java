@@ -35,6 +35,7 @@ public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
     return this.createAlternation_85xxz0_a(editorContext, node);
   }
 
+  @Deprecated
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);

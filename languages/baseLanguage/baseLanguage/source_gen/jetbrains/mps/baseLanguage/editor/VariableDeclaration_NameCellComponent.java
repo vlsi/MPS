@@ -41,6 +41,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     return this.createProperty_j36akn_a(editorContext, node);
   }
 
+  @Deprecated
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);

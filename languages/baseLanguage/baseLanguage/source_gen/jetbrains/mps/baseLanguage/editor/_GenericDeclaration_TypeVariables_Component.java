@@ -33,6 +33,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return this.createCollection_k0lfun_a(editorContext, node);
   }
 
+  @Deprecated
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);

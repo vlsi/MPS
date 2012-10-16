@@ -31,6 +31,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     return this.createCollection_fao2ea_a(editorContext, node);
   }
 
+  @Deprecated
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);

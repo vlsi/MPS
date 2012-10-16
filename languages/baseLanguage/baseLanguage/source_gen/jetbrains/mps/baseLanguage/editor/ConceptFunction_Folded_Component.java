@@ -21,6 +21,7 @@ public class ConceptFunction_Folded_Component extends AbstractCellProvider {
     return this.createConstant_hl0bni_a(editorContext, node);
   }
 
+  @Deprecated
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);

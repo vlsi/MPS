@@ -21,6 +21,7 @@ public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellPr
     return this.createConstant_2ccpf5_a(editorContext, node);
   }
 
+  @Deprecated
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
