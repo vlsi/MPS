@@ -73,17 +73,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public SNode(@NotNull String conceptFqName) {
     myConceptFqName = conceptFqName;
+    myId = SModel.generateUniqueId();
   }
 
   public SNodeId getSNodeId() {
     ModelAccess.assertLegalRead(this);
-
     fireNodeReadAccess();
-    if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
-      // TODO remove id generation
-      myId = SModel.generateUniqueId();
-      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
-    }
     return myId;
   }
 
