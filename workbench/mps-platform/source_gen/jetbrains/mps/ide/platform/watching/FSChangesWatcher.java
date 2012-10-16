@@ -34,6 +34,7 @@ import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
@@ -228,7 +229,7 @@ public class FSChangesWatcher implements ApplicationComponent {
       }
       if (ListSequence.fromList(events).all(new IWhereFilter<VFileEvent>() {
         public boolean accept(VFileEvent it) {
-          return !(it.isFromRefresh());
+          return VirtualFileUtils.isFileEventFromMPS(it);
         }
       })) {
         return;
@@ -240,7 +241,7 @@ public class FSChangesWatcher implements ApplicationComponent {
         }
         ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
           public boolean accept(VFileEvent it) {
-            return it.isFromRefresh();
+            return !(VirtualFileUtils.isFileEventFromMPS(it));
           }
         }).visitAll(new IVisitor<VFileEvent>() {
           public void visit(VFileEvent it) {
