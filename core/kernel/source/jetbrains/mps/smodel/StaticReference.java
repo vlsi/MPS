@@ -56,7 +56,7 @@ public final class StaticReference extends SReferenceBase {
   protected SNode getTargetNode_internal(boolean silently) {
     NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
-    if(myImmatureTargetNode != null) {
+    if (myImmatureTargetNode != null) {
       synchronized (this) {
         if (!makeIndirect()) {
           return myImmatureTargetNode;
@@ -93,7 +93,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste: targetModel.getDisposedStacktrace()) {
+      for (StackTraceElement ste : targetModel.getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }
@@ -115,33 +115,28 @@ public final class StaticReference extends SReferenceBase {
   }
 
   public SModel getTargetModel() {
-    if (!isExternal()) {
-      return getSourceNode().getModel();
-    }
+    SModel current = getSourceNode().getModel();
+    if (!isExternal()) return current;
 
     // external
     SModelReference targetModelReference = getTargetSModelReference();
-    if (targetModelReference == null) {
-      // 'unresolved' actually.
-      // It can be tmp reference created while copy/pasting a node
-      return null;
-    }
+    // 'unresolved' actually.
+    // It can be tmp reference created while copy/pasting a node
+    if (targetModelReference == null) return null;
 
-    SModelDescriptor current = getSourceNode().getModel().getModelDescriptor();
     // TODO
 //    if(current == null) {
 //      return null;
 //    }
 
     SModelDescriptor modelDescriptor = null;
-    if (current != null) {
-      modelDescriptor = current.resolveModel(targetModelReference);
+    if (current != null && current.getModelDescriptor() != null) {
+      modelDescriptor = current.getModelDescriptor().resolveModel(targetModelReference);
     } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     }
-    if (modelDescriptor == null) {
-      return null;
-    }
+
+    if (modelDescriptor == null) return null;
 
     SModel model = modelDescriptor.getSModel();
     if (model == null) {
