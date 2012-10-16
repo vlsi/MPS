@@ -673,11 +673,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Deprecated
-  //for migration purposes only. Should be removed in release
-  public void setModel(SModel model) {
-    myModel = model;
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel);
   }
 
+  @Deprecated
+  //for migration purposes only. Should be removed in release
+  public void setModel(SModel model) {
+    myOldModel = model;
+  }
+
+  @Deprecated
   /**
    * Use<br/>
    * n = new SNode(concept);<br/>
@@ -689,13 +699,22 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    *
    * @Deprecated in 3.0
    */
-  @Deprecated
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
     setModel(model);
   }
 
   @Deprecated
+  /**
+   * Use<br/>
+   * n = new SNode(concept);<br/>
+   * model.addNode(n)<br/>
+   * or<br/>
+   * n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   *
+   * @Deprecated in 3.0
+   */
   public SNode(SModel model, String conceptFqName) {
     this(InternUtil.intern(conceptFqName));
     setModel(model);
@@ -1139,14 +1158,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel);
-  }
 
   @Deprecated
   /**
