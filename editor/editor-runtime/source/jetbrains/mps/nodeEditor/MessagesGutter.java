@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.ui.ColorUtil;
+import com.intellij.ui.Gray;
+import com.intellij.ui.LightColors;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.errors.MessageStatus;
@@ -86,10 +88,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void paintTrack(Graphics g, JComponent c, Rectangle bounds) {
-    g.setColor(TRACK_BACKGROUND);
+    g.setColor(LightColors.SLIGHTLY_GRAY);
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
-    g.setColor(TRACK_BORDER);
+    g.setColor(Gray._230);
     int border = myRightToLeft ? bounds.x + bounds.width - 1 : bounds.x;
     g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
 
@@ -396,10 +398,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     public void paint(Graphics g) {
       final Rectangle bounds = getBounds();
 
-      g.setColor(ButtonlessScrollBarUI.TRACK_BACKGROUND);
+      g.setColor(LightColors.SLIGHTLY_GRAY);
       g.fillRect(0, 0, bounds.width, bounds.height);
 
-      g.setColor(ButtonlessScrollBarUI.TRACK_BORDER);
+      g.setColor(Gray._230);
       g.drawLine(0, 0, 0, bounds.height);
 
       Icon icon = getIcon();
