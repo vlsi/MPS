@@ -37,6 +37,7 @@ import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -430,7 +431,7 @@ public class State {
   
   public void setTargetNode(SNode node) {
     if (myInequalitySystem != null) return;
-    addBlock(new TargetBlock(this, typeOf(node, null)));
+    addBlock(new TargetBlock(this, typeOf(node, null), new SNodePointer(node)));
     myTargetNode = node;
   }
 
