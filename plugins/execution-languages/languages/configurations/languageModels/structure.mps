@@ -17,7 +17,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)" version="0" implicit="yes" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" version="3" implicit="yes" />
-  <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345993">
@@ -148,11 +147,6 @@
       <property name="name" nameId="tpck.1169194664001" value="BeforeTaskParameterReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="before" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1810236057992810377">
-      <property name="name" nameId="tpck.1169194664001" value="StartedProcessType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1594211126127733907">
       <property name="name" nameId="tpck.1169194664001" value="ConsoleType" />
@@ -549,17 +543,6 @@
       <property name="role" nameId="tpce.1071599776563" value="parameterDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1068581517664" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6550182048787562516" resolveInfo="BeforeTaskParameter" />
-    </node>
-  </root>
-  <root id="1810236057992810377">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1810236057992810378">
-      <property name="value" nameId="tpce.1105725733873" value="started" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1810236057992810379">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="process" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="rzqf.856705193941281810" resolveInfo="ProcessType" />
     </node>
   </root>
   <root id="1594211126127733907">
