@@ -532,7 +532,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                             }
 
                                             public String getDefaultResolveInfo() {
-                                              return "";
+                                              return "o";
                                             }
 
                                             public SNodePointer getTemplateNode() {

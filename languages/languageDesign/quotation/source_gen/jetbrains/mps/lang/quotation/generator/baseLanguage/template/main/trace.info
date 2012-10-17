@@ -1830,7 +1830,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="526" startPosition="45" endLine="527" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="527" startPosition="150" endLine="528" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="530" startPosition="110" endLine="531" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="534" startPosition="83" endLine="535" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="534" startPosition="83" endLine="535" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="538" startPosition="83" endLine="539" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="541" startPosition="86" endLine="542" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="543" startPosition="51" endLine="544" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3807,7 +3807,7 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="481" startPosition="87" endLine="482" endPosition="78" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="519" startPosition="62" endLine="520" endPosition="76" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="530" startPosition="110" endLine="531" endPosition="346" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="534" startPosition="83" endLine="535" endPosition="56" />
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="534" startPosition="83" endLine="535" endPosition="57" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="538" startPosition="83" endLine="539" endPosition="212" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="547" startPosition="62" endLine="548" endPosition="82" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="559" startPosition="43" endLine="560" endPosition="125" />

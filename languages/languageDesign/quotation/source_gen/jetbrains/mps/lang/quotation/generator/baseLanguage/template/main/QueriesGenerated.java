@@ -381,7 +381,7 @@ public class QueriesGenerated {
               }
               SNode targetNode = reference.getTargetNode();
               if (SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == SNodeOperations.getAncestor(child, "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
-                SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+                SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
                 referenceNode.setProperty("role", reference.getRole());
                 referenceNode.setReferenceTarget("targetNode", targetNode);
                 referenceNode.setReferenceTarget("sourceNode", child);
@@ -421,7 +421,7 @@ public class QueriesGenerated {
         if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), n)) != null)) {
           return true;
         }
-        SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         propertyNode.setProperty("propertyName", n);
         propertyNode.setProperty("propertyValue", v);
         ListSequence.fromList(result).addElement(propertyNode);
@@ -458,7 +458,7 @@ public class QueriesGenerated {
         if (SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
           return true;
         }
-        SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         referenceNode.setProperty("targetModel", ((SReference) ref).getTargetSModelReference().toString());
         referenceNode.setProperty("role", ref.getRole());
         if (targetNode != null) {
