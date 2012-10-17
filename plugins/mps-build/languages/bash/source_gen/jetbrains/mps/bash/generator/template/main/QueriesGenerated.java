@@ -145,7 +145,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930354787069(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "alias");
+    return SConceptPropertyOperations.getString(_context.getNode(), "alias");
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930355559021(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -169,7 +169,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930355442057(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "alias");
+    return SConceptPropertyOperations.getString(_context.getNode(), "alias");
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930355559099(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -177,7 +177,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930355442186(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "alias");
+    return SConceptPropertyOperations.getString(_context.getNode(), "alias");
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930355559120(final IOperationContext operationContext, final PropertyMacroContext _context) {
