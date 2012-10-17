@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -103,8 +102,8 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
             for (SNode cfp : ConceptFunction_Behavior.call_getParameters_1213877374450(node)) {
-              String alias = SPropertyOperations.getString(cfp, "alias");
-              String description = SPropertyOperations.getString(cfp, "shortDescription");
+              String alias = SConceptPropertyOperations.getString(cfp, "alias");
+              String description = SConceptPropertyOperations.getString(cfp, "shortDescription");
               if (description == null) {
                 description = "<no help. use short_description concept function property to create one>";
               }
