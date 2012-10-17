@@ -54,7 +54,10 @@ public final class StaticReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal(boolean silently) {
-    NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
+    SModelReference mr = getTargetSModelReference();
+    if (mr != null) {
+      NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), mr, getTargetNodeId());
+    }
 
     if (myImmatureTargetNode != null) {
       synchronized (this) {

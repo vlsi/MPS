@@ -69,7 +69,8 @@ abstract class SReferenceBase extends SReference {
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetModelReference;
-    return immatureNode.getModel().getSModelReference();
+    SModel model = immatureNode.getModel();
+    return model == null ? null : model.getSModelReference();
   }
 
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
