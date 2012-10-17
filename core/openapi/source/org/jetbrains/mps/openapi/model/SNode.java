@@ -47,8 +47,8 @@ public interface SNode {
    * If the given role is single and currently has a child in it, the current child is replaced
    * with a new one. Last parameter is ignored in this case.<br/>
    *
-   * @param role a role to insert new child into
-   * @param child a node to insert
+   * @param role   a role to insert new child into
+   * @param child  a node to insert
    * @param anchor a new child node will be inserted after this node. If specified,
    *               anchor must be in the same role as inserted child. If not specified,
    *               a new child is inserted into first position in the given role
@@ -64,8 +64,16 @@ public interface SNode {
 
   SNode getParent();
 
+  //complex queries
+
   @NotNull
   SNode getTopmostAncestor();
+
+  String getRoleInParent();
+
+  SNode getPrevSibling();
+
+  SNode getNextSibling();
 
   //non-modifiable
   Iterable<? extends SNode> getChildren(String role);

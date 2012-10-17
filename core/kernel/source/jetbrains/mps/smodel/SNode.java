@@ -553,12 +553,26 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return Arrays.asList(myReferences);
   }
 
+  public String getRoleInParent() {
+    return myRoleInParent;
+  }
+
+  public SNode getPrevSibling(){
+    if (getParent()==null) return null;
+    return getParent().getPrevChild(this);
+  }
+
+  public SNode getNextSibling(){
+    if (getParent()==null) return null;
+    return getParent().getNextChild(this);
+  }
 //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
+  @Deprecated
   public String getRole() {
-    return myRoleInParent;
+    return getRoleInParent();
   }
 
   public String getPersistentProperty(String propertyName) {
@@ -1290,24 +1304,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     return findConceptProperty(propertyName) != null;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getNextChild(SNode child) {
-    return getNextChild(((org.jetbrains.mps.openapi.model.SNode) child));
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getPrevChild(SNode child) {
-    return getPrevChild(((org.jetbrains.mps.openapi.model.SNode) child));
   }
 
   @Deprecated
