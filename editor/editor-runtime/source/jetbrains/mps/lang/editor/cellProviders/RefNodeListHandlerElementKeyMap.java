@@ -36,7 +36,7 @@ public class RefNodeListHandlerElementKeyMap extends EditorCellKeyMap {
 
         public void execute(KeyEvent keyEvent, EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
-          SNode nodeToInsert = myListHandler.createNodeToInsert(context);
+          SNode nodeToInsert = myListHandler.createNodeToInsert((jetbrains.mps.openapi.editor.EditorContext) context);
           SNode parentNode = myListHandler.getOwner();
           parentNode.insertChild(myListHandler.getElementRole(), nodeToInsert, parentNode.getPrevChild(anchorNode));
         }
@@ -50,7 +50,7 @@ public class RefNodeListHandlerElementKeyMap extends EditorCellKeyMap {
 
         public void execute(KeyEvent keyEvent, EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
-          SNode nodeToInsert = myListHandler.createNodeToInsert(context);
+          SNode nodeToInsert = myListHandler.createNodeToInsert((jetbrains.mps.openapi.editor.EditorContext) context);
           myListHandler.getOwner().insertChild(myListHandler.getElementRole(), nodeToInsert, anchorNode);
         }
       };
