@@ -566,7 +566,39 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (getParent()==null) return null;
     return getParent().getNextChild(this);
   }
-//-------------------------------------------------------
+
+  public Iterable<String> getUserObjectKeys() {
+    return new Iterable<String>() {
+      public Iterator<String> iterator() {
+        return new Iterator<String>() {
+          int myIndex = 0;
+          public boolean hasNext() {
+            return myIndex+2<myProperties.length;
+          }
+
+          public String next() {
+            myIndex +=2;
+            return myProperties[myIndex-1];
+          }
+
+          public void remove() {
+            throw new UnsupportedOperationException();
+          }
+        };
+      }
+    };
+  }
+
+  //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
+  public Set<String> getPropertyNames() {
+    HashSet<String> result = new HashSet<String>();
+    for (int i = 0;i<myProperties.length;i+=2){
+      result.add(myProperties[i]);
+    }
+    return result;
+  }
+
+  //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
@@ -1449,15 +1481,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Collection<SReference> getReferencesIterable() {
     return jetbrains.mps.util.SNodeOperations.getReferences(this);
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Replace with visitProperties
-   * @Deprecated in 3.0
-   */
-  public Set<String> getPropertyNames() {
-    return jetbrains.mps.util.SNodeOperations.getProperties(this).keySet();
   }
 
   @Deprecated

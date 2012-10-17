@@ -84,9 +84,7 @@ public interface SNode {
 
   String getRoleOf(SNode child);
 
-  public Iterable<? extends SNode> getChildren();  //?needed
-
-  void visitChildren(ChildVisitor v);
+  public Iterable<? extends SNode> getChildren();
 
   // refs
 
@@ -100,9 +98,7 @@ public interface SNode {
 
   void setReference(String role, SReference reference);
 
-  public Iterable<? extends SReference> getReferences();  //?needed
-
-  void visitReferences(ReferenceVisitor v);
+  public Iterable<? extends SReference> getReferences();
 
   // props
 
@@ -112,7 +108,7 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
-  void visitProperties(PropertyVisitor v);
+  Iterable<String> getPropertyNames();
 
   // user objects
 
@@ -120,9 +116,17 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
-  void visitUserObjects(UserObjectVisitor v);
+  Iterable<String> getUserObjectKeys();
 
   //visitors
+
+  void visitChildren(ChildVisitor v);
+
+  void visitReferences(ReferenceVisitor v);
+
+  void visitProperties(PropertyVisitor v);
+
+  void visitUserObjects(UserObjectVisitor v);
 
   public interface ChildVisitor {
     boolean visitChild(String role, SNode child);
