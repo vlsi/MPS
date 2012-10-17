@@ -1053,9 +1053,9 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6962838954693749204">
-        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <property name="noTargetText" nameId="tpc2.1139852716018" value="..." />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="m373.6962838954693749192" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6962838954693749202">
@@ -1795,9 +1795,9 @@
   <root id="6962838954693749205">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6962838954693749207">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="2217234381367103893">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284771309" resolveInfo="CommentTag" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="2565027568480537754" resolveInfo="ValueInlineDocTag_Actions" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6501140109493928003">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="m373.2565027568480644422" />
@@ -1855,8 +1855,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="m373.2217234381367190458" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2217234381367190451">
-        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="m373.2217234381367190444" resolveInfo="text" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2217234381367190452" />
@@ -2132,7 +2132,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2546654756694997559">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="2546654756694997560">
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284771309" resolveInfo="CommentTag" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2546654756694999493">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="m373.2546654756694997556" />

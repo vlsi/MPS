@@ -444,8 +444,8 @@
                 </node>
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7154590315135355070">
-                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no caption&gt;" />
                 <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no caption&gt;" />
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.1204991940915" resolveInfo="caption" />
               </node>
               <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7154590315135355071" />
@@ -462,8 +462,8 @@
                 </node>
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7154590315135355076">
-                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no mnemonic&gt;" />
                 <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no mnemonic&gt;" />
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.1205160812895" resolveInfo="mnemonic" />
               </node>
               <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7154590315135355077" />
@@ -480,8 +480,8 @@
                 </node>
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7154590315135355082">
-                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no mnemonic&gt;" />
                 <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no mnemonic&gt;" />
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.1217005992861" resolveInfo="isInvisibleWhenDisabled" />
               </node>
               <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7154590315135355083" />
@@ -1047,8 +1047,8 @@
   </root>
   <root id="1207318322675">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1207318325522">
-      <property name="usesBraces" nameId="tpc2.1139416841293" value="false" />
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
+      <property name="usesBraces" nameId="tpc2.1139416841293" value="false" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1207318325523">
         <property name="text" nameId="tpc2.1073389577007" value="&lt;" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215091279307" resolveInfo="LeftBrace" />
@@ -1468,8 +1468,8 @@
   </root>
   <root id="1210180436234">
     <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="1210180446803">
-      <property name="actionId" nameId="tpc2.1139535298778" value="right_transform_action_id" />
       <property name="description" nameId="tpc2.1139537298254" value="Add initializer" />
+      <property name="actionId" nameId="tpc2.1139535298778" value="right_transform_action_id" />
       <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="1210180446804">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210180446805">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1210180450936">
@@ -2989,8 +2989,8 @@
   <root id="5818192529492110611">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8096638938275467316">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="8096638938275467317">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8096638938275467318">
         <property name="text" nameId="tpc2.1073389577007" value="(" />
@@ -3013,8 +3013,8 @@
   <root id="1862809785209128868">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1862809785209128870">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1862809785209128871">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1862809785209128872">
         <property name="text" nameId="tpc2.1073389577007" value="(" />
@@ -3467,8 +3467,8 @@
             </node>
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7043625615963447701">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no mnemonic&gt;" />
             <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no mnemonic&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.1215865999894" resolveInfo="mnemonic" />
           </node>
           <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7043625615963447702" />
@@ -3830,8 +3830,8 @@
             <property name="text" nameId="tpc2.1073389577007" value="shortcut char:" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="3743831881070613029">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no shortcut&gt;" />
             <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no shortcut&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.3743831881070611767" resolveInfo="shortcutChar" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ReadOnlyModelAccessor" typeId="tpc2.1225900081164" id="3743831881070613030">

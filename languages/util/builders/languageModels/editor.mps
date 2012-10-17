@@ -852,7 +852,7 @@
   <root id="5389689214217248371">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="5389689214217248373">
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="4315270135341539211" resolveInfo="Parameter" />
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
   <root id="5389689214217404514">

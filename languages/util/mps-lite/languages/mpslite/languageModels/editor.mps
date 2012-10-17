@@ -182,8 +182,8 @@
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="1237317110345">
       <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_intermediate_position" />
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="1237317110346">
-        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_ENTER" />
+        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
       </node>
       <node role="executeFunction" roleId="tpc2.1136920925604" type="tpc2.CellKeyMap_ExecuteFunction" typeId="tpc2.1136917288805" id="1237317110347">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237317110348">
@@ -696,8 +696,8 @@
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="1237320871359">
       <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_intermediate_position" />
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="1237320871360">
-        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_SPACE" />
+        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
       </node>
       <node role="executeFunction" roleId="tpc2.1136920925604" type="tpc2.CellKeyMap_ExecuteFunction" typeId="tpc2.1136917288805" id="1237320871361">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237320871362">
@@ -861,8 +861,8 @@
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="1237320871428">
       <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_last_position" />
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="1237320871429">
-        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_SPACE" />
+        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
       </node>
       <node role="executeFunction" roleId="tpc2.1136920925604" type="tpc2.CellKeyMap_ExecuteFunction" typeId="tpc2.1136917288805" id="1237320871430">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237320871431">
@@ -894,8 +894,8 @@
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="1237320940438">
       <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_first_position" />
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="1237320940439">
-        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_SPACE" />
+        <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
       </node>
       <node role="executeFunction" roleId="tpc2.1136920925604" type="tpc2.CellKeyMap_ExecuteFunction" typeId="tpc2.1136917288805" id="1237320940440">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237320940441">
@@ -1400,9 +1400,9 @@
   </root>
   <root id="1239939907526">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1239939908719">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1196960726948" resolveInfo="MPSLiteChild" />
       <link role="keyMap" roleId="tpc2.1081339532145" targetNodeId="1237320834448" resolveInfo="LinePart_Actions" />
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

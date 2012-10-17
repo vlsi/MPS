@@ -340,9 +340,9 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1174662994690">
-        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <property name="noTargetText" nameId="tpc2.1139852716018" value="no description" />
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpfo.1174662978120" resolveInfo="description" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678737">
           <property name="color" nameId="tpc2.1186403713874" value="darkGray" />
@@ -1447,8 +1447,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1174900304959">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no multiplicity&gt;" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no multiplicity&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215010940130" resolveInfo="Operator" />
@@ -2574,8 +2574,8 @@
   </root>
   <root id="3050481019131644558">
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="3050481019131644559">
-      <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_last_position" />
       <property name="description" nameId="tpc2.1136916941877" value="insert an item after" />
+      <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_last_position" />
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="3050481019131644560">
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_ENTER" />
         <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
@@ -2640,8 +2640,8 @@
       </node>
     </node>
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="1353467374624921476">
-      <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_first_position" />
       <property name="description" nameId="tpc2.1136916941877" value="insert an item before" />
+      <property name="caretPolicy" nameId="tpc2.1141091278922" value="caret_at_first_position" />
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="1353467374624921477">
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_ENTER" />
         <property name="modifiers" nameId="tpc2.1136923970223" value="none" />
@@ -2731,7 +2731,7 @@
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1174900929182" resolveInfo="BinaryRegexp_Left_Actions" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1353467374623956848">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="1353467374623956849">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -3111,8 +3111,8 @@
   </root>
   <root id="4759120547780522710">
     <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="4759120547780522711">
-      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <property name="description" nameId="tpc2.1139537298254" value="convert to positive class" />
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="4759120547780522712">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4759120547780522713">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4759120547781018328">
