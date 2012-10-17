@@ -31,6 +31,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Iterator;

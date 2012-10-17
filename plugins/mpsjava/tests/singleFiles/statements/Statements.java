@@ -1,8 +1,8 @@
 
 public class Statements {
   void method(int arg) {
-     //int x = arg;
-     //int y = x;
+     // comment line
+     // another comment
      foo();
   }
   void foo() {}

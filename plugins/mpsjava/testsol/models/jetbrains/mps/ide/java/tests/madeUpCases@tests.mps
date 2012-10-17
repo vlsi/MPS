@@ -149,8 +149,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4795297196607456975">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4795297196607508732">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="SimpleClass" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8083368042256321633">
           <property name="name" nameId="tpck.1169194664001" value="staticField" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8083368042256321634" />
@@ -194,8 +194,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4795297196607508738">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4795297196607508741">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="Claz2" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
         <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="8083368042256391121">
           <property name="name" nameId="tpck.1169194664001" value="staticMethod" />
@@ -216,8 +216,8 @@
           </node>
         </node>
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8083368042256323315">
-          <property name="name" nameId="tpck.1169194664001" value="overloaded" />
           <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
+          <property name="name" nameId="tpck.1169194664001" value="overloaded" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8083368042256323316" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8083368042256323319" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8083368042256323318" />
@@ -242,8 +242,8 @@
           </node>
         </node>
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8083368042256344740">
-          <property name="isFinal" nameId="tpee.1181808852946" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="overrideStopper" />
+          <property name="isFinal" nameId="tpee.1181808852946" value="true" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8083368042256344741" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8083368042256344742" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8083368042256344743" />
@@ -280,11 +280,11 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8083368042256391113">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8083368042256391114">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="Claz3" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8083368042256392478">
-          <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="constant" />
+          <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8083368042256392481" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="8083368042256392482" />
         </node>
@@ -307,8 +307,8 @@
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8083368042256391461" />
         </node>
         <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8083368042256391462">
-          <property name="name" nameId="tpck.1169194664001" value="transnt" />
           <property name="isTransient" nameId="tpee.8606350594693632173" value="true" />
+          <property name="name" nameId="tpck.1169194664001" value="transnt" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8083368042256391463" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8083368042256391465" />
         </node>
@@ -336,8 +336,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7030568040400121706">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.Interface" typeId="tpee.1107796713796" id="7030568040400121707">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="GenericIface" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7030568040400121713">
           <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="method1" />
@@ -482,13 +482,13 @@
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="8083368042256393635">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SModelType" typeId="tp25.1143226024141" id="8083368042256393637" />
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256393614">
-                  <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel1" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel1" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256393648">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel1.sub" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel1.sub" />
                   <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel1s" />
                 </node>
               </node>
@@ -518,13 +518,13 @@
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="8083368042256417961">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SModelType" typeId="tp25.1143226024141" id="8083368042256417962" />
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256417963">
-                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel21" />
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel2" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel2" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel21" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256417964">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel2.sub" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel2.sub" />
                   <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel1s" />
                 </node>
               </node>
@@ -554,13 +554,13 @@
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="8083368042256418404">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SModelType" typeId="tp25.1143226024141" id="8083368042256418405" />
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256418406">
-                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel21" />
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel3" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel3" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.ide.java.testMaterial.testModel21" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8083368042256418407">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel3.sub" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.testModel3.sub" />
                   <property name="fqName" nameId="tp25.559557797393041554" value="jetsbrains.mps.ide.java.testMaterial.testModel3.sub" />
                 </node>
               </node>
@@ -613,8 +613,8 @@
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="887121589775379652">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial4" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial4" />
                 </node>
               </node>
             </node>
@@ -626,26 +626,22 @@
       <property name="name" nameId="tpck.1169194664001" value="LittleSource" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8051061021619748496" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8051061021619748497">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="9114761665055225572">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="9114761665055225573">
-            <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8051061021619748498">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8051061021619748500">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wfc9.887121589775295268" resolveInfo="checkSourceModel" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wfc9.8083368042256321540" resolveInfo="Utils" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8051061021619748501">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8051061021619748502">
-                    <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/statements" />
-                  </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8051061021619748503">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                  </node>
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8051061021619748513">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.singleFiles" />
-                  <property name="stereotype" nameId="tp25.559557797393021807" value="" />
-                </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8051061021619748498">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8051061021619748500">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wfc9.887121589775295268" resolveInfo="checkSourceModel" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wfc9.8083368042256321540" resolveInfo="Utils" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8051061021619748501">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8051061021619748502">
+                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/statements" />
               </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8051061021619748503">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
+              </node>
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="8051061021619748513">
+              <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+              <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.ide.java.testMaterial.singleFiles" />
             </node>
           </node>
         </node>
@@ -653,8 +649,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4795297196607520929">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4795297196607521155">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="SelfRef" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8083368042256419344">
           <property name="name" nameId="tpck.1169194664001" value="field" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8083368042256419347">
@@ -674,8 +670,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1218582063869484737">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1218582063869484741">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="ClassWithIface" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1218582063869484799">
           <property name="name" nameId="tpck.1169194664001" value="ifaceMethod" />
@@ -694,8 +690,8 @@
           </node>
         </node>
         <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.Interface" typeId="tpee.1107796713796" id="1218582063869484751">
-          <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="Iface" />
+          <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
           <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1218582063869484759">
             <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
             <property name="name" nameId="tpck.1169194664001" value="ifaceMethod" />
@@ -732,8 +728,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8083368042256419833">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8083368042256419834">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="NestContainer" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7030568040400313087">
           <property name="name" nameId="tpck.1169194664001" value="f1" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7030568040400313088" />
@@ -756,14 +752,14 @@
           </node>
         </node>
         <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8083368042256419842">
-          <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="Nested1" />
+          <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
           <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8083368042256419850">
-            <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
             <property name="name" nameId="tpck.1169194664001" value="Nested1_1" />
+            <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
             <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7030568040400313694">
-              <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
               <property name="name" nameId="tpck.1169194664001" value="Nested1_1_1" />
+              <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
               <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7030568040400313700">
                 <property name="name" nameId="tpck.1169194664001" value="fieldNested2" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7030568040400313701" />
@@ -793,8 +789,8 @@
           </node>
         </node>
         <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8083368042256419858">
-          <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="Nested2" />
+          <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
           <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7030568040400313704">
             <property name="name" nameId="tpck.1169194664001" value="field" />
             <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7030568040400313705" />
