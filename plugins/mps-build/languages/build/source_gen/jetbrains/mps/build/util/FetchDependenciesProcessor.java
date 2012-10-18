@@ -39,11 +39,11 @@ public class FetchDependenciesProcessor {
 
     List<SNode> statements = helper.getStatements();
     if (!(ListSequence.fromList(statements).isEmpty())) {
-      SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), "jetbrains.mps.build.structure.BuildCustomWorkflow", null);
-      SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), "jetbrains.mps.build.workflow.structure.BwfTaskPart", null);
+      SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.structure.BuildCustomWorkflow");
+      SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfTaskPart");
       SLinkOperations.setTarget(taskpart, "task", SLinkOperations.getTarget(new FetchDependenciesProcessor.QuotationClass_t02zqv_a0a0c0h0a().createNode(), "target", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(wf, "parts", true)).addElement(taskpart);
-      SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), "jetbrains.mps.build.workflow.structure.BwfSubTask", null);
+      SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfSubTask");
       SPropertyOperations.set(stask, "name", "fetch");
       ListSequence.fromList(SLinkOperations.getTargets(taskpart, "subTasks", true)).addElement(stask);
       ListSequence.fromList(SLinkOperations.getTargets(stask, "statements", true)).addSequence(ListSequence.fromList(statements));
@@ -116,7 +116,7 @@ public class FetchDependenciesProcessor {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("target", SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
         result = quotedNode1_2;

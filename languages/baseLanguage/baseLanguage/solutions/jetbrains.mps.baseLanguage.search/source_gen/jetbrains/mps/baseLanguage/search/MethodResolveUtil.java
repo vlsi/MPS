@@ -188,7 +188,7 @@ public class MethodResolveUtil {
       }
       List<SNode> methodTypeVariableDecls = SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true);
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
-        typeByTypeVar.put(tvd, SModelOperations.createNewNode(((SModel) AuxilaryRuntimeModel.getDescriptor().getSModel()), "jetbrains.mps.baseLanguage.structure.WildCardType", null));
+        typeByTypeVar.put(tvd, SModelOperations.createNewNode(((SModel) AuxilaryRuntimeModel.getDescriptor().getSModel()), null, "jetbrains.mps.baseLanguage.structure.WildCardType"));
       }
       SNode typeOfParam = (varArg ?
         SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) :

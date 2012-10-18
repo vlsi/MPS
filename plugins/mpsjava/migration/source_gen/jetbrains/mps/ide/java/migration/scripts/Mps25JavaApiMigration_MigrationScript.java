@@ -65,7 +65,7 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), SNodeId.fromString("~Color")));
         quotedNode1_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), SNodeId.fromString("~Color.BLUE")));
@@ -100,10 +100,10 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
       SNode quotedNode_16 = null;
       SNode quotedNode_17 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_18 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_19 = quotedNode_2;
           quotedNode1_19.setProperty("nonStatic", "true");
           quotedNode1_19.setReference("classifier", SReference.create("classifier", quotedNode1_19, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~DefaultEditorMessage")));
@@ -115,33 +115,33 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
             }
           }
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_20 = quotedNode_4;
             quotedNode_2.addChild("visibility", quotedNode1_20);
           }
           {
-            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_21 = quotedNode_5;
             quotedNode1_21.setProperty("isAbstract", "false");
             quotedNode1_21.setProperty("name", "paint");
             quotedNode1_21.setProperty("isFinal", "false");
             quotedNode1_21.setProperty("isDeprecated", "false");
             {
-              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
+              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_22 = quotedNode_6;
               quotedNode_5.addChild("visibility", quotedNode1_22);
             }
             {
-              quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, GlobalScope.getInstance(), false);
+              quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_23 = quotedNode_7;
               quotedNode_5.addChild("returnType", quotedNode1_23);
             }
             {
-              quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
+              quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_24 = quotedNode_8;
               quotedNode1_24.setProperty("name", "graphics");
               {
-                quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+                quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_25 = quotedNode_13;
                 quotedNode1_25.setReference("classifier", SReference.create("classifier", quotedNode1_25, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), SNodeId.fromString("~Graphics")));
                 quotedNode_8.addChild("type", quotedNode1_25);
@@ -149,11 +149,11 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
               quotedNode_5.addChild("parameter", quotedNode1_24);
             }
             {
-              quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
+              quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_26 = quotedNode_9;
               quotedNode1_26.setProperty("name", "component");
               {
-                quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+                quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_27 = quotedNode_14;
                 quotedNode1_27.setReference("classifier", SReference.create("classifier", quotedNode1_27, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~EditorComponent")));
                 quotedNode_9.addChild("type", quotedNode1_27);
@@ -161,11 +161,11 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
               quotedNode_5.addChild("parameter", quotedNode1_26);
             }
             {
-              quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
+              quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_28 = quotedNode_10;
               quotedNode1_28.setProperty("name", "cell");
               {
-                quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+                quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_29 = quotedNode_15;
                 quotedNode1_29.setReference("classifier", SReference.create("classifier", quotedNode1_29, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)"), SNodeId.fromString("~EditorCell")));
                 quotedNode_10.addChild("type", quotedNode1_29);
@@ -173,13 +173,13 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
               quotedNode_5.addChild("parameter", quotedNode1_28);
             }
             {
-              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_30 = quotedNode_11;
               {
-                quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, GlobalScope.getInstance(), false);
+                quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_31 = quotedNode_16;
                 {
-                  quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_32 = quotedNode_17;
                   quotedNode1_32.setProperty("text", "nothing");
                   quotedNode_16.addChild("commentPart", quotedNode1_32);
@@ -189,7 +189,7 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
               quotedNode_5.addChild("body", quotedNode1_30);
             }
             {
-              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
+              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_33 = quotedNode_12;
               quotedNode1_33.setReference("annotation", SReference.create("annotation", quotedNode1_33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
               quotedNode_5.addChild("annotation", quotedNode1_33);

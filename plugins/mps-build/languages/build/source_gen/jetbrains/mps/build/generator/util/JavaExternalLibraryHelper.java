@@ -109,7 +109,7 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
       propertyNode.addChild("attrs", new JavaExternalLibraryHelper.QuotationClass_g6ffke_a1a0d0j0a().createNode(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
@@ -119,7 +119,7 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no content location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
       propertyNode.addChild("attrs", new JavaExternalLibraryHelper.QuotationClass_g6ffke_a1a0d0k0a().createNode(val));
       propertyNode.addChild("attrs", new JavaExternalLibraryHelper.QuotationClass_g6ffke_a1a0e0k0a().createNode());
       ListSequence.fromList(result).addElement(propertyNode);
@@ -137,11 +137,11 @@ public class JavaExternalLibraryHelper {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("attrName", "file");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", (String) parameter_5);
           quotedNode_1.addChild("value", quotedNode1_4);
@@ -162,11 +162,11 @@ public class JavaExternalLibraryHelper {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("attrName", "dir");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", (String) parameter_5);
           quotedNode_1.addChild("value", quotedNode1_4);
@@ -187,11 +187,11 @@ public class JavaExternalLibraryHelper {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("attrName", "includes");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", "*.jar");
           quotedNode_1.addChild("value", quotedNode1_4);

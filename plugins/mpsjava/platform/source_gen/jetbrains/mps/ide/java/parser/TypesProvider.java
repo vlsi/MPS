@@ -65,31 +65,31 @@ public class TypesProvider {
     SModel model = myReferentsCreator.myCurrentModel;
     if (binding instanceof BaseTypeBinding) {
       if (binding == TypeBinding.BOOLEAN) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.BooleanType");
       }
       if (binding == TypeBinding.BYTE) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ByteType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ByteType");
       }
       if (binding == TypeBinding.CHAR) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.CharType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.CharType");
       }
       if (binding == TypeBinding.DOUBLE) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DoubleType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.DoubleType");
       }
       if (binding == TypeBinding.FLOAT) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.FloatType");
       }
       if (binding == TypeBinding.INT) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.IntegerType");
       }
       if (binding == TypeBinding.LONG) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LongType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.LongType");
       }
       if (binding == TypeBinding.SHORT) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ShortType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ShortType");
       }
       if (binding == TypeBinding.VOID) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.VoidType", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.VoidType");
       }
       throw new JavaConverterException("Unknown base type : " + binding);
     }
@@ -98,12 +98,12 @@ public class TypesProvider {
       TypeBinding componentTypeBinding = arrayBinding.leafComponentType;
       int dimensions = arrayBinding.dimensions;
       SNode outerType = (varArg ?
-        SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.VariableArityType", null) :
-        SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayType", null)
+        SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.VariableArityType") :
+        SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ArrayType")
       );
       SNode smallestVectorType = outerType;
       while (dimensions > 1) {
-        SNode newArrayType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ArrayType", null);
+        SNode newArrayType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ArrayType");
         setComponentType(smallestVectorType, newArrayType);
         smallestVectorType = newArrayType;
         dimensions--;
@@ -115,14 +115,14 @@ public class TypesProvider {
       if (binding instanceof WildcardBinding) {
         WildcardBinding wildcardBinding = (WildcardBinding) binding;
         if (wildcardBinding.isUnboundWildcard()) {
-          return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.WildCardType", null);
+          return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.WildCardType");
         } else {
           if (wildcardBinding.boundKind == Wildcard.EXTENDS) {
-            SNode upperBoundType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
+            SNode upperBoundType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.UpperBoundType");
             SLinkOperations.setTarget(upperBoundType, "bound", createType(wildcardBinding.bound), true);
             return upperBoundType;
           } else {
-            SNode lowerBoundType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LowerBoundType", null);
+            SNode lowerBoundType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.LowerBoundType");
             SLinkOperations.setTarget(lowerBoundType, "bound", createType(wildcardBinding.bound), true);
             return lowerBoundType;
           }
@@ -131,7 +131,7 @@ public class TypesProvider {
       if (binding instanceof ParameterizedTypeBinding) {
         ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding;
         ReferenceBinding originalType = parameterizedTypeBinding.genericType();
-        SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SNode result = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassifierType");
         result.setReference(createClassifierReference(originalType, "classifier", result).getRole(), createClassifierReference(originalType, "classifier", result));
         if (!((parameterizedTypeBinding instanceof RawTypeBinding))) {
           TypeBinding[] typeBindings = parameterizedTypeBinding.arguments;
@@ -144,19 +144,19 @@ public class TypesProvider {
         return result;
       }
       if (binding instanceof SourceTypeBinding) {
-        SNode classifierType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SNode classifierType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassifierType");
         SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(myReferentsCreator.myBindingMap.get(binding), "jetbrains.mps.baseLanguage.structure.Classifier"), false);
         SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")).setResolveInfo(new String(binding.sourceName()));
         return classifierType;
       }
       if (binding instanceof MissingTypeBinding || binding instanceof ProblemReferenceBinding) {
-        SNode classifierType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SNode classifierType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassifierType");
         SReference reference = createErrorClassifierReference("classifier", (ReferenceBinding) binding, classifierType);
         classifierType.setReference(reference.getRole(), reference);
         return classifierType;
       }
       if (binding instanceof BinaryTypeBinding) {
-        SNode classifierType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SNode classifierType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassifierType");
         BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding;
         SReference reference = createClassifierReference(binaryTypeBinding, "classifier", classifierType);
         classifierType.setReference(reference.getRole(), reference);
@@ -165,7 +165,7 @@ public class TypesProvider {
     }
     if (binding instanceof TypeVariableBinding) {
       TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
-      SNode tvr = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode tvr = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       SNode declaringGeneric = myReferentsCreator.myBindingMap.get(typeVariableBinding.declaringElement);
       if (SNodeOperations.isInstanceOf(declaringGeneric, "jetbrains.mps.baseLanguage.structure.GenericDeclaration")) {
         SLinkOperations.setTarget(tvr, "typeVariableDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(declaringGeneric, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "typeVariableDeclaration", true)).getElement(typeVariableBinding.rank), false);
