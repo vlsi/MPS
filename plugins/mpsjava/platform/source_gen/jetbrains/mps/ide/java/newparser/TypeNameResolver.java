@@ -315,22 +315,19 @@ public class TypeNameResolver {
     }
 
     public SNode resolve(String name) {
-      SNode res = null;
-
       SNode typeVar = MapSequence.fromMap(myTypeVars).get(name);
 
       if ((typeVar == null)) {
-        if (myParent != null) {
-          res = myParent.resolve(name);
-        }
+        return (myParent == null ?
+          null :
+          myParent.resolve(name)
+        );
       } else {
         SNode typeVarRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
         SReference ref = new StaticReference("typeVariableDeclaration", typeVarRef, typeVar);
         typeVarRef.addReference(ref);
-        res = typeVarRef;
+        return typeVarRef;
       }
-
-      return res;
     }
   }
 

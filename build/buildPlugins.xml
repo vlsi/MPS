@@ -28,6 +28,10 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-java" />
+    <mkdir dir="${build.layout}/plugins/mps-java/auxArtifact" />
+    <jar destfile="${build.layout}/plugins/mps-java/auxArtifact/mpsjava-core.jar">
+      <fileset dir="${build.tmp}/java/out/mps-java" />
+    </jar>
     <mkdir dir="${build.layout}/plugins/mps-java/lib" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar/META-INF" />
@@ -48,8 +52,9 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.ide.java.sourceStubs-src.jar" descriptor="sources.msd" />
+        <sources jar="jetbrains.mps.ide.java.sourceStubs-src.jar" descriptor="sourcesWithoutExt.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.tmp}/default/mpsjava.jar/modules/jetbrains.mps.ide.java.sourceStubs.jar">
@@ -59,7 +64,7 @@
     </jar>
     <jar destfile="${build.tmp}/default/mpsjava.jar/modules/jetbrains.mps.ide.java.sourceStubs-src.jar">
       <fileset dir="${mps_home}/plugins/mpsjava/stubs/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/stubs/sources.msd" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/stubs/sourcesWithoutExt.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/stubs/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
@@ -314,6 +319,7 @@
         <path location="${mps_home}/plugins/mpsjava/stubs/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -330,6 +336,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.ide.java.sourceStubs">
