@@ -108,6 +108,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.UnifyLocalMethodCalls_MigrationScript" file="UnifyLocalMethodCalls_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.UnifyVariableReferences_MigrationScript" file="UnifyVariableReferences_MigrationScript.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
