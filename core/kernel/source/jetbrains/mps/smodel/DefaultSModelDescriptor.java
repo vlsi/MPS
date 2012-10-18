@@ -34,9 +34,9 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, Refactorable, MetadataContainer {
@@ -72,19 +72,19 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private boolean myChanged = false;
 
-  private IModule myModule;
+  private SModule myModule;
 
 
   @Deprecated //todo remove
-  public DefaultSModelDescriptor(IModule module, IFile modelFile, SModelReference modelReference) {
+  public DefaultSModelDescriptor(SModule module, IFile modelFile, SModelReference modelReference) {
     this(module, new RegularModelDataSource(module.getModuleReference(), modelFile), modelReference, new DescriptorLoadResult(), true);
   }
 
-  public DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  public DefaultSModelDescriptor(SModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     this(module, source, modelReference, d, true);
   }
 
-  protected DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
+  protected DefaultSModelDescriptor(SModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
     super(modelReference, source, checkDup);
     myModule = module;
     myHeader = d.getHeader();
@@ -123,7 +123,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
-    return getSource().loadSModel(myModule, this, loadingState);
+    return getSource().loadSModel((IModule)myModule, this, loadingState);
   }
 
   public boolean isChanged() {
@@ -176,7 +176,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     setChanged(false);
     boolean reload = getSource().saveModel(this);
     if (reload) {
-      ModelLoadResult res = getSource().loadSModel(myModule, this, getUpdateableModel().getState());
+      ModelLoadResult res = getSource().loadSModel((IModule)myModule, this, getUpdateableModel().getState());
       updateDiskTimestamp();
       replaceModel(res.getModel(), res.getState());
     }
