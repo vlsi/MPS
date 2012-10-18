@@ -152,7 +152,7 @@
   <unitInfo fileName="LessThanOrEqualsExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LessThanOrEqualsExpression_BehaviorDescriptor" />
   <unitInfo fileName="LocalInstanceFieldReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalInstanceFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="LocalInstanceMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalInstanceMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="LocalMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="LocalMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="LocalPropertyReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalPropertyReference_BehaviorDescriptor" />
   <unitInfo fileName="LocalStaticFieldReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalStaticFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="LocalStaticMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalStaticMethodCall_BehaviorDescriptor" />
@@ -13556,6 +13556,20 @@
       <varInfo nodeId="5412515780383209412" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="5412515780383209412" fileName="SingleLineComment_Behavior.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SingleLineComment_Behavior" />
+  </root>
+  <root nodeId="5452927990858825167" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
+    <nodeInfo nodeId="5452927990858874692" fileName="LocalMethodCall_Behavior.java" startLine="11" startPosition="102" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452927990858825167" fileName="LocalMethodCall_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5452927990858825167" fileName="LocalMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_useScopesForMethodDeclarationFixer_66132694723287898#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="5452927990858825169" fileName="LocalMethodCall_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="5452927990858856700" fileName="LocalMethodCall_Behavior.java" startLine="11" startPosition="102" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="5452927990858825167" fileName="LocalMethodCall_Behavior.java" startLine="7" startPosition="39" endLine="10" endPosition="0">
+      <varInfo nodeId="5452927990858825167" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452927990858825167" fileName="LocalMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="5452927990858825167" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5452927990858825167" fileName="LocalMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_Behavior" />
   </root>
   <root nodeId="5862977038373290892" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="5862977038373290908" fileName="LocalPropertyReference_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
