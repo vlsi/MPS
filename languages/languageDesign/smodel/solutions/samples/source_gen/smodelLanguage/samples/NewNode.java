@@ -19,7 +19,7 @@ public class NewNode {
   }
 
   public void newNode2(SNode node) {
-    SNode newIfStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.IfStatement", null);
+    SNode newIfStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode newCondition = SLinkOperations.setNewChild(newIfStatement, "condition", "jetbrains.mps.baseLanguage.structure.Expression");
     SNode newCondition2 = SNodeOperations.replaceWithNewChild(newCondition, "jetbrains.mps.baseLanguage.structure.AndExpression");
     SNode newStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(newIfStatement, "ifTrue", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");

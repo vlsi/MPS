@@ -70,12 +70,12 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
 
       String currText = SPropertyOperations.getString(node, "text");
       if (index < currText.length() && index > 0) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildTextStringPart", null);
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildTextStringPart");
         SPropertyOperations.set(newText, "text", currText.substring(index));
         SPropertyOperations.set(node, "text", currText.substring(0, index));
         SNodeOperations.insertNextSiblingChild(node, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildVarRefStringPart", null);
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildVarRefStringPart");
       if (index != 0) {
         SNodeOperations.insertNextSiblingChild(node, newRef);
       } else {

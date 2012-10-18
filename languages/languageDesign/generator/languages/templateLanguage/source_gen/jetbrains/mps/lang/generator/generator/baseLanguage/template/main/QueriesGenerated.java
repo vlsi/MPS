@@ -3571,7 +3571,7 @@ public class QueriesGenerated {
         if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro"), name)) != null)) {
           return true;
         }
-        SNode propertyNode = SModelOperations.createNewNode(_context.getInputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode propertyNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         propertyNode.setProperty("propertyName", name);
         propertyNode.setProperty("propertyValue", value);
         ListSequence.fromList(result).addElement(propertyNode);
@@ -3619,7 +3619,7 @@ public class QueriesGenerated {
           current = SNodeOperations.getParent(current);
           counter++;
         }
-        SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         referenceNode.setProperty("role", reference.getRole());
         referenceNode.setReferent("originalNode", _context.getNode(), false);
         if (current != null) {
@@ -3646,7 +3646,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(referenceNode);
 
       } else {
-        SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         referenceNode.setProperty("kind", "normal");
         referenceNode.setProperty("targetModel", reference.getTargetSModelReference().toString());
         referenceNode.setProperty("role", reference.getRole());

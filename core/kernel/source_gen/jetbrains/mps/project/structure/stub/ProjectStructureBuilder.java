@@ -116,14 +116,14 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(StubSolution source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.StubSolution", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.StubSolution");
     SPropertyOperations.set(result, "name", source.getName());
     SPropertyOperations.set(result, "uuid", source.getId().toString());
     return result;
   }
 
   private SNode convert(SModelReference source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelReference", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelReference");
     SPropertyOperations.set(result, "uuid", source.getSModelId().toString());
     SPropertyOperations.set(result, "qualifiedName", source.getSModelFqName().getLongName());
     SPropertyOperations.set(result, "stereotype", source.getSModelFqName().getStereotype());
@@ -155,7 +155,7 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(ModelRoot source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRoot", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRoot");
     SPropertyOperations.set(result, "path", source.getPath());
     SLinkOperations.setTarget(result, "manager", convert(source.getManager()), true);
     return result;
@@ -165,27 +165,27 @@ public abstract class ProjectStructureBuilder {
     if (source == null) {
       return null;
     }
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRootManager", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRootManager");
     SPropertyOperations.set(result, "moduleId", source.getModuleId());
     SPropertyOperations.set(result, "className", source.getClassName());
     return result;
   }
 
   private SNode convertSourcePath(String s) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.SourcePath", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.SourcePath");
     SPropertyOperations.set(result, "value", s);
     return result;
   }
 
   private SNode convert(Dependency source) {
-    SNode dep = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleDependency", null);
+    SNode dep = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModuleDependency");
     SPropertyOperations.set(dep, "reexport", "" + (source.isReexport()));
     SLinkOperations.setTarget(dep, "moduleRef", convert(source.getModuleRef()), true);
     return dep;
   }
 
   private SNode convert(GeneratorDescriptor source) {
-    SNode generator = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.Generator", null);
+    SNode generator = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.Generator");
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
@@ -204,7 +204,7 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(MappingPriorityRule source) {
-    SNode rule = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingPriorityRule", null);
+    SNode rule = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingPriorityRule");
     switch (source.getType()) {
       case BEFORE_OR_TOGETHER:
         SPropertyOperations.set(rule, "type", "before_or_together");
@@ -230,7 +230,7 @@ public abstract class ProjectStructureBuilder {
     if (ref == null) {
       return null;
     }
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleReference", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModuleReference");
     SPropertyOperations.set(result, "uuid", (ref.getModuleId() != null ?
       ref.getModuleId().toString() :
       null
@@ -241,22 +241,22 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convert(MappingConfig_AbstractRef source) {
     if (source instanceof MappingConfig_RefAllGlobal) {
-      return SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", null);
+      return SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal");
     } else if (source instanceof MappingConfig_RefAllLocal) {
-      return SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", null);
+      return SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal");
     } else if (source instanceof MappingConfig_RefSet) {
-      SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefSet", null);
+      SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigRefSet");
       for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) source).getMappingConfigs()) {
         SLinkOperations.getTargets(result, "refs", true).add(convert(ref));
       }
       return result;
     } else if (source instanceof MappingConfig_ExternalRef) {
-      SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", null);
+      SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef");
       SLinkOperations.setTarget(result, "generator", convert(((MappingConfig_ExternalRef) source).getGenerator()), true);
       SLinkOperations.setTarget(result, "innerRef", convert(((MappingConfig_ExternalRef) source).getMappingConfig()), true);
       return result;
     } else if (source instanceof MappingConfig_SimpleRef) {
-      SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", null);
+      SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef");
       SPropertyOperations.set(result, "modelUID", ((MappingConfig_SimpleRef) source).getModelUID());
       SPropertyOperations.set(result, "nodeID", ((MappingConfig_SimpleRef) source).getNodeID());
       return result;

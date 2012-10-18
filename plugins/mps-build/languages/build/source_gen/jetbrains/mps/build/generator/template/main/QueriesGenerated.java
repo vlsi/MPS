@@ -1520,7 +1520,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5979287180587467230(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode module : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getModules()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule");
       SLinkOperations.setTarget(loopnode, "targetModule", module, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1530,7 +1530,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_8169228734285529277(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getJars()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar");
       SLinkOperations.setTarget(loopnode, "targetJar", jar, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1540,7 +1540,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6859736767834590289(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJars()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile");
       SLinkOperations.setTarget(loopnode, "targetFile", jar, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1550,7 +1550,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5680938682773841356(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<SNode, String> jarInFolder : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJarsInFolder()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
       loopnode.setReferent("targetJar", jarInFolder._0(), false);
       loopnode.setProperty("suffix", jarInFolder._1(), false);
       ListSequence.fromList(result).addElement(loopnode);
@@ -1561,7 +1561,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_144710003695560909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode library : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getLibraries()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary");
       SLinkOperations.setTarget(loopnode, "targetLibrary", library, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1627,7 +1627,7 @@ public class QueriesGenerated {
     }));
     List<SNode> result = new ArrayList<SNode>();
     for (String fname : folders) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
       loopnode.setProperty("folderName", fname, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
