@@ -103,9 +103,10 @@ public class PostponedReference extends SReference {
 
       SNode templateNode = myReferenceInfo instanceof ReferenceInfo_Macro ? ((ReferenceInfo_Macro) myReferenceInfo).getMacroNode() : null;
       SNode inputNode = myReferenceInfo.getInputNode();
-      if (inputNode != null || templateNode != null) {
+      if ((inputNode != null && inputNode.getModel() != null) || templateNode != null) {
         dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, inputNode != null ? new SNodePointer(inputNode) : null));
       }
+
       myReplacementReference = dynamicReference;
 
     } else {
