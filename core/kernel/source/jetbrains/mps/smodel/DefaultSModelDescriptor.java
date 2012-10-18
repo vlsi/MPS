@@ -74,18 +74,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private SModule myModule;
 
-
-  @Deprecated //todo remove
-  public DefaultSModelDescriptor(SModule module, IFile modelFile, SModelReference modelReference) {
-    this(module, new RegularModelDataSource(module.getModuleReference(), modelFile), modelReference, new DescriptorLoadResult(), true);
-  }
-
   public DefaultSModelDescriptor(SModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
-    this(module, source, modelReference, d, true);
-  }
-
-  protected DefaultSModelDescriptor(SModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
-    super(modelReference, source, checkDup);
+    super(modelReference, source, true);
     myModule = module;
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
