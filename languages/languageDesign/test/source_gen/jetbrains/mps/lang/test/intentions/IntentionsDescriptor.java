@@ -17,6 +17,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new AddNodeHasErrorMark_Intention(), "6017652711700380617");
     add(new AddOperationsMark_Intention(), "1215604006108");
     add(new AddPropertiesMark_Intention(), "1215508253864");
+    add(new AddScopeExpectedNodes_Intention(), "3100207102209325314");
+    add(new AddScopeTestAnnotation_Intention(), "3100207102208970627");
     add(new AddTestAnnotation_Intention(), "1210673906861");
   }
 }
