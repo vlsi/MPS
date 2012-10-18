@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
+import java.util.Collections;
 
 public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRoot {
   private final SModule myModule;
@@ -87,7 +88,11 @@ public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRo
 
   @Override
   public Iterable<SModel> getModels() {
-    Collection<SModelDescriptor> models = getManager().load(myModelRoot, (IModule) myModule);
+    IModelRootManager manager = getManager();
+    //model with model root manager not yet loaded - should be loaded after classes reloading
+    if (manager == null) return Collections.emptyList();
+
+    Collection<SModelDescriptor> models = manager.load(myModelRoot, (IModule) myModule);
     return (Iterable) models;
   }
 

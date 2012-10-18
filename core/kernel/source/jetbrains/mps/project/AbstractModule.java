@@ -581,7 +581,6 @@ public abstract class AbstractModule implements IModule {
         try {
           SModelRoot root = new SModelRoot(this, modelRoot);
           result.add(root);
-          //model with model root manager not yet loaded - should be loaded after classes reloading
 
           for (SModel model : root.getModels()) {
             allLoadedModels.add(model.getModelReference());
