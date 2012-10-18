@@ -31,11 +31,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -168,7 +171,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName = getMethodName(methodCallNode);
 
-    Tuples._2<SNode, Boolean> resolveResult = resolveTarget(methodCallNode, methodName);
+    Tuples._2<SNode, Boolean> resolveResult = resolveMethod(methodCallNode, methodName);
     SNode newTarget = resolveResult._0();
     boolean good = (boolean) resolveResult._1();
 
@@ -212,17 +215,35 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
 
-  private Tuples._2<SNode, Boolean> resolveTarget(SNode methodCall, String name) {
+  private Tuples._2<SNode, Boolean> resolveMethod(SNode methodCall, String name) {
+    if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, methodCall, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Class[]{SNode.class}))) {
+      return resolveMethodUsingScopes(methodCall, name);
+    }
+
     List<SNode> candidates = getCandidates(methodCall, name);
     if (candidates == null || candidates.isEmpty()) {
       return MultiTuple.<SNode,Boolean>from((SNode) null, false);
     }
+    Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
 
+    return resolveMethodByCandidatesAndTypes(methodCall, candidates, typeByTypeVar);
+  }
+
+  private Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, String name) {
+    Scope scope = ModelConstraints.getScope(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")));
+    SNode resolvedMethod = SNodeOperations.cast(scope.resolve(methodCall, name), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if ((resolvedMethod != null)) {
+      return MultiTuple.<SNode,Boolean>from(resolvedMethod, true);
+    } else {
+      return resolveMethodByCandidatesAndTypes(methodCall, scope.getAvailableElements(null), null);
+    }
+  }
+
+  private Tuples._2<SNode, Boolean> resolveMethodByCandidatesAndTypes(SNode methodCall, Iterable<SNode> candidates, @Nullable Map<SNode, SNode> typeByTypeVar) {
     List<SNode> actualArgs = SLinkOperations.getTargets(methodCall, "actualArgument", true);
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
 
-    Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
-    jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(candidates, methodCall);
+    jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(Sequence.fromIterable(candidates).toListSequence(), methodCall);
     List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
 
     if (methodDeclarationsGoodParams.size() == 1) {
@@ -233,6 +254,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       if (methodDeclarationsGoodParams.size() == 1) {
         return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), parmCountPair.o2);
       } else {
+        if (typeByTypeVar == null) {
+          return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), false);
+        }
+
         jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
         return MultiTuple.<SNode,Boolean>from(parmTypesPair.o1, parmTypesPair.o2);
       }
