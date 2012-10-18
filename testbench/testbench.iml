@@ -62,6 +62,15 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../plugins/mpsjava/lib/mpsjava-classes.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 
