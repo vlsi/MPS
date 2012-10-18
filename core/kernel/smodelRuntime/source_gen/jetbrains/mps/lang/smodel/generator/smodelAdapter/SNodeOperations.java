@@ -326,17 +326,11 @@ public class SNodeOperations {
   }
 
   public static SNode getNextSibling(SNode node) {
-    if (node == null || node.getParent() == null) {
-      return null;
-    }
-    return node.getParent().getNextChild(node);
+    return node.getNextSibling();
   }
 
   public static SNode getPrevSibling(SNode node) {
-    if (node == null || node.getParent() == null) {
-      return null;
-    }
-    return node.getParent().getPrevChild(node);
+    return node.getPrevSibling();
   }
 
   public static List<SNode> getPrevSiblings(SNode node, boolean inclusion) {

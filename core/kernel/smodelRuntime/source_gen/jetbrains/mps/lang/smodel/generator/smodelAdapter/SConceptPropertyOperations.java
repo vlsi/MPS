@@ -69,7 +69,7 @@ public class SConceptPropertyOperations {
         for (SNode cpd : (List<SNode>) SModelSearchUtil.getConceptPropertyDeclarations(node)) {
           if (SPropertyOperations.getString(cpd, "name").equals(propertyName)) {
             if (SNodeOperations.isInstanceOf(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
-              SNode bcp = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.BooleanConceptProperty");
+              SNode bcp = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty");
               SLinkOperations.setTarget(bcp, "conceptPropertyDeclaration", SNodeOperations.cast(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"), false);
               ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).addElement(bcp);
               break;
