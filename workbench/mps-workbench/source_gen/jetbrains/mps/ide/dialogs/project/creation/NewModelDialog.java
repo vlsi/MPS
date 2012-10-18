@@ -17,7 +17,6 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
@@ -78,8 +77,7 @@ public class NewModelDialog extends BaseDialog {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      IModelRootManager manager = root.getManager();
-      if (manager != null && manager.canCreateModel(myModule, root.getModelRoot(), null)) {
+      if (!(root.isReadOnly())) {
         model.addElement(root);
       }
     }
@@ -92,7 +90,7 @@ public class NewModelDialog extends BaseDialog {
       public Component getListCellRendererComponent(JList list, Object object, int i, boolean b, boolean b1) {
         if (object instanceof SModelRoot) {
           SModelRoot mr = (SModelRoot) object;
-          String manager = NameUtil.shortNameFromLongName(mr.getManager().getClass().getName());
+          String manager = NameUtil.shortNameFromLongName(mr.getKind());
           object = mr.getModelRoot().getPath() + " (" + manager + ")";
         }
         return super.getListCellRendererComponent(list, object, i, b, b1);
@@ -172,11 +170,6 @@ public class NewModelDialog extends BaseDialog {
     }
 
     SModelRoot mr = ((SModelRoot) selected);
-    IModelRootManager manager = mr.getManager();
-    if (manager == null) {
-      setErrorText("Can't create manager class");
-      return false;
-    }
 
     String modelName = myModelName.getText();
     if (modelName.length() == 0) {
@@ -210,7 +203,7 @@ public class NewModelDialog extends BaseDialog {
       return false;
     }
 
-    if (!(manager.canCreateModel(myModule, mr.getModelRoot(), getFqName()))) {
+    if (!(mr.canCreateModel(getFqName().toString()))) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }

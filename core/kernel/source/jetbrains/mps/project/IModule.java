@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collection;
 import java.util.List;
@@ -78,6 +79,8 @@ public interface IModule extends ModelOwner, SModule {
   //----
 
   SModelDescriptor createModel(SModelFqName fqName, SModelRoot root, @Nullable ModelAdjuster adj);
+
+  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   List<SModelDescriptor> getOwnModelDescriptors();
 
