@@ -36,6 +36,7 @@
     <dependency reexport="false">7b15492d-a198-43e2-91e3-4a7e9116ce2b(jetbrains.mps.execution.impl.tests)</dependency>
     <dependency reexport="false">50fc24f9-2bc9-4702-84ed-7f00cd088aca(jetbrains.mps.generator.tests)</dependency>
     <dependency reexport="false">1cf9ab03-28e6-49cc-b765-555cd6dcfc28(jetbrains.mps.graphLayout.test)</dependency>
+    <dependency reexport="false">c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)</dependency>
     <dependency reexport="false">4076bab3-4981-4035-94aa-19b6b4c51a84(jetbrains.mps.kernel.tests)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">69de002c-bbba-40be-be5b-f3a6e61ea828(jetbrains.mps.lang.editor.table.tests)</dependency>

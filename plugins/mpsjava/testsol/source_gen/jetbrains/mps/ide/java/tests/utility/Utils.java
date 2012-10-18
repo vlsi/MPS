@@ -24,7 +24,6 @@ import jetbrains.mps.ide.java.parser.FeatureKind;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -45,6 +44,7 @@ import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Utils {
@@ -71,8 +71,6 @@ public class Utils {
     Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
     SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
-
-    System.out.println("Non static: " + SPropertyOperations.getBoolean(result, "nonStatic"));
 
     NodePatcher.removeStatements(expected);
     NodePatcher.fixNonStatic(expected);
@@ -123,7 +121,6 @@ public class Utils {
     for (SModelDescriptor md : CollectionSequence.fromCollection(mds)) {
       SModel m = md.getSModel();
       ListSequence.fromList(models).addElement(m);
-      // <node> 
     }
 
     for (SModel m : ListSequence.fromList(expected)) {
@@ -165,7 +162,6 @@ public class Utils {
     for (SModelDescriptor md : CollectionSequence.fromCollection(binStubModels)) {
       SModel m = md.getSModel();
       ListSequence.fromList(binModels).addElement(m);
-      System.out.println(m.getLongName());
 
       for (SNode binRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
         NodePatcher.fixNonStatic(binRoot);
@@ -180,15 +176,13 @@ public class Utils {
       }
     }
 
-    System.out.println("-------------------------");
-
     List<SModel> srcModels = ListSequence.fromList(new ArrayList<SModel>());
     Collection<SModelDescriptor> srcStubModels;
     srcStubModels = src.load(new ModelRoot(sourcePath), mod2);
     for (SModelDescriptor md : CollectionSequence.fromCollection(srcStubModels)) {
       SModel m = md.getSModel();
       ListSequence.fromList(srcModels).addElement(m);
-      System.out.println(m.getLongName());
+      // <node> 
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
         NodePatcher.fixNonStatic(srcRoot);
@@ -225,7 +219,7 @@ public class Utils {
       buildModelNodeMap(binModel, srcModel, classMap);
     }
 
-    System.out.println("-------------------------");
+    // <node> 
 
     boolean errors = false;
 
@@ -255,11 +249,11 @@ public class Utils {
       }
     }, true).toListSequence();
 
-    System.out.println("Checking " + SModelOperations.getModelName(left));
+    // <node> 
     List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
     if (diff != null) {
       wereErrors = true;
-      System.err.println("Diff: " + diff);
+      // <node> 
     }
     return wereErrors;
   }
@@ -287,7 +281,7 @@ public class Utils {
     for (SNode cl : ListSequence.fromList(SNodeOperations.getDescendants(left, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
       SNode rightBrother = SNodeOperations.cast(MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, "name")), "jetbrains.mps.baseLanguage.structure.Classifier");
 
-      System.out.println("Mapping " + SPropertyOperations.getString(cl, "name") + " to " + SPropertyOperations.getString(rightBrother, "name"));
+      // <node> 
 
       Assert.assertNull(MapSequence.fromMap(nodeMap).get(cl));
       MapSequence.fromMap(nodeMap).put(cl, rightBrother);
