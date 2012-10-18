@@ -11,6 +11,10 @@ public class InstanceMethodCallOperation_BehaviorDescriptor extends BaseConcept_
   public InstanceMethodCallOperation_BehaviorDescriptor() {
   }
 
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
+  }
+
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }

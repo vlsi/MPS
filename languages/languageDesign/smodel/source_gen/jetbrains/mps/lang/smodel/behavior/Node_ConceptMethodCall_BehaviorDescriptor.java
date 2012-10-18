@@ -21,6 +21,10 @@ public class Node_ConceptMethodCall_BehaviorDescriptor extends SNodeOperation_Be
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
+  }
+
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return Node_ConceptMethodCall_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
   }
