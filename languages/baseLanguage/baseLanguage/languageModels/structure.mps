@@ -3000,9 +3000,6 @@
       <property name="value" nameId="tpce.1105725733873" value="local static method invocation" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4439253381393984338">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.6293714305936158372" resolveInfo="substituteInAmbigousPosition" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1172058436957">
       <property name="role" nameId="tpce.1071599776563" value="staticMethodDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
