@@ -54,7 +54,7 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.ide.java.sourceStubs-src.jar" descriptor="sourcesWithoutExt.msd" />
+        <sources jar="jetbrains.mps.ide.java.sourceStubs-src.jar" descriptor="sources.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.tmp}/default/mpsjava.jar/modules/jetbrains.mps.ide.java.sourceStubs.jar">
@@ -64,7 +64,7 @@
     </jar>
     <jar destfile="${build.tmp}/default/mpsjava.jar/modules/jetbrains.mps.ide.java.sourceStubs-src.jar">
       <fileset dir="${mps_home}/plugins/mpsjava/stubs/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/stubs/sourcesWithoutExt.msd" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/stubs/sources.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/stubs/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
