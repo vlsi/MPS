@@ -218,32 +218,25 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return MultiTuple.<SNode,Boolean>from((SNode) null, false);
     }
 
-
     List<SNode> actualArgs = SLinkOperations.getTargets(methodCall, "actualArgument", true);
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
 
-    SNode newTarget = null;
-    boolean good;
     Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
     jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(candidates, methodCall);
     List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
+
     if (methodDeclarationsGoodParams.size() == 1) {
-      newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
-      good = parmCountPair.o2;
+      return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), parmCountPair.o2);
     } else {
       parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs);
       methodDeclarationsGoodParams = parmCountPair.o1;
       if (methodDeclarationsGoodParams.size() == 1) {
-        newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
-        good = parmCountPair.o2;
+        return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), parmCountPair.o2);
       } else {
         jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
-        newTarget = parmTypesPair.o1;
-        good = parmTypesPair.o2;
+        return MultiTuple.<SNode,Boolean>from(parmTypesPair.o1, parmTypesPair.o2);
       }
     }
-
-    return MultiTuple.<SNode,Boolean>from(newTarget, good);
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
