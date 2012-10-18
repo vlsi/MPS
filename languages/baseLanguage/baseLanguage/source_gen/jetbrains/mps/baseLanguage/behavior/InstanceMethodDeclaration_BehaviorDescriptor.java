@@ -8,7 +8,7 @@ import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
 
-public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
+public class InstanceMethodDeclaration_BehaviorDescriptor extends MethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public InstanceMethodDeclaration_BehaviorDescriptor() {
   }
 

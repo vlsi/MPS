@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="44lzlq1u85ktrzs2pfmlcov6gdlbsb6">
+<dependencies version="2" modelHash="6stl5b4w64q17ye87wrqj9b8d2emyy6">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
@@ -265,6 +265,8 @@
     <dep root="7405920559687209278" />
     <dep root="7405920559687237502" />
     <dep root="7785501532031639928" />
+    <dep root="7812454656619025412" />
+    <dep root="7812454656619025416" />
     <dep root="7812779912047922391" />
     <dep root="8064396509828172209" />
     <dep root="8412076637103718467" />
@@ -316,7 +318,7 @@
   <source id="1068580123159" name="IfStatement" hash="9kflsj3yarg4o90mu7u5og24d8q5axk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1068580123165" name="InstanceMethodDeclaration" hash="-10stra219snss9xgnkwzbxt2pif9etm">
+  <source id="1068580123165" name="InstanceMethodDeclaration" hash="5xwdn04rf6l52l3dnvfe28yw2yllfyl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1068580320020" name="IntegerConstant" hash="-5b93h4jlgayo2p5625ln97kvsim5hfa">
@@ -412,7 +414,7 @@
   <source id="1081236700937" name="StaticMethodCall" hash="-9pjxeq953h8e70cbieygzck3j2efkrt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1081236700938" name="StaticMethodDeclaration" hash="9dbozi6118o3t33wj13t1bh5p727x2n">
+  <source id="1081236700938" name="StaticMethodDeclaration" hash="etdvzgbwlpbbdkptcgd5e2kupz52npx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1081256982272" name="InstanceOfExpression" hash="9v6uhsjigd15p2dblh72issdj9f3h3h">
@@ -579,7 +581,7 @@
   <source id="1171903916106" name="UpperBoundType" hash="-6rtv33vnrqh3e3v78uew66a7plhq05s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1172058436953" name="LocalStaticMethodCall" hash="c4os0d2ai5otbp9jnin7refdtuokn8y">
+  <source id="1172058436953" name="LocalStaticMethodCall" hash="-8p3jbspdb93a4n7kn1fy98wqc2kxdh1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1173175405605" name="ArrayAccessExpression" hash="-5f367mf6di7irh4v73c52sqh01gq5wi">
@@ -942,7 +944,7 @@
   <source id="3718132079121388578" name="ITryCatchStatement" hash="-3rak17w7dvu8jp6rew7k386u8hnyfhf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3066917033203108594" name="LocalInstanceMethodCall" hash="-bnw4x9ztqmg14c8oyw44zv3vvhv7u0q">
+  <source id="3066917033203108594" name="LocalInstanceMethodCall" hash="c93a3sqttc7oc1ody76lf0t055dosva">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3262277503800813724" name="ILocalDeclaration" hash="ct9rlvbe8nat38jvepz8sih81cmavnl">
@@ -1108,6 +1110,12 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1068498886296" name="VariableReference" hash="-282ocfdkw23tc9lduzdhekvao65sb7m">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7812454656619025412" name="LocalMethodCall" hash="-1gjj73v1ji26r7zcwd33wrkbpw13a7d">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7812454656619025416" name="MethodDeclaration" hash="-8te43jxke7zekrx3pe822zyha0i3vwx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

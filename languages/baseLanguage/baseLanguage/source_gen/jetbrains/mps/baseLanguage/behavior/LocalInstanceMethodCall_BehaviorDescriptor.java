@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 
-public class LocalInstanceMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
+public class LocalInstanceMethodCall_BehaviorDescriptor extends LocalMethodCall_BehaviorDescriptor {
   public LocalInstanceMethodCall_BehaviorDescriptor() {
   }
 
