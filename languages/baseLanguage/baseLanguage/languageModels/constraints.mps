@@ -231,6 +231,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7812454656619472116">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
+    </node>
   </roots>
   <root id="1213104836688">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104836689">
@@ -2684,6 +2688,14 @@
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.1068581517664" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1791178592936928836">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+      </node>
+    </node>
+  </root>
+  <root id="7812454656619472116">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7812454656619472117">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.7812454656619025415" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7812454656619472118">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.7812454656619025416" resolveInfo="MethodDeclaration" />
       </node>
     </node>
   </root>
