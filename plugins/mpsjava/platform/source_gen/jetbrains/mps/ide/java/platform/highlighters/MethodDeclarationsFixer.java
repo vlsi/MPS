@@ -29,7 +29,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -164,41 +166,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   public void testAndFixMethodCall(@NotNull SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
-    String methodName;
-    if (baseMethodDeclaration == null) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(methodCallNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false) != null) {
-        methodName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(methodCallNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "name");
-      } else {
-        methodName = SLinkOperations.getResolveInfo(SNodeOperations.getReference(methodCallNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")));
-      }
-    } else {
-      methodName = SPropertyOperations.getString(baseMethodDeclaration, "name");
-    }
-    List<SNode> actualArgs = SLinkOperations.getTargets(methodCallNode, "actualArgument", true);
-    List<SNode> candidates = getCandidates(methodCallNode, methodName);
-    if (candidates == null || candidates.isEmpty()) {
-      return;
-    }
-    SNode newTarget = null;
-    boolean good;
-    Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCallNode);
-    jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(candidates, methodCallNode);
-    List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
-    if (methodDeclarationsGoodParams.size() == 1) {
-      newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
-      good = parmCountPair.o2;
-    } else {
-      parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs);
-      methodDeclarationsGoodParams = parmCountPair.o1;
-      if (methodDeclarationsGoodParams.size() == 1) {
-        newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
-        good = parmCountPair.o2;
-      } else {
-        jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
-        newTarget = parmTypesPair.o1;
-        good = parmTypesPair.o2;
-      }
-    }
+    String methodName = getMethodName(methodCallNode);
+
+    Tuples._2<SNode, Boolean> resolveResult = resolveTarget(methodCallNode, methodName);
+    SNode newTarget = resolveResult._0();
+    boolean good = (boolean) resolveResult._1();
+
     if (newTarget != null) {
       if (baseMethodDeclaration == null || (good && newTarget != baseMethodDeclaration)) {
         reResolvedTargets.put(methodCallNode, newTarget);
@@ -224,6 +197,53 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
       nodesByNameAndConcept.add(methodCallPointer);
     }
+  }
+
+  private String getMethodName(SNode methodCall) {
+    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    if (baseMethodDeclaration == null) {
+      if (SLinkOperations.getTarget(SNodeOperations.as(methodCall, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false) != null) {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(methodCall, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "name");
+      } else {
+        return SLinkOperations.getResolveInfo(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")));
+      }
+    } else {
+      return SPropertyOperations.getString(baseMethodDeclaration, "name");
+    }
+  }
+
+  private Tuples._2<SNode, Boolean> resolveTarget(SNode methodCall, String name) {
+    List<SNode> candidates = getCandidates(methodCall, name);
+    if (candidates == null || candidates.isEmpty()) {
+      return MultiTuple.<SNode,Boolean>from((SNode) null, false);
+    }
+
+
+    List<SNode> actualArgs = SLinkOperations.getTargets(methodCall, "actualArgument", true);
+    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+
+    SNode newTarget = null;
+    boolean good;
+    Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
+    jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(candidates, methodCall);
+    List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
+    if (methodDeclarationsGoodParams.size() == 1) {
+      newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
+      good = parmCountPair.o2;
+    } else {
+      parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs);
+      methodDeclarationsGoodParams = parmCountPair.o1;
+      if (methodDeclarationsGoodParams.size() == 1) {
+        newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
+        good = parmCountPair.o2;
+      } else {
+        jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+        newTarget = parmTypesPair.o1;
+        good = parmTypesPair.o2;
+      }
+    }
+
+    return MultiTuple.<SNode,Boolean>from(newTarget, good);
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
