@@ -18,14 +18,25 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import java.util.List;
 import jetbrains.mps.smodel.SModel;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.IMakeService;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.IModule;
@@ -79,6 +90,7 @@ public class ConceptPropertiesHelper {
       SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(node, ""));
     }
 
+    final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
     RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -87,14 +99,45 @@ public class ConceptPropertiesHelper {
               SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
             }
             for (SNode node : SetSequence.fromSet(accessUsages)) {
-              SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a9a2().createNode(), "operation", true));
+              SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a01a2().createNode(), "operation", true));
             }
             refactoringViewItem.close();
           }
         });
       }
-    }, new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence()), false, "remove alias");
+    }, searchResults, false, "remove alias");
 
+    final Set<SModel> sourceModels = searchResults.getAffectedModels();
+    if (sourceModels.isEmpty()) {
+      return;
+    }
+    final List<org.jetbrains.mps.openapi.model.SModel> descriptors = new ArrayList<org.jetbrains.mps.openapi.model.SModel>();
+    SModelRepository.getInstance().saveAll();
+    //  save all before launching make 
+    for (SModel model : sourceModels) {
+      if (!(model.isDisposed())) {
+        descriptors.add(model.getModelDescriptor());
+      }
+    }
+
+    final IOperationContext operationContext = new ProjectOperationContext(project);
+    new Thread() {
+      public void run() {
+        try {
+          MakeSession sess = new MakeSession(operationContext);
+          if (IMakeService.INSTANCE.get().openNewSession(sess)) {
+            Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));
+            result.get();
+            //  wait for end of make to remove member access modifier 
+          }
+        } catch (InterruptedException e) {
+        } catch (CancellationException ignore) {
+        } catch (ExecutionException e) {
+          e.printStackTrace();
+        } finally {
+        }
+      }
+    }.start();
 
 
 
@@ -196,8 +239,8 @@ public class ConceptPropertiesHelper {
     }
   }
 
-  public static class QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a9a2 {
-    public QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a9a2() {
+  public static class QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a01a2 {
+    public QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a01a2() {
     }
 
     public SNode createNode() {
