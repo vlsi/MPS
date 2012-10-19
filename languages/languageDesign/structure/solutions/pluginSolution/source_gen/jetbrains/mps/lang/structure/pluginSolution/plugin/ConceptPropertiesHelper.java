@@ -49,6 +49,7 @@ public class ConceptPropertiesHelper {
     this.project = project;
     this.ideaProject = ProjectHelper.toIdeaProject(project);
     this.scope = project.getScope();
+    migrate();
   }
 
   public void migrate() {
