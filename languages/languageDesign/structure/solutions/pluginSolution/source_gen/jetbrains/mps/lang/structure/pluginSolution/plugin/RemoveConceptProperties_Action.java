@@ -18,7 +18,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
   protected static Log log = LogFactory.getLog(RemoveConceptProperties_Action.class);
 
   public RemoveConceptProperties_Action() {
-    super("Get rid of concept cproperties", "", ICON);
+    super("Get rid of concept properties", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

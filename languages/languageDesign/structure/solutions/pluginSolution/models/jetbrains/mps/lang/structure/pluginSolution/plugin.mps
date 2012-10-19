@@ -142,7 +142,7 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967702201" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2928721655729225312">
       <property name="name" nameId="tpck.1169194664001" value="RemoveConceptProperties" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Get rid of concept cproperties" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Get rid of concept properties" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2928721655729253202">
@@ -3744,6 +3744,11 @@
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2928721655729463392" resolveInfo="scope" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="624663709685747920">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="624663709685747921">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2928721655729373023" resolveInfo="migrate" />
           </node>
         </node>
       </node>
