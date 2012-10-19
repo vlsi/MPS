@@ -37,7 +37,7 @@ public class MPSFacetConfiguration {
         MapSequence.fromMap(props).put(mth.getName().substring(3), mth);
       }
     }
-    for (Element ch : AttributeUtils.elementChildren(config, "option")) {
+    for (Element ch : AttributeUtils.elementChildren(((Element) config), "option")) {
       Method pr = MapSequence.fromMap(props).get(NameUtil.capitalize(ch.getAttributeValue("name")));
       if (pr != null) {
         Object value;
