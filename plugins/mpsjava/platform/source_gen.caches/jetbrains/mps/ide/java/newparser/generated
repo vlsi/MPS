@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4c9q2qjd2h0uwlz947ogwshvx0trsnh">
+<dependencies version="2" modelHash="2ioy3k75cu5mteg547ttp629o5why69">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -34,7 +34,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="3493766494546486454" name="ASTConverter" hash="8adtvnz58ipm33io1o3ykkpgrpjkk6l">
+  <source id="3493766494546486454" name="ASTConverter" hash="-bjkrjy0jn6hcl2i7awl5skrdk7n97od">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -73,12 +73,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JavaPackagesDynReferece.java" />
   </source>
-  <source id="3493766494546492050" name="JavaParseException" hash="-92ztv88bf9qpamwnyrtww2tusbncwft">
+  <source id="3493766494546492050" name="JavaParseException" hash="2e8r9vfhvt02a4r2ju8st7ux5c7m6hp">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="JavaParseException.java" />
   </source>
-  <source id="3493766494546492073" name="JavaParser" hash="4u66qg6g7zjf1y766ce0cfuuw9bec9">
+  <source id="3493766494546492073" name="JavaParser" hash="a7pekdouzpicik9vnkzukftgflsk3sb">
     <dep root="3493766494546486454" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -123,7 +123,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TypeNameResolver.java" />
   </source>
-  <source id="887121589775377717" name="DirParser" hash="2r0evg2ykah64np19bbjuz01j1it1wn">
+  <source id="887121589775377717" name="DirParser" hash="4an1renenaveax6zyivmimoeb1xqcbu">
     <dep root="3493766494546492073" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -138,6 +138,11 @@
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DirParser.java" />
+  </source>
+  <source id="8183587472723110671" name="ReflectException" hash="-kxz48qze0cw81pnozegtlheiej2hpp">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="ReflectException.java" />
   </source>
 </dependencies>
 

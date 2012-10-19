@@ -92,7 +92,7 @@ public class SolutionIdea extends Solution {
   @Override
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     newDescriptor.setNamespace(myModule.getName());
-    addLibs(newDescriptor);
+//    addLibs(newDescriptor);
     super.setSolutionDescriptor(newDescriptor, reloadClasses);
   }
 
@@ -143,6 +143,8 @@ public class SolutionIdea extends Solution {
       }
       */
 
+      myModule.getProject().getComponent(Proj)
+
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
@@ -188,10 +190,10 @@ public class SolutionIdea extends Solution {
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     // FIXME make proper dependencies
-    Dependency dep = new Dependency();
-    dep.setModuleRef(moduleRef);
-    dep.setReexport(false); // overriding parameter
-    myAddedDependencies.add(dep);
+//    Dependency dep = new Dependency();
+//    dep.setModuleRef(moduleRef);
+//    dep.setReexport(false); // overriding parameter
+//    myAddedDependencies.add(dep);
   }
 
   @Override

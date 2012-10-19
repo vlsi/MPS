@@ -39,14 +39,14 @@ public class JavaParser {
   }
 
   @NotNull
-  public JavaParser.JavaParseResult parseCompilationUnit(String code) {
+  public JavaParser.JavaParseResult parseCompilationUnit(String code) throws JavaParseException {
     // temp thing: peek at the package name 
     String pkg = peekPackage(code);
     return parse(code, pkg, FeatureKind.CLASS, true);
   }
 
   @NotNull
-  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, boolean recovery) {
+  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, boolean recovery) throws JavaParseException {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
@@ -81,7 +81,12 @@ public class JavaParser {
 
           List<SNode> roots = new ArrayList<SNode>();
           for (ASTNode astNode : astTypes) {
-            ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
+            try {
+              ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
+            } catch (ReflectException e) {
+              // reflect exception will go away completely 
+              throw new RuntimeException(e);
+            }
           }
           resultNodes = roots;
         }
@@ -103,7 +108,11 @@ public class JavaParser {
         ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, true, recovery);
         // type decl (inner), field, method 
         if (astNodes != null && astNodes.length > 0) {
-          resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
+          try {
+            resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
+          } catch (ReflectException e) {
+            throw new RuntimeException(e);
+          }
         }
 
         break;
@@ -120,7 +129,11 @@ public class JavaParser {
 
         if (stmts != null && stmts.length > 0) {
           // TODO construct typeResolver from parent node context 
-          resultNodes = converter.convertStatements(stmts);
+          try {
+            resultNodes = converter.convertStatements(stmts);
+          } catch (ReflectException e) {
+            throw new RuntimeException(e);
+          }
         }
 
         break;

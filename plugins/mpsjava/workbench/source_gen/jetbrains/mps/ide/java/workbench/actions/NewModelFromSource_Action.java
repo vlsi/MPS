@@ -30,6 +30,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeNode;
@@ -163,11 +164,22 @@ public class NewModelFromSource_Action extends BaseAction {
           // <node> 
 
           final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), sModel, new File(resultFile.getPath()));
+          // we cannot take write action inside try, because it's implemented through 
+          // ... Runnable() { void run() } 
+          // Also I don't want to show error dialog while in write action 
+          final Wrappers._T<JavaParseException> parseException = new Wrappers._T<JavaParseException>(null);
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              dirParser.parseDirs();
+              try {
+                dirParser.parseDirs();
+              } catch (JavaParseException e) {
+                parseException.value = e;
+              }
             }
           });
+          if (parseException.value != null) {
+            JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.value.getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
+          }
         }
         SModelDescriptor modelDescriptor = result;
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);

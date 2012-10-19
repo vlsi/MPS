@@ -50,7 +50,7 @@ public class DirParser {
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<File>(), sourceDir);
   }
 
-  public List<SNode> parseDir(File dir) {
+  public List<SNode> parseDir(File dir) throws JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
     JavaParser parser = new JavaParser();
 
@@ -69,7 +69,7 @@ public class DirParser {
     return result;
   }
 
-  public void parseDirs() {
+  public void parseDirs() throws JavaParseException {
     // <node> 
     for (File sourceDir : ListSequence.fromList(mySourceDirs)) {
       myPrefix = null;
@@ -83,7 +83,7 @@ public class DirParser {
 
   }
 
-  public void addSourceFromDirectory(File dir) {
+  public void addSourceFromDirectory(File dir) throws JavaParseException {
     assert dir.isDirectory();
 
     // packages which match the directory 
@@ -146,7 +146,7 @@ public class DirParser {
     }
   }
 
-  private JavaParser.JavaParseResult parseFile(File file) {
+  private JavaParser.JavaParseResult parseFile(File file) throws JavaParseException {
     String contents = FileUtil.read(file);
     return myJavaParser.parseCompilationUnit(contents);
   }
