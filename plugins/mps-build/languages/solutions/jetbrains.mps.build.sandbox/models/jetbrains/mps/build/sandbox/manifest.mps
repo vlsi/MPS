@@ -7,8 +7,8 @@
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7471276865246050739">
       <property name="name" nameId="tpck.1169194664001" value="testmanifest" />
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="testmanifest.xml" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../" />
     </node>
   </roots>
   <root id="7471276865246050739">
