@@ -62,7 +62,7 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_errt5h_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("newMethodDeclaration");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("n");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new PullUpMethod_Editor._Inline_errt5h_a3a());
     editorCell = provider.createEditorCell(editorContext);

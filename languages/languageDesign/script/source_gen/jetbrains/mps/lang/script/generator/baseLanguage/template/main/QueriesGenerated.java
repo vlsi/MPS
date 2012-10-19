@@ -76,6 +76,10 @@ public class QueriesGenerated {
     }).first();
   }
 
+  public static Object referenceMacro_GetReferent_8543458906718506273(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(PullUpMethod_Behavior.call_getMigration_5166971494091017146(_context.getNode()), "newClassifier", false);
+  }
+
   public static Object referenceMacro_GetReferent_8543458906717834750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false);
   }

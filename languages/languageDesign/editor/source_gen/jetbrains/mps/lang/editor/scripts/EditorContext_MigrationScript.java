@@ -8,6 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class EditorContext_MigrationScript extends BaseMigrationScript {
   public EditorContext_MigrationScript(IOperationContext operationContext) {
@@ -26,7 +28,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getSelectedNode():jetbrains.mps.smodel.SNode");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getSelectedNode():jetbrains.mps.smodel.SNode") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -51,7 +53,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -76,7 +78,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode,boolean):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode,boolean):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -101,7 +103,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.select(jetbrains.mps.smodel.SNode):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.select(jetbrains.mps.smodel.SNode):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -126,7 +128,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectBefore(jetbrains.mps.smodel.SNode):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectBefore(jetbrains.mps.smodel.SNode):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -151,7 +153,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectAfter(jetbrains.mps.smodel.SNode):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectAfter(jetbrains.mps.smodel.SNode):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -176,7 +178,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectAndSetCaret(jetbrains.mps.smodel.SNode,int):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.selectAndSetCaret(jetbrains.mps.smodel.SNode,int):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -201,7 +203,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -226,7 +228,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -251,7 +253,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -276,7 +278,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.executeCommand(java.lang.Runnable):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.executeCommand(java.lang.Runnable):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -301,7 +303,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.executeCommand(jetbrains.mps.util.Computable):java.lang.Object");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.executeCommand(jetbrains.mps.util.Computable):java.lang.Object") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -326,7 +328,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.flushEvents():void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.flushEvents():void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -351,7 +353,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getScope():jetbrains.mps.smodel.IScope");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getScope():jetbrains.mps.smodel.IScope") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -376,7 +378,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.createNodeCell(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.createNodeCell(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -401,7 +403,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.createReferentCell(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.nodeEditor.cells.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.createReferentCell(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.nodeEditor.cells.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -426,7 +428,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.createRoleAttributeCell(java.lang.Class,jetbrains.mps.openapi.editor.EditorCell,jetbrains.mps.smodel.SNode):jetbrains.mps.openapi.editor.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.createRoleAttributeCell(java.lang.Class,jetbrains.mps.openapi.editor.EditorCell,jetbrains.mps.smodel.SNode):jetbrains.mps.openapi.editor.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -451,7 +453,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -476,7 +478,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.isInspector():boolean");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorContext.isInspector():boolean") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorContext");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -502,7 +504,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.selectNode(jetbrains.mps.smodel.SNode):void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.selectNode(jetbrains.mps.smodel.SNode):void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorComponent");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -527,7 +529,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.getDeepestSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.getDeepestSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorComponent");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -552,7 +554,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.getSelectedNodes():java.util.List");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.getSelectedNodes():java.util.List") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorComponent");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -577,7 +579,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.findCellWithId(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.nodeEditor.cells.EditorCell");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.findCellWithId(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.nodeEditor.cells.EditorCell") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorComponent");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -602,7 +604,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.rebuildEditorContent():void");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.rebuildEditorContent():void") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorComponent");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -627,7 +629,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.isReadOnly():boolean");
+        return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)", "~EditorComponent.isReadOnly():boolean") && DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(node)) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)", "~EditorComponent");
       }
 
       public void doUpdateInstanceNode(SNode node) {
