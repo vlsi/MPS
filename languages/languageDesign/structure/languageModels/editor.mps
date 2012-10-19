@@ -261,8 +261,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1082985295845" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1106001907860">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1106002077143">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
           </node>
         </node>
@@ -533,8 +533,8 @@
                 </node>
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1212087554899">
-                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;none&gt;" />
                 <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+                <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;none&gt;" />
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1212087449254" resolveInfo="noValueText" />
                 <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678545">
                   <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
@@ -576,8 +576,8 @@
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1083241965437" />
                 <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1212080889126">
                   <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1212080889127">
-                    <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no external value&gt;" />
                     <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+                    <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no external value&gt;" />
                     <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1083923523172" resolveInfo="externalValue" />
                     <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934377">
                       <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
@@ -712,8 +712,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1071599976176" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1197832374771">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5109811630748430360">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678183">
               <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
@@ -1178,8 +1178,8 @@
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1071489389519" />
               <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1215626361109">
                 <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1215626361110">
-                  <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
                   <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+                  <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
                   <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                   <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1215626361111">
                     <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
@@ -1249,6 +1249,27 @@
               <property name="flag" nameId="tpc2.1186414551515" value="false" />
             </node>
           </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5092175715804935372">
+            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5092175715804935373">
+              <property name="flag" nameId="tpc2.1186414551515" value="false" />
+            </node>
+            <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5092175715804935376">
+              <property name="text" nameId="tpc2.1073389577007" value="alias:" />
+            </node>
+            <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5092175715804935378">
+              <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no alias&gt;" />
+              <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.5092175715804935370" resolveInfo="conceptAlias" />
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="5092175715804935381">
+                <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
+              </node>
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5092175715804935383">
+                <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
+              </node>
+            </node>
+            <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5092175715804935375" />
+          </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5092175715804935380" />
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1105739255643">
             <property name="text" nameId="tpc2.1073389577007" value="properties:" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310994709">
@@ -1647,8 +1668,8 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2465654535473044227">
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
-          <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
           <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no URL&gt;" />
+          <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.2465654535473034588" resolveInfo="helpURL" />
         </node>
       </node>
@@ -2051,8 +2072,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1105736621938" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1137532689749">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1137532689750">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
           </node>
         </node>
@@ -2099,8 +2120,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1105742417828" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1105739101929">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1105739124745">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934385">
               <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
@@ -2179,8 +2200,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1105736621938" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1137532662978">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1137545446126">
-            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
           </node>
         </node>
@@ -2266,8 +2287,8 @@
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1149608246500" />
               <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1204751188238">
                 <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1204751188239">
-                  <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
                   <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+                  <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
                   <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                   <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678607">
                     <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
@@ -2289,8 +2310,8 @@
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1204741097161" />
               <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1204751383649">
                 <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1204751383650">
-                  <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
                   <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+                  <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
                   <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                   <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678019">
                     <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />

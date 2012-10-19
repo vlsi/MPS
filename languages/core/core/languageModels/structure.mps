@@ -120,6 +120,10 @@
       <property name="name" nameId="1169194664001" value="virtualPackage" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5092175715804935370">
+      <property name="name" nameId="1169194664001" value="conceptAlias" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1137473854053">
       <property name="name" nameId="1169194664001" value="abstract" />
     </node>
