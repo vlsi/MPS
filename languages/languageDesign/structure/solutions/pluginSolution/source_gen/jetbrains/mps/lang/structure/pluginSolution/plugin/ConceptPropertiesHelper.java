@@ -6,6 +6,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -27,7 +28,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -50,14 +50,22 @@ public class ConceptPropertiesHelper {
     this.project = project;
     this.ideaProject = ProjectHelper.toIdeaProject(project);
     this.scope = project.getScope();
-    migrate();
+    migrateAlias();
   }
 
   public void migrate() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        migrateAlias();
+      }
+    });
+  }
+
+  public void migrateAlias() {
     final Set<SNode> conceptUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> accessUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-    SNode aliasDecl = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0d0b().createNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"), "conceptProperty", false);
+    SNode aliasDecl = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0d0c().createNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"), "conceptProperty", false);
     final Set<SNode> searchedNodes = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(searchedNodes).addElement(aliasDecl);
     Set<SReference> usages = FindUsagesManager.getInstance().findUsages(searchedNodes, SearchType.USAGES, scope, new EmptyProgressMonitor());
@@ -72,14 +80,18 @@ public class ConceptPropertiesHelper {
     }
 
     RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
-      public void performAction(RefactoringViewItem refactoringViewItem) {
-        for (SNode concept : SetSequence.fromSet(conceptUsages)) {
-          SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
-        }
-        for (SNode node : SetSequence.fromSet(accessUsages)) {
-          SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0a1a0a0b0a9a1().createNode(), "operation", true));
-        }
-        refactoringViewItem.close();
+      public void performAction(final RefactoringViewItem refactoringViewItem) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            for (SNode concept : SetSequence.fromSet(conceptUsages)) {
+              SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
+            }
+            for (SNode node : SetSequence.fromSet(accessUsages)) {
+              SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a9a2().createNode(), "operation", true));
+            }
+            refactoringViewItem.close();
+          }
+        });
       }
     }, new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence()), false, "remove alias");
 
@@ -135,8 +147,8 @@ public class ConceptPropertiesHelper {
     return results;
   }
 
-  public static class QuotationClass_azpnkk_a0a0a0d0b {
-    public QuotationClass_azpnkk_a0a0a0d0b() {
+  public static class QuotationClass_azpnkk_a0a0a0d0c {
+    public QuotationClass_azpnkk_a0a0a0d0c() {
     }
 
     public SNode createNode() {
@@ -184,8 +196,8 @@ public class ConceptPropertiesHelper {
     }
   }
 
-  public static class QuotationClass_azpnkk_a0a0a0a1a0a0b0a9a1 {
-    public QuotationClass_azpnkk_a0a0a0a1a0a0b0a9a1() {
+  public static class QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a9a2 {
+    public QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a9a2() {
     }
 
     public SNode createNode() {
